@@ -7,13 +7,16 @@
     <title>teste3</title>
    <style>
        body {
-        display: grid;
-        justify-items: center;
            margin: 0;
+       }
+       #rev {
+           display: grid;
+           justify-items: center;
+           position: relative;
        }
        #main {
            z-index: 10;
-           top: 6.7%;
+           top: 0%;
            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
          position: absolute;
          border-bottom-left-radius: 5%;
@@ -37,7 +40,7 @@
           margin: 0 0 0 0 ;
            text-align: center;
            background-color: white;
-           width: 260px;
+           width: 267px;
        }
        #main > .psearcher:hover{
            background-color: rgb(235, 235, 235);
@@ -84,8 +87,10 @@
 </head>
 <body> </body>
 <p id="ps"><input type="text" name="" id="searcher" onkeyup="search2()" onfocus="search2()"></p>
-<div id="main">
-          
+<div id="rev">
+    <div id="main">
+    
+    </div>
 </div>
     <script src="teste3.js"></script>
  </div>
