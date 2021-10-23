@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste3</title>
+   <style>
+       body {
+        display: grid;
+        justify-items: center;
+           margin: 0;
+       }
+       #main {
+           z-index: 10;
+           top: 6.7%;
+           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+         position: absolute;
+         border-bottom-left-radius: 5%;
+         border-bottom-right-radius: 5%;
+         background-color: white;
+         padding-bottom: 0.3vw;
+         overflow: hidden;
+
+       } 
+       #ps {
+           position: relative;
+           margin-bottom: 0;
+         text-align: center;
+       }
+       #main > .psearcher{
+           z-index: 20;
+           position: absolute;
+           text-align: center;
+           padding-top: 1.5%;
+           padding-bottom: 1.5%;
+          margin: 0 0 0 0 ;
+           text-align: center;
+           background-color: white;
+           width: 260px;
+       }
+       #main > .psearcher:hover{
+           background-color: rgb(235, 235, 235);
+       }
+       #searcher {
+           border-image: none;
+           height: 20px;
+           border: 1.9px solid black;
+          margin-top: 1%;
+           position: relative;
+           background-color: white;
+           width: 260px;
+       }
+       
+       .video-holder {
+           min-width: 390px;
+           min-height: 307px;
+           position: relative;
+           margin: 10px auto auto auto;
+           width: 50%;
+           height: 40vw;
+        background-color: pink;
+       }
+       .video {
+           font-size: 2em;
+           top: 5% ;
+           left: 5%;
+           right: 5%;
+           width: 90%;
+           height: 90%;
+           position: absolute;
+           background-color: white;
+       }
+       .video > p {
+           text-align: center;
+           margin: 0;
+       }
+       .video-holder > input {
+           position: absolute;
+           left: 91%;
+           top: 95.5%;
+       }
+   </style>
+</head>
+<body> </body>
+<p id="ps"><input type="text" name="" id="searcher" onkeyup="search2()" onfocus="search2()"></p>
+<div id="main">
+          
+</div>
+    <script src="teste3.js"></script>
+ </div>
+</body>
+</html>
