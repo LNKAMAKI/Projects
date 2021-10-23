@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidas de Tendência Central/Frequências</title>
+    <style>
+        select {
+          width: 250px;
+          min-width: 200px;
+          overflow-x: scroll ;
+          overflow-y : scroll;
+          height: fit-content;
+        }
+        option {
+            text-align: center;
+        }
+        input#numb {
+            width: 200px;
+        }
+        input {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    p {
+           margin-top: 1px;
+           margin-bottom: 10px;
+            text-align: center;
+            
+        }
+        div {
+            margin-bottom: 10px;
+            text-align: center;
+            
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h1#spec {
+            margin-bottom: 5px;
+        }
+        input#freq {
+            width: 50px;
+        }
+        input#interclass {
+            width: 50px;
+        }
+        input#submit {
+            margin-top: 5px;
+        }
+        .para:hover {
+          background-color: rgba(221, 233, 250, 0.973);
+        }
+       
+    </style>
+</head>
+
+<body>
+    <h1 id="spec">Medidas de Tendência Central</h1>
+    <script src="mamemo.js"></script><p><input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)"> <input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)"> <input style="cursor: pointer;" id= "submit" type="submit" value="Submit" onclick="go()">  
+    </p>
+   <p>
+   <select name="selc" id="selc" size="11"  class="para">
+    </p>
+   </select>
+  <p id="ma">Média Aritmética:</p>
+  <p id="me">Mediana:</p>
+  <p id="mo">Moda:</p>
+  <p id="amp">Amplitude Total:</p>
+  <p><input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()"></p>
+ 
+ <h1>Frequências</h1>
+ <p><input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)"></p>
+    <div> 
+             <select name="selc" id="acum" size="11" class="para" >
+           
+              </select>
+              <select name="selc" id="fa" size="11" class="para">
+
+            </select>
+            
+ </div>
+ <p></p>
+ <div> 
+    <select name="selc" id="porc" size="11" class="para" >
+     </select>
+     <select name="selc" id="fra" size="11" class="para">
+   </select>
+   
+</div>  
+</body>
+</html> 
