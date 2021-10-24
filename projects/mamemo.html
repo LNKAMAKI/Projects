@@ -18,6 +18,7 @@
         }
         input#numb {
             width: 200px;
+            position: relative;
         }
         input {
             margin-top: 0px;
@@ -30,6 +31,7 @@
             
         }
         div {
+            position: relative;
             margin-bottom: 10px;
             text-align: center;
             
@@ -53,14 +55,117 @@
         .para:hover {
           background-color: rgba(221, 233, 250, 0.973);
         }
-       
+       .instruction {
+         display: none;
+       }
+      .inline {
+          display: inline-block;
+       }
+       .thingy {
+         display: none;
+       }
+       #numb:hover + .instruction > .thingy{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: 0%;
+           width: 12px;
+           height: 12px;
+           top: -5px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #numb:hover + .instruction{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 110%;
+         left: 20%;
+         display: inline-block;
+       }
+
+       .instruction2 {
+           min-width: 180px;
+         display: none;
+       }
+       .thingy2 {
+         display: none;
+       }
+       #freq:hover + .instruction2 > .thingy2{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: 0%;
+           width: 12px;
+           height: 12px;
+           top: -5px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #freq:hover + .instruction2{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 110%;
+         left: 20%;
+         display: inline-block;
+       }
+       .instruction3 {
+         display: none;
+         min-width: 180px;
+       }
+          .thingy3 {
+         display: none;
+       }
+       #submit:hover + .instruction3 > .thingy3{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: 0%;
+           width: 12px;
+           height: 12px;
+           top: -5px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #submit:hover + .instruction3{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 110%;
+         left: 20%;
+         display: inline-block;
+       }
     </style>
 </head>
 
 <body>
     <h1 id="spec">Medidas de Tendência Central</h1>
-    <script src="mamemo.js"></script><p><input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)"> <input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)"> <input style="cursor: pointer;" id= "submit" type="submit" value="Submit" onclick="go()">  
-    </p>
+    <script src="mamemo.js"></script> <div>
+        <div class="inline"><input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)">
+            <span class="instruction">Coloque qualquer número
+                <span class="thingy"></span>
+            </span> 
+        </div>
+        <div class="inline"><input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)">  
+            <span class="instruction2">Determine quantas vezes esse número vai se repetir
+                <span class="thingy2"></span>
+            </span> 
+        </div>
+
+        <div class="inline">
+            <input style="cursor: pointer;" id= "submit" type="submit" value="Submit" onclick="go()">
+            <span class="instruction3">Adicione o número à lista
+                <span class="thingy3"></span>
+            </span> 
+        </div>
+</div>
    <p>
    <select name="selc" id="selc" size="11"  class="para">
     </p>
@@ -69,7 +174,9 @@
   <p id="me">Mediana:</p>
   <p id="mo">Moda:</p>
   <p id="amp">Amplitude Total:</p>
-  <p><input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()"></p>
+  <div>
+      <div class="inline"><input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()"></div>
+  </div>
  
  <h1>Frequências</h1>
  <p><input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)"></p>
