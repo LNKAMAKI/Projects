@@ -142,6 +142,146 @@
          left: 20%;
          display: inline-block;
        }
+       .instruction4 {
+         display: none;
+         min-width: 180px;
+       }
+          .thingy4 {
+         display: none;
+       }
+       #delete + .instruction4 > .thingy4{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: 0%;
+           width: 12px;
+           height: 12px;
+           top: -5px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #delete:hover + .instruction4{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 110%;
+         left: 20%;
+         display: inline-block;
+       }
+       .instruction5 {
+         display: none;
+min-width: 180px;
+       }
+          .thingy5 {
+         display: none;
+       }
+       #acum + .instruction5 > .thingy5{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: 97%;
+           width: 12px;
+           height: 12px;
+           top: 3.1px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #acum:hover + .instruction5{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: -76%; 
+         display: inline-block;
+       }
+       .instruction6 {
+         display: none;
+min-width: 180px;
+       }
+          .thingy6 {
+         display: none;
+       }
+       #fa + .instruction6 > .thingy6{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: -3%;
+           width: 12px;
+           height: 12px;
+           top: 3.1px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #fa:hover + .instruction6{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: 103%;
+         display: inline-block;
+       }
+       .instruction7 {
+         display: none;
+max-width: 205px;
+       }
+          .thingy7 {
+         display: none;
+       }
+       #porc + .instruction7 > .thingy7{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: 97%;
+           width: 12px;
+           height: 12px;
+           top: 3.1px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #porc:hover + .instruction7{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: -87%;
+         display: inline-block;
+       }
+       .instruction8 {
+         display: none;
+min-width: 170px;
+       }
+          .thingy8 {
+         display: none;
+       }
+       #fra + .instruction8 > .thingy8{
+           background-color: white;
+           z-index: -20;
+           position: absolute;
+           left: -3%;
+           width: 12px;
+           height: 12px;
+           top: 3.1px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #fra:hover + .instruction8{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: 104%;
+         display: inline-block;
+       }
     </style>
 </head>
 
@@ -175,26 +315,53 @@
   <p id="mo">Moda:</p>
   <p id="amp">Amplitude Total:</p>
   <div>
-      <div class="inline"><input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()"></div>
-  </div>
+      <div class="inline"><input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()">
+        <span class="instruction4">Deletar todos os itens da lista
+            <span class="thingy4"></span>
+        </span> 
+    </div>
+      
+</div>
  
  <h1>Frequências</h1>
  <p><input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)"></p>
     <div> 
-             <select name="selc" id="acum" size="11" class="para" >
-           
-              </select>
-              <select name="selc" id="fa" size="11" class="para">
+             <div class="inline">
+                 <select name="selc" id="acum" size="11" class="para" >
+                  </select>
 
-            </select>
+                  <span class="instruction5">Frequência Absoluta
+                    <span class="thingy5"></span>
+                </span> 
+
+             </div>
+
+              <div class="inline">
+                  <select name="selc" id="fa" size="11" class="para">
+                  </select>
+                  <span class="instruction6">Frequência Relativa
+                    <span class="thingy6"></span>
+                </span> 
+                             
+              </div>
             
  </div>
  <p></p>
  <div> 
-    <select name="selc" id="porc" size="11" class="para" >
-     </select>
-     <select name="selc" id="fra" size="11" class="para">
-   </select>
+    <div class="inline">
+        <select name="selc" id="porc" size="11" class="para" >
+         </select>
+         <span class="instruction7">Frequência Absoluta Acumulada
+            <span class="thingy7"></span>
+        </span> 
+    </div>
+     <div class="inline">
+         <select name="selc" id="fra" size="11" class="para">
+            </select>
+            <span class="instruction8">Frequência Relativa Acumulada
+                <span class="thingy8"></span>
+            </span> 
+     </div>
    
 </div>  
 </body>
