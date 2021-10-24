@@ -45,6 +45,12 @@
        #main > .psearcher:hover{
            background-color: rgb(235, 235, 235);
        }
+       #searcher:focus {
+           outline-width: 0px ;
+        border-radius: 0px;
+        border:2px solid black;
+       }
+       
        #searcher {
            border-image: none;
            height: 20px;
@@ -86,7 +92,7 @@
    </style>
 </head>
 <body> </body>
-<p id="ps"><input type="text" name="" id="searcher" onkeyup="search2()" onfocus="search2()"></p>
+<p id="ps"><input type="text" name="" id="searcher" onkeyup="search2()" onfocus="search2() "></p>
 <div id="rev">
     <div id="main">
     
