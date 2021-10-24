@@ -228,7 +228,7 @@ min-width: 180px;
        }
        .instruction7 {
          display: none;
-max-width: 205px;
+min-width: 180px;
        }
           .thingy7 {
          display: none;
@@ -251,7 +251,7 @@ max-width: 205px;
          margin: 0;
          position: absolute;
          top: 50%;
-         left: -87%;
+         left: -76%;
          display: inline-block;
        }
        .instruction8 {
@@ -280,6 +280,34 @@ min-width: 170px;
          position: absolute;
          top: 50%;
          left: 104%;
+         display: inline-block;
+       }
+       .instruction9 {
+         display: none;
+         min-width: 180px;
+       }
+          .thingy9 {
+         display: none;
+       }
+       #interclass:hover + .instruction9 > .thingy9{
+           background-color:white;
+           z-index: -20;
+           position: absolute;
+           left: 0%;
+           width: 12px;
+           height: 12px;
+           top: -5px;
+           transform: rotate(-45deg);
+           display: inline-block;
+       }
+       #interclass:hover + .instruction9{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+           background-color: white;
+           z-index: 20;
+         margin: 0;
+         position: absolute;
+         top: 110%;
+         left: 20%;
          display: inline-block;
        }
     </style>
@@ -324,7 +352,14 @@ min-width: 170px;
 </div>
  
  <h1>Frequências</h1>
- <p><input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)"></p>
+     <div>
+         <div class="inline">
+             <input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)">
+             <span class="instruction9">Intervalo de classe
+                <span class="thingy9"></span>
+            </span> 
+            </div>
+    </div>
     <div> 
              <div class="inline">
                  <select name="selc" id="acum" size="11" class="para" >
@@ -339,7 +374,7 @@ min-width: 170px;
               <div class="inline">
                   <select name="selc" id="fa" size="11" class="para">
                   </select>
-                  <span class="instruction6">Frequência Relativa
+                  <span class="instruction6">Frequência Absoluta Acumulada
                     <span class="thingy6"></span>
                 </span> 
                              
@@ -351,7 +386,7 @@ min-width: 170px;
     <div class="inline">
         <select name="selc" id="porc" size="11" class="para" >
          </select>
-         <span class="instruction7">Frequência Absoluta Acumulada
+         <span class="instruction7">Frequência Relativa
             <span class="thingy7"></span>
         </span> 
     </div>
