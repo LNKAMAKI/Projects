@@ -14,9 +14,10 @@
            justify-items: center;
            position: relative;
        }
-       #main {
-           z-index: 10;
-           top: 0%;
+       input:focus ~ #main {
+           opacity: 100;
+        z-index: 10;
+           top: 100%;
            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
          position: absolute;
          border-bottom-left-radius: 5px;
@@ -24,7 +25,18 @@
          background-color: white;
          padding-bottom: 0.3vw;
          overflow: hidden;
-
+       }
+       #main {
+           opacity: 0;
+        z-index: 10;
+           top: 100%;
+           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+         position: absolute;
+         border-bottom-left-radius: 5px;
+         border-bottom-right-radius: 5px;
+         background-color: white;
+         padding-bottom: 0.3vw;
+         overflow: hidden;
        } 
        #ps {
            position: relative;
@@ -92,12 +104,14 @@
    </style>
 </head>
 <body> </body>
-<p id="ps"><input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..."></p>
+
 <div id="rev">
+    <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search...">
     <div id="main">
 
     </div>
 </div>
+
     <script src="teste3.js"></script>
  </div>
 </body>
