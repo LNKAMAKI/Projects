@@ -7,7 +7,10 @@
     <title>Medidas de Tendência Central/Frequências</title>
     <style>
 .p {
-        
+        display: inline-block;
+        position: relative;
+        z-index: 0;
+        color: black;;
     }
     .p > p {
         margin: 0px;
@@ -31,7 +34,7 @@
         background-color: black;
         z-index: 1;
     }
-    .thingy {
+    .thingo {
        position: absolute;
        max-width: 11.8px;
        max-height: 11.2px;
@@ -55,6 +58,8 @@
     }
 
         select {
+            position: relative;
+        z-index: -3;
           width: 250px;
           min-width: 200px;
           overflow-x: scroll ;
@@ -389,25 +394,25 @@ min-width: 180px;
 </head>
 
 <body>
+
+
+
+
+
+
     <h1 id="spec">Medidas de Tendência Central</h1>
     <script src="mamemo.js"></script> <div>
-        <div class="inline"><input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)">
-            <span class="instruction">Coloque qualquer número
-                <span class="thingy"></span>
-            </span> 
-        </div>
-        <div class="inline"><input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)">  
-            <span class="instruction2">Determine quantas vezes esse número vai se repetir
-                <span class="thingy2"></span>
-            </span> 
-        </div>
+        <div class="p" style="margin-right: 10px;">
+            <input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)">
+            <div class="ad"><div class="inform">Coloque um número<div class="thingo"></div></div></div></div>
 
-        <div class="inline">
+        <div class="p" style="margin-right: 10px;">
+            <input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)">
+            <div class="ad"><div class="inform">Determine quantas vezes esse n se repetirá<div class="thingo"></div></div></div></div>
+
+        <div class="p" style="margin-right: 10px;">
             <input style="cursor: pointer;" id= "submit" type="submit" value="Submit" onclick="go()">
-            <span class="instruction3">Adicione o número à lista
-                <span class="thingy3"></span>
-            </span> 
-        </div>
+            <div class="ad"><div class="inform">Adicione o n à lista<div class="thingo"></div></div></div></div>
 </div>
    <p>
    <select name="selc" id="selc" size="11"  class="para">
@@ -418,23 +423,21 @@ min-width: 180px;
   <p id="mo">Moda:</p>
   <p id="amp">Amplitude Total:</p>
   <div>
-      <div class="inline"><input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()">
-        <span class="instruction4">Deletar todos os itens da lista
-            <span class="thingy4"></span>
-        </span> 
-    </div>
-      
+    <div class="p" style="margin-right: 10px;">
+        <input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()">
+        <div class="ad"><div class="inform">Deletar todos os elementos da lista<div class="thingo"></div></div></div></div>
 </div>
  
  <h1>Frequências</h1>
-     <div>
-        <div class="p"> 
-            <input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)">
-              <div class="ad">
-                 <div class="inform">TO LET YOU KNOW<div class="thingy"></div></div></div>
-              </div>
-    </div>
-    <div> 
+
+ <div>
+     <div class="p" style="margin-right: 10px;">
+<input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)">
+<div class="ad"><div class="inform">Intervalo de classe<div class="thingo"></div></div></div></div>
+ </div>
+
+
+    <div>
              <div class="inline">
                  <select name="selc" id="acum" size="11" class="para" >
                   </select>
@@ -473,5 +476,7 @@ min-width: 180px;
      </div>
    
 </div>  
+
+
 </body>
 </html> 
