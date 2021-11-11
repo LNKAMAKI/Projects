@@ -7,7 +7,7 @@ div.ali  {
 .p2 {
 display: inline-block;
 position: relative;
-z-index: 0;
+z-index: -3;
 }
 .p2 > p {
 display: none;
@@ -88,7 +88,7 @@ border-radius: 5px ;
 top: 12%;
 color: white;
 background-color: black;
-z-index: 1;
+z-index: 10;
 }
 .thingo {
 position: absolute;
