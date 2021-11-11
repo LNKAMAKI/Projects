@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medidas de Tendência Central/Frequências</title>
     <style>
+  .inline {
+    display: inline-block;
+}
+
+
 .p {
         display: inline-block;
         position: relative;
@@ -120,282 +125,16 @@
          display: inline-block;
          opacity: 0;
        }
-      .inline {
-          display: inline-block;
-       }
-       .thingy {
-           display: none;
-       }
-       #numb:hover + .instruction > .thingy{
-        background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: 0%;
-           width: 12px;
-           height: 12px;
-           top: -5px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #numb:hover + .instruction{
-         opacity: 100;
-         transition-duration: 1s;
-       }
+   
+       
 
-       .instruction2 {
-        transition-duration: 1s;
-           min-width: 180px;
-           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 110%;
-         left: 20%;
-         display: inline-block;
-         opacity: 0;
-       }
-       .thingy2 {
-         display: none;
-       }
-       #freq:hover + .instruction2 > .thingy2{
-           background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: 0%;
-           width: 12px;
-           height: 12px;
-           top: -5px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #freq:hover + .instruction2{
-        opacity: 100;
-        transition-duration: 1s;
-       }
-       .instruction3 {
-        transition-duration: 1s;
-         min-width: 180px;
-         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 110%;
-         left: 20%;
-         display: inline-block;
-         opacity: 0;
-       }
-          .thingy3 {
-         display: none;
-       }
-       #submit:hover + .instruction3 > .thingy3{
-           background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: 0%;
-           width: 12px;
-           height: 12px;
-           top: -5px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #submit:hover + .instruction3{
-      opacity: 100;
-      transition-duration: 1s;
-       }
-       .instruction4 {
-        transition-duration: 1s;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 110%;
-         left: 20%;
-         display: inline-block;
-         min-width: 180px;
-         opacity: 0;
-       }
-          .thingy4 {
-         display: none;
-       }
-       #delete + .instruction4 > .thingy4{
-           background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: 0%;
-           width: 12px;
-           height: 12px;
-           top: -5px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #delete:hover + .instruction4{
-       opacity: 100;
-       transition-duration: 1s;
-       }
-       .instruction5 {
-        transition-duration: 1s;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 45%;
-         left: -76%; 
-         display: inline-block;
-min-width: 180px;
-opacity: 0;
-       }
-          .thingy5 {
-         display: none;
-       }
-       #acum + .instruction5 > .thingy5{
-           background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: 97%;
-           width: 12px;
-           height: 12px;
-           top: 3.1px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #acum:hover + .instruction5{
-       opacity: 100;
-       transition-duration: 1s;
-       }
-       .instruction6 {
-        transition-duration: 1s;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 40%;
-         left: 103%;
-         display: inline-block;
-min-width: 180px;
-opacity: 0;
-       }
-          .thingy6 {
-         display: none;
-       }
-       #fa + .instruction6 > .thingy6{
-           background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: -3%;
-           width: 12px;
-           height: 12px;
-           top: 3.1px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #fa:hover + .instruction6{
-       opacity: 100;
-       transition-duration: 1s;
-       }
-       .instruction7 {
-        transition-duration: 1s;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 45%;
-         left: -76%;
-         display: inline-block;
-       opacity: 0;
-min-width: 180px;
-       }
-          .thingy7 {
-         display: none;
-       }
-       #porc + .instruction7 > .thingy7{
-        background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: 97%;
-           width: 12px;
-           height: 12px;
-           top: 3.1px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #porc:hover + .instruction7{
-       opacity: 100;
-       transition-duration: 1s;
-       }
-       .instruction8 {
-        transition-duration: 1s;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 40%;
-         left: 104%;
-         display: inline-block;
-         min-width: 170px;
-         opacity: 0;
-       }
-          .thingy8 {
-         display: none;
-       }
-       #fra + .instruction8 > .thingy8{
-        background-color: white;
-    z-index: -20;
-    position: absolute;
-    left: -3%;
-    width: 12px;
-    height: 12px;
-    top: 3.1px;
-    transform: rotate(-45deg);
-    display: inline-block;
-       }
-       #fra:hover + .instruction8{
-       opacity: 100;
-       transition-duration: 1s;
-       }
-       .instruction9 {
-        transition-duration: 1s;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
-           background-color: white;
-           z-index: 20;
-         margin: 0;
-         position: absolute;
-         top: 110%;
-         left: 20%;
-         display: inline-block;
-        opacity: 0;
-         min-width: 180px;
-       }
-          .thingy9 {
-         display: none;
-       }
-       #interclass:hover + .instruction9 > .thingy9{
-           background-color:white;
-           z-index: -20;
-           position: absolute;
-           left: 0%;
-           width: 12px;
-           height: 12px;
-           top: -5px;
-           transform: rotate(-45deg);
-           display: inline-block;
-       }
-       #interclass:hover + .instruction9{
-       opacity: 100;
-       transition-duration: 1s;
-       }
+      
+   
     </style>
 </head>
 
 <body>
-
-
+ 
 
 
 
@@ -440,42 +179,30 @@ min-width: 180px;
     <div>
              <div class="inline">
                  <select name="selc" id="acum" size="11" class="para" >
-                  </select>
-
-                  <span class="instruction5">Frequência Absoluta
-                    <span class="thingy5"></span>
-                </span> 
-
+                 </select>
              </div>
 
               <div class="inline">
                   <select name="selc" id="fa" size="11" class="para">
                   </select>
-                  <span class="instruction6">Frequência Absoluta Acumulada
-                    <span class="thingy6"></span>
-                </span> 
+             
                              
               </div>
             
  </div>
  <p></p>
- <div> 
-    <div class="inline">
-        <select name="selc" id="porc" size="11" class="para" >
-         </select>
-         <span class="instruction7">Frequência Relativa
-            <span class="thingy7"></span>
-        </span> 
-    </div>
-     <div class="inline">
-         <select name="selc" id="fra" size="11" class="para">
-            </select>
-            <span class="instruction8">Frequência Relativa Acumulada
-                <span class="thingy8"></span>
-            </span> 
-     </div>
+ <div>
+   <div class="inline">
+       <select name="selc" id="porc" size="11" class="para" >
+           </select>
    
-</div>  
+      </div>
+      <div class="inline">
+           <select name="selc" id="fra" size="11" class="para">
+              </select>
+   
+       </div>
+ </div>
 
 
 </body>
