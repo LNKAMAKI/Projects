@@ -1,3 +1,14 @@
+
+select {
+    position: relative;
+  width: 250px;
+  min-width: 200px;
+  overflow-x: scroll ;
+  overflow-y : scroll;
+  height: fit-content;
+  z-index:0;
+}
+
 div.ali  {
     position: relative;
     margin-bottom: 10px;
@@ -29,7 +40,6 @@ padding: 6px 6px 5px 6px;
 border-radius: 5px ;
 color: white;
 background-color: black;
-z-index: 1;
 }
 .thingo2 {
 position: absolute;
@@ -63,7 +73,7 @@ display: inline-block;
 .p {
 display: inline-block;
 position: relative;
-z-index: 0;
+z-index: 1;
 color: black;;
 }
 .p > p {
@@ -86,7 +96,6 @@ border-radius: 5px ;
 top: 12%;
 color: white;
 background-color: black;
-z-index: 10;
 }
 .thingo {
 position: absolute;
@@ -111,15 +120,6 @@ background-color: transparent;
 display: grid;
 }
 
-select {
-    position: relative;
-z-index: -3;
-  width: 250px;
-  min-width: 200px;
-  overflow-x: scroll ;
-  overflow-y : scroll;
-  height: fit-content;
-}
 option {
     text-align: center;
 }
