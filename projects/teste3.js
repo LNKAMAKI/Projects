@@ -98,8 +98,6 @@ function search2() {
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
     document.getElementById('main').style.display = 'none'
-   }else{
-       document.getElementById('main').style.display = 'block'
    }
    
     //window.alert(pesquisa.toLowerCase())
@@ -126,6 +124,7 @@ function search2() {
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight: normal";">${pesquise}</span>`)
              document.getElementById('main').appendChild(psearcher)
              opnumbers++
+             document.getElementById('main').style.display = 'block'
          }
     }
     if (pesquise.length != 0 && opnumbers == 0) {
@@ -145,6 +144,7 @@ function search2() {
                  psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
                  document.getElementById('main').appendChild(psearcher)
                  opnumbers++
+                 document.getElementById('main').style.display = 'block'
              }
         }
      
@@ -166,8 +166,12 @@ function search2() {
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
              document.getElementById('main').appendChild(psearcher)
              opnumbers++
+             document.getElementById('main').style.display = 'block'
          }
     }
+ }
+ if (opnumbers == 0) {
+     document.getElementById('main').style.display = 'none'
  }
 }
 function fclic() {
