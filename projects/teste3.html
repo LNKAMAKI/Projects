@@ -9,13 +9,18 @@
        body {
            margin: 0;
        }
+       #ali {
+           position: relative;
+           display: grid;
+           justify-items: center;
+       }
        #rev {
            display: grid;
            justify-items: center;
-           position: relative;
+           position: absolute;
        }
        input:focus ~ #main {
-           opacity: 100;
+        opacity: 100;
         z-index: 10;
            top: 100%;
            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
@@ -28,22 +33,26 @@
        }
        #searcher {
            border-image: none;
-           height: 20px;
+           border-radius: 5px;
+           height: 24px;
            border: 1.9px solid black;
           margin-top: 1%;
            position: relative;
            background-color: white;
+           transition-property: width;
+        transition-duration: 0.4s;
            width: 260px;
        }
      #main {
-           opacity: 0;
-        z-index: 10;
-           top: 100%;
-           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
-         position: absolute;
-         border-bottom-left-radius: 5px;
-         border-bottom-right-radius: 5px;
-         overflow: hidden;
+        opacity: 0;
+    z-index: 10;
+    width: 100%;
+    top: 100%;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 34%);
+    position: absolute;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
        } 
        #ps {
            position: relative;
@@ -59,14 +68,17 @@
           margin: 0 0 0 0 ;
            text-align: center;
            background-color: white;
-           width: 267px;
+           width: 100%;
        }
        #main > .psearcher:hover{
            background-color: rgb(235, 235, 235);
        }
        #searcher:focus {
         outline-width: 0px ;
-        border-radius: 0px;
+        transition-property: width;
+        transition-duration: 0.4s;
+        width: 410px;
+        border-radius: 5px;
         border:2px solid black;
        }
        
@@ -103,10 +115,12 @@
 </head>
 <body> </body>
 
-<div id="rev">
-    <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search...">
-    <div id="main">
-
+<div id="ali">
+    <div id="rev">
+        <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search...">
+        <div id="main">
+    
+        </div>
     </div>
 </div>
 
