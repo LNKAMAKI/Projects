@@ -10,13 +10,14 @@
            margin: 0;
        }
        #ali {
+        position: relative;
            display: grid;
            justify-items: center;
        }
        #rev {
            display: grid;
            justify-items: center;
-           position: absolute;
+           position: relative;
        }
        input:focus ~ #main {
            opacity: 100;
@@ -126,7 +127,6 @@
 <body> </body>
 
 <div id="ali">
-    <br><br>
     <div id="rev">
         <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
         <div id="main">
