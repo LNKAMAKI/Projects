@@ -10,7 +10,6 @@
            margin: 0;
        }
        #ali {
-           position: relative;
            display: grid;
            justify-items: center;
        }
@@ -32,14 +31,18 @@
          overflow: hidden;
        }
        #searcher {
+           padding-left: 12px;
+           padding-right: 12px;
            border-image: none;
            border-radius: 5px;
            height: 24px;
-           border: 1.9px solid black;
+           border: 2px solid white;
+           box-shadow: 0px 0px 6px rgba(36, 84, 146, 0.548);
           margin-top: 1%;
+          color: white;
            position: relative;
-           background-color: white;
-           transition-property: width;
+           background-color: rgb(39, 38, 38);
+           transition-property: width,background-color;
         transition-duration: 0.4s;
            width: 260px;
        }
@@ -75,11 +78,15 @@
        }
        #searcher:focus {
         outline-width: 0px ;
-        transition-property: width;
+        transition-property: width, background-color;
         transition-duration: 0.4s;
         width: 410px;
         border-radius: 5px;
+        background-color: white;
         border:2px solid black;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.219);
+          margin-top: 1%;
+          color: black;
        }
        
        
@@ -111,15 +118,22 @@
            left: 91%;
            top: 95.5%;
        }
+       #searcher::placeholder {
+           color: rgb(189, 189, 189) ;
+       }
+       #searcher:focus::placeholder {
+        color: rgb(129, 129, 129);
+       }
    </style>
 </head>
 <body> </body>
 
 <div id="ali">
+    <br><br>
     <div id="rev">
-        <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search...">
+        <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." >
         <div id="main">
-    
+            <p style="margin: 0px;"></p>
         </div>
     </div>
 </div>
