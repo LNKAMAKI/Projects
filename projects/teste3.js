@@ -28,6 +28,7 @@ var songs = ['all-star','are you bored yet?','army of one','ain\'t no sense in l
 
 ]
 var songsSearched = []
+// Cria o "vídeos"
 function search() {
     pesquisa = document.getElementById('searcher').value
 
@@ -66,7 +67,9 @@ function dothesearch(whichid) {
     allps = document.getElementsByClassName('psearcher')
    // window.alert(document.getElementById('a' + whichid))
    for (n = allps.length - 1; n >= 0; n--) {
+       if (allps[n].id != 'a' + whichid) {
    document.getElementById('main').removeChild(allps[n])
+       }
     }
     search()
 }
@@ -93,6 +96,11 @@ function deleta(indexnumber) {
 function search2() {
     pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
+   if (pesquisa.length == 0) {
+    document.getElementById('main').style.display = 'none'
+   }else{
+       document.getElementById('main').style.display = 'block'
+   }
    
     //window.alert(pesquisa.toLowerCase())
     allps = document.getElementsByClassName('psearcher')
@@ -161,4 +169,10 @@ function search2() {
          }
     }
  }
+}
+function fclic() {
+    pesquisa = document.getElementById('searcher').value
+    if (pesquisa.length == 0) {
+     document.getElementById('main').style.display = 'none'
+    }
 }
