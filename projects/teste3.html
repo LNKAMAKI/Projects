@@ -6,11 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teste3</title>
    <style>
+       h1 {
+           margin: 0px 0px 15px 0px;
+           font-size: 2.8em;
+           color: white;
+           text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.404);
+           font-family: Arial, Helvetica, sans-serif ;
+       }
+       #vidcontainer {
+           position: relative;
+           padding-top: 135px;
+       }
        body {
            margin: 0;
        }
-       #ali {
-        position: relative;
+       #ali { 
+        margin-top: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        padding: 10px 0px 10px 0px;
+        background-color: rgb(221, 242, 243);
            display: grid;
            justify-items: center;
        }
@@ -39,11 +55,10 @@
            border-radius: 5px;
            height: 24px;
            border: 2px solid white;
-           box-shadow: 0px 0px 6px rgba(36, 84, 146, 0.548);
-          margin-top: 35px;
+           box-shadow: 0px 0px 6px rgba(59, 123, 207, 0.822);
           color: rgba(36, 84, 146, 0.623);
            position: relative;
-           background-color: rgba(0, 0, 0, 0.041);
+           background-color: rgb(238, 238, 238);
            transition-property: width,background-color;
         transition-duration: 0.4s;
            width: 180px;
@@ -86,7 +101,6 @@
         border-radius: 5px;
         background-color: white ;
         border: 2px solid rgba(0, 0, 0, 0.041);
-          margin-top: 35px;
           color: black;
        }
        
@@ -95,7 +109,7 @@
            min-width: 390px;
            min-height: 307px;
            position: relative;
-           margin: 10px auto auto auto;
+           margin: 0px auto 10px auto;
            width: 50%;
            height: 40vw;
         background-color: pink;
@@ -127,6 +141,7 @@
 <body> </body>
 
 <div id="ali">
+    <h1>SONGS SEARCHER</h1>
     <div id="rev">
         <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
         <div id="main">
@@ -135,6 +150,9 @@
     </div>
 </div>
 
+<div id="vidcontainer">
+
+</div>
     <script src="teste3.js"></script>
  </div>
 </body>
