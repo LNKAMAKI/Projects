@@ -37,13 +37,13 @@ function search() {
    // window.alert(allvidholders.length)
         songsSearched.unshift(pesquisa.toLowerCase())
         for (n = allvidholders.length - 1; n >= 0; n--) {
-        document.body.removeChild(allvidholders[n])
+        document.getElementById('vidcontainer').removeChild(allvidholders[n])
     }
     for (n in songsSearched)  {
         vidhold =  document.createElement('div')
         vidhold.setAttribute('class', 'video-holder')
         vidhold.id = songsSearched[n]
-       document.body.appendChild(vidhold)
+        document.getElementById('vidcontainer').appendChild(vidhold)
         vid = document.createElement('div')
         vid.setAttribute('class', 'video')
         vidhold.appendChild(vid)
