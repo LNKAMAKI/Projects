@@ -20,7 +20,7 @@ var songs = ['all-star','are you bored yet?','army of one','ain\'t no sense in l
 'the one','the hardest part','titanium','the reason','these days','the circus','the flood','the day the work is done','the way i feel','this is the last time', 'the saltwater room', 'to the sky', 'talk', 'the scientist',
 'us and ours','ue o muite arukou', 'upside down', 'up and up', 'up all night',
 'viva la vida', 'violet hill', 
-'welcome to the black parade','what you believe in','wake me up','waiting for the end','what i\'ve done','where\'s the love?','what\'s love','when we were young','wrecked','what do you want from me','wake me up when september ends','warning sign', 'wonderful world', 'wherever you will go', 'when can i see you again', 
+'welcome to the black parade','what you believe in','wake me up','waiting for the end','what i\'ve done','where\'s the love?','what is love','when we were young','wrecked','what do you want from me','wake me up when september ends','warning sign', 'wonderful world', 'wherever you will go', 'when can i see you again', 
 'you\'re not alone','yellow', 'you deserve an oscar', 'you', 
 'zombie', 
 '505'
