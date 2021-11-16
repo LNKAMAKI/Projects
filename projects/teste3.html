@@ -14,14 +14,17 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        padding: 20px 0px 20px 0px;
+        padding: 5px 0px 5px 0px;
         background-color: rgb(221, 242, 243);
+display: flex;
+align-items: center
        }
 
        #rev {
            width: fit-content;
            display: inline-block;
           position: relative;
+          top: 0px;
          
        }
        input:focus ~ #main {
@@ -52,7 +55,7 @@
            background-color: rgb(238, 238, 238);
            transition-property: width,background-color;
         transition-duration: 0.4s;
-           width: 180px;
+           width: 13vw;
        }
      #main {
         opacity: 0;
@@ -89,7 +92,7 @@
         outline-width: 0px ;
         transition-property: width, background-color;
         transition-duration: 0.4s;
-        width: 280px;
+        width: 26vw;
         border-radius: 5px;
         background-color: white ;
         border: 2px solid rgba(0, 0, 0, 0.041);
@@ -128,18 +131,32 @@
        #searcher::placeholder {
            color: rgb(173, 173, 173) ;
        }
+       #circle {
+        margin: 0px 20px 0px 70px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 3px;
+           display: inline-flex;
+           justify-content: center;
+           align-items: center;
+           top: 0px;
+           bottom: 0px;
+           width: 50px;
+          height: 50px;
+          position: relative;
+       }
        img {
-           position: relative;
-           left: 50vw;
-           width: 30px;
-           height: 30px;
+           position: absolute;
+          width: 60%;
+          height: 60%;
        }
    </style>
 </head>
 <body> </body>
 
 <div id="ali">
-    <img src="panda-image.png" alt="">
+    
+    <div id="circle"><img src="panda-image.png" alt=""></div>
     <div id="rev">
         <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
         <div id="main">
