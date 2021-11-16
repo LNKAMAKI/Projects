@@ -17,13 +17,12 @@
         padding: 20px 0px 20px 0px;
         background-color: rgb(221, 242, 243);
        }
-       
+
        #rev {
            width: fit-content;
-           display: grid;
-           align-items: center;
+           display: inline-block;
           position: relative;
-          left: 5vw;
+         
        }
        input:focus ~ #main {
            opacity: 100;
@@ -129,13 +128,19 @@
        #searcher::placeholder {
            color: rgb(173, 173, 173) ;
        }
+       img {
+           position: relative;
+           left: 50vw;
+           width: 30px;
+           height: 30px;
+       }
    </style>
 </head>
 <body> </body>
 
 <div id="ali">
+    <img src="panda-image.png" alt="">
     <div id="rev">
-        <img src="" alt="">
         <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
         <div id="main">
          
