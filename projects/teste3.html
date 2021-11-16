@@ -6,33 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teste3</title>
    <style>
-       h1 {
-           margin: 0px 0px 15px 0px;
-           font-size: 2em;
-           color: white;
-           text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.404);
-           font-family: Arial, Helvetica, sans-serif ;
-       }
-       #vidcontainer {
-           position: relative;
-           padding-top: 135px;
-       }
        body {
            margin: 0;
        }
        #ali { 
-        margin-top: 0;
-        position: fixed;
-        width: 100%;
+        margin:0px;
+        position: sticky;
+        top: 0;
         z-index: 10;
-        padding: 10px 0px 10px 0px;
+        padding: 20px 0px 20px 0px;
         background-color: rgb(221, 242, 243);
-           display: grid;
-           justify-items: center;
+           
        }
        #rev {
-           display: grid;
-           justify-items: center;
+           width: fit-content;
            position: relative;
        }
        input:focus ~ #main {
@@ -42,6 +29,7 @@
            top: 100%;
            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
          position: absolute;
+         width: 100%;
          border-bottom-left-radius: 5px;
          border-bottom-right-radius: 5px;
          background-color: white;
@@ -49,13 +37,14 @@
          overflow: hidden;
        }
        #searcher {
+           margin-left:2vw;
            padding-left: 12px;
            padding-right: 12px;
            border-image: none;
            border-radius: 5px;
            height: 24px;
+           box-shadow: 0px 0px 6px rgba(36, 84, 146, 0.548);
            border: 2px solid white;
-           box-shadow: 0px 0px 6px rgba(59, 123, 207, 0.822);
           color: rgba(36, 84, 146, 0.623);
            position: relative;
            background-color: rgb(238, 238, 238);
@@ -81,6 +70,7 @@
        }
        #main > .psearcher{
            z-index: 20;
+           width: 100%;
            position: absolute;
            text-align: center;
            padding-top: 1.5px;
@@ -109,7 +99,7 @@
            min-width: 390px;
            min-height: 307px;
            position: relative;
-           margin: 0px auto 10px auto;
+           margin: 10px auto;
            width: 50%;
            height: 40vw;
         background-color: pink;
@@ -141,8 +131,8 @@
 <body> </body>
 
 <div id="ali">
-    <h1>SONGS SEARCHER</h1>
     <div id="rev">
+        <img src="" alt="">
         <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
         <div id="main">
          
@@ -150,9 +140,6 @@
     </div>
 </div>
 
-<div id="vidcontainer">
-
-</div>
     <script src="teste3.js"></script>
  </div>
 </body>
