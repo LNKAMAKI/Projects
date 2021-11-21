@@ -1,6 +1,6 @@
 var songs = ['alone without you','all-star','are you bored yet?','army of one','ain\'t no sense in love','animals','a head full of dreams', 'amazing day', 'as the world caves in', 'a sky full of stars', 'adventure of a lifetime', 'all i need',
 'battle symphony','burn it down','boulevard of broken dreams','bring me to life','believe','beautiful world','believer', 'birds', 'back for good', 'bad liar','bedshaped', 'bad dream',
-'castle of glass','carnival','cancer', 'crawling', 'counting stars', 'clocks', 'charlie brown',
+'californication','castle of glass','carnival','cancer', 'crawling', 'counting stars', 'clocks', 'charlie brown',
 'demons', 'do i wanna know?', 
 'every teardrop is waterfall','eight letters','end of everything','everglow', 'everlasting', 'everybody is changing',
 'freeze','fun','flaws','fix you','fall down at your feet','faint', 'feel good', 'fireflies', 'fluorescent adolescent', 'fly on', 'fly me to the moon',
