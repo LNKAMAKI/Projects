@@ -12,12 +12,22 @@
        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
        h1 {
            margin: 0%;
-           width: 100%;
-           position: absolute;
            font-family: 'Oswald',sans-serif;
            font-weight: 400 ;
            font-size: 3em;
            text-align: center;
+       }
+       #square {
+        border-radius: 50%;
+        animation: jump 1s ease-in infinite alternate;
+       }
+       
+       @keyframes jump {
+           100% {
+               transform: rotate(90deg) scale(0);
+               background-color: black;
+               opacity: 0;
+           }
        }
        body {
            margin: 0;
@@ -119,7 +129,6 @@ align-items: center
            position: relative;
            margin: 10px auto;
            width: 90%;
-           height: 40vw;
         background-color: pink;
        }
        .video-holder > input {
@@ -144,10 +153,17 @@ align-items: center
           height: 50px;
           position: relative;
        }
-       img {
+       img#fav {
            position: absolute;
           width: 60%;
           height: 60%;
+       }
+       .video-holder > img {
+           width: 20vw;
+           height: 20vw;
+           min-width: 200px;
+           min-height: 200px;
+           margin-left: 10px;
        }
    </style>
 </head>
@@ -155,7 +171,7 @@ align-items: center
 
 <div id="ali">
     
-    <div id="circle"><img src="favicon copy.ico" alt=""></div>
+    <div id="circle"><img id="fav" src="favicon copy.ico" alt=""></div>
     <div id="rev">
         <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
         <div id="main">
@@ -165,7 +181,10 @@ align-items: center
     
 </div>
 <div class="video-holder">
-<h1>COMO FAZER UM SITE?</h1>
+<h1>CSS ANIMATION</h1>
+
+<div id="square" style="background-color: blue; 
+width: 100px; height: 100px; margin: auto;"></div>
 </div>
 
     <script src="teste3 copy.js"></script>
