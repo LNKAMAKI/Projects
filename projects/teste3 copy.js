@@ -1,5 +1,6 @@
 var songs = [
-
+'how to make',
+'z-index'
 ]
 var songsSearched = []
 // Cria o "vídeos"
@@ -9,29 +10,29 @@ function search() {
     if (songsSearched.indexOf(pesquisa.toLowerCase()) == -1) {
     allvidholders = document.getElementsByClassName('video-holder')
    // window.alert(allvidholders.length)
+       songsSearched.length = 0
         songsSearched.unshift(pesquisa.toLowerCase())
         for (n = allvidholders.length - 1; n >= 0; n--) {
         document.body.removeChild(allvidholders[n])
     }
-    for (n in songsSearched)  {
+    
         vidhold =  document.createElement('div')
         vidhold.setAttribute('class', 'video-holder')
-        vidhold.id = songsSearched[n]
+        vidhold.id = songsSearched[0]
         document.body.appendChild(vidhold)
         vid = document.createElement('div')
         vid.setAttribute('class', 'video')
         vidhold.appendChild(vid)
         p = document.createElement('p')
-        p.innerText = songsSearched[n]
+        p.innerText = songsSearched[0]
         vid.appendChild(p)
         delbut = document.createElement('input')
         delbut.setAttribute('type', 'button')
         delbut.setAttribute('value', 'Deletar')
-        delbut.id = n
+        delbut.id = 0
         delbut.setAttribute('class', 'deletbut')
         delbut.setAttribute('onclick', `deleta(${delbut.id})`)
         vidhold.appendChild(delbut)
- }
 }
  
 }
@@ -133,7 +134,7 @@ function search2() {
              psearcher.style.position = 'sticky'
              psearcher.innerText = songs[n]
              psearcher.setAttribute('class', 'psearcher')
-             psearcher.id = 'a' + n
+             psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
             // window.alert(pesquise)
