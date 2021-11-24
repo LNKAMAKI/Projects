@@ -1,6 +1,5 @@
 var songs = [
-'how to make',
-'z-index'
+'como fazer um site?'
 ]
 var songsSearched = []
 // Cria o "vídeos"
@@ -18,23 +17,9 @@ function search() {
     
         vidhold =  document.createElement('div')
         vidhold.setAttribute('class', 'video-holder')
-        vidhold.id = songsSearched[0]
+        vidhold.id = pesquisa.toLowerCase()
         document.body.appendChild(vidhold)
-        vid = document.createElement('div')
-        vid.setAttribute('class', 'video')
-        vidhold.appendChild(vid)
-        p = document.createElement('p')
-        p.innerText = songsSearched[0]
-        vid.appendChild(p)
-        delbut = document.createElement('input')
-        delbut.setAttribute('type', 'button')
-        delbut.setAttribute('value', 'Deletar')
-        delbut.id = 0
-        delbut.setAttribute('class', 'deletbut')
-        delbut.setAttribute('onclick', `deleta(${delbut.id})`)
-        vidhold.appendChild(delbut)
 }
- 
 }
   
 function dothesearch(whichid) {
