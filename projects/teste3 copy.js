@@ -1,6 +1,6 @@
 var songs = [
-{word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly',
-examples: 'She opened her suitcase and laid her clothes out on the bed*A display of local history material was laid out on the table/The documents lay out the principles clearly enough' 
+{word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly/to arrange something according to a detailed plan, for example rooms in a building, roads in a town, or areas on a piece of land/to spend an amount of money/to hit someone so hard that they fall to the ground and become unconscious',
+examples: 'She opened her suitcase and laid her clothes out on the bed*A display of local history material was laid out on the table/The documents lay out the principles clearly enough/The city was laid out with the town hall on a hill in its centre/They had already laid out a substantial sum for the wedding/Joe laid Ken out with one punch' 
 }
 ]
 var songsSearched = []
