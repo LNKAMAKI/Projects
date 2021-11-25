@@ -15,8 +15,89 @@ examples: '/Why is that woman lurking around?*I saw someone lurking behind the b
 {word: 'soggy', type: 'adjective', meaning: 'encharcado, úmido/wet and soft, especially in an unpleasant way', examples:'/a soggy afternoon (=an afternoon of rain)'},
 {word: 'hind', type: 'adjective', meaning: 'the hind legs or feet of an animal are its back legs or feet', examples: ''}
 ,{word: 'leap', type: 'verb', meaning: 'to move somewhere suddenly and quickly/to jump into the air or over a long distance/to jump over something/to suddenly improve, increase, or progress/to suddenly change to another time or situation, for example in a film', 
-examples: 'She leapt to her feet (=suddenly stood up) when she saw me*The suspect was seen leaping into a car and speeding off*He leapt out of bed/People were forced to leap to safety from the burning building*She leapt into the air with joy/The horse leapt the fence and galloped off down the track/Sales have leapt 43% this quarter/The action then leaps forward to 1989, when Rose is an elderly woman'}
+examples: 'She leapt to her feet (=suddenly stood up) when she saw me*The suspect was seen leaping into a car and speeding off*He leapt out of bed/People were forced to leap to safety from the burning building*She leapt into the air with joy/The horse leapt the fence and galloped off down the track/Sales have leapt 43% this quarter/The action then leaps forward to 1989, when Rose is an elderly woman'},
+{word: 'rub', type: 'verb', meaning: 'esfregar, massagear', examples: 'The boy rubbed his eyes sleepily*Scott gently rubbed her back until the pain went away*The cat rubbed its cheek against my leg*Rub your hands together, it will help you to stay warm'}
+,{word: 'pet peeve', type: 'noun', meaning: 'implicância/something that a particular person finds especially annoying', examples: '/One of my biggest pet peeves is poor customer service'}
+,{word: 'doodle', type: 'noun/verb countable', meaning: 'rabisco', examples: 'He was only doodling in the margin*the text was interspersed with doodles'}
+,{word: 'dodge ball', type: 'noun', meaning: 'queimada, carimba', examples: 'Let\'s play dodge ball'},
+{word: 'badge', type: 'noun', meaning: 'emblema, chachá, distintivo', examples: 'Employees should wear their badges at all times in the building*a scout badge'}
+,{word: 'reef', type: 'noun', meaning: 'recife, corais', examples: ''}
+,{word: 'attempt', type: 'noun countable/verb', meaning: 'try to do something', examples: 'He attempted to swim the swollen river*It’s his fourth attempt at flying a balloon around the world solo*An attempt on the world record*Their spokesperson has rejected all our attempts to talk to him'}
+, {word: 'assembly', type: 'noun', meaning: 'montagem/a part of a government consisting of people who have been elected to make laws/a group of people who meet together for a particular reason', examples: '/the French National Assembly'}
+, {word: 'crack of dawn', type: 'noun', meaning: 'amanhecer', examples: 'I was up at the crack of dawn trying to finish my essay'}
+,{word: 'nosy', type: 'adjective', meaning: 'curioso', examples: 'Don\'t be nosy'},
+{word: 'hurdle', type: 'noun', meaning: 'obstáculo', examples: 'Finding investors is the biggest hurdle we face'}
+,{word: 'fierce', type: 'adjective', meaning: 'acirrado, destemido, feroz', examples: 'A fierce storm forced the crew to abandon the yacht*We face fierce competition from overseas competitors*He looked so fierce'}
+, {word: 'wondrous', type: 'adjective', meaning: 'maravilhoso', examples: 'what a wondrous place'},
+{word: 'prevail over', type: 'verb', meaning: 'prevalecer/to defeat someone in a game, competition, argument', examples: '/The Italian team eventually prevailed over Russia 45 – 43'}
+,{word: 'blunder', type: 'noun', meaning: 'mancada, erro/a careless or embarrassing mistake', examples: '/Officials were accused of making a huge administrative blunder'}
+,{word: 'template', type: 'noun', meaning: 'modelo, mode, gabarito/something that is used as a pattern or an example for something else', examples: '/The French Revolution was the template for all future revolutions'}
+,{word: 'flop', type: 'noun/verb intransitive', meaning: 'fiasco, fracasso/to sit or lie down in a heavy way by relaxing your muscles and letting your body fall/to move or hang in a loose, heavy, and uncontrolled way/if a play, film, or new product flops, it is completely unsuccessful'
+,examples: '/He got home and flopped into a chair/Her long hair flopped down over her eyes'}
+,{word: 'hover', type: 'verb intransitive',meaning: 'pairar/to be in a state or situation that may change at any time',examples: 'Hover your mouse over the image/His girlfriend is hovering between life and death'}
+,{word: 'linger', type: 'verb intransitive', meaning: 'perdurar, atrasar, demorar/to stay somewhere longer than is necessary, or to spend longer doing something than is necessary, because it is enjoyable or helpful to you',
+examples:'/Many students lingered after class*She let her eyes linger on him*His face lingered in her memory'}
+,{word: 'bound',type: 'adjective/noun', meaning: 'vinculado,ligado,limite/something that is bound to happen will almost certainly happen/having an obligation to do something because of a law, promise/feeling that you should do something because you are expected to, or because it is morally right, even if you do not really want to do it/limits/a long or high jump', 
+examples: '/Knowing Jim, he’s bound to be late/By signing the contract you agree to be bound by its terms/We felt bound to tell her that her son had been taking drugs/The business community was allowed – within reasonable bounds – to set whatever pay rates they wanted*investment advice that goes beyond the bounds of good sense'},
+{word: 'power plant',type: 'noun', meaning: 'usina', examples: ''},
+{word: 'meddling',type: 'noun/verb intransitive', meaning: 'intromissão,interferência/intrometer', examples: '/Stop meddling!'},
+{word: 'interest',type: 'noun', meaning: 'interesse, juros', examples: 'We can show you how you can earn a higher rate of interest on your savings'},
+{word: 'fire department',type: 'noun', meaning: 'corpo de bombeiros', examples: 'The fire department has been called'},
+{word: 'rod',type: 'noun', meaning: 'vara, vareta', examples: 'A fishing rod'},
+{word: 'fad',type: 'noun', meaning: '\'modinha\'/something that is popular or fashionable for only a short time', examples: ''},
+{word: 'outweigh',type: 'verb transitive', meaning: 'superar,ultrapassar/to be more important, useful, or valuable than something else', examples: '/The possible benefits outweigh the risks involved'},
+{word: 'live it up',type: 'phrase', meaning: 'Viver o hoje, sem se preocupar muito com o amanhã/to do enjoyable and exciting things that involve spending a lot of money', examples: ''},
+{word: 'lay someone low',type: 'phrase usually passive', meaning: 'to make someone ill or weak and unable to do the things that they usually do', examples: 'He was laid low for two weeks with a virus'},
+{word: 'lay low',type: 'phrasal verb', meaning: 'Ao contrário de live it up, ter uma vida mais tranquila, sem ser o centro das atenções', examples: ''},
+{word: 'throw under the bus',type: 'informal phrase', meaning: 'betray someone', examples: 'You do realize they might cut a deal and throw you under the bus'},
+{word: 'as a matter of fact',type: 'phrase', meaning: 'na realidade', examples: 'I haven’t been here long. As a matter of fact, I just got off the plane yesterday'},
+{word: 'income',type: 'noun', meaning: 'renda,rendimento/money that someone gets from working or from investing money', examples: '/These families have no source of income when the harvest is over'},
+{word: 'turnover',type: 'noun', meaning: 'rolatividade,volume,faturamento', examples: 'a company with an annual turnover of over £150 million*a high turnover of staff,personnel'},
+{word: 'fit the mold',type: 'phrase', meaning: 'to be the right person for a certain activity', examples: 'She doesn’t fit the mold of the typical opera singer.'},
+{word: 'wrest',type: 'verb transitive', meaning: 'arrancar', examples: 'Russia wrested control of the northern Caucasus in the 19th century'},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
+{word: '',type: '', meaning: '', examples: ''},
 ]
+
+
 var songsSearched = []
 // Cria o "vídeos"
 function search() {
