@@ -1,5 +1,5 @@
 var songs = [
-{word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly',examples: 'p' }
+{word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly',examples: '' }
 ]
 var songsSearched = []
 // Cria o "vídeos"
@@ -41,11 +41,17 @@ function search() {
        lit = document.createElement('li')
        lit.innerText = splitmeanings[n]
        ulist.appendChild(lit)
-
+   
+       console.log(n)
+       console.log(splitexamples.length - 1)
+       splitmore = splitexamples[n].split('*')
+       if (n <= splitexamples.length - 1) {
+           for (n in splitmore) {
        lit = document.createElement('li')
-       lit.innerText = splitexamples[n]
+       lit.innerText = splitmore[n]
        ulist.appendChild(lit)
-     
+           }
+    }
 
        }
 
