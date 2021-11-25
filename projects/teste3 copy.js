@@ -1,5 +1,7 @@
 var songs = [
-{word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly',examples: '' }
+{word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly',
+examples: 'She opened her suitcase and laid her clothes out on the bed*A display of local history material was laid out on the table/The documents lay out the principles clearly enough.' 
+}
 ]
 var songsSearched = []
 // Cria o "vídeos"
@@ -31,8 +33,14 @@ function search() {
        type.innerText = `(${wordSearched.type})`
        vidhold.appendChild(type)
 
+       if (wordSearched.examples.length > 0) {
        splitexamples = wordSearched.examples.split('/')
+       dosplit = true
+       }else{ 
+        dosplit = false
+       }
        splitmeanings = wordSearched.meaning.split('/')
+    
        for (n in splitmeanings) {
        console.log(splitmeanings[n])
        ulist = document.createElement('ul')
@@ -41,20 +49,20 @@ function search() {
        lit = document.createElement('li')
        lit.innerText = splitmeanings[n]
        ulist.appendChild(lit)
-   
-       console.log(n)
-       console.log(splitexamples.length - 1)
-       splitmore = splitexamples[n].split('*')
+
+       if (dosplit == true) {
        if (n <= splitexamples.length - 1) {
-           for (n in splitmore) {
+        splitmore = splitexamples[n].split('*')
+           for (a in splitmore) {
        lit = document.createElement('li')
-       lit.innerText = splitmore[n]
+       lit.innerText = splitmore[a]
        ulist.appendChild(lit)
            }
     }
 
        }
 
+}
 }
 }
   
