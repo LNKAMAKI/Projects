@@ -1,6 +1,6 @@
 var songs = [
 {word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly',
-examples: 'She opened her suitcase and laid her clothes out on the bed*A display of local history material was laid out on the table/The documents lay out the principles clearly enough.' 
+examples: 'She opened her suitcase and laid her clothes out on the bed*A display of local history material was laid out on the table/The documents lay out the principles clearly enough' 
 }
 ]
 var songsSearched = []
@@ -47,7 +47,8 @@ function search() {
        vidhold.appendChild(ulist)
        ulist.setAttribute('type', 'disc')
        lit = document.createElement('li')
-       lit.innerText = splitmeanings[n]
+       lit.setAttribute('class', 'numb-ex')
+       lit.innerText = `${Number(n) + 1}. ` + splitmeanings[n].replace(splitmeanings[n].charAt(0), splitmeanings[n].charAt(0).toUpperCase())
        ulist.appendChild(lit)
 
        if (dosplit == true) {
