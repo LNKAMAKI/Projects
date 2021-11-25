@@ -11,13 +11,34 @@
        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-       h1 {
+       span.tipo {
+           color: rgb(158, 158, 158);
+           font-size: 1.4em;
+       }
+       .video-holder > h1 {
+           display: inline-block;
            margin: 0%;
            font-family: 'DM Serif Display', serif;
            font-weight: 400 ;
            font-size: 4em;
            position: relative;
-           margin-left: 80px;
+           margin-left: 150px;
+       }
+       .video-holder p {
+           font-family: 'DM Serif Display', serif;
+           font-size: 1.3em;
+       }
+       ul {
+           margin-left: 170px;
+       }
+       li {
+           font-size: 1.3em;
+           font-family: 'DM Serif Display', serif ;
+           font-style: italic;
+       }
+       li::marker {
+        content: '⚫  ';
+        font-size: 0.5em ;
        }
        body {
            margin: 0;
@@ -170,11 +191,9 @@ align-items: center
     </div>
     
 </div>
-<div class="video-holder">
-<h1>lay out</h1>
-</div>
+
 
     <script src="teste3 copy.js"></script>
- </div>
+ 
 </body>
 </html>

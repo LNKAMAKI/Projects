@@ -1,5 +1,5 @@
 var songs = [
-'como fazer um site?'
+{word: 'lay out',type: 'verb',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly',examples: 'p' }
 ]
 var songsSearched = []
 // Cria o "vídeos"
@@ -18,13 +18,42 @@ function search() {
         vidhold =  document.createElement('div')
         vidhold.setAttribute('class', 'video-holder')
         vidhold.id = pesquisa.toLowerCase()
-        vidhold.innerHTML = 
         document.body.appendChild(vidhold)
+       word =  document.createElement('h1')
+       word.innerText = pesquisa.toLowerCase()
+       vidhold.appendChild(word)
+
+        wordSearched = songs.find(function(songs){
+        return songs.word = pesquisa.toLowerCase()
+       })
+       type = document.createElement('span')
+       type.setAttribute('class', 'tipo')
+       type.innerText = `(${wordSearched.type})`
+       vidhold.appendChild(type)
+
+       splitexamples = wordSearched.examples.split('/')
+       splitmeanings = wordSearched.meaning.split('/')
+       for (n in splitmeanings) {
+       console.log(splitmeanings[n])
+       ulist = document.createElement('ul')
+       vidhold.appendChild(ulist)
+       ulist.setAttribute('type', 'disc')
+       lit = document.createElement('li')
+       lit.innerText = splitmeanings[n]
+       ulist.appendChild(lit)
+
+       lit = document.createElement('li')
+       lit.innerText = splitexamples[n]
+       ulist.appendChild(lit)
+     
+
+       }
+
 }
 }
   
 function dothesearch(whichid) {
-    document.getElementById('searcher').value = songs[whichid]
+    document.getElementById('searcher').value = songs[whichid].word
     allps = document.getElementsByClassName('psearcher')
    // window.alert(document.getElementById('a' + whichid))
    for (n = allps.length - 1; n >= 0; n--) {
@@ -73,10 +102,10 @@ function search2() {
         // window.alert(songs[n])
         // window.alert(songs[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
-         if (songs[n].search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+         if (songs[n].word.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
-             psearcher.innerText = songs[n]
+             psearcher.innerText = songs[n].word
              psearcher.setAttribute('class', 'psearcher')
              psearcher.id = 'a' + n
              psearcher.style.fontWeight = 'bold'
@@ -93,10 +122,10 @@ function search2() {
             // window.alert(songs[n])
             // window.alert(songs[n].includes(pesquisa.toLowerCase()))
              pesquise = pesquisa.toLowerCase()
-             if (songs[n].search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+             if (songs[n].word.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
                  psearcher = document.createElement('p')
                  psearcher.style.position = 'sticky'
-                 psearcher.innerText = songs[n]
+                 psearcher.innerText = songs[n].word
                  psearcher.setAttribute('class', 'psearcher')
                  psearcher.id = 'a' + n
                  psearcher.style.fontWeight = 'bold'
@@ -115,10 +144,10 @@ function search2() {
         // window.alert(songs[n])
         // window.alert(songs[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
-         if (songs[n].search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+         if (songs[n].word.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
-             psearcher.innerText = songs[n]
+             psearcher.innerText = songs[n].word
              psearcher.setAttribute('class', 'psearcher')
              psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
