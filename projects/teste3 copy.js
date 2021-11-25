@@ -18,7 +18,7 @@ function search() {
         vidhold =  document.createElement('div')
         vidhold.setAttribute('class', 'video-holder')
         vidhold.id = pesquisa.toLowerCase()
-        vidhold.innerHTML = `<h1>COMO FAZER UM SITE?</h1> <img src="Javascript_Logo.png" alt="" width="400px" height="400px">`        
+        vidhold.innerHTML = 
         document.body.appendChild(vidhold)
 }
 }
