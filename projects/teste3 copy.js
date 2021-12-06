@@ -594,6 +594,7 @@ function dothesearch(whichid) {
     }
     search()
 }
+/*
 function deleta(indexnumber) {
     allvidholders = document.getElementsByClassName('video-holder')
     document.body.removeChild(allvidholders[indexnumber])
@@ -610,8 +611,10 @@ function deleta(indexnumber) {
         delbuts[n].setAttribute('onclick', `deleta(${delbuts[n].id})`)
        
     }
+    
  
 }
+*/
 
 
 function search2() {
