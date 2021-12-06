@@ -514,13 +514,6 @@ examples: ''},
 {word: 'ascertain',type: 'verb formal', 
 meaning: 'to find out something', 
 examples: 'Police are trying to ascertain the facts of the case*Ascertain whether, what, how etc: We need to ascertain whether the project is feasible*Ascertain that: The police have ascertained that he knew the victim*Ascertain from: This much could easily be ascertained from the newspapers*Ascertain the cause, nature, extent of something: Experts were unable to ascertain the cause of the accident'},
-{word: '',type: '', 
-meaning: '', 
-examples: ''},
-{word: '',type: '', 
-meaning: '', 
-examples: ''},
-
 
 ]
 
@@ -622,6 +615,7 @@ function deleta(indexnumber) {
 
 
 function search2() {
+    pnumber = 0
     pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
@@ -641,6 +635,7 @@ function search2() {
         // window.alert(songs[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (songs[n].word.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+             pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
              psearcher.innerText = songs[n].word
@@ -650,7 +645,9 @@ function search2() {
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
             // window.alert(pesquise)
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight: normal";">${pesquise}</span>`)
+             if (pnumber < 7) {
              document.getElementById('main').appendChild(psearcher)
+             }
              opnumbers++
              document.getElementById('main').style.display = 'block'
          }
@@ -661,7 +658,8 @@ function search2() {
             // window.alert(songs[n].includes(pesquisa.toLowerCase()))
              pesquise = pesquisa.toLowerCase()
              if (songs[n].word.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
-                 psearcher = document.createElement('p')
+                pnumber++
+                psearcher = document.createElement('p')
                  psearcher.style.position = 'sticky'
                  psearcher.innerText = songs[n].word
                  psearcher.setAttribute('class', 'psearcher')
@@ -670,7 +668,9 @@ function search2() {
                  psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
                 // window.alert(pesquise)
                  psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
-                 document.getElementById('main').appendChild(psearcher)
+                 if (pnumber < 7) {
+                    document.getElementById('main').appendChild(psearcher)
+                    }
                  opnumbers++
                  document.getElementById('main').style.display = 'block'
              }
@@ -683,6 +683,7 @@ function search2() {
         // window.alert(songs[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (songs[n].word.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+            pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
              psearcher.innerText = songs[n].word
@@ -692,7 +693,9 @@ function search2() {
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
             // window.alert(pesquise)
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
-             document.getElementById('main').appendChild(psearcher)
+             if (pnumber < 7) {
+                document.getElementById('main').appendChild(psearcher)
+                }
              opnumbers++
              document.getElementById('main').style.display = 'block'
          }
