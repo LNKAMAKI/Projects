@@ -177,3 +177,7 @@ console.log('uasd', palavrasNumericas)
 for (p in palavrasNumericas) {
 console.log(palavrasPrimitivas[posicaoPalavras[p]])
 }
+
+numeros = [1,8, 20, 4, 6, 2, 5, 7, 3]
+console.log(numeros)
+console.log(numeros.sort((a, b) => a - b))
