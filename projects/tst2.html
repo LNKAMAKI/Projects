@@ -1,16 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1 {
-            font-size: 4em;
-            text-align: center;
-            margin-top: 1vw;
-            margin-bottom: 1.5vw;
+      body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      :root {
+        --lightblue: rgb(145, 210, 248);
+        --midblue: rgb(119, 178, 212);
+      }
+        header {
+            margin: 0;
+            min-height: 100px;
+            margin-bottom: 30px;
+            background-color:rgb(80, 184, 245);
+            display: grid;
+            position: relative;
+            align-items: center;
+        }
+        header > h1 {
+          font-size: 4em;
+          padding: 30px;
+          text-align: center;
+            margin: 0;
+            color: rgb(166, 222, 255);
+            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        }
+        main {
+          background-color: white;
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.363);
+          border-radius: 10px ;
+          padding-top: 35px;
+          padding-bottom: 35px;
+          display: grid;
+          max-width: 900px;
+          align-content: center;
+          margin: auto;
+          position: relative;
+          overflow: hidden;
+          min-height: 400px;
+          height: fit-content;
+        }
+        p.green {
+          position: absolute;
+          margin: 0;
+          background-color: rgb(154, 230, 154);
+          box-shadow: 0px 0px 10px rgb(132, 192, 132);
+          border-top-left-radius: calc(50px + 1vw);
+          border-top-right-radius: calc(50px + 1vw);
+          padding-top: calc(80px + 1vw);
+          height: 0px;
+          top: calc(400px - 1.5vw);
+          left: calc(130px + 5.5vw);
+          width: 100%;
+          transform: rotate(0deg);
+          z-index: 0;
+        }
+        p.blue {
+          position: absolute;
+          margin: 0;
+          background-color: rgb(81, 197, 218);
+          box-shadow: 0px 0px 10px rgb(88, 169, 184);
+          border-top-left-radius: calc(65px + 1vw);
+          border-top-right-radius: calc(65px + 1vw);
+          padding-top: calc(80px + 1vw);
+          height: 0px;
+          top: calc(420px - 1vw);
+          width: 100%;
+          z-index: 1;
+        }
+        p.green2 {
+          position: absolute;
+          margin: 0;
+          background-color: rgb(154, 230, 154);
+          box-shadow: 0px 0px 10px rgb(132, 192, 132);
+          border-bottom-left-radius: 50%;
+          border-bottom-right-radius: 50%;
+          height: 120px;
+          left: -30%;
+          margin-top: 3px;
+          width: 100%;
+          transform: rotate(0deg);
+          z-index: 0;
+        }
+        p.blue2 {
+          position: absolute;
+          margin: 0;
+          background-color: rgb(81, 197, 218);
+          box-shadow: 0px 0px 10px rgb(88, 169, 184);
+          border-bottom-left-radius: 30%;
+          border-bottom-right-radius: 30%;
+          height: 80px;
+          top: 0%;
+          width: 100%;
+          z-index: 1;
         }
         input {
             display: block;
@@ -18,10 +107,48 @@
             min-height: 30px;
             min-width: 100px;
             font-size: 0.9em;
+            position: relative;
+            z-index: 2;
         }
+        input[type= 'number']:hover{
+        border-radius: 3px;
+        border-image: none;
+        border: 2px solid lightskyblue;
+        outline: none;
+        box-shadow: 0px 0px 10px lightblue;
+    }
+        input[type= 'number']:focus{
+        border-radius: 3px;
+        border-image: none;
+        border: 2px solid rgb(46, 174, 253);
+        outline: none;
+        box-shadow: 0px 0px 10px lightblue;
+    }
+    input[type= 'button'] {
+      background-color: var(--lightblue);
+      color: white;
+      width: 120px;
+      height: 40px;
+      border-image: none;
+      margin-top: 20px;
+      outline: none;
+     border: none;
+     border-radius: 15px;
+     transition-duration: 0.07s;
+    }
+    input[type= 'button']:hover {
+     box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.308);
+     transition-duration: 0.07s;
+    }
+    input[type= 'button']:active {
+      transition-duration: 0.07s;
+      transform: translate(2px) translateY(2px);
+      box-shadow: 4px 3px 3px rgba(0, 0, 0, 0.308);
+
+    }
         div.ali  {
     position: relative;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     text-align: center;
 }
 .p3 {
@@ -44,12 +171,13 @@
     align-items: center;
     justify-items: end;
     position: absolute;
-    min-width: 25px;
-    width: max-content;
+    width: 10vw;
+    max-width: max-content;
+    min-width: min-content;
     padding: 6px 6px 5px 6px;
     border-radius: 5px ;
     color: white;
-    background-color: black;
+    background-color: var(--midblue);
     z-index: 2;
     }
     .thingo3 {
@@ -60,15 +188,17 @@
     width: 15px;
     height: 15px;
     transform: rotate(-44deg);
-    background-color: black;
+    background-color: var(--midblue);
     left:-1.8px;
     }
     .ad3 {
-    display: none;
+      opacity: 0;
+      display:grid;
     }
     .p3:hover > .ad3 {
     left: -100%;
-    display:grid;
+    transition-duration: 0.7s;
+    opacity: 100;
     align-items: center;
     justify-items: auto;
     position: absolute;
@@ -78,38 +208,94 @@
     height: 100%;
     }
     .centralizar {
+      position: relative;
         text-align: center;
-        margin-bottom: 1.5vw;
+        top: calc(45px - 1.5vw);
     }
-    input:hover{
-        border-radius: 3px;
-        border-image: none;
-        border: 2px solid lightskyblue;
-        outline: none;
-        box-shadow: 0px 0px 10px lightblue;
-    }
-
-
+     .end {
+       position: absolute;
+       top: 65.5%;
+       width: 100%;
+       display: grid;
+       justify-items: end;
+     }
+      #circ {
+        opacity: 0;
+        position: relative;
+        background-color: rgba(173, 238, 173, 0.397);
+        width: 200px;
+     height: 200px;
+     z-index: 2;
+     display: grid;
+     align-items: center;
+     justify-items: center;
+     border-radius: 50%;
+     right: -16px;
+      }
+   p#result {
+     text-align: center;
+     font-size: 1.4em;
+     width: fit-content;
+     margin: 0;
+     font-size: 4em;
+     font-family: sans-serif;
+     color: rgba(255, 255, 255, 0.603);
+     font-weight: bold;
+     top: 80%;
+   }
+   p#corres {
+     opacity: 0;
+     position: absolute;
+   background-color: cadetblue;
+   color: black;
+   font-size: 2em;
+   font-family: sans-serif;
+   z-index: 2;
+   top: 100px;
+   width: 50%;
+   height: 200px;
+   }
+  /* calc(100% - 1vw) 
+     calc(80px - 1vw)
+     */
     </style>
 </head>
 <body>
-    <h1>CALCULADOR DE IMC</h1>
+    <header><h1>CALCULADOR DE IMC</h1></header>
   
-  <div class="centralizar">
-      <div class="p3">
-        <input type="" name="" id="">
-        <div class="ad3"><div class="inform3">MASSA CORPORAL(EM KG)<div class="thingo3"></div></div></div></div>
+  <main>
+    <p class="blue"></p>
+    <p class="green"></p>
+
+    <p class="blue2"></p>
+    <p class="green2"></p>
+    <div class="centralizar">
+      <div class="ali">
+        
+                <div class="p3">
+                  <input type="number" name="" id="massa">
+                  <div class="ad3"><div class="inform3">MASSA CORPORAL(EM KG)<div class="thingo3"></div></div></div></div>
       </div>
+      <div class="ali">
+        
+        <div class="p3">
+          <input type="number" name="" id="massa">
+          <div class="ad3"><div class="inform3">ALTURA(EM METROS)<div class="thingo3"></div></div></div></div>
+</div>
+      
+      
+      
+          <input class="button" type="button" value="CALCULAR" onclick="calcularIMC()">
     </div>
+      
 
-    
-  <div class="centralizar">
-    <div class="p3">
-      <input type="" name="" id="">
-      <div class="ad3"><div class="inform3">ALTURA(EM METROS)<div class="thingo3"></div></div></div></div>
-    </div>
-  </div>
-
-  <input class="button" type="button" value="CALCULAR">
+      <div class="end">
+        <div id="circ">
+          <p id="result"></p>
+        </div>
+      </div>
+      <p id="corres">MAGREZA</p>
+  </main>
+ <script src="tst2.js"></script>
 </body>
 </html>
