@@ -29,11 +29,11 @@
        imc = m/(a*a)
         res.innerText = imc
        circu.style.display = 'grid'
-        circu.style.animation = 'goup 0.5s'
+        circu.style.animation = 'goup 0.4s'
        
        core.style.opacity = 0
        core.style.display = 'block'
-       core.style.animation = 'goup 0.5s 0.3s forwards'
+       core.style.animation = 'goup 0.4s 0.3s forwards'
             if (imc < 18.5) {
             core.innerText = 'Abaixo do Peso'
             }else if(imc <= 24.9){
