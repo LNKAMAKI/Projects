@@ -34,12 +34,10 @@ display: grid;
 align-items: center;
 justify-items: end;
 position: absolute;
-min-width: 25px;
-width: max-content;
 padding: 6px 6px 5px 6px;
 border-radius: 5px ;
 color: white;
-background-color: rgb(119, 178, 212);
+background-color: black;
 }
 .thingo2 {
 position: absolute;
@@ -48,14 +46,26 @@ max-height: 11.2px;
 width: 15px;
 height: 15px;
 transform: rotate(-44deg);
-background-color: rgb(119, 178, 212);
+background-color: black;
 right: -1.8px;
 z-index: -2;
 }
 .ad2 {
-opacity: 0;
+    transition-property: opacity;
+    transition-duration: 2s;
+    left: -100%;
+    opacity: 0;
+    display:grid;
+    align-items: center;
+    justify-items: end;
+    position: absolute;
+    left: -104%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
 }
 .p2:hover > .ad2 {
+    transition-property: opacity;
 transition-duration: 2s;
 left: -100%;
 opacity: 100;
@@ -198,7 +208,7 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     padding: 6px 6px 5px 6px;
     border-radius: 5px ;
     color: white;
-    background-color: rgb(119, 178, 212);
+    background-color: black;
     z-index: 2;
     }
     .thingo3 {
@@ -209,14 +219,14 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     width: 15px;
     height: 15px;
     transform: rotate(-44deg);
-    background-color: rgb(119, 178, 212);
+    background-color: black;
     left:-1.8px;
     }
     .ad3 {
         opacity: 0;
         transition-duration: 2s;
     left: -100%;
-    display:grid;
+    display: grid;
     align-items: center;
     justify-items: auto;
     position: absolute;

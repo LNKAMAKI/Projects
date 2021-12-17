@@ -1,210 +1,233 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      .p3 {
-    display: inline-block;
-    position: relative;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --lightblue: rgb(145, 210, 248);
+      --midblue: rgb(119, 178, 212);
     }
-    .p3 > p {
-    display: none;
+
+    header {
+      margin: 0;
+      min-height: 100px;
+      margin-bottom: 30px;
+      background-color: rgb(80, 184, 245);
+      display: grid;
+      position: relative;
+      align-items: center;
     }
-    .p3:hover > p {
-    display: inline-block; 
-    margin: 0px;
-    background-color: pink;
+
+    header>h1 {
+      font-size: 4em;
+      padding: 30px;
+      text-align: center;
+      margin: 0;
+      color: rgb(166, 222, 255);
+      text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
     }
+
+    main {
+      display: block;
+      background-color: white;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.363);
+      border-radius: 10px;
+      padding-top: 35px;
+      padding-bottom: 35px;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+    }
+
+    .p3 {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .p3>p {
+      display: none;
+    }
+
+    .p3:hover>p {
+      display: inline-block;
+      background-color: pink;
+    }
+
     .inform3 {
-    font-size: 0.7em;
-    font-family: sans-serif;
-    font-weight: bold;
-    display: grid;
-    align-items: center;
-    justify-items: end;
-    position: absolute;
-    min-width: 25px;
-    width: max-content;
-    padding: 6px 6px 5px 6px;
-    border-radius: 5px ;
-    color: white;
-    background-color: rgb(119, 178, 212);
-    z-index: 2;
+      font-size: 12px;
+      font-family: sans-serif;
+      font-weight: bold;
+      display: grid;
+      align-items: center;
+      justify-items: end;
+      max-width: max-content;
+      width: 15vw;
+      min-width: min-content;
+      position: relative;
+      padding: 6px 6px 5px 6px;
+      border-radius: 5px;
+      color: white;
+      background-color: var(--midblue);
+      z-index: 2;
     }
+
     .thingo3 {
-    position: absolute;
-    max-width: 11.8px;
-    max-height: 11.2px;
-    z-index: -1;
-    width: 15px;
-    height: 15px;
-    transform: rotate(-44deg);
-    background-color: rgb(119, 178, 212);
-    left:-1.8px;
+      position: absolute;
+      max-width: 11.8px;
+      max-height: 11.2px;
+      z-index: -1;
+      width: 15px;
+      height: 15px;
+      transform: rotate(-44deg);
+      background-color: var(--midblue);
+      left: -1.8px;
     }
+
     .ad3 {
-        opacity: 0;
-        transition-duration: 2s;
-    left: -100%;
-    display:grid;
-    align-items: center;
-    justify-items: auto;
-    position: absolute;
-    left: 105%;
-    top: 0%;
-    width: 100%;
-    height: 100%;
+      opacity: 0;
+      transition-duration: 0.5s;
+      left: -100%;
+      display: grid;
+      align-items: center;
+      justify-items: auto;
+      position: absolute;
+      left: 105%;
+      top: 0%;
+      width: 100%;
+      height: 100%;
     }
-    .p3:hover > .ad3 {
-        transition-duration: 2s;
-        opacity: 100;
-    left: -100%;
-    display:grid;
-    align-items: center;
-    justify-items: auto;
-    position: absolute;
-    left: 105%;
-    top: 0%;
-    width: 100%;
-    height: 100%;
+
+    .p3:hover>.ad3 {
+      transition-duration: 0.5s;
+      opacity: 100;
+      left: -100%;
+      display: grid;
+      align-items: center;
+      justify-items: auto;
+      position: absolute;
+      left: 105%;
+      top: 0%;
+      width: 100%;
+      height: 100%;
     }
-        * {
-          margin: 0;
-        }
-      body {
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-      }
-      :root {
-        --lightblue: rgb(145, 210, 248);
-        --midblue: rgb(119, 178, 212);
-      }
-        header {
-            margin: 0;
-            min-height: 100px;
-            margin-bottom: 30px;
-            background-color:rgb(80, 184, 245);
-            display: grid;
-            position: relative;
-            align-items: center;
-        }
-        header > h1 {
-          font-size: 4em;
-          padding: 30px;
-          text-align: center;
-            margin: 0;
-            color: rgb(166, 222, 255);
-            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
-        }
-        main {
-          display: block;
-          background-color: white;
-          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.363);
-          border-radius: 10px ;
-          padding-top: 35px;
-          padding-bottom: 35px;
-          max-width: 900px;
-          margin: auto;
-          position: relative;
-          overflow: hidden;
-          min-height: 400px;
-        }
-        p.green {
-          position: relative;
-          margin: 0;
-          background-color: rgb(154, 230, 154);
-          box-shadow: 0px 0px 10px rgb(132, 192, 132);
-          border-top-left-radius: calc(50px + 1vw);
-          border-top-right-radius: calc(50px + 1vw);
-          padding-top: calc(65px + 1.5vw);
-          height: 0px;
-          left: calc(130px + 5.5vw);
-          width: 100%;
-          transform: rotate(0deg);
-          z-index: 0;
-        }
-        div#help {
-          position: relative;
-          top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-        display: grid;
-        align-items: end;
-        }
-        p.blue {
-          position: absolute;
-          margin: 0;
-          background-color: rgb(81, 197, 218);
-          box-shadow: 0px 0px 10px rgb(88, 169, 184);
-          border-top-left-radius: calc(65px + 1vw);
-          border-top-right-radius: calc(65px + 1vw);
-          padding-top: calc(45px + 1vw);
-          height: 0px;
-          width: 100%;
-          z-index: 1;
-        }
-        #help2 {
-          top: 0;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background-color: transparent;
-          align-items: center;
-        }
-        p.green2 {
-          position: absolute;
-          margin: 0;
-          background-color: rgb(154, 230, 154);
-          box-shadow: 0px 0px 10px rgb(132, 192, 132);
-          border-bottom-left-radius: calc(50px + 1vw);
-          border-bottom-right-radius: calc(50px + 1vw);
-          padding-top: calc(65px + 1.5vw);
-          height: 0px;
-          left: calc(-130px - 6vw);
-          width: 100%;
-          z-index: 0;
-        }
-        p.blue2 {
-          position: absolute;
-          margin: 0;
-          background-color: rgb(81, 197, 218);
-          box-shadow: 0px 0px 10px rgb(88, 169, 184);
-          border-bottom-left-radius: calc(65px + 1vw);
-          border-bottom-right-radius: calc(65px + 1vw);
-          padding-top: calc(45px + 1vw);
-          height: 0px;
-          width: 100%;
-          z-index: 1;
-        }
-        input {
-            margin-bottom: 0px;
-            display: block;
-            height: 30px;
-            width: 150px;
-            font-size: 0.9em;
-            position: relative;
-            z-index: 2;
-        }
-        input[type= 'number']:hover{
-        border-radius: 3px;
-        border-image: none;
-        border: 2px solid lightskyblue;
-        outline: none;
-        box-shadow: 0px 0px 10px lightblue;
+
+    * {
+      margin: 0;
     }
-        input[type= 'number']:focus{
-        border-radius: 3px;
-        border-image: none;
-        border: 2px solid rgb(46, 174, 253);
-        outline: none;
-        box-shadow: 0px 0px 10px lightblue;
+
+    body {
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
     }
-    input[type= 'button'] {
+
+    p.green {
+      position: relative;
+      margin: 0;
+      background-color: rgb(154, 230, 154);
+      box-shadow: 0px 0px 10px rgb(132, 192, 132);
+      border-top-left-radius: calc(50px + 1vw);
+      border-top-right-radius: calc(50px + 1vw);
+      padding-top: calc(65px + 1.5vw);
+      height: 0px;
+      left: calc(130px + 5.5vw);
+      width: 100%;
+      transform: rotate(0deg);
+      z-index: 0;
+    }
+
+    div#help {
+      position: relative;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      display: grid;
+      align-items: end;
+    }
+
+    p.blue {
+      position: absolute;
+      margin: 0;
+      background-color: rgb(81, 197, 218);
+      box-shadow: 0px 0px 10px rgb(88, 169, 184);
+      border-top-left-radius: calc(65px + 1vw);
+      border-top-right-radius: calc(65px + 1vw);
+      padding-top: calc(45px + 1vw);
+      height: 0px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    #help2 {
+      top: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      align-items: center;
+    }
+
+    p.green2 {
+      position: absolute;
+      margin: 0;
+      background-color: rgb(154, 230, 154);
+      box-shadow: 0px 0px 10px rgb(132, 192, 132);
+      border-bottom-left-radius: calc(50px + 1vw);
+      border-bottom-right-radius: calc(50px + 1vw);
+      padding-top: calc(65px + 1.5vw);
+      height: 0px;
+      left: calc(-130px - 6vw);
+      width: 100%;
+      z-index: 0;
+    }
+
+    p.blue2 {
+      position: absolute;
+      margin: 0;
+      background-color: rgb(81, 197, 218);
+      box-shadow: 0px 0px 10px rgb(88, 169, 184);
+      border-bottom-left-radius: calc(65px + 1vw);
+      border-bottom-right-radius: calc(65px + 1vw);
+      padding-top: calc(45px + 1vw);
+      height: 0px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    input {
+      display: block;
+      height: 30px;
+      width: 150px;
+      font-size: 0.9em;
+      position: relative;
+      z-index: 2;
+    }
+
+    input[type='number']:hover {
+      border-radius: 3px;
+      border-image: none;
+      border: 2px solid lightskyblue;
+      outline: none;
+      box-shadow: 0px 0px 10px lightblue;
+    }
+
+    input[type='number']:focus {
+      border-radius: 3px;
+      border-image: none;
+      border: 2px solid rgb(46, 174, 253);
+      outline: none;
+      box-shadow: 0px 0px 10px lightblue;
+    }
+
+    input[type='button'] {
       background-color: var(--lightblue);
       color: white;
       width: 120px;
@@ -212,124 +235,191 @@
       border-image: none;
       outline: none;
       margin-bottom: 0px;
-     border: none;
-     border-radius: 15px;
-     transition-duration: 0.07s;
+      border: none;
+      border-radius: 15px;
+      transition-duration: 0.07s;
     }
-    input[type= 'button']:hover {
-     box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.308);
-     transition-duration: 0.07s;
+
+    input[type='button']:hover {
+      box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.308);
+      transition-duration: 0.07s;
     }
-    input[type= 'button']:active {
+
+    input[type='button']:active {
       transition-duration: 0.07s;
       transform: translate(2px) translateY(2px);
       box-shadow: 4px 3px 3px rgba(0, 0, 0, 0.308);
 
     }
+
     .centralizar {
       position: relative;
-       display: grid;
-       justify-items: center;
-        margin-top: 120px;
+      display: grid;
+      justify-items: center;
+      margin-top: 120px;
     }
-     .end {
+
+    .end {
       position: relative;
-       background-color: transparent;
-       margin: 0;
-       width: 100%;
-       display: grid;
-       justify-items: center;
+      background-color: transparent;
+      margin: 0;
+      width: 100%;
+      display: grid;
+      justify-items: center;
 
-     }
-      #circ {
-        position: relative;
-        background-color: rgba(173, 238, 173, 0.397);
-        width: 200px;
-     height: 200px;
-     margin-bottom: 0px;
-     z-index: 2;
-     display: none;
-     align-items: center;
-     justify-items: center;
-     border-radius: 50%;
+    }
+
+    #circ {
+      position: relative;
+      background-color: rgba(173, 238, 173, 0.397);
+      width: 200px;
+      height: 200px;
+      margin-bottom: 0px;
+      z-index: 2;
+      display: none;
+      align-items: center;
+      justify-items: center;
+      border-radius: 50%;
+    }
+
+    @keyframes goup {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
       }
-   p#result {
-     text-align: center;
-     font-size: 1.4em;
-     width: fit-content;
-     margin: 0;
-     font-size: 4em;
-     font-family: sans-serif;
-     color: rgba(255, 255, 255, 0.603);
-     font-weight: bold;
-     top: 80%;
-   }
-   p#corres {
-     opacity: 0;
-     position: absolute;
-     display: none;
-   background-color: cadetblue;
-   color: black;
-   font-size: 2em;
-   font-family: sans-serif;
-   z-index: 2;
-   top: 100px;
-   width: 50%;
-   height: 200px;
-   }
-   #gr {
-     top: 0;
-     position: absolute;
-     width: 100%;
-     height: 100%;
-   }
-  /* calc(100% - 1vw) 
-     calc(80px - 1vw)
-     */
-    </style>
-</head>
-<body>
-    <header><h1>CALCULADOR DE IMC</h1></header>
-    <main>
-    
-      <div id="gr">
-        <div id="help">
-          <p class="blue"></p>
-          <p class="green"></p>
-        </div>
-        <div id="help2">
-          <p class="blue2"></p>
-          <p class="green2"></p>
-        </div>
-      </div>
-    
-      <div class= "centralizar">
-        
-                    <input type="number" name="" id="massa">
-        
-        
-                    <div class="p3">
-                      <input type="number" name="" id="altura">
-                      <div class="ad3"><div class="inform3">Frequência absoluta acumulada<div class="thingo3"></div></div></div></div>
-            
 
-            <div class="p3">
-              <input class="button" type="button" value="CALCULAR" onclick="calcularIMC()">
-              <div class="ad3"><div class="inform3">Frequência absoluta acumulada<div class="thingo3"></div></div></div></div>
-      
-            
-        
-      </div>
-    <div class="end">
-      <div id="circ">
-        <p id="result"></p>
-      </div>
-      </div>
+      100% {
+        opacity: 100;
+        transform: translateY(0px);
+      }
+    }
+
+    p#result {
+      text-align: center;
+      font-size: 1.4em;
+      width: fit-content;
+      margin: 0;
+      font-size: 4em;
+      font-family: sans-serif;
+      color: rgba(255, 255, 255, 0.603);
+      font-weight: bold;
+      top: 80%;
+    }
+
+    p#corres {
+      opacity: 100;
+      position: relative;
+      margin: 0;
+      display: none;
+      color: rgba(0, 0, 0, 0.39);
+      margin-top: 15px;
+      font-weight: bold;
+      background-color: transparent;
+      font-size: 3em;
+      font-family: sans-serif;
+      z-index: 2;
+      text-align: center;
+      animation-play-state: paused;
+      animation: goup 0.6s;
+    }
+
+    #gr {
+      top: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    #bd {
+      background-color: transparent;
+      margin-bottom: 75px;
+    }
+
   
-      
+  </style>
+</head>
 
+<body>
+  <header>
+    <h1>CALCULADOR DE IMC</h1>
+  </header>
+  <main>
+
+    <div id="gr">
+      <div id="help">
+        <p class="blue"></p>
+        <p class="green"></p>
+      </div>
+      <div id="help2">
+        <p class="blue2"></p>
+        <p class="green2"></p>
+      </div>
+    </div>
+<div id="bd">
+  
+      <div class="centralizar">
+  
+        <div class="p3">
+          <input type="number" name="" id="massa">
+          <div class="ad3">
+            <div class="inform3">MASSA (EM KILOGRAMAS)<div class="thingo3"></div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="p3">
+          <input type="number" name="" id="altura">
+          <div class="ad3">
+            <div class="inform3">ALTURA (EM METROS)<div class="thingo3"></div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="p3"><input class="button" type="button" value="CALCULAR" onclick="calcularIMC()"></div>
+  
+      </div>
+      <div class="end"> </div>
       
+      <table>
+        <thead>
+           <tr>
+             <th>CLASSIFICAÇÃO</th>
+             <th>IMC</th>
+           </tr>
+        </thead>
+        <tbody>
+           <tr>
+             <td>Abaixo do Peso</td>
+             <td>Abaixo 18.5</td>
+           </tr>
+           <tr>
+            <td>Peso Normal</td>
+            <td>18.5 - 24.9</td>
+          </tr>
+          <tr>
+            <td>Sobrepeso</td>
+            <td>25 - 29.9</td>
+          </tr>
+          <tr>
+            <td>Obesidade Grau I</td>
+            <td>30 - 34.9</td>
+          </tr>
+          <tr>
+            <td>Obesidade Grau II</td>
+            <td>35 - 39.9</td>
+          </tr>
+          <tr>
+            <td>Obesidade Grau III</td>
+            <td>Maior ou Igual 40</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
+
+
+
   </main>
- <script src="tst2.js"></script>
+  <script src="tst2.js"></script>
 </body>
+
 </html>
