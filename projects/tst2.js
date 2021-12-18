@@ -133,7 +133,6 @@ function desfazer() {
   // window.alert('desfazer')
     document.getElementById('motab').value = 'Mostrar Tabela'
     mt.setAttribute('onclick', 'clicado()')
-
    // if (document.getElementsByTagName('table').length == 1) {
    //     hd.removeChild(document.getElementsByTagName('table')[0])
 
@@ -150,16 +149,13 @@ tb = document.getElementsByTagName('table')[0]
 
 toel = tb.getElementsByTagName('tr')
 
-dla = 0
+
 for (trow = toel.length - 1; trow > -1; trow--) {
 tdata = toel[trow].getElementsByTagName('td')
 
-    for (num = 0; num < tdata.length; num++) {
-    tdata[num].style.opacity = '100'
-   tdata[num].style.border = '1px solid black'
-    tdata[num].style.animation = 'showup4 1.5s ' + dla + 's' + ' forwards'
-    }
-    dla += 0.3
+for (num = 0; num < tdata.length; num++) {
+    tdata[num].style.animationPlayState = 'paused'
+   }
 
 }
 
@@ -168,12 +164,12 @@ for (trow = 0; trow < 1; trow++) {
     tdata = toel[trow].getElementsByTagName('th')
 
     for (num = 0; num < tdata.length; num++) {
-    tdata[num].style.opacity = '100'
-    tdata[num].style.border = '1px solid rgb(65, 169, 195)'
-    tdata[num].style.animation = 'showup3 1.5s ' + dla + 's' + ' forwards'
+    tdata[num].style.animationPlayState = 'paused'
     }
 
 }
+
+tb.style.display = 'none'
 
 }
 
