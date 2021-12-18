@@ -280,6 +280,7 @@
       align-items: center;
       justify-items: center;
       border-radius: 50%;
+      overflow: hidden;
     }
 
     @keyframes goup {
@@ -301,7 +302,7 @@
       margin: 0;
       font-size: 4em;
       font-family: sans-serif;
-      color: rgba(255, 255, 255, 0.603);
+      color: rgba(119, 156, 119, 0.726);
       font-weight: bold;
       top: 80%;
     }
@@ -335,20 +336,53 @@
     }
  
   table {
+    position: relative;
     width: 440px;
-    margin: auto;
+    margin: 20px auto 0px auto;
     border-collapse: collapse;
     border: 1px solid black;
-    display: block;
+   display: none;
+   z-index: 2;
   }
   thead {
-    background-color: rgb(65, 169, 195);
     color: white;
   }
-  th, td {
+  td {
     padding: 7px;
     border: 1px solid black;
     font-family: Arial, Helvetica, sans-serif;
+  }
+  th {
+    padding: 7px;
+    border: 1px solid rgb(65, 169, 195);
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 100;
+    background-color: rgb(65, 169, 195);
+  }
+  td {
+    background-color: white;
+  }
+  @keyframes showup {
+    0% {
+      border: 0px solid transparent;
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 100;
+      border: 1px solid rgb(65, 169, 195);
+      transform: translateX(0px);
+    }
+  }
+  @keyframes showup2 {
+    0% {
+      transform: translateX(10px);
+      border: 0px solid transparent;
+    }
+    100% {
+      opacity: 100;
+      border: 1px solid black;
+      transform: translateX(0px);
+    }
   }
   </style>
 </head>
@@ -393,45 +427,8 @@
   
       </div>
       <div class="end"> </div>
-      
-      
-</div>
 
-<table>
-  <thead>
-     <tr>
-       <th>CLASSIFICAÇÃO</th>
-       <th>IMC</th>
-     </tr>
-  </thead>
-  <tbody>
-     <tr>
-       <td>Abaixo do Peso</td>
-       <td>Abaixo 18.5</td>
-     </tr>
-     <tr>
-      <td>Peso Normal</td>
-      <td>18.5 - 24.9</td>
-    </tr>
-    <tr>
-      <td>Sobrepeso</td>
-      <td>25 - 29.9</td>
-    </tr>
-    <tr>
-      <td>Obesidade Grau I</td>
-      <td>30 - 34.9</td>
-    </tr>
-    <tr>
-      <td>Obesidade Grau II</td>
-      <td>35 - 39.9</td>
-    </tr>
-    <tr>
-      <td>Obesidade Grau III</td>
-      <td>Maior ou Igual 40</td>
-    </tr>
-    
-  </tbody>
-</table>
+</div>
 
   </main>
   <script src="tst2.js"></script>
