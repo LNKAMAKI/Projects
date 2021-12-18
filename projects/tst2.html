@@ -375,7 +375,9 @@
     }
   }
   @keyframes showup2 {
+
     0% {
+      transition-property: transform, border;
       transform: translateX(10px);
       border: 0px solid transparent;
     }
@@ -388,7 +390,6 @@
 
   @keyframes showup4 {
     0% {
-      border: 1px solid black;
       transform: translateX(0px);
     }
     100% {
@@ -402,7 +403,6 @@
   @keyframes showup3 {
 
 0% {
-  border: 1px solid rgb(65, 169, 195);
   transform: translateX(0px);
 }
 100% {

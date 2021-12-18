@@ -128,25 +128,25 @@ function clicado() {
     }
    
 }
-/*
+
 function desfazer() {
   // window.alert('desfazer')
     document.getElementById('motab').value = 'Mostrar Tabela'
     mt.setAttribute('onclick', 'clicado()')
 
-    if (document.getElementsByTagName('table').length == 1) {
-        hd.removeChild(document.getElementsByTagName('table')[0])
+   // if (document.getElementsByTagName('table').length == 1) {
+   //     hd.removeChild(document.getElementsByTagName('table')[0])
 
-}
+//}
 
-tb = document.createElement('table')
-tb.innerHTML = '<thead><tr><th>CLASSIFICAÇÃO</th><th>IMC</th></tr></thead><tbody><tr><td>Abaixo do Peso</td><td>Abaixo 18.5</td></tr><tr><td>Peso Normal</td><td>18.5 - 24.9</td></tr><tr><td>Sobrepeso</td><td>25 - 29.9</td></tr><tr><td>Obesidade Grau I</td><td>30 - 34.9</td></tr><tr><td>Obesidade Grau II</td><td>35 - 39.9</td></tr><tr><td>Obesidade Grau III</td><td>Maior ou Igual 40</td></tr></tbody>'
-hd.appendChild(tb)
+//tb = document.createElement('table')
+//tb.innerHTML = '<thead><tr><th>CLASSIFICAÇÃO</th><th>IMC</th></tr></thead><tbody><tr><td>Abaixo do Peso</td><td>Abaixo 18.5</td></tr><tr><td>Peso Normal</td><td>18.5 - 24.9</td></tr><tr><td>Sobrepeso</td><td>25 - 29.9</td></tr><tr><td>Obesidade Grau I</td><td>30 - 34.9</td></tr><tr><td>Obesidade Grau II</td><td>35 - 39.9</td></tr><tr><td>Obesidade Grau III</td><td>Maior ou Igual 40</td></tr></tbody>'
+//hd.appendChild(tb)
 
-//tab = document.getElementsByTagName('table')[0]
-tb.style.display = 'table'
+tb = document.getElementsByTagName('table')[0]
+//tb.style.display = 'table'
 
-tb.style.border = '0px solid black'
+//tb.style.border = '0px solid black'
 
 toel = tb.getElementsByTagName('tr')
 
@@ -156,7 +156,7 @@ tdata = toel[trow].getElementsByTagName('td')
 
     for (num = 0; num < tdata.length; num++) {
     tdata[num].style.opacity = '100'
-    tdata[num].style.border = '1px solid black'
+   tdata[num].style.border = '1px solid black'
     tdata[num].style.animation = 'showup4 1.5s ' + dla + 's' + ' forwards'
     }
     dla += 0.3
@@ -176,51 +176,4 @@ for (trow = 0; trow < 1; trow++) {
 }
 
 }
-*/
 
-function desfazer() {
-    // window.alert('desfazer')
-      document.getElementById('motab').value = 'Mostrar Tabela'
-      mt.setAttribute('onclick', 'clicado()')
-  
-      if (document.getElementsByTagName('table').length == 1) {
-          hd.removeChild(document.getElementsByTagName('table')[0])
-  
-  }
-  
-  tb = document.createElement('table')
-  tb.innerHTML = '<thead><tr><th>CLASSIFICAÇÃO</th><th>IMC</th></tr></thead><tbody><tr><td>Abaixo do Peso</td><td>Abaixo 18.5</td></tr><tr><td>Peso Normal</td><td>18.5 - 24.9</td></tr><tr><td>Sobrepeso</td><td>25 - 29.9</td></tr><tr><td>Obesidade Grau I</td><td>30 - 34.9</td></tr><tr><td>Obesidade Grau II</td><td>35 - 39.9</td></tr><tr><td>Obesidade Grau III</td><td>Maior ou Igual 40</td></tr></tbody>'
-  hd.appendChild(tb)
-  
-  //tab = document.getElementsByTagName('table')[0]
-  tb.style.display = 'table'
-  
-  tb.style.border = '0px solid black'
-  
-  toel = tb.getElementsByTagName('tr')
-  
-  dla = 0
-  for (trow = toel.length - 1; trow > -1; trow--) {
-  tdata = toel[trow].getElementsByTagName('td')
-  
-      for (num = 0; num < tdata.length; num++) {
-      tdata[num].style.opacity = '100'
-      tdata[num].style.border = '1px solid black'
-      tdata[num].style.animation = 'showup4 1.5s ' + dla + 's' + ' forwards'
-      }
-      dla += 0.3
-  
-  }
-  
-  for (trow = 0; trow < 1; trow++) {
-  
-      tdata = toel[trow].getElementsByTagName('th')
-  
-      for (num = 0; num < tdata.length; num++) {
-      tdata[num].style.opacity = '100'
-      tdata[num].style.border = '1px solid rgb(65, 169, 195)'
-      tdata[num].style.animation = 'showup3 1.5s ' + dla + 's' + ' forwards'
-      }
-  
-  }
-}
