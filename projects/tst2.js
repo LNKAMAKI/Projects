@@ -145,18 +145,20 @@ function desfazer() {
 tb = document.getElementsByTagName('table')[0]
 //tb.style.display = 'table'
 
-//tb.style.border = '0px solid black'
+tb.style.border = '0px solid black'
 
 toel = tb.getElementsByTagName('tr')
 
-
+dla = 0
 for (trow = toel.length - 1; trow > -1; trow--) {
 tdata = toel[trow].getElementsByTagName('td')
 
 for (num = 0; num < tdata.length; num++) {
     tdata[num].style.animationPlayState = 'paused'
-   }
 
+   }
+  
+   dla += 0.2
 }
 
 for (trow = 0; trow < 1; trow++) {
