@@ -7,6 +7,7 @@
  <li><a href= "https://lnkamaki.github.io/Projects/projects/english.html">English Project</a></li>
  <li><a href= "https://lnkamaki.github.io/Projects/projects/red-apresent.html">Trabalho de Redação</a></li>
  <li><a href= "https://lnkamaki.github.io/Projects/projects/teste3 copy.html">Dicionário</a></li>   
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/tst2.html">Calculador de IMC</a></li> 
 
 
  
