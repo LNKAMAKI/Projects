@@ -2,6 +2,7 @@
     function calcularIMC() {
         m = document.getElementById('massa').value 
         a = document.getElementById('altura').value 
+        if (m.length != 0 && a.length != 0) {
        core = document.createElement('p')
        core.id = 'corres'
 
@@ -29,14 +30,13 @@
         res.id = 'result'
         circu.appendChild(res)
 
-        if (m.length != 0 && a.length != 0) {
         console.log(m,a)
         console.log(a*a)
         console.log(m/(a*a))
 
          
        imc = m/(a*a)
-        res.innerText = imc
+        res.innerText = String(imc).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
        circu.style.display = 'grid'
         circu.style.animation = 'goup 0.4s'
        

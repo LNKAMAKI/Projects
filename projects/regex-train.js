@@ -1,9 +1,6 @@
-ex = 'A a a a bbbb'
+ex = '610.19445454544545454'
 
-ent(ex)
-//ent(ex.replace(new RegExp('a', 'gi'), 'n'))
-
-//ent(ex.replace(new RegExp('(?<=\\s)a', 'gi'), 'n'))
+ent(ex.replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), ''))
 
 
 
