@@ -290,7 +290,8 @@ for (ui = 0; ui < what.length; ui++) {
     //fr
     tdata = document.createElement('td')
     trow.appendChild(tdata)
-    tdata.innerText = `${uao[ui]/sum * 100}% `
+    xernols =  String(uao[ui]/sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+    tdata.innerText = xernols + '%'
     optn2++
     ju = document.createElement('option')
     ju.text = 'fr ' + `${asd[ui]}: ${uao[ui]/sum * 100}% `
@@ -311,7 +312,8 @@ for (ui = 0; ui < what.length; ui++) {
     ja = document.createElement('option')
     tdata = document.createElement('td')
     trow.appendChild(tdata)
-    tdata.innerText = fra + '%'
+    xernols =  String(fra).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+    tdata.innerText = xernols + '%'
     ja.text = 'fra ' + fra + '%'
     freac.appendChild(ja)
 
@@ -360,7 +362,8 @@ for (n in aparic) {
     optn2++
     tdata = document.createElement('td')
     trow.appendChild(tdata)
-    tdata.innerText =  `${uao[ui]/sum * 100}% `
+    xernols =  String(uao[ui]/sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+    tdata.innerText =  xernols + '%'
     ju = document.createElement('option')
     ju.text = `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
@@ -379,7 +382,8 @@ for (n in aparic) {
     fra += uao[ui]/sum * 100
     tdata = document.createElement('td')
     trow.appendChild(tdata)
-    tdata.innerText =  fra + '%'
+    xernols =  String(fra).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+    tdata.innerText =  xernols + '%'
     ja = document.createElement('option')
     ja.text = fra + '%'
     freac.appendChild(ja)
