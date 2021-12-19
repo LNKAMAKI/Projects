@@ -67,7 +67,7 @@ function go() {
     }
     tab = document.createElement('table')
     document.body.appendChild(tab)
-    tab.innerHTML = '<thead><th> </th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></thead><tbody></tbody>'
+    tab.innerHTML = '<thead><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></thead><tbody></tbody>'
     tab.style.margin = 'auto'
     num = document.getElementById('numb')
     m1 = document.getElementById('ma')
