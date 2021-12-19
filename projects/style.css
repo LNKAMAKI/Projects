@@ -249,3 +249,33 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     height: 100%;
     }
     
+    table {
+        border-collapse: collapse;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    td, th {
+        border: 1px solid black;
+        padding: 5px 15px 5px 15px;
+        width: 150px;
+    }
+    tr {
+        background-color: white;
+    }
+    th {
+        background-color: rgb(231, 225, 225);
+    }
+    td {
+        text-align: center;
+    }
+    #fa {
+        display: none;
+    }
+    #acum {
+        display: none;
+    }
+    #porc {
+        display: none;
+    } 
+    #fra {
+        display: none;
+    }

@@ -62,6 +62,13 @@ function delit(l) {
 
 }
 function go() {
+    if (document.getElementsByTagName('table').length > 0) {
+        document.body.removeChild(document.getElementsByTagName('table')[0])
+    }
+    tab = document.createElement('table')
+    document.body.appendChild(tab)
+    tab.innerHTML = '<thead><th> </th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></thead><tbody></tbody>'
+    tab.style.margin = 'auto'
     num = document.getElementById('numb')
     m1 = document.getElementById('ma')
     m2 = document.getElementById('me')
@@ -265,26 +272,46 @@ uao = sort2(apar, what)[0]
 asd = sort2(apar, what)[1]
 
 for (ui = 0; ui < what.length; ui++) {
+
+    // window.alert('a')
+     trow = document.createElement('tr')
+     tab.getElementsByTagName('tbody')[0].appendChild(trow)
+     tdata = document.createElement('td')
+     trow.appendChild(tdata)
+     tdata.innerText = asd[ui]
+        //f
+        tdata = document.createElement('td')
+        trow.appendChild(tdata)
+        tdata.innerText = uao[ui]
+        ji = document.createElement('option')
+        ji.text = 'f ' + `${asd[ui]}: ${uao[ui]}`
+        acum.appendChild(ji)
+
     //fr
+    tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    tdata.innerText = `${uao[ui]/sum * 100}% `
     optn2++
     ju = document.createElement('option')
     ju.text = 'fr ' + `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
 
-    //f
-    ji = document.createElement('option')
-    ji.text = 'f ' + `${asd[ui]}: ${uao[ui]}`
-    acum.appendChild(ji)
     
     //fa 
     fa += uao[ui]
     jn = document.createElement('option')
+    tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    tdata.innerText = fa
     jn.text = 'fa ' + fa 
     fac.appendChild(jn)
 
     //fra 
     fra += uao[ui]/sum * 100
     ja = document.createElement('option')
+    tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    tdata.innerText = fra + '%'
     ja.text = 'fra ' + fra + '%'
     freac.appendChild(ja)
 
@@ -315,25 +342,44 @@ for (n in aparic) {
     sum += aparic[n]
 }
    for (ui = 0; ui < interclasses.length; ui++) {
+    trow = document.createElement('tr')
+     tab.getElementsByTagName('tbody')[0].appendChild(trow)
+
+     tdata = document.createElement('td')
+     trow.appendChild(tdata)
+     tdata.innerText =  `${asd[ui]}`
+     //f
+     tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    tdata.innerText =  `${uao[ui]}`
+     ji = document.createElement('option')
+     ji.text = `${asd[ui]}: ${uao[ui]}`
+     acum.appendChild(ji)
+
     //fr
     optn2++
+    tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    tdata.innerText =  `${uao[ui]/sum * 100}% `
     ju = document.createElement('option')
     ju.text = `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
 
-    //f
-    ji = document.createElement('option')
-    ji.text = `${asd[ui]}: ${uao[ui]}`
-    acum.appendChild(ji)
     
     //fa 
     fa += uao[ui]
+    tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    tdata.innerText =  fa
     jn = document.createElement('option')
     jn.text = fa
     fac.appendChild(jn)
 
     //fra 
     fra += uao[ui]/sum * 100
+    tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    tdata.innerText =  fra + '%'
     ja = document.createElement('option')
     ja.text = fra + '%'
     freac.appendChild(ja)
