@@ -129,12 +129,14 @@ function go() {
     num.focus()
 }
 function del() {
-    u = [] // Lista de Números
-    optn = -1
-    seletor = document.getElementById('selc')
-    alop = seletor.getElementsByTagName('option')
-    for (th = alop.length; th > 0; th--) {
-        seletor.removeChild(alop[th - 1])
+
+    if (u.length > 0) {
+        u = [] // Lista de Números
+        optn = -1
+        seletor = document.getElementById('selc')
+        alop = seletor.getElementsByTagName('option')
+        for (th = alop.length; th > 0; th--) {
+            seletor.removeChild(alop[th - 1])
     }
     m1.innerText = 'Média Aritmética:'
     m2.innerText = 'Mediana:'
@@ -160,6 +162,8 @@ function del() {
     for (gt = uyg.length; gt > 0; gt--) {
     fac.removeChild(uyg[gt - 1])
     }
+
+}
 }
 
 
@@ -441,3 +445,4 @@ function sort2(n, p) {
     return [maiorparamenor, posiçõesnumeros]
     }
     
+f
