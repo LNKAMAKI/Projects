@@ -54,6 +54,8 @@ function delit(l) {
         m2.innerText = 'Mediana:'
         m3.innerText = 'Moda:'
         amp.innerText = 'Amplitude Total:'
+
+        doTheMath(list)
     }else {
         list = sort(u)[0]
         positions = sort(u)[1]
@@ -121,6 +123,7 @@ function go() {
     }
 
     }
+    
     if (num.value.length > 0) {
     doTheMath(list)
     }
@@ -169,18 +172,19 @@ function del() {
 
 function doTheMath(list)   {
 
-window.alert('DO THE MATH')
 // Deletando a Tabela
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
     }
 
+//Criando a Tabela
+if (u.length > 0) {
     tab = document.createElement('table')
     document.body.appendChild(tab)
     tab.innerHTML = '<thead><tr><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></tr></thead><tbody></tbody>'
     tab.style.margin = 'auto'
     tab.getElementsByTagName('tr')[0].style.animation = 'slide 1s'
-
+}
 // Ordenando lista:
 
 m1.innerText = 'Média Aritmética: ' + media(list)[0]
@@ -359,6 +363,7 @@ for (n in aparic) {
 
      tdata = document.createElement('td')
      trow.appendChild(tdata)
+     trow.style.animation = 'slide 1s'
      tdata.innerText =  `${asd[ui]}`
      //f
      tdata = document.createElement('td')
