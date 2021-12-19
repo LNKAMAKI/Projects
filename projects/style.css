@@ -256,13 +256,14 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     td, th {
         border: 1px solid black;
         padding: 5px 15px 5px 15px;
-        width: 150px;
+        width: 80px;
     }
     tr {
         background-color: white;
     }
     th {
-        background-color: rgb(231, 225, 225);
+        background-color: rgb(65, 169, 195);
+        color: white;
     }
     td {
         text-align: center;
@@ -278,4 +279,13 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     } 
     #fra {
         display: none;
+    }
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            transform: translate(10px, 10px);
+        }
+        100% {
+            opacity: 100;
+        }
     }

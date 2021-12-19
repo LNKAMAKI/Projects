@@ -62,13 +62,7 @@ function delit(l) {
 
 }
 function go() {
-    if (document.getElementsByTagName('table').length > 0) {
-        document.body.removeChild(document.getElementsByTagName('table')[0])
-    }
-    tab = document.createElement('table')
-    document.body.appendChild(tab)
-    tab.innerHTML = '<thead><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></thead><tbody></tbody>'
-    tab.style.margin = 'auto'
+
     num = document.getElementById('numb')
     m1 = document.getElementById('ma')
     m2 = document.getElementById('me')
@@ -125,9 +119,11 @@ function go() {
     for (th = alop.length; th > 0; th--) {
         alop[th - 1].style.color = 'black'
     }
-    
+
     }
+    if (num.value.length > 0) {
     doTheMath(list)
+    }
 }
    
     }
@@ -172,9 +168,20 @@ function del() {
 
 
 function doTheMath(list)   {
+
+window.alert('DO THE MATH')
+// Deletando a Tabela
+    if (document.getElementsByTagName('table').length > 0) {
+        document.body.removeChild(document.getElementsByTagName('table')[0])
+    }
+
+    tab = document.createElement('table')
+    document.body.appendChild(tab)
+    tab.innerHTML = '<thead><tr><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></tr></thead><tbody></tbody>'
+    tab.style.margin = 'auto'
+    tab.getElementsByTagName('tr')[0].style.animation = 'slide 1s'
+
 // Ordenando lista:
-
-
 
 m1.innerText = 'Média Aritmética: ' + media(list)[0]
 
@@ -271,13 +278,14 @@ if (iclass.value.length == 0 || iclass.value < 0.1){
 uao = sort2(apar, what)[0]
 asd = sort2(apar, what)[1]
 
+// Frequências 
 for (ui = 0; ui < what.length; ui++) {
 
-    // window.alert('a')
      trow = document.createElement('tr')
      tab.getElementsByTagName('tbody')[0].appendChild(trow)
      tdata = document.createElement('td')
      trow.appendChild(tdata)
+     trow.style.animation = 'slide 1s'
      tdata.innerText = asd[ui]
         //f
         tdata = document.createElement('td')
@@ -343,6 +351,8 @@ for (ui = 0; ui < what.length; ui++) {
 for (n in aparic) {
     sum += aparic[n]
 }
+
+// Frequências com intervalo de classe
    for (ui = 0; ui < interclasses.length; ui++) {
     trow = document.createElement('tr')
      tab.getElementsByTagName('tbody')[0].appendChild(trow)
