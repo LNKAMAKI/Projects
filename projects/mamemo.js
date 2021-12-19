@@ -268,24 +268,24 @@ for (ui = 0; ui < what.length; ui++) {
     //fr
     optn2++
     ju = document.createElement('option')
-    ju.text = `${asd[ui]}: ${uao[ui]/sum * 100}% `
+    ju.text = 'fr ' + `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
 
     //f
     ji = document.createElement('option')
-    ji.text = `${asd[ui]}: ${uao[ui]}`
+    ji.text = 'f ' + `${asd[ui]}: ${uao[ui]}`
     acum.appendChild(ji)
     
     //fa 
     fa += uao[ui]
     jn = document.createElement('option')
-    jn.text = fa
+    jn.text = 'fa ' + fa 
     fac.appendChild(jn)
 
     //fra 
     fra += uao[ui]/sum * 100
     ja = document.createElement('option')
-    ja.text = fra + '%'
+    ja.text = 'fra ' + fra + '%'
     freac.appendChild(ja)
 
     }
