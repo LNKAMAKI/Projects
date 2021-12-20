@@ -445,4 +445,3 @@ function sort2(n, p) {
     return [maiorparamenor, posiçõesnumeros]
     }
     
-f
