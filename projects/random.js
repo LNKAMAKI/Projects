@@ -1,4 +1,4 @@
-songs = [
+LPsongs = [
     'Guilty All The Same',
     'Invisible',
     'A Place For My Head',
@@ -47,13 +47,14 @@ songs = [
     'Runaway'
 
 ]
+
 palavrasPrimitivas = []
-for (muscs in songs) {
+for (muscs in LPsongs) {
     //console.log(songs[muscs])
     musname = []
-    for (letr in songs[muscs]) {
+    for (letr in LPsongs[muscs]) {
           //console.log(songs[muscs][letr])
-          musname.push(songs[muscs][letr])
+          musname.push(LPsongs[muscs][letr])
     }
     for (letr = musname.length - 1; letr >= 0; letr--) {
         //console.log(musname[letr])
@@ -251,8 +252,8 @@ for (pNumber in palavrasNumericas) {
 songs2 = []
 //console.log('uasd', palavrasNumericas)
 for (p in palavrasNumericas) {
-console.log(songs[posicaoPalavras[p]])
-songs2.push(songs[posicaoPalavras[p]])
+console.log(LPsongs[posicaoPalavras[p]])
+songs2.push(LPsongs[posicaoPalavras[p]])
 }
 console.log(songs2)
 randnum = Math.random()
