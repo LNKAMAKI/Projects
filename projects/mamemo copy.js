@@ -136,6 +136,12 @@ function go() {
 }
 function del() {
     u = [] // Lista de Números
+  
+    //Deletando a Tabela
+    if (document.getElementsByTagName('table').length > 0) {
+        document.body.removeChild(document.getElementsByTagName('table')[0])
+    }
+    
     optn = -1
     seletor = document.getElementById('selc')
     alop = seletor.getElementsByTagName('option')
