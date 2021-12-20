@@ -338,7 +338,8 @@ for (ui = 0; ui < what.length; ui++) {
     br.style.width = `calc( ${100/what.length - 2}% )`
     // br.style.width = `${55 - what.length*2}px`
     br.style.innerText = `${100/what.length}%`
-    br.style.height = uao[ui]/sum * 100/1 + '%'
+    br.style.height = uao[ui]/sum * 280 + 'px'
+    console.log(xernols)
     //br.style.border = '2px solid black'
    // window.alert(br.style.width)
 
