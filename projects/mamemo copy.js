@@ -301,7 +301,7 @@ asd = sort2(apar, what)[1]
 // Frequências 
 
 left = 0
-
+ou = 0
 for (ui = 0; ui < what.length; ui++) {
 
      trow = document.createElement('tr')
@@ -335,10 +335,15 @@ for (ui = 0; ui < what.length; ui++) {
     //window.alert(document.getElementById('porc').getElementsByTagName('option').length)
     //window.alert(what.length)
     quantidadeDeBarras = document.getElementsByTagName('table')[0].getElementsByTagName('tr').length - 2
-    br.style.width = `${what.length*50}px`
+    br.style.width = `${55 - what.length*2}px`
+    br.innerText = 55 - what.length*2
+    if (ui > 0) {
     br.style.left = left + 'px'
-    left += 70
-    
+    }
+
+    left += 55 - what.length*2 + 10
+   // ou++
+
     //fa 
     fa += uao[ui]
     jn = document.createElement('option')
