@@ -335,14 +335,20 @@ for (ui = 0; ui < what.length; ui++) {
     //window.alert(document.getElementById('porc').getElementsByTagName('option').length)
     //window.alert(what.length)
     quantidadeDeBarras = document.getElementsByTagName('table')[0].getElementsByTagName('tr').length - 2
-    br.style.width = `calc( ${100/what.length}% )`
+    br.style.width = `calc( ${100/what.length - 2}% )`
     // br.style.width = `${55 - what.length*2}px`
     br.style.innerText = `${100/what.length}%`
+    br.style.height = uao[ui]/sum * 100/1 + '%'
+    //br.style.border = '2px solid black'
    // window.alert(br.style.width)
 
+  // if () {
+
+   //}
     br.style.left = `calc(${left}%)`
 
-   left += 100/what.length 
+    left += 100/what.length
+
    
     // left += 100/what.length
    // left += 55 - what.length*2 + 10

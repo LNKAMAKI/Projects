@@ -302,8 +302,7 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     .bar {
         position: absolute;
         background-color: lightcoral;
-        height: 150px;
         margin-left: 5px;
         display: inline-block;
-        max-width: 60px;
+
     }
