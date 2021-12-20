@@ -296,7 +296,7 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
         margin: auto;
         background-color: lightblue;
         display: grid;
-        align-items: flex-end;
+        align-items: end;
         margin-bottom: 10px;
     }
     .bar {
@@ -305,4 +305,5 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
         height: 150px;
         margin-left: 5px;
         display: inline-block;
+        max-width: 60px;
     }
