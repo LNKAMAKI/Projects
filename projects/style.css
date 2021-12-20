@@ -289,3 +289,20 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
             opacity: 100;
         }
     }
+    #graph {
+        position: relative;
+        width: 600px;
+        height: 300px;
+        margin: auto;
+        background-color: lightblue;
+        display: grid;
+        align-items: flex-end;
+        margin-bottom: 10px;
+    }
+    .bar {
+        position: absolute;
+        background-color: lightcoral;
+        height: 150px;
+        margin-left: 5px;
+        display: inline-block;
+    }

@@ -140,7 +140,9 @@ function del() {
     //Deletando a Tabela
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
+        document.body.removeChild(document.getElementById('graph'))
     }
+
     
     optn = -1
     seletor = document.getElementById('selc')
@@ -178,18 +180,26 @@ function del() {
 
 function doTheMath(list)   {
 
-// Deletando a Tabela
+
+// Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
+        document.body.removeChild(document.getElementById('graph'))
     }
 
-//Criando a Tabela
+
+// Criando a Tabela e o Gráfico
 if (u.length > 0) {
+    gr = document.createElement('div')
+    gr.id = 'graph'
+    document.body.appendChild(gr)
+
     tab = document.createElement('table')
     document.body.appendChild(tab)
     tab.innerHTML = '<thead><tr><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></tr></thead><tbody></tbody>'
     tab.style.margin = 'auto'
     tab.getElementsByTagName('tr')[0].style.animation = 'slide 1s'
+
 }
 // Ordenando lista:
 
@@ -289,6 +299,9 @@ uao = sort2(apar, what)[0]
 asd = sort2(apar, what)[1]
 
 // Frequências 
+
+left = 0
+
 for (ui = 0; ui < what.length; ui++) {
 
      trow = document.createElement('tr')
@@ -314,7 +327,17 @@ for (ui = 0; ui < what.length; ui++) {
     ju = document.createElement('option')
     ju.text = 'fr ' + `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
-
+    
+    br = document.createElement('div')
+    br.setAttribute('class', 'bar')
+    gr.appendChild(br)
+    
+    //window.alert(document.getElementById('porc').getElementsByTagName('option').length)
+    //window.alert(what.length)
+    quantidadeDeBarras = document.getElementsByTagName('table')[0].getElementsByTagName('tr').length - 2
+    br.style.width = `${what.length*50}px`
+    br.style.left = left + 'px'
+    left += 70
     
     //fa 
     fa += uao[ui]
@@ -336,6 +359,8 @@ for (ui = 0; ui < what.length; ui++) {
     freac.appendChild(ja)
 
     }
+
+    
 }else{
     interval = []
     interclasses = []
