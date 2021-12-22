@@ -1,4 +1,3 @@
-
 u = [] // Lista de Números
 optn = -1
 optn2 = -1
@@ -457,10 +456,10 @@ left = 0
     gr.appendChild(br)
     
 
-    if (100/what.length - 30/what.length > 8.5) {
+    if (100/interclasses.length - 30/interclasses.length > 8.5) {
             br.style.width = 'calc(8.5%)'
         }else{
-            br.style.width = `calc( ${100/what.length - 30/what.length}% )`
+            br.style.width = `calc( ${100/interclasses.length - 30/interclasses.length}% )`
         }
 
     pnum = document.createElement('p')
@@ -474,18 +473,18 @@ left = 0
     br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
     console.log(xernols)
     
-   console.log('what length' + what.length)
-   pc = 12.5 * (what.length - 1) + 8.5
-   pc2 = 100/what.length * (what.length - 1) + (100/what.length - 30/what.length)
+   console.log('interclasses length' + interclasses.length)
+   pc = 12.5 * (interclasses.length - 1) + 8.5
+   pc2 = 100/interclasses.length * (interclasses.length - 1) + (100/interclasses.length - 30/interclasses.length)
    if (ui == 0) {
-    if (100/what.length - 30/what.length > 8.5) {
+    if (100/interclasses.length - 30/interclasses.length > 8.5) {
         br.style.left = `calc(${left + ((100 - pc)/2)}%)`
     }else{
         br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
     }
     
    }else{
-    if (100/what.length - 30/what.length > 8.5) {
+    if (100/interclasses.length - 30/interclasses.length > 8.5) {
         br.style.left = `calc(${left + ((100 - pc)/2)}%)`
     }else{
         br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
@@ -493,10 +492,10 @@ left = 0
    
    }
 
-   if (100/what.length - 30/what.length > 8.5) {
+   if (100/interclasses.length - 30/interclasses.length > 8.5) {
     left += 8.5 + 4
 }else{
-    left += 100/what.length
+    left += 100/interclasses.length
 }
     
     //fa 
