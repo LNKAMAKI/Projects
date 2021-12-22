@@ -302,6 +302,7 @@ asd = sort2(apar, what)[1]
 
 left = 0
 ou = 0
+
 for (ui = 0; ui < what.length; ui++) {
 
      trow = document.createElement('tr')
@@ -335,10 +336,25 @@ for (ui = 0; ui < what.length; ui++) {
     //window.alert(document.getElementById('porc').getElementsByTagName('option').length)
     //window.alert(what.length)
     quantidadeDeBarras = document.getElementsByTagName('table')[0].getElementsByTagName('tr').length - 2
-    br.style.width = `calc( ${100/what.length - 2}% )`
+
+    if (100/what.length - 30/what.length > 8.5) {
+            br.style.width = 'calc(8.5%)'
+        }else{
+            br.style.width = `calc( ${100/what.length - 30/what.length}% )`
+        }
+
+
     // br.style.width = `${55 - what.length*2}px`
-    br.style.innerText = `${100/what.length}%`
+    //br.style.position = 'relative'
+    pnum = document.createElement('p')
+    pnum.style.position = 'absolute'
+    pnum.innerText = asd[ui] + '(' + xernols + '%)'
+    pnum.setAttribute('class', 'pnumber')
+    pnum.style.top = '-20px'
+    br.appendChild(pnum)
     br.style.height = uao[ui]/sum * 280 + 'px'
+    gr.style.animation = 'hidden ' + uao[0]/sum * 280/90*3.3 + 's'
+    br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
     console.log(xernols)
     //br.style.border = '2px solid black'
    // window.alert(br.style.width)
@@ -346,9 +362,34 @@ for (ui = 0; ui < what.length; ui++) {
   // if () {
 
    //}
-    br.style.left = `calc(${left}%)`
+    
+   console.log('what length' + what.length)
+   pc = 12.5 * (what.length - 1) + 8.5
+   pc2 = 100/what.length * (what.length - 1) + (100/what.length - 30/what.length)
+   if (ui == 0) {
+    if (100/what.length - 30/what.length > 8.5) {
+        br.style.left = `calc(${left + ((100 - pc)/2)}%)`
+    }else{
+        //br.style.left = `calc(${15/what.length}%)`
+        br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
+    }
+    
+   }else{
+    if (100/what.length - 30/what.length > 8.5) {
+        br.style.left = `calc(${left + ((100 - pc)/2)}%)`
+    }else{
+        //br.style.left = `calc(${left  + 15/what.length}%)`
+        br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
+    }
+   
+   }
 
+   if (100/what.length - 30/what.length > 8.5) {
+    left += 8.5 + 4
+}else{
     left += 100/what.length
+}
+   
 
    
     // left += 100/what.length
