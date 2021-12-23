@@ -300,7 +300,6 @@ asd = sort2(apar, what)[1]
 // Frequências 
 
 left = 0
-ou = 0
 
 for (ui = 0; ui < what.length; ui++) {
 
@@ -457,11 +456,12 @@ left = 0
     ju.text = `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
 //
-    br = document.createElement('div')
-    br.setAttribute('class', 'bar')
-    gr.appendChild(br)
-    
-    if (100/interclasses.length - 30/interclasses.length > 8.5) {
+br = document.createElement('div')
+br.setAttribute('class', 'bar')
+gr.appendChild(br)
+
+
+if (100/interclasses.length - 30/interclasses.length > 8.5) {
         br.style.width = 'calc(8.5%)'
         gr.style.maxWidth = '600px'
     }else{
@@ -473,42 +473,42 @@ left = 0
         }
     }
 
-    pnum = document.createElement('p')
-    pnum.style.position = 'absolute'
-    pnum.innerText = asd[ui] + '(' + xernols + '%)'
-    pnum.setAttribute('class', 'pnumber')
-    pnum.style.top = '-20px'
-    br.appendChild(pnum)
-    br.style.height = uao[ui]/sum * 280 + 'px'
-    gr.style.animation = 'hidden ' + uao[0]/sum * 280/90*3.3 + 's'
-    br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
-    console.log(xernols)
-    
-   console.log('interclasses length' + interclasses.length)
-   pc = 12.5 * (interclasses.length - 1) + 8.5
-   pc2 = 100/interclasses.length * (interclasses.length - 1) + (100/interclasses.length - 30/interclasses.length)
-   if (ui == 0) {
-    if (100/interclasses.length - 30/interclasses.length > 8.5) {
-        br.style.left = `calc(${left + ((100 - pc)/2)}%)`
-    }else{
-        br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
-    }
-    
-   }else{
-    if (100/interclasses.length - 30/interclasses.length > 8.5) {
-        br.style.left = `calc(${left + ((100 - pc)/2)}%)`
-    }else{
-        br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
-    }
-   
-   }
+pnum = document.createElement('p')
+pnum.style.position = 'absolute'
+pnum.innerText = asd[ui] + '(' + xernols + '%)'
+pnum.setAttribute('class', 'pnumber')
+pnum.style.top = '-20px'
+br.appendChild(pnum)
+br.style.height = uao[ui]/sum * 280 + 'px'
+gr.style.animation = 'hidden ' + uao[0]/sum * 280/90*3.3 + 's'
+br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
+console.log(xernols)
 
-   if (100/interclasses.length - 30/interclasses.length > 8.5) {
-    left += 8.5 + 4
+console.log('interclasses.length' + interclasses.length)
+pc = 12.5 * (interclasses.length - 1) + 8.5
+pc2 = 100/interclasses.length * (interclasses.length - 1) + (100/interclasses.length - 30/interclasses.length)
+if (ui == 0) {
+if (100/interclasses.length - 30/interclasses.length > 8.5) {
+    br.style.left = `calc(${left + ((100 - pc)/2)}%)`
 }else{
-    left += 100/interclasses.length
+    br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
 }
-    //
+
+}else{
+if (100/interclasses.length - 30/interclasses.length > 8.5) {
+    br.style.left = `calc(${left + ((100 - pc)/2)}%)`
+}else{
+    br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
+}
+
+}
+
+if (100/interclasses.length - 30/interclasses.length > 8.5) {
+left += 8.5 + 4
+}else{
+left += 100/interclasses.length
+}
+
     //fa 
     fa += uao[ui]
     tdata = document.createElement('td')
