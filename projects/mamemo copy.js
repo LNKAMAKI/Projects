@@ -335,8 +335,14 @@ for (ui = 0; ui < what.length; ui++) {
 
     if (100/what.length - 30/what.length > 8.5) {
             br.style.width = 'calc(8.5%)'
+            gr.style.maxWidth = '600px'
         }else{
             br.style.width = `calc( ${100/what.length - 30/what.length}% )`
+            if (600 + what.length*10 < 1000) {
+                gr.style.maxWidth = 600 + what.length*10 + 'px'
+            }else{
+                gr.style.maxWidth = '1000px'
+            }
         }
 
     pnum = document.createElement('p')
@@ -450,17 +456,22 @@ left = 0
     ju = document.createElement('option')
     ju.text = `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
-
+//
     br = document.createElement('div')
     br.setAttribute('class', 'bar')
     gr.appendChild(br)
     
-
     if (100/interclasses.length - 30/interclasses.length > 8.5) {
-            br.style.width = 'calc(8.5%)'
+        br.style.width = 'calc(8.5%)'
+        gr.style.maxWidth = '600px'
+    }else{
+        br.style.width = `calc( ${100/interclasses.length - 30/interclasses.length}% )`
+        if (600 + interclasses.length*10 < 1000) {
+            gr.style.maxWidth = 600 + interclasses.length*10 + 'px'
         }else{
-            br.style.width = `calc( ${100/interclasses.length - 30/interclasses.length}% )`
+            gr.style.maxWidth = '1000px'
         }
+    }
 
     pnum = document.createElement('p')
     pnum.style.position = 'absolute'
@@ -497,7 +508,7 @@ left = 0
 }else{
     left += 100/interclasses.length
 }
-    
+    //
     //fa 
     fa += uao[ui]
     tdata = document.createElement('td')
