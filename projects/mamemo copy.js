@@ -5,7 +5,7 @@ optn3 = -1
 optn4 = -1
 function blue(idf) {
     num = document.getElementById(idf)
-    num.style.backgroundColor = 'rgba(221, 233, 250, 0.973)'
+    num.style.backgroundColor = 'rgba(221, 233, 250, 0.98.53)'
     num.style.transitionDuration = '0.3s'
 }
 function white(idf) {
@@ -19,6 +19,17 @@ function delit(l) {
     positions.splice(l, 1)
     seletor = document.getElementById('selc')
     quant = seletor.getElementsByTagName('option')
+
+    if (list.length < 7) {
+        seletor.style.width = 'fit-content'
+        seletor.style.height = '55px'
+        seletor.style.overflowX = 'hidden'
+    }else{
+        seletor.style.width = '338px'
+        seletor.style.height = '72px'
+        seletor.style.overflowX = 'scroll'
+   }
+
     for (h = 0; h < quant.length; h++) {
       quant[h].text = `${h}: ${list[h]}`
       quant[h].id = h
@@ -45,6 +56,7 @@ function delit(l) {
     fac.removeChild(uyg[gt - 1])
     }
     if (u.length == 0) {
+        seletor.style.display = 'none'
         m1 = document.getElementById('ma')
         m2 = document.getElementById('me')
         m3 = document.getElementById('mo')
@@ -115,7 +127,18 @@ function go() {
     op.id = a 
     op.setAttribute('onclick', `delit(${op.id})`)
     seletor.appendChild(op)
-    }
+
+    seletor.style.display = 'block'
+    if (list.length < 7) {
+        seletor.style.width = 'fit-content'
+        seletor.style.height = '55px'
+        seletor.style.overflowX = 'hidden'
+    }else{
+        seletor.style.width = '338px'
+        seletor.style.height = '72px'
+        seletor.style.overflowX = 'scroll'
+   }
+}
     alop = seletor.getElementsByTagName('option')
     for (th = alop.length; th > 0; th--) {
         alop[th - 1].style.color = 'black'
@@ -136,13 +159,13 @@ function go() {
 function del() {
     u = [] // Lista de Números
   
+    seletor.style.display = 'none'
     //Deletando a Tabela
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
         document.body.removeChild(document.getElementById('graph'))
     }
 
-    
     optn = -1
     seletor = document.getElementById('selc')
     alop = seletor.getElementsByTagName('option')
@@ -302,7 +325,7 @@ asd = sort2(apar, what)[1]
 left = 0
 
 for (ui = 0; ui < what.length; ui++) {
-
+    
      trow = document.createElement('tr')
      tab.getElementsByTagName('tbody')[0].appendChild(trow)
      tdata = document.createElement('td')
@@ -379,7 +402,7 @@ for (ui = 0; ui < what.length; ui++) {
 }else{
     left += 100/what.length
 }
-   
+
     //fa 
     fa += uao[ui]
     jn = document.createElement('option')
@@ -428,6 +451,14 @@ for (n in aparic) {
     sum += aparic[n]
 }
 
+console.log(interclasses) 
+for (ui = interclasses.length; ui > -1; ui--) {
+    console.log(uao[ui]/sum * 100)
+    if (uao[ui]/sum * 100 == 0) {
+        console.log('0!!!')
+        interclasses.splice(ui, 1)
+    }
+}
 left = 0
 // Frequências com intervalo de classe
    for (ui = 0; ui < interclasses.length; ui++) {

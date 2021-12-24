@@ -1,14 +1,19 @@
-
-select {
-    position: relative;
-  width: 250px;
-  min-width: 200px;
-  overflow-x: scroll ;
-  overflow-y : scroll;
-  height: fit-content;
-  z-index:0;
+body {
+    overflow-x: hidden;
 }
-
+#selc {
+    position: relative;
+    overflow-y: hidden;
+  z-index:0;
+  display: none;
+  margin: auto;
+}
+#abs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: powderblue;
+}
 div.ali  {
     position: relative;
     margin-bottom: 10px;
@@ -133,7 +138,18 @@ display: grid;
 }
 
 option {
+    position: relative;
     text-align: center;
+    display: inline-flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(221, 160, 221, 0.705);
+    border: 1px solid black;
+    font-size: 1.5em;
+    height: 50px;
+    min-width: 50px;
+    width: fit-content;
 }
 input#numb {
     width: 200px;
@@ -165,9 +181,6 @@ input#interclass {
 }
 input#submit {
     margin-top: 5px;
-}
-.para:hover {
-  background-color: rgba(221, 233, 250, 0.973);
 }
 .instruction {
    transition-duration: 1s;
