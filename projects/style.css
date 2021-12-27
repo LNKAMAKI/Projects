@@ -4,7 +4,10 @@ body {
 #selc {
     position: relative;
     overflow-y: hidden;
+    overflow-x: scroll;
+    max-width: 336px;
   z-index:0;
+  height: 72px;
   display: none;
   margin: auto;
 }

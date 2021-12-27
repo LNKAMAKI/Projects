@@ -20,16 +20,6 @@ function delit(l) {
     seletor = document.getElementById('selc')
     quant = seletor.getElementsByTagName('option')
 
-    if (list.length < 7) {
-        seletor.style.width = 'fit-content'
-        seletor.style.height = '55px'
-        seletor.style.overflowX = 'hidden'
-    }else{
-        seletor.style.width = '338px'
-        seletor.style.height = '72px'
-        seletor.style.overflowX = 'scroll'
-   }
-
     for (h = 0; h < quant.length; h++) {
       quant[h].text = `${h}: ${list[h]}`
       quant[h].id = h
@@ -129,15 +119,7 @@ function go() {
     seletor.appendChild(op)
 
     seletor.style.display = 'block'
-    if (list.length < 7) {
-        seletor.style.width = 'fit-content'
-        seletor.style.height = '55px'
-        seletor.style.overflowX = 'hidden'
-    }else{
-        seletor.style.width = '338px'
-        seletor.style.height = '72px'
-        seletor.style.overflowX = 'scroll'
-   }
+
 }
     alop = seletor.getElementsByTagName('option')
     for (th = alop.length; th > 0; th--) {
