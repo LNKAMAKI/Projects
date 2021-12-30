@@ -384,6 +384,10 @@ for (ui = 0; ui < what.length; ui++) {
     console.log(xernols)
     
    console.log('what length' + what.length)
+   ht = String(uao[0]/sum * 280).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+   console.log(Number(ht) + 5)
+   gr.style.height = Number(ht) + 25 + 'px'
+
    pc = 12.5 * (what.length - 1) + 8.5
    pc2 = 100/what.length * (what.length - 1) + (100/what.length - 30/what.length)
    if (ui == 0) {
@@ -496,7 +500,6 @@ br = document.createElement('div')
 br.setAttribute('class', 'bar')
 gr.appendChild(br)
 
-
 if (100/interclasses.length - 30/interclasses.length > 8.5) {
         br.style.width = 'calc(8.5%)'
         gr.style.maxWidth = '600px'
@@ -544,7 +547,6 @@ left += 8.5 + 4
 }else{
 left += 100/interclasses.length
 }
-
     //fa 
     fa += uao[ui]
     tdata = document.createElement('td')
