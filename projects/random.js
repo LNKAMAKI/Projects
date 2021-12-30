@@ -259,3 +259,11 @@ console.log(songs2)
 randnum = Math.random()
 ind = Math.floor(songs2.length*randnum)
 console.log(songs2[ind])
+
+num1 = []
+for (n = 0; n < 256; n++) {
+num1.push(n)
+
+}
+console.log(num1[Math.floor(num1.length*Math.random())])
+console.log(num1[Math.floor(num1.length*Math.random())])

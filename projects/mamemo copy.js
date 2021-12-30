@@ -47,6 +47,9 @@ function delit(l) {
     }
     if (u.length == 0) {
         seletor.style.display = 'none'
+        document.getElementById('medten').style.display = 'none'
+        document.getElementById('dela').style.display = 'none'
+        document.getElementById('tagra').style.display = 'none'
         m1 = document.getElementById('ma')
         m2 = document.getElementById('me')
         m3 = document.getElementById('mo')
@@ -118,7 +121,10 @@ function go() {
     op.setAttribute('onclick', `delit(${op.id})`)
     seletor.appendChild(op)
 
-    seletor.style.display = 'block'
+    seletor.style.display = 'inline-block'
+    document.getElementById('medten').style.display = 'block'
+    document.getElementById('dela').style.display = 'block'
+    document.getElementById('tagra').style.display = 'block'
 
 }
     alop = seletor.getElementsByTagName('option')
@@ -142,6 +148,9 @@ function del() {
     u = [] // Lista de Números
   
     seletor.style.display = 'none'
+    document.getElementById('medten').style.display = 'none'
+    document.getElementById('dela').style.display = 'none'
+    document.getElementById('tagra').style.display = 'none'
     //Deletando a Tabela
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
@@ -207,7 +216,8 @@ if (u.length > 0) {
 }
 // Ordenando lista:
 
-m1.innerText = 'Média Aritmética: ' + media(list)[0]
+xernols =  String(media(list)[0]).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+m1.innerText = 'Média Aritmética: ' + xernols
 
 // Calculando a Amplitude Total
 amplitude = list[0] - list[list.length - 1]
@@ -334,9 +344,22 @@ for (ui = 0; ui < what.length; ui++) {
     
     br = document.createElement('div')
     br.setAttribute('class', 'bar')
+        num1 = []
+        num2 = []
+        for (n = 0; n < 240; n++) {
+        num1.push(n)
+
+        }
+        for (n = 0; n < 240; n++) {
+            num2.push(n)
+    
+            }
+      n1 = num1[Math.floor(num1.length*Math.random())]
+      n2 = num2[Math.floor(num2.length*Math.random())]
+      n3 = num2[Math.floor(num2.length*Math.random())]
+    br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
     gr.appendChild(br)
     
-
     if (100/what.length - 30/what.length > 8.5) {
             br.style.width = 'calc(8.5%)'
             gr.style.maxWidth = '600px'
@@ -561,9 +584,6 @@ left += 100/interclasses.length
     m3.innerText = showmoda
     }
 }
-
-
-
 
 // Ordenar a lista de números
 function sort(n) {

@@ -24,14 +24,20 @@
             <input style="cursor: pointer;" id= "submit" type="submit" value="Submit" onclick="go()">
             <div class="ad"><div class="inform">Adicione o n à lista<div class="thingo"></div></div></div></div>
 </div>
-   <select name="selc" id="selc" size="11"  class="para">
-   </select>
+   <div id="al">
+       <select name="selc" id="selc" size="11"  class="para">
+       </select>
+       <div id="arrow"></div>
+   </div>
    
-  <p id="ma">Média Aritmética:</p>
-  <p id="me">Mediana:</p>
-  <p id="mo">Moda:</p>
-  <p id="amp">Amplitude Total:</p>
-  <div class="ali">
+  <div id="medten">
+      <p id="ma">Média Aritmética:</p>
+      <p id="me">Mediana:</p>
+      <p id="mo">Moda:</p>
+      <p id="amp">Amplitude Total:</p>
+  </div>
+
+  <div class="ali" id="dela">
     <div class="p" style="margin-right: 10px;">
         <input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()">
         <div class="ad"><div class="inform">Deletar todos os elementos da lista<div class="thingo"></div></div></div></div>
@@ -39,13 +45,14 @@
  
 
 
- <h1>Frequências</h1>
-
- <div class="ali">
-     <div class="p" style="margin-right: 10px;">
-<input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)">
-<div class="ad"><div class="inform">Intervalo de classe 
-  <div class="thingo"></div></div></div></div>
+ <div id="tagra">
+     <h1>Frequências</h1>
+     <div class="ali">
+         <div class="p" style="margin-right: 10px;">
+     <input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)">
+     <div class="ad"><div class="inform">Intervalo de classe
+      <div class="thingo"></div></div></div></div>
+     </div>
  </div>
 
  <!--<div id="graph">
