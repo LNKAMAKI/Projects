@@ -378,15 +378,18 @@ for (ui = 0; ui < what.length; ui++) {
     pnum.setAttribute('class', 'pnumber')
     pnum.style.top = '-20px'
     br.appendChild(pnum)
-    br.style.height = uao[ui]/sum * 280 + 'px'
-    gr.style.animation = 'hidden ' + uao[0]/sum * 280/90*3.3 + 's'
-    br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
+
+    ht = String(uao[0]/sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+
+    gr.style.animation = 'hidden ' + 94/(ht/(uao[0]/sum*100))/7.9 + 's'
+   // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
+   br.style.animation = 'baran ' + 94/(ht/(uao[ui]/sum*100))/25 + 's'
     console.log(xernols)
     
    console.log('what length' + what.length)
-   ht = String(uao[0]/sum * 280).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
-   console.log(Number(ht) + 5)
-   gr.style.height = Number(ht) + 25 + 'px'
+   console.log(ht)
+  
+   br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
 
    pc = 12.5 * (what.length - 1) + 8.5
    pc2 = 100/what.length * (what.length - 1) + (100/what.length - 30/what.length)
