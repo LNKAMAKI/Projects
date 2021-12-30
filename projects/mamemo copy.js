@@ -207,6 +207,10 @@ if (u.length > 0) {
     gr.id = 'graph'
     document.body.appendChild(gr)
 
+    //line = document.createElement('hr')
+    //line.setAttribute('class', 'hr1')
+    //gr.appendChild(line)
+
     tab = document.createElement('table')
     document.body.appendChild(tab)
     tab.innerHTML = '<thead><tr><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></tr></thead><tbody></tbody>'
@@ -383,13 +387,17 @@ for (ui = 0; ui < what.length; ui++) {
 
     gr.style.animation = 'hidden ' + 94/(ht/(uao[0]/sum*100))/7.9 + 's'
    // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
-   br.style.animation = 'baran ' + 94/(ht/(uao[ui]/sum*100))/25 + 's'
+    br.style.animation = 'baran ' + 94/(ht/(uao[ui]/sum*100))/25 + 's'
+
     console.log(xernols)
     
    console.log('what length' + what.length)
    console.log(ht)
   
-   br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
+    br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
+
+    //br.style.height = uao[ui]/sum * 100 * 2.8 + 'px'
+    //br.style.height = '286.6px'
 
    pc = 12.5 * (what.length - 1) + 8.5
    pc2 = 100/what.length * (what.length - 1) + (100/what.length - 30/what.length)
