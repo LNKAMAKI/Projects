@@ -211,10 +211,11 @@ if (u.length > 0) {
     line.setAttribute('class', 'hr1')
     gr.appendChild(line)
     
-    pa = document.createElement('hr.hr1::before')
-    gr.appendChild(pa)
-    //pa.innerText = '0'
-
+    pa = document.createElement('p')
+    line.appendChild(pa)
+    pa.innerText = '0'
+    pa.style.left = -1 * 9 + 'px'
+  
     tab = document.createElement('table')
     document.body.appendChild(tab)
     tab.innerHTML = '<thead><tr><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></tr></thead><tbody></tbody>'
@@ -407,13 +408,25 @@ for (ui = 0; ui < what.length; ui++) {
   
    if (String(ht).search('\\.') == -1) {
     if (htLstN != 0) {
-        console.log(Number(htWiotDec) + (10 - htLstN))
+        mxNum = Number(htWiotDec) + (10 - htLstN)
+        }else{
+            mxNum = htWiotDec
         }
    }else{
-    console.log(Number(htWiotDec) + (10 - htLstN))
+    mxNum = Number(htWiotDec) + (10 - htLstN)
    }
 
-    br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
+   line = document.createElement('hr')
+    line.setAttribute('class', 'hr2')
+    gr.appendChild(line)
+    
+    pa = document.createElement('p')
+    line.appendChild(pa)
+    pa.innerText = mxNum
+    pa.style.left = -mxNum.length * 9 + 'px'
+
+   console.log('max number: ' + mxNum)
+    br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
 
     //br.style.height = uao[ui]/sum * 100 * 2.8 + 'px'
     //br.style.height = '286.6px'

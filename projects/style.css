@@ -347,14 +347,28 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
         width: 10px;
         overflow: visible;
     }
-   hr.hr1::before {
-       content: '0';
+   hr.hr1 > p {
        margin: 0;
        display: inline-block;
        position: absolute;
        top: -10px;
-       left: -10px;
    }
+
+   hr.hr2 {
+    position: absolute;
+    bottom: 286.6px;
+    left: -12px;
+    margin: 0;
+    width: 10px;
+    overflow: visible;
+}
+hr.hr2 > p {
+   content: '0';
+   margin: 0;
+   display: inline-block;
+   position: absolute;
+   top: -10px;
+}
     .pnumber {
         opacity: 0;
         transition-duration: 0.5s;
