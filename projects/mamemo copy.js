@@ -208,7 +208,6 @@ if (u.length > 0) {
     document.body.appendChild(gr)
 
     line = document.createElement('hr')
-    line.setAttribute('class', 'hr1')
     gr.appendChild(line)
     
     pa = document.createElement('p')
@@ -407,37 +406,31 @@ for (ui = 0; ui < what.length; ui++) {
 
   
    line = document.createElement('hr')
-   line.setAttribute('class', 'hr2')
    gr.appendChild(line)
+   line2 = document.createElement('hr')
+   gr.appendChild(line2)
+   line3 = document.createElement('hr')
+   gr.appendChild(line3)
+   line4 = document.createElement('hr')
+   gr.appendChild(line4)
 
    console.log(htWiotDec.length)
   // if (htWiotDec.length > 1) {
-   if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
-    if (htLstN != 0) { // Se o número não terminar em zero (Ex: 25)
-        if (htLstN >= 5) { // Se o último algarismo for maior ou igual a 5 (Ex: 25)
-            mxNum = Number(htWiotDec) + (10 - htLstN) // mxNum = 30
-            br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
-            line.style.bottom = 'calc(94%)'
-        }else{ // Se o último algarismo for menor que 5 (Ex: 12)
-            mxNum = Number(htWiotDec) - htLstN // mxNum = 10
-            br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
-            line.style.bottom = `calc(${94/(ht/mxNum)}%)`
-        }
-        }else{ // Se o número terminar em zero (Ex: 50)
-            mxNum = htWiotDec // mxNum = 50
-            br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
-            line.style.bottom = 'calc(94%)'
-        }
-   }else{ // Se o número tiver casa decimal (Ex: 12,5)
-    if (htLstN >= 5) { // Se o último algarismo for maior ou igual a 5 (Ex: 25,5)
-        mxNum = Number(htWiotDec) + (10 - htLstN) // mxNum = 30
-        br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
-        line.style.bottom = 'calc(94%)'
-    }else{ // Se o último algarismo for menor que 5 (Ex: 33,3)
-        mxNum = Number(htWiotDec) - htLstN // mxNum = 30
-        br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
-        line.style.bottom = `calc(${94/(ht/mxNum)}%)`
-    }
+   //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
+
+   mxNum = Math.round(ht)
+   if (mxNum >= ht) {
+    br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
+    line.style.bottom = 'calc(94%)'
+    line2.style.bottom = `calc(${94/2}%)`
+    line3.style.bottom = `calc(${94/4}%)`
+    line4.style.bottom = `calc(${94*0.75}%)`
+   }else{
+    br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
+    line.style.bottom = `calc(${94/(ht/mxNum)}%)`
+    line2.style.bottom = `calc(${94/(ht/mxNum)/2}%)`
+    line3.style.bottom = `calc(${94/(ht/mxNum)/4}%)`
+    line4.style.bottom = `calc(${94/(ht/mxNum)*0.75}%)`
    }
 
 
@@ -447,6 +440,21 @@ for (ui = 0; ui < what.length; ui++) {
     pa.style.left = -String(mxNum).length * 9 + 'px'
 
    console.log('max number: ' + mxNum)
+
+    pa2 = document.createElement('p')
+    line2.appendChild(pa2)
+    pa2.innerText = mxNum/2
+    pa2.style.left = -String(mxNum/2).length * 9 + 'px'
+
+    pa3 = document.createElement('p')
+    line3.appendChild(pa3)
+    pa3.innerText = mxNum/4
+    pa3.style.left = -String(mxNum/4).length * 9 + 'px'
+
+    pa4 = document.createElement('p')
+    line4.appendChild(pa4)
+    pa4.innerText = mxNum/4
+    pa4.style.left = -String(mxNum*0.75).length * 9 + 'px'
 
     //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
     //br.style.height = '286.6px'
