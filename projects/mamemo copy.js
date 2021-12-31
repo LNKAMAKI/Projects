@@ -393,12 +393,26 @@ for (ui = 0; ui < what.length; ui++) {
    // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
     br.style.animation = 'baran ' + 94/(ht/(uao[ui]/sum*100))/25 + 's'
 
-    console.log(xernols)
+    //console.log(xernols)
     
-   console.log('what length' + what.length)
-   console.log('Maior porcentagem: ' + ht)
-   console.log(ht.replace(new RegExp('(?<=\.)[0-9]+'), ''))
+   //console.log('what length' + what.length)
+
+   //console.log('Maior porcentagem: ' + ht)
+   htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
+
+   htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
+
+   console.log(htWiotDec, htLstN)
+
   
+   if (String(ht).search('\\.') == -1) {
+    if (htLstN != 0) {
+        console.log(Number(htWiotDec) + (10 - htLstN))
+        }
+   }else{
+    console.log(Number(htWiotDec) + (10 - htLstN))
+   }
+
     br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
 
     //br.style.height = uao[ui]/sum * 100 * 2.8 + 'px'
