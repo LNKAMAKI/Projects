@@ -207,9 +207,13 @@ if (u.length > 0) {
     gr.id = 'graph'
     document.body.appendChild(gr)
 
-    //line = document.createElement('hr')
-    //line.setAttribute('class', 'hr1')
-    //gr.appendChild(line)
+    line = document.createElement('hr')
+    line.setAttribute('class', 'hr1')
+    gr.appendChild(line)
+    
+    pa = document.createElement('hr.hr1::before')
+    gr.appendChild(pa)
+    //pa.innerText = '0'
 
     tab = document.createElement('table')
     document.body.appendChild(tab)
@@ -384,7 +388,7 @@ for (ui = 0; ui < what.length; ui++) {
     br.appendChild(pnum)
 
     ht = String(uao[0]/sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
-
+    
     gr.style.animation = 'hidden ' + 94/(ht/(uao[0]/sum*100))/7.9 + 's'
    // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
     br.style.animation = 'baran ' + 94/(ht/(uao[ui]/sum*100))/25 + 's'
@@ -392,7 +396,8 @@ for (ui = 0; ui < what.length; ui++) {
     console.log(xernols)
     
    console.log('what length' + what.length)
-   console.log(ht)
+   console.log('Maior porcentagem: ' + ht)
+   console.log(ht.replace(new RegExp('(?<=\.)[0-9]+'), ''))
   
     br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
 
