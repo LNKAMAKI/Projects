@@ -316,7 +316,7 @@ fra = 0
 fa = 0
 
 let iclass = document.getElementById('interclass')
-if (iclass.value.length == 0 || iclass.value < 0.1){
+if (iclass.value.length == 0 || iclass.value < uao[ui]/sum){
 
 uao = sort2(apar, what)[0]
 asd = sort2(apar, what)[1]
@@ -406,29 +406,49 @@ for (ui = 0; ui < what.length; ui++) {
    console.log(htWiotDec, htLstN)
 
   
-   if (String(ht).search('\\.') == -1) {
-    if (htLstN != 0) {
-        mxNum = Number(htWiotDec) + (10 - htLstN)
-        }else{
-            mxNum = htWiotDec
+   line = document.createElement('hr')
+   line.setAttribute('class', 'hr2')
+   gr.appendChild(line)
+
+   console.log(htWiotDec.length)
+  // if (htWiotDec.length > 1) {
+   if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
+    if (htLstN != 0) { // Se o número não terminar em zero (Ex: 25)
+        if (htLstN >= 5) { // Se o último algarismo for maior ou igual a 5 (Ex: 25)
+            mxNum = Number(htWiotDec) + (10 - htLstN) // mxNum = 30
+            br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
+            line.style.bottom = 'calc(94%)'
+        }else{ // Se o último algarismo for menor que 5 (Ex: 12)
+            mxNum = Number(htWiotDec) - htLstN // mxNum = 10
+            br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
+            line.style.bottom = `calc(${94/(ht/mxNum)}%)`
         }
-   }else{
-    mxNum = Number(htWiotDec) + (10 - htLstN)
+        }else{ // Se o número terminar em zero (Ex: 50)
+            mxNum = htWiotDec // mxNum = 50
+            br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
+            line.style.bottom = 'calc(94%)'
+        }
+   }else{ // Se o número tiver casa decimal (Ex: 12,5)
+    if (htLstN >= 5) { // Se o último algarismo for maior ou igual a 5 (Ex: 25,5)
+        mxNum = Number(htWiotDec) + (10 - htLstN) // mxNum = 30
+        br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
+        line.style.bottom = 'calc(94%)'
+    }else{ // Se o último algarismo for menor que 5 (Ex: 33,3)
+        mxNum = Number(htWiotDec) - htLstN // mxNum = 30
+        br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
+        line.style.bottom = `calc(${94/(ht/mxNum)}%)`
+    }
    }
 
-   line = document.createElement('hr')
-    line.setAttribute('class', 'hr2')
-    gr.appendChild(line)
-    
+
     pa = document.createElement('p')
     line.appendChild(pa)
     pa.innerText = mxNum
-    pa.style.left = -mxNum.length * 9 + 'px'
+    pa.style.left = -String(mxNum).length * 9 + 'px'
 
    console.log('max number: ' + mxNum)
-    br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
 
-    //br.style.height = uao[ui]/sum * 100 * 2.8 + 'px'
+    //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
     //br.style.height = '286.6px'
 
    pc = 12.5 * (what.length - 1) + 8.5
