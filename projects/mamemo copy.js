@@ -454,7 +454,7 @@ for (ui = 0; ui < what.length; ui++) {
     pa4 = document.createElement('p')
     line4.appendChild(pa4)
     pa4.innerText = mxNum*0.75
-    //pa4.style.left = `${-String(mxNum*0.75).length}px`
+    pa4.style.left = -String(mxNum*0.75).length * 9 + 'px'
 
     //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
     //br.style.height = '286.6px'
