@@ -367,7 +367,7 @@ for (ui = 0; ui < what.length; ui++) {
       n2 = num2[Math.floor(num2.length*Math.random())]
       n3 = num2[Math.floor(num2.length*Math.random())]
     br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
-    br.style.backgroundColor = 'purple'
+
     gr.appendChild(br)
     
     if (100/what.length - 30/what.length > 8.5) {
