@@ -511,7 +511,7 @@ for (ui = 0; ui < what.length; ui++) {
     interval = []
     interclasses = []
     aparic = []
-   for (c = what[what.length - 1]; c <= what[0] + Number(iclass.value); c += Number(iclass.value)) {
+   for (c = 0; c <= what[0] + Number(iclass.value); c += Number(iclass.value)) {
     interval.push(c)
     if (interval.length != 1)   {
     apar2 = 0
