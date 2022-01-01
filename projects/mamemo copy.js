@@ -218,7 +218,7 @@ if (u.length > 0) {
   
     tab = document.createElement('table')
     document.body.appendChild(tab)
-    tab.innerHTML = '<thead><tr><th>Valor</th><th>F</th><th>FR</th><th>FA</th><th>FRA</th></tr></thead><tbody></tbody>'
+    tab.innerHTML = '<thead><tr><th scope= "col">Valor</th><th scope= "col">F</th><th scope= "col">FR</th><th scope= "col">FA</th><th scope= "col">FRA</th></tr></thead><tbody></tbody>'
     tab.style.margin = 'auto'
     tab.getElementsByTagName('tr')[0].style.animation = 'slide 1s'
 
