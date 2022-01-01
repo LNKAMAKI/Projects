@@ -208,6 +208,7 @@ if (u.length > 0) {
     document.body.appendChild(gr)
 
     line = document.createElement('hr')
+    line.setAttribute('class', 'hr0')
     gr.appendChild(line)
     
     pa = document.createElement('p')
@@ -366,6 +367,7 @@ for (ui = 0; ui < what.length; ui++) {
       n2 = num2[Math.floor(num2.length*Math.random())]
       n3 = num2[Math.floor(num2.length*Math.random())]
     br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
+    br.style.backgroundColor = 'purple'
     gr.appendChild(br)
     
     if (100/what.length - 30/what.length > 8.5) {
@@ -419,7 +421,7 @@ for (ui = 0; ui < what.length; ui++) {
    //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
 
    mxNum = Math.round(ht)
-   if (mxNum >= ht) {
+   if (mxNum > ht) {
     br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
     line.style.bottom = 'calc(94%)'
     line2.style.bottom = `calc(${94/2}%)`

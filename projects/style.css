@@ -341,10 +341,15 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
         width: calc(100.8%);
         overflow: visible;
         border-color: black;
+        background-color: black;
         height: 0;
         padding: 0;
-        outline: 0px solid black;
         z-index: 0;
+    }
+    hr.hr0 {
+    width: 4px;
+    left: -6px;
+    bottom: -1px;
     }
 
     .bar {
