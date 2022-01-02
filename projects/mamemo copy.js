@@ -350,7 +350,26 @@ for (ui = 0; ui < what.length; ui++) {
     ju = document.createElement('option')
     ju.text = 'fr ' + `${asd[ui]}: ${uao[ui]/sum * 100}% `
     porcent.appendChild(ju)
-    
+
+     //fa 
+     fa += uao[ui]
+     jn = document.createElement('option')
+     tdata = document.createElement('td')
+     trow.appendChild(tdata)
+     tdata.innerText = fa
+     jn.text = 'fa ' + fa 
+     fac.appendChild(jn)
+
+    //fra 
+    fra += uao[ui]/sum * 100
+    ja = document.createElement('option')
+    tdata = document.createElement('td')
+    trow.appendChild(tdata)
+    xernolsim =  String(fra).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
+    tdata.innerText = xernolsim + '%'
+    ja.text = 'fra ' + fra + '%'
+    freac.appendChild(ja)
+
     br = document.createElement('div')
     br.setAttribute('class', 'bar')
         num1 = []
@@ -370,11 +389,16 @@ for (ui = 0; ui < what.length; ui++) {
 
     gr.appendChild(br)
     
+    jorge = document.createElement('div')
+    jorge.setAttribute('class', 'blacko')
+    gr.appendChild(jorge)
     if (100/what.length - 30/what.length > 8.5) {
             br.style.width = 'calc(8.5%)'
+            jorge.style.width = 'calc(8.5%)'
             gr.style.maxWidth = '600px'
         }else{
             br.style.width = `calc( ${100/what.length - 30/what.length}% )`
+            jorge.style.width = `calc( ${100/what.length - 30/what.length}% )`
             if (600 + what.length*10 < 1000) {
                 gr.style.maxWidth = 600 + what.length*10 + 'px'
             }else{
@@ -388,10 +412,6 @@ for (ui = 0; ui < what.length; ui++) {
     pnum.setAttribute('class', 'pnumber')
     pnum.style.top = '-35px'
     br.appendChild(pnum)
-
-    square = document.createElement('div')
-    square.setAttribute('class', 'squar')
-    br.appendChild(square)
 
     ar = document.createElement('div')
     ar.setAttribute('class', 'porcarrow')
@@ -431,18 +451,21 @@ for (ui = 0; ui < what.length; ui++) {
    mxNum = Math.round(ht)
    if (mxNum > ht) {
     br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
+    jorge.style.height = `calc(${94/(100/xernolsim)}%)`
+    altur = 94/(mxNum/(uao[ui]/sum*100))
     line.style.bottom = 'calc(94%)'
     line2.style.bottom = `calc(${94/2}%)`
     line3.style.bottom = `calc(${94/4}%)`
     line4.style.bottom = `calc(${94*0.75}%)`
    }else{
     br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
+    jorge.style.height = `calc(${94/(100/xernolsim)}%)`
+    altur = 94/(ht/(uao[ui]/sum*100))
     line.style.bottom = `calc(${94/(ht/mxNum)}%)`
     line2.style.bottom = `calc(${94/(ht/mxNum)/2}%)`
     line3.style.bottom = `calc(${94/(ht/mxNum)/4}%)`
     line4.style.bottom = `calc(${94/(ht/mxNum)*0.75}%)`
    }
-
 
     pa = document.createElement('p')
     line.appendChild(pa)
@@ -474,15 +497,19 @@ for (ui = 0; ui < what.length; ui++) {
    if (ui == 0) {
     if (100/what.length - 30/what.length > 8.5) {
         br.style.left = `calc(${left + ((100 - pc)/2)}%)`
+        jorge.style.left = `calc(${left + ((100 - pc)/2)}%)`
     }else{
         br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
+        jorge.style.left = `calc(${left + ((100 - pc2)/2)}%)`
     }
     
    }else{
     if (100/what.length - 30/what.length > 8.5) {
         br.style.left = `calc(${left + ((100 - pc)/2)}%)`
+        jorge.style.left = `calc(${left + ((100 - pc)/2)}%)`
     }else{
         br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
+        jorge.style.left = `calc(${left + ((100 - pc2)/2)}%)`
     }
    
    }
@@ -492,25 +519,16 @@ for (ui = 0; ui < what.length; ui++) {
 }else{
     left += 100/what.length
 }
+square = document.createElement('div')
+square.setAttribute('class', 'squar')
+jorge.appendChild(square)
+square.style.animation = 'popup ' + altur/12 + 's' + ' steps(2)'
+//square.style.top = 100/fra*(altur/2) + '%'
 
-    //fa 
-    fa += uao[ui]
-    jn = document.createElement('option')
-    tdata = document.createElement('td')
-    trow.appendChild(tdata)
-    tdata.innerText = fa
-    jn.text = 'fa ' + fa 
-    fac.appendChild(jn)
-
-    //fra 
-    fra += uao[ui]/sum * 100
-    ja = document.createElement('option')
-    tdata = document.createElement('td')
-    trow.appendChild(tdata)
-    xernols =  String(fra).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
-    tdata.innerText = xernols + '%'
-    ja.text = 'fra ' + fra + '%'
-    freac.appendChild(ja)
+sqap = document.createElement('p')
+sqap.setAttribute('class', 'squarp')
+sqap.innerText = xernolsim + '%'
+square.appendChild(sqap)
 
     }
 
@@ -672,6 +690,9 @@ for (ui = 0; ui < interclasses.length; ui++) {
    gr.style.animation = 'hidden ' + 94/(ht/(uao[0]/sum*100))/7.9 + 's'
   // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
    br.style.animation = 'baran ' + 94/(ht/(uao[ui]/sum*100))/25 + 's'
+   square = document.createElement('div')
+    square.setAttribute('class', 'squar')
+    br.appendChild(square)
 
    htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
 
@@ -769,7 +790,12 @@ for (ui = 0; ui < interclasses.length; ui++) {
    tdata.innerText = xernols + '%'
    ja.text = fra + '%'
    freac.appendChild(ja)
-
+   
+   sqap = document.createElement('p')
+    sqap.setAttribute('class', 'squarp')
+    sqap.innerText = xernols + '%'
+    square.appendChild(sqap)
+    square.style.top = '94%'
 }
 }
 
