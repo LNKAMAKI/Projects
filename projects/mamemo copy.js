@@ -853,14 +853,10 @@ function sort2(n, p) {
     maiorparamenor[volume] = yposition[item]
     posiçõesnumeros[volume] = teste[item]
     dn = 10
-    
-    
+
     }
     }
     }
     }
     return [maiorparamenor, posiçõesnumeros]
     }
-
-
-    0 - -2 -2 - -4  -4 - -6 -6 - -8 -8 - -10 -10 - -12 -12 - -14 
