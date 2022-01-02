@@ -512,39 +512,71 @@ for (ui = 0; ui < what.length; ui++) {
 
     
 }else{
-    interval = []
     interclasses = []
     aparic = []
 
     for(n in what) {//tirar
-    //what = [1,2,3,4]
+        interval = []
+    //what = [1,2]
+    if (what[n] >= 0) {
    for (c = 0; c <= what[n] + Number(iclass.value); c += Number(iclass.value)) {
-    // exemplo de lista de números: [0, 1, 4, 5] 
     // intervalo de classe = 2
-    // c = 0; c <= 7; c += 2
-    // 0 |-- 2, 2 |-- 4, 4 |-- 6
-    //    2        0        2
+   // c = 0; c <= 4; c += 2 
     interval.push(c)
-    // interval = [0,2,4,6]
-    // interval = [0,2]
+    // interval = [0, 2, 4]
     if (interval.length != 1)   {  // Se o comprimento de interval for maior que 1
-    apar2 = 0
-    //for(n in what) {
+    //apar2 = 0
        if (what[n] >= interval[interval.length - 2] && what[n] < interval[interval.length - 1]) {
         // Se 1 >= 0 && 1 < 2
-           apar2 += Number(apar[n])
+           //apar2 += Number(apar[n])
         // apar = [1,1,1,1] (Número que os números se repetem)
         // apar += 1
+
+        if (interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1]) == -1) {
+            interclasses.push(interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+            aparic.push(apar[n])
+            console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+        }else{
+            console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1] + 'too')
+            aparic[interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1])] += apar[n]
+        }
+
        }
-    //}
-    interclasses.push(interval[interval.length - 2] + '|--' + interval[interval.length - 1])
     // interclasses.push(0 |-- 2)
-    aparic.push(apar2)
     // aparic.push(2)
     }
-
    }
-}//tirar
+}else{
+    for (c = 0; c >= what[n] - Number(iclass.value); c -= Number(iclass.value)) {
+        // intervalo de classe = 2
+       // c = 0; c <= 4; c += 2 
+        interval.push(c)
+        // interval = [0, 2, 4]
+        if (interval.length != 1)   {  // Se o comprimento de interval for maior que 1
+        //apar2 = 0
+           if (what[n] <= interval[interval.length - 2] && what[n] > interval[interval.length - 1]) {
+            // Se 1 >= 0 && 1 < 2
+               //apar2 += Number(apar[n])
+            // apar = [1,1,1,1] (Número que os números se repetem)
+            // apar += 1
+    
+            if (interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1]) == -1) {
+                interclasses.push(interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+                aparic.push(apar[n])
+                console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+            }else{
+                console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1] + 'too')
+                aparic[interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1])] += apar[n]
+            }
+    
+           }
+        // interclasses.push(0 |-- 2)
+        // aparic.push(2)
+        }
+       }
+    
+}
+    }
 
    asd = sort2(aparic, interclasses)[1]
    uao = sort2(aparic, interclasses)[0]
