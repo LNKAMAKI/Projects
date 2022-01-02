@@ -389,6 +389,10 @@ for (ui = 0; ui < what.length; ui++) {
     pnum.style.top = '-35px'
     br.appendChild(pnum)
 
+    square = document.createElement('div')
+    square.setAttribute('class', 'squar')
+    br.appendChild(square)
+
     ar = document.createElement('div')
     ar.setAttribute('class', 'porcarrow')
     pnum.appendChild(ar)

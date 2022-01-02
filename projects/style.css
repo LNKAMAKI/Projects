@@ -389,14 +389,6 @@ hr.hr2a > p {
    position: absolute;
    top: -10px;
 }
-.pnumber > .porcarrow {
-    position: absolute;
-    transform:rotate(45deg);
-    top: 80%;
-    width: 8px;
-    height: 8px;
-    background-color: black;
-}
 
 .pnumber {
     opacity: 0;
@@ -410,7 +402,15 @@ hr.hr2a > p {
    justify-items: center;
    width: fit-content;
 }
-
+.pnumber > .porcarrow {
+    position: absolute;
+    transform:rotate(45deg);
+    top: calc(80%);
+    width: 8px;
+    height: 8px;
+    background-color: black;
+}
+.
     .bar:hover > .pnumber {
         transition-duration: 0.5s;
         opacity: 100;
