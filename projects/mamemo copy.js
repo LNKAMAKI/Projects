@@ -384,7 +384,7 @@ for (ui = 0; ui < what.length; ui++) {
 
     pnum = document.createElement('p')
     pnum.style.position = 'absolute'
-    pnum.innerText = asd[ui] + '(' + xernols + '%)'
+    pnum.innerText = asd[ui] + ':' + xernols + '%'
     pnum.setAttribute('class', 'pnumber')
     pnum.style.top = '-35px'
     br.appendChild(pnum)
@@ -515,20 +515,37 @@ for (ui = 0; ui < what.length; ui++) {
     interval = []
     interclasses = []
     aparic = []
-   for (c = 0; c <= what[0] + Number(iclass.value); c += Number(iclass.value)) {
+
+    for(n in what) {//tirar
+    //what = [1,2,3,4]
+   for (c = 0; c <= what[n] + Number(iclass.value); c += Number(iclass.value)) {
+    // exemplo de lista de números: [0, 1, 4, 5] 
+    // intervalo de classe = 2
+    // c = 0; c <= 7; c += 2
+    // 0 |-- 2, 2 |-- 4, 4 |-- 6
+    //    2        0        2
     interval.push(c)
-    if (interval.length != 1)   {
+    // interval = [0,2,4,6]
+    // interval = [0,2]
+    if (interval.length != 1)   {  // Se o comprimento de interval for maior que 1
     apar2 = 0
-    for(n in what) {
+    //for(n in what) {
        if (what[n] >= interval[interval.length - 2] && what[n] < interval[interval.length - 1]) {
+        // Se 1 >= 0 && 1 < 2
            apar2 += Number(apar[n])
+        // apar = [1,1,1,1] (Número que os números se repetem)
+        // apar += 1
        }
-    }
-    interclasses.push(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])
+    //}
+    interclasses.push(interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+    // interclasses.push(0 |-- 2)
     aparic.push(apar2)
+    // aparic.push(2)
     }
 
    }
+}//tirar
+
    asd = sort2(aparic, interclasses)[1]
    uao = sort2(aparic, interclasses)[0]
 
@@ -605,7 +622,7 @@ for (ui = 0; ui < interclasses.length; ui++) {
 
    pnum = document.createElement('p')
    pnum.style.position = 'absolute'
-   pnum.innerText = asd[ui] + '(' + xernols + '%)'
+   pnum.innerText = asd[ui] + ':' + xernols + '%'
    pnum.setAttribute('class', 'pnumber')
    pnum.style.top = '-20px'
    br.appendChild(pnum)
@@ -812,3 +829,6 @@ function sort2(n, p) {
     }
     return [maiorparamenor, posiçõesnumeros]
     }
+
+
+    0 - -2 -2 - -4  -4 - -6 -6 - -8 -8 - -10 -10 - -12 -12 - -14 

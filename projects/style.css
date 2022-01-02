@@ -129,7 +129,7 @@ min-width: 25px;
 width: max-content;
 padding: 6px 6px 5px 6px;
 border-radius: 5px ;
-top: 12%;
+top: 7%;
 color: white;
 background-color: black;
 }
@@ -145,14 +145,18 @@ transform: rotate(-44deg);
 background-color: black;
 }
 .ad {
-display: none;
+transition-duration: 0.5s;
+opacity:0;
+display: grid;
 justify-items: center;
 position: absolute;
 width: 100%;
 height: 300%;
 background-color: transparent;
 }
-.p:hover > .ad {
+.p:hover .ad {
+transition-duration: 0.5s;
+opacity: 100;
 display: grid;
 }
 
@@ -200,7 +204,7 @@ input#interclass {
     width: 50px;
 }
 input#submit {
-    margin-top: 5px;
+    top: 5px;
 }
 .instruction {
    transition-duration: 1s;
@@ -243,6 +247,7 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     color: white;
     background-color: black;
     z-index: 2;
+    left: 7%;
     }
     .thingo3 {
     position: absolute;
@@ -253,11 +258,11 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     height: 15px;
     transform: rotate(-44deg);
     background-color: black;
-    left:-1.8px;
+    left:-2.4px;
     }
     .ad3 {
         opacity: 0;
-        transition-duration: 2s;
+        transition-duration: 0.5s;
     left: -100%;
     display: grid;
     align-items: center;
@@ -269,7 +274,7 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     height: 100%;
     }
     .p3:hover > .ad3 {
-        transition-duration: 2s;
+        transition-duration: 0.5s;
         opacity: 100;
     left: -100%;
     display:grid;
@@ -394,7 +399,7 @@ hr.hr2a > p {
 }
 
 .pnumber {
-    opacity: 100;
+    opacity: 0;
     position: relative;
     transition-duration: 0.5s;
     background-color: black;
@@ -403,6 +408,7 @@ hr.hr2a > p {
    padding: 3px;
    display: grid;
    justify-items: center;
+   width: fit-content;
 }
 
     .bar:hover > .pnumber {
