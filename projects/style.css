@@ -331,8 +331,9 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
         display: grid;
         align-items: end;
         margin-bottom: 10px;
+        margin-top: 30px;
         width: 85vw;
-        z-index: 0;
+        z-index: 3;
     }
     hr {
         position: absolute;
@@ -366,6 +367,7 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
        display: inline-block;
        position: absolute;
        top: -10px;
+    
    }
 
    hr.hr2a {
@@ -382,11 +384,27 @@ hr.hr2a > p {
    position: absolute;
    top: -10px;
 }
-    .pnumber {
-        opacity: 0;
-        transition-duration: 0.5s;
-        z-index: 1;
-    }
+.pnumber > .porcarrow {
+    position: absolute;
+    transform:rotate(45deg);
+    top: 80%;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+}
+
+.pnumber {
+    opacity: 100;
+    position: relative;
+    transition-duration: 0.5s;
+    background-color: black;
+   color: white;
+   border-radius: 5px;
+   padding: 3px;
+   display: grid;
+   justify-items: center;
+}
+
     .bar:hover > .pnumber {
         transition-duration: 0.5s;
         opacity: 100;

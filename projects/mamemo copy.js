@@ -386,8 +386,12 @@ for (ui = 0; ui < what.length; ui++) {
     pnum.style.position = 'absolute'
     pnum.innerText = asd[ui] + '(' + xernols + '%)'
     pnum.setAttribute('class', 'pnumber')
-    pnum.style.top = '-20px'
+    pnum.style.top = '-35px'
     br.appendChild(pnum)
+
+    ar = document.createElement('div')
+    ar.setAttribute('class', 'porcarrow')
+    pnum.appendChild(ar)
 
     ht = String(uao[0]/sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
     
