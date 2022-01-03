@@ -315,9 +315,8 @@ for (n in apar) {
 fra = 0
 fa = 0
 
-let iclass = document.getElementById('num')
-//if (iclass.value.length == 0 || iclass.value < uao[ui]/sum){
-if (5 < 0) {
+let iclass = document.getElementById('interclass')
+if (iclass.value.length == 0 || iclass.value < uao[ui]/sum){
 uao = sort2(apar, what)[0]
 asd = sort2(apar, what)[1]
 
@@ -419,7 +418,7 @@ for (ui = 0; ui < what.length; ui++) {
 
     ht = String(uao[0]/sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
     
-    gr.style.animation = 'hidden ' + 94/(ht/(uao[0]/sum*100))/7.9 + 's'
+    gr.style.animation = 'hidden ' + 94/(ht/(uao[0]/sum*100))/6.99 + 's'
    // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
     br.style.animation = 'baran ' + 94/(ht/(uao[ui]/sum*100))/25 + 's'
 
@@ -809,6 +808,7 @@ linha.setAttribute('class', 'linha')
   }
 
   fra2 = uao[ui + 1]/sum*100
+  console.log('quantidade de quadrados: ' + Number(fra2)/(0.7*0.7))
   linha.style.width = `calc(0.7%)`
   linha.style.height = '0px'
   linha.style.paddingBottom = 'calc(0.7%)'
@@ -917,7 +917,7 @@ linha.setAttribute('class', 'linha')
 square = document.createElement('div')
 square.setAttribute('class', 'squar')
 jorge.appendChild(square)
-square.style.animation = 'popup ' + altur/12 + 's' + ' steps(1)'
+square.style.animation = 'popup ' + altur/24 + 's' + ' steps(1)'
 //square.style.top = 100/fra*(altur/2) + '%'
 
 sqap = document.createElement('p')
