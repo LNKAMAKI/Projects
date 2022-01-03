@@ -6,7 +6,7 @@ LPsongs = [
     'Burn It Down',
     'Burning In The Skies',
     'Battle Symphony',
-    'Valentines Day',
+    'Valentine\'s Day',
     'Shadow Of The Day',
     'Powerless',
     'Good Goodbye',
@@ -59,9 +59,10 @@ for (muscs in LPsongs) {
     for (letr = musname.length - 1; letr >= 0; letr--) {
         //console.log(musname[letr])
         musname[letr] = musname[letr].toLowerCase()
-        if (musname[letr] == ' ') {
+        if (musname[letr] == ' ' || musname[letr] == '\'') {
             //console.log('tirar')
-            musname.splice(letr, 1)
+            musname[letr] = ''
+            //musname.splice(letr, 1)
         }
     }
     //console.log('AQUI')

@@ -429,7 +429,7 @@ hr.hr2a > p {
     transition-duration: 0.5s;
 opacity: 100;
 }
-    .bar:hover > .pnumber {
+    .bar:hover .pnumber {
         transition-duration: 0.5s;
         opacity: 100;
     }

@@ -451,7 +451,7 @@ for (ui = 0; ui < what.length; ui++) {
    mxNum = Math.round(ht)
    if (mxNum > ht) {
     br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
-    jorge.style.height = `calc(${94/(100/xernolsim)}%)`
+    jorge.style.bottom = `calc(${94/(100/xernolsim)}%)`
     altur = 94/(mxNum/(uao[ui]/sum*100))
     line.style.bottom = 'calc(94%)'
     line2.style.bottom = `calc(${94/2}%)`
@@ -459,7 +459,7 @@ for (ui = 0; ui < what.length; ui++) {
     line4.style.bottom = `calc(${94*0.75}%)`
    }else{
     br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
-    jorge.style.height = `calc(${94/(100/xernolsim)}%)`
+    jorge.style.bottom = `calc(${94/(100/xernolsim)}%)`
     altur = 94/(ht/(uao[ui]/sum*100))
     line.style.bottom = `calc(${94/(ht/mxNum)}%)`
     line2.style.bottom = `calc(${94/(ht/mxNum)/2}%)`
@@ -744,7 +744,7 @@ for (ui = 0; ui < interclasses.length; ui++) {
   mxNum = Math.round(ht)
   if (mxNum > ht) {
    br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
-   jorge.style.height = `calc(${94/(100/xernolsim)}%)`
+   jorge.style.bottom = `calc(${94/(100/xernolsim)}%)`
    altur = 94/(mxNum/(uao[ui]/sum*100))
    line.style.bottom = 'calc(94%)'
    line2.style.bottom = `calc(${94/2}%)`
@@ -752,7 +752,7 @@ for (ui = 0; ui < interclasses.length; ui++) {
    line4.style.bottom = `calc(${94*0.75}%)`
   }else{
    br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
-   jorge.style.height = `calc(${94/(100/xernolsim)}%)`
+   jorge.style.bottom = `calc(${94/(100/xernolsim)}%)`
    altur = 94/(ht/(uao[ui]/sum*100))
    line.style.bottom = `calc(${94/(ht/mxNum)}%)`
    line2.style.bottom = `calc(${94/(ht/mxNum)/2}%)`
