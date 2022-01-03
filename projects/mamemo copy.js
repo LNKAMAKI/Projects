@@ -560,6 +560,7 @@ for (ui = 0; ui < what.length; ui++) {
 }else{
     left += 100/what.length
 }
+if (what.length > 1) {
 square = document.createElement('div')
 square.setAttribute('class', 'squar')
 jorge.appendChild(square)
@@ -570,7 +571,7 @@ sqap = document.createElement('p')
 sqap.setAttribute('class', 'squarp')
 sqap.innerText = xernolsim + '%'
 square.appendChild(sqap)
-
+}
     }
 
     
