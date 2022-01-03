@@ -566,6 +566,7 @@ square.setAttribute('class', 'squar')
 jorge.appendChild(square)
 square.style.animation = 'popup ' + altur/12 + 's' + ' steps(2)'
 //square.style.top = 100/fra*(altur/2) + '%'
+//linha.style.transform = `rotate(${-50}deg)`
 
 sqap = document.createElement('p')
 sqap.setAttribute('class', 'squarp')
@@ -727,10 +728,13 @@ for (ui = 0; ui < interclasses.length; ui++) {
    jorge = document.createElement('div')
    jorge.setAttribute('class', 'blacko')
    gr.appendChild(jorge)
+   linha = document.createElement('div')
+gr.appendChild(linha)
+linha.setAttribute('class', 'linha')
    if (100/interclasses.length - 30/interclasses.length > 8.5) {
            br.style.width = 'calc(8.5%)'
            jorge.style.width = 'calc(8.5%)'
-           gr.style.maxWidth = '600px'
+         gr.style.maxWidth = '600px'
        }else{
            br.style.width = `calc( ${100/interclasses.length - 30/interclasses.length}% )`
            jorge.style.width = `calc( ${100/interclasses.length - 30/interclasses.length}% )`
@@ -787,6 +791,7 @@ for (ui = 0; ui < interclasses.length; ui++) {
   if (mxNum > ht) {
    br.style.height = `calc(${94/(mxNum/(uao[ui]/sum*100))}%)`
    jorge.style.bottom = `calc(${94/(100/xernolsim)}%)`
+   linha.style.bottom = `calc(${94/(100/xernolsim)}%)`
    altur = 94/(mxNum/(uao[ui]/sum*100))
    line.style.bottom = 'calc(94%)'
    line2.style.bottom = `calc(${94/2}%)`
@@ -795,6 +800,7 @@ for (ui = 0; ui < interclasses.length; ui++) {
   }else{
    br.style.height = `calc(${94/(ht/(uao[ui]/sum*100))}%)`
    jorge.style.bottom = `calc(${94/(100/xernolsim)}%)`
+   linha.style.bottom = `calc(${94/(100/xernolsim)}%)`
    altur = 94/(ht/(uao[ui]/sum*100))
    line.style.bottom = `calc(${94/(ht/mxNum)}%)`
    line2.style.bottom = `calc(${94/(ht/mxNum)/2}%)`
@@ -802,6 +808,9 @@ for (ui = 0; ui < interclasses.length; ui++) {
    line4.style.bottom = `calc(${94/(ht/mxNum)*0.75}%)`
   }
 
+  linha.style.width = `${xernolsim*4}px`
+  linha.style.transform = `rotateX(180deg)`
+  //linha.style.top = `${xernolsim/3}%`
   pa = document.createElement('p')
   line.appendChild(pa)
   pa.innerText = mxNum
@@ -875,18 +884,22 @@ for (ui = 0; ui < interclasses.length; ui++) {
    if (100/interclasses.length - 30/interclasses.length > 8.5) {
        br.style.left = `calc(${left + ((100 - pc)/2)}%)`
        jorge.style.left = `calc(${left + ((100 - pc)/2)}%)`
+       linha.style.left = `calc(${left + ((100 - pc)/2)}%)`
    }else{
        br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
        jorge.style.left = `calc(${left + ((100 - pc2)/2)}%)`
+       linha.style.left = `calc(${left + ((100 - pc)/2)}%)`
    }
    
   }else{
    if (100/interclasses.length - 30/interclasses.length > 8.5) {
        br.style.left = `calc(${left + ((100 - pc)/2)}%)`
        jorge.style.left = `calc(${left + ((100 - pc)/2)}%)`
+       linha.style.left = `calc(${left + ((100 - pc)/2)}%)`
    }else{
        br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
        jorge.style.left = `calc(${left + ((100 - pc2)/2)}%)`
+       linha.style.left = `calc(${left + ((100 - pc2)/2)}%)`
    }
   
   }
