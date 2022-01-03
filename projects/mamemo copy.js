@@ -315,9 +315,9 @@ for (n in apar) {
 fra = 0
 fa = 0
 
-let iclass = document.getElementById('interclass')
-if (iclass.value.length == 0 || iclass.value < uao[ui]/sum){
-
+let iclass = document.getElementById('num')
+//if (iclass.value.length == 0 || iclass.value < uao[ui]/sum){
+if (5 < 0) {
 uao = sort2(apar, what)[0]
 asd = sort2(apar, what)[1]
 
@@ -564,7 +564,7 @@ if (what.length > 1) {
 square = document.createElement('div')
 square.setAttribute('class', 'squar')
 jorge.appendChild(square)
-square.style.animation = 'popup ' + altur/12 + 's' + ' steps(2)'
+square.style.animation = 'popup ' + altur/24 + 's' + ' steps(1)'
 //square.style.top = 100/fra*(altur/2) + '%'
 //linha.style.transform = `rotate(${-50}deg)`
 
@@ -808,8 +808,13 @@ linha.setAttribute('class', 'linha')
    line4.style.bottom = `calc(${94/(ht/mxNum)*0.75}%)`
   }
 
-  linha.style.width = `${xernolsim*4}px`
-  linha.style.transform = `rotateX(180deg)`
+  fra2 = uao[ui + 1]/sum*100
+  linha.style.width = `calc(0.7%)`
+  linha.style.height = '0px'
+  linha.style.paddingBottom = 'calc(0.7%)'
+  if (ui == interclasses.length - 1) {
+    linha.style.display = 'none'
+  }
   //linha.style.top = `${xernolsim/3}%`
   pa = document.createElement('p')
   line.appendChild(pa)
@@ -888,7 +893,7 @@ linha.setAttribute('class', 'linha')
    }else{
        br.style.left = `calc(${left + ((100 - pc2)/2)}%)`
        jorge.style.left = `calc(${left + ((100 - pc2)/2)}%)`
-       linha.style.left = `calc(${left + ((100 - pc)/2)}%)`
+       linha.style.left = `calc(${left + ((100 - pc2)/2)}%)`
    }
    
   }else{
@@ -912,7 +917,7 @@ linha.setAttribute('class', 'linha')
 square = document.createElement('div')
 square.setAttribute('class', 'squar')
 jorge.appendChild(square)
-square.style.animation = 'popup ' + altur/12 + 's' + ' steps(2)'
+square.style.animation = 'popup ' + altur/12 + 's' + ' steps(1)'
 //square.style.top = 100/fra*(altur/2) + '%'
 
 sqap = document.createElement('p')

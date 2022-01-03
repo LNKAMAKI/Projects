@@ -474,7 +474,7 @@ opacity: 100;
         justify-items: center;
     }
     .linha {
-        display: none;
+        display: block;
         position: absolute;
         background-color: blue;
         z-index: 7;
