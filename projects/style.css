@@ -391,6 +391,7 @@ hr.hr2a > p {
    top: -10px;
 }
 .SQUARE2 {
+    display: none;
     right: calc(-100% - 5vw);
 }
 .squar {

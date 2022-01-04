@@ -586,13 +586,15 @@ function doTheMath(list) {
                     square.appendChild(square2)
                     square2.setAttribute('class', 'SQUARE2')
                     square2.style.position = 'absolute'
-                    square2.style.width = '100%'
-                    square2.style.height = '100%'
+                    square2.style.width = '5px'
+                    square2.style.height = '5px'
                     tp+= 100
-                    rg+= 100
+                    rg+= 154
                     //50/10 = 5 30/10 = 3
-                    square2.style.top = -tp + '%'
-                    square2.style.right = `calc(-${rg}% - -1vw + ${-50/fra2}%)`
+                    //square2.style.top = -tp + '%'
+                    //square2.style.right = -rg + '%'
+                    square2.style.top = `calc(${-rg}% - -1vw + ${-50/fra2}%)`
+                    square2.style.right = `calc(${-rg}% - -1vw + ${-50/fra2}%)`
                     square2.style.backgroundColor = 'red'
                     //square2.style.animation = 'popup ' + altur/24 + 's' + ' steps(1)'
                     //tp += 10
