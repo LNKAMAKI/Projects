@@ -627,13 +627,13 @@ function doTheMath(list) {
                             // apar = [1,1,1,1] (Número que os números se repetem)
                             // apar += 1
 
-                            if (interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1]) == -1) {
-                                interclasses.push(interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+                            if (interclasses.indexOf(interval[interval.length - 2] + '-' + interval[interval.length - 1]) == -1) {
+                                interclasses.push(interval[interval.length - 2] + '-' + interval[interval.length - 1])
                                 aparic.push(apar[n])
-                                console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1])
                             } else {
-                                console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1] + 'too')
-                                aparic[interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1])] += apar[n]
+                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1] + 'too')
+                                aparic[interclasses.indexOf(interval[interval.length - 2] + '-' + interval[interval.length - 1])] += apar[n]
                             }
 
                         }
@@ -655,13 +655,13 @@ function doTheMath(list) {
                             // apar = [1,1,1,1] (Número que os números se repetem)
                             // apar += 1
 
-                            if (interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1]) == -1) {
-                                interclasses.push(interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+                            if (interclasses.indexOf(interval[interval.length - 2] + '-' + interval[interval.length - 1]) == -1) {
+                                interclasses.push(interval[interval.length - 2] + '-' + interval[interval.length - 1])
                                 aparic.push(apar[n])
-                                console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1])
+                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1])
                             } else {
-                                console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1] + 'too')
-                                aparic[interclasses.indexOf(interval[interval.length - 2] + '|--' + interval[interval.length - 1])] += apar[n]
+                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + '|--' + interval[interval.length - 1] + 'too')
+                                aparic[interclasses.indexOf(interval[interval.length - 2] + '-' + interval[interval.length - 1])] += apar[n]
                             }
 
                         }
@@ -943,6 +943,7 @@ function doTheMath(list) {
             } else {
                 left += 100 / interclasses.length
             }
+            if (interclasses.length > 1) {
             square = document.createElement('div')
             square.setAttribute('class', 'squar')
             jorge.appendChild(square)
@@ -953,7 +954,7 @@ function doTheMath(list) {
             sqap.setAttribute('class', 'squarp')
             sqap.innerText = xernolsim + '%'
             square.appendChild(sqap)
-
+        }
         }
     }
 
