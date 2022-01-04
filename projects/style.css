@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     background-color: rgba(0, 0, 0, 0.589);
+    background-color: white;
 }
 #selc {
     position: relative;
@@ -182,7 +183,7 @@ input#numb {
     position: relative;
 }
 input {
-    margin-top: 0px;
+    margin-top: 5px;
     margin-bottom: 0px;
 }
 p {
@@ -197,7 +198,7 @@ h1 {
     margin-bottom: 10px;
 }
 h1#spec {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 input#freq {
     width: 50px;
