@@ -390,6 +390,9 @@ hr.hr2a > p {
    position: absolute;
    top: -10px;
 }
+.SQUARE2 {
+    right: calc(-100% - 5vw);
+}
 .squar {
     position: absolute;
     display: grid;
@@ -474,7 +477,7 @@ opacity: 100;
         justify-items: center;
     }
     .linha {
-        display: none;
+        display: block;
         position: absolute;
         background-color: blue;
         z-index: 7;
