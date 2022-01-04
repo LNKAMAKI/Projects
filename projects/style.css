@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-    background-color: rgba(0, 0, 0, 0.507);
+    background-color: white;
 }
 #selc {
     position: relative;
@@ -405,7 +405,7 @@ hr.hr2a > p {
 }
 .squarp {
     transition-duration: 0.5s;
-    opacity: 100;
+    opacity: 0;
     position: relative;
     top: -67%;
 }
