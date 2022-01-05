@@ -67,9 +67,11 @@ function delit(l) {
     }
 
 }
+
 function go() {
 
     num = document.getElementById('numb')
+    num.value = 1
     m1 = document.getElementById('ma')
     m2 = document.getElementById('me')
     m3 = document.getElementById('mo')
@@ -206,6 +208,16 @@ function doTheMath(list) {
         gr = document.createElement('div')
         gr.id = 'graph'
         document.body.appendChild(gr)
+
+        personal = document.createElement('div')
+        personal.setAttribute('class', 'person')
+        gr.appendChild(personal)
+
+        pper = document.createElement('p')
+        pper.setAttribute('class', 'pper')
+        pper.innerText = '🔁'
+        pper.setAttribute('onclick', 'go()')
+        personal.appendChild(pper)
 
         line = document.createElement('hr')
         line.setAttribute('class', 'hr0')
