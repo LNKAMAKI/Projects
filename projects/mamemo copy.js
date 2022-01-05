@@ -71,7 +71,6 @@ function delit(l) {
 function go() {
 
     num = document.getElementById('numb')
-    num.value = 1
     m1 = document.getElementById('ma')
     m2 = document.getElementById('me')
     m3 = document.getElementById('mo')
@@ -216,7 +215,7 @@ function doTheMath(list) {
         pper = document.createElement('p')
         pper.setAttribute('class', 'pper')
         pper.innerText = '🔁'
-        pper.setAttribute('onclick', 'go()')
+        pper.setAttribute('onclick', 'redo()')
         personal.appendChild(pper)
 
         line = document.createElement('hr')
@@ -1064,4 +1063,39 @@ function sort2(n, p) {
         }
     }
     return [maiorparamenor, posiçõesnumeros]
+}
+function redo() {
+    window.alert(what)
+     //Deletando a Tabela e o Gráfico
+    if (document.getElementsByTagName('table').length > 0) {
+        document.body.removeChild(document.getElementsByTagName('table')[0])
+        document.body.removeChild(document.getElementById('graph'))
+    }
+
+
+    // Criando a Tabela e o Gráfico
+    if (u.length > 0) {
+        gr = document.createElement('div')
+        gr.id = 'graph'
+        document.body.appendChild(gr)
+
+        personal = document.createElement('div')
+        personal.setAttribute('class', 'person')
+        gr.appendChild(personal)
+
+        pper = document.createElement('p')
+        pper.setAttribute('class', 'pper')
+        pper.innerText = '🔁'
+        pper.setAttribute('onclick', 'redo()')
+        personal.appendChild(pper)
+
+        line = document.createElement('hr')
+        line.setAttribute('class', 'hr0')
+        gr.appendChild(line)
+
+        pa = document.createElement('p')
+        line.appendChild(pa)
+        pa.innerText = '0'
+        pa.style.left = -1 * 9 + 'px'
+    }
 }
