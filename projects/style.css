@@ -263,7 +263,7 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
     left:-2.4px;
     }
     .ad3 {
-        opacity: 1;
+        opacity: 0;
         transition-duration: 0.5s;
     left: -100%;
     display: grid;
@@ -474,6 +474,7 @@ opacity: 100;
     .blacko {
         position: absolute;
         height: 0px;
+        background-color: blueviolet;
         z-index: 6;
         display: grid;
         justify-items: center;
