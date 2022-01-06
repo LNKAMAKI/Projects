@@ -3,6 +3,7 @@ optn = -1
 optn2 = -1
 optn3 = -1
 optn4 = -1
+ischeck = false
 function blue(idf) {
     num = document.getElementById(idf)
     num.style.backgroundColor = 'rgba(221, 233, 250, 0.98.53)'
@@ -1075,7 +1076,11 @@ function sort2(n, p) {
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '100'
             config.style.top = '-2%'
-            config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox">`
+            if (ischeck == true) {
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()">`
+            }else{
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()">`
+            }
             click = 1
         }else{
             config = document.getElementsByClassName('config')[0]
