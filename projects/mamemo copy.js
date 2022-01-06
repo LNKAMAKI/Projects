@@ -218,7 +218,6 @@ function doTheMath(list) {
 
         config = document.createElement('div')
         config.setAttribute('class', 'config')
-        //config.setAttribute('onclick', 'disap()')
         gr.appendChild(config)
 
         line = document.createElement('hr')
@@ -1083,7 +1082,8 @@ function sort2(n, p) {
     function redo(){
         //window.alert(document.getElementsByClassName('config')[0])
         if (click == 0) {
-            gear = document.getElementsByClassName('person')[0]
+            gear = document.getElementsByClassName('person')[0]   
+            gear.style.opacity = '100'
             gear.style.left = 'calc(350px + (100% - 380px) / 2)'
             gear.style.top = '201px'
             gear.innerHTML = '<img src="x-mark.png" alt="" id= "s">'
@@ -1093,11 +1093,21 @@ function sort2(n, p) {
             config.style.top = '-2%'
             if (ischeck == true) {
                 config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p>`
+
+               
             }else{
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()">`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p>`
             }
+            
+            for (n = 0; n < config.getElementsByTagName('input').length; n++) {
+                config.getElementsByTagName('input')[n].style.cursor = 'pointer'
+            }
+
             click = 1
         }else{
+           // for (n = 0; n < config.getElementsByTagName('p').length; n++) {
+                //config.getElementsByTagName('p')[n].style.display = 'none'
+           // }
             gear.style.left = 'calc(100% - 45px)'
             gear.style.top = '260px'
             gear.innerHTML = '<img src="gear.png" alt="" id= "f">'
@@ -1106,9 +1116,14 @@ function sort2(n, p) {
             config.style.opacity = '0'
             config.style.top = '0%'
             click = 0
+
+            for (n = 0; n < config.getElementsByTagName('input').length; n++) {
+                //config.getElementsByTagName('input')[n].style.animation= 'disap 0.4s'
+               // config.getElementsByTagName('p')[n].style.display = 'none'
+           }
         }
     }
-    
+
     function check() {
         inp = config.getElementsByTagName('input')[0]
         if (click == 1) {
