@@ -1090,3 +1090,8 @@ function sort2(n, p) {
             click = 0
         }
     }
+    
+    function check() {
+        window.alert(config.document.getElementsByTagName('input', 'number'))
+        //document.get
+    }
