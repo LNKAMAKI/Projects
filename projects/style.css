@@ -514,18 +514,24 @@ opacity: 100;
     }
     .person {
         transition-duration: 0.3s;
-        opacity: 0;
+        opacity: 100;
         position: absolute;
         background-color: rgb(231, 231, 231);
         padding: 5px;
         border-radius: 50%;
-        left: calc(100% - 45px);
-        bottom: 5px;
+        top: 260px;
+        left: calc(100% - 45px); 
         display: grid;
         align-items: center;
         justify-items: center;
-        z-index: 5;
+        z-index: 6;
+        height: 30px;
     }
+    /*.person:active {
+        transition-duration: 0.3s;
+        left: calc(60% + 100px);
+    }
+    */
     .person > img {
         width: 30px;
         height: 30px;
@@ -533,6 +539,9 @@ opacity: 100;
     .person:hover {
         transition-duration: 0.3s;
         opacity: 100;
+    }
+    input[type= "checkbox"] {
+        cursor: pointer;
     }
     
     

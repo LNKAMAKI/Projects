@@ -1083,6 +1083,9 @@ function sort2(n, p) {
     function redo(){
         //window.alert(document.getElementsByClassName('config')[0])
         if (click == 0) {
+            gear = document.getElementsByClassName('person')[0]
+            gear.style.left = 'calc(350px + (100% - 380px) / 2)'
+            gear.style.top = '201px'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '100'
@@ -1094,6 +1097,8 @@ function sort2(n, p) {
             }
             click = 1
         }else{
+            gear.style.left = 'calc(100% - 45px)'
+            gear.style.top = '260px'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '0'
@@ -1104,6 +1109,7 @@ function sort2(n, p) {
     
     function check() {
         inp = config.getElementsByTagName('input')[0]
+        if (click == 1) {
         if (inp.checked == true) {
             ischeck = true
            sqs = document.getElementById('graph').getElementsByClassName('squar')
@@ -1124,6 +1130,16 @@ function sort2(n, p) {
             }
         }
     }
-    function change() {if ()
-        config = document.getElementsByClassName('config')[0]
+    }
+    function change() {
+        if (click == 1) {
+            config = document.getElementsByClassName('config')[0]
+         console.log(config.getElementsByTagName('input')[1].value)
+         console.log(gr.getElementsByClassName('bar'))
+         for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
+            gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
+         }
+        }
+
+    
     }
