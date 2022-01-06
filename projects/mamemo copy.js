@@ -1124,6 +1124,6 @@ function sort2(n, p) {
             }
         }
     }
-    function change() {
-        
+    function change() {if ()
+        config = document.getElementsByClassName('config')[0]
     }
