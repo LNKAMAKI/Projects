@@ -486,18 +486,49 @@ opacity: 100;
         z-index: 7;
         height: 5px;
     }
-    .person {
+    .config {
+        opacity: 0;
+        display: inline-block;
+        position: relative;
+        width: 380px;
+        left: calc((100% - 380px) / 2);
+        height: 30%;
+        z-index: 4;
+        top: 0%;
+        background-color: rgba(231, 231, 231, 0.931);
+        border-radius: 10px;
+    }
+    .config:active {
+        /*transition-duration: 0.4s;
         opacity: 100;
+        top: -2%;
+        */
+    }
+    .config p {
+        display: inline-block;
+        margin: 0px;
+        padding: 15px 1px 0px 15px;
+    }
+    .person {
+        transition-duration: 0.3s;
+        opacity: 0;
         position: absolute;
-        background-color:transparent;
-        left: calc(100% - 35px);
+        background-color: rgb(231, 231, 231);
+        padding: 5px;
+        border-radius: 50%;
+        left: calc(100% - 45px);
         bottom: 5px;
         display: grid;
         align-items: center;
         justify-items: center;
+        z-index: 5;
     }
     .person > img {
         width: 30px;
         height: 30px;
+    }
+    .person:hover {
+        transition-duration: 0.3s;
+        opacity: 100;
     }
     

@@ -70,6 +70,7 @@ function delit(l) {
 
 function go() {
 
+    click = 0
     num = document.getElementById('numb')
     m1 = document.getElementById('ma')
     m2 = document.getElementById('me')
@@ -210,8 +211,13 @@ function doTheMath(list) {
 
         personal = document.createElement('div')
         personal.setAttribute('class', 'person')
+        personal.setAttribute('onclick', 'redo()')
         gr.appendChild(personal)
         personal.innerHTML = '<img src="gear.png" alt="">'
+
+        config = document.createElement('div')
+        config.setAttribute('class', 'config')
+        gr.appendChild(config)
 
         line = document.createElement('hr')
         line.setAttribute('class', 'hr0')
@@ -1062,6 +1068,20 @@ function sort2(n, p) {
 
 //REDO
 
-function redo(){
-    
-}
+    function redo(){
+        //window.alert(document.getElementsByClassName('config')[0])
+        if (click == 0) {
+            config = document.getElementsByClassName('config')[0]
+            config.style.transitionDuration = '0.4s'
+            config.style.opacity = '100'
+            config.style.top = '-2%'
+            config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox">`
+            click = 1
+        }else{
+            config = document.getElementsByClassName('config')[0]
+            config.style.transitionDuration = '0.4s'
+            config.style.opacity = '0'
+            config.style.top = '0%'
+            click = 0
+        }
+    }
