@@ -1092,6 +1092,18 @@ function sort2(n, p) {
     }
     
     function check() {
-        window.alert(config.document.getElementsByTagName('input','aaaa))
-        //document.get
+        inp = config.getElementsByTagName('input')[0]
+        if (inp.checked == true) {
+            //ischeck = true
+           dots = document.getElementById('graph').getElementsByClassName('blacko')
+           for (n = 0; n < dots.length; n++) {
+           dots[n].style.display = 'none'
+           }
+        }else{
+            //ischeck = false
+            dots = document.getElementById('graph').getElementsByClassName('blacko')
+            for (n = 0; n < dots.length; n++) {
+            dots[n].style.display = 'grid'
+            }
+        }
     }
