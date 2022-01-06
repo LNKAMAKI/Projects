@@ -218,6 +218,7 @@ function doTheMath(list) {
 
         config = document.createElement('div')
         config.setAttribute('class', 'config')
+        //config.setAttribute('onclick', 'disap()')
         gr.appendChild(config)
 
         line = document.createElement('hr')
