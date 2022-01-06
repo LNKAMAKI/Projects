@@ -499,12 +499,6 @@ opacity: 100;
         background-color: rgba(231, 231, 231, 0.931);
         border-radius: 10px;
     }
-    .config:active {
-        /*transition-duration: 0.4s;
-        opacity: 100;
-        top: -2%;
-        */
-    }
     .config p {
         display: inline-block;
         font-family: Arial, Helvetica, sans-serif;
