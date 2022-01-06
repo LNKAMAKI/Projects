@@ -214,7 +214,7 @@ function doTheMath(list) {
         personal.setAttribute('class', 'person')
         personal.setAttribute('onclick', 'redo()')
         gr.appendChild(personal)
-        personal.innerHTML = '<img src="gear.png" alt="">'
+        personal.innerHTML = '<img src="gear.png" alt="" id= "f">'
 
         config = document.createElement('div')
         config.setAttribute('class', 'config')
@@ -1086,6 +1086,7 @@ function sort2(n, p) {
             gear = document.getElementsByClassName('person')[0]
             gear.style.left = 'calc(350px + (100% - 380px) / 2)'
             gear.style.top = '201px'
+            gear.innerHTML = '<img src="x-mark.png" alt="" id= "s">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '100'
@@ -1099,6 +1100,7 @@ function sort2(n, p) {
         }else{
             gear.style.left = 'calc(100% - 45px)'
             gear.style.top = '260px'
+            gear.innerHTML = '<img src="gear.png" alt="" id= "f">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '0'

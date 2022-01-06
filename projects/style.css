@@ -526,15 +526,20 @@ opacity: 100;
         justify-items: center;
         z-index: 6;
         height: 30px;
+        width: 30px;
     }
     /*.person:active {
         transition-duration: 0.3s;
         left: calc(60% + 100px);
     }
     */
-    .person > img {
+    .person > img#f {
         width: 30px;
         height: 30px;
+    }
+    .person > img#s {
+        width: 15px;
+        height: 15px;
     }
     .person:hover {
         transition-duration: 0.3s;
