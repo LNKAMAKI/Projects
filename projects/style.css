@@ -409,6 +409,7 @@ hr.hr2a > p {
     opacity: 0;
     position: relative;
     top: -67%;
+    cursor: default;
 }
 .squar:hover .squarp {
     transition-duration: 0.5s;
@@ -475,7 +476,7 @@ opacity: 100;
         position: absolute;
         height: 0px;
         background-color: blueviolet;
-        z-index: 6;
+        z-index: 3;
         display: grid;
         justify-items: center;
     }

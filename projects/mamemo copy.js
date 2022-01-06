@@ -584,6 +584,11 @@ function doTheMath(list) {
                 sqap.innerText = xernolsim + '%'
                 square.appendChild(sqap)
 
+                if (ischeck == true) {
+                    square.style.backgroundColor = 'transparent'
+                    sqap.style.color = 'transparent'
+                }
+
             }
             if (what.length > 1 && ui != what.length - 1) {
                 //linha.style.display = 'none'
@@ -967,6 +972,11 @@ function doTheMath(list) {
             sqap.setAttribute('class', 'squarp')
             sqap.innerText = xernolsim + '%'
             square.appendChild(sqap)
+
+            if (ischeck == true) {
+                square.style.backgroundColor = 'transparent'
+                sqap.style.color = 'transparent'
+            }
         }
         }
     }
@@ -1094,18 +1104,22 @@ function sort2(n, p) {
     function check() {
         inp = config.getElementsByTagName('input')[0]
         if (inp.checked == true) {
-            //ischeck = true
+            ischeck = true
            sqs = document.getElementById('graph').getElementsByClassName('squar')
-           for (n = 0; n < dots.length; n++) {
-           dots[n].style.backgroundColor = 'green'
+           sqps = document.getElementById('graph').getElementsByClassName('squarp')
+           for (n = 0; n < sqs.length; n++) {
+           sqs[n].style.backgroundColor = 'transparent'
+           sqps[n].style.color = 'transparent'
            }
         }else{
-            //ischeck = false
-            dsqs = document.getElementById('graph').getElementsByClassName('squar')
-            window.alert(sqs)
+            ischeck = false
+            sqs = document.getElementById('graph').getElementsByClassName('squar')
+            sqps = document.getElementById('graph').getElementsByClassName('squarp')
+            //window.alert(sqs)
             console.log(sqs)
-            for (n = 0; n < dots.length; n++) {
-            dots[n].style.backgroundColor = 'red'
+            for (n = 0; n < sqs.length; n++) {
+            sqs[n].style.backgroundColor = 'currentColor'
+            sqps[n].style.color = 'currentColor'
             }
         }
     }
