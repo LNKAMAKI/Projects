@@ -1095,14 +1095,15 @@ function sort2(n, p) {
         inp = config.getElementsByTagName('input')[0]
         if (inp.checked == true) {
             //ischeck = true
-           dots = document.getElementById('graph').getElementsByClassName('blacko')
+           sqs = document.getElementById('graph').getElementsByClassName('squar')
            for (n = 0; n < dots.length; n++) {
            dots[n].style.backgroundColor = 'green'
            }
         }else{
             //ischeck = false
-            dots = document.getElementById('graph').getElementsByClassName('blacko')
-            window.alert(dots)
+            dsqs = document.getElementById('graph').getElementsByClassName('squar')
+            window.alert(sqs)
+            console.log(sqs)
             for (n = 0; n < dots.length; n++) {
             dots[n].style.backgroundColor = 'red'
             }
