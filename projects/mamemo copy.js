@@ -1082,13 +1082,14 @@ function sort2(n, p) {
 
     function redo(){
         //window.alert(document.getElementsByClassName('config')[0])
+        document.getElementsByClassName('person')[0].style.transform = 'translateX(calc((100% - 380px) / 2)';
         if (click == 0) {
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '100'
             config.style.top = '-2%'
             if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()">`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p>`
             }else{
                 config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()">`
             }
