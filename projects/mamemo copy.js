@@ -1092,6 +1092,6 @@ function sort2(n, p) {
     }
     
     function check() {
-        window.alert(config.document.getElementsByTagName('input', 'number'))
+        window.alert(config.document.getElementsByTagName('input','aaaa))
         //document.get
     }
