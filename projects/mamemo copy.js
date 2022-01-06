@@ -1082,7 +1082,6 @@ function sort2(n, p) {
 
     function redo(){
         //window.alert(document.getElementsByClassName('config')[0])
-        document.getElementsByClassName('person')[0].style.transform = 'translateX(calc((100% - 380px) / 2)';
         if (click == 0) {
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
@@ -1124,4 +1123,7 @@ function sort2(n, p) {
             sqps[n].style.color = 'currentColor'
             }
         }
+    }
+    function change() {
+        
     }
