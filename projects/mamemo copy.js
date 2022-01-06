@@ -1097,13 +1097,14 @@ function sort2(n, p) {
             //ischeck = true
            dots = document.getElementById('graph').getElementsByClassName('blacko')
            for (n = 0; n < dots.length; n++) {
-           dots[n].style.display = 'none'
+           dots[n].style.backgroundColor = 'green'
            }
         }else{
             //ischeck = false
             dots = document.getElementById('graph').getElementsByClassName('blacko')
+            window.alert(dots)
             for (n = 0; n < dots.length; n++) {
-            dots[n].style.display = 'grid'
+            dots[n].style.backgroundColor = 'red'
             }
         }
     }
