@@ -1088,23 +1088,20 @@ function sort2(n, p) {
 //REDO
 
     function redo(){
-        //window.alert(document.getElementsByClassName('config')[0])
+    
         if (click == 0) {
             console.log(personal)
             css = '.person {background-color: rgb(231, 231, 231); }'
-           //css = '.person {visibility: hidden; }'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
            css = '.person:hover {background-color: rgb(231, 231, 231); }'
-           //css = '.person:hover {visibility: visible;}'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
            css = '.person:active {background-color: rgb(206, 206, 206); }'
-           //css = '.person:hover {visibility: visible;}'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
@@ -1119,21 +1116,27 @@ function sort2(n, p) {
              document.head.appendChild(style)
              style.appendChild(document.createTextNode(css))
 
-            gear = document.getElementsByClassName('person')[0]   
-            gear.style.opacity = '100'
-            gear.style.left = 'calc(350px + (100% - 380px) / 2)'
-            gear.style.top = '201px'
+            gear = document.getElementsByClassName('person')[0] 
+
+           gear.style.animation = 'an 0.4s forwards'
+            
+           // gear.style.transitionDuration = '4s'
+            //gear.style.opacity = '100'
+            //gear.style.left = 'calc(350px + (100% - 380px) / 2)'
+           // gear.style.top = '201px'
+            
+
             gear.innerHTML = '<img src="x-mark.png" alt="x-mark" id= "s">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '100'
             config.style.top = '-2%'
             if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p> <img src="paint-brush.png" onclick= "change()>`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p> <img src="paint-brush.png" style= "width: 25px; height: 25px; cursor: pointer;" onclick= "change()">`
                 config.getElementsByTagName('input')[1].value = valueColor
                
             }else{
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p><img src="paint-brush.png" onclick= "change()>`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p> <img src="paint-brush.png" style= "width: 25px; height: 25px; cursor: pointer;" onclick= "change()">`
                 config.getElementsByTagName('input')[1].value = valueColor
             }
             
@@ -1143,52 +1146,48 @@ function sort2(n, p) {
 
             click = 1
         }else{
-           // for (n = 0; n < config.getElementsByTagName('p').length; n++) {
-                //config.getElementsByTagName('p')[n].style.display = 'none'
-           // }
-          // css = '.person {animation: sho2 5s;}'
-           //css = '.person {visibility: hidden; }'
-           //style = document.createElement('style')
-           //document.head.appendChild(style)
-           //style.appendChild(document.createTextNode(css))
 
+            gear.style.animation = 'an2 0.3s'
+            /*
            css = '.person {background-color: transparent;}'
-           //css = '.person {visibility: hidden; }'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
+            */
 
            css = '.person:hover {background-color: rgb(231, 231, 231); }'
-           //css = '.person:hover {visibility: visible;}'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
            css = '.person:active {background-color: rgb(206, 206, 206); }'
-           //css = '.person:hover {visibility: visible;}'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
+           /*
             css = '.person > img#f {opacity: 0; }'
             style = document.createElement('style')
             document.head.appendChild(style)
             style.appendChild(document.createTextNode(css))
- 
+            */
+
              css = '.person:hover > img#f {opacity: 100;}'
              style = document.createElement('style')
              document.head.appendChild(style)
              style.appendChild(document.createTextNode(css))
 
-
-            gear.style.left = 'calc(100% - 45px)'
-            gear.style.top = '260px'
+           // gear.style.left = 'calc(100% - 45px)'
+            //gear.style.top = '260px'
             gear.innerHTML = '<img src="gear.png" alt="configuration gear" id= "f">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '0'
             config.style.top = '0%'
             click = 0
+
+            config.getElementsByTagName('img')[0].style.transitionDuration = '0.4s'
+            config.getElementsByTagName('img')[0].style.visibility = 'hidden'
 
             for (n = 0; n < config.getElementsByTagName('input').length; n++) {
                 config.getElementsByTagName('input')[n].style.transitionDuration = '0.4s'

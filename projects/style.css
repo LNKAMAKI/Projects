@@ -551,6 +551,7 @@ opacity: 100;
     input[type= "checkbox"] {
         cursor: pointer;
     }
+    /*
     @keyframes sho {
         0% {
             background-color: rgb(231, 231, 231) ;
@@ -567,6 +568,29 @@ opacity: 100;
             opacity: 0;
         }
     }
+    */
+    @keyframes an {
+        100% {
+            opacity: 100;
+            left: calc(350px + (100% - 380px) / 2);
+            top: 201px;
+        }
+    }
+
+    @keyframes an2 {
+        0% {
+            opacity: 100;
+            left: calc(350px + (100% - 380px) / 2);
+            top: 201px;
+        }
+        100% {
+            opacity: 0;
+            left: calc(100% - 45px);
+            top: 260px;
+        }
+    }
+    
+
    
    
     
