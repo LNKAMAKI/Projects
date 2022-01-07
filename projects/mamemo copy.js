@@ -491,13 +491,13 @@ function doTheMath(list) {
             if (String(mxNum).length == 1) { // 1
                 pa.style.left = '-9px'
             } else if (String(mxNum).length == 2) { // 10
-                pa.style.left = '-18px'
+                pa.style.left = '-19px'
             } else if (String(mxNum).length == 3) { //100
                 pa.style.left = '-26px'
             } else if (String(mxNum).length == 4) { //10.5
-                pa.style.left = '-29px'
+                pa.style.left = '-32px'
             } else if (String(mxNum).length == 5) { // 10.55
-                pa.style.left = '-37px'
+                pa.style.left = '-41px'
             }
             console.log('max number: ' + mxNum)
 
@@ -508,13 +508,13 @@ function doTheMath(list) {
             if (String(mxNum / 2).length == 1) { // 1
                 pa2.style.left = '-9px'
             } else if (String(mxNum / 2).length == 2) { // 10
-                pa2.style.left = '-18px'
+                pa2.style.left = '-19px'
             } else if (String(mxNum / 2).length == 3) { //100
                 pa2.style.left = '-22px'
             } else if (String(mxNum / 2).length == 4) { //10.5
-                pa2.style.left = '-29px'
+                pa2.style.left = '-32px'
             } else if (String(mxNum / 2).length == 5) { // 10.55
-                pa2.style.left = '-37px'
+                pa2.style.left = '-41px'
             }
 
             pa3 = document.createElement('p')
@@ -524,13 +524,13 @@ function doTheMath(list) {
             if (String(mxNum / 4).length == 1) { // 1
                 pa3.style.left = '-9px'
             } else if (String(mxNum / 4).length == 2) { // 10
-                pa3.style.left = '-18px'
+                pa3.style.left = '-19px'
             } else if (String(mxNum / 4).length == 3) { //100
                 pa3.style.left = '-22px'
             } else if (String(mxNum / 4).length == 4) { //10.5
-                pa3.style.left = '-29px'
+                pa3.style.left = '-32px'
             } else if (String(mxNum / 4).length == 5) { // 10.55
-                pa3.style.left = '-37px'
+                pa3.style.left = '-41px'
             }
             pa4 = document.createElement('p')
             line4.appendChild(pa4)
@@ -539,13 +539,13 @@ function doTheMath(list) {
             if (String(mxNum * 0.75).length == 1) { // 1
                 pa4.style.left = '-9px'
             } else if (String(mxNum * 0.75).length == 2) { // 10
-                pa4.style.left = '-18px'
+                pa4.style.left = '-19px'
             } else if (String(mxNum * 0.75).length == 3) { //100
                 pa4.style.left = '-22px'
             } else if (String(mxNum * 0.75).length == 4) { //10.5
-                pa4.style.left = '-29px'
+                pa4.style.left = '-32px'
             } else if (String(mxNum * 0.75).length == 5) { // 10.55
-                pa4.style.left = '-37px'
+                pa4.style.left = '-41px'
             }
             //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
             //br.style.height = '286.6px'
@@ -878,13 +878,13 @@ function doTheMath(list) {
             if (String(mxNum).length == 1) { // 1
                 pa.style.left = '-9px'
             } else if (String(mxNum).length == 2) { // 10
-                pa.style.left = '-18px'
+                pa.style.left = '-19px'
             } else if (String(mxNum).length == 3) { //100
                 pa.style.left = '-26px'
             } else if (String(mxNum).length == 4) { //10.5
-                pa.style.left = '-29px'
+                pa.style.left = '-32px'
             } else if (String(mxNum).length == 5) { // 10.55
-                pa.style.left = '-37px'
+                pa.style.left = '-41px'
             }
             console.log('max number: ' + mxNum)
 
@@ -895,13 +895,13 @@ function doTheMath(list) {
             if (String(mxNum / 2).length == 1) { // 1
                 pa2.style.left = '-9px'
             } else if (String(mxNum / 2).length == 2) { // 10
-                pa2.style.left = '-18px'
+                pa2.style.left = '-19px'
             } else if (String(mxNum / 2).length == 3) { //100
                 pa2.style.left = '-22px'
             } else if (String(mxNum / 2).length == 4) { //10.5
-                pa2.style.left = '-29px'
+                pa2.style.left = '-32px'
             } else if (String(mxNum / 2).length == 5) { // 10.55
-                pa2.style.left = '-37px'
+                pa2.style.left = '-41px'
             }
 
             pa3 = document.createElement('p')
@@ -911,13 +911,13 @@ function doTheMath(list) {
             if (String(mxNum / 4).length == 1) { // 1
                 pa3.style.left = '-9px'
             } else if (String(mxNum / 4).length == 2) { // 10
-                pa3.style.left = '-18px'
+                pa3.style.left = '-19px'
             } else if (String(mxNum / 4).length == 3) { //100
                 pa3.style.left = '-22px'
             } else if (String(mxNum / 4).length == 4) { //10.5
-                pa3.style.left = '-29px'
+                pa3.style.left = '-32px'
             } else if (String(mxNum / 4).length == 5) { // 10.55
-                pa3.style.left = '-37px'
+                pa3.style.left = '-41px'
             }
             pa4 = document.createElement('p')
             line4.appendChild(pa4)
@@ -926,13 +926,13 @@ function doTheMath(list) {
             if (String(mxNum * 0.75).length == 1) { // 1
                 pa4.style.left = '-9px'
             } else if (String(mxNum * 0.75).length == 2) { // 10
-                pa4.style.left = '-18px'
+                pa4.style.left = '-19px'
             } else if (String(mxNum * 0.75).length == 3) { //100
                 pa4.style.left = '-22px'
             } else if (String(mxNum * 0.75).length == 4) { //10.5
-                pa4.style.left = '-29px'
+                pa4.style.left = '-32px'
             } else if (String(mxNum * 0.75).length == 5) { // 10.55
-                pa4.style.left = '-37px'
+                pa4.style.left = '-41px'
             }
 
             //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
