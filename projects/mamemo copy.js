@@ -1123,17 +1123,17 @@ function sort2(n, p) {
             gear.style.opacity = '100'
             gear.style.left = 'calc(350px + (100% - 380px) / 2)'
             gear.style.top = '201px'
-            gear.innerHTML = '<img src="x-mark.png" alt="" id= "s">'
+            gear.innerHTML = '<img src="x-mark.png" alt="x-mark" id= "s">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '100'
             config.style.top = '-2%'
             if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"> <input type= "submit" value= "Change" onclick= "change()" ></p>`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p> <img src="paint-brush.png" onclick= "change()>`
                 config.getElementsByTagName('input')[1].value = valueColor
                
             }else{
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"> <input type= "submit" value= "Change" onclick= "change()" ></p>`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p><img src="paint-brush.png" onclick= "change()>`
                 config.getElementsByTagName('input')[1].value = valueColor
             }
             
@@ -1183,7 +1183,7 @@ function sort2(n, p) {
 
             gear.style.left = 'calc(100% - 45px)'
             gear.style.top = '260px'
-            gear.innerHTML = '<img src="gear.png" alt="" id= "f">'
+            gear.innerHTML = '<img src="gear.png" alt="configuration gear" id= "f">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.opacity = '0'
