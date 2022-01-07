@@ -1131,11 +1131,11 @@ function sort2(n, p) {
            // for (n = 0; n < config.getElementsByTagName('p').length; n++) {
                 //config.getElementsByTagName('p')[n].style.display = 'none'
            // }
-           css = '.person {animation: sho2 5s;}'
+          // css = '.person {animation: sho2 5s;}'
            //css = '.person {visibility: hidden; }'
-           style = document.createElement('style')
-           document.head.appendChild(style)
-           style.appendChild(document.createTextNode(css))
+           //style = document.createElement('style')
+           //document.head.appendChild(style)
+           //style.appendChild(document.createTextNode(css))
 
            css = '.person {background-color: transparent;}'
            //css = '.person {visibility: hidden; }'
@@ -1149,12 +1149,12 @@ function sort2(n, p) {
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
-            css = '.person > img#f {visibility: hidden; }'
+            css = '.person > img#f {opacity: 0; }'
             style = document.createElement('style')
             document.head.appendChild(style)
             style.appendChild(document.createTextNode(css))
  
-             css = '.person:hover > img#f {visibility: visible;}'
+             css = '.person:hover > img#f {opacity: 100;}'
              style = document.createElement('style')
              document.head.appendChild(style)
              style.appendChild(document.createTextNode(css))

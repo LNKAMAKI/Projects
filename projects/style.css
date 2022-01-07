@@ -529,6 +529,7 @@ opacity: 100;
        background-color: rgb(206, 206, 206);
     }
     .person > img#f {
+        transition-duration: 0.3s;
         width: 30px;
         height: 30px;
     }
