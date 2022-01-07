@@ -1133,6 +1133,7 @@ function sort2(n, p) {
             }
 
             click = 1
+            change()
         }else{
            // for (n = 0; n < config.getElementsByTagName('p').length; n++) {
                 //config.getElementsByTagName('p')[n].style.display = 'none'
@@ -1222,4 +1223,7 @@ function sort2(n, p) {
             gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
          }
         }
+    }
+    function y() {
+        window.alert('clickado')
     }

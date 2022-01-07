@@ -184,6 +184,9 @@ input#numb {
     width: 90px;
     position: relative;
 }
+input[type= "number"] {
+    cursor: text;
+}
 input {
     margin-top: 5px;
     margin-bottom: 0px;
@@ -510,6 +513,7 @@ opacity: 100;
         padding: 15px 1px 0px 15px;
     }
     .person {
+        cursor: pointer;
         transition-duration: 0.3s;
         opacity: 0;
         position: absolute;
@@ -529,11 +533,13 @@ opacity: 100;
        background-color: rgb(206, 206, 206);
     }
     .person > img#f {
+        cursor: pointer;
         transition-duration: 0.3s;
         width: 30px;
         height: 30px;
     }
     .person > img#s {
+        cursor: pointer;
         width: 15px;
         height: 15px;
     }
