@@ -1082,6 +1082,29 @@ function sort2(n, p) {
     function redo(){
         //window.alert(document.getElementsByClassName('config')[0])
         if (click == 0) {
+            console.log(personal)
+            css = '.person {background-color: rgb(231, 231, 231); }'
+           //css = '.person {visibility: hidden; }'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+           css = '.person:hover {background-color: rgb(231, 231, 231); }'
+           //css = '.person:hover {visibility: visible;}'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+            css = '.person > img#f {visibility: visible;}'
+            style = document.createElement('style')
+            document.head.appendChild(style)
+            style.appendChild(document.createTextNode(css))
+ 
+             css = '.person:hover > img#f {visibility: visible;}'
+             style = document.createElement('style')
+             document.head.appendChild(style)
+             style.appendChild(document.createTextNode(css))
+
             gear = document.getElementsByClassName('person')[0]   
             gear.style.opacity = '100'
             gear.style.left = 'calc(350px + (100% - 380px) / 2)'
@@ -1108,6 +1131,35 @@ function sort2(n, p) {
            // for (n = 0; n < config.getElementsByTagName('p').length; n++) {
                 //config.getElementsByTagName('p')[n].style.display = 'none'
            // }
+           css = '.person {animation: sho2 5s;}'
+           //css = '.person {visibility: hidden; }'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+           css = '.person {background-color: transparent;}'
+           //css = '.person {visibility: hidden; }'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+           css = '.person:hover {background-color: rgb(231, 231, 231); }'
+           //css = '.person:hover {visibility: visible;}'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+            css = '.person > img#f {visibility: hidden; }'
+            style = document.createElement('style')
+            document.head.appendChild(style)
+            style.appendChild(document.createTextNode(css))
+ 
+             css = '.person:hover > img#f {visibility: visible;}'
+             style = document.createElement('style')
+             document.head.appendChild(style)
+             style.appendChild(document.createTextNode(css))
+
+
             gear.style.left = 'calc(100% - 45px)'
             gear.style.top = '260px'
             gear.innerHTML = '<img src="gear.png" alt="" id= "f">'
@@ -1118,8 +1170,9 @@ function sort2(n, p) {
             click = 0
 
             for (n = 0; n < config.getElementsByTagName('input').length; n++) {
-                //config.getElementsByTagName('input')[n].style.animation= 'disap 0.4s'
-               // config.getElementsByTagName('p')[n].style.display = 'none'
+                config.getElementsByTagName('input')[n].style.transitionDuration = '0.4s'
+                config.getElementsByTagName('input')[n].style.visibility = 'hidden'
+    
            }
         }
     }
@@ -1157,6 +1210,4 @@ function sort2(n, p) {
             gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
          }
         }
-
-    
     }
