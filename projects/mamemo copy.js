@@ -3,6 +3,7 @@ optn = -1
 optn2 = -1
 optn3 = -1
 optn4 = -1
+valueColor = null
 ischeck = false
 function blue(idf) {
     num = document.getElementById(idf)
@@ -397,7 +398,11 @@ function doTheMath(list) {
             n1 = num1[Math.floor(num1.length * Math.random())]
             n2 = num2[Math.floor(num2.length * Math.random())]
             n3 = num2[Math.floor(num2.length * Math.random())]
+            if (valueColor == null) {
             br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
+            }else{
+                br.style.backgroundColor = valueColor
+            }
 
             gr.appendChild(br)
 
@@ -769,8 +774,11 @@ function doTheMath(list) {
             n1 = num1[Math.floor(num1.length * Math.random())]
             n2 = num2[Math.floor(num2.length * Math.random())]
             n3 = num2[Math.floor(num2.length * Math.random())]
+            if (valueColor == null) {
             br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
-
+            }else{
+                br.style.backgroundColor = valueColor
+            }
             gr.appendChild(br)
 
             jorge = document.createElement('div')
@@ -1121,11 +1129,12 @@ function sort2(n, p) {
             config.style.opacity = '100'
             config.style.top = '-2%'
             if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p>`
-
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"> <input type= "submit" value= "Change" onclick= "change()" ></p>`
+                config.getElementsByTagName('input')[1].value = valueColor
                
             }else{
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p>`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"> <input type= "submit" value= "Change" onclick= "change()" ></p>`
+                config.getElementsByTagName('input')[1].value = valueColor
             }
             
             for (n = 0; n < config.getElementsByTagName('input').length; n++) {
@@ -1133,7 +1142,6 @@ function sort2(n, p) {
             }
 
             click = 1
-            change()
         }else{
            // for (n = 0; n < config.getElementsByTagName('p').length; n++) {
                 //config.getElementsByTagName('p')[n].style.display = 'none'
@@ -1218,12 +1226,11 @@ function sort2(n, p) {
         if (click == 1) {
             config = document.getElementsByClassName('config')[0]
          console.log(config.getElementsByTagName('input')[1].value)
+         valueColor = config.getElementsByTagName('input')[1].value
          console.log(gr.getElementsByClassName('bar'))
          for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
             gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
          }
         }
     }
-    function y() {
-        window.alert('clickado')
-    }
+    
