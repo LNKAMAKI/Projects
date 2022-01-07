@@ -1095,6 +1095,12 @@ function sort2(n, p) {
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
+           css = '.person:active {background-color: rgb(206, 206, 206); }'
+           //css = '.person:hover {visibility: visible;}'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
             css = '.person > img#f {visibility: visible;}'
             style = document.createElement('style')
             document.head.appendChild(style)
@@ -1144,6 +1150,12 @@ function sort2(n, p) {
            style.appendChild(document.createTextNode(css))
 
            css = '.person:hover {background-color: rgb(231, 231, 231); }'
+           //css = '.person:hover {visibility: visible;}'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+           css = '.person:active {background-color: rgb(206, 206, 206); }'
            //css = '.person:hover {visibility: visible;}'
            style = document.createElement('style')
            document.head.appendChild(style)
