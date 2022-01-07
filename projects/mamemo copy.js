@@ -1205,8 +1205,8 @@ function sort2(n, p) {
            sqs = document.getElementById('graph').getElementsByClassName('squar')
            sqps = document.getElementById('graph').getElementsByClassName('squarp')
            for (n = 0; n < sqs.length; n++) {
-           sqs[n].style.backgroundColor = 'transparent'
-           sqps[n].style.color = 'transparent'
+           sqs[n].style.visibility= 'hidden'
+           //sqps[n].style.color = 'transparent'
            }
         }else{
             ischeck = false
@@ -1215,8 +1215,8 @@ function sort2(n, p) {
             //window.alert(sqs)
             console.log(sqs)
             for (n = 0; n < sqs.length; n++) {
-            sqs[n].style.backgroundColor = 'currentColor'
-            sqps[n].style.color = 'currentColor'
+            sqs[n].style.visibility = 'visible'
+            //sqps[n].style.color = 'currentColor'
             }
         }
     }
