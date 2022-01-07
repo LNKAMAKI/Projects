@@ -506,8 +506,16 @@ opacity: 100;
         background-color: rgba(231, 231, 231, 0.931);
         border-radius: 10px;
     }
+    .config img {
+        cursor: pointer;
+    }
     .config img:hover {
         background-color: rgb(200, 200, 200);
+        border-radius: 3px;
+    }
+    #rb {
+        background-color: rgb(200, 200, 200);
+        border-radius: 3px;
     }
     .config p {
         display: inline-block;
@@ -554,6 +562,14 @@ opacity: 100;
     input[type= "checkbox"] {
         cursor: pointer;
     }
+    input[type= "color"] {
+        background-color: transparent;
+        width: 27px;
+        height: 30px;
+        padding: 0px;
+        margin: 0px;
+        border-width: 0px;
+    }
     /*
     @keyframes sho {
         0% {
@@ -572,6 +588,7 @@ opacity: 100;
         }
     }
     */
+    /*
     @keyframes an {
         100% {
             opacity: 100;
@@ -592,7 +609,7 @@ opacity: 100;
             top: 260px;
         }
     }
-    
+    */
 
    
    

@@ -3,8 +3,10 @@ optn = -1
 optn2 = -1
 optn3 = -1
 optn4 = -1
+cn = false
 valueColor = null
 ischeck = false
+rainbow = true
 function blue(idf) {
     num = document.getElementById(idf)
     num.style.backgroundColor = 'rgba(221, 233, 250, 0.98.53)'
@@ -398,7 +400,7 @@ function doTheMath(list) {
             n1 = num1[Math.floor(num1.length * Math.random())]
             n2 = num2[Math.floor(num2.length * Math.random())]
             n3 = num2[Math.floor(num2.length * Math.random())]
-            if (valueColor == null) {
+            if (valueColor == null || cn == true) {
             br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
             }else{
                 br.style.backgroundColor = valueColor
@@ -774,7 +776,7 @@ function doTheMath(list) {
             n1 = num1[Math.floor(num1.length * Math.random())]
             n2 = num2[Math.floor(num2.length * Math.random())]
             n3 = num2[Math.floor(num2.length * Math.random())]
-            if (valueColor == null) {
+            if (valueColor == null || cn == true) {
             br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
             }else{
                 br.style.backgroundColor = valueColor
@@ -1118,12 +1120,12 @@ function sort2(n, p) {
 
             gear = document.getElementsByClassName('person')[0] 
 
-           gear.style.animation = 'an 0.4s forwards'
+           //gear.style.animation = 'an 0.4s forwards'
             
            // gear.style.transitionDuration = '4s'
-            //gear.style.opacity = '100'
-            //gear.style.left = 'calc(350px + (100% - 380px) / 2)'
-           // gear.style.top = '201px'
+            gear.style.opacity = '100'
+            gear.style.left = 'calc(350px + (100% - 380px) / 2)'
+            gear.style.top = '201px'
             
 
             gear.innerHTML = '<img src="x-mark.png" alt="x-mark" id= "s">'
@@ -1132,11 +1134,11 @@ function sort2(n, p) {
             config.style.opacity = '100'
             config.style.top = '-2%'
             if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p> <img src="paint-brush.png" style= "width: 25px; height: 25px; cursor: pointer;" onclick= "change()">`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px; onclick= "change()"><img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
                 config.getElementsByTagName('input')[1].value = valueColor
                
             }else{
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px;">Cor das barras: <input type= "color"></p> <img src="paint-brush.png" style= "width: 25px; height: 25px; cursor: pointer;" onclick= "change()">`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick= "change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
                 config.getElementsByTagName('input')[1].value = valueColor
             }
             
@@ -1145,15 +1147,25 @@ function sort2(n, p) {
             }
 
             click = 1
+
+            if (rainbow == true) {
+            //config.getElementsByTagName('img')[1].style.backgroundColor = 'rgb(200, 200, 200)'
+            //config.getElementsByTagName('img')[1].style.borderRadius = '3px'
+            }
         }else{
 
-            gear.style.animation = 'an2 0.3s'
-            /*
+            if (rainbow == true) {
+                //config.getElementsByTagName('img')[1].style.backgroundColor = 'rgb(200, 200, 200)'
+                //config.getElementsByTagName('img')[1].style.borderRadius = '3px'
+                }
+
+           // gear.style.animation = 'an2 0.3s'
+            
            css = '.person {background-color: transparent;}'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
-            */
+            
 
            css = '.person:hover {background-color: rgb(231, 231, 231); }'
            style = document.createElement('style')
@@ -1165,20 +1177,20 @@ function sort2(n, p) {
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
-           /*
+           
             css = '.person > img#f {opacity: 0; }'
             style = document.createElement('style')
             document.head.appendChild(style)
             style.appendChild(document.createTextNode(css))
-            */
+            
 
              css = '.person:hover > img#f {opacity: 100;}'
              style = document.createElement('style')
              document.head.appendChild(style)
              style.appendChild(document.createTextNode(css))
 
-           // gear.style.left = 'calc(100% - 45px)'
-            //gear.style.top = '260px'
+            gear.style.left = 'calc(100% - 45px)'
+            gear.style.top = '260px'
             gear.innerHTML = '<img src="gear.png" alt="configuration gear" id= "f">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
@@ -1223,6 +1235,18 @@ function sort2(n, p) {
     }
     function change() {
         if (click == 1) {
+            css = '.config img#rb {background-color: transparent;}'
+            style = document.createElement('style')
+            document.head.appendChild(style)
+            style.appendChild(document.createTextNode(css))
+
+            css = '.config img:hover#rb {background-color: rgb(200, 200, 200);}'
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+            rainbow = false
+            cn = false
             config = document.getElementsByClassName('config')[0]
          console.log(config.getElementsByTagName('input')[1].value)
          valueColor = config.getElementsByTagName('input')[1].value
@@ -1233,3 +1257,50 @@ function sort2(n, p) {
         }
     }
     
+    function random() {
+        if (click == 1 && valueColor!= null) {
+            if (rainbow == false) {
+                css = '.config img#rb {background-color: rgb(200, 200, 200); border-radius: 3px;}'
+                style = document.createElement('style')
+                document.head.appendChild(style)
+                style.appendChild(document.createTextNode(css))
+    
+                css = '.config img#rb:hover {background-color: rgb(200, 200, 200);}'
+                style = document.createElement('style')
+                document.head.appendChild(style)
+                style.appendChild(document.createTextNode(css))
+            //config.getElementsByTagName('img')[1].style.backgroundColor = 'rgb(200, 200, 200)'
+            //config.getElementsByTagName('img')[1].style.borderRadius = '3px'
+         for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
+            n1 = num1[Math.floor(num1.length * Math.random())]
+            n2 = num2[Math.floor(num2.length * Math.random())]
+            n3 = num2[Math.floor(num2.length * Math.random())]
+            //gr.getElementsByClassName('bar')[n].style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
+            gr.getElementsByClassName('bar')[n].style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
+         }
+           // valueColor = null
+           cn = true
+            rainbow = true
+        }else{
+            css = '.config img#rb {background-color: transparent;}'
+            style = document.createElement('style')
+            document.head.appendChild(style)
+            style.appendChild(document.createTextNode(css))
+
+            css = '.config img#rb:hover {background-color: rgb(200, 200, 200);}'
+            style = document.createElement('style')
+            document.head.appendChild(style)
+            style.appendChild(document.createTextNode(css))
+
+            cn = false
+            rainbow = false
+            config = document.getElementsByClassName('config')[0]
+            console.log(config.getElementsByTagName('input')[1].value)
+            valueColor = config.getElementsByTagName('input')[1].value
+            console.log(gr.getElementsByClassName('bar'))
+            for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
+               gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
+        }
+    }
+    }
+}
