@@ -492,15 +492,15 @@ function doTheMath(list) {
             pa.innerText = mxNum
             //pa.style.left = -String(mxNum).length * 9 + 'px'
             if (String(mxNum).length == 1) { // 1
-                pa.style.left = '-9px'
+                pa.style.left = '-12px'
             } else if (String(mxNum).length == 2) { // 10
-                pa.style.left = '-19px'
+                pa.style.left = '-20px'
             } else if (String(mxNum).length == 3) { //100
-                pa.style.left = '-26px'
+                pa.style.left = '-28px'
             } else if (String(mxNum).length == 4) { //10.5
-                pa.style.left = '-32px'
+                pa.style.left = '-33px'
             } else if (String(mxNum).length == 5) { // 10.55
-                pa.style.left = '-41px'
+                pa.style.left = '-42px'
             }
             //console.log('max number: ' + mxNum)
 
@@ -509,15 +509,15 @@ function doTheMath(list) {
             pa2.innerText = mxNum / 2
             //pa2.style.left = -String(mxNum/2).length * 9 + 'px'
             if (String(mxNum / 2).length == 1) { // 1
-                pa2.style.left = '-9px'
+                pa2.style.left = '-10px'
             } else if (String(mxNum / 2).length == 2) { // 10
-                pa2.style.left = '-19px'
+                pa2.style.left = '-20px'
             } else if (String(mxNum / 2).length == 3) { //100
-                pa2.style.left = '-22px'
+                pa2.style.left = '-24px'
             } else if (String(mxNum / 2).length == 4) { //10.5
-                pa2.style.left = '-32px'
+                pa2.style.left = '-33px'
             } else if (String(mxNum / 2).length == 5) { // 10.55
-                pa2.style.left = '-41px'
+                pa2.style.left = '-42px'
             }
 
             pa3 = document.createElement('p')
@@ -525,30 +525,30 @@ function doTheMath(list) {
             pa3.innerText = mxNum / 4
             //pa3.style.left = -String(mxNum/4).length * 9 + 'px'
             if (String(mxNum / 4).length == 1) { // 1
-                pa3.style.left = '-9px'
+                pa3.style.left = '-12px'
             } else if (String(mxNum / 4).length == 2) { // 10
-                pa3.style.left = '-19px'
+                pa3.style.left = '-20px'
             } else if (String(mxNum / 4).length == 3) { //100
-                pa3.style.left = '-22px'
+                pa3.style.left = '-24px'
             } else if (String(mxNum / 4).length == 4) { //10.5
-                pa3.style.left = '-32px'
+                pa3.style.left = '-33px'
             } else if (String(mxNum / 4).length == 5) { // 10.55
-                pa3.style.left = '-41px'
+                pa3.style.left = '-42px'
             }
             pa4 = document.createElement('p')
             line4.appendChild(pa4)
             pa4.innerText = mxNum * 0.75
             //pa4.style.left = -String(mxNum*0.75).length * 9 + 'px'
             if (String(mxNum * 0.75).length == 1) { // 1
-                pa4.style.left = '-9px'
+                pa4.style.left = '-12px'
             } else if (String(mxNum * 0.75).length == 2) { // 10
-                pa4.style.left = '-19px'
+                pa4.style.left = '-20px'
             } else if (String(mxNum * 0.75).length == 3) { //100
-                pa4.style.left = '-22px'
+                pa4.style.left = '-24px'
             } else if (String(mxNum * 0.75).length == 4) { //10.5
-                pa4.style.left = '-32px'
+                pa4.style.left = '-33px'
             } else if (String(mxNum * 0.75).length == 5) { // 10.55
-                pa4.style.left = '-41px'
+                pa4.style.left = '-42px'
             }
             //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
             //br.style.height = '286.6px'
@@ -878,15 +878,15 @@ function doTheMath(list) {
             pa.innerText = mxNum
             //pa.style.left = -String(mxNum).length * 9 + 'px'
             if (String(mxNum).length == 1) { // 1
-                pa.style.left = '-9px'
+                pa.style.left = '-12px'
             } else if (String(mxNum).length == 2) { // 10
-                pa.style.left = '-19px'
+                pa.style.left = '-20px'
             } else if (String(mxNum).length == 3) { //100
-                pa.style.left = '-26px'
+                pa.style.left = '-28px'
             } else if (String(mxNum).length == 4) { //10.5
-                pa.style.left = '-32px'
+                pa.style.left = '-33px'
             } else if (String(mxNum).length == 5) { // 10.55
-                pa.style.left = '-41px'
+                pa.style.left = '-42px'
             }
             //console.log('max number: ' + mxNum)
 
@@ -895,15 +895,15 @@ function doTheMath(list) {
             pa2.innerText = mxNum / 2
             //pa2.style.left = -String(mxNum/2).length * 9 + 'px'
             if (String(mxNum / 2).length == 1) { // 1
-                pa2.style.left = '-9px'
+                pa2.style.left = '-12px'
             } else if (String(mxNum / 2).length == 2) { // 10
-                pa2.style.left = '-19px'
+                pa2.style.left = '-20px'
             } else if (String(mxNum / 2).length == 3) { //100
-                pa2.style.left = '-22px'
+                pa2.style.left = '-24px'
             } else if (String(mxNum / 2).length == 4) { //10.5
-                pa2.style.left = '-32px'
+                pa2.style.left = '-33px'
             } else if (String(mxNum / 2).length == 5) { // 10.55
-                pa2.style.left = '-41px'
+                pa2.style.left = '-42px'
             }
 
             pa3 = document.createElement('p')
@@ -911,30 +911,30 @@ function doTheMath(list) {
             pa3.innerText = mxNum / 4
             //pa3.style.left = -String(mxNum/4).length * 9 + 'px'
             if (String(mxNum / 4).length == 1) { // 1
-                pa3.style.left = '-9px'
+                pa3.style.left = '-12px'
             } else if (String(mxNum / 4).length == 2) { // 10
-                pa3.style.left = '-19px'
+                pa3.style.left = '-20px'
             } else if (String(mxNum / 4).length == 3) { //100
-                pa3.style.left = '-22px'
+                pa3.style.left = '-24px'
             } else if (String(mxNum / 4).length == 4) { //10.5
-                pa3.style.left = '-32px'
+                pa3.style.left = '-33px'
             } else if (String(mxNum / 4).length == 5) { // 10.55
-                pa3.style.left = '-41px'
+                pa3.style.left = '-42px'
             }
             pa4 = document.createElement('p')
             line4.appendChild(pa4)
             pa4.innerText = mxNum * 0.75
             //pa4.style.left = -String(mxNum*0.75).length * 9 + 'px'
             if (String(mxNum * 0.75).length == 1) { // 1
-                pa4.style.left = '-9px'
+                pa4.style.left = '-12px'
             } else if (String(mxNum * 0.75).length == 2) { // 10
-                pa4.style.left = '-19px'
+                pa4.style.left = '-20px'
             } else if (String(mxNum * 0.75).length == 3) { //100
-                pa4.style.left = '-22px'
+                pa4.style.left = '-24px'
             } else if (String(mxNum * 0.75).length == 4) { //10.5
-                pa4.style.left = '-32px'
+                pa4.style.left = '-33px'
             } else if (String(mxNum * 0.75).length == 5) { // 10.55
-                pa4.style.left = '-41px'
+                pa4.style.left = '-42px'
             }
 
             //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
