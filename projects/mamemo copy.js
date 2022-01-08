@@ -592,8 +592,7 @@ function doTheMath(list) {
                 square.appendChild(sqap)
 
                 if (ischeck == true) {
-                    square.style.backgroundColor = 'transparent'
-                    sqap.style.color = 'transparent'
+                    square.style.visibility = 'hidden'
                 }
 
             }
@@ -984,8 +983,7 @@ function doTheMath(list) {
             square.appendChild(sqap)
 
             if (ischeck == true) {
-                square.style.backgroundColor = 'transparent'
-                sqap.style.color = 'transparent'
+                square.style.visibility = 'hidden'
             }
         }
         }
@@ -1211,6 +1209,7 @@ function sort2(n, p) {
 
     function check() {
         inp = config.getElementsByTagName('input')[0]
+        console.log('GO')
         if (click == 1) {
         if (inp.checked == true) {
             ischeck = true
@@ -1234,6 +1233,7 @@ function sort2(n, p) {
     }
     }
     function change() {
+        console.log('change color')
         if (click == 1) {
             css = '.config img#rb {background-color: transparent;}'
             style = document.createElement('style')
