@@ -1124,7 +1124,7 @@ function sort2(n, p) {
            // gear.style.transitionDuration = '4s'
             gear.style.opacity = '100'
             gear.style.left = 'calc(350px + (100% - 380px) / 2)'
-            gear.style.top = '201px'
+            gear.style.top = 'calc(100% - 112px)'
             
 
             gear.innerHTML = '<img src="x-mark.png" alt="x-mark" id= "s">'
@@ -1132,7 +1132,7 @@ function sort2(n, p) {
             config.style.transitionDuration = '0.4s'
             config.style.visibility = 'visible'
             config.style.opacity = '100'
-            config.style.top = '-2%'
+            config.style.top = '-7px'
             /*
             if (ischeck == true) {
                 config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px; onclick="change()"><img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
@@ -1199,7 +1199,7 @@ function sort2(n, p) {
              style.appendChild(document.createTextNode(css))
 
             gear.style.left = 'calc(100% - 45px)'
-            gear.style.top = '260px'
+            gear.style.top = 'calc(100% - 45px)'
             gear.innerHTML = '<img src="gear.png" alt="configuration gear" id= "f">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
