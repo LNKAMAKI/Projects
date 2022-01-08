@@ -74,6 +74,7 @@ function delit(l) {
 
 function go() {
 
+    console.log('click = 0')
     click = 0
     num = document.getElementById('numb')
     m1 = document.getElementById('ma')
@@ -451,7 +452,7 @@ function doTheMath(list) {
 
             htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
-            console.log(htWiotDec, htLstN)
+            //console.log(htWiotDec, htLstN)
 
 
             line = document.createElement('hr')
@@ -463,7 +464,7 @@ function doTheMath(list) {
             line4 = document.createElement('hr')
             gr.appendChild(line4)
 
-            console.log(htWiotDec.length)
+            //console.log(htWiotDec.length)
             // if (htWiotDec.length > 1) {
             //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
 
@@ -501,7 +502,7 @@ function doTheMath(list) {
             } else if (String(mxNum).length == 5) { // 10.55
                 pa.style.left = '-41px'
             }
-            console.log('max number: ' + mxNum)
+            //console.log('max number: ' + mxNum)
 
             pa2 = document.createElement('p')
             line2.appendChild(pa2)
@@ -601,8 +602,8 @@ function doTheMath(list) {
                 //square.style.top = 100/fra*(altur/2) + '%'
 
                 fra2 = uao[ui + 1] / sum * 100
-                console.log('fra2: ' + fra2)
-                console.log(fra2 / 3)
+                //console.log('fra2: ' + fra2)
+                //console.log(fra2 / 3)
                 tp = 0
                 rg = 0
                 for (n = 0; n <= Math.round(fra2/1.2); n++) {
@@ -705,11 +706,11 @@ function doTheMath(list) {
             sum += aparic[n]
         }
 
-        console.log(interclasses)
+        //console.log(interclasses)
         for (ui = interclasses.length; ui > -1; ui--) {
-            console.log(uao[ui] / sum * 100)
+            //console.log(uao[ui] / sum * 100)
             if (uao[ui] / sum * 100 == 0) {
-                console.log('0!!!')
+                //console.log('0!!!')
                 interclasses.splice(ui, 1)
             }
         }
@@ -828,7 +829,7 @@ function doTheMath(list) {
 
             htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
-            console.log(htWiotDec, htLstN)
+            //console.log(htWiotDec, htLstN)
 
 
             line = document.createElement('hr')
@@ -840,7 +841,7 @@ function doTheMath(list) {
             line4 = document.createElement('hr')
             gr.appendChild(line4)
 
-            console.log(htWiotDec.length)
+            //console.log(htWiotDec.length)
             // if (htWiotDec.length > 1) {
             //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
 
@@ -887,7 +888,7 @@ function doTheMath(list) {
             } else if (String(mxNum).length == 5) { // 10.55
                 pa.style.left = '-41px'
             }
-            console.log('max number: ' + mxNum)
+            //console.log('max number: ' + mxNum)
 
             pa2 = document.createElement('p')
             line2.appendChild(pa2)
@@ -1090,7 +1091,7 @@ function sort2(n, p) {
     function redo(){
     
         if (click == 0) {
-            console.log(personal)
+            //console.log(personal)
             css = '.person {background-color: rgb(231, 231, 231); }'
            style = document.createElement('style')
            document.head.appendChild(style)
@@ -1129,21 +1130,31 @@ function sort2(n, p) {
             gear.innerHTML = '<img src="x-mark.png" alt="x-mark" id= "s">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
+            config.style.visibility = 'visible'
             config.style.opacity = '100'
             config.style.top = '-2%'
+            /*
             if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" checked= "checked" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px; onclick= "change()"><img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px; onclick="change()"><img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
                 config.getElementsByTagName('input')[1].value = valueColor
-               
-            }else{
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick= "change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
+               */
+            //}else{
+
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick="change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
                 config.getElementsByTagName('input')[1].value = valueColor
-            }
+
+                if (ischeck == true) {
+                console.log(config.getElementsByTagName('input')[0])
+                config.getElementsByTagName('input')[0].checked = true
+                }
+                
+            //}
             
             for (n = 0; n < config.getElementsByTagName('input').length; n++) {
                 config.getElementsByTagName('input')[n].style.cursor = 'pointer'
             }
 
+            console.log('click = 1')
             click = 1
 
             if (rainbow == true) {
@@ -1192,8 +1203,10 @@ function sort2(n, p) {
             gear.innerHTML = '<img src="gear.png" alt="configuration gear" id= "f">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
+            config.style.visibility = 'hidden'
             config.style.opacity = '0'
             config.style.top = '0%'
+            console.log('click = 0')
             click = 0
 
             config.getElementsByTagName('img')[0].style.transitionDuration = '0.4s'
@@ -1209,8 +1222,8 @@ function sort2(n, p) {
 
     function check() {
         inp = config.getElementsByTagName('input')[0]
-        console.log('GO')
-        if (click == 1) {
+        //console.log('GO')
+       // if (click == 1) {
         if (inp.checked == true) {
             ischeck = true
            sqs = document.getElementById('graph').getElementsByClassName('squar')
@@ -1224,17 +1237,17 @@ function sort2(n, p) {
             sqs = document.getElementById('graph').getElementsByClassName('squar')
             sqps = document.getElementById('graph').getElementsByClassName('squarp')
             //window.alert(sqs)
-            console.log(sqs)
+            //console.log(sqs)
             for (n = 0; n < sqs.length; n++) {
             sqs[n].style.visibility = 'visible'
             //sqps[n].style.color = 'currentColor'
             }
         }
-    }
+   // }
     }
     function change() {
         console.log('change color')
-        if (click == 1) {
+        //if (click == 1) {
             css = '.config img#rb {background-color: transparent;}'
             style = document.createElement('style')
             document.head.appendChild(style)
@@ -1248,13 +1261,13 @@ function sort2(n, p) {
             rainbow = false
             cn = false
             config = document.getElementsByClassName('config')[0]
-         console.log(config.getElementsByTagName('input')[1].value)
+         //console.log(config.getElementsByTagName('input')[1].value)
          valueColor = config.getElementsByTagName('input')[1].value
-         console.log(gr.getElementsByClassName('bar'))
+         //console.log(gr.getElementsByClassName('bar'))
          for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
             gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
          }
-        }
+        //}
     }
     
     function random() {
@@ -1295,9 +1308,9 @@ function sort2(n, p) {
             cn = false
             rainbow = false
             config = document.getElementsByClassName('config')[0]
-            console.log(config.getElementsByTagName('input')[1].value)
+            //console.log(config.getElementsByTagName('input')[1].value)
             valueColor = config.getElementsByTagName('input')[1].value
-            console.log(gr.getElementsByClassName('bar'))
+            //console.log(gr.getElementsByClassName('bar'))
             for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
                gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
         }
