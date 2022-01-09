@@ -1123,7 +1123,7 @@ function sort2(n, p) {
             
            // gear.style.transitionDuration = '4s'
             gear.style.opacity = '100'
-            gear.style.left = 'calc(350px + (100% - 380px) / 2)'
+            gear.style.left = 'calc(270px + (100% - 300px) / 2)'
             gear.style.top = 'calc(100% - 112px)'
             
 

@@ -1,4 +1,5 @@
 LPsongs = [
+    'Tear Up This Town',
     'Guilty All The Same',
     'Invisible',
     'A Place For My Head',
