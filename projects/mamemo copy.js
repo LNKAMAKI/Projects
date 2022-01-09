@@ -231,7 +231,7 @@ function doTheMath(list) {
         pa = document.createElement('p')
         line.appendChild(pa)
         pa.innerText = '0'
-        pa.style.left = -1 * 9 + 'px'
+        pa.style.left = '-10px'
 
         tab = document.createElement('table')
         document.body.appendChild(tab)
@@ -1140,7 +1140,7 @@ function sort2(n, p) {
                */
             //}else{
 
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick="change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
+                config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick="change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
                 config.getElementsByTagName('input')[1].value = valueColor
 
                 if (ischeck == true) {
