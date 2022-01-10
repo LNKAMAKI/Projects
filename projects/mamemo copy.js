@@ -201,6 +201,7 @@ function del() {
 function doTheMath(list) {
 
     lfts = []
+    intxts = []
     // Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
@@ -388,6 +389,7 @@ function doTheMath(list) {
 
             br = document.createElement('div')
             br.setAttribute('class', 'bar')
+            br.setAttribute('onmouseenter', `hey(${ui})`)
             num1 = []
             num2 = []
             for (n = 0; n < 240; n++) {
@@ -426,12 +428,15 @@ function doTheMath(list) {
                 }
             }
 
+            /*
             pnum = document.createElement('p')
             pnum.style.position = 'absolute'
             pnum.innerText = asd[ui] + ' : ' + xernols + '%'
+            intxts.push(asd[ui] + ' : ' + xernols + '%')
             pnum.setAttribute('class', 'pnumber')
             pnum.style.top = '-35px'
             br.appendChild(pnum)
+            */
 
             ar = document.createElement('div')
             ar.setAttribute('class', 'porcarrow')
@@ -1320,4 +1325,8 @@ function sort2(n, p) {
         }
     }
     }
+}
+function hey(idx) {
+    //window.alert(lfts[idx])
+    //window.alert(intxts[idx])
 }
