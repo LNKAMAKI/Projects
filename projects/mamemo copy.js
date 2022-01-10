@@ -428,11 +428,11 @@ function doTheMath(list) {
                 }
             }
 
+            intxts.push(asd[ui] + ' : ' + xernols + '%')
             /*
             pnum = document.createElement('p')
             pnum.style.position = 'absolute'
             pnum.innerText = asd[ui] + ' : ' + xernols + '%'
-            intxts.push(asd[ui] + ' : ' + xernols + '%')
             pnum.setAttribute('class', 'pnumber')
             pnum.style.top = '-35px'
             br.appendChild(pnum)
@@ -440,7 +440,7 @@ function doTheMath(list) {
 
             ar = document.createElement('div')
             ar.setAttribute('class', 'porcarrow')
-            pnum.appendChild(ar)
+           // pnum.appendChild(ar)
 
             ht = String(uao[0] / sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
 
@@ -1326,7 +1326,16 @@ function sort2(n, p) {
     }
     }
 }
-function hey(idx) {
-    //window.alert(lfts[idx])
-    //window.alert(intxts[idx])
-}
+    function hey(idx) {
+        //window.alert(lfts[idx])
+            window.alert(intxts[idx])
+            pnum = document.createElement('p')
+            pnum.style.position = 'absolute'
+            pnum.innerText = intxts[idx]
+            pnum.setAttribute('class', 'pnumber')
+            pnum.style.top = '-35px'
+            gr.getElementsByClassName('bar')[idx].appendChild(pnum)
+            ar = document.createElement('div')
+            ar.setAttribute('class', 'porcarrow')
+            pnum.appendChild(ar)
+    }
