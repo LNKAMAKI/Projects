@@ -426,7 +426,7 @@ opacity: 100;
 }
 .pnumber {
     width: max-content;
-    opacity: 0;
+    opacity: 100;
     position: absolute;
     transition-duration: 0.5s;
     background-color: black;

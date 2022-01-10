@@ -429,6 +429,14 @@ function doTheMath(list) {
             }
 
             intxts.push(asd[ui] + ' : ' + xernols + '%')
+            pnum = document.createElement('p')
+            pnum.style.position = 'absolute'
+            //pnum.innerText = intxts[idx]
+            pnum.setAttribute('class', 'pnumber')
+           // pnum.style.top = '-35px'
+            pnum.innerText = '11111'
+            gr.appendChild(pnum)
+            
             /*
             pnum = document.createElement('p')
             pnum.style.position = 'absolute'
@@ -1328,14 +1336,21 @@ function sort2(n, p) {
 }
     function hey(idx) {
         //window.alert(lfts[idx])
-            window.alert(intxts[idx])
-            pnum = document.createElement('p')
-            pnum.style.position = 'absolute'
+            //window.alert(intxts[idx])
+           // pnum = document.createElement('p')
+            //pnum.style.position = 'absolute'
             pnum.innerText = intxts[idx]
-            pnum.setAttribute('class', 'pnumber')
-            pnum.style.top = '-35px'
-            gr.getElementsByClassName('bar')[idx].appendChild(pnum)
+            pnum.style.left = `calc(${lfts[idx]}%)`
+            pnum.style.left = '-10px'
             ar = document.createElement('div')
             ar.setAttribute('class', 'porcarrow')
             pnum.appendChild(ar)
+            //pnum.style.opacity = '100'
+            //ar.style.opacity = '100'
+            //pnum.setAttribute('class', 'pnumber')
+            //pnum.style.top = '-35px'
+            //gr.getElementsByClassName('bar')[idx].appendChild(pnum)
+            //ar = document.createElement('div')
+           // ar.setAttribute('class', 'porcarrow')
+            //pnum.appendChild(ar)
     }
