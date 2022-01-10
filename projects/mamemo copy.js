@@ -1353,6 +1353,7 @@ function sort2(n, p) {
             pnum.style.position = 'absolute'
             pnum.setAttribute('class', 'pnumber')
             pnum.style.top = '-29px'
+            console.log(intxts[idx])
             pnum.innerText = intxts[idx]
             ar.appendChild(pnum)
     }
