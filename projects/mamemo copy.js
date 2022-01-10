@@ -202,6 +202,8 @@ function doTheMath(list) {
 
     lfts = []
     intxts = []
+    hgts = []
+    wids = 0
     // Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
@@ -334,6 +336,10 @@ function doTheMath(list) {
     fa = 0
 
     let iclass = document.getElementById('interclass')
+    ar = document.createElement('div')
+    ar.setAttribute('class', 'porcarrow')
+    gr.appendChild(ar)
+
     if (iclass.value.length == 0 || iclass.value < uao[ui] / sum) {
         uao = sort2(apar, what)[0]
         asd = sort2(apar, what)[1]
@@ -390,6 +396,7 @@ function doTheMath(list) {
             br = document.createElement('div')
             br.setAttribute('class', 'bar')
             br.setAttribute('onmouseenter', `hey(${ui})`)
+            br.setAttribute('onmouseout', `hah(${ui})`)
             num1 = []
             num2 = []
             for (n = 0; n < 240; n++) {
@@ -417,10 +424,12 @@ function doTheMath(list) {
             if (100 / what.length - 30 / what.length > 8.5) {
                 br.style.width = 'calc(8.5%)'
                 jorge.style.width = 'calc(8.5%)'
+                wids = 8.5
                 gr.style.maxWidth = '600px'
             } else {
                 br.style.width = `calc( ${100 / what.length - 30 / what.length}% )`
                 jorge.style.width = `calc( ${100 / what.length - 30 / what.length}% )`
+                wids = 100 / what.length - 30 / what.length
                 if (600 + what.length * 10 < 1000) {
                     gr.style.maxWidth = 600 + what.length * 10 + 'px'
                 } else {
@@ -429,13 +438,13 @@ function doTheMath(list) {
             }
 
             intxts.push(asd[ui] + ' : ' + xernols + '%')
-            pnum = document.createElement('p')
-            pnum.style.position = 'absolute'
+           // pnum = document.createElement('p')
+            //pnum.style.position = 'absolute'
             //pnum.innerText = intxts[idx]
-            pnum.setAttribute('class', 'pnumber')
+           // pnum.setAttribute('class', 'pnumber')
            // pnum.style.top = '-35px'
-            pnum.innerText = '11111'
-            gr.appendChild(pnum)
+            //pnum.innerText = '11111'
+            //gr.appendChild(pnum)
             
             /*
             pnum = document.createElement('p')
@@ -446,8 +455,6 @@ function doTheMath(list) {
             br.appendChild(pnum)
             */
 
-            ar = document.createElement('div')
-            ar.setAttribute('class', 'porcarrow')
            // pnum.appendChild(ar)
 
             ht = String(uao[0] / sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
@@ -485,6 +492,7 @@ function doTheMath(list) {
             if (mxNum > ht) {
                 br.style.height = `calc(${94 / (mxNum / (uao[ui] / sum * 100))}%)`
                 jorge.style.bottom = `calc(${94 / (100 / xernolsim)}%)`
+                hgts.push(94 / (mxNum / (uao[ui] / sum * 100)))
                 altur = 94 / (mxNum / (uao[ui] / sum * 100))
                 line.style.bottom = 'calc(94%)'
                 line2.style.bottom = `calc(${94 / 2}%)`
@@ -493,6 +501,7 @@ function doTheMath(list) {
             } else {
                 br.style.height = `calc(${94 / (ht / (uao[ui] / sum * 100))}%)`
                 jorge.style.bottom = `calc(${94 / (100 / xernolsim)}%)`
+                hgts.push(94 / (ht / (uao[ui] / sum * 100)))
                 altur = 94 / (ht / (uao[ui] / sum * 100))
                 line.style.bottom = `calc(${94 / (ht / mxNum)}%)`
                 line2.style.bottom = `calc(${94 / (ht / mxNum) / 2}%)`
@@ -1337,20 +1346,17 @@ function sort2(n, p) {
     function hey(idx) {
         //window.alert(lfts[idx])
             //window.alert(intxts[idx])
-           // pnum = document.createElement('p')
-            //pnum.style.position = 'absolute'
+            ar.style.left = `calc(${lfts[idx] + wids/2}% - 7px)`
+            ar.style.bottom =  `calc(${hgts[idx] - 1}%)`
+             ar.style.opacity = '100'
+             pnum = document.createElement('p')
+            pnum.style.position = 'absolute'
+            pnum.setAttribute('class', 'pnumber')
+            pnum.style.top = '-29px'
             pnum.innerText = intxts[idx]
-            pnum.style.left = `calc(${lfts[idx]}%)`
-            pnum.style.left = '-10px'
-            ar = document.createElement('div')
-            ar.setAttribute('class', 'porcarrow')
-            pnum.appendChild(ar)
-            //pnum.style.opacity = '100'
-            //ar.style.opacity = '100'
-            //pnum.setAttribute('class', 'pnumber')
-            //pnum.style.top = '-35px'
-            //gr.getElementsByClassName('bar')[idx].appendChild(pnum)
-            //ar = document.createElement('div')
-           // ar.setAttribute('class', 'porcarrow')
-            //pnum.appendChild(ar)
+            ar.appendChild(pnum)
+    }
+    function hah() {
+    // window.alert('HAH')
+     ar.style.opacity = '0'
     }
