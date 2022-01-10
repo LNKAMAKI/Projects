@@ -200,7 +200,7 @@ function del() {
 
 function doTheMath(list) {
 
-
+    lfts = []
     // Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
         document.body.removeChild(document.getElementsByTagName('table')[0])
@@ -559,18 +559,22 @@ function doTheMath(list) {
                 if (100 / what.length - 30 / what.length > 8.5) {
                     br.style.left = `calc(${left + ((100 - pc) / 2)}%)`
                     jorge.style.left = `calc(${left + ((100 - pc) / 2)}%)`
+                    lfts.push(left + (100 - pc) / 2)
                 } else {
                     br.style.left = `calc(${left + ((100 - pc2) / 2)}%)`
                     jorge.style.left = `calc(${left + ((100 - pc2) / 2)}%)`
+                    lfts.push(left + (100 - pc2) / 2)
                 }
 
             } else {
                 if (100 / what.length - 30 / what.length > 8.5) {
                     br.style.left = `calc(${left + ((100 - pc) / 2)}%)`
                     jorge.style.left = `calc(${left + ((100 - pc) / 2)}%)`
+                    lfts.push(left + (100 - pc) / 2)
                 } else {
                     br.style.left = `calc(${left + ((100 - pc2) / 2)}%)`
                     jorge.style.left = `calc(${left + ((100 - pc2) / 2)}%)`
+                    lfts.push(left + (100 - pc2) / 2)
                 }
 
             }
