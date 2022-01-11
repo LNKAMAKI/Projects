@@ -203,6 +203,7 @@ function doTheMath(list) {
     lfts = []
     intxts = []
     hgts = []
+    //clrs = []
     wids = 0
     // Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
@@ -412,6 +413,7 @@ function doTheMath(list) {
             n3 = num2[Math.floor(num2.length * Math.random())]
             if (valueColor == null || cn == true) {
             br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
+
             }else{
                 br.style.backgroundColor = valueColor
             }
@@ -1330,6 +1332,7 @@ function sort2(n, p) {
             config = document.getElementsByClassName('config')[0]
          //console.log(config.getElementsByTagName('input')[1].value)
          valueColor = config.getElementsByTagName('input')[1].value
+         //config.getElementsByTagName('input')[1].value = 'rgb(0, 0, 255)'
          //console.log(gr.getElementsByClassName('bar'))
          for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
             gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
@@ -1387,6 +1390,7 @@ function sort2(n, p) {
     function hey(idx) {
         //window.alert(lfts[idx])
             //window.alert(intxts[idx])
+            console.log(gr.getElementsByClassName('bar')[idx].style.backgroundColor)
             if (ar.getElementsByClassName('pnumber').length > 0) {
                 ar.removeChild(ar.getElementsByClassName('pnumber')[0])
             }
