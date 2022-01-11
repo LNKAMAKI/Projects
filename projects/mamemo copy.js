@@ -160,7 +160,8 @@ function del() {
     document.getElementById('tagra').style.display = 'none'
     //Deletando a Tabela
     if (document.getElementsByTagName('table').length > 0) {
-        document.body.removeChild(document.getElementsByTagName('table')[0])
+        //document.body.removeChild(document.getElementsByTagName('table')[0])
+        dv.removeChild(tab)
         document.body.removeChild(document.getElementById('graph'))
     }
 
@@ -207,7 +208,8 @@ function doTheMath(list) {
     wids = 0
     // Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
-        document.body.removeChild(document.getElementsByTagName('table')[0])
+        //document.body.removeChild(document.getElementsByTagName('table')[0])
+        dv.removeChild(tab)
         document.body.removeChild(document.getElementById('graph'))
     }
 
@@ -237,8 +239,13 @@ function doTheMath(list) {
         pa.innerText = '0'
         pa.style.left = '-10px'
 
+        dv = document.createElement('div')
+        dv.style.overflowY = 'hidden'
+        dv.style.overflowX = 'auto'
+        document.body.appendChild(dv)
+
         tab = document.createElement('table')
-        document.body.appendChild(tab)
+        dv.appendChild(tab)
         tab.innerHTML = '<thead><tr><th scope= "col">Valor</th><th scope= "col">F</th><th scope= "col">FR</th><th scope= "col">FA</th><th scope= "col">FRA</th></tr></thead><tbody></tbody>'
         tab.style.margin = 'auto'
         tab.getElementsByTagName('tr')[0].style.animation = 'slide 1s'
