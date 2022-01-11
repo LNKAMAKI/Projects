@@ -460,6 +460,8 @@ function doTheMath(list) {
             ht = String(uao[0] / sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
 
             gr.style.animation = 'hidden ' + 94 / (ht / (uao[0] / sum * 100)) / 6.99 + 's'
+
+            ar.style.animation = 'hide ' + 94 / (ht / (uao[0] / sum * 100)) / 24 + 's' + ' steps(1)'
             // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
             br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 
@@ -856,6 +858,8 @@ function doTheMath(list) {
      ht = String(uao[0] / sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
 
      gr.style.animation = 'hidden ' + 94 / (ht / (uao[0] / sum * 100)) / 6.99 + 's'
+
+     ar.style.animation = 'hide ' + 94 / (ht / (uao[0] / sum * 100)) / 24 + 's' + ' steps(1)'
      // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
      br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 

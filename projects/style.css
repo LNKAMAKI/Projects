@@ -584,3 +584,13 @@ opacity: 100;
         margin: 0px;
         border-width: 0px;
     }
+    @keyframes hide {
+        0% {
+           /* border-top-color: transparent; */
+           visibility: hidden;
+        }
+        100% {
+           /* border-top-color: black; */
+           visibility: visible;
+        }
+    }
