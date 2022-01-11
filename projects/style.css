@@ -2,6 +2,7 @@ body {
     overflow-x: hidden;
     background-color: rgba(0, 0, 0, 0.781);
     /*background-color: white;*/
+    background-color: rgb(160, 160, 160);
     font-family: Arial, Helvetica, sans-serif;
 }
 * {
@@ -408,10 +409,13 @@ hr.hr2a > p {
     position: absolute;
     display: grid;
     justify-content: center;
-    width: 12%;
+    width: 3.5px;
+    /*12%*/
     height: 0px;
-    padding-bottom: 14%;
+    padding-bottom: 3.5px;
+    /*14%*/
     background-color: black;
+    z-index: 0;
 }
 .squarp {
     transition-duration: 0.5s;
@@ -491,7 +495,7 @@ opacity: 100;
         position: absolute;
         height: 0px;
         background-color: blueviolet;
-        z-index: 3;
+        z-index: 2;
         display: grid;
         justify-items: center;
     }

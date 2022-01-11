@@ -1346,13 +1346,16 @@ function sort2(n, p) {
     function hey(idx) {
         //window.alert(lfts[idx])
             //window.alert(intxts[idx])
+            if (ar.getElementsByClassName('pnumber').length > 0) {
+                ar.removeChild(ar.getElementsByClassName('pnumber')[0])
+            }
             ar.style.left = `calc(${lfts[idx] + wids/2}% - 7px)`
             ar.style.bottom =  `calc(${hgts[idx] - 1}%)`
              ar.style.opacity = '100'
              pnum = document.createElement('p')
             pnum.style.position = 'absolute'
             pnum.setAttribute('class', 'pnumber')
-            pnum.style.top = '-29px'
+            pnum.style.top = '-30px'
             console.log(intxts[idx])
             pnum.innerText = intxts[idx]
             ar.appendChild(pnum)
