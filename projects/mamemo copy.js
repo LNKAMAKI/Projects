@@ -1391,8 +1391,9 @@ function sort2(n, p) {
                 ar.removeChild(ar.getElementsByClassName('pnumber')[0])
             }
             ar.style.left = `calc(${lfts[idx] + wids/2}% - 7px)`
-            ar.style.bottom =  `calc(${hgts[idx] - 1}%)`
+            ar.style.bottom =  `calc(${hgts[idx]}% - 3px)`
              ar.style.opacity = '100'
+             ar.style.visibility = 'visible'
              pnum = document.createElement('p')
             pnum.style.position = 'absolute'
             pnum.setAttribute('class', 'pnumber')
@@ -1404,4 +1405,5 @@ function sort2(n, p) {
     function hah() {
     // window.alert('HAH')
      ar.style.opacity = '0'
+     ar.style.visibility = 'hidden'
     }
