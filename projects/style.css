@@ -576,13 +576,22 @@ opacity: 100;
     input[type= "checkbox"] {
         cursor: pointer;
     }
-    input[type= "color"] {
+    #cor {
         background-color: transparent;
         width: 27px;
         height: 30px;
         padding: 0px;
         margin: 0px;
         border-width: 0px;
+    }
+    .inputcolor {
+      display: inline-block;
+      width: 16px;
+      height: 20px;
+      padding: 0px;
+        margin: 0px;
+        border-width: 0px;
+        background-color: transparent;
     }
     @keyframes hide {
         0% {

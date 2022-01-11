@@ -203,7 +203,7 @@ function doTheMath(list) {
     lfts = []
     intxts = []
     hgts = []
-    //clrs = []
+    clrs = []
     wids = 0
     // Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
@@ -401,22 +401,23 @@ function doTheMath(list) {
             num1 = []
             num2 = []
             
-            for (n = 0; n < 240; n++) {
-                num1.push(n)
-
-            }
-            for (n = 0; n < 240; n++) {
-                num2.push(n)
-
-            }
+         
+            num1 = ['0', '1', '2', '3', '4', '5', '6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+            console.log(num1)
             n1 = num1[Math.floor(num1.length * Math.random())]
-            n2 = num2[Math.floor(num2.length * Math.random())]
-            n3 = num2[Math.floor(num2.length * Math.random())]
-            if (valueColor == null || cn == true) {
-            br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
-
+            n2 = num1[Math.floor(num1.length * Math.random())]
+            n3 = num1[Math.floor(num1.length * Math.random())]
+            n4 = num1[Math.floor(num1.length * Math.random())]
+            n5 = num1[Math.floor(num1.length * Math.random())]
+            n6 = num1[Math.floor(num1.length * Math.random())]
+        
+             if (valueColor == null || cn == true) {
+                 console.log(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
+             br.style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
+             clrs.push(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
             }else{
                 br.style.backgroundColor = valueColor
+                clrs.push(valueColor)
             }
 
             gr.appendChild(br)
@@ -468,17 +469,9 @@ function doTheMath(list) {
             // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
             br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 
-            //console.log(xernols)
-
-            //console.log('what length' + what.length)
-
-            //console.log('Maior porcentagem: ' + ht)
             htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
 
             htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
-
-            //console.log(htWiotDec, htLstN)
-
 
             line = document.createElement('hr')
             gr.appendChild(line)
@@ -489,7 +482,7 @@ function doTheMath(list) {
             line4 = document.createElement('hr')
             gr.appendChild(line4)
 
-            //console.log(htWiotDec.length)
+            
             // if (htWiotDec.length > 1) {
             //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
 
@@ -529,7 +522,7 @@ function doTheMath(list) {
             } else if (String(mxNum).length == 5) { // 10.55
                 pa.style.left = '-42px'
             }
-            //console.log('max number: ' + mxNum)
+            
 
             pa2 = document.createElement('p')
             line2.appendChild(pa2)
@@ -626,15 +619,13 @@ function doTheMath(list) {
                 if (ischeck == true) {
                     square.style.visibility = 'hidden'
                 }
-
             }
             if (what.length > 1 && ui != what.length - 1) {
                 //linha.style.display = 'none'
                 //square.style.top = 100/fra*(altur/2) + '%'
 
                 fra2 = uao[ui + 1] / sum * 100
-                //console.log('fra2: ' + fra2)
-                //console.log(fra2 / 3)
+                
                 tp = 0
                 rg = 0
                 for (n = 0; n <= Math.round(fra2/1.2); n++) {
@@ -660,9 +651,7 @@ function doTheMath(list) {
                 }
             }
         }
-
-
-    } else {
+    }else{
         interclasses = []
         aparic = []
 
@@ -686,9 +675,9 @@ function doTheMath(list) {
                             if (interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1]) == -1) {
                                 interclasses.push(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])
                                 aparic.push(apar[n])
-                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])
+                                
                             } else {
-                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1] + 'too')
+                                
                                 aparic[interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])] += apar[n]
                             }
 
@@ -714,9 +703,9 @@ function doTheMath(list) {
                             if (interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1]) == -1) {
                                 interclasses.push(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])
                                 aparic.push(apar[n])
-                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])
+                                
                             } else {
-                                //console.log(what[n] + 'is in' + interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1] + 'too')
+                                
                                 aparic[interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])] += apar[n]
                             }
 
@@ -737,11 +726,11 @@ function doTheMath(list) {
             sum += aparic[n]
         }
 
-        //console.log(interclasses)
+        
         for (ui = interclasses.length; ui > -1; ui--) {
-            //console.log(uao[ui] / sum * 100)
+            
             if (uao[ui] / sum * 100 == 0) {
-                //console.log('0!!!')
+                
                 interclasses.splice(ui, 1)
             }
         }
@@ -800,22 +789,23 @@ function doTheMath(list) {
      br.setAttribute('onmouseout', `hah(${ui})`)
      num1 = []
      num2 = []
-     for (n = 0; n < 240; n++) {
-         num1.push(n)
-
-     }
-     for (n = 0; n < 240; n++) {
-         num2.push(n)
-
-     }
-     n1 = num1[Math.floor(num1.length * Math.random())]
-     n2 = num2[Math.floor(num2.length * Math.random())]
-     n3 = num2[Math.floor(num2.length * Math.random())]
     
+    num1 = ['0', '1', '2', '3', '4', '5', '6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    console.log(num1)
+    n1 = num1[Math.floor(num1.length * Math.random())]
+    n2 = num1[Math.floor(num1.length * Math.random())]
+    n3 = num1[Math.floor(num1.length * Math.random())]
+    n4 = num1[Math.floor(num1.length * Math.random())]
+    n5 = num1[Math.floor(num1.length * Math.random())]
+    n6 = num1[Math.floor(num1.length * Math.random())]
+
      if (valueColor == null || cn == true) {
-     br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
+         console.log(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
+     br.style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
+     clrs.push(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
      }else{
          br.style.backgroundColor = valueColor
+         clrs.push(valueColor)
      }
 
      gr.appendChild(br)
@@ -867,16 +857,16 @@ function doTheMath(list) {
      // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
      br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 
-     //console.log(xernols)
+     
 
-     //console.log('interclasses length' + interclasses.length)
+     
 
-     //console.log('Maior porcentagem: ' + ht)
+     
      htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
 
      htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
-     //console.log(htWiotDec, htLstN)
+     
 
 
      line = document.createElement('hr')
@@ -888,7 +878,7 @@ function doTheMath(list) {
      line4 = document.createElement('hr')
      gr.appendChild(line4)
 
-     //console.log(htWiotDec.length)
+     
      // if (htWiotDec.length > 1) {
      //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
 
@@ -928,7 +918,7 @@ function doTheMath(list) {
      } else if (String(mxNum).length == 5) { // 10.55
          pa.style.left = '-42px'
      }
-     //console.log('max number: ' + mxNum)
+     
 
      pa2 = document.createElement('p')
      line2.appendChild(pa2)
@@ -1032,8 +1022,8 @@ function doTheMath(list) {
          //square.style.top = 100/fra*(altur/2) + '%'
 
          fra2 = uao[ui + 1] / sum * 100
-         //console.log('fra2: ' + fra2)
-         //console.log(fra2 / 3)
+         
+         
          tp = 0
          rg = 0
          for (n = 0; n <= Math.round(fra2/1.2); n++) {
@@ -1162,7 +1152,7 @@ function sort2(n, p) {
     function redo(){
     
         if (click == 0) {
-            //console.log(personal)
+            
             css = '.person {background-color: rgb(231, 231, 231); }'
            style = document.createElement('style')
            document.head.appendChild(style)
@@ -1206,12 +1196,12 @@ function sort2(n, p) {
             config.style.top = '-7px'
             /*
             if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px; onclick="change()"><img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
+                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" id= "cor"> <img src="paint-brush.png" style= "width: 25px; height: 25px; onclick="change()"><img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
                 config.getElementsByTagName('input')[1].value = valueColor
                */
             //}else{
 
-                config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick="change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
+                config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" id= "cor"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick="change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
                 config.getElementsByTagName('input')[1].value = valueColor
 
                 if (ischeck == true) {
@@ -1293,7 +1283,7 @@ function sort2(n, p) {
 
     function check() {
         inp = config.getElementsByTagName('input')[0]
-        //console.log('GO')
+        
        // if (click == 1) {
         if (inp.checked == true) {
             ischeck = true
@@ -1308,7 +1298,7 @@ function sort2(n, p) {
             sqs = document.getElementById('graph').getElementsByClassName('squar')
             sqps = document.getElementById('graph').getElementsByClassName('squarp')
             //window.alert(sqs)
-            //console.log(sqs)
+            
             for (n = 0; n < sqs.length; n++) {
             sqs[n].style.visibility = 'visible'
             //sqps[n].style.color = 'currentColor'
@@ -1332,12 +1322,16 @@ function sort2(n, p) {
             rainbow = false
             cn = false
             config = document.getElementsByClassName('config')[0]
-         //console.log(config.getElementsByTagName('input')[1].value)
+         
          valueColor = config.getElementsByTagName('input')[1].value
          //config.getElementsByTagName('input')[1].value = 'rgb(0, 0, 255)'
-         //console.log(gr.getElementsByClassName('bar'))
+         
+
+         clrs = []
          for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
             gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
+
+            clrs.push(config.getElementsByTagName('input')[1].value)
          }
         //}
     }
@@ -1356,12 +1350,17 @@ function sort2(n, p) {
                 style.appendChild(document.createTextNode(css))
             //config.getElementsByTagName('img')[1].style.backgroundColor = 'rgb(200, 200, 200)'
             //config.getElementsByTagName('img')[1].style.borderRadius = '3px'
+            clrs = []
          for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
             n1 = num1[Math.floor(num1.length * Math.random())]
-            n2 = num2[Math.floor(num2.length * Math.random())]
-            n3 = num2[Math.floor(num2.length * Math.random())]
-            //gr.getElementsByClassName('bar')[n].style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
-            gr.getElementsByClassName('bar')[n].style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
+            n2 = num1[Math.floor(num1.length * Math.random())]
+            n3 = num1[Math.floor(num1.length * Math.random())]
+            n4 = num1[Math.floor(num1.length * Math.random())]
+            n5 = num1[Math.floor(num1.length * Math.random())]
+            n6 = num1[Math.floor(num1.length * Math.random())]
+    
+            gr.getElementsByClassName('bar')[n].style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
+            clrs.push(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
          }
            // valueColor = null
            cn = true
@@ -1380,19 +1379,22 @@ function sort2(n, p) {
             cn = false
             rainbow = false
             config = document.getElementsByClassName('config')[0]
-            //console.log(config.getElementsByTagName('input')[1].value)
+            
             valueColor = config.getElementsByTagName('input')[1].value
-            //console.log(gr.getElementsByClassName('bar'))
+            
+
+            clrs = []
             for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
                gr.getElementsByClassName('bar')[n].style.backgroundColor = config.getElementsByTagName('input')[1].value
+
+               clrs.push(config.getElementsByTagName('input')[1].value)
         }
     }
     }
 }
     function hey(idx) {
-        //window.alert(lfts[idx])
-            //window.alert(intxts[idx])
-            console.log(gr.getElementsByClassName('bar')[idx].style.backgroundColor)
+
+            console.log(clrs[idx])
             if (ar.getElementsByClassName('pnumber').length > 0) {
                 ar.removeChild(ar.getElementsByClassName('pnumber')[0])
             }
@@ -1404,12 +1406,18 @@ function sort2(n, p) {
             pnum.style.position = 'absolute'
             pnum.setAttribute('class', 'pnumber')
             pnum.style.top = '-30px'
+            pnum.style.padding = '2px 6px 2px 6px'
             console.log(intxts[idx])
             pnum.innerText = intxts[idx]
             ar.appendChild(pnum)
+
+            inpcor = document.createElement('input')
+            inpcor.setAttribute('type', 'color')
+            inpcor.setAttribute('class', 'inputcolor')
+            pnum.appendChild(inpcor)
+            inpcor.value = clrs[idx]
     }
     function hah() {
-    // window.alert('HAH')
      ar.style.opacity = '0'
      ar.style.visibility = 'hidden'
     }
