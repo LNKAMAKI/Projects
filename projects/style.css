@@ -603,3 +603,7 @@ opacity: 100;
            visibility: visible;
         }
     }
+    div.o {
+        background-color: transparent;
+        margin-top: 5px;
+    }
