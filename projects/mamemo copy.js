@@ -400,6 +400,7 @@ function doTheMath(list) {
             br.setAttribute('onmouseout', `hah(${ui})`)
             num1 = []
             num2 = []
+            
             for (n = 0; n < 240; n++) {
                 num1.push(n)
 
@@ -810,6 +811,7 @@ function doTheMath(list) {
      n1 = num1[Math.floor(num1.length * Math.random())]
      n2 = num2[Math.floor(num2.length * Math.random())]
      n3 = num2[Math.floor(num2.length * Math.random())]
+    
      if (valueColor == null || cn == true) {
      br.style.backgroundColor = `rgb(${n1}, ${n2}, ${n3})`
      }else{
