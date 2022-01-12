@@ -1324,7 +1324,7 @@ function sort2(n, p) {
             pnum.innerHTML = `${String(intxts[idx]).replace(new RegExp('\\s:.+', 'g'), '')}<br>`
             ar.appendChild(pnum)
 
-            if (lfts[idx] > 7) {
+            if (lfts[idx] > 7 && lfts[idx] < 87) {
                 pnum.style.top = '-45px'
                 ar.style.justifyItems = 'center'
                 ar.style.alignItems = 'normal'
@@ -1333,28 +1333,30 @@ function sort2(n, p) {
                 ar.style.borderLeftColor = 'transparent'
                 ar.style.borderBottomColor = 'transparent'
             }else{
-                pnum.style.left = 'calc(50% + 5px)'
-                pnum.style.top = '-17px'
+             //  pnum.style.left = 'calc(50% + 5px)'
+               // pnum.style.top = '-17px'
+              // pnum.style.left = '0px'
+             //  pnum.style.top = '0px'
                if (lfts[idx] < 7) {
                 // /*
-               pnum.style.left = '4px'
+             //  pnum.style.left = '4px'
                ar.style.display = 'grid'
                ar.style.alignItems = 'center'
                ar.style.justifyItems = 'start'
                 ar.style.borderTopColor = 'transparent'
-                ar.style.borderRightColor = 'black'
+                ar.style.borderRightColor = 'transparent'
                 ar.style.borderLeftColor = 'transparent'
-                ar.style.borderBottomColor = 'transparent'
+                ar.style.borderBottomColor = 'black'
                 // */
                }else{
-               pnum.style.left += 5
+              // pnum.style.left += 5
              // /*
                 ar.style.alignItems = 'center'
                 ar.style.justifyItems = 'end'
                  ar.style.borderTopColor = 'transparent'
                  ar.style.borderRightColor = 'transparent'
-                 ar.style.borderLeftColor = 'black'
-                 ar.style.borderBottomColor = 'transparent'
+                 ar.style.borderLeftColor = 'transparent'
+                 ar.style.borderBottomColor = 'black'
                  //*/
                }
             }
@@ -1365,6 +1367,6 @@ function sort2(n, p) {
 
     }
     function hah() {
-     ar.style.opacity = '0'
-     ar.style.visibility = 'hidden'
+   //  ar.style.opacity = '0'
+   //  ar.style.visibility = 'hidden'
     }
