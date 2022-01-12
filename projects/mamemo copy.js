@@ -1428,7 +1428,8 @@ function sort2(n, p) {
             pnum.innerHTML = `${String(intxts[idx]).replace(new RegExp('\\s:.+', 'g'), '')}<br>`
             ar.appendChild(pnum)
 
-            if (lfts[idx] > 7 && lfts[idx] < 85) {
+            //  if (lfts[idx] > 7 && lfts[idx] < 85) {
+            if (lfts[idx] > 7) {
                 pnum.style.top = '-45px'
                 ar.style.justifyItems = 'center'
                 ar.style.alignItems = 'normal'
@@ -1437,24 +1438,29 @@ function sort2(n, p) {
                 ar.style.borderLeftColor = 'transparent'
                 ar.style.borderBottomColor = 'transparent'
             }else{
-               // pnum.style.left = 'calc(50% + 5px)'
-               // pnum.style.top = '-17px'
+                pnum.style.left = 'calc(50% + 5px)'
+                pnum.style.top = '-17px'
                if (lfts[idx] < 7) {
+                // /*
                pnum.style.left = '4px'
+               ar.style.display = 'grid'
                ar.style.alignItems = 'center'
-               ar.style.justifyItems = 'end'
+               ar.style.justifyItems = 'start'
                 ar.style.borderTopColor = 'transparent'
                 ar.style.borderRightColor = 'black'
                 ar.style.borderLeftColor = 'transparent'
                 ar.style.borderBottomColor = 'transparent'
+                // */
                }else{
-               pnum.style.left = '-20px'
+               pnum.style.left += 5
+             // /*
                 ar.style.alignItems = 'center'
                 ar.style.justifyItems = 'end'
                  ar.style.borderTopColor = 'transparent'
                  ar.style.borderRightColor = 'transparent'
                  ar.style.borderLeftColor = 'black'
                  ar.style.borderBottomColor = 'transparent'
+                 //*/
                }
             }
 
@@ -1463,8 +1469,9 @@ function sort2(n, p) {
             pnum.innerHTML += `<input type= "color" class= "inputcolor"></input>${String(intxts[idx]).replace(new RegExp('.+\\s:\\s', 'g'), '')}`
 
             pnum.getElementsByTagName('input')[0].value = clrs[idx]
+
     }
     function hah() {
-    // ar.style.opacity = '0'
-    // ar.style.visibility = 'hidden'
+     ar.style.opacity = '0'
+     ar.style.visibility = 'hidden'
     }
