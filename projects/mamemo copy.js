@@ -1428,8 +1428,10 @@ function sort2(n, p) {
             pnum.innerHTML = `${String(intxts[idx]).replace(new RegExp('\\s:.+', 'g'), '')}<br>`
             ar.appendChild(pnum)
 
-            if (lfts[idx] > 7) {
+            if (lfts[idx] > 7 && lfts[idx] < 85) {
                 pnum.style.top = '-45px'
+                ar.style.justifyItems = 'center'
+                ar.style.alignItems = 'normal'
                 ar.style.borderTopColor = 'black'
                 ar.style.borderRightColor = 'transparent'
                 ar.style.borderLeftColor = 'transparent'
@@ -1437,10 +1439,23 @@ function sort2(n, p) {
             }else{
                // pnum.style.left = 'calc(50% + 5px)'
                // pnum.style.top = '-17px'
+               if (lfts[idx] < 7) {
+               pnum.style.left = '4px'
+               ar.style.alignItems = 'center'
+               ar.style.justifyItems = 'end'
                 ar.style.borderTopColor = 'transparent'
                 ar.style.borderRightColor = 'black'
                 ar.style.borderLeftColor = 'transparent'
                 ar.style.borderBottomColor = 'transparent'
+               }else{
+               pnum.style.left = '-20px'
+                ar.style.alignItems = 'center'
+                ar.style.justifyItems = 'end'
+                 ar.style.borderTopColor = 'transparent'
+                 ar.style.borderRightColor = 'transparent'
+                 ar.style.borderLeftColor = 'black'
+                 ar.style.borderBottomColor = 'transparent'
+               }
             }
 
            // inpcor.value = clrs[idx]
