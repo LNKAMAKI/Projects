@@ -160,7 +160,6 @@ function del() {
     document.getElementById('tagra').style.display = 'none'
     //Deletando a Tabela
     if (document.getElementsByTagName('table').length > 0) {
-        //document.body.removeChild(document.getElementsByTagName('table')[0])
         dv.removeChild(tab)
         document.body.removeChild(document.getElementById('graph'))
     }
@@ -208,7 +207,6 @@ function doTheMath(list) {
     wids = 0
     // Deletando a Tabela e o Gráfico
     if (document.getElementsByTagName('table').length > 0) {
-        //document.body.removeChild(document.getElementsByTagName('table')[0])
         dv.removeChild(tab)
         document.body.removeChild(document.getElementById('graph'))
     }
@@ -449,31 +447,13 @@ function doTheMath(list) {
             }
 
             intxts.push(asd[ui] + ' : ' + xernols + '%')
-           // pnum = document.createElement('p')
-            //pnum.style.position = 'absolute'
-            //pnum.innerText = intxts[idx]
-           // pnum.setAttribute('class', 'pnumber')
-           // pnum.style.top = '-35px'
-            //pnum.innerText = '11111'
-            //gr.appendChild(pnum)
-            
-            /*
-            pnum = document.createElement('p')
-            pnum.style.position = 'absolute'
-            pnum.innerText = asd[ui] + ' : ' + xernols + '%'
-            pnum.setAttribute('class', 'pnumber')
-            pnum.style.top = '-35px'
-            br.appendChild(pnum)
-            */
-
-           // pnum.appendChild(ar)
 
             ht = String(uao[0] / sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
 
             gr.style.animation = 'hidden ' + 94 / (ht / (uao[0] / sum * 100)) / 6.99 + 's'
 
             ar.style.animation = 'hide ' + 94 / (ht / (uao[0] / sum * 100)) / 24 + 's' + ' steps(1)'
-            // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
+           
             br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 
             htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
@@ -488,10 +468,6 @@ function doTheMath(list) {
             gr.appendChild(line3)
             line4 = document.createElement('hr')
             gr.appendChild(line4)
-
-            
-            // if (htWiotDec.length > 1) {
-            //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
 
             mxNum = Math.round(ht)
             if (mxNum > ht) {
@@ -517,7 +493,7 @@ function doTheMath(list) {
             pa = document.createElement('p')
             line.appendChild(pa)
             pa.innerText = mxNum
-            //pa.style.left = -String(mxNum).length * 9 + 'px'
+            
             if (String(mxNum).length == 1) { // 1
                 pa.style.left = '-12px'
             } else if (String(mxNum).length == 2) { // 10
@@ -534,7 +510,7 @@ function doTheMath(list) {
             pa2 = document.createElement('p')
             line2.appendChild(pa2)
             pa2.innerText = mxNum / 2
-            //pa2.style.left = -String(mxNum/2).length * 9 + 'px'
+         
             if (String(mxNum / 2).length == 1) { // 1
                 pa2.style.left = '-10px'
             } else if (String(mxNum / 2).length == 2) { // 10
@@ -550,7 +526,7 @@ function doTheMath(list) {
             pa3 = document.createElement('p')
             line3.appendChild(pa3)
             pa3.innerText = mxNum / 4
-            //pa3.style.left = -String(mxNum/4).length * 9 + 'px'
+           
             if (String(mxNum / 4).length == 1) { // 1
                 pa3.style.left = '-12px'
             } else if (String(mxNum / 4).length == 2) { // 10
@@ -565,7 +541,7 @@ function doTheMath(list) {
             pa4 = document.createElement('p')
             line4.appendChild(pa4)
             pa4.innerText = mxNum * 0.75
-            //pa4.style.left = -String(mxNum*0.75).length * 9 + 'px'
+          
             if (String(mxNum * 0.75).length == 1) { // 1
                 pa4.style.left = '-12px'
             } else if (String(mxNum * 0.75).length == 2) { // 10
@@ -577,8 +553,6 @@ function doTheMath(list) {
             } else if (String(mxNum * 0.75).length == 5) { // 10.55
                 pa4.style.left = '-42px'
             }
-            //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
-            //br.style.height = '286.6px'
 
             pc = 12.5 * (what.length - 1) + 8.5
             pc2 = 100 / what.length * (what.length - 1) + (100 / what.length - 30 / what.length)
@@ -628,9 +602,6 @@ function doTheMath(list) {
                 }
             }
             if (what.length > 1 && ui != what.length - 1) {
-                //linha.style.display = 'none'
-                //square.style.top = 100/fra*(altur/2) + '%'
-
                 fra2 = uao[ui + 1] / sum * 100
                 
                 tp = 0
@@ -644,17 +615,10 @@ function doTheMath(list) {
                     square2.style.height = '5px'
                     tp+= 100
                     rg+= 154
-                    //50/10 = 5 30/10 = 3
-                    //square2.style.top = -tp + '%'
-                    //square2.style.right = -rg + '%'
+    
                     square2.style.top = `calc(${-rg}% - -1vw + ${-50/fra2}%)`
                     square2.style.right = `calc(${-rg}% - -1vw + ${-50/fra2}%)`
                     square2.style.backgroundColor = 'red'
-                    //square2.style.animation = 'popup ' + altur/24 + 's' + ' steps(1)'
-                    //tp += 10
-                    //square2.style.top= -tp + 'px'
-                   // square2.style.right = `calc(${-tp}%)`
-                   // square2.style.top = `calc(${-tp}%)`
                 }
             }
         }
@@ -662,7 +626,7 @@ function doTheMath(list) {
         interclasses = []
         aparic = []
 
-        for (n in what) {//tirar
+        for (n in what) {
             interval = []
             //what = [1,2]
             if (what[n] >= 0) {
@@ -837,31 +801,13 @@ function doTheMath(list) {
      }
 
      intxts.push(asd[ui] + ' : ' + xernols + '%')
-    // pnum = document.createElement('p')
-     //pnum.style.position = 'absolute'
-     //pnum.innerText = intxts[idx]
-    // pnum.setAttribute('class', 'pnumber')
-    // pnum.style.top = '-35px'
-     //pnum.innerText = '11111'
-     //gr.appendChild(pnum)
-     
-     /*
-     pnum = document.createElement('p')
-     pnum.style.position = 'absolute'
-     pnum.innerText = asd[ui] + ' : ' + xernols + '%'
-     pnum.setAttribute('class', 'pnumber')
-     pnum.style.top = '-35px'
-     br.appendChild(pnum)
-     */
-
-    // pnum.appendChild(ar)
 
      ht = String(uao[0] / sum * 100).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
 
      gr.style.animation = 'hidden ' + 94 / (ht / (uao[0] / sum * 100)) / 6.99 + 's'
 
      ar.style.animation = 'hide ' + 94 / (ht / (uao[0] / sum * 100)) / 24 + 's' + ' steps(1)'
-     // br.style.animation = 'baran ' + uao[ui]/sum * 280/90 + 's'
+     
      br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 
      
@@ -884,10 +830,6 @@ function doTheMath(list) {
      gr.appendChild(line3)
      line4 = document.createElement('hr')
      gr.appendChild(line4)
-
-     
-     // if (htWiotDec.length > 1) {
-     //if (String(ht).search('\\.') == -1) { // Se o número não tiver casa decimal (Ex: 100)
 
      mxNum = Math.round(ht)
      if (mxNum > ht) {
@@ -913,7 +855,7 @@ function doTheMath(list) {
      pa = document.createElement('p')
      line.appendChild(pa)
      pa.innerText = mxNum
-     //pa.style.left = -String(mxNum).length * 9 + 'px'
+     
      if (String(mxNum).length == 1) { // 1
          pa.style.left = '-12px'
      } else if (String(mxNum).length == 2) { // 10
@@ -930,7 +872,7 @@ function doTheMath(list) {
      pa2 = document.createElement('p')
      line2.appendChild(pa2)
      pa2.innerText = mxNum / 2
-     //pa2.style.left = -String(mxNum/2).length * 9 + 'px'
+     
      if (String(mxNum / 2).length == 1) { // 1
          pa2.style.left = '-10px'
      } else if (String(mxNum / 2).length == 2) { // 10
@@ -946,7 +888,7 @@ function doTheMath(list) {
      pa3 = document.createElement('p')
      line3.appendChild(pa3)
      pa3.innerText = mxNum / 4
-     //pa3.style.left = -String(mxNum/4).length * 9 + 'px'
+     
      if (String(mxNum / 4).length == 1) { // 1
          pa3.style.left = '-12px'
      } else if (String(mxNum / 4).length == 2) { // 10
@@ -961,7 +903,7 @@ function doTheMath(list) {
      pa4 = document.createElement('p')
      line4.appendChild(pa4)
      pa4.innerText = mxNum * 0.75
-     //pa4.style.left = -String(mxNum*0.75).length * 9 + 'px'
+   
      if (String(mxNum * 0.75).length == 1) { // 1
          pa4.style.left = '-12px'
      } else if (String(mxNum * 0.75).length == 2) { // 10
@@ -973,8 +915,6 @@ function doTheMath(list) {
      } else if (String(mxNum * 0.75).length == 5) { // 10.55
          pa4.style.left = '-42px'
      }
-     //br.style.height = uao[ui]/sum * 100 * 2.866 + 'px'
-     //br.style.height = '286.6px'
 
      pc = 12.5 * (interclasses.length - 1) + 8.5
      pc2 = 100 / interclasses.length * (interclasses.length - 1) + (100 / interclasses.length - 30 / interclasses.length)
@@ -1025,12 +965,8 @@ function doTheMath(list) {
 
      }
      if (interclasses.length > 1 && ui != interclasses.length - 1) {
-         //linha.style.display = 'none'
-         //square.style.top = 100/fra*(altur/2) + '%'
-
          fra2 = uao[ui + 1] / sum * 100
-         
-         
+        
          tp = 0
          rg = 0
          for (n = 0; n <= Math.round(fra2/1.2); n++) {
@@ -1042,17 +978,10 @@ function doTheMath(list) {
              square2.style.height = '5px'
              tp+= 100
              rg+= 154
-             //50/10 = 5 30/10 = 3
-             //square2.style.top = -tp + '%'
-             //square2.style.right = -rg + '%'
+
              square2.style.top = `calc(${-rg}% - -1vw + ${-50/fra2}%)`
              square2.style.right = `calc(${-rg}% - -1vw + ${-50/fra2}%)`
              square2.style.backgroundColor = 'red'
-             //square2.style.animation = 'popup ' + altur/24 + 's' + ' steps(1)'
-             //tp += 10
-             //square2.style.top= -tp + 'px'
-            // square2.style.right = `calc(${-tp}%)`
-            // square2.style.top = `calc(${-tp}%)`
          }
      }
  }
@@ -1125,7 +1054,6 @@ function sort2(n, p) {
 
     for (n in yposition) {
         maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
-        //posiçõesnumeros.push(-1)
 
     }
 
@@ -1187,9 +1115,6 @@ function sort2(n, p) {
 
             gear = document.getElementsByClassName('person')[0] 
 
-           //gear.style.animation = 'an 0.4s forwards'
-            
-           // gear.style.transitionDuration = '4s'
             gear.style.opacity = '100'
             gear.style.left = 'calc(270px + (100% - 300px) / 2)'
             gear.style.top = 'calc(100% - 112px)'
@@ -1201,12 +1126,6 @@ function sort2(n, p) {
             config.style.visibility = 'visible'
             config.style.opacity = '100'
             config.style.top = '-7px'
-            /*
-            if (ischeck == true) {
-                config.innerHTML = `<p>Esconder o gráfico de pareto</p><input type="checkbox" onclick= "check()"> <p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" id= "cor"> <img src="paint-brush.png" style= "width: 25px; height: 25px; onclick="change()"><img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb">`
-                config.getElementsByTagName('input')[1].value = valueColor
-               */
-            //}else{
 
                 config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <div class= "o"><p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" id= "cor"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick="change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb"></div>`
                 config.getElementsByTagName('input')[1].value = valueColor
@@ -1215,8 +1134,6 @@ function sort2(n, p) {
                 console.log(config.getElementsByTagName('input')[0])
                 config.getElementsByTagName('input')[0].checked = true
                 }
-                
-            //}
             
             for (n = 0; n < config.getElementsByTagName('input').length; n++) {
                 config.getElementsByTagName('input')[n].style.cursor = 'pointer'
@@ -1226,18 +1143,14 @@ function sort2(n, p) {
             click = 1
 
             if (rainbow == true) {
-            //config.getElementsByTagName('img')[1].style.backgroundColor = 'rgb(200, 200, 200)'
-            //config.getElementsByTagName('img')[1].style.borderRadius = '3px'
+          
             }
         }else{
 
             if (rainbow == true) {
-                //config.getElementsByTagName('img')[1].style.backgroundColor = 'rgb(200, 200, 200)'
-                //config.getElementsByTagName('img')[1].style.borderRadius = '3px'
+              
                 }
 
-           // gear.style.animation = 'an2 0.3s'
-            
            css = '.person {background-color: transparent;}'
            style = document.createElement('style')
            document.head.appendChild(style)
@@ -1291,31 +1204,26 @@ function sort2(n, p) {
     function check() {
         inp = config.getElementsByTagName('input')[0]
         
-       // if (click == 1) {
         if (inp.checked == true) {
             ischeck = true
            sqs = document.getElementById('graph').getElementsByClassName('squar')
            sqps = document.getElementById('graph').getElementsByClassName('squarp')
            for (n = 0; n < sqs.length; n++) {
            sqs[n].style.visibility= 'hidden'
-           //sqps[n].style.color = 'transparent'
            }
         }else{
             ischeck = false
             sqs = document.getElementById('graph').getElementsByClassName('squar')
             sqps = document.getElementById('graph').getElementsByClassName('squarp')
-            //window.alert(sqs)
             
             for (n = 0; n < sqs.length; n++) {
             sqs[n].style.visibility = 'visible'
-            //sqps[n].style.color = 'currentColor'
+           
             }
         }
-   // }
     }
     function change() {
         console.log('change color')
-        //if (click == 1) {
             css = '.config img#rb {background-color: transparent;}'
             style = document.createElement('style')
             document.head.appendChild(style)
@@ -1331,8 +1239,6 @@ function sort2(n, p) {
             config = document.getElementsByClassName('config')[0]
          
          valueColor = config.getElementsByTagName('input')[1].value
-         //config.getElementsByTagName('input')[1].value = 'rgb(0, 0, 255)'
-         
 
          clrs = []
          for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
@@ -1340,7 +1246,6 @@ function sort2(n, p) {
 
             clrs.push(config.getElementsByTagName('input')[1].value)
          }
-        //}
     }
     
     function random() {
@@ -1355,8 +1260,7 @@ function sort2(n, p) {
                 style = document.createElement('style')
                 document.head.appendChild(style)
                 style.appendChild(document.createTextNode(css))
-            //config.getElementsByTagName('img')[1].style.backgroundColor = 'rgb(200, 200, 200)'
-            //config.getElementsByTagName('img')[1].style.borderRadius = '3px'
+           
             clrs = []
          for (n = 0; n < gr.getElementsByClassName('bar').length; n++) {
             n1 = num1[Math.floor(num1.length * Math.random())]
@@ -1369,7 +1273,6 @@ function sort2(n, p) {
             gr.getElementsByClassName('bar')[n].style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
             clrs.push(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
          }
-           // valueColor = null
            cn = true
             rainbow = true
         }else{
@@ -1406,12 +1309,6 @@ function sort2(n, p) {
                 ar.removeChild(ar.getElementsByClassName('pnumber')[0])
             }
 
-            /*
-            border-right-color: transparent;
-            border-left-color: transparent;
-            border-bottom-color: transparent;
-            */
-
             ar.style.left = `calc(${lfts[idx] + wids/2}% - 7px)`
             ar.style.bottom =  `calc(${hgts[idx]}% - 3px)`
              ar.style.opacity = '100'
@@ -1421,14 +1318,12 @@ function sort2(n, p) {
             pnum.setAttribute('class', 'pnumber')
             pnum.style.padding = '3px 8px 3px 8px'
     
-          //  pnum.innerText = intxts[idx]
             console.log('text:',intxts[idx])
             console.log(String(intxts[idx]).replace(new RegExp('.+\\s:\\s', 'g'), ''))
 
             pnum.innerHTML = `${String(intxts[idx]).replace(new RegExp('\\s:.+', 'g'), '')}<br>`
             ar.appendChild(pnum)
 
-            //  if (lfts[idx] > 7 && lfts[idx] < 85) {
             if (lfts[idx] > 7) {
                 pnum.style.top = '-45px'
                 ar.style.justifyItems = 'center'
@@ -1463,8 +1358,6 @@ function sort2(n, p) {
                  //*/
                }
             }
-
-           // inpcor.value = clrs[idx]
 
             pnum.innerHTML += `<input type= "color" class= "inputcolor"></input>${String(intxts[idx]).replace(new RegExp('.+\\s:\\s', 'g'), '')}`
 
