@@ -422,6 +422,7 @@ hr.hr2a > p {
 }
 .squarp {
     transition-duration: 0.5s;
+    visibility: hidden;
     opacity: 0;
     position: relative;
     top: -67%;
@@ -429,6 +430,7 @@ hr.hr2a > p {
 }
 .squar:hover .squarp {
     transition-duration: 0.5s;
+    visibility: visible;
 opacity: 100;
 }
 .pnumber {
@@ -445,6 +447,7 @@ opacity: 100;
    font-size: 0.75em;
 }
 .porcarrow {
+    transition-property: visibility, opacity, left, bottom;
     transition-duration: 0.3s;
     position: absolute;
     /*transform: rotate(45deg);*/
