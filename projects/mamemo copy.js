@@ -10,11 +10,9 @@ rainbow = true
 function blue(idf) {
     num = document.getElementById(idf)
     num.style.backgroundColor = 'rgba(221, 233, 250, 0.98.53)'
-    num.style.transitionDuration = '0.3s'
 }
 function white(idf) {
     num = document.getElementById(idf)
-    num.style.backgroundColor = 'white'
 }
 function delit(l) {
     document.getElementById(l).parentNode.removeChild(document.getElementById(l))

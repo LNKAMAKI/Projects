@@ -10,17 +10,16 @@
 </head>
 
 <body>
-
-<div id="cen"><img src="chart.png" alt="" style="width: 60px; height: 60px;"><h1 id="spec"> Estatística</h1></div>
+    
+<div id="cen"><img src="chart.png" alt="" id="char" style="width: 45px; height: 45px;"><h1 id="spec"> Estatística</h1></div>
     <script src="mamemo copy.js"></script> <div class="ali">
 
-            <label for="numb">Valor:</label>
-            <input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)">
+            <input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)" placeholder="Digite um número...">
 
-            <label for="freq">Frequência:</label>
+             x
             <input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)">
             
-            <input style="cursor: pointer;" id= "submit" type="submit" value="Submit" onclick="go()">
+            <input style="cursor: pointer;" id= "submit" type="submit" value="Add" onclick="go()">
         
 </div>
    <div id="al">
@@ -28,21 +27,17 @@
        </select>
        <!--<div id="arrow">a</div>-->
    </div>
-   
-  <div id="medten">
+
+   <div class="ali" id="dela">
+    <input style="cursor: pointer;" id= "delete" type="submit" value="DELETAR" onclick="del()">
+</div>
+
+  <div id="medten" style="display: none;">
       <p id="ma">Média Aritmética:</p>
       <p id="me">Mediana:</p>
       <p id="mo">Moda:</p>
       <p id="amp">Amplitude Total:</p>
   </div>
-
-  <div class="ali" id="dela">
-    <div class="p">
-        <input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()">
-        <div class="ad"><div class="inform">Deletar todos os elementos da lista<div class="thingo"></div></div></div></div>
-</div>
- 
-
 
  <div id="tagra">
      <h1>Frequências</h1>
