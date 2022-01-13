@@ -201,12 +201,19 @@ p {
     
 }
 
+#cen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 h1 {
     text-align: center;
     margin-bottom: 10px;
 }
 h1#spec {
-    margin-bottom: 0px;
+    margin: 0px;
+    display: inline-block;
 }
 input#freq {
     width: 50px;
