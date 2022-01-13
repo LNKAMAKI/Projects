@@ -21,8 +21,9 @@ body {
   height: 72px;
   border-image: none;
   display: none;
-  background-color:rgb(187, 236, 245);
+  background-color: transparent;
   border: 2px solid rgb(231, 231, 231);
+  border-color: white;
   outline-width: 0px;
 }
 #arrow {
@@ -187,6 +188,7 @@ option {
     min-width: 50px;
     width: fit-content;
     color: rgb(133, 133, 133);
+    border-radius: 3px;
 }
 input#numb {
     width: 140px;
