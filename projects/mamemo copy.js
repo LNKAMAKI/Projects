@@ -238,12 +238,13 @@ function doTheMath(list) {
         dv = document.createElement('div')
         dv.style.overflowY = 'hidden'
         dv.style.overflowX = 'auto'
+        dv.style.margin = 'auto'
+        dv.style.width = 'fit-content'
         document.body.appendChild(dv)
 
         tab = document.createElement('table')
         dv.appendChild(tab)
         tab.innerHTML = '<thead><tr><th scope= "col">Valor</th><th scope= "col">F</th><th scope= "col">FR</th><th scope= "col">FA</th><th scope= "col">FRA</th></tr></thead><tbody></tbody>'
-        tab.style.margin = 'auto'
         tab.getElementsByTagName('tr')[0].style.animation = 'slide 1s'
 
     }
