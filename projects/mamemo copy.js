@@ -58,10 +58,6 @@ function delit(l) {
         amp = document.getElementById('amp')
 
         console.log(m1)
-        //m1.innerText = 'Média Aritmética:'
-        //m2.innerText = 'Mediana:'
-        //m3.innerText = 'Moda:'
-        //amp.innerText = 'Amplitude Total:'
 
         doTheMath(list)
     } else {
@@ -170,10 +166,6 @@ function del() {
     for (th = alop.length; th > 0; th--) {
         seletor.removeChild(alop[th - 1])
     }
-    //m1.innerText = 'Média Aritmética:'
-    //m2.innerText = 'Mediana:'
-    //m3.innerText = 'Moda:'
-    //amp.innerText = 'Amplitude Total:'
 
     uyu = porcent.getElementsByTagName('option')
     for (gt = uyu.length; gt > 0; gt--) {
@@ -252,20 +244,18 @@ function doTheMath(list) {
     // Ordenando lista:
 
     xernols = String(media(list)[0]).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
-    console.log('m1:', m1)
-    console.log(m1.innerText)
+    
     m1.innerText = xernols
-//    m1.innerText = 'Média Aritmética: ' + xernols
 
     // Calculando a Amplitude Total
     amplitude = list[0] - list[list.length - 1]
-    //amp.innerText = 'Amplitude Total: ' + amplitude
+    amp.innerText = amplitude
 
     // Conseguindo a Mediana
     let ehprimo = parOuImpar(list.length)
     if (list.length > 2) {
         if (ehprimo == 'ÍMPAR') {
-            //m2.innerText = 'Mediana: ' + list[(list.length + 1) / 2 - 1]
+            m2.innerText = list[(list.length + 1) / 2 - 1]
             medel = document.getElementById((list.length + 1) / 2 - 1)
             medel.style.color = 'blue'
         }
@@ -274,11 +264,11 @@ function doTheMath(list) {
             medoptions = [list.length / 2 - 1, list.length / 2]
             document.getElementById(medoptions[0]).style.color = 'blue'
             document.getElementById(medoptions[1]).style.color = 'blue'
-            //m2.innerText = 'Mediana: ' + ((list[list.length / 2 - 1] + list[list.length / 2]) / 2)
+            m2.innerText = ((list[list.length / 2 - 1] + list[list.length / 2]) / 2)
 
         }
     } else {
-        //m2.innerText = 'Mediana: ---'
+        m2.innerText = '---'
     }
 
 
@@ -990,7 +980,7 @@ function doTheMath(list) {
  }
     }
 
-    showmoda = 'Moda: '
+    showmoda = ''
     for (m = 0; m < moda.length; m++) {
         if (moda.length != 1 && m != moda.length - 1 && m != moda.length - 2) {
             showmoda += `${moda[m]}, `
@@ -1002,9 +992,9 @@ function doTheMath(list) {
 
     }
     if (what.length < 2 || mod[0] == 0) {
-        //m3.innerText = 'Moda: ---'
+        m3.innerText = '---'
     } else {
-        //m3.innerText = showmoda
+        m3.innerText = showmoda
     }
 }
 
