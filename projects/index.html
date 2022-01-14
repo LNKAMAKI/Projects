@@ -6,19 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            background-color: rgba(0, 0, 0, 0.383);
-        }
-        div {
-            background-color: cadetblue;
-            width: 300px;
-            height: 300px;
-            overflow-x: scroll;
-        }
-        select {
-            width: 200px;
-            height: 200px;
-        }
         table {
             border-collapse: collapse;
             margin: auto;
@@ -28,35 +15,30 @@
             width: 80px;
             border: 1px solid black;
         }
+        div#aut {
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
-    <div></div>
-    
-    <select name="selc" id="selc" size="2"  class="para">
-        <option value="">a</option>
-        <option value="">a</option>
-        <option value="">a</option>
-        <option value="">a</option>
-        <option value="">a</option>
-        <option value="">a</option>
-    </select>
-    <table>
-        <tr>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th>D</th>
-            <th>E</th>
-        </tr>
-        <tr>
-            <td>18</td>
-            <td>24</td>
-            <td>32</td>
-            <td>27</td>
-            <td>21</td>
-        </tr>
-    </table>
+    <div id="aut">
+        <table>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>24</td>
+                <td>32</td>
+                <td>27</td>
+                <td>21</td>
+            </tr>
+        </table>
+    </div>
     
    <script src="random.js"></script>
 </body>

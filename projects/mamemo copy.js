@@ -238,8 +238,6 @@ function doTheMath(list) {
         dv = document.createElement('div')
         dv.style.overflowY = 'hidden'
         dv.style.overflowX = 'auto'
-        dv.style.margin = '0px auto 10px auto'
-        dv.style.width = 'fit-content'
         document.body.appendChild(dv)
 
         tab = document.createElement('table')
