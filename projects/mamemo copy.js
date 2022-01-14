@@ -56,10 +56,12 @@ function delit(l) {
         m2 = document.getElementById('me')
         m3 = document.getElementById('mo')
         amp = document.getElementById('amp')
-        m1.innerText = 'Média Aritmética:'
-        m2.innerText = 'Mediana:'
-        m3.innerText = 'Moda:'
-        amp.innerText = 'Amplitude Total:'
+
+        console.log(m1)
+        //m1.innerText = 'Média Aritmética:'
+        //m2.innerText = 'Mediana:'
+        //m3.innerText = 'Moda:'
+        //amp.innerText = 'Amplitude Total:'
 
         doTheMath(list)
     } else {
@@ -157,7 +159,7 @@ function del() {
     document.getElementById('dela').style.display = 'none'
     document.getElementById('tagra').style.display = 'none'
     //Deletando a Tabela
-    if (document.getElementsByTagName('table').length > 0) {
+    if (document.getElementsByClassName('frencs').length > 0) {
         dv.removeChild(tab)
         document.body.removeChild(document.getElementById('graph'))
     }
@@ -168,10 +170,10 @@ function del() {
     for (th = alop.length; th > 0; th--) {
         seletor.removeChild(alop[th - 1])
     }
-    m1.innerText = 'Média Aritmética:'
-    m2.innerText = 'Mediana:'
-    m3.innerText = 'Moda:'
-    amp.innerText = 'Amplitude Total:'
+    //m1.innerText = 'Média Aritmética:'
+    //m2.innerText = 'Mediana:'
+    //m3.innerText = 'Moda:'
+    //amp.innerText = 'Amplitude Total:'
 
     uyu = porcent.getElementsByTagName('option')
     for (gt = uyu.length; gt > 0; gt--) {
@@ -204,7 +206,7 @@ function doTheMath(list) {
     clrs = []
     wids = 0
     // Deletando a Tabela e o Gráfico
-    if (document.getElementsByTagName('table').length > 0) {
+    if (document.getElementsByClassName('frencs').length > 0) {
         dv.removeChild(tab)
         document.body.removeChild(document.getElementById('graph'))
     }
@@ -241,6 +243,7 @@ function doTheMath(list) {
         document.body.appendChild(dv)
 
         tab = document.createElement('table')
+        tab.setAttribute('class', 'frencs')
         dv.appendChild(tab)
         tab.innerHTML = '<thead><tr><th scope= "col">Valor</th><th scope= "col">F</th><th scope= "col">FR</th><th scope= "col">FA</th><th scope= "col">FRA</th></tr></thead><tbody></tbody>'
         tab.getElementsByTagName('tr')[0].style.animation = 'slide 1s'
@@ -249,17 +252,20 @@ function doTheMath(list) {
     // Ordenando lista:
 
     xernols = String(media(list)[0]).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), '')
-    m1.innerText = 'Média Aritmética: ' + xernols
+    console.log('m1:', m1)
+    console.log(m1.innerText)
+    m1.innerText = xernols
+//    m1.innerText = 'Média Aritmética: ' + xernols
 
     // Calculando a Amplitude Total
     amplitude = list[0] - list[list.length - 1]
-    amp.innerText = 'Amplitude Total: ' + amplitude
+    //amp.innerText = 'Amplitude Total: ' + amplitude
 
     // Conseguindo a Mediana
     let ehprimo = parOuImpar(list.length)
     if (list.length > 2) {
         if (ehprimo == 'ÍMPAR') {
-            m2.innerText = 'Mediana: ' + list[(list.length + 1) / 2 - 1]
+            //m2.innerText = 'Mediana: ' + list[(list.length + 1) / 2 - 1]
             medel = document.getElementById((list.length + 1) / 2 - 1)
             medel.style.color = 'blue'
         }
@@ -268,11 +274,11 @@ function doTheMath(list) {
             medoptions = [list.length / 2 - 1, list.length / 2]
             document.getElementById(medoptions[0]).style.color = 'blue'
             document.getElementById(medoptions[1]).style.color = 'blue'
-            m2.innerText = 'Mediana: ' + ((list[list.length / 2 - 1] + list[list.length / 2]) / 2)
+            //m2.innerText = 'Mediana: ' + ((list[list.length / 2 - 1] + list[list.length / 2]) / 2)
 
         }
     } else {
-        m2.innerText = 'Mediana: ---'
+        //m2.innerText = 'Mediana: ---'
     }
 
 
@@ -996,9 +1002,9 @@ function doTheMath(list) {
 
     }
     if (what.length < 2 || mod[0] == 0) {
-        m3.innerText = 'Moda: ---'
+        //m3.innerText = 'Moda: ---'
     } else {
-        m3.innerText = showmoda
+        //m3.innerText = showmoda
     }
 }
 
