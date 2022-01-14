@@ -518,7 +518,7 @@ opacity: 100;
 }
 .porcarrow {
     transition-property: visibility, opacity, left, bottom;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
     position: absolute;
     /*transform: rotate(45deg);*/
     opacity: 0;
