@@ -104,46 +104,42 @@ function go(ni) {
             }
 
             uyg = fac.getElementsByTagName('option')
-            for (gt = uyg.length; gt > 0; gt--) {
+            for (gt = uyg.length; gt > 0; gt--) 
                 fac.removeChild(uyg[gt - 1])
-            }
+            
+            // Adicionar o número n vezes
+            for (f = 0; f < freq.value; f++) 
+                if (ni == 1)
+                    u.push(Number(n))
+            
+            list = sort(u)[0]
+            positions = sort(u)[1]
 
-            for (f = 0; f < freq.value; f++) {
+            alop = seletor.getElementsByTagName('option')
+            for (th = alop.length; th > 0; th--) 
+                seletor.removeChild(alop[th - 1])
+            
+            for (a in list) {
+                op = document.createElement('option')
+                op.text = `${a}: ${list[a]}`
+                op.id = a
+                op.setAttribute('onclick', `delit(${op.id})`)
+                seletor.appendChild(op)
 
-                if (ni == 1) {
-                u.push(Number(n))
-                }
-
-                list = sort(u)[0]
-                positions = sort(u)[1]
-
-                alop = seletor.getElementsByTagName('option')
-                for (th = alop.length; th > 0; th--) {
-                    seletor.removeChild(alop[th - 1])
-                }
-                for (a in list) {
-                    op = document.createElement('option')
-                    op.text = `${a}: ${list[a]}`
-                    op.id = a
-                    op.setAttribute('onclick', `delit(${op.id})`)
-                    seletor.appendChild(op)
-
-                    seletor.style.display = 'inline-block'
-                    document.getElementById('medten').style.display = 'block'
-                    document.getElementById('dela').style.display = 'block'
-                    document.getElementById('tagra').style.display = 'block'
-
-                }
-                alop = seletor.getElementsByTagName('option')
-                for (th = alop.length; th > 0; th--) {
-                    alop[th - 1].style.color = 'black'
-                }
+                seletor.style.display = 'inline-block'
+                document.getElementById('medten').style.display = 'block'
+                document.getElementById('dela').style.display = 'block'
+                document.getElementById('tagra').style.display = 'block'
 
             }
+            alop = seletor.getElementsByTagName('option')
+            for (th = alop.length; th > 0; th--) 
+                alop[th - 1].style.color = 'black'
+            
 
-            if (num.value.length > 0) {
+            if (num.value.length > 0) 
                 doTheMath(list)
-            }
+            
         }
 
     }
