@@ -68,9 +68,9 @@ function delit(l) {
 
 }
 
-function go() {
+function go(ni) {
 
-    console.log('click = 0')
+    console.log(ni)
     click = 0
     num = document.getElementById('numb')
     m1 = document.getElementById('ma')
@@ -109,7 +109,11 @@ function go() {
             }
 
             for (f = 0; f < freq.value; f++) {
+
+                if (ni == 1) {
                 u.push(Number(n))
+                }
+
                 list = sort(u)[0]
                 positions = sort(u)[1]
 
