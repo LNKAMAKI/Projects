@@ -991,7 +991,19 @@ function doTheMath(list) {
         }
 
     }
-    if (what.length < 2 || mod[0] == 0) {
+
+    console.log(apar)
+    st = false
+    for (n = 0; n < apar.length && st == false; n++) {
+        if (apar[n] == apar[0]) {
+            console.log('stop == false')
+        }else{
+            console.log('stop == true')
+            st = true
+        }
+    }
+
+    if (what.length < 2 || mod[0] == 0 || st == false) {
         m3.innerText = '---'
     } else {
         m3.innerText = showmoda
