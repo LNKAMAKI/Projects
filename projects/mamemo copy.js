@@ -506,7 +506,7 @@ function doTheMath(list) {
 
             pa2 = document.createElement('p')
             line2.appendChild(pa2)
-            pa2.innerText = mxNum / 2
+            pa2.innerText =Math.round(mxNum / 2)
          
             if (String(mxNum / 2).length == 1) { // 1
                 pa2.style.left = '-10px'
@@ -522,7 +522,7 @@ function doTheMath(list) {
 
             pa3 = document.createElement('p')
             line3.appendChild(pa3)
-            pa3.innerText = mxNum / 4
+            pa3.innerText =Math.round(mxNum / 4)
            
             if (String(mxNum / 4).length == 1) { // 1
                 pa3.style.left = '-12px'
@@ -537,7 +537,7 @@ function doTheMath(list) {
             }
             pa4 = document.createElement('p')
             line4.appendChild(pa4)
-            pa4.innerText = mxNum * 0.75
+            pa4.innerText =Math.round(mxNum * 0.75)
           
             if (String(mxNum * 0.75).length == 1) { // 1
                 pa4.style.left = '-12px'
@@ -868,7 +868,7 @@ function doTheMath(list) {
 
      pa2 = document.createElement('p')
      line2.appendChild(pa2)
-     pa2.innerText = mxNum / 2
+     pa2.innerText =Math.round(mxNum / 2)
      
      if (String(mxNum / 2).length == 1) { // 1
          pa2.style.left = '-10px'
@@ -884,7 +884,7 @@ function doTheMath(list) {
 
      pa3 = document.createElement('p')
      line3.appendChild(pa3)
-     pa3.innerText = mxNum / 4
+     pa3.innerText =Math.round(mxNum / 4)
      
      if (String(mxNum / 4).length == 1) { // 1
          pa3.style.left = '-12px'
@@ -899,7 +899,7 @@ function doTheMath(list) {
      }
      pa4 = document.createElement('p')
      line4.appendChild(pa4)
-     pa4.innerText = mxNum * 0.75
+     pa4.innerText =Math.round(mxNum * 0.75)
    
      if (String(mxNum * 0.75).length == 1) { // 1
          pa4.style.left = '-12px'
