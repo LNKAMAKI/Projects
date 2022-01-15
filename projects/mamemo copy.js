@@ -631,25 +631,25 @@ function doTheMath(list) {
                     // intervalo de classe = 2
                     // c = 0; c <= 4; c += 2 
                    
-                    interval.push(c)
+                    //interval.push(c)
                     console.log('OLHE: ' + what[n])
 
                     // interval = [0, 2, 4]
                     if (interval.length != 1) {  // Se o comprimento de interval for maior que 1
                         //apar2 = 0
-                        if (what[n] >= interval[interval.length - 2] && what[n] < interval[interval.length - 1]) {
+                        if (what[n] >= c - Number(iclass.value) && what[n] < c) {
                             // Se 1 >= 0 && 1 < 2
                             //apar2 += Number(apar[n])
                             // apar = [1,1,1,1] (Número que os números se repetem)
                             // apar += 1
 
-                            if (interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1]) == -1) {
-                                interclasses.push(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])
+                            if (interclasses.indexOf(c - Number(iclass.value) + ' |-- ' + c) == -1) {
+                                interclasses.push(c - Number(iclass.value) + ' |-- ' + c)
                                 aparic.push(apar[n])
                                 
                             } else {
                                 
-                                aparic[interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])] += apar[n]
+                                aparic[interclasses.indexOf(c - Number(iclass.value) + ' |-- ' + c)] += apar[n]
                             }
 
                         }
@@ -661,23 +661,23 @@ function doTheMath(list) {
                 for (c = 0; c >= what[n] - Number(iclass.value); c -= Number(iclass.value)) {
                     // intervalo de classe = 2
                     // c = 0; c <= 4; c += 2 
-                    interval.push(c)
+                    //interval.push(c)
                     // interval = [0, 2, 4]
                     if (interval.length != 1) {  // Se o comprimento de interval for maior que 1
                         //apar2 = 0
-                        if (what[n] <= interval[interval.length - 2] && what[n] > interval[interval.length - 1]) {
+                        if (what[n] <= c + Number(iclass.value) && what[n] > c) {
                             // Se 1 >= 0 && 1 < 2
                             //apar2 += Number(apar[n])
                             // apar = [1,1,1,1] (Número que os números se repetem)
                             // apar += 1
 
-                            if (interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1]) == -1) {
-                                interclasses.push(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])
+                            if (interclasses.indexOf(c + Number(iclass.value) + ' |-- ' + c) == -1) {
+                                interclasses.push(c + Number(iclass.value) + ' |-- ' + c)
                                 aparic.push(apar[n])
                                 
                             } else {
                                 
-                                aparic[interclasses.indexOf(interval[interval.length - 2] + ' |-- ' + interval[interval.length - 1])] += apar[n]
+                                aparic[interclasses.indexOf(c + Number(iclass.value) + ' |-- ' + c)] += apar[n]
                             }
 
                         }
