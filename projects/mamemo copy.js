@@ -630,7 +630,10 @@ function doTheMath(list) {
                 for (c = 0; c <= what[n] + Number(iclass.value); c += Number(iclass.value)) {
                     // intervalo de classe = 2
                     // c = 0; c <= 4; c += 2 
+                   
                     interval.push(c)
+                    console.log('OLHE: ' + what[n])
+
                     // interval = [0, 2, 4]
                     if (interval.length != 1) {  // Se o comprimento de interval for maior que 1
                         //apar2 = 0
