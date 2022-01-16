@@ -502,7 +502,7 @@ function doTheMath(list) {
 
             pa2 = document.createElement('p')
             line2.appendChild(pa2)
-            pa2.innerText =Math.round(mxNum / 2)
+            pa2.innerText = mxNum / 2
          
             if (String(mxNum / 2).length == 1) { // 1
                 pa2.style.left = '-10px'
@@ -518,7 +518,7 @@ function doTheMath(list) {
 
             pa3 = document.createElement('p')
             line3.appendChild(pa3)
-            pa3.innerText =Math.round(mxNum / 4)
+            pa3.innerText = mxNum / 4
            
             if (String(mxNum / 4).length == 1) { // 1
                 pa3.style.left = '-12px'
@@ -533,7 +533,7 @@ function doTheMath(list) {
             }
             pa4 = document.createElement('p')
             line4.appendChild(pa4)
-            pa4.innerText =Math.round(mxNum * 0.75)
+            pa4.innerText = mxNum * 0.75
           
             if (String(mxNum * 0.75).length == 1) { // 1
                 pa4.style.left = '-12px'
@@ -815,101 +815,80 @@ function doTheMath(list) {
 
      htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
-     
+     console.log(String(Math.round(ht)).length - 1 + '------')
+     lstlet = String(Math.round(ht))[String(Math.round(ht)).length - 1]
+   
+     console.log('lastlet: ' + lstlet)
+
+     if (lstlet == 5 || lstlet == 0) {
+        console.log('mxNum: ' + Math.round(ht))
+        mxNum = Math.round(ht)
+     }else if(lstlet > 3) {
+        console.log('mxNum: ' + (Number(Math.round(ht)) + (10 - Number(lstlet))))
+        mxNum = Number(Math.round(ht)) + (10 - Number(lstlet))
+     }else{
+        console.log('mxNum: ' + (Number(Math.round(ht)) - Number(lstlet)))
+        mxNum = Number(Math.round(ht)) - Number(lstlet)
+     }
+     //mxNum = Math.round(ht)
 
 
-     line = document.createElement('hr')
-     gr.appendChild(line)
-     line2 = document.createElement('hr')
-     gr.appendChild(line2)
-     line3 = document.createElement('hr')
-     gr.appendChild(line3)
-     line4 = document.createElement('hr')
-     gr.appendChild(line4)
+     /*
+       line.style.bottom = 'calc(94%)'
+            line2.style.bottom = `calc(${94 / 2}%)` 
+            line3.style.bottom = `calc(${94 / 4}%)` 
+            line4.style.bottom = `calc(${94 * 0.75}%)`
+    */
+   console.log(String(mxNum).length + 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+   tds = 0
+   for (n = 0; n < String(mxNum).length; n++) {
+    console.log(String(mxNum)[n])
+    tds = tds + Number(String(mxNum)[n])
+   }
+   console.log('soma: ', tds)
+     numarks = []
+     for (n = mxNum; n > 0; n = n - Number(mxNum)/10) {
+        console.log(n)
+        numarks.push(n)
+        line = document.createElement('hr')
+        if (mxNum > ht) {
+            line.style.bottom = `calc(${94*(n / mxNum)}%)`
+          
+        }else{
+            line.style.bottom = `calc(${94 / (ht / n)}%)`
+        }
+        console.log(94 / (ht / n))
+        gr.appendChild(line)
 
-     mxNum = Math.round(ht)
+        pa = document.createElement('p')
+        line.appendChild(pa)
+        pa.innerText = n
+
+        if (String(n).length == 1) { // 1
+            pa.style.left = '-12px'
+         } else if (String(n).length == 2) { // 10
+            pa.style.left = '-20px'
+         } else if (String(n).length == 3) { //100
+             pa.style.left = '-28px'
+     } else if (String(n).length == 4) { //10.5
+             pa.style.left = '-33px'
+         } else if (String(n).length == 5) { // 10.55
+             pa.style.left = '-42px'
+     }
+     }
+
      if (mxNum > ht) {
          br.style.height = `calc(${94 / (mxNum / (uao[ui] / sum * 100))}%)`
          jorge.style.bottom = `calc(${94 / (100 / xernolsim)}%)`
          hgts.push(94 / (mxNum / (uao[ui] / sum * 100)))
          altur = 94 / (mxNum / (uao[ui] / sum * 100))
-         line.style.bottom = 'calc(94%)'
-         line2.style.bottom = `calc(${94 / 2}%)`
-         line3.style.bottom = `calc(${94 / 4}%)`
-         line4.style.bottom = `calc(${94 * 0.75}%)`
+        
      } else {
          br.style.height = `calc(${94 / (ht / (uao[ui] / sum * 100))}%)`
          jorge.style.bottom = `calc(${94 / (100 / xernolsim)}%)`
          hgts.push(94 / (ht / (uao[ui] / sum * 100)))
          altur = 94 / (ht / (uao[ui] / sum * 100))
-         line.style.bottom = `calc(${94 / (ht / mxNum)}%)`
-         line2.style.bottom = `calc(${94 / (ht / mxNum) / 2}%)`
-         line3.style.bottom = `calc(${94 / (ht / mxNum) / 4}%)`
-         line4.style.bottom = `calc(${94 / (ht / mxNum) * 0.75}%)`
-     }
-
-     pa = document.createElement('p')
-     line.appendChild(pa)
-     pa.innerText = mxNum
-     
-     if (String(mxNum).length == 1) { // 1
-         pa.style.left = '-12px'
-     } else if (String(mxNum).length == 2) { // 10
-         pa.style.left = '-20px'
-     } else if (String(mxNum).length == 3) { //100
-         pa.style.left = '-28px'
-     } else if (String(mxNum).length == 4) { //10.5
-         pa.style.left = '-33px'
-     } else if (String(mxNum).length == 5) { // 10.55
-         pa.style.left = '-42px'
-     }
-     
-
-     pa2 = document.createElement('p')
-     line2.appendChild(pa2)
-     pa2.innerText =Math.round(mxNum / 2)
-     
-     if (String(mxNum / 2).length == 1) { // 1
-         pa2.style.left = '-10px'
-     } else if (String(mxNum / 2).length == 2) { // 10
-         pa2.style.left = '-20px'
-     } else if (String(mxNum / 2).length == 3) { //100
-         pa2.style.left = '-24px'
-     } else if (String(mxNum / 2).length == 4) { //10.5
-         pa2.style.left = '-33px'
-     } else if (String(mxNum / 2).length == 5) { // 10.55
-         pa2.style.left = '-42px'
-     }
-
-     pa3 = document.createElement('p')
-     line3.appendChild(pa3)
-     pa3.innerText =Math.round(mxNum / 4)
-     
-     if (String(mxNum / 4).length == 1) { // 1
-         pa3.style.left = '-12px'
-     } else if (String(mxNum / 4).length == 2) { // 10
-         pa3.style.left = '-20px'
-     } else if (String(mxNum / 4).length == 3) { //100
-         pa3.style.left = '-24px'
-     } else if (String(mxNum / 4).length == 4) { //10.5
-         pa3.style.left = '-33px'
-     } else if (String(mxNum / 4).length == 5) { // 10.55
-         pa3.style.left = '-42px'
-     }
-     pa4 = document.createElement('p')
-     line4.appendChild(pa4)
-     pa4.innerText =Math.round(mxNum * 0.75)
-   
-     if (String(mxNum * 0.75).length == 1) { // 1
-         pa4.style.left = '-12px'
-     } else if (String(mxNum * 0.75).length == 2) { // 10
-         pa4.style.left = '-20px'
-     } else if (String(mxNum * 0.75).length == 3) { //100
-         pa4.style.left = '-24px'
-     } else if (String(mxNum * 0.75).length == 4) { //10.5
-         pa4.style.left = '-33px'
-     } else if (String(mxNum * 0.75).length == 5) { // 10.55
-         pa4.style.left = '-42px'
+         
      }
 
      pc = 12.5 * (interclasses.length - 1) + 8.5
