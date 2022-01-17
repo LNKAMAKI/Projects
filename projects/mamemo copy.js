@@ -444,9 +444,9 @@ function doTheMath(list) {
            
             br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 
-            htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
+            //htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
 
-            htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
+           // htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
             line = document.createElement('hr')
             gr.appendChild(line)
@@ -696,7 +696,7 @@ function doTheMath(list) {
         // Frequências com intervalo de classe
 
  left = 0
-
+ nimpor = false
  for (ui = 0; ui < interclasses.length; ui++) {
 
      trow = document.createElement('tr')
@@ -796,51 +796,95 @@ function doTheMath(list) {
      
      br.style.animation = 'baran ' + 94 / (ht / (uao[ui] / sum * 100)) / 25 + 's'
 
+     lie = String(ht).replace(new RegExp('(?<=[0-9]+)\\.[0-9]+'), '').length
+     if (String(ht).search('\\.') == -1 || lie > 1) { //Se o número não tiver casa decimal ou ser maior que 9 (Ex.: 8, 7, 5, 4, 33.33, 12.5, 14.28)
+         arredondamento = Math.round(ht)
+     }else{ // Se o número for um 4.8, 5.5, 9.6
+         console.log('DECIMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL')
+         seila = String(ht).replace(new RegExp('(?<=[0-9]+\\.[0-9])[0-9]+'), '')
+     resto = String(ht).replace(new RegExp('[0-9]+\\..'), '')
+     primeiraCasaDecimal = String(seila).replace(new RegExp('[0-9]+\.'), '')
+     roundar = Number(`${primeiraCasaDecimal}.${resto}`)
+     frstnum = String(seila).replace(new RegExp('\\.[0-9]'), '')
+     decround = Number(`${frstnum}.${Math.round(roundar)}`)
+     arredondamento = decround
+     }
      
+    // htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
 
-     
+    // htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
-     
-     htWiotDec = ht.replace(new RegExp('\\.[0-9]+'), '')
+     lstlet = String(arredondamento)[String(arredondamento).length - 1]
 
-     htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
-
+     if (nimpor == false) {
      console.log('A porcentagem mais alta equivale a ' + ht)
-     console.log(`${Math.round(ht)}.length: ${String(Math.round(ht)).length}`)
+     console.log(`${arredondamento}.length: ${String(arredondamento).length}`)
+     console.log(`O último algarismo do número ${arredondamento} é: ${lstlet}`)
+     }
 
-     lstlet = String(Math.round(ht))[String(Math.round(ht)).length - 1]
-   
-     console.log(`O último algarismo do número ${Math.round(ht)} é: ${lstlet}`)
+     if (lstlet == 5 || lstlet == 0) { // 25, 50, 100, 4.5
+        if (nimpor == false)
+        console.log('mxNum: ' + arredondamento)
 
-     if (lstlet == 5 || lstlet == 0) { // 25, 50, 100
-        console.log('mxNum: ' + Math.round(ht))
-        mxNum = Math.round(ht)
-     }else if(lstlet >= 8) { // 48,59
-        if  (String(Math.round(ht)).length > 1) {
-        console.log('mxNum: ' + (Number(Math.round(ht)) + (10 - Number(lstlet))))
-        mxNum = Number(Math.round(ht)) + (10 - Number(lstlet))
-        }else{
-            mxNum = Math.round(ht)
+        mxNum = arredondamento
+     }else if(lstlet >= 8) { 
+        if  (String(ht).search('\\.') == -1 || lie > 1) { //8, 9, 48, 69
+            if (nimpor == false)
+        console.log('mxNum: ' + (Number(arredondamento) + (10 - Number(lstlet))))
+
+        mxNum = Number(arredondamento) + (10 - Number(lstlet))
+        // 10, 10, 50, 70
+        }else{ // 4.8, 7.9
+            if (nimpor == false)
+            console.log('mxNum: ' + (Number(arredondamento) + (10 - Number(lstlet))/10))
+            //4.8 + (10 - 8)/10
+
+            mxNum = Number(arredondamento) + (10 - Number(lstlet))/10
+            //5, 8
         }
      }else if (lstlet <= 2){ 
-        if  (String(Math.round(ht)).length > 1) { // 11,52
-            console.log('mxNum: ' + (Number(Math.round(ht)) - Number(lstlet)))
-            mxNum = Number(Math.round(ht)) - Number(lstlet)
-        }else{
-            mxNum = Math.round(ht) // 1, 2, 3
+        if  (lie > 1) { // 11, 32
+            if (nimpor == false)
+            console.log('mxNum: ' + (Number(arredondamento) - Number(lstlet)))
+            mxNum = Number(arredondamento) - Number(lstlet)
+        }else{ 
+            if (String(ht).search('\\.') == -1) { // 1, 2
+            if (nimpor == false)
+            console.log('mxNum: ' + arredondamento)
+            mxNum = arredondamento 
+            // 1, 2
+            }else{ // 4.1, 5.2
+                console.log('mxNum: ' + (Number(arredondamento) - Number(lstlet)/10))
+                mxNum = Number(arredondamento) - Number(lstlet)/10
+                // 4, 5
+            }
         }
      }else{ 
-        if  (String(Math.round(ht)).length > 1) { // 14, 66, 87, 33
-        console.log('mxNum: ' + (Number(Math.round(ht)) + (5 - Number(lstlet))))
-        mxNum = Number(Math.round(ht)) + (5 - Number(lstlet))
+        if  (lie > 1) { // 44, 56, 87, 93
+        if (nimpor == false)
+        console.log('mxNum: ' + (Number(arredondamento) + (5 - Number(lstlet))))
+        mxNum = Number(arredondamento) + (5 - Number(lstlet))
+        // 45, 55, 85, 95
         }else{
-            mxNum = Math.round(ht) // 4, 6, 7, 3
+            if(String(ht).search('\\.') == -1) { // 4, 6, 7, 3
+                if (nimpor == false)
+                console.log('mxNum: ' + arredondamento)
+                mxNum = arredondamento 
+                // 4, 6, 7, 3
+            }else{ // 4.4, 7.6, 9.7, 1.3
+                if (nimpor == false)
+                console.log('mxNum: ' + (Number(arredondamento) + (5 - Number(lstlet))/10))
+                mxNum = Number(arredondamento) + (5 - Number(lstlet))/10
+               // 4.5, 7.5, 9.5, 1.5
+            }
         }
      }
+     if (nimpor == false)
      console.log('---------------------')
+    
      // 14 + (5 - 4) = 15
      // 16 + (5 - 6) = 16 + -1 16 - 1 = 15
-     //mxNum = Math.round(ht)
+     //mxNum = arredondamento
 
 
      /*
@@ -869,9 +913,13 @@ function doTheMath(list) {
      }else{
         divisor = 5
      }
-     for (n = mxNum; n > 0; n = n - Number(mxNum)/divisor) {
+     sal = 0
+     
+     for (n = mxNum; sal < divisor; n = n - Number(mxNum)/divisor) {
          nm = Number(String(n).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), ''))
-       // console.log(nm)
+         sal++
+         if (nimpor == false)
+        console.log(nm, sal)
         numarks.push(nm)
         line = document.createElement('hr')
         if (mxNum > ht) {
@@ -899,6 +947,7 @@ function doTheMath(list) {
              pa.style.left = '-42px'
      }
      }
+     nimpor = true
 
      if (mxNum > ht) {
          br.style.height = `calc(${94 / (mxNum / (uao[ui] / sum * 100))}%)`
