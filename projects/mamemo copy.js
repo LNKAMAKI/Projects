@@ -57,8 +57,6 @@ function delit(l) {
         m3 = document.getElementById('mo')
         amp = document.getElementById('amp')
 
-        console.log(m1)
-
         doTheMath(list)
     } else {
         list = sort(u)[0]
@@ -401,7 +399,6 @@ function doTheMath(list) {
             
          
             num1 = ['0', '1', '2', '3', '4', '5', '6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
-            console.log(num1)
             n1 = num1[Math.floor(num1.length * Math.random())]
             n2 = num1[Math.floor(num1.length * Math.random())]
             n3 = num1[Math.floor(num1.length * Math.random())]
@@ -410,7 +407,6 @@ function doTheMath(list) {
             n6 = num1[Math.floor(num1.length * Math.random())]
         
              if (valueColor == null || cn == true) {
-                 console.log(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
              br.style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
              clrs.push(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
             }else{
@@ -626,10 +622,7 @@ function doTheMath(list) {
                 for (c = 0; c <= what[n] + Number(iclass.value); c += Number(iclass.value)) {
                     // intervalo de classe = 2
                     // c = 0; c <= 4; c += 2 
-                   
                     //interval.push(c)
-                    console.log('OLHE: ' + what[n])
-
                     // interval = [0, 2, 4]
                     if (interval.length != 1) {  // Se o comprimento de interval for maior que 1
                         //apar2 = 0
@@ -758,7 +751,6 @@ function doTheMath(list) {
      num2 = []
     
     num1 = ['0', '1', '2', '3', '4', '5', '6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
-    console.log(num1)
     n1 = num1[Math.floor(num1.length * Math.random())]
     n2 = num1[Math.floor(num1.length * Math.random())]
     n3 = num1[Math.floor(num1.length * Math.random())]
@@ -767,7 +759,6 @@ function doTheMath(list) {
     n6 = num1[Math.floor(num1.length * Math.random())]
 
      if (valueColor == null || cn == true) {
-         console.log(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
      br.style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
      clrs.push(`#${n1}${n2}${n3}${n4}${n5}${n6}`)
      }else{
@@ -831,19 +822,19 @@ function doTheMath(list) {
         }else{
             mxNum = Math.round(ht)
         }
-     }else if (lstlet <= 3){ 
-        if  (String(Math.round(ht)).length > 1) { // 11,52,33
+     }else if (lstlet <= 2){ 
+        if  (String(Math.round(ht)).length > 1) { // 11,52
             console.log('mxNum: ' + (Number(Math.round(ht)) - Number(lstlet)))
             mxNum = Number(Math.round(ht)) - Number(lstlet)
         }else{
             mxNum = Math.round(ht) // 1, 2, 3
         }
      }else{ 
-        if  (String(Math.round(ht)).length > 1) { // 14, 66, 87
+        if  (String(Math.round(ht)).length > 1) { // 14, 66, 87, 33
         console.log('mxNum: ' + (Number(Math.round(ht)) + (5 - Number(lstlet))))
         mxNum = Number(Math.round(ht)) + (5 - Number(lstlet))
         }else{
-            mxNum = Math.round(ht) // 4, 6, 7
+            mxNum = Math.round(ht) // 4, 6, 7, 3
         }
      }
      // 14 + (5 - 4) = 15
@@ -869,7 +860,6 @@ function doTheMath(list) {
    */
 
      numarks = []
-     console.log('AGAIN!!!!!' + mxNum)
      
      if (String(mxNum).length > 1) {
          divisor = 5
@@ -1006,7 +996,6 @@ function doTheMath(list) {
 
     }
 
-    console.log(apar)
     st = false
     for (n = 0; n < apar.length && st == false; n++) {
         if (apar[n] == apar[0]) {
@@ -1158,7 +1147,6 @@ function sort2(n, p) {
                 config.getElementsByTagName('input')[n].style.cursor = 'pointer'
             }
 
-            console.log('click = 1')
             click = 1
 
             if (rainbow == true) {
@@ -1206,7 +1194,6 @@ function sort2(n, p) {
             config.style.visibility = 'hidden'
             config.style.opacity = '0'
             config.style.top = '0%'
-            console.log('click = 0')
             click = 0
 
             config.getElementsByTagName('img')[0].style.transitionDuration = '0.4s'
@@ -1242,7 +1229,6 @@ function sort2(n, p) {
         }
     }
     function change() {
-        console.log('change color')
             css = '.config img#rb {background-color: transparent;}'
             style = document.createElement('style')
             document.head.appendChild(style)
@@ -1323,7 +1309,6 @@ function sort2(n, p) {
 }
     function hey(idx) {
 
-            console.log(clrs[idx])
             if (ar.getElementsByClassName('pnumber').length > 0) {
                 ar.removeChild(ar.getElementsByClassName('pnumber')[0])
             }
@@ -1336,9 +1321,6 @@ function sort2(n, p) {
             pnum.style.position = 'absolute'
             pnum.setAttribute('class', 'pnumber')
             pnum.style.padding = '3px 8px 3px 8px'
-    
-            console.log('text:',intxts[idx])
-            console.log(String(intxts[idx]).replace(new RegExp('.+\\s:\\s', 'g'), ''))
 
             pnum.innerHTML = `${String(intxts[idx]).replace(new RegExp('\\s:.+', 'g'), '')}<br>`
             ar.appendChild(pnum)
