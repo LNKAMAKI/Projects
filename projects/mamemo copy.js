@@ -816,20 +816,38 @@ function doTheMath(list) {
      htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
      console.log(String(Math.round(ht)).length - 1 + '------')
+
      lstlet = String(Math.round(ht))[String(Math.round(ht)).length - 1]
    
      console.log('lastlet: ' + lstlet)
 
-     if (lstlet == 5 || lstlet == 0) {
+     if (lstlet == 5 || lstlet == 0) { // 25, 50, 100
         console.log('mxNum: ' + Math.round(ht))
         mxNum = Math.round(ht)
-     }else if(lstlet > 3) {
+     }else if(lstlet >= 8) { // 48,59
+        if  (String(Math.round(ht)).length > 1) {
         console.log('mxNum: ' + (Number(Math.round(ht)) + (10 - Number(lstlet))))
         mxNum = Number(Math.round(ht)) + (10 - Number(lstlet))
-     }else{
-        console.log('mxNum: ' + (Number(Math.round(ht)) - Number(lstlet)))
-        mxNum = Number(Math.round(ht)) - Number(lstlet)
+        }else{
+            mxNum = Math.round(ht)
+        }
+     }else if (lstlet <= 3){ 
+        if  (String(Math.round(ht)).length > 1) { // 11,52,33
+            console.log('mxNum: ' + (Number(Math.round(ht)) - Number(lstlet)))
+            mxNum = Number(Math.round(ht)) - Number(lstlet)
+        }else{
+            mxNum = Math.round(ht) // 1, 2, 3
+        }
+     }else{ 
+        if  (String(Math.round(ht)).length > 1) { // 14, 66, 87
+        console.log('mxNum: ' + (Number(Math.round(ht)) + (5 - Number(lstlet))))
+        mxNum = Number(Math.round(ht)) + (5 - Number(lstlet))
+        }else{
+            mxNum = Math.round(ht) // 4, 6, 7
+        }
      }
+     // 14 + (5 - 4) = 15
+     // 16 + (5 - 6) = 16 + -1 16 - 1 = 15
      //mxNum = Math.round(ht)
 
 
@@ -840,39 +858,53 @@ function doTheMath(list) {
             line4.style.bottom = `calc(${94 * 0.75}%)`
     */
    console.log(String(mxNum).length + 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+
+   /*
    tds = 0
    for (n = 0; n < String(mxNum).length; n++) {
     console.log(String(mxNum)[n])
     tds = tds + Number(String(mxNum)[n])
    }
    console.log('soma: ', tds)
+   */
+
      numarks = []
-     for (n = mxNum; n > 0; n = n - Number(mxNum)/10) {
-        console.log(n)
-        numarks.push(n)
+     console.log('AGAIN!!!!!' + mxNum)
+     
+     if (String(mxNum).length > 1) {
+         divisor = 5
+     }else if(mxNum < 8 && mxNum > 3){ //7,6,5,4
+         divisor = mxNum
+     }else{
+        divisor = 5
+     }
+     for (n = mxNum; n > 0; n = n - Number(mxNum)/divisor) {
+         nm = Number(String(n).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), ''))
+        console.log(nm)
+        numarks.push(nm)
         line = document.createElement('hr')
         if (mxNum > ht) {
-            line.style.bottom = `calc(${94*(n / mxNum)}%)`
+            line.style.bottom = `calc(${94*(nm / mxNum)}%)`
           
         }else{
-            line.style.bottom = `calc(${94 / (ht / n)}%)`
+            line.style.bottom = `calc(${94 / (ht / nm)}%)`
         }
         console.log(94 / (ht / n))
         gr.appendChild(line)
 
         pa = document.createElement('p')
         line.appendChild(pa)
-        pa.innerText = n
+        pa.innerText = nm
 
-        if (String(n).length == 1) { // 1
-            pa.style.left = '-12px'
-         } else if (String(n).length == 2) { // 10
+        if (String(nm).length == 1) { // 1
+            pa.style.left = '-8px'
+         } else if (String(nm).length == 2) { // 10
             pa.style.left = '-20px'
-         } else if (String(n).length == 3) { //100
+         } else if (String(nm).length == 3) { //100
              pa.style.left = '-28px'
-     } else if (String(n).length == 4) { //10.5
+     } else if (String(nm).length == 4) { //10.5
              pa.style.left = '-33px'
-         } else if (String(n).length == 5) { // 10.55
+         } else if (String(nm).length == 5) { // 10.55
              pa.style.left = '-42px'
      }
      }
