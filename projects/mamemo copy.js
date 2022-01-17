@@ -837,6 +837,7 @@ function doTheMath(list) {
             mxNum = Math.round(ht) // 4, 6, 7, 3
         }
      }
+     console.log('---------------------')
      // 14 + (5 - 4) = 15
      // 16 + (5 - 6) = 16 + -1 16 - 1 = 15
      //mxNum = Math.round(ht)
