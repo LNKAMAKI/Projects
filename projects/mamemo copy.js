@@ -68,7 +68,6 @@ function delit(l) {
 
 function go(ni) {
 
-    console.log(ni)
     click = 0
     num = document.getElementById('numb')
     m1 = document.getElementById('ma')
@@ -806,11 +805,12 @@ function doTheMath(list) {
 
      htLstN = String(htWiotDec)[Number(String(htWiotDec).length) - 1]
 
-     console.log(String(Math.round(ht)).length - 1 + '------')
+     console.log('A porcentagem mais alta equivale a ' + ht)
+     console.log(`${Math.round(ht)}.length: ${String(Math.round(ht)).length}`)
 
      lstlet = String(Math.round(ht))[String(Math.round(ht)).length - 1]
    
-     console.log('lastlet: ' + lstlet)
+     console.log(`O último algarismo do número ${Math.round(ht)} é: ${lstlet}`)
 
      if (lstlet == 5 || lstlet == 0) { // 25, 50, 100
         console.log('mxNum: ' + Math.round(ht))
@@ -848,7 +848,7 @@ function doTheMath(list) {
             line3.style.bottom = `calc(${94 / 4}%)` 
             line4.style.bottom = `calc(${94 * 0.75}%)`
     */
-   console.log(String(mxNum).length + 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+   //console.log(String(mxNum).length + 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
 
    /*
    tds = 0
@@ -870,7 +870,7 @@ function doTheMath(list) {
      }
      for (n = mxNum; n > 0; n = n - Number(mxNum)/divisor) {
          nm = Number(String(n).replace(new RegExp('(?<=[0-9]\.[0-9]{2})[0-9]+'), ''))
-        console.log(nm)
+       // console.log(nm)
         numarks.push(nm)
         line = document.createElement('hr')
         if (mxNum > ht) {
@@ -879,7 +879,7 @@ function doTheMath(list) {
         }else{
             line.style.bottom = `calc(${94 / (ht / nm)}%)`
         }
-        console.log(94 / (ht / n))
+       // console.log(94 / (ht / n))
         gr.appendChild(line)
 
         pa = document.createElement('p')
@@ -999,9 +999,9 @@ function doTheMath(list) {
     st = false
     for (n = 0; n < apar.length && st == false; n++) {
         if (apar[n] == apar[0]) {
-            console.log('stop == false')
+            //console.log('stop == false')
         }else{
-            console.log('stop == true')
+            //console.log('stop == true')
             st = true
         }
     }
@@ -1139,7 +1139,6 @@ function sort2(n, p) {
                 config.getElementsByTagName('input')[1].value = valueColor
 
                 if (ischeck == true) {
-                console.log(config.getElementsByTagName('input')[0])
                 config.getElementsByTagName('input')[0].checked = true
                 }
             
