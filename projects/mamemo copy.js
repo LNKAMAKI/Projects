@@ -1486,6 +1486,6 @@ function sort2(n, p) {
 
     }
     function hah() {
-        ar.style.opacity = '0'
-        ar.style.visibility = 'hidden'
+        ar.style.opacity = '100'
+        ar.style.visibility = 'visible'
     }
