@@ -1,4 +1,4 @@
-palavrasPrimitivas = ['cenoura', 'morango', 'biscoito', 'gelatina', 'pudim', 'tofu', 'missushiro', 'torta', 'arroz', 'feijao', 'beterraba', 'nabo']
+palavrasPrimitivas = [{s: 'c'},{s: 's'},{s: 'z'},{s: 'b'},{s: 'e'},{s: 'a'},{s: 'd'}]
 alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 palavrasNumericas = []
 posicaoPalavras = []
@@ -6,7 +6,7 @@ console.log(palavrasPrimitivas)
 
 for (palavra in palavrasPrimitivas) {
     console.log(palavrasPrimitivas[palavra])
-    word = palavrasPrimitivas[palavra]
+    word = palavrasPrimitivas[palavra].s
     wordToNumber = ''
     for (letra = 0; letra < word.length; letra++) {
         console.log(word[letra])
@@ -175,5 +175,5 @@ for (pNumber in palavrasNumericas) {
 }
 console.log('uasd', palavrasNumericas)
 for (p in palavrasNumericas) {
-console.log(palavrasPrimitivas[posicaoPalavras[p]])
+console.log(palavrasPrimitivas[posicaoPalavras[p]].s)
 }
