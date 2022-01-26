@@ -1,51 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+    <meta name="description" content= "Medidas de Tendência Central e Frequências(Com tabela e gráfico)">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medidas de Tendência Central/Frequências</title>
    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     
-    <h1 id="spec">Medidas de Tendência Central</h1>
+<div id="cen"><img src="chart.png" alt="" id="char" style="width: 45px; height: 45px;"><h1 id="spec"> Estatística</h1></div>
     <script src="mamemo.js"></script> <div class="ali">
-        <div class="p" style="margin-right: 10px;">
-            <input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)">
-            <div class="ad"><div class="inform">Coloque um número<div class="thingo"></div></div></div></div>
 
-        <div class="p" style="margin-right: 10px;">
-            <input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)">
-            <div class="ad"><div class="inform">Determine quantas vezes esse n se repetirá<div class="thingo"></div></div></div></div>
+                <input type="number" name="numb" id="numb" onkeydown="blue(this.id)" onkeyup="white(this.id)" placeholder="Digite um número...">
+                 x
+                <input type="number" name="freq" id="freq" value="1" onkeydown="blue(this.id)" onkeyup="white(this.id)">
+                
+                <input style="cursor: pointer;" id= "submit" type="submit" value="Add" onclick="go(1)">
 
-        <div class="p" style="margin-right: 10px;">
-            <input style="cursor: pointer;" id= "submit" type="submit" value="Submit" onclick="go()">
-            <div class="ad"><div class="inform">Adicione o n à lista<div class="thingo"></div></div></div></div>
+        
 </div>
-   <p>
-   <select name="selc" id="selc" size="11"  class="para">
-    </p>
-   </select>
-  <p id="ma">Média Aritmética:</p>
-  <p id="me">Mediana:</p>
-  <p id="mo">Moda:</p>
-  <p id="amp">Amplitude Total:</p>
-  <div class="ali">
-    <div class="p" style="margin-right: 10px;">
-        <input style="cursor: pointer;" id= "delete" type="submit" value="Delete" onclick="del()">
-        <div class="ad"><div class="inform">Deletar todos os elementos da lista<div class="thingo"></div></div></div></div>
+   <div id="al">
+       <select name="selc" id="selc" size="11"  class="para">
+       </select>
+       <!--<div id="arrow">a</div>-->
+   </div>
+
+   <div class="ali" id="dela">
+    <input style="cursor: pointer;" id= "delete" type="submit" value="DELETAR" onclick="del()">
 </div>
- 
 
+  <div id="medten" style="display: none;">
+    <table id="medids">
+        <!--<caption>MEDIDAS DE TENDÊNCIA CENTRAL</caption>-->
+        <tr>
+      <th scope="row">Média Aritmética:</th>
+       <td id="ma"></td>
+      </tr>
+      <tr>
+        <th scope="row">Mediana:</th>
+         <td id="me"></td>
+        </tr>
+        <tr>
+            <th scope="row">Moda:</th>
+             <td id="mo"></td>
+            </tr>
+            <tr>
+                <th scope="row">Amplitude Total:</th>
+                 <td id="amp"></td>
+                </tr>
+    </table>
 
- <h1>Frequências</h1>
+  </div>
 
- <div class="ali">
-     <div class="p3" style="margin-right: 10px;">
-<input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)">
-<div class="ad3"><div class="inform3">Intervalo de classe 
-  <div class="thingo3"></div></div></div></div>
+ <div id="tagra">
+     <h1>Frequências</h1>
+    <div class="ali">
+        <div class="p3">0 |--
+     <input type="number" name="numb" id="interclass" onkeydown= "blue(this.id)"  onkeyup="white(this.id)">
+     <div class="ad3"><div class="inform3">Intervalo de classe
+      <div class="thingo3"></div></div></div></div>
+     </div>
  </div>
 
  <!--<div id="graph">
@@ -82,7 +99,6 @@
         
 
  </div>
-
 
 </body>
 </html> 
