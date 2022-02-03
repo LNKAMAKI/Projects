@@ -6,20 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
         * {
             margin: 0px;
             padding: 0px;
         }
         h1 {
+            color: white;
             padding: 20px;
-            background-color: rgb(212, 113, 77);
+            background-color: rgb(67 100 139);
+            text-align: center;
+            font-family: 'Aclonica';
+            margin-bottom: 20px;
+        }
+        div.centr {
             text-align: center;
         }
+        input[type="number"] {
+    background-color: white;
+    height: 70px;
+    width: 100px;
+    margin-right: 20px;
+    font-size: 2.6em;
+    text-align: center;
+    padding: 6px;
+    border-radius: 5px;
+    border: 2px solid rgb(240, 240, 240);
+    border-image: none;
+    outline-width: 0px;
+}
+input[type="number"]:hover {
+    box-shadow: 0px 0px 8px rgb(7 143 255);
+}
+input[type="number"]:focus-visible {
+    border: 2px solid rgb(123, 207, 255);
+}
     </style>
 </head>
 <body>
     <script src="celsius-fahrenheit.js"></script>
     <h1>CONVERSOR</h1>
-    <input type="text" name="" id=""><input type="text" name="" id="">
+    <div class="centr"><input type="number" name="" id=""><input type="number" name="" id=""></div>
 </body>
 </html>
