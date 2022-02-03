@@ -33,8 +33,16 @@ function invert() {
         console.log('true')
         document.getElementsByName('fst')[0].id = 'fah'
         document.getElementsByName('sec')[0].id = 'cel'
+        document.getElementById('gf').innerText = 'F'
+        document.getElementById('gs').innerText = 'C'
+        document.getElementsByName('fst')[0].value = ''
+        document.getElementsByName('sec')[0].value = ''
     }else{
         document.getElementsByName('fst')[0].id = 'cel'
         document.getElementsByName('sec')[0].id = 'fah'
+        document.getElementById('gf').innerText = 'C'
+        document.getElementById('gs').innerText = 'F'
+        document.getElementsByName('fst')[0].value = ''
+        document.getElementsByName('sec')[0].value = ''
     }
 }

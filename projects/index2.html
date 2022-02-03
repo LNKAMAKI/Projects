@@ -10,6 +10,7 @@
         * {
             margin: 0px;
             padding: 0px;
+            position: relative;
         }
         h1 {
             color: white;
@@ -41,6 +42,7 @@ input[type="number"]:focus-visible {
     border: 2px solid rgb(123, 207, 255);
 }
 input[type="button"]#invert {
+    margin-top: 15px;
     color: white;
     position: relative;
     background-color: rgb(84 84 235);
@@ -62,8 +64,10 @@ input[type="button"]#invert {
     <h1>CONVERSOR</h1>
    <div class="centr"> 
        <input type="number" name="fst" id="cel" onclick="converter()" onkeyup="converter()">
+       <span style="font-size: 2.6em;" id="gf">C</span>
        <span style="font-size: 2.6em;">=</span>
        <input type="number" name="sec" id="fah" onclick="converter2()" onkeyup="converter2()">
+       <span style="font-size: 2.6em;" id="gs">F</span>
        <input type="button" value="Inverter" id="invert" onclick="invert()">
     </div> 
 </body>
