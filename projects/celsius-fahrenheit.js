@@ -72,6 +72,7 @@ function mudarVar(n) {
    
         if (String(sca2num2).length > 0) {
             document.getElementById('sca1num2').value = res
+           // document.getElementById('relac').style.backgroundColor
             }else{
                 document.getElementById('sca1num2').value = ''
             }
