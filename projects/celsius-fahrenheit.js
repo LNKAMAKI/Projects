@@ -88,7 +88,7 @@ function mudarVar(n) {
             }else{
                 sca1rel2.style.top = `calc(-99.5%)`
                
-                prop2 = 100/((sca1num3 - sca1num1)/(res - sca1num1))
+                prop2 = 100/((sca1num2 - sca1num1)/(sca1num3 - sca1num1))
                 sca1rel3.style.top = `calc(${100 - prop2}%)`
                 
             }
