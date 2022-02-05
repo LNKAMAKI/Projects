@@ -25,7 +25,7 @@
             text-align: center;
             font-family:'Open Sans Condensed';
             font-size: 1.5em;
-            margin-bottom: 40px;
+            margin-bottom: 66px;
         }
         div.centr {
            text-align: center;
@@ -43,7 +43,6 @@ input[type='number'].pri {
     font-size: 1.9em;
     height: 45px;
     width: 75px;
-    background-color: blueviolet;
 }
 input[type="number"]:hover, input[type="text"]:hover {
     box-shadow: 0px 0px 8px rgb(7 143 255);
@@ -56,13 +55,12 @@ input[type="button"]#invert {
     color: white;
     position: relative;
     background-color: rgb(84 84 235);
-    height: 50px;
+    height: 61px;
     width: fit-content;
-    min-width: 100px;
     font-size: 1.2em;
-    top: -8px;
+    top: -4px;
     text-align: center;
-    padding: 3px;
+    padding: 3px 8px 3px 8px;
     border-radius: 5px;
     border: 2px solid rgb(84 84 235);
     border-image: none;
@@ -87,11 +85,18 @@ input[type="button"]#fazcomp {
     border-image: none;
     outline-width: 0px;
 }
+div.cont {
+    position: absolute;
+    color: black;
+    background-color: transparent;
+    top: -50px;
+}
 div#sca1, div#sca2 {
     background-color: black;
     width: 2px;
     height: 300px;
     display: inline-block;
+    display: grid;
 }
 div#sca1 {
     position: relative;
@@ -124,7 +129,8 @@ div.ali3 {
 }
 div.lin {
     display: grid;
-    align-items: center;
+    align-items: center;   
+    justify-items: center;
     position: absolute;
     color: transparent;
     background-color: black;
@@ -156,12 +162,12 @@ input.scanum2 {
    <div class="centr"> 
       
            <input type="number" name="fst" id="cel" onclick="converter()" onkeyup="converter()" class="pri">
-           <span style="font-size: 2.6em;" id="gf">C</span>
+           <span style="font-size: 1.9em;" id="gf">C</span>
       
-       <span style="font-size: 2.6em;">=</span>
+       <span style="font-size: 1.9em;">=</span>
        
            <input type="number" name="sec" id="fah" onclick="converter2()" onkeyup="converter2()" class="pri">
-           <span style="font-size: 2.6em;" id="gs">F</span>
+           <span style="font-size: 1.9em;" id="gs">F</span>
      
        <input type="button" value="Inverter" id="invert" onclick="invert()">
    
@@ -169,31 +175,37 @@ input.scanum2 {
    
 <h1>Comparação de Escalas</h1>
         <div style="display: flex; justify-content: center;margin-top: 30px;">
-            <div id="sca1" style="margin-right: 100px;">
-                <div class="ali1">
-                    <div class="lin">
-                        aaa
-                        <input type="number" name="" id="sca1num3" class="scanum" >
+           
+                <div id="sca1" style="margin-right: 100px;">
+
+                    <div class="ali1">
+                        <div class="lin">
+                            aaa
+                            <input type="number" name="" id="sca1num3" class="scanum" >
+
+                            <div class="cont">Escala&nbsp;X</div>  
+                        </div>
+                    </div>
+                    <div class="ali2">
+                        <div class="lin">
+                            aaa
+                            <input type="number" name="" id="sca1num2" class="scanum"  onkeyup="mudarVar(1)">
+                        </div>
+                    </div>
+                    <div class="ali3">
+                        <div class="lin">
+                            aaa
+                            <input type="number" name="" id="sca1num1" class="scanum" >
+                        </div>
                     </div>
                 </div>
-                <div class="ali2">
-                    <div class="lin">
-                        aaa
-                        <input type="number" name="" id="sca1num2" class="scanum"  onkeyup="mudarVar(1)">
-                    </div>
-                </div>
-                <div class="ali3">
-                    <div class="lin">
-                        aaa
-                        <input type="number" name="" id="sca1num1" class="scanum" >
-                    </div>
-                </div>
-            </div>
+            
             <div id="sca2">
                 <div class="ali1">
                     <div class="lin">
                         aaa
                         <input type="number" name="" id="sca2num3" class="scanum2" >
+                        <div class="cont">Escala&nbsp;Xaaaaaaa</div>  
                     </div>
                 </div>
                 <div class="ali2">
