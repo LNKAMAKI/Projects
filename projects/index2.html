@@ -144,13 +144,14 @@ div.lin {
     width: calc(100% + 18px);
     height: 2px;
 }
-input.scanum {
+.scanum {
     position: absolute;
     width: 60px;
     height: 40px;
     left: -80px;
     font-size: 1.7em;
-    
+    text-align: center;
+    background-color: blue;
 }
 input.scanum2 {
     position: absolute;
@@ -213,16 +214,26 @@ input.specput {
                             </div>  
                         </div>
                     </div>
+
                     <div class="ali2">
                         <div class="lin" id="relac">
                             aaa
-                            <input type="number" name="" id="sca1num2" class="scanum"  onkeyup="mudarVar(1)" onclick="mudarVar(1)" >
+                            <input type="number" name="" id="sca1num2" class="scanum" onkeyup="mudarVar(1)" onclick="mudarVar(1)">
                         </div>
                     </div>
-                    <div class="ali3">
-                        <div class="lin">
+
+                    <div class="ali2">
+                        <div class="lin" id="relac2">
                             aaa
+                            
                             <input type="number" name="" id="sca1num1" class="scanum" value="32">
+                        </div>
+                    </div>
+
+                    <div class="ali3">
+                        <div class="lin" >
+                            aaa
+                            <span class="scanum" style="display: none;">0</span>
                         </div>
                     </div>
                 </div>
@@ -250,6 +261,6 @@ input.specput {
                 </div>
             </div>
         </div>
-    <!--<input type="button" value="Ir" id="fazcomp" onclick="fazerComparacao()">-->
+    <input type="button" value="Ir" id="fazcomp" onclick="fazerComparacao()">
 </body>
 </html>

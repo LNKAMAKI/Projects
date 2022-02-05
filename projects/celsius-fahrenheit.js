@@ -49,7 +49,8 @@ function invert() {
 
 function mudarVar(n) {
     console.log(n) 
-    sca1num1 = document.getElementById('sca1num1').value
+   
+   sca1num1 = document.getElementById('sca1num1').value
     sca1num2 = document.getElementById('sca1num2').value
     sca1num3 = document.getElementById('sca1num3').value
 
@@ -73,14 +74,26 @@ function mudarVar(n) {
         if (String(sca2num2).length > 0) {
             document.getElementById('sca1num2').value = res
             rel = document.getElementById('relac')
-            rel.style.backgroundColor = 'red'
-            if (res < sca1num3 ) {
-            prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
-            prop = 
-            rel.style.top = `calc(-${prop}%)`
+            
+           // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
+            prop = 10/(sca1num3/res)*10
+            
+            if (Number(sca1num2) < Number(sca1num3)) {
+            rel.style.top = `calc(${-prop}%)`
+            }else{
+                console.log('mudar aaa')
+                rel.style.top = `calc(0%)`
             }
+         
             }else{
                 document.getElementById('sca1num2').value = ''
             }
+
+            
+           // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
+            prop = 10/(sca1num3/sca1num1)*10
+            
+            document.getElementById('relac2').style.top = `calc(${-prop}%)`
     }
 }
+
