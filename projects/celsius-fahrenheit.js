@@ -75,8 +75,6 @@ function mudarVar(n) {
             document.getElementById('sca1num2').value = res
             sca1rel2 = document.getElementById('sca1rel2')
             sca1rel3 = document.getElementById('sca1rel3')
-            
-           // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
            
             prop = 100/((sca1num3 - sca1num1)/(res - sca1num1))
             
@@ -99,8 +97,6 @@ function mudarVar(n) {
                 document.getElementById('sca1num2').value = ''
             }
 
-            
-           // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
             prop3 = 100/((sca1num3 - sca1num1)/(res - sca1num1))
             
             document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
