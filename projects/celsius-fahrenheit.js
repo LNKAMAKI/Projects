@@ -73,16 +73,17 @@ function mudarVar(n) {
    
         if (String(sca2num2).length > 0) {
             document.getElementById('sca1num2').value = res
-            rel = document.getElementById('relac')
+            sca1rel2 = document.getElementById('sca1rel2')
             
            // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
             prop = 10/(sca1num3/res)*10
             
-            if (Number(sca1num2) < Number(sca1num3)) {
-            rel.style.top = `calc(${-prop}%)`
+            if (Number(res) < Number(sca1num3)) {
+                document.getElementById('sca1num3').style.top = 'calc(0%)'
+            sca1rel2.style.top = `calc(${-prop}%)`
             }else{
                 console.log('mudar aaa')
-                rel.style.top = `calc(0%)`
+                sca1rel2.style.top = `calc(-100%)`
             }
          
             }else{
@@ -93,7 +94,7 @@ function mudarVar(n) {
            // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
             prop = 10/(sca1num3/sca1num1)*10
             
-            document.getElementById('relac2').style.top = `calc(${-prop}%)`
+            document.getElementById('sca1rel1').style.top = `calc(${-prop}%)`
     }
 }
 
