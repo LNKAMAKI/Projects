@@ -77,24 +77,22 @@ function mudarVar(n) {
             sca1rel3 = document.getElementById('sca1rel3')
             
            // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
-            prop = 10/(sca1num3/res)*10
+           
+            prop = 100/((sca1num3 - sca1num1)/(res - sca1num1))
             
             if (Number(res) <= Number(sca1num3)) {
-            sca1rel2.style.top = `calc(${-prop}%)`
-            sca1rel3.style.top = 'calc(0%)'
+               if (prop != '100') {
+                sca1rel2.style.top = `calc(${-prop}%)`
+               }else{
+                sca1rel2.style.top = `calc(${-99.5}%)`
+               }
             
-            sca1rel3.innerHTML += '<div class="cont">Escala&nbsp;<input type="text" class="specput" value="X"></div>'
-
             }else{
-                console.log('mudar aaa')
-                sca1rel2.style.top = `calc(-100%)`
-                prop2 = 10/(res/sca1num3)*10
-                sca1rel3.style.top = `calc(${100 - prop2}%)`
-                console.log(document.getElementsByClassName('cont'))
-                 for(n = 0; n < document.getElementsByClassName('cont').length; n++) {
-                    document.getElementsByClassName('cont')[n].parentNode.removeChild(document.getElementsByClassName('cont')[n])
-                 }
+                sca1rel2.style.top = `calc(-99.5%)`
                
+                prop2 = 100/((sca1num3 - sca1num1)/(res - sca1num1))
+                sca1rel3.style.top = `calc(${100 - prop2}%)`
+                
             }
          
             }else{
@@ -103,9 +101,9 @@ function mudarVar(n) {
 
             
            // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
-            prop = 10/(sca1num3/sca1num1)*10
+            prop3 = 100/((sca1num3 - sca1num1)/(res - sca1num1))
             
-            document.getElementById('sca1rel1').style.top = `calc(${-prop}%)`
+            document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
     }
 }
 
