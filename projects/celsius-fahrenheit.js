@@ -97,7 +97,7 @@ function mudarVar(n) {
                 document.getElementById('sca1num2').value = ''
             }
 
-            prop3 = 100/((sca1num3 - sca1num1)/(res - sca1num1))
+            prop3 = 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
             
             document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
     }
