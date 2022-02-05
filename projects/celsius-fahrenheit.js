@@ -62,11 +62,7 @@ function mudarVar(n) {
 
         res = ((sca2num3 - sca2num1)*(sca1num2 - sca1num1) + (sca1num3 - sca1num1)*sca2num1) / (sca1num3 - sca1num1)
 
-        if (String(sca1num2).length > 0) {
-        document.getElementById('sca2num2').value = res
-        }else{
-            document.getElementById('sca2num2').value = ''
-        }
+       
 
     }else{
         res = ((sca1num3 - sca1num1)*(sca2num2 - sca2num1) + (sca2num3 - sca2num1)*sca1num1) / (sca2num3 - sca2num1)
@@ -78,6 +74,16 @@ function mudarVar(n) {
            
             prop = 100/((sca1num3 - sca1num1)/(res - sca1num1))
             
+            if (Number(res) < Number(sca1num1)) {
+                sca1rel2.style.top = `calc(0%)`
+                
+                prop3 = 100/((sca1num3 - sca1num2)/(sca1num1 - sca1num2))
+            
+                document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
+
+                sca1rel3.style.top = `calc(0%)`
+
+            }else{
             if (Number(res) <= Number(sca1num3)) {
                if (prop != '100') {
                 sca1rel2.style.top = `calc(${-prop}%)`
@@ -85,21 +91,31 @@ function mudarVar(n) {
                 sca1rel2.style.top = `calc(${-99.5}%)`
                }
             
+               prop3 = 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
+            
+            document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
+
+            sca1rel3.style.top = `calc(0%)`
+
+            prop3 = 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
+            
+            document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
             }else{
                 sca1rel2.style.top = `calc(-99.5%)`
                
                 prop2 = 100/((sca1num2 - sca1num1)/(sca1num3 - sca1num1))
                 sca1rel3.style.top = `calc(${100 - prop2}%)`
                 
+                prop3 = 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
+            
+            document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
             }
+        }
          
             }else{
                 document.getElementById('sca1num2').value = ''
             }
 
-            prop3 = 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
-            
-            document.getElementById('sca1rel1').style.top = `calc(${-prop3}%)`
     }
 }
 
