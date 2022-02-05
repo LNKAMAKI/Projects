@@ -85,12 +85,6 @@ input[type="button"]#fazcomp {
     border-image: none;
     outline-width: 0px;
 }
-div.cont {
-    position: absolute;
-    color: black;
-    background-color: transparent;
-    top: -50px;
-}
 div#sca1, div#sca2 {
     background-color: black;
     width: 2px;
@@ -152,7 +146,21 @@ input.scanum2 {
     font-size: 1.7em;
     left: calc(100% + 4px);
 }
-
+div.cont {
+    position: absolute;
+    color: black;
+    background-color: blue;
+    top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input.specput {
+    background-color: blueviolet;
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+}
 
     </style>
 </head>
@@ -183,7 +191,8 @@ input.scanum2 {
                             aaa
                             <input type="number" name="" id="sca1num3" class="scanum" >
 
-                            <div class="cont">Escala&nbsp;X</div>  
+                            <div class="cont">o<input type="number" name="" id="" class="specput">
+                            </div>  
                         </div>
                     </div>
                     <div class="ali2">
@@ -205,7 +214,8 @@ input.scanum2 {
                     <div class="lin">
                         aaa
                         <input type="number" name="" id="sca2num3" class="scanum2" >
-                        <div class="cont">Escala&nbsp;Xaaaaaaa</div>  
+                        <div class="cont">Escala&nbsp;<input type="number" name="" id="" class="specput">
+                        </div>  
                     </div>
                 </div>
                 <div class="ali2">
