@@ -74,8 +74,11 @@ function mudarVar(n) {
             document.getElementById('sca1num2').value = res
             rel = document.getElementById('relac')
             rel.style.backgroundColor = 'red'
-            prop = sca1num3/res
-            rel.style.top = `calc(${prop}%)`
+            if (res < sca1num3 ) {
+            prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
+            prop = 
+            rel.style.top = `calc(-${prop}%)`
+            }
             }else{
                 document.getElementById('sca1num2').value = ''
             }
