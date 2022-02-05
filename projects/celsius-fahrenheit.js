@@ -72,7 +72,10 @@ function mudarVar(n) {
    
         if (String(sca2num2).length > 0) {
             document.getElementById('sca1num2').value = res
-           // document.getElementById('relac').style.backgroundColor
+            rel = document.getElementById('relac')
+            rel.style.backgroundColor = 'red'
+            prop = sca1num3/res
+            rel.style.top = `calc(${prop}%)`
             }else{
                 document.getElementById('sca1num2').value = ''
             }
