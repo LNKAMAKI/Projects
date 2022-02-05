@@ -46,3 +46,25 @@ function invert() {
         document.getElementsByName('sec')[0].value = ''
     }
 }
+
+function fazerComparacao() {
+    window.alert('e')
+    sca1num1 = document.getElementById('sca1num1').value
+    sca1num2 = document.getElementById('sca1num2').value
+    sca1num3 = document.getElementById('sca1num3').value
+
+    sca2num1 = document.getElementById('sca2num1').value
+    sca2num2 = document.getElementById('sca2num2').value
+    sca2num3 = document.getElementById('sca2num3').value
+    console.log('sca1num1.value = ' + sca1num1)
+    console.log('sca1num2.value = ' + sca1num2)
+    console.log('sca1num3.value = ' + sca1num3)
+
+    console.log('sca2num1.value = ' + sca2num1)
+    console.log('sca2num2.value = ' + sca2num2)
+    console.log('sca2num3.value = ' + sca2num3)
+
+    // Formula da 1 Escala
+    console.log(sca1num3 - sca1num1)
+    console.log(sca2num3 - sca2num1)
+}
