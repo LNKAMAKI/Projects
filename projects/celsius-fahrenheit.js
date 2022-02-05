@@ -74,16 +74,27 @@ function mudarVar(n) {
         if (String(sca2num2).length > 0) {
             document.getElementById('sca1num2').value = res
             sca1rel2 = document.getElementById('sca1rel2')
+            sca1rel3 = document.getElementById('sca1rel3')
             
            // prop = 10/((Number(sca1num3) + Number(sca1num1))/res)*10
             prop = 10/(sca1num3/res)*10
             
-            if (Number(res) < Number(sca1num3)) {
-                document.getElementById('sca1num3').style.top = 'calc(0%)'
+            if (Number(res) <= Number(sca1num3)) {
             sca1rel2.style.top = `calc(${-prop}%)`
+            sca1rel3.style.top = 'calc(0%)'
+            
+            sca1rel3.innerHTML += '<div class="cont">Escala&nbsp;<input type="text" class="specput" value="X"></div>'
+
             }else{
                 console.log('mudar aaa')
                 sca1rel2.style.top = `calc(-100%)`
+                prop2 = 10/(res/sca1num3)*10
+                sca1rel3.style.top = `calc(${100 - prop2}%)`
+                console.log(document.getElementsByClassName('cont'))
+                 for(n = 0; n < document.getElementsByClassName('cont').length; n++) {
+                    document.getElementsByClassName('cont')[n].parentNode.removeChild(document.getElementsByClassName('cont')[n])
+                 }
+               
             }
          
             }else{
