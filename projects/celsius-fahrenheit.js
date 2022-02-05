@@ -49,16 +49,6 @@ function invert() {
 
 function mudarVar(n) {
     console.log(n) 
-    if (n == 1) {
-        fstvar = document.getElementById('sca1num2').value
-        console.log(fstvar)
-    }else{
-        secvar = document.getElementById('sca2num2').value
-        console.log(secvar)
-    }
-}
-
-function fazerComparacao() {
     sca1num1 = document.getElementById('sca1num1').value
     sca1num2 = document.getElementById('sca1num2').value
     sca1num3 = document.getElementById('sca1num3').value
@@ -66,17 +56,24 @@ function fazerComparacao() {
     sca2num1 = document.getElementById('sca2num1').value
     sca2num2 = document.getElementById('sca2num2').value
     sca2num3 = document.getElementById('sca2num3').value
-  
 
-    // Formula da 1 Escala
-    if (String(Number(sca1num2)) != 'NaN') {
+    if (n == 1) {
+
         res = ((sca2num3 - sca2num1)*(sca1num2 - sca1num1) + (sca1num3 - sca1num1)*sca2num1) / (sca1num3 - sca1num1)
+
+        if (String(sca1num2).length > 0) {
+        document.getElementById('sca2num2').value = res
+        }else{
+            document.getElementById('sca2num2').value = ''
+        }
+
+    }else{
+        res = ((sca1num3 - sca1num1)*(sca2num2 - sca2num1) + (sca2num3 - sca2num1)*sca1num1) / (sca2num3 - sca2num1)
    
-        document.getElementById('sca2num2').value = `${res}${secvar}`
-   
-       }else if(String(Number(sca2num2)) != 'NaN'){
-           res = ((sca1num3 - sca1num1)*(sca2num2 - sca2num1) + (sca2num3 - sca2num1)*sca1num1) / (sca2num3 - sca2num1)
-   
-           document.getElementById('sca1num2').value = `${res}${fstvar}`
-       }
+        if (String(sca2num2).length > 0) {
+            document.getElementById('sca1num2').value = res
+            }else{
+                document.getElementById('sca1num2').value = ''
+            }
+    }
 }

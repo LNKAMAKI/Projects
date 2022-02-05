@@ -7,18 +7,23 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Fjalla+One&display=swap');
         * {
             margin: 0px;
             padding: 0px;
             position: relative;
         }
-        h1 {
+        h1#titulo {
             color: white;
             padding: 20px;
             background-color: rgb(67 100 139);
             text-align: center;
-            font-family: 'Aclonica';
+            font-family: 'Fjalla One';
             margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-family: sans-serif;
         }
         div.centr {
            text-align: center;
@@ -144,7 +149,7 @@ input.scanum2 {
 </head>
 <body>
     <script src="celsius-fahrenheit.js"></script>
-    <h1>CONVERSOR</h1>
+    <h1 id="titulo">CONVERSOR</h1>
    <div class="centr"> 
       
            <input type="number" name="fst" id="cel" onclick="converter()" onkeyup="converter()" class="pri">
@@ -159,7 +164,7 @@ input.scanum2 {
    
  </div>
    
-
+<h1>Comparação de Escalas</h1>
         <div style="display: flex; justify-content: center;margin-top: 30px;">
             <div id="sca1" style="margin-right: 100px;">
                 <div class="ali1">
@@ -171,7 +176,7 @@ input.scanum2 {
                 <div class="ali2">
                     <div class="lin">
                         aaa
-                        <input type="text" name="" id="sca1num2" class="scanum"  onkeyup="mudarVar(1)">
+                        <input type="number" name="" id="sca1num2" class="scanum"  onkeyup="mudarVar(1)">
                     </div>
                 </div>
                 <div class="ali3">
@@ -202,6 +207,6 @@ input.scanum2 {
                 </div>
             </div>
         </div>
-    <input type="button" value="Ir" id="fazcomp" onclick="fazerComparacao()">
+    <!--<input type="button" value="Ir" id="fazcomp" onclick="fazerComparacao()">-->
 </body>
 </html>
