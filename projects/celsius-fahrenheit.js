@@ -61,11 +61,14 @@ function mudarVar(n) {
     if (n == 1) {
 
         res = ((sca2num3 - sca2num1)*(sca1num2 - sca1num1) + (sca1num3 - sca1num1)*sca2num1) / (sca1num3 - sca1num1)
+
+        /*
         sca2rel2 = document.getElementById('sca2rel2')
         console.log(sca2rel2)
         //sca2rel2.style.backgroundColor = 'red'
         sca2rel2.style.top = 'calc(-99.5%)'
  
+        
         if (String(sca1num2).length > 0) {
          document.getElementById('sca2num2').value = res
          sca2rel2 = document.getElementById('sca2rel2')
@@ -120,7 +123,7 @@ function mudarVar(n) {
              document.getElementById('sca2num2').value = ''
              sca2rel1.style.top = 'calc(0%)'
          }
- 
+ */
     }else{
         res = ((sca1num3 - sca1num1)*(sca2num2 - sca2num1) + (sca2num3 - sca2num1)*sca1num1) / (sca2num3 - sca2num1)
    
