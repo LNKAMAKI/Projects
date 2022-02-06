@@ -20,6 +20,7 @@
             text-align: center;
             font-family: 'Aclonica';
             margin-bottom: 20px;
+            font-size: 2em;
         }
         h1 {
             text-align: center;
@@ -144,7 +145,7 @@ div.lin {
     width: calc(100% + 18px);
     height: 2px;
 }
-.scanum {
+.scanum2 {
     position: absolute;
     width: 60px;
     height: 40px;
@@ -153,7 +154,7 @@ div.lin {
     text-align: center;
     background-color: blue;
 }
-input.scanum2 {
+input.scanum {
     position: absolute;
     width: 60px;
     height: 40px;
@@ -203,7 +204,32 @@ input.specput {
 <h1>Comparação de Escalas</h1>
         <div style="display: flex; justify-content: center;margin-top: 30px;">
            
-                <div id="sca1" style="margin-right: 110px;">
+            
+            <div id="sca2"  style="margin-right: 110px;">
+                <div class="ali1">
+                    <div class="lin" id="sca2rel3">
+                        aaa
+                        <input type="number" name="" id="sca2num3" class="scanum2" value="100">
+                        <!--<div class="cont">Escala&nbsp;<input type="text" name="" id="" class="specput" value="Y" >
+                        </div>-->
+
+                    </div>
+                </div>
+                <div class="ali2">
+                    <div class="lin" id="sca2rel2">
+                        aaa
+                        <input type="number" name="" id="sca2num2" class="scanum2"  onkeyup="mudarVar(2)" onclick="mudarVar(2)">
+                    </div>
+                </div>
+                <div class="ali3">
+                    <div class="lin" id="sca2rel1">
+                        aaa
+                        <input type="number" name="" id="sca2num1" class="scanum2" value="0" >
+                    </div>
+                </div>
+            </div>
+
+                <div id="sca1">
 
                     <div class="ali1">
                         <div class="lin" id="sca1rel3">
@@ -230,30 +256,8 @@ input.specput {
                     </div>
 
                 </div>
-            
-            <div id="sca2">
-                <div class="ali1">
-                    <div class="lin" id="sca2rel3">
-                        aaa
-                        <input type="number" name="" id="sca2num3" class="scanum2" value="100">
-                        <div class="cont">Escala&nbsp;<input type="text" name="" id="" class="specput" value="Y" >
-                        </div>  
-                    </div>
-                </div>
-                <div class="ali2">
-                    <div class="lin" id="sca2rel2">
-                        aaa
-                        <input type="number" name="" id="sca2num2" class="scanum2"  onkeyup="mudarVar(2)" onclick="mudarVar(2)">
-                    </div>
-                </div>
-                <div class="ali3">
-                    <div class="lin" id="sca2rel1">
-                        aaa
-                        <input type="number" name="" id="sca2num1" class="scanum2" value="0" >
-                    </div>
-                </div>
-            </div>
         </div>
+
     <input type="button" value="Ir" id="fazcomp" onclick="fazerComparacao()">
 </body>
 </html>
