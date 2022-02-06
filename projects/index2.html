@@ -91,7 +91,7 @@ input[type="button"]#fazcomp {
 div#sca1, div#sca2 {
     background-color: black;
     width: 2px;
-    height: 300px;
+    height: 350px;
     display: inline-block;
     display: grid;
 }
@@ -185,6 +185,17 @@ input.specput {
 }
 #sca1num2 {
     z-index: 1;
+    
+}
+#titfor {
+    margin: 40px auto 40px auto;
+    max-width: 354px;
+    text-align: center;
+    display: grid;
+   font-family: monospace;
+   font-size: 1.3em;
+   color: transparent;
+   background-color: rgba(128, 128, 128, 0.226);
 }
     </style>
 </head>
@@ -214,7 +225,7 @@ input.specput {
                 <div class="ali1">
                     <div class="lin" style="background-color: transparent;">
                         aaa
-                            <div class="cont">Escala&nbsp;<input type="text" class="specput" value="Y" >
+                            <div class="cont">Escala&nbsp;<input type="text" class="specput" value="Y" id="fstspec" >
                             </div>
                         </div>
                 </div>
@@ -245,7 +256,7 @@ input.specput {
                     <div class="ali1">
                         <div class="lin" style="background-color: transparent;">
                             aaa
-                                <div class="cont">Escala&nbsp;<input type="text" class="specput" value="X" >
+                                <div class="cont">Escala&nbsp;<input type="text" class="specput" value="X" id="secspec">
                                 </div>
                             </div>
                     </div>
@@ -268,13 +279,18 @@ input.specput {
 
                     <div class="ali3">
                         <div class="lin" id="sca1rel1">
-                            aaa
+                            aa
                             
                             <input type="number" name="" id="sca1num1" class="scanum" value="32">
                         </div>
                     </div>
 
                 </div>
+        </div>
+
+        <div id="titfor">
+            Formula:<br><br>
+           <span id="form"></span>
         </div>
 
     <!--<input type="button" value="Ir" id="fazcomp" onclick="fazerComparacao()">-->
