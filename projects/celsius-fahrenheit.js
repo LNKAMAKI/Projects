@@ -58,6 +58,7 @@ function mudarVar(n) {
     sca2num2 = document.getElementById('sca2num2').value
     sca2num3 = document.getElementById('sca2num3').value
 
+    if (Number(sca1num1) < Number(sca1num3) && Number(sca2num1) < Number(sca2num3)) {
     formula = document.getElementById('form')
     titfor = document.getElementById('titfor')
 
@@ -72,6 +73,7 @@ function mudarVar(n) {
 
     if (n == 1) {
 
+        if (String(sca1num2).length > 0) {
         sca1rel2 = document.getElementById('sca1rel2')
         sca1rel3 = document.getElementById('sca1rel3')
        
@@ -131,7 +133,6 @@ function mudarVar(n) {
    
     res = ((sca2num3 - sca2num1)*(sca1num2 - sca1num1) + (sca1num3 - sca1num1)*sca2num1) / (sca1num3 - sca1num1)
    
-    if (String(sca1num2).length > 0) {
         document.getElementById('sca2num2').value = res
         sca2rel2 = document.getElementById('sca2rel2')
         sca2rel3 = document.getElementById('sca2rel3')
@@ -196,6 +197,10 @@ function mudarVar(n) {
        
     }else{
    
+        if (String(sca2num2).length > 0) {
+        console.log(sca1num1, sca1num3)
+        console.log(Number(sca1num1) < Number(sca1num3))
+       
             sca2rel2 = document.getElementById('sca2rel2')
             sca2rel3 = document.getElementById('sca2rel3')
            
@@ -250,12 +255,10 @@ function mudarVar(n) {
                 }
             }
         }
-         
             
 
         res = ((sca1num3 - sca1num1)*(sca2num2 - sca2num1) + (sca2num3 - sca2num1)*sca1num1) / (sca2num3 - sca2num1)
 
-        if (String(sca2num2).length > 0) {
             document.getElementById('sca1num2').value = res
             sca1rel2 = document.getElementById('sca1rel2')
             sca1rel3 = document.getElementById('sca1rel3')
@@ -315,7 +318,10 @@ function mudarVar(n) {
             }else{
                 document.getElementById('sca1num2').value = ''
             }
-
     }
-}
+    }else{
+        window.alert('Escala Inválida')
+    }
+    }
+
 
