@@ -323,5 +323,4 @@ function mudarVar(n) {
         window.alert('Escala Inválida')
     }
     }
-
-
+    
