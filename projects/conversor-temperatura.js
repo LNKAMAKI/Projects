@@ -47,6 +47,9 @@ function invert() {
     }
 }
 
+function opvale() {
+    console.log('Hey')
+}
 function mudarVar(n) {
     console.log(n) 
    
@@ -95,7 +98,7 @@ function mudarVar(n) {
                if (Number(prop) <= 99.5) {
             sca1rel2.style.top = `calc(${prop}%)`
                }else{
-                   sca1rel2.style.backgroundColor = 'red'
+                  
                }
            }else{
             sca1rel2.style.top = `calc(${-99.5}%)`
@@ -114,12 +117,13 @@ function mudarVar(n) {
         document.getElementById('sca1rel1').style.top = `calc(${prop3}%)`
         }
         }else{
-            sca1rel2.style.top = `calc(-99.5%)`
+            sca1rel2.style.top = `calc(0%)`
            
             prop2 = 100 - 100/((sca1num2 - sca1num1)/(sca1num3 - sca1num1))
-            if (Number(prop2) <= 100 && Number(prop2) >= 0) {
-            sca1rel3.style.top = `calc(${100 - prop2}%)`
-            }
+            
+           
+            sca1rel3.style.top = `calc(${prop2}%)`
+            
             
             prop3 = 100 - 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
         
@@ -129,10 +133,12 @@ function mudarVar(n) {
         }
     }
      
-        
-   
+    if (document.getElementById('sel').value == 'Temperatura') {
     res = ((sca2num3 - sca2num1)*(sca1num2 - sca1num1) + (sca1num3 - sca1num1)*sca2num1) / (sca1num3 - sca1num1)
-   
+    }else{
+    res = sca1num2*(sca2num3 - sca2num1)/(sca1num3 - sca1num1)
+    }
+
         document.getElementById('sca2num2').value = res
         sca2rel2 = document.getElementById('sca2rel2')
         sca2rel3 = document.getElementById('sca2rel3')
@@ -155,7 +161,7 @@ function mudarVar(n) {
                if (Number(prop) <= 99.5) {
             sca2rel2.style.top = `calc(${prop}%)`
                }else{
-                   sca2rel2.style.backgroundColor = 'red'
+                  
                }
            }else{
             sca2rel2.style.top = `calc(${-99.5}%)`
@@ -174,12 +180,13 @@ function mudarVar(n) {
         document.getElementById('sca2rel1').style.top = `calc(${prop3}%)`
         }
         }else{
-            sca2rel2.style.top = `calc(-99.5%)`
+            sca2rel2.style.top = `calc(0%)`
            
             prop2 = 100 - 100/((sca2num2 - sca2num1)/(sca2num3 - sca2num1))
-            if (Number(prop2) <= 100 && Number(prop2) >= 0) {
-            sca2rel3.style.top = `calc(${100 - prop2}%)`
-            }
+           
+           
+            sca2rel3.style.top = `calc(${prop2}%)`
+            
             
             prop3 = 100 - 100/((sca2num3 - sca2num1)/(sca2num1 - sca2num1))
         
@@ -222,7 +229,7 @@ function mudarVar(n) {
                    if (Number(prop) <= 99.5) {
                 sca2rel2.style.top = `calc(${prop}%)`
                    }else{
-                       sca2rel2.style.backgroundColor = 'red'
+                     
                    }
                }else{
                 sca2rel2.style.top = `calc(${-99.5}%)`
@@ -241,12 +248,13 @@ function mudarVar(n) {
             document.getElementById('sca2rel1').style.top = `calc(${prop3}%)`
             }
             }else{
-                sca2rel2.style.top = `calc(-99.5%)`
+                sca2rel2.style.top = `calc(0%)`
                
                 prop2 = 100 - 100/((sca2num2 - sca2num1)/(sca2num3 - sca2num1))
-                if (Number(prop2) <= 100 && Number(prop2) >= 0) {
-                sca2rel3.style.top = `calc(${100 - prop2}%)`
-                }
+              
+               
+                sca2rel3.style.top = `calc(${prop2}%)`
+                
                 
                 prop3 = 100 - 100/((sca2num3 - sca2num1)/(sca2num1 - sca2num1))
             
@@ -256,9 +264,11 @@ function mudarVar(n) {
             }
         }
             
-
+        if (document.getElementById('sel').value == 'Temperatura') {
         res = ((sca1num3 - sca1num1)*(sca2num2 - sca2num1) + (sca2num3 - sca2num1)*sca1num1) / (sca2num3 - sca2num1)
-
+        }else{
+        res = sca2num2*(sca1num3 - sca1num1)/(sca2num3 - sca2num1)
+        }
             document.getElementById('sca1num2').value = res
             sca1rel2 = document.getElementById('sca1rel2')
             sca1rel3 = document.getElementById('sca1rel3')
@@ -281,7 +291,7 @@ function mudarVar(n) {
                    if (Number(prop) <= 99.5) {
                 sca1rel2.style.top = `calc(${prop}%)`
                    }else{
-                       sca1rel2.style.backgroundColor = 'red'
+                      
                    }
                }else{
                 sca1rel2.style.top = `calc(${-99.5}%)`
@@ -300,12 +310,13 @@ function mudarVar(n) {
             document.getElementById('sca1rel1').style.top = `calc(${prop3}%)`
             }
             }else{
-                sca1rel2.style.top = `calc(-99.5%)`
+                sca1rel2.style.top = `calc(0%)`
                
                 prop2 = 100 - 100/((sca1num2 - sca1num1)/(sca1num3 - sca1num1))
-                if (Number(prop2) <= 100 && Number(prop2) >= 0) {
-                sca1rel3.style.top = `calc(${100 - prop2}%)`
-                }
+              
+               
+                sca1rel3.style.top = `calc(${prop2}%)`
+                
                 
                 prop3 = 100 - 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
             

@@ -42,6 +42,17 @@
             margin-bottom: 66px;
             margin-top: 15px;
         }
+
+
+        #fh1 {
+            margin-bottom: 0px;
+        }
+        #fh2 {
+            font-size: 1em;
+            font-weight: normal;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
         div.centr {
            text-align: center;
         }
@@ -154,10 +165,9 @@
         align-items: center;   
         justify-items: center;
         position: absolute;
+        background-color: black;
         color: transparent;
-        background-color: rgb(204, 62, 62);
         width: calc(100% + 18px);
-        z-index: 2;
         height: 2px;
     }
     .scanum2 {
@@ -196,18 +206,12 @@
         text-align: center;
         border-radius: 0px;
     }
-    #sca1num1, #sca2num1 {
-        background-color: blue;
-        position: absolute;
-        z-index: 1;
-    }
+
     #sca1rel2, #sca2rel2 {
     top: calc(50%);
+    z-index: 1;
     }
-    #sca1num2, #sca2num2 {
-        position: absolute;
-        z-index: 3;
-    }
+
     #titfor {
         margin: 40px auto 40px auto;
         max-width: 354px;
@@ -217,19 +221,16 @@
     font-size: 1.3em;
     color: transparent;
     }
-    div#quadro {
-        display: none;
-        position: absolute;
-        width: 300px;
-        height: 100%;
-        z-index: 2;
-        background-color: blueviolet;
-        left: calc(100% + 98px);
+    select {
+        text-align: center;
+        border-radius: 0px;
+        border: 2px solid rgb(240, 240, 240);
     }
+    
     </style>
 </head>
 <body>
-    <script src="celsius-fahrenheit.js"></script>
+    <script src="conversor-temperatura.js"></script>
     
     <div id="cen"><img src="termometro.png" alt="" id="char" style="width: 32px; height: 45px;"><h1 id="spec">Conversor</h1></div>
    <div class="centr"> 
@@ -245,10 +246,15 @@
        <input type="button" value="Inverter" id="invert" onclick="invert()">
    
  </div>
-   
-<h1>Comparação de Escalas</h1>
-        <div style="display: flex; justify-content: center;margin-top: 30px;">
-           
+
+<h1 id="fh1">Comparação de Escalas</h1>
+
+<h1 id="fh2"><select name="" id="sel">
+    <option value="" onclick="opvale()">Temperatura</option>
+    <option value="" onclick="opvale()">Variação</option>
+</select></h1>
+
+        <div style="display: flex; justify-content: center;margin-top: 30px;"> 
             
             <div id="sca2"  style="margin-right: 121px;">
                 
@@ -282,7 +288,6 @@
             </div>
 
                 <div id="sca1">
-                    <div id="quadro"></div>
 
                     <div class="ali1">
                         <div class="lin" style="background-color: transparent;">
