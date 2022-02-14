@@ -13,6 +13,70 @@
             padding: 0px;
             position: relative;
         }
+        .p2 {
+display: inline-block;
+position: relative;
+}
+.p2 > p {
+display: none;
+}
+.p2:hover > p {
+display: inline-block; 
+margin: 0px;
+background-color: pink;
+}
+.inform2 {
+font-size: 0.7em;
+font-family: sans-serif;
+font-weight: bold;
+display: grid;
+align-items: center;
+position: absolute;
+padding: 6px 6px 5px 6px;
+border-radius: 5px ;
+color: white;
+width: max-content;
+background-color: red;
+}
+.thingo2 {
+    position: absolute;
+    max-width: 11.8px;
+    max-height: 11.2px;
+    z-index: -1;
+    width: 15px;
+    height: 15px;
+    transform: rotate(-44deg);
+    background-color: red;
+    left: calc(100% - 10px);
+}
+.ad2 {
+    transition-property: opacity;
+    transition-duration: 2s;
+    left: -100%;
+    opacity: 100;
+    display:grid;
+    align-items: center;
+    justify-items: end;
+    position: absolute;
+    left: -104%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+}
+.p2:hover > .ad2 {
+    transition-property: opacity;
+transition-duration: 2s;
+left: -100%;
+opacity: 100;
+display:grid;
+align-items: center;
+justify-items: end;
+position: absolute;
+left: -104%;
+top: 0%;
+width: 100%;
+height: 100%;
+}
             #cen {
         padding: 20px 0px 20px 0px;
         background-color: rgb(67 100 139);
@@ -263,7 +327,7 @@
                 <div class="ali1">
                     <div class="lin" style="background-color: transparent;">
                         aaa
-                            <div class="cont">Escala&nbsp;<input type="text" class="specput" value="Y" id="fstspec" >
+                            <div class="cont">Escala&nbsp;<input type="text" class="specput" value="Y" id="fstspec" spellcheck="false">
                             </div>
                         </div>
                 </div>
@@ -283,8 +347,9 @@
                 </div>
                 <div class="ali3">
                     <div class="lin" id="sca2rel1">
-                        aaa
+                        
                         <input type="number" name="" id="sca2num1" class="scanum2" value="0" onkeyup="mudarVar(2)" onclick="mudarVar(2)">
+
                     </div>
                 </div>
             </div>
@@ -294,7 +359,7 @@
                     <div class="ali1">
                         <div class="lin" style="background-color: transparent;">
                             aaa
-                                <div class="cont">Escala&nbsp;<input type="text" class="specput" value="X" id="secspec">
+                                <div class="cont">Escala&nbsp;<input type="text" class="specput" value="X" id="secspec" spellcheck="false">
                                 </div>
                             </div>
                     </div>
@@ -329,6 +394,13 @@
         <div id="titfor">
             Fórmula:<br><br>
            <span id="form"></span>
+        </div>
+
+        <div style="text-align: center;display: none;">
+            <div class="p2">0 |--
+                
+                <div class="ad2"><div class="inform2">Valor Inválido
+                 <div class="thingo2"></div></div></div></div>
         </div>
 
     <!--<input type="button" value="Ir" id="fazcomp" onclick="fazerComparacao()">-->

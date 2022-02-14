@@ -76,11 +76,11 @@ position: absolute;
 padding: 6px 6px 5px 6px;
 border-radius: 5px ;
 color: white;
+width: max-content;
 background-color: black;
 }
 .thingo2 {
 position: absolute;
-max-width: 11.8px;
 max-height: 11.2px; 
 width: 15px;
 height: 15px;
@@ -93,7 +93,7 @@ z-index: -2;
     transition-property: opacity;
     transition-duration: 2s;
     left: -100%;
-    opacity: 0;
+    opacity: 100;
     display:grid;
     align-items: center;
     justify-items: end;

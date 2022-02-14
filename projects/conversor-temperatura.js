@@ -105,13 +105,13 @@ function mudarVar(n) {
         }else{
         if (Number(sca1num2) <= Number(sca1num3)) {
            if (prop != '100') {
-               if (Number(prop) <= 99.5) {
+               if (Number(prop) <= 100) {
             sca1rel2.style.top = `calc(${prop}%)`
                }else{
                   
                }
            }else{
-            sca1rel2.style.top = `calc(${-99.5}%)`
+            sca1rel2.style.top = `calc(${100}%)`
            }
         
            prop3 = 100 - 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
@@ -168,13 +168,13 @@ function mudarVar(n) {
         }else{
         if (Number(res) <= Number(sca2num3)) {
            if (prop != '100') {
-               if (Number(prop) <= 99.5) {
+               if (Number(prop) <= 100) {
             sca2rel2.style.top = `calc(${prop}%)`
                }else{
                   
                }
            }else{
-            sca2rel2.style.top = `calc(${-99.5}%)`
+            sca2rel2.style.top = `calc(${100}%)`
            }
         
            prop3 = 100 - 100/((sca2num3 - sca2num1)/(sca2num1 - sca2num1))
@@ -236,13 +236,13 @@ function mudarVar(n) {
             }else{
             if (Number(sca2num2) <= Number(sca2num3)) {
                if (prop != '100') {
-                   if (Number(prop) <= 99.5) {
+                   if (Number(prop) <= 100) {
                 sca2rel2.style.top = `calc(${prop}%)`
                    }else{
                      
                    }
                }else{
-                sca2rel2.style.top = `calc(${-99.5}%)`
+                sca2rel2.style.top = `calc(${100}%)`
                }
             
                prop3 = 100 - 100/((sca2num3 - sca2num1)/(sca2num1 - sca2num1))
@@ -298,13 +298,13 @@ function mudarVar(n) {
             }else{
             if (Number(res) <= Number(sca1num3)) {
                if (prop != '100') {
-                   if (Number(prop) <= 99.5) {
+                   if (Number(prop) <= 100) {
                 sca1rel2.style.top = `calc(${prop}%)`
                    }else{
                       
                    }
                }else{
-                sca1rel2.style.top = `calc(${-99.5}%)`
+                sca1rel2.style.top = `calc(${100}%)`
                }
             
                prop3 = 100 - 100/((sca1num3 - sca1num1)/(sca1num1 - sca1num1))
