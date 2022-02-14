@@ -1,3 +1,4 @@
+opvalue = 'temp'
 function converter() {
     frst = document.getElementsByName('fst')[0]
     n = frst.value
@@ -48,7 +49,12 @@ function invert() {
 }
 
 function opvale() {
-    console.log('Hey')
+    
+   if (document.getElementById('temp').selected == true) {
+        opvalue = 'temp'
+    }else{
+        opvalue = 'vari'
+    }
 }
 function mudarVar(n) {
     console.log(n) 
@@ -133,7 +139,7 @@ function mudarVar(n) {
         }
     }
      
-    if (document.getElementById('sel').value == 'Temperatura') {
+    if (opvalue == 'temp') {
     res = ((sca2num3 - sca2num1)*(sca1num2 - sca1num1) + (sca1num3 - sca1num1)*sca2num1) / (sca1num3 - sca1num1)
     }else{
     res = sca1num2*(sca2num3 - sca2num1)/(sca1num3 - sca1num1)
@@ -264,7 +270,7 @@ function mudarVar(n) {
             }
         }
             
-        if (document.getElementById('sel').value == 'Temperatura') {
+        if (opvalue == 'temp') {
         res = ((sca1num3 - sca1num1)*(sca2num2 - sca2num1) + (sca2num3 - sca2num1)*sca1num1) / (sca2num3 - sca2num1)
         }else{
         res = sca2num2*(sca1num3 - sca1num1)/(sca2num3 - sca2num1)
