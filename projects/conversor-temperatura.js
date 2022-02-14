@@ -77,8 +77,12 @@ function mudarVar(n) {
 
     titfor.style.color = 'black'
     console.log(fstspec, secspec)
-    formula.innerHTML = `(${fstspec} - ${sca2num1})/${sca2num3 - sca2num1} = (${secspec} - ${sca1num1})/${sca1num3 - sca1num1}`
 
+    if (opvalue == 'temp') {
+    formula.innerHTML = `(${fstspec} - ${sca2num1})/${sca2num3 - sca2num1} = (${secspec} - ${sca1num1})/${sca1num3 - sca1num1}`
+    }else{
+        formula.innerHTML = `${fstspec}/${sca2num3 - sca2num1} = ${secspec}/${sca1num3 - sca1num1}`
+    }
 
     if (n == 1) {
 
