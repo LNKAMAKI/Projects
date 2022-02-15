@@ -1,20 +1,53 @@
 opvalue = 'temp'
-function converter() {
-    
+function sele1() {
+    //window.alert('sele1')
     console.log(document.getElementById('ce').selected)
     if (document.getElementById('ce').selected == true) {
         document.getElementsByName('fst')[0].id = 'cel'
         if (document.getElementById('ce2').selected == true) {
             document.getElementsByName('sec')[0].id = 'fah'
             document.getElementById('fa2').selected = true
+
+            document.getElementsByName('fst')[0].value = ''
+            document.getElementsByName('sec')[0].value = ''
         }
     }else if (document.getElementById('fa').selected == true){
         document.getElementsByName('fst')[0].id = 'fah'
         if (document.getElementById('fa2').selected == true) {
             document.getElementsByName('sec')[0].id = 'cel'
             document.getElementById('ce2').selected = true
+
+            document.getElementsByName('fst')[0].value = ''
+            document.getElementsByName('sec')[0].value = ''
         }
     }
+}
+
+function sele2() {
+    //window.alert('sele2')
+    if (document.getElementById('ce2').selected == true) {
+        document.getElementsByName('sec')[0].id = 'cel'
+        if (document.getElementById('ce').selected == true) {
+            document.getElementsByName('fst')[0].id = 'fah'
+            document.getElementById('fa').selected = true
+
+            document.getElementsByName('fst')[0].value = ''
+            document.getElementsByName('sec')[0].value = ''
+
+        }
+    }else if (document.getElementById('fa2').selected == true){
+        document.getElementsByName('sec')[0].id = 'fah'
+        if (document.getElementById('fa').selected == true) {
+            document.getElementsByName('fst')[0].id = 'cel'
+            document.getElementById('ce').selected = true
+            
+            document.getElementsByName('fst')[0].value = ''
+            document.getElementsByName('sec')[0].value = ''
+        }
+    }
+
+}
+function converter() {
 
     n = document.getElementsByName('fst')[0].value
     if (String(n).length > 0) {
@@ -30,20 +63,6 @@ function converter() {
 }
 function converter2() {
     
-    if (document.getElementById('ce2').selected == true) {
-        document.getElementsByName('sec')[0].id = 'cel'
-        if (document.getElementById('ce').selected == true) {
-            document.getElementsByName('fst')[0].id = 'fah'
-            document.getElementById('fa').selected = true
-
-        }
-    }else if (document.getElementById('fa2').selected == true){
-        document.getElementsByName('sec')[0].id = 'fah'
-        if (document.getElementById('fa').selected == true) {
-            document.getElementsByName('fst')[0].id = 'cel'
-            document.getElementById('ce').selected = true
-        }
-    }
 
     n = document.getElementsByName('sec')[0].value
     console.log(n)

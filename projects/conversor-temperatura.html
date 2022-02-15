@@ -291,6 +291,10 @@ height: 100%;
         text-align: center;
         border-radius: 0px;
         border: 2px solid rgb(240, 240, 240);
+        cursor: pointer;
+    }
+    option {
+        cursor: pointer;
     }
     
     </style>
@@ -303,25 +307,25 @@ height: 100%;
       
            <div style="display: inline-flex;flex-direction: column;">
                <input type="number" name="fst" id="cel" onclick="converter()" onkeyup="converter()" class="pri">
-               <select name="" id="">
+               <select name="" id="" onclick="sele1()">
                    <option value="" id="ce">Celsius</option>
                    <option value="" id="fa">Fahrenheit</option>
                </select>
            </div>
 
-           <span style="font-size: 1.9em;" id="gf">C</span>
+           <!--<span style="font-size: 1.9em;" id="gf">C</span>-->
       
-       <span style="font-size: 1.9em;">=</span>
+       <span style="font-size: 1.9em;">&nbsp;=&nbsp;</span>
        
            
                <div style="display: inline-flex;flex-direction: column"><input type="number" name="sec" id="fah" onclick="converter2()" onkeyup="converter2()" class="pri">  
-                <select name="" id="">
+                <select name="" id="" onclick="sele2()">
                     <option value="" id="fa2">Fahrenheit</option>
                     <option value="" id="ce2">Celsius</option>
                 </select>
             </div>
 
-                <span style="font-size: 1.9em;" id="gs">F</span>
+                <!--<span style="font-size: 1.9em;" id="gs">F</span>-->
      
        <input type="button" value="Inverter" id="invert" onclick="invert()" style="display: none;">
    
