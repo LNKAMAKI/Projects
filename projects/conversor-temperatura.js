@@ -1,11 +1,26 @@
 opvalue = 'temp'
 function converter() {
-    frst = document.getElementsByName('fst')[0]
-    n = frst.value
+    
+    console.log(document.getElementById('ce').selected)
+    if (document.getElementById('ce').selected == true) {
+        document.getElementsByName('fst')[0].id = 'cel'
+        if (document.getElementById('ce2').selected == true) {
+            document.getElementsByName('sec')[0].id = 'fah'
+            document.getElementById('fa2').selected = true
+        }
+    }else if (document.getElementById('fa').selected == true){
+        document.getElementsByName('fst')[0].id = 'fah'
+        if (document.getElementById('fa2').selected == true) {
+            document.getElementsByName('sec')[0].id = 'cel'
+            document.getElementById('ce2').selected = true
+        }
+    }
+
+    n = document.getElementsByName('fst')[0].value
     if (String(n).length > 0) {
-        if (frst.id == 'cel') {
+        if (document.getElementsByName('fst')[0].id == 'cel' && document.getElementsByName('sec')[0].id == 'fah') {
         document.getElementsByName('sec')[0].value = (n*9 + 160)/5
-        }else{
+        }else if (document.getElementsByName('fst')[0].id == 'fah' && document.getElementsByName('sec')[0].id == 'cel'){
             document.getElementsByName('sec')[0].value = (n - 32)*5/9
         }
 
@@ -14,13 +29,28 @@ function converter() {
     }
 }
 function converter2() {
-    seco = document.getElementsByName('sec')[0]
-    n = seco.value
+    
+    if (document.getElementById('ce2').selected == true) {
+        document.getElementsByName('sec')[0].id = 'cel'
+        if (document.getElementById('ce').selected == true) {
+            document.getElementsByName('fst')[0].id = 'fah'
+            document.getElementById('fa').selected = true
+
+        }
+    }else if (document.getElementById('fa2').selected == true){
+        document.getElementsByName('sec')[0].id = 'fah'
+        if (document.getElementById('fa').selected == true) {
+            document.getElementsByName('fst')[0].id = 'cel'
+            document.getElementById('ce').selected = true
+        }
+    }
+
+    n = document.getElementsByName('sec')[0].value
     console.log(n)
     if (String(n).length > 0) {
-        if (seco.id == 'fah') {
+        if (document.getElementsByName('sec')[0].id == 'fah' && document.getElementsByName('fst')[0].id == 'cel') {
         document.getElementsByName('fst')[0].value = (n - 32)*5/9
-        }else{
+        }else if(document.getElementsByName('sec')[0].id == 'cel' && document.getElementsByName('fst')[0].id == 'fah'){
             document.getElementsByName('fst')[0].value = (n*9 + 160)/5
         }
         }else{
@@ -30,22 +60,19 @@ function converter2() {
 function invert() {
     console.log(document.getElementsByName('fst')[0].id)
     console.log(document.getElementsByName('sec')[0].id)
-    if (document.getElementsByName('fst')[0].id == 'cel') {
-        console.log('true')
-        document.getElementsByName('fst')[0].id = 'fah'
-        document.getElementsByName('sec')[0].id = 'cel'
+    
+        window.alert(document.getElementsByName('fst')[0].id)
+        secid = document.getElementsByName('fst')[0].id
+
+        document.getElementsByName('fst')[0].id =  document.getElementsByName('sec')[0].id
+        document.getElementsByName('sec')[0].id = secid
         document.getElementById('gf').innerText = 'F'
         document.getElementById('gs').innerText = 'C'
+
         document.getElementsByName('fst')[0].value = ''
         document.getElementsByName('sec')[0].value = ''
-    }else{
-        document.getElementsByName('fst')[0].id = 'cel'
-        document.getElementsByName('sec')[0].id = 'fah'
-        document.getElementById('gf').innerText = 'C'
-        document.getElementById('gs').innerText = 'F'
-        document.getElementsByName('fst')[0].value = ''
-        document.getElementsByName('sec')[0].value = ''
-    }
+    
+    
 }
 
 function opvale() {

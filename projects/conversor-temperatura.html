@@ -301,15 +301,29 @@ height: 100%;
     <div id="cen"><img src="termometro.png" alt="" id="char" style="width: 32px; height: 45px;"><h1 id="spec">Conversor</h1></div>
    <div class="centr"> 
       
-           <input type="number" name="fst" id="cel" onclick="converter()" onkeyup="converter()" class="pri">
+           <div style="display: inline-flex;flex-direction: column;">
+               <input type="number" name="fst" id="cel" onclick="converter()" onkeyup="converter()" class="pri">
+               <select name="" id="">
+                   <option value="" id="ce">Celsius</option>
+                   <option value="" id="fa">Fahrenheit</option>
+               </select>
+           </div>
+
            <span style="font-size: 1.9em;" id="gf">C</span>
       
        <span style="font-size: 1.9em;">=</span>
        
-           <input type="number" name="sec" id="fah" onclick="converter2()" onkeyup="converter2()" class="pri">
-           <span style="font-size: 1.9em;" id="gs">F</span>
+           
+               <div style="display: inline-flex;flex-direction: column"><input type="number" name="sec" id="fah" onclick="converter2()" onkeyup="converter2()" class="pri">  
+                <select name="" id="">
+                    <option value="" id="fa2">Fahrenheit</option>
+                    <option value="" id="ce2">Celsius</option>
+                </select>
+            </div>
+
+                <span style="font-size: 1.9em;" id="gs">F</span>
      
-       <input type="button" value="Inverter" id="invert" onclick="invert()">
+       <input type="button" value="Inverter" id="invert" onclick="invert()" style="display: none;">
    
  </div>
 
