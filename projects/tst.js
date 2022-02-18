@@ -1,4 +1,5 @@
 palavra = 'BOLSO'
+palof = 'BOLSO'
 rownum = 0
 letnum = 0
 palform = []
@@ -31,9 +32,12 @@ function digitar(letra) {
 
         }
         if (letrig == 5) {
-            window.alert('Parabéns!')
+            //window.alert('Parabéns!')
+            document.getElementById('cent').style.animation = 'color 1s forwards'
+            document.getElementById('props').style.animation = 'goup 1s forwards'
+            document.getElementById('pal').innerHTML += `<span style="color: blue;">${palof}</span>`
         }else{
-            palavra = 'BOLSO'
+            palavra = palof
             letnum = 0
             rownum++
             palform = []
