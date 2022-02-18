@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+              margin: 0px;
+         }
+        div#quadradao {
+            max-width: 900px;
+            height: fit-content;
+            margin: auto;
+            display:grid;
+            justify-items: center;
+        }
+        div.quadradinho {
+            background-color: white;
+            width: 11vw;
+            max-width: 55px;
+            min-width: 50px;
+            height: 55px;
+            border: 2px solid black;
+            display: inline-flex;
+            font-size: 2em;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            margin: 4px;
+            font-weight: bold;
+            margin: 0px;
+            margin-bottom: 2px;
+        }
+        #teclado {
+            margin-top: 10px;
+            display: grid;
+            justify-items: center;
+            cursor: pointer;
+        }
+        .tecla{
+            width: 8vw;
+            max-width: 45px;
+            min-width: fit-content;
+            height: 50px;
+            background-color: rgb(212, 212, 212);
+            margin: 0px 0px 4px 0px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            border-radius: 5px;
+        }
+        div#cent {
+             position: absolute;
+             display: grid;
+             justify-items: center;
+             align-items: center;
+             background-color: transparent;
+             width: 100vw;
+             height: 100vh;
+        }
+        div#props {
+             width: 80vw;
+             max-width: 600px;
+             min-width: 400px;
+             height: 50vh;
+             background-color: blue;
+             position: absolute;
+             border-radius: 10px;
+             background-color: white;
+             box-shadow: 1px 2px 5px black;
+        }
+    </style>
+</head>
+<body>
+     <script src="tst.js"></script>
+     <div id="cent">
+          <div id="props">
+               a
+              </div>
+     </div>
+
+    <div id="quadradao">
+        <div id="0">
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+        </div>
+        <div id="1">
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+        </div>
+        <div id="2">
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+        </div>
+        <div id="3">
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+        </div>
+        <div id="4">
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+        </div>
+        <div id="5">
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+             <div class="quadradinho">&nbsp;</div>
+        </div>
+    </div>
+
+    <div id="teclado">
+        <div>
+             <div class="tecla" onclick="digitar('A')">A</div>
+             <div class="tecla" onclick="digitar('B')">B</div>
+             <div class="tecla" onclick="digitar('C')">C</div>
+             <div class="tecla" onclick="digitar('D')">D</div>
+             <div class="tecla" onclick="digitar('E')">E</div>
+             <div class="tecla" onclick="digitar('F')">F</div>
+             <div class="tecla" onclick="digitar('G')">G</div>
+             <div class="tecla" onclick="digitar('H')">H</div>
+        </div>
+        <div>
+             <div class="tecla" onclick="digitar('I')">I</div>
+             <div class="tecla" onclick="digitar('J')">J</div>
+             <div class="tecla" onclick="digitar('K')">K</div>
+             <div class="tecla" onclick="digitar('L')">L</div>
+             <div class="tecla" onclick="digitar('M')">M</div>
+             <div class="tecla" onclick="digitar('N')">N</div>
+             <div class="tecla" onclick="digitar('O')">O</div>
+             <div class="tecla" onclick="digitar('P')">P</div>
+        </div>
+            <div>
+                 <div class="tecla" onclick="digitar('Q')">Q</div>
+                 <div class="tecla" onclick="digitar('R')">R</div>
+                 <div class="tecla" onclick="digitar('S')">S</div>
+                 <div class="tecla" onclick="digitar('T')">T</div>
+                 <div class="tecla" onclick="digitar('U')">U</div>
+                 <div class="tecla" onclick="digitar('V')">V</div>
+                 <div class="tecla" onclick="digitar('W')">W</div>
+                 <div class="tecla" onclick="digitar('X')">X</div>
+            </div>
+            
+            <div>
+                 <div class="tecla" onclick="digitar('ENTER')">Enter</div>
+                 <div class="tecla" onclick="digitar('Y')">Y</div>
+                 <div class="tecla" onclick="digitar('Z')">Z</div>
+                 <div class="tecla" onclick="digitar('BACK')">Backspace</div>
+            </div>
+    </div>
+
+</body>
+</html>
