@@ -1,5 +1,5 @@
-palavra = 'BOLSO'
-palof = 'BOLSO'
+palavra = 'BARCO'
+palof = 'BARCO'
 rownum = 0
 letnum = 0
 palform = []
