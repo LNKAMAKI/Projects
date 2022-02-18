@@ -1,5 +1,5 @@
-palavra = 'BARCO'
-palof = 'BARCO'
+palavra = 'AGUIA'
+palof = 'AGUIA'
 rownum = 0
 letnum = 0
 palform = []
@@ -24,13 +24,22 @@ function digitar(letra) {
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'green'
 
                 letrig++
-            }else if(palavra.search(palform[n]) != -1){
+            }
+
+        }
+
+        for (n = 0; n < palform.length; n++) {
+            console.log(palform[n])
+            console.log('letra certa: '+ palavra[n])
+        
+            if(palavra.search(palform[n]) != -1){
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'orange'
                 palavra = palavra.replace(palavra[palavra.search(palform[n])], '-')
                // window.alert(palavra)
             }
 
         }
+
         if (letrig == 5) {
             //window.alert('Parabéns!')
             document.getElementById('cent').style.animation = 'color 1s forwards'

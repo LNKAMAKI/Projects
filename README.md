@@ -8,6 +8,7 @@
  <li><a href= "https://lnkamaki.github.io/Projects/projects/dicionario.html">Dicionário</a></li>   
  <li><a href= "https://lnkamaki.github.io/Projects/projects/calcular-imc.html">Calculador de IMC</a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/tabelas.html">Tabelas</a></li> 
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/tst.html">PALAVRA</a></li> 
 
  
 
