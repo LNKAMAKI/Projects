@@ -1,5 +1,5 @@
-palavra = 'PENCIL'
-palof = 'PENCIL'
+palavra = 'SCRIPT'
+palof = 'SCRIPT'
 rownum = 0
 letnum = 0
 palform = []
@@ -9,7 +9,7 @@ window.addEventListener('keydown', (event) => {
 
 })
 function digitar(letra) {
-    if (String(letra).length == 1 && letnum <= 5) {
+    if (String(letra).length == 1 && String(letra).search(new RegExp('[a-z]')) != -1 && letnum <= 5) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
    palform.push(letra)
    letnum++
@@ -60,15 +60,15 @@ function digitar(letra) {
             choice = [1, 2]
            dur = [1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4]
            
-            for(n = 0; n < 33; n++) {
+            for(n = 0; n < 40; n++) {
                 star = document.createElement('div')
                 if (choice[Math.floor(Math.random()*(choice[choice.length - 1]))] == 1){
                     star.setAttribute('class', 'star')
-                        lft += 3
+                        c = 2.5
                     
                 }else{
                     star.setAttribute('class', 'star2')
-                    lft += 4
+                    c = 3.5
                 }
                 //star.setAttribute('src', 'star.png')
                 star.style.left = `calc(${lft}%)`
@@ -86,7 +86,7 @@ function digitar(letra) {
                 document.getElementById('ground').appendChild(star)
                 del += nums[Math.floor(Math.random()*(nums[nums.length - 1]))]
                 del+= 0.1
-           
+                lft+= c
             }
         
         }else{
