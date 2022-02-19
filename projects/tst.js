@@ -1,5 +1,5 @@
-palavra = 'AGUIA'
-palof = 'AGUIA'
+palavra = 'PENTE'
+palof = 'PENTE'
 rownum = 0
 letnum = 0
 palform = []
