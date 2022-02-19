@@ -96,7 +96,7 @@
              }
              100% {
                   visibility: visible;
-                  background-color: rgb(126, 83, 91);
+                  background-color: rgb(119, 183, 226);
              }
         }
         div#props > h1 {
@@ -111,11 +111,22 @@
         }
         .star {
              width: 4vw;
-             max-width: 50px;
-             min-width: 20px;
+             max-width: 40px;
+             min-width: 15px;
              height: 4vw;
-             max-height: 50px;
-             min-height: 20px;
+             max-height: 40px;
+             min-height: 15px;
+             background-color: transparent;
+             position: fixed;
+             top: calc(0% - 30px);
+             opacity: 0;
+             animation: cair 2s cubic-bezier(0.03, 0.01, 1, 1.01) infinite forwards;
+        }
+        .star2 {
+             width: 1.2vw;
+             min-width: 10px;
+             height: 1.2vw;
+             min-height: 10px;
              background-color: transparent;
              position: fixed;
              top: calc(0% - 30px);

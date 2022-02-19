@@ -57,17 +57,33 @@ function digitar(letra) {
             lft = 0
             del = 0.9
             nums = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5]
+            choice = [1, 2]
             for(n = 0; n < 33; n++) {
-                star = document.createElement('img')
-                star.setAttribute('class', 'star')
-                star.setAttribute('src', 'star.png')
+                star = document.createElement('div')
+                if (choice[Math.floor(Math.random()*(choice[choice.length - 1]))] == 1){
+                    star.setAttribute('class', 'star')
+                }else{
+                    star.setAttribute('class', 'star2')
+                }
+                //star.setAttribute('src', 'star.png')
                 star.style.left = `calc(${lft}%)`
-              // star.style.animation = `cair 2s ${del}s infinite forwards`
               star.style.animationDelay = `${del}s`
+              num1 = ['0', '1', '2', '3', '4', '5', '6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+              n1 = num1[Math.floor(num1.length * Math.random())]
+              n2 = num1[Math.floor(num1.length * Math.random())]
+              n3 = num1[Math.floor(num1.length * Math.random())]
+              n4 = num1[Math.floor(num1.length * Math.random())]
+              n5 = num1[Math.floor(num1.length * Math.random())]
+              n6 = num1[Math.floor(num1.length * Math.random())]
+           
+               star.style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
                 document.getElementById('ground').appendChild(star)
                 lft += 3
                 del+= nums[Math.floor(Math.random()*(nums[nums.length - 1]))]
+
+           
             }
+           
         }else{
             palavra = palof
             letnum = 0
