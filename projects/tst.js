@@ -9,7 +9,7 @@ window.addEventListener('keydown', (event) => {
 
 })
 function digitar(letra) {
-    if (String(letra).length == 1 && String(letra).search(new RegExp('[a-z]')) != -1 && letnum <= 5) {
+    if (String(letra).length == 1 && String(letra).search(new RegExp('[A-Z]')) != -1 && letnum <= 5) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
    palform.push(letra)
    letnum++
