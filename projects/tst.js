@@ -24,8 +24,8 @@ function digitar(letra) {
       letrig = 0
         for (n = 0; n < palform.length; n++) {
             console.log(palform[n])
-            console.log('letra certa: '+ palavra[n])
-            console.log('-------------------------------------')
+           // console.log('letra certa: '+ palavra[n])
+            //console.log('-------------------------------------')
             if (palform[n] == palavra[n]) {
                 console.log('está certo')
                 palavra = palavra.replace(palavra[n], '-')
