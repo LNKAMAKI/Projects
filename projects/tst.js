@@ -1,5 +1,5 @@
-palavra = 'ABELHA'
-palof = 'ABELHA'
+palavra = 'PENCIL'
+palof = 'PENCIL'
 rownum = 0
 letnum = 0
 palform = []
@@ -55,19 +55,25 @@ function digitar(letra) {
             document.getElementById('pal').innerHTML += `<span style="color: blue;">${palof}</span>`
 
             lft = 0
-            del = 0.9
-            nums = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5]
+            del = 0.6
+            nums = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
             choice = [1, 2]
+           dur = [1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4]
+           
             for(n = 0; n < 33; n++) {
                 star = document.createElement('div')
                 if (choice[Math.floor(Math.random()*(choice[choice.length - 1]))] == 1){
                     star.setAttribute('class', 'star')
+                        lft += 3
+                    
                 }else{
                     star.setAttribute('class', 'star2')
+                    lft += 4
                 }
                 //star.setAttribute('src', 'star.png')
                 star.style.left = `calc(${lft}%)`
               star.style.animationDelay = `${del}s`
+              star.style.animationDuration = `${dur[Math.floor(Math.random()*(dur[dur.length - 1]))]}s`
               num1 = ['0', '1', '2', '3', '4', '5', '6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
               n1 = num1[Math.floor(num1.length * Math.random())]
               n2 = num1[Math.floor(num1.length * Math.random())]
@@ -78,12 +84,11 @@ function digitar(letra) {
            
                star.style.backgroundColor = `#${n1}${n2}${n3}${n4}${n5}${n6}`
                 document.getElementById('ground').appendChild(star)
-                lft += 3
-                del+= nums[Math.floor(Math.random()*(nums[nums.length - 1]))]
-
+                del += nums[Math.floor(Math.random()*(nums[nums.length - 1]))]
+                del+= 0.1
            
             }
-           
+        
         }else{
             palavra = palof
             letnum = 0
