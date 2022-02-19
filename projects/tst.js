@@ -5,6 +5,7 @@ letnum = 0
 palform = []
 window.addEventListener('keydown', (event) => {
   digitar(String(event.key.toUpperCase()))
+  console.log(String(event.key.toUpperCase()))
 
 })
 function digitar(letra) {
@@ -12,10 +13,12 @@ function digitar(letra) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
    palform.push(letra)
    letnum++
-    }else if(letra == 'BACK'){
+    }else if(letra == 'BACKSPACE'){
+        if (letnum > 0) {
         letnum--
         document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerHTML = '&nbsp;'
         palform.splice(letnum,1)
+        }
     }else if(letra == 'ENTER' && palform.length == 5) {
       //  window.alert('ENTER')
       letrig = 0
