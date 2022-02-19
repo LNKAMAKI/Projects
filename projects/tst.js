@@ -50,7 +50,7 @@ function digitar(letra) {
         if (letrig == 5) {
             //window.alert('Parabéns!')
             document.getElementById('cent').style.animation = 'color 1s forwards'
-            document.getElementById('props').style.animation = 'goup 1s forwards'
+            document.getElementById('props').style.animation = 'goup 1s'
             document.getElementById('pal').innerHTML += `<span style="color: blue;">${palof}</span>`
         }else{
             palavra = palof
