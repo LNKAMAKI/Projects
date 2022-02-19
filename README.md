@@ -1,7 +1,7 @@
 # Projects
 <u type= "circle">
 <li><a href= "https://lnkamaki.github.io/Projects/projects/tst.html">PALAVRETO</a></li> 
- <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html">Projeto Medidas de Tendência Central e Frequências</a> </li>
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html">Medidas de Tendência Central e Frequências</a> </li>
  <li><a href= "https://lnkamaki.github.io/Projects/projects/conversor-temperatura.html">Conversor de Temperatura</a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/android.html">Projeto Android</a></li>
  <!--<li><a href= "https://lnkamaki.github.io/Projects/projects/teste3.html">Protótipo de Site</a></li>-->
