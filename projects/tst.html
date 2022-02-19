@@ -13,7 +13,7 @@
             max-width: 900px;
             height: fit-content;
             margin: auto;
-            margin-top: 150px;
+            margin-top: 10vw;
             display:grid;
             justify-items: center;
         }
@@ -62,7 +62,7 @@
              background-color: transparent;
              width: 100%;
              margin: 0px;
-             margin-top: -150px;
+             margin-top: -10vw;
              height: calc(100%);
              visibility: hidden;
         }
@@ -82,7 +82,7 @@
         }
         @keyframes goup {
              0% {
-                  opacity: 100;
+                  opacity: 0;
                   transform: translateY(150%);
              }
              100% {
@@ -96,7 +96,7 @@
              }
              100% {
                   visibility: visible;
-                  background-color: pink;
+                  background-color: rgb(126, 83, 91);
              }
         }
         div#props > h1 {
@@ -109,6 +109,38 @@
              font-weight: bold;
              text-align: center;
         }
+        .star {
+             width: 4vw;
+             max-width: 50px;
+             min-width: 20px;
+             height: 4vw;
+             max-height: 50px;
+             min-height: 20px;
+             background-color: transparent;
+             position: fixed;
+             top: calc(0% - 30px);
+             opacity: 0;
+             animation: cair 2s cubic-bezier(0.03, 0.01, 1, 1.01) infinite forwards;
+        }
+        #ground {
+             position: absolute;
+             width: 100%;
+             height: 100%;
+             background-color: transparent;
+        }
+        @keyframes cair {
+             0% {
+                  opacity: 100;
+               top:calc(0% - 30px);
+               transform: rotate(0deg);
+             }
+             100% {
+                  opacity: 100;
+               top:calc(100%);
+               transform: rotate(800deg) rotate3d(1, 0, 1, 360deg);
+             }
+        }
+      
     </style>
 </head>
 <body >
@@ -117,6 +149,9 @@
           <div id="props">
                <h1>PARABÉNS!</h1>
                <p id="pal">PALAVRA ESCOLHIDA FOI: </p>
+              </div>
+              <div id="ground">
+               
               </div>
      </div>
 
