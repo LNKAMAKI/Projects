@@ -3,6 +3,10 @@ palof = 'AGUIA'
 rownum = 0
 letnum = 0
 palform = []
+window.addEventListener('keydown', (event) => {
+  digitar(String(event.key.toUpperCase()))
+
+})
 function digitar(letra) {
     if (String(letra).length == 1 && letnum <= 4) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
