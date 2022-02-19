@@ -1,5 +1,5 @@
-palavra = 'SCRIPT'
-palof = 'SCRIPT'
+palavra = 'AUTUMN'
+palof = 'AUTUMN'
 rownum = 0
 letnum = 0
 palform = []
