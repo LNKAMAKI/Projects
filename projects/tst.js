@@ -1,5 +1,5 @@
-palavra = 'LENTE'
-palof = 'LENTE'
+palavra = 'ABELHA'
+palof = 'ABELHA'
 rownum = 0
 letnum = 0
 palform = []
@@ -9,7 +9,7 @@ window.addEventListener('keydown', (event) => {
 
 })
 function digitar(letra) {
-    if (String(letra).length == 1 && letnum <= 4) {
+    if (String(letra).length == 1 && letnum <= 5) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
    palform.push(letra)
    letnum++
@@ -19,7 +19,7 @@ function digitar(letra) {
         document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerHTML = '&nbsp;'
         palform.splice(letnum,1)
         }
-    }else if(letra == 'ENTER' && palform.length == 5) {
+    }else if(letra == 'ENTER' && palform.length == 6) {
       //  window.alert('ENTER')
       letrig = 0
         for (n = 0; n < palform.length; n++) {
@@ -49,7 +49,7 @@ function digitar(letra) {
 
  }
 
-        if (letrig == 5) {
+        if (letrig == 6) {
             document.getElementById('cent').style.animation = 'color 1s forwards'
             document.getElementById('props').style.animation = 'goup 1s forwards'
             document.getElementById('pal').innerHTML += `<span style="color: blue;">${palof}</span>`
