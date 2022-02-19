@@ -1,5 +1,5 @@
-palavra = 'AUTUMN'
-palof = 'AUTUMN'
+palavra = 'CENTER'
+palof = 'CENTER'
 rownum = 0
 letnum = 0
 palform = []
@@ -8,6 +8,8 @@ window.addEventListener('keydown', (event) => {
   console.log(String(event.key.toUpperCase()))
 
 })
+
+        
 function digitar(letra) {
     if (String(letra).length == 1 && String(letra).search(new RegExp('[A-Z]')) != -1 && letnum <= 5) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
