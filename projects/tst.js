@@ -1,8 +1,9 @@
-palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','PLANTA', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE','DECEIT', 'ISLAND','PRETTY']
+palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','PLANTA', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE','DECEIT', 'ISLAND','PRETTY','STRESS']
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
-palof = palavra
+palof = 'AAAAAA'
 rits = []
+palavra = 'AAAAAA'
 
 //window.alert(palavra)
 rownum = 0
@@ -134,8 +135,16 @@ function digitar(letra) {
            for (n = 0; n < tabtrs.length; n++) {
             tabtrs[n].style.animation = `expand 1s ${0.5 + n/4}s forwards`
             //tabtrs[n].innerText = dela
-          
+
+           // console.log(tabtrs[n].getElementsByTagName('td')[0])
+           for (na = 1; na < tabtrs[n].getElementsByTagName('td').length; na++) {
+               console.log(na)
+              if (document.getElementById(n).getElementsByClassName('quadradinho')[na - 1].innerText == palof[na - 1]) {
+          tabtrs[n].getElementsByTagName('td')[na].innerText = document.getElementById(n).getElementsByClassName('quadradinho')[na - 1].innerText
+              }
            }
+           }
+       
         }else{
             palavra = palof
             letnum = 0
