@@ -12,12 +12,12 @@ window.addEventListener('keydown', (event) => {
 
 })
 if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
-   console.log(palavras.indexOf(palavra), palavras.indexOf('-'))
-   window.alert('A PALAVRA É EM INGLÊS')
-}else[
-    window.alert('A PALAVRA É EM PORTUGUÊS')
-]
-        
+  // console.log(palavras.indexOf(palavra), palavras.indexOf('-'))
+  // window.alert('A PALAVRA É EM INGLÊS')
+}else{
+    //window.alert('A PALAVRA É EM PORTUGUÊS')
+}
+
 function digitar(letra) {
     if (String(letra).length == 1 && String(letra).search(new RegExp('[A-Z]')) != -1 && letnum <= 5) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
@@ -110,8 +110,14 @@ function digitar(letra) {
             }
         
            tab = document.getElementById('tries')
-           tabtds = tab.getElementsByTagName('td')
-           console.log(tabtds[0].innerText)
+           tabtrs = tab.getElementsByTagName('tr')
+
+           console.log(tabtrs.length)
+           for (n = 0; n < tabtrs.length; n++) {
+            tabtrs[n].style.animation = `expand 1s ${n}s forwards`
+            //tabtrs[n].innerText = dela
+          
+           }
         }else{
             palavra = palof
             letnum = 0

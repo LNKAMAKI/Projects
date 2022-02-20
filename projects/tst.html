@@ -134,7 +134,18 @@
         #tries tr {
              margin-bottom: 10px;
              display: block;
+             width: 0px;
+             overflow-x: hidden;
+
         }
+       @keyframes expand {
+            0% {
+               width: 0px;
+            }
+            100% {
+               width: 301px;
+            }
+       }
         #tries .ind {
              border-width: 0px;
              font-weight: bold;
@@ -190,6 +201,7 @@
                transform: /*rotate(800deg)*/ rotate3d(1, 0, 1, 600deg);
              }
         }
+        
       
     </style>
 </head>
