@@ -1,5 +1,5 @@
-palavra = 'SERIES'
-palof = 'SERIES'
+palavra = 'LEITAO'
+palof = 'REGARD'
 rownum = 0
 letnum = 0
 palform = []
@@ -30,8 +30,11 @@ function digitar(letra) {
             //console.log('-------------------------------------')
             if (palform[n] == palavra[n]) {
                 console.log('está certo')
+
+                document.getElementById(palavra[n]).style.backgroundColor = 'green'
                 palavra = palavra.replace(palavra[n], '-')
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'green'
+
 
                 letrig++
                 console.log('PALAVRA:' + palavra)
@@ -45,6 +48,7 @@ function digitar(letra) {
         
             if(palavra.search(palform[n]) != -1 && document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green'){
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'orange'
+                document.getElementById(palform[n]).style.backgroundColor = 'orange'
                 palavra = palavra.replace(palavra[palavra.search(palform[n])], '-')
                console.log('PALAVRA' + palavra)
            }
@@ -52,6 +56,7 @@ function digitar(letra) {
  }
 
         if (letrig == 6) {
+            document.getElementById('ground').style.visibility = 'visible'
             document.getElementById('cent').style.animation = 'color 1s forwards'
             document.getElementById('props').style.animation = 'goup 1s forwards'
             document.getElementById('pal').innerHTML += `<span style="color: blue;">${palof}</span>`
@@ -72,6 +77,7 @@ function digitar(letra) {
                     star.setAttribute('class', 'star2')
                     c = 3.5
                 }
+
                 //star.setAttribute('src', 'star.png')
                 star.style.left = `calc(${lft}%)`
               star.style.animationDelay = `${del}s`
@@ -91,6 +97,9 @@ function digitar(letra) {
                 lft+= c
             }
         
+           tab = document.getElementById('tries')
+           tabtds = tab.getElementsByTagName('td')
+           console.log(tabtds[0].innerText)
         }else{
             palavra = palof
             letnum = 0
