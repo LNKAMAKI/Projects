@@ -3,6 +3,7 @@ palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
 palof = palavra
 
+window.alert(palavra)
 rownum = 0
 letnum = 0
 palform = []
