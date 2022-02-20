@@ -1,5 +1,5 @@
-palavra = 'CENTER'
-palof = 'CENTER'
+palavra = 'MUSCLE'
+palof = 'MUSCLE'
 rownum = 0
 letnum = 0
 palform = []
