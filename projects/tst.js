@@ -1,6 +1,6 @@
-palavras = ['INSIDE', 'REGARD','SHIVER', '-','PRISAO', 'FARELO', 'ESTOJO','DIVISA', 'LIMITE', 'OUVIDO',]
+palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'QUEIJO', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE',]
 
-palavra = palavras[Math.floor(Math.random()*(palavras.length - 1))]
+palavra = palavras[Math.floor(Math.random()*(palavras.length))]
 palof = palavra
 
 rownum = 0
@@ -11,11 +11,23 @@ window.addEventListener('keydown', (event) => {
   console.log(String(event.key.toUpperCase()))
 
 })
+
 if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
-  // console.log(palavras.indexOf(palavra), palavras.indexOf('-'))
-  // window.alert('A PALAVRA É EM INGLÊS')
+   console.log(palavras.indexOf(palavra), palavras.indexOf('-'))
+   window.alert('A PALAVRA É EM PORTUGUÊS')
+}else if (palavras.indexOf(palavra) == palavras.indexOf('-')) {
+    
+  while (palavras.indexOf(palavra) == palavras.indexOf('-')) {
+    palavra = palavras[Math.floor(Math.random()*(palavras.length))]
+  }
+  
+  if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
+    window.alert('A PALAVRA É EM PORTUGUÊS')
+  }else{
+    window.alert('A PALAVRA É EM INGLÊS')
+  }
 }else{
-    //window.alert('A PALAVRA É EM PORTUGUÊS')
+    window.alert('A PALAVRA É EM INGLÊS')
 }
 
 function digitar(letra) {
@@ -114,7 +126,7 @@ function digitar(letra) {
 
            console.log(tabtrs.length)
            for (n = 0; n < tabtrs.length; n++) {
-            tabtrs[n].style.animation = `expand 1s ${n}s forwards`
+            tabtrs[n].style.animation = `expand 1s ${2 + n/4}s forwards`
             //tabtrs[n].innerText = dela
           
            }
