@@ -2,8 +2,9 @@ palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
 palof = palavra
+rits = []
 
-window.alert(palavra)
+//window.alert(palavra)
 rownum = 0
 letnum = 0
 palform = []
@@ -56,6 +57,7 @@ function digitar(letra) {
                 document.getElementById(palavra[n]).style.backgroundColor = 'green'
                 palavra = palavra.replace(palavra[n], '-')
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'green'
+                rits.push(palform[n])
 
 
                 letrig++
@@ -70,7 +72,9 @@ function digitar(letra) {
         
             if(palavra.search(palform[n]) != -1 && document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green'){
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'orange'
+                if (rits.indexOf(palform[n]) == -1) {
                 document.getElementById(palform[n]).style.backgroundColor = 'orange'
+                }
                 palavra = palavra.replace(palavra[palavra.search(palform[n])], '-')
                console.log('PALAVRA' + palavra)
            }else if (document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green' && palof.indexOf(palform[n]) == -1) {
