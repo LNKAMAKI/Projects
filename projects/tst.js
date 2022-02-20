@@ -1,5 +1,7 @@
-palavra = 'LEITAO'
-palof = 'REGARD'
+palavras = ['INSIDE', 'PRISAO', 'REGARD', 'FARELO', 'ESTOJO','DIVISA', 'LIMITE', 'OUVIDO', 'SHIVER']
+palof = 'LEITAO'
+
+palavra = palavras[Math.floor(Math.random()*(palavras.length - 1))]
 rownum = 0
 letnum = 0
 palform = []
