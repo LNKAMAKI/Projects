@@ -1,7 +1,8 @@
-palavras = ['INSIDE', 'PRISAO', 'REGARD', 'FARELO', 'ESTOJO','DIVISA', 'LIMITE', 'OUVIDO', 'SHIVER']
-palof = 'LEITAO'
+palavras = ['INSIDE', 'REGARD','SHIVER', '-','PRISAO', 'FARELO', 'ESTOJO','DIVISA', 'LIMITE', 'OUVIDO',]
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length - 1))]
+palof = palavra
+
 rownum = 0
 letnum = 0
 palform = []
@@ -10,7 +11,12 @@ window.addEventListener('keydown', (event) => {
   console.log(String(event.key.toUpperCase()))
 
 })
-
+if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
+   console.log(palavras.indexOf(palavra), palavras.indexOf('-'))
+   window.alert('A PALAVRA É EM INGLÊS')
+}else[
+    window.alert('A PALAVRA É EM PORTUGUÊS')
+]
         
 function digitar(letra) {
     if (String(letra).length == 1 && String(letra).search(new RegExp('[A-Z]')) != -1 && letnum <= 5) {
