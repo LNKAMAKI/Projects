@@ -1,4 +1,4 @@
-palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE',]
+palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','PLANTA', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE','DECEIT', 'ISLAND','PRETTY']
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
 palof = palavra
@@ -72,7 +72,7 @@ function digitar(letra) {
                 document.getElementById(palform[n]).style.backgroundColor = 'orange'
                 palavra = palavra.replace(palavra[palavra.search(palform[n])], '-')
                console.log('PALAVRA' + palavra)
-           }else if (document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green') {
+           }else if (document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green' && palof.indexOf(palform[n]) == -1) {
             document.getElementById(palform[n]).style.backgroundColor = 'black'
             document.getElementById(palform[n]).style.color = 'white'
            }
@@ -127,7 +127,7 @@ function digitar(letra) {
 
            console.log(tabtrs.length)
            for (n = 0; n < tabtrs.length; n++) {
-            tabtrs[n].style.animation = `expand 1s ${1 + n/4}s forwards`
+            tabtrs[n].style.animation = `expand 1s ${0.5 + n/4}s forwards`
             //tabtrs[n].innerText = dela
           
            }
