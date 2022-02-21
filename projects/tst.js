@@ -1,6 +1,7 @@
 palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','PLANTA', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE','DECEIT', 'ISLAND','PRETTY','STRESS']
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
+palavra = 'GRELHA'
 palof = palavra
 rits = ['','', '', '', '','']
 
@@ -14,6 +15,7 @@ window.addEventListener('keydown', (event) => {
 
 })
 
+/*
 if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
    console.log(palavras.indexOf(palavra), palavras.indexOf('-'))
    window.alert('A PALAVRA É EM PORTUGUÊS')
@@ -32,6 +34,7 @@ if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
 }else{
     window.alert('A PALAVRA É EM INGLÊS')
 }
+*/
 
 function digitar(letra) {
     if (String(letra).length == 1 && String(letra).search(new RegExp('[A-Z]')) != -1 && letnum <= 5) {
@@ -94,6 +97,7 @@ function digitar(letra) {
 
     rownum++
         if (letrig == 6) {
+            document.body.style.overflowY = 'hidden'
             document.getElementById('ground').style.visibility = 'visible'
             document.getElementById('cent').style.animation = 'color 1s forwards'
             document.getElementById('props').style.animation = 'goup 1s forwards'
