@@ -1,9 +1,8 @@
 palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','PLANTA', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE','DECEIT', 'ISLAND','PRETTY','STRESS']
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
-palof = 'AAAAAA'
+palof = palavra
 rits = ['','', '', '', '','']
-palavra = 'AAAAAA'
 
 //window.alert(palavra)
 rownum = 0
