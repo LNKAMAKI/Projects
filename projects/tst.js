@@ -51,9 +51,12 @@ function digitar(letra) {
             console.log(palform[n])
            // console.log('letra certa: '+ palavra[n])
             //console.log('-------------------------------------')
+
+            document.getElementById(palform[n]).style.transitionDuration = '1s'
             if (palform[n] == palavra[n]) {
                 console.log('está certo')
 
+               // document.getElementById(palavra[n]).style.transitionDuration = '5s'
                 document.getElementById(palavra[n]).style.backgroundColor = 'green'
                 palavra = palavra.replace(palavra[n], '-')
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'green'
@@ -70,7 +73,10 @@ function digitar(letra) {
             console.log(palform[n])
             console.log('letra certa: '+ palavra[n])
         
+            document.getElementById(palform[n]).style.transitionDuration = '1s'
+
             if(palavra.search(palform[n]) != -1 && document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green'){
+
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'orange'
                 if (rits.indexOf(palform[n]) == -1) {
                 document.getElementById(palform[n]).style.backgroundColor = 'orange'
@@ -78,6 +84,8 @@ function digitar(letra) {
                 palavra = palavra.replace(palavra[palavra.search(palform[n])], '-')
                console.log('PALAVRA' + palavra)
            }else if (document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green' && palof.indexOf(palform[n]) == -1) {
+
+            document.getElementById(palform[n]).style.transitionDuration = '1s'
             document.getElementById(palform[n]).style.backgroundColor = 'black'
             document.getElementById(palform[n]).style.color = 'white'
            }
