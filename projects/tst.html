@@ -91,6 +91,12 @@
              overflow-y: auto;
              z-index: 2;
         }
+        #pal {
+             font-size: 3em;
+             margin: 5px 0px 5px 0px;
+             color: #54afff;
+             text-shadow: -6px 0px 0px #1e6db3;
+        }
         @keyframes goup {
              0% {
                   opacity: 0;
@@ -127,6 +133,7 @@
         div#props > p {
              font-family: sans-serif;
              font-weight: bold;
+             margin-bottom: 0px;
         }
         #tries {
             border-collapse: collapse;
@@ -154,6 +161,8 @@
              position: relative;
              z-index: 2;
              background-color: white;
+             width: 5px;
+             min-width: 5px;
         }
         #tries td {
              min-width: 40px;
@@ -226,8 +235,9 @@
      <script src="tst.js"></script>
      <div id="cent">
           <div id="props">
-               <h1>PARABÉNS!</h1>
-               <p id="pal">PALAVRA ESCOLHIDA FOI: </p>
+               <h1>ISSO AÍ!</h1>
+               <p>PALAVRETO DO DIA: </p>
+               <p id="pal"></p>
                <table id="tries">
                     <tr>
                          <td class="ind">1.&nbsp;</td>

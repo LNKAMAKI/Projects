@@ -97,7 +97,7 @@ function digitar(letra) {
             document.getElementById('ground').style.visibility = 'visible'
             document.getElementById('cent').style.animation = 'color 1s forwards'
             document.getElementById('props').style.animation = 'goup 1s forwards'
-            document.getElementById('pal').innerHTML += `<span style="color: blue;">${palof}</span>`
+            document.getElementById('pal').innerHTML += `${palof}`
 
             lft = 0
             del = 0.6
