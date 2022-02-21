@@ -98,6 +98,7 @@ function digitar(letra) {
             document.getElementById('cent').style.animation = 'color 1s forwards'
             document.getElementById('props').style.animation = 'goup 1s forwards'
             document.getElementById('pal').innerHTML += `${palof}`
+            document.getElementById('pal').style.animation = 'appear 1s 0.7s forwards'
 
             lft = 0
             del = 0.6
@@ -144,7 +145,7 @@ function digitar(letra) {
            posrit = ['','', '', '', '','']
 
            for (n = 0; n < tabtrs.length; n++) {
-            tabtrs[n].style.animation = `expand 1s ${0.8 + n/4}s forwards`
+            tabtrs[n].style.animation = `expand 1s ${1.3 + n/3}s forwards`
             //tabtrs[n].innerText = dela
 
            // console.log(tabtrs[n].getElementsByTagName('td')[0])

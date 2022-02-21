@@ -78,7 +78,7 @@
              max-width: 600px;
              min-width: 325px;
              height: 90vw;
-             min-height: 450px;
+             min-height: 480px;
              max-height: 520px;
              background-color: blue;
              position: fixed;
@@ -96,6 +96,14 @@
              margin: 5px 0px 5px 0px;
              color: #54afff;
              text-shadow: -6px 0px 0px #1e6db3;
+             opacity: 0;
+             transform: scale(0);
+        }
+        @keyframes appear {
+             100% {
+                  opacity: 100;
+                  transform: scale(1);
+             }
         }
         @keyframes goup {
              0% {
