@@ -62,6 +62,8 @@ function digitar(letra) {
                // document.getElementById(palavra[n]).style.transitionDuration = '5s'
                 document.getElementById(palavra[n]).style.backgroundColor = 'green'
                 palavra = palavra.replace(palavra[n], '-')
+
+                document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.transitionDuration = '1s'
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'green'
                 rits[n] = palform[n]
 
@@ -80,6 +82,7 @@ function digitar(letra) {
 
             if(palavra.search(palform[n]) != -1 && document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor!= 'green'){
 
+              document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.transitionDuration = '1s'
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'orange'
                 if (rits.indexOf(palform[n]) == -1) {
                 document.getElementById(palform[n]).style.backgroundColor = 'orange'
