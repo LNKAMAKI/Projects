@@ -2,7 +2,7 @@ palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
 palof = 'AAAAAA'
-rits = []
+rits = ['','', '', '', '','']
 palavra = 'AAAAAA'
 
 //window.alert(palavra)
@@ -58,7 +58,7 @@ function digitar(letra) {
                 document.getElementById(palavra[n]).style.backgroundColor = 'green'
                 palavra = palavra.replace(palavra[n], '-')
                 document.getElementById(rownum).getElementsByClassName('quadradinho')[n].style.backgroundColor = 'green'
-                rits.push(palform[n])
+                rits[n] = palform[n]
 
 
                 letrig++
@@ -85,6 +85,7 @@ function digitar(letra) {
 
  }
 
+    rownum++
         if (letrig == 6) {
             document.getElementById('ground').style.visibility = 'visible'
             document.getElementById('cent').style.animation = 'color 1s forwards'
@@ -132,23 +133,38 @@ function digitar(letra) {
            tabtrs = tab.getElementsByTagName('tr')
 
            console.log(tabtrs.length)
+
+           posrit = ['','', '', '', '','']
+
            for (n = 0; n < tabtrs.length; n++) {
-            tabtrs[n].style.animation = `expand 1s ${0.5 + n/4}s forwards`
+            tabtrs[n].style.animation = `expand 1s ${0.8 + n/4}s forwards`
             //tabtrs[n].innerText = dela
 
            // console.log(tabtrs[n].getElementsByTagName('td')[0])
+           if(n < rownum) {
+
+            ala = 0.5
            for (na = 1; na < tabtrs[n].getElementsByTagName('td').length; na++) {
                console.log(na)
               if (document.getElementById(n).getElementsByClassName('quadradinho')[na - 1].innerText == palof[na - 1]) {
           tabtrs[n].getElementsByTagName('td')[na].innerText = document.getElementById(n).getElementsByClassName('quadradinho')[na - 1].innerText
+
+          tabtrs[n].getElementsByTagName('td')[na].style.transitionDelay = `${ala}s`
+          tabtrs[n].getElementsByTagName('td')[na].style.transitionDuration = '0.5s'
+          tabtrs[n].getElementsByTagName('td')[na].style.backgroundColor = 'green'
+                posrit[na - 1] = palof[na - 1]
+                console.log(posrit)
+              }else if(posrit[na - 1] != ''){
+                 tabtrs[n].getElementsByTagName('td')[na].innerText = posrit[na - 1]
               }
+              ala+= 0.5
            }
+        }
            }
        
         }else{
             palavra = palof
             letnum = 0
-            rownum++
             palform = []
         }
     }
