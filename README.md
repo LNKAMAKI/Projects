@@ -1,6 +1,6 @@
 # Projects
 <u type= "circle">
-<li><a href= "https://lnkamaki.github.io/Projects/projects/tst.html">PALAVRETO</a></li> 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/tst.html">Palavreto</a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html">Medidas de Tendência Central e Frequências</a> </li>
  <li><a href= "https://lnkamaki.github.io/Projects/projects/conversor-temperatura.html">Conversor de Temperatura</a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/calcular-imc.html">Calculador de IMC</a></li> 
