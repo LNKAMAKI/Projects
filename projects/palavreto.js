@@ -1,7 +1,7 @@
 palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','PLANTA', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE','DECEIT', 'ISLAND','PRETTY','STRESS']
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
-palavra = 'GRELHA'
+palavra = 'HABITO'
 palof = palavra
 rits = ['','', '', '', '','']
 
