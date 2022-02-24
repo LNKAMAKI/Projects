@@ -1,4 +1,6 @@
 # Projects
+ <img src="favicon.ico" alt="">
+ 
 <u type= "circle">
 <li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html">Palavreto</a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html">Medidas de Tendência Central e Frequências</a> </li>
