@@ -1,5 +1,5 @@
 # Projects
-<img src="https://lnkamaki.github.io/Projects/projects/gear.png" style="background-color: white;"></img>
+<img src="https://lnkamaki.github.io/Projects/projects/favicon.ico" style="background-color: white;"></img>
 <u type= "circle">
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html">Palavreto</a></li> 
