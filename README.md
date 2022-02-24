@@ -3,7 +3,7 @@
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico">
 <u type= "circle">
 
-<li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html"><span style="color: #e34bb3; font-weight: bold;">Palavreto</span></a></li> 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html"><span style="color: #e34bb3; font-weight: bold; font-size: 2em;">Palavreto</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html"><span style="color: #e34bb3; font-weight: bold;">Medidas de Tendência Central e Frequências</span></a> </li>
  <li><a href= "https://lnkamaki.github.io/Projects/projects/conversor-temperatura.html"><span style="color: #e34bb3; font-weight: bold;">Conversor de Temperatura</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/calcular-imc.html"><span style="color: #e34bb3; font-weight: bold;">Calculador de IMC</span></a></li> 
