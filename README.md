@@ -1,4 +1,9 @@
 # Sites 
+<style> 
+a {
+    color: "white";
+}
+</style>
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico">
 <u type= "circle">
 
