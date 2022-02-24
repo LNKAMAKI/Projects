@@ -1,5 +1,5 @@
 # Projects
-<img src="gear.png"></img>
+<img src="gear.png">a</img>
 <u type= "circle">
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html">Palavreto</a></li> 
