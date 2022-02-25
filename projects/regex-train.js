@@ -31,6 +31,8 @@ while(n < expression.length) {
 } 
 
 console.log('--------------------------SEGUNDO PASSO--------------------------')
+
+degs = []
 for (e = 0; e < expression.length; e++) {
 
     console.log('NUMBER: ' + expression[e])
@@ -41,6 +43,7 @@ for (e = 0; e < expression.length; e++) {
 
     if (expression[e] == '(') {
         console.log('--------PARÊNTESES--------')
+        degs.push({})
 
         for (n = e + 1; stop2 == false; n++) {
             console.log(continuar)
@@ -50,6 +53,7 @@ for (e = 0; e < expression.length; e++) {
                 console.log('Oh no')
                 pares++
                 continuar = true
+                degs[e].par = pares
             }else if (continuar == true && expression[n] == ')'){ 
                     console.log('TRUE')
                   
@@ -60,12 +64,20 @@ for (e = 0; e < expression.length; e++) {
                     console.log('PARES: ' + pares)
 
             }else if (continuar == false && expression[n] == ')') {
+
+                console.log(degs[e].par)
+                if (degs[e].par == undefined) {
+                    console.log('TEM ALGO DE ERRADO')
+                    degs[e].par = 0
+                }
                 console.log('MAIS')
                 console.log('PARES: ' + pares)
                 console.log('stop2: ' + stop2)
                 stop2 = true
                 console.log('stop2: ' + stop2)
                 console.log('abre parenteses: ' + e + '    fecha parenteses: ' + n )
+                degs[e].start = e
+                degs[e].end = n
             }
              
         }
