@@ -1,4 +1,4 @@
-expression = ['3', 'x', '(', '100', '+', '(', '4', '+', '(', '10', '/', '5', '+', '2', ')', ')', ')', '+', '(','1','+', '(', '(','14', '+', '6',')','/','10', ')', ')']
+expression = ['3', 'x', '(', '100', '+', '(', '4', '+', '(', '10', '/', '5', '+', '2', ')', ')', ')', '+', '(','4', '+', '(','1','+', '(', '(','14', '+', '6',')','+','10', ')', ')', ')']
 /// (5 + 1)*(10 - (4 + 2))
 
 console.log(expression, expression.length) 
@@ -22,7 +22,7 @@ while(n < expression.length) {
     }else if(expression[n] == '/' &&  expression[n + 1] != '(' &&  expression[n + 1] != ')' &&  expression[n - 1] != '(' &&  expression[n - 1] != ')'){
         console.log('Dividir')
        // console.log(expression[n - 1]*expression[n + 1])
-        expression[n + 1] = expression[n - 1]/expression[n + 1]
+        expression[n + 1] = String(expression[n - 1]/expression[n + 1])
         expression.splice(n - 1, 2)
         console.log(expression)
 
@@ -89,7 +89,7 @@ for (e = 0; e < expression.length; e++) {
                 console.log('VAMOS LÁ')
                 if (expression[n] == '+' && expression[n + 1] != '(' &&  expression[n + 1] != ')' &&  expression[n - 1] != '(' &&  expression[n - 1] != ')') {
                     console.log('CONTA AÍ!!!!!!!!!!!!: ' + expression[n - 1] + ' + '+ expression[n + 1])
-                    expression[n + 1] = Number(expression[n - 1]) + Number(expression[n + 1])
+                    expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
                     expression.splice(n - 1, 2)
                     console.log('VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI' + expression[n - 2], expression[n])
                     if(expression[n] == ')' && expression[n - 2] == '(') {
