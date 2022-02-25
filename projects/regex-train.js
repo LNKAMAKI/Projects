@@ -1,4 +1,4 @@
-expression = [ '(', '5', '+', '1', ')', 'x', '(','10', '-' ,'(', '4', '+', '2', ')', ')']
+expression = [ '(', '5', '+', '1', ')', 'x', '(','10', '+' ,'5', '+', '(', '4', '+', '2', ')', ')']
 /// (5 + 1)*(10 - (4 + 2))
 
 console.log(expression, expression.length) 
@@ -49,6 +49,7 @@ for (e = 0; e < expression.length; e++) {
         degs.push({})
         console.log('DEEEEEEGS[E] = ' + degs[parents])
 
+        calcular = ''
         for (n = e + 1; stop2 == false && n < expression.length; n++) {
             console.log(continuar)
             console.log(continuar == true)
@@ -84,12 +85,29 @@ for (e = 0; e < expression.length; e++) {
                 console.log('abre parenteses: ' + e + '    fecha parenteses: ' + n )
                 degs[parents].start = e
                 degs[parents].end = n
+            }else{
+                console.log('VAMOS LÁ')
+                if (expression[n] == '+' && expression[n + 1] != '(' &&  expression[n + 1] != ')' &&  expression[n - 1] != '(' &&  expression[n - 1] != ')') {
+                    console.log('CONTA AÍ!!!!!!!!!!!!: ' + expression[n - 1] + ' + '+ expression[n + 1])
+                    expression[n + 1] = Number(expression[n - 1]) + Number(expression[n + 1])
+                    expression.splice(n - 1, 2)
+                    console.log('VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI' + expression[n - 2], expression[n])
+                    if(expression[n] == ')') {
+                        expression.splice(n, 1)
+                       // expression.splice(n, 1)
+                    } 
+                    if (expression[n - 2] == '(') {
+                        expression.splice(n - 2, 1)
+                    }
+                    console.log(Number(expression[n - 1]) + Number(expression[n + 1]))
+                }
             }
              
         }
         console.log('STOP2: ' + stop2)
         console.log('PARES: ', pares)
         
+        console.log('EXPRESSION!!!!!!!!!!!!: ' + expression)
         parents++
     }
 }
@@ -134,5 +152,21 @@ function sort(n) {
     return [maiorparamenor, posiçõesnumeros]
 }
 
+/*
+console.log('--------------------------TERCEIRO PASSO--------------------------')
+for(n = degSort.length - 1; n > -1; n--) {
+    console.log('')
+    console.log(degSort[n])
+  
+
+    for (a = degSort[n].start + 1; a < degSort[n].end; a++) {
+        console.log(`${a}: ${expression[a]}`)
+        if (expression[a] == '+') {
+            console.log(Number(expression[a - 1]) + Number(expression[a + 1]))
+        }
+    }
+   
+}
+*/
     
         
