@@ -1,10 +1,6 @@
 
-expression = []
-console.log(expression, expression.length) 
-stop = false
 
-n = 0
-
+function fazerConta() {
 for (n = 0; n < expression.length; n++) {
 if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
     console.log('MULTIPLICAÇÃO')
@@ -170,4 +166,4 @@ if (expression.length > 1) {
             }
         }
 }
- 
+}
