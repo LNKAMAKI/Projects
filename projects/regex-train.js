@@ -2,10 +2,12 @@
 expression = ['(','(','10', '+', '(','50', '+', '100', '+', '(','(','200', '+', '(','(','20', '+', '50', ')', '+', '(', '90', '+', '10', ')',')',')', '+', 
 '(', '30', '+', '(', '150', '+', '(', '20', '+', '(', '110', '+', '50',')', '+', '(','40', '+', '2',')',
 ')',')',')',')',')', '+', '60', '+', '6', '+', '(', '10', '+', '7', ')', ')', '+', '100', ')', '+','500']
-
+/*
 expression = [ '100', '/' ,'(' ,'(' ,'212' ,'-', '32', ')', '/', '(', '122', '-', '32', ')', ')']
-expression = ['9', '-', '5', '+', '3', 'x', '5', '/', '2', 'x', '4']
-//expression = ['2', '-', '(','5', '+', '110',')']
+expression = ['(','(','9', '-', '5', '+', '3', 'x', '5', '/', '2', 'x', '4',')','/', '2',')','x', '5', '-', '20', '+', '(', '100', '-', '50', ')', '-', '(', '4', 'x', '4', ')']
+
+*/
+expression = ['(','2', '+', '3',')','^', '2']
 console.log(expression, expression.length) 
 stop = false
 
@@ -28,6 +30,19 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
 }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
     console.log('DIVISÃO')
     expression[n + 1] = Number(expression[n - 1]) / Number(expression[n + 1])
+    expression.splice(n - 1, 2)
+    
+    n--
+    console.log(n, expression)
+    if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+        console.log('TIRAR')
+        expression.splice(n + 1, 1)
+        expression.splice(n - 1, 1)
+        n = n - 3
+    }
+}else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+    console.log('DIVISÃO')
+    expression[n + 1] = Number(expression[n - 1]) ** Number(expression[n + 1])
     expression.splice(n - 1, 2)
     
     n--
@@ -89,6 +104,19 @@ if (expression.length > 1) {
             }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
                 console.log('DIVISÃO')
                 expression[n + 1] = Number(expression[n - 1]) / Number(expression[n + 1])
+                expression.splice(n - 1, 2)
+                
+                n--
+                console.log(n, expression)
+                if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+                    console.log('TIRAR')
+                    expression.splice(n + 1, 1)
+                    expression.splice(n - 1, 1)
+                    n = n - 3
+                }
+            }else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+                console.log('DIVISÃO')
+                expression[n + 1] = Number(expression[n - 1]) ** Number(expression[n + 1])
                 expression.splice(n - 1, 2)
                 
                 n--
