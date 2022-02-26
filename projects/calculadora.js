@@ -1,7 +1,7 @@
 
 window.addEventListener('keydown', (event)=> {
     console.log(event.key)
-    
+    console.log(event.ke)
     if (String(event.key).search('[0-9]') != -1) {
         console.log('NUmber')
     }
