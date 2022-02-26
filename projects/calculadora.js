@@ -1,4 +1,14 @@
 
+window.addEventListener('keydown', (event)=> {
+    console.log(event.key)
+    
+    if (String(event.key).search('[0-9]') != -1) {
+        console.log('NUmber')
+    }
+})
+function inserir(n) {
+
+}
 
 function fazerConta() {
 for (n = 0; n < expression.length; n++) {
