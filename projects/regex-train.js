@@ -11,8 +11,6 @@ stop = false
 
 n = 0
 
-console.log('--------------------------PRIMEIRO PASSO--------------------------')
-
 for (n = 0; n < expression.length; n++) {
 if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
     console.log('MULTIPLICAÇÃO')
@@ -42,7 +40,6 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
     }
 }
 }
-console.log('--------------------------SEGUNDO PASSO--------------------------')
 
 console.log(expression)
 
@@ -104,7 +101,5 @@ if (expression.length > 1) {
                 }
             }
         }
-   // }
-
 }
  
