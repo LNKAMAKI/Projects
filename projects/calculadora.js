@@ -1,10 +1,18 @@
-
+numero = ''
 window.addEventListener('keydown', (event)=> {
+    if (event.key != 'Shift'){
     console.log(event.key)
-    console.log(event.ke)
-    if (String(event.key).search('[0-9]') != -1) {
-        console.log('NUmber')
+    
+    if (String(event.key).search('[0-9]') != -1 || event.key.search('[\\.\\(\\)\\+\\-\\x\\/r]') != -1) {
+        if (numero.length > 0) {
+
+        }else{
+            console.log('NUMERO VAZIO')
+            numero+= event.key
+        }
+
     }
+}
 })
 function inserir(n) {
 
