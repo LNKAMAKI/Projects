@@ -100,37 +100,50 @@ console.log(' ')
 //INSERIR
 ansd = false
 position = 0
+juntar = false
+
 function inserir(n) {
-    //console.log('DIGITO: ' + n)
+    console.log('DIGITO: ' + n)
     if (String(n).search('[=CE]') == -1) {
     if (ansd == false) {
     if (expression.length > 0) {
 
     if (String(n).search('[0-9]') != -1 || String(n) == '.') {
-        //console.log('NUMERO OU PONTO')
+        console.log('NUMERO OU PONTO')
 
         if (ansd == true) {
             ansd = false
         }
-       if (String(expression[expression.length - 1]).search('[0-9]') != -1 || String(expression[expression.length - 1]) == '.') {
-       // console.log(expression[expression.length - 1] + ' é um número ou ponto')
+       if (String(expression[expression.length - 1]).search('[0-9]') != -1 || String(expression[expression.length - 1]) == '.' || juntar == true) {
+        console.log(expression[expression.length - 1] + ' é um número ou ponto')
         expression[position] += String(n)
+
+        juntar = false
        }else{
-          // console.log(expression[expression.length - 1] + ' não é um número ou ponto')
+           console.log(expression[expression.length - 1] + ' não é um número ou ponto')
            position++
         expression[position] = String(n)
        }
     }else{
+        if (n == '-' && String(expression[expression.length - 1]).search('[x\\\\*+\\(\\/]') != -1 || expression[expression.length - 1] == '-') {
+            console.log('TEMOS UM PROBLEMÃO')
+            juntar = true
+        }
         position++
         expression[position] = String(n)
+      
     }
   
 }else{
     //console.log('LISTA VAZIA')
    expression.push(String(n))
+   if (n == '-') {
+    console.log('OOOPS')
+    juntar = true
+   }
   
 }
-//console.log(expression)
+console.log(expression)
 //console.log('POSITION: ' + position)
 //console.log(' ')
     }else{
