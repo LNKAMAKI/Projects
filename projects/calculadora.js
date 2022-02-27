@@ -57,6 +57,7 @@ window.addEventListener('keydown', (event)=> {
 position = 0
 function inserir(n) {
     console.log('DIGITO: ' + n)
+    if (String(n).search('[=CE]') == -1) {
     if (expression.length > 0) {
 
     if (String(n).search('[0-9]') != -1 || String(n) == '.') {
@@ -83,6 +84,28 @@ function inserir(n) {
 console.log(expression)
 console.log('POSITION: ' + position)
 console.log(' ')
+    }else{
+        if (String(n) == 'CE') {
+            console.log('CE')
+            if (String(expression[expression.length - 1]).length == 1) {
+                console.log(expression[expression.length - 1] + ' tem tamanho 1')
+                expression.splice(expression.length - 1, 1)
+                console.log(expression)
+            }else{
+                slicednum = ''
+                console.log(expression[expression.length - 1] + ' tem tamanho maior que 1') 
+                for (na = 0; na <= String(expression[expression.length - 1]).length - 2; na++) {
+                    console.log(na, expression[expression.length - 1][na])
+                    slicednum +=  expression[expression.length - 1][na]
+                }
+                console.log(slicednum)
+                expression[expression.length - 1] = slicednum
+                console.log(expression)
+            }
+        }else{
+            console.log('=')
+        }
+    }
 }
 
 
