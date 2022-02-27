@@ -58,6 +58,7 @@ position = 0
 function inserir(n) {
     console.log('DIGITO: ' + n)
     if (String(n).search('[=CE]') == -1) {
+       // document.getElementById('put').innerText += String(n)
     if (expression.length > 0) {
 
     if (String(n).search('[0-9]') != -1 || String(n) == '.') {
@@ -87,6 +88,9 @@ console.log(' ')
     }else{
         if (String(n) == 'CE') {
             console.log('CE')
+            if (position > 0) {
+            position--
+            }
             if (String(expression[expression.length - 1]).length == 1) {
                 console.log(expression[expression.length - 1] + ' tem tamanho 1')
                 expression.splice(expression.length - 1, 1)
@@ -101,11 +105,19 @@ console.log(' ')
                 console.log(slicednum)
                 expression[expression.length - 1] = slicednum
                 console.log(expression)
+
             }
         }else{
             console.log('=')
         }
     }
+    txt = ''
+    for (b = 0; b < expression.length; b++) {
+        console.log(expression[b])
+        txt+= `${expression[b]}`
+    }
+    console.log(txt)
+    document.getElementById('put').innerText = txt
 }
 
 
