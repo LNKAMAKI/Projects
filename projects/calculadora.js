@@ -72,9 +72,11 @@ console.log(' ')
             }
         }else{
             console.log('=')
+            if (expression.length != 0) {
             fazerConta()
             position = 0
             ansd = true
+            }
         }
     }
     txt = ''
@@ -165,9 +167,12 @@ function inserir(n) {
             }
         }else{
            // console.log('=')
-            fazerConta()
+           if (expression.length != 0) {
+               anstxt = txt
+            fazerConta(anstxt)
             position = 0
             ansd = true
+           }
         }
     }
     txt = ''
@@ -185,7 +190,7 @@ function inserir(n) {
 
 
 //FAZER CONTA
-function fazerConta() {
+function fazerConta(anterior) {
     for (n = 0; n < expression.length; n++) {
     if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
         console.log('POTENCIALIZAÇÃO')
@@ -358,7 +363,19 @@ if (expression.length > 1) {
 
 //document.getElementById('put').style.justifyContent = 'start'
 
-document.getElementById('put').style.backgroundColor = 'nlue'
+    document.getElementById('selc').removeChild(document.getElementById('put'))
+    op = document.createElement('option')
+    op.id = 'put'
+    document.getElementById('selc').appendChild(op)
+    op.style.animation = 'goup 0.2s'
+
+    document.getElementById('selc').removeChild(document.getElementById('ans'))
+    op2 = document.createElement('option')
+    op2.id = 'ans'
+    op2.innerText = `${anterior} =`
+    document.getElementById('selc').appendChild(op2)
+    op2.style.animation = 'goup2 0.3s'
+
 if (expression.indexOf('NaN') == -1 && expression.length == 1) {
 document.getElementById('put').innerText = expression
 }else{

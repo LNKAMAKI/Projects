@@ -52,7 +52,7 @@
         border: 0px solid black;
         border-radius: 5px;
         }
-        #selc > option {
+        #selc > option#put {
             position: absolute;
         background-color: transparent;
         font-size: 3em;
@@ -63,9 +63,28 @@
         height: 100%;
       
         }
+        #selc > option#ans {
+            position: absolute;
+            width: calc(100% - 20px);
+            height: 20px;
+            top: 5px;
+            background-color: transparent;
+            display: grid;
+            justify-content: end;
+            animation: goup2 0.3s;
+        }
         @keyframes goup {
             0% {
                 transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0%);
+            }
+        }
+        @keyframes goup2 {
+            0% {
+                font-size: 2em;
+                transform: translateY(100%) translateX(-10%);
             }
             100% {
                 transform: translateY(0%);
@@ -137,7 +156,8 @@
     <div id="calc">
         <div id="visor">
             <select name="selc" id="selc" size="11"  class="para">
-                <option id="put">3</option>
+                <option id="put"></option>
+                <option id="ans"></option>
             </select>
         </div>
         <div id="contnumbers">
