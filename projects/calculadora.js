@@ -308,7 +308,7 @@ if (expression.length > 1) {
             }
         }
 }
-if (expression.indexOf('NaN') == -1) {
+if (expression.indexOf('NaN') == -1 && expression.length == 1) {
 document.getElementById('put').innerText = expression
 }else{
     console.log('what?')
