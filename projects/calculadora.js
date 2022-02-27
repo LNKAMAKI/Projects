@@ -93,7 +93,7 @@ console.log(' ')
 
 
 
-
+//INSERIR
 ansd = false
 position = 0
 function inserir(n) {
@@ -184,7 +184,7 @@ console.log(' ')
 
 
 
-
+//FAZER CONTA
 function fazerConta() {
 for (n = 0; n < expression.length; n++) {
 if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
