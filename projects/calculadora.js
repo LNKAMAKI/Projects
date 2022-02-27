@@ -37,6 +37,7 @@ console.log(expression)
 console.log('POSITION: ' + position)
 console.log(' ')
     }else{
+        document.getElementById('ans').innerText = `Ans = ${anstxt}`
         console.log('ansd = true')
         if (String(event.key).search('[0-9]') != -1 || String(event.key).search('[\\.\\(\\)]') != -1) {
             expression[0] = event.key
@@ -134,6 +135,7 @@ function inserir(n) {
 //console.log(' ')
     }else{
         //console.log('ansd = true')
+        document.getElementById('ans').innerText = `Ans = ${anstxt}`
         if (String(n).search('[0-9]') != -1 || String(n) == '.') {
             expression[0] = n
         }else{
@@ -368,7 +370,7 @@ if (expression.length > 1) {
     op = document.createElement('option')
     op.id = 'put'
     document.getElementById('selc').appendChild(op)
-    op.style.animation = 'goup 0.2s'
+    op.style.animation = 'goup 0.3s'
 
     document.getElementById('selc').removeChild(document.getElementById('ans'))
     op2 = document.createElement('option')
