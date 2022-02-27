@@ -38,7 +38,7 @@ console.log('POSITION: ' + position)
 console.log(' ')
     }else{
         console.log('ansd = true')
-        if (String(event.key).search('[0-9]') != -1 || String(event.key) == '.') {
+        if (String(event.key).search('[0-9]') != -1 || String(event.key).search('[\\.\\(\\)]') != -1) {
             expression[0] = event.key
         }else{
        position++
@@ -344,6 +344,8 @@ if (expression.length > 1) {
             }
         }
 }
+
+//document.getElementById('put').style.justifyContent = 'start'
 if (expression.indexOf('NaN') == -1 && expression.length == 1) {
 document.getElementById('put').innerText = expression
 }else{
