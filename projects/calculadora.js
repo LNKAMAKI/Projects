@@ -90,6 +90,10 @@ console.log(' ')
     }
 })
 
+
+
+
+
 ansd = false
 position = 0
 function inserir(n) {
@@ -176,6 +180,9 @@ console.log(' ')
     document.getElementById('put').innerText = txt 
     }
 }
+
+
+
 
 
 function fazerConta() {
