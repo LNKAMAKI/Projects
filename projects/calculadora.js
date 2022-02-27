@@ -109,12 +109,14 @@ console.log(' ')
             }
         }else{
             console.log('=')
+            fazerConta()
+            position = 0
         }
     }
     txt = ''
     for (b = 0; b < expression.length; b++) {
         console.log(expression[b])
-        txt+= `${expression[b]}`
+        txt+= ` ${expression[b]}`
     }
     console.log(txt)
     document.getElementById('put').innerText = txt
