@@ -36,6 +36,8 @@ window.addEventListener('keydown', (event)=> {
     }else{
         console.log('IR')
         expression.push(numero)
+        numero = ''
+        fazerConta()
     }
     }
     
@@ -77,6 +79,8 @@ function inserir(n) {
 }else{
     console.log('pode ir')
     expression.push(numero)
+    fazerConta()
+    numero = ''
 }
 }
 
@@ -117,7 +121,7 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
     }else{
         console.log(expression)
     }
-}else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+}else if(expression[n] == '**' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
     console.log('DIVISÃO')
     expression[n + 1] = Number(expression[n - 1]) ** Number(expression[n + 1])
     expression.splice(n - 1, 2)
@@ -227,7 +231,7 @@ if (expression.length > 1) {
                 }else{
                     console.log(expression)
                 }
-            }else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+            }else if(expression[n] == '**' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
                 console.log('DIVISÃO')
                 expression[n + 1] = Number(expression[n - 1]) ** Number(expression[n + 1])
                 expression.splice(n - 1, 2)
@@ -247,4 +251,5 @@ if (expression.length > 1) {
             }
         }
 }
+document.getElementById('put').innerText = expression
 }
