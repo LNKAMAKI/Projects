@@ -12,7 +12,7 @@
         body {
             margin: 0px;
         }
-      
+
         #calc {
            background-color: rgb(118, 198, 255);
            width: calc(100% - 50px);
@@ -23,6 +23,7 @@
            padding-top: 5px;
            border-radius: 25px;
            padding-bottom: 20px;
+           z-index: 2;
         }
         #visor {
             position: relative;
@@ -37,6 +38,27 @@
             font-size: 2.5em;
             font-family: 'Roboto Condensed';
         }
+        #selc {
+    position: absolute;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+  border-image: none;
+  background-color: transparent;
+  outline-width: 0px;
+  border: 0px solid black;
+  border-radius: 5px;
+}
+#selc > option {
+    position: absolute;
+background-color: transparent;
+font-size: 3em;
+display: grid;
+align-items: center;
+justify-content: end;
+width: calc(100% - 20px);
+height: 100%;
+}
         #most {
             position: absolute;
             background-color: transparent;
@@ -47,9 +69,6 @@
            text-align: left;
             padding: 0px 10px 0px 10px;
             overflow-x: hidden;
-        }
-        #put {
-          
         }
        #contnumbers {
             width: calc(100% - 40px);
@@ -76,7 +95,8 @@
            height: 0px;
            padding-bottom: 15%;
            border-radius: 5px;
-           background-color: rgb(223, 223, 223);
+           color: white;
+           background-color: rgb(165 75 165);
            font-family: 'Roboto Condensed';
            box-shadow:-4px 2px 1px #0000001f;
            font-size: 2.2em;
@@ -85,13 +105,13 @@
        }
        .tecla:hover {
            transition-duration: 0.2s;
-           background-color: rgb(200, 200, 200);
+           background-color: rgb(138, 42, 138);
        }
        .help {
            position: absolute;
            height: 100%;
            width: 100%;
-           background-color: purple;
+           background-color: transparent;
            display: grid;
            align-content: center;
            justify-content: center;
@@ -104,9 +124,9 @@
     <script src="calculadora.js"></script>
     <div id="calc">
         <div id="visor">
-          <div id="most">
-             <span id="put"></span>
-          </div>
+            <select name="selc" id="selc" size="11"  class="para">
+                <option id="put"></option>
+            </select>
         </div>
         <div id="contnumbers">
             <div class="dshow">
