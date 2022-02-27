@@ -56,47 +56,33 @@ window.addEventListener('keydown', (event)=> {
 */
 position = 0
 function inserir(n) {
-    console.log(n)
-    if (n != '=') {
-        document.getElementById('put').innerText += n
+    console.log('DIGITO: ' + n)
+    if (expression.length > 0) {
 
-    if (String(n).search('[0-9]') != -1 || n.search('[\\.\\(\\)\\+\\-\\x\\/r**=]') != -1) {
-        if (numero.length > 0) {
-            if (String(n).search('\\.') != -1 || String(n).search('[0-9]') != -1) {
-                if (String(expression[expression.length - 1]).search('\\.') != -1 || String(expression[expression.length - 1]).search('[0-9]') != -1) {
-                    console.log('AAAAAAAAAAAAAAAAAAAA' + numero[numero.length - 1].search('[0-9]'))
-                    console.log('DO IT')
-                    expression[position - 1] = String(n)
-                } else {
-                    console.log('TIRAR')
-                    expression.push(expression[position])
-                    console.log(expression)
-                
-                    expression[position] = String(n)
-                }
-            } else {
-                console.log('AAAAAAAAAAAAAAAAAAAA' + numero[numero.length - 1].search('\\.'))
-                console.log('RETIRAR')
-                expression.push(numero)
-                console.log(expression)
-                expression[position] = String(n)
-                position++
-            }
+    if (String(n).search('[0-9]') != -1 || String(n) == '.') {
+        console.log('NUMERO OU PONTO')
 
-        } else {
-            console.log('NUMERO VAZIO')
-            expression[position] = String(n)
-            position++
-        }
-        console.log(expression)
-        console.log(position)
+       if (String(expression[expression.length - 1]).search('[0-9]') != -1 || String(expression[expression.length - 1]) == '.') {
+        console.log(expression[expression.length - 1] + ' é um número ou ponto')
+        expression[position] += String(n)
+       }else{
+           console.log(expression[expression.length - 1] + ' não é um número ou ponto')
+           position++
+        expression[position] = String(n)
+       }
+    }else{
+        position++
+        expression[position] = String(n)
     }
+  
 }else{
-    console.log('pode ir')
-    expression.push(numero)
-    fazerConta()
-    numero = ''
+    console.log('LISTA VAZIA')
+    expression.push(String(n))
+  
 }
+console.log(expression)
+console.log('POSITION: ' + position)
+console.log(' ')
 }
 
 
