@@ -1,6 +1,16 @@
-numero = ''
+numero = '1'
 expression = []
+/*
 window.addEventListener('keydown', (event)=> {
+    if (event.key == 'Backspace' && expression.length > 0) {
+        console.log('APAGAR')
+        if (expression[expression.length - 1].length == 1) {
+            expression.push(numero)
+            console.log('VAI')
+            expression.splice(expression.length - 1, 1)
+            document.getElementById('put').innerHTML = expression
+        }
+    }
     if (event.key != 'Shift'){
     console.log(event.key)
     
@@ -43,6 +53,8 @@ window.addEventListener('keydown', (event)=> {
     
 }
 })
+*/
+position = 0
 function inserir(n) {
     console.log(n)
     if (n != '=') {
@@ -51,30 +63,33 @@ function inserir(n) {
     if (String(n).search('[0-9]') != -1 || n.search('[\\.\\(\\)\\+\\-\\x\\/r**=]') != -1) {
         if (numero.length > 0) {
             if (String(n).search('\\.') != -1 || String(n).search('[0-9]') != -1) {
-                if (String(numero[numero.length - 1]).search('\\.') != -1 || String(numero[numero.length - 1]).search('[0-9]') != -1) {
+                if (String(expression[expression.length - 1]).search('\\.') != -1 || String(expression[expression.length - 1]).search('[0-9]') != -1) {
                     console.log('AAAAAAAAAAAAAAAAAAAA' + numero[numero.length - 1].search('[0-9]'))
                     console.log('DO IT')
-                    numero += String(n)
+                    expression[position - 1] = String(n)
                 } else {
                     console.log('TIRAR')
-                    expression.push(numero)
+                    expression.push(expression[position])
                     console.log(expression)
-                    numero = String(n)
+                
+                    expression[position] = String(n)
                 }
             } else {
                 console.log('AAAAAAAAAAAAAAAAAAAA' + numero[numero.length - 1].search('\\.'))
                 console.log('RETIRAR')
                 expression.push(numero)
                 console.log(expression)
-                numero = String(n)
+                expression[position] = String(n)
+                position++
             }
 
         } else {
             console.log('NUMERO VAZIO')
-            numero += String(n)
+            expression[position] = String(n)
+            position++
         }
-        console.log(numero)
-
+        console.log(expression)
+        console.log(position)
     }
 }else{
     console.log('pode ir')
