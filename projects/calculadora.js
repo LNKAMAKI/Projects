@@ -1,11 +1,28 @@
 numero = ''
+expression = []
 window.addEventListener('keydown', (event)=> {
     if (event.key != 'Shift'){
     console.log(event.key)
     
     if (String(event.key).search('[0-9]') != -1 || event.key.search('[\\.\\(\\)\\+\\-\\x\\/r]') != -1) {
         if (numero.length > 0) {
-
+            if (String(event.key).search('\\.') != -1 || String(event.key).search('[0-9]') != -1) {
+                if (String(numero[numero.length - 1]).search('\\.') != -1 || String(numero[numero.length - 1]).search('[0-9]') != -1) {
+                console.log('AAAAAAAAAAAAAAAAAAAA' + numero[numero.length - 1].search('[0-9]'))
+                console.log('DO IT')
+            numero+= event.key
+                }else{
+                    console.log('TIRAR') 
+                    expression.push(numero)
+                    numero = event.key
+                }
+            }else{
+                console.log('AAAAAAAAAAAAAAAAAAAA' + numero[numero.length - 1].search('\\.'))
+                console.log('RETIRAR')
+                expression.push(numero)
+                numero = event.key
+            }
+          
         }else{
             console.log('NUMERO VAZIO')
             numero+= event.key
