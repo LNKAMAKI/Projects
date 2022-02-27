@@ -1254,7 +1254,7 @@ function sort2(n, p) {
             config.style.opacity = '100'
             config.style.top = '-7px'
 
-                config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <div class= "o"><p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" id= "cor"> <img src="paint-brush.png" style= "width: 25px; height: 25px;" onclick="change()"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb"></div>`
+                config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <div class= "o"><p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" onchange="change()" id= "cor" > <img src="paint-brush.png" style= "width: 25px; height: 25px;"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb"></div>`
                 config.getElementsByTagName('input')[1].value = valueColor
 
                 if (ischeck == true) {

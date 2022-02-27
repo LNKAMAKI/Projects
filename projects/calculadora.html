@@ -25,6 +25,7 @@
            padding-bottom: 20px;
         }
         #visor {
+            position: relative;
             box-shadow: inset 5px 5px 2px rgb(224, 224, 224);
             width: 80%;
             height: 0px;
@@ -33,6 +34,22 @@
             margin-left: 10%;
             background-color: white;
             border-radius: 10px;
+            font-size: 2.5em;
+            font-family: 'Roboto Condensed';
+        }
+        #most {
+            position: absolute;
+            background-color: transparent;
+            width: calc(100% - 20px);
+            display: grid;
+            height: 100%;
+            align-content: center;
+           text-align: left;
+            padding: 0px 10px 0px 10px;
+            overflow-x: hidden;
+        }
+        #put {
+          
         }
        #contnumbers {
             width: calc(100% - 40px);
@@ -74,7 +91,7 @@
            position: absolute;
            height: 100%;
            width: 100%;
-           background-color: transparent;
+           background-color: purple;
            display: grid;
            align-content: center;
            justify-content: center;
@@ -86,7 +103,11 @@
 
     <script src="calculadora.js"></script>
     <div id="calc">
-        <div id="visor"></div>
+        <div id="visor">
+          <div id="most">
+             <span id="put"></span>
+          </div>
+        </div>
         <div id="contnumbers">
             <div class="dshow">
                 <div class="tecla" onclick="inserir(1)">

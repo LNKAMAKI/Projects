@@ -5,6 +5,9 @@ window.addEventListener('keydown', (event)=> {
     console.log(event.key)
     
     if (String(event.key).search('[0-9]') != -1 || event.key.search('[\\.\\(\\)\\+\\-\\x\\/r**=]') != -1) {
+        if (event.key != '=') {
+            document.getElementById('put').innerText += event.key
+
         if (numero.length > 0) {
             if (String(event.key).search('\\.') != -1 || String(event.key).search('[0-9]') != -1) {
                 if (String(numero[numero.length - 1]).search('\\.') != -1 || String(numero[numero.length - 1]).search('[0-9]') != -1) {
@@ -30,13 +33,19 @@ window.addEventListener('keydown', (event)=> {
             numero += String(event.key)
         }
         console.log(numero)
-    
+    }else{
+        console.log('IR')
+        expression.push(numero)
+    }
     }
     
 }
 })
 function inserir(n) {
     console.log(n)
+    if (n != '=') {
+        document.getElementById('put').innerText += n
+
     if (String(n).search('[0-9]') != -1 || n.search('[\\.\\(\\)\\+\\-\\x\\/r**=]') != -1) {
         if (numero.length > 0) {
             if (String(n).search('\\.') != -1 || String(n).search('[0-9]') != -1) {
@@ -65,6 +74,10 @@ function inserir(n) {
         console.log(numero)
 
     }
+}else{
+    console.log('pode ir')
+    expression.push(numero)
+}
 }
 
 
