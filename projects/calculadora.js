@@ -73,7 +73,8 @@ console.log(' ')
         }else{
             console.log('=')
             if (expression.length != 0) {
-            fazerConta()
+                anstxt = txt
+            fazerConta(anstxt)
             position = 0
             ansd = true
             }
