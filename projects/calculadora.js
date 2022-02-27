@@ -97,22 +97,22 @@ console.log(' ')
 ansd = false
 position = 0
 function inserir(n) {
-    console.log('DIGITO: ' + n)
+    //console.log('DIGITO: ' + n)
     if (String(n).search('[=CE]') == -1) {
     if (ansd == false) {
     if (expression.length > 0) {
 
     if (String(n).search('[0-9]') != -1 || String(n) == '.') {
-        console.log('NUMERO OU PONTO')
+        //console.log('NUMERO OU PONTO')
 
         if (ansd == true) {
             ansd = false
         }
        if (String(expression[expression.length - 1]).search('[0-9]') != -1 || String(expression[expression.length - 1]) == '.') {
-        console.log(expression[expression.length - 1] + ' é um número ou ponto')
+       // console.log(expression[expression.length - 1] + ' é um número ou ponto')
         expression[position] += String(n)
        }else{
-           console.log(expression[expression.length - 1] + ' não é um número ou ponto')
+          // console.log(expression[expression.length - 1] + ' não é um número ou ponto')
            position++
         expression[position] = String(n)
        }
@@ -122,15 +122,15 @@ function inserir(n) {
     }
   
 }else{
-    console.log('LISTA VAZIA')
+    //console.log('LISTA VAZIA')
    expression.push(String(n))
   
 }
-console.log(expression)
-console.log('POSITION: ' + position)
-console.log(' ')
+//console.log(expression)
+//console.log('POSITION: ' + position)
+//console.log(' ')
     }else{
-        console.log('ansd = true')
+        //console.log('ansd = true')
         if (String(n).search('[0-9]') != -1 || String(n) == '.') {
             expression[0] = n
         }else{
@@ -141,30 +141,30 @@ console.log(' ')
 }
     }else{
         if (String(n) == 'CE') {
-            console.log('CE')
+          //  console.log('CE')
            
             if (String(expression[expression.length - 1]).length == 1) {
-                console.log(expression[expression.length - 1] + ' tem tamanho 1')
+               // console.log(expression[expression.length - 1] + ' tem tamanho 1')
                 expression.splice(expression.length - 1, 1)
-                console.log(expression)
+                //console.log(expression)
 
                 if (position > 0) {
                     position--
                     }
             }else{
                 slicednum = ''
-                console.log(expression[expression.length - 1] + ' tem tamanho maior que 1') 
+               // console.log(expression[expression.length - 1] + ' tem tamanho maior que 1') 
                 for (na = 0; na <= Number(String(expression[expression.length - 1]).length) - 2; na++) {
-                    console.log(na, String(expression[expression.length - 1])[na])
+                    //console.log(na, String(expression[expression.length - 1])[na])
                     slicednum +=  String(expression[expression.length - 1])[na]
                 }
-                console.log(slicednum)
+                //console.log(slicednum)
                 expression[expression.length - 1] = slicednum
-                console.log(expression)
+                //console.log(expression)
 
             }
         }else{
-            console.log('=')
+           // console.log('=')
             fazerConta()
             position = 0
             ansd = true
@@ -172,10 +172,10 @@ console.log(' ')
     }
     txt = ''
     for (b = 0; b < expression.length; b++) {
-        console.log(expression[b])
+        //console.log(expression[b])
         txt+= ` ${expression[b]}`
     }
-    console.log(txt)
+   // console.log(txt)
     if (n != '=') {
     document.getElementById('put').innerText = txt 
     }
@@ -186,6 +186,44 @@ console.log(' ')
 
 //FAZER CONTA
 function fazerConta() {
+    for (n = 0; n < expression.length; n++) {
+    if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+        console.log('POTENCIALIZAÇÃO')
+        expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
+        expression.splice(n - 1, 2)
+        
+        n--
+        
+        if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+            console.log('TIRAR')
+            expression.splice(n + 1, 1)
+            expression.splice(n - 1, 1)
+            n = n - 3
+    
+            console.log(expression)
+        }else{
+            console.log(expression)
+        }
+    }else if(expression[n] == 'r' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+        console.log('RAIZ')
+        expression[n + 1] = String(Number(expression[n - 1]) ** (1/ Number(expression[n + 1])))
+        expression.splice(n - 1, 2)
+        
+        n--
+        
+        if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+            console.log('TIRAR')
+            expression.splice(n + 1, 1)
+            expression.splice(n - 1, 1)
+            n = n - 3
+    
+            console.log(expression)
+        }else{
+            console.log(expression)
+        }
+    }
+    }
+
 for (n = 0; n < expression.length; n++) {
 if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
     console.log('MULTIPLICAÇÃO')
@@ -211,40 +249,6 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
     
     n--
    
-    if (expression[n - 1] == '(' && expression[n + 1] == ')') {
-        console.log('TIRAR')
-        expression.splice(n + 1, 1)
-        expression.splice(n - 1, 1)
-        n = n - 3
-
-        console.log(expression)
-    }else{
-        console.log(expression)
-    }
-}else if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
-    console.log('DIVISÃO')
-    expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
-    expression.splice(n - 1, 2)
-    
-    n--
-    
-    if (expression[n - 1] == '(' && expression[n + 1] == ')') {
-        console.log('TIRAR')
-        expression.splice(n + 1, 1)
-        expression.splice(n - 1, 1)
-        n = n - 3
-
-        console.log(expression)
-    }else{
-        console.log(expression)
-    }
-}else if(expression[n] == 'r' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
-    console.log('RAIZ')
-    expression[n + 1] = String(Number(expression[n - 1]) ** (1/ Number(expression[n + 1])))
-    expression.splice(n - 1, 2)
-    
-    n--
-    
     if (expression[n - 1] == '(' && expression[n + 1] == ')') {
         console.log('TIRAR')
         expression.splice(n + 1, 1)
@@ -353,6 +357,8 @@ if (expression.length > 1) {
 }
 
 //document.getElementById('put').style.justifyContent = 'start'
+
+document.getElementById('put').style.backgroundColor = 'nlue'
 if (expression.indexOf('NaN') == -1 && expression.length == 1) {
 document.getElementById('put').innerText = expression
 }else{
