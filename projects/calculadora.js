@@ -46,7 +46,7 @@ function inserir(n) {
         expression[position] = String(n)
        }
     }else{
-        if (n == '-' && String(expression[expression.length - 1]).search('[x\\\\*+\\(\\/]') != -1 || n== '-' && expression[expression.length - 1] == '-') {
+        if (n == '-' && String(expression[expression.length - 1]).search('[x\\\\*+\\(\\/\\-]') != -1) {
             console.log('TEMOS UM PROBLEMÃO')
             juntar = true
         }
