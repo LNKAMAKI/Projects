@@ -220,6 +220,7 @@ console.log(expression)
 
 //FAZER CONTA
 function fazerConta(anterior) {
+    //Primeiro raizes e potências
     for (n = 0; n < expression.length; n++) {
     if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
         console.log('POTENCIALIZAÇÃO')
@@ -258,6 +259,7 @@ function fazerConta(anterior) {
     }
     }
 
+    // Segundo multiplicações e divisões
 for (n = 0; n < expression.length; n++) {
 if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
     console.log('MULTIPLICAÇÃO')
@@ -382,6 +384,23 @@ if (expression.length > 1) {
                     expression.splice(n - 1, 1)
                     n = n - 3
 
+                    console.log(expression)
+                }else{
+                    console.log(expression)
+                }
+            }else if(expression[n] == 'r' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+                console.log('RAIZ')
+                expression[n + 1] = String(Number(expression[n - 1]) ** (1/ Number(expression[n + 1])))
+                expression.splice(n - 1, 2)
+                
+                n--
+                
+                if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+                    console.log('TIRAR')
+                    expression.splice(n + 1, 1)
+                    expression.splice(n - 1, 1)
+                    n = n - 3
+            
                     console.log(expression)
                 }else{
                     console.log(expression)
