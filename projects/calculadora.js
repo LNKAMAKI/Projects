@@ -102,6 +102,7 @@ position = 0
 juntar = false
 anstxt = ''
 function inserir(n) {
+    document.getElementById('put').style.justifyContent = 'end'
     console.log('DIGITO: ' + n)
     
     if (anstxt != '') {
