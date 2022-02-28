@@ -159,6 +159,7 @@ console.log(expression)
        
         if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n).search('[\\(\\)]') != -1) {
             expression[0] = n
+            
         }else{
        position++
         expression[position] = n
