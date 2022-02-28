@@ -77,6 +77,7 @@ console.log(expression)
         if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n) == '(') {
             expression[0] = n
             ansd = false
+            error = false
         }else if (error == false && String(n) != ')'){
        position++
         expression[position] = n
@@ -90,7 +91,7 @@ console.log(expression)
     }else{
         if (String(n) == 'CE') {
           //  console.log('CE')
-           
+           if (error == false && String(document.getElementById('put').innerText).search('Infinity') == -1) {
             if (String(expression[expression.length - 1]).length == 1) {
                 console.log('AAAAAAAA')
                // console.log(expression[expression.length - 1] + ' tem tamanho 1')
@@ -116,7 +117,11 @@ console.log(expression)
             if (expression.length == 0) {
               //  document.getElementById('ans').innerText = ''
             }
-
+        }else{
+            console.log('ARE YOU KIDDING ME?')
+            position = 0
+            document.getElementById('put').innerText = '777777'
+        }
             if (expression.length == 0) {
                 console.log('É ZEEEEEEEEEEEEEEROOOOOOOOOOOOOO')
                 ansd = false
