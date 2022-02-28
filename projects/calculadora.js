@@ -37,7 +37,6 @@ console.log(expression)
 console.log('POSITION: ' + position)
 console.log(' ')
     }else{
-        document.getElementById('ans').innerText = `Ans = ${anstxt}`
         console.log('ansd = true')
         if (String(event.key).search('[0-9]') != -1 || String(event.key).search('[\\.\\(\\)]') != -1) {
             expression[0] = event.key
@@ -101,9 +100,14 @@ console.log(' ')
 ansd = false
 position = 0
 juntar = false
-
+anstxt = ''
 function inserir(n) {
     console.log('DIGITO: ' + n)
+    
+    if (anstxt != '') {
+    document.getElementById('ans').innerText = `Ans = ${anstxt}`
+    }
+
     if (String(n).search('[=CE]') == -1) {
     if (ansd == false) {
     if (expression.length > 0) {
@@ -129,9 +133,11 @@ function inserir(n) {
             console.log('TEMOS UM PROBLEMÃO')
             juntar = true
         }
+        if (expression.length > 0) {
         position++
+        }
         expression[position] = String(n)
-      
+        
     }
   
 }else{
@@ -147,9 +153,9 @@ console.log(expression)
 //console.log('POSITION: ' + position)
 //console.log(' ')
     }else{
-        //console.log('ansd = true')
-        document.getElementById('ans').innerText = `Ans = ${anstxt}`
-        if (String(n).search('[0-9]') != -1 || String(n) == '.') {
+        console.log('ansd = true')
+       
+        if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n).search('[\\(\\)]') != -1) {
             expression[0] = n
         }else{
        position++
@@ -180,6 +186,10 @@ console.log(expression)
                 expression[expression.length - 1] = slicednum
                 //console.log(expression)
 
+            }
+            console.log(expression)
+            if (expression.length == 0) {
+              //  document.getElementById('ans').innerText = ''
             }
         }else{
            // console.log('=')
