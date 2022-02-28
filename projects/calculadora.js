@@ -402,8 +402,11 @@ if (expression.length > 1) {
     document.getElementById('selc').appendChild(op2)
     op2.style.animation = 'goup2 0.3s'
 
-if (expression.indexOf('NaN') == -1 && expression.length == 1) {
-document.getElementById('put').innerText = expression
+    if (expression.indexOf('NaN') == -1 && expression.length == 1) {
+    document.getElementById('put').innerText = expression
+    if (expression[0].length > 17) {
+        document.getElementById('put').style.justifyContent = 'start'
+    }
 }else{
     console.log('what?')
     expression = []
