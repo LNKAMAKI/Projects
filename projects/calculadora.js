@@ -15,6 +15,7 @@ ansd = false
 position = 0
 juntar = false
 anstxt = ''
+error = false
 function inserir(n) {
     document.getElementById('put').style.justifyContent = 'end'
     console.log('DIGITO: ' + n)
@@ -76,10 +77,13 @@ console.log(expression)
         if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n) == '(') {
             expression[0] = n
             ansd = false
-        }else if (document.getElementById('put').innerText != 'Error' && String(n) != ')'){
+        }else if (error == false && String(n) != ')'){
        position++
         expression[position] = n
         ansd = false
+    }else if(error == true){
+        ansd = false
+        error = false
     }
     
 }
@@ -356,6 +360,7 @@ if (expression.length > 1) {
     console.log('what?')
     expression = []
     document.getElementById('put').innerText = 'Error'
+    error = true
     
 }
 }
