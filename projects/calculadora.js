@@ -119,6 +119,7 @@ function inserir(n) {
             ansd = false
         }
        if (String(expression[expression.length - 1]).search('[0-9]') != -1 || String(expression[expression.length - 1]) == '.' || juntar == true) {
+           console.log(juntar)
         console.log(expression[expression.length - 1] + ' é um número ou ponto')
         expression[position] += String(n)
 
@@ -129,7 +130,7 @@ function inserir(n) {
         expression[position] = String(n)
        }
     }else{
-        if (n == '-' && String(expression[expression.length - 1]).search('[x\\\\*+\\(\\/]') != -1 || expression[expression.length - 1] == '-') {
+        if (n == '-' && String(expression[expression.length - 1]).search('[x\\\\*+\\(\\/]') != -1 || n== '-' && expression[expression.length - 1] == '-') {
             console.log('TEMOS UM PROBLEMÃO')
             juntar = true
         }
