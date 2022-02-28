@@ -91,7 +91,7 @@ console.log(expression)
     }else{
         if (String(n) == 'CE') {
           //  console.log('CE')
-           if (error == false && String(document.getElementById('put').innerText).search('Infinity') == -1) {
+           if (error == false /*&& String(document.getElementById('put').innerText).search('Infinity') == -1*/) {
             if (String(expression[expression.length - 1]).length == 1) {
                 console.log('AAAAAAAA')
                // console.log(expression[expression.length - 1] + ' tem tamanho 1')
