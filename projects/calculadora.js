@@ -59,7 +59,7 @@ function inserir(n) {
   
 }else{
     console.log('LISTA VAZIA')
-    if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n) == '(' || String(n) == '-')  {
+    if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n) == '(' || String(n) == '-' || String(n) == '√')  {
    expression.push(String(n))
     }
    if (n == '-') {
@@ -74,7 +74,7 @@ console.log(expression)
     }else{
         console.log('ansd = true')
        
-        if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n) == '(') {
+        if (String(n).search('[0-9]') != -1 || String(n) == '.' || String(n) == '(' || String(n) == '√') {
             expression[0] = n
             ansd = false
             error = false
@@ -154,7 +154,7 @@ console.log(expression)
 function fazerConta(anterior) {
     //Primeiro raizes e potências
     for (n = 0; n < expression.length; n++) {
-    if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+    if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
         console.log('POTENCIALIZAÇÃO')
         expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
         expression.splice(n - 1, 2)
@@ -171,13 +171,12 @@ function fazerConta(anterior) {
         }else{
             console.log(expression)
         }
-    }else if(expression[n] == 'r' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+    }else if(expression[n] == '√' && expression[n + 1] != '(' ) {
         console.log('RAIZ')
-        expression[n + 1] = String(Number(expression[n - 1]) ** (1/ Number(expression[n + 1])))
-        expression.splice(n - 1, 2)
+        expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
+        expression.splice(n, 1)
         
-        n--
-        
+        n = n - 2
         if (expression[n - 1] == '(' && expression[n + 1] == ')') {
             console.log('TIRAR')
             expression.splice(n + 1, 1)
@@ -193,7 +192,7 @@ function fazerConta(anterior) {
 
     // Segundo multiplicações e divisões
 for (n = 0; n < expression.length; n++) {
-if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
     console.log('MULTIPLICAÇÃO')
     expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
     expression.splice(n - 1, 2)
@@ -210,7 +209,7 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
     }else{
         console.log(expression)
     }
-}else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+}else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
     console.log('DIVISÃO')
     expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
     expression.splice(n - 1, 2)
@@ -235,7 +234,7 @@ if (expression.length > 1) {
 
         for (n = 0; n < expression.length; n++) {
             console.log(expression[n])
-            if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+            if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
                 console.log('ADIÇÃO')
                 expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
@@ -252,8 +251,8 @@ if (expression.length > 1) {
                 }else{
                     console.log(expression)
                 }
-            }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
-                console.log('SUBTRAÇÃO')
+            }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
+                console.log('SUBTRAÇÃO') 
                 expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 
@@ -269,7 +268,7 @@ if (expression.length > 1) {
                 }else{
                     console.log(expression)
                 }
-            }else if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+            }else if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
                 console.log('MULTIPLICAÇÃO')
                 expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
@@ -286,7 +285,7 @@ if (expression.length > 1) {
                 }else{
                     console.log(expression)
                 }
-            }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+            }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
                 console.log('DIVISÃO')
                 expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
@@ -303,7 +302,7 @@ if (expression.length > 1) {
                 }else{
                     console.log(expression)
                 }
-            }else if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+            }else if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
                 console.log('DIVISÃO')
                 expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
@@ -320,13 +319,12 @@ if (expression.length > 1) {
                 }else{
                     console.log(expression)
                 }
-            }else if(expression[n] == 'r' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')') {
+            }else if(expression[n] == '√' && expression[n + 1] != '(') {
                 console.log('RAIZ')
-                expression[n + 1] = String(Number(expression[n - 1]) ** (1/ Number(expression[n + 1])))
-                expression.splice(n - 1, 2)
+                expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
+                expression.splice(n, 1)
                 
-                n--
-                
+                n = n - 2
                 if (expression[n - 1] == '(' && expression[n + 1] == ')') {
                     console.log('TIRAR')
                     expression.splice(n + 1, 1)
