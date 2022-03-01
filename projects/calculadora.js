@@ -47,8 +47,8 @@ function inserir(n) {
        }
     }else{
         console.log('EEEEEEEEEEEEI')
-        console.log(expression[expression.length - 1], expression[expression.length - 1].search('[\\x\\*\\+\\(\\/]') != -1)
-        if (String(n) == '-' && expression[expression.length - 1].search('[\\x\\*\\+\\(\\/]') != -1 || String(n) == '-' && expression[expression.length - 1] == '-') {
+        console.log(expression[expression.length - 1], String(expression[expression.length - 1]).search('[\\x\\*\\+\\(\\/]') != -1)
+        if (String(n) == '-' && String(expression[expression.length - 1]).search('[\\x\\*\\+\\(\\/]') != -1 || String(n) == '-' && expression[expression.length - 1] == '-') {
             console.log('TEMOS UM PROBLEMÃO')
             juntar = true
         }
@@ -239,7 +239,7 @@ if (expression.length > 1) {
     while(expression.length != 1 && expression.indexOf('NaN') == -1) {
         for (n = 0; n < expression.length; n++) {
             console.log(expression[n])
-            if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\*]') == -1 && String(expression[n - 2]).search('[x\\/\\*]') == -1) {
+            if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\*]') == -1 && String(expression[n - 2]).search('[x\\/\\*\\-]') == -1) {
                 console.log('ADIÇÃO')
                 expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
