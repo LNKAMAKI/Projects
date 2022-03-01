@@ -149,12 +149,91 @@
            align-content: center;
            justify-content: center;
        }
+       #fundo {
+           visibility: visible;
+           position: absolute;
+           width: 100%;
+           margin-top: -105px;
+           height: calc(99.95%);
+           background-color: transparent;
+           z-index: 2;
+           display: grid;
+           justify-items: center;
+           align-items: center;
+       }
+       #inst {
+           opacity: 100;
+           visibility: visible;
+        position: absolute;
+        width: 90%;
+        max-width: 597px;
+        height: fit-content;
+        background-color: white;
+        font-family: 'Aclonica';
+        display: grid;
+         box-shadow: -3px 3px 8px #00000026;
+         border-radius: 15px;
+         padding: 15px;
+         text-align: center;
+         animation: fall 2s;
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+}
+@keyframes fall2 {
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+#ok {
+    background-color: rgb(57, 178, 235);
+    border-image: none;
+    outline: none;
+    width: 50px;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin-left: calc(100% - 40px);
+    border-radius: 25px;
+    cursor: pointer;
+    animation: surgir 2s steps(1);
+}
+@keyframes surgir {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+#ok:hover {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.301);
+}
+
     </style>
 </head>
 <body>
     <div id="cen"><img src="calculator.png" alt="" id="char" style="width: 50px; height: 50px;"><h1 id="spec">Calculadora</h1></div>
 
     <script src="calculadora.js"></script>
+    <div id="fundo">
+        <div id="inst">
+            <h1>Instruções:</h1>
+            <p>Não coloque números entre parênteses, como na expressão abaixo:</p>
+            <p><span style="color: red;">15 x 8 + (-3)</span></p>
+            <p>Quando for para fazer uma multiplicação, inclua o sinal x:</p>
+            <p>4 x (5 + 10)</p>
+            <p>Não coloque + na frente de números positivos se ele não se referir a uma adição:</p>
+           <p><span style="color: red;">4 x +5</span></p>
+           <p>Expressões faltando parênteses e outros casos de erro de digitação podem comprometer o sistema, fazendo a página parar de funcionar. Então verifique se a expressão está correta antes de ver o resultado.</p>
+           <button id="ok" onclick="ok()">Ok!</button>
+        </div>
+        
+    </div>
+
     <div id="calc">
         <div id="visor">
             <select name="selc" id="selc" size="11"  class="para">

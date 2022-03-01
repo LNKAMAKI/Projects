@@ -9,7 +9,10 @@ window.addEventListener('keydown', (event)=> {
 
 
 
-
+function ok() {
+    document.getElementById('inst').style.animation = 'fall2 1s forwards'
+    document.getElementById('fundo').style.visibility = 'hidden'
+}
 //INSERIR
 ansd = false
 position = 0
