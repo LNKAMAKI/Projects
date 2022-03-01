@@ -87,6 +87,10 @@ console.log(expression)
     }else if(error == true){
         ansd = false
         error = false
+        if (String(n) == '-') {
+            expression[0] = n
+            juntar = true
+        }
     }
     
 }
