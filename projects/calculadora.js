@@ -23,9 +23,6 @@ function inserir(n) {
     document.getElementById('put').style.justifyContent = 'end'
     console.log('DIGITO: ' + n)
     
-    if (anstxt != '') {
-    document.getElementById('ans').innerText = `Ans = ${anstxt}`
-    }
 
     if (String(n).search('[=CE]') == -1) {
     if (ansd == false) {
@@ -95,7 +92,7 @@ console.log(expression)
             juntar = true
         }
     }
-    
+
 }
     }else{
         if (String(n) == 'CE') {
@@ -155,6 +152,15 @@ console.log(expression)
     if (n != '=') {
     document.getElementById('put').innerText = txt 
     }
+
+    if (anstxt != '' && ansd == false) {
+        if (String(anstxt).search(`Ans = `) == -1)  {
+            document.getElementById('ans').innerText = `Ans = ${String(anstxt).replace('=', '')}`
+        }else{
+            document.getElementById('ans').innerText = `${anstxt}`
+        }
+    }
+
 }
 
 
@@ -355,6 +361,8 @@ if (expression.length > 1) {
 
 //document.getElementById('put').style.justifyContent = 'start'
 
+   rem = String(document.getElementById('ans').innerText)
+
     document.getElementById('selc').removeChild(document.getElementById('put'))
     op = document.createElement('option')
     op.id = 'put'
@@ -364,7 +372,8 @@ if (expression.length > 1) {
     document.getElementById('selc').removeChild(document.getElementById('ans'))
     op2 = document.createElement('option')
     op2.id = 'ans'
-    op2.innerText = `${anterior} =`
+    
+
     document.getElementById('selc').appendChild(op2)
     op2.style.animation = 'goup2 0.3s'
 
@@ -380,4 +389,12 @@ if (expression.length > 1) {
     error = true
     
 }
+
+if (ansd == false && error == false) {
+    op2.innerText = `${anterior} =`
+}else{
+    op2.innerText = rem
+    anstxt = rem
+}
+
 }
