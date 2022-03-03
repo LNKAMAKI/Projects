@@ -253,7 +253,7 @@ for (e = 0; e < expression.length; e++) {
         expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
         expression.splice(n - 1, 2)
         
-        n--
+        n-- // n = n - 3
         
         if (expression[n - 1] == '(' && expression[n + 1] == ')') {
             console.log('TIRAR')
