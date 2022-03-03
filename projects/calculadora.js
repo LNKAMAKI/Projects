@@ -253,12 +253,12 @@ for (e = 0; e < expression.length; e++) {
         expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
         expression.splice(n - 1, 2)
         
-        n-- // n = n - 3
-        
-        if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+        n = n - 3 // n = n - 3
+        console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+        if (expression[n + 1] == '(' && expression[n + 3] == ')') {
             console.log('TIRAR')
+            expression.splice(n + 3, 1)
             expression.splice(n + 1, 1)
-            expression.splice(n - 1, 1)
             n = n - 3
     
             console.log(expression)
@@ -292,12 +292,13 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
     expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
     expression.splice(n - 1, 2)
     
-    n--
-  
-    if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+    n = n - 3
+    console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+ 
+    if (expression[n + 1] == '(' && expression[n + 3] == ')') {
         console.log('TIRAR')
+        expression.splice(n + 3, 1)
         expression.splice(n + 1, 1)
-        expression.splice(n - 1, 1)
         n = n - 3
 
         console.log(expression)
@@ -309,12 +310,12 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
     expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
     expression.splice(n - 1, 2)
     
-    n--
-   
-    if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+    n = n - 3
+    console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+    if (expression[n + 1] == '(' && expression[n + 3] == ')') {
         console.log('TIRAR')
+        expression.splice(n + 3, 1)
         expression.splice(n + 1, 1)
-        expression.splice(n - 1, 1)
         n = n - 3
 
         console.log(expression)
@@ -327,7 +328,7 @@ if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' 
 
 if (expression.length > 1) {
 
-    while(expression.length != 1 && expression.indexOf('NaN') == -1) {
+   // while(expression.length != 1 && expression.indexOf('NaN') == -1) {
         for (n = 0; n < expression.length; n++) {
             console.log(expression[n])
             if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\*]') == -1 && String(expression[n - 2]).search('[x\\/\\*\\-]') == -1) {
@@ -335,12 +336,12 @@ if (expression.length > 1) {
                 expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
               
-                n--
-               
-                if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+                n = n - 3
+                console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
                     console.log('TIRAR')
+                    expression.splice(n + 3, 1)
                     expression.splice(n + 1, 1)
-                    expression.splice(n - 1, 1)
                     n = n - 3
 
                     console.log(expression)
@@ -352,12 +353,12 @@ if (expression.length > 1) {
                 expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 
-                n--
-                
-                if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+                n = n - 3
+                console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
                     console.log('TIRAR')
+                    expression.splice(n + 3, 1)
                     expression.splice(n + 1, 1)
-                    expression.splice(n - 1, 1)
                     n = n - 3
 
                     console.log(expression)
@@ -369,12 +370,12 @@ if (expression.length > 1) {
                 expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 
-                n--
-                
-                if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+                n = n - 3
+                console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
                     console.log('TIRAR')
+                    expression.splice(n + 3, 1)
                     expression.splice(n + 1, 1)
-                    expression.splice(n - 1, 1)
                     n = n - 3
 
                     console.log(expression)
@@ -386,12 +387,12 @@ if (expression.length > 1) {
                 expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 
-                n--
-                
-                if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+                n = n - 3
+                console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
                     console.log('TIRAR')
+                    expression.splice(n + 3, 1)
                     expression.splice(n + 1, 1)
-                    expression.splice(n - 1, 1)
                     n = n - 3
 
                     console.log(expression)
@@ -403,12 +404,12 @@ if (expression.length > 1) {
                 expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 
-                n--
-            
-                if (expression[n - 1] == '(' && expression[n + 1] == ')') {
+                n = n - 3
+                console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
+                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
                     console.log('TIRAR')
+                    expression.splice(n + 3, 1)
                     expression.splice(n + 1, 1)
-                    expression.splice(n - 1, 1)
                     n = n - 3
 
                     console.log(expression)
@@ -434,7 +435,7 @@ if (expression.length > 1) {
                 }
             }
         }
-    }
+   // }
 }
 
 //document.getElementById('put').style.justifyContent = 'start'
