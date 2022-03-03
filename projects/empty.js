@@ -1,82 +1,81 @@
-console.log('DIGITO: ' + event.key)
-    if (String(event.key).search('[=CE]') == -1) {
-    if (ansd == false) {
-    if (expression.length > 0) {
 
-    if (String(event.key).search('[0-9]') != -1 || String(event.key) == '.') {
-        console.log('NUMERO OU PONTO')
-
-        if (ansd == true) {
-            ansd = false
-        }
-       if (String(expression[expression.length - 1]).search('[0-9]') != -1 || String(expression[expression.length - 1]) == '.') {
-        console.log(expression[expression.length - 1] + ' é um número ou ponto')
-        expression[position] += String(event.key)
-       }else{
-           console.log(expression[expression.length - 1] + ' não é um número ou ponto')
-           position++
-        expression[position] = String(event.key)
-       }
-    }else{
-        position++
-        expression[position] = String(event.key)
-    }
-  
-}else{
-    console.log('LISTA VAZIA')
-   expression.push(String(event.key))
-  
-}
+expression = ['(','(','3', '-', '(', '7', '+', '5',')',')',')','+','9']
 console.log(expression)
-console.log('POSITION: ' + position)
-console.log(' ')
-    }else{
-        console.log('ansd = true')
-        if (String(event.key).search('[0-9]') != -1 || String(event.key) == '.') {
-            expression[0] = event.key
-        }else{
-       position++
-        expression[position] = event.key
-    }
-    ansd = false
-}
-    }else{
-        if (String(event.key) == 'CE') {
-            console.log('CE')
-           
-            if (String(expression[expression.length - 1]).length == 1) {
-                console.log(expression[expression.length - 1] + ' tem tamanho 1')
-                expression.splice(expression.length - 1, 1)
-                console.log(expression)
+degs = []
+parents = 0
+for (e = 0; e < expression.length; e++) {
 
-                if (position > 0) {
-                    position--
+    console.log('NUMBER: ' + expression[e])
+    
+
+    if (expression[e] == '(') {
+        continuar = false
+        stop2 = false
+        pares = 0
+
+        console.log('--------PARÊNTESES--------')
+        degs.push({})
+        console.log(degs)
+        degs[parents].start = e
+       
+        console.log('DEEEEEEGS[E] = ' + degs[parents])
+
+        calcular = ''
+        for (n = e + 1; stop2 == false && n < expression.length; n++) {
+            //console.log(continuar)
+            //console.log(continuar == true)
+            console.log(expression[n])
+            if (expression[n] == '(') {
+                console.log('Oh no')
+                console.log(pares)
+                pares++
+                console.log('PARES: ' + pares)
+                continuar = true
+                degs[parents].par = pares
+                console.log('DEGS PARES---------: ' + degs[parents].par)
+
+            }else if (continuar == true && expression[n] == ')'){ 
+                    console.log('TRUE')
+                  
+                    if (pares == 1) {
+                        continuar = false
                     }
-            }else{
-                slicednum = ''
-                console.log(expression[expression.length - 1] + ' tem tamanho maior que 1') 
-                for (na = 0; na <= Number(String(expression[expression.length - 1]).length) - 2; na++) {
-                    console.log(na, String(expression[expression.length - 1])[na])
-                    slicednum +=  String(expression[expression.length - 1])[na]
-                }
-                console.log(slicednum)
-                expression[expression.length - 1] = slicednum
-                console.log(expression)
+                    pares--
+                    console.log('PARES: ' + pares)
 
-            }
-        }else{
-            console.log('=')
-            fazerConta()
-            position = 0
-            ansd = true
+            }else if (continuar == false && expression[n] == ')') {
+
+                console.log(degs[parents])
+                if (degs[parents].par == undefined) {
+                   console.log('TEM ALGO DE ERRADO')
+                    degs[parents].par = 0
+                }
+                console.log('MAIS')
+                console.log('PARES: ' + pares)
+                console.log('stop2: ' + stop2)
+                stop2 = true
+                console.log('stop2: ' + stop2)
+                console.log('abre parenteses: ' + e + '    fecha parenteses: ' + n )
+
+                degs[parents].end = n
+            }else{
+                
+            } 
         }
+        console.log('STOP2: ' + stop2)
+        console.log('PARES: ', pares)
+        
+        console.log('EXPRESSION!!!!!!!!!!!!: ' + expression)
+        parents++
     }
-    txt = ''
-    for (b = 0; b < expression.length; b++) {
-        console.log(expression[b])
-        txt+= ` ${expression[b]}`
+}
+
+falta = false
+console.log('EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
+for (i = 0; i < degs.length && false == false; i++) {
+    console.log(degs[i].end)
+    if (degs[i].end == undefined) {
+        console.log('TEM ALGO DE ERRADO AQUI')
+        falta = true
     }
-    console.log(txt)
-    if (event.key != '=') {
-    document.getElementById('put').innerText = txt 
-    }
+}
