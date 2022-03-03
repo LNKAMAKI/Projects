@@ -169,6 +169,7 @@ console.log(expression)
 //FAZER CONTA
 function fazerConta(anterior) {
 
+    /*
     degs = []
 parents = 0
 for (e = 0; e < expression.length; e++) {
@@ -234,7 +235,7 @@ for (e = 0; e < expression.length; e++) {
         console.log('EXPRESSION!!!!!!!!!!!!: ' + expression)
         parents++
     }
-}
+} 
         falta = false
         for (i = 0; i < degs.length && false == false; i++) {
             console.log(degs[i].end)
@@ -242,9 +243,9 @@ for (e = 0; e < expression.length; e++) {
                 falta = true
             }
         }
+*/
 
-
-        if (falta == false) {
+        if (0 == 0) { // falta == false
     //Primeiro raizes e potências
     for (n = 0; n < expression.length; n++) {
     if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
