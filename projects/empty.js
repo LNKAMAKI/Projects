@@ -1,59 +1,6 @@
-expression = ['x','-','18','*','2']
-
-// FATORANDO OS NÚMEROS 
-/*
-for (n = 0; n < exp.length; n++) {
-    if (ehprimo(exp[n]) == false && String(exp[n]).search('[0-9]') != -1) {
-    fatorado = ''
-
-    first = 1
-
-    div = 0
-    //console.log(exp[n], div)
-
-    stop = false
-    fator = 1
-    
-    for (e = 2; stop == false; e++) {
-        //console.log('')
-        //console.log(e)
-        //console.log('')
-    
-        sob = Number(exp[n])
-      
-           if (ehprimo(e) == true) {
-            while (sob%e == 0) {
-            if (sob%e == 0) {
-                //console.log(sob + '/' + e + ': ' + sob/e)
-                
-                
-            }
-
-            sob = sob/e
-            
-            console.log('SIM')
-            console.log(fator + ' x ' + e + ': ' + fator*e)
-
-            fator = fator*e
-
-            st = false
-            
-            if (fator == exp[n]) {
-            stop = true
-            fatorado += `${e}`
-            }else{
-                fatorado += `${e} x `
-            }
-           }
-        }
-    }
-    exp[n] = fatorado
-}
-}
-*/
+expression = ['4','x','-','(','18','*','2', '+', '4',')','+','80']
 
 fazerConta(expression)
-//FAZER CONTA
 function fazerConta(anterior) {
 
     if(0 == 0) {// falta == false
@@ -251,16 +198,79 @@ if (expression.length > 1) {
     
 }
 }
-
-monomios = [{}]
+// FATORANDO OS NÚMEROS 
 
 for (n = 0; n < expression.length; n++) {
-console.log(expression[n])
-if (expression[n].search('[-+/]') != -1) {
-console.log('DEVTOOLS SEU LIXO')
+    if (ehprimo(expression[n]) == false && String(expression[n]).search('[0-9]') != -1) {
+    fatorado = ''
+
+    first = 1
+
+    div = 0
+    //console.log(exp[n], div)
+
+    stop = false
+    fator = 1
+    
+    for (e = 2; stop == false; e++) {
+        //console.log('')
+        //console.log(e)
+        //console.log('')
+    
+        sob = Number(expression[n])
+      
+           if (ehprimo(e) == true) {
+            while (sob%e == 0) {
+            if (sob%e == 0) {
+                //console.log(sob + '/' + e + ': ' + sob/e)
+                
+                
+            }
+
+            sob = sob/e
+            
+            console.log('SIM')
+            console.log(fator + ' x ' + e + ': ' + fator*e)
+
+            fator = fator*e
+
+            st = false
+            
+            if (fator == expression[n]) {
+            stop = true
+            fatorado += `${e}`
+            }else{
+                fatorado += `${e} x `
+            }
+           }
+        }
+    }
+    expression[n] = fatorado
 }
 }
 
+
+monomios = [{numero: ''}]
+obnum = 0
+for (n = 0; n < expression.length; n++) {
+console.log(expression[n], monomios[obnum])
+
+if (expression[n].search('[-+]') != -1) {
+console.log('DEVTOOLS EU TE ODEIO')
+monomios.push({numero: ''})
+obnum++
+}
+
+monomios[obnum].numero += expression[n]
+}
+
+for (m = 0; m < monomios.length; m++) {
+    console.log('monomios')
+    console.log(monomios[m].numero[0])
+    //for (oc = 0; oc < monomios[m].numero.length; oc++) {
+     //   console.log(monomios[m].numero[oc])
+   // }
+}
 
 function ehprimo(number) {
     parar = false
