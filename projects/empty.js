@@ -1,7 +1,7 @@
-exp= ['16']
+exp= ['2','x','y','+','8','x']
 
 for (n = 0; n < exp.length; n++) {
-    if (ehprimo(exp[n]) == false) {
+    if (ehprimo(exp[n]) == false && String(exp[n]).search('[0-9]') != -1) {
     fatorado = ''
 
     first = 1
@@ -45,6 +45,7 @@ for (n = 0; n < exp.length; n++) {
            }
         }
     }
+    exp[n] = fatorado
 }
 }
 
