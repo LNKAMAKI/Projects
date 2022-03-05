@@ -1,4 +1,4 @@
-expression = ['4','-','2','x','+','x']
+expression = ['16','x','-','8','x','+','x']
 
 fazerConta(expression)
 function fazerConta(anterior) {
@@ -265,34 +265,82 @@ monomios[obnum].numero += expression[n]
 }
 
 console.log('--------------------------------------------MONOMIOS--------------------------------------')
-for (m = 0; m < 1; m++) {
-    
-    console.log('BURRO')
- console.log('--------------------')
-    console.log(monomios[m].numero)
+reps = []
+
+
+for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     repetido = []
 
-    for (oc = 0; oc < monomios[m].numero.length; oc++) {
+    ocs2 = []
+    console.log('BURROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+ console.log('--------------------')
+    console.log(monomios[m].numero)
+    
+    for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MONÔMIO
+        if (monomios[m].numero[oc].search('[*-+/]') == -1) {
         console.log('LETRA OU NÚMERO ISOLADO: ' + monomios[m].numero[oc])
 
-        for (u = 0; u < monomios.length; u++) {
+        for (u = 0; u < monomios.length; u++) { // OUTROS MONÔMIOS
             if(u != m) {
           console.log(`monomio ${u}: `)
           console.log(monomios[u])   
                 
-          for (e = 0; e < monomios[u].numero.length; e++) {
+          ocs = 0
+          if(ocs2.find(function(ocs2) {
+            return ocs2.ed == monomios[m].numero[oc]
+            }).ed == undefined) {
+                ocs2.push({ed: mo})
+          for (ao = 0; ao < monomios[m].numero.length; ao++) {
+            console.log('AAAAAAAAAA' + monomios[m].numero[ao])
+            if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
+                ocs++
+            }
+          }
+        }
+          console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
+          
+          for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MONÔMIO
             console.log(monomios[u].numero[e])
-            if (monomios[u].numero[e] == monomios[m].numero[oc]) {
+            if (monomios[u].numero[e] == monomios[m].numero[oc] && ocs2 < ocs) {
                 console.log(monomios[m].numero[oc] + ' é igual a ' + monomios[u].numero[e])
+                
+                if (repetido.find(function(repetido) {
+                    return repetido.monum == u
+                    }) === undefined) {
 
-                repetido.push({monum: u, letr: []})
+                    console.log(u, 'UUUUUUUU')
+                repetido.push({monum: u, letr: [e]})
+
+                ocs2++
+                //reps.push({mns: [u, m],alg: monomios[u].numero[e])
+               // reps.push(monomios[u].numero[e])
+                    }else{
+                        console.log('OOOOOBABAOBABEI')
+                        if (repetido.find(function(repetido) {
+                            return repetido.monum == u
+                            }).letr.indexOf(e) == -1) {
+                                console.log('ADD**************************************************************************************')
+                                repetido.find(function(repetido) {
+                                    return repetido.monum == u
+                                    }).letr.push(e)
+                                    //reps.push(monomios[u].numero[e])
+                                    ocs2++
+                                    console.log(ocs2)
+                            }else{
+                                console.log('DO NOT ADD')
+                            }
+                    }
+                
                 console.log('REPETIDO: ', repetido)
+            }else{
+                
             }
             console.log('')
           }
         }
         }
         console.log('------------------------------------------------------------------------------------------')
+    }
     }
 }
 
