@@ -1,4 +1,4 @@
-expression = ['4','x','-','(','18','*','2', '+', '4',')','+','80']
+expression = ['4','-','2','x','+','x']
 
 fazerConta(expression)
 function fazerConta(anterior) {
@@ -240,7 +240,7 @@ for (n = 0; n < expression.length; n++) {
             stop = true
             fatorado += `${e}`
             }else{
-                fatorado += `${e} x `
+                fatorado += `${e}*`
             }
            }
         }
@@ -264,12 +264,36 @@ obnum++
 monomios[obnum].numero += expression[n]
 }
 
-for (m = 0; m < monomios.length; m++) {
-    console.log('monomios')
-    console.log(monomios[m].numero[0])
-    //for (oc = 0; oc < monomios[m].numero.length; oc++) {
-     //   console.log(monomios[m].numero[oc])
-   // }
+console.log('--------------------------------------------MONOMIOS--------------------------------------')
+for (m = 0; m < 1; m++) {
+    
+    console.log('BURRO')
+ console.log('--------------------')
+    console.log(monomios[m].numero)
+    repetido = []
+
+    for (oc = 0; oc < monomios[m].numero.length; oc++) {
+        console.log('LETRA OU NÚMERO ISOLADO: ' + monomios[m].numero[oc])
+
+        for (u = 0; u < monomios.length; u++) {
+            if(u != m) {
+          console.log(`monomio ${u}: `)
+          console.log(monomios[u])   
+                
+          for (e = 0; e < monomios[u].numero.length; e++) {
+            console.log(monomios[u].numero[e])
+            if (monomios[u].numero[e] == monomios[m].numero[oc]) {
+                console.log(monomios[m].numero[oc] + ' é igual a ' + monomios[u].numero[e])
+
+                repetido.push({monum: u, letr: []})
+                console.log('REPETIDO: ', repetido)
+            }
+            console.log('')
+          }
+        }
+        }
+        console.log('------------------------------------------------------------------------------------------')
+    }
 }
 
 function ehprimo(number) {
