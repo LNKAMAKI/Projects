@@ -1,4 +1,4 @@
-expression = ['2','x','y']
+expression = ['x','-','18','*','2']
 
 // FATORANDO OS NÚMEROS 
 /*
@@ -53,14 +53,13 @@ for (n = 0; n < exp.length; n++) {
 */
 
 fazerConta(expression)
-
 //FAZER CONTA
 function fazerConta(anterior) {
 
     if(0 == 0) {// falta == false
 //Primeiro raizes e potências
 for (n = 0; n < expression.length; n++) {
-if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
+if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
     console.log('POTENCIALIZAÇÃO')
     expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
     expression.splice(n - 1, 2)
@@ -99,7 +98,7 @@ if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' 
 
 // Segundo multiplicações e divisões
 for (n = 0; n < expression.length; n++) {
-if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
 console.log('MULTIPLICAÇÃO')
 expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
 expression.splice(n - 1, 2)
@@ -117,7 +116,7 @@ if (expression[n + 1] == '(' && expression[n + 3] == ')') {
 }else{
     console.log(expression)
 }
-}else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+}else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
 console.log('DIVISÃO')
 expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
 expression.splice(n - 1, 2)
@@ -142,8 +141,8 @@ if (expression.length > 1) {
 
 // while(expression.length != 1 && expression.indexOf('NaN') == -1) {
     for (n = 0; n < expression.length && expression.length != 1; n++) {
-        console.log(expression[n])
-        if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\*]') == -1 && String(expression[n - 2]).search('[x\\/\\*\\-]') == -1) {
+       // console.log(expression[n])
+        if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\^]') == -1 && String(expression[n - 2]).search('[x\\/\\^\\-]') == -1) {
             console.log('ADIÇÃO')
             expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -160,7 +159,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\*]') == -1 && String(expression[n - 2]).search('[x\\/\\*\\-]') == -1) {
+        }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\^]') == -1 && String(expression[n - 2]).search('[x\\/\\^\\-]') == -1) {
             console.log('SUBTRAÇÃO') 
             expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -177,7 +176,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+        }else if(expression[n] == '*' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
             console.log('MULTIPLICAÇÃO')
             expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -194,7 +193,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+        }else if(expression[n] == '/' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
             console.log('DIVISÃO')
             expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -211,7 +210,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
+        }else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
             console.log('DIVISÃO')
             expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -249,52 +248,20 @@ if (expression.length > 1) {
     }
 // }
 }
-
-//document.getElementById('put').style.justifyContent = 'start'
-
-
-rem = String(document.getElementById('ans').innerText)
-
-document.getElementById('selc').removeChild(document.getElementById('put'))
-op = document.createElement('option')
-op.id = 'put'
-document.getElementById('selc').appendChild(op)
-op.style.animation = 'goup 0.3s'
-
-document.getElementById('selc').removeChild(document.getElementById('ans'))
-op2 = document.createElement('option')
-op2.id = 'ans'
-
-
-document.getElementById('selc').appendChild(op2)
-op2.style.animation = 'goup2 0.3s'
-
-if (expression.indexOf('NaN') == -1 && expression.length == 1) {
-document.getElementById('put').innerText = expression
-if (expression[0].length > 17) {
-    document.getElementById('put').style.justifyContent = 'start'
-}
-}else{
-console.log('what?')
-expression = []
-document.getElementById('put').innerText = 'Error'
-error = true
-
-}
-
-if (ansd == false && error == false) {
-op2.innerText = `${anterior} =`
-}else{
-op2.innerText = rem
-anstxt = rem
-}
     
 }
 }
 
+monomios = [{}]
+
 for (n = 0; n < expression.length; n++) {
-//console.log(expression[n])
+console.log(expression[n])
+if (expression[n].search('[-+/]') != -1) {
+console.log('DEVTOOLS SEU LIXO')
 }
+}
+
+
 function ehprimo(number) {
     parar = false
     for (t = 2; t < number && parar == false; t++) {
