@@ -1,5 +1,6 @@
-exp= ['2','x','y','+','8','x']
+exp = ['-2','x','y','-','8','x']
 
+// FATORANDO OS NÚMEROS 
 for (n = 0; n < exp.length; n++) {
     if (ehprimo(exp[n]) == false && String(exp[n]).search('[0-9]') != -1) {
     fatorado = ''
