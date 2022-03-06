@@ -270,6 +270,7 @@ reps = []
 
 
 for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
+    col = false
     repetido = []
 
    numerosrep = []
@@ -340,7 +341,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                             if (ocs2.find(function(ocs2) {
                                 return ocs2.ed == monomios[m].numero[oc]
                                 }).el <= ocs) {
-                repetido.push({monum: u, letr: monomios[u].numero[e]})
+                repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
                             }
 
                 //reps.push({mns: [u, m],alg: monomios[u].numero[e])
@@ -395,17 +396,29 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     }
       // ANALISANDO OS MONÔMIOS
       console.log('ANALISANDO OS MONÔMIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSS')
-    
+     console.log(reps)
       for (lp = 0; lp < repetido.length; lp++) {
-          console.log(repetido[lp].monum, repetido[lp].letr)
+          console.log(repetido[lp].wc, repetido[lp].letr)
 
       for (len = 0; len < reps.length; len++) {
           console.log('EU NÃO SEI MAIS O QUE FAZER')
-          console.log(reps[len].monum, reps[len].letr)
+           
+          an = reps[len]
+          if (an.find(function(an) {
+            return an.letr == repetido[lp].letr
+            }) != undefined && an.find(function(an) {
+                return an.letr == repetido[lp].letr
+                }).wc.indexOf(m) == -1)  {
+                an.find(function(an) {
+                    return an.letr == repetido[lp].letr
+                    }).wc.push(m)
+          }
       }
     }
 
+    if (col == true || reps.length == 0) {
     reps.push(repetido)
+    }
 }
 
 function ehprimo(number) {
