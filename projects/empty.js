@@ -392,6 +392,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     }
     }
     }
+    reps.push(repetido)
 }
 
 function ehprimo(number) {
