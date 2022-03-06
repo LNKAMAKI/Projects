@@ -1,4 +1,4 @@
-expression = ['12','x','-','20','x','+','x']
+expression = ['x','-','12','+','20','x']
 
 fazerConta(expression)
 function fazerConta(anterior) {
@@ -267,9 +267,11 @@ monomios[obnum].numero += expression[n]
 
 console.log('--------------------------------------------MONOMIOS--------------------------------------')
 reps = []
-
+segs = []
 
 for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
+    repetido = []
+    
     col = false
     repetido = []
 
@@ -278,7 +280,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
  console.log('--------------------')
     console.log(monomios[m].numero)
     
-
+ 
     for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MONÔMIO
         
 
@@ -341,7 +343,11 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                             if (ocs2.find(function(ocs2) {
                                 return ocs2.ed == monomios[m].numero[oc]
                                 }).el <= ocs) {
+
                 repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
+
+               
+
                             }
 
                 //reps.push({mns: [u, m],alg: monomios[u].numero[e])
@@ -372,6 +378,8 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                                 repetido.find(function(repetido) {
                                     return repetido.monum == u
                                     }).letr += `.${monomios[u].numero[e]}`
+
+                                   
                                 }
                                     //reps.push(monomios[u].numero[e])
     
@@ -394,6 +402,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     }
     }
     }
+    /*
       // ANALISANDO OS MONÔMIOS
       console.log('ANALISANDO OS MONÔMIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSS')
      console.log(reps)
@@ -417,8 +426,31 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     }
 
     if (col == true || reps.length == 0) {
-    reps.push(repetido)
     }
+    */
+
+    reps.push(repetido)
+
+    console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
+        for (moe in repetido) {
+            console.log(repetido[moe])
+            if (segs.find(function(segs) {
+                return segs.car == repetido[moe].letr
+                }) == undefined) {
+
+                segs.push({car: repetido[moe].letr, mons: [m]})
+            }else if(segs.find(function(segs) {
+                return segs.car == repetido[moe].letr
+                }).mons.indexOf(m) == -1){
+                console.log('IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIISSSSSSSSSSSSSSSSSSHHHHHHHHHHH', segs.find(function(segs) {
+                    return segs.car == repetido[moe].letr
+                    }).mons)
+
+                    segs.find(function(segs) {
+                        return segs.car == repetido[moe].letr
+                        }).mons.push(m)
+            }
+        }
 }
 
 function ehprimo(number) {
