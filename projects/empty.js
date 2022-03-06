@@ -1,4 +1,4 @@
-expression = ['(','3', '*', '2',')', 'x', '+','(', '√', '25','*', '3', '+', '3',')', 'x', '+', 'x']
+expression = ['12','x','-','20','x','+','x']
 
 fazerConta(expression)
 function fazerConta(anterior) {
@@ -273,13 +273,14 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     repetido = []
 
    numerosrep = []
-    console.log('BURROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000OO')
+    console.log('BURRO')
  console.log('--------------------')
     console.log(monomios[m].numero)
     
-    
+
     for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MONÔMIO
-    
+        
+
         if (monomios[m].numero[oc].search('[\\*\\-\\+\\/]') == -1) {
         console.log('LETRA OU NÚMERO ISOLADO: ' + monomios[m].numero[oc])
 
@@ -299,7 +300,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
           if(ocs2.find(function(ocs2) {
             return ocs2.ed == monomios[m].numero[oc]
             }) == undefined) {
-                console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAA====================ASASASSWHSWUDHWUDHWUDHWUDHWUDHW')
+                console.log('====================')
                 ocs2.push({ed: monomios[m].numero[oc], el: 0})
 
                 ocs = 0
@@ -339,16 +340,16 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                             if (ocs2.find(function(ocs2) {
                                 return ocs2.ed == monomios[m].numero[oc]
                                 }).el <= ocs) {
-                repetido.push({monum: u, letr: [monomios[u].numero[e]]})
+                repetido.push({monum: u, letr: monomios[u].numero[e]})
                             }
 
                 //reps.push({mns: [u, m],alg: monomios[u].numero[e])
                // reps.push(monomios[u].numero[e])
                     }else{
                         console.log('OOOOOBABAOBABEI')
-                        if (repetido.find(function(repetido) {
-                            return repetido.monum == u
-                            }).letr.indexOf(monomios[u].numero[e]) == -1) {
+                       // if (repetido.find(function(repetido) {
+                           // return repetido.monum == u
+                           // }).letr.indexOf(monomios[u].numero[e]) == -1) {
 
                                 ocs2.find(function(ocs2) {
                                     return ocs2.ed == monomios[m].numero[oc]
@@ -369,14 +370,14 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                                             }).el <= ocs) {
                                 repetido.find(function(repetido) {
                                     return repetido.monum == u
-                                    }).letr.push(monomios[u].numero[e])
+                                    }).letr += `.${monomios[u].numero[e]}`
                                 }
                                     //reps.push(monomios[u].numero[e])
     
               
-                            }else{
-                                console.log('DO NOT ADD')
-                            }
+                           // }else{
+                                //console.log('DO NOT ADD')
+                          // }
                     }
                 
                 console.log('REPETIDO: ', repetido)
@@ -392,6 +393,18 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     }
     }
     }
+      // ANALISANDO OS MONÔMIOS
+      console.log('ANALISANDO OS MONÔMIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSS')
+    
+      for (lp = 0; lp < repetido.length; lp++) {
+          console.log(repetido[lp].monum, repetido[lp].letr)
+
+      for (len = 0; len < reps.length; len++) {
+          console.log('EU NÃO SEI MAIS O QUE FAZER')
+          console.log(reps[len].monum, reps[len].letr)
+      }
+    }
+
     reps.push(repetido)
 }
 
