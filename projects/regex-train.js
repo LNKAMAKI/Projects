@@ -1,2 +1,4 @@
 console.log('OLÁ')
-ar = [{monum: 10}]
+
+r = [{num: 'xx'}, {num: 'x'}]
+
