@@ -1,4 +1,4 @@
-expression = ['20','x','x','+','x','x','-','12','x']
+expression = ['15','y','+','xy','+','5','x','-','3','y','+','3']
 
 fazerConta(expression)
 function fazerConta(anterior) {
@@ -451,6 +451,43 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                         }).mons.push(m)
             }
         }
+}
+
+
+console.log('RELAÇÃO ENTRE OS MONÔMIOS')
+console.log(segs)
+
+for (nl = 0; nl < segs.length; nl++) {
+    console.log('-----------------------------------------------------------------------------------------')
+    
+    console.log(segs[nl])
+
+    console.log('ANALISAR CADA ITEM')
+    console.log('NUMERO: ', segs[nl].car)
+    for (n = 0; n < segs.length; n++) {
+
+        console.log('---------------------------------------------------------------------')
+        if (n != nl) {
+        console.log(`${segs[n].car}.search('${segs[nl].car}')`)
+        if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
+           
+            console.log(`${segs[n].car}: ${segs[n].mons}`)
+            console.log(`${segs[nl].car}: ${segs[nl].mons}`)
+
+            for (u in segs[n].mons) {
+                console.log(segs[n].mons[u])
+                if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
+                    console.log('TEM')
+                }else{
+                    console.log('NÃO TEM')
+                    segs[nl].mons.push(segs[n].mons[u])
+                }
+            }
+        }
+        }
+    
+    }
+
 }
 
 function ehprimo(number) {
