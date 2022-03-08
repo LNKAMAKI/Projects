@@ -1,4 +1,4 @@
-expression = ['x','^','3', 'y','^','2','+','x','x','x','y']
+expression = ['x','^','3', 'y','^','2','+','x','^','2','y']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
