@@ -1,4 +1,6 @@
-expression = ['15','y','+','xy','+','5','x','-','3','y','+','3','x']
+expression = ['x','^','3', 'y','^','2','+','x','x','x','y']
+
+//FAZENDO AS CONTAS COM NÚMEROS
 
 fazerConta(expression)
 function fazerConta(anterior) {
@@ -6,7 +8,7 @@ function fazerConta(anterior) {
     if(0 == 0) {// falta == false
 //Primeiro raizes e potências
 for (n = 0; n < expression.length; n++) {
-if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
+if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 & expression[n + 2].search('[a-z]') == -1) {
     console.log('POTENCIALIZAÇÃO')
     expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
     expression.splice(n - 1, 2)
@@ -45,7 +47,7 @@ if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' 
 
 // Segundo multiplicações e divisões
 for (n = 0; n < expression.length; n++) {
-if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
+if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 2].search('[a-z]') == -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
 console.log('MULTIPLICAÇÃO')
 expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
 expression.splice(n - 1, 2)
@@ -63,7 +65,7 @@ if (expression[n + 1] == '(' && expression[n + 3] == ')') {
 }else{
     console.log(expression)
 }
-}else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
+}else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 2].search('[a-z]') == -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
 console.log('DIVISÃO')
 expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
 expression.splice(n - 1, 2)
@@ -89,7 +91,7 @@ if (expression.length > 1) {
 // while(expression.length != 1 && expression.indexOf('NaN') == -1) {
     for (n = 0; n < expression.length && expression.length != 1; n++) {
        // console.log(expression[n])
-        if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\^]') == -1 && String(expression[n - 2]).search('[x\\/\\^\\-]') == -1) {
+        if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 2].search('[a-z]') == -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\^]') == -1 && String(expression[n - 2]).search('[x\\/\\^\\-]') == -1) {
             console.log('ADIÇÃO')
             expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -106,7 +108,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\^]') == -1 && String(expression[n - 2]).search('[x\\/\\^\\-]') == -1) {
+        }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 & expression[n + 2].search('[a-z]') == -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\^]') == -1 && String(expression[n - 2]).search('[x\\/\\^\\-]') == -1) {
             console.log('SUBTRAÇÃO') 
             expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -123,7 +125,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == '*' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
+        }else if(expression[n] == '*' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 & expression[n + 2].search('[a-z]') == -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
             console.log('MULTIPLICAÇÃO')
             expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -140,7 +142,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == '/' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
+        }else if(expression[n] == '/' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1 && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 & expression[n + 2].search('[a-z]') == -1) {
             console.log('DIVISÃO')
             expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -157,7 +159,7 @@ if (expression.length > 1) {
             }else{
                 console.log(expression)
             }
-        }else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
+        }else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n - 1].search('[0-9]') != -1 && expression[n + 1].search('[0-9]') != -1 & expression[n + 2].search('[a-z]') == -1 && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
             console.log('DIVISÃO')
             expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
             expression.splice(n - 1, 2)
@@ -249,15 +251,42 @@ for (n = 0; n < expression.length; n++) {
     expression[n] = fatorado
 }
 }
+console.log(expression)
 
+
+// FAZENDO AS POTÊNCIAS COM LETRAS 
+
+console.log('FAZENDO AS POTÊNCIAS COM LETRAS')
+for (y in expression) {
+  //  console.log(expression[y])
+
+    if (expression[y] == '^') {
+        console.log('expression[y - 1]: ' + expression[Number(y) - 1])
+        console.log('expression[y]: ' + expression[y])
+        console.log('expression[y + 1]: ' + expression[Number(y) + 1])
+
+       ad =  expression[Number(y) - 1] 
+        for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
+            console.log(h)
+            expression[Number(y) - 1]+= ad
+        }
+
+        expression.splice(Number(y) + 1, 1)
+        expression.splice(y, 1)
+        console.log(expression[Number(y) - 1])
+        console.log(expression)
+    }
+}
+
+// SEPARANDO OS MONÔMIOS
 
 monomios = [{numero: ''}]
 obnum = 0
 for (n = 0; n < expression.length; n++) {
-console.log(expression[n], monomios[obnum])
+//console.log(expression[n], monomios[obnum])
 
 if (expression[n].search('[-+]') != -1) {
-console.log('DEVTOOLS EU TE ODEIO')
+//console.log('DEVTOOLS EU TE ODEIO')
 monomios.push({numero: ''})
 obnum++
 }
