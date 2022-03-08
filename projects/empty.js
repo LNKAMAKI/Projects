@@ -1,4 +1,4 @@
-expression = ['15','y','+','xy','+','5','x','-','3','y','+','3']
+expression = ['15','y','+','xy','+','5','x','-','3','y','+','3','x']
 
 fazerConta(expression)
 function fazerConta(anterior) {
