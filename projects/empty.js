@@ -1,4 +1,4 @@
-expression = ['x','^','3', 'y','^','2','+','x','^','2','y']
+expression = ['2','x','y', '-', '4','x', '+', '4','x','y', '-', '8','x', '+', '3','x','y', '-', '6','x']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -283,10 +283,10 @@ for (y in expression) {
 monomios = [{numero: ''}]
 obnum = 0
 for (n = 0; n < expression.length; n++) {
-//console.log(expression[n], monomios[obnum])
+console.log(expression[n], monomios[obnum])
 
-if (expression[n].search('[-+]') != -1) {
-//console.log('DEVTOOLS EU TE ODEIO')
+if (expression[n].search('[\\-\\+]') != -1) {
+console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
 monomios.push({numero: ''})
 obnum++
 }
@@ -431,33 +431,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     }
     }
     }
-    /*
-      // ANALISANDO OS MONÔMIOS
-      console.log('ANALISANDO OS MONÔMIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSS')
-     console.log(reps)
-      for (lp = 0; lp < repetido.length; lp++) {
-          console.log(repetido[lp].wc, repetido[lp].letr)
-
-      for (len = 0; len < reps.length; len++) {
-          console.log('EU NÃO SEI MAIS O QUE FAZER')
-           
-          an = reps[len]
-          if (an.find(function(an) {
-            return an.letr == repetido[lp].letr
-            }) != undefined && an.find(function(an) {
-                return an.letr == repetido[lp].letr
-                }).wc.indexOf(m) == -1)  {
-                an.find(function(an) {
-                    return an.letr == repetido[lp].letr
-                    }).wc.push(m)
-          }
-      }
-    }
-
-    if (col == true || reps.length == 0) {
-    }
-    */
-
+   
     reps.push(repetido)
 
     console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
@@ -519,6 +493,18 @@ for (nl = 0; nl < segs.length; nl++) {
 
 }
 
+
+ml = monomios.length
+console.log(ml)
+
+divs = ehprimo2(ml)
+console.log(divs)
+
+for (n in divs) {
+    console.log(divs[n])
+    grnum = []
+}
+
 function ehprimo(number) {
     parar = false
     for (t = 2; t < number && parar == false; t++) {
@@ -531,4 +517,15 @@ function ehprimo(number) {
     return false
     else
     return true
+}
+
+function ehprimo2(number) {
+    divisores = []
+    for (t = 2; t < number && parar == false; t++) {
+    
+        if (number%t == 0) {
+           divisores.push(t)
+        }
+    }
+   return divisores
 }
