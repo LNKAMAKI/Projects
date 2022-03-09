@@ -535,6 +535,10 @@ for (n in divs) {
 
         if (Number(segs[m].mons.length) > quanto) {
             console.log('OH NO')
+
+            if () {
+                
+            }
         }
     }
   }
