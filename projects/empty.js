@@ -502,7 +502,7 @@ console.log(divs)
 
 for (n in divs) {
     console.log(divs[n])
-    grnum = []
+    
 }
 
 function ehprimo(number) {
