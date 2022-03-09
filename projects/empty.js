@@ -506,6 +506,7 @@ for (n in divs) {
     
 }
 
+numapars = []
 for (m in monomios) {
     aparic = 0
     console.log(m)
@@ -517,8 +518,31 @@ for (m in monomios) {
         }
     }
     console.log('aparic',m, aparic)
+    numapars.push({num: Number(m), vezes: aparic})
     }
 
+    console.log(numapars)
+
+    console.log('----------------------------------------------AGRUPANDO---------------------------------------')
+for (n in divs) {
+
+    quanto = Number(monomios.length)/Number(divs[n])
+    console.log(`${divs[n]} grupos com ${quanto} monômios`)
+  for (m in segs) {
+    console.log(segs[m])
+    for (y = 0; y < segs[m].mons.length; y++) {
+        console.log(segs[m].mons[y])
+
+        if (Number(segs[m].mons.length) > quanto) {
+            console.log('OH NO')
+        }
+    }
+  }
+}
+
+
+
+// Vendo se o número é primo
 function ehprimo(number) {
     parar = false
     for (t = 2; t < number && parar == false; t++) {
@@ -533,6 +557,8 @@ function ehprimo(number) {
     return true
 }
 
+// Achando todos os divisores da quantidade de monômios
+// Ex: 12: 4, 3, 2, 6
 function ehprimo2(number) {
     divisores = []
     for (t = 2; t < number && parar == false; t++) {
