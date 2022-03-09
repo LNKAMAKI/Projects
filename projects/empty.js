@@ -1,4 +1,5 @@
-expression = ['-','8','-','4']
+expression = ['a','^','2','-','5','a','+','a','-','5']
+//expression = ['100','+','80']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -404,10 +405,10 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                                         if (ocs2.find(function(ocs2) {
                                             return ocs2.ed == monomios[m].numero[oc]
                                             }).el <= ocs) {
+                                   
                                 repetido.find(function(repetido) {
                                     return repetido.monum == u
                                     }).letr += `.${monomios[u].numero[e]}`
-
                                    
                                 }
                                     //reps.push(monomios[u].numero[e])
@@ -504,6 +505,19 @@ for (n in divs) {
     console.log(divs[n])
     
 }
+
+for (m in monomios) {
+    aparic = 0
+    console.log(m)
+    for (t in segs) {
+        console.log(segs[t].mons)
+        console.log(segs[t].mons.indexOf(Number(m)))
+        if (segs[t].mons.indexOf(Number(m)) != -1) {
+            aparic++
+        }
+    }
+    console.log('aparic',m, aparic)
+    }
 
 function ehprimo(number) {
     parar = false
