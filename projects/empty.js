@@ -512,24 +512,6 @@ for (n in divs) {
 }
 
 
-numapars = []
-for (m in monomios) {
-    aparic = 0
-    console.log(m)
-    for (t in segs) {
-        console.log(segs[t].mons)
-        console.log(segs[t].mons.indexOf(Number(m)))
-        if (segs[t].mons.indexOf(Number(m)) != -1) {
-            aparic++
-        }
-    }
-    console.log('aparic',m, aparic)
-    numapars.push({num: Number(m), vezes: aparic})
-    }
-
-    console.log(numapars)
-   console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAA',sortob(numapars, 'vezes'))
-
 
     console.log('----------------------------------------------AGRUPANDO---------------------------------------')
 
@@ -539,6 +521,28 @@ for (n in divs) {
     quanto = Number(monomios.length)/Number(divs[n])
     
     console.log(`${divs[n]} grupos com ${quanto} monômios`)
+
+    numapars = []
+    for (m in monomios) {
+        aparic = 0
+        console.log(m)
+        for (t in segs) {
+            console.log(segs[t].mons)
+            console.log(segs[t].mons.indexOf(Number(m)))
+
+            console.log(segs[t].mons.length, quanto)
+            console.log(segs[t].mons.length >= quanto)
+
+            if (segs[t].mons.indexOf(Number(m)) != -1 && segs[t].mons.length >= quanto) {
+                aparic++
+            }
+        }
+        console.log('aparic',m, aparic)
+        numapars.push({num: Number(m), vezes: aparic})
+        }
+    
+        console.log(numapars)
+       console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAA',sortob(numapars, 'vezes'))
 
     groups = []
 
@@ -634,12 +638,14 @@ for (n in divs) {
         newthing.push(segs[m].mons[sortob(obj, 'tis')[1][s]])
     }
     segs[m].mons = newthing
+    console.log(segs[m].mons)
     
     if (qrs < quanto && segs[m].mons.length >= quanto) {
         console.log(qrs, quanto)
         console.log('É MENOR')
 
         for (h = 0; qrs < segs[m].mons.length; h++) {
+            //if ( qrs < quanto) {
             console.log('ADICIONAR')
             console.log(segs[m].mons[h])
 
@@ -648,6 +654,10 @@ for (n in divs) {
             groups[m].par.push(segs[m].mons[h])
             qrs++
             }
+       // }else{
+          //  console.log('RETIRAR')
+           // console.log(segs[m].mons[h])
+       // }
         }
     }
     
