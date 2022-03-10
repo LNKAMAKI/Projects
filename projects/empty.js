@@ -618,10 +618,25 @@ for (n in divs) {
     console.log(segs[m].mons)
 
     console.log(sortob(numapars, 'vezes')[1])
+
+    obj = []
     for (j in segs[m].mons) {
-        console.log(sortob(numapars, 'vezes')[0][sortob(numapars, 'vezes')[1].indexOf(segs[m].mons[j])])
+
+        posicao = sortob(numapars, 'vezes')[0][sortob(numapars, 'vezes')[1].indexOf(segs[m].mons[j])]
+        console.log(posicao)
+        obj.push({n: segs[m].mons[j], tis: posicao})
     }
+    console.log(sortob(obj, 'tis'))
+
+    newthing = []
+    for (s = Number(sortob(obj, 'tis')[1].length) - 1; s > -1; s--) {
+        console.log(segs[m].mons[sortob(obj, 'tis')[1][s]])
+        newthing.push(segs[m].mons[sortob(obj, 'tis')[1][s]])
+    }
+    segs[m].mons = newthing
+    
     if (qrs < quanto && segs[m].mons.length >= quanto) {
+        console.log(qrs, quanto)
         console.log('É MENOR')
 
         for (h = 0; qrs < segs[m].mons.length; h++) {
@@ -635,6 +650,7 @@ for (n in divs) {
             }
         }
     }
+    
     
     gs++
 
