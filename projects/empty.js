@@ -461,6 +461,9 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
 console.log('RELAÇÃO ENTRE OS MONÔMIOS')
 console.log(segs)
 
+// SEGS
+segs = [{car: 'a', mons: [0,2,1]}, {car: '-5', mons: [1,3]}]
+
 for (nl = 0; nl < segs.length; nl++) {
     console.log('-----------------------------------------------------------------------------------------')
     
@@ -532,26 +535,22 @@ for (n in divs) {
 
     groups = []
   for (m in segs) {
+      console.log('')
     console.log(segs[m])
    
       
         groups.push({par: []})
-        if (segs[m].mons.length > quanto) {
 
             qrs = 0
         for (o = 0; o < segs[m].mons.length && qrs < quanto; o++) {
-            console.log('-----------------------------------------------------')
-           console.log(segs[m].mons[o])
+            console.log('----------------------------------------------------------------------------------------------')
+           console.log('número: ' + segs[m].mons[o])
            
            if (segs[m].mons.length > quanto) {
-            console.log('HEY')
+            console.log(`tamanho do array(${segs[m].mons.length}) é maior que ${quanto}`)
             console.log('aparicoes: ' + numapars.find(function(numapars) {
                 return numapars.num == segs[m].mons[o]
                 }).vezes)
-
-                console.log(numapars.find(function(numapars) {
-                    return numapars.num == segs[m].mons[o]
-                    }).vezes == 1)
 
                 if (numapars.find(function(numapars) {
                     return numapars.num == segs[m].mons[o]
@@ -563,11 +562,12 @@ for (n in divs) {
                         qrs++
                 }
            }else{
-           // o++
-           }
+                  groups[m].par.push(segs[m].mons[o])
+                  console.log(groups[m])
+                  qrs++
            
         }
-        console.log(qrs)
+        console.log('monômios agrupados: ' + qrs)
     }
 
   }
