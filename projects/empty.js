@@ -1,4 +1,4 @@
-expression = ['a','^','2','-','5','a','+','a','-','5']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 //expression = ['100','+','80']
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -461,8 +461,6 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
 console.log('RELAÇÃO ENTRE OS MONÔMIOS')
 console.log(segs)
 
-// SEGS
-segs = [{car: 'a', mons: [0,2,1]}, {car: '-5', mons: [1,3]}]
 
 for (nl = 0; nl < segs.length; nl++) {
     console.log('-----------------------------------------------------------------------------------------')
@@ -497,6 +495,10 @@ for (nl = 0; nl < segs.length; nl++) {
 
 }
 
+// SEGS
+//segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5]}]
+   
+//monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
 
 ml = monomios.length
 console.log(ml)
@@ -508,6 +510,7 @@ for (n in divs) {
     console.log(divs[n])
     
 }
+
 
 numapars = []
 for (m in monomios) {
@@ -525,8 +528,12 @@ for (m in monomios) {
     }
 
     console.log(numapars)
+   console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAA',sortob(numapars, 'vezes'))
+
 
     console.log('----------------------------------------------AGRUPANDO---------------------------------------')
+
+    arrancar = []
 for (n in divs) {
 
     quanto = Number(monomios.length)/Number(divs[n])
@@ -534,7 +541,9 @@ for (n in divs) {
     console.log(`${divs[n]} grupos com ${quanto} monômios`)
 
     groups = []
-  for (m in segs) {
+
+    gs = 0
+  for (m = 0; m < segs.length; m++) {
       console.log('')
     console.log(segs[m])
    
@@ -561,16 +570,77 @@ for (n in divs) {
                         console.log(groups[m])
                         qrs++
                 }
-           }else{
-                  groups[m].par.push(segs[m].mons[o])
+            
+           }else if(segs[m].mons.length == quanto){
+                  
+                 groups[m].par.push(segs[m].mons[o])
                   console.log(groups[m])
                   qrs++
+                  if (numapars.find(function(numapars) {
+                    return numapars.num == segs[m].mons[o]
+                    }).vezes == 1) {
+                    console.log('FIXAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                    
+                    }
+                    console.log(groups)
+                    for (t in groups[m].par) {
+
+                        nant = groups[m].par[t]
+                        console.log('partTTTTTTTTTTTTTTTTTTTTTTTTT: ', nant)
+                    console.log(groups.find(function(groups) {
+                        return groups.par.indexOf(nant) != -1
+                        }))
+
+                        if (groups.indexOf(groups.find(function(groups) {
+                            return groups.par.indexOf(nant) != -1
+                            })) != m) {
+                                console.log('OK, PODE TIRAR')
+                                
+                                ind = groups.indexOf(groups.find(function(groups) {
+                                    return groups.par.indexOf(nant) != -1
+                                    }))
+
+                                console.log(ind)
+                                arrancar.push(ind)
+
+                                    console.log(groups)
+                        }else{
+                            console.log('ARE YOU KIDDING ME?')
+                        }
+                    }
+
            
         }
         console.log('monômios agrupados: ' + qrs)
+        console.log('GROOOOOOOUPS: ', groups)
     }
+    
+    console.log(segs[m].mons)
+
+    console.log(sortob(numapars, 'vezes')[1])
+    for (j in segs[m].mons) {
+        console.log(sortob(numapars, 'vezes')[0][sortob(numapars, 'vezes')[1].indexOf(segs[m].mons[j])])
+    }
+    if (qrs < quanto && segs[m].mons.length >= quanto) {
+        console.log('É MENOR')
+
+        for (h = 0; qrs < segs[m].mons.length; h++) {
+            console.log('ADICIONAR')
+            console.log(segs[m].mons[h])
+
+            gm = groups[m]
+            if (gm.par.indexOf(segs[m].mons[h]) == -1) {
+            groups[m].par.push(segs[m].mons[h])
+            qrs++
+            }
+        }
+    }
+    
+    gs++
 
   }
+  console.log(gs)
+  console.log('GROUPS: ', groups)
 }
 
 
@@ -601,4 +671,41 @@ function ehprimo2(number) {
         }
     }
    return divisores
+}
+
+function sortob(n, pam) {
+    var maiorparamenor = []
+    var posiçõesnumeros = []
+    var yposition = n
+
+    for (n in yposition) {
+        maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
+        posiçõesnumeros.push(-1)
+
+    }
+
+    for (item in yposition) {
+        var volume = 0
+        var dn = 0
+        for (volume in yposition) {
+            if (dn == 0) {
+                if (yposition[item][pam] > maiorparamenor[volume]) {
+                    var itens = yposition.length - (Number(volume) + 1)
+                    var leng = yposition.length
+
+                    for (c = 0; c < itens; c++) {
+                        maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+                        posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+                        leng--
+                    }
+                    maiorparamenor[volume] = yposition[item][pam]
+                    posiçõesnumeros[volume] = Number(item)
+                    dn = 10
+
+
+                }
+            }
+        }
+    }
+    return [maiorparamenor, posiçõesnumeros]
 }

@@ -1,7 +1,7 @@
 number = [{o: 1},{o: 2},{o: 6},{o: 4},{o: 3}]
 console.log(sort(number, 'o'))
 
-function sort(n, pam) {
+function sortob(n, pam) {
     var maiorparamenor = []
     var posiçõesnumeros = []
     var yposition = n
