@@ -527,20 +527,49 @@ for (m in monomios) {
 for (n in divs) {
 
     quanto = Number(monomios.length)/Number(divs[n])
+    
     console.log(`${divs[n]} grupos com ${quanto} monômios`)
+
+    groups = []
   for (m in segs) {
     console.log(segs[m])
-    for (y = 0; y < segs[m].mons.length; y++) {
-        console.log(segs[m].mons[y])
+   
+      
+        groups.push({par: []})
+        if (segs[m].mons.length > quanto) {
 
-        if (Number(segs[m].mons.length) > quanto) {
-            console.log('OH NO')
+            qrs = 0
+        for (o = 0; o < segs[m].mons.length && qrs < quanto; o++) {
+            console.log('-----------------------------------------------------')
+           console.log(segs[m].mons[o])
+           
+           if (segs[m].mons.length > quanto) {
+            console.log('HEY')
+            console.log('aparicoes: ' + numapars.find(function(numapars) {
+                return numapars.num == segs[m].mons[o]
+                }).vezes)
 
-            if () {
-                
-            }
+                console.log(numapars.find(function(numapars) {
+                    return numapars.num == segs[m].mons[o]
+                    }).vezes == 1)
+
+                if (numapars.find(function(numapars) {
+                    return numapars.num == segs[m].mons[o]
+                    }).vezes == 1) {
+                        console.log('APARECE SÓ UMA VEZ')
+                        console.log(groups[m], segs[m].mons[o])
+                        groups[m].par.push(segs[m].mons[o])
+                        console.log(groups[m])
+                        qrs++
+                }
+           }else{
+           // o++
+           }
+           
         }
+        console.log(qrs)
     }
+
   }
 }
 
