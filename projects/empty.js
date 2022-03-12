@@ -1,5 +1,5 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
-expression = ['2','+','10']
+//expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -11,7 +11,7 @@ function fazerConta(anterior) {
 for (n = 0; n < expression.length; n++) {
 if(expression[n] == '^' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 & String(expression[n + 2]).search('[a-z]') == -1) {
     console.log('POTENCIALIZAÇÃO')
-    String(expression[n + 1]) = String(Number(String(expression[n - 1])) ** Number(String(expression[n + 1])))
+    expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
     expression.splice(n - 1, 2)
     
     n = n - 3 // n = n - 3
@@ -28,7 +28,7 @@ if(expression[n] == '^' && String(expression[n - 1]) != '(' && String(expression
     }
 }else if(expression[n] == '√' && String(expression[n + 1]) != '(' && String(expression[n + 1]).search('[0-9]') != -1) {
     console.log('RAIZ')
-    String(expression[n + 1]) = String(Number(String(expression[n + 1])) ** (1/2))
+    expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
     expression.splice(n, 1)
     console.log(n)
     n = n - 2
@@ -50,7 +50,7 @@ if(expression[n] == '^' && String(expression[n - 1]) != '(' && String(expression
 for (n = 0; n < expression.length; n++) {
 if(expression[n] == '*' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 2]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1) {
 console.log('MULTIPLICAÇÃO')
-String(expression[n + 1]) = String(Number(String(expression[n - 1])) * Number(String(expression[n + 1])))
+expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
 expression.splice(n - 1, 2)
 
 n = n - 3
@@ -68,7 +68,7 @@ if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
 }
 }else if(expression[n] == '/' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 2]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1) {
 console.log('DIVISÃO')
-String(expression[n + 1]) = String(Number(String(expression[n - 1])) / Number(String(expression[n + 1])))
+expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
 expression.splice(n - 1, 2)
 
 n = n - 3
@@ -94,7 +94,7 @@ if (expression.length > 1) {
        // console.log(expression[n])
         if (expression[n] == '+' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 2]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('[x\\/\\^]') == -1 && String(String(expression[n - 2])).search('[x\\/\\^\\-]') == -1) {
             console.log('ADIÇÃO')
-            String(expression[n + 1]) = String(Number(String(expression[n - 1])) + Number(String(expression[n + 1])))
+            expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
             expression.splice(n - 1, 2)
           
             n = n - 3
@@ -111,7 +111,7 @@ if (expression.length > 1) {
             }
         }else if(expression[n] == '-' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 & String(expression[n + 2]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('[x\\/\\^]') == -1 && String(String(expression[n - 2])).search('[x\\/\\^\\-]') == -1) {
             console.log('SUBTRAÇÃO') 
-            String(expression[n + 1]) = String(Number(String(expression[n - 1])) - Number(String(expression[n + 1])))
+            expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
             expression.splice(n - 1, 2)
             
             n = n - 3
@@ -128,7 +128,7 @@ if (expression.length > 1) {
             }
         }else if(expression[n] == '*' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 & String(expression[n + 2]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1) {
             console.log('MULTIPLICAÇÃO')
-            String(expression[n + 1]) = String(Number(String(expression[n - 1])) * Number(String(expression[n + 1])))
+            expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
             expression.splice(n - 1, 2)
             
             n = n - 3
@@ -145,7 +145,7 @@ if (expression.length > 1) {
             }
         }else if(expression[n] == '/' && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1 && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 & String(expression[n + 2]).search('[a-z]') == -1) {
             console.log('DIVISÃO')
-            String(expression[n + 1]) = String(Number(String(expression[n - 1])) / Number(String(expression[n + 1])))
+            expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
             expression.splice(n - 1, 2)
             
             n = n - 3
@@ -162,7 +162,7 @@ if (expression.length > 1) {
             }
         }else if(expression[n] == '^' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 & String(expression[n + 2]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√') {
             console.log('DIVISÃO')
-            String(expression[n + 1]) = String(Number(String(expression[n - 1])) ** Number(String(expression[n + 1])))
+           expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
             expression.splice(n - 1, 2)
             
             n = n - 3
@@ -179,7 +179,7 @@ if (expression.length > 1) {
             }
         }else if(expression[n] == '√' && String(expression[n + 1]) != '(' && String(expression[n + 1]).search('[0-9]') != -1) {
             console.log('RAIZ')
-            String(expression[n + 1]) = String(Number(String(expression[n + 1])) ** (1/2))
+            expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
             expression.splice(n, 1)
             
             n = n - 2
@@ -496,7 +496,7 @@ for (nl = 0; nl < segs.length; nl++) {
 }
 
 // SEGS
-//segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5]}]
+//segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5,3]}]
    
 //monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
 
@@ -515,6 +515,7 @@ for (n in divs) {
 
     console.log('----------------------------------------------AGRUPANDO---------------------------------------')
 
+    /*
     arrancar = []
 for (n in divs) {
 
@@ -668,7 +669,7 @@ for (n in divs) {
   console.log(gs)
   console.log('GROUPS: ', groups)
 }
-
+*/
 
 
 // Vendo se o número é primo
