@@ -497,7 +497,7 @@ for (nl = 0; nl < segs.length; nl++) {
 
 // SEGS
 //segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5,3]}]
-   segs = [{car: 'a', mons: [0,1,2,3,5]},{car: 'a', mons: [4,0,1,5]},{car: 'a', mons: [5,6,7,8]}]
+   segs = [{car: 'a', mons: [0,1,2,3,5]},{car: 'a', mons: [4,3,2,1]},{car: 'a', mons: [6,3,2,7]}, {car: 'a', mons: [5,6,7,8]}]
 
 monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
 
@@ -603,6 +603,9 @@ for (n in divs) {
         
         }
         console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
+        for (c in relation) {
+            console.log(relation[c].fix, relation[c].falt)
+        }
     }
 
 
