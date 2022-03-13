@@ -1,6 +1,7 @@
 expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 //expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
+expression = ['10','x','+','x','^','2','-','20','+','2','x','+','5','x','-','50']
 //FAZENDO AS CONTAS COM NÚMEROS
 
 fazerConta(expression)
@@ -497,10 +498,33 @@ for (nl = 0; nl < segs.length; nl++) {
 
 // SEGS
 //segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5,3]}]
-//   segs = [{car: 'a', mons: [0,2,3,1,5]},{car: 'a', mons: [4,3,2,1]},{car: 'a', mons: [6,3,2,7]}, {car: 'a', mons: [5,6,7,8]}]
+  // segs = [{car: 'a', mons: [6,3,2,7]}, {car: 'a', mons: [5,6,7,8]},{car: 'a', mons: [4,3,2,1]}, {car: 'a', mons: [0,1,2,3,5]}]
 
 //monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
 
+console.log('------------------------------ORDENANDO DO MAIOR PARA O MENOR----------------------------')
+
+grtols = []
+for (hi in segs) {
+    console.log(segs[hi], segs[hi].mons.length)
+    segs[hi].length = segs[hi].mons.length
+    grtols.push(segs[hi])
+}
+console.log('grtols: ', segs)
+console.log(sortob(grtols, 'length'))
+organizado = sortob(grtols, 'length')[1]
+
+grtols = []
+for (ah in organizado) {
+    console.log(segs[organizado[ah]])
+    grtols.push(segs[organizado[ah]])
+}
+
+console.log('LISTA ORDENADA PELO TAMANHO', grtols)
+segs = grtols
+
+
+//DIVS
 ml = monomios.length
 console.log(ml)
 
@@ -600,8 +624,8 @@ divs = [2]
                         }).vezes)
 
                       //  numapars.find(function(numapars) {
-                         //  return numapars.num == lista[g]
-                          //  }).vezes--
+                          // return numapars.num == lista[g]
+                         //   }).vezes--
 
                             
                 }
@@ -645,8 +669,10 @@ divs = [2]
                 console.log(relation[c].falt[f])
                relation[c].fix.push(relation[c].falt[f])
               
+               console.log('ANTES: ', relation[c].falt)
                relation[c].falt[f] = -10
-               console.log('AGORA É SÓ O PUDIM: ', relation[c].falt)
+
+               console.log('DEPOIS: ', relation[c].falt)
             }
             console.log(relation[c].fix)
 
