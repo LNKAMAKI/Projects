@@ -1,4 +1,4 @@
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 //expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -497,8 +497,9 @@ for (nl = 0; nl < segs.length; nl++) {
 
 // SEGS
 //segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5,3]}]
-   
-//monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
+   segs = [{car: 'a', mons: [0,1,2,3,5]},{car: 'a', mons: [4,0,1,5]},{car: 'a', mons: [5,6,7,8]}]
+
+monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
 
 ml = monomios.length
 console.log(ml)
@@ -511,9 +512,100 @@ for (n in divs) {
     
 }
 
-
+//divs = []
 
     console.log('----------------------------------------------AGRUPANDO---------------------------------------')
+
+    console.log(segs, divs)
+
+    for (n in divs) {
+        relation = []
+
+        console.log(divs[n])
+        quanto = Number(monomios.length)/Number(divs[n])
+        console.log(`${divs[n]} grupos com ${quanto} monômios`)
+
+        numapars = []
+
+
+        console.log('--------------------------------------------------------------------------------------------------------------------------------')
+       
+
+        util = []
+        for (t in segs) {
+
+            console.log(segs[n],'.mons: ',segs[t].mons,'.length: ', segs[t].mons.length)
+            console.log(`${segs[t].mons.length} é maior que ou igual a ${quanto}? ${segs[t].mons.length >= quanto}`)
+
+            if (segs[t].mons.length >= quanto) {
+                util.push(segs[t])
+            }
+            console.log('')
+        }
+
+        console.log('util', util)
+        
+        for (m in monomios) {
+            aparic = 0
+            console.log(m)
+            for (t in util) {
+                console.log('util[t].mons', util[t].mons)
+                console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
+    
+                if (util[t].mons.indexOf(Number(m)) != -1) {
+                    aparic++
+                }
+            }
+            console.log('aparic',m, aparic)
+            numapars.push({num: Number(m), vezes: aparic})
+            }
+
+        present = []
+        console.log('----------------------------------------------------------------------------------------------------')
+        for (r in util) {
+
+            console.log('-----------------------------------------------------------------------------------------------------------------------------')
+           lista = util[r].mons
+            present = {fix: [], falt: []}
+            console.log(lista)
+          
+            rep = 0
+            for (g = 0; g < lista.length && rep < quanto; g++) {
+                console.log(lista[g])
+
+
+                if (numapars.find(function(numapars) {
+                    return numapars.num == lista[g]
+                    }).vezes == 1) {
+                    console.log('ADICIONAR')
+                      rep++
+                      present.fix.push(lista[g])
+                     
+                }
+
+            }
+            console.log('present', present)
+            console.log('--------------------------------------VENDO O QUE FALTA-----------------------------------')
+
+            if (present.fix.length < quanto) {
+            for (g in lista) {
+                console.log('')
+                console.log(lista[g])
+                if (present.fix.indexOf(lista[g]) == -1) {
+                    console.log('FALTA')
+                    present.falt.push(lista[g])
+                }
+            }
+            console.log('FALTAM OS NÚMEROS', present.falt)
+          
+        }
+        relation[r] = present
+        
+        }
+        console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
+    }
+
+
 
     /*
     arrancar = []
