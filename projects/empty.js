@@ -497,9 +497,9 @@ for (nl = 0; nl < segs.length; nl++) {
 
 // SEGS
 //segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5,3]}]
-   segs = [{car: 'a', mons: [0,1,2,3,5]},{car: 'a', mons: [4,3,2,1]},{car: 'a', mons: [6,3,2,7]}, {car: 'a', mons: [5,6,7,8]}]
+//   segs = [{car: 'a', mons: [0,2,3,1,5]},{car: 'a', mons: [4,3,2,1]},{car: 'a', mons: [6,3,2,7]}, {car: 'a', mons: [5,6,7,8]}]
 
-monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
+//monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
 
 ml = monomios.length
 console.log(ml)
@@ -512,7 +512,7 @@ for (n in divs) {
     
 }
 
-//divs = []
+divs = [2]
 
     console.log('----------------------------------------------AGRUPANDO---------------------------------------')
 
@@ -594,17 +594,92 @@ for (n in divs) {
                 if (present.fix.indexOf(lista[g]) == -1) {
                     console.log('FALTA')
                     present.falt.push(lista[g])
+
+                    console.log('vezes:', numapars.find(function(numapars) {
+                        return numapars.num == lista[g]
+                        }).vezes)
+
+                      //  numapars.find(function(numapars) {
+                         //  return numapars.num == lista[g]
+                          //  }).vezes--
+
+                            
                 }
             }
             console.log('FALTAM OS NÚMEROS', present.falt)
-          
+
+            
+            if (present.fix.length == 0) {
+            for (ti in present.falt) {
+                console.log(present.falt[ti])
+
+                console.log('antes:', numapars.find(function(numapars) {
+                    return numapars.num == present.falt[ti]
+                    }).vezes)
+
+                    numapars.find(function(numapars) {
+                        return numapars.num == present.falt[ti]
+                        }).vezes--
+
+                        console.log('depois', numapars.find(function(numapars) {
+                            return numapars.num == present.falt[ti]
+                            }).vezes)
+            }
+        }
+            
+
         }
         relation[r] = present
         
         }
         console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
         for (c in relation) {
+            console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
+            if (relation[c].fix.length > 0) {
             console.log(relation[c].fix, relation[c].falt)
+
+            faltam = Number(quanto) - Number(relation[c].fix.length)
+            console.log('faltam', faltam)
+
+            for (f = 0; f < faltam; f++) {
+                console.log(relation[c].falt[f])
+               relation[c].fix.push(relation[c].falt[f])
+              
+               relation[c].falt[f] = -10
+               console.log('AGORA É SÓ O PUDIM: ', relation[c].falt)
+            }
+            console.log(relation[c].fix)
+
+            for (tel = 0; tel < c; tel++){
+
+                if (relation[tel].fix.length > 0) {
+                console.log('relation[tel]', relation[tel])
+                }
+                
+                outrorel = relation[tel]
+                
+            for (hu in outrorel.fix) {
+                console.log(outrorel.fix[hu])
+                if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
+                    console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
+                    console.log(outrorel.falt)
+                    y = 0
+                    for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
+
+                        console.log(outrorel.falt[ou])
+                        if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
+                            console.log('pode ir')
+                            outrorel.fix[hu] =  outrorel.falt[ou]
+                            outrorel.falt[ou] = -10
+                            
+                            console.log('isso aí:', outrorel.fix)
+                            y++
+                        }
+                    }
+                }
+            }
+        }
+            }
         }
     }
 
