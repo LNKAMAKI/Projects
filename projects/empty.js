@@ -1,7 +1,7 @@
 expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 //expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
-expression = ['10','x','+','x','^','2','-','20','+','2','x','+','5','x','-','50']
+expression = ['a','x','y', '+', 'b','c','x','y' ,'-', 'a','z', '-' ,'b','c','z', '-', 'a' ,'-', 'b','c']
 //FAZENDO AS CONTAS COM NÚMEROS
 
 fazerConta(expression)
@@ -497,14 +497,16 @@ for (nl = 0; nl < segs.length; nl++) {
 }
 
 // SEGS
-//segs = [{car: 'a', mons: [0,3,4]},{car: '-5', mons: [1,2,4]},{car: '-5', mons: [0,5,3]}]
-  // segs = [{car: 'a', mons: [6,3,2,7]}, {car: 'a', mons: [5,6,7,8]},{car: 'a', mons: [4,3,2,1]}, {car: 'a', mons: [0,1,2,3,5]}]
+segs = []
+   segs = [{car: 'a', mons: [0,1,2,4]}, {car: 'a', mons: [0,1,2,3,5]}]
 
-//monomios = [{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}, {numero: 'aa'}]
+monomios = [{numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}]
 
 console.log('------------------------------ORDENANDO DO MAIOR PARA O MENOR----------------------------')
 
+/*
 grtols = []
+
 for (hi in segs) {
     console.log(segs[hi], segs[hi].mons.length)
     segs[hi].length = segs[hi].mons.length
@@ -522,7 +524,7 @@ for (ah in organizado) {
 
 console.log('LISTA ORDENADA PELO TAMANHO', grtols)
 segs = grtols
-
+*/
 
 //DIVS
 ml = monomios.length
