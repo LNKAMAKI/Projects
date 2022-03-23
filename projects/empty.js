@@ -1,11 +1,11 @@
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 //expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
 //expression = ['2','x','y', '-', '4','x', '+', '3','x','y', '-', '6','x', '+', '4','x','y', '-', '8','x']
 
-expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
+//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -545,7 +545,7 @@ for (n in divs) {
     
 }
 
-divs = [3]
+//divs = [3]
 
 
 console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -767,8 +767,78 @@ for (f = mia.length - 1; f >= 0; f--) {
         }
             }
         }
+
+        console.log('SERÁ QUE DEU CERTO?')
+
+//console.log(relation)
+
+groups = 0
+conts = []
+for (yougo in relation) {
+    if (relation[yougo].fix.length > 0) {
+    console.log(relation[yougo].fix)
+
+    for (pals in relation[yougo].fix) {
+        console.log(relation[yougo].fix[pals])
+        conts.push(relation[yougo].fix[pals])
+    }
+    groups++
+    }
+}
+
+console.log('divs é igual a ', divs[n])
+console.log('groups é igual a', groups)
+    if (groups == divs[n]) {
+        console.log('DEU CERTO!!!EBAAAAAA')
+    }else{
+        console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+        console.log('números que têm: ', conts)
+        console.log(segs)
+
+        
+        for (hu in segs) {
+            tirados = []
+                console.log('então vai', quanto)
+            for (sec = 0; sec < segs[hu].mons.length; sec++) {
+                console.log('number', segs[hu].mons[sec])
+                if (conts.indexOf(segs[hu].mons[sec]) != -1) {
+                    console.log('tirar')
+                    tirados.push(sec)
+                }
+            }
+            console.log('OK, AGORA É PRA VALER', tirados)
+            for (sec = tirados.length - 1; sec >= 0; sec--) {
+                console.log(tirados[sec])
+                segs[hu].mons.splice(tirados[sec], 1)
+            }
+            console.log('FICOU ASSIM: ',segs[hu].mons)
+
+        }
+
+        for (hu in segs) {
+            console.log('------------------------------------------------------------------------------')
+            console.log('length de', segs[hu].mons, 'é', segs[hu].mons.length)
+            console.log('quantos grupos dá para formar: ', Math.floor(segs[hu].mons.length/quanto))
+
+            yourheart = 0
+
+            hey = 0
+            while (hey < Math.floor(segs[hu].mons.length/quanto)) {
+                console.log(hey, 'vez')
+                console.log('então vai', quanto)
+            for (sec = 0; sec < quanto; sec++) {
+                console.log('number', segs[hu].mons[yourheart])
+                yourheart++
+               // tear++
+                //console.log(tear)
+            }
+            hey++
+        }
+        }
     }
 
+    }
+    
 
 
     /*
