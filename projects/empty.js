@@ -545,7 +545,7 @@ for (n in divs) {
     
 }
 
-divs = [2]
+divs = [3]
 
 
 console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -809,7 +809,7 @@ console.log('groups é igual a', groups)
             console.log('OK, AGORA É PRA VALER', tirados)
             for (sec = tirados.length - 1; sec >= 0; sec--) {
                 console.log(tirados[sec])
-                segs[hu].mons.splice(tirados[sec], 1)
+               // segs[hu].mons.splice(tirados[sec], 1)
             }
             console.log('FICOU ASSIM: ',segs[hu].mons)
 
