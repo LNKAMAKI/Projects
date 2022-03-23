@@ -3,9 +3,9 @@
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
-//expression = ['2','x','y', '-', '4','x', '+', '3','x','y', '-', '6','x', '+', '4','x','y', '-', '8','x']
+expression = ['2','x','y', '-', '4','x', '+', '3','x','y', '-', '6','x', '+', '4','x','y', '-', '8','x']
 
-expression = ['25','x','+','15','+','5','x','^','2','+','3','x']
+//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -504,9 +504,10 @@ for (nl = 0; nl < segs.length; nl++) {
 
 // SEGS
 //segs = []
-  // segs = [{car: 'a', mons: [0,1,2,4]}, {car: 'a', mons: [0,1,2,3,5]}]
+  // segs = [{car: 'a', mons: [1,2,4]},{car: 'a', mons: [0,1,2,4,5]},{car: 'a', mons: [1,2,3]},{car: 'a', mons: [5,4,2]}]
 
 //monomios = [{numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'},{numero: 'aa'}, {numero: 'aa'}]
+
 
 console.log('------------------------------ORDENANDO DO MAIOR PARA O MENOR----------------------------')
 
@@ -544,9 +545,58 @@ for (n in divs) {
     
 }
 
-//divs = [3]
+divs = [2]
 
-    console.log('----------------------------------------------AGRUPANDO---------------------------------------')
+
+console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+console.log(segs)
+
+mia = []
+for (idk in segs) {
+console.log('---------------------------------------------------------------------')
+console.log('aqui ó',segs[idk].mons)
+
+for (mcr in segs) {
+if (mcr != idk) {
+
+    console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
+    console.log('outro',segs[mcr].mons)
+   
+    //console.log(segs[idk].mons.length)
+    if (segs[mcr].mons.length <= segs[idk].mons.length) {
+
+        sames = []
+   for(y = 0; y < segs[mcr].mons.length; y++) {
+        console.log(segs[idk].mons, segs[mcr].mons[y], segs[idk].mons.indexOf(segs[mcr].mons[y]))
+        if (segs[idk].mons.indexOf(segs[mcr].mons[y]) != -1) {
+            console.log('igual')
+            sames.push('igual')
+        }else{
+            console.log('diferente')
+            sames.push('diferente')
+        }
+   }
+   console.log(sames)
+   if (sames.indexOf('diferente') == -1){
+    console.log('TIRAR', segs[mcr])
+
+    if (mia.indexOf(mcr) == -1) {
+    mia.push(mcr)
+    }
+    //segs.splice(mcr, 1)
+    //console.log(segs)
+    
+   }
+}
+    
+}
+}
+
+}
+
+for (f in mia) {
+ console.log('1')
+}
 
     console.log(segs, divs)
 
@@ -561,7 +611,7 @@ for (n in divs) {
 
 
         console.log('--------------------------------------------------------------------------------------------------------------------------------')
-       
+
 
         util = []
         for (t in segs) {
@@ -939,4 +989,4 @@ function sortob(n, pam) {
         }
     }
     return [maiorparamenor, posiçõesnumeros]
-}
+ }
