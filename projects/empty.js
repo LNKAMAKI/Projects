@@ -3,9 +3,9 @@
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
-expression = ['2','x','y', '-', '4','x', '+', '3','x','y', '-', '6','x', '+', '4','x','y', '-', '8','x']
+//expression = ['4','x','y', '-', '8','x','-','6','x','-','4','x','+','2','x','y','+','3', 'x','y']
 
-//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
+expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -545,16 +545,19 @@ for (n in divs) {
     
 }
 
-divs = [3]
+//divs = [3]
 
 
 console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 console.log(segs)
 
 mia = []
+
+/*
 for (idk in segs) {
 console.log('---------------------------------------------------------------------')
 console.log('aqui ó',segs[idk].mons)
+
 
 for (mcr in segs) {
 if (mcr != idk) {
@@ -593,6 +596,7 @@ if (mcr != idk) {
 }
 
 }
+*/
 
 console.log('MIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
 for (f = mia.length - 1; f >= 0; f--) {
