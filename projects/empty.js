@@ -10,7 +10,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
-//expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45']
+expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -535,7 +535,7 @@ for (n in divs) {
     
 }
 
-divs = [3]
+divs = [6]
 
 ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 ////console.log(segs)
@@ -905,10 +905,15 @@ for (b = 0; b < grupos; b++) {
     console.log(b, 'vez----------------------------------------------------------------------------------------')
     add = []
     for (live = 0; live < quanto; live++) {
+        console.log('TIRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOS')
         console.log(segs2[sorrow].mons[imor])
+
+        if (tirados.indexOf(segs2[sorrow].mons[imor]) == -1) {
         add.push(segs2[sorrow].mons[imor])
+        tirados.push(segs2[sorrow].mons[imor])
         imor++
-        
+        }
+       
     }
     ob = {car: segs2[sorrow].car, fix: [add]}
     console.log('IN THE END', ob)
@@ -1192,10 +1197,15 @@ imor = 0
 for (b = 0; b < grupos; b++) {
     console.log(b, 'vez----------------------------------------------------------------------------------------')
     add = []
+    
     for (live = 0; live < quanto; live++) {
         console.log(segs2[sorrow].mons[imor])
+        console.log('TIRADOOOOOOOOOOOOOOOOOOOOOOOOOOOS')
+        if (tirados.indexOf(segs2[sorrow].mons[imor]) == -1) {
         add.push(segs2[sorrow].mons[imor])
+        tirados.push(segs2[sorrow].mons[imor])
         imor++
+        }
         
     }
     ob = {car: segs2[sorrow].car, fix: [add]}
