@@ -7,7 +7,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
-expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2']
+expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -547,7 +547,7 @@ for (n in divs) {
     
 }
 
-//divs = [2]
+divs = [4]
 
 
 console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -850,11 +850,9 @@ console.log('groups é igual a', groups)
     /*
     arrancar = []
 for (n in divs) {
-
     quanto = Number(monomios.length)/Number(divs[n])
     
     console.log(`${divs[n]} grupos com ${quanto} monômios`)
-
     numapars = []
     for (m in monomios) {
         aparic = 0
@@ -862,10 +860,8 @@ for (n in divs) {
         for (t in segs) {
             console.log(segs[t].mons)
             console.log(segs[t].mons.indexOf(Number(m)))
-
             console.log(segs[t].mons.length, quanto)
             console.log(segs[t].mons.length >= quanto)
-
             if (segs[t].mons.indexOf(Number(m)) != -1 && segs[t].mons.length >= quanto) {
                 aparic++
             }
@@ -876,9 +872,7 @@ for (n in divs) {
     
         console.log(numapars)
        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAA',sortob(numapars, 'vezes'))
-
     groups = []
-
     gs = 0
   for (m = 0; m < segs.length; m++) {
       console.log('')
@@ -886,7 +880,6 @@ for (n in divs) {
    
       
         groups.push({par: []})
-
             qrs = 0
         for (o = 0; o < segs[m].mons.length && qrs < quanto; o++) {
             console.log('----------------------------------------------------------------------------------------------')
@@ -897,7 +890,6 @@ for (n in divs) {
             console.log('aparicoes: ' + numapars.find(function(numapars) {
                 return numapars.num == segs[m].mons[o]
                 }).vezes)
-
                 if (numapars.find(function(numapars) {
                     return numapars.num == segs[m].mons[o]
                     }).vezes == 1) {
@@ -921,13 +913,11 @@ for (n in divs) {
                     }
                     console.log(groups)
                     for (t in groups[m].par) {
-
                         nant = groups[m].par[t]
                         console.log('partTTTTTTTTTTTTTTTTTTTTTTTTT: ', nant)
                     console.log(groups.find(function(groups) {
                         return groups.par.indexOf(nant) != -1
                         }))
-
                         if (groups.indexOf(groups.find(function(groups) {
                             return groups.par.indexOf(nant) != -1
                             })) != m) {
@@ -936,16 +926,13 @@ for (n in divs) {
                                 ind = groups.indexOf(groups.find(function(groups) {
                                     return groups.par.indexOf(nant) != -1
                                     }))
-
                                 console.log(ind)
                                 arrancar.push(ind)
-
                                     console.log(groups)
                         }else{
                             console.log('ARE YOU KIDDING ME?')
                         }
                     }
-
            
         }
         console.log('monômios agrupados: ' + qrs)
@@ -953,18 +940,14 @@ for (n in divs) {
     }
     
     console.log(segs[m].mons)
-
     console.log(sortob(numapars, 'vezes')[1])
-
     obj = []
     for (j in segs[m].mons) {
-
         posicao = sortob(numapars, 'vezes')[0][sortob(numapars, 'vezes')[1].indexOf(segs[m].mons[j])]
         console.log(posicao)
         obj.push({n: segs[m].mons[j], tis: posicao})
     }
     console.log(sortob(obj, 'tis'))
-
     newthing = []
     for (s = Number(sortob(obj, 'tis')[1].length) - 1; s > -1; s--) {
         console.log(segs[m].mons[sortob(obj, 'tis')[1][s]])
@@ -976,12 +959,10 @@ for (n in divs) {
     if (qrs < quanto && segs[m].mons.length >= quanto) {
         console.log(qrs, quanto)
         console.log('É MENOR')
-
         for (h = 0; qrs < segs[m].mons.length; h++) {
             //if ( qrs < quanto) {
             console.log('ADICIONAR')
             console.log(segs[m].mons[h])
-
             gm = groups[m]
             if (gm.par.indexOf(segs[m].mons[h]) == -1) {
             groups[m].par.push(segs[m].mons[h])
@@ -996,7 +977,6 @@ for (n in divs) {
     
     
     gs++
-
   }
   console.log(gs)
   console.log('GROUPS: ', groups)
