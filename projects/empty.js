@@ -10,7 +10,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
-///expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25']
+expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -840,7 +840,7 @@ groups++
 
 //console.log('divs é igual a ', divs[n])
 //console.log('groups é igual a', groups)
-if (groups == divs[n]) {
+if (groups != divs[n]) {
  console.log('DEU CERTO!!!EBAAAAAA')
 }else{
     
@@ -1054,10 +1054,10 @@ relation = []
      }
  }
 
- //console.log('SERÁ QUE DEU CERTO?')
+ console.log('SERÁ QUE DEU CERTO?')
 
-////console.log(relation)
-/*
+console.log(relation)
+
 groups = 0
 conts = []
 for (yougo in relation) {
@@ -1071,7 +1071,27 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-*/
+console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
+if (divs[n] != groups) {
+console.log('THEN WHY ARE WE LAUGHING?')
+console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
+
+tirados = []
+for (wish in relation) {
+ console.log(relation[wish].fix)
+ for (edge in relation[wish].fix) {
+    console.log(relation[wish].fix[edge])
+    tirados.push(relation[wish].fix[edge])
+ }
+}
+console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
+
+for (die in segs2) {
+console.log('break', segs2[die].mons)
+}
+
+}
+
 
 
 
