@@ -1,7 +1,7 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 //expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
@@ -10,7 +10,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
-expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45']
+//expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -535,7 +535,7 @@ for (n in divs) {
     
 }
 
-//divs = [6,4]
+divs = [3]
 
 ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 ////console.log(segs)
@@ -840,7 +840,7 @@ groups++
 
 //console.log('divs é igual a ', divs[n])
 //console.log('groups é igual a', groups)
-if (groups != divs[n]) {
+if (groups == divs[n]) {
  console.log('DEU CERTO!!!EBAAAAAA')
 }else{
     
@@ -1086,15 +1086,49 @@ for (wish in relation) {
 }
 console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
 
+tirar = []
+
 for (die in segs2) {
 console.log('break', segs2[die].mons)
+for (h in segs2[die].mons) {
+console.log(segs2[die].mons[h])
+if (tirados.indexOf(segs2[die].mons[h]) != -1) {
+tirar.push(Number(h))
+}
+}
+console.log('tirar de ',segs2[die].mons, tirar)
+for (far = tirar.length - 1; far >= 0; far--) {
+segs2[die].mons.splice(tirar[far], 1)
+}
+console.log('ficou assim:', segs2[die].mons)
+}
+
+for (sorrow in segs2) {
+console.log(segs2[sorrow].mons)
+grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
+console.log('dá para formar', grupos,'grupos')
+
+imor = 0
+
+for (b = 0; b < grupos; b++) {
+    console.log(b, 'vez----------------------------------------------------------------------------------------')
+    add = []
+    for (live = 0; live < quanto; live++) {
+        console.log(segs2[sorrow].mons[imor])
+        add.push(segs2[sorrow].mons[imor])
+        imor++
+        
+    }
+    ob = {car: segs2[sorrow].car, fix: [add]}
+    console.log('IN THE END', ob)
+    relation.push(ob)
 }
 
 }
 
 
 
-
+}
 }
 return [relation, segs2]
 }
