@@ -2,13 +2,13 @@
 //expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
-//expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
+
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
-//expression = ['4','x','y', '-', '8','x','-','6','x','-','4','x','+','2','x','y','+','3', 'x','y']
+expression = ['4','x','y', '-', '8','x','-','6','x','-','4','x','+','2','x','y','+','3', 'x','y']
 
-expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
+//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
 //expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25']
 
@@ -541,59 +541,6 @@ for (n in divs) {
 ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 ////console.log(segs)
 
-mia = []
-
-/*
-for (idk in segs) {
-////console.log('---------------------------------------------------------------------')
-////console.log('aqui ó',segs[idk].mons)
-
-
-for (mcr in segs) {
-if (mcr != idk) {
-
-    ////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-    ////console.log('outro',segs[mcr].mons)
-   
-    ////console.log(segs[idk].mons.length)
-    if (segs[mcr].mons.length <= segs[idk].mons.length) {
-
-        sames = []
-   for(y = 0; y < segs[mcr].mons.length; y++) {
-      //  //console.log(segs[idk].mons, segs[mcr].mons[y], segs[idk].mons.indexOf(segs[mcr].mons[y]))
-        if (segs[idk].mons.indexOf(segs[mcr].mons[y]) != -1) {
-          //  //console.log('igual')
-            sames.push('igual')
-        }else{
-           // //console.log('diferente')
-            sames.push('diferente')
-        }
-   }
-  // //console.log(sames)
-   if (sames.indexOf('diferente') == -1){
-   // //console.log('TIRAR', segs[mcr])
-
-    if (mia.indexOf(mcr) == -1) {
-    mia.push(mcr)
-    }
-
-    ////console.log(segs)
-    
-   }
-}
-    
-}
-}
-
-}
-*/
-
-
-////console.log('MIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-//for (f = mia.length - 1; f >= 0; f--) {
- 
- 
-//}
 
     ////console.log(segs, divs)
 
@@ -895,48 +842,48 @@ groups++
 //console.log('divs é igual a ', divs[n])
 //console.log('groups é igual a', groups)
 if (groups == divs[n]) {
- console.log('DEU CERTO!!!EBAAAAAA')
+ //console.log('DEU CERTO!!!EBAAAAAA')
 }else{
     
- console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+ //console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
  //console.log('números que têm: ', conts)
  //console.log(segs)
 
  
 for (idk in segs2) {
 ////console.log('---------------------------------------------------------------------')
-////console.log('aqui ó',segs[idk].mons)
+//console.log('aqui ó',segs[idk].mons)
 
 
 for (mcr in segs2) {
 if (mcr != idk) {
 
     ////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-    ////console.log('outro',segs[mcr].mons)
+   // console.log('outro',segs[mcr].mons)
    
-    ////console.log(segs[idk].mons.length)
+   // console.log(segs[idk].mons.length)
     if (segs2[mcr].mons.length <= segs2[idk].mons.length) {
 
         sames = []
    for(y = 0; y < segs2[mcr].mons.length; y++) {
-      //  //console.log(segs[idk].mons, segs[mcr].mons[y], segs[idk].mons.indexOf(segs[mcr].mons[y]))
+    //  console.log(segs[idk].mons, segs[mcr].mons[y], segs[idk].mons.indexOf(segs[mcr].mons[y]))
         if (segs2[idk].mons.indexOf(segs2[mcr].mons[y]) != -1) {
-          //  //console.log('igual')
+          //console.log('igual')
             sames.push('igual')
         }else{
-           // //console.log('diferente')
+          // console.log('diferente')
             sames.push('diferente')
         }
    }
-  // //console.log(sames)
+ // console.log(sames)
    if (sames.indexOf('diferente') == -1){
-   // //console.log('TIRAR', segs[mcr])
+  // console.log('TIRAR', segs[mcr])
 
     if (mia.indexOf(mcr) == -1) {
     mia.push(mcr)
     }
     
-    ////console.log(segs)
+    //console.log(segs)
     
    }
 }
@@ -954,6 +901,7 @@ for (f = mia.length - 1; f >= 0; f--) {
 
    
  numapars = []
+ 
 relation = []
 
  ////console.log('--------------------------------------------------------------------------------------------------------------------------------')
@@ -962,8 +910,8 @@ relation = []
  util = []
  for (t in segs2) {
 
-     ////console.log(segs[n],'.mons: ',segs[t].mons,'.length: ', segs[t].mons.length)
-    // //console.log(`${segs[t].mons.length} é maior que ou igual a ${quanto}? ${segs[t].mons.length >= quanto}`)
+    console.log(segs[n],'.mons: ',segs[t].mons,'.length: ', segs[t].mons.length)
+    console.log(`${segs[t].mons.length} é maior que ou igual a ${quanto}? ${segs[t].mons.length >= quanto}`)
 
      if (segs2[t].mons.length >= quanto) {
          util.push(segs2[t])
@@ -971,20 +919,20 @@ relation = []
      //console.log('')
  }
 
- //console.log('util', util)
+ console.log('util', util)
  
  for (m in monomios) {
      aparic = 0
-     //console.log(m)
+    console.log(m)
      for (t in util) {
-         //console.log('util[t].mons', util[t].mons)
-         //console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
+         console.log('util[t].mons', util[t].mons)
+         console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
 
          if (util[t].mons.indexOf(Number(m)) != -1) {
              aparic++
          }
      }
-     //console.log('aparic',m, aparic)
+     console.log('aparic',m, aparic)
      numapars.push({num: Number(m), vezes: aparic})
      }
 
@@ -999,7 +947,7 @@ relation = []
    
      rep = 0
      for (g = 0; g < lista.length && rep < quanto; g++) {
-         //console.log(lista[g])
+         console.log(lista[g])
 
 
          if (numapars.find(function(numapars) {
@@ -1012,15 +960,15 @@ relation = []
          }
 
      }
-     //console.log('present', present)
+     console.log('present', present)
      //console.log('--------------------------------------VENDO O QUE FALTA-----------------------------------')
 
      if (present.fix.length < quanto) {
      for (g in lista) {
-         //console.log('')
-         //console.log(lista[g])
+         console.log('')
+         console.log(lista[g])
          if (present.fix.indexOf(lista[g]) == -1) {
-             //console.log('FALTA')
+             console.log('FALTA')
              present.falt.push(lista[g])
 
             
@@ -1032,12 +980,12 @@ relation = []
                      
          }
      }
-     //console.log('FALTAM OS NÚMEROS', present.falt)
+     console.log('FALTAM OS NÚMEROS', present.falt)
 
      
      if (present.fix.length == 0) {
      for (ti in present.falt) {
-         //console.log(present.falt[ti])
+         console.log(present.falt[ti])
 
         
 
@@ -1055,49 +1003,49 @@ relation = []
  relation[r].car = segs2[r].car
  
  }
- //console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
+ console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
  for (c in relation) {
-     //console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
+     console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
      if (relation[c].fix.length > 0) {
-     //console.log(relation[c].fix, relation[c].falt)
+     console.log(relation[c].fix, relation[c].falt)
 
      faltam = Number(quanto) - Number(relation[c].fix.length)
-     //console.log('faltam', faltam)
+     console.log('faltam', faltam)
 
      for (f = 0; f < faltam; f++) {
-         //console.log(relation[c].falt[f])
+         console.log(relation[c].falt[f])
         relation[c].fix.push(relation[c].falt[f])
        
-        //console.log('ANTES: ', relation[c].falt)
+        console.log('ANTES: ', relation[c].falt)
         relation[c].falt[f] = -10
 
-        //console.log('DEPOIS: ', relation[c].falt)
+        console.log('DEPOIS: ', relation[c].falt)
      }
-     //console.log(relation[c].fix)
+     console.log(relation[c].fix)
 
      for (tel = 0; tel < c; tel++){
 
          if (relation[tel].fix.length > 0) {
-         //console.log('relation[tel]', relation[tel])
+         console.log('relation[tel]', relation[tel])
          }
          
          outrorel = relation[tel]
          
      for (hu in outrorel.fix) {
-         //console.log(outrorel.fix[hu])
+         console.log(outrorel.fix[hu])
          if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-             //console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
+             console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
              //console.log(outrorel.falt)
              y = 0
              for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
 
-                 //console.log(outrorel.falt[ou])
+                 console.log(outrorel.falt[ou])
                  if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                     //console.log('pode ir')
+                     console.log('pode ir')
                      outrorel.fix[hu] =  outrorel.falt[ou]
                      outrorel.falt[ou] = -10
                      
-                     //console.log('isso aí:', outrorel.fix)
+                     console.log('isso aí:', outrorel.fix)
                      y++
                  }
              }
@@ -1110,7 +1058,7 @@ relation = []
  //console.log('SERÁ QUE DEU CERTO?')
 
 ////console.log(relation)
-
+/*
 groups = 0
 conts = []
 for (yougo in relation) {
@@ -1124,14 +1072,12 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-//if (vi == 0) {
-  //doit(segs)
- //vi++
-//}
+*/
+
 
 
 }
-return [relation, segs]
+return [relation, segs2]
 }
 
 
