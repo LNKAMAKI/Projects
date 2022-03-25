@@ -1,4 +1,4 @@
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 //expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
@@ -10,7 +10,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
 
-expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45']
+//expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -535,7 +535,7 @@ for (n in divs) {
     
 }
 
-divs = [5]
+divs = [3]
 
 ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 ////console.log(segs)
@@ -840,7 +840,7 @@ groups++
 
 //console.log('divs é igual a ', divs[n])
 //console.log('groups é igual a', groups)
-if (groups != divs[n]) {
+if (groups < divs[n]) {
  console.log('DEU CERTO!!!EBAAAAAA')
 
  console.log('SERÁ QUE DEU CERTO?')
@@ -920,7 +920,7 @@ for (b = 0; b < grupos; b++) {
 
 
 }
-}else{
+}else if(groups > divs[n]){
     
  console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
  //console.log('números que têm: ', conts)
@@ -1167,7 +1167,7 @@ console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
 
 for (die in segs2) {
     tirar = []
-    
+
 console.log('break', segs2[die].mons)
 for (h in segs2[die].mons) {
 console.log(segs2[die].mons[h])
