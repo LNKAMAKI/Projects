@@ -555,8 +555,9 @@ divs = [6]
     //console.log(int[1])
     for (ish in int[0]) {
         
-        if (int[0][ish].fix.length != 0) {
-            console.log(int[0][ish].fix)
+        if (int[0][ish].fix.length > 0) {
+            console.log(int[0][ish].car, int[0][ish].fix)
+
         }
         
     }
@@ -903,19 +904,28 @@ imor = 0
 
 for (b = 0; b < grupos; b++) {
     console.log(b, 'vez----------------------------------------------------------------------------------------')
-    add = []
+   
+    ob = {car: segs2[sorrow].car, fix: [],problem:false}
+
     for (live = 0; live < quanto; live++) {
-        console.log('TIRADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOS')
+        console.log('TIRADOS')
         console.log(segs2[sorrow].mons[imor])
 
-        if (tirados.indexOf(segs2[sorrow].mons[imor]) == -1) {
-        add.push(segs2[sorrow].mons[imor])
+       console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
+
+           if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
+                ob.problem = true
+           }
+            console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
+        ob.fix.push(segs2[sorrow].mons[imor])
         tirados.push(segs2[sorrow].mons[imor])
         imor++
-        }
+        
        
     }
-    ob = {car: segs2[sorrow].car, fix: [add]}
+   
+    console.log('OBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB')
+   
     console.log('IN THE END', ob)
     relation.push(ob)
 }
@@ -1196,19 +1206,27 @@ imor = 0
 
 for (b = 0; b < grupos; b++) {
     console.log(b, 'vez----------------------------------------------------------------------------------------')
-    add = []
+    
+    ob = {car: segs2[sorrow].car, fix: []}
     
     for (live = 0; live < quanto; live++) {
         console.log(segs2[sorrow].mons[imor])
-        console.log('TIRADOOOOOOOOOOOOOOOOOOOOOOOOOOOS')
-        if (tirados.indexOf(segs2[sorrow].mons[imor]) == -1) {
-        add.push(segs2[sorrow].mons[imor])
+        console.log('TIRADOS')
+
+       console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
+
+       
+           if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
+            problem = true
+           }
+            ob.fix.push(segs2[sorrow].mons[imor])
+        
         tirados.push(segs2[sorrow].mons[imor])
         imor++
-        }
+          
         
     }
-    ob = {car: segs2[sorrow].car, fix: [add]}
+  
     console.log('IN THE END', ob)
     relation.push(ob)
 }
@@ -1222,4 +1240,30 @@ for (b = 0; b < grupos; b++) {
 return [relation, segs2]
 }
 
+console.log('WHAT IF GOD WAS ONE OF US?')
 
+
+
+function temNaLista(h) {
+
+for (t in relation) {
+
+    if (relation[t].fix.length > 0) {
+    console.log(relation[t].fix)
+
+    home = 0
+    for (fear in relation[t].fix) {
+        if (relation[t].fix[fear] == h[fear]) {
+            console.log('WOW')
+            home++
+        }
+    }
+
+    if (home == h.length) {
+        console.log('É IGUAL')
+        return true 
+    }
+
+    }
+}
+}
