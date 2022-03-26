@@ -924,10 +924,14 @@ for (b = 0; b < grupos; b++) {
        
     }
    
-    console.log('OBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB')
    
     console.log('IN THE END', ob)
+
+    console.log(segs2)
+    console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temNaLista(ob.fix))
+    if (ob.problem == false || temNaLista(ob.fix) == true) {
     relation.push(ob)
+    }
 }
 
 }
@@ -1206,29 +1210,34 @@ imor = 0
 
 for (b = 0; b < grupos; b++) {
     console.log(b, 'vez----------------------------------------------------------------------------------------')
-    
-    ob = {car: segs2[sorrow].car, fix: []}
-    
+   
+    ob = {car: segs2[sorrow].car, fix: [],problem:false}
+
     for (live = 0; live < quanto; live++) {
-        console.log(segs2[sorrow].mons[imor])
         console.log('TIRADOS')
+        console.log(segs2[sorrow].mons[imor])
 
        console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
 
-       
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
-            problem = true
+                ob.problem = true
            }
-            ob.fix.push(segs2[sorrow].mons[imor])
-        
+            console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
+        ob.fix.push(segs2[sorrow].mons[imor])
         tirados.push(segs2[sorrow].mons[imor])
         imor++
-          
         
+       
     }
-  
+   
+   
     console.log('IN THE END', ob)
+
+    console.log(segs2)
+    console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temNaLista(ob.fix))
+    if (ob.problem == false || temNaLista(ob.fix) == true) {
     relation.push(ob)
+    }
 }
 
 }
@@ -1245,6 +1254,7 @@ console.log('WHAT IF GOD WAS ONE OF US?')
 
 
 function temNaLista(h) {
+console.log('THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR')
 
 for (t in relation) {
 
