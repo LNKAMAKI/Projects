@@ -71,6 +71,24 @@ for (huh in monomios) {
     
 }
 
+
+console.log('ESQUEÇA TODO O RESTOOOOOOOOOOOOOOOO-----------------------------------------------------------------------------------------------------------------------------------------------')
+
+T = ['z','z','y','x','x']
+eg = '20xzyxz'
+
+for (n in eg) {
+console.log(eg[n],'---')
+if (T.indexOf(eg[n]) != -1) {
+console.log('tem')
+T.splice()
+}
+}
+
+console.log(eg)
+
+
+
 function fazerConta(anterior) {
 
     if(0 == 0) {// falta == false
