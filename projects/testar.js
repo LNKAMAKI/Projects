@@ -81,7 +81,7 @@ for (n in eg) {
 console.log(eg[n],'---')
 if (T.indexOf(eg[n]) != -1) {
 console.log('tem')
-T.splice()
+T.splice(T.lastIn)
 }
 }
 
