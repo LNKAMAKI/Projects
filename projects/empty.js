@@ -6,11 +6,11 @@
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
-//expression = ['4','x','y', '-', '8','x','-','6','x','-','4','x','+','2','x','y','+','3', 'x','y']
+//expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15']
+expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20']
+//expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x','+', '12','xx','+','30']
 
 
 //FAZENDO AS CONTAS COM NÚMEROS
@@ -535,7 +535,7 @@ for (n in divs) {
     
 }
 
-divs = [6]
+divs = [7]
 
 ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 ////console.log(segs)
@@ -918,7 +918,7 @@ for (b = 0; b < grupos; b++) {
            }
             console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
-        tirados.push(segs2[sorrow].mons[imor])
+        //tirados.push(segs2[sorrow].mons[imor])
         imor++
         
        
@@ -1178,7 +1178,7 @@ for (wish in relation) {
  console.log(relation[wish].fix)
  for (edge in relation[wish].fix) {
     console.log(relation[wish].fix[edge])
-    tirados.push(relation[wish].fix[edge])
+    //tirados.push(relation[wish].fix[edge])
  }
 }
 console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
