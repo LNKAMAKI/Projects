@@ -1,4 +1,4 @@
-exp = ['3','+','50','x','^','2','+','20','-','14','x','^','2']
+exp = ['3','+','50','x','^','2','+','20','-','14','x','^','2','+','30','y','+','7','y']
 
 // FAZENDO AS POTENCIAÇÕES COM NÚMEROS
 for (y in exp) {
@@ -54,7 +54,22 @@ for (huh in monomios) {
     monomios[huh].partletral = partlet
 }
 
-
+ji = []
+for (huh in monomios) {
+    console.log(monomios[huh], monomios[huh].partletral)
+    
+    if (ji.find(function (ji) {
+        return ji.que == monomios[huh].partletral
+       }) == undefined) {
+           console.log('ARRRRRROZ')
+    ji.push({quais: [Number(huh)], que:  monomios[huh].partletral})
+       }else{
+        ji.find(function (ji) {
+            return ji.que == monomios[huh].partletral
+           }).quais.push(Number(huh))
+       }
+    
+}
 
 function fazerConta(anterior) {
 
