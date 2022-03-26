@@ -40,6 +40,19 @@ monomios[obnum].numero += exp[n]
 }
 //
 
+for (huh in monomios) {
+    console.log(monomios[huh].numero)
+
+    partlet = ''
+    for (y in monomios[huh].numero) {
+     console.log(monomios[huh].numero[y])
+     if (String(monomios[huh].numero[y]).search('[a-z]') != -1) {
+        console.log('EEEEEE')
+        partlet+= String(monomios[huh].numero[y])
+     }
+    }
+    monomios[huh].partletral = partlet
+}
 
 
 
