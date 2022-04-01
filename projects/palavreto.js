@@ -1,8 +1,8 @@
-palavras = ['GUERRA', 'GAVETA', 'TROFEU', 'COLHER', 'TEATRO','CAMISA','QUARTO','PLANTA', '-', 'INCOME','SHORTS', 'CASTLE', 'SQUARE', 'SIMPLE','DECEIT', 'ISLAND','PRETTY','STRESS']
+palavras = ['SCRIPT','SEARCH','COMMIT','ACTION', '-',]
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
-palavra = 'QUIABO'
-palof = palavra
+//palavra = 'MANGUE'
+//palof = palavra
 rits = ['','', '', '', '','']
 
 //window.alert(palavra)
