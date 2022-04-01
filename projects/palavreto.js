@@ -15,10 +15,10 @@ window.addEventListener('keydown', (event) => {
 
 })
 
-/*
+
 if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
    console.log(palavras.indexOf(palavra), palavras.indexOf('-'))
-   window.alert('A PALAVRA É EM PORTUGUÊS')
+  // window.alert('A PALAVRA É EM PORTUGUÊS')
 }else if (palavras.indexOf(palavra) == palavras.indexOf('-')) {
     
   while (palavras.indexOf(palavra) == palavras.indexOf('-')) {
@@ -27,14 +27,14 @@ if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
   }
   
   if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
-    window.alert('A PALAVRA É EM PORTUGUÊS')
+    //window.alert('A PALAVRA É EM PORTUGUÊS')
   }else{
-    window.alert('A PALAVRA É EM INGLÊS')
+    //window.alert('A PALAVRA É EM INGLÊS')
   }
 }else{
-    window.alert('A PALAVRA É EM INGLÊS')
+   // window.alert('A PALAVRA É EM INGLÊS')
 }
-*/
+
 
 function digitar(letra) {
     if (String(letra).length == 1 && String(letra).search(new RegExp('[A-Z]')) != -1 && letnum <= 5) {
