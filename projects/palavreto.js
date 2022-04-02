@@ -34,6 +34,7 @@ if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
 }else{
    // window.alert('A PALAVRA É EM INGLÊS')
 }
+palof = palavra
 
 
 function digitar(letra) {
