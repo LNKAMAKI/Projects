@@ -75,8 +75,10 @@ for (huh in monomios) {
 console.log('ESQUEÇA TODO O RESTOOOOOOOOOOOOOOOO-----------------------------------------------------------------------------------------------------------------------------------------------')
 
 
-T = ['c','a','b','d','d']
-eg = '20abcd'
+console.log(DIVIDIR(['x', 'x']))
+
+function DIVIDIR(T) {
+eg = '14xx'
 takeout = []
 
 console.log(T)
@@ -104,7 +106,9 @@ for (n in eg) {
     }
 }
 
-console.log('FICOU ASSIM: ' + depois)
+return depois
+
+}
 
 function fazerConta(anterior) {
 
