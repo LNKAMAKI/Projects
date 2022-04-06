@@ -74,20 +74,37 @@ for (huh in monomios) {
 
 console.log('ESQUEÇA TODO O RESTOOOOOOOOOOOOOOOO-----------------------------------------------------------------------------------------------------------------------------------------------')
 
-T = ['z','z','y','x','x']
-eg = '20xzyxz'
 
+T = ['c','a','b','d','d']
+eg = '20abcd'
+takeout = []
+
+console.log(T)
+console.log(eg)
 for (n in eg) {
 console.log(eg[n],'---')
 if (T.indexOf(eg[n]) != -1) {
 console.log('tem')
-T.splice(T.lastIn)
-}
-}
 
+
+T.splice(T.lastIndexOf(eg[n]), 1)
+console.log(T, Number(n))
+takeout.push(Number(n))
+}
+}
+console.log(takeout)
 console.log(eg)
 
+depois = ''
+for (n in eg) {
+    console.log(eg[n], n)
+    if (takeout.indexOf(Number(n)) == -1) {
+        console.log('ADICIONAR')
+        depois += String(eg[n])
+    }
+}
 
+console.log('FICOU ASSIM: ' + depois)
 
 function fazerConta(anterior) {
 
