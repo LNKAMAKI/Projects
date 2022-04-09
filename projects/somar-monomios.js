@@ -1,4 +1,4 @@
-exp = ['3','x','+','7','x','-','2','x','+','10','y']
+exp = ['121','x','y']
 
 
 // FATORANDO OS NÚMEROS
@@ -130,9 +130,42 @@ for (huh in monomios) {
 }
 //
 
+//ji = [{numero:'11*11xy'}]
+console.log('JIIIIII')
+for (bye in ji) {
+    console.log(ji[bye])
+
+    for (misery in ji[bye].quais) { 
+        console.log(monomios[ji[bye].quais[misery]].numero)
+
+        ground = ''
+
+        comofica = []
+        for (b in monomios[ji[bye].quais[misery]].numero) {
+
+           carac =  monomios[ji[bye].quais[misery]].numero[b]
+           console.log(carac)
+            console.log()
+            if (ground.length == 0) {
+                console.log('LISTA VAZIA')
+                ground+= carac
+            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
+                console.log('É UM NÚMERO')
+                ground+= carac
+            }else{
+                comofica.push(ground)
+                ground = ''
+                ground += carac
+            }
+        }
+        console.log('comofica')
+    }
+}
 
 
-//console.log(DIVIDIR(['y', 'y'],'30xy'))
+
+console.log('--------------------------------------------------')
+//console.log(DIVIDIR(['11','x'],['11','11','x','y']))
 
 
 // DIVIDINDO MONÔMIOS
@@ -182,7 +215,7 @@ return depois
 console.log('OK, VAMOS DAR UMA PARADINHA')
 
 // FATORAR SÓ UM NÚMERO
-console.log(FATORARSINGULAR('20'))
+//console.log(FATORARSINGULAR('20'))
 
 function FATORARSINGULAR(potn) {
 if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {

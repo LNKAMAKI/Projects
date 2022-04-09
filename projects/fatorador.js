@@ -6,7 +6,7 @@
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
-expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+//expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
@@ -14,6 +14,7 @@ expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2'
 
 //expression = ['5','+','10']
 
+expression = ['3','x','+','9','x']
 //FAZENDO AS CONTAS COM NÚMEROS
 
 fazerConta(expression)
@@ -308,6 +309,8 @@ obnum++
 monomios[obnum].numero += expression[n]
 }
 
+
+monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
 //console.log('--------------------------------------------MONOMIOS--------------------------------------')
 reps = []
 segs = []
@@ -328,9 +331,9 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
         
 
         if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-        //console.log('LETRA OU NÚMERO ISOLADO: ' + monomios[m].numero[oc])
+        console.log('LETRA OU NÚMERO ISOLADO: ' + monomios[m].numero[oc])
 
-       // //console.log('NUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc])
+       console.log('NUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
         if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
         numerosrep.push(monomios[m].numero[oc])
 
@@ -338,32 +341,32 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
             ocs2 = []
 
             if(u != m) {
-          //console.log(`monomio ${u}: `)
-          //console.log(monomios[u])   
+          console.log(`monomio ${u}: `)
+          console.log(monomios[u])   
             
 
           // OCAS
           if(ocs2.find(function(ocs2) {
             return ocs2.ed == monomios[m].numero[oc]
             }) == undefined) {
-                //console.log('====================')
+                console.log('====================')
                 ocs2.push({ed: monomios[m].numero[oc], el: 0})
 
                 ocs = 0
           for (ao = 0; ao < monomios[m].numero.length; ao++) {
-            //console.log('AAAAAAAAAA' + monomios[m].numero[ao])
+            console.log('AAAAAAAAAA' + monomios[m].numero[ao])
             if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
                 ocs++
             }
           }
         }
-          //console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
+          console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
           
           for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MONÔMIO
-            //console.log(monomios[u].numero[e])
+            console.log(monomios[u].numero[e])
             
             if (monomios[u].numero[e] == monomios[m].numero[oc]) {
-                //console.log(monomios[m].numero[oc] + ' é igual a ' + monomios[u].numero[e])
+                console.log(monomios[m].numero[oc] + ' é igual a ' + monomios[u].numero[e])
 
                 if (repetido.find(function(repetido) {
                     return repetido.monum == u
@@ -493,6 +496,21 @@ for (nl = 0; nl < segs.length; nl++) {
 
 }
 
+
+function ehprimo(number) {
+    parar = false
+    for (t = 2; t < number && parar == false; t++) {
+    
+        if (number%t == 0) {
+            parar = true
+        }
+    }
+    if (parar) 
+    return false
+    else
+    return true
+}
+
 // SEGS
 
   // segs = [{car: 'a', mons: [1,2,4]},{car: 'a', mons: [0,1,2,4,5]},{car: 'a', mons: [1,2,3]},{car: 'a', mons: [5,4,2]}]
@@ -502,7 +520,7 @@ for (nl = 0; nl < segs.length; nl++) {
 
 ////console.log('------------------------------ORDENANDO DO MAIOR PARA O MENOR----------------------------')
 
-
+/*
 grtols = []
 
 for (hi in segs) {
@@ -1278,3 +1296,4 @@ for (t in relation) {
     }
 }
 }
+*/
