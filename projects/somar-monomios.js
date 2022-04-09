@@ -1,4 +1,4 @@
-exp = ['3','x','+','40','x','-','60','x']
+exp = ['3','x','+','7','x','-','2','x','+','10','y']
 
 
 // FATORANDO OS NÚMEROS
@@ -233,6 +233,8 @@ if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
 }
 //
 
+
+// FAZER CONTA COM NÚMEROS
 function fazerConta(anterior) {
 
     if(0 == 0) {// falta == false
@@ -432,7 +434,7 @@ if (anterior.length > 1) {
 }
 return anterior
 }
-
+//
 
 
 // É PRIMO?
