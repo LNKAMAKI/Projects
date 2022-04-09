@@ -1,4 +1,57 @@
-exp = ['3','+','50','x','^','2','+','20','-','14','x','^','2','+','30','y','+','7','y']
+exp = ['3','x','+','40','x','-','60','x']
+
+
+// FATORANDO OS NÚMEROS
+for (n = 0; n < exp.length; n++) {
+    if (ehprimo(exp[n]) == false && String(exp[n]).search('[0-9]') != -1) {
+    fatorado = ''
+
+    first = 1
+
+    div = 0
+    ////console.log(exp[n], div)
+
+    stop = false
+    fator = 1
+    
+    for (e = 2; stop == false; e++) {
+        ////console.log('')
+        ////console.log(e)
+        ////console.log('')
+    
+        sob = Number(exp[n])
+      
+           if (ehprimo(e) == true) {
+            while (sob%e == 0) {
+            if (sob%e == 0) {
+                ////console.log(sob + '/' + e + ': ' + sob/e)
+                
+                
+            }
+
+            sob = sob/e
+            
+            //console.log('SIM')
+            //console.log(fator + ' x ' + e + ': ' + fator*e)
+
+            fator = fator*e
+
+            st = false
+            
+            if (fator == exp[n]) {
+            stop = true
+            fatorado += `${e}`
+            }else{
+                fatorado += `${e}*`
+            }
+           }
+        }
+    }
+    exp[n] = fatorado
+}
+}
+//
+
 
 // FAZENDO AS POTENCIAÇÕES COM NÚMEROS
 for (y in exp) {
@@ -23,9 +76,11 @@ for (y in exp) {
   }
 //
 
+
   // SEPARANDO OS MONÔMIOS
 monomios = [{numero: ''}]
 obnum = 0
+
 
 for (n = 0; n < exp.length; n++) {
 //console.log(exp[n], monomios[obnum])
@@ -40,6 +95,8 @@ monomios[obnum].numero += exp[n]
 }
 //
 
+
+// VENDO OS QUE PODEM SER SOMADOS
 for (huh in monomios) {
     console.log(monomios[huh].numero)
 
@@ -53,6 +110,7 @@ for (huh in monomios) {
     }
     monomios[huh].partletral = partlet
 }
+
 
 ji = []
 for (huh in monomios) {
@@ -70,15 +128,22 @@ for (huh in monomios) {
        }
     
 }
+//
 
 
-console.log('ESQUEÇA TODO O RESTOOOOOOOOOOOOOOOO-----------------------------------------------------------------------------------------------------------------------------------------------')
+
+//console.log(DIVIDIR(['y', 'y'],'30xy'))
 
 
-console.log(DIVIDIR(['x', 'x']))
+// DIVIDINDO MONÔMIOS
+function DIVIDIR(T, qual) {
+    
+    Tfix = []
+for (h in T) {
+    Tfix.push(T[h])
+}
+eg = qual
 
-function DIVIDIR(T) {
-eg = '14xx'
 takeout = []
 
 console.log(T)
@@ -106,9 +171,67 @@ for (n in eg) {
     }
 }
 
+console.log(`TIRAR ` + Tfix + ' DE ' + eg + ` : ` + depois)
 return depois
 
+
 }
+//
+
+
+console.log('OK, VAMOS DAR UMA PARADINHA')
+
+// FATORAR SÓ UM NÚMERO
+console.log(FATORARSINGULAR('20'))
+
+function FATORARSINGULAR(potn) {
+if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
+    fatorado = ''
+
+    first = 1
+
+    div = 0
+
+    stop = false
+    fator = 1
+    
+    for (e = 2; stop == false; e++) {
+        ////console.log('')
+        ////console.log(e)
+        ////console.log('')
+    
+        sob = Number(potn)
+      
+           if (ehprimo(e) == true) {
+            while (sob%e == 0) {
+            if (sob%e == 0) {
+                ////console.log(sob + '/' + e + ': ' + sob/e)
+                
+                
+            }
+
+            sob = sob/e
+            
+            //console.log('SIM')
+            //console.log(fator + ' x ' + e + ': ' + fator*e)
+
+            fator = fator*e
+
+            st = false
+            
+            if (fator == potn) {
+            stop = true
+            fatorado += `${e}`
+            }else{
+                fatorado += `${e}*`
+            }
+           }
+        }
+    }
+    return fatorado
+}
+}
+//
 
 function fazerConta(anterior) {
 
@@ -309,3 +432,21 @@ if (anterior.length > 1) {
 }
 return anterior
 }
+
+
+
+// É PRIMO?
+function ehprimo(number) {
+    parar = false
+    for (t = 2; t < number && parar == false; t++) {
+    
+        if (number%t == 0) {
+            parar = true
+        }
+    }
+    if (parar) 
+    return false
+    else
+    return true
+}
+//
