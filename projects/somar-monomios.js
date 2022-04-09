@@ -1,4 +1,4 @@
-exp = ['121','x','y']
+exp = ['121','x','y','+','20','x','y']
 
 
 // FATORANDO OS NÚMEROS
@@ -132,6 +132,44 @@ for (huh in monomios) {
 
 //ji = [{numero:'11*11xy'}]
 console.log('JIIIIII')
+//ji = []
+
+/*
+for (bye in monomios) {
+    console.log(monomios[bye])
+
+    comofica = []
+    ground = ''
+
+    for (misery in monomios[bye].numero) { 
+        console.log(monomios[bye].numero[misery])
+        
+        carac = monomios[bye].numero[misery]
+        console.log('CARACTER' + carac)
+        console.log(ground.length)
+
+        console.log('OH COME ON',ground, String(ground.search('[0-9]')))
+            if (ground.length == 0) {
+                console.log('LISTA VAZIA')
+                ground+= carac
+            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
+                console.log('É UM NÚMERO')
+                ground+= carac
+            }else{
+                comofica.push(ground)
+                ground = ''
+                ground += carac
+                if (misery == monomios[bye].numero.length - 1) {
+                    comofica.push(ground)
+                }
+            }
+    }
+
+    console.log('COMOFICA', comofica)
+   // monomios[bye].numero = comofica
+}
+
+*/
 for (bye in ji) {
     console.log(ji[bye])
 
@@ -145,7 +183,7 @@ for (bye in ji) {
 
            carac =  monomios[ji[bye].quais[misery]].numero[b]
            console.log(carac)
-            console.log()
+            
             if (ground.length == 0) {
                 console.log('LISTA VAZIA')
                 ground+= carac
@@ -156,9 +194,12 @@ for (bye in ji) {
                 comofica.push(ground)
                 ground = ''
                 ground += carac
+                if (b == monomios[ji[bye].quais[misery]].numero.length - 1) {
+                    comofica.push(ground)
+                }
             }
         }
-        console.log('comofica')
+        console.log(comofica)
     }
 }
 
