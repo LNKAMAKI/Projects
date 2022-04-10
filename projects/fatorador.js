@@ -8,215 +8,17 @@
 
 //expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
+expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
 //expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x','+', '12','xx','+','30']
 
-expression = ['3*3x', '-', '2*3*3x']
+//expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
 //expression = ['5x', '+', '5*2x','+','7y','+','7*2y']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
-fazerConta(expression)
-function fazerConta(anterior) {
-
-    if(0 == 0) {// falta == false
-//Primeiro raizes e potências
-for (n = 0; n < expression.length; n++) {
-if(expression[n] == '^' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1) {
-    //console.log('POTENCIALIZAÇÃO')
-    expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
-    expression.splice(n - 1, 2)
-    
-    n = n - 3 // n = n - 3
-    //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-    if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-        //console.log('TIRAR')
-        expression.splice(n + 3, 1)
-        expression.splice(n + 1, 1)
-        n = n - 3
-
-        //console.log(expression)
-    }else{
-        //console.log(expression)
-    }
-}else if(expression[n] == '√' && String(expression[n + 1]) != '(' && String(expression[n + 1]).search('[0-9]') != -1) {
-    //console.log('RAIZ')
-    expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
-    expression.splice(n, 1)
-    //console.log(n)
-    n = n - 2
-    //console.log(n)
-    if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-        //console.log('TIRAR')
-        expression.splice(n + 3, 1)
-        expression.splice(n + 1, 1)
-        n = n - 3
-
-        //console.log(expression)
-    }else{
-        //console.log(expression)
-    }
-}
-}
-
-// Segundo multiplicações e divisões
-for (n = 0; n < expression.length; n++) {
-if(expression[n] == '*' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1) {
-//console.log('MULTIPLICAÇÃO')
-expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
-expression.splice(n - 1, 2)
-
-n = n - 3
-//console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-
-if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-    //console.log('TIRAR')
-    expression.splice(n + 3, 1)
-    expression.splice(n + 1, 1)
-    n = n - 3
-
-    //console.log(expression)
-}else{
-    //console.log(expression)
-}
-}else if(expression[n] == '/' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1) {
-//console.log('DIVISÃO')
-expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
-expression.splice(n - 1, 2)
-
-n = n - 3
-//console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-    //console.log('TIRAR')
-    expression.splice(n + 3, 1)
-    expression.splice(n + 1, 1)
-    n = n - 3
-
-    //console.log(expression)
-}else{
-    //console.log(expression)
-}
-}
-}
-
-
-if (expression.length > 1) {
-
-// while(expression.length != 1 && expression.indexOf('NaN') == -1) {
-    for (n = 0; n < expression.length && expression.length != 1; n++) {
-       // //console.log(expression[n])
-        if (expression[n] == '+' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('[x\\/\\^]') == -1 && String(String(expression[n - 2])).search('[x\\/\\^\\-]') == -1) {
-            //console.log('ADIÇÃO')
-            expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
-            expression.splice(n - 1, 2)
-          
-            n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-            if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-                //console.log('TIRAR')
-                expression.splice(n + 3, 1)
-                expression.splice(n + 1, 1)
-                n = n - 3
-
-                //console.log(expression)
-            }else{
-                //console.log(expression)
-            }
-        }else if(expression[n] == '-' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('[x\\/\\^]') == -1 && String(String(expression[n - 2])).search('[x\\/\\^\\-]') == -1) {
-            //console.log('SUBTRAÇÃO') 
-            expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
-            expression.splice(n - 1, 2)
-            
-            n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-            if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-                //console.log('TIRAR')
-                expression.splice(n + 3, 1)
-                expression.splice(n + 1, 1)
-                n = n - 3
-
-                //console.log(expression)
-            }else{
-                //console.log(expression)
-            }
-        }else if(expression[n] == '*' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1) {
-            //console.log('MULTIPLICAÇÃO')
-            expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
-            expression.splice(n - 1, 2)
-            
-            n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-            if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-                //console.log('TIRAR')
-                expression.splice(n + 3, 1)
-                expression.splice(n + 1, 1)
-                n = n - 3
-
-                //console.log(expression)
-            }else{
-                //console.log(expression)
-            }
-        }else if(expression[n] == '/' && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√' && String(String(expression[n + 2])).search('\\^') == -1 && String(String(expression[n - 2])).search('\\^') == -1 && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1) {
-            //console.log('DIVISÃO')
-            expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
-            expression.splice(n - 1, 2)
-            
-            n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-            if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-                //console.log('TIRAR')
-                expression.splice(n + 3, 1)
-                expression.splice(n + 1, 1)
-                n = n - 3
-
-                //console.log(expression)
-            }else{
-                //console.log(expression)
-            }
-        }else if(expression[n] == '^' && String(expression[n - 1]) != '(' && String(expression[n - 1]) != ')' && String(expression[n - 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[0-9]') != -1 && String(expression[n + 1]).search('[a-z]') == -1 && String(expression[n + 1]) != '(' && String(expression[n + 1]) != ')' && String(expression[n + 1]) != '√') {
-            //console.log('DIVISÃO')
-           expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
-            expression.splice(n - 1, 2)
-            
-            n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, expression[n])
-            if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-                //console.log('TIRAR')
-                expression.splice(n + 3, 1)
-                expression.splice(n + 1, 1)
-                n = n - 3
-
-                //console.log(expression)
-            }else{
-                //console.log(expression)
-            }
-        }else if(expression[n] == '√' && String(expression[n + 1]) != '(' && String(expression[n + 1]).search('[0-9]') != -1) {
-            //console.log('RAIZ')
-            expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
-            expression.splice(n, 1)
-            
-            n = n - 2
-            //console.log(n)
-            if (String(expression[n + 1]) == '(' && expression[n + 3] == ')') {
-                //console.log('TIRAR')
-                expression.splice(n + 3, 1)
-                expression.splice(n + 1, 1)
-                n = n - 3
         
-                //console.log(expression)
-            }else{
-                //console.log(expression)
-            }
-        }
-    }
-// }
-}
-    
-}
-//console.log(expression)
-}
 // FATORANDO OS NÚMEROS 
 
 
@@ -594,7 +396,7 @@ for (n in divs) {
     
 }
 
-divs = [2]
+divs = [3]
 
 ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 ////console.log(segs)
