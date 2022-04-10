@@ -14,7 +14,7 @@
 
 //expression = ['5','+','10']
 
-expression = ['3','x','+','9','x']
+//expression = ['121','x','+','33','x']
 //FAZENDO AS CONTAS COM NÚMEROS
 
 fazerConta(expression)
@@ -310,8 +310,9 @@ monomios[obnum].numero += expression[n]
 }
 
 
-monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
+//monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
 
+// SEPARAR CORRETAMENTE OS NÚMEROS
 for (bye in monomios) {
     console.log(monomios[bye])
 
@@ -336,11 +337,15 @@ for (bye in monomios) {
                 comofica.push(ground)
                 ground = ''
                 ground += carac
+                if (misery == monomios[bye].numero.length - 1) {
+                    comofica.push(ground)
+                }
             }
     }
 
     console.log('COMOFICA', comofica)
-   // monomios[bye].numero = comofica
+    console.log('NAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
+    monomios[bye].numero = comofica
 }
 
 
@@ -553,7 +558,7 @@ function ehprimo(number) {
 
 ////console.log('------------------------------ORDENANDO DO MAIOR PARA O MENOR----------------------------')
 
-/*
+
 grtols = []
 
 for (hi in segs) {
@@ -1329,4 +1334,3 @@ for (t in relation) {
     }
 }
 }
-*/

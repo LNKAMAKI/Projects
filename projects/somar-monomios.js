@@ -1,4 +1,4 @@
-exp = ['121','x','y','+','20','x','y']
+exp = ['121','x','y','+','20','x','y','+','6','y','-','2','y']
 
 
 // FATORANDO OS NÚMEROS
@@ -130,11 +130,7 @@ for (huh in monomios) {
 }
 //
 
-//ji = [{numero:'11*11xy'}]
-console.log('JIIIIII')
-//ji = []
-
-/*
+//ji = oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 for (bye in monomios) {
     console.log(monomios[bye])
 
@@ -159,17 +155,16 @@ for (bye in monomios) {
                 comofica.push(ground)
                 ground = ''
                 ground += carac
-                if (misery == monomios[bye].numero.length - 1) {
-                    comofica.push(ground)
+                         
                 }
             }
     }
 
     console.log('COMOFICA', comofica)
    // monomios[bye].numero = comofica
-}
 
-*/
+
+
 for (bye in ji) {
     console.log(ji[bye])
 
@@ -226,6 +221,7 @@ for (n in eg) {
 console.log(eg[n],'---')
 if (T.indexOf(eg[n]) != -1) {
 console.log('tem')
+
 
 
 T.splice(T.lastIndexOf(eg[n]), 1)
