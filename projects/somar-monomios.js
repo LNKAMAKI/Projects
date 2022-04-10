@@ -131,6 +131,7 @@ for (huh in monomios) {
 //
 
 //ji = oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+/*
 for (bye in monomios) {
     console.log(monomios[bye])
 
@@ -162,9 +163,10 @@ for (bye in monomios) {
 
     console.log('COMOFICA', comofica)
    // monomios[bye].numero = comofica
+*/
 
 
-
+// SEPARANDO/JUNTANDO OS NÚMEROS
 for (bye in ji) {
     console.log(ji[bye])
 
@@ -195,9 +197,28 @@ for (bye in ji) {
             }
         }
         console.log(comofica)
+        monomios[ji[bye].quais[misery]].numero = comofica
     }
 }
 
+
+console.log('COMEÇAR A DIVIDIR')
+// COMEÇAR A DIVIDIR
+for (chuva in ji) {
+for (da in ji[chuva].quais) {
+
+
+divisor = []
+for (flowers in ji[chuva].que) {
+
+divisor.push(ji[chuva].que[flowers])
+}
+
+console.log(monomios[ji[chuva].quais[da]].numero, '/',divisor)
+console.log('A DIVISÃ É IGUAL A ', DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero))
+
+}
+}
 
 
 console.log('--------------------------------------------------')
@@ -215,33 +236,26 @@ eg = qual
 
 takeout = []
 
-console.log(T)
-console.log(eg)
 for (n in eg) {
-console.log(eg[n],'---')
+
 if (T.indexOf(eg[n]) != -1) {
-console.log('tem')
 
 
 
 T.splice(T.lastIndexOf(eg[n]), 1)
-console.log(T, Number(n))
 takeout.push(Number(n))
 }
 }
-console.log(takeout)
-console.log(eg)
+
+
 
 depois = ''
 for (n in eg) {
-    console.log(eg[n], n)
     if (takeout.indexOf(Number(n)) == -1) {
-        console.log('ADICIONAR')
         depois += String(eg[n])
     }
 }
 
-console.log(`TIRAR ` + Tfix + ' DE ' + eg + ` : ` + depois)
 return depois
 
 
@@ -249,7 +263,7 @@ return depois
 //
 
 
-console.log('OK, VAMOS DAR UMA PARADINHA')
+//console.log('OK, VAMOS DAR UMA PARADINHA')
 
 // FATORAR SÓ UM NÚMERO
 //console.log(FATORARSINGULAR('20'))
