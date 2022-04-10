@@ -1,4 +1,4 @@
-exp = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','+','8','-','2']
+exp = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','+','8','-','2','+','4','y']
 
 
 // FATORANDO OS NÚMEROS
@@ -167,6 +167,8 @@ for (bye in monomios) {
 
 
 // SEPARANDO/JUNTANDO OS NÚMEROS
+
+exp = []
 for (bye in ji) {
     console.log(ji[bye])
 
@@ -313,10 +315,22 @@ if (comehome[0][0] == '-') {
    oop+= fat
 console.log(oop)
 
+exp.push('+')
+exp.push(oop)
+
 }else{
 fat = FATORARSINGULAR(comehome)
 console.log(fat)
+
+if (exp.length == 0) {
+    exp.push(fat)
+    }else {
+        exp.push('+')
+        exp.push(fat)
+
+    }
 }
+
 
 
 }
