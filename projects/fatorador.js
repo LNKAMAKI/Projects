@@ -15,6 +15,7 @@
 //expression = ['5','+','10']
 
 //expression = ['121','x','+','33','x']
+
 //FAZENDO AS CONTAS COM NÚMEROS
 
 fazerConta(expression)
@@ -592,7 +593,7 @@ for (n in divs) {
     
 }
 
-divs = [4]
+divs = [2]
 
 ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 ////console.log(segs)
