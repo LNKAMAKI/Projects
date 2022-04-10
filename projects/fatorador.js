@@ -14,7 +14,7 @@
 
 //expression = ['5','+','10']
 
-//expression = ['121','x','+','33','x']
+//expression = ['5x', '+', '5*2x','+','7y','+','7*2y']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -218,6 +218,7 @@ if (expression.length > 1) {
 //console.log(expression)
 }
 // FATORANDO OS NÚMEROS 
+
 
 for (n = 0; n < expression.length; n++) {
     if (ehprimo(expression[n]) == false && String(expression[n]).search('[0-9]') != -1) {

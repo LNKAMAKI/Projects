@@ -1,4 +1,4 @@
-exp = ['121','x','y','+','20','x','y','+','6','y','-','2','y']
+exp = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','+','8','-','2']
 
 
 // FATORANDO OS NÚMEROS
@@ -205,7 +205,13 @@ for (bye in ji) {
 console.log('COMEÇAR A DIVIDIR')
 // COMEÇAR A DIVIDIR
 for (chuva in ji) {
+    console.log('')
+    console.log('')
+    console.log('')
+
+    conta = []
 for (da in ji[chuva].quais) {
+
 
 
 divisor = []
@@ -214,12 +220,106 @@ for (flowers in ji[chuva].que) {
 divisor.push(ji[chuva].que[flowers])
 }
 
-console.log(monomios[ji[chuva].quais[da]].numero, '/',divisor)
-console.log('A DIVISÃ É IGUAL A ', DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero))
+//console.log(monomios[ji[chuva].quais[da]].numero, '/',divisor)
+
+resultadoDaDivisão = DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero)
+//console.log('A DIVISÃ É IGUAL A ', resultadoDaDivisão)
+
+plan = []
+add = ''
+
+for (past in resultadoDaDivisão) {
+   
+ //console.log(resultadoDaDivisão[past])
+
+ if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
+//console.log('ADICIONAR')
+
+if (add.length == 0) {
+    add+= resultadoDaDivisão[past]
+
+}else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
+    console.log('OK')
+add+= resultadoDaDivisão[past]
+}else{
+    plan.push(add)
+    add = ''
+    add+= resultadoDaDivisão[past]
+    
+}
+//console.log('ADD', add)
+//console.log('PLAN É:', plan)
+
+if (plan.length == 3) {
+//console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+//console.log(Number(plan[0])*Number(plan[2]))
+plan = [String(Number(plan[0])*Number(plan[2]))]
+}
+ }
 
 }
+plan.push(add)
+//console.log('PLAN', plan)
+
+if (plan.length == 3) {
+    //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+    //console.log(Number(plan[0])*Number(plan[2]))
+    plan = [String(Number(plan[0])*Number(plan[2]))]
+   // console.log('É ISSO!!', plan)
+    }
+
+    if (monomios[ji[chuva].quais[da]].numero[0] == '+' || monomios[ji[chuva].quais[da]].numero[0] == '-') {
+   // console.log('O SINAL É: ', monomios[ji[chuva].quais[da]].numero[0])
+
+    sinal = monomios[ji[chuva].quais[da]].numero[0]
+
+    if (conta.length != 0) {
+    conta.push(monomios[ji[chuva].quais[da]].numero[0])
+    }
+    }
+
+    if (conta.length == 0 && monomios[ji[chuva].quais[da]].numero[0] == '-') {
+
+ entao = '-'
+ entao+= plan[0]
+ //console.log(entao)
+ conta.push(entao)
+    }else{
+       
+        conta.push(plan[0])
+    }
+   
+    
 }
 
+
+console.log('OK, FICOU ASSIM:', conta)
+
+comehome = fazerConta(conta)
+console.log('E RESOLVENDO FICA ASSIM:', comehome)
+
+
+
+if (comehome[0][0] == '-') {
+    t = ''
+   for (b in comehome[0]) {
+   if (comehome[0][b] != '-') {
+     t+= comehome[0][b]
+   }
+   }
+   console.log(t)
+   fat = FATORARSINGULAR(t)
+   oop = '-'
+   oop+= fat
+console.log(oop)
+
+}else{
+fat = FATORARSINGULAR(comehome)
+console.log(fat)
+}
+
+
+}
 
 console.log('--------------------------------------------------')
 //console.log(DIVIDIR(['11','x'],['11','11','x','y']))
@@ -316,6 +416,7 @@ if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
 }
 }
 //
+
 
 
 // FAZER CONTA COM NÚMEROS
