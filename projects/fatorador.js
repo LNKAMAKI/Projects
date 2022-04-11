@@ -10,11 +10,11 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-expression = ['6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x','+', '12','xx','+','30']
+expression = ['12','xx','+','30','+','6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
-//expression = ['5x', '+', '5*2x','+','7y','+','7*2y']
+//expression = ['3*3xy', '-', '2*3*3x']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -156,7 +156,7 @@ for (bye in monomios) {
 ////console.log('--------------------------------------------MONOMIOS--------------------------------------')
 reps = []
 segs = []
-DEVTOOLSLIXO = []
+let  = []
 
 for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     repetido = []
@@ -290,7 +290,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                 }) == undefined) {
 
                 segs.push({car: repetido[moe].letr, mons: [m]})
-                DEVTOOLSLIXO.push({car: repetido[moe].letr, mons: [m]})
+               
 
             }else if(segs.find(function(segs) {
                 return segs.car == repetido[moe].letr
@@ -301,9 +301,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
                         return segs.car == repetido[moe].letr
                         }).mons.push(m)
 
-                        DEVTOOLSLIXO.find(function(segs) {
-                            return segs.car == repetido[moe].letr
-                            }).mons.push(m)
+                        
             }
         }
 }
@@ -338,7 +336,7 @@ for (nl = 0; nl < segs.length; nl++) {
                     ////console.log('NÃO TEM')
                     console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU NESSE MUNDO', segs[nl].mons)
                     segs[nl].mons.push(segs[n].mons[u])
-                    DEVTOOLSLIXO[nl].mons.push(segs[n].mons[u])
+                  
                 }
             }
         }
@@ -369,12 +367,14 @@ function ehprimo(number) {
 
 grtols = []
 
+
 for (hi in segs) {
     //////console.log(segs[hi], segs[hi].mons.length)
-    //segs[hi].length = segs[hi].mons.length
+    segs[hi].length = segs[hi].mons.length
 
     grtols.push(segs[hi])
 }
+
 //////console.log('grtols: ', segs)
 //////console.log(sortob(grtols, 'length'))
 organizado = sortob(grtols, 'length')[1]
@@ -387,29 +387,9 @@ for (ah in organizado) {
 }
 
 //////console.log('LISTA ORDENADA PELO TAMANHO', grtols)
-//segs = grtols
+segs = grtols
 
 
-
-grtols = []
-
-for (hi in DEVTOOLSLIXO) {
-    
-    DEVTOOLSLIXO[hi].length = DEVTOOLSLIXO[hi].mons.length
-
-    grtols.push(DEVTOOLSLIXO[hi])
-}
-
-organizado = sortob(grtols, 'length')[1]
-
-grtols = []
-for (ah in organizado) {
-   // ////console.log(segs[organizado[ah]])
-    grtols.push(DEVTOOLSLIXO[organizado[ah]])
-   
-}
-
-DEVTOOLSLIXO = grtols
 //DIVS
 ml = monomios.length
 //////console.log(ml)
@@ -422,8 +402,11 @@ for (n in divs) {
     
 }
 
-divs = [7,7,7,3,3,3]
+if (divs.length == 0) {
+divs = [monomios.length]
+}
 
+divs = [7,7]
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
 
@@ -441,12 +424,17 @@ divs = [7,7,7,3,3,3]
         //HATEYOU.push(segs[HATEDEVTOOLS])
    // }
     
-   
+   console.log(segs)
+   for (tie in segs) {
+    console.log(segs[tie])
+    segs[tie].godhelpme = [...segs[tie].mons]
+   }
+  
     for (n in divs) {
         //const vi = 0
 
 
-    int = doit(DEVTOOLSLIXO)
+    int = doit()
    console.log(int[0], int[1])
     ////console.log(int[1])
     for (ish in int[0]) {
@@ -458,8 +446,21 @@ divs = [7,7,7,3,3,3]
         
     }
 
+    if (ehprimo(monomios.length) == true) {
+        console.log('TEMOS UM PROBLEMA')
+        for (ish in segs) {
+        
+               console.log(segs[ish].car, segs[ish].mons)
+            if (segs[ish].mons.length == monomios.length) {
+                console.log('É ESSE')
+                relation = [{car: [...segs[ish].car], fix: [...segs[ish].mons]}]
+            }
+        }
+        console.log('FICA ASSIM', relation)
     }
-    
+
+    }
+
     
 
 
@@ -548,17 +549,15 @@ function sortob(n, pam) {
 
 
 
-function doit(par) {
+function doit() {
 
     segs2 = []
 
-    for (uf in par) {
-        ta = par[uf]
-        
-       //console.log(ta)
+    for (uf in segs) {
     
-        segs2.push(ta)
+        segs2.push(segs[uf])
  }
+
  relation = []
 
 
@@ -599,7 +598,7 @@ function doit(par) {
      }
 
  present = []
- console.log('numapars',numapars)
+ //console.log('numapars',numapars)
  ////console.log('----------------------------------------------------------------------------------------------------')
  for (r in util) {
 
@@ -787,7 +786,9 @@ tirar.push(Number(h))
 }
 //console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
-//segs2[die].mons.splice(tirar[far], 1)
+   // console.log(segs[die].mons[tirar[far]])
+segs2[die].mons.splice(tirar[far], 1)
+
 }
 //console.log('ficou assim:', segs2[die].mons)
 }
@@ -887,7 +888,7 @@ if (mcr != idk) {
 }
 
 for (f = mia.length - 1; f >= 0; f--) {
-   // segs2.splice(mia[f],1)
+    segs2.splice(mia[f],1)
     
    }
 
@@ -1092,7 +1093,9 @@ tirar.push(Number(h))
 }
 //console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
-//segs2[die].mons.splice(tirar[far], 1)
+    
+segs2[die].mons.splice(tirar[far], 1)
+
 }
 //console.log('ficou assim:', segs2[die].mons)
 }

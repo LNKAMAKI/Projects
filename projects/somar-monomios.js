@@ -1,4 +1,4 @@
-exp = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','+','8','-','2','+','4','y']
+exp = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 
 // FATORANDO OS NÚMEROS
@@ -315,19 +315,24 @@ if (comehome[0][0] == '-') {
    oop+= fat
 console.log(oop)
 
-exp.push('+')
-exp.push(oop)
+exp.push('-')
+fat += ji[chuva].que
+exp.push(fat)
 
 }else{
 fat = FATORARSINGULAR(comehome)
 console.log(fat)
 
 if (exp.length == 0) {
+    fat += ji[chuva].que
     exp.push(fat)
+    console.log('PARTE LETRAL:', ji[chuva].que)
+   
     }else {
         exp.push('+')
+        fat += ji[chuva].que
         exp.push(fat)
-
+        console.log('PARTE LETRAL:', ji[chuva].que)
     }
 }
 
@@ -335,6 +340,7 @@ if (exp.length == 0) {
 
 }
 
+console.log(exp)
 console.log('--------------------------------------------------')
 //console.log(DIVIDIR(['11','x'],['11','11','x','y']))
 
