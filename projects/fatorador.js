@@ -422,7 +422,7 @@ for (n in divs) {
     
 }
 
-divs = [3,3]
+divs = [7,7,7,3,3,3]
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
@@ -445,13 +445,8 @@ divs = [3,3]
     for (n in divs) {
         //const vi = 0
 
-        uh = []
-        for (f in DEVTOOLSLIXO) {
-            g = DEVTOOLSLIXO[f]
-            uh.push(g)
-        }
 
-    int = doit(uh)
+    int = doit(DEVTOOLSLIXO)
    console.log(int[0], int[1])
     ////console.log(int[1])
     for (ish in int[0]) {
@@ -558,9 +553,12 @@ function doit(par) {
     segs2 = []
 
     for (uf in par) {
-       ////console.log(par[uf])
-        segs2.push(par[uf])
-    }
+        ta = par[uf]
+        
+       //console.log(ta)
+    
+        segs2.push(ta)
+ }
  relation = []
 
 
@@ -789,7 +787,7 @@ tirar.push(Number(h))
 }
 //console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
-segs2[die].mons.splice(tirar[far], 1)
+//segs2[die].mons.splice(tirar[far], 1)
 }
 //console.log('ficou assim:', segs2[die].mons)
 }
@@ -889,7 +887,7 @@ if (mcr != idk) {
 }
 
 for (f = mia.length - 1; f >= 0; f--) {
-    segs2.splice(mia[f],1)
+   // segs2.splice(mia[f],1)
     
    }
 
@@ -1094,7 +1092,7 @@ tirar.push(Number(h))
 }
 //console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
-segs2[die].mons.splice(tirar[far], 1)
+//segs2[die].mons.splice(tirar[far], 1)
 }
 //console.log('ficou assim:', segs2[die].mons)
 }
@@ -1147,7 +1145,7 @@ for (b = 0; b < grupos; b++) {
 return [relation, segs2]
 }
 
-//console.log('WHAT IF GOD WAS ONE OF US?')
+
 
 
 
