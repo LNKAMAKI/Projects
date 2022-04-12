@@ -406,7 +406,7 @@ if (divs.length == 0) {
 divs = [monomios.length]
 }
 
-divs = [7,7]
+divs = [7,3]
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
 
@@ -434,6 +434,7 @@ divs = [7,7]
         //const vi = 0
 
 
+        console.log('YEHAAAAAAAAAA')
     int = doit()
    console.log(int[0], int[1])
     ////console.log(int[1])
@@ -555,7 +556,13 @@ function doit() {
 
     for (uf in segs) {
     
-        segs2.push(segs[uf])
+       // console.log(segs[uf].godhelpme)
+       // segs2.push(segs[uf])
+      //  segs[tie].godhelpme = [...segs[tie].mons]
+      segs2[uf] = {}
+        segs2[uf].mons = [...segs[uf].mons]
+        segs2[uf].car = segs[uf].car
+
  }
 
  relation = []
