@@ -10,7 +10,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-expression = ['12','xx','+','30','+','6','x','^','2','+', '2','x', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','10','x','^','2','+','25','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x']
+expression = ['12','xx','+','30', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -406,7 +406,7 @@ if (divs.length == 0) {
 divs = [monomios.length]
 }
 
-divs = [7,3]
+divs = [7]
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
 
@@ -435,14 +435,24 @@ divs = [7,3]
 
 
         console.log('YEHAAAAAAAAAA')
-    int = doit()
+    int = doit(segs)
    console.log(int[0], int[1])
     ////console.log(int[1])
-    for (ish in int[0]) {
+
+    outro = []
+    enemy = 0
+    for (ish = int[0].length - 1; ish >= 0; ish--) {
         
         if (int[0][ish].fix.length > 0) {
+         //  console.log('ALL WE ARE IS EVERYTHING WE\'VE DONE')
+         
            console.log(int[0][ish].car, int[0][ish].fix)
+           //console.log(outro)
+          
+           enemy++
 
+        }else{
+            int[0].splice(ish, 1)
         }
         
     }
@@ -550,18 +560,18 @@ function sortob(n, pam) {
 
 
 
-function doit() {
+function doit(par) {
 
     segs2 = []
 
-    for (uf in segs) {
+    for (uf in par) {
     
        // console.log(segs[uf].godhelpme)
        // segs2.push(segs[uf])
       //  segs[tie].godhelpme = [...segs[tie].mons]
       segs2[uf] = {}
-        segs2[uf].mons = [...segs[uf].mons]
-        segs2[uf].car = segs[uf].car
+        segs2[uf].mons = [...par[uf].mons]
+        segs2[uf].car = par[uf].car
 
  }
 
@@ -895,7 +905,7 @@ if (mcr != idk) {
 }
 
 for (f = mia.length - 1; f >= 0; f--) {
-    segs2.splice(mia[f],1)
+    //segs2.splice(mia[f],1)
     
    }
 
