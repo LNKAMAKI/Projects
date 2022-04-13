@@ -8,9 +8,9 @@
 
 //expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
+expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-expression = ['12','xx','+','30', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25']
+//expression = ['12','xx','+','30', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -436,7 +436,7 @@ divs = [monomios.length]
 
         console.log('YEHAAAAAAAAAA')
     int = doit(segs)
-   console.log(int[0], int[1])
+   //console.log(int[0], int[1])
     ////console.log(int[1])
 
     outro = []
@@ -645,9 +645,9 @@ function doit(par) {
      if (present.fix.length < quanto) {
      for (g in lista) {
          ////console.log('')
-         ////console.log(lista[g])
+        //console.log(lista[g])
          if (present.fix.indexOf(lista[g]) == -1) {
-             ////console.log('FALTA')
+           //  console.log('FALTA')
              present.falt.push(lista[g])
 
             
@@ -659,12 +659,12 @@ function doit(par) {
                      
          }
      }
-     ////console.log('FALTAM OS NÚMEROS', present.falt)
+     //console.log('FALTAM OS NÚMEROS', present.falt)
 
      
      if (present.fix.length == 0) {
      for (ti in present.falt) {
-         ////console.log(present.falt[ti])
+       //  console.log(present.falt[ti])
 
         
 
@@ -754,6 +754,8 @@ groups++
 
 ////console.log('divs é igual a ', divs[n])
 ////console.log('groups é igual a', groups)
+
+
 if (groups < divs[n]) {
  console.log('DEU CERTO!!!EBAAAAAA')
 
@@ -776,7 +778,7 @@ groups++
 }
 ////console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
 if (divs[n] != groups) {
-////console.log('THEN WHY ARE WE LAUGHING?')
+console.log('SÓ QUE NÃO')
 ////console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
 
 tirados = []
@@ -829,11 +831,11 @@ for (b = 0; b < grupos; b++) {
        //console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
 
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
-               // ob.problem = true
+               ob.problem = true
            }
             //console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
-        //tirados.push(segs2[sorrow].mons[imor])
+        tirados.push(segs2[sorrow].mons[imor])
         imor++
         
        
@@ -854,6 +856,85 @@ for (b = 0; b < grupos; b++) {
 
 
 }
+males = []
+for (nah = relation.length - 1; nah >= 0; nah--) {
+     // if (relation[nah].fix.length > 0) {
+          
+  console.log('fix',relation[nah].fix)
+
+  //console.log('---VENDO TODA A LISTA---')
+  for (nop in relation) {
+    if (relation[nop].fix.length > 0 && nop != nah) {
+//console.log(relation[nop].fix, relation[nop].car)
+
+igual = true
+for (uh in relation[nop].fix) {
+//console.log(relation[nop].fix[uh])
+if (relation[nah].fix.indexOf(relation[nop].fix[uh]) == -1) {
+igual = false
+}
+}
+//console.log(igual)
+if (igual == true) {
+if (relation[nah].car.length > relation[nop].car.length) {
+//console.log('ESSE É UM MAL QUE PRECISA SER RETIRADO DA SOCIEDADE')
+males.push(Number(nop))
+}
+//}
+
+    }
+
+}
+      }
+  
+  }
+
+  for (nah = relation.length - 1; nah >= 0; nah--) {
+      console.log('dream',nah, relation[nah])
+      console.log(males)
+    if (males.indexOf(nah) != -1) {
+        console.log('HEY')
+        relation.splice(nah, 1)
+    }
+  }
+
+  numerosquetem = []
+  for (nah in relation) {
+      if (relation[nah].fix.length > 0) {
+      console.log(relation[nah].fix)
+
+      for (nop in relation[nah].fix) {
+          console.log(relation[nah].fix[nop])
+          numerosquetem.push(relation[nah].fix[nop])
+      }
+      }
+  }
+  console.log('----------------------------------------------------------------')
+
+  segs2 = []
+
+  for (uf in par) {
+  
+     // console.log(segs[uf].godhelpme)
+     // segs2.push(segs[uf])
+    //  segs[tie].godhelpme = [...segs[tie].mons]
+    segs2[uf] = {}
+      segs2[uf].mons = [...par[uf].mons]
+      segs2[uf].car = par[uf].car
+
+}
+
+for (pose in segs2) {
+console.log(segs2[pose].mons)
+for (me = segs2[pose].mons.length - 1; me >= 0; me--) {
+console.log(segs2[pose].mons[me])
+if (numerosquetem.indexOf(segs2[pose].mons[me]) != -1) {
+console.log('tirar')
+segs2[pose].mons.splice(me, 1)
+}
+}
+}
+
 }else if(groups > divs[n]){
     
 console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
@@ -1092,7 +1173,7 @@ for (wish in relation) {
  //console.log(relation[wish].fix)
  for (edge in relation[wish].fix) {
     //console.log(relation[wish].fix[edge])
-    //tirados.push(relation[wish].fix[edge])
+    tirados.push(relation[wish].fix[edge])
  }
 }
 //console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
@@ -1136,7 +1217,7 @@ for (b = 0; b < grupos; b++) {
        //console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
 
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
-               // ob.problem = true
+                ob.problem = true
            }
             //console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
@@ -1391,7 +1472,7 @@ groups++
 ////console.log('divs é igual a ', divs[n])
 ////console.log('groups é igual a', groups)
 if (groups < divs[n]) {
- console.log('DEU CERTO!!!EBAAAAAA')
+ //console.log('DEU CERTO!!!EBAAAAAA')
 
  ////console.log('SERÁ QUE DEU CERTO?')
 
@@ -1401,55 +1482,55 @@ groups = 0
 conts = []
 for (yougo in relation) {
 if (relation[yougo].fix.length > 0) {
-////console.log(relation[yougo].fix)
+console.log(relation[yougo].fix)
 
 for (pals in relation[yougo].fix) {
- ////console.log(relation[yougo].fix[pals])
+console.log(relation[yougo].fix[pals])
  conts.push(relation[yougo].fix[pals])
 }
 groups++
 }
 }
-////console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
+console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
 if (divs[n] != groups) {
-////console.log('THEN WHY ARE WE LAUGHING?')
-////console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
+console.log('THEN WHY ARE WE LAUGHING?')
+console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
 
 tirados = []
 for (wish in relation) {
- ////console.log(relation[wish].fix)
+// console.log(relation[wish].fix)
  for (edge in relation[wish].fix) {
-    ////console.log(relation[wish].fix[edge])
+//    console.log(relation[wish].fix[edge])
     tirados.push(relation[wish].fix[edge])
  }
 }
-////console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
+console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
 
 
 
 for (die in segs2) {
     tirar = []
 
-//console.log('break', segs2[die].mons)
+console.log('break', segs2[die].mons)
 for (h in segs2[die].mons) {
-//console.log(segs2[die].mons[h])
+console.log(segs2[die].mons[h])
 if (tirados.indexOf(segs2[die].mons[h]) != -1) {
 tirar.push(Number(h))
 }
 }
-//console.log('tirar de ',segs2[die].mons, tirar)
+console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
    // console.log(segs[die].mons[tirar[far]])
 segs2[die].mons.splice(tirar[far], 1)
 
 }
-//console.log('ficou assim:', segs2[die].mons)
+console.log('ficou assim:', segs2[die].mons)
 }
 
 for (sorrow in segs2) {
-//console.log(segs2[sorrow].mons)
+console.log(segs2[sorrow].mons)
 grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-//console.log('dá para formar', grupos,'grupos')
+console.log('dá para formar', grupos,'grupos')
 
 imor = 0
 
@@ -1469,7 +1550,7 @@ for (b = 0; b < grupos; b++) {
            }
             //console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
-        //tirados.push(segs2[sorrow].mons[imor])
+        tirados.push(segs2[sorrow].mons[imor])
         imor++
         
        
@@ -1492,45 +1573,45 @@ for (b = 0; b < grupos; b++) {
 }
 }else if(groups > divs[n]){
     
-console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
- ////console.log('números que têm: ', conts)
+//console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+ //console.log('números que têm: ', conts)
  ////console.log(segs)
 
  mia = []
 for (idk in segs2) {
 //////console.log('---------------------------------------------------------------------')
-////console.log('aqui ó',segs[idk].mons)
+//console.log('aqui ó',segs[idk].mons)
 
 
 for (mcr in segs2) {
 if (mcr != idk) {
 
     //////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-   // //console.log('outro',segs[mcr].mons)
+  // console.log('outro',segs[mcr].mons)
    
-   // //console.log(segs[idk].mons.length)
+   //console.log(segs[idk].mons.length)
     if (segs2[mcr].mons.length <= segs2[idk].mons.length) {
 
         sames = []
    for(y = 0; y < segs2[mcr].mons.length; y++) {
     //  //console.log(segs[idk].mons, segs[mcr].mons[y], segs[idk].mons.indexOf(segs[mcr].mons[y]))
         if (segs2[idk].mons.indexOf(segs2[mcr].mons[y]) != -1) {
-          ////console.log('igual')
+       //   console.log('igual')
             sames.push('igual')
         }else{
-          // //console.log('diferente')
+        //  console.log('diferente')
             sames.push('diferente')
         }
    }
- // //console.log(sames)
+// console.log(sames)
    if (sames.indexOf('diferente') == -1){
-  // //console.log('TIRAR', segs[mcr])
+ //console.log('TIRAR', segs[mcr])
 
     if (mia.indexOf(mcr) == -1) {
     mia.push(mcr)
     }
     
-    ////console.log(segs)
+ //  console.log(segs)
     
    }
 }
@@ -1680,7 +1761,7 @@ relation = []
      for (hu in outrorel.fix) {
        //  //console.log(outrorel.fix[hu])
          if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-          //   //console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
+          console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
              ////console.log(outrorel.falt)
              y = 0
              for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
@@ -1691,7 +1772,7 @@ relation = []
                      outrorel.fix[hu] =  outrorel.falt[ou]
                      outrorel.falt[ou] = -10
                      
-                  //   //console.log('isso aí:', outrorel.fix)
+                  //console.log('isso aí:', outrorel.fix)
                      y++
                  }
              }
@@ -1709,10 +1790,10 @@ groups = 0
 conts = []
 for (yougo in relation) {
 if (relation[yougo].fix.length > 0) {
-////console.log(relation[yougo].fix)
+console.log(relation[yougo].fix)
 
 for (pals in relation[yougo].fix) {
- ////console.log(relation[yougo].fix[pals])
+ console.log(relation[yougo].fix[pals])
  conts.push(relation[yougo].fix[pals])
 }
 groups++
@@ -1725,38 +1806,38 @@ if (divs[n] != groups) {
 
 tirados = []
 for (wish in relation) {
- //console.log(relation[wish].fix)
+ console.log(relation[wish].fix)
  for (edge in relation[wish].fix) {
-    //console.log(relation[wish].fix[edge])
-    //tirados.push(relation[wish].fix[edge])
+    console.log(relation[wish].fix[edge])
+    tirados.push(relation[wish].fix[edge])
  }
 }
-//console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
+console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
 
 
 for (die in segs2) {
     tirar = []
 
-//console.log('break', segs2[die].mons)
+console.log('break', segs2[die].mons)
 for (h in segs2[die].mons) {
-//console.log(segs2[die].mons[h])
+console.log(segs2[die].mons[h])
 if (tirados.indexOf(segs2[die].mons[h]) != -1) {
 tirar.push(Number(h))
 }
 }
-//console.log('tirar de ',segs2[die].mons, tirar)
+console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
     
 segs2[die].mons.splice(tirar[far], 1)
 
 }
-//console.log('ficou assim:', segs2[die].mons)
+console.log('ficou assim:', segs2[die].mons)
 }
 
 for (sorrow in segs2) {
-//console.log(segs2[sorrow].mons)
+console.log(segs2[sorrow].mons)
 grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-//console.log('dá para formar', grupos,'grupos')
+console.log('dá para formar', grupos,'grupos')
 
 imor = 0
 
@@ -1766,15 +1847,15 @@ for (b = 0; b < grupos; b++) {
     ob = {car: segs2[sorrow].car, fix: [],problem:false}
 
     for (live = 0; live < quanto; live++) {
-        //console.log('TIRADOS')
-        //console.log(segs2[sorrow].mons[imor])
+      //  console.log('TIRADOS')
+     //   console.log(segs2[sorrow].mons[imor])
 
-       //console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
+    //   console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
 
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
-               // ob.problem = true
+                //ob.problem = true
            }
-            //console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
+         //   console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
         tirados.push(segs2[sorrow].mons[imor])
         imor++
@@ -1798,5 +1879,14 @@ for (b = 0; b < grupos; b++) {
 
 }
 }
+
+console.log('HELLO')
+for (nah in relation) {
+    if (relation[nah].fix.length > 0 && relation[nah].problem == undefined) {
+console.log(relation[nah].fix)
+    }
+
+}
+
 return [relation, segs2]
 }
