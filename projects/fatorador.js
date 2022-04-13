@@ -1,5 +1,4 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
-//expression = ['10','-','7','+','10','x','-','(','5','+','9',')']
 
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
@@ -8,13 +7,13 @@
 
 //expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
+//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['12','xx','+','30', '+', '10','+', '14','x','^','2', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','5','x','+','9','x','+','18','x','^','2','+','45','+','4','x','+','8','x','^','2','+','20', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25']
+//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
-//expression = ['3*3xy', '-', '2*3*3x']
+expression = ['3*3xy', '-', '2*3*3x']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -334,7 +333,7 @@ for (nl = 0; nl < segs.length; nl++) {
                     ////console.log('TEM')
                 }else{
                     ////console.log('NÃO TEM')
-                    console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU NESSE MUNDO', segs[nl].mons)
+                 //   console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU NESSE MUNDO', segs[nl].mons)
                     segs[nl].mons.push(segs[n].mons[u])
                   
                 }
@@ -406,7 +405,7 @@ if (divs.length == 0) {
 divs = [monomios.length]
 }
 
-//divs = []
+
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
 
@@ -424,9 +423,9 @@ divs = [monomios.length]
         //HATEYOU.push(segs[HATEDEVTOOLS])
    // }
     
-   console.log(segs)
+   //console.log(segs)
    for (tie in segs) {
-    console.log(segs[tie])
+   // console.log(segs[tie])
     segs[tie].godhelpme = [...segs[tie].mons]
    }
   
@@ -434,7 +433,8 @@ divs = [monomios.length]
         //const vi = 0
 
 
-        console.log('YEHAAAAAAAAAA')
+       // console.log('YEHAAAAAAAAAA')
+       console.log(divs[n],'grupos')
     int = doit(segs)
    //console.log(int[0], int[1])
     ////console.log(int[1])
@@ -458,16 +458,17 @@ divs = [monomios.length]
     }
 
     if (ehprimo(monomios.length) == true) {
-        console.log('TEMOS UM PROBLEMA')
+      //  console.log('TEMOS UM PROBLEMA')
         for (ish in segs) {
         
-               console.log(segs[ish].car, segs[ish].mons)
+            //   console.log(segs[ish].car, segs[ish].mons)
             if (segs[ish].mons.length == monomios.length) {
                 console.log('É ESSE')
-                relation = [{car: [...segs[ish].car], fix: [...segs[ish].mons]}]
+                relation = [{car: segs[ish].car, fix: [...segs[ish].mons]}]
             }
         }
-        console.log('FICA ASSIM', relation)
+        console.log('FICA ASSIM')
+        console.log(relation)
     }
 
     }
@@ -757,7 +758,7 @@ groups++
 
 
 if (groups < divs[n]) {
- console.log('DEU CERTO!!!EBAAAAAA')
+ //console.log('DEU CERTO!!!EBAAAAAA')
 
  ////console.log('SERÁ QUE DEU CERTO?')
 
@@ -778,7 +779,7 @@ groups++
 }
 ////console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
 if (divs[n] != groups) {
-console.log('SÓ QUE NÃO')
+//console.log('SÓ QUE NÃO')
 ////console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
 
 tirados = []
@@ -860,7 +861,7 @@ males = []
 for (nah = relation.length - 1; nah >= 0; nah--) {
      // if (relation[nah].fix.length > 0) {
           
-  console.log('fix',relation[nah].fix)
+ // console.log('fix',relation[nah].fix)
 
   //console.log('---VENDO TODA A LISTA---')
   for (nop in relation) {
@@ -884,16 +885,18 @@ males.push(Number(nop))
 
     }
 
+}else if(relation[nop].fix.length == 0) {
+    males.push(Number(nop))
 }
       }
   
   }
 
   for (nah = relation.length - 1; nah >= 0; nah--) {
-      console.log('dream',nah, relation[nah])
-      console.log(males)
+      //console.log('dream',nah, relation[nah])
+     // console.log(males)
     if (males.indexOf(nah) != -1) {
-        console.log('HEY')
+      //  console.log('HEY')
         relation.splice(nah, 1)
     }
   }
@@ -901,10 +904,10 @@ males.push(Number(nop))
   numerosquetem = []
   for (nah in relation) {
       if (relation[nah].fix.length > 0) {
-      console.log(relation[nah].fix)
+    //  console.log(relation[nah].fix)
 
       for (nop in relation[nah].fix) {
-          console.log(relation[nah].fix[nop])
+       //   console.log(relation[nah].fix[nop])
           numerosquetem.push(relation[nah].fix[nop])
       }
       }
@@ -925,15 +928,38 @@ males.push(Number(nop))
 }
 
 for (pose in segs2) {
-console.log(segs2[pose].mons)
+//console.log(segs2[pose].mons)
 for (me = segs2[pose].mons.length - 1; me >= 0; me--) {
-console.log(segs2[pose].mons[me])
+//console.log(segs2[pose].mons[me])
 if (numerosquetem.indexOf(segs2[pose].mons[me]) != -1) {
-console.log('tirar')
+//console.log('tirar')
 segs2[pose].mons.splice(me, 1)
 }
 }
 }
+
+fireonfire = []
+
+    for (uf in relation) {
+    
+       // console.log(segs[uf].godhelpme)
+       // segs2.push(segs[uf])
+      //  segs[tie].godhelpme = [...segs[tie].mons]
+      fireonfire[uf] = {}
+        fireonfire[uf].mons = [...relation[uf].fix]
+        fireonfire[uf].car = relation[uf].car
+
+ }
+
+ console.log('OK, AGORA PRECISAMOS ENCONTRAR O RESTO')
+ console.log(doit2(segs2)[0])
+ console.log(fireonfire)
+
+ //console.log('relation', relation)
+ for (red in fireonfire) {
+   // console.log(fireonfire[red])
+    relation.push({fix: fireonfire[red].mons, car: fireonfire[red].car})
+ }
 
 }else if(groups > divs[n]){
     
@@ -1287,7 +1313,7 @@ function doit2(par) {
        // segs2.push(segs[uf])
       //  segs[tie].godhelpme = [...segs[tie].mons]
       segs2[uf] = {}
-        segs2[uf].mons = [...par[uf].fix]
+        segs2[uf].mons = [...par[uf].mons]
         segs2[uf].car = par[uf].car
 
  }
@@ -1511,26 +1537,26 @@ console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
 for (die in segs2) {
     tirar = []
 
-console.log('break', segs2[die].mons)
+//console.log('break', segs2[die].mons)
 for (h in segs2[die].mons) {
-console.log(segs2[die].mons[h])
+//console.log(segs2[die].mons[h])
 if (tirados.indexOf(segs2[die].mons[h]) != -1) {
 tirar.push(Number(h))
 }
 }
-console.log('tirar de ',segs2[die].mons, tirar)
+//console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
    // console.log(segs[die].mons[tirar[far]])
 segs2[die].mons.splice(tirar[far], 1)
 
 }
-console.log('ficou assim:', segs2[die].mons)
+//console.log('ficou assim:', segs2[die].mons)
 }
 
 for (sorrow in segs2) {
-console.log(segs2[sorrow].mons)
+//console.log(segs2[sorrow].mons)
 grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-console.log('dá para formar', grupos,'grupos')
+//console.log('dá para formar', grupos,'grupos')
 
 imor = 0
 
@@ -1761,7 +1787,7 @@ relation = []
      for (hu in outrorel.fix) {
        //  //console.log(outrorel.fix[hu])
          if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-          console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
+        // console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
              ////console.log(outrorel.falt)
              y = 0
              for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
@@ -1790,10 +1816,10 @@ groups = 0
 conts = []
 for (yougo in relation) {
 if (relation[yougo].fix.length > 0) {
-console.log(relation[yougo].fix)
+//console.log(relation[yougo].fix)
 
 for (pals in relation[yougo].fix) {
- console.log(relation[yougo].fix[pals])
+ //console.log(relation[yougo].fix[pals])
  conts.push(relation[yougo].fix[pals])
 }
 groups++
@@ -1806,9 +1832,9 @@ if (divs[n] != groups) {
 
 tirados = []
 for (wish in relation) {
- console.log(relation[wish].fix)
+ //console.log(relation[wish].fix)
  for (edge in relation[wish].fix) {
-    console.log(relation[wish].fix[edge])
+   // console.log(relation[wish].fix[edge])
     tirados.push(relation[wish].fix[edge])
  }
 }
@@ -1818,26 +1844,26 @@ console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
 for (die in segs2) {
     tirar = []
 
-console.log('break', segs2[die].mons)
+//console.log('break', segs2[die].mons)
 for (h in segs2[die].mons) {
-console.log(segs2[die].mons[h])
+//console.log(segs2[die].mons[h])
 if (tirados.indexOf(segs2[die].mons[h]) != -1) {
 tirar.push(Number(h))
 }
 }
-console.log('tirar de ',segs2[die].mons, tirar)
+//console.log('tirar de ',segs2[die].mons, tirar)
 for (far = tirar.length - 1; far >= 0; far--) {
     
 segs2[die].mons.splice(tirar[far], 1)
 
 }
-console.log('ficou assim:', segs2[die].mons)
+//console.log('ficou assim:', segs2[die].mons)
 }
 
 for (sorrow in segs2) {
 console.log(segs2[sorrow].mons)
 grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-console.log('dá para formar', grupos,'grupos')
+//console.log('dá para formar', grupos,'grupos')
 
 imor = 0
 
@@ -1881,12 +1907,7 @@ for (b = 0; b < grupos; b++) {
 }
 
 console.log('HELLO')
-for (nah in relation) {
-    if (relation[nah].fix.length > 0 && relation[nah].problem == undefined) {
-console.log(relation[nah].fix)
-    }
 
-}
 
 return [relation, segs2]
 }
