@@ -183,42 +183,6 @@ for (huh in monomios) {
        }
     
 }
-//
-
-//ji = oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-/*
-for (bye in monomios) {
-    console.log(monomios[bye])
-
-    comofica = []
-    ground = ''
-
-    for (misery in monomios[bye].numero) { 
-        console.log(monomios[bye].numero[misery])
-        
-        carac = monomios[bye].numero[misery]
-        console.log('CARACTER' + carac)
-        console.log(ground.length)
-
-        console.log('OH COME ON',ground, String(ground.search('[0-9]')))
-            if (ground.length == 0) {
-                console.log('LISTA VAZIA')
-                ground+= carac
-            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                console.log('É UM NÚMERO')
-                ground+= carac
-            }else{
-                comofica.push(ground)
-                ground = ''
-                ground += carac
-                         
-                }
-            }
-    }
-
-    console.log('COMOFICA', comofica)
-   // monomios[bye].numero = comofica
-*/
 
 
 // SEPARANDO/JUNTANDO OS NÚMEROS
