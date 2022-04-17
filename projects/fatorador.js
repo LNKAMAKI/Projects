@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
@@ -17,7 +17,7 @@
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z']
 
-expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
+//expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 //FAZENDO AS CONTAS COM NÚMEROS
 
         
@@ -160,9 +160,9 @@ for (huh in monomios) {
 
     partlet = ''
     for (y in monomios[huh].numero) {
-     console.log(monomios[huh].numero[y])
+     //console.log(monomios[huh].numero[y])
      if (String(monomios[huh].numero[y]).search('[a-z]') != -1) {
-        console.log('EEEEEE')
+        //console.log('EEEEEE')
         partlet+= String(monomios[huh].numero[y])
      }
     }
@@ -177,7 +177,7 @@ for (huh in monomios) {
     if (ji.find(function (ji) {
         return ji.que == monomios[huh].partletral
        }) == undefined) {
-           console.log('ARRRRRROZ')
+           //console.log('ARRRRRROZ')
     ji.push({quais: [Number(huh)], que:  monomios[huh].partletral})
        }else{
         ji.find(function (ji) {
@@ -997,13 +997,22 @@ divs = [monomios.length]
         
             //   console.log(segs[ish].car, segs[ish].mons)
             if (segs[ish].mons.length == monomios.length) {
-                console.log('É ESSE')
+             //console.log('É ESSE')
                 relation = [{car: segs[ish].car, fix: [...segs[ish].mons]}]
             }
         }
         console.log('FICA ASSIM')
         console.log(relation)
     }
+
+    console.log('YOU GO GIVING UP YOUR HOME')
+    for(anchor in int[0]) {
+        console.log(int[0][anchor].fix)
+        for (fixme in int[0][anchor].fix) {
+            console.log(monomios[int[0][anchor].fix[fixme]].numero)
+        }
+    }
+   
 
     }
 
