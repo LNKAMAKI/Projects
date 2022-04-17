@@ -2,6 +2,7 @@
 
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
+expression = ['x','^','3','+','x','-','2','x','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
@@ -19,7 +20,7 @@
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
-expression = ['11','x','+','33','x','+','22','y','x']
+//expression = ['11','x','+','33','x','+','22','y','x','+','2','y','x']
 //FAZENDO AS CONTAS COM NÚMEROS
 
         
@@ -335,7 +336,11 @@ if (comehome[0][0] == '-') {
    }
    }
    console.log(t)
+   if (ehprimo(t) == false) {
    fat = FATORARSINGULAR(t)
+   }else{
+    fat = t
+   }
    oop = '-'
    oop+= fat
 console.log(oop)
