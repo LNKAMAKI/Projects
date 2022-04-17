@@ -20,7 +20,7 @@ expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+'
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-//expression = ['10x','+','5xyy','+','5xx','+','12y','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','8b','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx']
+expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -985,7 +985,7 @@ for (n in divs) {
 if (divs.length == 0) {
 divs = [monomios.length]
 }
-divs = [2]
+//divs = [2]
 
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
