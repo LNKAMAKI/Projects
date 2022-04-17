@@ -1062,7 +1062,15 @@ divs = [monomios.length]
             }else{
                 console.log('NÃO VAI NÃO')
                 army.push(lpisthebest)
+                if(relation[anchor].car[fall] != '.') {
                 lpisthebest = relation[anchor].car[fall]
+                }else{
+                    if (relation[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
+                    lpisthebest = '*'
+                    }else{
+                        lpisthebest = ''
+                    }
+                }
                 console.log('LPISTHEBEST', lpisthebest)
             }
             if (fall == relation[anchor].car.length - 1) {
@@ -1072,10 +1080,10 @@ divs = [monomios.length]
         }
         console.log('ESSE É O ARMY', army)
 
-      //  for (fixme in relation[anchor].fix) {
-          //  console.log(monomios[relation[anchor].fix[fixme]].numero)
+        for (fixme in relation[anchor].fix) {
+            console.log(monomios[relation[anchor].fix[fixme]].numero)
           //  console.log(DIVIDIR(army, monomios[relation[anchor].fix[fixme]].numero))
-      //  }
+        }
     }
    
 
