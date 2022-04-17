@@ -231,9 +231,9 @@ for (bye in ji) {
 */
 
 for (chuva in ji) {
-    console.log('')
-    console.log('')
-    console.log('')
+    //console.log('')
+   // console.log('')
+    //console.log('')
 
     conta = []
 for (da in ji[chuva].quais) {
@@ -319,10 +319,10 @@ if (plan.length == 3) {
 }
 
 
-console.log('OK, FICOU ASSIM:', conta)
+//console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
-console.log('E RESOLVENDO FICA ASSIM:', comehome)
+//console.log('E RESOLVENDO FICA ASSIM:', comehome)
 
 
 
@@ -353,18 +353,18 @@ fat = FATORARSINGULAR(comehome)
     }else{
         fat = comehome
     }
-console.log(fat)
+//console.log(fat)
 
 if (exp.length == 0) {
     fat += ji[chuva].que
     exp.push(fat)
-    console.log('PARTE LETRAL:', ji[chuva].que)
+    //console.log('PARTE LETRAL:', ji[chuva].que)
    
     }else {
         exp.push('+')
         fat += ji[chuva].que
         exp.push(fat)
-        console.log('PARTE LETRAL:', ji[chuva].que)
+      //  console.log('PARTE LETRAL:', ji[chuva].que)
     }
 }
 
@@ -1054,14 +1054,14 @@ divs =[2]
         lpisthebest = ''
             for (fall in relation[anchor].car) {
             if (lpisthebest.length == 0) {
-                console.log('LISTA VAZIA - ADD')
+              //  console.log('LISTA VAZIA - ADD')
                 lpisthebest = relation[anchor].car[fall]
                 console.log(lpisthebest)
             }else if(lpisthebest.search('[0-9]') != -1 && relation[anchor].car[fall].search('[0-9]') != -1) {
-                console.log('VAI - ADD')
+               // console.log('VAI - ADD')
                 lpisthebest += relation[anchor].car[fall]
             }else{
-                console.log('NÃO VAI NÃO')
+               // console.log('NÃO VAI NÃO')
                 army.push(lpisthebest)
                 if(relation[anchor].car[fall] != '.') {
                 lpisthebest = relation[anchor].car[fall]
@@ -1082,9 +1082,26 @@ divs =[2]
         console.log('OAHAHA', army)
         for (high in relation[anchor].fix) {
             army = [...bell]
-            console.log(army, bell)
-            console.log(monomios[relation[anchor].fix[high]].numero)
-            console.log(DIVIDIR(army,monomios[relation[anchor].fix[high]].numero))
+     
+            console.log(monomios[relation[anchor].fix[high]].numero,army)
+
+            pain = DIVIDIR(army,monomios[relation[anchor].fix[high]].numero)
+            
+            if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
+              //  console.log('É 1')
+                pain = 1
+                console.log('É ESSE:', pain)
+            }else{
+
+                right = ''
+                for (feet in pain) {
+                  //  console.log(pain[feet])
+                    if (pain[feet] != '+') {
+                        right+= pain[feet]
+                    }
+                }
+                console.log('É ESSE:', right)
+            }
            
         }
     }
