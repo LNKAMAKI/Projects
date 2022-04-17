@@ -1,13 +1,13 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
 //expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
+expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
 //expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
@@ -18,6 +18,8 @@ expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+'
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
+
+//expression = ['11','x','+','33','x']
 //FAZENDO AS CONTAS COM NÚMEROS
 
         
@@ -187,10 +189,11 @@ for (huh in monomios) {
     
 }
 
-/*
+
 // SEPARANDO/JUNTANDO OS NÚMEROS
 
 exp = []
+/*
 for (bye in ji) {
     console.log(ji[bye])
 
@@ -225,9 +228,8 @@ for (bye in ji) {
     }
 }
 
+*/
 
-console.log('COMEÇAR A DIVIDIR')
-// COMEÇAR A DIVIDIR
 for (chuva in ji) {
     console.log('')
     console.log('')
@@ -342,7 +344,11 @@ fat += ji[chuva].que
 exp.push(fat)
 
 }else{
+    if (ehprimo(comehome) == false) {
 fat = FATORARSINGULAR(comehome)
+    }else{
+        fat = comehome
+    }
 console.log(fat)
 
 if (exp.length == 0) {
@@ -362,31 +368,6 @@ if (exp.length == 0) {
 
 }
 
-console.log(exp)
-expression = exp
-console.log('--------------------------------------------------')
-//console.log(DIVIDIR(['11','x'],['11','11','x','y']))
-
-
-// SEPARANDO OS MONÔMIOS DENOVO
-monomios = [{numero: ''}]
-obnum = 0
-
-
-for (n = 0; n < exp.length; n++) {
-//console.log(exp[n], monomios[obnum])
-
-if (String(exp[n]).search('[\\-\\+]') != -1 && n != 0) {
-//console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
-monomios.push({numero: ''})
-obnum++
-}
-
-monomios[obnum].numero += exp[n]
-}
-//
-
-// DIVIDINDO MONÔMIOS
 function DIVIDIR(T, qual) {
     
     Tfix = []
@@ -421,8 +402,25 @@ return depois
 
 
 }
+expression = exp
+
+// SEPARANDO OS MONÔMIOS DENOVO
+monomios = [{numero: ''}]
+obnum = 0
+
+
+for (n = 0; n < exp.length; n++) {
+//console.log(exp[n], monomios[obnum])
+
+if (String(exp[n]).search('[\\-\\+]') != -1 && n != 0) {
+//console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
+monomios.push({numero: ''})
+obnum++
+}
+
+monomios[obnum].numero += exp[n]
+}
 //
-*/
 
 //console.log('OK, VAMOS DAR UMA PARADINHA')
 
