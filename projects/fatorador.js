@@ -1007,9 +1007,16 @@ divs = [monomios.length]
 
     console.log('YOU GO GIVING UP YOUR HOME')
     for(anchor in int[0]) {
-        console.log(int[0][anchor].fix)
+        console.log(int[0][anchor].fix, int[0][anchor].car)
+        
+        army = []
+
+        for (fall in int[0][anchor].car) {
+            console.log(int[0][anchor].car[fall])
+        }
         for (fixme in int[0][anchor].fix) {
             console.log(monomios[int[0][anchor].fix[fixme]].numero)
+
         }
     }
    
