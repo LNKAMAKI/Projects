@@ -1,8 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
-
-expression = ['x','^','3','+','x','-','2','x','y']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
@@ -176,7 +174,7 @@ for (huh in monomios) {
 
 ji = []
 for (huh in monomios) {
-    console.log(monomios[huh], monomios[huh].partletral)
+   // console.log(monomios[huh], monomios[huh].partletral)
     
     if (ji.find(function (ji) {
         return ji.que == monomios[huh].partletral
@@ -979,6 +977,7 @@ for (n in divs) {
 if (divs.length == 0) {
 divs = [monomios.length]
 }
+divs =[2]
 
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -1049,14 +1048,11 @@ divs = [monomios.length]
 
     console.log('YOU GO GIVING UP YOUR HOME')
     for(anchor in relation) {
-        console.log(relation[anchor].fix, int[0][anchor].car)
+        console.log('i feel the light betrayed me', relation[anchor].fix, int[0][anchor].car)
         
         army = []
-
         lpisthebest = ''
-        for (fall in relation[anchor].car) {
-            console.log(relation[anchor].car[fall])
-
+            for (fall in relation[anchor].car) {
             if (lpisthebest.length == 0) {
                 console.log('LISTA VAZIA - ADD')
                 lpisthebest = relation[anchor].car[fall]
@@ -1081,13 +1077,15 @@ divs = [monomios.length]
             if (fall == relation[anchor].car.length - 1) {
                 army.push(lpisthebest)
             }
-            
         }
-        console.log('ESSE É O ARMY', army)
-
-        for (fixme in relation[anchor].fix) {
-            console.log(monomios[relation[anchor].fix[fixme]].numero)
-          //  console.log(DIVIDIR(army, monomios[relation[anchor].fix[fixme]].numero))
+        bell = [...army]
+        console.log('OAHAHA', army)
+        for (high in relation[anchor].fix) {
+            army = [...bell]
+            console.log(army, bell)
+            console.log(monomios[relation[anchor].fix[high]].numero)
+            console.log(DIVIDIR(army,monomios[relation[anchor].fix[high]].numero))
+           
         }
     }
    

@@ -658,4 +658,4 @@ function ehprimo(number) {
     return true
 }
 //
-console.log(DIVIDIR(['11'], ['2','*','11','x']))
+//console.log(DIVIDIR(['x'], ['-','2','x','x']))
