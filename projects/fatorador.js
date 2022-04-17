@@ -19,6 +19,8 @@
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
 //expression = ['11','x','+','33','x','+','22','y','x','+','2','y','x']
+
+expression = ['11','x','-','33','y']
 //FAZENDO AS CONTAS COM NÚMEROS
 
         
@@ -981,7 +983,7 @@ for (n in divs) {
 if (divs.length == 0) {
 divs = [monomios.length]
 }
-divs =[2]
+
 
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
