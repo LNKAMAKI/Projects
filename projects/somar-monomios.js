@@ -1,4 +1,4 @@
-exp = []
+exp = ['3']
 
 
 // FATORANDO OS NÚMEROS
@@ -311,7 +311,11 @@ if (comehome[0][0] == '-') {
    }
    }
    console.log(t)
+   if (ehprimo(t) == false) {
    fat = FATORARSINGULAR(t)
+   }else {
+       fat = t
+   }
    oop = '-'
    oop+= fat
 console.log(oop)

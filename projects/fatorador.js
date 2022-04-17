@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2','-', 'y','^','2','b', '-', '7','y','^','2']
 
@@ -278,7 +278,7 @@ add+= resultadoDaDivisão[past]
 
 if (plan.length == 3) {
 //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-//console.log(Number(plan[0])*Number(plan[2]))
+console.log(Number(plan[0])*Number(plan[2]))
 plan = [String(Number(plan[0])*Number(plan[2]))]
 }
  }
@@ -322,7 +322,7 @@ if (plan.length == 3) {
 //console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
-//console.log('E RESOLVENDO FICA ASSIM:', comehome)
+console.log('E RESOLVENDO FICA ASSIM:', comehome)
 
 
 
@@ -334,13 +334,17 @@ if (comehome[0][0] == '-') {
    }
    }
    console.log(t)
+   console.log(typeof t)
+   at = t
    if (ehprimo(t) == false) {
-   fat = FATORARSINGULAR(t)
+      console.log(at)
+   fat = FATORARSINGULAR(at)
+   console.log(String(fat))
    }else{
     fat = t
    }
    oop = '-'
-   oop+= fat
+   oop+= String(fat)
 console.log(oop)
 
 exp.push('-')
