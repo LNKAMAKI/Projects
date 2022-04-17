@@ -1,4 +1,4 @@
-exp = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+exp = []
 
 
 // FATORANDO OS NÚMEROS
@@ -224,6 +224,7 @@ divisor.push(ji[chuva].que[flowers])
 
 //console.log(monomios[ji[chuva].quais[da]].numero, '/',divisor)
 
+console.log('OCEANS', divisor, monomios[ji[chuva].quais[da]].numero)
 resultadoDaDivisão = DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero)
 //console.log('A DIVISÃ É IGUAL A ', resultadoDaDivisão)
 
@@ -657,3 +658,4 @@ function ehprimo(number) {
     return true
 }
 //
+console.log(DIVIDIR(['11'], ['2','*','11','x']))

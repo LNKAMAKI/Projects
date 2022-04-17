@@ -19,7 +19,7 @@
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
-//expression = ['11','x','+','33','x','+','22','y','x']
+expression = ['11','x','+','33','x','+','22','y','x']
 //FAZENDO AS CONTAS COM NÚMEROS
 
         
@@ -1041,19 +1041,41 @@ divs = [monomios.length]
         console.log(relation)
     }
 
+
     console.log('YOU GO GIVING UP YOUR HOME')
-    for(anchor in int[0]) {
-        console.log(int[0][anchor].fix, int[0][anchor].car)
+    for(anchor in relation) {
+        console.log(relation[anchor].fix, int[0][anchor].car)
         
         army = []
 
-        for (fall in int[0][anchor].car) {
-            console.log(int[0][anchor].car[fall])
-        }
-        for (fixme in int[0][anchor].fix) {
-            console.log(monomios[int[0][anchor].fix[fixme]].numero)
+        lpisthebest = ''
+        for (fall in relation[anchor].car) {
+            console.log(relation[anchor].car[fall])
 
+            if (lpisthebest.length == 0) {
+                console.log('LISTA VAZIA - ADD')
+                lpisthebest = relation[anchor].car[fall]
+                console.log(lpisthebest)
+            }else if(lpisthebest.search('[0-9]') != -1 && relation[anchor].car[fall].search('[0-9]') != -1) {
+                console.log('VAI - ADD')
+                lpisthebest += relation[anchor].car[fall]
+            }else{
+                console.log('NÃO VAI NÃO')
+                army.push(lpisthebest)
+                lpisthebest = relation[anchor].car[fall]
+                console.log('LPISTHEBEST', lpisthebest)
+            }
+            if (fall == relation[anchor].car.length - 1) {
+                army.push(lpisthebest)
+            }
+            
         }
+        console.log('ESSE É O ARMY', army)
+
+      //  for (fixme in relation[anchor].fix) {
+          //  console.log(monomios[relation[anchor].fix[fixme]].numero)
+          //  console.log(DIVIDIR(army, monomios[relation[anchor].fix[fixme]].numero))
+      //  }
     }
    
 
