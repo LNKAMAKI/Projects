@@ -7,7 +7,7 @@
 
 //expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
+//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
 //expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
@@ -19,7 +19,7 @@ expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4',
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
-//expression = ['11','x','+','33','x']
+//expression = ['11','x','+','33','x','+','22','y','x']
 //FAZENDO AS CONTAS COM NÚMEROS
 
         
@@ -145,9 +145,10 @@ for (bye in monomios) {
                 comofica.push(ground)
                 ground = ''
                 ground += carac
-                if (misery == monomios[bye].numero.length - 1) {
-                    comofica.push(ground)
-                }
+                
+            }
+            if (misery == monomios[bye].numero.length - 1) {
+                comofica.push(ground)
             }
     }
 
@@ -421,6 +422,43 @@ obnum++
 monomios[obnum].numero += exp[n]
 }
 //
+
+// SEPARAR CORRETAMENTE OS NÚMEROS
+for (bye in monomios) {
+    ////console.log(monomios[bye])
+
+    comofica = []
+    ground = ''
+
+    for (misery in monomios[bye].numero) { 
+      //  //console.log(monomios[bye].numero[misery])
+        
+        carac = monomios[bye].numero[misery]
+       // //console.log('CARACTER' + carac)
+      //  //console.log(ground.length)
+
+       // //console.log('OH COME ON',ground, String(ground.search('[0-9]')))
+            if (ground.length == 0) {
+                //console.log('LISTA VAZIA')
+                ground+= carac
+            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
+                //console.log('É UM NÚMERO')
+                ground+= carac
+            }else{
+                comofica.push(ground)
+                ground = ''
+                ground += carac
+               
+            }
+            if (misery == monomios[bye].numero.length - 1) {
+                comofica.push(ground)
+            }
+    }
+
+    ////console.log('COMOFICA', comofica)
+    ////console.log('NAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
+    monomios[bye].numero = comofica
+}
 
 //console.log('OK, VAMOS DAR UMA PARADINHA')
 
