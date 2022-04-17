@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
@@ -20,7 +20,7 @@
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-expression = ['10x','+','5xyy','+','5xx','+','12y','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','8b','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx']
+//expression = ['10x','+','5xyy','+','5xx','+','12y','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','8b','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -985,7 +985,7 @@ for (n in divs) {
 if (divs.length == 0) {
 divs = [monomios.length]
 }
-
+divs = [2]
 
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -1013,7 +1013,7 @@ divs = [monomios.length]
   
     for (n in divs) {
         //const vi = 0
-
+   scarecrow = []
 
        // console.log('YEHAAAAAAAAAA')
        console.log(divs[n],'grupos')
@@ -1057,7 +1057,8 @@ divs = [monomios.length]
     console.log('YOU GO GIVING UP YOUR HOME')
     for(anchor in relation) {
         console.log('i feel the light betrayed me', relation[anchor].fix, int[0][anchor].car)
-        
+        scarecrow.push({divididos: [], poss: [...relation[anchor].fix]})
+
         army = []
         lpisthebest = ''
             for (fall in relation[anchor].car) {
@@ -1089,6 +1090,8 @@ divs = [monomios.length]
         bell = [...army]
         console.log('OAHAHA', army)
         for (high in relation[anchor].fix) {
+            
+           
             army = [...bell]
      
             console.log(monomios[relation[anchor].fix[high]].numero,army)
@@ -1097,8 +1100,9 @@ divs = [monomios.length]
             
             if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
               //  console.log('É 1')
-                pain = 1
+                pain = '1'
                 console.log('É ESSE:', pain)
+                scarecrow[anchor].divididos.push(pain)
             }else{
 
                 right = ''
@@ -1109,6 +1113,7 @@ divs = [monomios.length]
                     }
                 }
                 console.log('É ESSE:', right)
+                scarecrow[anchor].divididos.push(right)
             }
            
         }
