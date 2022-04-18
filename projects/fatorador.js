@@ -1062,6 +1062,7 @@ divs = [3]
                     pain = '1'
                     console.log('É ESSE:', pain)
                     scarecrow[anchor].divididos.push(pain)
+                   
                 }else{
         
                     right = ''
@@ -1072,9 +1073,24 @@ divs = [3]
                         }
                     }
                     console.log('É ESSE:', right)
-                    scarecrow[anchor].divididos.push(right)
+                   
+                    uy = ''
+                   for (xarope in right) {
+                    console.log(right[xarope])
+                    if (xarope == 0 && right[xarope] == '*') {
+                      console.log('ERRADO!')
+                    }else if(xarope == right.length - 1 && right[xarope] == '*'){
+                        console.log('ERRADO')
+                    }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){
+                        console.log('ERRADO')
+                    }else{
+                        uy+= right[xarope]
+                    }
+                   }
+                   console.log('UY',uy)
+                    scarecrow[anchor].divididos.push(uy)
                 }
-                scarecrow[anchor].divididos.push(right)
+               
             }
         }
    
