@@ -1,10 +1,10 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
-expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+//expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
@@ -22,11 +22,11 @@ expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2'
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
+//expression = ['ab','+','ac','+','bb','+','bc']
 //FAZENDO AS CONTAS COM NÚMEROS
 
         
 // FATORANDO OS NÚMEROS 
-
 
 for (n = 0; n < expression.length; n++) {
     if (ehprimo(expression[n]) == false && String(expression[n]).search('[0-9]') != -1) {
@@ -1132,7 +1132,9 @@ for (ah in organizado) {
 }
 miss = [...grtols]
 //
-       for (java in miss) {
+deucerto = false
+java = 0
+       while(java < miss.length && deucerto == false) {
            
         relações = []
            if (miss[java].aparicoes.length >= quantasposições) {
@@ -1148,22 +1150,70 @@ miss = [...grtols]
                 presentes = []
                 for (quecoisa in miss[outro].aparicoes) {
                     fatorzinho = miss[outro].aparicoes[quecoisa]
-                    console.log(fatorzinho)
+                  //  console.log(fatorzinho)
 
                     if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
                         presentes.push(fatorzinho)
                     }
                 }
-                console.log('OLHA', presentes)
-                if (presentes.length >= quantasposições) {
-                    podeser.push({opl: presentes, position: outro})
+              //  console.log('OLHA', presentes)
+                adicionou = false
+                for (idk in podeser) {
+                 //   console.log(podeser[idk])
+                    esigual = true
+                    for (denovo in podeser[idk].opl) {
+                        console.log(podeser[idk].opl[denovo], presentes[denovo])
+                        if (podeser[idk].opl[denovo] == presentes[denovo]) {
+                        //    console.log('É IGUAL')
+                        }else{
+                            esigual = false
+                        }
+                    }
+                    if (esigual == true) {
+                        podeser[idk].position.push(outro)
+                        adicionou = true
+                    }
+                }
+                if (presentes.length >= quantasposições && adicionou == false) {
+                    podeser.push({opl: presentes, position: [outro]})
                 }
                 
             }
            }
            console.log('ESSE É O PODESER', podeser)
+           console.log('E ESSE É O ORIGINAL: ', miss[java].aparicoes, java)
+           if (podeser.length > 0) {
+           if (podeser[0].position.length == quantosfatores - 1 && miss[java].aparicoes.length == quantasposições) {
+            console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+            deucerto = true
+
+            ficaassim = ''
+           // podeser[0].position.push(miss[java].dividido)
+
+            for (yehaa in podeser[0].position) {
+                console.log(miss[podeser[0].position[yehaa]].dividido)
+                if (miss[podeser[0].position[yehaa]].dividido[0] == '-') {
+                    console.log('PERAÍ')
+                    fi = ''
+                    for (ohjesus in miss[podeser[0].position[yehaa]].dividido) {
+                        if (miss[podeser[0].position[yehaa]].dividido[ohjesus] != '-') {
+                            fi+= miss[podeser[0].position[yehaa]].dividido[ohjesus]
+                        }
+                    }
+                    console.log(fi)
+                    ficaassim += `- ${fi}`
+                }else{
+                    ficaassim+= miss[podeser[0].position[yehaa]].dividido + ' '
+                }
+                
+            
+            }
+          
            }
-           
+        }
+
+           }
+           java++
        }
     }
 
