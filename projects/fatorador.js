@@ -1011,7 +1011,7 @@ divs = [3]
     segs[tie].godhelpme = [...segs[tie].mons]
    }
   
-    for (n in divs) {
+    for (okentao in divs) {
         //const vi = 0
         scarecrow = []
         for(anchor in segs) {
@@ -1105,6 +1105,46 @@ divs = [3]
             miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}).aparicoes.push(Number(ah))
            }
         }
+       }
+
+       
+       quantosfatores = Number(monomios.length)/Number(divs[okentao])
+       quantasposições = Number(monomios.length)/Number(quantosfatores)
+
+       console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
+
+// ORDENANO O MISS DE ACORDO COM O TAMANHO DO APARIÇÕES
+
+       grtols = []
+for (hi in miss) {
+    //////console.log(segs[hi], segs[hi].mons.length)
+    miss[hi].length = miss[hi].aparicoes.length
+
+    grtols.push(miss[hi])
+}
+organizado = sortob(grtols, 'length')[1]
+
+grtols = []
+for (ah in organizado) {
+   // ////console.log(segs[organizado[ah]])
+    grtols.push(miss[organizado[ah]])
+   
+}
+miss = [...grtols]
+//
+       for (java in miss) {
+           console.log('')
+           
+           if (miss[java].aparicoes.length >= quantasposições) {
+        console.log('SENDO ANALISADO NO MOMENTO', miss[java].aparicoes)
+
+        for (outro in miss) {
+            if (outro != java) {
+                console.log(miss[outro].aparicoes)
+            }
+           }
+           }
+           
        }
     }
 
