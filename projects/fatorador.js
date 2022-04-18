@@ -1016,7 +1016,7 @@ divs = [3]
         scarecrow = []
         for(anchor in segs) {
             console.log('i feel the light betrayed me', segs[anchor].mons)
-            scarecrow.push({divididos: [], poss: [...segs[anchor].mons]})
+            scarecrow.push({divididos: [], poss: [...segs[anchor].mons], divisor: [...segs[anchor].car]})
         
             army = []
             lpisthebest = ''
@@ -1094,7 +1094,18 @@ divs = [3]
             }
         }
    
+       miss = []
 
+       for (ah in scarecrow) {
+           console.log('SCARECROW', scarecrow[ah].divididos)
+           for (é in scarecrow[ah].divididos) {
+           if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
+            miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
+           }else{
+            miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}).aparicoes.push(Number(ah))
+           }
+        }
+       }
     }
 
     
