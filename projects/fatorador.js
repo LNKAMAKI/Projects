@@ -4,9 +4,9 @@
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
-//expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
+//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
 //expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
@@ -985,7 +985,7 @@ for (n in divs) {
 if (divs.length == 0) {
 divs = [monomios.length]
 }
-divs = [3]
+divs = [2]
 
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -1133,16 +1133,35 @@ for (ah in organizado) {
 miss = [...grtols]
 //
        for (java in miss) {
-           console.log('')
            
+        relações = []
            if (miss[java].aparicoes.length >= quantasposições) {
+            console.log('')
         console.log('SENDO ANALISADO NO MOMENTO', miss[java].aparicoes)
 
+        podeser = []
         for (outro in miss) {
-            if (outro != java) {
+            console.log('')
+            if (outro != java && miss[outro].aparicoes.length >= quantasposições) {
                 console.log(miss[outro].aparicoes)
+
+                presentes = []
+                for (quecoisa in miss[outro].aparicoes) {
+                    fatorzinho = miss[outro].aparicoes[quecoisa]
+                    console.log(fatorzinho)
+
+                    if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
+                        presentes.push(fatorzinho)
+                    }
+                }
+                console.log('OLHA', presentes)
+                if (presentes.length >= quantasposições) {
+                    podeser.push({opl: presentes, position: outro})
+                }
+                
             }
            }
+           console.log('ESSE É O PODESER', podeser)
            }
            
        }
