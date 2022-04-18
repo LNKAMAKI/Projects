@@ -1,12 +1,12 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
 //expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
-//expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
+expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
 //expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
@@ -20,7 +20,7 @@ expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+'
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
+//expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 //FAZENDO AS CONTAS COM NÚMEROS
 
@@ -231,7 +231,7 @@ for (bye in ji) {
     }
 }
 
-*/
+
 
 for (chuva in ji) {
     //console.log('')
@@ -380,41 +380,7 @@ if (exp.length == 0) {
 
 }
 
-function DIVIDIR(T, qual) {
-    
-    Tfix = []
-for (h in T) {
-    Tfix.push(T[h])
-}
-eg = qual
 
-takeout = []
-
-for (n in eg) {
-
-if (T.indexOf(eg[n]) != -1) {
-
-
-
-T.splice(T.lastIndexOf(eg[n]), 1)
-takeout.push(Number(n))
-}
-}
-
-
-
-depois = ''
-for (n in eg) {
-    if (takeout.indexOf(Number(n)) == -1) {
-        depois += String(eg[n])
-    }
-}
-
-return depois
-
-
-}
-expression = exp
 
 // SEPARANDO OS MONÔMIOS DENOVO
 monomios = [{numero: ''}]
@@ -728,10 +694,44 @@ if (anterior.length > 1) {
 return anterior
 }
 //
+*/
+
+
+function DIVIDIR(T, qual) {
+    
+    Tfix = []
+for (h in T) {
+    Tfix.push(T[h])
+}
+eg = qual
+
+takeout = []
+
+for (n in eg) {
+
+if (T.indexOf(eg[n]) != -1) {
 
 
 
+T.splice(T.lastIndexOf(eg[n]), 1)
+takeout.push(Number(n))
+}
+}
 
+
+
+depois = ''
+for (n in eg) {
+    if (takeout.indexOf(Number(n)) == -1) {
+        depois += String(eg[n])
+    }
+}
+
+return depois
+
+
+}
+expression = exp
 
 ////console.log('--------------------------------------------MONOMIOS--------------------------------------')
 reps = []
@@ -985,7 +985,7 @@ for (n in divs) {
 if (divs.length == 0) {
 divs = [monomios.length]
 }
-//divs = [2]
+divs = [3]
 
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -1013,111 +1013,70 @@ divs = [monomios.length]
   
     for (n in divs) {
         //const vi = 0
-   scarecrow = []
-
-       // console.log('YEHAAAAAAAAAA')
-       console.log(divs[n],'grupos')
-    int = doit(segs)
-   //console.log(int[0], int[1])
-    ////console.log(int[1])
-
-    outro = []
-    enemy = 0
-    for (ish = int[0].length - 1; ish >= 0; ish--) {
+        scarecrow = []
+        for(anchor in segs) {
+            console.log('i feel the light betrayed me', segs[anchor].mons)
+            scarecrow.push({divididos: [], poss: [...segs[anchor].mons]})
         
-        if (int[0][ish].fix.length > 0) {
-         //  console.log('ALL WE ARE IS EVERYTHING WE\'VE DONE')
-         
-           console.log(int[0][ish].car, int[0][ish].fix)
-           //console.log(outro)
-          
-           enemy++
-
-        }else{
-            int[0].splice(ish, 1)
-        }
-        
-    }
-
-    if (ehprimo(monomios.length) == true) {
-      //  console.log('TEMOS UM PROBLEMA')
-        for (ish in segs) {
-        
-            //   console.log(segs[ish].car, segs[ish].mons)
-            if (segs[ish].mons.length == monomios.length) {
-             //console.log('É ESSE')
-                relation = [{car: segs[ish].car, fix: [...segs[ish].mons]}]
-            }
-        }
-        console.log('FICA ASSIM')
-        console.log(relation)
-    }
-
-
-    console.log('YOU GO GIVING UP YOUR HOME')
-    for(anchor in relation) {
-        console.log('i feel the light betrayed me', relation[anchor].fix, int[0][anchor].car)
-        scarecrow.push({divididos: [], poss: [...relation[anchor].fix]})
-
-        army = []
-        lpisthebest = ''
-            for (fall in relation[anchor].car) {
-            if (lpisthebest.length == 0) {
-              //  console.log('LISTA VAZIA - ADD')
-                lpisthebest = relation[anchor].car[fall]
-                console.log(lpisthebest)
-            }else if(lpisthebest.search('[0-9]') != -1 && relation[anchor].car[fall].search('[0-9]') != -1) {
-               // console.log('VAI - ADD')
-                lpisthebest += relation[anchor].car[fall]
-            }else{
-               // console.log('NÃO VAI NÃO')
-                army.push(lpisthebest)
-                if(relation[anchor].car[fall] != '.') {
-                lpisthebest = relation[anchor].car[fall]
+            army = []
+            lpisthebest = ''
+                for (fall in segs[anchor].car) {
+                if (lpisthebest.length == 0) {
+                  //  console.log('LISTA VAZIA - ADD')
+                    lpisthebest = segs[anchor].car[fall]
+                    console.log(lpisthebest)
+                }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
+                   // console.log('VAI - ADD')
+                    lpisthebest += segs[anchor].car[fall]
                 }else{
-                    if (relation[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
-                    lpisthebest = '*'
+                   // console.log('NÃO VAI NÃO')
+                    army.push(lpisthebest)
+                    if(segs[anchor].car[fall] != '.') {
+                    lpisthebest = segs[anchor].car[fall]
                     }else{
-                        lpisthebest = ''
+                        if (segs[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
+                        lpisthebest = '*'
+                        }else{
+                            lpisthebest = ''
+                        }
                     }
+                    console.log('LPISTHEBEST', lpisthebest)
                 }
-                console.log('LPISTHEBEST', lpisthebest)
+                if (fall == segs[anchor].car.length - 1) {
+                    army.push(lpisthebest)
+                }
             }
-            if (fall == relation[anchor].car.length - 1) {
-                army.push(lpisthebest)
-            }
-        }
-        bell = [...army]
-        console.log('OAHAHA', army)
-        for (high in relation[anchor].fix) {
-            
-           
-            army = [...bell]
-     
-            console.log(monomios[relation[anchor].fix[high]].numero,army)
-
-            pain = DIVIDIR(army,monomios[relation[anchor].fix[high]].numero)
-            
-            if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-              //  console.log('É 1')
-                pain = '1'
-                console.log('É ESSE:', pain)
-                scarecrow[anchor].divididos.push(pain)
-            }else{
-
-                right = ''
-                for (feet in pain) {
-                  //  console.log(pain[feet])
-                    if (pain[feet] != '+') {
-                        right+= pain[feet]
+            bell = [...army]
+            console.log('OAHAHA', army)
+            for (high in segs[anchor].mons) {
+                
+               
+                army = [...bell]
+         
+                console.log(monomios[segs[anchor].mons[high]].numero,army)
+        
+                pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
+                
+                if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
+                  //  console.log('É 1')
+                    pain = '1'
+                    console.log('É ESSE:', pain)
+                    scarecrow[anchor].divididos.push(pain)
+                }else{
+        
+                    right = ''
+                    for (feet in pain) {
+                      //  console.log(pain[feet])
+                        if (pain[feet] != '+') {
+                            right+= pain[feet]
+                        }
                     }
+                    console.log('É ESSE:', right)
+                    scarecrow[anchor].divididos.push(right)
                 }
-                console.log('É ESSE:', right)
                 scarecrow[anchor].divididos.push(right)
             }
-           
         }
-    }
    
 
     }
