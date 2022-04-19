@@ -23,10 +23,10 @@ expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x'
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 //expression = ['ab','+','ac','+','bb','+','bc']
-//FAZENDO AS CONTAS COM NÚMEROS
+//FAZEnDO AS COnTAS COM nÚMEROS
 
         
-// FATORANDO OS NÚMEROS 
+// FATORAnDO OS nÚMEROS 
 
 for (n = 0; n < expression.length; n++) {
     if (ehprimo(expression[n]) == false && String(expression[n]).search('[0-9]') != -1) {
@@ -79,9 +79,9 @@ for (n = 0; n < expression.length; n++) {
 ////console.log(expression)
 
 
-// FAZENDO AS POTÊNCIAS COM LETRAS 
+// FAZEnDO AS POTÊnCIAS COM LETRAS 
 
-////console.log('FAZENDO AS POTÊNCIAS COM LETRAS')
+////console.log('FAZEnDO AS POTÊnCIAS COM LETRAS')
 for (y in expression) {
   //  ////console.log(expression[y])
 
@@ -103,7 +103,7 @@ for (y in expression) {
     }
 }
 
-// SEPARANDO OS MONÔMIOS
+// SEPARAnDO OS MOnÔMIOS
 
 monomios = [{numero: ''}]
 obnum = 0
@@ -122,7 +122,7 @@ monomios[obnum].numero += expression[n]
 
 //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
 
-// SEPARAR CORRETAMENTE OS NÚMEROS
+// SEPARAR CORRETAMEnTE OS nÚMEROS
 for (bye in monomios) {
     ////console.log(monomios[bye])
 
@@ -136,12 +136,12 @@ for (bye in monomios) {
        // //console.log('CARACTER' + carac)
       //  //console.log(ground.length)
 
-       // //console.log('OH COME ON',ground, String(ground.search('[0-9]')))
+       // //console.log('OH COME On',ground, String(ground.search('[0-9]')))
             if (ground.length == 0) {
                 //console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                //console.log('É UM NÚMERO')
+                //console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
@@ -155,7 +155,7 @@ for (bye in monomios) {
     }
 
     ////console.log('COMOFICA', comofica)
-    ////console.log('NAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
+    ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
     monomios[bye].numero = comofica
 }
 
@@ -193,7 +193,7 @@ for (huh in monomios) {
 }
 
 
-// SEPARANDO/JUNTANDO OS NÚMEROS
+// SEPARAnDO/JUnTAnDO OS nÚMEROS
 
 exp = []
 /*
@@ -215,7 +215,7 @@ for (bye in ji) {
                 console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                console.log('É UM NÚMERO')
+                console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
@@ -262,7 +262,7 @@ for (past in resultadoDaDivisão) {
  //console.log(resultadoDaDivisão[past])
 
  if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
-//console.log('ADICIONAR')
+//console.log('ADICIOnAR')
 
 if (add.length == 0) {
     add+= resultadoDaDivisão[past]
@@ -277,7 +277,7 @@ add+= resultadoDaDivisão[past]
     
 }
 //console.log('ADD', add)
-//console.log('PLAN É:', plan)
+//console.log('PLAn É:', plan)
 
 if (plan.length == 3) {
 //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
@@ -288,7 +288,7 @@ plan = [String(Number(plan[0])*Number(plan[2]))]
 
 }
 plan.push(add)
-//console.log('PLAN', plan)
+//console.log('PLAn', plan)
 
 if (plan.length == 3) {
     //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
@@ -298,7 +298,7 @@ if (plan.length == 3) {
     }
 
     if (monomios[ji[chuva].quais[da]].numero[0] == '+' || monomios[ji[chuva].quais[da]].numero[0] == '-') {
-   // console.log('O SINAL É: ', monomios[ji[chuva].quais[da]].numero[0])
+   // console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
 
     sinal = monomios[ji[chuva].quais[da]].numero[0]
 
@@ -325,7 +325,7 @@ if (plan.length == 3) {
 //console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
-console.log('E RESOLVENDO FICA ASSIM:', comehome)
+console.log('E RESOLVEnDO FICA ASSIM:', comehome)
 
 
 
@@ -341,7 +341,7 @@ if (comehome[0][0] == '-') {
    at = t
    if (ehprimo(t) == false) {
       console.log(at)
-   fat = FATORARSINGULAR(at)
+   fat = FATORARSInGULAR(at)
    console.log(String(fat))
    }else{
        console.log('É PRIMOOOOOOOOOOOOOOOOO')
@@ -357,7 +357,7 @@ exp.push(fat)
 
 }else{
     if (ehprimo(comehome) == false) {
-fat = FATORARSINGULAR(comehome)
+fat = FATORARSInGULAR(comehome)
     }else{
         fat = comehome
     }
@@ -382,7 +382,7 @@ if (exp.length == 0) {
 
 
 
-// SEPARANDO OS MONÔMIOS DENOVO
+// SEPARAnDO OS MOnÔMIOS DEnOVO
 monomios = [{numero: ''}]
 obnum = 0
 
@@ -400,7 +400,7 @@ monomios[obnum].numero += exp[n]
 }
 //
 
-// SEPARAR CORRETAMENTE OS NÚMEROS
+// SEPARAR CORRETAMEnTE OS nÚMEROS
 for (bye in monomios) {
     ////console.log(monomios[bye])
 
@@ -414,12 +414,12 @@ for (bye in monomios) {
        // //console.log('CARACTER' + carac)
       //  //console.log(ground.length)
 
-       // //console.log('OH COME ON',ground, String(ground.search('[0-9]')))
+       // //console.log('OH COME On',ground, String(ground.search('[0-9]')))
             if (ground.length == 0) {
                 //console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                //console.log('É UM NÚMERO')
+                //console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
@@ -433,16 +433,16 @@ for (bye in monomios) {
     }
 
     ////console.log('COMOFICA', comofica)
-    ////console.log('NAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
+    ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
     monomios[bye].numero = comofica
 }
 
-//console.log('OK, VAMOS DAR UMA PARADINHA')
+//console.log('OK, VAMOS DAR UMA PARADInHA')
 
-// FATORAR SÓ UM NÚMERO
-//console.log(FATORARSINGULAR('20'))
+// FATORAR SÓ UM nÚMERO
+//console.log(FATORARSInGULAR('20'))
 
-function FATORARSINGULAR(potn) {
+function FATORARSInGULAR(potn) {
 if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
     fatorado = ''
 
@@ -493,19 +493,19 @@ if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
 
 
 
-// FAZER CONTA COM NÚMEROS
+// FAZER COnTA COM nÚMEROS
 function fazerConta(anterior) {
 
     if(0 == 0) {// falta == false
 //Primeiro raizes e potências
 for (n = 0; n < anterior.length; n++) {
 if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
-    //console.log('POTENCIALIZAÇÃO')
+    //console.log('POTEnCIALIZAÇÃO')
     anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
     anterior.splice(n - 1, 2)
     
     n = n - 3 // n = n - 3
-    //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+    //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
     if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
         //console.log('TIRAR')
         anterior.splice(n + 3, 1)
@@ -544,7 +544,7 @@ anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
 anterior.splice(n - 1, 2)
 
 n = n - 3
-//console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+//console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
 
 if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
     //console.log('TIRAR')
@@ -562,7 +562,7 @@ anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
 anterior.splice(n - 1, 2)
 
 n = n - 3
-//console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+//console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
 if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
     //console.log('TIRAR')
     anterior.splice(n + 3, 1)
@@ -579,7 +579,7 @@ if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
 
 if (anterior.length > 1) {
 
-// while(anterior.length != 1 && anterior.indexOf('NaN') == -1) {
+// while(anterior.length != 1 && anterior.indexOf('nan') == -1) {
     for (n = 0; n < anterior.length && anterior.length != 1; n++) {
         //console.log(anterior[n])
         if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
@@ -588,7 +588,7 @@ if (anterior.length > 1) {
             anterior.splice(n - 1, 2)
           
             n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
                 //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
@@ -605,7 +605,7 @@ if (anterior.length > 1) {
             anterior.splice(n - 1, 2)
             
             n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
                 //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
@@ -622,7 +622,7 @@ if (anterior.length > 1) {
             anterior.splice(n - 1, 2)
             
             n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
                 //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
@@ -639,7 +639,7 @@ if (anterior.length > 1) {
             anterior.splice(n - 1, 2)
             
             n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
                 //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
@@ -656,7 +656,7 @@ if (anterior.length > 1) {
             anterior.splice(n - 1, 2)
             
             n = n - 3
-            //console.log('ENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
                 //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
@@ -733,12 +733,12 @@ return depois
 }
 expression = exp
 
-////console.log('--------------------------------------------MONOMIOS--------------------------------------')
+////console.log('--------------------------------------------MOnOMIOS--------------------------------------')
 reps = []
 segs = []
 let  = []
 
-for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
+for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
     repetido = []
     
     col = false
@@ -750,17 +750,17 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     ////console.log(monomios[m].numero)
     
  
-    for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MONÔMIO
+    for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
         
 
         if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-       // //console.log('LETRA OU NÚMERO ISOLADO: ' + monomios[m].numero[oc])
+       // //console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
 
-       ////console.log('NUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
+       ////console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
         if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
         numerosrep.push(monomios[m].numero[oc])
 
-        for (u = 0; u < monomios.length; u++) { // OUTROS MONÔMIOS
+        for (u = 0; u < monomios.length; u++) { // OUTROS MOnÔMIOS
             ocs2 = []
 
             if(u != m) {
@@ -785,7 +785,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
         }
           ////console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
           
-          for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MONÔMIO
+          for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
           //  //console.log(monomios[u].numero[e])
             
             if (monomios[u].numero[e] == monomios[m].numero[oc]) {
@@ -841,7 +841,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
     
               
                            // }else{
-                                //////console.log('DO NOT ADD')
+                                //////console.log('DO nOT ADD')
                           // }
                     }
                 
@@ -887,7 +887,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MONÔMIO
 }
 
 
-////console.log('RELAÇÃO ENTRE OS MONÔMIOS')
+////console.log('RELAÇÃO EnTRE OS MOnÔMIOS')
 ////console.log(segs)
 
 
@@ -896,8 +896,8 @@ for (nl = 0; nl < segs.length; nl++) {
     
     ////console.log(segs[nl])
 
-    ////console.log('ANALISAR CADA ITEM')
-    ////console.log('NUMERO: ', segs[nl].car)
+    ////console.log('AnALISAR CADA ITEM')
+    ////console.log('nUMERO: ', segs[nl].car)
     for (n = 0; n < segs.length; n++) {
 
         ////console.log('---------------------------------------------------------------------')
@@ -913,8 +913,8 @@ for (nl = 0; nl < segs.length; nl++) {
                 if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
                     ////console.log('TEM')
                 }else{
-                    ////console.log('NÃO TEM')
-                 //   console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU NESSE MUNDO', segs[nl].mons)
+                    ////console.log('nÃO TEM')
+                 //   console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
                     segs[nl].mons.push(segs[n].mons[u])
                   
                 }
@@ -927,11 +927,11 @@ for (nl = 0; nl < segs.length; nl++) {
 }
 
 
-function ehprimo(number) {
+function ehprimo(Number) {
     parar = false
-    for (t = 2; t < number && parar == false; t++) {
+    for (t = 2; t < Number && parar == false; t++) {
     
-        if (number%t == 0) {
+        if (Number%t == 0) {
             parar = true
         }
     }
@@ -942,7 +942,7 @@ function ehprimo(number) {
 }
 
 
-//////console.log('------------------------------ORDENANDO DO MAIOR PARA O MENOR----------------------------')
+//////console.log('------------------------------ORDEnAnDO DO MAIOR PARA O MEnOR----------------------------')
 
 
 grtols = []
@@ -966,7 +966,7 @@ for (ah in organizado) {
    
 }
 
-//////console.log('LISTA ORDENADA PELO TAMANHO', grtols)
+//////console.log('LISTA ORDEnADA PELO TAMAnHO', grtols)
 segs = grtols
 
 
@@ -1012,6 +1012,7 @@ divs = [7]
    }
   
     for (okentao in divs) {
+        console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
         //const vi = 0
         scarecrow = []
         for(anchor in segs) {
@@ -1029,7 +1030,7 @@ divs = [7]
                    // console.log('VAI - ADD')
                     lpisthebest += segs[anchor].car[fall]
                 }else{
-                   // console.log('NÃO VAI NÃO')
+                   // console.log('nÃO VAI nÃO')
                     army.push(lpisthebest)
                     if(segs[anchor].car[fall] != '.') {
                     lpisthebest = segs[anchor].car[fall]
@@ -1113,7 +1114,7 @@ divs = [7]
 
        console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
 
-// ORDENANO O MISS DE ACORDO COM O TAMANHO DO APARIÇÕES
+// ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
 
        grtols = []
 for (hi in miss) {
@@ -1139,7 +1140,7 @@ java = 0
         relações = []
            if (miss[java].aparicoes.length >= quantasposições) {
             console.log('')
-        console.log('SENDO ANALISADO NO MOMENTO', miss[java].aparicoes)
+        console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
 
         podeser = []
         for (outro in miss) {
@@ -1181,7 +1182,7 @@ java = 0
             }
            }
            console.log('ESSE É O PODESER', podeser)
-           console.log('E ESSE É O ORIGINAL: ', miss[java].aparicoes, java)
+           console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
            whyis = java
            if (podeser.length > 0) {
                console.log('fatores', quantosfatores, 'posições', quantasposições)
@@ -1241,11 +1242,11 @@ java = 0
 
 
 // Vendo se o número é primo
-function ehprimo(number) {
+function ehprimo(Number) {
     parar = false
-    for (t = 2; t < number && parar == false; t++) {
+    for (t = 2; t < Number && parar == false; t++) {
     
-        if (number%t == 0) {
+        if (Number%t == 0) {
             parar = true
         }
     }
@@ -1257,11 +1258,11 @@ function ehprimo(number) {
 
 // Achando todos os divisores da quantidade de monômios
 // Ex: 12: 4, 3, 2, 6
-function ehprimo2(number) {
+function ehprimo2(Number) {
     divisores = []
-    for (t = 2; t < number && parar == false; t++) {
+    for (t = 2; t < Number && parar == false; t++) {
     
-        if (number%t == 0) {
+        if (Number%t == 0) {
            divisores.push(t)
         }
     }
@@ -1304,13 +1305,6 @@ function sortob(n, pam) {
     }
     return [maiorparamenor, posiçõesnumeros]
  }
-
-
-
-
-
-
-
 
 
 
@@ -1397,7 +1391,7 @@ function doit(par) {
          if (numapars.find(function(numapars) {
              return numapars.num == lista[g]
              }).vezes == 1) {
-             ////console.log('ADICIONAR')
+             ////console.log('ADICIOnAR')
                rep++
                present.fix.push(lista[g])
               
@@ -1405,7 +1399,7 @@ function doit(par) {
 
      }
      ////console.log('present', present)
-     ////console.log('--------------------------------------VENDO O QUE FALTA-----------------------------------')
+     ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
 
      if (present.fix.length < quanto) {
      for (g in lista) {
@@ -1424,7 +1418,7 @@ function doit(par) {
                      
          }
      }
-     //console.log('FALTAM OS NÚMEROS', present.falt)
+     //console.log('FALTAM OS nÚMEROS', present.falt)
 
      
      if (present.fix.length == 0) {
@@ -1447,49 +1441,49 @@ function doit(par) {
  relation[r].car = segs2[r].car
  
  }
- ////console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
+ console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
  for (c in relation) {
      ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
      if (relation[c].fix.length > 0) {
-     ////console.log(relation[c].fix, relation[c].falt)
+     console.log(relation[c].fix, relation[c].falt)
 
      faltam = Number(quanto) - Number(relation[c].fix.length)
-     ////console.log('faltam', faltam)
+     console.log('faltam', faltam)
 
      for (f = 0; f < faltam; f++) {
-         ////console.log(relation[c].falt[f])
+         console.log(relation[c].falt[f])
         relation[c].fix.push(relation[c].falt[f])
        
-        ////console.log('ANTES: ', relation[c].falt)
+        console.log('AnTES: ', relation[c].falt)
         relation[c].falt[f] = -10
 
-        ////console.log('DEPOIS: ', relation[c].falt)
+        console.log('DEPOIS: ', relation[c].falt)
      }
-     ////console.log(relation[c].fix)
+     console.log(relation[c].fix)
 
      for (tel = 0; tel < c; tel++){
 
          if (relation[tel].fix.length > 0) {
-         ////console.log('relation[tel]', relation[tel])
+         console.log('relation[tel]', relation[tel])
          }
          
          outrorel = relation[tel]
          
      for (hu in outrorel.fix) {
-         ////console.log(outrorel.fix[hu])
+         console.log(outrorel.fix[hu])
          if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-             ////console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
-             ////console.log(outrorel.falt)
+             console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
+             console.log(outrorel.falt)
              y = 0
              for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
 
-                 ////console.log(outrorel.falt[ou])
+                 console.log(outrorel.falt[ou])
                  if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                     ////console.log('pode ir')
+                     console.log('pode ir')
                      outrorel.fix[hu] =  outrorel.falt[ou]
                      outrorel.falt[ou] = -10
                      
-                     ////console.log('isso aí:', outrorel.fix)
+                     console.log('isso aí:', outrorel.fix)
                      y++
                  }
              }
@@ -1507,24 +1501,24 @@ groups = 0
 conts = []
 for (yougo in relation) {
 if (relation[yougo].fix.length > 0) {
-////console.log(relation[yougo].fix)
+console.log(relation[yougo].fix)
 
 for (pals in relation[yougo].fix) {
- ////console.log(relation[yougo].fix[pals])
+ console.log(relation[yougo].fix[pals])
  conts.push(relation[yougo].fix[pals])
 }
 groups++
 }
 }
 
-////console.log('divs é igual a ', divs[n])
-////console.log('groups é igual a', groups)
+console.log('divs é igual a ', divs[n])
+console.log('groups é igual a', groups)
 
 
 if (groups < divs[n]) {
  //console.log('DEU CERTO!!!EBAAAAAA')
 
- ////console.log('SERÁ QUE DEU CERTO?')
+ console.log('SERÁ QUE DEU CERTO?')
 
 ////console.log(relation)
 
@@ -1532,7 +1526,7 @@ groups = 0
 conts = []
 for (yougo in relation) {
 if (relation[yougo].fix.length > 0) {
-////console.log(relation[yougo].fix)
+console.log(relation[yougo].fix)
 
 for (pals in relation[yougo].fix) {
  ////console.log(relation[yougo].fix[pals])
@@ -1541,10 +1535,10 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-////console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
+////console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[n], 'and', groups)
 if (divs[n] != groups) {
-//console.log('SÓ QUE NÃO')
-////console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
+//console.log('SÓ QUE nÃO')
+////console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
 tirados = []
 for (wish in relation) {
@@ -1554,7 +1548,7 @@ for (wish in relation) {
     tirados.push(relation[wish].fix[edge])
  }
 }
-////console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
+////console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
 
 
 
@@ -1591,14 +1585,14 @@ for (b = 0; b < grupos; b++) {
 
     for (live = 0; live < quanto; live++) {
         //console.log('TIRADOS')
-        //console.log(segs2[sorrow].mons[imor])
+        console.log(segs2[sorrow].mons[imor])
 
-       //console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
+    console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
 
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                ob.problem = true
            }
-            //console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
+            //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
         tirados.push(segs2[sorrow].mons[imor])
         imor++
@@ -1607,11 +1601,11 @@ for (b = 0; b < grupos; b++) {
     }
    
    
-    //console.log('IN THE END', ob)
+    console.log('In THE EnD', ob)
 
     //console.log(segs2)
-    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temNaLista(ob.fix))
-    if (ob.problem == false || temNaLista(ob.fix) == true) {
+    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
+    if (ob.problem == false || temnaLista(ob.fix) == true) {
     relation.push(ob)
     }
 }
@@ -1627,7 +1621,7 @@ for (nah = relation.length - 1; nah >= 0; nah--) {
           
  // console.log('fix',relation[nah].fix)
 
-  //console.log('---VENDO TODA A LISTA---')
+  //console.log('---VEnDO TODA A LISTA---')
   for (nop in relation) {
     if (relation[nop].fix.length > 0 && nop != nah) {
 //console.log(relation[nop].fix, relation[nop].car)
@@ -1715,7 +1709,7 @@ fireonfire = []
 
  }
 
- console.log('OK, AGORA PRECISAMOS ENCONTRAR O RESTO')
+ console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
  console.log(doit2(segs2)[0])
  console.log(fireonfire)
 
@@ -1727,7 +1721,7 @@ fireonfire = []
 
 }else if(groups > divs[n]){
     
-console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
  ////console.log('números que têm: ', conts)
  ////console.log(segs)
 
@@ -1834,7 +1828,7 @@ relation = []
          if (numapars.find(function(numapars) {
              return numapars.num == lista[g]
              }).vezes == 1) {
-             ////console.log('ADICIONAR')
+             ////console.log('ADICIOnAR')
                rep++
                present.fix.push(lista[g])
               
@@ -1842,7 +1836,7 @@ relation = []
 
      }
     // //console.log('present', present)
-     ////console.log('--------------------------------------VENDO O QUE FALTA-----------------------------------')
+     ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
 
      if (present.fix.length < quanto) {
      for (g in lista) {
@@ -1861,7 +1855,7 @@ relation = []
                      
          }
      }
-   //  //console.log('FALTAM OS NÚMEROS', present.falt)
+   //  //console.log('FALTAM OS nÚMEROS', present.falt)
 
      
      if (present.fix.length == 0) {
@@ -1884,7 +1878,7 @@ relation = []
  relation[r].car = segs2[r].car
  
  }
- //console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
+ //console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
  for (c in relation) {
     // //console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
      if (relation[c].fix.length > 0) {
@@ -1897,7 +1891,7 @@ relation = []
       //   //console.log(relation[c].falt[f])
         relation[c].fix.push(relation[c].falt[f])
        
-    //    //console.log('ANTES: ', relation[c].falt)
+    //    //console.log('AnTES: ', relation[c].falt)
         relation[c].falt[f] = -10
 
     //    //console.log('DEPOIS: ', relation[c].falt)
@@ -1953,10 +1947,10 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-//console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
+//console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[n], 'and', groups)
 if (divs[n] != groups) {
-//console.log('THEN WHY ARE WE LAUGHING?')
-//console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
+//console.log('THEn WHY ARE WE LAUGHInG?')
+//console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
 tirados = []
 for (wish in relation) {
@@ -1966,7 +1960,7 @@ for (wish in relation) {
     tirados.push(relation[wish].fix[edge])
  }
 }
-//console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
+//console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
 
 
 for (die in segs2) {
@@ -2009,7 +2003,7 @@ for (b = 0; b < grupos; b++) {
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                 ob.problem = true
            }
-            //console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
+            //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
         tirados.push(segs2[sorrow].mons[imor])
         imor++
@@ -2018,11 +2012,11 @@ for (b = 0; b < grupos; b++) {
     }
    
    
-    //console.log('IN THE END', ob)
+    //console.log('In THE EnD', ob)
 
     //console.log(segs2)
-    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temNaLista(ob.fix))
-    if (ob.problem == false || temNaLista(ob.fix) == true) {
+    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
+    if (ob.problem == false || temnaLista(ob.fix) == true) {
     relation.push(ob)
     }
 }
@@ -2040,7 +2034,7 @@ return [relation, segs2]
 
 
 
-function temNaLista(h) {
+function temnaLista(h) {
 //console.log('THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR')
 
 for (t in relation) {
@@ -2139,7 +2133,7 @@ function doit2(par) {
          if (numapars.find(function(numapars) {
              return numapars.num == lista[g]
              }).vezes == 1) {
-             ////console.log('ADICIONAR')
+             ////console.log('ADICIOnAR')
                rep++
                present.fix.push(lista[g])
               
@@ -2147,7 +2141,7 @@ function doit2(par) {
 
      }
      ////console.log('present', present)
-     ////console.log('--------------------------------------VENDO O QUE FALTA-----------------------------------')
+     ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
 
      if (present.fix.length < quanto) {
      for (g in lista) {
@@ -2166,7 +2160,7 @@ function doit2(par) {
                      
          }
      }
-     ////console.log('FALTAM OS NÚMEROS', present.falt)
+     ////console.log('FALTAM OS nÚMEROS', present.falt)
 
      
      if (present.fix.length == 0) {
@@ -2189,7 +2183,7 @@ function doit2(par) {
  relation[r].car = segs2[r].car
  
  }
- ////console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
+ ////console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
  for (c in relation) {
      ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
      if (relation[c].fix.length > 0) {
@@ -2202,7 +2196,7 @@ function doit2(par) {
          ////console.log(relation[c].falt[f])
         relation[c].fix.push(relation[c].falt[f])
        
-        ////console.log('ANTES: ', relation[c].falt)
+        ////console.log('AnTES: ', relation[c].falt)
         relation[c].falt[f] = -10
 
         ////console.log('DEPOIS: ', relation[c].falt)
@@ -2281,10 +2275,10 @@ console.log(relation[yougo].fix[pals])
 groups++
 }
 }
-console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
+console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[n], 'and', groups)
 if (divs[n] != groups) {
-console.log('THEN WHY ARE WE LAUGHING?')
-console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
+console.log('THEn WHY ARE WE LAUGHInG?')
+console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
 tirados = []
 for (wish in relation) {
@@ -2294,7 +2288,7 @@ for (wish in relation) {
     tirados.push(relation[wish].fix[edge])
  }
 }
-console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
+console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
 
 
 
@@ -2338,7 +2332,7 @@ for (b = 0; b < grupos; b++) {
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                // ob.problem = true
            }
-            //console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
+            //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
         tirados.push(segs2[sorrow].mons[imor])
         imor++
@@ -2347,11 +2341,11 @@ for (b = 0; b < grupos; b++) {
     }
    
    
-    //console.log('IN THE END', ob)
+    //console.log('In THE EnD', ob)
 
     //console.log(segs2)
-    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temNaLista(ob.fix))
-    if (ob.problem == false || temNaLista(ob.fix) == true) {
+    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
+    if (ob.problem == false || temnaLista(ob.fix) == true) {
     relation.push(ob)
     }
 }
@@ -2363,7 +2357,7 @@ for (b = 0; b < grupos; b++) {
 }
 }else if(groups > divs[n]){
     
-//console.log('NÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+//console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
  //console.log('números que têm: ', conts)
  ////console.log(segs)
 
@@ -2470,7 +2464,7 @@ relation = []
          if (numapars.find(function(numapars) {
              return numapars.num == lista[g]
              }).vezes == 1) {
-             ////console.log('ADICIONAR')
+             ////console.log('ADICIOnAR')
                rep++
                present.fix.push(lista[g])
               
@@ -2478,7 +2472,7 @@ relation = []
 
      }
     // //console.log('present', present)
-     ////console.log('--------------------------------------VENDO O QUE FALTA-----------------------------------')
+     ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
 
      if (present.fix.length < quanto) {
      for (g in lista) {
@@ -2497,7 +2491,7 @@ relation = []
                      
          }
      }
-   //  //console.log('FALTAM OS NÚMEROS', present.falt)
+   //  //console.log('FALTAM OS nÚMEROS', present.falt)
 
      
      if (present.fix.length == 0) {
@@ -2520,7 +2514,7 @@ relation = []
  relation[r].car = segs2[r].car
  
  }
- //console.log('RELATION!!!!!!!!!!!!!!!!!', relation)
+ //console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
  for (c in relation) {
     // //console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
      if (relation[c].fix.length > 0) {
@@ -2533,7 +2527,7 @@ relation = []
       //   //console.log(relation[c].falt[f])
         relation[c].fix.push(relation[c].falt[f])
        
-    //    //console.log('ANTES: ', relation[c].falt)
+    //    //console.log('AnTES: ', relation[c].falt)
         relation[c].falt[f] = -10
 
     //    //console.log('DEPOIS: ', relation[c].falt)
@@ -2589,10 +2583,10 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-//console.log('IF LIFE AIN\'T JUST A JOKE THEN WHY ARE WE LAUGHING?', divs[n], 'and', groups)
+//console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[n], 'and', groups)
 if (divs[n] != groups) {
-//console.log('THEN WHY ARE WE LAUGHING?')
-//console.log('I\'VE TRIED TO PUT THIS ALL BEHIND ME')
+//console.log('THEn WHY ARE WE LAUGHInG?')
+//console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
 tirados = []
 for (wish in relation) {
@@ -2602,7 +2596,7 @@ for (wish in relation) {
     tirados.push(relation[wish].fix[edge])
  }
 }
-console.log('NÚMEROS QUE SERÃO TIRADOS', tirados)
+console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
 
 
 for (die in segs2) {
@@ -2645,7 +2639,7 @@ for (b = 0; b < grupos; b++) {
            if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                 //ob.problem = true
            }
-         //   console.log('PLEASE DONT ASK ME FOR THE LAST WORDS',ob)
+         //   console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
         ob.fix.push(segs2[sorrow].mons[imor])
         tirados.push(segs2[sorrow].mons[imor])
         imor++
@@ -2654,11 +2648,11 @@ for (b = 0; b < grupos; b++) {
     }
    
    
-    //console.log('IN THE END', ob)
+    //console.log('In THE EnD', ob)
 
     //console.log(segs2)
-    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temNaLista(ob.fix))
-    if (ob.problem == false || temNaLista(ob.fix) == true) {
+    //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
+    if (ob.problem == false || temnaLista(ob.fix) == true) {
     relation.push(ob)
     }
 }
