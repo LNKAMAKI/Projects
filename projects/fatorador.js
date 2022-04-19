@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
@@ -8,7 +8,7 @@ expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+'
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -985,7 +985,7 @@ for (n in divs) {
 if (divs.length == 0) {
 divs = [monomios.length]
 }
-divs = [2]
+divs = [7]
 
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -1182,18 +1182,22 @@ java = 0
            }
            console.log('ESSE É O PODESER', podeser)
            console.log('E ESSE É O ORIGINAL: ', miss[java].aparicoes, java)
+           whyis = java
            if (podeser.length > 0) {
-           if (podeser[0].position.length == quantosfatores - 1 && miss[java].aparicoes.length == quantasposições) {
+               console.log('fatores', quantosfatores, 'posições', quantasposições)
+               console.log(podeser)
+           if (podeser[0].position.length == quantosfatores - 1 && miss[whyis].aparicoes.length == quantasposições) {
             console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
             deucerto = true
 
             ficaassim = ''
-           // podeser[0].position.push(miss[java].dividido)
+            podeser[0].position.push(whyis)
 
             for (yehaa in podeser[0].position) {
+                console.log(podeser[0])
                 console.log(miss[podeser[0].position[yehaa]].dividido)
                 if (miss[podeser[0].position[yehaa]].dividido[0] == '-') {
-                    console.log('PERAÍ')
+                    
                     fi = ''
                     for (ohjesus in miss[podeser[0].position[yehaa]].dividido) {
                         if (miss[podeser[0].position[yehaa]].dividido[ohjesus] != '-') {
@@ -1201,14 +1205,30 @@ java = 0
                         }
                     }
                     console.log(fi)
-                    ficaassim += `- ${fi}`
+                    if (yehaa != 0) {
+                         ficaassim += ` - ${fi}`
+                    }else{
+                        ficaassim += `-${fi}`
+                    }
+                }else if(yehaa != 0){
+                    ficaassim += ' + '
+                    ficaassim+= miss[podeser[0].position[yehaa]].dividido
                 }else{
-                    ficaassim+= miss[podeser[0].position[yehaa]].dividido + ' '
+                    ficaassim+= miss[podeser[0].position[yehaa]].dividido 
                 }
                 
             
             }
-          
+            console.log('FICA ASSIM', `(${ficaassim})`)
+           for (ruin in podeser[0].opl) {
+            console.log(scarecrow[podeser[0].opl[ruin]].divisor)
+            emotion = ''
+            for (scream in scarecrow[podeser[0].opl[ruin]].divisor ) {
+                console.log(scarecrow[podeser[0].opl[ruin]].divisor[scream])
+                emotion+= scarecrow[podeser[0].opl[ruin]].divisor[scream]
+            }
+            console.log(`${emotion}(${ficaassim})`)
+          }
            }
         }
 
