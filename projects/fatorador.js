@@ -23,6 +23,7 @@
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','cx']
+expression = ['7x','-','7y','+','tx','-','ty']
 //FAZEnDO AS COnTAS COM nÚMEROS
 
         
@@ -983,10 +984,10 @@ for (n in divs) {
 }
 
 if (divs.length == 0) {
-divs = [monomios.length]
+divs = [1]
 }
 
-divs = [2]
+//divs = [2]
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
@@ -1084,6 +1085,8 @@ divs = [2]
                     }else if(xarope == right.length - 1 && right[xarope] == '*'){
                         console.log('ERRADO')
                     }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){
+                        console.log('ERRADO')
+                    }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){
                         console.log('ERRADO')
                     }else{
                         uy+= right[xarope]
