@@ -23,7 +23,7 @@
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','cx']
-expression = ['7x','-','7y','+','tx','-','ty']
+//expression = ['9','x','-','3','y']
 //FAZEnDO AS COnTAS COM nÚMEROS
 
         
@@ -1019,7 +1019,7 @@ divs = [1]
         scarecrow = []
         for(anchor in segs) {
             console.log('i feel the light betrayed me', segs[anchor].mons)
-            scarecrow.push({divididos: [], poss: [...segs[anchor].mons], divisor: [...segs[anchor].car]})
+            scarecrow.push({divididos: [], poss: [...segs[anchor].mons], divisor: [...segs[anchor].car], positions: [...segs[anchor].mons]})
         
             army = []
             lpisthebest = ''
