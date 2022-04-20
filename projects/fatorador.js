@@ -22,8 +22,8 @@
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
-expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','cx']
-//expression = ['9','x','-','3','y']
+//expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','cx']
+
 //FAZEnDO AS COnTAS COM nÚMEROS
 
         
@@ -1155,13 +1155,15 @@ java = 0
                 presentes = []
                 for (quecoisa in miss[outro].aparicoes) {
                     fatorzinho = miss[outro].aparicoes[quecoisa]
-                  //  console.log(fatorzinho)
+                    console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
 
                     if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
+                        console.log('TEM', fatorzinho)
                         presentes.push(fatorzinho)
                     }
                 }
-              //  console.log('OLHA', presentes)
+                console.log('OLHA', presentes)
+
                 adicionou = false
                 for (idk in podeser) {
                  //   console.log(podeser[idk])
@@ -1169,7 +1171,7 @@ java = 0
                     for (denovo in podeser[idk].opl) {
                         console.log(podeser[idk].opl[denovo], presentes[denovo])
                         if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                        //    console.log('É IGUAL')
+                            console.log('É IGUAL')
                         }else{
                             esigual = false
                         }
@@ -1179,7 +1181,7 @@ java = 0
                         adicionou = true
                     }
                 }
-                if (presentes.length >= quantasposições && adicionou == false) {
+                if (presentes.length >= quantasposições && presentes.length > 0 && adicionou == false) {
                     podeser.push({opl: presentes, position: [outro]})
                 }
                 
@@ -1191,7 +1193,7 @@ java = 0
            if (podeser.length > 0) {
                console.log('fatores', quantosfatores, 'posições', quantasposições)
                console.log(podeser)
-           if (podeser[0].position.length == quantosfatores - 1 && miss[whyis].aparicoes.length == quantasposições) {
+           if (podeser[0].position.length == quantosfatores - 1 /*&& podeser[0].opl.length == quantasposições*/ && miss[whyis].aparicoes.length == quantasposições) {
             console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
             deucerto = true
 
