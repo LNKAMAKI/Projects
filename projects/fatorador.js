@@ -22,7 +22,7 @@ expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x'
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
-expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','xc','+','x']
+//expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','xc','+','x']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1014,6 +1014,8 @@ divs = [1]
   
    mind = 0
     for (okentao in divs) {
+        roll = [] 
+
         console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
         //const vi = 0
         scarecrow = []
@@ -1188,7 +1190,30 @@ java = 0
             }
            }
            console.log('ESSE É O PODESER', podeser)
-           console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
+           
+           
+           for (belief in podeser) {
+            console.log(podeser[belief].opl)
+
+            shot = ''
+            for (gun in podeser[belief].opl) {
+                //console.log(podeser[belief].opl[gun])
+                shot+= podeser[belief].opl[gun] + ','
+            }
+            console.log('THAT WE LET IT GO:', shot)
+
+            if (roll.length == 0) {
+                console.log('ADICIONAR(LISTA VAZIA)')
+                roll.push({repetidos: [...podeser[belief].opl], way: shot})
+            }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
+                console.log('JÁ TEM')
+            }else{
+                console.log('NÃO TEM')
+                roll.push({repetidos: [...podeser[belief].opl], way: shot})
+            }
+           }
+
+          // console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
            whyis = java
            if (podeser.length > 0) {
                console.log('fatores', quantosfatores, 'posições', quantasposições)
