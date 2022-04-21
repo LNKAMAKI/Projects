@@ -1193,6 +1193,7 @@ java = 0
            
            
            for (belief in podeser) {
+               podeser[belief].position.push(java)
             console.log(podeser[belief].opl)
 
             shot = ''
@@ -1204,12 +1205,12 @@ java = 0
 
             if (roll.length == 0) {
                 console.log('ADICIONAR(LISTA VAZIA)')
-                roll.push({repetidos: [...podeser[belief].opl], way: shot})
+                roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                 console.log('JÁ TEM')
             }else{
                 console.log('NÃO TEM')
-                roll.push({repetidos: [...podeser[belief].opl], way: shot})
+                roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }
            }
 
@@ -1220,7 +1221,7 @@ java = 0
                console.log(podeser)
 
                for(cold in podeser) {
-           if (podeser[cold].position.length == quantosfatores - 1 && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
+           if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
             console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
             deucerto = true
 
