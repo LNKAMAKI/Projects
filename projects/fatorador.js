@@ -8,7 +8,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -22,7 +22,7 @@
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
-//expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','xc','+','x']
+//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','x']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1020,7 +1020,7 @@ divs = [1]
         //const vi = 0
         scarecrow = []
         for(anchor in segs) {
-            console.log('i feel the light betrayed me', segs[anchor].mons)
+           // console.log('i feel the light betrayed me', segs[anchor].mons)
             scarecrow.push({divididos: [], poss: [...segs[anchor].mons], divisor: [...segs[anchor].car], positions: [...segs[anchor].mons]})
         
             army = []
@@ -1029,7 +1029,7 @@ divs = [1]
                 if (lpisthebest.length == 0) {
                   //  console.log('LISTA VAZIA - ADD')
                     lpisthebest = segs[anchor].car[fall]
-                    console.log(lpisthebest)
+                  //  console.log(lpisthebest)
                 }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
                    // console.log('VAI - ADD')
                     lpisthebest += segs[anchor].car[fall]
@@ -1045,27 +1045,27 @@ divs = [1]
                             lpisthebest = ''
                         }
                     }
-                    console.log('LPISTHEBEST', lpisthebest)
+               //     console.log('LPISTHEBEST', lpisthebest)
                 }
                 if (fall == segs[anchor].car.length - 1) {
                     army.push(lpisthebest)
                 }
             }
             bell = [...army]
-            console.log('OAHAHA', army)
+          //  console.log('OAHAHA', army)
             for (high in segs[anchor].mons) {
                 
                
                 army = [...bell]
          
-                console.log(monomios[segs[anchor].mons[high]].numero,army)
+             //   console.log(monomios[segs[anchor].mons[high]].numero,army)
         
                 pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
                 
                 if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
                   //  console.log('É 1')
                     pain = '1'
-                    console.log('É ESSE:', pain)
+                  //  console.log('É ESSE:', pain)
                     scarecrow[anchor].divididos.push(pain)
                    
                 }else{
@@ -1077,24 +1077,24 @@ divs = [1]
                             right+= pain[feet]
                         }
                     }
-                    console.log('É ESSE:', right)
+                 //   console.log('É ESSE:', right)
                    
                     uy = ''
                    for (xarope in right) {
-                    console.log(right[xarope])
+                   // console.log(right[xarope])
                     if (xarope == 0 && right[xarope] == '*') {
-                      console.log('ERRADO!')
+                    //  console.log('ERRADO!')
                     }else if(xarope == right.length - 1 && right[xarope] == '*'){
-                        console.log('ERRADO')
+                       // console.log('ERRADO')
                     }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){
-                        console.log('ERRADO')
+                       // console.log('ERRADO')
                     }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){
-                        console.log('ERRADO')
+                       // console.log('ERRADO')
                     }else{
                         uy+= right[xarope]
                     }
                    }
-                   console.log('UY',uy)
+                 //  console.log('UY',uy)
                     scarecrow[anchor].divididos.push(uy)
                 }
                
@@ -1194,7 +1194,7 @@ java = 0
            
            for (belief in podeser) {
                if (podeser[belief].position.indexOf(java) == -1) {
-               podeser[belief].position.push(java)
+               podeser[belief].position.push(String(java))
                }
 
             console.log(podeser[belief].opl)
@@ -1334,6 +1334,12 @@ java = 0
         }
         */
         console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
+        for (raging in roll) {
+            console.log(roll[raging].repetidos, roll[raging].posições)
+            for (still in roll[raging].posições) {
+                console.log(miss[roll[raging].posições[still]].dividido)
+            }
+        }
         
        }
     
