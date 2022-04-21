@@ -1,63 +1,59 @@
-for(anchor in segs) {
-    console.log('i feel the light betrayed me', segs[anchor].mons, int[0][anchor].car)
-    scarecrow.push({divididos: [], poss: [...segs[anchor].mons]})
+correto = ['+', '2', '*', '2', 'x', 'x']
+eg = '2xx'
+eg2 = ['2']
 
-    army = []
-    lpisthebest = ''
-        for (fall in segs[anchor].car) {
-        if (lpisthebest.length == 0) {
-          //  console.log('LISTA VAZIA - ADD')
-            lpisthebest = segs[anchor].car[fall]
-            console.log(lpisthebest)
-        }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
-           // console.log('VAI - ADD')
-            lpisthebest += segs[anchor].car[fall]
-        }else{
-           // console.log('NÃO VAI NÃO')
-            army.push(lpisthebest)
-            if(segs[anchor].car[fall] != '.') {
-            lpisthebest = segs[anchor].car[fall]
-            }else{
-                if (segs[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
-                lpisthebest = '*'
-                }else{
-                    lpisthebest = ''
-                }
-            }
-            console.log('LPISTHEBEST', lpisthebest)
+eassim = []
+solo = ''
+for (ne in eg) {
+    console.log(eg[ne])
+if (solo.length == 0) {
+    console.log('LISTA VAZIA')
+    solo+= eg[ne]
+}else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
+    console.log('É UM nÚMERO')
+    solo+= eg[ne]
+}else{
+    eassim.push(solo)
+    solo = ''
+    solo += eg[ne]
+    
+}
+if (ne == eg.length - 1) {
+    eassim.push(solo)
+}
+}
+
+eg = eassim
+
+
+console.log(correto)
+for (ponto in eg2) {
+    console.log(eg2[ponto])
+    eg.push(eg2[ponto])
+}
+
+console.log('MULTIPLICAR', eg2,'*',eg)
+console.log(eg)
+
+numerinhos = []
+for (decisao in correto) {
+    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
+       numerinhos.push(correto[decisao])
         }
-        if (fall == segs[anchor].car.length - 1) {
-            army.push(lpisthebest)
-        }
+    console.log(correto[decisao])
+}
+console.log(numerinhos)
+
+
+for (poder in eg){
+    if (eg[poder] != '*' && eg[poder] != '.' && eg[poder] != '+' && eg[poder] != '-' && numerinhos.indexOf(eg[poder]) != -1) {
+    console.log(eg[poder], numerinhos)
+    console.log(numerinhos.indexOf(eg[poder]))
+    numerinhos.splice(numerinhos.indexOf(eg[poder]),1)
+
     }
-    bell = [...army]
-    console.log('OAHAHA', army)
-    for (high in segs[anchor].mons) {
-        
-       
-        army = [...bell]
- 
-        console.log(monomios[segs[anchor].mons[high]].numero,army)
-
-        pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
-        
-        if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-          //  console.log('É 1')
-            pain = '1'
-            console.log('É ESSE:', pain)
-            scarecrow[anchor].divididos.push(pain)
-        }else{
-
-            right = ''
-            for (feet in pain) {
-              //  console.log(pain[feet])
-                if (pain[feet] != '+') {
-                    right+= pain[feet]
-                }
-            }
-            console.log('É ESSE:', right)
-            scarecrow[anchor].divididos.push(right)
-        }
-       
-    }
+}
+console.log(numerinhos)
+if (numerinhos.length == 0) {
+    console.log('ENTÃO', eg2,'*',eg,'=',correto)
 }

@@ -8,7 +8,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -22,7 +22,7 @@
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
-expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','xc','+','x']
+//expression = ['ab','+','ac','+','bb','+','bc','+','ax','+','xc','+','x']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1193,7 +1193,8 @@ java = 0
            
            
            for (belief in podeser) {
-             //  podeser[belief].position.push(String(java))
+               podeser[belief].position.push(String(java))
+
             console.log(podeser[belief].opl)
 
             shot = ''
@@ -1287,12 +1288,52 @@ java = 0
        }
        mind++
 
-       console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
 
+       
        for (nao in roll) {
-        console.log(roll[nao].repetidos)
+           console.log('-------------------------------------------------------------------')
+        console.log('esse é o negócio',roll[nao].repetidos)
+        
+        console.log('---------------------------------------------')
+        console.log('ANALISANDO O MISS')
+
+       
+            shot = ''
+            for (gun in roll[nao].repetidos) {
+                //console.log(podeser[belief].opl[gun])
+                shot+= roll[nao].repetidos[gun] + ','
+            }
+
+        for (whyso in miss) {
+            console.log(miss[whyso].aparicoes)
+            igual = 0
+            for (heat in miss[whyso].aparicoes) {
+                console.log(miss[whyso].aparicoes[heat])
+                if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
+                    console.log('TEM')
+                    igual++
+                }
+            }
+            console.log('HÁ', igual, 'numero repetidos')
+            if (igual == roll[nao].repetidos.length) {
+                console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
+                   console.log(roll.find(function (roll){return roll.way == shot}).posições)
+
+                   if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
+                    console.log('NAO ADICIONAR, JÁ TEM')
+                }else{
+                    console.log('ADICIONAR EFETIVAMENTE')
+                    roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
+                }
+            }
+              // console.log('THAT WE LET IT GO:', shot)
+               
+            }
+        }
+        console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
+        
        }
-    }
+    
 
     
 
