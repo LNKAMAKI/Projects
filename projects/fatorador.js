@@ -1152,19 +1152,19 @@ java = 0
         for (outro in miss) {
             console.log('')
             if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-                //console.log(miss[outro].aparicoes)
+                console.log(miss[outro].aparicoes)
 
                 presentes = []
                 for (quecoisa in miss[outro].aparicoes) {
                     fatorzinho = miss[outro].aparicoes[quecoisa]
-                    //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
+                    console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
 
                     if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                   // console.log('TEM', fatorzinho)
+                    console.log('TEM', fatorzinho)
                         presentes.push(fatorzinho)
                     }
                 }
-                //console.log('OLHA', presentes)
+                console.log('OLHA', presentes)
 
                 adicionou = false
                 for (idk in podeser) {
@@ -1189,11 +1189,11 @@ java = 0
                 
             }
            }
-           console.log('ESSE É O PODESER', podeser)
+           console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
            
            
            for (belief in podeser) {
-               podeser[belief].position.push(java)
+             //  podeser[belief].position.push(String(java))
             console.log(podeser[belief].opl)
 
             shot = ''
@@ -1208,13 +1208,26 @@ java = 0
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                 console.log('JÁ TEM')
+                console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
+
+                for (capital in podeser[belief].position) {
+                    console.log(podeser[belief].position[capital])
+
+                    console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+
+                if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
+                   console.log('NÃO TEM') 
+                  // roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                }
+                }
+
             }else{
                 console.log('NÃO TEM')
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }
            }
 
-          // console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
+           console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
            whyis = java
            if (podeser.length > 0) {
                console.log('fatores', quantosfatores, 'posições', quantasposições)
@@ -1273,6 +1286,12 @@ java = 0
            java++
        }
        mind++
+
+       console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
+
+       for (nao in roll) {
+        console.log(roll[nao].repetidos)
+       }
     }
 
     
@@ -1652,6 +1671,7 @@ for (b = 0; b < grupos; b++) {
 
 
 }
+
 males = []
 for (nah = relation.length - 1; nah >= 0; nah--) {
      // if (relation[nah].fix.length > 0) {
