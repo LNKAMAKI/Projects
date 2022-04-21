@@ -8,7 +8,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -1152,19 +1152,19 @@ java = 0
         for (outro in miss) {
             console.log('')
             if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-                console.log(miss[outro].aparicoes)
+             //  console.log(miss[outro].aparicoes)
 
                 presentes = []
                 for (quecoisa in miss[outro].aparicoes) {
                     fatorzinho = miss[outro].aparicoes[quecoisa]
-                    console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
+                   // console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
 
                     if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    console.log('TEM', fatorzinho)
+                   // console.log('TEM', fatorzinho)
                         presentes.push(fatorzinho)
                     }
                 }
-                console.log('OLHA', presentes)
+               // console.log('OLHA', presentes)
 
                 adicionou = false
                 for (idk in podeser) {
@@ -1193,7 +1193,9 @@ java = 0
            
            
            for (belief in podeser) {
-               podeser[belief].position.push(String(java))
+               if (podeser[belief].position.indexOf(java) == -1) {
+               podeser[belief].position.push(java)
+               }
 
             console.log(podeser[belief].opl)
 
@@ -1202,22 +1204,22 @@ java = 0
                 //console.log(podeser[belief].opl[gun])
                 shot+= podeser[belief].opl[gun] + ','
             }
-            console.log('THAT WE LET IT GO:', shot)
+          //  console.log('THAT WE LET IT GO:', shot)
 
             if (roll.length == 0) {
-                console.log('ADICIONAR(LISTA VAZIA)')
+               // console.log('ADICIONAR(LISTA VAZIA)')
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                console.log('JÁ TEM')
-                console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
+                //console.log('JÁ TEM')
+            //    console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
 
                 for (capital in podeser[belief].position) {
-                    console.log(podeser[belief].position[capital])
+                  //  console.log(podeser[belief].position[capital])
 
-                    console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+              //      console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
 
                 if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                   console.log('NÃO TEM') 
+                //   console.log('NÃO TEM') 
                   // roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                 }
                 }
@@ -1240,7 +1242,7 @@ java = 0
             deucerto = true
 
             ficaassim = ''
-            podeser[cold].position.push(whyis)
+           // podeser[cold].position.push(whyis)
 
             for (yehaa in podeser[cold].position) {
                 console.log(podeser[cold])
@@ -1289,7 +1291,7 @@ java = 0
        mind++
 
 
-       
+       /*
        for (nao in roll) {
            console.log('-------------------------------------------------------------------')
         console.log('esse é o negócio',roll[nao].repetidos)
@@ -1330,6 +1332,7 @@ java = 0
                
             }
         }
+        */
         console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
         
        }
