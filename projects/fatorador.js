@@ -8,11 +8,11 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
-expression = ['2y', '+','4','y','+','y','+','2','x','+','4','x']
+//expression = ['2y', '+','4','y','+','y','+','2','x','+','4','x']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
 
@@ -1499,11 +1499,51 @@ java = 0
            }
 
            console.log('ASITWAS',asitwas)
-           youdumb.push({whichmons: asitwas})
+           youdumb.push({mons: asitwas, rag: raging})
         }
         
-       
+
        }
+
+       console.log('WHICHMONS',youdumb)
+       
+        dontworry = []
+        for (behappy in youdumb) {
+
+            console.log('')
+            console.log(youdumb[behappy].mons)
+
+            console.log('---------------------------------------')
+            for (armenia in youdumb) {
+                
+                if (armenia != behappy) {
+                console.log(youdumb[armenia].mons)
+
+                doeshave = true
+                for (sofar in youdumb[armenia].mons) {
+                    console.log(youdumb[armenia].mons[sofar])
+                    if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
+                        doeshave = false
+                       
+                    }
+                }
+                console.log(doeshave)
+                if (doeshave == true) {
+                console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
+                dontworry.push(armenia)
+                }
+            }
+
+            }
+          
+        }
+
+        for (da = youdumb.length - 1; da >= 0; da--) {
+            if (dontworry.indexOf(String(da)) != -1) {
+                console.log('TEM COISA AÍ',youdumb[da].mons)
+                youdumb.splice(da,1)
+            }
+        }
       
     }
     
@@ -2941,4 +2981,8 @@ return [relation, segs2]
     
 
 
-console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
+//console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
+
+
+
+
