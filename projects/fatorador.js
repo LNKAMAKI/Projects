@@ -1334,13 +1334,14 @@ java = 0
         }
         */
         console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
-        for (raging in roll) {
+        for (raging = 0; raging < roll.length; raging++) {
             console.log('')
           //  console.log(roll[raging].repetidos, roll[raging].posições)
 
            
            // console.log('MY LIFE:', mylife)
            for (still in roll[raging].repetidos) {
+               console.log('****************************************************************************************************************')
             console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
 
             mylife = '('
@@ -1351,9 +1352,93 @@ java = 0
                 }else{
                     mylife+= miss[roll[raging].posições[still2]].dividido
                 }
+
+              
                 console.log(miss[roll[raging].posições[still2]].dividido)
 
-                console.log(DESFATORAR(monomios, scarecrow[roll[raging].repetidos[still]].divisor,miss[roll[raging].posições[still2]].dividido, 'numero'))
+                conseguiu = false
+                older = 0
+                while (older < monomios.length && conseguiu == false) {
+                DESFATORAR(monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+                
+                
+                // correto == ['2','*','10','x'] (NÚMERO QUE VAI SER COMPARADO)
+                // eg2 == ['10'] (NÚMERO QUE VAI MULTIPLICAR)
+                // eg == '2x' (NÚMERO QUE VAI SER MULTIPLICADO)
+                
+                function DESFATORAR(correto, eg2, eg) {
+                eassim = []
+                solo = ''
+                for (ne in eg) {
+                  //  console.log('EGGGGGG',eg[ne])
+                    if (eg[ne] != '.') {
+                if (solo.length == 0) {
+                  //  console.log('LISTA VAZIA')
+                    solo+= eg[ne]
+                }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
+                  //  console.log('É UM nÚMERO')
+                    solo+= eg[ne]
+                }else{
+                    eassim.push(solo)
+                    solo = ''
+                    solo += eg[ne]
+                    
+                }
+                if (ne == eg.length - 1) {
+                    eassim.push(solo)
+                }
+                    }else{
+                       // console.log('NAO')
+                    }
+                }
+                
+                eg = eassim
+                
+                
+                whythat = [...eg]
+              //  console.log(correto)
+                for (ponto in eg2) {
+                  //  console.log(eg2[ponto])
+                    if (eg2[ponto] != '.') {
+                    whythat.push(eg2[ponto])
+                  //  console.log('I FOLLOW YOu')
+                    }
+                }
+                
+              //  console.log('MULTIPLICAR', eg2,'*',eg)
+              //  console.log(whythat)
+                
+                numerinhos = []
+                for (decisao in correto) {
+                    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
+                       numerinhos.push(correto[decisao])
+                       
+                        }
+                 //   console.log(correto[decisao],'AH, NAO')
+                }
+                  //  console.log(numerinhos)
+                    thatway = [...numerinhos]
+
+
+                    for (poder in whythat){
+                        if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && whythat[poder] != '-' && numerinhos.indexOf(whythat[poder]) != -1) {
+                      //  console.log(whythat[poder], numerinhos)
+                     //   console.log(numerinhos.indexOf(whythat[poder]))
+                        numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
+
+                        }
+                    }
+                   // console.log(numerinhos)
+                  //  console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
+                    if (numerinhos.length == 0 && thatway.length == whythat.length) {
+                      //  console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                        conseguiu = true
+                    }
+                }
+                older++
+                }
+               // console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+               console.log('WHO WILL FIX IT NOW? DIVING IN THE DROWN.', older - 1)
            }
         }
         
@@ -2795,81 +2880,3 @@ return [relation, segs2]
     
 
 
-
-
-
-
-
-function DESFATORAR(boulder, eg, oka, mon) {
-
-console.log('---------------------------------------------------------------')
-    eassim = []
-    solo = ''
-    for (ne in eg) {
-        //console.log(eg[ne])
-    if (solo.length == 0) {
-        //console.log('LISTA VAZIA')
-        solo+= eg[ne]
-    }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-        //console.log('É UM nÚMERO')
-        solo+= eg[ne]
-    }else{
-        eassim.push(solo)
-        solo = ''
-        solo += eg[ne]
-        
-    }
-    if (ne == eg.length - 1) {
-        eassim.push(solo)
-    }
-    }
-    
-    
-    
-    pieces = 0 
-    
-    eassim = ''
-    toyou = false
-    while(pieces < boulder.length && toyou == false){
-    console.log(boulder[pieces][mon])
-    
-    for (ponto in oka) {
-        console.log(oka[ponto])
-        eassim.push(oka[ponto])
-    }
-    
-    console.log('MULTIPLICAR', oka,'*',eg)
-    console.log(eassim)
-    
-    numerinhos = []
-    for (decisao in boulder[pieces][mon]) {
-        if (boulder[pieces][mon][decisao] != '*' && boulder[pieces][mon][decisao] != '.' && boulder[pieces][mon][decisao] != '+' && boulder[pieces][mon][decisao] != '-') {
-           numerinhos.push(boulder[pieces][mon][decisao])
-            }
-        console.log(boulder[pieces][mon][decisao])
-    }
-    console.log('NUMERINHOS',numerinhos)
-    
-    
-    for (poder in eassim){
-        if (eassim[poder] != '*' && eassim[poder] != '.' && eassim[poder] != '+' && eassim[poder] != '-' && numerinhos.indexOf(eassim[poder]) != -1) {
-        console.log(eassim[poder], numerinhos)
-        console.log(numerinhos.indexOf(eassim[poder]))
-        numerinhos.splice(numerinhos.indexOf(eassim[poder]),1)
-    
-        }
-    }
-    console.log(numerinhos)
-    if (numerinhos.length == 0) {
-        console.log('ENTÃO', oka,'*',eg,'=',boulder[pieces][mon])
-        toyou = true
-        return pieces
-    }else{
-        console.log('ESSE NÃO É O CERTO')
-    }
-    
-    pieces++
-    }
-    console.log('---------------------------------------------------------------')
-
-    }
