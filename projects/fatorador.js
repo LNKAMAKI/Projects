@@ -1405,6 +1405,9 @@ java = 0
                 // eg == '2x' (NÚMERO QUE VAI SER MULTIPLICADO)
                 
                 function DESFATORAR(correto, eg2, eg) {
+
+                   // console.log('eg', eg)
+
                 eassim = []
                 solo = ''
                 for (ne in eg) {
@@ -1469,7 +1472,7 @@ java = 0
 
                     for (pombo = whythat.length - 1; pombo >= 0; pombo--){
                       //  console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
-                        if (whythat[pombo] == '*') {
+                        if (whythat[pombo] == '*' || whythat[pombo] == '1') {
                             whythat.splice(pombo,1)
                         }
                         
@@ -1491,7 +1494,7 @@ java = 0
            }
         }
         
-        console.log(asitwas)
+        console.log('ASITWAS',asitwas)
        }
       
     }
