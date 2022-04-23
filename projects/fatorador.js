@@ -1335,8 +1335,10 @@ java = 0
         */
         console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
         for (raging = 0; raging < roll.length; raging++) {
+
+            asitwas = []
             console.log('')
-          //  console.log(roll[raging].repetidos, roll[raging].posições)
+            console.log(roll[raging].repetidos, roll[raging].posições)
 
            
            // console.log('MY LIFE:', mylife)
@@ -1439,6 +1441,7 @@ java = 0
                 }
                // console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
                console.log('WHO WILL FIX IT NOW? DIVING IN THE DROWN.', older - 1)
+               asitwas.push(older - 1)
            }
         }
         
