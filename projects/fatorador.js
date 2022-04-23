@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
@@ -22,7 +22,7 @@ expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+'
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
-//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 //FAZEnDO AS COnTAS COM nÚMEROS
@@ -709,14 +709,14 @@ for (h in T) {
 }
 //egs = [...qual]
 
-console.log('QUAL?',qual)
+//console.log('QUAL?',qual)
 egs = []
 for (norte in qual) {
-console.log(qual[norte])
+//console.log(qual[norte])
 if (qual[norte] == '*') {
-    console.log('NÃOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+    //console.log('NÃOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 }else{
-console.log('SIIIIIIIIIIM')
+//console.log('SIIIIIIIIIIM')
 
 egs.push(qual[norte])
 
@@ -731,7 +731,7 @@ for (n in egs) {
 
 if (T.indexOf(egs[n]) != -1) {
 
-    console.log('TAKE OUT', egs[n])
+   // console.log('TAKE OUT', egs[n])
 T.splice(T.lastIndexOf(egs[n]), 1)
 takeout.push(Number(n))
 }
@@ -739,26 +739,26 @@ takeout.push(Number(n))
 }
 
 
-console.log('eeeeeeeeeeeeeeeeeeg', egs)
+//console.log('eeeeeeeeeeeeeeeeeeg', egs)
 
 
 for (giro = egs.length - 1; giro >= 0; giro--) {
     if (takeout.indexOf(Number(giro)) == -1) {
-    console.log(egs[giro],'egs[giro]')
+   // console.log(egs[giro],'egs[giro]')
     }else{
-        console.log('SPLICE')
+       // console.log('SPLICE')
         egs.splice(giro,1)
     }
 }
 
-console.log('GIRRRRRRRRRROOOOO', egs)
+//console.log('GIRRRRRRRRRROOOOO', egs)
 depois = ''
 for (n in egs) {
-    console.log('yo',egs[n])
+   // console.log('yo',egs[n])
         depois += String(egs[n])
 
      if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
-        console.log('HUmm')
+      //  console.log('HUmm')
         depois+= '*'
      }
 }
@@ -1115,23 +1115,23 @@ divs = [1]
                  //   console.log('É ESSE:', right)
                    
                     uy = ''
-                    console.log(right, 'RIGHT') 
+                  //  console.log(right, 'RIGHT') 
 
                    for (xarope in right) {
-                    console.log(right[xarope])
+                 //   console.log(right[xarope])
                     if (xarope == 0 && right[xarope] == '*') { // *2
-                      console.log('ERRADO!', '*2')
+                   //   console.log('ERRADO!', '*2')
                     }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
-                        console.log('ERRADO', '2*')
+                  //      console.log('ERRADO', '2*')
                     }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
-                        console.log('ERRADO', '2*x')
+                 //       console.log('ERRADO', '2*x')
                     }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
-                        console.log('ERRADO', 'x*2')
+                   //     console.log('ERRADO', 'x*2')
                     }else{
                         uy+= right[xarope]
                     }
                    }
-                   console.log('UY',uy)
+                 //  console.log('UY',uy)
                     scarecrow[anchor].divididos.push(uy)
                 }
                
@@ -1183,7 +1183,7 @@ java = 0
         relações = []
            if (miss[java].aparicoes.length >= quantasposições) {
             console.log('')
-        console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
+        //console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
 
         podeser = []
         for (outro in miss) {
@@ -1226,7 +1226,7 @@ java = 0
                 
             }
            }
-           console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
+        //   console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
            
            
            for (belief in podeser) {
@@ -1234,7 +1234,7 @@ java = 0
                podeser[belief].position.push(String(java))
                }
 
-            console.log(podeser[belief].opl)
+          //  console.log(podeser[belief].opl)
 
             shot = ''
             for (gun in podeser[belief].opl) {
