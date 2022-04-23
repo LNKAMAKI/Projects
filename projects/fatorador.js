@@ -8,7 +8,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -22,7 +22,7 @@
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
-expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','x']
+//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1013,7 +1013,7 @@ divs = ehprimo2(ml)
 //////console.log(divs)
 
 for (n in divs) {
-    //////console.log(divs[mind])
+    //////console.log(divs[okentao])
     
 }
 
@@ -1046,7 +1046,7 @@ divs = [1]
     segs[tie].godhelpme = [...segs[tie].mons]
    }
   
-   mind = 0
+   okentao = 0
     for (okentao in divs) {
         roll = [] 
 
@@ -1324,7 +1324,7 @@ java = 0
            }
            java++
        }
-       mind++
+       okentao++
 
 
        /*
@@ -1370,15 +1370,19 @@ java = 0
         }
         */
         console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
+
+       youdumb = []
         for (raging = 0; raging < roll.length; raging++) {
 
-            asitwas = []
+           
             console.log('')
           //  console.log(roll[raging].repetidos, roll[raging].posições)
 
            
            // console.log('MY LIFE:', mylife)
            for (still in roll[raging].repetidos) {
+            asitwas = [] 
+
                console.log('')
             console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
 
@@ -1493,9 +1497,12 @@ java = 0
           //  console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
            }
+
+           console.log('ASITWAS',asitwas)
+           youdumb.push({whichmons: asitwas})
         }
         
-        console.log('ASITWAS',asitwas)
+       
        }
       
     }
@@ -1598,7 +1605,7 @@ function doit(par) {
  relation = []
 
 
- quanto = Number(monomios.length)/Number(divs[mind])
+ quanto = Number(monomios.length)/Number(divs[okentao])
 
 
  numapars = []
@@ -1772,11 +1779,11 @@ groups++
 }
 }
 
-console.log('divs é igual a ', divs[mind])
+console.log('divs é igual a ', divs[okentao])
 console.log('groups é igual a', groups)
 
 
-if (groups < divs[mind]) {
+if (groups < divs[okentao]) {
  //console.log('DEU CERTO!!!EBAAAAAA')
 
  console.log('SERÁ QUE DEU CERTO?')
@@ -1796,8 +1803,8 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-////console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[mind], 'and', groups)
-if (divs[mind] != groups) {
+////console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[okentao], 'and', groups)
+if (divs[okentao] != groups) {
 //console.log('SÓ QUE nÃO')
 ////console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
@@ -1981,7 +1988,7 @@ fireonfire = []
     relation.push({fix: fireonfire[red].mons, car: fireonfire[red].car})
  }
 
-}else if(groups > divs[mind]){
+}else if(groups > divs[okentao]){
     
 console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
  ////console.log('números que têm: ', conts)
@@ -2209,8 +2216,8 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-//console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[mind], 'and', groups)
-if (divs[mind] != groups) {
+//console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[okentao], 'and', groups)
+if (divs[okentao] != groups) {
 //console.log('THEn WHY ARE WE LAUGHInG?')
 //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
@@ -2341,7 +2348,7 @@ function doit2(par) {
  relation = []
 
 
- quanto = Number(monomios.length)/Number(divs[mind])
+ quanto = Number(monomios.length)/Number(divs[okentao])
 
 
  numapars = []
@@ -2515,9 +2522,9 @@ groups++
 }
 }
 
-////console.log('divs é igual a ', divs[mind])
+////console.log('divs é igual a ', divs[okentao])
 ////console.log('groups é igual a', groups)
-if (groups < divs[mind]) {
+if (groups < divs[okentao]) {
  //console.log('DEU CERTO!!!EBAAAAAA')
 
  ////console.log('SERÁ QUE DEU CERTO?')
@@ -2537,8 +2544,8 @@ console.log(relation[yougo].fix[pals])
 groups++
 }
 }
-console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[mind], 'and', groups)
-if (divs[mind] != groups) {
+console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[okentao], 'and', groups)
+if (divs[okentao] != groups) {
 console.log('THEn WHY ARE WE LAUGHInG?')
 console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
@@ -2617,7 +2624,7 @@ for (b = 0; b < grupos; b++) {
 
 
 }
-}else if(groups > divs[mind]){
+}else if(groups > divs[okentao]){
     
 //console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
  //console.log('números que têm: ', conts)
@@ -2845,8 +2852,8 @@ for (pals in relation[yougo].fix) {
 groups++
 }
 }
-//console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[mind], 'and', groups)
-if (divs[mind] != groups) {
+//console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[okentao], 'and', groups)
+if (divs[okentao] != groups) {
 //console.log('THEn WHY ARE WE LAUGHInG?')
 //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
 
