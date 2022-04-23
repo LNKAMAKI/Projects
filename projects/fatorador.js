@@ -1374,7 +1374,7 @@ java = 0
 
             asitwas = []
             console.log('')
-            console.log(roll[raging].repetidos, roll[raging].posições)
+          //  console.log(roll[raging].repetidos, roll[raging].posições)
 
            
            // console.log('MY LIFE:', mylife)
@@ -1489,7 +1489,8 @@ java = 0
                 older++
                 }
                // console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-               console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+            //   console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+          //  console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
            }
         }
