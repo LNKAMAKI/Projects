@@ -700,32 +700,66 @@ return anterior
 
 function DIVIDIR(T, qual) {
     
+
     Tfix = []
 for (h in T) {
     Tfix.push(T[h])
+    //console.log(T[h])
 }
-eg = qual
+//egs = [...qual]
+
+console.log('QUAL?',qual)
+egs = []
+for (norte in qual) {
+console.log(qual[norte])
+if (qual[norte] == '*') {
+    console.log('NÃOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+}else{
+console.log('SIIIIIIIIIIM')
+
+egs.push(qual[norte])
+
+}
+
+}
+
 
 takeout = []
 
-for (n in eg) {
+for (n in egs) {
 
-if (T.indexOf(eg[n]) != -1) {
+if (T.indexOf(egs[n]) != -1) {
 
-
-
-T.splice(T.lastIndexOf(eg[n]), 1)
+    console.log('TAKE OUT', egs[n])
+T.splice(T.lastIndexOf(egs[n]), 1)
 takeout.push(Number(n))
 }
+
 }
 
 
+console.log('eeeeeeeeeeeeeeeeeeg', egs)
 
-depois = ''
-for (n in eg) {
-    if (takeout.indexOf(Number(n)) == -1) {
-        depois += String(eg[n])
+
+for (giro = egs.length - 1; giro >= 0; giro--) {
+    if (takeout.indexOf(Number(giro)) == -1) {
+    console.log(egs[giro],'egs[giro]')
+    }else{
+        console.log('SPLICE')
+        egs.splice(giro,1)
     }
+}
+
+console.log('GIRRRRRRRRRROOOOO', egs)
+depois = ''
+for (n in egs) {
+    console.log('yo',egs[n])
+        depois += String(egs[n])
+
+     if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
+        console.log('HUmm')
+        depois+= '*'
+     }
 }
 
 return depois
@@ -1080,21 +1114,23 @@ divs = [1]
                  //   console.log('É ESSE:', right)
                    
                     uy = ''
+                    console.log(right, 'RIGHT') 
+
                    for (xarope in right) {
-                   // console.log(right[xarope])
-                    if (xarope == 0 && right[xarope] == '*') {
-                    //  console.log('ERRADO!')
-                    }else if(xarope == right.length - 1 && right[xarope] == '*'){
-                       // console.log('ERRADO')
-                    }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){
-                       // console.log('ERRADO')
-                    }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){
-                       // console.log('ERRADO')
+                    console.log(right[xarope])
+                    if (xarope == 0 && right[xarope] == '*') { // *2
+                      console.log('ERRADO!', '*2')
+                    }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
+                        console.log('ERRADO', '2*')
+                    }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
+                        console.log('ERRADO', '2*x')
+                    }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
+                        console.log('ERRADO', 'x*2')
                     }else{
                         uy+= right[xarope]
                     }
                    }
-                 //  console.log('UY',uy)
+                   console.log('UY',uy)
                     scarecrow[anchor].divididos.push(uy)
                 }
                
@@ -1343,7 +1379,7 @@ java = 0
            
            // console.log('MY LIFE:', mylife)
            for (still in roll[raging].repetidos) {
-               console.log('****************************************************************************************************************')
+               console.log('')
             console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
 
             mylife = '('
@@ -1407,8 +1443,8 @@ java = 0
                     }
                 }
                 
-              //  console.log('MULTIPLICAR', eg2,'*',eg)
-              //  console.log(whythat)
+          //  console.log('MULTIPLICAR', eg2,'*',eg)
+           //  console.log(whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
@@ -1424,29 +1460,40 @@ java = 0
 
                     for (poder in whythat){
                         if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && whythat[poder] != '-' && numerinhos.indexOf(whythat[poder]) != -1) {
-                      //  console.log(whythat[poder], numerinhos)
-                     //   console.log(numerinhos.indexOf(whythat[poder]))
+                    //    console.log(whythat[poder], numerinhos)
+                    //    console.log(numerinhos.indexOf(whythat[poder]))
                         numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
 
                         }
                     }
+
+                    for (pombo = whythat.length - 1; pombo >= 0; pombo--){
+                      //  console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
+                        if (whythat[pombo] == '*') {
+                            whythat.splice(pombo,1)
+                        }
+                        
+                    }
+
+                 //   console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
                    // console.log(numerinhos)
                   //  console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                      //  console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                       // console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
                 older++
                 }
                // console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-               console.log('WHO WILL FIX IT NOW? DIVING IN THE DROWN.', older - 1)
+               console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
                asitwas.push(older - 1)
            }
         }
         
+        console.log(asitwas)
        }
-    
+      
     }
     
 
@@ -2883,3 +2930,4 @@ return [relation, segs2]
     
 
 
+console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
