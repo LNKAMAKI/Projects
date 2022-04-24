@@ -22,7 +22,8 @@
 
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
-expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
+
+//expression = ['ab','+','ac','+','bc','+','xa','+','xc']
 
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 //FAZEnDO AS COnTAS COM nÚMEROS
@@ -1375,14 +1376,16 @@ java = 0
        youdumb = []
         for (raging = 0; raging < roll.length; raging++) {
 
-           
+            asitwas = [] 
+            obe = {what:[]}
+
             console.log('')
           //  console.log(roll[raging].repetidos, roll[raging].posições)
 
            
            // console.log('MY LIFE:', mylife)
            for (still in roll[raging].repetidos) {
-            asitwas = [] 
+            asitwas2 = []
 
                console.log('')
             console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
@@ -1497,13 +1500,17 @@ java = 0
             //   console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
           //  console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
+               asitwas2.push(older - 1)
            }
-
-           console.log('ASITWAS',asitwas)
-           youdumb.push({mons: asitwas, rag: raging})
-        }
         
 
+           console.log('ASITWAS',asitwas, asitwas2)
+           obe.what.push(asitwas2)
+           
+        }
+        
+        youdumb.push({mons: asitwas, rag: raging})
+        console.log(obe)
        }
 
        console.log('WHICHMONS',youdumb)
@@ -1511,27 +1518,29 @@ java = 0
         dontworry = []
         for (behappy in youdumb) {
 
-            console.log('')
-            console.log(youdumb[behappy].mons)
+          //  console.log('')
+            //console.log(youdumb[behappy].mons)
 
-            console.log('---------------------------------------')
+            //console.log('---------------------------------------')
             for (armenia in youdumb) {
                 
                 if (armenia != behappy) {
-                console.log(youdumb[armenia].mons)
+               // console.log(youdumb[armenia].mons)
 
                 doeshave = true
                 for (sofar in youdumb[armenia].mons) {
-                    console.log(youdumb[armenia].mons[sofar])
+                  //  console.log(youdumb[armenia].mons[sofar])
                     if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
                         doeshave = false
                        
                     }
                 }
-                console.log(doeshave)
+               // console.log(doeshave)
                 if (doeshave == true) {
-                console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
+               // console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
+               if (dontworry.indexOf(behappy) == -1) {
                 dontworry.push(armenia)
+               }
                 }
             }
 
