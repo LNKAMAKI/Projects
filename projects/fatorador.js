@@ -4,11 +4,11 @@
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
-//expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 //expression = ['-3*3', '-', '2*3*3', '+', '2*3', '+', '2*2']
 
@@ -199,7 +199,7 @@ for (huh in monomios) {
 // SEPARAnDO/JUnTAnDO OS nÚMEROS
 
 exp = []
-/*
+
 for (bye in ji) {
     console.log(ji[bye])
 
@@ -253,22 +253,25 @@ divisor.push(ji[chuva].que[flowers])
 }
 
 //console.log(monomios[ji[chuva].quais[da]].numero, '/',divisor)
-
+tu = [...divisor]
 resultadoDaDivisão = DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero)
-//console.log('A DIVISÃ É IGUAL A ', resultadoDaDivisão)
+
+console.log('A DIVISÃ É IGUAL DE',monomios[ji[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
 
 plan = []
 add = ''
 
 for (past in resultadoDaDivisão) {
    
- //console.log(resultadoDaDivisão[past])
+ console.log(resultadoDaDivisão[past])
 
  if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
 //console.log('ADICIOnAR')
 
 if (add.length == 0) {
+    if (resultadoDaDivisão[past - 1] != '-') {
     add+= resultadoDaDivisão[past]
+    }
 
 }else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
     console.log('OK')
@@ -276,14 +279,17 @@ add+= resultadoDaDivisão[past]
 }else{
     plan.push(add)
     add = ''
+    console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
+   
     add+= resultadoDaDivisão[past]
     
+    
 }
-//console.log('ADD', add)
-//console.log('PLAn É:', plan)
+console.log('ADD', add)
+console.log('PLAn É:', plan)
 
 if (plan.length == 3) {
-//console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
 console.log(Number(plan[0])*Number(plan[2]))
 plan = [String(Number(plan[0])*Number(plan[2]))]
 }
@@ -294,14 +300,14 @@ plan.push(add)
 //console.log('PLAn', plan)
 
 if (plan.length == 3) {
-    //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-    //console.log(Number(plan[0])*Number(plan[2]))
+    console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+    console.log(Number(plan[0])*Number(plan[2]))
     plan = [String(Number(plan[0])*Number(plan[2]))]
-   // console.log('É ISSO!!', plan)
+    console.log('É ISSO!!', plan)
     }
 
     if (monomios[ji[chuva].quais[da]].numero[0] == '+' || monomios[ji[chuva].quais[da]].numero[0] == '-') {
-   // console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
+    console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
 
     sinal = monomios[ji[chuva].quais[da]].numero[0]
 
@@ -314,7 +320,7 @@ if (plan.length == 3) {
 
  entao = '-'
  entao+= plan[0]
- //console.log(entao)
+ console.log(entao)
  conta.push(entao)
     }else{
        
@@ -325,7 +331,7 @@ if (plan.length == 3) {
 }
 
 
-//console.log('OK, FICOU ASSIM:', conta)
+console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
 console.log('E RESOLVEnDO FICA ASSIM:', comehome)
@@ -347,7 +353,7 @@ if (comehome[0][0] == '-') {
    fat = FATORARSInGULAR(at)
    console.log(String(fat))
    }else{
-       console.log('É PRIMOOOOOOOOOOOOOOOOO')
+      console.log('É PRIMOOOOOOOOOOOOOOOOO')
     fat = at
    }
    oop = '-'
@@ -364,7 +370,7 @@ fat = FATORARSInGULAR(comehome)
     }else{
         fat = comehome
     }
-//console.log(fat)
+console.log(fat)
 
 if (exp.length == 0) {
     fat += ji[chuva].que
@@ -697,7 +703,7 @@ if (anterior.length > 1) {
 return anterior
 }
 //
-*/
+
 
 
 function DIVIDIR(T, qual) {
@@ -1052,7 +1058,7 @@ divs = [1]
     for (okentao in divs) {
         roll = [] 
 
-        console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
+       // console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
         //const vi = 0
         scarecrow = []
         for(anchor in segs) {
@@ -1142,7 +1148,7 @@ divs = [1]
        miss = []
 
        for (ah in scarecrow) {
-           console.log('SCARECROW', scarecrow[ah].divididos)
+         //  console.log('SCARECROW', scarecrow[ah].divididos)
            for (é in scarecrow[ah].divididos) {
            if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
             miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
@@ -1156,7 +1162,7 @@ divs = [1]
        quantosfatores = Number(monomios.length)/Number(divs[okentao])
        quantasposições = Number(monomios.length)/Number(quantosfatores)
 
-       console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
+      // console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
 
 // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
 
@@ -1263,16 +1269,16 @@ java = 0
                 }
 
             }else{
-                console.log('NÃO TEM')
+               // console.log('NÃO TEM')
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }
            }
 
-           console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
+          // console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
            whyis = java
            if (podeser.length > 0) {
-               console.log('fatores', quantosfatores, 'posições', quantasposições)
-               console.log(podeser)
+              // console.log('fatores', quantosfatores, 'posições', quantasposições)
+              // console.log(podeser)
 
                for(cold in podeser) {
            if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
