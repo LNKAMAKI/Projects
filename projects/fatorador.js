@@ -14,7 +14,7 @@
 
 //expression = ['2y', '+','4','y','+','y','+','2','x','+','4','x']
 
-expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
+//expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
@@ -23,7 +23,7 @@ expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2',
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
-//expression = ['ab','+','ac','+','bc','+','xa','+','xc']
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 //FAZEnDO AS COnTAS COM nÚMEROS
@@ -201,10 +201,10 @@ for (huh in monomios) {
 exp = []
 
 for (bye in ji) {
-    console.log(ji[bye])
+  //  console.log(ji[bye])
 
     for (misery in ji[bye].quais) { 
-        console.log(monomios[ji[bye].quais[misery]].numero)
+      //  console.log(monomios[ji[bye].quais[misery]].numero)
 
         ground = ''
 
@@ -212,13 +212,13 @@ for (bye in ji) {
         for (b in monomios[ji[bye].quais[misery]].numero) {
 
            carac =  monomios[ji[bye].quais[misery]].numero[b]
-           console.log(carac)
+         //  console.log(carac)
             
             if (ground.length == 0) {
-                console.log('LISTA VAZIA')
+                //console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                console.log('É UM nÚMERO')
+               // console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
@@ -229,7 +229,7 @@ for (bye in ji) {
                 }
             }
         }
-        console.log(comofica)
+        //console.log(comofica)
         monomios[ji[bye].quais[misery]].numero = comofica
     }
 }
@@ -256,14 +256,14 @@ divisor.push(ji[chuva].que[flowers])
 tu = [...divisor]
 resultadoDaDivisão = DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero)
 
-console.log('A DIVISÃ É IGUAL DE',monomios[ji[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
+//console.log('A DIVISÃ É IGUAL DE',monomios[ji[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
 
 plan = []
 add = ''
 
 for (past in resultadoDaDivisão) {
    
- console.log(resultadoDaDivisão[past])
+ //console.log(resultadoDaDivisão[past])
 
  if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
 //console.log('ADICIOnAR')
@@ -274,23 +274,23 @@ if (add.length == 0) {
     }
 
 }else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
-    console.log('OK')
+    //console.log('OK')
 add+= resultadoDaDivisão[past]
 }else{
     plan.push(add)
     add = ''
-    console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
+    //console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
    
     add+= resultadoDaDivisão[past]
     
     
 }
-console.log('ADD', add)
-console.log('PLAn É:', plan)
+//console.log('ADD', add)
+//console.log('PLAn É:', plan)
 
 if (plan.length == 3) {
-console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-console.log(Number(plan[0])*Number(plan[2]))
+//console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+//console.log(Number(plan[0])*Number(plan[2]))
 plan = [String(Number(plan[0])*Number(plan[2]))]
 }
  }
@@ -300,14 +300,14 @@ plan.push(add)
 //console.log('PLAn', plan)
 
 if (plan.length == 3) {
-    console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-    console.log(Number(plan[0])*Number(plan[2]))
+    //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+    //console.log(Number(plan[0])*Number(plan[2]))
     plan = [String(Number(plan[0])*Number(plan[2]))]
-    console.log('É ISSO!!', plan)
+    //console.log('É ISSO!!', plan)
     }
 
     if (monomios[ji[chuva].quais[da]].numero[0] == '+' || monomios[ji[chuva].quais[da]].numero[0] == '-') {
-    console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
+   //console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
 
     sinal = monomios[ji[chuva].quais[da]].numero[0]
 
@@ -320,7 +320,7 @@ if (plan.length == 3) {
 
  entao = '-'
  entao+= plan[0]
- console.log(entao)
+ //console.log(entao)
  conta.push(entao)
     }else{
        
@@ -331,10 +331,10 @@ if (plan.length == 3) {
 }
 
 
-console.log('OK, FICOU ASSIM:', conta)
+//console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
-console.log('E RESOLVEnDO FICA ASSIM:', comehome)
+//console.log('E RESOLVEnDO FICA ASSIM:', comehome)
 
 
 
@@ -345,20 +345,20 @@ if (comehome[0][0] == '-') {
      t+= comehome[0][b]
    }
    }
-   console.log(t)
-   console.log(typeof t)
+  // console.log(t)
+   //console.log(typeof t)
    at = t
    if (ehprimo(t) == false) {
-      console.log(at)
+      //console.log(at)
    fat = FATORARSInGULAR(at)
-   console.log(String(fat))
+  // console.log(String(fat))
    }else{
-      console.log('É PRIMOOOOOOOOOOOOOOOOO')
+     // console.log('É PRIMOOOOOOOOOOOOOOOOO')
     fat = at
    }
    oop = '-'
    oop+= String(fat)
-console.log(oop)
+//console.log(oop)
 
 exp.push('-')
 fat += ji[chuva].que
@@ -370,7 +370,7 @@ fat = FATORARSInGULAR(comehome)
     }else{
         fat = comehome
     }
-console.log(fat)
+//console.log(fat)
 
 if (exp.length == 0) {
     fat += ji[chuva].que
@@ -1233,7 +1233,7 @@ java = 0
                 
             }
            }
-        //   console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
+           console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
            
            
            for (belief in podeser) {
@@ -1255,16 +1255,16 @@ java = 0
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                 //console.log('JÁ TEM')
-            //    console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
+              // console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
 
                 for (capital in podeser[belief].position) {
                   //  console.log(podeser[belief].position[capital])
 
-              //      console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+                 //  console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
 
                 if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                 //   console.log('NÃO TEM') 
-                  // roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                   roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                 }
                 }
 
@@ -1335,7 +1335,7 @@ java = 0
        okentao++
 
 
-       /*
+       
        for (nao in roll) {
            console.log('-------------------------------------------------------------------')
         console.log('esse é o negócio',roll[nao].repetidos)
@@ -1351,24 +1351,24 @@ java = 0
             }
 
         for (whyso in miss) {
-            console.log(miss[whyso].aparicoes)
+            //console.log(miss[whyso].aparicoes)
             igual = 0
             for (heat in miss[whyso].aparicoes) {
-                console.log(miss[whyso].aparicoes[heat])
+                //console.log(miss[whyso].aparicoes[heat])
                 if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
-                    console.log('TEM')
+                  //  console.log('TEM')
                     igual++
                 }
             }
-            console.log('HÁ', igual, 'numero repetidos')
+           // console.log('HÁ', igual, 'numero repetidos')
             if (igual == roll[nao].repetidos.length) {
-                console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
-                   console.log(roll.find(function (roll){return roll.way == shot}).posições)
+               // console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
+                  // console.log(roll.find(function (roll){return roll.way == shot}).posições)
 
                    if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
-                    console.log('NAO ADICIONAR, JÁ TEM')
+                    //console.log('NAO ADICIONAR, JÁ TEM')
                 }else{
-                    console.log('ADICIONAR EFETIVAMENTE')
+                  //  console.log('ADICIONAR EFETIVAMENTE')
                     roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
                 }
             }
@@ -1376,8 +1376,8 @@ java = 0
                
             }
         }
-        */
-       /*
+        
+       
         console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
 
        youdumb = []
@@ -1386,7 +1386,7 @@ java = 0
             asitwas = [] 
             obe = {what:[]}
 
-            console.log('')
+          //  console.log('')
           //  console.log(roll[raging].repetidos, roll[raging].posições)
 
            
@@ -1394,8 +1394,8 @@ java = 0
            for (still in roll[raging].repetidos) {
             asitwas2 = []
 
-               console.log('')
-            console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
+              // console.log('')
+           // console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
 
             mylife = '('
             for (still2 in roll[raging].posições) {
@@ -1407,7 +1407,7 @@ java = 0
                 }
 
               
-                console.log(miss[roll[raging].posições[still2]].dividido)
+              //  console.log(miss[roll[raging].posições[still2]].dividido)
 
                 conseguiu = false
                 older = 0
@@ -1516,7 +1516,7 @@ java = 0
            
         }
         
-        youdumb.push({mons: asitwas, rag: raging})
+        youdumb.push({mons: asitwas, rag: raging, w: obe})
         console.log(obe)
        }
 
@@ -1582,7 +1582,7 @@ for (ah in organizado) {
     grtols.push(youdumb[organizado[ah]])
    
 }
-     */ 
+     
     }
     
 
