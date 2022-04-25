@@ -1601,7 +1601,7 @@ for (ah in organizado) {
      
 quaistem = []
 
-/*
+
 for (yourlife in grtols) {
 
     console.log(grtols[yourlife].w.what)
@@ -1615,7 +1615,7 @@ for (yourlife in grtols) {
         }
     }
 }
-*/
+
     }
     
 
