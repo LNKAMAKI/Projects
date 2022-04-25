@@ -1029,7 +1029,7 @@ if (divs.length == 0) {
 divs = [1]
 }
 
-divs = [2]
+divs = [3,2]
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
@@ -1185,39 +1185,42 @@ miss = [...grtols]
 //
 deucerto = false
 java = 0
-       while(java < miss.length && deucerto == false) {
+
+console.log('MISS.LENGTH',miss.length)
+
+
+while(java < miss.length && deucerto == false) {
            
-        relações = []
-           if (miss[java].aparicoes.length >= quantasposições) {
+          // if (miss[java].aparicoes.length >= quantasposições) {
             console.log('')
-        //console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
+        console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
 
         podeser = []
         for (outro in miss) {
             console.log('')
             if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-             //  console.log(miss[outro].aparicoes)
+               console.log(miss[outro], outro)
 
                 presentes = []
                 for (quecoisa in miss[outro].aparicoes) {
                     fatorzinho = miss[outro].aparicoes[quecoisa]
-                   // console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
+                    console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
 
                     if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                   // console.log('TEM', fatorzinho)
+                    console.log('TEM', fatorzinho)
                         presentes.push(fatorzinho)
                     }
                 }
-               // console.log('OLHA', presentes)
+                console.log('OLHA', presentes)
 
                 adicionou = false
                 for (idk in podeser) {
                  //   console.log(podeser[idk])
                     esigual = true
                     for (denovo in podeser[idk].opl) {
-                      //  console.log(podeser[idk].opl[denovo], presentes[denovo])
+                        console.log(podeser[idk].opl[denovo], presentes[denovo])
                         if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                        //    console.log('É IGUAL')
+                            console.log('É IGUAL')
                         }else{
                             esigual = false
                         }
@@ -1329,7 +1332,10 @@ java = 0
 
         }
 
-           }
+         //  }
+           
+           console.log('continuar', miss[java])
+
            java++
        }
        okentao++
@@ -1386,16 +1392,16 @@ java = 0
             asitwas = [] 
             obe = {what:[]}
 
-          //  console.log('')
-          //  console.log(roll[raging].repetidos, roll[raging].posições)
+            console.log('')
+            console.log(roll[raging].repetidos, roll[raging].posições)
 
            
-           // console.log('MY LIFE:', mylife)
+        
            for (still in roll[raging].repetidos) {
             asitwas2 = []
 
-              // console.log('')
-           // console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
+               console.log('')
+            console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
 
             mylife = '('
             for (still2 in roll[raging].posições) {
@@ -1407,7 +1413,7 @@ java = 0
                 }
 
               
-              //  console.log(miss[roll[raging].posições[still2]].dividido)
+                console.log(miss[roll[raging].posições[still2]].dividido)
 
                 conseguiu = false
                 older = 0
@@ -1461,8 +1467,8 @@ java = 0
                     }
                 }
                 
-            console.log('MULTIPLICAR', eg2,'*',eg)
-             console.log(whythat)
+          //  console.log('MULTIPLICAR', eg2,'*',eg)
+           //  console.log(whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
@@ -1493,17 +1499,17 @@ java = 0
                         
                     }
 
-                    console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
+                    //console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
                    // console.log(numerinhos)
                   //  console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                        console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                       // console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
                 older++
                 }
-               console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+              // console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
             //   console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
           //  console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
