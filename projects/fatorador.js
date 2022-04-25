@@ -1461,12 +1461,12 @@ java = 0
                     }
                 }
                 
-          //  console.log('MULTIPLICAR', eg2,'*',eg)
-           //  console.log(whythat)
+            console.log('MULTIPLICAR', eg2,'*',eg)
+             console.log(whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
-                    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
+                    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' /*&& correto[decisao] != '-'*/) {
                        numerinhos.push(correto[decisao])
                        
                         }
@@ -1477,7 +1477,7 @@ java = 0
 
 
                     for (poder in whythat){
-                        if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && whythat[poder] != '-' && numerinhos.indexOf(whythat[poder]) != -1) {
+                        if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' /*&& whythat[poder] != '-'*/ && numerinhos.indexOf(whythat[poder]) != -1) {
                     //    console.log(whythat[poder], numerinhos)
                     //    console.log(numerinhos.indexOf(whythat[poder]))
                         numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
@@ -1493,17 +1493,17 @@ java = 0
                         
                     }
 
-                 //   console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
+                    console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
                    // console.log(numerinhos)
                   //  console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                       // console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                        console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
                 older++
                 }
-               // console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+               console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
             //   console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
           //  console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
