@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
@@ -23,7 +23,7 @@ expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+'
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
-//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','xd']
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','xd']
 
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 //FAZEnDO AS COnTAS COM nÚMEROS
@@ -1029,7 +1029,7 @@ if (divs.length == 0) {
 divs = [1]
 }
 
-divs = [3,2]
+//divs = [2,3]
 
 //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 //////console.log(segs)
@@ -1563,7 +1563,7 @@ while(java < miss.length && deucerto == false) {
 
         for (da = youdumb.length - 1; da >= 0; da--) {
             if (dontworry.indexOf(String(da)) != -1) {
-                console.log('TEM COISA AÍ',youdumb[da].mons)
+                //console.log('TEM COISA AÍ',youdumb[da].mons)
                // youdumb.splice(da,1)
             }
         }
