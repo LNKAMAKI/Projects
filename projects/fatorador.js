@@ -1387,9 +1387,12 @@ while(java < miss.length && deucerto == false) {
         console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
 
        youdumb = []
+
+        aswillbe2 = []
         for (raging = 0; raging < roll.length; raging++) {
 
             asitwas = [] 
+        
             obe = {what:[]}
 
             console.log('')
@@ -1399,6 +1402,7 @@ while(java < miss.length && deucerto == false) {
         
            for (still in roll[raging].repetidos) {
             asitwas2 = []
+            aswillbe = []
 
                console.log('')
             console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
@@ -1514,11 +1518,15 @@ while(java < miss.length && deucerto == false) {
           //  console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
                asitwas2.push(older - 1)
+               aswillbe.push(older - 1)
+               
            }
         
 
-           console.log('ASITWAS',asitwas, asitwas2)
+           console.log('ASITWAS',asitwas, asitwas2, aswillbe)
+           
            obe.what.push(asitwas2)
+           aswillbe2.push({oque:aswillbe, onde:raging})
            
         }
         
@@ -1580,6 +1588,8 @@ for (hi in youdumb) {
 
 //////console.log('grtols: ', segs)
 //////console.log(sortob(grtols, 'length'))
+
+
 organizado = sortob(grtols, 'length')[1]
 
 grtols = []
@@ -1589,6 +1599,23 @@ for (ah in organizado) {
    
 }
      
+quaistem = []
+
+/*
+for (yourlife in grtols) {
+
+    console.log(grtols[yourlife].w.what)
+
+    for (bolinho in grtols[yourlife].w.what) {
+        console.log(grtols[yourlife].w.what[bolinho])
+
+        vagem = grtols[yourlife].w.what[bolinho]
+        for (ahnao in vagem) {
+            console.log(vagem[ahnao])
+        }
+    }
+}
+*/
     }
     
 
