@@ -20,7 +20,7 @@
             max-width: 800px;
            text-align: center;
            height: fit-content;
-           height: 400px;
+         
             border-radius:25px;
             margin: auto;
             border: 10px solid rgb(202, 202, 202);
@@ -91,6 +91,24 @@
           
            margin-left: 24.5%;
         }
+
+        input[type='button'] {
+            
+            border-image: none;
+            outline: none;
+            border:none;
+            background-color:rgb(44, 179, 213);
+            border-radius: 100px;
+            display: inline-flex;
+            font-size: 1.6em;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: white;
+          width: 40px;
+          height: 40px;
+        }
+
     </style>
 </head>
 <body>
@@ -105,15 +123,16 @@
                           <img src="HTML symbol.webp" alt="">
                       </div>
                   
+                     
                   </div>
-
+                 
                 
                 </div>
                   
-        
-    <input type="button" value="<" onclick="clicar2()">
-      <input type="button" value=">" onclick="clicar()">
     </div>
+
+    <input type="button" value="<" onclick="prev()">
+    <input type="button" value=">" onclick="next()">
 
 </body>
 </html>
