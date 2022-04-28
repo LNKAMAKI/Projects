@@ -1,4 +1,13 @@
 
+window.addEventListener('keydown', (event) => {
+  if (event.key == 'ArrowRight') {
+   next()
+  }else if(event.key == 'ArrowLeft'){
+     prev()
+  }
+ 
+ })
+
 ident = 0
 qual = 0
 
@@ -86,7 +95,7 @@ function sw(what){
       cont.innerText =  'aaaaaaaaaaa'
       break
       case 3: 
-      outra.innerHTML = '<div class="pic"><img src="imagens/standard_js.png" alt=""></div></div>'
+      outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
       break
       default: 
