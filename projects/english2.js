@@ -9,7 +9,7 @@ console.log(hat)
 
 
 console.log(hat[ident])
-hat[ident].style.animation = 'slide3 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
+hat[ident].style.animation = 'slide 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
 
 if (ident == 0) {
 ident = 1
@@ -55,7 +55,7 @@ outra.style.visibility = 'visible'
 
 sw(qual)
 
-outra.style.transform = 'translate(200%)'
+outra.style.transform = 'translate(-200%)'
 outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
    }
 
