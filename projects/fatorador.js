@@ -1620,9 +1620,18 @@ for (yourlife in grtols) {
 pans = []
 numerospresentes = []
 
+for (wrecked in youdumb) {
+    console.log(youdumb[wrecked])
+    initial = youdumb[wrecked].w.what
+    for (agg in initial) {
+        console.log(initial[agg])
+    }
+}
+
 for (imback in youdumb) {
     initial = youdumb[imback].w.what
-    console.log(initial)
+    inside = {which: [], numberyoudumb: imback}
+    console.log('THERE\'S NOTHING TO SAY NOW',initial, inside)
     for (agg in initial) {
         console.log(initial[agg])
 
@@ -1640,9 +1649,11 @@ for (imback in youdumb) {
      
          if (taai == false) {
             console.log('SEM PROBLEMAS', imback, agg)
-            inform = {monos: initial[agg], numberyoudumb: imback, numberwhat: agg} 
+            inform = {monos: initial[agg], numberwhat: agg} 
             // youdumb[numberyoudumb].w.what[numberwhat] = monos
-            pans.push(inform)
+            console.log('I\'M TWISTED UP',inside, inform)
+            inside.which.push(inform)
+            console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
 
             for (eng in initial[agg]) {
             
@@ -1651,6 +1662,9 @@ for (imback in youdumb) {
              }
              console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
          }
+    }
+    if (inside.which.length > 0) {
+ pans.push(inside)
     }
 }
 
