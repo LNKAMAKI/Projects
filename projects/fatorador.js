@@ -1534,7 +1534,7 @@ while(java < miss.length && deucerto == false) {
         console.log(obe)
        }
 
-       console.log('WHICHMONS',youdumb)
+       console.log('YOUDUMB',youdumb)
        
         dontworry = []
         for (behappy in youdumb) {
@@ -1601,7 +1601,7 @@ for (ah in organizado) {
      
 quaistem = []
 
-
+/*
 for (yourlife in grtols) {
 
     console.log(grtols[yourlife].w.what)
@@ -1615,6 +1615,7 @@ for (yourlife in grtols) {
         }
     }
 }
+*/
 
     }
     
