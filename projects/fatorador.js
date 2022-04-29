@@ -1617,6 +1617,43 @@ for (yourlife in grtols) {
 }
 */
 
+pans = []
+numerospresentes = []
+
+for (imback in youdumb) {
+    initial = youdumb[imback].w.what
+    console.log(initial)
+    for (agg in initial) {
+        console.log(initial[agg])
+
+        taai = false
+         for (eng in initial[agg]) {
+            console.log(initial[agg][eng])
+            if (numerospresentes.indexOf(initial[agg][eng]) == -1) {
+                console.log('OK')
+               
+            }else{
+                console.log('WE HAVE A PROBLEM')
+                taai = true
+            }
+         }
+     
+         if (taai == false) {
+            console.log('SEM PROBLEMAS', imback, agg)
+            inform = {monos: initial[agg], numberyoudumb: imback, numberwhat: agg} 
+            // youdumb[numberyoudumb].w.what[numberwhat] = monos
+            pans.push(inform)
+
+            for (eng in initial[agg]) {
+            
+                numerospresentes.push(initial[agg][eng])
+               
+             }
+             console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
+         }
+    }
+}
+
     }
     
 
