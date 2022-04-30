@@ -1629,6 +1629,8 @@ for (wrecked in youdumb) {
 }
 
 for (imback in youdumb) {
+    console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
+
     initial = youdumb[imback].w.what
     inside = {which: [], numberyoudumb: imback}
     console.log(imback)
@@ -1681,26 +1683,29 @@ for (imback in youdumb) {
     
     for (h in youdumb) {
         if (h != imback) {
-     //   console.log(youdumb[h].w.what, h)
-     //   console.log('-----------------------------')
+            if (youdumb[h].w.what.length > 0) {
+        console.log(youdumb[h].w.what, h)
+            }
+
+        console.log('-----------------------------')
         for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
-          //  console.log(youdumb[h].w.what[tempo].ar, tempo)
+          console.log(youdumb[h].w.what[tempo].ar, tempo)
             
             dulu = false
             
            for (and in youdumb[h].w.what[tempo].ar) {
-           // console.log(youdumb[h].w.what[tempo].ar[and])
+            console.log(youdumb[h].w.what[tempo].ar[and])
             if (numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[and]) != -1) {
-              //  console.log('ESTÁ EM: ', numerospresentes)
+                console.log('ESTÁ EM: ', numerospresentes)
                 dulu = true
             }
            }
            if (dulu == false) {
-          //  console.log('PODE FICAR :)', h, tempo)
+            console.log('PODE FICAR :)', h, tempo)
            }else{
-           //    console.log('NÃO PODE!!!!!!!!!!!!!')
+              console.log('NÃO PODE!!!!!!!!!!!!!')
            youdumb[h].w.what.splice(tempo, 1)
-         //  imback++
+          //imback++
            }
        }
     }
