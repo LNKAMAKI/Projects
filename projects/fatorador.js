@@ -1631,10 +1631,16 @@ for (wrecked in youdumb) {
 for (imback in youdumb) {
     console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
 
+    sticky = []
     initial = youdumb[imback].w.what
+
     inside = {which: [], numberyoudumb: imback}
     console.log(imback)
     console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
+
+
+    console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
+    
     for (agg in initial) {
         console.log(initial[agg].ar)
 
@@ -1657,6 +1663,10 @@ for (imback in youdumb) {
           //  console.log('I\'M TWISTED UP',inside, inform)
             inside.which.push(inform)
             console.log('INFORM', inform.monos)
+            for (darkening in inform.monos) {
+               
+                sticky.push(inform.monos[darkening])
+            }
           //  console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
 
             for (eng in initial[agg].ar) {
@@ -1667,11 +1677,14 @@ for (imback in youdumb) {
              //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
          }
     }
+
+    
     if (inside.which.length > 0) {
+        inside.todos = sticky
  pans.push(inside)
     }
 
-    console.log('FICOU ASSIM Ó:', numerospresentes)
+    console.log('FICOU ASSIM Ó:', numerospresentes, sticky)
     /*
     for (invest in pans) {
         console.log('índice',invest)
