@@ -1525,7 +1525,7 @@ while(java < miss.length && deucerto == false) {
 
            console.log('ASITWAS',asitwas, asitwas2, aswillbe)
            
-           obe.what.push(asitwas2)
+           obe.what.push({ar: asitwas2, indice: still})
            aswillbe2.push({oque:aswillbe, onde:raging})
            
         }
@@ -1599,7 +1599,7 @@ for (ah in organizado) {
    
 }
      
-quaistem = []
+youdumb = grtols
 
 /*
 for (yourlife in grtols) {
@@ -1621,51 +1621,96 @@ pans = []
 numerospresentes = []
 
 for (wrecked in youdumb) {
-    console.log(youdumb[wrecked])
+    //console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
     initial = youdumb[wrecked].w.what
     for (agg in initial) {
-        console.log(initial[agg])
+        console.log(initial[agg].ar, Number(agg))
     }
 }
 
 for (imback in youdumb) {
     initial = youdumb[imback].w.what
     inside = {which: [], numberyoudumb: imback}
-    console.log('THERE\'S NOTHING TO SAY NOW',initial, inside)
+    console.log(imback)
+    console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
     for (agg in initial) {
-        console.log(initial[agg])
+        console.log(initial[agg].ar)
 
         taai = false
-         for (eng in initial[agg]) {
-            console.log(initial[agg][eng])
-            if (numerospresentes.indexOf(initial[agg][eng]) == -1) {
-                console.log('OK')
+         for (eng in initial[agg].ar) {
+          //  console.log(initial[agg].ar[eng])
+            if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
+              //  console.log('OK')
                
             }else{
-                console.log('WE HAVE A PROBLEM')
+            //    console.log('WE HAVE A PROBLEM')
                 taai = true
             }
          }
      
          if (taai == false) {
-            console.log('SEM PROBLEMAS', imback, agg)
-            inform = {monos: initial[agg], numberwhat: agg} 
+          //  console.log('SEM PROBLEMAS', imback, agg)
+            inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
             // youdumb[numberyoudumb].w.what[numberwhat] = monos
-            console.log('I\'M TWISTED UP',inside, inform)
+          //  console.log('I\'M TWISTED UP',inside, inform)
             inside.which.push(inform)
-            console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
+            console.log('INFORM', inform.monos)
+          //  console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
 
-            for (eng in initial[agg]) {
+            for (eng in initial[agg].ar) {
             
-                numerospresentes.push(initial[agg][eng])
+                numerospresentes.push(initial[agg].ar[eng])
                
              }
-             console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
+             //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
          }
     }
     if (inside.which.length > 0) {
  pans.push(inside)
     }
+
+    console.log('FICOU ASSIM Ó:', numerospresentes)
+    /*
+    for (invest in pans) {
+        console.log('índice',invest)
+        for (plat in pans[invest].which) {
+            console.log(pans[invest].which[plat].monos)
+        }
+    }
+    */
+    
+    for (h in youdumb) {
+        if (h != imback) {
+        console.log(youdumb[h].w.what, h)
+        for (tempo in youdumb[h].w.what) {
+            console.log(youdumb[h].w.what[tempo].ar, tempo)
+            dulu = false
+            for (serious in youdumb[h].w.what[tempo].ar) {
+                console.log(youdumb[h].w.what[tempo].ar[serious], serious)
+                if (numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[serious]) != -1) {
+                    console.log('NAO')
+                    dulu = true
+                }
+            }
+            if (dulu == false) {
+                console.log('YES')
+            }else{
+                console.log('TIRAR', youdumb[h].w.what[tempo].ar)
+                youdumb[h].w.what.splice(tempo,1)
+            }
+       }
+    }
+    }
+
+    console.log('OLHA, eu tentei...')
+    for (vixi in youdumb) {
+        console.log(youdumb[vixi].w.what)
+        for (ainao in youdumb[vixi].w.what) {
+            console.log(youdumb[vixi].w.what[ainao].ar)
+        }
+
+    }
+    
 }
 
     }
