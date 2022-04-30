@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y','+','5x','+','5y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
@@ -1681,41 +1681,58 @@ for (imback in youdumb) {
     
     for (h in youdumb) {
         if (h != imback) {
-        console.log(youdumb[h].w.what, h)
-        for (tempo in youdumb[h].w.what) {
-            console.log(youdumb[h].w.what[tempo].ar, tempo)
+     //   console.log(youdumb[h].w.what, h)
+     //   console.log('-----------------------------')
+        for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
+          //  console.log(youdumb[h].w.what[tempo].ar, tempo)
+            
             dulu = false
-            for (serious in youdumb[h].w.what[tempo].ar) {
-                console.log(youdumb[h].w.what[tempo].ar[serious], serious)
-                if (numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[serious]) != -1) {
-                    console.log('NAO')
-                    dulu = true
-                }
+            
+           for (and in youdumb[h].w.what[tempo].ar) {
+           // console.log(youdumb[h].w.what[tempo].ar[and])
+            if (numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[and]) != -1) {
+              //  console.log('ESTÁ EM: ', numerospresentes)
+                dulu = true
             }
-            if (dulu == false) {
-                console.log('YES')
-            }else{
-                console.log('TIRAR', youdumb[h].w.what[tempo].ar)
-                youdumb[h].w.what.splice(tempo,1)
-            }
+           }
+           if (dulu == false) {
+          //  console.log('PODE FICAR :)', h, tempo)
+           }else{
+           //    console.log('NÃO PODE!!!!!!!!!!!!!')
+           youdumb[h].w.what.splice(tempo, 1)
+         //  imback++
+           }
        }
     }
+    }
+    console.log('YOUDUMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMB' 
+    )
+
+    for (hora in youdumb) {
+        if (youdumb[hora].w.what.length > 0) {
+        console.log(youdumb[hora].w.what)
+        for (prazo in youdumb[hora].w.what) {
+          
+            console.log(youdumb[hora].w.what[prazo].ar)
+            }
+        }
+            
     }
 
     console.log('OLHA, eu tentei...')
     for (vixi in youdumb) {
+        if (youdumb[vixi].w.what.length > 0) {
         console.log(youdumb[vixi].w.what)
         for (ainao in youdumb[vixi].w.what) {
+          
             console.log(youdumb[vixi].w.what[ainao].ar)
-        }
 
+        }  
     }
     
 }
-
-    }
-    
-
+}
+}
 
 // Vendo se o número é primo
 function ehprimo(Number) {
@@ -3146,8 +3163,6 @@ console.log('HELLO')
 
 return [relation, segs2]
 }
-    
-
 
 //console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
 
