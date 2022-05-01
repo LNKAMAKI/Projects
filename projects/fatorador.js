@@ -28,7 +28,7 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-expression = ['24','a','x','+','55','x','^','2']
+expression = ['169','x','+','338','x','y']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -37,36 +37,36 @@ expression = ['24','a','x','+','55','x','^','2']
 
 
 for (n = 0; n < expression.length; n++) {
-    if (ehprimo(expression[n]) == false && String(expression[n]).search('[0-9]') != -1) {
+    if (ehprimo(expression[n]) == false && String(expression[n]).search('[0-9]') != -1 && expression[n - 1] != '^') {
     fatorado = ''
 
     first = 1
 
     div = 0
-    //////console.log(exp[n], div)
+    console.log(expression[n], expression[n - 1])
 
     stop = false
     fator = 1
     
     for (e = 2; stop == false; e++) {
-        //////console.log('')
-        //////console.log(e)
-        //////console.log('')
+    //    console.log('')
+    //    console.log(e)
+    //    console.log('')
     
         sob = Number(expression[n])
       
            if (ehprimo(e) == true) {
             while (sob%e == 0) {
             if (sob%e == 0) {
-                //////console.log(sob + '/' + e + ': ' + sob/e)
+           //     console.log(sob + '/' + e + ': ' + sob/e)
                 
                 
             }
 
             sob = sob/e
             
-            ////console.log('SIM')
-            ////console.log(fator + ' x ' + e + ': ' + fator*e)
+          //  console.log('SIM')
+          //  console.log(fator + ' x ' + e + ': ' + fator*e)
 
             fator = fator*e
 
@@ -91,23 +91,23 @@ for (n = 0; n < expression.length; n++) {
 
 ////console.log('FAZEnDO AS POTÊnCIAS COM LETRAS')
 for (y in expression) {
-  //  ////console.log(expression[y])
+  //console.log(expression[y])
 
     if (expression[y] == '^') {
-        ////console.log('expression[y - 1]: ' + expression[Number(y) - 1])
-        ////console.log('expression[y]: ' + expression[y])
-        ////console.log('expression[y + 1]: ' + expression[Number(y) + 1])
+        console.log('expression[y - 1]: ' + expression[Number(y) - 1])
+        console.log('expression[y]: ' + expression[y])
+        console.log('expression[y + 1]: ' + expression[Number(y) + 1])
 
        ad =  expression[Number(y) - 1] 
         for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
-            ////console.log(h)
+            console.log(h)
             expression[Number(y) - 1]+= ad
         }
 
         expression.splice(Number(y) + 1, 1)
         expression.splice(y, 1)
-        ////console.log(expression[Number(y) - 1])
-        ////console.log(expression)
+        console.log(expression[Number(y) - 1])
+        console.log(expression)
     }
 }
 
@@ -1191,7 +1191,7 @@ miss = [...grtols]
 deucerto = false
 java = 0
 
-console.log('MISS.LENGTH',miss.length)
+//console.log('MISS.LENGTH',miss.length)
 
 
 while(java < miss.length && deucerto == false) {
@@ -1290,15 +1290,15 @@ while(java < miss.length && deucerto == false) {
 
                for(cold in podeser) {
            if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
-            console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+           // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
             deucerto = true
 
             ficaassim = ''
            // podeser[cold].position.push(whyis)
 
             for (yehaa in podeser[cold].position) {
-                console.log(podeser[cold])
-                console.log(miss[podeser[cold].position[yehaa]].dividido)
+              //  console.log(podeser[cold])
+               // console.log(miss[podeser[cold].position[yehaa]].dividido)
                 if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
                     
                     fi = ''
@@ -1307,7 +1307,7 @@ while(java < miss.length && deucerto == false) {
                             fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
                         }
                     }
-                    console.log(fi)
+                  //  console.log(fi)
                     if (yehaa != 0) {
                          ficaassim += ` - ${fi}`
                     }else{
@@ -1322,15 +1322,15 @@ while(java < miss.length && deucerto == false) {
                 
             
             }
-            console.log('FICA ASSIM', `(${ficaassim})`)
+          //  console.log('FICA ASSIM', `(${ficaassim})`)
            for (ruin in podeser[cold].opl) {
-            console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
+          //  console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
             emotion = ''
             for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-                console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
+           //     console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
                 emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
             }
-            console.log(`${emotion}(${ficaassim})`)
+          //  console.log(`${emotion}(${ficaassim})`)
           }
            }
         }
@@ -1339,7 +1339,7 @@ while(java < miss.length && deucerto == false) {
 
          //  }
            
-           console.log('continuar', miss[java])
+         //  console.log('continuar', miss[java])
 
            java++
        }
@@ -1389,7 +1389,7 @@ while(java < miss.length && deucerto == false) {
         }
         
        
-        console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
+      //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
 
        youdumb = []
 
@@ -1400,8 +1400,8 @@ while(java < miss.length && deucerto == false) {
         
             obe = {what:[]}
 
-            console.log('')
-            console.log(roll[raging].repetidos, roll[raging].posições)
+          //  console.log('')
+           // console.log(roll[raging].repetidos, roll[raging].posições)
 
            
         
@@ -1409,8 +1409,8 @@ while(java < miss.length && deucerto == false) {
             asitwas2 = []
             aswillbe = []
 
-               console.log('')
-            console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
+           //    console.log('')
+         //   console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
 
             mylife = '('
             for (still2 in roll[raging].posições) {
@@ -1422,7 +1422,7 @@ while(java < miss.length && deucerto == false) {
                 }
 
               
-                console.log(miss[roll[raging].posições[still2]].dividido)
+              //  console.log(miss[roll[raging].posições[still2]].dividido)
 
                 conseguiu = false
                 older = 0
@@ -1436,18 +1436,18 @@ while(java < miss.length && deucerto == false) {
                 
                 function DESFATORAR(correto, eg2, eg) {
 
-                   // console.log('eg', eg)
+                    console.log('eg', eg)
 
                 eassim = []
                 solo = ''
                 for (ne in eg) {
-                  //  console.log('EGGGGGG',eg[ne])
+                    console.log('EGGGGGG',eg[ne])
                     if (eg[ne] != '.') {
                 if (solo.length == 0) {
-                  //  console.log('LISTA VAZIA')
+                    console.log('LISTA VAZIA')
                     solo+= eg[ne]
                 }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-                  //  console.log('É UM nÚMERO')
+                    console.log('É UM nÚMERO')
                     solo+= eg[ne]
                 }else{
                     eassim.push(solo)
@@ -1468,6 +1468,7 @@ while(java < miss.length && deucerto == false) {
                 
                 whythat = [...eg]
               //  console.log(correto)
+              /*
                 for (ponto in eg2) {
                   //  console.log(eg2[ponto])
                     if (eg2[ponto] != '.') {
@@ -1475,9 +1476,46 @@ while(java < miss.length && deucerto == false) {
                   //  console.log('I FOLLOW YOu')
                     }
                 }
-                
-          //  console.log('MULTIPLICAR', eg2,'*',eg)
-           //  console.log(whythat)
+                */
+                juntar = ''
+                for (estudar in eg2) {
+                    console.log(eg2[estudar])
+                    if (eg2[estudar] == '.') {
+                        if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
+                          
+                            whythat.push(juntar)
+                            juntar = ''
+                        whythat.push('*')
+                        console.log('aaaaaaaaaaaaaaaaa', whythat)
+                        }
+                    }else{
+                       
+                   
+                      console.log('juntar',juntar)
+                        if (juntar.length == 0) {
+                            juntar = eg2[estudar]
+                            console.log('LISTA VAZIA', juntar)
+                        }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
+                            console.log('I\'M NEVER WHAT I LIKE')
+                            juntar+= eg2[estudar]
+                            console.log('juntar', juntar)
+                            if (estudar == eg2.length - 1) {
+                                console.log('UAISO')
+                                whythat.push(juntar)
+                            }
+                        }else{
+                            whythat.push(juntar)
+                            juntar= eg2[estudar]
+                            if (estudar == eg2.length - 1) {
+                                whythat.push(juntar)
+                            }
+                        }
+                    }
+                      
+                 }
+
+            console.log('MULTIPLICAR', eg2,'*',eg)
+             console.log(whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
@@ -1528,7 +1566,7 @@ while(java < miss.length && deucerto == false) {
            }
         
 
-           console.log('ASITWAS',asitwas, asitwas2, aswillbe)
+          // console.log('ASITWAS',asitwas, asitwas2, aswillbe)
            
            obe.what.push({ar: asitwas2, indice: still})
            aswillbe2.push({oque:aswillbe, onde:raging})
@@ -1536,10 +1574,10 @@ while(java < miss.length && deucerto == false) {
         }
         
         youdumb.push({mons: asitwas, rag: raging, w: obe, polen: raging})
-        console.log(obe)
+       // console.log(obe)
        }
 
-       console.log('YOUDUMB',youdumb)
+      // console.log('YOUDUMB',youdumb)
        
         dontworry = []
         for (behappy in youdumb) {
@@ -1608,7 +1646,7 @@ for (ah in organizado) {
 console.log('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
 youdumb = []
 for (erro = grtols.length - 1; erro >= 0; erro--) {
-    console.log(grtols[erro])
+  //  console.log(grtols[erro])
     youdumb.push(grtols[erro])
 }
 console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
@@ -1635,7 +1673,7 @@ for (wrecked in youdumb) {
     //console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
     initial = youdumb[wrecked].w.what
     for (agg in initial) {
-        console.log(initial[agg].ar, Number(agg))
+       // console.log(initial[agg].ar, Number(agg))
     }
 }
 
@@ -1659,35 +1697,35 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
 
         taai = false
          for (eng in initial[agg].ar) {
-          //  console.log(initial[agg].ar[eng])
+            console.log(initial[agg].ar[eng])
             if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
-              //  console.log('OK')
+                console.log('OK')
                
             }else{
-            //    console.log('WE HAVE A PROBLEM')
+                console.log('WE HAVE A PROBLEM')
                 taai = true
             }
          }
      
          if (taai == false) {
-          //  console.log('SEM PROBLEMAS', imback, agg)
+            console.log('SEM PROBLEMAS', imback, agg)
             inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
-            // youdumb[numberyoudumb].w.what[numberwhat] = monos
-          //  console.log('I\'M TWISTED UP',inside, inform)
+           //  youdumb[numberyoudumb].w.what[numberwhat] = monos
+            console.log('I\'M TWISTED UP',inside, inform)
             inside.which.push(inform)
             console.log('INFORM', inform.monos)
             for (darkening in inform.monos) {
                
                 sticky.push(inform.monos[darkening])
             }
-          //  console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
+            console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
 
             for (eng in initial[agg].ar) {
             
                 numerospresentes.push(initial[agg].ar[eng])
                
              }
-             //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
+             console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
          }
     }
 
@@ -1831,10 +1869,50 @@ for (bababa in pans) {
         gates = []
 
         quase = []
+        /*
         for (power in el) {
             quase.push(el[power])
             console.log('EL POWER!',el[power])
         }
+*/
+        juntar = ''
+        console.log('NADAAAAAAAAAA')
+        for (estudar in el) {
+            console.log(el[estudar])
+            if (el[estudar] == '*') {
+                if (el[Number(estudar) + 1].search('[0-9]') != -1) {
+                  
+                    quase.push(juntar)
+                    juntar = ''
+                quase.push('*')
+                console.log('aaaaaaaaaaaaaaaaa', quase)
+                }
+            }else{
+               
+           
+              console.log('juntar',juntar)
+                if (juntar.length == 0) {
+                    juntar = el[estudar]
+                    console.log('LISTA VAZIA', juntar)
+                }else if(el[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
+                    console.log('I\'M NEVER WHAT I LIKE')
+                    juntar+= el[estudar]
+                    console.log('juntar', juntar)
+                    if (estudar == el.length - 1) {
+                        console.log('UAISO')
+                        quase.push(juntar)
+                    }
+                }else{
+                    quase.push(juntar)
+                    juntar= el[estudar]
+                    if (estudar == el.length - 1) {
+                        quase.push(juntar)
+                    }
+                }
+            }
+              
+         }
+         console.log('QUASSSSEEEE',quase)
 
         aconta = ''
 
@@ -1948,6 +2026,12 @@ for (bababa in pans) {
                     console.log('juntar', juntar)
                     if (estudar == triste.length - 1) {
                         console.log('UAISO')
+                        quase.push(juntar)
+                    }
+                }else{
+                    quase.push(juntar)
+                    juntar= triste[estudar]
+                    if (estudar == triste.length - 1) {
                         quase.push(juntar)
                     }
                 }
