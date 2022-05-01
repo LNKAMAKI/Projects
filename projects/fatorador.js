@@ -25,8 +25,10 @@
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
-expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
+//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
+
+expression = ['99','x','+','162','y']
 //FAZEnDO AS COnTAS COM nÚMEROS
 
         
@@ -1815,9 +1817,40 @@ for (bababa in pans) {
     //console.log(pans[bababa].which)
     console.log(roll[pans[bababa].numberyoudumb])
       console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
+
+      tobreak = ''
       for (quassao in roll[pans[bababa].numberyoudumb].posições) {
         console.log(quassao,':', roll[pans[bababa].numberyoudumb].posições[quassao],miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido)
+
+        el = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
+
+        console.log('ALLI I WANTED WAS TO FINISH THIS THING :D', el)
+
+        gates = []
+        for (patience in el) {
+            console.log(el[patience])            
+        }
+
+        if (tobreak.length == 0) {
+            tobreak += el
+        }else if(el[0]== '-'){
+         
+
+            correct = ''
+            for (okay in el) {
+               // console.log(el[okay])
+                if (el[okay]!= '-'){
+                    correct+= el[okay]
+                }
+            }
+           // console.log('ASSIM: ', correct)
+            tobreak+= ` - ${correct}`
+        }else{
+          //  console.log(el)
+            tobreak+= ` + ${el}`
+        }
       }
+      console.log('ENTÃO:','(', tobreak,')')
 
     for (repr in pans[bababa].which) {
        console.log(' ')
