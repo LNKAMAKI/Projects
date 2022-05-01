@@ -23,8 +23,9 @@
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
-expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1809,17 +1810,61 @@ console.log('IMAGENS', youdumb)
 }
 console.log('pans é', pans)
 for (bababa in pans) {
-    console.log(' ')
-    console.log(pans[bababa])
+    console.log('_____________________________________________________________________')
+    console.log(pans[bababa], Number(bababa))
     //console.log(pans[bababa].which)
     console.log(roll[pans[bababa].numberyoudumb])
+      console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
+      for (quassao in roll[pans[bababa].numberyoudumb].posições) {
+        console.log(quassao,':', roll[pans[bababa].numberyoudumb].posições[quassao],miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido)
+      }
 
     for (repr in pans[bababa].which) {
-       
-        console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat)
+       console.log(' ')
+        console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
+         console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
     }
 }
 }
+
+/*
+for (yehaa in podeser[cold].position) {
+    console.log(podeser[cold])
+    console.log(miss[podeser[cold].position[yehaa]].dividido)
+    if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
+        
+        fi = ''
+        for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
+            if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
+                fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
+            }
+        }
+        console.log(fi)
+        if (yehaa != 0) {
+             ficaassim += ` - ${fi}`
+        }else{
+            ficaassim += `-${fi}`
+        }
+    }else if(yehaa != 0){
+        ficaassim += ' + '
+        ficaassim+= miss[podeser[cold].position[yehaa]].dividido
+    }else{
+        ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
+    }
+    
+
+}
+console.log('FICA ASSIM', `(${ficaassim})`)
+for (ruin in podeser[cold].opl) {
+console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
+emotion = ''
+for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
+    console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
+    emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
+}
+console.log(`${emotion}(${ficaassim})`)
+}
+*/
 
 // Vendo se o número é primo
 function ehprimo(Number) {
