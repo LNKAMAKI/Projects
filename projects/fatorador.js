@@ -1805,6 +1805,19 @@ for (erro = grtols.length - 1; erro >= 0; erro--) {
 console.log('IMAGENS', youdumb)
 
 }
+
+}
+console.log('pans é', pans)
+for (bababa in pans) {
+    console.log(' ')
+    console.log(pans[bababa])
+    //console.log(pans[bababa].which)
+    console.log(roll[pans[bababa].numberyoudumb])
+
+    for (repr in pans[bababa].which) {
+       
+        console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat)
+    }
 }
 }
 
