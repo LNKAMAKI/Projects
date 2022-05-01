@@ -28,7 +28,7 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac']
+expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac','+','bb','+','bc']
 //expression = ['4','b','c','+','4','x','x']
 
 
@@ -1952,6 +1952,7 @@ for (bababa in pans) {
 
          if (teri == false) {
             
+            quase = []
           //  console.log('SEM ASTERISCO')
             for (t in el) {
             quase.push(el[t])
@@ -2052,7 +2053,7 @@ for (bababa in pans) {
          juntar = ''
          teri = false
          for (estudar in triste) {
-            console.log('O QUE ESTÁ ACONTECENDO?', quase, estudar)
+            console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
             console.log('asasasa',triste[estudar])
             ohjeez = triste[Number(estudar) - 1] != '-'
             console.log(ohjeez)
@@ -2099,9 +2100,11 @@ for (bababa in pans) {
             }
               
          }
-         console.log(quase)
+         console.log('MAIS RÁPIDO',quase)
+
          if (teri == false) {
             
+            quase = []
            console.log('SEM ASTERISCO')
             for (t in triste) {
             quase.push(triste[t])
@@ -2112,7 +2115,8 @@ for (bababa in pans) {
          aster = false
          elevar = 1
          for (patience in quase) {
-            console.log(quase[patience])        
+            console.log(quase,'edededededededededed',quase[patience])   
+
             if (quase[patience] == '*') {
                 aster = true
                 console.log('AND THE CLSDADWDWD', patience)
