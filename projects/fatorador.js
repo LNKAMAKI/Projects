@@ -28,7 +28,8 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-expression = ['169','x','+','338','x','y']
+//expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac','+','bb','+','bc']
+expression = ['4','b','c','+','4','x','x']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -917,7 +918,13 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
                 return segs.car == repetido[moe].letr
                 }) == undefined) {
 
-                segs.push({car: repetido[moe].letr, mons: [m]})
+                    console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                    if (repetido[moe].letr == '-') {
+                        console.log('ARE YOU SERIOUS?')
+                    }else{
+                        segs.push({car: repetido[moe].letr, mons: [m]})
+                    }
+              
                
 
             }else if(segs.find(function(segs) {
@@ -1477,10 +1484,12 @@ while(java < miss.length && deucerto == false) {
                     }
                 }
                 */
+               teri = false
                 juntar = ''
                 for (estudar in eg2) {
                     console.log(eg2[estudar])
                     if (eg2[estudar] == '.') {
+                        teri = true
                         if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
                           
                             whythat.push(juntar)
@@ -1495,6 +1504,11 @@ while(java < miss.length && deucerto == false) {
                         if (juntar.length == 0) {
                             juntar = eg2[estudar]
                             console.log('LISTA VAZIA', juntar)
+                            if (estudar == eg2.length - 1) {
+                                whythat.push(juntar)
+                                console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
+                            }
+
                         }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
                             console.log('I\'M NEVER WHAT I LIKE')
                             juntar+= eg2[estudar]
@@ -1502,6 +1516,7 @@ while(java < miss.length && deucerto == false) {
                             if (estudar == eg2.length - 1) {
                                 console.log('UAISO')
                                 whythat.push(juntar)
+                            
                             }
                         }else{
                             whythat.push(juntar)
@@ -1513,6 +1528,13 @@ while(java < miss.length && deucerto == false) {
                     }
                       
                  }
+                 if (teri == false) {
+                  
+                    console.log('SEM ASTERISCO')
+                    for (t in eg2) {
+                    whythat.push(eg2[t])
+                    }
+                }
 
             console.log('MULTIPLICAR', eg2,'*',eg)
              console.log(whythat)
@@ -1864,7 +1886,7 @@ for (bababa in pans) {
 
         el = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
 
-        console.log('ALLI I WANTED WAS TO FINISH THIS THING :D', el)
+       // console.log('ALL I WANTED WAS TO FINISH THIS THING :D', el)
 
         gates = []
 
@@ -1875,11 +1897,13 @@ for (bababa in pans) {
             console.log('EL POWER!',el[power])
         }
 */
+        teri = false
         juntar = ''
-        console.log('NADAAAAAAAAAA')
+      //  console.log('NADAAAAAAAAAA')
         for (estudar in el) {
             console.log(el[estudar])
             if (el[estudar] == '*') {
+                teri = true
                 if (el[Number(estudar) + 1].search('[0-9]') != -1) {
                   
                     quase.push(juntar)
@@ -1912,24 +1936,33 @@ for (bababa in pans) {
             }
               
          }
-         console.log('QUASSSSEEEE',quase)
+       //  console.log('QUASSSSEEEE',quase)
 
+         if (teri == false) {
+            
+          //  console.log('SEM ASTERISCO')
+            for (t in el) {
+            quase.push(el[t])
+            }
+        }
         aconta = ''
 
        elevar = 1
        aster = false
+       
         for (patience in quase) {
-            console.log(quase[patience])        
+           // console.log(quase[patience])       
+           
             if (quase[patience] == '*') {
                 aster = true
-                console.log('AND THE CLSDADWDWD', patience)
-                console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+               // console.log('AND THE CLSDADWDWD', patience)
+              //  console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
                 console.log(gates, fazerConta(gates))
 
-                console.log(quase, Number(patience) + 1)
+               // console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
                 console.log(quase)
@@ -1938,7 +1971,7 @@ for (bababa in pans) {
             }else if(quase[patience].search('[a-z]') != -1)  {
                 //console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
-                    console.log('ELEVAR!')
+                   // console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
@@ -1995,19 +2028,23 @@ for (bababa in pans) {
       console.log('ENTÃO:','(', tobreak,')')
 
     for (repr in pans[bababa].which) {
-       console.log(' ')
-        console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
-         console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
+     //  console.log(' ')
+      //  console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
+       //  console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
 
          triste = scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
          console.log(triste)
 
          quase = []
          juntar = ''
+         teri = false
          for (estudar in triste) {
-            console.log(triste[estudar])
+            console.log('asasasa',triste[estudar])
+            ohjeez = triste[Number(estudar) - 1] != '-'
+            console.log(ohjeez)
             if (triste[estudar] == '.') {
-                if (triste[Number(estudar) + 1].search('[0-9]') != -1) {
+                teri = true
+                if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
                   
                     quase.push(juntar)
                     juntar = ''
@@ -2015,17 +2052,17 @@ for (bababa in pans) {
                 }
             }else{
                
-              //  quase.push(triste[estudar])
+                quase.push(triste[estudar])
               console.log('juntar',juntar)
                 if (juntar.length == 0) {
                     juntar = triste[estudar]
                     console.log('LISTA VAZIA', juntar)
                 }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                    console.log('I\'M NEVER WHAT I LIKE')
+                   console.log('I\'M NEVER WHAT I LIKE')
                     juntar+= triste[estudar]
                     console.log('juntar', juntar)
                     if (estudar == triste.length - 1) {
-                        console.log('UAISO')
+                       console.log('UAISO')
                         quase.push(juntar)
                     }
                 }else{
@@ -2039,6 +2076,13 @@ for (bababa in pans) {
               
          }
          console.log(quase)
+         if (teri == false) {
+            
+           console.log('SEM ASTERISCO')
+            for (t in triste) {
+            quase.push(triste[t])
+            }
+        }
 
          aconta = ''
          aster = false
@@ -2061,7 +2105,7 @@ for (bababa in pans) {
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-                //console.log('É LETRA')
+                console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
                     console.log('ELEVAR!')
                     elevar++
