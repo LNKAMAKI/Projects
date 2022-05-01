@@ -20,7 +20,7 @@
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
+//expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
@@ -28,6 +28,7 @@ expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7a
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
+expression = ['24','a','x','+','55','x','^','2']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1832,6 +1833,7 @@ for (bababa in pans) {
         quase = []
         for (power in el) {
             quase.push(el[power])
+            console.log('EL POWER!',el[power])
         }
 
         aconta = ''
@@ -1923,15 +1925,34 @@ for (bababa in pans) {
          console.log(triste)
 
          quase = []
+         juntar = ''
          for (estudar in triste) {
             console.log(triste[estudar])
             if (triste[estudar] == '.') {
                 if (triste[Number(estudar) + 1].search('[0-9]') != -1) {
+                  
+                    quase.push(juntar)
+                    juntar = ''
                 quase.push('*')
                 }
             }else{
-                quase.push(triste[estudar])
+               
+              //  quase.push(triste[estudar])
+              console.log('juntar',juntar)
+                if (juntar.length == 0) {
+                    juntar = triste[estudar]
+                    console.log('LISTA VAZIA', juntar)
+                }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
+                    console.log('I\'M NEVER WHAT I LIKE')
+                    juntar+= triste[estudar]
+                    console.log('juntar', juntar)
+                    if (estudar == triste.length - 1) {
+                        console.log('UAISO')
+                        quase.push(juntar)
+                    }
+                }
             }
+              
          }
          console.log(quase)
 
