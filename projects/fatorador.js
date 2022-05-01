@@ -28,7 +28,7 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac','+','bb','+','bc']
+//expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac','+','bb','+','bc']
 //expression = ['4','b','c','+','4','x','x']
 
 
@@ -1964,48 +1964,48 @@ for (bababa in pans) {
        aster = false
        
         for (patience in quase) {
-            console.log(quase[patience])       
+            //console.log(quase[patience])       
            
             if (quase[patience] == '*') {
                 aster = true
-                console.log('AND THE CLSDADWDWD', patience)
-                console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+               // console.log('AND THE CLSDADWDWD', patience)
+               // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-                console.log(gates, fazerConta(gates))
+              //  console.log(gates, fazerConta(gates))
 
-               console.log(quase, Number(patience) + 1)
+             //  console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
-                console.log(quase)
+               // console.log(quase)
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-                console.log('É LETRA')
+               // console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
-                    console.log('ELEVAR!')
+                   // console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
-                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                     //   console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                        console.log(aconta)
+                       // console.log(aconta)
                     }
 
                 }else{
                     if (elevar > 1) {
-                        console.log('UEPA')
+                      //  console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
 
                     aconta+= quase[patience]
-                    console.log(aconta)
+                  //  console.log(aconta)
                   
                     elevar = 1
                 }
-                console.log(elevar)
+                //console.log(elevar)
                
             } 
         }
