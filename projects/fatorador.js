@@ -20,7 +20,7 @@
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-//expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
+expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
@@ -28,7 +28,7 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-expression = ['99','x','+','162','y','a','^','2']
+
 //FAZEnDO AS COnTAS COM nÚMEROS
 
         
@@ -1196,35 +1196,35 @@ console.log('MISS.LENGTH',miss.length)
 while(java < miss.length && deucerto == false) {
            
           // if (miss[java].aparicoes.length >= quantasposições) {
-            console.log('')
-        console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
+        //    console.log('')
+     //   console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
 
         podeser = []
         for (outro in miss) {
-            console.log('')
+           // console.log('')
             if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-               console.log(miss[outro], outro)
+            //   console.log(miss[outro], outro)
 
                 presentes = []
                 for (quecoisa in miss[outro].aparicoes) {
                     fatorzinho = miss[outro].aparicoes[quecoisa]
-                    console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
+                 //   console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
 
                     if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    console.log('TEM', fatorzinho)
+                 //   console.log('TEM', fatorzinho)
                         presentes.push(fatorzinho)
                     }
                 }
-                console.log('OLHA', presentes)
+              //  console.log('OLHA', presentes)
 
                 adicionou = false
                 for (idk in podeser) {
                  //   console.log(podeser[idk])
                     esigual = true
                     for (denovo in podeser[idk].opl) {
-                        console.log(podeser[idk].opl[denovo], presentes[denovo])
+                       // console.log(podeser[idk].opl[denovo], presentes[denovo])
                         if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                            console.log('É IGUAL')
+                           // console.log('É IGUAL')
                         }else{
                             esigual = false
                         }
@@ -1835,9 +1835,13 @@ for (bababa in pans) {
         }
 
         aconta = ''
+
+       elevar = 1
+       aster = false
         for (patience in quase) {
             console.log(quase[patience])        
             if (quase[patience] == '*') {
+                aster = true
                 console.log('AND THE CLSDADWDWD', patience)
                 console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
@@ -1852,29 +1856,60 @@ for (bababa in pans) {
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-                console.log('É LETRA')
-                aconta+= quase[patience]
-                console.log(aconta)
+                //console.log('É LETRA')
+                if (quase[patience] == quase[Number(patience) - 1]) {
+                    console.log('ELEVAR!')
+                    elevar++
+
+                    if (patience == quase.length - 1) {
+                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                        aconta+= `^${elevar}`
+                        console.log(aconta)
+                    }
+
+                }else{
+                    if (elevar > 1) {
+                        console.log('UEPA')
+                        aconta+= `^${elevar}`
+                        
+                    }
+
+                    aconta+= quase[patience]
+                    console.log(aconta)
+                  
+                    elevar = 1
+                }
+                console.log(elevar)
+               
             } 
         }
+        console.log('A CONTA',aconta,quase, tobreak)
+    if (aster == false) {
+        console.log('SEM ASTERISCO')
+        aconta = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
+    }
 
         if (tobreak.length == 0) {
-            tobreak += el
-        }else if(el[0]== '-'){
+            if(quase[0]== '-'){
+            tobreak += `-${aconta}`
+            }else{
+                tobreak+= aconta
+            }
+        }else if(quase[0]== '-'){
          
 
             correct = ''
-            for (okay in el) {
+            for (okay in aconta) {
                // console.log(el[okay])
-                if (el[okay]!= '-'){
-                    correct+= el[okay]
+                if (aconta[okay]!= '-'){
+                    correct+= aconta[okay]
                 }
             }
            // console.log('ASSIM: ', correct)
             tobreak+= ` - ${correct}`
         }else{
           //  console.log(el)
-            tobreak+= ` + ${el}`
+            tobreak+= ` + ${aconta}`
         }
       }
       console.log('ENTÃO:','(', tobreak,')')
@@ -1883,11 +1918,87 @@ for (bababa in pans) {
        console.log(' ')
         console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
          console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
+
+         triste = scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
+         console.log(triste)
+
+         quase = []
+         for (estudar in triste) {
+            console.log(triste[estudar])
+            if (triste[estudar] == '.') {
+                if (triste[Number(estudar) + 1].search('[0-9]') != -1) {
+                quase.push('*')
+                }
+            }else{
+                quase.push(triste[estudar])
+            }
+         }
+         console.log(quase)
+
+         aconta = ''
+         aster = false
+         elevar = 1
+         for (patience in quase) {
+            console.log(quase[patience])        
+            if (quase[patience] == '*') {
+                aster = true
+                console.log('AND THE CLSDADWDWD', patience)
+                console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                gates.push(quase[Number(patience) - 1])
+                gates.push('x')
+                gates.push(quase[Number(patience) + 1])
+                console.log(gates, fazerConta(gates))
+
+                console.log(quase, Number(patience) + 1)
+                quase[Number(patience) + 1] = fazerConta(gates)[0]
+                aconta = fazerConta(gates)[0]
+                console.log(quase)
+              
+                gates = []
+            }else if(quase[patience].search('[a-z]') != -1)  {
+                //console.log('É LETRA')
+                if (quase[patience] == quase[Number(patience) - 1]) {
+                    console.log('ELEVAR!')
+                    elevar++
+
+                    if (patience == quase.length - 1) {
+                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                        aconta+= `^${elevar}`
+                        console.log(aconta)
+                    }
+
+                }else{
+                    if (elevar > 1) {
+                        console.log('UEPA')
+                        aconta+= `^${elevar}`
+                        
+                    }
+
+                    aconta+= quase[patience]
+                    console.log(aconta)
+                  
+                    elevar = 1
+                }
+                console.log(elevar)
+               
+            } 
+        }
+        if (aster == false) {
+            aconta = ''
+            console.log('SEM ASTERISCO')
+            for (t in quase) {
+            aconta+= quase[t]
+            }
+        }
+        console.log('VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
+
     }
+    
 }
 }
 
 /*
+
 for (yehaa in podeser[cold].position) {
     console.log(podeser[cold])
     console.log(miss[podeser[cold].position[yehaa]].dividido)
