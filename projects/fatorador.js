@@ -1445,18 +1445,18 @@ while(java < miss.length && deucerto == false) {
                 
                 function DESFATORAR(correto, eg2, eg) {
 
-                    console.log('eg', eg)
+                //    console.log('eg', eg)
 
                 eassim = []
                 solo = ''
                 for (ne in eg) {
-                    console.log('EGGGGGG',eg[ne])
+                    //console.log('EGGGGGG',eg[ne])
                     if (eg[ne] != '.') {
                 if (solo.length == 0) {
-                    console.log('LISTA VAZIA')
+                   // console.log('LISTA VAZIA')
                     solo+= eg[ne]
                 }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-                    console.log('É UM nÚMERO')
+                  //  console.log('É UM nÚMERO')
                     solo+= eg[ne]
                 }else{
                     eassim.push(solo)
@@ -2046,17 +2046,17 @@ for (bababa in pans) {
        //  console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
 
          triste = scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
-         console.log(triste)
+     //    console.log(triste)
 
          quase = []
-         console.log(quase, 'k')
+        // console.log(quase, 'k')
          juntar = ''
          teri = false
          for (estudar in triste) {
-            console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
-            console.log('asasasa',triste[estudar])
+          //  console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
+          //  console.log('asasasa',triste[estudar])
             ohjeez = triste[Number(estudar) - 1] != '-'
-            console.log(ohjeez)
+          //  console.log(ohjeez)
             if (triste[estudar] == '.') {
                 teri = true
                 if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
@@ -2064,48 +2064,48 @@ for (bababa in pans) {
                     quase.push(juntar)
                     juntar = ''
                 quase.push('*')
-                console.log(quase)
+              //  console.log(quase)
                 }
             }else{
                
                // quase.push(triste[estudar])
-              console.log('juntar',juntar)
+            //  console.log('juntar',juntar)
                 if (juntar.length == 0) {
                     juntar = triste[estudar]
-                    console.log('LISTA VAZIA', juntar)
+                 //   console.log('LISTA VAZIA', juntar)
 
                     if (estudar == triste.length - 1) {
                         quase.push(juntar)
                     }
-                    console.log('MENMEN',quase)
+                  //  console.log('MENMEN',quase)
 
                 }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
 
-                   console.log('I\'M NEVER WHAT I LIKE')
+                 //  console.log('I\'M NEVER WHAT I LIKE')
                     juntar+= triste[estudar]
-                    console.log('juntar', juntar)
+                 //   console.log('juntar', juntar)
                     if (estudar == triste.length - 1) {
-                       console.log('UAISO')
+                     //  console.log('UAISO')
                         quase.push(juntar)
-                        console.log(quase)
+                     //   console.log(quase)
                     }
                 }else{
                     quase.push(juntar)
                     juntar= triste[estudar]
                     if (estudar == triste.length - 1) {
                         quase.push(juntar)
-                        console.log(quase)
+                      //  console.log(quase)
                     }
                 }
             }
               
          }
-         console.log('MAIS RÁPIDO',quase)
+        // console.log('MAIS RÁPIDO',quase)
 
          if (teri == false) {
             
             quase = []
-           console.log('SEM ASTERISCO')
+         //  console.log('SEM ASTERISCO')
             for (t in triste) {
             quase.push(triste[t])
             }
@@ -2115,38 +2115,38 @@ for (bababa in pans) {
          aster = false
          elevar = 1
          for (patience in quase) {
-            console.log(quase,'edededededededededed',quase[patience])   
+            //console.log(quase,'edededededededededed',quase[patience])   
 
             if (quase[patience] == '*') {
                 aster = true
-                console.log('AND THE CLSDADWDWD', patience)
-                console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+               // console.log('AND THE CLSDADWDWD', patience)
+               // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-                console.log(gates, fazerConta(gates))
+              //  console.log(gates, fazerConta(gates))
 
-                console.log(quase, Number(patience) + 1)
+               // console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
-                console.log(quase)
+               // console.log(quase)
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-                console.log('É LETRA')
+               // console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
                     console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
-                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                        //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
                         console.log(aconta)
                     }
 
                 }else{
                     if (elevar > 1) {
-                        console.log('UEPA')
+                       // console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
@@ -2162,7 +2162,7 @@ for (bababa in pans) {
         }
         if (aster == false) {
             aconta = ''
-            console.log('SEM ASTERISCO')
+           // console.log('SEM ASTERISCO')
             for (t in quase) {
             aconta+= quase[t]
             }
