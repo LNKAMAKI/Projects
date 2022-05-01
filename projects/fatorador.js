@@ -1644,8 +1644,8 @@ while(java < miss.length && deucerto == false) {
 
         for (da = youdumb.length - 1; da >= 0; da--) {
             if (dontworry.indexOf(String(da)) != -1) {
-                //console.log('TEM COISA AÍ',youdumb[da].mons)
-               // youdumb.splice(da,1)
+              //  console.log('TEM COISA AÍ',youdumb[da].mons)
+              //  youdumb.splice(da,1)
             }
         }
 
