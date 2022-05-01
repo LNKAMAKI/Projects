@@ -19,14 +19,14 @@
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-//expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
+expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
-expression = ['-','10','y','-','338','x','y','-','20','y','^','2','-','169','x','+','ab','+','bb']
+//expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb']
 
 
 //expression = ['4','b','c','+','4','x','x']
@@ -1881,7 +1881,11 @@ console.log('IMAGENS', youdumb)
 }
 console.log('pans é', pans)
 for (bababa in pans) {
+   
     console.log('_____________________________________________________________________')
+    console.log('A PARTIR DA QUI')
+    naonao = ''
+
     console.log(pans[bababa], Number(bababa))
     //console.log(pans[bababa].which)
     console.log(roll[pans[bababa].numberyoudumb])
@@ -2057,6 +2061,7 @@ for (bababa in pans) {
       console.log('ENTÃO:','(', tobreak,')')
 
     for (repr in pans[bababa].which) {
+        
      //  console.log(' ')
       //  console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
        //  console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
@@ -2184,9 +2189,22 @@ for (bababa in pans) {
             }
         }
         console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
-
+        if (naonao.length == 0) {
+            console.log('TÁ VAZio')
+            if (quase[0] == '-') {
+                naonao+= `-${aconta}`
+            }else{
+                naonao+= aconta
+            }
+        }else{
+            if (quase[0] == '-') {
+                naonao+= ` - ${aconta}`
+            }else{
+                naonao+= ` + ${aconta}`
+            }
+        }
     }
-    
+    console.log('(',naonao,')','(',tobreak,')')
 }
 }
 
