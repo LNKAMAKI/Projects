@@ -1,6 +1,6 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y','+','5x','+','5y']
+//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['6','x','^','2','b', '+', '42','x','^','2', '-', '7','y','^','2','-','y','^','2','b']
 
@@ -23,7 +23,7 @@
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
-expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','xd']
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b']
 
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 //FAZEnDO AS COnTAS COM nÚMEROS
@@ -1530,7 +1530,7 @@ while(java < miss.length && deucerto == false) {
            
         }
         
-        youdumb.push({mons: asitwas, rag: raging, w: obe})
+        youdumb.push({mons: asitwas, rag: raging, w: obe, polen: raging})
         console.log(obe)
        }
 
@@ -1579,6 +1579,7 @@ while(java < miss.length && deucerto == false) {
         grtols = []
 
 
+    
 for (hi in youdumb) {
     //////console.log(segs[hi], segs[hi].mons.length)
     youdumb[hi].length = youdumb[hi].mons.length
@@ -1599,8 +1600,13 @@ for (ah in organizado) {
    
 }
      
-youdumb = grtols
-
+console.log('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
+youdumb = []
+for (erro = grtols.length - 1; erro >= 0; erro--) {
+    console.log(grtols[erro])
+    youdumb.push(grtols[erro])
+}
+console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
 /*
 for (yourlife in grtols) {
 
@@ -1628,21 +1634,23 @@ for (wrecked in youdumb) {
     }
 }
 
-for (imback in youdumb) {
+for (imback = youdumb.length - 1; imback >= 0; imback--) {
     console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
 
     sticky = []
     initial = youdumb[imback].w.what
 
-    inside = {which: [], numberyoudumb: imback}
+    if (initial.length > 0) {
+    inside = {which: [], numberyoudumb: youdumb[imback].polen}
     console.log(imback)
     console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
 
 
     console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
     
+    
     for (agg in initial) {
-        console.log(initial[agg].ar)
+        console.log('IN THIS WORLD',initial[agg].ar)
 
         taai = false
          for (eng in initial[agg].ar) {
@@ -1684,6 +1692,7 @@ for (imback in youdumb) {
  pans.push(inside)
     }
 
+    //youdumb.splice(imback, 1)
     console.log('FICOU ASSIM Ó:', numerospresentes, sticky)
     /*
     for (invest in pans) {
@@ -1694,60 +1703,107 @@ for (imback in youdumb) {
     }
     */
     
+    youdumb.splice(imback, 1)
     for (h in youdumb) {
+
         if (h != imback) {
             if (youdumb[h].w.what.length > 0) {
-        console.log(youdumb[h].w.what, h)
+      //  console.log(youdumb[h].w.what, h)
             }
 
         console.log('-----------------------------')
         for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
-          console.log(youdumb[h].w.what[tempo].ar, tempo)
+        //  console.log(youdumb[h].w.what[tempo].ar, tempo)
             
             dulu = false
             
            for (and in youdumb[h].w.what[tempo].ar) {
-            console.log(youdumb[h].w.what[tempo].ar[and])
+           // console.log(youdumb[h].w.what[tempo].ar[and])
             if (numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[and]) != -1) {
-                console.log('ESTÁ EM: ', numerospresentes)
+              //  console.log('ESTÁ EM: ', numerospresentes)
                 dulu = true
             }
            }
            if (dulu == false) {
-            console.log('PODE FICAR :)', h, tempo)
+          //  console.log('PODE FICAR :)', h, tempo)
            }else{
-              console.log('NÃO PODE!!!!!!!!!!!!!')
+         //     console.log('NÃO PODE!!!!!!!!!!!!!')
            youdumb[h].w.what.splice(tempo, 1)
           //imback++
+      //    console.log('IMBAACK',imback)
            }
        }
     }
     }
+    
     console.log('YOUDUMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMB' 
     )
 
-    for (hora in youdumb) {
-        if (youdumb[hora].w.what.length > 0) {
-        console.log(youdumb[hora].w.what)
-        for (prazo in youdumb[hora].w.what) {
-          
-            console.log(youdumb[hora].w.what[prazo].ar)
-            }
-        }
-            
-    }
-
-    console.log('OLHA, eu tentei...')
+  
+ 
+    console.log('OLHA, eu tentei...', youdumb.length)
     for (vixi in youdumb) {
-        if (youdumb[vixi].w.what.length > 0) {
-        console.log(youdumb[vixi].w.what)
+     
+     // if (youdumb[vixi].w.what.length > 0) {
+        console.log('aaa',youdumb[vixi].w.what)
         for (ainao in youdumb[vixi].w.what) {
+         console.log('AI NÃO',youdumb[vixi].w.what[ainao].ar)
+        
           
-            console.log(youdumb[vixi].w.what[ainao].ar)
-
-        }  
     }
+//}
+}
+
+for (força in youdumb) {
+    console.log(força, youdumb[força],youdumb[força].w.what.length)
+    entao = []
+    for (areo in youdumb[força].w.what) {
+        console.log(areo,youdumb[força].w.what[areo].ar)
+        for (paris in youdumb[força].w.what[areo].ar) {
+            console.log(paris,youdumb[força].w.what[areo].ar[paris])
+            entao.push(Number(youdumb[força].w.what[areo].ar[paris]))
+        }
+    }
+    console.log(entao)
+    youdumb[força].t = entao
+    console.log(youdumb[força].t)
+ }
+
+console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
+
+
+grtols = []
+
+
     
+for (hi in youdumb) {
+    //////console.log(segs[hi], segs[hi].mons.length)
+    youdumb[hi].length = youdumb[hi].t.length
+
+    grtols.push(youdumb[hi])
+}
+
+//////console.log('grtols: ', segs)
+//////console.log(sortob(grtols, 'length'))
+
+
+organizado = sortob(grtols, 'length')[1]
+
+grtols = []
+for (ah in organizado) {
+   // ////console.log(segs[organizado[ah]])
+    grtols.push(youdumb[organizado[ah]])
+   
+}
+
+youdumb = []
+for (erro = grtols.length - 1; erro >= 0; erro--) {
+    console.log('RAINY DAY',grtols[erro])
+    youdumb.push(grtols[erro])
+}
+
+console.log('IMAGENS', youdumb)
+
 }
 }
 }
