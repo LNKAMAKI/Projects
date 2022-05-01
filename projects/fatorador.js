@@ -28,11 +28,12 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-expression = ['99','x','+','162','y']
+expression = ['99','x','+','162','y','a','^','2']
 //FAZEnDO AS COnTAS COM nÚMEROS
 
         
 // FATORAnDO OS nÚMEROS 
+
 
 for (n = 0; n < expression.length; n++) {
     if (ehprimo(expression[n]) == false && String(expression[n]).search('[0-9]') != -1) {
@@ -1827,18 +1828,34 @@ for (bababa in pans) {
         console.log('ALLI I WANTED WAS TO FINISH THIS THING :D', el)
 
         gates = []
-        for (patience in el) {
-            console.log(el[patience])        
-            if (el[patience] == '*') {
+
+        quase = []
+        for (power in el) {
+            quase.push(el[power])
+        }
+
+        aconta = ''
+        for (patience in quase) {
+            console.log(quase[patience])        
+            if (quase[patience] == '*') {
                 console.log('AND THE CLSDADWDWD', patience)
-                console.log(el[Number(patience) - 1], el[Number(patience) + 1])
-                gates.push(el[Number(patience) - 1])
+                console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                gates.push(quase[Number(patience) - 1])
                 gates.push('x')
-                gates.push(el[Number(patience) + 1])
+                gates.push(quase[Number(patience) + 1])
                 console.log(gates, fazerConta(gates))
-                el[Number(patience) + 1] = fazerConta(gates)
-                console.log(el)
-            }    
+
+                console.log(quase, Number(patience) + 1)
+                quase[Number(patience) + 1] = fazerConta(gates)[0]
+                aconta = fazerConta(gates)[0]
+                console.log(quase)
+              
+                gates = []
+            }else if(quase[patience].search('[a-z]') != -1)  {
+                console.log('É LETRA')
+                aconta+= quase[patience]
+                console.log(aconta)
+            } 
         }
 
         if (tobreak.length == 0) {
