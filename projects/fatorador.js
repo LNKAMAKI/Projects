@@ -29,7 +29,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb']
 
 
-//expression = ['4','b','c','+','4','x','x']
+expression = ['18','x','^','3','+','4','x','^','2']
 
 
 
@@ -1986,43 +1986,58 @@ for (bababa in pans) {
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-               // console.log('É LETRA')
+                console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
-                   // console.log('ELEVAR!')
+                    console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
-                     //   console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                       // console.log(aconta)
+                        console.log(aconta)
                     }
 
                 }else{
                     if (elevar > 1) {
-                      //  console.log('UEPA')
+                        console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
 
                     aconta+= quase[patience]
-                  //  console.log(aconta)
+                    console.log(aconta)
                   
                     elevar = 1
                 }
-                //console.log(elevar)
+                console.log(elevar)
                
             } 
         }
         console.log('A CONTA',aconta,quase, tobreak)
     if (aster == false) {
-        console.log('SEM ASTERISCO')
-        aconta = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
+        console.log('SEM ASTERISCO',aconta)
+        antes = ''
+        for (eyes in quase) {
+            
+            console.log(quase[eyes])
+            if (quase[eyes].search('[0-9]') != -1) {
+                console.log('CRY')
+                antes+= quase[eyes]
+            }
+        }
+        antes+= aconta
+        console.log('ANTEEEES:', antes)
+        
+        aconta = antes
     }
 
+    console.log('_____________________________________________________________________',aconta)
         if (tobreak.length == 0) {
+           
            
             if(quase[0]== '-'){
             
+               
             if (aconta[0] == '-') {
                 console.log('PROBLEM')
                 mood = ''
@@ -2049,6 +2064,7 @@ for (bababa in pans) {
                // console.log(el[okay])
                 if (aconta[okay]!= '-'){
                     correct+= aconta[okay]
+                    console.log('MESS', aconta[okay])
                 }
             }
            // console.log('ASSIM: ', correct)
@@ -2057,6 +2073,7 @@ for (bababa in pans) {
           //  console.log(el)
             tobreak+= ` + ${aconta}`
         }
+        console.log('THE COLOURS THAT I SAW', tobreak)
       }
       console.log('ENTÃO:','(', tobreak,')')
 
@@ -2154,20 +2171,20 @@ for (bababa in pans) {
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-               // console.log('É LETRA')
+                console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
                     console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
-                        //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
                         console.log(aconta)
                     }
 
                 }else{
                     if (elevar > 1) {
-                       // console.log('UEPA')
+                        console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
@@ -2182,11 +2199,24 @@ for (bababa in pans) {
             } 
         }
         if (aster == false) {
-            aconta = ''
-           // console.log('SEM ASTERISCO')
-            for (t in quase) {
-            aconta+= quase[t]
+          
+            console.log('SEM ASTERISCO2', aconta, quase)
+
+            antes = ''
+        for (eyes in quase) {
+            
+            console.log(quase[eyes])
+            if (quase[eyes].search('[0-9]') != -1) {
+                console.log('CRY')
+                antes+= quase[eyes]
             }
+        }
+        antes+= aconta
+        console.log('ANTEEEES:', antes)
+           // for (t in quase) {
+           // aconta+= quase[t]
+          //  }
+          aconta = antes
         }
         console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
         if (naonao.length == 0) {
