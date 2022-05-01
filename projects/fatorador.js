@@ -1828,7 +1828,17 @@ for (bababa in pans) {
 
         gates = []
         for (patience in el) {
-            console.log(el[patience])            
+            console.log(el[patience])        
+            if (el[patience] == '*') {
+                console.log('AND THE CLSDADWDWD', patience)
+                console.log(el[Number(patience) - 1], el[Number(patience) + 1])
+                gates.push(el[Number(patience) - 1])
+                gates.push('x')
+                gates.push(el[Number(patience) + 1])
+                console.log(gates, fazerConta(gates))
+                el[Number(patience) + 1] = fazerConta(gates)
+                console.log(el)
+            }    
         }
 
         if (tobreak.length == 0) {
