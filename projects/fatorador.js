@@ -28,10 +28,10 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-//expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac','+','bb','+','bc']
+expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac']
 //expression = ['4','b','c','+','4','x','x']
 
-expression = ['169','x','+','338','x','y']
+
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1531,10 +1531,13 @@ while(java < miss.length && deucerto == false) {
                       
                  }
                  if (teri == false) {
-                  
+                  whythat = []
                     console.log('SEM ASTERISCO')
                     for (t in eg2) {
                     whythat.push(eg2[t])
+                    }
+                    for (t in eg) {
+                        whythat.push(eg[t])
                     }
                 }
 
@@ -1922,6 +1925,11 @@ for (bababa in pans) {
                 if (juntar.length == 0) {
                     juntar = el[estudar]
                     console.log('LISTA VAZIA', juntar)
+
+                    if (estudar == el.length - 1) {
+                        quase.push(juntar)
+                    }
+
                 }else if(el[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
                     console.log('I\'M NEVER WHAT I LIKE')
                     juntar+= el[estudar]
@@ -2065,6 +2073,9 @@ for (bababa in pans) {
                     juntar = triste[estudar]
                     console.log('LISTA VAZIA', juntar)
 
+                    if (estudar == triste.length - 1) {
+                        quase.push(juntar)
+                    }
                     console.log('MENMEN',quase)
 
                 }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
