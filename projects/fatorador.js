@@ -29,7 +29,9 @@
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
 //expression = ['-','10','y','-','20','y','^','2','-','169','x','-','338','x','y','+','ab','+','ac','+','bb','+','bc']
-expression = ['4','b','c','+','4','x','x']
+//expression = ['4','b','c','+','4','x','x']
+
+expression = ['169','x','+','338','x','y']
 
 //FAZEnDO AS COnTAS COM nÚMEROS
 
@@ -1495,7 +1497,7 @@ while(java < miss.length && deucerto == false) {
                             whythat.push(juntar)
                             juntar = ''
                         whythat.push('*')
-                        console.log('aaaaaaaaaaaaaaaaa', whythat)
+                       
                         }
                     }else{
                        
@@ -1563,7 +1565,9 @@ while(java < miss.length && deucerto == false) {
                     for (pombo = whythat.length - 1; pombo >= 0; pombo--){
                       //  console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
                         if (whythat[pombo] == '*' || whythat[pombo] == '1') {
+                            console.log('?',whythat[pombo])
                             whythat.splice(pombo,1)
+                           console.log(whythat)
                         }
                         
                     }
@@ -1951,27 +1955,27 @@ for (bababa in pans) {
        aster = false
        
         for (patience in quase) {
-           // console.log(quase[patience])       
+            console.log(quase[patience])       
            
             if (quase[patience] == '*') {
                 aster = true
-               // console.log('AND THE CLSDADWDWD', patience)
-              //  console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                console.log('AND THE CLSDADWDWD', patience)
+                console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
                 console.log(gates, fazerConta(gates))
 
-               // console.log(quase, Number(patience) + 1)
+               console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
                 console.log(quase)
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-                //console.log('É LETRA')
+                console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
-                   // console.log('ELEVAR!')
+                    console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
@@ -2036,9 +2040,11 @@ for (bababa in pans) {
          console.log(triste)
 
          quase = []
+         console.log(quase, 'k')
          juntar = ''
          teri = false
          for (estudar in triste) {
+            console.log('O QUE ESTÁ ACONTECENDO?', quase, estudar)
             console.log('asasasa',triste[estudar])
             ohjeez = triste[Number(estudar) - 1] != '-'
             console.log(ohjeez)
@@ -2049,27 +2055,34 @@ for (bababa in pans) {
                     quase.push(juntar)
                     juntar = ''
                 quase.push('*')
+                console.log(quase)
                 }
             }else{
                
-                quase.push(triste[estudar])
+               // quase.push(triste[estudar])
               console.log('juntar',juntar)
                 if (juntar.length == 0) {
                     juntar = triste[estudar]
                     console.log('LISTA VAZIA', juntar)
+
+                    console.log('MENMEN',quase)
+
                 }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
+
                    console.log('I\'M NEVER WHAT I LIKE')
                     juntar+= triste[estudar]
                     console.log('juntar', juntar)
                     if (estudar == triste.length - 1) {
                        console.log('UAISO')
                         quase.push(juntar)
+                        console.log(quase)
                     }
                 }else{
                     quase.push(juntar)
                     juntar= triste[estudar]
                     if (estudar == triste.length - 1) {
                         quase.push(juntar)
+                        console.log(quase)
                     }
                 }
             }
