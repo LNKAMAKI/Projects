@@ -80,6 +80,14 @@ function sw(what){
    cont.style.opacity = '0'
    cont.style.transform = 'translateY(100%)'
    cont.style.animation = 'showup 0.5s 0.1s forwards'
+
+   document.getElementById('alter').parentNode.removeChild(document.getElementById('alter'))
+   at = document.createElement('div')
+   at.id = 'alter'
+   document.getElementById('partim').appendChild(at)
+   at.style.opacity = '0'
+   at.style.transform = 'translateY(100%)'
+   at.style.animation = 'showup 0.5s 0.1s forwards'
    
    switch (what) {
       case 0: 
@@ -97,6 +105,12 @@ function sw(what){
       case 3: 
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 4: 
+      outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
+      cont.innerText =  '---------------------------'
+
+      at.innerHTML = ' <div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh wdw duwd wdwq q2wue dwudwud uuwd wwduwd udwud</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh w</p><p class="option">THIS IS THE SECOND OPTION</p></div>'
       break
       default: 
       outra.innerHTML = ''
