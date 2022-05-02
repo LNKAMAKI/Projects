@@ -110,7 +110,7 @@ function sw(what){
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  '---------------------------'
 
-      at.innerHTML = ' <div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh wdw duwd wdwq q2wue dwudwud uuwd wwduwd udwud</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh w</p><p class="option">THIS IS THE SECOND OPTION</p></div>'
+      at.innerHTML = ' <div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh wdw duwd wdwq q2wue dwudwud uuwd wwduwd udwud</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh w sadw wid dwo0w dwidwa taci aewdi wid amkks iwd iwutgbceirh tuoyto lpl ancsdchw eur5tgn fqio wjdoqidj jiwjdwi wijwidjwdjw idjwid jwdj  wjdiwjd iwjdoqdqifefeoifjeoifoef</p><p class="option">THIS IS THE SECOND OPTION</p></div>'
       break
       default: 
       outra.innerHTML = ''
