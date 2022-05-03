@@ -11,8 +11,11 @@ window.addEventListener('keydown', (event) => {
 ident = 0
 qual = 0
 
+direction = 'next'
 // go to the next slide
 function next() {
+
+   direction = 'next'
    if (mark == false || respondidas.find(function(respondidas) {
       return respondidas.numslide == qual
    }) != undefined) {
@@ -49,6 +52,7 @@ outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
 
 // go to previous slide
 function prev() {
+   direction = 'prev'
    if (qual > 0) {
    hat = document.getElementsByClassName('scroll')
 
@@ -90,6 +94,7 @@ function sw(what){
    cont.style.transform = 'translateY(100%)'
    cont.style.animation = 'showup 0.5s 0.1s forwards'
 
+   
    document.getElementById('alter').parentNode.removeChild(document.getElementById('alter'))
    at = document.createElement('div')
    at.id = 'alter'
