@@ -30,6 +30,7 @@ ident = 1
    ident = 0
 }
 qual++
+wisright(qual)
 outra = hat[ident]
 outra.style.visibility = 'visible'
 
@@ -63,6 +64,8 @@ ident = 1
    ident = 0
 }
 qual--
+wisright(qual)
+
 outra = hat[ident]
 outra.style.visibility = 'visible'
 
@@ -131,6 +134,8 @@ function sw(what){
          }).marked
       console.log(which)
       automark(which)
+      document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
+      document.getElementsByClassName('option')[correct].style.color = 'white'
       }
 
       break
@@ -151,6 +156,8 @@ function sw(what){
          }).marked
       console.log(which)
       automark(which)
+      document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
+      document.getElementsByClassName('option')[correct].style.color = 'white'
       }
 
       break
@@ -192,6 +199,8 @@ function corrigir() {
       return respondidas.numslide == qual
    }) == undefined) {
    respondidas.push({numslide: qual, marked: marcada})
+   document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
+   document.getElementsByClassName('option')[correct].style.color = 'white'
    }
 
    }
@@ -209,4 +218,19 @@ opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
 
    }
 }
+}
+
+correct = -1
+function wisright(w) {
+   switch(w) {
+      case 4:
+         correct = 0
+         break
+      case 5:
+         correct = 3
+         break
+      default:
+      correct = -1
+      break
+   }
 }
