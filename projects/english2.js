@@ -120,9 +120,11 @@ function sw(what){
       if (respondidas.find(function(respondidas) {
          return respondidas.numslide == qual
       }) != undefined) {
-      console.log(respondidas.find(function(respondidas) {
-         return respondidas.numslide == qual
-      }).marked)
+         which = respondidas.find(function(respondidas) {
+            return respondidas.numslide == qual
+         }).marked
+      console.log(which)
+      automark(which)
       }
 
       break
@@ -138,11 +140,13 @@ function sw(what){
       if (respondidas.find(function(respondidas) {
          return respondidas.numslide == qual
       }) != undefined) {
-      console.log(respondidas.find(function(respondidas) {
-         return respondidas.numslide == qual
-      }).marked)
+         which = respondidas.find(function(respondidas) {
+            return respondidas.numslide == qual
+         }).marked
+      console.log(which)
+      automark(which)
       }
-      
+
       break
 
       default: 
@@ -166,6 +170,8 @@ function clicou(value) {
       return respondidas.numslide == qual
    }) == undefined) {
 console.log('VOCÊ CLICOU', value)
+automark(value)
+/*
 opsnum = document.getElementsByClassName('option')
 
    opsnum[value].style.backgroundColor = 'rgb(149, 229, 253)'
@@ -177,6 +183,7 @@ opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
 
    }
 }
+*/
    }
 }
 
@@ -194,4 +201,18 @@ function corrigir() {
    }
 
    }
+}
+
+function automark(val) {
+   opsnum = document.getElementsByClassName('option')
+
+   opsnum[val].style.backgroundColor = 'rgb(149, 229, 253)'
+
+marcada = val
+for (ham in opsnum) {
+   if (ham != val && ham.search('[a-z]') == -1) {
+opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
+
+   }
+}
 }
