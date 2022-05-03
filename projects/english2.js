@@ -73,6 +73,7 @@ outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
 
 }
 
+respondidas = []
 function sw(what){
    document.getElementById('p').parentNode.removeChild(document.getElementById('p'))
    cont = document.createElement('p')
@@ -113,6 +114,17 @@ function sw(what){
       cont.innerText =  'HERE GOES THE QUESTION'
 
       at.innerHTML = ' <div class="conter"><p class="option" name="space">THIS IS THE FIRST OPTION</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">THIS IS THE THIRD OPTION</p><p class="option">THIS IS THE FORTH OPTION</p></div> <input type="button" value="SUBMIT" class="sub">'
+
+      document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
+
+      if (respondidas.find(function(respondidas) {
+         return respondidas.numslide == qual
+      }) != undefined) {
+      console.log(respondidas.find(function(respondidas) {
+         return respondidas.numslide == qual
+      }).marked)
+      }
+
       break
 
       case 5: 
@@ -120,6 +132,17 @@ function sw(what){
       cont.innerText =  'QUESTION: BLAH, BLAH, BLAH, BLAH'
 
       at.innerHTML = ' <div class="conter"><p class="option" name="space">THIS IS THE FIRST OPTION</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">THIS IS THE CORRECT ONE</p><p class="option">THIS IS THE FORTH OPTION</p></div> <input type="button" value="SUBMIT" class="sub">'
+
+      document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
+
+      if (respondidas.find(function(respondidas) {
+         return respondidas.numslide == qual
+      }) != undefined) {
+      console.log(respondidas.find(function(respondidas) {
+         return respondidas.numslide == qual
+      }).marked)
+      }
+      
       break
 
       default: 
@@ -139,6 +162,9 @@ function sw(what){
 
 
 function clicou(value) {
+   if (respondidas.find(function(respondidas) {
+      return respondidas.numslide == qual
+   }) == undefined) {
 console.log('VOCÊ CLICOU', value)
 opsnum = document.getElementsByClassName('option')
 
@@ -151,4 +177,21 @@ opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
 
    }
 }
+   }
+}
+
+function corrigir() {
+   if (marcada != -1) {
+   console.log('corrigir')
+   console.log(respondidas.find(function(respondidas) {
+      return respondidas.numslide == qual
+   }))
+
+   if (respondidas.find(function(respondidas) {
+      return respondidas.numslide == qual
+   }) == undefined) {
+   respondidas.push({numslide: qual, marked: marcada})
+   }
+
+   }
 }
