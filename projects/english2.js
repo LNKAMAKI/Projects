@@ -11,6 +11,7 @@ window.addEventListener('keydown', (event) => {
 ident = 0
 qual = 0
 
+// go to the next slide
 function next() {
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
@@ -42,7 +43,7 @@ outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
 
 }
 
-
+// go to previous slide
 function prev() {
    if (qual > 0) {
    hat = document.getElementsByClassName('scroll')
@@ -134,9 +135,8 @@ function sw(what){
       }
    }
 }
-/*
-                  <div class="scroll"><div class="pic"><img src="hello world.gif" alt=""></div></div>
-                  */
+
+
 
 function clicou(value) {
 console.log('VOCÊ CLICOU', value)
