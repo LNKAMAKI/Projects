@@ -109,9 +109,9 @@ function sw(what){
       break
       case 4: 
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
-      cont.innerText =  '---------------------------'
+      cont.innerText =  'HERE GOES THE QUESTION'
 
-      at.innerHTML = ' <div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh wdw duwd wdwq q2wue dwudwud uuwd wwduwd udwud</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">asduwdhwuidhwiu wwd uwdh w sadw wid dwo0w dwidwa taci aewdi wid amkks iwd iwutgbceirh tuoyto lpl ancsdchw eur5tgn fqio wjdoqidj jiwjdwi wijwidjwdjw idjwid jwdj  wjdiwjd iwjdoqdqifefeoifjeoifoef</p><p class="option">THIS IS THE SECOND OPTION</p></div> <input type="button" value="SUBMIT" class="sub">'
+      at.innerHTML = ' <div class="conter"><p class="option" name="space">THIS IS THE FIRST OPTION</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">THIS IS THE THIRD OPTION</p><p class="option">THIS IS THE FORTH OPTION</p></div> <input type="button" value="SUBMIT" class="sub">'
       break
       default: 
       outra.innerHTML = ''
