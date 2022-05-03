@@ -89,6 +89,7 @@ function sw(what){
    at.style.transform = 'translateY(100%)'
    at.style.animation = 'showup 0.5s 0.1s forwards'
    
+   marcada = -1
    switch (what) {
       case 0: 
       outra.innerHTML = '<div class="pic"><img src="imagens/html-css-js.jpg" alt=""></div>'
@@ -116,7 +117,30 @@ function sw(what){
       outra.innerHTML = ''
       break
    }
+   ops = document.getElementsByClassName('option')
+   for (number in ops) {
+      if (number.search('[a-z]') == -1) {
+      console.log(ops[number])
+       ops[number].setAttribute('onclick',`clicou(${number})`)
+      
+      }
+   }
 }
 /*
                   <div class="scroll"><div class="pic"><img src="hello world.gif" alt=""></div></div>
                   */
+
+function clicou(value) {
+console.log('VOCÊ CLICOU', value)
+opsnum = document.getElementsByClassName('option')
+
+   opsnum[value].style.backgroundColor = 'rgb(149, 229, 253)'
+
+marcada = value
+for (ham in opsnum) {
+   if (ham != value && ham.search('[a-z]') == -1) {
+opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
+
+   }
+}
+}
