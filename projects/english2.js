@@ -177,19 +177,7 @@ function clicou(value) {
    }) == undefined) {
 console.log('VOCÊ CLICOU', value)
 automark(value)
-/*
-opsnum = document.getElementsByClassName('option')
 
-   opsnum[value].style.backgroundColor = 'rgb(149, 229, 253)'
-
-marcada = value
-for (ham in opsnum) {
-   if (ham != value && ham.search('[a-z]') == -1) {
-opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
-
-   }
-}
-*/
    }
 }
 
