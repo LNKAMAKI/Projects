@@ -13,6 +13,9 @@ qual = 0
 
 // go to the next slide
 function next() {
+   if (mark == false || respondidas.find(function(respondidas) {
+      return respondidas.numslide == qual
+   }) != undefined) {
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
 
@@ -38,7 +41,7 @@ outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
 
 
 
-
+   }
 
 
 }
@@ -73,6 +76,7 @@ outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
 
 }
 
+mark = false
 respondidas = []
 function sw(what){
    document.getElementById('p').parentNode.removeChild(document.getElementById('p'))
@@ -106,10 +110,12 @@ function sw(what){
       cont.innerText =  'aaaaaaaaaaa'
       break
       case 3: 
+      mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
       break
       case 4: 
+      mark = true
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  'HERE GOES THE QUESTION'
 
