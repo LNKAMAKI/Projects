@@ -91,10 +91,10 @@ function sw(what){
    cont.id = 'p'
    document.getElementById('hold').appendChild(cont)
    cont.style.opacity = '0'
-   cont.style.transform = 'translateY(100%)'
+   //cont.style.transform = 'translateY(100%)'
    cont.style.animation = 'showup 0.5s 0.1s forwards'
 
-   
+
    document.getElementById('alter').parentNode.removeChild(document.getElementById('alter'))
    at = document.createElement('div')
    at.id = 'alter'
@@ -102,6 +102,7 @@ function sw(what){
    at.style.opacity = '0'
    at.style.transform = 'translateY(100%)'
    at.style.animation = 'showup 0.5s 0.1s forwards'
+   
    
    marcada = -1
    switch (what) {
