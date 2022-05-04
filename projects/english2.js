@@ -240,3 +240,4 @@ function wisright(w) {
       break
    }
 }
+
