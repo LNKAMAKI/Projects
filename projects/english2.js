@@ -146,6 +146,15 @@ function sw(what){
       automark(which)
       document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
       document.getElementsByClassName('option')[correct].style.color = 'white'
+
+      if (respondidas.find(function(respondidas) {
+         return respondidas.numslide == qual
+         }).marked != correct) {
+            markedanswer = respondidas.find(function(respondidas) {
+               return respondidas.numslide == qual
+               }).marked
+            document.getElementsByClassName('option')[markedanswer].style.backgroundColor = 'red'
+         }
       }
 
       break
@@ -168,6 +177,15 @@ function sw(what){
       automark(which)
       document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
       document.getElementsByClassName('option')[correct].style.color = 'white'
+      
+      if (respondidas.find(function(respondidas) {
+         return respondidas.numslide == qual
+         }).marked != correct) {
+            markedanswer = respondidas.find(function(respondidas) {
+               return respondidas.numslide == qual
+               }).marked
+            document.getElementsByClassName('option')[markedanswer].style.backgroundColor = 'red'
+         }
       }
 
       break
@@ -211,8 +229,16 @@ function corrigir() {
    respondidas.push({numslide: qual, marked: marcada})
    document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
    document.getElementsByClassName('option')[correct].style.color = 'white'
-   }
 
+   if (respondidas.find(function(respondidas) {
+      return respondidas.numslide == qual
+      }).marked != correct) {
+         markedanswer = respondidas.find(function(respondidas) {
+            return respondidas.numslide == qual
+            }).marked
+         document.getElementsByClassName('option')[markedanswer].style.backgroundColor = 'red'
+      }
+   }
    }
 }
 
