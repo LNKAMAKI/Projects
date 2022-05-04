@@ -91,7 +91,7 @@ function sw(what){
    cont.id = 'p'
    document.getElementById('hold').appendChild(cont)
    cont.style.opacity = '0'
-   //cont.style.transform = 'translateY(100%)'
+   cont.style.transform = 'translateY(100%)'
    cont.style.animation = 'showup 0.5s 0.1s forwards'
 
 
@@ -107,16 +107,16 @@ function sw(what){
    marcada = -1
    switch (what) {
       case 0: 
-      outra.innerHTML = '<div class="pic"><img src="imagens/html-css-js.jpg" alt=""></div>'
-     cont.innerText =  'MOST SITES USE THESE THREE MAIN LANGUAGES: HTML, CSS AND JAVASCRIPT.'
+      outra.innerHTML = '<div class="pic"><img src="imagens/var.png" alt=""></div>'
+     cont.innerText =  'Variable is one of the most essential concepts in any programming language, \'cause it helps us store information to use later. It can be stored as a number, string or boolean.'
       break
       case 1: 
-      outra.innerHTML = '<div class="pic"><img src="html-symbol.webp" alt=""></div></div>'
-      cont.innerText =  'sss'
+      outra.innerHTML = '<div class="pic"><img src="imagens/arithmetic-operations.png" alt=""></div>'
+      cont.innerText =  'When we store a information as a number, we can do some operations with it. This includes addition, subtraction, multiplication, exponential and division. These are called arithmetic operations.'
       break
       case 2: 
-      outra.innerHTML = '<div class="pic"><img src="css-logo.webp" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      outra.innerHTML = '<div class="pic"><img src="imagens/comparison-operations.png" alt=""></div></div>'
+      cont.innerText =  'As the name already says, comparison operations have to do with comparing a value to another one. This includes seeing if a number is greater or less than another, if it has the same value as the one being compared or if it\'s different from it.'
       break
       case 3: 
       mark = false
