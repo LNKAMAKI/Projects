@@ -107,23 +107,27 @@ function sw(what){
    marcada = -1
    switch (what) {
       case 0: 
+      outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div>'
+     cont.innerText =  ' Javascript is the most commonly-used programming language in the world. It\'s also one of the easiest, since it doesn\'t require any previous coding knowledge. Google, Youtube, Facebook, Amazon, Twitter and Netflix are examples of popular platforms that have javascript in their composition.'
+      break
+      case 1: 
       outra.innerHTML = '<div class="pic"><img src="imagens/var.png" alt=""></div>'
      cont.innerText =  'Variable is one of the most essential concepts in any programming language, \'cause it helps us store information to use later. It can be stored as a number, string or boolean.'
       break
-      case 1: 
+      case 2: 
       outra.innerHTML = '<div class="pic"><img src="imagens/arithmetic-operations.png" alt=""></div>'
       cont.innerText =  'When we store a information as a number, we can do some operations with it. This includes addition, subtraction, multiplication, exponential and division. These are called arithmetic operations.'
       break
-      case 2: 
+      case 3: 
       outra.innerHTML = '<div class="pic"><img src="imagens/comparison-operations.png" alt=""></div></div>'
       cont.innerText =  'As the name already says, comparison operations have to do with comparing a value to another one. This includes seeing if a number is greater or less than another, if it has the same value as the one being compared or if it\'s different from it.'
       break
-      case 3: 
+      case 4: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
       break
-      case 4: 
+      case 5: 
       mark = true
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  'HERE GOES THE QUESTION'
