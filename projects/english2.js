@@ -150,7 +150,7 @@ function sw(what){
 
       break
 
-      case 5: 
+      case 6: 
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
       cont.innerText =  'QUESTION: BLAH, BLAH, BLAH, BLAH'
 
@@ -233,10 +233,10 @@ opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
 correct = -1
 function wisright(w) {
    switch(w) {
-      case 4:
+      case 5:
          correct = 0
          break
-      case 5:
+      case 6:
          correct = 3
          break
       default:
