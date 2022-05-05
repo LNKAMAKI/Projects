@@ -200,7 +200,7 @@ function sw(what){
       case 19: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
-      cont.innerText =  'While coding, we eventually write the same lines to run the same tasks and it gets to a point we need to make our code shorter. That\'s why there\'re functions, which can be compared to algorithms, since they usually run a task without having predefined parameters. '
+      cont.innerText =  'While coding, we eventually write the same lines to run the same tasks and it gets to a point when we . That\'s why there\'re functions, which can be compared to algorithms, since they usually run a task without having predefined parameters. '
       break
       case 20: 
       mark = false
