@@ -135,17 +135,17 @@ function sw(what){
       case 6: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/declarearray.png" alt=""></div></div>'
-      cont.innerText =  'Another very important concept in javascript and not only in javascript is the array. It is like a list where each element has its own position, which we refer to as an index. '
+      cont.innerText =  'Another very important concept in javascript and not only in javascript is the array. It is like a list where each element has its own position, which we refer to as an index. The index of the first element in the array is 0. '
       break
       case 7: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/arraysplice.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'When we want to remove an item from a array, we can use the method splice(), which can receive 3 values. The first one receives the index we want to start removing from and the second, how many items are going to be removed. The third, not represented on the image is the item we want to place instead.'
       break
       case 8: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/arraypush.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'The method push allows us to add an item to the list or array. '
       break
       case 9: 
       mark = false
