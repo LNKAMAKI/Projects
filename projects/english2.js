@@ -180,7 +180,7 @@ function sw(what){
       case 15: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/whilearray.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'We can apply the method console.log() to each item in a array using a while structure.'
       break
       case 16: 
       mark = false
