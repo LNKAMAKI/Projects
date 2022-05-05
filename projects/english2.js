@@ -124,12 +124,98 @@ function sw(what){
       break
       case 4: 
       mark = false
-      outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
+      outra.innerHTML = '<div class="pic"><img src="imagens/concatenation1.png" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
       break
       case 5: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/concatenation2.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 6: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/declarearray.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 7: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/arraysplice.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 8: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/arraypush.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 9: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/arrayindexof.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 10: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/declareobject.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 11: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/objectprop.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 12: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/ifelse.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 13: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/ifexample.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 14: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/while.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 15: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/whilearray.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 16: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/for.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 17: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/forin.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 18: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/forinobject.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 19: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 20: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      case 21: 
+      mark = false
+      outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
+      cont.innerText =  'aaaaaaaaaaa'
+      break
+      /*
+      case 6:
       mark = true
-      outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
+      outra.innerHTML = '<div class="pic"><img src="imagens/concatenation2.png" alt=""></div></div>'
       cont.innerText =  'HERE GOES THE QUESTION'
 
       at.innerHTML = ' <div class="conter"><p class="option" name="space">THIS IS THE FIRST OPTION</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">THIS IS THE THIRD OPTION</p><p class="option">THIS IS THE FORTH OPTION</p></div> <input type="button" value="SUBMIT" class="sub">'
@@ -158,38 +244,7 @@ function sw(what){
       }
 
       break
-
-      case 6: 
-      outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div></div>'
-      cont.innerText =  'QUESTION: BLAH, BLAH, BLAH, BLAH'
-
-      at.innerHTML = ' <div class="conter"><p class="option" name="space">THIS IS THE FIRST OPTION</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">THIS IS THE CORRECT ONE</p><p class="option">THIS IS THE FORTH OPTION</p></div> <input type="button" value="SUBMIT" class="sub">'
-
-      document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
-
-      if (respondidas.find(function(respondidas) {
-         return respondidas.numslide == qual
-      }) != undefined) {
-         which = respondidas.find(function(respondidas) {
-            return respondidas.numslide == qual
-         }).marked
-      console.log(which)
-      automark(which)
-      document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
-      document.getElementsByClassName('option')[correct].style.color = 'white'
-      
-      if (respondidas.find(function(respondidas) {
-         return respondidas.numslide == qual
-         }).marked != correct) {
-            markedanswer = respondidas.find(function(respondidas) {
-               return respondidas.numslide == qual
-               }).marked
-            document.getElementsByClassName('option')[markedanswer].style.backgroundColor = 'red'
-         }
-      }
-
-      break
-
+*/
       default: 
       outra.innerHTML = ''
       break
