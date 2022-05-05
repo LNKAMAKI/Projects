@@ -180,27 +180,27 @@ function sw(what){
       case 15: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/whilearray.png" alt=""></div></div>'
-      cont.innerText =  'We can apply the method console.log() to each item in a array using a while structure.'
+      cont.innerText =  'We can apply the method console.log() to each item in a array using the while structure.'
       break
       case 16: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/for.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'The for method does basically the same thing as the while method. The difference is that you can set the variable initial value, check if the statement is true and do the increment all at once.'
       break
       case 17: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/forin.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'The for in method is just a shorthand for the previous one.'
       break
       case 18: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/forinobject.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'This is how the for in can be applied to an object. The only change is that, besides the index, we have to specify the property as well. '
       break
       case 19: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'While coding, we eventually write the same lines to run the same tasks and it gets to a point we need to make our code shorter. That\'s why there\'re functions, which can be compared to algorithms, since they usually run a task without having predefined parameters. '
       break
       case 20: 
       mark = false
@@ -212,8 +212,9 @@ function sw(what){
       outra.innerHTML = '<div class="pic"><img src="imagens/functionexample.png" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
       break
+      
       /*
-      case 6:
+      case 22:
       mark = true
       outra.innerHTML = '<div class="pic"><img src="imagens/concatenation2.png" alt=""></div></div>'
       cont.innerText =  'HERE GOES THE QUESTION'
@@ -314,7 +315,7 @@ opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
 correct = -1
 function wisright(w) {
    switch(w) {
-      case 5:
+      case 22:
          correct = 0
          break
       case 6:
