@@ -125,7 +125,7 @@ function sw(what){
       case 4: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/concatenation1.png" alt=""></div></div>'
-      cont.innerText =  'Imagine this situation: you ask the user\'s name on your website and you want to say something like: Hello, (user\'s name), which was previously stored in a variable called username. In order to do that, you have to follow a syntax: the variable goes inside two brackets, the first preceded by a dollar sign, and the text goes outside. However, it only works if the whole statement is inside these special quotes: ` `, which are called backticks'
+      cont.innerText =  'Imagine this situation: you ask the user\'s name on your website and you want to say something like: Hello, ( user\'s name ), which was previously stored in a variable called username. In order to do that, you have to follow a syntax: the variable goes inside two brackets, the first preceded by a dollar sign, and the text goes outside. However, it only works if the whole statement is inside these special quotes: ` `, which are called backticks'
       break
       case 5: 
       mark = false
@@ -200,21 +200,14 @@ function sw(what){
       case 19: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
-      cont.innerText =  'While coding, we eventually write the same lines to run the same tasks and it gets to a point when we . That\'s why there\'re functions, which can be compared to algorithms, since they usually run a task without having predefined parameters. '
+      cont.innerText =  'Just like doing tasks in real life, we can run tasks in javascript. When you count numbers, for example, you follow the same logic each time you do so, what changes is the numbers. With functions we can run tasks without having predetermined parameters, what helps us avoid writing a code multiple times. '
       break
       case 20: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/functionexample.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'This function is for when you sum up any two numbers. It receives two parameters ( number1 and number2 ) and returns their sum. As you can noticed, the function can be stored inside a variable; which avoids calling it again.'
       break
       case 21: 
-      mark = false
-      outra.innerHTML = '<div class="pic"><img src="imagens/functionexample.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
-      break
-      
-      /*
-      case 22:
       mark = true
       outra.innerHTML = '<div class="pic"><img src="imagens/concatenation2.png" alt=""></div></div>'
       cont.innerText =  'HERE GOES THE QUESTION'
@@ -245,7 +238,7 @@ function sw(what){
       }
 
       break
-*/
+
       default: 
       outra.innerHTML = ''
       break
