@@ -120,22 +120,22 @@ function sw(what){
       break
       case 3: 
       outra.innerHTML = '<div class="pic"><img src="imagens/comparison-operations.png" alt=""></div></div>'
-      cont.innerText =  'As the name already says, comparison operations have to do with comparing a value to another one. This includes seeing if a number is greater or less than another, if it has the same value as the one being compared or if it\'s different from it.'
+      cont.innerText =  'As the name already says, comparison operations have to do with comparing a value to another. This includes seeing if a number is greater, less or equal to the one being compared.'
       break
       case 4: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/concatenation1.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'Imagine this situation: you ask the user\'s name on your website and you want to say something like: Hello, (user\'s name), which was previously stored in a variable called username. In order to do that, you have to follow a syntax: the variable goes inside two brackets, the first preceded by a dollar sign, and the text goes outside. However, it only works if the whole statement is inside these special quotes: ` `, which are called backticks'
       break
       case 5: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/concatenation2.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'When you don\'t have many variables inside a text, you may want to join them by the plus sign, like shown above. But in case you have a lot of variables, the other way is more convenient.'
       break
       case 6: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/declarearray.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'Another very important concept in javascript and not only in javascript is the array. It is like a list where each element has its own position, which we refer to as an index. '
       break
       case 7: 
       mark = false
@@ -204,12 +204,12 @@ function sw(what){
       break
       case 20: 
       mark = false
-      outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
+      outra.innerHTML = '<div class="pic"><img src="imagens/functionexample.png" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
       break
       case 21: 
       mark = false
-      outra.innerHTML = '<div class="pic"><img src="imagens/function.png" alt=""></div></div>'
+      outra.innerHTML = '<div class="pic"><img src="imagens/functionexample.png" alt=""></div></div>'
       cont.innerText =  'aaaaaaaaaaa'
       break
       /*
