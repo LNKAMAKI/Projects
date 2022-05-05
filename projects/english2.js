@@ -140,42 +140,42 @@ function sw(what){
       case 7: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/arraysplice.png" alt=""></div></div>'
-      cont.innerText =  'When we want to remove an item from a array, we can use the method splice(), which can receive 3 values. The first one receives the index we want to start removing from and the second, how many items are going to be removed. The third, not represented on the image is the item we want to place instead.'
+      cont.innerText =  'When we want to remove an item from a array, we can use the method splice(), which can receive 3 parameters. The first one receives the index we want to start removing from and the second, how many items are going to be removed. The third, not represented on the image is the item we want to place instead.'
       break
       case 8: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/arraypush.png" alt=""></div></div>'
-      cont.innerText =  'The method push allows us to add an item to the list or array. '
+      cont.innerText =  'The method push() allows us to add any item to the list or array. When we do so, it takes up the last position or the last index. '
       break
       case 9: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/arrayindexof.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'If we don\'t have any repeated values in the list, we can use the method indexOf() to get the index of a certain item. It differs strings from numbers, so make sure to put the exact value of the item on the list. If the item isn\'t found in the array, it will return -1.'
       break
       case 10: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/declareobject.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'Arrays, however, allows us to put only one value in each index. This turns into a problem when we work with items with more than one property. In the example above, our object is a cake and it has a color, a number of layers and a specific size. '
       break
       case 11: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/objectprop.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'We can access those properties in two ways: one is by putting .nameoftheproperty next to the object name and the other one is similar to the index in a array, what changes is that the value is a string, not an number. We can also add a property to an object, just like an array. '
       break
       case 12: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/ifelse.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'The comparison operators can be applied when we use if and else structure. The example above is an very common script, used to compare two numbers and say which of them is the greatest. '
       break
       case 13: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/ifexample.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'Like we said before, when an item isn\'t in a array, its index is -1. Which means if the index of an element is equal to any other value different from -1, this element is in the list. '
       break
       case 14: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/while.png" alt=""></div></div>'
-      cont.innerText =  'aaaaaaaaaaa'
+      cont.innerText =  'The repeating structures are very important when dealing with many information. For example, when you have an array with more than 30 values and you want to analyze them one by one, copying the same script over and over again may get exhausting'
       break
       case 15: 
       mark = false
