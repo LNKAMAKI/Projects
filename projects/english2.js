@@ -209,16 +209,18 @@ function sw(what){
       break
       case 21: 
       mark = true
-      outra.innerHTML = '<div class="pic"><img src="imagens/concatenation2.png" alt=""></div></div>'
-      cont.innerText =  'HERE GOES THE QUESTION'
+      outra.innerHTML = '<div class="pic"><img src="imagens/question1.png" alt=""></div></div>'
+      cont.innerText =  'The result shown on the console will be:'
 
-      at.innerHTML = ' <div class="conter"><p class="option" name="space">THIS IS THE FIRST OPTION</p><p class="option">THIS IS THE SECOND OPTION</p></div><div class="conter"><p class="option" name="space">THIS IS THE THIRD OPTION</p><p class="option">THIS IS THE FORTH OPTION</p></div> <input type="button" value="SUBMIT" class="sub">'
+      at.innerHTML = ' <div class="conter"><p class="option" name="space">Nothing</p><p class="option">b</p></div><div class="conter"><p class="option" name="space">a</p></div> <input type="button" value="SUBMIT" class="sub">'
 
       document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
 
       if (respondidas.find(function(respondidas) {
          return respondidas.numslide == qual
       }) != undefined) {
+
+
          which = respondidas.find(function(respondidas) {
             return respondidas.numslide == qual
          }).marked
@@ -308,8 +310,8 @@ opsnum[ham].style.backgroundColor = 'rgb(109, 198, 226)'
 correct = -1
 function wisright(w) {
    switch(w) {
-      case 22:
-         correct = 0
+      case 21:
+         correct = 1
          break
       case 6:
          correct = 3
