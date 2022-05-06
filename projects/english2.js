@@ -18,7 +18,7 @@ function next() {
    direction = 'next'
    if (mark == false || respondidas.find(function(respondidas) {
       return respondidas.numslide == qual
-   }) != undefined) {
+   }) != undefined && qual != 24) {
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
 
