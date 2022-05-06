@@ -116,7 +116,7 @@ function sw(what){
       break
       case 2: 
       outra.innerHTML = '<div class="pic"><img src="imagens/arithmetic-operations.png" alt=""></div>'
-      cont.innerText =  'When we store a information as a number, we can do some operations with it. This includes addition, subtraction, multiplication, exponential and division. These are called arithmetic operations.'
+      cont.innerText =  'When we store information as a number, we can do some operations with it. This includes addition, subtraction, multiplication, exponential and division. These are called arithmetic operations.'
       break
       case 3: 
       outra.innerHTML = '<div class="pic"><img src="imagens/comparison-operations.png" alt=""></div></div>'
@@ -125,7 +125,7 @@ function sw(what){
       case 4: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/concatenation1.png" alt=""></div></div>'
-      cont.innerText =  'Imagine this situation: you ask the user\'s name on your website and you want to say something like: Hello, ( user\'s name ), which was previously stored in a variable called username. In order to do that, you have to follow a syntax: the variable goes inside two brackets, the first preceded by a dollar sign, and the text goes outside. However, it only works if the whole statement is inside these special quotes: ` `, which are called backticks'
+      cont.innerText =  'Imagine this situation: you ask the user\'s name on your website and you want to say something like: Hello, ( user\'s name ), which has been previously stored in a variable called username. In order to do that, you have to follow a syntax: the variable goes inside two brackets, the first preceded by a dollar sign, and the text goes outside. However, it only works if the whole statement is inside these special quotes: ` `, which are called backticks'
       break
       case 5: 
       mark = false
