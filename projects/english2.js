@@ -190,7 +190,7 @@ function sw(what){
       case 17: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/forin.png" alt=""></div></div>'
-      cont.innerText =  'The for in method is just a shorthand for the previous one.'
+      cont.innerText =  'The "for in" method is just a shorthand for the previous one.'
       break
       case 18: 
       mark = false
