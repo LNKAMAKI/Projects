@@ -205,7 +205,7 @@ function sw(what){
       case 20: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/functionexample.png" alt=""></div></div>'
-      cont.innerText =  'This function is for when you sum up any two numbers. It receives two parameters ( number1 and number2 ) and returns their sum. As you can noticed, the function can be stored inside a variable; which avoids calling it again.'
+      cont.innerText =  'This function is for when you sum up any two numbers. It receives two parameters ( number1 and number2 ) and returns their sum. As you can notice, the function can be stored inside a variable; which avoids calling it again.'
       break
       case 21: 
       mark = true
@@ -216,29 +216,47 @@ function sw(what){
 
       document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
 
-      if (respondidas.find(function(respondidas) {
-         return respondidas.numslide == qual
-      }) != undefined) {
+      markingcorrect()
+     
+      break
 
+      case 22: 
+      mark = true
+      outra.innerHTML = '<div class="pic"><img src="imagens/question2.png" alt=""></div></div>'
+      cont.innerText =  'The result shown on the console will be:'
 
-         which = respondidas.find(function(respondidas) {
-            return respondidas.numslide == qual
-         }).marked
-      console.log(which)
-      automark(which)
-      document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
-      document.getElementsByClassName('option')[correct].style.color = 'white'
+      at.innerHTML = ' <div class="conter"><p class="option" name="space">[\'20\', 5]</p><p class="option">[true, 5]</p></div><div class="conter"><p class="option" name="space">[5]</p> <p class="option">[ ]</p></div> <input type="button" value="SUBMIT" class="sub">'
 
-      if (respondidas.find(function(respondidas) {
-         return respondidas.numslide == qual
-         }).marked != correct) {
-            markedanswer = respondidas.find(function(respondidas) {
-               return respondidas.numslide == qual
-               }).marked
-            document.getElementsByClassName('option')[markedanswer].style.backgroundColor = 'red'
-         }
-      }
+      document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
 
+      markingcorrect()
+     
+      break
+
+      case 23: 
+      mark = true
+      outra.innerHTML = '<div class="pic"><img src="imagens/question3.png" alt=""></div></div>'
+      cont.innerText =  'After this for loop, the variable number equals to:'
+
+      at.innerHTML = ' <div class="conter"><p class="option" name="space">10</p><p class="option">12</p></div><div class="conter"><p class="option" name="space">0</p> <p class="option">15</p></div> <input type="button" value="SUBMIT" class="sub">'
+
+      document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
+
+      markingcorrect()
+     
+      break
+
+      case 24: 
+      mark = true
+      outra.innerHTML = '<div class="pic"><img src="imagens/question4.png" alt=""></div></div>'
+      cont.innerText =  'The result shown on the console will be:'
+
+      at.innerHTML = ' <div class="conter"><p class="option" name="space">55</p><p class="option">24</p></div><div class="conter"><p class="option" name="space">12</p> <p class="option">48</p></div> <input type="button" value="SUBMIT" class="sub">'
+
+      document.getElementsByClassName('sub')[0].setAttribute('onclick', 'corrigir()')
+
+      markingcorrect()
+     
       break
 
       default: 
@@ -313,12 +331,42 @@ function wisright(w) {
       case 21:
          correct = 1
          break
-      case 6:
-         correct = 3
+      case 22:
+         correct = 2
          break
+         case 23:
+            correct = 3
+            break
+            case 24:
+            correct = 3
+            break
       default:
       correct = -1
       break
    }
 }
 
+function markingcorrect() {
+   if (respondidas.find(function(respondidas) {
+      return respondidas.numslide == qual
+   }) != undefined) {
+
+
+      which = respondidas.find(function(respondidas) {
+         return respondidas.numslide == qual
+      }).marked
+   console.log(which)
+   automark(which)
+   document.getElementsByClassName('option')[correct].style.backgroundColor = 'rgb(82, 250, 82)'
+   document.getElementsByClassName('option')[correct].style.color = 'white'
+
+   if (respondidas.find(function(respondidas) {
+      return respondidas.numslide == qual
+      }).marked != correct) {
+         markedanswer = respondidas.find(function(respondidas) {
+            return respondidas.numslide == qual
+            }).marked
+         document.getElementsByClassName('option')[markedanswer].style.backgroundColor = 'red'
+      }
+   }
+}
