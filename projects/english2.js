@@ -175,7 +175,7 @@ function sw(what){
       case 14: 
       mark = false
       outra.innerHTML = '<div class="pic"><img src="imagens/while.png" alt=""></div></div>'
-      cont.innerText =  'The repeating structures are very important when dealing with many information. For example, when you have an array with more than 30 values and you want to analyze them one by one, copying the same script more than 30 times is too exhausting. So we use repeated scripts to avoid this unnecessary work.'
+      cont.innerText =  'The repeating structures are very important when dealing with too much information. For example, when you have an array with more than 30 values and you want to analyze them one by one, copying the same script more than 30 times is too exhausting. So we use repeated scripts to avoid this unnecessary work.'
       break
       case 15: 
       mark = false
