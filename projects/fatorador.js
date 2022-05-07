@@ -22,7 +22,7 @@
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
-//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
@@ -30,7 +30,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc','+','4','c']
 
 
-expression = ['6','x','^','2','+','3','+','14','x','^','2','y','+','7y']
+//expression = ['6','x','^','2','+','3','+','14','x','^','2','y','+','7y']
 
 
 // 6x^2 + 3 + 14x^2y + 7y
@@ -1709,11 +1709,14 @@ for (wrecked in youdumb) {
     }
 }
 
+heya = [...youdumb]
 for (imback = youdumb.length - 1; imback >= 0; imback--) {
     console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
 
     sticky = []
     initial = youdumb[imback].w.what
+
+  
 
     if (initial.length > 0) {
     inside = {which: [], numberyoudumb: youdumb[imback].polen}
