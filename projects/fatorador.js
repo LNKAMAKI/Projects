@@ -27,10 +27,11 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-//expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
+expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-//expression = ['6','x','^','2','+','3','+','14','x','^','y','+','7y']
+//expression = ['6','x','^','2','+','3','+','7','y','+','14','x','y']
+
 
 
 // 6x^2 + 3 + 14x^2y + 7y
@@ -1806,7 +1807,7 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
           //  console.log('PODE FICAR :)', h, tempo)
            }else{
          //     console.log('NÃO PODE!!!!!!!!!!!!!')
-           youdumb[h].w.what.splice(tempo, 1)
+          // youdumb[h].w.what.splice(tempo, 1)
           //imback++
       //    console.log('IMBAACK',imback)
            }
@@ -2244,6 +2245,27 @@ for (bababa in pans) {
 }
 }
 
+vai = []
+for (y in heya) {
+    console.log('-------------------------------------')
+    console.log(y, heya[y].w.what, heya[y].mons)
+    vai.push(heya[y].mons)
+    for (data in heya[y].w.what) {
+        console.log(heya[y].w.what[data].indice, heya[y].w.what[data].ar)
+    }
+    for (miya in vai) {
+        if (miya != y) {
+        console.log('****',vai[miya])
+        for (redacao = vai[miya].length - 1; redacao >= 0; redacao--) {
+            console.log(vai[miya][redacao])
+            if (heya[y].mons.indexOf(vai[miya][redacao]) != -1) {
+                console.log('TEM')
+                vai[miya].splice(redacao, 1)
+            }
+        }
+        }
+    }
+}
 /*
 
 for (yehaa in podeser[cold].position) {
