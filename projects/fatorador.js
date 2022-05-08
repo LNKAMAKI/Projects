@@ -27,10 +27,10 @@
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
 
-expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
+//expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-//expression = ['6','x','^','2','+','3','+','7','y','+','14','x','y']
+expression = ['+','3','+','7y','+','14','x','y','+','6','x','^','2']
 
 
 
@@ -2246,10 +2246,19 @@ for (bababa in pans) {
 }
 
 vai = []
+posições = []
 for (y in heya) {
     console.log('-------------------------------------')
     console.log(y, heya[y].w.what, heya[y].mons)
     vai.push(heya[y].mons)
+
+    for (uh in heya[y].mons) {
+        console.log(heya[y].mons[uh])
+        if (posições.indexOf(heya[y].mons[uh]) == -1) {
+            posições.push(heya[y].mons[uh])
+        }
+    }
+
     for (data in heya[y].w.what) {
         console.log(heya[y].w.what[data].indice, heya[y].w.what[data].ar)
     }
