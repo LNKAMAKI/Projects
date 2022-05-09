@@ -22,15 +22,15 @@
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
-//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
-//expression = ['3x','+','3y','+','3','z','+','5y','+','4y']
+//expression = ['3x','+','3a','+','3','z','+','5xy']
 
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['+','3','+','7y','+','14','x','y','+','6','x','^','2']
+//expression = ['7y','+','6','x','^','2','+','3','+','14','x','y']
 
 
 
@@ -1782,7 +1782,7 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
     }
     */
     
-    youdumb.splice(imback, 1)
+   // youdumb.splice(imback, 1)
     for (h in youdumb) {
 
         if (h != imback) {
@@ -2247,7 +2247,8 @@ for (bababa in pans) {
 
 vai = []
 posições = []
-for (y in heya) {
+y = 0
+while (posições.length < monomios.length) {
     console.log('-------------------------------------')
     console.log(y, heya[y].w.what, heya[y].mons)
     vai.push(heya[y].mons)
@@ -2274,6 +2275,7 @@ for (y in heya) {
         }
         }
     }
+    y++
 }
 /*
 
