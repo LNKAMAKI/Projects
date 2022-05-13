@@ -30,7 +30,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['+','3','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
+expression = ['21','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
 
 
 
@@ -123,15 +123,16 @@ for (y in expression) {
 monomios = [{numero: ''}]
 obnum = 0
 for (n = 0; n < expression.length; n++) {
-////console.log(expression[n], monomios[obnum])
+console.log(expression[n])
 
 if (String(expression[n]).search('[\\-\\+]') != -1 && n != 0) {
-////console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
+console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
 monomios.push({numero: ''})
 obnum++
 }
 
 monomios[obnum].numero += expression[n]
+console.log('número:',monomios[obnum].numero)
 }
 
 
