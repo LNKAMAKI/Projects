@@ -1682,6 +1682,8 @@ for (erro = grtols.length - 1; erro >= 0; erro--) {
   //  console.log(grtols[erro])
     youdumb.push(grtols[erro])
 }
+
+
 console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
 /*
 for (yourlife in grtols) {
@@ -2245,6 +2247,7 @@ for (bababa in pans) {
 }
 }
 
+/*
 vai = []
 posições = []
 y = 0
@@ -2277,7 +2280,7 @@ while (posições.length < monomios.length) {
     }
     y++
 }
-/*
+
 
 for (yehaa in podeser[cold].position) {
     console.log(podeser[cold])
