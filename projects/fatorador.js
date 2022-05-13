@@ -30,7 +30,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['3','+','6','x','^','2','+','14','x','y','+','7y']
+expression = ['+','3','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
 
 
 
@@ -50,7 +50,7 @@ for (n = 0; n < expression.length; n++) {
     first = 1
 
     div = 0
-    console.log(expression[n], expression[n - 1])
+   // console.log(expression[n], expression[n - 1])
 
     stop = false
     fator = 1
@@ -101,20 +101,20 @@ for (y in expression) {
   //console.log(expression[y])
 
     if (expression[y] == '^') {
-        console.log('expression[y - 1]: ' + expression[Number(y) - 1])
-        console.log('expression[y]: ' + expression[y])
-        console.log('expression[y + 1]: ' + expression[Number(y) + 1])
+       // console.log('expression[y - 1]: ' + expression[Number(y) - 1])
+       // console.log('expression[y]: ' + expression[y])
+        //console.log('expression[y + 1]: ' + expression[Number(y) + 1])
 
        ad =  expression[Number(y) - 1] 
         for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
-            console.log(h)
+           // console.log(h)
             expression[Number(y) - 1]+= ad
         }
 
         expression.splice(Number(y) + 1, 1)
         expression.splice(y, 1)
-        console.log(expression[Number(y) - 1])
-        console.log(expression)
+       // console.log(expression[Number(y) - 1])
+       // console.log(expression)
     }
 }
 
@@ -1254,7 +1254,7 @@ while(java < miss.length && deucerto == false) {
                 
             }
            }
-           console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
+           //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
            
            
            for (belief in podeser) {
@@ -1361,11 +1361,11 @@ while(java < miss.length && deucerto == false) {
 
        
        for (nao in roll) {
-           console.log('-------------------------------------------------------------------')
-        console.log('esse é o negócio',roll[nao].repetidos)
+          // console.log('-------------------------------------------------------------------')
+       // console.log('esse é o negócio',roll[nao].repetidos)
         
-        console.log('---------------------------------------------')
-        console.log('ANALISANDO O MISS')
+       // console.log('---------------------------------------------')
+      //  console.log('ANALISANDO O MISS')
 
        
             shot = ''
@@ -1676,7 +1676,7 @@ for (ah in organizado) {
    
 }
      
-console.log('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
+//console.log('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
 youdumb = []
 for (erro = grtols.length - 1; erro >= 0; erro--) {
   //  console.log(grtols[erro])
@@ -1684,7 +1684,7 @@ for (erro = grtols.length - 1; erro >= 0; erro--) {
 }
 
 
-console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
+//console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
 /*
 for (yourlife in grtols) {
 
@@ -1714,7 +1714,7 @@ for (wrecked in youdumb) {
 
 heya = [...youdumb]
 for (imback = youdumb.length - 1; imback >= 0; imback--) {
-    console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
+   // console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
 
     sticky = []
     initial = youdumb[imback].w.what
@@ -1835,21 +1835,21 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
 }
 
 for (força in youdumb) {
-    console.log(força, youdumb[força],youdumb[força].w.what.length)
+   // console.log(força, youdumb[força],youdumb[força].w.what.length)
     entao = []
     for (areo in youdumb[força].w.what) {
-        console.log(areo,youdumb[força].w.what[areo].ar)
+       // console.log(areo,youdumb[força].w.what[areo].ar)
         for (paris in youdumb[força].w.what[areo].ar) {
-            console.log(paris,youdumb[força].w.what[areo].ar[paris])
+           // console.log(paris,youdumb[força].w.what[areo].ar[paris])
             entao.push(Number(youdumb[força].w.what[areo].ar[paris]))
         }
     }
-    console.log(entao)
+   // console.log(entao)
     youdumb[força].t = entao
-    console.log(youdumb[força].t)
+   // console.log(youdumb[força].t)
  }
 
-console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
+//console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
 
 
 grtols = []
@@ -1878,11 +1878,11 @@ for (ah in organizado) {
 
 youdumb = []
 for (erro = grtols.length - 1; erro >= 0; erro--) {
-    console.log('RAINY DAY',grtols[erro])
+   // console.log('RAINY DAY',grtols[erro])
     youdumb.push(grtols[erro])
 }
 
-console.log('IMAGENS', youdumb)
+//console.log('IMAGENS', youdumb)
 
 }
 
@@ -1890,7 +1890,6 @@ console.log('IMAGENS', youdumb)
 console.log('pans é', pans)
 for (bababa in pans) {
    
-    console.log('_____________________________________________________________________')
     console.log('A PARTIR DA QUI')
     naonao = ''
 
@@ -1994,52 +1993,51 @@ for (bababa in pans) {
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-                console.log('É LETRA')
+               //console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
                     console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
-                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                      //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                        console.log(aconta)
+                       // console.log(aconta)
                     }
 
                 }else{
                     if (elevar > 1) {
-                        console.log('UEPA')
+                       // console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
 
                     aconta+= quase[patience]
-                    console.log(aconta)
+                   // console.log(aconta)
                   
                     elevar = 1
                 }
-                console.log(elevar)
+              //  console.log(elevar)
                
             } 
         }
-        console.log('A CONTA',aconta,quase, tobreak)
+       // console.log('A CONTA',aconta,quase, tobreak)
     if (aster == false) {
-        console.log('SEM ASTERISCO',aconta)
+     //   console.log('SEM ASTERISCO',aconta)
         antes = ''
         for (eyes in quase) {
             
-            console.log(quase[eyes])
+           // console.log(quase[eyes])
             if (quase[eyes].search('[0-9]') != -1) {
-                console.log('CRY')
+               // console.log('CRY')
                 antes+= quase[eyes]
             }
         }
         antes+= aconta
-        console.log('ANTEEEES:', antes)
+       // console.log('ANTEEEES:', antes)
         
         aconta = antes
     }
 
-    console.log('_____________________________________________________________________',aconta)
         if (tobreak.length == 0) {
            
            
@@ -2047,12 +2045,12 @@ for (bababa in pans) {
             
                
             if (aconta[0] == '-') {
-                console.log('PROBLEM')
+             //   console.log('PROBLEM')
                 mood = ''
                 for (member in aconta) {
-                    console.log('VAMOS LOGO!!!', aconta[member])
+                    //console.log('VAMOS LOGO!!!', aconta[member])
                     if (aconta[member] != '-') {
-                        console.log('PUSHAR')
+                       // console.log('PUSHAR')
                         mood+= aconta[member]
                     }
                 }
@@ -2072,7 +2070,7 @@ for (bababa in pans) {
                // console.log(el[okay])
                 if (aconta[okay]!= '-'){
                     correct+= aconta[okay]
-                    console.log('MESS', aconta[okay])
+                  //  console.log('MESS', aconta[okay])
                 }
             }
            // console.log('ASSIM: ', correct)
@@ -2081,9 +2079,9 @@ for (bababa in pans) {
           //  console.log(el)
             tobreak+= ` + ${aconta}`
         }
-        console.log('THE COLOURS THAT I SAW', tobreak)
+       // console.log('THE COLOURS THAT I SAW', tobreak)
       }
-      console.log('ENTÃO:','(', tobreak,')')
+      //console.log('ENTÃO:','(', tobreak,')')
 
     for (repr in pans[bababa].which) {
         
@@ -2179,56 +2177,56 @@ for (bababa in pans) {
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-                console.log('É LETRA')
+              //  console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
-                    console.log('ELEVAR!')
+                   // console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
-                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                       // console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                        console.log(aconta)
+                        //console.log(aconta)
                     }
 
                 }else{
                     if (elevar > 1) {
-                        console.log('UEPA')
+                       // console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
 
                     aconta+= quase[patience]
-                    console.log(aconta)
+                   // console.log(aconta)
                   
                     elevar = 1
                 }
-                console.log(elevar)
+                //console.log(elevar)
                
             } 
         }
         if (aster == false) {
           
-            console.log('SEM ASTERISCO2', aconta, quase)
+           // console.log('SEM ASTERISCO2', aconta, quase)
 
             antes = ''
         for (eyes in quase) {
             
-            console.log(quase[eyes])
+           // console.log(quase[eyes])
             if (quase[eyes].search('[0-9]') != -1) {
-                console.log('CRY')
+               // console.log('CRY')
                 antes+= quase[eyes]
             }
         }
         antes+= aconta
-        console.log('ANTEEEES:', antes)
+       // console.log('ANTEEEES:', antes)
            // for (t in quase) {
            // aconta+= quase[t]
           //  }
           aconta = antes
         }
-        console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
+       // console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
         if (naonao.length == 0) {
-            console.log('TÁ VAZio')
+            //console.log('TÁ VAZio')
             if (quase[0] == '-') {
                 naonao+= `-${aconta}`
             }else{
@@ -2242,7 +2240,7 @@ for (bababa in pans) {
             }
         }
     }
-    console.log('(',naonao,')','(',tobreak,')')
+    console.log('____________________','(',naonao,')','(',tobreak,')','___________________________')
 }
 }
 
