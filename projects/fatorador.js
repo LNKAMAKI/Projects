@@ -22,7 +22,7 @@
 //expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
-expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
+//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3a','+','3','z','+','5xy']
@@ -30,7 +30,7 @@ expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-//expression = ['7y','+','6','x','^','2','+','3','+','14','x','y']
+expression = ['3','+','6','x','^','2','+','14','x','y','+','7y']
 
 
 
@@ -924,9 +924,9 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
                 return segs.car == repetido[moe].letr
                 }) == undefined) {
 
-                    console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                  //  console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                     if (repetido[moe].letr == '-') {
-                        console.log('ARE YOU SERIOUS?')
+                        //console.log('ARE YOU SERIOUS?')
                     }else{
                         segs.push({car: repetido[moe].letr, mons: [m]})
                     }
@@ -1493,7 +1493,7 @@ while(java < miss.length && deucerto == false) {
                teri = false
                 juntar = ''
                 for (estudar in eg2) {
-                    console.log(eg2[estudar])
+                    //console.log(eg2[estudar])
                     if (eg2[estudar] == '.') {
                         teri = true
                         if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
@@ -1506,21 +1506,21 @@ while(java < miss.length && deucerto == false) {
                     }else{
                        
                    
-                      console.log('juntar',juntar)
+                      //console.log('juntar',juntar)
                         if (juntar.length == 0) {
                             juntar = eg2[estudar]
-                            console.log('LISTA VAZIA', juntar)
+                           // console.log('LISTA VAZIA', juntar)
                             if (estudar == eg2.length - 1) {
                                 whythat.push(juntar)
-                                console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
+                               // console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
                             }
 
                         }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                            console.log('I\'M NEVER WHAT I LIKE')
+                           // console.log('I\'M NEVER WHAT I LIKE')
                             juntar+= eg2[estudar]
-                            console.log('juntar', juntar)
+                           // console.log('juntar', juntar)
                             if (estudar == eg2.length - 1) {
-                                console.log('UAISO')
+                                //console.log('UAISO')
                                 whythat.push(juntar)
                             
                             }
@@ -1536,7 +1536,7 @@ while(java < miss.length && deucerto == false) {
                  }
                  if (teri == false) {
                   whythat = []
-                    console.log('SEM ASTERISCO')
+                   // console.log('SEM ASTERISCO')
                     for (t in eg2) {
                     whythat.push(eg2[t])
                     }
@@ -1545,8 +1545,8 @@ while(java < miss.length && deucerto == false) {
                     }
                 }
 
-            console.log('MULTIPLICAR', eg2,'*',eg)
-             console.log(whythat)
+           // console.log('MULTIPLICAR', eg2,'*',eg)
+            // console.log(whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
@@ -1572,9 +1572,9 @@ while(java < miss.length && deucerto == false) {
                     for (pombo = whythat.length - 1; pombo >= 0; pombo--){
                       //  console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
                         if (whythat[pombo] == '*' || whythat[pombo] == '1') {
-                            console.log('?',whythat[pombo])
+                           // console.log('?',whythat[pombo])
                             whythat.splice(pombo,1)
-                           console.log(whythat)
+                          // console.log(whythat)
                         }
                         
                     }
@@ -1723,47 +1723,47 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
 
     if (initial.length > 0) {
     inside = {which: [], numberyoudumb: youdumb[imback].polen}
-    console.log(imback)
-    console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
+   // console.log(imback)
+   // console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
 
 
-    console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
+   // console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
     
     
     for (agg in initial) {
-        console.log('IN THIS WORLD',initial[agg].ar)
+       // console.log('IN THIS WORLD',initial[agg].ar)
 
         taai = false
          for (eng in initial[agg].ar) {
-            console.log(initial[agg].ar[eng])
+           // console.log(initial[agg].ar[eng])
             if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
-                console.log('OK')
+               // console.log('OK')
                
             }else{
-                console.log('WE HAVE A PROBLEM')
+                //console.log('WE HAVE A PROBLEM')
                 taai = true
             }
          }
      
          if (taai == false) {
-            console.log('SEM PROBLEMAS', imback, agg)
+           // console.log('SEM PROBLEMAS', imback, agg)
             inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
            //  youdumb[numberyoudumb].w.what[numberwhat] = monos
-            console.log('I\'M TWISTED UP',inside, inform)
+          //  console.log('I\'M TWISTED UP',inside, inform)
             inside.which.push(inform)
-            console.log('INFORM', inform.monos)
+           // console.log('INFORM', inform.monos)
             for (darkening in inform.monos) {
                
                 sticky.push(inform.monos[darkening])
             }
-            console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
+           // console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
 
             for (eng in initial[agg].ar) {
             
                 numerospresentes.push(initial[agg].ar[eng])
                
              }
-             console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
+             //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
          }
     }
 
@@ -1774,7 +1774,7 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
     }
 
     //youdumb.splice(imback, 1)
-    console.log('FICOU ASSIM Ó:', numerospresentes, sticky)
+    //console.log('FICOU ASSIM Ó:', numerospresentes, sticky)
     /*
     for (invest in pans) {
         console.log('índice',invest)
@@ -1792,7 +1792,7 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
       //  console.log(youdumb[h].w.what, h)
             }
 
-        console.log('-----------------------------')
+        //console.log('-----------------------------')
         for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
         //  console.log(youdumb[h].w.what[tempo].ar, tempo)
             
@@ -1817,18 +1817,17 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
     }
     }
     
-    console.log('YOUDUMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMB' 
-    )
+    //console.log('YOUDUMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMB' )
 
   
  
-    console.log('OLHA, eu tentei...', youdumb.length)
+   // console.log('OLHA, eu tentei...', youdumb.length)
     for (vixi in youdumb) {
      
      // if (youdumb[vixi].w.what.length > 0) {
-        console.log('aaa',youdumb[vixi].w.what)
+       // console.log('aaa',youdumb[vixi].w.what)
         for (ainao in youdumb[vixi].w.what) {
-         console.log('AI NÃO',youdumb[vixi].w.what[ainao].ar)
+        // console.log('AI NÃO',youdumb[vixi].w.what[ainao].ar)
         
           
     }
