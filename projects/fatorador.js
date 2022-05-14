@@ -30,7 +30,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['-','3','+','7','y','^','2','+','14','x','^','3','y','^','2','+','6','x','^','4']
+expression = ['-','3','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -1132,9 +1132,8 @@ divs = [1]
                 pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
                 
                 if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-                  //  console.log('É 1')
+                    console.log('É 1')
                     pain = '1'
-                  //  console.log('É ESSE:', pain)
                     scarecrow[anchor].divididos.push(pain)
                    
                 }else{
@@ -1559,18 +1558,18 @@ while(java < miss.length && deucerto == false) {
                 
                 numerinhos = []
                 for (decisao in correto) {
-                    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' /*&& correto[decisao] != '-'*/) {
+                    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+') {
                        numerinhos.push(correto[decisao])
                        
                         }
-                    //console.log(correto[decisao],'AH, NAO')
+                    console.log(correto[decisao],'AH, NAO')
                 }
                     console.log(numerinhos)
                     thatway = [...numerinhos]
 
 
                     for (poder in whythat){
-                        if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' /*&& whythat[poder] != '-'*/ && numerinhos.indexOf(whythat[poder]) != -1) {
+                        if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
                         console.log(whythat[poder], numerinhos)
                         console.log(numerinhos.indexOf(whythat[poder]))
                         numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
@@ -1579,7 +1578,7 @@ while(java < miss.length && deucerto == false) {
                     }
 
                     for (pombo = whythat.length - 1; pombo >= 0; pombo--){
-                      //  console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
+                        console.log('______________________', whythat[pombo])
                         if (whythat[pombo] == '*' || whythat[pombo] == '1') {
                             console.log('?',whythat[pombo])
                             whythat.splice(pombo,1)
@@ -1591,6 +1590,9 @@ while(java < miss.length && deucerto == false) {
                     console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
                     console.log(numerinhos)
                     console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
+
+                  console.log('_U__U__U__U__U__U__U__U_ooooo_U_U_U__U_U__U__U_U_U__U__', thatway)
+                  
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
                        // console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
