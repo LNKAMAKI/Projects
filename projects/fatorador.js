@@ -30,7 +30,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['-','3','-','6','x','^','4','+','14','x','^','3','y','^','2','-','7','y','^','2']
+//expression = ['-','3','-','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -1664,19 +1664,21 @@ while(java < miss.length && deucerto == false) {
           
         }
 
+        
         for (da = youdumb.length - 1; da >= 0; da--) {
             if (dontworry.indexOf(String(da)) != -1) {
                 console.log('TEM COISA AÍ',youdumb[da].mons)
-              //  youdumb.splice(da,1)
+               // youdumb.splice(da,1)
             }
         }
+        
 
         grtols = []
 
 
     
 for (hi in youdumb) {
-    console.log(segs[hi], segs[hi].mons.length)
+   // console.log(segs[hi], segs[hi].mons.length)
     youdumb[hi].length = youdumb[hi].mons.length
 
     grtols.push(youdumb[hi])
@@ -1696,11 +1698,13 @@ for (ah in organizado) {
 }
      
 //console.log('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
+
 youdumb = []
-for (erro = grtols.length - 1; erro >= 0; erro--) {
-  //  console.log(grtols[erro])
+for (erro in grtols) {
+    console.log(grtols[erro])
     youdumb.push(grtols[erro])
 }
+
 
 
 //console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
@@ -1723,6 +1727,10 @@ for (yourlife in grtols) {
 pans = []
 numerospresentes = []
 
+console.log('WHAT IS IN YOUR MIND??????????????????__________LLLLLLLLLLLLLLLLLLLLLLLLL_______________')
+for (AH in youdumb) {
+    console.log(youdumb[AH])
+}
 for (wrecked in youdumb) {
     console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
     initial = youdumb[wrecked].w.what
@@ -1732,7 +1740,7 @@ for (wrecked in youdumb) {
 }
 
 heya = [...youdumb]
-for (imback = youdumb.length - 1; imback >= 0; imback--) {
+for (imback in youdumb) {
    // console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
 
     sticky = []
@@ -1742,47 +1750,47 @@ for (imback = youdumb.length - 1; imback >= 0; imback--) {
 
     if (initial.length > 0) {
     inside = {which: [], numberyoudumb: youdumb[imback].polen}
-   // console.log(imback)
-   // console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
+    console.log(imback)
+    console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
 
 
-   // console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
+    console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
     
     
     for (agg in initial) {
-       // console.log('IN THIS WORLD',initial[agg].ar)
+        console.log('IN THIS WORLD',initial[agg].ar)
 
         taai = false
          for (eng in initial[agg].ar) {
            // console.log(initial[agg].ar[eng])
             if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
-               // console.log('OK')
+                console.log('OK')
                
             }else{
-                //console.log('WE HAVE A PROBLEM')
+            console.log('WE HAVE A PROBLEM')
                 taai = true
             }
          }
      
          if (taai == false) {
-           // console.log('SEM PROBLEMAS', imback, agg)
+            console.log('SEM PROBLEMAS', imback, agg)
             inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
-           //  youdumb[numberyoudumb].w.what[numberwhat] = monos
-          //  console.log('I\'M TWISTED UP',inside, inform)
+           
+            console.log('I\'M TWISTED UP',inside, inform)
             inside.which.push(inform)
-           // console.log('INFORM', inform.monos)
+            console.log('INFORM', inform.monos)
             for (darkening in inform.monos) {
                
                 sticky.push(inform.monos[darkening])
             }
-           // console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
+            console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
 
             for (eng in initial[agg].ar) {
             
                 numerospresentes.push(initial[agg].ar[eng])
                
              }
-             //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
+             console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
          }
     }
 
@@ -1896,7 +1904,7 @@ for (ah in organizado) {
 }
 
 youdumb = []
-for (erro = grtols.length - 1; erro >= 0; erro--) {
+for (erro in grtols) {
    // console.log('RAINY DAY',grtols[erro])
     youdumb.push(grtols[erro])
 }
@@ -1913,7 +1921,7 @@ for (bababa in pans) {
     naonao = ''
 
     console.log(pans[bababa], Number(bababa))
-    //console.log(pans[bababa].which)
+    console.log(pans[bababa].which)
     console.log(roll[pans[bababa].numberyoudumb])
       console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
 
@@ -1923,7 +1931,7 @@ for (bababa in pans) {
 
         el = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
 
-       // console.log('ALL I WANTED WAS TO FINISH THIS THING :D', el)
+        console.log('ALL I WANTED WAS TO FINISH THIS THING :D', el)
 
         gates = []
 
@@ -1951,7 +1959,7 @@ for (bababa in pans) {
             }else{
                
            
-             // console.log('juntar',juntar)
+              console.log('juntar',juntar)
                 if (juntar.length == 0) {
                     juntar = el[estudar]
                     console.log('LISTA VAZIA', juntar)
@@ -1978,7 +1986,7 @@ for (bababa in pans) {
             }
               
          }
-       //  console.log('QUASSSSEEEE',quase)
+         console.log('QUASSSSEEEE',quase)
 
          if (teri == false) {
             
@@ -3767,5 +3775,5 @@ return [relation, segs2]
 }
 
 //console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
-DESFATORAR(['-','3'],['3'],['1'])
+//DESFATORAR(['-','3'],['3'],['1'])
 
