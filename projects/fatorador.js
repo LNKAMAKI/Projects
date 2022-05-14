@@ -131,16 +131,16 @@ for (y in expression) {
 monomios = [{numero: ''}]
 obnum = 0
 for (n = 0; n < expression.length; n++) {
-console.log(expression[n])
+//console.log(expression[n])
 
 if (String(expression[n]).search('[\\-\\+]') != -1 && n != 0) {
-console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
+//console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
 monomios.push({numero: ''})
 obnum++
 }
 
 monomios[obnum].numero += expression[n]
-console.log('número:',monomios[obnum].numero)
+//console.log('número:',monomios[obnum].numero)
 }
 
 
@@ -1563,7 +1563,7 @@ while(java < miss.length && deucerto == false) {
                        numerinhos.push(correto[decisao])
                        
                         }
-                    console.log(correto[decisao],'AH, NAO')
+                    //console.log(correto[decisao],'AH, NAO')
                 }
                     console.log(numerinhos)
                     thatway = [...numerinhos]
@@ -1579,7 +1579,7 @@ while(java < miss.length && deucerto == false) {
                     }
 
                     for (pombo = whythat.length - 1; pombo >= 0; pombo--){
-                        console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
+                      //  console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
                         if (whythat[pombo] == '*' || whythat[pombo] == '1') {
                             console.log('?',whythat[pombo])
                             whythat.splice(pombo,1)
@@ -1592,7 +1592,7 @@ while(java < miss.length && deucerto == false) {
                     console.log(numerinhos)
                     console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                        console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                       // console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
