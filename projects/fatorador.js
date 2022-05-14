@@ -30,9 +30,17 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['21','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
+expression = ['3','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
 
-
+if (expression[0] !== '-' && expression[0] !== '+') {
+    console.log('EPAAAAAAAAAAAAAAA')
+    expo = ['+']
+    for (ent in expression) {
+        console.log(expression[ent])
+        expo.push(expression[ent])
+    }
+    expression = expo
+}
 
 // 6x^2 + 3 + 14x^2y + 7y
 
