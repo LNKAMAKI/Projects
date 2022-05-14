@@ -30,7 +30,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['-','3','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
+expression = ['-','3','-','6','x','^','4','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -1449,7 +1449,7 @@ while(java < miss.length && deucerto == false) {
                 older = 0
                 while (older < monomios.length && conseguiu == false) {
                 DESFATORAR(monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-                
+                console.log('ISOOOOOOOOO', monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
                 
                 // correto == ['2','*','10','x'] (NÚMERO QUE VAI SER COMPARADO)
                 // eg2 == ['10'] (NÚMERO QUE VAI MULTIPLICAR)
@@ -1462,13 +1462,13 @@ while(java < miss.length && deucerto == false) {
                 eassim = []
                 solo = ''
                 for (ne in eg) {
-                    //console.log('EGGGGGG',eg[ne])
+                    console.log('EGGGGGG',eg[ne])
                     if (eg[ne] != '.') {
                 if (solo.length == 0) {
-                   // console.log('LISTA VAZIA')
+                    console.log('LISTA VAZIA')
                     solo+= eg[ne]
                 }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-                  //  console.log('É UM nÚMERO')
+                    console.log('É UM nÚMERO')
                     solo+= eg[ne]
                 }else{
                     eassim.push(solo)
@@ -1480,7 +1480,7 @@ while(java < miss.length && deucerto == false) {
                     eassim.push(solo)
                 }
                     }else{
-                       // console.log('NAO')
+                        console.log('NAO')
                     }
                 }
                 
@@ -1501,7 +1501,7 @@ while(java < miss.length && deucerto == false) {
                teri = false
                 juntar = ''
                 for (estudar in eg2) {
-                    //console.log(eg2[estudar])
+                    console.log(eg2[estudar])
                     if (eg2[estudar] == '.') {
                         teri = true
                         if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
@@ -1514,21 +1514,21 @@ while(java < miss.length && deucerto == false) {
                     }else{
                        
                    
-                      //console.log('juntar',juntar)
+                      console.log('juntar',juntar)
                         if (juntar.length == 0) {
                             juntar = eg2[estudar]
-                           // console.log('LISTA VAZIA', juntar)
+                           console.log('LISTA VAZIA', juntar)
                             if (estudar == eg2.length - 1) {
                                 whythat.push(juntar)
-                               // console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
+                                console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
                             }
 
                         }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                           // console.log('I\'M NEVER WHAT I LIKE')
+                            console.log('I\'M NEVER WHAT I LIKE')
                             juntar+= eg2[estudar]
-                           // console.log('juntar', juntar)
+                            console.log('juntar', juntar)
                             if (estudar == eg2.length - 1) {
-                                //console.log('UAISO')
+                                console.log('UAISO')
                                 whythat.push(juntar)
                             
                             }
@@ -1558,7 +1558,7 @@ while(java < miss.length && deucerto == false) {
                 
                 numerinhos = []
                 for (decisao in correto) {
-                    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+') {
+                    if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
                        numerinhos.push(correto[decisao])
                        
                         }
@@ -1593,8 +1593,16 @@ while(java < miss.length && deucerto == false) {
 
                   console.log('_U__U__U__U__U__U__U__U_ooooo_U_U_U__U_U__U__U_U_U__U__', thatway)
                   
+                  console.log('PLEAAAAAAAAAAAAAAASE, GOD', numerinhos, whythat, thatway)
+
+                  for (pray = whythat.length - 1; pray>=0 ; pray--) {
+                    console.log(whythat[pray])
+                    if (whythat[pray] == '-')
+                    whythat.splice(pray, 1)
+                  }
+
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                       // console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                        console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
@@ -3759,4 +3767,5 @@ return [relation, segs2]
 }
 
 //console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
+DESFATORAR(['-','3'],['3'],['1'])
 
