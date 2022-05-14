@@ -30,13 +30,13 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['7','y','^','2','+','14','x','^','3','y','^','2','+','6','x','^','4','+','3']
+expression = ['-','3','+','7','y','^','2','+','14','x','^','3','y','^','2','+','6','x','^','4']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
-    console.log('EPAAAAAAAAAAAAAAA')
+ //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
     for (ent in expression) {
-        console.log(expression[ent])
+      //  console.log(expression[ent])
         expo.push(expression[ent])
     }
     expression = expo
