@@ -30,7 +30,7 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['3','+','6','x','^','4','+','14','x','^','3','y','^','2','+','7','y','^','2']
+expression = ['7','y','^','2','+','14','x','^','3','y','^','2','+','6','x','^','4','+','3']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     console.log('EPAAAAAAAAAAAAAAA')
@@ -1545,7 +1545,7 @@ while(java < miss.length && deucerto == false) {
                  }
                  if (teri == false) {
                   whythat = []
-                   // console.log('SEM ASTERISCO')
+                    console.log('SEM ASTERISCO')
                     for (t in eg2) {
                     whythat.push(eg2[t])
                     }
@@ -1554,8 +1554,8 @@ while(java < miss.length && deucerto == false) {
                     }
                 }
 
-           // console.log('MULTIPLICAR', eg2,'*',eg)
-            // console.log(whythat)
+            console.log('MULTIPLICAR', eg2,'*',eg)
+             console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
@@ -1563,44 +1563,44 @@ while(java < miss.length && deucerto == false) {
                        numerinhos.push(correto[decisao])
                        
                         }
-                 //   console.log(correto[decisao],'AH, NAO')
+                    console.log(correto[decisao],'AH, NAO')
                 }
-                  //  console.log(numerinhos)
+                    console.log(numerinhos)
                     thatway = [...numerinhos]
 
 
                     for (poder in whythat){
                         if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' /*&& whythat[poder] != '-'*/ && numerinhos.indexOf(whythat[poder]) != -1) {
-                    //    console.log(whythat[poder], numerinhos)
-                    //    console.log(numerinhos.indexOf(whythat[poder]))
+                        console.log(whythat[poder], numerinhos)
+                        console.log(numerinhos.indexOf(whythat[poder]))
                         numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
 
                         }
                     }
 
                     for (pombo = whythat.length - 1; pombo >= 0; pombo--){
-                      //  console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
+                        console.log('AAAAAAAAAAAAAAAAAAAASDUSWDJUWDJWUDJWDUWDJUWDJUWD', whythat[pombo])
                         if (whythat[pombo] == '*' || whythat[pombo] == '1') {
-                           // console.log('?',whythat[pombo])
+                            console.log('?',whythat[pombo])
                             whythat.splice(pombo,1)
-                          // console.log(whythat)
+                           console.log(whythat)
                         }
                         
                     }
 
-                    //console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
-                   // console.log(numerinhos)
-                  //  console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
+                    console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
+                    console.log(numerinhos)
+                    console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                       // console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                        console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
                 older++
                 }
-              // console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-            //   console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
-          //  console.log(older - 1, monomios[older - 1].numero)
+               console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+               console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+            console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
                asitwas2.push(older - 1)
                aswillbe.push(older - 1)
@@ -1608,7 +1608,7 @@ while(java < miss.length && deucerto == false) {
            }
         
 
-          // console.log('ASITWAS',asitwas, asitwas2, aswillbe)
+           console.log('ASITWAS',asitwas, asitwas2, aswillbe)
            
            obe.what.push({ar: asitwas2, indice: still})
            aswillbe2.push({oque:aswillbe, onde:raging})
@@ -1616,34 +1616,34 @@ while(java < miss.length && deucerto == false) {
         }
         
         youdumb.push({mons: asitwas, rag: raging, w: obe, polen: raging})
-       // console.log(obe)
+        console.log(obe)
        }
 
-      // console.log('YOUDUMB',youdumb)
+      console.log('YOUDUMB',youdumb)
        
         dontworry = []
         for (behappy in youdumb) {
 
-          //  console.log('')
-            //console.log(youdumb[behappy].mons)
+            console.log('_______________________________')
+            console.log(youdumb[behappy].mons)
 
             //console.log('---------------------------------------')
             for (armenia in youdumb) {
                 
                 if (armenia != behappy) {
-               // console.log(youdumb[armenia].mons)
+                console.log(youdumb[armenia].mons)
 
                 doeshave = true
                 for (sofar in youdumb[armenia].mons) {
-                  //  console.log(youdumb[armenia].mons[sofar])
+                    console.log(youdumb[armenia].mons[sofar])
                     if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
                         doeshave = false
                        
                     }
                 }
-               // console.log(doeshave)
+                console.log(doeshave)
                 if (doeshave == true) {
-               // console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
+                console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
                if (dontworry.indexOf(behappy) == -1) {
                 dontworry.push(armenia)
                }
@@ -1656,7 +1656,7 @@ while(java < miss.length && deucerto == false) {
 
         for (da = youdumb.length - 1; da >= 0; da--) {
             if (dontworry.indexOf(String(da)) != -1) {
-              //  console.log('TEM COISA AÍ',youdumb[da].mons)
+                console.log('TEM COISA AÍ',youdumb[da].mons)
               //  youdumb.splice(da,1)
             }
         }
@@ -1666,21 +1666,21 @@ while(java < miss.length && deucerto == false) {
 
     
 for (hi in youdumb) {
-    //////console.log(segs[hi], segs[hi].mons.length)
+    console.log(segs[hi], segs[hi].mons.length)
     youdumb[hi].length = youdumb[hi].mons.length
 
     grtols.push(youdumb[hi])
 }
 
-//////console.log('grtols: ', segs)
-//////console.log(sortob(grtols, 'length'))
+console.log('grtols: ', segs)
+console.log(sortob(grtols, 'length'))
 
 
 organizado = sortob(grtols, 'length')[1]
 
 grtols = []
 for (ah in organizado) {
-   // ////console.log(segs[organizado[ah]])
+   console.log(segs[organizado[ah]])
     grtols.push(youdumb[organizado[ah]])
    
 }
@@ -1714,10 +1714,10 @@ pans = []
 numerospresentes = []
 
 for (wrecked in youdumb) {
-    //console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
+    console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
     initial = youdumb[wrecked].w.what
     for (agg in initial) {
-       // console.log(initial[agg].ar, Number(agg))
+        console.log(initial[agg].ar, Number(agg))
     }
 }
 
