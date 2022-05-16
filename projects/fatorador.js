@@ -32,7 +32,9 @@
 
 //expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
-expression = ['+','ab','-','ac','-','bb','+','bc']
+//expression = ['+','ab','-','ac','-','bb','+','bc']
+
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -813,7 +815,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
    numerosrep = []
     ////console.log('BURRO')
  ////console.log('--------------------')
-    console.log(monomios[m].numero)
+    //console.log(monomios[m].numero)
     
  
     for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
@@ -822,7 +824,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
         if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
       // console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
 
-       console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
+       //console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
         if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
         numerosrep.push(monomios[m].numero[oc])
 
@@ -873,7 +875,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
                                 return ocs2.ed == monomios[m].numero[oc]
                                 }).el <= ocs) {
 
-                                    console.log('________uuuuuuuuuuuuuuuuuuuuuu________',{monum: u, wc: [m], letr: monomios[u].numero[e]})
+                                    //console.log('________uuuuuuuuuuuuuuuuuuuuuu________',{monum: u, wc: [m], letr: monomios[u].numero[e]})
                 repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
 
                
@@ -926,24 +928,24 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
     }
     }
    
-    console.log('REPETIDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', repetido)
+    //console.log('REPETIDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', repetido)
     reps.push(repetido)
 
     
     for (nope in repetido) {
     if (repetido[nope].letr[0] == '-') {
-        console.log('hei')
+        //console.log('hei')
         la = ''
         for (u in repetido[nope].letr) {
             if (u != 0 && u != 1) {
                 la+= repetido[nope].letr[u]
             }
         }
-        console.log(la, 'aaaaaaaaa')
+        //console.log(la, 'aaaaaaaaa')
         if (repetido.find(function(repetido){
             return repetido.letr == la
         })) {
-            console.log(':(', nope)
+            //console.log(':(', nope)
             repetido.splice(nope, 1)
             
         }
@@ -958,9 +960,9 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
                 return segs.car == repetido[moe].letr
                 }) == undefined) {
 
-                  console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                  //console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                     if (repetido[moe].letr == '-') {
-                        console.log('ARE YOU SERIOUS?')
+                        //console.log('ARE YOU SERIOUS?')
                     }else{
                         segs.push({car: repetido[moe].letr, mons: [m]})
                     }
@@ -971,7 +973,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
                 return segs.car == repetido[moe].letr
                 }).mons.indexOf(m) == -1){
               
-                    console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                    //console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                     segs.find(function(segs) {
                         return segs.car == repetido[moe].letr
                         }).mons.push(m)
@@ -1107,7 +1109,7 @@ divs = [1]
    }
   
    okentao = 0
-    for (okentao in divs) {
+   // for (okentao in divs) {
         roll = [] 
 
        // console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
@@ -1189,7 +1191,7 @@ divs = [1]
                         uy+= right[xarope]
                     }
                    }
-                   console.log('UY',uy)
+                   //console.log('UY',uy)
                    scarecrow[anchor].outrodiv.push(uy)
 
                    if (uy[0] == '-') {
@@ -1198,7 +1200,7 @@ divs = [1]
                         if (uy[qual] != '-')
                         holdon+= uy[qual]
                     }
-                    console.log('FIXED', holdon)
+                    //console.log('FIXED', holdon)
                     uy = holdon
                    }
                    scarecrow[anchor].divididos.push(uy)
@@ -1210,9 +1212,9 @@ divs = [1]
        miss = []
 
        for (ah in scarecrow) {
-           console.log('SCARECROW', scarecrow[ah].divididos)
+           //console.log('SCARECROW', scarecrow[ah].divididos)
            for (é in scarecrow[ah].divididos) {
-               console.log(scarecrow[ah].divididos[é])
+               //console.log(scarecrow[ah].divididos[é])
            if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
             miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
            }else{
@@ -1307,44 +1309,44 @@ while(java < miss.length && deucerto == false) {
                podeser[belief].position.push(String(java))
                }
 
-            console.log(podeser[belief].opl)
+            //console.log(podeser[belief].opl)
 
             shot = ''
             for (gun in podeser[belief].opl) {
-                console.log(podeser[belief].opl[gun])
+                //console.log(podeser[belief].opl[gun])
                 shot+= podeser[belief].opl[gun] + ','
             }
-            console.log('THAT WE LET IT GO:', shot)
+           // console.log('THAT WE LET IT GO:', shot)
 
             if (roll.length == 0) {
-                console.log('ADICIONAR(LISTA VAZIA)')
+               // console.log('ADICIONAR(LISTA VAZIA)')
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                 //console.log('JÁ TEM')
-               console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
+               //console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
 
                 for (capital in podeser[belief].position) {
-                    console.log(podeser[belief].position[capital])
+                    //console.log(podeser[belief].position[capital])
 
-                   console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+                  // console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
 
                 if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                   console.log('NÃO TEM') 
+                   //console.log('NÃO TEM') 
                    roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                 }
                 }
 
             }else{
-                console.log('NÃO TEM')
+                //console.log('NÃO TEM')
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }
            }
 
-           console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
+           //console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
            whyis = java
            if (podeser.length > 0) {
-               console.log('fatores', quantosfatores, 'posições', quantasposições)
-               console.log(podeser)
+               //console.log('fatores', quantosfatores, 'posições', quantasposições)
+               //console.log(podeser)
 
                for(cold in podeser) {
            if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
@@ -1380,7 +1382,7 @@ while(java < miss.length && deucerto == false) {
                 
             
             }
-            console.log('FICA ASSIM', `(${ficaassim})`)
+           // console.log('FICA ASSIM', `(${ficaassim})`)
            for (ruin in podeser[cold].opl) {
           //  console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
             emotion = ''
@@ -1452,20 +1454,25 @@ while(java < miss.length && deucerto == false) {
 
       console.log('PARAR PARA ANALISAR')
       for (ne in roll) {
+        // for (ne = 0; ne < 1; ne++) {
           console.log('_______________________________')
         console.log(roll[ne].posições, '(MISS):')
         console.log('')
         console.log(roll[ne].repetidos, '(SCARECROW)')
 
+        arranjar = []
         for (pq in roll[ne].repetidos) {
             gosto = roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
             console.log('----', gosto, scarecrow[gosto].divisor)
+            arranjar.push({pos: pq, ocupa: []})
 
         for (moon in roll[ne].posições) {
-            console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[gosto].divididos)
-            console.log(scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)])
 
-           
+            console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[gosto].divididos)
+            vaiir = scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
+            console.log(vaiir)
+
+           arranjar[pq].ocupa.push(vaiir)
         }
     }
       }
@@ -2173,8 +2180,8 @@ for (bababa in pans) {
     for (repr in pans[bababa].which) {
         
      //  console.log(' ')
-        console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
-         console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
+        //console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
+         //console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
 
          triste = scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
          console.log(triste)
@@ -2329,7 +2336,7 @@ for (bababa in pans) {
     }
     console.log('____________________','(',naonao,')','(',tobreak,')','___________________________')
 }
-}
+//}
 
 /*
 vai = []
