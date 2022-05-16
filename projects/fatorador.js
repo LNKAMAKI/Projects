@@ -1466,7 +1466,7 @@ while(java < miss.length && deucerto == false) {
         for (pq in roll[ne].repetidos) {
             gosto = roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
             console.log('----', gosto, scarecrow[gosto].divisor)
-            arranjar.push({pos: pq, ocupa: []})
+            arranjar.push({pos: pq, ocupa: [], origin: gosto})
 
         for (moon in roll[ne].posições) {
 
@@ -1487,9 +1487,9 @@ while(java < miss.length && deucerto == false) {
 
         if (jafoi.indexOf(tosse) == -1) {
             organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-        console.log('___________________________________________')
-        console.log(tosse, arranjar[tosse].ocupa)
-        console.log('')
+       // console.log('___________________________________________')
+       // console.log(tosse, arranjar[tosse].ocupa)
+      //  console.log('')
       
         for (calor in arranjar) {
     
@@ -1514,7 +1514,7 @@ while(java < miss.length && deucerto == false) {
                 }
                // console.log('igualar:', igualar)
                 if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
-                    console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`,tosse, calor)                     
+                    //console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`,tosse, calor)                     
                     jafoi.push(calor)
                     organizer.agrupar.push(calor)
 
@@ -1525,7 +1525,27 @@ while(java < miss.length && deucerto == false) {
     }
     }
     
+    console.log(roll[ne].posições)
+    for (youchoose in perfectwave) {
+        console.log('_______________________________________',perfectwave[youchoose].agrupar)
+        console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
+        for (catraca in perfectwave[youchoose].agrupar) {
+            console.log('-----------------------------------------------------------')
+            presa = perfectwave[youchoose].agrupar[catraca]
+          
+            console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
+            console.log(scarecrow[arranjar[presa].origin].divisor)
+
+            for (moon in roll[ne].posições) {
+
+                console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[arranjar[presa].origin].divididos)
+                vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
+                console.log(vaiir)
     
+              
+            }
+        }
+    }
       }
 
 
