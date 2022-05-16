@@ -32,7 +32,7 @@
 
 //expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
-//expression = ['+','ab','+','ac','+','bb','+','bc']
+//expression = ['+','ab','-','ac','-','bb','+','bc']
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
@@ -1454,12 +1454,19 @@ while(java < miss.length && deucerto == false) {
           console.log('_______________________________')
         console.log(roll[ne].posições, '(MISS):')
         console.log('')
-        for (moon in roll[ne].posições) {
-            console.log('')
-            console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].aparicoes)
+        console.log(roll[ne].repetidos, '(SCARECROW)')
 
-            console.log(roll[ne].repetidos, '(SCARECROW)')
+        for (pq in roll[ne].repetidos) {
+            gosto = roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
+            console.log('----', gosto, scarecrow[gosto].divisor)
+
+        for (moon in roll[ne].posições) {
+            console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[gosto].divididos)
+            console.log(scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)])
+
+           
         }
+    }
       }
 
 
