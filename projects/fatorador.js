@@ -32,7 +32,8 @@
 
 //expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
-//expression = ['+','ab','-','ac','-','bb','+','bc']
+expression = ['+','ab','-','ac','-','bb','+','bc']
+
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
