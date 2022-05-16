@@ -30,8 +30,9 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
+//expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
+//expression = ['-','ab','+','ac','+','bb','-','bc']
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
@@ -73,7 +74,7 @@ for (n = 0; n < expression.length; n++) {
            if (ehprimo(e) == true) {
             while (sob%e == 0) {
             if (sob%e == 0) {
-           //     console.log(sob + '/' + e + ': ' + sob/e)
+           ////console.log(sob + '/' + e + ': ' + sob/e)
                 
                 
             }
@@ -811,16 +812,16 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
    numerosrep = []
     ////console.log('BURRO')
  ////console.log('--------------------')
-    ////console.log(monomios[m].numero)
+    console.log(monomios[m].numero)
     
  
     for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
         
 
         if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-       // //console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
+      // console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
 
-       ////console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
+       console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
         if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
         numerosrep.push(monomios[m].numero[oc])
 
@@ -828,29 +829,29 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
             ocs2 = []
 
             if(u != m) {
-        //  //console.log(`monomio ${u}: `)
-         // //console.log(monomios[u])   
+        //console.log(`monomio ${u}: `)
+        //console.log(monomios[u])   
             
 
           // OCAS
           if(ocs2.find(function(ocs2) {
             return ocs2.ed == monomios[m].numero[oc]
             }) == undefined) {
-              //  //console.log('====================')
+             // console.log('====================')
                 ocs2.push({ed: monomios[m].numero[oc], el: 0})
 
                 ocs = 0
           for (ao = 0; ao < monomios[m].numero.length; ao++) {
-           // //console.log('AAAAAAAAAA' + monomios[m].numero[ao])
+          // console.log('AAAAAAAAAA' + monomios[m].numero[ao])
             if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
                 ocs++
             }
           }
         }
-          ////console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
+          //console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
           
           for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
-          //  //console.log(monomios[u].numero[e])
+          //console.log(monomios[u].numero[e])
             
             if (monomios[u].numero[e] == monomios[m].numero[oc]) {
               //  //console.log(monomios[m].numero[oc] + ' é igual a ' + monomios[u].numero[e])
@@ -871,6 +872,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
                                 return ocs2.ed == monomios[m].numero[oc]
                                 }).el <= ocs) {
 
+                                    console.log('________uuuuuuuuuuuuuuuuuuuuuu________',{monum: u, wc: [m], letr: monomios[u].numero[e]})
                 repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
 
                
@@ -923,19 +925,39 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
     }
     }
    
+    console.log('REPETIDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', repetido)
     reps.push(repetido)
 
-    
+    for (nope in repetido) {
+    if (repetido[nope].letr[0] == '-') {
+        console.log('hei')
+        la = ''
+        for (u in repetido[nope].letr) {
+            if (u != 0 && u != 1) {
+                la+= repetido[nope].letr[u]
+            }
+        }
+        console.log(la, 'aaaaaaaaa')
+        if (repetido.find(function(repetido){
+            return repetido.letr == la
+        })) {
+            console.log(':(', nope)
+            repetido.splice(nope, 1)
+            
+        }
+    }
+}
+
     ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
-        for (moe in repetido) {
+        for (moe = repetido.length - 1; moe >= 0; moe--) {
             ////console.log(repetido[moe])
             if (segs.find(function(segs) {
                 return segs.car == repetido[moe].letr
                 }) == undefined) {
 
-                  //  console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                  console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                     if (repetido[moe].letr == '-') {
-                        //console.log('ARE YOU SERIOUS?')
+                        console.log('ARE YOU SERIOUS?')
                     }else{
                         segs.push({car: repetido[moe].letr, mons: [m]})
                     }
@@ -946,7 +968,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
                 return segs.car == repetido[moe].letr
                 }).mons.indexOf(m) == -1){
               
-
+                    console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                     segs.find(function(segs) {
                         return segs.car == repetido[moe].letr
                         }).mons.push(m)
@@ -962,29 +984,29 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
 
 
 for (nl = 0; nl < segs.length; nl++) {
-    ////console.log('-----------------------------------------------------------------------------------------')
+    //console.log('-----------------------------------------------------------------------------------------')
     
-    ////console.log(segs[nl])
+    //console.log(segs[nl])
 
-    ////console.log('AnALISAR CADA ITEM')
-    ////console.log('nUMERO: ', segs[nl].car)
+    //console.log('AnALISAR CADA ITEM')
+    //console.log('nUMERO: ', segs[nl].car)
     for (n = 0; n < segs.length; n++) {
 
-        ////console.log('---------------------------------------------------------------------')
+        //console.log('---------------------------------------------------------------------')
         if (n != nl) {
-        ////console.log(`${segs[n].car}.search('${segs[nl].car}')`)
+        //console.log(`${segs[n].car}.search('${segs[nl].car}')`)
         if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
            
-            ////console.log(`${segs[n].car}: ${segs[n].mons}`)
-            ////console.log(`${segs[nl].car}: ${segs[nl].mons}`)
+            //console.log(`${segs[n].car}: ${segs[n].mons}`)
+            //console.log(`${segs[nl].car}: ${segs[nl].mons}`)
 
             for (u in segs[n].mons) {
-                ////console.log(segs[n].mons[u])
+                //console.log(segs[n].mons[u])
                 if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
-                    ////console.log('TEM')
+                    //console.log('TEM')
                 }else{
-                    ////console.log('nÃO TEM')
-                 //   console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
+                  //console.log('nÃO TEM')
+                  //console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
                     segs[nl].mons.push(segs[n].mons[u])
                   
                 }
@@ -1090,7 +1112,7 @@ divs = [1]
         scarecrow = []
         for(anchor in segs) {
            // console.log('i feel the light betrayed me', segs[anchor].mons)
-            scarecrow.push({divididos: [], poss: [...segs[anchor].mons], divisor: [...segs[anchor].car], positions: [...segs[anchor].mons]})
+            scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...segs[anchor].car], positions: [...segs[anchor].mons]})
         
             army = []
             lpisthebest = ''
@@ -1114,7 +1136,7 @@ divs = [1]
                             lpisthebest = ''
                         }
                     }
-               //     console.log('LPISTHEBEST', lpisthebest)
+               ////console.log('LPISTHEBEST', lpisthebest)
                 }
                 if (fall == segs[anchor].car.length - 1) {
                     army.push(lpisthebest)
@@ -1132,7 +1154,7 @@ divs = [1]
                 pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
                 
                 if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-                    console.log('É 1')
+               //console.log('É 1')
                     pain = '1'
                     scarecrow[anchor].divididos.push(pain)
                    
@@ -1155,17 +1177,28 @@ divs = [1]
                     if (xarope == 0 && right[xarope] == '*') { // *2
                    //   console.log('ERRADO!', '*2')
                     }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
-                  //      console.log('ERRADO', '2*')
+                  // //console.log('ERRADO', '2*')
                     }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
-                 //       console.log('ERRADO', '2*x')
+                 //  //console.log('ERRADO', '2*x')
                     }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
-                   //     console.log('ERRADO', 'x*2')
+                   ////console.log('ERRADO', 'x*2')
                     }else{
                         uy+= right[xarope]
                     }
                    }
-                 //  console.log('UY',uy)
-                    scarecrow[anchor].divididos.push(uy)
+                   console.log('UY',uy)
+                   scarecrow[anchor].outrodiv.push(uy)
+
+                   if (uy[0] == '-') {
+                    holdon = ''
+                    for (qual in uy) { 
+                        if (uy[qual] != '-')
+                        holdon+= uy[qual]
+                    }
+                    console.log('FIXED', holdon)
+                    //uy = holdon
+                   }
+                   scarecrow[anchor].divididos.push(uy)
                 }
                
             }
@@ -1174,8 +1207,9 @@ divs = [1]
        miss = []
 
        for (ah in scarecrow) {
-         //  console.log('SCARECROW', scarecrow[ah].divididos)
+           console.log('SCARECROW', scarecrow[ah].divididos)
            for (é in scarecrow[ah].divididos) {
+               console.log(scarecrow[ah].divididos[é])
            if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
             miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
            }else{
@@ -1343,12 +1377,12 @@ while(java < miss.length && deucerto == false) {
                 
             
             }
-          //  console.log('FICA ASSIM', `(${ficaassim})`)
+            console.log('FICA ASSIM', `(${ficaassim})`)
            for (ruin in podeser[cold].opl) {
           //  console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
             emotion = ''
             for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-           //     console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
+           ////console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
                 emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
             }
           //  console.log(`${emotion}(${ficaassim})`)
@@ -1412,6 +1446,22 @@ while(java < miss.length && deucerto == false) {
        
       //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
 
+
+      console.log('PARAR PARA ANALISAR')
+      for (ne in roll) {
+          console.log('_______________________________')
+        console.log(roll[ne].posições, '(MISS):')
+        console.log('')
+        for (moon in roll[ne].posições) {
+            console.log('')
+            console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].aparicoes)
+
+            console.log(roll[ne].repetidos, '(SCARECROW)')
+        }
+      }
+
+
+
        youdumb = []
 
         aswillbe2 = []
@@ -1449,7 +1499,7 @@ while(java < miss.length && deucerto == false) {
                 older = 0
                 while (older < monomios.length && conseguiu == false) {
                 DESFATORAR(monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-                console.log('ISOOOOOOOOO', monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+                //console.log('ISOOOOOOOOO', monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
                 
                 // correto == ['2','*','10','x'] (NÚMERO QUE VAI SER COMPARADO)
                 // eg2 == ['10'] (NÚMERO QUE VAI MULTIPLICAR)
@@ -1462,13 +1512,13 @@ while(java < miss.length && deucerto == false) {
                 eassim = []
                 solo = ''
                 for (ne in eg) {
-                    console.log('EGGGGGG',eg[ne])
+                    //console.log('EGGGGGG',eg[ne])
                     if (eg[ne] != '.') {
                 if (solo.length == 0) {
-                    console.log('LISTA VAZIA')
+                    //console.log('LISTA VAZIA')
                     solo+= eg[ne]
                 }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-                    console.log('É UM nÚMERO')
+                    //console.log('É UM nÚMERO')
                     solo+= eg[ne]
                 }else{
                     eassim.push(solo)
@@ -1480,7 +1530,7 @@ while(java < miss.length && deucerto == false) {
                     eassim.push(solo)
                 }
                     }else{
-                        console.log('NAO')
+                   //console.log('NAO')
                     }
                 }
                 
@@ -1501,7 +1551,7 @@ while(java < miss.length && deucerto == false) {
                teri = false
                 juntar = ''
                 for (estudar in eg2) {
-                    console.log(eg2[estudar])
+               //console.log(eg2[estudar])
                     if (eg2[estudar] == '.') {
                         teri = true
                         if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
@@ -1514,21 +1564,21 @@ while(java < miss.length && deucerto == false) {
                     }else{
                        
                    
-                      console.log('juntar',juntar)
+                 //console.log('juntar',juntar)
                         if (juntar.length == 0) {
                             juntar = eg2[estudar]
-                           console.log('LISTA VAZIA', juntar)
+                      //console.log('LISTA VAZIA', juntar)
                             if (estudar == eg2.length - 1) {
                                 whythat.push(juntar)
-                                console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
+                           //console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
                             }
 
                         }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                            console.log('I\'M NEVER WHAT I LIKE')
+                       //console.log('I\'M NEVER WHAT I LIKE')
                             juntar+= eg2[estudar]
-                            console.log('juntar', juntar)
+                       //console.log('juntar', juntar)
                             if (estudar == eg2.length - 1) {
-                                console.log('UAISO')
+                           //console.log('UAISO')
                                 whythat.push(juntar)
                             
                             }
@@ -1544,7 +1594,7 @@ while(java < miss.length && deucerto == false) {
                  }
                  if (teri == false) {
                   whythat = []
-                    console.log('SEM ASTERISCO')
+               //console.log('SEM ASTERISCO')
                     for (t in eg2) {
                     whythat.push(eg2[t])
                     }
@@ -1553,8 +1603,8 @@ while(java < miss.length && deucerto == false) {
                     }
                 }
 
-            console.log('MULTIPLICAR', eg2,'*',eg)
-             console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+       //console.log('MULTIPLICAR', eg2,'*',eg)
+        //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
@@ -1562,55 +1612,55 @@ while(java < miss.length && deucerto == false) {
                        numerinhos.push(correto[decisao])
                        
                         }
-                    console.log(correto[decisao],'AH, NAO')
+               //console.log(correto[decisao],'AH, NAO')
                 }
-                    console.log(numerinhos)
+               //console.log(numerinhos)
                     thatway = [...numerinhos]
 
 
                     for (poder in whythat){
                         if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
-                        console.log(whythat[poder], numerinhos)
-                        console.log(numerinhos.indexOf(whythat[poder]))
+                   //console.log(whythat[poder], numerinhos)
+                   //console.log(numerinhos.indexOf(whythat[poder]))
                         numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
 
                         }
                     }
 
                     for (pombo = whythat.length - 1; pombo >= 0; pombo--){
-                        console.log('______________________', whythat[pombo])
+                   //console.log('______________________', whythat[pombo])
                         if (whythat[pombo] == '*' || whythat[pombo] == '1') {
-                            console.log('?',whythat[pombo])
+                       //console.log('?',whythat[pombo])
                             whythat.splice(pombo,1)
-                           console.log(whythat)
+                      //console.log(whythat)
                         }
                         
                     }
 
-                    console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
-                    console.log(numerinhos)
-                    console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
+               //console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
+               //console.log(numerinhos)
+               //console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
 
-                  console.log('_U__U__U__U__U__U__U__U_ooooo_U_U_U__U_U__U__U_U_U__U__', thatway)
+             //console.log('_U__U__U__U__U__U__U__U_ooooo_U_U_U__U_U__U__U_U_U__U__', thatway)
                   
-                  console.log('PLEAAAAAAAAAAAAAAASE, GOD', numerinhos, whythat, thatway)
+             //console.log('PLEAAAAAAAAAAAAAAASE, GOD', numerinhos, whythat, thatway)
 
                   for (pray = whythat.length - 1; pray>=0 ; pray--) {
-                    console.log(whythat[pray])
+               //console.log(whythat[pray])
                     if (whythat[pray] == '-')
                     whythat.splice(pray, 1)
                   }
 
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                        console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                   //console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
                 older++
                 }
-               console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-               console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
-            console.log(older - 1, monomios[older - 1].numero)
+          //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+          //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+       //console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
                asitwas2.push(older - 1)
                aswillbe.push(older - 1)
@@ -1618,7 +1668,7 @@ while(java < miss.length && deucerto == false) {
            }
         
 
-           console.log('ASITWAS',asitwas, asitwas2, aswillbe)
+      //console.log('ASITWAS',asitwas, asitwas2, aswillbe)
            
            obe.what.push({ar: asitwas2, indice: still})
            aswillbe2.push({oque:aswillbe, onde:raging})
@@ -1626,34 +1676,34 @@ while(java < miss.length && deucerto == false) {
         }
         
         youdumb.push({mons: asitwas, rag: raging, w: obe, polen: raging})
-        console.log(obe)
+   //console.log(obe)
        }
 
-      console.log('YOUDUMB',youdumb)
+ //console.log('YOUDUMB',youdumb)
        
         dontworry = []
         for (behappy in youdumb) {
 
-            console.log('_______________________________')
-            console.log(youdumb[behappy].mons)
+       //console.log('_______________________________')
+       //console.log(youdumb[behappy].mons)
 
             //console.log('---------------------------------------')
             for (armenia in youdumb) {
                 
                 if (armenia != behappy) {
-                console.log(youdumb[armenia].mons)
+           //console.log(youdumb[armenia].mons)
 
                 doeshave = true
                 for (sofar in youdumb[armenia].mons) {
-                    console.log(youdumb[armenia].mons[sofar])
+               //console.log(youdumb[armenia].mons[sofar])
                     if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
                         doeshave = false
                        
                     }
                 }
-                console.log(doeshave)
+           //console.log(doeshave)
                 if (doeshave == true) {
-                console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
+           //console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
                if (dontworry.indexOf(behappy) == -1) {
                 dontworry.push(armenia)
                }
@@ -1667,7 +1717,7 @@ while(java < miss.length && deucerto == false) {
         
         for (da = youdumb.length - 1; da >= 0; da--) {
             if (dontworry.indexOf(String(da)) != -1) {
-                console.log('TEM COISA AÍ',youdumb[da].mons)
+           //console.log('TEM COISA AÍ',youdumb[da].mons)
                // youdumb.splice(da,1)
             }
         }
@@ -1684,15 +1734,15 @@ for (hi in youdumb) {
     grtols.push(youdumb[hi])
 }
 
-console.log('grtols: ', segs)
-console.log(sortob(grtols, 'length'))
+//console.log('grtols: ', segs)
+//console.log(sortob(grtols, 'length'))
 
 
 organizado = sortob(grtols, 'length')[1]
 
 grtols = []
 for (ah in organizado) {
-   console.log(segs[organizado[ah]])
+   //console.log(segs[organizado[ah]])
     grtols.push(youdumb[organizado[ah]])
    
 }
@@ -1701,7 +1751,7 @@ for (ah in organizado) {
 
 youdumb = []
 for (erro in grtols) {
-    console.log(grtols[erro])
+   //console.log(grtols[erro])
     youdumb.push(grtols[erro])
 }
 
@@ -1714,11 +1764,11 @@ for (yourlife in grtols) {
     console.log(grtols[yourlife].w.what)
 
     for (bolinho in grtols[yourlife].w.what) {
-        console.log(grtols[yourlife].w.what[bolinho])
+   //console.log(grtols[yourlife].w.what[bolinho])
 
         vagem = grtols[yourlife].w.what[bolinho]
         for (ahnao in vagem) {
-            console.log(vagem[ahnao])
+       //console.log(vagem[ahnao])
         }
     }
 }
@@ -1727,15 +1777,15 @@ for (yourlife in grtols) {
 pans = []
 numerospresentes = []
 
-console.log('WHAT IS IN YOUR MIND??????????????????__________LLLLLLLLLLLLLLLLLLLLLLLLL_______________')
+//console.log('WHAT IS IN YOUR MIND??????????????????__________LLLLLLLLLLLLLLLLLLLLLLLLL_______________')
 for (AH in youdumb) {
-    console.log(youdumb[AH])
+    //console.log(youdumb[AH])
 }
 for (wrecked in youdumb) {
-    console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
+    //console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
     initial = youdumb[wrecked].w.what
     for (agg in initial) {
-        console.log(initial[agg].ar, Number(agg))
+   //console.log(initial[agg].ar, Number(agg))
     }
 }
 
@@ -1750,47 +1800,47 @@ for (imback in youdumb) {
 
     if (initial.length > 0) {
     inside = {which: [], numberyoudumb: youdumb[imback].polen}
-    console.log(imback)
-    console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
+   //console.log(imback)
+    //console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
 
 
-    console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
+    //console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
     
     
     for (agg in initial) {
-        console.log('IN THIS WORLD',initial[agg].ar)
+   //console.log('IN THIS WORLD',initial[agg].ar)
 
         taai = false
          for (eng in initial[agg].ar) {
            // console.log(initial[agg].ar[eng])
             if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
-                console.log('OK')
+           //console.log('OK')
                
             }else{
-            console.log('WE HAVE A PROBLEM')
+       //console.log('WE HAVE A PROBLEM')
                 taai = true
             }
          }
      
          if (taai == false) {
-            console.log('SEM PROBLEMAS', imback, agg)
+       //console.log('SEM PROBLEMAS', imback, agg)
             inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
            
-            console.log('I\'M TWISTED UP',inside, inform)
+       //console.log('I\'M TWISTED UP',inside, inform)
             inside.which.push(inform)
-            console.log('INFORM', inform.monos)
+       //console.log('INFORM', inform.monos)
             for (darkening in inform.monos) {
                
                 sticky.push(inform.monos[darkening])
             }
-            console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
+       //console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
 
             for (eng in initial[agg].ar) {
             
                 numerospresentes.push(initial[agg].ar[eng])
                
              }
-             console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
+        //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
          }
     }
 
@@ -1804,9 +1854,9 @@ for (imback in youdumb) {
     //console.log('FICOU ASSIM Ó:', numerospresentes, sticky)
     /*
     for (invest in pans) {
-        console.log('índice',invest)
+   //console.log('índice',invest)
         for (plat in pans[invest].which) {
-            console.log(pans[invest].which[plat].monos)
+       //console.log(pans[invest].which[plat].monos)
         }
     }
     */
@@ -1835,7 +1885,7 @@ for (imback in youdumb) {
            if (dulu == false) {
           //  console.log('PODE FICAR :)', h, tempo)
            }else{
-         //     console.log('NÃO PODE!!!!!!!!!!!!!')
+         ////console.log('NÃO PODE!!!!!!!!!!!!!')
           // youdumb[h].w.what.splice(tempo, 1)
           //imback++
       //    console.log('IMBAACK',imback)
@@ -1920,18 +1970,18 @@ for (bababa in pans) {
     console.log('A PARTIR DA QUI')
     naonao = ''
 
-    console.log(pans[bababa], Number(bababa))
-    console.log(pans[bababa].which)
-    console.log(roll[pans[bababa].numberyoudumb])
-      console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
+  //console.log(pans[bababa], Number(bababa))
+   //console.log(pans[bababa].which)
+   //console.log(roll[pans[bababa].numberyoudumb])
+ //console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
 
       tobreak = ''
       for (quassao in roll[pans[bababa].numberyoudumb].posições) {
-        console.log(quassao,':', roll[pans[bababa].numberyoudumb].posições[quassao],miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido)
+   //console.log(quassao,':', roll[pans[bababa].numberyoudumb].posições[quassao],miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido)
 
         el = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
 
-        console.log('ALL I WANTED WAS TO FINISH THIS THING :D', el)
+   //console.log('ALL I WANTED WAS TO FINISH THIS THING :D', el)
 
         gates = []
 
@@ -1939,14 +1989,14 @@ for (bababa in pans) {
         /*
         for (power in el) {
             quase.push(el[power])
-            console.log('EL POWER!',el[power])
+       //console.log('EL POWER!',el[power])
         }
 */
         teri = false
         juntar = ''
       //  console.log('NADAAAAAAAAAA')
         for (estudar in el) {
-            console.log(el[estudar])
+       //console.log(el[estudar])
             if (el[estudar] == '*') {
                 teri = true
                 if (el[Number(estudar) + 1].search('[0-9]') != -1) {
@@ -1954,26 +2004,26 @@ for (bababa in pans) {
                     quase.push(juntar)
                     juntar = ''
                 quase.push('*')
-                console.log('aaaaaaaaaaaaaaaaa', quase)
+           //console.log('aaaaaaaaaaaaaaaaa', quase)
                 }
             }else{
                
            
-              console.log('juntar',juntar)
+         //console.log('juntar',juntar)
                 if (juntar.length == 0) {
                     juntar = el[estudar]
-                    console.log('LISTA VAZIA', juntar)
+               //console.log('LISTA VAZIA', juntar)
 
                     if (estudar == el.length - 1) {
                         quase.push(juntar)
                     }
 
                 }else if(el[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                    console.log('I\'M NEVER WHAT I LIKE')
+               //console.log('I\'M NEVER WHAT I LIKE')
                     juntar+= el[estudar]
-                    console.log('juntar', juntar)
+               //console.log('juntar', juntar)
                     if (estudar == el.length - 1) {
-                        console.log('UAISO')
+                   //console.log('UAISO')
                         quase.push(juntar)
                     }
                 }else{
@@ -1986,7 +2036,7 @@ for (bababa in pans) {
             }
               
          }
-         console.log('QUASSSSEEEE',quase)
+    //console.log('QUASSSSEEEE',quase)
 
          if (teri == false) {
             
@@ -2022,7 +2072,7 @@ for (bababa in pans) {
             }else if(quase[patience].search('[a-z]') != -1)  {
                //console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
-                    console.log('ELEVAR!')
+               //console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
@@ -2108,16 +2158,16 @@ for (bababa in pans) {
         }
        // console.log('THE COLOURS THAT I SAW', tobreak)
       }
-      //console.log('ENTÃO:','(', tobreak,')')
+      console.log('ENTÃO:','(', tobreak,')')
 
     for (repr in pans[bababa].which) {
         
      //  console.log(' ')
-      //  console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
-       //  console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
+        console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
+         console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
 
          triste = scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
-     //    console.log(triste)
+         console.log(triste)
 
          quase = []
         // console.log(quase, 'k')
@@ -2281,22 +2331,22 @@ while (posições.length < monomios.length) {
     vai.push(heya[y].mons)
 
     for (uh in heya[y].mons) {
-        console.log(heya[y].mons[uh])
+   //console.log(heya[y].mons[uh])
         if (posições.indexOf(heya[y].mons[uh]) == -1) {
             posições.push(heya[y].mons[uh])
         }
     }
 
     for (data in heya[y].w.what) {
-        console.log(heya[y].w.what[data].indice, heya[y].w.what[data].ar)
+   //console.log(heya[y].w.what[data].indice, heya[y].w.what[data].ar)
     }
     for (miya in vai) {
         if (miya != y) {
-        console.log('****',vai[miya])
+   //console.log('****',vai[miya])
         for (redacao = vai[miya].length - 1; redacao >= 0; redacao--) {
-            console.log(vai[miya][redacao])
+       //console.log(vai[miya][redacao])
             if (heya[y].mons.indexOf(vai[miya][redacao]) != -1) {
-                console.log('TEM')
+           //console.log('TEM')
                 vai[miya].splice(redacao, 1)
             }
         }
@@ -2317,7 +2367,7 @@ for (yehaa in podeser[cold].position) {
                 fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
             }
         }
-        console.log(fi)
+   //console.log(fi)
         if (yehaa != 0) {
              ficaassim += ` - ${fi}`
         }else{
@@ -2548,45 +2598,45 @@ function doit(par) {
  for (c in relation) {
      ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
      if (relation[c].fix.length > 0) {
-     console.log(relation[c].fix, relation[c].falt)
+//console.log(relation[c].fix, relation[c].falt)
 
      faltam = Number(quanto) - Number(relation[c].fix.length)
-     console.log('faltam', faltam)
+//console.log('faltam', faltam)
 
      for (f = 0; f < faltam; f++) {
-         console.log(relation[c].falt[f])
+    //console.log(relation[c].falt[f])
         relation[c].fix.push(relation[c].falt[f])
        
-        console.log('AnTES: ', relation[c].falt)
+   //console.log('AnTES: ', relation[c].falt)
         relation[c].falt[f] = -10
 
-        console.log('DEPOIS: ', relation[c].falt)
+   //console.log('DEPOIS: ', relation[c].falt)
      }
-     console.log(relation[c].fix)
+//console.log(relation[c].fix)
 
      for (tel = 0; tel < c; tel++){
 
          if (relation[tel].fix.length > 0) {
-         console.log('relation[tel]', relation[tel])
+    //console.log('relation[tel]', relation[tel])
          }
          
          outrorel = relation[tel]
          
      for (hu in outrorel.fix) {
-         console.log(outrorel.fix[hu])
+    //console.log(outrorel.fix[hu])
          if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-             console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
-             console.log(outrorel.falt)
+        //console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
+        //console.log(outrorel.falt)
              y = 0
              for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
 
-                 console.log(outrorel.falt[ou])
+            //console.log(outrorel.falt[ou])
                  if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                     console.log('pode ir')
+                //console.log('pode ir')
                      outrorel.fix[hu] =  outrorel.falt[ou]
                      outrorel.falt[ou] = -10
                      
-                     console.log('isso aí:', outrorel.fix)
+                //console.log('isso aí:', outrorel.fix)
                      y++
                  }
              }
@@ -2688,7 +2738,7 @@ for (b = 0; b < grupos; b++) {
 
     for (live = 0; live < quanto; live++) {
         //console.log('TIRADOS')
-        console.log(segs2[sorrow].mons[imor])
+   //console.log(segs2[sorrow].mons[imor])
 
     console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
 
