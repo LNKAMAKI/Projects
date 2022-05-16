@@ -1483,7 +1483,28 @@ while(java < miss.length && deucerto == false) {
         console.log('')
         for (calor in arranjar) {
             if (calor != tosse) {
+                console.log('------------------------------')
                 console.log(calor, arranjar[calor].ocupa)
+
+                equals = true
+                igualar =[]
+                for (boring in arranjar[calor].ocupa) {
+                    sendocomparado = arranjar[calor].ocupa[boring]
+                    comparador= arranjar[tosse].ocupa[boring]
+                    console.log(sendocomparado, '=>', comparador)
+                    console.log(sendocomparado[0],'==', comparador[0])
+                    if (sendocomparado[0] != comparador[0]) {
+                        console.log(true)
+                        igualar.push(true)
+                    }else{
+                        console.log(false)
+                        igualar.push(false)
+                    }
+                }
+                console.log('igualar:', igualar)
+                if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
+                    console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`)
+                }
             }
         }
     }
