@@ -32,9 +32,10 @@
 
 //expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
-//expression = ['+','ab','-','ac','-','bb','+','bc']
+expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
-expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b']
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15t']
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -1162,7 +1163,8 @@ divs = [1]
                //console.log('É 1')
                     pain = '1'
                     scarecrow[anchor].divididos.push(pain)
-                   
+                    scarecrow[anchor].outrodiv.push(pain)
+
                 }else{
         
                     right = ''
@@ -1453,8 +1455,8 @@ while(java < miss.length && deucerto == false) {
 
 
       console.log('PARAR PARA ANALISAR')
-     // for (ne in roll) {
-         for (ne = 0; ne < 1; ne++) {
+    //  for (ne in roll) {
+       for (ne = 0; ne < 1; ne++) {
           console.log('_______________________________')
         console.log(roll[ne].posições, '(MISS):')
         console.log('')
@@ -1477,37 +1479,52 @@ while(java < miss.length && deucerto == false) {
     }
     console.log('_______________ANALISANDO O ARRANJAR!!!!!!!!!!!_______________')
     
+    
+    jafoi = []
+    
+    perfectwave = []
     for (tosse in arranjar) {
+
+        if (jafoi.indexOf(tosse) == -1) {
+            organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
         console.log('___________________________________________')
         console.log(tosse, arranjar[tosse].ocupa)
         console.log('')
+      
         for (calor in arranjar) {
+    
             if (calor != tosse) {
-                console.log('------------------------------')
-                console.log(calor, arranjar[calor].ocupa)
+               // console.log('------------------------------')
+                //console.log(calor, arranjar[calor].ocupa)
 
                 equals = true
                 igualar =[]
                 for (boring in arranjar[calor].ocupa) {
                     sendocomparado = arranjar[calor].ocupa[boring]
                     comparador= arranjar[tosse].ocupa[boring]
-                    console.log(sendocomparado, '=>', comparador)
-                    console.log(sendocomparado[0],'==', comparador[0])
+                  //  console.log(sendocomparado, '=>', comparador)
+                   // console.log(sendocomparado[0],'==', comparador[0])
                     if (sendocomparado[0] != comparador[0]) {
-                        console.log(true)
+                      //  console.log(true)
                         igualar.push(true)
                     }else{
-                        console.log(false)
+                       // console.log(false)
                         igualar.push(false)
                     }
                 }
-                console.log('igualar:', igualar)
+               // console.log('igualar:', igualar)
                 if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
-                    console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`)
+                    console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`,tosse, calor)                     
+                    jafoi.push(calor)
+                    organizer.agrupar.push(calor)
+
                 }
             }
         }
+        perfectwave.push(organizer)
     }
+    }
+    
     
       }
 
