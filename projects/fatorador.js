@@ -1529,6 +1529,8 @@ while(java < miss.length && deucerto == false) {
     for (youchoose in perfectwave) {
         console.log('_______________________________________',perfectwave[youchoose].agrupar)
         console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
+        ficarassim =  perfectwave[youchoose].referencia
+
         for (catraca in perfectwave[youchoose].agrupar) {
             console.log('-----------------------------------------------------------')
             presa = perfectwave[youchoose].agrupar[catraca]
@@ -1536,13 +1538,26 @@ while(java < miss.length && deucerto == false) {
             console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
             console.log(scarecrow[arranjar[presa].origin].divisor)
 
+            diferente = false
             for (moon in roll[ne].posições) {
 
                 console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[arranjar[presa].origin].divididos)
                 vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
-                console.log(vaiir)
+                console.log(vaiir, ficarassim[moon])
+                if (vaiir != ficarassim[moon]) {
+                    diferente = true
+
+                    console.log('MUDARR!!!!!!')
+                   console.log(scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)])
+
+                   scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
+                }
     
               
+            }
+            console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
+            if (diferente == true) {
+                console.log('ALTERAR...', scarecrow[arranjar[presa].origin].divisor)
             }
         }
     }
