@@ -32,7 +32,7 @@
 
 //expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
-//expression = ['-','ab','+','ac','+','bb','-','bc']
+//expression = ['+','ab','+','ac','+','bb','+','bc']
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
@@ -928,6 +928,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
     console.log('REPETIDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', repetido)
     reps.push(repetido)
 
+    
     for (nope in repetido) {
     if (repetido[nope].letr[0] == '-') {
         console.log('hei')
@@ -947,6 +948,7 @@ for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
         }
     }
 }
+
 
     ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
         for (moe = repetido.length - 1; moe >= 0; moe--) {
@@ -1196,7 +1198,7 @@ divs = [1]
                         holdon+= uy[qual]
                     }
                     console.log('FIXED', holdon)
-                    //uy = holdon
+                    uy = holdon
                    }
                    scarecrow[anchor].divididos.push(uy)
                 }
@@ -1304,44 +1306,44 @@ while(java < miss.length && deucerto == false) {
                podeser[belief].position.push(String(java))
                }
 
-          //  console.log(podeser[belief].opl)
+            console.log(podeser[belief].opl)
 
             shot = ''
             for (gun in podeser[belief].opl) {
-                //console.log(podeser[belief].opl[gun])
+                console.log(podeser[belief].opl[gun])
                 shot+= podeser[belief].opl[gun] + ','
             }
-          //  console.log('THAT WE LET IT GO:', shot)
+            console.log('THAT WE LET IT GO:', shot)
 
             if (roll.length == 0) {
-               // console.log('ADICIONAR(LISTA VAZIA)')
+                console.log('ADICIONAR(LISTA VAZIA)')
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                 //console.log('JÁ TEM')
-              // console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
+               console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
 
                 for (capital in podeser[belief].position) {
-                  //  console.log(podeser[belief].position[capital])
+                    console.log(podeser[belief].position[capital])
 
-                 //  console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+                   console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
 
                 if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                //   console.log('NÃO TEM') 
+                   console.log('NÃO TEM') 
                    roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                 }
                 }
 
             }else{
-               // console.log('NÃO TEM')
+                console.log('NÃO TEM')
                 roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
             }
            }
 
-          // console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
+           console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
            whyis = java
            if (podeser.length > 0) {
-              // console.log('fatores', quantosfatores, 'posições', quantasposições)
-              // console.log(podeser)
+               console.log('fatores', quantosfatores, 'posições', quantasposições)
+               console.log(podeser)
 
                for(cold in podeser) {
            if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
