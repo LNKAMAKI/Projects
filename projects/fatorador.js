@@ -34,7 +34,7 @@
 
 //expression = ['+','ab','-','ac','-','bb','+','bc']
 
-//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b']
+expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -1453,8 +1453,8 @@ while(java < miss.length && deucerto == false) {
 
 
       console.log('PARAR PARA ANALISAR')
-      for (ne in roll) {
-        // for (ne = 0; ne < 1; ne++) {
+     // for (ne in roll) {
+         for (ne = 0; ne < 1; ne++) {
           console.log('_______________________________')
         console.log(roll[ne].posições, '(MISS):')
         console.log('')
@@ -1475,6 +1475,19 @@ while(java < miss.length && deucerto == false) {
            arranjar[pq].ocupa.push(vaiir)
         }
     }
+    console.log('_______________ANALISANDO O ARRANJAR!!!!!!!!!!!_______________')
+    
+    for (tosse in arranjar) {
+        console.log('___________________________________________')
+        console.log(tosse, arranjar[tosse].ocupa)
+        console.log('')
+        for (calor in arranjar) {
+            if (calor != tosse) {
+                console.log(calor, arranjar[calor].ocupa)
+            }
+        }
+    }
+    
       }
 
 
