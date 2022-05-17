@@ -37,8 +37,11 @@
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15t']
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
-expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','+','e','+','7t','+','7j']
+//expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
 
+//expression = ['55','w','^','3','+','13','h','^','4','k','^','2']
+
+expression = ['+','11','x','+','121','y','+','11yz','+','xz']
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
@@ -529,6 +532,9 @@ if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
 //
 
 
+for (aiquecoisa in monomios) {
+    console.log(monomios[aiquecoisa].numero)
+}
 
 // FAZER COnTA COM nÚMEROS
 function fazerConta(anterior) {
@@ -1831,7 +1837,7 @@ while(java < miss.length && deucerto == false) {
                     //console.log('EGGGGGG',eg[ne])
                     if (eg[ne] != '.') {
                 if (solo.length == 0) {
-                    //console.log('LISTA VAZIA')
+                    console.log('LISTA VAZIA')
                     solo+= eg[ne]
                 }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
                     //console.log('É UM nÚMERO')
@@ -1919,8 +1925,8 @@ while(java < miss.length && deucerto == false) {
                     }
                 }
 
-       //console.log('MULTIPLICAR', eg2,'*',eg)
-        //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+       console.log('MULTIPLICAR', eg2,'*',eg)
+        console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                 
                 numerinhos = []
                 for (decisao in correto) {
@@ -1968,14 +1974,14 @@ while(java < miss.length && deucerto == false) {
                   }
 
                     if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                   //console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                   console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                         conseguiu = true
                     }
                 }
                 older++
                 }
           //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-          //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+          console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
        //console.log(older - 1, monomios[older - 1].numero)
                asitwas.push(older - 1)
                asitwas2.push(older - 1)
@@ -2285,6 +2291,7 @@ concatenar = ''
 for (bababa in pans) {
    
     console.log('A PARTIR DA QUI')
+    edge = []
     naonao = ''
 
   //console.log(pans[bababa], Number(bababa))
@@ -2415,7 +2422,7 @@ for (bababa in pans) {
                
             } 
         }
-       // console.log('A CONTA',aconta,quase, tobreak)
+        
     if (aster == false) {
      //   console.log('SEM ASTERISCO',aconta)
         antes = ''
@@ -2432,6 +2439,7 @@ for (bababa in pans) {
         
         aconta = antes
     }
+    console.log('A CONTA',aconta)
 
         if (tobreak.length == 0) {
            
@@ -2620,6 +2628,8 @@ for (bababa in pans) {
           aconta = antes
         }
        // console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
+
+       edge.push(aconta)
         if (naonao.length == 0) {
             //console.log('TÁ VAZio')
             if (quase[0] == '-') {
@@ -2640,11 +2650,11 @@ for (bababa in pans) {
         concatenar+= ' + '
     }
     if (naonao.length > 1) {
-    console.log('____________________','(',naonao,')','(',tobreak,')','___________________________')
-    concatenar+= `(${naonao})(${tobreak})`
+    console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
+    concatenar+= `( ${naonao} )( ${tobreak} )`
     }else{
-        console.log('____________________',naonao,'(',tobreak,')','___________________________')
-        concatenar+= `${naonao}(${tobreak})`
+        console.log('____________________',naonao,'( ',tobreak,' )','___________________________')
+        concatenar+= `${naonao}( ${tobreak} )`
     }
 }
 
@@ -2663,6 +2673,106 @@ for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
 }
 }
 console.log(todososnumeros)
+
+for (bye in todososnumeros) {
+    console.log(monomios[todososnumeros[bye]].numero)
+
+    quase = monomios[todososnumeros[bye]].numero
+    aconta = ''
+    elevar = 1
+    aster = false
+    
+    console.log(quase)
+    gates = []
+
+     for (patience in quase) {
+         console.log('EFEEDEDEDEED',quase[patience])       
+        
+         if (quase[patience] == '*') {
+             aster = true
+            // console.log('AND THE CLSDADWDWD', patience)
+            // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+             gates.push(quase[Number(patience) - 1])
+             gates.push('x')
+             gates.push(quase[Number(patience) + 1])
+           //  console.log(gates, fazerConta(gates))
+
+          //  console.log(quase, Number(patience) + 1)
+             quase[Number(patience) + 1] = fazerConta(gates)[0]
+             aconta = fazerConta(gates)[0]
+            // console.log(quase)
+           
+             gates = []
+         }else if(quase[patience].search('[a-z]') != -1)  {
+            //console.log('É LETRA')
+             if (quase[patience] == quase[Number(patience) - 1]) {
+            //console.log('ELEVAR!')
+                 elevar++
+
+                 if (patience == quase.length - 1) {
+                   //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                     aconta+= `^${elevar}`
+                    // console.log(aconta)
+                 }
+
+             }else{
+                 if (elevar > 1) {
+                    // console.log('UEPA')
+                     aconta+= `^${elevar}`
+                     
+                 }
+
+                 aconta+= quase[patience]
+                // console.log(aconta)
+               
+                 elevar = 1
+             }
+           //  console.log(elevar)
+            
+         } 
+     }
+     
+ if (aster == false) {
+  //   console.log('SEM ASTERISCO',aconta)
+     antes = ''
+     for (eyes in quase) {
+         
+        // console.log(quase[eyes])
+         if (quase[eyes].search('[0-9]') != -1) {
+            // console.log('CRY')
+             antes+= quase[eyes]
+         }
+     }
+     antes+= aconta
+    // console.log('ANTEEEES:', antes)
+     
+     aconta = antes
+ }
+ console.log('A CONTA',aconta, quase)
+
+ if (bye == 0) {
+    console.log('PRIMEIRO')
+    if (concatenar.length > 0) {
+        if (quase[0] == '-') {
+            concatenar+= ` - ${aconta}`
+        }else{
+            concatenar+= ` + ${aconta}`
+        }
+    }else{
+        if (quase[0] == '-') {
+            concatenar+= `-${aconta}`
+        }else{
+            concatenar+= `${aconta}`
+        }
+    }
+ }else{
+    if (quase[0] == '-') {
+        concatenar+= ` - ${aconta}`
+    }else{
+        concatenar+= ` + ${aconta}`
+    }
+ }
+}
 //}
 
 /*
