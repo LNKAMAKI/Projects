@@ -19,7 +19,7 @@
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
+//expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
 
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
@@ -37,7 +37,7 @@ expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7a
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15t']
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
-//expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','+','e']
+expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','+','e','+','7t','+','7j']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -2281,6 +2281,7 @@ for (erro in grtols) {
 
 }
 console.log('pans é', pans)
+concatenar = ''
 for (bababa in pans) {
    
     console.log('A PARTIR DA QUI')
@@ -2634,23 +2635,34 @@ for (bababa in pans) {
             }
         }
     }
+
+    if (concatenar.length > 0) {
+        concatenar+= ' + '
+    }
+    if (naonao.length > 1) {
     console.log('____________________','(',naonao,')','(',tobreak,')','___________________________')
+    concatenar+= `(${naonao})(${tobreak})`
+    }else{
+        console.log('____________________',naonao,'(',tobreak,')','___________________________')
+        concatenar+= `${naonao}(${tobreak})`
+    }
 }
 
 console.log('VENDO OS QUE FALTAM:')
 console.log(numerospresentes)
 todososnumeros = []
 for (acaba in monomios) {
-    console.log(acaba)
+   // console.log(acaba)
     todososnumeros.push(acaba)
 }
 cancelar = []
 for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
-        console.log(todososnumeros[feliz])
+       // console.log(todososnumeros[feliz])
         if (numerospresentes.indexOf(Number(todososnumeros[feliz])) != -1) {
            todososnumeros.splice(feliz, 1)
 }
 }
+console.log(todososnumeros)
 //}
 
 /*
