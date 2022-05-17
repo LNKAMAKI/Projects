@@ -1455,8 +1455,8 @@ while(java < miss.length && deucerto == false) {
 
 
       console.log('PARAR PARA ANALISAR')
-    //  for (ne in roll) {
-       for (ne = 0; ne < 1; ne++) {
+      for (ne in roll) {
+       //for (ne = 0; ne < 1; ne++) {
           console.log('_______________________________')
         console.log(roll[ne].posições, '(MISS):')
         console.log('')
@@ -1558,6 +1558,20 @@ while(java < miss.length && deucerto == false) {
             console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
             if (diferente == true) {
                 console.log('ALTERAR...', scarecrow[arranjar[presa].origin].divisor)
+
+                lista = scarecrow[arranjar[presa].origin].divisor
+                if (lista != '-') {
+                    console.log('aff... >:')
+                    modificar = ['-','.']
+                    for (saved in lista) {
+                        console.log(lista[saved])
+                        modificar.push(lista[saved])
+                    }
+                    console.log(modificar)
+                    scarecrow[arranjar[presa].origin].divisor = modificar
+                }else{
+                    lista.splice(0,2)
+                }
             }
         }
     }
