@@ -1456,30 +1456,30 @@ while(java < miss.length && deucerto == false) {
       //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
 
 
-      console.log('PARAR PARA ANALISAR')
+      //console.log('PARAR PARA ANALISAR')
       for (ne in roll) {
        //for (ne = 0; ne < 1; ne++) {
-          console.log('_______________________________')
-        console.log(roll[ne].posições, '(MISS):')
-        console.log('')
-        console.log(roll[ne].repetidos, '(SCARECROW)')
+          //console.log('_______________________________')
+        //console.log(roll[ne].posições, '(MISS):')
+        //console.log('')
+        //console.log(roll[ne].repetidos, '(SCARECROW)')
 
         arranjar = []
         for (pq in roll[ne].repetidos) {
             gosto = roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
-            console.log('----', gosto, scarecrow[gosto].divisor)
+            //console.log('----', gosto, scarecrow[gosto].divisor)
             arranjar.push({pos: pq, ocupa: [], origin: gosto})
 
         for (moon in roll[ne].posições) {
 
-            console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[gosto].divididos)
+           //console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[gosto].divididos)
             vaiir = scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
-            console.log(vaiir)
+            //console.log(vaiir)
 
            arranjar[pq].ocupa.push(vaiir)
         }
     }
-    console.log('_______________ANALISANDO O ARRANJAR!!!!!!!!!!!_______________')
+    //console.log('_______________ANALISANDO O ARRANJAR!!!!!!!!!!!_______________')
     
     
     jafoi = []
@@ -1527,29 +1527,29 @@ while(java < miss.length && deucerto == false) {
     }
     }
     
-    console.log(roll[ne].posições)
+   // console.log(roll[ne].posições)
     for (youchoose in perfectwave) {
-        console.log('_______________________________________',perfectwave[youchoose].agrupar)
-        console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
+        //console.log('_______________________________________',perfectwave[youchoose].agrupar)
+        //console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
         ficarassim =  perfectwave[youchoose].referencia
 
         for (catraca in perfectwave[youchoose].agrupar) {
             console.log('-----------------------------------------------------------')
             presa = perfectwave[youchoose].agrupar[catraca]
           
-            console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
-            console.log(scarecrow[arranjar[presa].origin].divisor)
+           // console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
+           // console.log(scarecrow[arranjar[presa].origin].divisor)
 
             diferente = false
             for (moon in roll[ne].posições) {
 
-                console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[arranjar[presa].origin].divididos)
+               // console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[arranjar[presa].origin].divididos)
                 vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
-                console.log(vaiir, ficarassim[moon])
+               // console.log(vaiir, ficarassim[moon])
                 if (vaiir != ficarassim[moon]) {
                     diferente = true
 
-                    console.log('MUDARR!!!!!!')
+                    //console.log('MUDARR!!!!!!')
                    console.log(scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)])
 
                    scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
@@ -1557,19 +1557,19 @@ while(java < miss.length && deucerto == false) {
     
               
             }
-            console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
+           // console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
             if (diferente == true) {
-                console.log('ALTERAR...', scarecrow[arranjar[presa].origin].divisor)
+                //console.log('ALTERAR...', scarecrow[arranjar[presa].origin].divisor)
 
                 lista = scarecrow[arranjar[presa].origin].divisor
                 if (lista != '-') {
-                    console.log('aff... >:')
+                    //console.log('aff... >:')
                     modificar = ['-','.']
                     for (saved in lista) {
                         console.log(lista[saved])
                         modificar.push(lista[saved])
                     }
-                    console.log(modificar)
+                   // console.log(modificar)
                     scarecrow[arranjar[presa].origin].divisor = modificar
                 }else{
                     lista.splice(0,2)
