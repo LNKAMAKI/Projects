@@ -30,14 +30,14 @@
 //expression = ['+','10','y','-','338','x','y','+','20','y','^','2','-','169','x','+','ab','+','bb','+','ac','+','bc']
 
 
-//expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
+expression = ['3','-','6','x','^','3','+','14','x','^','3','y','^','2','-','7','y','^','2']
 
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15t']
-expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
-expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','+','ab','-','ac','-','bb','+','bc']
+//expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','+','ab','-','ac','-','bb','+','bc']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
@@ -1159,13 +1159,31 @@ divs = [1]
          
              //   console.log(monomios[segs[anchor].mons[high]].numero,army)
         
+            
+             lightson = [...army]
                 pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
-                
+                console.log(lightson,monomios[segs[anchor].mons[high]].numero)
+
                 if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
                //console.log('É 1')
-                    pain = '1'
-                    scarecrow[anchor].divididos.push(pain)
+               if (lightson.indexOf('-') != -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') == -1) {
+
+                   pain = '-1'
+                   console.log('opa')
+                   scarecrow[anchor].divididos.push('1')
                     scarecrow[anchor].outrodiv.push(pain)
+               }else if(lightson.indexOf('-') == -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') != -1) {
+                   
+                    pain = '-1'
+                    console.log('opa')
+                    scarecrow[anchor].divididos.push('1')
+                    scarecrow[anchor].outrodiv.push(pain)
+               }else{
+                pain = '1'
+                scarecrow[anchor].divididos.push(pain)
+                    scarecrow[anchor].outrodiv.push(pain)
+               }
+                
 
                 }else{
         
@@ -1534,7 +1552,7 @@ while(java < miss.length && deucerto == false) {
         ficarassim =  perfectwave[youchoose].referencia
 
         for (catraca in perfectwave[youchoose].agrupar) {
-            console.log('-----------------------------------------------------------')
+            //console.log('-----------------------------------------------------------')
             presa = perfectwave[youchoose].agrupar[catraca]
           
            // console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
@@ -1550,7 +1568,7 @@ while(java < miss.length && deucerto == false) {
                     diferente = true
 
                     //console.log('MUDARR!!!!!!')
-                   console.log(scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)])
+                   //console.log(scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)])
 
                    scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
                 }
@@ -1566,7 +1584,7 @@ while(java < miss.length && deucerto == false) {
                     //console.log('aff... >:')
                     modificar = ['-','.']
                     for (saved in lista) {
-                        console.log(lista[saved])
+                       // console.log(lista[saved])
                         modificar.push(lista[saved])
                     }
                    // console.log(modificar)
