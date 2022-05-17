@@ -34,7 +34,7 @@
 
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
-expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15t']
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15t']
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
@@ -1576,6 +1576,185 @@ while(java < miss.length && deucerto == false) {
         }
     }
       }
+
+      console.log('OKAY, LET\'S DO IT!')
+      for (sei in scarecrow) {
+        console.log(scarecrow[sei].divididos)
+        
+        for (ai in scarecrow[sei].divididos) {
+            console.log(scarecrow[sei].divididos[ai],'=', scarecrow[sei].outrodiv[ai])
+            scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai]
+        }
+      }
+
+      miss = []
+
+      for (ah in scarecrow) {
+          //console.log('SCARECROW', scarecrow[ah].divididos)
+          for (é in scarecrow[ah].divididos) {
+              //console.log(scarecrow[ah].divididos[é])
+          if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
+           miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
+          }else{
+           miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}).aparicoes.push(Number(ah))
+          }
+       }
+      }
+      
+
+      java = 0
+      roll = []
+      deucerto = false
+
+      while(java < miss.length && deucerto == false) {
+        
+
+      podeser = []
+      for (outro in miss) {
+         // console.log('')
+          if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
+             //console.log(miss[outro].aparicoes, outro)
+
+              presentes = []
+              for (quecoisa in miss[outro].aparicoes) {
+                  fatorzinho = miss[outro].aparicoes[quecoisa]
+                 //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
+
+                  if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
+                  //console.log('TEM', fatorzinho)
+                      presentes.push(fatorzinho)
+                  }
+              }
+              //console.log('OLHA', presentes)
+
+              adicionou = false
+              for (idk in podeser) {
+                 // console.log(podeser[idk])
+                  esigual = true
+                  for (denovo in podeser[idk].opl) {
+                      //console.log(podeser[idk].opl[denovo], presentes[denovo])
+                      if (podeser[idk].opl[denovo] == presentes[denovo]) {
+                         // console.log('É IGUAL')
+                      }else{
+                          esigual = false
+                      }
+                  }
+                  if (esigual == true) {
+                      podeser[idk].position.push(outro)
+                      adicionou = true
+                  }
+              }
+              if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
+                  podeser.push({opl: presentes, position: [outro]})
+              }
+              
+          }
+         }
+        // console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
+         
+         
+         for (belief in podeser) {
+             if (podeser[belief].position.indexOf(java) == -1) {
+             podeser[belief].position.push(String(java))
+             }
+
+          //console.log(podeser[belief].opl)
+
+          shot = ''
+          for (gun in podeser[belief].opl) {
+              //console.log(podeser[belief].opl[gun])
+              shot+= podeser[belief].opl[gun] + ','
+          }
+         // console.log('THAT WE LET IT GO:', shot)
+
+          if (roll.length == 0) {
+             // console.log('ADICIONAR(LISTA VAZIA)')
+              roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+          }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
+              //console.log('JÁ TEM')
+             //console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
+
+              for (capital in podeser[belief].position) {
+                  //console.log(podeser[belief].position[capital])
+
+                // console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+
+              if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
+                 //console.log('NÃO TEM') 
+                 roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+              }
+              }
+
+          }else{
+              //console.log('NÃO TEM')
+              roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+          }
+         }
+
+         //console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
+         whyis = java
+         if (podeser.length > 0) {
+             //console.log('fatores', quantosfatores, 'posições', quantasposições)
+             //console.log(podeser)
+
+             for(cold in podeser) {
+         if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
+         // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+          deucerto = true
+
+          ficaassim = ''
+          podeser[cold].position.push(whyis)
+
+          for (yehaa in podeser[cold].position) {
+             // console.log(podeser[cold])
+              //console.log(miss[podeser[cold].position[yehaa]].dividido)
+              if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
+                  
+                  fi = ''
+                  for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
+                      if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
+                          fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
+                      }
+                  }
+                 // console.log(fi)
+                  if (yehaa != 0) {
+                       ficaassim += ` - ${fi}`
+                  }else{
+                      ficaassim += `-${fi}`
+                  }
+              }else if(yehaa != 0){
+                  ficaassim += ' + '
+                  ficaassim+= miss[podeser[cold].position[yehaa]].dividido
+              }else{
+                  ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
+              }
+              
+          
+          }
+          //console.log('FICA ASSIM', `(${ficaassim})`)
+         for (ruin in podeser[cold].opl) {
+         // console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
+          emotion = ''
+          for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
+        // console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
+              emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
+          }
+         // console.log(`${emotion}(${ficaassim})`)
+        }
+         }
+      }
+
+      }
+
+       //  }
+
+         java++
+     }
+
+
+
+
+
 
 
 
