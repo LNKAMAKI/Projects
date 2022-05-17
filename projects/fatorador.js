@@ -41,7 +41,7 @@
 
 //expression = ['55','w','^','3','+','13','h','^','4','k','^','2']
 
-expression = ['+','11','x','+','121','y','+','11yz','+','xz']
+//expression = ['-','11','x','-','121','y','+','11yz','+','xz']
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
@@ -1126,20 +1126,20 @@ divs = [1]
         scarecrow = []
         for(anchor in segs) {
            // console.log('i feel the light betrayed me', segs[anchor].mons)
-            scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...segs[anchor].car], positions: [...segs[anchor].mons]})
+            
         
             army = []
             lpisthebest = ''
                 for (fall in segs[anchor].car) {
                 if (lpisthebest.length == 0) {
-                  //  console.log('LISTA VAZIA - ADD')
+                    console.log('LISTA VAZIA - ADD')
                     lpisthebest = segs[anchor].car[fall]
-                  //  console.log(lpisthebest)
+                    console.log(lpisthebest)
                 }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
-                   // console.log('VAI - ADD')
+                    console.log('VAI - ADD')
                     lpisthebest += segs[anchor].car[fall]
                 }else{
-                   // console.log('nÃO VAI nÃO')
+                    console.log('nÃO VAI nÃO')
                     army.push(lpisthebest)
                     if(segs[anchor].car[fall] != '.') {
                     lpisthebest = segs[anchor].car[fall]
@@ -1157,7 +1157,9 @@ divs = [1]
                 }
             }
             bell = [...army]
-          //  console.log('OAHAHA', army)
+            console.log('OAHAHA', army)
+
+            scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
             for (high in segs[anchor].mons) {
                 
                
