@@ -40,8 +40,8 @@
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
 
 //expression = ['55','w','^','3','+','13','h','^','4','k','^','2']
-
 //expression = ['-','11','x','-','121','y','+','11yz','+','xz']
+
 if (expression[0] !== '-' && expression[0] !== '+') {
  //   console.log('EPAAAAAAAAAAAAAAA')
     expo = ['+']
@@ -2661,7 +2661,7 @@ for (bababa in pans) {
     if (concatenar.length > 0) {
         concatenar+= ' + '
     }
-    if (naonao.length > 1) {
+    if (edge.length > 1) {
     console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
     concatenar+= `( ${naonao} )( ${tobreak} )`
     }else{
@@ -2785,6 +2785,8 @@ for (bye in todososnumeros) {
     }
  }
 }
+
+console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
 //}
 
 /*
