@@ -2635,6 +2635,21 @@ for (bababa in pans) {
     }
     console.log('____________________','(',naonao,')','(',tobreak,')','___________________________')
 }
+
+console.log('VENDO OS QUE FALTAM:')
+console.log(numerospresentes)
+todososnumeros = []
+for (acaba in monomios) {
+    console.log(acaba)
+    todososnumeros.push(acaba)
+}
+cancelar = []
+for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
+        console.log(todososnumeros[feliz])
+        if (numerospresentes.indexOf(Number(todososnumeros[feliz])) != -1) {
+           todososnumeros.splice(feliz, 1)
+}
+}
 //}
 
 /*
