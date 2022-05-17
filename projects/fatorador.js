@@ -1159,6 +1159,14 @@ divs = [1]
             bell = [...army]
             console.log('OAHAHA', army)
 
+            console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
+            
+            for (pahh in army) {
+                console.log(army[pahh])
+                if (army[pahh] == '*') {
+                    army[pahh] = '.'
+                }
+            }
             scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
             for (high in segs[anchor].mons) {
                 
@@ -2503,7 +2511,7 @@ for (bababa in pans) {
          teri = false
          for (estudar in triste) {
           //  console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
-          //  console.log('asasasa',triste[estudar])
+            console.log('asasasa',triste[estudar])
             ohjeez = triste[Number(estudar) - 1] != '-'
           //  console.log(ohjeez)
             if (triste[estudar] == '.') {
@@ -2517,16 +2525,16 @@ for (bababa in pans) {
                 }
             }else{
                
-               // quase.push(triste[estudar])
-            //  console.log('juntar',juntar)
+                //quase.push(triste[estudar])
+              console.log('juntar',juntar)
                 if (juntar.length == 0) {
                     juntar = triste[estudar]
-                 //   console.log('LISTA VAZIA', juntar)
+                    console.log('LISTA VAZIA', juntar)
 
                     if (estudar == triste.length - 1) {
                         quase.push(juntar)
                     }
-                  //  console.log('MENMEN',quase)
+                    console.log('MENMEN',quase)
 
                 }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
 
@@ -2563,49 +2571,51 @@ for (bababa in pans) {
          aconta = ''
          aster = false
          elevar = 1
+         console.log('QUAAAAAAAASE', quase)
+
          for (patience in quase) {
-            //console.log(quase,'edededededededededed',quase[patience])   
+            console.log(quase,'edededededededededed',quase[patience])   
 
             if (quase[patience] == '*') {
                 aster = true
-               // console.log('AND THE CLSDADWDWD', patience)
-               // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                console.log('AND THE CLSDADWDWD', patience)
+                console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-              //  console.log(gates, fazerConta(gates))
+                console.log(gates, fazerConta(gates))
 
-               // console.log(quase, Number(patience) + 1)
+                console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
-               // console.log(quase)
+                console.log(quase)
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-              //  console.log('É LETRA')
+                console.log('É LETRA')
                 if (quase[patience] == quase[Number(patience) - 1]) {
-                   // console.log('ELEVAR!')
+                    console.log('ELEVAR!')
                     elevar++
 
                     if (patience == quase.length - 1) {
-                       // console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                        //console.log(aconta)
+                        console.log(aconta)
                     }
 
                 }else{
                     if (elevar > 1) {
-                       // console.log('UEPA')
+                        console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
 
                     aconta+= quase[patience]
-                   // console.log(aconta)
+                    console.log(aconta)
                   
                     elevar = 1
                 }
-                //console.log(elevar)
+                console.log(elevar)
                
             } 
         }
