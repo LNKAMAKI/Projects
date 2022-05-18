@@ -44,7 +44,8 @@
 
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
-
+//expression = ['2xx','+','30','xx']
+expression = ['4','x','+','13','x','+','6','x','+','42','x','x','x']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -157,29 +158,32 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //console.log('número:',monomios[obnum].numero)
    }
    
-   
+   for (surprise in monomios) {
+       console.log(monomios[surprise].numero)
+   }
    //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
    
-   // SEPARAR CORRETAMEnTE OS nÚMEROS
+   // TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
+   /*
    for (bye in monomios) {
-       ////console.log(monomios[bye])
+       console.log(monomios[bye])
    
        comofica = []
        ground = ''
    
        for (misery in monomios[bye].numero) { 
-         //  //console.log(monomios[bye].numero[misery])
+        // console.log(monomios[bye].numero[misery])
            
            carac = monomios[bye].numero[misery]
-          // //console.log('CARACTER' + carac)
-         //  //console.log(ground.length)
+          //console.log('CARACTER' + carac)
+         //console.log(ground.length)
    
-          // //console.log('OH COME On',ground, String(ground.search('[0-9]')))
+         // console.log('OH COME On',ground, String(ground.search('[0-9]')))
                if (ground.length == 0) {
-                   //console.log('LISTA VAZIA')
+                  // console.log('LISTA VAZIA')
                    ground+= carac
                }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                   //console.log('É UM nÚMERO')
+                  // console.log('É UM nÚMERO')
                    ground+= carac
                }else{
                    comofica.push(ground)
@@ -192,12 +196,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
        }
    
-       ////console.log('COMOFICA', comofica)
+      // console.log('COMOFICA', comofica)
        ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
    }
-   
-   
+   */
+
    for (huh in monomios) {
     //   console.log(monomios[huh].numero)
    
@@ -214,6 +218,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    ji = []
+   // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
    for (huh in monomios) {
       // console.log(monomios[huh], monomios[huh].partletral)
        
@@ -236,10 +241,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    exp = []
    
    for (bye in ji) {
-     //  console.log(ji[bye])
+       console.log(ji[bye])
    
        for (misery in ji[bye].quais) { 
-         //  console.log(monomios[ji[bye].quais[misery]].numero)
+           console.log(monomios[ji[bye].quais[misery]].numero)
    
            ground = ''
    
@@ -247,13 +252,13 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            for (b in monomios[ji[bye].quais[misery]].numero) {
    
               carac =  monomios[ji[bye].quais[misery]].numero[b]
-            //  console.log(carac)
+              console.log(carac)
                
                if (ground.length == 0) {
-                   //console.log('LISTA VAZIA')
+                   console.log('LISTA VAZIA')
                    ground+= carac
                }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                  // console.log('É UM nÚMERO')
+                   console.log('É UM nÚMERO')
                    ground+= carac
                }else{
                    comofica.push(ground)
@@ -264,7 +269,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    }
                }
            }
-           //console.log(comofica)
+           console.log('EITANÓIS',comofica)
            monomios[ji[bye].quais[misery]].numero = comofica
        }
    }
@@ -287,21 +292,21 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    divisor.push(ji[chuva].que[flowers])
    }
    
-   //console.log(monomios[ji[chuva].quais[da]].numero, '/',divisor)
+   console.log(monomios[ji[chuva].quais[da]].numero, '/',divisor)
    tu = [...divisor]
    resultadoDaDivisão = DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero)
    
-   //console.log('A DIVISÃ É IGUAL DE',monomios[ji[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
+   console.log('A DIVISÃ É IGUAL DE',monomios[ji[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
    
    plan = []
    add = ''
    
    for (past in resultadoDaDivisão) {
       
-    //console.log(resultadoDaDivisão[past])
+    console.log(resultadoDaDivisão[past])
    
     if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
-   //console.log('ADICIOnAR')
+   console.log('ADICIOnAR')
    
    if (add.length == 0) {
        if (resultadoDaDivisão[past - 1] != '-') {
@@ -309,22 +314,23 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
    
    }else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
-       //console.log('OK')
+       console.log('OK')
    add+= resultadoDaDivisão[past]
    }else{
        plan.push(add)
        add = ''
-       //console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
+       console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
       
        add+= resultadoDaDivisão[past]
        
        
    }
-   //console.log('ADD', add)
+  // console.log('ADD', add)
    //console.log('PLAn É:', plan)
    
    if (plan.length == 3) {
    //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+   //console.log('___________________number1:', Number(plan[0]), 'number2:', Number(plan[2]),'__________________')
    //console.log(Number(plan[0])*Number(plan[2]))
    plan = [String(Number(plan[0])*Number(plan[2]))]
    }
@@ -332,7 +338,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    }
    
-   console.log(ji[chuva].quais.length, '---------')
+   //console.log(ji[chuva].quais.length, '---------')
    if (add == '' && ji[chuva].quais.length > 1) {
        add = '1'
       console.log('VAIIIIIIIIIIIIIII')
@@ -341,14 +347,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //console.log('PLAn', plan)
    
    if (plan.length == 3) {
-       //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-       //console.log(Number(plan[0])*Number(plan[2]))
+       console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+       console.log(Number(plan[0])*Number(plan[2]))
        plan = [String(Number(plan[0])*Number(plan[2]))]
-       //console.log('É ISSO!!', plan)
+       console.log('É ISSO!!', plan)
        }
    
        if (monomios[ji[chuva].quais[da]].numero[0] == '+' || monomios[ji[chuva].quais[da]].numero[0] == '-') {
-      //console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
+      console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
    
        sinal = monomios[ji[chuva].quais[da]].numero[0]
    
@@ -361,7 +367,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
     entao = '-'
     entao+= plan[0]
-    //console.log(entao)
+    console.log(entao)
     conta.push(entao)
        }else{
           
@@ -378,7 +384,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //console.log('E RESOLVEnDO FICA ASSIM:', comehome)
    
    
-   
+   /*
    if (comehome[0][0] == '-') {
        t = ''
       for (b in comehome[0]) {
@@ -425,6 +431,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
          //  console.log('PARTE LETRAL:', ji[chuva].que)
        }
    }
+   */
    
    
    
@@ -433,6 +440,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    // SEPARAnDO OS MOnÔMIOS DEnOVO
+   /*
    monomios = [{numero: ''}]
    obnum = 0
    
@@ -448,9 +456,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    monomios[obnum].numero += exp[n]
    }
+   */
    //
    
    // SEPARAR CORRETAMEnTE OS nÚMEROS
+   
    for (bye in monomios) {
        ////console.log(monomios[bye])
    
@@ -485,8 +495,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('COMOFICA', comofica)
        ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
-   }
-   
+    }
+ 
    //console.log('OK, VAMOS DAR UMA PARADInHA')
    
    // FATORAR SÓ UM nÚMERO
@@ -818,7 +828,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    }
-   expression = exp
+   //expression = exp
    
    ////console.log('--------------------------------------------MOnOMIOS--------------------------------------')
    reps = []
@@ -1945,8 +1955,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        }
                    }
    
-          console.log('MULTIPLICAR', eg2,'*',eg)
-           console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+          //console.log('MULTIPLICAR', eg2,'*',eg)
+           //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                    
                    numerinhos = []
                    for (decisao in correto) {
@@ -1994,14 +2004,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                      }
    
                        if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                      console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
+                      //console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
                            conseguiu = true
                        }
                    }
                    older++
                    }
              //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-             console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
           //console.log(older - 1, monomios[older - 1].numero)
                   asitwas.push(older - 1)
                   asitwas2.push(older - 1)
@@ -2397,21 +2407,21 @@ if (expression[0] !== '-' && expression[0] !== '+') {
           
           console.log(quase)
            for (patience in quase) {
-               console.log('EFEEDEDEDEED',quase[patience])       
+               console.log('_________uuuuuuuuuuu_______',quase[patience])       
               
                if (quase[patience] == '*') {
                    aster = true
-                  // console.log('AND THE CLSDADWDWD', patience)
-                  // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                   console.log('AND THE CLSDADWDWD', patience)
+                   console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                 //  console.log(gates, fazerConta(gates))
+                   console.log('gates',gates, fazerConta(gates))
    
                 //  console.log(quase, Number(patience) + 1)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
-                  // console.log(quase)
+                   console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
@@ -2477,13 +2487,17 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                            mood+= aconta[member]
                        }
                    }
+                   console.log('THIS IS MOOOOOOOOOOOOD', mood)
                    tobreak+= `-${mood}`
                }else{
                    tobreak += `-${aconta}`
+                   console.log('THIS IS ACONTAAAAAAAAAAA', aconta)
                }
    
                }else{
                    tobreak+= aconta
+                   console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
+                   for ()
                }
            }else if(quase[0]== '-'){
             
@@ -2498,9 +2512,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
               // console.log('ASSIM: ', correct)
                tobreak+= ` - ${correct}`
+               console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
              //  console.log(el)
                tobreak+= ` + ${aconta}`
+               console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
            }
           // console.log('THE COLOURS THAT I SAW', tobreak)
          }
@@ -2581,47 +2597,47 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             aconta = ''
             aster = false
             elevar = 1
-            console.log('QUAAAAAAAASE', quase)
+            //console.log('QUAAAAAAAASE', quase)
    
             for (patience in quase) {
-               console.log(quase,'edededededededededed',quase[patience])   
+               //console.log(quase,'edededededededededed',quase[patience])   
    
                if (quase[patience] == '*') {
                    aster = true
-                   console.log('AND THE CLSDADWDWD', patience)
-                   console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                   //console.log('AND THE CLSDADWDWD', patience)
+                   //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                   console.log(gates, fazerConta(gates))
+                   //console.log(gates, fazerConta(gates))
    
-                   console.log(quase, Number(patience) + 1)
+                   //console.log(quase, Number(patience) + 1)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
-                   console.log(quase)
+                   //console.log(quase)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                   console.log('É LETRA')
+                   //console.log('É LETRA')
                    if (quase[patience] == quase[Number(patience) - 1]) {
-                       console.log('ELEVAR!')
+                       //console.log('ELEVAR!')
                        elevar++
    
                        if (patience == quase.length - 1) {
-                           console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                           //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta+= `^${elevar}`
                            console.log(aconta)
                        }
    
                    }else{
                        if (elevar > 1) {
-                           console.log('UEPA')
+                         //console.log('UEPA')
                            aconta+= `^${elevar}`
                            
                        }
    
                        aconta+= quase[patience]
-                       console.log(aconta)
+                      //console.log(aconta)
                      
                        elevar = 1
                    }
