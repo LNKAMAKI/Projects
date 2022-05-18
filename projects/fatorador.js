@@ -45,7 +45,7 @@
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
-expression = ['4','x','+','13','x','+','6','x','+','42','x','x','x']
+expression = ['-','10','x','x','y','+','20','x','x','y','y']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -2330,6 +2330,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
     //console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
    
          tobreak = ''
+         amontoado = []
          for (quassao in roll[pans[bababa].numberyoudumb].posições) {
       //console.log(quassao,':', roll[pans[bababa].numberyoudumb].posições[quassao],miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido)
    
@@ -2401,6 +2402,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
            }
            aconta = ''
+           friend = ''
    
           elevar = 1
           aster = false
@@ -2421,11 +2423,13 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                 //  console.log(quase, Number(patience) + 1)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
+                   friend = fazerConta(gates)[0]
                    console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  //console.log('É LETRA')
+                  console.log('É LETRA!!!!')
+                  friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                   //console.log('ELEVAR!')
                        elevar++
@@ -2437,6 +2441,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        }
    
                    }else{
+                     
                        if (elevar > 1) {
                           // console.log('UEPA')
                            aconta+= `^${elevar}`
@@ -2444,6 +2449,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        }
    
                        aconta+= quase[patience]
+                   
                       // console.log(aconta)
                      
                        elevar = 1
@@ -2452,7 +2458,21 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                   
                } 
            }
+         
            
+           if (aster == false) {
+            console.log('<<<<<<<<<<<<<',quase)
+            direitando = ''
+            for (h in quase) {
+                    direitando+= quase[h]
+            }
+            friend = direitando
+           }
+           console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend)
+           console.log(amontoado)
+           amontoado.push(friend)
+
+
        if (aster == false) {
         //   console.log('SEM ASTERISCO',aconta)
            antes = ''
@@ -2468,6 +2488,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
           // console.log('ANTEEEES:', antes)
            
            aconta = antes
+        
        }
        console.log('A CONTA',aconta)
    
@@ -2497,7 +2518,9 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }else{
                    tobreak+= aconta
                    console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
-                   for ()
+                   for (now in aconta) {
+                    console.log(aconta[now])
+                   }
                }
            }else if(quase[0]== '-'){
             
@@ -2595,6 +2618,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            }
    
             aconta = ''
+            friend = ''
             aster = false
             elevar = 1
             //console.log('QUAAAAAAAASE', quase)
@@ -2614,11 +2638,13 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    //console.log(quase, Number(patience) + 1)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
+                   friend = fazerConta(gates)[0]
                    //console.log(quase)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                   //console.log('É LETRA')
+                   console.log('É LETRA', quase[patience])
+                    friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                        //console.log('ELEVAR!')
                        elevar++
@@ -2645,6 +2671,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                   
                } 
            }
+           console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
            if (aster == false) {
              
               // console.log('SEM ASTERISCO2', aconta, quase)
