@@ -43,7 +43,8 @@
 //expression = ['-','11','x','-','121','y','+','11yz','+','xz']
 
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
-
+//expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
+//expression = ['a','^','2','-','5a','+','a','-','5']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -331,8 +332,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    }
    
-   if (add == '') {
+   console.log(ji[chuva].quais.length, '---------')
+   if (add == '' && ji[chuva].quais.length > 1) {
        add = '1'
+      console.log('VAIIIIIIIIIIIIIII')
    }
    plan.push(add)
    //console.log('PLAn', plan)
@@ -977,7 +980,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    }) == undefined) {
    
                      //console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
-                       if (repetido[moe].letr == '-') {
+                       if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
                            //console.log('ARE YOU SERIOUS?')
                        }else{
                            segs.push({car: repetido[moe].letr, mons: [m]})
