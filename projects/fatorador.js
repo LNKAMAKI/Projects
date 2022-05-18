@@ -45,7 +45,7 @@
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
-expression = ['-','10','x','x','y','+','20','x','x','y','y']
+expression = ['10xxy','+','5xxy']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -203,7 +203,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    */
 
    for (huh in monomios) {
-    //   console.log(monomios[huh].numero)
+       console.log('HUH',monomios[huh].numero)
    
        partlet = ''
        for (y in monomios[huh].numero) {
@@ -214,6 +214,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         }
        }
        monomios[huh].partletral = partlet
+       console.log('PARTLETRAL',monomios[huh].partletral)
    }
    
    
