@@ -44,7 +44,7 @@
 
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
-//expression = ['a','^','2','-','5a','+','a','-','5']
+
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
