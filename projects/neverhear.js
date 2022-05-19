@@ -1,5 +1,3 @@
-exp = []
-   
 for (bye in agruparsoma) {
     console.log(agruparsoma[bye])
 
@@ -57,7 +55,7 @@ console.log(particles[agruparsoma[chuva].quais[da]].numero, '/',divisor)
 tu = [...divisor]
 resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
 
-console.log('A DIVISÃ É IGUAL DE',particles[agruparsoma[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
+console.log('A DIVISÃO É IGUAL DE',particles[agruparsoma[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
 
 plan = []
 add = ''
@@ -139,7 +137,7 @@ if (plan.length == 3) {
 }
 
 
-//console.log('OK, FICOU ASSIM:', conta)
+console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
 //console.log('E RESOLVEnDO FICA ASSIM:', comehome)
@@ -198,22 +196,3 @@ if (exp.length == 0) {
 
 }
 
-
-
-// SEPARAnDO OS MOnÔMIOS DEnOVO
-
-particles = [{numero: ''}]
-obnum = 0
-
-
-for (n = 0; n < exp.length; n++) {
-//console.log(exp[n], particles[obnum])
-
-if (String(exp[n]).search('[\\-\\+]') != -1 && n != 0) {
-//console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
-particles.push({numero: ''})
-obnum++
-}
-
-particles[obnum].numero += exp[n]
-}

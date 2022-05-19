@@ -4,14 +4,14 @@
 
 //expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b','+','ae','-','af','-','be','+','bf','+','ex','-','fx']
 
-expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+//expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
 //expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 
-//expression = ['2y', '+','4','y','+','y','+','2','x','+','4','x']
+expression = ['2','y','+','4','y','+','2','x','+','4','x']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
 
@@ -45,7 +45,7 @@ expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2'
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
-expression = ['-','10xy','+','5xy']
+//expression = ['-','10x','-','5x','+','2x','+','4','x','y','+','6','x','y']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -221,7 +221,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    ji = []
    // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
    for (huh in monomios) {
-      // console.log(monomios[huh], monomios[huh].partletral)
+       console.log(monomios[huh].numero, monomios[huh].partletral,'_________________')
        
        if (ji.find(function (ji) {
            return ji.que == monomios[huh].partletral
@@ -238,7 +238,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    // SEPARAnDO/JUnTAnDO OS nÚMEROS
-   /*
+   
    exp = []
    
    for (bye in ji) {
@@ -277,7 +277,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    
-   
+   /*
    for (chuva in ji) {
        //console.log('')
       // console.log('')
@@ -298,7 +298,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    tu = [...divisor]
    resultadoDaDivisão = DIVIDIR( divisor, monomios[ji[chuva].quais[da]].numero)
    
-   console.log('A DIVISÃ É IGUAL DE',monomios[ji[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
+   console.log('A DIVISÃO É IGUAL DE',monomios[ji[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
    
    plan = []
    add = ''
@@ -380,7 +380,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    }
    
    
-   //console.log('OK, FICOU ASSIM:', conta)
+   console.log('OK, FICOU ASSIM:', conta)
    
    comehome = fazerConta(conta)
    //console.log('E RESOLVEnDO FICA ASSIM:', comehome)
@@ -463,7 +463,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //
    
    // SEPARAR CORRETAMEnTE OS nÚMEROS
-   
+   /*
    for (bye in monomios) {
        ////console.log(monomios[bye])
    
@@ -499,7 +499,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
     }
- 
+ */
    //console.log('OK, VAMOS DAR UMA PARADInHA')
    
    // FATORAR SÓ UM nÚMERO
@@ -2423,7 +2423,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    gates.push(quase[Number(patience) + 1])
                    console.log('gates',gates, fazerConta(gates))
    
-                //  console.log(quase, Number(patience) + 1)
+                  console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
@@ -2462,7 +2462,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                } 
            }
          
-           
+           console.log('(((((((((((((((((((((((((((((((', quase,')))))))))))))))))))))))))))))))))))', aconta)
            if (aster == false) {
             console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
@@ -2471,6 +2471,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             }
             friend = direitando
            }
+
            console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend)
            console.log(amontoado)
            if (friend[0] == '-') {
@@ -2513,7 +2514,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
               
                if(quase[0]== '-'){
                
-                  
+                  negativo = true
                if (aconta[0] == '-') {
                 //   console.log('PROBLEM')
                    mood = ''
@@ -2532,6 +2533,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
    
                }else{
+                   negativo = false
                    tobreak+= aconta
                    console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
                    for (now in aconta) {
@@ -2540,7 +2542,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
            }else if(quase[0]== '-'){
             
-   
+            negativo = true
                correct = ''
                for (okay in aconta) {
                   // console.log(el[okay])
@@ -2553,6 +2555,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                tobreak+= ` - ${correct}`
                console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
+               negativo = false
              //  console.log(el)
                tobreak+= ` + ${aconta}`
                console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
@@ -2655,7 +2658,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   //console.log(quase)
+                   console.log(friend)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
@@ -2740,90 +2743,268 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
        console.log('ESSE É O AMONTOADO', amontoado)
 
-      
-       particles = [{numero: ''}]
-       obnum = 0
-       for (n = 0; n < amontoado.length; n++) {
-       //console.log(amontoado[n])
-       
-       if (String(amontoado[n]).search('[\\-\\+]') != -1 && n != 0) {
-       //console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
-       particles.push({numero: ''})
-       obnum++
-       }
-       
-       particles[obnum].numero += amontoado[n]
-       //console.log('número:',particles[obnum].numero)
-       }
-
-       for (huh in particles) {
-        //console.log('HUH',particles[huh].numero)
-    
-        partlet = ''
-        for (y in particles[huh].numero) {
-         //console.log(particles[huh].numero[y])
-         if (String(particles[huh].numero[y]).search('[a-z]') != -1) {
-            //console.log('EEEEEE')
-            partlet+= String(particles[huh].numero[y])
-         }
-        }
-        particles[huh].partletral = partlet
-        //console.log('PARTLETRAL',particles[huh].partletral)
-    }
-
-    agruparsoma = []
-   // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
-   for (huh in particles) {
-      // console.log(particles[huh], particles[huh].partletral)
-       
-       if (agruparsoma.find(function (agruparsoma) {
-           return agruparsoma.que == particles[huh].partletral
-          }) == undefined) {
-              //console.log('ARRRRRROZ')
-       agruparsoma.push({quais: [Number(huh)], que:  particles[huh].partletral})
-          }else{
-           agruparsoma.find(function (agruparsoma) {
-               return agruparsoma.que == particles[huh].partletral
-              }).quais.push(Number(huh))
-          }
-       
-   }
-
-   exp = []
+     
+   // SEPARAnDO OS MOnÔMIOS
    
-for (bye in agruparsoma) {
-    console.log(agruparsoma[bye])
+particles = [{numero: ''}]
+obnum = 0
+for (n = 0; n < amontoado.length; n++) {
+//console.log(amontoado[n])
 
-    for (misery in agruparsoma[bye].quais) { 
-        console.log(particles[agruparsoma[bye].quais[misery]].numero)
+if (String(amontoado[n]).search('[\\-\\+]') != -1 && n != 0) {
+//console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
+particles.push({numero: ''})
+obnum++
+}
 
-        ground = ''
+particles[obnum].numero += amontoado[n]
+console.log('número----------------------------------------------:',particles[obnum].numero)
+}
 
-        comofica = []
-        for (b in particles[agruparsoma[bye].quais[misery]].numero) {
 
-           carac =  particles[agruparsoma[bye].quais[misery]].numero[b]
-           console.log(carac)
-            
+
+for (huh in particles) {
+    console.log('HUH',particles[huh].numero)
+
+    partlet = ''
+    for (y in particles[huh].numero) {
+     //console.log(particles[huh].numero[y])
+     if (String(particles[huh].numero[y]).search('[a-z]') != -1) {
+        //console.log('EEEEEE')
+        partlet+= String(particles[huh].numero[y])
+     }
+    }
+    particles[huh].partletral = partlet
+    console.log('PARTLETRAL',particles[huh].partletral)
+}
+
+ 
+for (bye in particles) {
+    console.log(particles[bye])
+
+    comofica = []
+    ground = ''
+
+    for (misery in particles[bye].numero) { 
+     // console.log(particles[bye].numero[misery])
+        
+        carac = particles[bye].numero[misery]
+       //console.log('CARACTER' + carac)
+      //console.log(ground.length)
+
+      // console.log('OH COME On',ground, String(ground.search('[0-9]')))
             if (ground.length == 0) {
-                console.log('LISTA VAZIA')
+               // console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                console.log('É UM nÚMERO')
+               // console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
                 ground = ''
                 ground += carac
-                if (b == particles[agruparsoma[bye].quais[misery]].numero.length - 1) {
-                    comofica.push(ground)
-                }
+                
             }
-        }
-        console.log('EITANÓIS',comofica)
-        particles[agruparsoma[bye].quais[misery]].numero = comofica
+            if (misery == particles[bye].numero.length - 1) {
+                comofica.push(ground)
+            }
+    }
+
+   // console.log('COMOFICA', comofica)
+    ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',particles[bye].numero)
+    particles[bye].numero = comofica
+}
+
+
+agruparsoma = []
+// JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
+for (huh in particles) {
+    console.log(particles[huh].numero, particles[huh].partletral,'_________________')
+    
+    if (agruparsoma.find(function (agruparsoma) {
+        return agruparsoma.que == particles[huh].partletral
+       }) == undefined) {
+           //console.log('ARRRRRROZ')
+    agruparsoma.push({quais: [Number(huh)], que:  particles[huh].partletral})
+       }else{
+        agruparsoma.find(function (agruparsoma) {
+            return agruparsoma.que == particles[huh].partletral
+           }).quais.push(Number(huh))
+       }
+    
+}
+
+
+          
+
+
+
+
+
+for (chuva in agruparsoma) {
+    //console.log('')
+   // console.log('')
+    //console.log('')
+
+    conta = []
+for (da in agruparsoma[chuva].quais) {
+
+
+
+divisor = []
+for (flowers in agruparsoma[chuva].que) {
+
+divisor.push(agruparsoma[chuva].que[flowers])
+}
+
+console.log(particles[agruparsoma[chuva].quais[da]].numero, '/',divisor)
+tu = [...divisor]
+resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
+
+console.log('A DIVISÃO É IGUAL DE',particles[agruparsoma[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
+
+plan = []
+add = ''
+
+for (past in resultadoDaDivisão) {
+   
+ console.log(resultadoDaDivisão[past])
+
+ if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
+console.log('ADICIOnAR')
+
+if (add.length == 0) {
+    if (resultadoDaDivisão[past - 1] != '-') {
+    add+= resultadoDaDivisão[past]
+    }
+
+}else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
+    console.log('OK')
+add+= resultadoDaDivisão[past]
+}else{
+    plan.push(add)
+    add = ''
+    console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
+   
+    add+= resultadoDaDivisão[past]
+    
+    
+}
+// console.log('ADD', add)
+//console.log('PLAn É:', plan)
+
+if (plan.length == 3) {
+//console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+//console.log('___________________number1:', Number(plan[0]), 'number2:', Number(plan[2]),'__________________')
+//console.log(Number(plan[0])*Number(plan[2]))
+plan = [String(Number(plan[0])*Number(plan[2]))]
+}
+ }
+
+}
+
+//console.log(agruparsoma[chuva].quais.length, '---------')
+if (add == '' && agruparsoma[chuva].quais.length > 1) {
+    add = '1'
+   console.log('VAIIIIIIIIIIIIIII')
+}
+plan.push(add)
+//console.log('PLAn', plan)
+
+if (plan.length == 3) {
+    console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+    console.log(Number(plan[0])*Number(plan[2]))
+    plan = [String(Number(plan[0])*Number(plan[2]))]
+    console.log('É ISSO!!', plan)
+    }
+
+    if (particles[agruparsoma[chuva].quais[da]].numero[0] == '+' || particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
+   console.log('O SInAL É: ', particles[agruparsoma[chuva].quais[da]].numero[0])
+
+    sinal = particles[agruparsoma[chuva].quais[da]].numero[0]
+
+    if (conta.length != 0) {
+    conta.push(particles[agruparsoma[chuva].quais[da]].numero[0])
+    }
+    }
+
+    if (conta.length == 0 && particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
+
+ entao = '-'
+ entao+= plan[0]
+ console.log(entao)
+ conta.push(entao)
+    }else{
+       
+        conta.push(plan[0])
+    }
+   
+    
+}
+
+
+console.log('OK, FICOU ASSIM:', conta)
+
+comehome = fazerConta(conta)
+//console.log('E RESOLVEnDO FICA ASSIM:', comehome)
+
+
+
+if (comehome[0][0] == '-') {
+    t = ''
+   for (b in comehome[0]) {
+   if (comehome[0][b] != '-') {
+     t+= comehome[0][b]
+   }
+   }
+  // console.log(t)
+   //console.log(typeof t)
+   at = t
+   if (ehprimo(t) == false) {
+      //console.log(at)
+   fat = FATORARSInGULAR(at)
+  // console.log(String(fat))
+   }else{
+     // console.log('É PRIMOOOOOOOOOOOOOOOOO')
+    fat = at
+   }
+   oop = '-'
+   oop+= String(fat)
+//console.log(oop)
+
+exp.push('-')
+fat += agruparsoma[chuva].que
+exp.push(fat)
+
+}else{
+    /*
+    if (ehprimo(comehome) == false) {
+fat = FATORARSInGULAR(comehome)
+    }else{
+        fat = comehome
+    }
+    */
+    fat = comehome
+//console.log(fat)
+
+if (exp.length == 0) {
+    fat += agruparsoma[chuva].que
+    exp.push(fat)
+    //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
+   
+    }else {
+        exp.push('+')
+        fat += agruparsoma[chuva].que
+        exp.push(fat)
+      //  console.log('PARTE LETRAL:', agruparsoma[chuva].que)
     }
 }
+
+
+
+
+}
+
 
 
 
@@ -2854,6 +3035,7 @@ for (bye in agruparsoma) {
        aconta = ''
        elevar = 1
        aster = false
+       friend = ''
        
        console.log(quase)
        gates = []
@@ -2873,11 +3055,11 @@ for (bye in agruparsoma) {
              //  console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
-               // console.log(quase)
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
                //console.log('É LETRA')
+              
                 if (quase[patience] == quase[Number(patience) - 1]) {
                //console.log('ELEVAR!')
                     elevar++
@@ -4455,4 +4637,5 @@ for (bye in agruparsoma) {
    
    //console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
    //DESFATORAR(['-','3'],['3'],['1'])
+   //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', DIVIDIR(['x'], ['10','x']))
    
