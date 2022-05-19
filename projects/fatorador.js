@@ -7,7 +7,7 @@
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 
 //expression = ['2','y','+','4','y','+','2','x','+','4','x']
@@ -41,7 +41,8 @@ expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x'
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
-//expression = ['-','5x','+','10x','+','2x','+','4','x','y','+','6','x','y']
+expression = ['-','5x','+','10x','+','2x','+','4','x','y','+','6','x','y']
+//expression = ['37','x','+','21','x','^','4']
 //expression = ['13*2y','+','13xy']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
@@ -2408,24 +2409,24 @@ if (expression[0] !== '-' && expression[0] !== '+') {
           elevar = 1
           aster = false
           
-          console.log(quase)
+          console.log('QUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASE',quase)
            for (patience in quase) {
                //console.log('_________uuuuuuuuuuu_______',quase[patience])       
               
                if (quase[patience] == '*') {
                    aster = true
                   // console.log('AND THE CLSDADWDWD', patience)
-                  // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                   console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                  // console.log('gates',gates, fazerConta(gates))
+                   console.log('gates',gates, fazerConta(gates))
    
-                 // console.log(friend)
+                  console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                  // console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
+                   console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
@@ -2460,7 +2461,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                } 
            }
          
-          // console.log('(((((((((((((((((((((((((((((((', quase,')))))))))))))))))))))))))))))))))))', aconta)
+           console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
            if (aster == false) {
            // console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
@@ -2765,10 +2766,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
       segundocaso = SOMANDOMONOMIOS(amontoado)
       if (primeirocaso[1] == primeirocaso[2]) {
         console.log(primeirocaso[0], 'continua igual')
+      }else{
+          console.log(amount,'=>',primeirocaso[0])
       }
 
       if (segundocaso[1] == segundocaso[2]) {
         console.log(segundocaso[0], 'continua igual')
+      }else{
+        console.log(amontoado,'=>',segundocaso[0])
       }
 
 
@@ -4667,3 +4672,98 @@ if (exp.length == 0) {
 
 return[exp, agruparsoma.length, particles.length]
  }
+
+
+ function REDONUMFACTORING(storer) {
+
+    if (typeof storer === 'string') {
+        other = []
+        for (h in storer) {
+            other.push(storer[h])
+        }
+        storer = other
+    }
+
+resultobtained = ''
+
+elevar = 1
+wasmultiplicated = false
+
+
+operation = []
+for (patience in storer) {
+    
+   
+    if (storer[patience] == '*') {
+        wasmultiplicated = true
+        
+        
+        operation.push(storer[Number(patience) - 1])
+        operation.push('x')
+        operation.push(storer[Number(patience) + 1])
+        
+
+        storer[Number(patience) + 1] = fazerConta(operation)[0]
+        resultobtained = fazerConta(operation)[0]
+        
+      
+        operation = []
+    }else if(storer[patience].search('[a-z]') != -1)  {
+       
+        if (storer[patience] == storer[Number(patience) - 1]) {
+       
+            elevar++
+
+            if (patience == storer.length - 1) {
+                
+                resultobtained+= `^${elevar}`
+                
+            }
+
+        }else{
+          
+            if (elevar > 1) {
+                
+                resultobtained+= `^${elevar}`
+                
+            }
+
+            resultobtained+= storer[patience]
+        
+            
+          
+            elevar = 1
+        }
+        
+       
+    } 
+}
+
+if (wasmultiplicated == false) {
+    //   
+       addingnumber = ''
+       for (eyes in storer) {
+           
+          // 
+           if (storer[eyes].search('[0-9]') != -1) {
+              // 
+               addingnumber+= storer[eyes]
+           }
+       }
+       addingnumber+= resultobtained
+      // 
+       
+       resultobtained = addingnumber
+    
+   }
+if(storer[0] == '-') {
+    confirmedresult = '-'
+    for (caracter in resultobtained) {
+        confirmedresult+= resultobtained[caracter]
+    }
+    return confirmedresult
+}else{
+    return resultobtained
+}
+   
+}
