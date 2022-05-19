@@ -36,15 +36,15 @@
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
 
 //expression = ['55','w','^','3','+','13','h','^','4','k','^','2']
-//expression = ['-','11','x','-','121','y','+','11yz','+','xz']
+expression = ['-','11','x','-','121','y','+','11yz','+','xz']
 
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
-expression = ['-','5x','+','10x','+','2x','+','4','x','y','+','6','x','y']
+//expression = ['-','5x','+','10x','+','2x','+','4','x','y','+','6','x','y']
 //expression = ['37','x','+','21','x','^','4']
 //expression = ['13*2y','+','13xy']
-expression = ['10','x','x','y','+','8','x','x','+','12','x','x','+','6','x','x','y']
+//expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 
 
 if (expression[0] !== '-' && expression[0] !== '+') {
@@ -2334,6 +2334,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
     //console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
    
          tobreak = ''
+         realife = []
          amontoado = []
          for (quassao in roll[pans[bababa].numberyoudumb].posições) {
       //console.log(quassao,':', roll[pans[bababa].numberyoudumb].posições[quassao],miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido)
@@ -2493,6 +2494,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
        //console.log('A CONTA',aconta)
    
+       realife.push(aconta)
            if (tobreak.length == 0) {
               
               
@@ -2695,6 +2697,16 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                } 
            }
            console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
+
+           if (aster == false) {
+            // console.log('<<<<<<<<<<<<<',quase)
+             direitando = ''
+             for (h in quase) {
+                     direitando+= quase[h]
+             }
+             friend = direitando
+            }
+
            if (aster == false) {
              
               // console.log('SEM ASTERISCO2', aconta, quase)
@@ -2720,12 +2732,18 @@ if (expression[0] !== '-' && expression[0] !== '+') {
           edge.push(aconta)
 
           if (quase[0] == '-') {
+            uh = ''
+            for (i in friend) {
+                if (friend[i] != '-') {
+                    uh+= friend[i]
+                }
+            }
             amount.push('-')
-            amount.push(aconta)
+            amount.push(uh)
             console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta,'____________________')
         }else{
             amount.push('+')
-            amount.push(aconta)
+            amount.push(friend)
             console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta)
         }
 
@@ -2859,6 +2877,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             } 
         }
         
+        if (aster == false) {
+            // console.log('<<<<<<<<<<<<<',quase)
+             direitando = ''
+             for (h in quase) {
+                     direitando+= quase[h]
+             }
+             friend = direitando
+            }
     if (aster == false) {
      //   console.log('SEM ASTERISCO',aconta)
         antes = ''
@@ -4769,3 +4795,5 @@ if(storer[0] == '-') {
 }
    
 }
+
+console.log(FATORARSInGULAR('10x'))
