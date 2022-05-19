@@ -4,14 +4,14 @@
 
 //expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b','+','ae','-','af','-','be','+','bf','+','ex','-','fx']
 
-//expression = ['3', 'x', 'y', '-', '8','x', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
 //expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 
-expression = ['2','y','+','4','y','+','2','x','+','4','x']
+//expression = ['2','y','+','4','y','+','2','x','+','4','x']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
 
@@ -159,7 +159,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    }
    
    for (surprise in monomios) {
-       console.log(monomios[surprise].numero)
+      // console.log(monomios[surprise].numero)
    }
    //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
    
@@ -203,7 +203,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    */
 
    for (huh in monomios) {
-       console.log('HUH',monomios[huh].numero)
+       //console.log('HUH',monomios[huh].numero)
    
        partlet = ''
        for (y in monomios[huh].numero) {
@@ -214,14 +214,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         }
        }
        monomios[huh].partletral = partlet
-       console.log('PARTLETRAL',monomios[huh].partletral)
+       //console.log('PARTLETRAL',monomios[huh].partletral)
    }
    
    
    ji = []
    // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
    for (huh in monomios) {
-       console.log(monomios[huh].numero, monomios[huh].partletral,'_________________')
+       //console.log(monomios[huh].numero, monomios[huh].partletral,'_________________')
        
        if (ji.find(function (ji) {
            return ji.que == monomios[huh].partletral
@@ -242,10 +242,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    exp = []
    
    for (bye in ji) {
-       console.log(ji[bye])
+      // console.log(ji[bye])
    
        for (misery in ji[bye].quais) { 
-           console.log(monomios[ji[bye].quais[misery]].numero)
+           //console.log(monomios[ji[bye].quais[misery]].numero)
    
            ground = ''
    
@@ -253,10 +253,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            for (b in monomios[ji[bye].quais[misery]].numero) {
    
               carac =  monomios[ji[bye].quais[misery]].numero[b]
-              console.log(carac)
+             // console.log(carac)
                
                if (ground.length == 0) {
-                   console.log('LISTA VAZIA')
+                  // console.log('LISTA VAZIA')
                    ground+= carac
                }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
                    console.log('É UM nÚMERO')
@@ -270,7 +270,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    }
                }
            }
-           console.log('EITANÓIS',comofica)
+           //console.log('EITANÓIS',comofica)
            monomios[ji[bye].quais[misery]].numero = comofica
        }
    }
@@ -1180,12 +1180,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    }
                }
                bell = [...army]
-               console.log('OAHAHA', army)
+              // console.log('OAHAHA', army)
    
-               console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
+              // console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
                
                for (pahh in army) {
-                   console.log(army[pahh])
+                  // console.log(army[pahh])
                    if (army[pahh] == '*') {
                        army[pahh] = '.'
                    }
@@ -1208,13 +1208,13 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                   if (lightson.indexOf('-') != -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') == -1) {
    
                       pain = '-1'
-                      console.log('opa')
+                     // console.log('opa')
                       scarecrow[anchor].divididos.push('1')
                        scarecrow[anchor].outrodiv.push(pain)
                   }else if(lightson.indexOf('-') == -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') != -1) {
                       
                        pain = '-1'
-                       console.log('opa')
+                     //  console.log('opa')
                        scarecrow[anchor].divididos.push('1')
                        scarecrow[anchor].outrodiv.push(pain)
                   }else{
@@ -1636,12 +1636,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
          }
    
-         console.log('OKAY, LET\'S DO IT!')
+        // console.log('OKAY, LET\'S DO IT!')
          for (sei in scarecrow) {
-           console.log(scarecrow[sei].divididos)
+           //console.log(scarecrow[sei].divididos)
            
            for (ai in scarecrow[sei].divididos) {
-               console.log(scarecrow[sei].divididos[ai],'=', scarecrow[sei].outrodiv[ai])
+               //console.log(scarecrow[sei].divididos[ai],'=', scarecrow[sei].outrodiv[ai])
                scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai]
            }
          }
@@ -1870,7 +1870,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        //console.log('EGGGGGG',eg[ne])
                        if (eg[ne] != '.') {
                    if (solo.length == 0) {
-                       console.log('LISTA VAZIA')
+                       //console.log('LISTA VAZIA')
                        solo+= eg[ne]
                    }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
                        //console.log('É UM nÚMERO')
@@ -2412,26 +2412,26 @@ if (expression[0] !== '-' && expression[0] !== '+') {
           
           console.log(quase)
            for (patience in quase) {
-               console.log('_________uuuuuuuuuuu_______',quase[patience])       
+               //console.log('_________uuuuuuuuuuu_______',quase[patience])       
               
                if (quase[patience] == '*') {
                    aster = true
-                   console.log('AND THE CLSDADWDWD', patience)
-                   console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                  // console.log('AND THE CLSDADWDWD', patience)
+                  // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                   console.log('gates',gates, fazerConta(gates))
+                  // console.log('gates',gates, fazerConta(gates))
    
-                  console.log(friend)
+                 // console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
+                  // console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  console.log('É LETRA!!!!')
+                  //console.log('É LETRA!!!!')
                   friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                   //console.log('ELEVAR!')
@@ -2462,31 +2462,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                } 
            }
          
-           console.log('(((((((((((((((((((((((((((((((', quase,')))))))))))))))))))))))))))))))))))', aconta)
+          // console.log('(((((((((((((((((((((((((((((((', quase,')))))))))))))))))))))))))))))))))))', aconta)
            if (aster == false) {
-            console.log('<<<<<<<<<<<<<',quase)
+           // console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
             for (h in quase) {
                     direitando+= quase[h]
             }
             friend = direitando
-           }
-
-           console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend)
-           console.log(amontoado)
-           if (friend[0] == '-') {
-          
-           uh = ''
-           for (i in friend) {
-               if (friend[i] != '-') {
-                   uh+= friend[i]
-               }
-           }
-           amontoado.push('-')
-           amontoado.push(uh)
-           }else{
-               amontoado.push('+')
-               amontoado.push(friend)
            }
 
 
@@ -2507,7 +2490,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            aconta = antes
         
        }
-       console.log('A CONTA',aconta)
+       //console.log('A CONTA',aconta)
    
            if (tobreak.length == 0) {
               
@@ -2525,19 +2508,19 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                            mood+= aconta[member]
                        }
                    }
-                   console.log('THIS IS MOOOOOOOOOOOOD', mood)
+                   //console.log('THIS IS MOOOOOOOOOOOOD', mood)
                    tobreak+= `-${mood}`
                }else{
                    tobreak += `-${aconta}`
-                   console.log('THIS IS ACONTAAAAAAAAAAA', aconta)
+                   //console.log('THIS IS ACONTAAAAAAAAAAA', aconta)
                }
    
                }else{
                    negativo = false
                    tobreak+= aconta
-                   console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
+                  // console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
                    for (now in aconta) {
-                    console.log(aconta[now])
+                   // console.log(aconta[now])
                    }
                }
            }else if(quase[0]== '-'){
@@ -2561,6 +2544,26 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
            }
           // console.log('THE COLOURS THAT I SAW', tobreak)
+
+
+         // console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
+          // console.log(amontoado)
+           
+           if (negativo == true) {
+          
+           uh = ''
+           for (i in friend) {
+               if (friend[i] != '-') {
+                   uh+= friend[i]
+               }
+           }
+           amontoado.push('-')
+           amontoado.push(uh)
+           }else{
+               amontoado.push('+')
+               amontoado.push(friend)
+           }
+           
          }
          console.log('ENTÃO:','(', tobreak,')')
    
@@ -2764,7 +2767,7 @@ console.log('número----------------------------------------------:',particles[o
 
 
 for (huh in particles) {
-    console.log('HUH',particles[huh].numero)
+   // console.log('HUH',particles[huh].numero)
 
     partlet = ''
     for (y in particles[huh].numero) {
@@ -2775,12 +2778,12 @@ for (huh in particles) {
      }
     }
     particles[huh].partletral = partlet
-    console.log('PARTLETRAL',particles[huh].partletral)
+   // console.log('PARTLETRAL',particles[huh].partletral)
 }
 
  
 for (bye in particles) {
-    console.log(particles[bye])
+    //console.log(particles[bye])
 
     comofica = []
     ground = ''
@@ -2819,7 +2822,7 @@ for (bye in particles) {
 agruparsoma = []
 // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
 for (huh in particles) {
-    console.log(particles[huh].numero, particles[huh].partletral,'_________________')
+    //console.log(particles[huh].numero, particles[huh].partletral,'_________________')
     
     if (agruparsoma.find(function (agruparsoma) {
         return agruparsoma.que == particles[huh].partletral
@@ -2857,21 +2860,21 @@ for (flowers in agruparsoma[chuva].que) {
 divisor.push(agruparsoma[chuva].que[flowers])
 }
 
-console.log(particles[agruparsoma[chuva].quais[da]].numero, '/',divisor)
+//console.log(particles[agruparsoma[chuva].quais[da]].numero, '/',divisor)
 tu = [...divisor]
 resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
 
-console.log('A DIVISÃO É IGUAL DE',particles[agruparsoma[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
+//console.log('A DIVISÃO É IGUAL DE',particles[agruparsoma[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
 
 plan = []
 add = ''
 
 for (past in resultadoDaDivisão) {
    
- console.log(resultadoDaDivisão[past])
+ //console.log(resultadoDaDivisão[past])
 
  if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
-console.log('ADICIOnAR')
+//console.log('ADICIOnAR')
 
 if (add.length == 0) {
     if (resultadoDaDivisão[past - 1] != '-') {
@@ -2879,12 +2882,12 @@ if (add.length == 0) {
     }
 
 }else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
-    console.log('OK')
+    //console.log('OK')
 add+= resultadoDaDivisão[past]
 }else{
     plan.push(add)
     add = ''
-    console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
+    //console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
    
     add+= resultadoDaDivisão[past]
     
@@ -2912,14 +2915,14 @@ plan.push(add)
 //console.log('PLAn', plan)
 
 if (plan.length == 3) {
-    console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-    console.log(Number(plan[0])*Number(plan[2]))
+    //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+    //console.log(Number(plan[0])*Number(plan[2]))
     plan = [String(Number(plan[0])*Number(plan[2]))]
-    console.log('É ISSO!!', plan)
+    //console.log('É ISSO!!', plan)
     }
 
     if (particles[agruparsoma[chuva].quais[da]].numero[0] == '+' || particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
-   console.log('O SInAL É: ', particles[agruparsoma[chuva].quais[da]].numero[0])
+   //console.log('O SInAL É: ', particles[agruparsoma[chuva].quais[da]].numero[0])
 
     sinal = particles[agruparsoma[chuva].quais[da]].numero[0]
 
@@ -2932,7 +2935,7 @@ if (plan.length == 3) {
 
  entao = '-'
  entao+= plan[0]
- console.log(entao)
+ //console.log(entao)
  conta.push(entao)
     }else{
        
@@ -2946,7 +2949,7 @@ if (plan.length == 3) {
 console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
-//console.log('E RESOLVEnDO FICA ASSIM:', comehome)
+console.log('E RESOLVEnDO FICA ASSIM:', comehome)
 
 
 
@@ -2977,14 +2980,13 @@ fat += agruparsoma[chuva].que
 exp.push(fat)
 
 }else{
-    /*
+    
     if (ehprimo(comehome) == false) {
 fat = FATORARSInGULAR(comehome)
     }else{
         fat = comehome
     }
-    */
-    fat = comehome
+    
 //console.log(fat)
 
 if (exp.length == 0) {
