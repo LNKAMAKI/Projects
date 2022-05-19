@@ -1,14 +1,13 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
-//expression = ['x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
-//expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b','+','ae','-','af','-','be','+','bf','+','ex','-','fx']
+//expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b']
 
-expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+//expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
-//expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
+expression = ['12','xx','+','30', '+', '10', '+', '15','+','7','x', '+', '3','x', '+', '35', '+', '4','x','^','2','+','9','x','+','18','x','^','2','+','45','+','4','x', '+', '6','x','+','6','x','^','2','+', '2','x','+','10','x','^','2','+','25','+','8','x','^','2','+','20','+','5','x','+', '14','x','^','2']
 
 
 //expression = ['2','y','+','4','y','+','2','x','+','4','x']
@@ -18,9 +17,6 @@ expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+'
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
-
-//expression = ['10x','+','5xyy','+','6yyy','+','6xy','+','14a','+','7ayy','+','7ax','+','4byy','+','4bx','+','10c','+','5cyy','+','5cx','+','14d','+','7dx','+','14e','+','7eyy','+','7ex','+','5xx','+','8b','+','14f','+','7fyy','+','7fx','+','7dyy','+','12y']
-
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'y', '+', 'x','^','2','y']
 
@@ -34,7 +30,7 @@ expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+'
 
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
-//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15t']
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
@@ -45,7 +41,8 @@ expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+'
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
-//expression = ['-','10x','-','5x','+','2x','+','4','x','y','+','6','x','y']
+//expression = ['-','5x','+','10x','+','2x','+','4','x','y','+','6','x','y']
+//expression = ['13*2y','+','13xy']
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -2326,6 +2323,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        console.log('A PARTIR DA QUI')
        edge = []
        naonao = ''
+       amount = []
    
      //console.log(pans[bababa], Number(bababa))
       //console.log(pans[bababa].which)
@@ -2717,18 +2715,33 @@ if (expression[0] !== '-' && expression[0] !== '+') {
           // console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
    
           edge.push(aconta)
+
+          if (quase[0] == '-') {
+            amount.push('-')
+            amount.push(aconta)
+            console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta,'____________________')
+        }else{
+            amount.push('+')
+            amount.push(aconta)
+            console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta)
+        }
+
            if (naonao.length == 0) {
                //console.log('TÁ VAZio')
                if (quase[0] == '-') {
                    naonao+= `-${aconta}`
+                  
                }else{
                    naonao+= aconta
+                   
                }
            }else{
                if (quase[0] == '-') {
                    naonao+= ` - ${aconta}`
+                  
                }else{
                    naonao+= ` + ${aconta}`
+                  
                }
            }
        }
@@ -2751,16 +2764,16 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
 particles = [{numero: ''}]
 obnum = 0
-for (n = 0; n < amontoado.length; n++) {
-//console.log(amontoado[n])
+for (n = 0; n < amount.length; n++) {
 
-if (String(amontoado[n]).search('[\\-\\+]') != -1 && n != 0) {
+
+if (String(amount[n]).search('[\\-\\+]') != -1 && n != 0) {
 //console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
 particles.push({numero: ''})
 obnum++
 }
 
-particles[obnum].numero += amontoado[n]
+particles[obnum].numero += amount[n]
 console.log('número----------------------------------------------:',particles[obnum].numero)
 }
 
