@@ -2761,8 +2761,15 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
      
    // FAZENDO A CONTA
-       SOMANDOMONOMIOS(amontoado)
+      primeirocaso = SOMANDOMONOMIOS(amount)
+      segundocaso = SOMANDOMONOMIOS(amontoado)
+      if (primeirocaso[1] == primeirocaso[2]) {
+        console.log(primeirocaso[0], 'continua igual')
+      }
 
+      if (segundocaso[1] == segundocaso[2]) {
+        console.log(segundocaso[0], 'continua igual')
+      }
 
 
 
@@ -4431,7 +4438,8 @@ for (huh in particles) {
    // console.log('PARTLETRAL',particles[huh].partletral)
 }
 
- 
+
+exp = []
 for (bye in particles) {
     //console.log(particles[bye])
 
@@ -4656,4 +4664,6 @@ if (exp.length == 0) {
 
 
 }
+
+return[exp, agruparsoma.length, particles.length]
  }
