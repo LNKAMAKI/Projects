@@ -41,12 +41,14 @@
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
-//expression = ['-','5x','+','10x','+','2x','+','4','x','y','+','6','x','y']
+//expression = ['-','5x','+','10x','+','2x','+','4','y','+','10','y']
 //expression = ['37','x','+','21','x','^','4']
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
+//expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
+//expression = ['2y','+','5y','+','4','x','+','10','x','+','6','y','+','15','y']
 
-// BIOLOGIA, HISTÓRIA, INGLÊS, FÍSICA
+// BIOLOGIA, FÍSICA, QUÍMICA
 
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -2413,7 +2415,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
           elevar = 1
           aster = false
           
-          console.log('QUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASE',quase)
+          //console.log('QUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASE',quase)
            for (patience in quase) {
                //console.log('_________uuuuuuuuuuu_______',quase[patience])       
               
@@ -2465,7 +2467,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                } 
            }
          
-           console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
+           //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
            if (aster == false) {
            // console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
@@ -2586,7 +2588,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             teri = false
             for (estudar in triste) {
              //  console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
-               console.log('asasasa',triste[estudar])
+               //console.log('asasasa',triste[estudar])
                ohjeez = triste[Number(estudar) - 1] != '-'
              //  console.log(ohjeez)
                if (triste[estudar] == '.') {
@@ -2601,15 +2603,15 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }else{
                   
                    //quase.push(triste[estudar])
-                 console.log('juntar',juntar)
+                // console.log('juntar',juntar)
                    if (juntar.length == 0) {
                        juntar = triste[estudar]
-                       console.log('LISTA VAZIA', juntar)
+                      // console.log('LISTA VAZIA', juntar)
    
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
                        }
-                       console.log('MENMEN',quase)
+                      // console.log('MENMEN',quase)
    
                    }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
    
@@ -2665,11 +2667,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   console.log(friend)
+                   //console.log(friend)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                   console.log('É LETRA', quase[patience])
+                  // console.log('É LETRA', quase[patience])
                     friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                        //console.log('ELEVAR!')
@@ -2678,7 +2680,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        if (patience == quase.length - 1) {
                            //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta+= `^${elevar}`
-                           console.log(aconta)
+                           //console.log(aconta)
                        }
    
                    }else{
@@ -2693,11 +2695,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                      
                        elevar = 1
                    }
-                   console.log(elevar)
+                   //console.log(elevar)
                   
                } 
            }
-           console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
+           //console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
 
            if (aster == false) {
             // console.log('<<<<<<<<<<<<<',quase)
@@ -2787,18 +2789,24 @@ if (expression[0] !== '-' && expression[0] !== '+') {
       segundocaso = SOMANDOMONOMIOS(amontoado)
       if (primeirocaso[1] == primeirocaso[2]) {
         console.log(primeirocaso[0], 'continua igual')
+        
       }else{
           console.log(amount,'=>',primeirocaso[0])
+          naonao = primeirocaso[0]
       }
 
       if (segundocaso[1] == segundocaso[2]) {
         console.log(segundocaso[0], 'continua igual')
       }else{
         console.log(amontoado,'=>',segundocaso[0])
+        tobreak = segundocaso[0]
       }
 
+      console.log('')
+      console.log('SOMANDO FICA ASSIM:')
+      console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
 
-
+      console.log('')
 
 
    }
@@ -4452,7 +4460,7 @@ obnum++
 }
 
 particles[obnum].numero += list[n]
-console.log('número----------------------------------------------:',particles[obnum].numero)
+//console.log('número----------------------------------------------:',particles[obnum].numero)
 }
 
 
