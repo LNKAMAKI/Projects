@@ -30,7 +30,7 @@
 
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
-//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
+expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
@@ -47,7 +47,7 @@
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
-expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
+//expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
@@ -168,7 +168,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
    
    // TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
-   /*
+   
    for (bye in monomios) {
        console.log(monomios[bye])
    
@@ -204,7 +204,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
    }
-   */
+   
 
    for (huh in monomios) {
        //console.log('HUH',monomios[huh].numero)
@@ -467,7 +467,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //
    
    // SEPARAR CORRETAMEnTE OS nÚMEROS
-   /*
+   
    for (bye in monomios) {
        ////console.log(monomios[bye])
    
@@ -503,7 +503,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
     }
- */
+ 
    //console.log('OK, VAMOS DAR UMA PARADInHA')
    
    // FATORAR SÓ UM nÚMERO
@@ -997,8 +997,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    }) == undefined) {
    
                      //console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
-                       if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                           console.log('ARE YOU SERIOUS?')
+                      if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
+                          console.log('ARE YOU SERIOUS?')
                        }else{
                            segs.push({car: repetido[moe].letr, mons: [m]})
                        }
@@ -1962,8 +1962,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        }
                    }
    
-          console.log('MULTIPLICAR', eg2,'*',eg)
-           console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+         // console.log('MULTIPLICAR', eg2,'*',eg)
+          // console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                    
                    numerinhos = []
                    for (decisao in correto) {
@@ -2017,9 +2017,9 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    }
                    older++
                    }
-             console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-             console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
-          console.log(older - 1, monomios[older - 1].numero)
+             //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+          //console.log(older - 1, monomios[older - 1].numero)
                   asitwas.push(older - 1)
                   asitwas2.push(older - 1)
                   aswillbe.push(older - 1)
@@ -2028,7 +2028,9 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            
    
          //console.log('ASITWAS',asitwas, asitwas2, aswillbe)
-              
+             // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
+
+
               obe.what.push({ar: asitwas2, indice: still})
               aswillbe2.push({oque:aswillbe, onde:raging})
               
@@ -3342,18 +3344,20 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    //console.log('break', segs2[die].mons)
    for (h in segs2[die].mons) {
-   //console.log(segs2[die].mons[h])
+   console.log(segs2[die].mons[h])
    if (tirados.indexOf(segs2[die].mons[h]) != -1) {
    tirar.push(Number(h))
    }
    }
-   //console.log('tirar de ',segs2[die].mons, tirar)
+
+   console.log('tirar de ',segs2[die].mons, tirar)
+
    for (far = tirar.length - 1; far >= 0; far--) {
-      // console.log(segs[die].mons[tirar[far]])
+       console.log(segs[die].mons[tirar[far]])
    segs2[die].mons.splice(tirar[far], 1)
    
    }
-   //console.log('ficou assim:', segs2[die].mons)
+   console.log('ficou assim:', segs2[die].mons)
    }
    
    for (sorrow in segs2) {
