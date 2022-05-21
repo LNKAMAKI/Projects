@@ -46,8 +46,8 @@
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
-//expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
-expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
+expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
+//expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
@@ -168,7 +168,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
    
    // TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
-   
+   /*
    for (bye in monomios) {
        //console.log(monomios[bye])
    
@@ -204,7 +204,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
    }
-   
+   */
 
    for (huh in monomios) {
        //console.log('HUH',monomios[huh].numero)
@@ -467,6 +467,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //
    
    // SEPARAR CORRETAMEnTE OS nÚMEROS
+   
    
    for (bye in monomios) {
        ////console.log(monomios[bye])
@@ -2918,6 +2919,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         }
         console.log('OK, AGORA É HORA DE REMOVER OS MONÔMIOS QUE FORAM DESFATORADOS')
         console.log(pans[bababa].todos)
+        
+        eliminar = sort(pans[bababa].todos)[0]
+        console.log(eliminar)
+       
       }
 
    }
