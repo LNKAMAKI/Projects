@@ -46,7 +46,8 @@
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
-expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
+//expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
+expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
@@ -997,7 +998,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
                      //console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                        if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                           //console.log('ARE YOU SERIOUS?')
+                           console.log('ARE YOU SERIOUS?')
                        }else{
                            segs.push({car: repetido[moe].letr, mons: [m]})
                        }
@@ -1961,8 +1962,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        }
                    }
    
-          //console.log('MULTIPLICAR', eg2,'*',eg)
-           //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+          console.log('MULTIPLICAR', eg2,'*',eg)
+           console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                    
                    numerinhos = []
                    for (decisao in correto) {
@@ -2016,9 +2017,9 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    }
                    older++
                    }
-             //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
-          //console.log(older - 1, monomios[older - 1].numero)
+             console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
+             console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+          console.log(older - 1, monomios[older - 1].numero)
                   asitwas.push(older - 1)
                   asitwas2.push(older - 1)
                   aswillbe.push(older - 1)
