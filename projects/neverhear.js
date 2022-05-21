@@ -299,7 +299,7 @@ return anterior
 }
 
 
-console.log(MULTIPLICARDIREITO('-4x','5y'))
+console.log(MULTIPLICARDIREITO('2*2x','-y'))
 function MULTIPLICARDIREITO(num1, num2) {
     
 
