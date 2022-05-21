@@ -3,7 +3,7 @@
 
 //expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b']
 
-expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','+','13','h','^','4','k','^','2']
+//expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','-','169','h','^','4','k','^','2']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
@@ -46,7 +46,7 @@ expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+'
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
-//expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
+expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
@@ -2936,22 +2936,58 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
         console.log('-----------------------------------------------------------------______')
         }
-        console.log('OK, AGORA É HORA DE REMOVER OS MONÔMIOS QUE FORAM DESFATORADOS')
-        console.log(pans[bababa].todos)
-        
+    
        
-        console.log(numsdesfat)
        for (e in pans[bababa].todos) {
         numsdesfat.push(pans[bababa].todos[e])
        }
-       console.log(numsdesfat)
+       
       }
 
    }
    
    if (numsdesfat.length > 0) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
-   }
+    todososnumeros = []
+    for (acaba in monomios) {
+       // console.log(acaba)
+        todososnumeros.push(acaba)
+    }
+
+    for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
+        // console.log(todososnumeros[feliz])
+         if (numsdesfat.indexOf(Number(todososnumeros[feliz])) != -1) {
+            todososnumeros.splice(feliz, 1)
+         }
+ }
+    console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios( tem', monomios.length, 'ao todo):',todososnumeros)
+    for (eh in todososnumeros) {
+        console.log(todososnumeros[eh], monomios[todososnumeros[eh]].numero)
+
+        join = ''
+        for (sempresei in monomios[todososnumeros[eh]].numero) {
+            if (monomios[todososnumeros[eh]].numero[sempresei] != '+' && monomios[todososnumeros[eh]].numero[sempresei] != '-') {
+            ter = monomios[todososnumeros[eh]].numero[sempresei]
+            console.log(ter)
+            join+= ter
+            }
+        }
+        if (monomios[todososnumeros[eh]].numero[0] == '+') {
+            console.log('MAIS')
+            newexpress.push('+')
+            newexpress.push(join)
+        }else if(monomios[todososnumeros[eh]].numero[0] == '-') {
+            console.log('MENOS')
+            newexpress.push('-')
+            newexpress.push(join)
+        }else{
+            console.log('MAIS')
+            newexpress.push('+')
+            newexpress.push(join)
+        }
+        console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
+    }
+   }else{
 
    console.log('VENDO OS QUE FALTAM:')
    console.log(numerospresentes)
@@ -3077,6 +3113,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
     }
    }
+}
    
    console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
    //}
