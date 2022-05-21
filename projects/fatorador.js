@@ -783,7 +783,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    egs = []
    for (norte in qual) {
    //console.log(qual[norte])
-   if (qual[norte] == '*') {
+   if (qual[norte] == '*' || qual[norte] == '.') {
        //console.log('NÃOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
    }else{
    //console.log('SIIIIIIIIIIM')
@@ -994,13 +994,13 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
        
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              console.log('esse',repetido[moe], segs)
+              console.log('**********************************************************************esse',repetido[moe], segs)
 
               for (meow in segs) {
                   
-                console.log('______________________11111111111111111111111111111111111111111111__',segs[meow].car)
+                console.log('')
+                console.log('',segs[meow].car)
                
-                    console.log('SUSPEITO')
                     array1 = []
                     for (d in segs[meow].car) {
                         array1.push(segs[meow].car[d])
@@ -1012,9 +1012,17 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                     }
 
                     if (segs[meow].car.length < repetido[moe].letr.length) {
-                    console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')')
+
+                        divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
+                    console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                      }else{
-                    console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')')
+                         divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
+                    console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
+                     }
+
+                     if (divisao == '') {
+                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
+                        
                      }
                   
               }
@@ -5121,14 +5129,19 @@ function sort(n) {
     return [maiorparamenor, posiçõesnumeros]
 }
 
-console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['13','*','2'],['2','*','3']))
+console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
+
+
+}
+
+console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'))
 function VAI(str) {
 
     
     comofica = []
     ground = ''
 for (bye in str) {
-    console.log(str[bye],'_________________________________')
+    
 
         
         carac = str[bye]
@@ -5146,43 +5159,6 @@ for (bye in str) {
             if (bye == str.length - 1) {
                 comofica.push(ground)
             }
-
-    console.log('COMOFICA', comofica)
-    str[bye].numero = comofica
- }
-
- return comofica
-}
-
-}
-
-console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['13'],['2','.','3']))
-function VAI(str) {
-
-    
-    comofica = []
-    ground = ''
-for (bye in str) {
-    console.log(str[bye],'_________________________________')
-
-        
-        carac = str[bye]
-      
-            if (ground.length == 0) {
-                ground+= carac
-            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
-                ground+= carac
-            }else{
-                comofica.push(ground)
-                ground = ''
-                ground += carac
-               
-            }
-            if (bye == str.length - 1) {
-                comofica.push(ground)
-            }
-
-    console.log('COMOFICA', comofica)
     str[bye].numero = comofica
  }
 
