@@ -3,7 +3,7 @@
 
 //expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b']
 
-expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
+expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','+','13','h','^','4','k','^','2']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
@@ -2970,7 +2970,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    console.log(todososnumeros)
    
    for (bye in todososnumeros) {
-       console.log(monomios[todososnumeros[bye]].numero)
+       //console.log(monomios[todososnumeros[bye]].numero)
    
        quase = monomios[todososnumeros[bye]].numero
        aconta = ''
@@ -2978,11 +2978,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        aster = false
        friend = ''
        
-       console.log(quase)
+       //console.log(quase)
        gates = []
    
         for (patience in quase) {
-            console.log('EFEEDEDEDEED',quase[patience])       
+            //console.log('EFEEDEDEDEED',quase[patience])       
            
             if (quase[patience] == '*') {
                 aster = true
