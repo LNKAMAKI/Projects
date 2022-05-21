@@ -170,7 +170,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    // TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
    
    for (bye in monomios) {
-       console.log(monomios[bye])
+       //console.log(monomios[bye])
    
        comofica = []
        ground = ''
@@ -558,10 +558,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    }
    //
    
-   
-   for (aiquecoisa in monomios) {
-       console.log(monomios[aiquecoisa].numero)
-   }
+
    
    // FAZER COnTA COM nÚMEROS
    function fazerConta(anterior) {
@@ -2904,6 +2901,21 @@ if (expression[0] !== '-' && expression[0] !== '+') {
       //console.log('', tobreak)
 
       console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
+
+      console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
+      for (roberto in naonao) {
+          console.log('---------------------------------------------------------------______')
+        console.log(naonao[roberto])
+        
+        for (vaidarcerto in tobreak) {
+            console.log(tobreak[vaidarcerto])
+            console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto]))
+        }
+
+
+
+        console.log('-----------------------------------------------------------------______')
+        }
       }
 
    }
@@ -4949,12 +4961,9 @@ function MULTIPLICARDIREITO(num1, num2) {
 
         sóletra+= sóletra2
     
-        console.log(sinal1, sinal2)
         if (sinal1 == sinal2) {
-            console.log('É POSITIVO')
             resultmult = sónumero+= sóletra
         }else{
-            console.log('É NEGATIVO')
             resultmult = '-'
             resultmult += sónumero+= sóletra
         }
