@@ -1158,14 +1158,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                lpisthebest = ''
                    for (fall in segs[anchor].car) {
                    if (lpisthebest.length == 0) {
-                       console.log('LISTA VAZIA - ADD')
+                       //console.log('LISTA VAZIA - ADD')
                        lpisthebest = segs[anchor].car[fall]
-                       console.log(lpisthebest)
+                       //console.log(lpisthebest)
                    }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
-                       console.log('VAI - ADD')
+                       //console.log('VAI - ADD')
                        lpisthebest += segs[anchor].car[fall]
                    }else{
-                       console.log('nÃO VAI nÃO')
+                       //console.log('nÃO VAI nÃO')
                        army.push(lpisthebest)
                        if(segs[anchor].car[fall] != '.') {
                        lpisthebest = segs[anchor].car[fall]
@@ -1204,7 +1204,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                
                 lightson = [...army]
                    pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
-                   console.log(lightson,monomios[segs[anchor].mons[high]].numero)
+                   //console.log(lightson,monomios[segs[anchor].mons[high]].numero)
    
                    if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
                   //console.log('É 1')
@@ -2326,7 +2326,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    concatenar = ''
    for (bababa in pans) {
       
-       console.log('A PARTIR DA QUI')
+       //console.log('A PARTIR DA QUI')
        edge = []
        naonao = ''
        amount = []
@@ -2542,12 +2542,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
               // console.log('ASSIM: ', correct)
                tobreak+= ` - ${correct}`
-               console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
+               //console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
                negativo = false
              //  console.log(el)
                tobreak+= ` + ${aconta}`
-               console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
+               //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
            }
           // console.log('THE COLOURS THAT I SAW', tobreak)
 
@@ -2571,7 +2571,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            }
            
          }
-         console.log('ENTÃO:','(', tobreak,')')
+         //console.log('ENTÃO:','(', tobreak,')')
    
        for (repr in pans[bababa].which) {
            
@@ -2580,7 +2580,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             //console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
    
             triste = scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
-            console.log(triste)
+            //console.log(triste)
    
             quase = []
            // console.log(quase, 'k')
@@ -2743,11 +2743,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             }
             amount.push('-')
             amount.push(uh)
-            console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta,'____________________')
+            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta,'____________________')
         }else{
             amount.push('+')
             amount.push(friend)
-            console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta)
+            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta)
         }
 
            if (naonao.length == 0) {
@@ -2782,6 +2782,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
 
        console.log('ESSE É O AMONTOADO', amontoado)
+       console.log('ESSE É O AMOUNT', amount)
 
      
    // FAZENDO A CONTA
