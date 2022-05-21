@@ -2913,7 +2913,20 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         
         for (vaidarcerto in tobreak) {
             console.log(tobreak[vaidarcerto])
-            console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto]))
+            novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
+            console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
+            console.warn(newexpress)
+            if (novomon[0] == '-') {
+                miya = ''
+                for (n in novomon) {
+                    if (novomon[n] != '-') {
+                        miya+= novomon[n]                 
+                       }
+                }
+                console.log(miya)
+                numsdesfat.push('-')
+                numdesfat.push(miya)
+            }
         }
 
 
