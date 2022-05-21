@@ -37,7 +37,7 @@
 //expression = ['55','w','^','3','+','13','h','^','4','k','^','2']
 //expression = ['-','11','x','-','121','y','+','11yz','+','xz']
 
-expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
+//expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
 //expression = ['-','5x','+','10x','+','2x','+','4','y','+','10','y']
@@ -48,7 +48,7 @@ expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 //expression = ['a','^','2','+','a','-','5a','-','5']
-//expression = ['3x','+','15','x','+','19','l','+','17','l']
+expression = ['3x','+','15','x','+','19','l','+','17','l']
 
 
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
@@ -996,6 +996,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            for (moe = repetido.length - 1; moe >= 0; moe--) {
               console.log('**********************************************************************esse',repetido[moe], segs)
 
+              podeir = true
               for (meow in segs) {
                   
                 console.log('')
@@ -1022,10 +1023,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
                      if (divisao == '') {
                         console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
-                        
+                        podeir = false
                      }
                   
               }
+
+              console.log('PODE IR?????????????????????????', podeir)
                if (segs.find(function(segs) {
                    return segs.car == repetido[moe].letr
                    }) == undefined) {
