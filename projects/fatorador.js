@@ -45,7 +45,7 @@
 //expression = ['37','x','+','21','x','^','4']
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
-//expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
+expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 //expression = ['a','^','2','+','a','-','5a','-','5']
@@ -4993,65 +4993,72 @@ if(storer[0] == '-') {
    
 }
 
+
 function MULTIPLICARDIREITO(num1, num2) {
     
 
-    sónumero = ''
-    sóletra = ''
-    for (car in num1) {
-        if (num1[car].search('[0-9]') != -1 || num1[car] == '*') {
-            sónumero += num1[car]
-        }else if(num1[car].search('[a-z]') != -1) {
-            sóletra += num1[car]
-        }
-    }
-    
-
-    sónumero2 = ''
-    sóletra2 = ''
-    for (car in num2) {
-        if (num2[car].search('[0-9]') != -1 || num2[car] == '*') {
-            sónumero2 += num2[car]
-        }else if(num2[car].search('[a-z]') != -1){
-            sóletra2 += num2[car]
-        }
-    }
-    
-    if (sónumero.length > 0 && sónumero2.length > 0) {
-        sónumero+= '*'
-    }
-
-    if (num1[0] == '-') {
-        sinal1 = 'neg'
-    }else{
-        sinal1 = 'pos'
-    }
-    
-    if (num2[0] == '-') {
-        sinal2 = 'neg'
-    }else{
-        sinal2 = 'pos'
-    }
-
-
-    sónumero+= sónumero2
-
-        sóletra+= sóletra2
-    
-        if (sinal1 == sinal2) {
-            resultmult = sónumero+= sóletra
+    if (num1 == '1' || num2 == '1') {
+        console.log('É 1')
+        if (num1 == '1') {
+            resultmult = num2
         }else{
-            resultmult = '-'
-            resultmult += sónumero+= sóletra
+            resultmult = num1
         }
-   
+    }else{
+        sónumero = ''
+        sóletra = ''
+        for (car in num1) {
+            if (num1[car].search('[0-9]') != -1 || num1[car] == '*') {
+                sónumero += num1[car]
+            }else if(num1[car].search('[a-z]') != -1) {
+                sóletra += num1[car]
+            }
+        }
+        
     
- 
+        sónumero2 = ''
+        sóletra2 = ''
+        for (car in num2) {
+            if (num2[car].search('[0-9]') != -1 || num2[car] == '*') {
+                sónumero2 += num2[car]
+            }else if(num2[car].search('[a-z]') != -1){
+                sóletra2 += num2[car]
+            }
+        }
+        
+        if (sónumero.length > 0 && sónumero2.length > 0) {
+            sónumero+= '*'
+        }
+    
+        if (num1[0] == '-') {
+            sinal1 = 'neg'
+        }else{
+            sinal1 = 'pos'
+        }
+        
+        if (num2[0] == '-') {
+            sinal2 = 'neg'
+        }else{
+            sinal2 = 'pos'
+        }
+    
+    
+        sónumero+= sónumero2
+    
+            sóletra+= sóletra2
+        
+           
+            if (sinal1 == sinal2) {
+               
+                resultmult = sónumero+= sóletra
+            }else{
+               
+                resultmult = '-'
+                resultmult += sónumero+= sóletra
+            }
+    }
     return resultmult
-    
-}
-console.log(FATORARSInGULAR('10x'))
-
+    }
 
 function sort(n) {
     var maiorparamenor = []
