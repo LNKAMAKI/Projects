@@ -299,10 +299,18 @@ return anterior
 }
 
 
-console.log(MULTIPLICARDIREITO('2*2x','-y'))
+console.log(MULTIPLICARDIREITO('13','2x'))
 function MULTIPLICARDIREITO(num1, num2) {
     
 
+if (num1 == '1' || num2 == '1') {
+    console.log('É 1')
+    if (num1 == '1') {
+        resultmult = num2
+    }else{
+        resultmult = num1
+    }
+}else{
     sónumero = ''
     sóletra = ''
     for (car in num1) {
@@ -345,18 +353,15 @@ function MULTIPLICARDIREITO(num1, num2) {
 
         sóletra+= sóletra2
     
-        console.log(sinal1, sinal2)
+       
         if (sinal1 == sinal2) {
-            console.log('É POSITIVO')
+           
             resultmult = sónumero+= sóletra
         }else{
-            console.log('É NEGATIVO')
+           
             resultmult = '-'
             resultmult += sónumero+= sóletra
         }
-   
-    
- 
-    return resultmult
-    
+}
+return resultmult
 }
