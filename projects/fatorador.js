@@ -993,12 +993,26 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
        
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              //console.log('esse',repetido[moe])
+              console.log('esse',repetido[moe], segs)
+
+              for (meow in segs) {
+                  
+                console.log('______________________11111111111111111111111111111111111111111111__',segs[meow].car)
+                if (segs[meow].car.length == repetido[moe].letr.length) {
+                    console.log('SUSPEITO')
+                    array1 = []
+                    for (d in segs[meow].car) {
+                        console.log()
+                    }
+                    //console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr)
+                }
+                  
+              }
                if (segs.find(function(segs) {
                    return segs.car == repetido[moe].letr
                    }) == undefined) {
    
-                    // console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                     console.log('000000',repetido[moe].letr)
                       if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
                           console.log('ARE YOU SERIOUS?')
                        }else{
@@ -1011,7 +1025,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    return segs.car == repetido[moe].letr
                    }).mons.indexOf(m) == -1){
                  
-                       //console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                       console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                        segs.find(function(segs) {
                            return segs.car == repetido[moe].letr
                            }).mons.push(m)
@@ -1028,29 +1042,29 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    for (nl = 0; nl < segs.length; nl++) {
-       //console.log('-----------------------------------------------------------------------------------------')
+       console.log('-----------------------------------------------------------------------------------------')
        
-       //console.log(segs[nl])
+       console.log(segs[nl])
    
-      // console.log('AnALISAR CADA ITEM')
-       //console.log('nUMERO: ', segs[nl].car)
+       console.log('AnALISAR CADA ITEM')
+       console.log('nUMERO: ', segs[nl].car)
        for (n = 0; n < segs.length; n++) {
    
            //console.log('---------------------------------------------------------------------')
            if (n != nl) {
-          // console.log(`${segs[n].car}.search('${segs[nl].car}')`)
+           console.log(`${segs[n].car}.search('${segs[nl].car}')`)
            if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
               
-             //  console.log(`${segs[n].car}: ${segs[n].mons}`)
-              // console.log(`${segs[nl].car}: ${segs[nl].mons}`)
+               console.log(`${segs[n].car}: ${segs[n].mons}`)
+               console.log(`${segs[nl].car}: ${segs[nl].mons}`)
    
                for (u in segs[n].mons) {
-                  // console.log(segs[n].mons[u])
+                   console.log(segs[n].mons[u])
                    if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
-                      // console.log('TEM')
+                       console.log('TEM')
                    }else{
-                     //console.log('nÃO TEM')
-                    // console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
+                     console.log('nÃO TEM')
+                     console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
                        segs[nl].mons.push(segs[n].mons[u])
                      
                    }
@@ -5096,4 +5110,10 @@ function sort(n) {
     }
     return [maiorparamenor, posiçõesnumeros]
 }
+
+
+
 }
+
+console.log('Poxa segs, você me decepcionou... ;-; (D:)')
+
