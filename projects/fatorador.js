@@ -46,7 +46,7 @@
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
-expression = ['2y','+','5y','+','4','x','+','10','x','+','6','y','+','15','y','+','49','+','63']
+expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
@@ -2774,10 +2774,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            concatenar+= ' + '
        }
        if (edge.length > 1) {
-       console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
+       console.log('                                ','( ',naonao,' )','( ',tobreak,' )','                         ')
        concatenar+= `( ${naonao} )( ${tobreak} )`
        }else{
-           console.log('____________________',naonao,'( ',tobreak,' )','___________________________')
+           console.log('                            ',naonao,'( ',tobreak,' )','                          ')
            concatenar+= `${naonao}( ${tobreak} )`
        }
 
@@ -2788,10 +2788,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS(amount)
       segundocaso = SOMANDOMONOMIOS(amontoado)
+
+      mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
         console.log(primeirocaso[0], 'continua igual')
         
       }else{
+
+          mudou = true
           console.log(amount,'=>',primeirocaso[0])
           naonao = primeirocaso[0]
       }
@@ -2799,16 +2803,24 @@ if (expression[0] !== '-' && expression[0] !== '+') {
       if (segundocaso[1] == segundocaso[2]) {
         console.log(segundocaso[0], 'continua igual')
       }else{
+
+          mudou = true
         console.log(amontoado,'=>',segundocaso[0])
         tobreak = segundocaso[0]
       }
 
+      if (mudou == true) {
       console.log('')
       console.log('SOMANDO FICA ASSIM:')
       console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
 
       console.log('')
 
+      for (k in naonao) {
+        console.log(naonao[k])
+      }
+
+      }
 
    }
    
