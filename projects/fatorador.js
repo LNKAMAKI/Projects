@@ -1145,9 +1145,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    console.log('TIRAR TUDO')
    console.log(goaway)
 
-   for (time in goaway) {
-    console.log(segs[goaway[time]])
-    segs.splice(goaway[time], 1)
+   for (time = segs.length - 1; time >= 0; time--) {
+    console.log(time, segs[time])
+    if (goaway.indexOf(time) != -1) {
+        console.log('TIRAR')
+        segs.splice(time, 1)
+        }
    }
 
    //divs = [2,3]
@@ -2856,9 +2859,51 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
       console.log('')
 
+      reason = []
       for (k in naonao) {
-        console.log(naonao[k])
+        console.log(k, naonao[k])
+        if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
+            deserve = naonao[k - 1]
+            reason.push(k - 1)
+            deserve+= naonao[k]
+            console.log('anterior:',deserve)
+            naonao[k] = deserve
+        }
       }
+
+      console.log('reason')
+     
+   for (time = naonao.length - 1; time >= 0; time--) {
+    console.log(time, naonao[time])
+    if (reason.indexOf(time) != -1) {
+        console.log('TIRAR')
+        naonao.splice(time, 1)
+        }
+   }
+      console.log('', naonao)
+
+   
+      for (k in tobreak) {
+        console.log(k, tobreak[k])
+        if (k != 0 && tobreak[k] != '-' && tobreak[k] != '+') {
+            deserve = tobreak[k - 1]
+            deserve+= tobreak[k]
+            reason.push(k - 1)
+            console.log('anterior:',deserve)
+           tobreak[k] = deserve
+        }
+      }
+
+      console.log('reason')
+      for (time = tobreak.length - 1; time >= 0; time--) {
+        console.log(time, tobreak[time])
+        if (reason.indexOf(time) != -1) {
+            console.log('TIRAR')
+            tobreak.splice(time, 1)
+            }
+       }
+      console.log('', tobreak)
+
 
       }
 
