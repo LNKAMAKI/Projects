@@ -2855,56 +2855,55 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
       console.log('')
       console.log('SOMANDO FICA ASSIM:')
-      console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
 
       console.log('')
 
       reason = []
       for (k in naonao) {
-        console.log(k, naonao[k])
+      // console.log(k, naonao[k])
         if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
             deserve = naonao[k - 1]
             reason.push(k - 1)
             deserve+= naonao[k]
-            console.log('anterior:',deserve)
+            //console.log('anterior:',deserve)
             naonao[k] = deserve
         }
       }
 
-      console.log('reason')
+    //  console.log('reason')
      
    for (time = naonao.length - 1; time >= 0; time--) {
-    console.log(time, naonao[time])
+    //console.log(time, naonao[time])
     if (reason.indexOf(time) != -1) {
-        console.log('TIRAR')
+        //console.log('TIRAR')
         naonao.splice(time, 1)
         }
    }
-      console.log('', naonao)
+      //console.log('', naonao)
 
    
       for (k in tobreak) {
-        console.log(k, tobreak[k])
+        //console.log(k, tobreak[k])
         if (k != 0 && tobreak[k] != '-' && tobreak[k] != '+') {
             deserve = tobreak[k - 1]
             deserve+= tobreak[k]
             reason.push(k - 1)
-            console.log('anterior:',deserve)
+           // console.log('anterior:',deserve)
            tobreak[k] = deserve
         }
       }
 
-      console.log('reason')
+     // console.log('reason')
       for (time = tobreak.length - 1; time >= 0; time--) {
-        console.log(time, tobreak[time])
+      //  console.log(time, tobreak[time])
         if (reason.indexOf(time) != -1) {
-            console.log('TIRAR')
+           // console.log('TIRAR')
             tobreak.splice(time, 1)
             }
        }
-      console.log('', tobreak)
+      //console.log('', tobreak)
 
-
+      console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
       }
 
    }
