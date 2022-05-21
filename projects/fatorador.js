@@ -2924,8 +2924,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                        }
                 }
                 console.log(miya)
-                numsdesfat.push('-')
-                numdesfat.push(miya)
+                newexpress.push('-')
+                newexpress.push(miya)
+            }else{
+                newexpress.push('+')
+                newexpress.push(novomon)
             }
         }
 
