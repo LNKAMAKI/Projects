@@ -37,7 +37,7 @@
 //expression = ['55','w','^','3','+','13','h','^','4','k','^','2']
 //expression = ['-','11','x','-','121','y','+','11yz','+','xz']
 
-//expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
+expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
 //expression = ['2xx','+','30','xx']
 //expression = ['-','5x','+','10x','+','2x','+','4','y','+','10','y']
@@ -48,7 +48,8 @@
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 //expression = ['a','^','2','+','a','-','5a','-','5']
-expression = ['3x','+','15','x','+','19','l','+','17','l']
+//expression = ['3x','+','15','x','+','19','l','+','17','l']
+
 
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
@@ -473,7 +474,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    for (bye in monomios) {
-       ////console.log(monomios[bye])
+       console.log(monomios[bye].numero,'_________________________________')
    
        comofica = []
        ground = ''
@@ -503,8 +504,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
        }
    
-       ////console.log('COMOFICA', comofica)
-       ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
+       console.log('COMOFICA', comofica)
+       console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
     }
  
@@ -998,26 +999,35 @@ if (expression[0] !== '-' && expression[0] !== '+') {
               for (meow in segs) {
                   
                 console.log('______________________11111111111111111111111111111111111111111111__',segs[meow].car)
-                if (segs[meow].car.length == repetido[moe].letr.length) {
+               
                     console.log('SUSPEITO')
                     array1 = []
                     for (d in segs[meow].car) {
-                        console.log()
+                        array1.push(segs[meow].car[d])
                     }
-                    //console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr)
-                }
+
+                    array2 = []
+                    for (d in repetido[moe].letr) {
+                        array2.push(repetido[moe].letr[d])
+                    }
+
+                    if (segs[meow].car.length < repetido[moe].letr.length) {
+                    console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')')
+                     }else{
+                    console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')')
+                     }
                   
               }
                if (segs.find(function(segs) {
                    return segs.car == repetido[moe].letr
                    }) == undefined) {
    
-                     console.log('000000',repetido[moe].letr)
-                      if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                          console.log('ARE YOU SERIOUS?')
-                       }else{
+                     console.log('NÃO TEM',repetido[moe].letr)
+                      //if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
+                         // console.log('ARE YOU SERIOUS?')
+                       //}else{
                            segs.push({car: repetido[moe].letr, mons: [m]})
-                       }
+                       //}
                  
                   
    
@@ -1025,7 +1035,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                    return segs.car == repetido[moe].letr
                    }).mons.indexOf(m) == -1){
                  
-                       console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                       console.log('TEM MAS FALTA',repetido[moe].letr)
                        segs.find(function(segs) {
                            return segs.car == repetido[moe].letr
                            }).mons.push(m)
@@ -5111,9 +5121,70 @@ function sort(n) {
     return [maiorparamenor, posiçõesnumeros]
 }
 
+console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['13','*','2'],['2','*','3']))
+function VAI(str) {
 
+    
+    comofica = []
+    ground = ''
+for (bye in str) {
+    console.log(str[bye],'_________________________________')
+
+        
+        carac = str[bye]
+      
+            if (ground.length == 0) {
+                ground+= carac
+            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
+                ground+= carac
+            }else{
+                comofica.push(ground)
+                ground = ''
+                ground += carac
+               
+            }
+            if (bye == str.length - 1) {
+                comofica.push(ground)
+            }
+
+    console.log('COMOFICA', comofica)
+    str[bye].numero = comofica
+ }
+
+ return comofica
+}
 
 }
 
-console.log('Poxa segs, você me decepcionou... ;-; (D:)')
+console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['13'],['2','.','3']))
+function VAI(str) {
 
+    
+    comofica = []
+    ground = ''
+for (bye in str) {
+    console.log(str[bye],'_________________________________')
+
+        
+        carac = str[bye]
+      
+            if (ground.length == 0) {
+                ground+= carac
+            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
+                ground+= carac
+            }else{
+                comofica.push(ground)
+                ground = ''
+                ground += carac
+               
+            }
+            if (bye == str.length - 1) {
+                comofica.push(ground)
+            }
+
+    console.log('COMOFICA', comofica)
+    str[bye].numero = comofica
+ }
+
+ return comofica
+}

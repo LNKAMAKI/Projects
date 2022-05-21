@@ -365,3 +365,35 @@ if (num1 == '1' || num2 == '1') {
 }
 return resultmult
 }
+
+aa = '222.23.5x'
+arranjar(aa)
+function arranjar(str) {
+
+    
+    comofica = []
+    ground = ''
+for (bye in str) {
+    console.log(str[bye],'_________________________________')
+
+        
+        carac = str[bye]
+      
+            if (ground.length == 0) {
+                ground+= carac
+            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
+                ground+= carac
+            }else{
+                comofica.push(ground)
+                ground = ''
+                ground += carac
+               
+            }
+            if (bye == str.length - 1) {
+                comofica.push(ground)
+            }
+
+    console.log('COMOFICA', comofica)
+    str[bye].numero = comofica
+ }
+}
