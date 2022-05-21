@@ -52,7 +52,7 @@ expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
-YESBABY(expression)
+FATORAR(expression)
 function YESBABY(expression) {
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
