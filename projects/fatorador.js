@@ -31,7 +31,7 @@
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
-//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
+expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
 
@@ -53,7 +53,7 @@ expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 // BIOLOGIA, FÍSICA, QUÍMICA
 
 FATORAR(expression)
-function YESBABY(expression) {
+function FATORAR(expression) {
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
        expo = ['+']
@@ -2993,7 +2993,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         console.log(newexpress)
         console.log('_______________________________________________________________________________________   _______________')
 
-        YESBABY(newexpress)
+        FATORAR(newexpress)
    }else{
 
    console.log('VENDO OS QUE FALTAM:')
