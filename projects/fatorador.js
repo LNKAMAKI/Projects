@@ -44,10 +44,10 @@
 //expression = ['-','5x','+','10x','+','2x','+','4','y','+','10','y']
 //expression = ['37','x','+','21','x','^','4']
 //expression = ['13*2y','+','13xy']
-//expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
+expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
-expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
+//expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
@@ -2831,8 +2831,9 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
           mudou = true
           console.log(amount,'=>',primeirocaso[0])
-          naonao = primeirocaso[0]
+         
       }
+      naonao = primeirocaso[0]
 
       if (segundocaso[1] == segundocaso[2]) {
         console.log(segundocaso[0], 'continua igual')
@@ -2840,8 +2841,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
           mudou = true
         console.log(amontoado,'=>',segundocaso[0])
-        tobreak = segundocaso[0]
+        
       }
+      
+      tobreak = segundocaso[0] 
+
 
       if (mudou == true) {
       console.log('')
