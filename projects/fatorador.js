@@ -30,7 +30,7 @@
 
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
-expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
@@ -47,7 +47,7 @@ expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a'
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
-//expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
+expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
@@ -990,13 +990,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
        ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
+       
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-               ////console.log(repetido[moe])
+              //console.log('esse',repetido[moe])
                if (segs.find(function(segs) {
                    return segs.car == repetido[moe].letr
                    }) == undefined) {
    
-                     //console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
+                    // console.log('WHAT YOU HAVE IN YOUR MIND?????????????????????huh????????',repetido[moe].letr)
                       if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
                           console.log('ARE YOU SERIOUS?')
                        }else{
@@ -1017,6 +1018,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                            
                }
            }
+           
    }
    
    
@@ -1029,25 +1031,25 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        
        //console.log(segs[nl])
    
-       //console.log('AnALISAR CADA ITEM')
+      // console.log('AnALISAR CADA ITEM')
        //console.log('nUMERO: ', segs[nl].car)
        for (n = 0; n < segs.length; n++) {
    
            //console.log('---------------------------------------------------------------------')
            if (n != nl) {
-           //console.log(`${segs[n].car}.search('${segs[nl].car}')`)
+          // console.log(`${segs[n].car}.search('${segs[nl].car}')`)
            if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
               
-               //console.log(`${segs[n].car}: ${segs[n].mons}`)
-               //console.log(`${segs[nl].car}: ${segs[nl].mons}`)
+             //  console.log(`${segs[n].car}: ${segs[n].mons}`)
+              // console.log(`${segs[nl].car}: ${segs[nl].mons}`)
    
                for (u in segs[n].mons) {
-                   //console.log(segs[n].mons[u])
+                  // console.log(segs[n].mons[u])
                    if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
-                       //console.log('TEM')
+                      // console.log('TEM')
                    }else{
                      //console.log('nÃO TEM')
-                     //console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
+                    // console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
                        segs[nl].mons.push(segs[n].mons[u])
                      
                    }
@@ -1059,7 +1061,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    }
    
-   
+
+   for (nah in segs) {
+    
+       console.log(segs[nah].car)
+       console.log(segs.find(function (segs){
+           return segs.car == '-.x'
+       }))
+   }
    function ehprimo(Number) {
        parar = false
        for (t = 2; t < Number && parar == false; t++) {
@@ -1102,7 +1111,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //////console.log('LISTA ORDEnADA PELO TAMAnHO', grtols)
    segs = grtols
    
-   
+  
    //DIVS
    ml = monomios.length
    //////console.log(ml)
