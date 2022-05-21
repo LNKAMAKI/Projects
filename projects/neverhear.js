@@ -297,3 +297,40 @@ if (anterior.length > 1) {
 }
 return anterior
 }
+
+
+console.log(MULTIPLICARDIREITO('7','2*2y'))
+function MULTIPLICARDIREITO(num1, num2) {
+    console.log('MULTIPLICAR:',num1, 'x',num2)
+
+    sónumero = ''
+    sóletra = ''
+    for (car in num1) {
+        if (num1[car].search('[0-9]') != -1 || num1[car] == '*') {
+            sónumero += num1[car]
+        }else{
+            sóletra += num1[car]
+        }
+    }
+    console.log(num1, sónumero, sóletra)
+
+    sónumero2 = ''
+    sóletra2 = ''
+    for (car in num2) {
+        if (num2[car].search('[0-9]') != -1 || num2[car] == '*') {
+            sónumero2 += num2[car]
+        }else{
+            sóletra2 += num2[car]
+        }
+    }
+    console.log(num2, sónumero2, sóletra2)
+    if (sónumero.length > 0 && sónumero2.length > 0) {
+        sónumero+= '*'
+    }
+    sónumero+= sónumero2
+
+        sóletra+= sóletra2
+    console.log(sónumero, sóletra)
+    resultmult = sónumero+= sóletra
+    console.log(resultmult)
+}

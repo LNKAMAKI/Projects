@@ -46,7 +46,7 @@
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
-//expression = ['2y','+','5y','+','4','x','+','10','x','+','6','y','+','15','y']
+expression = ['2y','+','5y','+','4','x','+','10','x','+','6','y','+','15','y','+','49','+','63']
 
 // BIOLOGIA, FÍSICA, QUÍMICA
 
@@ -2422,17 +2422,17 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                if (quase[patience] == '*') {
                    aster = true
                   // console.log('AND THE CLSDADWDWD', patience)
-                   console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                  // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                   console.log('gates',gates, fazerConta(gates))
+                   //console.log('gates',gates, fazerConta(gates))
    
-                  console.log(friend)
+                  //console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
+                   //console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
@@ -4609,7 +4609,7 @@ plan = [String(Number(plan[0])*Number(plan[2]))]
 //console.log(agruparsoma[chuva].quais.length, '---------')
 if (add == '' && agruparsoma[chuva].quais.length > 1) {
     add = '1'
-   console.log('VAIIIIIIIIIIIIIII')
+   //console.log('VAIIIIIIIIIIIIIII')
 }
 plan.push(add)
 //console.log('PLAn', plan)
@@ -4646,10 +4646,10 @@ if (plan.length == 3) {
 }
 
 
-console.log('OK, FICOU ASSIM:', conta)
+//console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
-console.log('E RESOLVEnDO FICA ASSIM:', comehome)
+//console.log('E RESOLVEnDO FICA ASSIM:', comehome)
 
 
 
