@@ -18,7 +18,7 @@
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'x','^','2','y']
+//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'x','^','2','y']
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3a','+','3','z','+','5xy']
@@ -49,7 +49,7 @@ expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 //expression = ['a','^','2','+','a','-','5a','-','5']
 
-// BIOLOGIA, FÍSICA, QUÍMICA
+// BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
 FATORAR(expression)
 function FATORAR(expression) {
