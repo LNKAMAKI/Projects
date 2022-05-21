@@ -2916,6 +2916,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
         console.log('-----------------------------------------------------------------______')
         }
+        console.log('OK, AGORA É HORA DE REMOVER OS MONÔMIOS QUE FORAM DESFATORADOS')
+        console.log(pans[bababa].todos)
       }
 
    }
