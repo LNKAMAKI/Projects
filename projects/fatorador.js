@@ -12,7 +12,7 @@
 
 //expression = ['2','y','+','4','y','+','2','x','+','4','x']
 
-//expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','a','x','^','2','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
+expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
@@ -48,7 +48,7 @@
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 //expression = ['a','^','2','+','a','-','5a','-','5']
-expression = ['3x','+','15','x','+','19','l','+','17','l']
+//expression = ['3x','+','15','x','+','19','l','+','17','l']
 
 
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
@@ -997,6 +997,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
               console.log('**********************************************************************esse',repetido[moe], segs)
 
               podeir = true
+              qual = -1
               for (meow in segs) {
                   
                 console.log('')
@@ -1021,17 +1022,16 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                     console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                      }
 
-                     if (divisao == '') {
+                     if (divisao == '' || divisao == '-') {
                         console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                         podeir = false
+                        qual = meow
                      }
                   
               }
 
-              console.log('PODE IR?????????????????????????', podeir)
-               if (segs.find(function(segs) {
-                   return segs.car == repetido[moe].letr
-                   }) == undefined) {
+              console.log('PODE IR?????????????????????????', podeir, qual)
+               if (podeir == true) {
    
                      console.log('NÃO TEM',repetido[moe].letr)
                       //if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
@@ -1042,14 +1042,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                  
                   
    
-               }else if(segs.find(function(segs) {
-                   return segs.car == repetido[moe].letr
-                   }).mons.indexOf(m) == -1){
+               }else if(segs[qual].mons.indexOf(m) == -1){
                  
                        console.log('TEM MAS FALTA',repetido[moe].letr)
-                       segs.find(function(segs) {
-                           return segs.car == repetido[moe].letr
-                           }).mons.push(m)
+                       segs[qual].mons.push(m)
    
                            
                }
@@ -1157,7 +1153,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    divs = [1]
    }
    
-
+/*
    goaway = []
    for (nah in segs) {
     
@@ -1188,7 +1184,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         segs.splice(time, 1)
         }
    }
-
+*/
    //divs = [2,3]
    
    //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
@@ -3028,7 +3024,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         console.log(newexpress)
         console.log('_______________________________________________________________________________________   _______________')
 
-        FATORAR(newexpress)
+        //FATORAR(newexpress)
    }else{
 
    console.log('VENDO OS QUE FALTAM:')
