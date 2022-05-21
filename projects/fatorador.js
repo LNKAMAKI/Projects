@@ -12,7 +12,7 @@
 
 //expression = ['2','y','+','4','y','+','2','x','+','4','x']
 
-//expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
+//expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','a','x','^','2','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
@@ -1062,13 +1062,6 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    }
    
 
-   for (nah in segs) {
-    
-       console.log(segs[nah].car)
-       console.log(segs.find(function (segs){
-           return segs.car == '-.x'
-       }))
-   }
    function ehprimo(Number) {
        parar = false
        for (t = 2; t < Number && parar == false; t++) {
@@ -1128,6 +1121,35 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    divs = [1]
    }
    
+
+   goaway = []
+   for (nah in segs) {
+    
+       console.log(segs[nah].car)
+       if (segs[nah].car[0] == '-') {
+        console.log('NEGATIVO')
+        semmenos = ''
+        for (memories in segs[nah].car) {
+            console.log(segs[nah].car[memories])
+            if (memories != 0 && memories!= 1){
+             semmenos+= segs[nah].car[memories]
+            }
+        }
+        console.log('pesquisar:', semmenos)
+        console.log(segs.find(function(segs) {return segs.car == semmenos}))
+        if (segs.find(function(segs) {return segs.car == semmenos}) != undefined) {
+            goaway.push(Number(nah))
+        }
+       }
+   }
+   console.log('TIRAR TUDO')
+   console.log(goaway)
+
+   for (time in goaway) {
+    console.log(segs[goaway[time]])
+    segs.splice(goaway[time], 1)
+   }
+
    //divs = [2,3]
    
    //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
