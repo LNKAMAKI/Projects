@@ -2359,6 +2359,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    }
    console.log('pans é', pans)
    concatenar = ''
+   numsdesfat = []
+
    for (bababa in pans) {
       
        //console.log('A PARTIR DA QUI')
