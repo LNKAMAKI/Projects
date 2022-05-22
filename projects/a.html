@@ -6,79 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       .p2 {
-        display: inline-block;
-        position: relative;
-        top: 5vh;
-        z-index: 0;
-        color: black;
-        border: 2px solid black;
-        background-color: white;
-    }
-    .p2 > p {
-      display: none;
+        @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+        body {
+            margin: 0;
         }
-   .p2:hover > p {
-      display: inline-block; 
-      margin: 0px;
-        background-color: pink;
-   }
-    .inform2 {
-        font-size: 0.7em;
-        font-family: sans-serif;
-        font-weight: bold;
-        display: grid;
-        align-items: center;
-        justify-items: end;
-        position: absolute;
-        min-width: 25px;
-        width: max-content;
-        padding: 6px 6px 5px 6px;
-        border-radius: 5px ;
-        color: white;
-        background-color: black;
-        z-index: 1;
-    }
-    .thingo2 {
-       position: absolute;
-       max-width: 11.8px;
-       max-height: 11.2px;
-       z-index: -1;
-       width: 15px;
-       height: 15px;
-       transform: rotate(-44deg);
-      background-color: black;
-      right:-1.8%;
-    }
-    .ad2 {
-    display: none;
-    }
-    .p2:hover > .ad2 {
-        left: -100%;
-        display:grid;
-        align-items: center;
-        justify-items: end;
-     position: absolute;
-     left: -109%;
-     top: 0%;
-     width: 100%;
-     height: 100%;
-    }
+        div#shade {
+            background-color: rgba(0, 0, 0, 0.726);
+            position: absolute;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            margin: 0;
+        }
+        div#title {
+            position: relative;
+        padding: 40px 0px 40px 0px;
+            height: 100%;
+            width: fit-content;
+            z-index: 0;
+            margin: auto;
+            
+        }
+        p#obs {
+            text-align: center;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+           margin: 0;
+            color: rgb(65, 173, 216);
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Macondo';
+            text-shadow: 2px 3px 8px;
+        }
+        div#header {
+            position: relative;
+            background: url('imagens/code.jpg');
+            background-repeat: repeat;
+           background-position: right bottom;
+           margin: 0;
+        }
+
+        h1{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+           margin: 0;
+            color: rgb(65, 173, 216);
+            text-align: center;
+            font-size: 4em;
+            font-family: 'Macondo';
+            text-shadow: 2px 3px 8px;
+           }
+           
+           @media screen and (max-width: 500px) {
+             h1 {
+                 font-size: 3.5em;
+             }
+             p#obs {
+                 font-size: 1.5em;
+             }
+           }
+    
+           div#testarea {
+               margin-top: 70px;
+               display: grid;
+               justify-content: center;
+           }
+           input#typearea {
+               width: 700px;
+               height: 35px;
+               font-size: 1.5em;
+               text-align: center;
+           }
+         
     </style>
 </head>
 <body>
-  <script src="fatorador.js"></script>
-    <div class="p2" style="margin-left: 200px;"> 
-        CLIQUE AQUI 
-           <div class="ad2">
-           <div class="inform2">
-        Olá, como vai?
-        <div class="thingo2">
-        
+    <script src="fatorador.js"></script>
+    
+        <div id="header">
+          
+            <div id="shade">
+                
+            </div>
+            <div id="title">
+                <h1>FATORADOR</h1>
+             
+                <p id="obs">(por agrupamento)</p>
+            </div>
         </div>
-           </div>
-           </div>
-        
-              </div>
+
+        <div id="testarea">
+            <input type="text" name="" id="typearea" spellcheck="false" placeholder="Digite aqui...">
+        </div>
+ 
 </body>
 </html>
