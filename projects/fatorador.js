@@ -30,7 +30,7 @@
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
-//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
+expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
 
@@ -1034,11 +1034,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                if (podeir == true) {
    
                      console.log('NÃO TEM',repetido[moe].letr)
-                      //if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                         // console.log('ARE YOU SERIOUS?')
-                       //}else{
+                      if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
+                          console.log('ARE YOU SERIOUS?')
+                    }else{
                            segs.push({car: repetido[moe].letr, mons: [m]})
-                       //}
+                       }
                  
                   
    
@@ -1057,7 +1057,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    ////console.log('RELAÇÃO EnTRE OS MOnÔMIOS')
    ////console.log(segs)
    
-   /*
+   
    for (nl = 0; nl < segs.length; nl++) {
        console.log('-----------------------------------------------------------------------------------------')
        
@@ -1067,9 +1067,13 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        console.log('nUMERO: ', segs[nl].car)
        for (n = 0; n < segs.length; n++) {
    
-           //console.log('---------------------------------------------------------------------')
+           console.log('---------------------------------------------------------------------')
            if (n != nl) {
-           console.log(`${segs[n].car}.search('${segs[nl].car}')`)
+           console.log(`${segs[n].car}.search('${segs[nl].car}')`, String(segs[n].car).search(String(segs[nl].car)))
+           for (dry in segs[nl].car) {
+            console.log('_|(o u o)|_', segs[nl].car[dry])
+           }
+
            if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
               
                console.log(`${segs[n].car}: ${segs[n].mons}`)
@@ -1092,7 +1096,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
    
    }
-   */
+   
 
    function ehprimo(Number) {
        parar = false
