@@ -18,7 +18,7 @@
 
 //expression = ['3aa', '+','3ac', '-', 'ab', '-', 'bc']
 
-//expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'x','^','2','y']
+expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc','+','7a','+','7b','+','5t','+','5y','+','x','^','3', '+', 'x', '-', '2','x','y', '-', '2','x','^','2', '+', 'x','^','2','y']
 
 //expression = ['ab','+','ac','+','bb','+','bc','+','xa','+','xc']
 //expression = ['3x','+','3a','+','3','z','+','5xy']
@@ -47,11 +47,11 @@
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
-expression = ['a','^','2','+','a','-','5a','-','5']
+//expression = ['a','^','2','+','a','-','5a','-','5']
 //expression = ['3x','+','15','x','+','19','l','+','17','l']
 //expression = ['3*5','+','5*3xx','+','5*3x']
 //expression = ['14','y','+','7','x','+','9','x']
-//expression = ['x']
+
 
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 startexp = [...expression]
@@ -271,7 +271,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                   // console.log('LISTA VAZIA')
                    ground+= carac
                }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                   console.log('É UM nÚMERO')
+                  // console.log('É UM nÚMERO')
                    ground+= carac
                }else{
                    comofica.push(ground)
@@ -317,7 +317,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    for (past in resultadoDaDivisão) {
       
-    console.log(resultadoDaDivisão[past])
+    //console.log(resultadoDaDivisão[past])
    
     if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
    console.log('ADICIOnAR')
@@ -328,12 +328,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
    
    }else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
-       console.log('OK')
+       //console.log('OK')
    add+= resultadoDaDivisão[past]
    }else{
        plan.push(add)
        add = ''
-       console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
+       //console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
       
        add+= resultadoDaDivisão[past]
        
@@ -355,20 +355,20 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //console.log(ji[chuva].quais.length, '---------')
    if (add == '' && ji[chuva].quais.length > 1) {
        add = '1'
-      console.log('VAIIIIIIIIIIIIIII')
+     // console.log('VAIIIIIIIIIIIIIII')
    }
    plan.push(add)
    //console.log('PLAn', plan)
    
    if (plan.length == 3) {
-       console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-       console.log(Number(plan[0])*Number(plan[2]))
+      // console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
+      // console.log(Number(plan[0])*Number(plan[2]))
        plan = [String(Number(plan[0])*Number(plan[2]))]
-       console.log('É ISSO!!', plan)
+      // console.log('É ISSO!!', plan)
        }
    
        if (monomios[ji[chuva].quais[da]].numero[0] == '+' || monomios[ji[chuva].quais[da]].numero[0] == '-') {
-      console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
+     // console.log('O SInAL É: ', monomios[ji[chuva].quais[da]].numero[0])
    
        sinal = monomios[ji[chuva].quais[da]].numero[0]
    
@@ -381,7 +381,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
     entao = '-'
     entao+= plan[0]
-    console.log(entao)
+   // console.log(entao)
     conta.push(entao)
        }else{
           
@@ -478,7 +478,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    for (bye in monomios) {
-       console.log(monomios[bye].numero,'_________________________________')
+      // console.log(monomios[bye].numero,'_________________________________')
    
        comofica = []
        ground = ''
@@ -508,8 +508,8 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
        }
    
-       console.log('COMOFICA', comofica)
-       console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
+       //console.log('COMOFICA', comofica)
+       //console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
        monomios[bye].numero = comofica
     }
  
@@ -998,14 +998,14 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
        
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              console.log('**********************************************************************esse',repetido[moe], segs)
+             // console.log('**********************************************************************esse',repetido[moe], segs)
 
               podeir = true
               qual = -1
               for (meow in segs) {
                   
-                console.log('')
-                console.log('',segs[meow].car)
+                //console.log('')
+               // console.log('',segs[meow].car)
                
                     array1 = []
                     for (d in segs[meow].car) {
@@ -1020,26 +1020,26 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                     if (segs[meow].car.length < repetido[moe].letr.length) {
 
                         divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
-                    console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
+                    //console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                      }else{
                          divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
-                    console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
+                    //console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                      }
 
                      if (divisao == '' || divisao == '-') {
-                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
+                       // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                         podeir = false
                         qual = meow
                      }
                   
               }
 
-              console.log('PODE IR?????????????????????????', podeir, qual)
+              //console.log('PODE IR?????????????????????????', podeir, qual)
                if (podeir == true) {
    
-                     console.log('NÃO TEM',repetido[moe].letr)
+                     //console.log('NÃO TEM',repetido[moe].letr)
                       if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                          console.log('ARE YOU SERIOUS?')
+                          //console.log('ARE YOU SERIOUS?')
                     }else{
                            segs.push({car: repetido[moe].letr, mons: [m]})
                        }
@@ -1048,7 +1048,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
                }else if(segs[qual].mons.indexOf(m) == -1){
                  
-                       console.log('TEM MAS FALTA',repetido[moe].letr)
+                       //console.log('TEM MAS FALTA',repetido[moe].letr)
                        segs[qual].mons.push(m)
    
                            
@@ -1081,17 +1081,26 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
            //console.log(music1, music2)
            stay = VAI(segs[n].car)
+           contido = true
            for (dry in segs[nl].car) {
             console.log('_|(o u o)|_', stay, segs[nl].car[dry])
             if (segs[nl].car[dry] != '.' && segs[nl].car[dry] != '-') {
                 console.log(stay.indexOf(segs[nl].car[dry]))
-                stay.splice(stay.indexOf(segs[nl].car[dry]), 1)
+                if (stay.indexOf(segs[nl].car[dry]) != -1) {
+                     stay.splice(stay.indexOf(segs[nl].car[dry]), 1)
+                }else{
+                    contido = false
+                }
+               
             }
            
            }
+           if (contido == true) {
+            console.log('>>>>>>>>>>>>>>> É, TÁ CONTIDO <<<<<<<<<<<<<<<<<')
+           }
 
-           if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
-              
+          // if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
+              if (contido == true) {
                console.log(`${segs[n].car}: ${segs[n].mons}`)
                console.log(`${segs[nl].car}: ${segs[nl].mons}`)
    
@@ -2969,7 +2978,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             console.log(tobreak[vaidarcerto])
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
             console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
-            console.warn(newexpress)
+           // console.warn(newexpress)
             if (novomon[0] == '-') {
                 miya = ''
                 for (n in novomon) {
@@ -3051,12 +3060,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    console.log(numerospresentes)
    todososnumeros = []
    for (acaba in monomios) {
-      // console.log(acaba)
+       console.log(acaba, monomios[acaba])
        todososnumeros.push(acaba)
    }
    cancelar = []
    for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
-          // console.log(todososnumeros[feliz])
+           console.log(todososnumeros[feliz])
            if (numerospresentes.indexOf(Number(todososnumeros[feliz])) != -1) {
               todososnumeros.splice(feliz, 1)
    }
@@ -3173,17 +3182,18 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    }
 }
    
-   console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
+   console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar, pans.length, todososnumeros.length)
    if (pans.length == 1 && todososnumeros.length == 0) {
     console.log('CERTINHO')
    }else{
+       if (pans.length != 0) {
        hei = concatenar
        otherway = FATORAR2(expression)
-       console.log('o outro lá:',otherway, hei)
+       console.log('o outro lá:',otherway, hei, pans.length, todososnumeros.length)
     if (otherway[1] == 1 && otherway[2] == 0) {
         console.log('EPA', 'ESSE É MELHOR:', otherway[0])
     }
-       
+} 
    }
    //}
    
@@ -3460,7 +3470,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
     relation[r].car = segs2[r].car
     
     }
-    console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
+//.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
     for (c in relation) {
         ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation[c].fix.length > 0) {
@@ -3523,7 +3533,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    console.log(relation[yougo].fix)
    
    for (pals in relation[yougo].fix) {
-    console.log(relation[yougo].fix[pals])
+  //  console.log(relation[yougo].fix[pals])
     conts.push(relation[yougo].fix[pals])
    }
    groups++
@@ -3537,7 +3547,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    if (groups < divs[okentao]) {
     //console.log('DEU CERTO!!!EBAAAAAA')
    
-    console.log('SERÁ QUE DEU CERTO?')
+//.log('SERÁ QUE DEU CERTO?')
    
    ////console.log(relation)
    
@@ -3576,20 +3586,20 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    //console.log('break', segs2[die].mons)
    for (h in segs2[die].mons) {
-   console.log(segs2[die].mons[h])
+   //console.log(segs2[die].mons[h])
    if (tirados.indexOf(segs2[die].mons[h]) != -1) {
    tirar.push(Number(h))
    }
    }
 
-   console.log('tirar de ',segs2[die].mons, tirar)
+   //console.log('tirar de ',segs2[die].mons, tirar)
 
    for (far = tirar.length - 1; far >= 0; far--) {
-       console.log(segs[die].mons[tirar[far]])
+   //.log(segs[die].mons[tirar[far]])
    segs2[die].mons.splice(tirar[far], 1)
    
    }
-   console.log('ficou assim:', segs2[die].mons)
+   //console.log('ficou assim:', segs2[die].mons)
    }
    
    for (sorrow in segs2) {
@@ -3608,7 +3618,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            //console.log('TIRADOS')
       //console.log(segs2[sorrow].mons[imor])
    
-       console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
+      // console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
    
               if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                   ob.problem = true
@@ -3622,7 +3632,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
       
       
-       console.log('In THE EnD', ob)
+   //.log('In THE EnD', ob)
    
        //console.log(segs2)
        //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
@@ -3692,7 +3702,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
          }
          }
      }
-     console.log('----------------------------------------------------------------')
+    // console.log('----------------------------------------------------------------')
    
      segs2 = []
    
@@ -3731,9 +3741,9 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
     }
    
-    console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
-    console.log(doit2(segs2)[0])
-    console.log(fireonfire)
+   // console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
+   // console.log(doit2(segs2)[0])
+   // c/onsole.log(fireonfire)
    
     //console.log('relation', relation)
     for (red in fireonfire) {
@@ -3952,7 +3962,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation)
    
@@ -4588,7 +4598,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+   // console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation)
    
@@ -5060,7 +5070,7 @@ function MULTIPLICARDIREITO(num1, num2) {
     
 
     if (num1 == '1' || num2 == '1') {
-        console.log('É 1')
+       // console.log('É 1')
         if (num1 == '1') {
             resultmult = num2
         }else{
@@ -5194,8 +5204,6 @@ for (bye in str) {
 
  return comofica
 }
-
-       
 
 
 function FATORAR2(expression) {
@@ -5411,7 +5419,7 @@ function FATORAR2(expression) {
                       // console.log('LISTA VAZIA')
                        ground+= carac
                    }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                       console.log('É UM nÚMERO')
+                       //console.log('É UM nÚMERO')
                        ground+= carac
                    }else{
                        comofica.push(ground)
@@ -5435,7 +5443,7 @@ function FATORAR2(expression) {
        
        
        for (bye in monomios) {
-           console.log(monomios[bye].numero,'_________________________________')
+           //console.log(monomios[bye].numero,'_________________________________')
        
            comofica = []
            ground = ''
@@ -5465,8 +5473,8 @@ function FATORAR2(expression) {
                    }
            }
        
-           console.log('COMOFICA', comofica)
-           console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
+          // console.log('COMOFICA', comofica)
+           //console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',monomios[bye].numero)
            monomios[bye].numero = comofica
         }
      
@@ -5955,14 +5963,14 @@ function FATORAR2(expression) {
            ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
            
                for (moe = repetido.length - 1; moe >= 0; moe--) {
-                  console.log('**********************************************************************esse',repetido[moe], segs)
+                 // console.log('**********************************************************************esse',repetido[moe], segs)
     
                   podeir = true
                   qual = -1
                   for (meow in segs) {
                       
-                    console.log('')
-                    console.log('',segs[meow].car)
+                    //console.log('')
+                    //console.log('',segs[meow].car)
                    
                         array1 = []
                         for (d in segs[meow].car) {
@@ -5977,26 +5985,26 @@ function FATORAR2(expression) {
                         if (segs[meow].car.length < repetido[moe].letr.length) {
     
                             divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
-                        console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
+                       // console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                          }else{
                              divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
-                        console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
+                      //  console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                          }
     
                          if (divisao == '' || divisao == '-') {
-                            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
+                          //  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                             podeir = false
                             qual = meow
                          }
                       
                   }
     
-                  console.log('PODE IR?????????????????????????', podeir, qual)
+                  //console.log('PODE IR?????????????????????????', podeir, qual)
                    if (podeir == true) {
        
-                         console.log('NÃO TEM',repetido[moe].letr)
+                        // console.log('NÃO TEM',repetido[moe].letr)
                           if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                              console.log('ARE YOU SERIOUS?')
+                              //console.log('ARE YOU SERIOUS?')
                         }else{
                                segs.push({car: repetido[moe].letr, mons: [m]})
                            }
@@ -6005,7 +6013,7 @@ function FATORAR2(expression) {
        
                    }else if(segs[qual].mons.indexOf(m) == -1){
                      
-                           console.log('TEM MAS FALTA',repetido[moe].letr)
+                           //console.log('TEM MAS FALTA',repetido[moe].letr)
                            segs[qual].mons.push(m)
        
                                
@@ -6020,55 +6028,64 @@ function FATORAR2(expression) {
        
        
        for (nl = 0; nl < segs.length; nl++) {
-           console.log('-----------------------------------------------------------------------------------------')
-           
-           console.log(segs[nl])
-       
-           console.log('AnALISAR CADA ITEM')
-           console.log('nUMERO: ', segs[nl].car)
-           for (n = 0; n < segs.length; n++) {
-       
-               console.log('---------------------------------------------------------------------')
-               if (n != nl) {
-               console.log(`${segs[n].car}.search('${segs[nl].car}')`, String(segs[n].car).search(String(segs[nl].car)))
-               //music1 = VAI(segs[n].car)
-               //music2 = VAI(segs[nl].car)
+        console.log('-----------------------------------------------------------------------------------------')
+        
+        console.log(segs[nl])
     
-              // inter = DIVIDIR(music2, music1)
+        console.log('AnALISAR CADA ITEM')
+        console.log('nUMERO: ', segs[nl].car)
+        for (n = 0; n < segs.length; n++) {
     
-               //console.log(music1, music2)
-               stay = VAI(segs[n].car)
-               for (dry in segs[nl].car) {
-                console.log('_|(o u o)|_', stay, segs[nl].car[dry])
-                if (segs[nl].car[dry] != '.' && segs[nl].car[dry] != '-') {
-                    console.log(stay.indexOf(segs[nl].car[dry]))
-                    stay.splice(stay.indexOf(segs[nl].car[dry]), 1)
+            console.log('---------------------------------------------------------------------')
+            if (n != nl) {
+            console.log(`${segs[n].car}.search('${segs[nl].car}')`, String(segs[n].car).search(String(segs[nl].car)))
+            //music1 = VAI(segs[n].car)
+            //music2 = VAI(segs[nl].car)
+ 
+           // inter = DIVIDIR(music2, music1)
+ 
+            //console.log(music1, music2)
+            stay = VAI(segs[n].car)
+            contido = true
+            for (dry in segs[nl].car) {
+             console.log('_|(o u o)|_', stay, segs[nl].car[dry])
+             if (segs[nl].car[dry] != '.' && segs[nl].car[dry] != '-') {
+                 console.log(stay.indexOf(segs[nl].car[dry]))
+                 if (stay.indexOf(segs[nl].car[dry]) != -1) {
+                      stay.splice(stay.indexOf(segs[nl].car[dry]), 1)
+                 }else{
+                     contido = false
+                 }
+                
+             }
+            
+            }
+            if (contido == true) {
+             console.log('>>>>>>>>>>>>>>> É, TÁ CONTIDO <<<<<<<<<<<<<<<<<')
+            }
+ 
+           // if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
+               if (contido == true) {
+                console.log(`${segs[n].car}: ${segs[n].mons}`)
+                console.log(`${segs[nl].car}: ${segs[nl].mons}`)
+    
+                for (u in segs[n].mons) {
+                    console.log(segs[n].mons[u])
+                    if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
+                        console.log('TEM')
+                    }else{
+                      console.log('nÃO TEM')
+                      console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
+                        segs[nl].mons.push(segs[n].mons[u])
+                      
+                    }
                 }
-               
-               }
+            }
+            }
+        
+        }
     
-               if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
-                  
-                   console.log(`${segs[n].car}: ${segs[n].mons}`)
-                   console.log(`${segs[nl].car}: ${segs[nl].mons}`)
-       
-                   for (u in segs[n].mons) {
-                       console.log(segs[n].mons[u])
-                       if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
-                           console.log('TEM')
-                       }else{
-                         console.log('nÃO TEM')
-                         console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
-                           segs[nl].mons.push(segs[n].mons[u])
-                         
-                       }
-                   }
-               }
-               }
-           
-           }
-       
-       }
+    }
        
     
        function ehprimo(Number) {
@@ -7368,7 +7385,7 @@ function FATORAR2(expression) {
        }
        
        }
-       console.log('pans é', pans)
+      // console.log('pans é', pans)
        concatenar = ''
        numsdesfat = []
        newexpress = []
@@ -7924,7 +7941,7 @@ function FATORAR2(expression) {
                 //console.log(tobreak[vaidarcerto])
                 novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
                // console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
-                console.warn(newexpress)
+               // console.warn(newexpress)
                 if (novomon[0] == '-') {
                     miya = ''
                     for (n in novomon) {
@@ -9508,7 +9525,7 @@ function FATORAR2(expression) {
        }
        }
        
-       console.log('HELLO')
+      // console.log('HELLO')
        
        
        return [relation, segs2]
@@ -9882,7 +9899,7 @@ function FATORAR2(expression) {
         
     
         if (num1 == '1' || num2 == '1') {
-            console.log('É 1')
+           // console.log('É 1')
             if (num1 == '1') {
                 resultmult = num2
             }else{
@@ -9981,7 +9998,7 @@ function FATORAR2(expression) {
         return [maiorparamenor, posiçõesnumeros]
     }
     
-    console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
+//.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
     return [concatenar, pans.length, todososnumeros.length]
     
     }

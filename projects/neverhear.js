@@ -396,4 +396,33 @@ for (bye in str) {
     console.log('COMOFICA', comofica)
     str[bye].numero = comofica
  }
+ return comofica
+}
+
+console.log(estáContido('7.3.3y','3.7.3.3.y'))
+function estáContido(comparador, variable) {
+    console.log(variable, 'está contida em', comparador)
+stay = arranjar(comparador)
+contido = true
+
+for (dry in variable) {
+    
+    if (variable[dry] != '.' && variable[dry] != '-') {
+      
+        if (stay.indexOf(variable[dry]) != -1) {
+             stay.splice(stay.indexOf(variable[dry]), 1)
+        }else{
+         contido = false
+        }
+       
+    }
+   
+   }
+   
+   if (contido == true) {
+    return true
+   }else{
+       return false
+   }
+
 }
