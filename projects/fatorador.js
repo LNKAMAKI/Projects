@@ -1070,14 +1070,18 @@ if (expression[0] !== '-' && expression[0] !== '+') {
            console.log('---------------------------------------------------------------------')
            if (n != nl) {
            console.log(`${segs[n].car}.search('${segs[nl].car}')`, String(segs[n].car).search(String(segs[nl].car)))
-           music1 = VAI(segs[n].car)
-           music2 = VAI(segs[nl].car)
+           //music1 = VAI(segs[n].car)
+           //music2 = VAI(segs[nl].car)
 
-           inter = DIVIDIR(music2, music1)
+          // inter = DIVIDIR(music2, music1)
 
-           console.log(music1, music2)
+           //console.log(music1, music2)
+           stay = VAI(segs[n].car)
            for (dry in segs[nl].car) {
-            console.log('_|(o u o)|_', segs[nl].car[dry])
+            console.log('_|(o u o)|_', stay, segs[nl].car[dry])
+            if (segs[nl].car[dry] != '.' && segs[nl].car[dry] != '-') {
+                console.log(stay.indexOf(segs[nl].car[dry]))
+            }
            
            }
 
