@@ -56,7 +56,7 @@
 //expression = ['58','x','+','29','+','87','y','+','18']
 //expression = ['132','+','2']
 //expression = ['29','+','37','+','74','x','+','58','x']
-
+expression = ['x','^','2','-','3','x','-','2','x','+','6']
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
 FATORAR(expression)
@@ -3190,14 +3190,15 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    }
 }
    
-   
+console.log(pans.length)
    if (pans.length == 1 && todososnumeros.length == 0) {
     console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
     console.log(concatenar)
     console.log('CERTNHO')
    }else{
        console.log('CERTINHO?')
-       if (pans.length != 0) {
+       if (monomios.length > 1) {
+         
        hei = concatenar
        otherway = FATORAR2(startexp)
        console.log(otherway[1], otherway[2])
