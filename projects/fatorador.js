@@ -3,7 +3,7 @@
 
 //expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b']
 
-//expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','-','169','h','^','4','k','^','2']
+//expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
@@ -30,7 +30,7 @@
 //expression = ['+','ab','-','ac','-','bb','+','bc','-','ad','-','bd']
 
 //expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a','+','2aby','+','6','a','b','+','5ty','+','15','t']
-expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
+//expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a']
 
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
 
@@ -50,10 +50,13 @@ expression = ['2yy','-','6','y','-','2xyy','+','6','x','y','-','2ay','-','6','a'
 //expression = ['a','^','2','+','a','-','5a','-','5']
 //expression = ['3x','+','15','x','+','19','l','+','17','l']
 //expression = ['3*5','+','5*3xx','+','5*3x']
+expression = ['14','y','+','7','x','+','9','x']
 
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
-
+startexp = [...expression]
 FATORAR(expression)
+
+
 function FATORAR(expression) {
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -285,7 +288,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    
-   /*
+   
    for (chuva in ji) {
        //console.log('')
       // console.log('')
@@ -466,7 +469,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    monomios[obnum].numero += exp[n]
    }
-   */
+   
    
    //
    
@@ -3036,11 +3039,11 @@ if (expression[0] !== '-' && expression[0] !== '+') {
         console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
     }
 
-    console.log('_____________________________________________newexpression:_____________________________________________ ')
-        console.log(newexpress)
-        console.log('_______________________________________________________________________________________   _______________')
+    //console.log('_____________________________________________newexpression:_____________________________________________ ')
+       // console.log(newexpress)
+       // console.log('_______________________________________________________________________________________   _______________')
 
-        FATORAR(newexpress)
+       // FATORAR(newexpress)
    }else{
 
    console.log('VENDO OS QUE FALTAM:')
@@ -3170,6 +3173,12 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 }
    
    console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
+   if (pans.length == 1 && todososnumeros.length == 0) {
+    console.log('CERTINHO')
+   }else{
+       console.log(expression)
+       
+   }
    //}
    
    /*
@@ -5179,3 +5188,7 @@ for (bye in str) {
 
  return comofica
 }
+
+       
+       
+      
