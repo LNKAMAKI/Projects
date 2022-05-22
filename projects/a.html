@@ -73,12 +73,53 @@
                justify-content: center;
            }
            input#typearea {
-               width: 700px;
+              width: 700px;
                height: 35px;
                font-size: 1.5em;
                text-align: center;
            }
-         
+
+           @media screen and (max-width: 750px) {
+            input#typearea {
+               width: 550px;
+               font-size: 1.4em;
+            }
+           }
+
+           @media screen and (max-width: 580px) {
+            input#typearea {
+               width: 400px;
+               font-size: 1.3em;
+            }
+           }
+
+           @media screen and (max-width: 460px) {
+            input#typearea {
+               width: 350px;
+               font-size: 1.2em;
+            }
+           }
+
+         div#tab {
+            
+           background-color: rgb(138, 232, 240);
+            animation: surgir 2s forwards;
+            overflow: hidden;
+         }
+         @keyframes surgir {
+            0%{
+               height: 0px;
+            }
+            100% {
+               height: fit-content;
+            }
+         }
+         p.eg {
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 5px 0px 5px 0px;
+         }
     </style>
 </head>
 <body>
@@ -97,7 +138,13 @@
         </div>
 
         <div id="testarea">
-            <input type="text" name="" id="typearea" spellcheck="false" placeholder="Digite aqui...">
+            <input type="text" name="" id="typearea" spellcheck="false" placeholder="Digite a expressão...">
+            <div id="tab">
+               
+               <p class="eg">A</p>
+               
+            </div>
+            <input type="button" value="Exemplos">
         </div>
  
 </body>
