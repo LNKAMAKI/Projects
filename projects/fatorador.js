@@ -1,7 +1,7 @@
 //expression = ['x','^','3', '+', 'x', '-', '2','x','y', '+', 'x','^','2','y', '-', '2','x','^','2', '+', 'y']
 
 
-//expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b']
+//expression = ['-','y','^','2','b','+','6','x','^','2','b', '+', '7','y','^','2', '-', '42','x','^','2']
 
 //expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
@@ -12,7 +12,7 @@
 
 //expression = ['2','y','+','4','y','+','2','x','+','4','x']
 
-//expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a','+','6','x','y','+','15','x','^','2','y','+','6','x','z','+','15','x','^','2','z','+','6','x','b','+','15','x','^','2','b']
+//expression = ['6','x','+','15','x','^','2','+','6','x','a','+','15','x','^','2','a','+','6','x','y','+','15','y','x','^','2','+','6','z','x','+','15','x','^','2','z','+','6','x','b','+','15','b','x','^','2']
 
 //expression = ['6','x','+','15','x','^','2','+','6','a','x','+','15','x','^','2','a']
 
@@ -35,7 +35,7 @@
 //expression = ['-','5x','+','xy','+','5y','-','y','^','2','+','ab','-','ac','-','bb','+','bc','-','55','w','^','3','+','7t','+','7j','-','13','h','^','4','k','^','2']
 
 //expression = ['55','w','^','3','+','13','h','^','4','k','^','2']
-//expression = ['-','11','x','-','121','y','+','11yz','+','xz']
+//expression = ['-','121','y','+','xz','+','11yz','-','11','x']
 
 //expression = ['26','a','x','+','169','x','b','+','4','a','y','+','26','b','y']
 //expression = ['-','37','x','^','2','+','74','x','-','42','y','+','21','x','y']
@@ -46,17 +46,17 @@
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
-//expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
+expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 //expression = ['a','^','2','+','a','-','5a','-','5']
 //expression = ['3x','+','15','x','+','19','l','+','17','l']
 //expression = ['3*5','+','5*3xx','+','5*3x']
 //expression = ['14','y','+','7','x','+','9','x']
-
+expression = ['29','x','+','58','+','87','y']
 
 
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
-FATORAR(expression)
+FATORAR2(expression)
 
 
 function FATORAR(expression) {
@@ -124,6 +124,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
               }
            }
        }
+       console.log(fatorado)
        expression[n] = fatorado
    }
    }
@@ -177,7 +178,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
    
    // TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
-   /*
+   
    for (bye in monomios) {
        
    
@@ -213,7 +214,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        //
        monomios[bye].numero = comofica
    }
-   */
+   
 
    for (huh in monomios) {
        
@@ -452,7 +453,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    }
    
-   
+   expression = exp
    
    // SEPARAnDO OS MOnÔMIOS DEnOVO
    
@@ -486,7 +487,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
        for (misery in monomios[bye].numero) { 
          //  
-           
+           console.log(monomios[bye].numero[misery])
            carac = monomios[bye].numero[misery]
           // 
          //  
@@ -506,6 +507,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
                if (misery == monomios[bye].numero.length - 1) {
                    comofica.push(ground)
+                   console.log(ground)
                }
        }
    
@@ -842,7 +844,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    }
-   //expression = exp
+   expression = exp
    
    //
    reps = []
