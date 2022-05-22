@@ -1081,6 +1081,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
             console.log('_|(o u o)|_', stay, segs[nl].car[dry])
             if (segs[nl].car[dry] != '.' && segs[nl].car[dry] != '-') {
                 console.log(stay.indexOf(segs[nl].car[dry]))
+                stay.splice(stay.indexOf(segs[nl].car[dry]), 1)
             }
            
            }
