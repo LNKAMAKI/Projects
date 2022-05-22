@@ -46,20 +46,26 @@
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
 //expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
-expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
+//expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
+
 //expression = ['a','^','2','+','a','-','5a','-','5']
+
 //expression = ['3x','+','15','x','+','19','l','+','17','l']
 //expression = ['3*5','+','5*3xx','+','5*3x']
 //expression = ['14','y','+','7','x','+','9','x']
-expression = ['29','x','+','58','+','87','y']
-
+//expression = ['58','x','+','29','+','87','y','+','18']
+//expression = ['132','+','2']
+//expression = ['29','+','37','+','74','x','+','58','x']
 
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
+FATORAR(expression)
 console.log(FATORAR2(expression))
 
-
 function FATORAR(expression) {
+
+    startexp = [...expression]
+
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   
        expo = ['+']
@@ -124,7 +130,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
               }
            }
        }
-       console.log(fatorado)
+      
        expression[n] = fatorado
    }
    }
@@ -487,7 +493,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
        for (misery in monomios[bye].numero) { 
          //  
-           console.log(monomios[bye].numero[misery])
+          
            carac = monomios[bye].numero[misery]
           // 
          //  
@@ -507,7 +513,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
                }
                if (misery == monomios[bye].numero.length - 1) {
                    comofica.push(ground)
-                   console.log(ground)
+                  
                }
        }
    
@@ -2886,7 +2892,6 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
 
        
-       
 
      
    // FAZENDO A CONTA
@@ -3187,18 +3192,29 @@ if (expression[0] !== '-' && expression[0] !== '+') {
    
    
    if (pans.length == 1 && todososnumeros.length == 0) {
-    console.log('RESULTADO DA EXPRESSÃO',expression,'é',concatenar)
+    console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+    console.log(concatenar)
+    console.log('CERTNHO')
    }else{
+       console.log('CERTINHO?')
        if (pans.length != 0) {
        hei = concatenar
-       otherway = FATORAR2(expression)
-       
+       otherway = FATORAR2(startexp)
+       console.log(otherway[1], otherway[2])
+
     if (otherway[1] == 1 && otherway[2] == 0) {
-        console.log('RESULTADO DA EXPRESSÃO',expression,'é',otherway[0])
+        console.log(otherway[1], otherway[2])
+        console.log('IS IT SERIOUS?')
+        console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+        console.log(otherway[0])
     }else{
-        console.log('RESULTADO DA EXPRESSÃO',expression,'é',concatenar)
+        console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+        console.log(hei)
     }
-} 
+}else{
+    console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+        console.log(concatenar)
+}
    }
    //}
    
@@ -5276,7 +5292,7 @@ function FATORAR2(expression) {
                   }
                }
            }
-           console.log(fatorado)
+           
            expression[n] = fatorado
        }
        }
@@ -5406,7 +5422,7 @@ function FATORAR2(expression) {
        // SEPARAnDO/JUnTAnDO OS nÚMEROS
        
        exp = []
-       
+       /*
        for (bye in ji) {
           // 
        
@@ -5639,7 +5655,7 @@ function FATORAR2(expression) {
        
            for (misery in monomios[bye].numero) { 
              //  
-               console.log(monomios[bye].numero[misery])
+               
                carac = monomios[bye].numero[misery]
               // 
              //  
@@ -5659,7 +5675,7 @@ function FATORAR2(expression) {
                    }
                    if (misery == monomios[bye].numero.length - 1) {
                        comofica.push(ground)
-                       console.log(ground)
+                       
                    }
            }
        
@@ -5668,7 +5684,7 @@ function FATORAR2(expression) {
            monomios[bye].numero = comofica
         }
      
-       
+       */
      
        
        
