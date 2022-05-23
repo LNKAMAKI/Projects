@@ -60,7 +60,7 @@
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
 
-function A() {
+function ir() {
 console.log('VAIIIIIIIII');
 qualexp1 = document.getElementById('typearea').value
 qualexp = ''
