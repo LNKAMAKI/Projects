@@ -56,11 +56,76 @@
 //expression = ['58','x','+','29','+','87','y','+','18']
 //expression = ['132','+','2']
 //expression = ['29','+','37','+','74','x','+','58','x']
-expression = ['x','^','2','-','3','x','-','2','x','+','6']
+//expression = ['x','^','2','-','3','x','-','2','x','+','6']
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
-FATORAR(expression)
-console.log(FATORAR2(expression))
+function A() {
+console.log('VAIIIIIIIII');
+qualexp1 = document.getElementById('typearea').value
+qualexp = ''
+for (copy in qualexp1) {
+    console.log(qualexp1[copy])
+    if (qualexp1[copy] != ' ') {
+        console.log(qualexp1[copy],'ir')
+        qualexp+= qualexp1[copy]
+    }
+}
+console.log('É ESSE:', qualexp)
+
+ground = ''
+expression = []
+for (phy in qualexp) {
+    console.log(qualexp[phy])
+    if (qualexp[phy].search('[0-9]') != -1) {
+    console.log('NÚMERO', ground, ground.search('[0-9]'))
+    if (ground.search('[0-9]') != -1) {
+        console.log('ADICIONAR')
+    ground+= qualexp[phy]
+    console.log(ground)
+    }else if(ground.length > 0){
+        expression.push(ground)
+        ground = qualexp[phy]
+        console.log(ground)
+    }else{
+        ground = qualexp[phy]
+        console.log(ground)
+    }
+
+    }else{
+        if (ground.length > 0) {
+            console.log(ground)
+            expression.push(ground)
+        }
+        ground = qualexp[phy]
+        console.log('LETRA', ground)
+    }
+    if (phy == qualexp.length - 1) {
+        console.log('ÚLTIMO')
+        expression.push(ground)
+    }
+}
+
+resultado = FATORAR(expression)
+console.log(resultado)
+}
+
+abriu = false
+function showegs() {
+    console.log('EXEMPLOS')
+    if (abriu == false) {
+    document.getElementById('tab').style.height = 'fit-content'
+    document.getElementById('exemplos').value= 'Fechar'
+    }else{
+        document.getElementById('tab').style.height = '0px'
+        document.getElementById('exemplos').value= 'Exemplos'
+    }
+    if (abriu == false) {
+        abriu = true
+    }else{
+        abriu = false
+    }
+}
+
 
 function FATORAR(expression) {
 
@@ -3195,6 +3260,7 @@ console.log(pans.length)
     console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
     console.log(concatenar)
     console.log('CERTNHO')
+    return concatenar
    }else{
        console.log('CERTINHO?')
        if (monomios.length > 1) {
@@ -3208,13 +3274,16 @@ console.log(pans.length)
         console.log('IS IT SERIOUS?')
         console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         console.log(otherway[0])
+        return otherway[0]
     }else{
         console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         console.log(hei)
+        return hei
     }
 }else{
     console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         console.log(concatenar)
+        return concatenar
 }
    }
    //}

@@ -7,6 +7,9 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+        :root {
+           --themecolor: rgb(114, 215, 255);
+        }
         body {
             margin: 0;
         }
@@ -68,42 +71,58 @@
            }
     
            div#testarea {
-               margin-top: 70px;
-               display: grid;
+              height: 500px;
+            width: 700px;
+               margin: 70px auto 0px auto;
+              
                justify-content: center;
            }
            input#typearea {
-              width: 700px;
+              width: 100%;
+              margin: 0px;
+              left: 0px;
+              right: 0px;
+             background-color:white;
+             border-width: 0px;
+             border-radius: 7px;
+              padding: 0px;
+              outline: 1px solid black;
                height: 35px;
                font-size: 1.5em;
                text-align: center;
            }
 
+           input#typearea:focus {
+            outline: 2px solid black;
+              background-color: pink;
+           }
            @media screen and (max-width: 750px) {
-            input#typearea {
+           div#testarea {
                width: 550px;
-               font-size: 1.4em;
+             
             }
            }
 
            @media screen and (max-width: 580px) {
-            input#typearea {
+            div#testarea {
                width: 400px;
-               font-size: 1.3em;
+               
             }
            }
 
            @media screen and (max-width: 460px) {
-            input#typearea {
+            div#testarea {
                width: 350px;
-               font-size: 1.2em;
+            
             }
            }
 
          div#tab {
-            
-           background-color: rgb(138, 232, 240);
-            animation: surgir 2s forwards;
+            width: 100%;
+            height: 0px;
+            background-color: black;
+            color: white;
+           /*animation: surgir 2s forwards;*/
             overflow: hidden;
          }
          @keyframes surgir {
@@ -114,12 +133,34 @@
                height: fit-content;
             }
          }
-         p.eg {
-            background-color: white;
-            text-align: center;
-            padding: 10px;
-            margin: 5px 0px 5px 0px;
+         input#exemplos {
+            width: 100%;
          }
+         p.eg {
+            background-color: var(--themecolor);
+            width: calc(100% - 20px);
+            text-align: center;
+            padding: 10px 0px 10px 0px;
+            margin: 5px 0px 5px 0px;
+            margin: 10px;
+            color:black;
+            
+         }
+
+         input#fatorar {
+            cursor: pointer;
+            width: 100px;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 30px;
+            padding: 10px;
+            border-width: 0px;
+            color: var(--themecolor);
+            background-color: black;
+            text-shadow: 2px 3px 8px var(--themecolor);
+         }
+       
     </style>
 </head>
 <body>
@@ -138,14 +179,19 @@
         </div>
 
         <div id="testarea">
+           
             <input type="text" name="" id="typearea" spellcheck="false" placeholder="Digite a expressão...">
             <div id="tab">
                
                <p class="eg">A</p>
                
             </div>
-            <input type="button" value="Exemplos">
-        </div>
+            <input type="button" value="Exemplos" id="exemplos" onclick="showegs()">
+
+            <input type="button" value="FATORAR" id="fatorar" onclick="A()">
+         
+      </div>
  
+       
 </body>
 </html>
