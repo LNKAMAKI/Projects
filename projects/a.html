@@ -137,6 +137,7 @@
             width: 100%;
          }
          p.eg {
+            cursor: pointer;
             background-color: var(--themecolor);
             width: calc(100% - 20px);
             text-align: center;
@@ -144,7 +145,8 @@
             margin: 5px 0px 5px 0px;
             margin: 10px;
             color:black;
-            
+            font-family: monospace;
+            font-size: 1.5em;
          }
 
          input#fatorar {
@@ -196,11 +198,15 @@
             <input type="text" name="" id="typearea" spellcheck="false" placeholder="Digite a expressão...">
             <div id="tab">
                
-               <p class="eg">A</p>
-               <p class="eg">A</p>
-               <p class="eg">A</p>
-               <p class="eg">A</p>
-               <p class="eg">A</p>
+               <p class="eg">x^2 - 3x - 2x + 6</p>
+               <p class="eg">ab + ac + bb + bc + xa + xc</p>
+               <p class="eg">-3x - 5x + 4x^2 + 3y + 5y - 4xy</p>
+               <p class="eg">14y + 7x + 9x</p>
+               <p class="eg">-121y + xz + 11yz - 11x</p>
+               <p class="eg">x^3 + x - 2xy + x^2y - 2x^2 + y</p>
+               <p class="eg">-8x + 3xy + 4xy - 6x + 2xy - 4x</p>
+               <p class="eg">29 + 37 + 74x + 58x</p>
+               <p class="eg">a^2 + a - 5a - 5</p>
                
             </div>
             <input type="button" value="Exemplos" id="exemplos" onclick="showegs()">

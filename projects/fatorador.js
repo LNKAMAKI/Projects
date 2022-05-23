@@ -59,10 +59,12 @@
 //expression = ['x','^','2','-','3','x','-','2','x','+','6']
 // BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
 
+
 function A() {
 console.log('VAIIIIIIIII');
 qualexp1 = document.getElementById('typearea').value
 qualexp = ''
+
 for (copy in qualexp1) {
     console.log(qualexp1[copy])
     if (qualexp1[copy] != ' ') {
@@ -72,6 +74,7 @@ for (copy in qualexp1) {
 }
 console.log('É ESSE:', qualexp)
 
+if (qualexp!= '') {
 ground = ''
 expression = []
 for (phy in qualexp) {
@@ -116,8 +119,14 @@ document.getElementById('exemplos').value= 'Exemplos'
 
 abriu = false
 }
+}
+
+
+
+
 
 abriu = false
+vez = 0
 function showegs() {
     console.log('EXEMPLOS')
     if (abriu == false) {
@@ -132,9 +141,26 @@ function showegs() {
     }else{
         abriu = false
     }
+
+    if (vez == 0) {
+    pegs = document.getElementsByClassName('eg')
+    console.log('TIME', pegs.length - 1)
+for (iveco in pegs) {
+    if (iveco.search('[0-9]') != -1) {
+    console.log(iveco, pegs[iveco])
+    pegs[iveco].setAttribute('onclick', `mudar(${iveco})`)
+    }
+}
+    }
+
+
+vez++
 }
 
-
+function mudar(index) {
+ console.log(index,'foi chamado')
+ document.getElementById('typearea').value = document.getElementsByClassName('eg')[index].innerText
+}
 function FATORAR(expression) {
 
     startexp = [...expression]
