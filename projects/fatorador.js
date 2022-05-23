@@ -2984,10 +2984,10 @@ if (expression[0] !== '-' && expression[0] !== '+') {
        }
        if (edge.length > 1) {
        
-       concatenar+= `( ${naonao} )( ${tobreak} )`
+       concatenar+= `(${naonao})(${tobreak})`
        }else{
            
-           concatenar+= `${naonao}( ${tobreak} )`
+           concatenar+= `${naonao}(${tobreak})`
        }
 
        
