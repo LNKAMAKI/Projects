@@ -67,7 +67,7 @@ qualexp = ''
 
 for (copy in qualexp1) {
     console.log(qualexp1[copy])
-    if (qualexp1[copy] != ' ') {
+    if (qualexp1[copy] != ' ' && qualexp1[copy].search('[0-9]?[a-z]?\\+?\\-?') != -1) {
         console.log(qualexp1[copy],'ir')
         qualexp+= qualexp1[copy]
     }

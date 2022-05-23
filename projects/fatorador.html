@@ -77,7 +77,7 @@
               
                justify-content: center;
            }
-           input#typearea {
+           #typearea {
               width: 100%;
               margin: 0px;
               left: 0px;
@@ -108,12 +108,18 @@
                width: 400px;
                
             }
+            #typearea {
+               font-size: 1.2em;
+            }
            }
 
            @media screen and (max-width: 460px) {
             div#testarea {
                width: 350px;
             
+            }
+            #typearea {
+               font-size: 1.1em;
             }
            }
 
@@ -135,6 +141,7 @@
          }
          input#exemplos {
             width: 100%;
+            padding: 2px 0px 2px 0px;
          }
          p.eg {
             border-radius: 20px;
@@ -200,6 +207,7 @@
             <div id="tab">
                
                <p class="eg">x^2 - 3x - 2x + 6</p>
+               <p class="eg">10y - 338xy + 20y^2 - 169x + ab + bb + ac + bc</p>
                <p class="eg">ab + ac + bb + bc + xa + xc</p>
                <p class="eg">-3x - 5x + 4x^2 + 3y + 5y - 4xy</p>
                <p class="eg">14y + 7x + 9x</p>
