@@ -65,16 +65,21 @@ console.log('VAIIIIIIIII');
 qualexp1 = document.getElementById('typearea').value
 qualexp = ''
 
+parar = false
 for (copy in qualexp1) {
     console.log(qualexp1[copy])
-    if (qualexp1[copy] != ' ' && qualexp1[copy].search('[0-9]?[a-z]?\\+?\\-?') != -1) {
+    if (qualexp1[copy] != ' ') {
+        if (qualexp1[copy].search('[0-9]') != -1 || qualexp1[copy].search('[a-z]') != -1 || qualexp1[copy].search('[\\+\\-\\^]') != -1) {
         console.log(qualexp1[copy],'ir')
         qualexp+= qualexp1[copy]
+        }else{
+            parar = true
+        }
     }
 }
 console.log('É ESSE:', qualexp)
 
-if (qualexp!= '') {
+if (qualexp!= '' && parar == false) {
 ground = ''
 expression = []
 for (phy in qualexp) {
@@ -119,6 +124,7 @@ document.getElementById('exemplos').value= 'Exemplos'
 
 abriu = false
 }
+
 }
 
 
