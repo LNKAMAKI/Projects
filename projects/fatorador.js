@@ -107,6 +107,14 @@ for (phy in qualexp) {
 
 resultado = FATORAR(expression)
 console.log(resultado)
+
+document.getElementById('result').innerHTML = "Resultado:"
+document.getElementById('fatoracao').innerText= resultado
+
+document.getElementById('tab').style.height = '0px'
+document.getElementById('exemplos').value= 'Exemplos'
+
+abriu = false
 }
 
 abriu = false

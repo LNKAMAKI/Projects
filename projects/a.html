@@ -94,7 +94,7 @@
 
            input#typearea:focus {
             outline: 2px solid black;
-              background-color: pink;
+           
            }
            @media screen and (max-width: 750px) {
            div#testarea {
@@ -161,6 +161,19 @@
             text-shadow: 2px 3px 8px var(--themecolor);
          }
        
+         #result {
+            text-align: center;
+            font-family: 'Macondo';
+            font-weight: bold;
+            font-size: 1.9em;
+            margin: 50px 0px 10px 0px;
+         }
+         #fatoracao {
+            text-align: center;
+            margin: 10px 0px 10px 0px;
+            font-size: 2em;
+            font-family: monospace;
+         }
     </style>
 </head>
 <body>
@@ -184,14 +197,19 @@
             <div id="tab">
                
                <p class="eg">A</p>
+               <p class="eg">A</p>
+               <p class="eg">A</p>
+               <p class="eg">A</p>
+               <p class="eg">A</p>
                
             </div>
             <input type="button" value="Exemplos" id="exemplos" onclick="showegs()">
 
             <input type="button" value="FATORAR" id="fatorar" onclick="A()">
-         
-      </div>
- 
-       
+             
+            
+                  <p id='result'></p>
+                  <p id='fatoracao'></p>
+        </div>
 </body>
 </html>
