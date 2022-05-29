@@ -1874,6 +1874,24 @@ function ir() {
              }
              
        
+             grtols = []
+             for (hi in miss) {
+                 ////
+                 miss[hi].length = miss[hi].aparicoes.length
+             
+                 grtols.push(miss[hi])
+             }
+             organizado = sortob(grtols, 'length')[1]
+             
+             grtols = []
+             for (ah in organizado) {
+                // //
+                 grtols.push(miss[organizado[ah]])
+                
+             }
+             miss = [...grtols]
+
+
              java = 0
              roll = []
              deucerto = false
@@ -7042,6 +7060,23 @@ function ir() {
                   }
                  }
                  
+
+                 grtols = []
+                 for (hi in miss) {
+                     ////
+                     miss[hi].length = miss[hi].aparicoes.length
+                 
+                     grtols.push(miss[hi])
+                 }
+                 organizado = sortob(grtols, 'length')[1]
+                 
+                 grtols = []
+                 for (ah in organizado) {
+                    // //
+                     grtols.push(miss[organizado[ah]])
+                    
+                 }
+                 miss = [...grtols]
            
                  java = 0
                  roll = []
