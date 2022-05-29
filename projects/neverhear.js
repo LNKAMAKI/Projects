@@ -11,3 +11,5 @@ ab + ac + bb + bc + xa + xc
 2y^2 - 6y - 2xy^2 + 6xy - 2ay - 6a
 
 10y - 338xy + 20y^2 - 169x + ab + bb + ac + bc
+
+6x+15x^2+6ax+15x^2a
