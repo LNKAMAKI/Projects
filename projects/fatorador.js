@@ -1504,360 +1504,21 @@ function ir() {
              // 
        
        // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
+      
+      
        
-              grtols = []
-       for (hi in miss) {
-           ////
-           miss[hi].length = miss[hi].aparicoes.length
-       
-           grtols.push(miss[hi])
+       for (what in miss) {
+           console.log(miss[what].aparicoes,'------------')
        }
-       organizado = sortob(grtols, 'length')[1]
        
-       grtols = []
-       for (ah in organizado) {
-          // //
-           grtols.push(miss[organizado[ah]])
-          
-       }
-       miss = [...grtols]
-       //
-       deucerto = false
-       java = 0
-       
-       
-       
-       
-       while(java < miss.length && deucerto == false) {
-                  
-                 // if (miss[java].aparicoes.length >= quantasposições) {
-               //    
-            //   
-       
-               podeser = []
-               for (outro in miss) {
-                  // 
-                   if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-                   //   
-       
-                       presentes = []
-                       for (quecoisa in miss[outro].aparicoes) {
-                           fatorzinho = miss[outro].aparicoes[quecoisa]
-                        //   
-       
-                           if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                        //   
-                               presentes.push(fatorzinho)
-                           }
-                       }
-                     //  
-       
-                       adicionou = false
-                       for (idk in podeser) {
-                        //   
-                           esigual = true
-                           for (denovo in podeser[idk].opl) {
-                              // 
-                               if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                                  // 
-                               }else{
-                                   esigual = false
-                               }
-                           }
-                           if (esigual == true) {
-                               podeser[idk].position.push(outro)
-                               adicionou = true
-                           }
-                       }
-                       if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
-                           podeser.push({opl: presentes, position: [outro]})
-                       }
-                       
-                   }
-                  }
-                  
-                  
-                  
-                  for (belief in podeser) {
-                      if (podeser[belief].position.indexOf(java) == -1) {
-                      podeser[belief].position.push(String(java))
-                      }
-       
-                   
-       
-                   shot = ''
-                   for (gun in podeser[belief].opl) {
-                       
-                       shot+= podeser[belief].opl[gun] + ','
-                   }
-                  // 
-       
-                   if (roll.length == 0) {
-                      // 
-                       roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
-                   }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                       
-                      
-       
-                       for (capital in podeser[belief].position) {
-                           
-       
-                         // 
-       
-                       if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                          
-                          roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
-                       }
-                       }
-       
-                   }else{
-                       
-                       roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
-                   }
-                  }
-       
-                  
-                  whyis = java
-                  if (podeser.length > 0) {
-                      
-                      
-       
-                      for(cold in podeser) {
-                  if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
-                  // 
-                   deucerto = true
-       
-                   ficaassim = ''
-                  // podeser[cold].position.push(whyis)
-       
-                   for (yehaa in podeser[cold].position) {
-                     //  
-                      // 
-                       if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
-                           
-                           fi = ''
-                           for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
-                               if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
-                                   fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
-                               }
-                           }
-                         //  
-                           if (yehaa != 0) {
-                                ficaassim += ` - ${fi}`
-                           }else{
-                               ficaassim += `-${fi}`
-                           }
-                       }else if(yehaa != 0){
-                           ficaassim += ' + '
-                           ficaassim+= miss[podeser[cold].position[yehaa]].dividido
-                       }else{
-                           ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
-                       }
-                       
-                   
-                   }
-                  // 
-                  for (ruin in podeser[cold].opl) {
-                 //  
-                   emotion = ''
-                   for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-                  //
-                       emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
-                   }
-                 //  
-                 }
-                  }
-               }
-       
-               }
-       
-                //  }
-                  
-                //  
-       
-                  java++
-              }
-              okentao++
-       
-       
+       for (sei in scarecrow) {
               
-              for (nao in roll) {
-                 // 
-              // 
-               
-              // 
-             //  
-       
               
-                   shot = ''
-                   for (gun in roll[nao].repetidos) {
-                       
-                       shot+= roll[nao].repetidos[gun] + ','
-                   }
-       
-               for (whyso in miss) {
-                   
-                   igual = 0
-                   for (heat in miss[whyso].aparicoes) {
-                       
-                       if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
-                         //  
-                           igual++
-                       }
-                   }
-                  // 
-                   if (igual == roll[nao].repetidos.length) {
-                      // 
-                         // 
-       
-                          if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
-                           
-                       }else{
-                         //  
-                           roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
-                       }
-                   }
-                     // 
-                      
-                   }
-               }
-               
-              
-             //  
-       
-       
-             
-             for (ne in roll) {
-              //for (ne = 0; ne < 1; ne++) {
-                 
-               
-               
-               
-       
-               arranjar = []
-               for (pq in roll[ne].repetidos) {
-                   gosto = roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
-                   
-                   arranjar.push({pos: pq, ocupa: [], origin: gosto})
-       
-               for (moon in roll[ne].posições) {
-       
-                  
-                   vaiir = scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
-                   
-       
-                  arranjar[pq].ocupa.push(vaiir)
-               }
-           }
-           
-           
-           
-           jafoi = []
-           
-           perfectwave = []
-           for (tosse in arranjar) {
-       
-               if (jafoi.indexOf(tosse) == -1) {
-                   organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-              // 
-              // 
-             //  
-             
-               for (calor in arranjar) {
-           
-                   if (calor != tosse) {
-                      // 
-                       
-       
-                       equals = true
-                       igualar =[]
-                       for (boring in arranjar[calor].ocupa) {
-                           sendocomparado = arranjar[calor].ocupa[boring]
-                           comparador= arranjar[tosse].ocupa[boring]
-                         //  
-                          // 
-                           if (sendocomparado[0] != comparador[0]) {
-                             //  
-                               igualar.push(true)
-                           }else{
-                              // 
-                               igualar.push(false)
-                           }
-                       }
-                      // 
-                       if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
-                           
-                           jafoi.push(calor)
-                           organizer.agrupar.push(calor)
-       
-                       }
-                   }
-               }
-               perfectwave.push(organizer)
-           }
-           }
-           
-          // 
-           for (youchoose in perfectwave) {
-               
-               
-               ficarassim =  perfectwave[youchoose].referencia
-       
-               for (catraca in perfectwave[youchoose].agrupar) {
-                   
-                   presa = perfectwave[youchoose].agrupar[catraca]
-                 
-                  // 
-                  // 
-       
-                   diferente = false
-                   for (moon in roll[ne].posições) {
-       
-                      // 
-                       vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
-                      // 
-                       if (vaiir != ficarassim[moon]) {
-                           diferente = true
-       
-                           
-                          
-       
-                          scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
-                       }
-           
-                     
-                   }
-                  // 
-                   if (diferente == true) {
-                       
-       
-                       lista = scarecrow[arranjar[presa].origin].divisor
-                       if (lista != '-') {
-                           
-                           modificar = ['-','.']
-                           for (saved in lista) {
-                              // 
-                               modificar.push(lista[saved])
-                           }
-                          // 
-                           scarecrow[arranjar[presa].origin].divisor = modificar
-                       }else{
-                           lista.splice(0,2)
-                       }
-                   }
-               }
-           }
-             }
-       
-            // 
-             for (sei in scarecrow) {
-               
-               
-               for (ai in scarecrow[sei].divididos) {
-                   
-                   scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai]
-               }
-             }
+        for (ai in scarecrow[sei].divididos) {
+            
+            scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai]
+        }
+      }
        
              miss = []
        
@@ -1873,7 +1534,27 @@ function ir() {
               }
              }
              
-       
+            
+
+             grtols = []
+             for (hi in miss) {
+                 ////
+                 miss[hi].length = miss[hi].aparicoes.length
+             
+                 grtols.push(miss[hi])
+             }
+             organizado = sortob(grtols, 'length')[1]
+             
+             grtols = []
+             for (ah in organizado) {
+                // //
+                 grtols.push(miss[organizado[ah]])
+                
+             }
+             arg = [...grtols]
+             miss = [...grtols]
+             //
+
              java = 0
              roll = []
              deucerto = false
@@ -2023,7 +1704,176 @@ function ir() {
                 java++
             }
        
-       
+            for (nao in roll) {
+                // 
+             // 
+              
+             // 
+            //  
+      
+             
+                  shot = ''
+                  for (gun in roll[nao].repetidos) {
+                      
+                      shot+= roll[nao].repetidos[gun] + ','
+                  }
+      
+              for (whyso in miss) {
+                  
+                  igual = 0
+                  for (heat in miss[whyso].aparicoes) {
+                      
+                      if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
+                        //  
+                          igual++
+                      }
+                  }
+                 // 
+                  if (igual == roll[nao].repetidos.length) {
+                     // 
+                        // 
+      
+                         if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
+                          
+                      }else{
+                        //  
+                          roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
+                      }
+                  }
+                    // 
+                     
+                  }
+              }
+              
+             
+            //  
+      
+      
+            
+            for (ne in roll) {
+             //for (ne = 0; ne < 1; ne++) {
+                
+              
+              
+              
+      
+              arranjar = []
+              for (pq in roll[ne].repetidos) {
+                  gosto = roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
+                  
+                  arranjar.push({pos: pq, ocupa: [], origin: gosto})
+      
+              for (moon in roll[ne].posições) {
+      
+                 
+                  vaiir = scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
+                  
+      
+                 arranjar[pq].ocupa.push(vaiir)
+              }
+          }
+          
+          
+          
+          jafoi = []
+          
+          perfectwave = []
+          for (tosse in arranjar) {
+      
+              if (jafoi.indexOf(tosse) == -1) {
+                  organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
+             // 
+             // 
+            //  
+            
+              for (calor in arranjar) {
+          
+                  if (calor != tosse) {
+                     // 
+                      
+      
+                      equals = true
+                      igualar =[]
+                      for (boring in arranjar[calor].ocupa) {
+                          sendocomparado = arranjar[calor].ocupa[boring]
+                          comparador= arranjar[tosse].ocupa[boring]
+                        //  
+                         // 
+                          if (sendocomparado[0] != comparador[0]) {
+                            //  
+                              igualar.push(true)
+                          }else{
+                             // 
+                              igualar.push(false)
+                          }
+                      }
+                     // 
+                      if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
+                          
+                          jafoi.push(calor)
+                          organizer.agrupar.push(calor)
+      
+                      }
+                  }
+              }
+              perfectwave.push(organizer)
+          }
+          }
+          
+         // 
+          for (youchoose in perfectwave) {
+              
+              
+              ficarassim =  perfectwave[youchoose].referencia
+      
+              for (catraca in perfectwave[youchoose].agrupar) {
+                  
+                  presa = perfectwave[youchoose].agrupar[catraca]
+                
+                 // 
+                 // 
+      
+                  diferente = false
+                  for (moon in roll[ne].posições) {
+      
+                     // 
+                      vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
+                     // 
+                      if (vaiir != ficarassim[moon]) {
+                          diferente = true
+      
+                          
+                         
+      
+                         scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
+                      }
+          
+                    
+                  }
+                 // 
+                  if (diferente == true) {
+                      
+      
+                      lista = scarecrow[arranjar[presa].origin].divisor
+                      if (lista != '-') {
+                          
+                          modificar = ['-','.']
+                          for (saved in lista) {
+                             // 
+                              modificar.push(lista[saved])
+                          }
+                         // 
+                          scarecrow[arranjar[presa].origin].divisor = modificar
+                      }else{
+                          lista.splice(0,2)
+                      }
+                  }
+              }
+          }
+            }
+      
+           // 
+           
        
        
        
