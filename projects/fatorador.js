@@ -3320,7 +3320,10 @@ function ir() {
         console.log(concatenar)
         console.log('CERTNHO')
         return concatenar
-       }/*else{
+       }else{
+           return concatenar
+       }
+       /*}else{
            console.log('CERTINHO?')
            if (monomios.length > 1) {
              
