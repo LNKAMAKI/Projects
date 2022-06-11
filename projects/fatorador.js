@@ -1594,7 +1594,7 @@ function ir() {
        
                    if (roll.length == 0) {
                       // 
-                       roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                       //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                    }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                        
                       
@@ -1606,13 +1606,13 @@ function ir() {
        
                        if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                           
-                          roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                          //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                        }
                        }
        
                    }else{
                        
-                       roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                      // roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                    }
                   }
        
@@ -1959,7 +1959,7 @@ function ir() {
        
                  if (roll.length == 0) {
                     // 
-                     roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                    // roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                  }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                      
                     
@@ -1971,13 +1971,13 @@ function ir() {
        
                      if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                         
-                        roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                        //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                      }
                      }
        
                  }else{
                      
-                     roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                     //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                  }
                 }
        
@@ -3319,7 +3319,7 @@ function ir() {
         console.log(concatenar)
         console.log('CERTNHO')
         return concatenar
-       }else{
+       }/*else{
            console.log('CERTINHO?')
            if (monomios.length > 1) {
              
@@ -3344,6 +3344,7 @@ function ir() {
             return concatenar
     }
        }
+       */
        //}
        
        /*
@@ -6781,7 +6782,7 @@ function ir() {
            
                        if (roll.length == 0) {
                           // 
-                           roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                           //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                        }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                            
                           
@@ -6793,13 +6794,13 @@ function ir() {
            
                            if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                               
-                              roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                              //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                            }
                            }
            
                        }else{
                            
-                           roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                           //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                        }
                       }
            
@@ -7145,7 +7146,7 @@ function ir() {
            
                      if (roll.length == 0) {
                         // 
-                         roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                         //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                      }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                          
                         
@@ -7157,13 +7158,13 @@ function ir() {
            
                          if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                             
-                            roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                            //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                          }
                          }
            
                      }else{
                          
-                         roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                         //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                      }
                     }
            
