@@ -1527,7 +1527,11 @@ function ir() {
        
        
        
-       
+        console.log('OK, LET ME FIX THIS THING')
+        for (eep in miss) {
+            console.log(miss[eep].aparicoes)
+        }
+
        while(java < miss.length && deucerto == false) {
                   
                  // if (miss[java].aparicoes.length >= quantasposições) {
@@ -1570,7 +1574,7 @@ function ir() {
                            }
                        }
                        if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
-                           podeser.push({opl: presentes, position: [outro]})
+                          // podeser.push({opl: presentes, position: [outro]})
                        }
                        
                    }
@@ -1936,7 +1940,7 @@ function ir() {
                          }
                      }
                      if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
-                         podeser.push({opl: presentes, position: [outro]})
+                        // podeser.push({opl: presentes, position: [outro]})
                      }
                      
                  }
@@ -6761,7 +6765,7 @@ function ir() {
                                }
                            }
                            if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
-                               podeser.push({opl: presentes, position: [outro]})
+                               //podeser.push({opl: presentes, position: [outro]})
                            }
                            
                        }
@@ -7125,7 +7129,7 @@ function ir() {
                              }
                          }
                          if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
-                             podeser.push({opl: presentes, position: [outro]})
+                            // podeser.push({opl: presentes, position: [outro]})
                          }
                          
                      }
