@@ -1533,7 +1533,7 @@ function ir() {
                  // if (miss[java].aparicoes.length >= quantasposições) {
                //    
             //   
-       
+            // FOCO
                podeser = []
                for (outro in miss) {
                   // 
@@ -1579,6 +1579,7 @@ function ir() {
                   
                   
                   for (belief in podeser) {
+                      console.log('ESSE É O PODESER',podeser[belief])
                       if (podeser[belief].position.indexOf(java) == -1) {
                       podeser[belief].position.push(String(java))
                       }
@@ -1594,7 +1595,7 @@ function ir() {
        
                    if (roll.length == 0) {
                       // 
-                       //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                       roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                    }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                        
                       
@@ -1606,13 +1607,13 @@ function ir() {
        
                        if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                           
-                          //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                          roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                        }
                        }
        
                    }else{
                        
-                      // roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                       roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                    }
                   }
        
@@ -1898,7 +1899,7 @@ function ir() {
        
              while(java < miss.length && deucerto == false) {
                
-       
+                // FOCO
              podeser = []
              for (outro in miss) {
                 // 
@@ -1959,7 +1960,7 @@ function ir() {
        
                  if (roll.length == 0) {
                     // 
-                    // roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                     roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                  }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                      
                     
@@ -1971,13 +1972,13 @@ function ir() {
        
                      if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                         
-                        //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                        roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                      }
                      }
        
                  }else{
                      
-                     //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                     roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                  }
                 }
        
@@ -3343,8 +3344,7 @@ function ir() {
             console.log(concatenar)
             return concatenar
     }
-       }
-       */
+       }*/
        //}
        
        /*
@@ -6721,7 +6721,7 @@ function ir() {
                      // if (miss[java].aparicoes.length >= quantasposições) {
                    //    
                 //   
-           
+                //FOCO
                    podeser = []
                    for (outro in miss) {
                       // 
@@ -6782,7 +6782,7 @@ function ir() {
            
                        if (roll.length == 0) {
                           // 
-                           //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                           roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                        }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                            
                           
@@ -6794,13 +6794,13 @@ function ir() {
            
                            if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                               
-                              //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                              roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                            }
                            }
            
                        }else{
                            
-                           //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                           roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                        }
                       }
            
@@ -7085,7 +7085,7 @@ function ir() {
            
                  while(java < miss.length && deucerto == false) {
                    
-           
+                    //FOCO
                  podeser = []
                  for (outro in miss) {
                     // 
@@ -7146,7 +7146,7 @@ function ir() {
            
                      if (roll.length == 0) {
                         // 
-                         //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                         roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                      }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                          
                         
@@ -7158,13 +7158,13 @@ function ir() {
            
                          if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                             
-                            //roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
+                            roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                          }
                          }
            
                      }else{
                          
-                         //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
+                         roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                      }
                     }
            
