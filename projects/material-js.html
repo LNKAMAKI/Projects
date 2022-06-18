@@ -19,9 +19,13 @@
         background-color: red;
     }
    
-    body {
-        margin: 0;
-    }
+    #head {
+        position: relative;
+        background-color: blue;
+       display: flex;
+       justify-content: center;
+  }
+
     #ali { 
      margin:0px;
      position: sticky;
@@ -30,12 +34,37 @@
      padding: 5px 0px 5px 0px;
      background-color: rgb(221, 242, 243);
 display: flex;
-align-items: center
+align-items: center;
+justify-content: center;
     }
-
+    
+    @media screen and (max-width: 530px) {
+        #ali {
+            width: 320px;
+        }
+    }
+    @media screen and (min-width: 530px) and (max-width: 900px){
+        #ali {
+            width: 450px;
+        }
+    }
+    @media screen and (min-width: 900px) and (max-width: 1050px){
+        #ali {
+            width: 600px;
+        }
+    }
+    @media screen and (min-width: 1050px) and (max-width: 1250px){
+        #ali {
+            width: 650px;
+        }
+    }
+    @media screen and (min-width: 1250px){
+        #ali {
+            width: 700px;
+        }
+    }
     #rev {
-        margin-left: 0.4vw;
-        width: fit-content;
+        width: calc(100% - 170px);
         display: inline-block;
        position: relative;
        top: 0px;
@@ -55,22 +84,28 @@ align-items: center
       padding-bottom: 0.3vw;
       overflow: hidden;
     }
+    /*
     #searcher {
         margin: 0px;
-        padding-left: 12px;
-        padding-right: 12px;
-        border-image: none;
-        border-radius: 5px;
+       border-radius: 5px; 
         height: 24px;
         box-shadow: 0px 0px 6px rgba(36, 84, 146, 0.548);
-        border: 2px solid white;
+       border: 2px solid white;
+       border-width: 0px;
        color: rgba(36, 84, 146, 0.623);
         position: relative;
         background-color: rgb(238, 238, 238);
         transition-property: width,background-color;
      transition-duration: 0.4s;
-        width: 13vw;
+        width: 99%;
     }
+    */
+   #searcher {
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+   }
   #main {
      opacity: 0;
  z-index: 10;
@@ -94,30 +129,32 @@ align-items: center
         text-align: center;
         padding-top: 1.5px;
         padding-bottom: 1.5px;
-       margin: 0 0 0 0 ;
+       margin: 0px;
         text-align: center;
         background-color: white;
     }
     #main > .psearcher:hover{
         background-color: rgb(235, 235, 235);
     }
+    /*
     #searcher:focus {
      box-shadow: 0px 0px 6px rgba(36, 84, 146, 0.548);
      outline-width: 0px ;
      transition-property: width, background-color;
      transition-duration: 0.4s;
-     width: 26vw;
+     width: 120%;
      border-radius: 5px;
      background-color: white ;
      border: 2px solid rgba(0, 0, 0, 0.041);
        color: black;
     }
-    
+    */
+
     #searcher::placeholder {
         color: rgb(173, 173, 173) ;
     }
     #circle {
-     margin: 0px 20px 0px 25px;
+     margin: 0px 20px 0px 0px;
      background-color: white;
      border-radius: 50%;
      padding: 3px;
@@ -129,6 +166,7 @@ align-items: center
         width: 50px;
        height: 50px;
        position: relative;
+     
     }
     img#fav {
         position: absolute;
@@ -139,16 +177,21 @@ align-items: center
     </style>
 </head>
 <body>
-    <div id="ali">
-    
-        <div id="circle"><img id="fav" src="favicon copy.ico" alt=""></div>
-        <div id="rev">
-            <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
-            <div id="main">
-             
-            </div>
-        </div>
+    <div id='head'>
+        <div id="ali">
         
+        
+                <div id="circle"><img id="fav" src="favicon copy.ico" alt=""></div>
+        
+                    <div id="rev">
+                        <input type="text" name="" id="searcher" onkeyup="search2()" placeholder="Search..." onclick="fclic()" spellcheck="false">
+                        <div id="main">
+        
+                        </div>
+                    </div>
+        
+        
+        </div>
     </div>
     
         <script src="material-js.js"></script>
