@@ -1,8 +1,12 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
-    {word: 'hunk', type: 'noun countable', meaning: 'a large piece of a solid substance',examples:'a hunk of meat,bread,plastic,concrete'},
-
+    {word: 'abacaxi'},
+    {word: 'abc'},
+    {word: 'aaa'}
+    
 ]
+
+songs = sortWords(songs,'word')
 
 
 var songsSearched = []
@@ -23,17 +27,17 @@ function search() {
         vidhold.setAttribute('class', 'video-holder')
         vidhold.id = pesquisa.toLowerCase()
         document.body.appendChild(vidhold)
-       word =  document.createElement('h1')
-       word.innerText = pesquisa.toLowerCase()
-       vidhold.appendChild(word)
+     
+        par = document.createElement('p')
+        par.innerText = pesquisa.toLowerCase()
+        vidhold.appendChild(par)
+        
 
         wordSearched = songs.find(function(songs){
         return songs.word == pesquisa.toLowerCase()
        })
-       type = document.createElement('span')
-       type.setAttribute('class', 'tipo')
-       type.innerText = `(${wordSearched.type})`
-       vidhold.appendChild(type)
+      
+       //⬜
 
        if (wordSearched.examples.length > 0) {
        splitexamples = wordSearched.examples.split('/')
@@ -45,13 +49,13 @@ function search() {
     
        for (n in splitmeanings) {
        console.log(splitmeanings[n])
-       ulist = document.createElement('ul')
-       vidhold.appendChild(ulist)
-       ulist.setAttribute('type', 'disc')
+       //⬜
+       //⬜
+       //⬜
        lit = document.createElement('li')
        lit.setAttribute('class', 'numb-ex')
        lit.innerText = `${Number(n) + 1}. ` + splitmeanings[n].replace(splitmeanings[n].charAt(0), splitmeanings[n].charAt(0).toUpperCase())
-       ulist.appendChild(lit)
+       //⬜
        if (dosplit == true) {
        if (n <= splitexamples.length - 1) {
         splitmore = splitexamples[n].split('*')
@@ -59,7 +63,7 @@ function search() {
                if (splitmore[a].length > 0) {
        lit = document.createElement('li')
        lit.innerText = splitmore[a]
-       ulist.appendChild(lit)
+       //⬜
            }
         }
     }
@@ -81,27 +85,6 @@ function dothesearch(whichid) {
     }
     search()
 }
-/*
-function deleta(indexnumber) {
-    allvidholders = document.getElementsByClassName('video-holder')
-    document.body.removeChild(allvidholders[indexnumber])
-   
-    songsSearched.splice(indexnumber, 1)
-    //window.alert(songsSearched)
-    //window.alert('Aqui vai...')
-    delbuts = document.getElementsByClassName('deletbut')
-    for (n in songsSearched) {
-       // window.alert(allvidholders[n])
-        //window.alert(delbuts[n].value)
-        allvidholders[n].id = songsSearched[n]
-        delbuts[n].id = n
-        delbuts[n].setAttribute('onclick', `deleta(${delbuts[n].id})`)
-       
-    }
-    
- 
-}
-*/
 
 
 function search2() {
@@ -200,4 +183,192 @@ function fclic() {
     if (pesquisa.length == 0) {
      document.getElementById('main').style.display = 'none'
     }
+}
+
+
+function sortWords(palavrasPrimitivas,s) {
+
+    alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+palavrasNumericas = []
+posicaoPalavras = []
+
+
+for (palavra in palavrasPrimitivas) {
+    //⬜
+    word = palavrasPrimitivas[palavra][s]
+    wordToNumber = ''
+    for (letra = 0; letra < word.length; letra++) {
+        //⬜
+        //⬜
+
+        if (letra != word.length - 1) {
+            //⬜
+            wordToNumber += `${alfabeto.indexOf(word[letra])}.`
+        } else {
+            wordToNumber += `${alfabeto.indexOf(word[letra])}`
+        }
+    }
+    //⬜
+
+    //⬜
+
+    palavrasNumericas.push(wordToNumber)
+    posicaoPalavras.push(palavra)
+
+    //⬜
+    //⬜
+}
+
+//⬜
+
+
+for (pNumber in palavrasNumericas) {
+    //⬜
+    //⬜
+    //⬜
+    //⬜
+
+    stop = false
+    for (n = 0; stop == false && n < pNumber; n++) {
+        //⬜
+
+        if (n != pNumber) {
+            //⬜
+            //⬜
+            palavraAnalisar = []
+           
+            //⬜
+            
+            numint = ''
+            for (num = 0; num < palavrasNumericas[n].length; num++) {
+                   //⬜
+                   if (palavrasNumericas[n][num] == '.') {
+                    //⬜
+                    palavraAnalisar.push(numint)
+                    numint = ''
+                   }else if(num == palavrasNumericas[n].length - 1){
+                        numint += `${palavrasNumericas[n][num]}`
+                        palavraAnalisar.push(numint)
+                   }else{
+                    numint += `${palavrasNumericas[n][num]}`
+                   }
+            }
+            //⬜
+
+            //⬜
+            //⬜
+            palavraOrigin = []
+
+            //⬜
+            
+            numint = ''
+            for (num = 0; num < palavrasNumericas[pNumber].length; num++) {
+                   //⬜
+                   if (palavrasNumericas[pNumber][num] == '.') {
+                    //⬜
+                    palavraOrigin.push(numint)
+                    numint = ''
+                   }else if(num == palavrasNumericas[pNumber].length - 1){
+                        numint += `${palavrasNumericas[pNumber][num]}`
+                        palavraOrigin.push(numint)
+                   }else{
+                    numint += `${palavrasNumericas[pNumber][num]}`
+                   }
+            }
+            //⬜
+
+            //⬜
+
+            //⬜
+           if (palavraOrigin.length > palavraAnalisar.length) {
+             //⬜
+             pare = false
+             for (numb = 0; numb < palavraAnalisar.length && pare == false; numb++) {
+              //⬜
+              //⬜
+              if (Number(palavraAnalisar[numb]) < Number(palavraOrigin[numb])) {
+                //⬜
+                pare = true
+                //⬜
+              }else if (Number(palavraAnalisar[numb]) > Number(palavraOrigin[numb])) {
+                //⬜
+                pare = true
+                //⬜
+                //⬜
+                //⬜
+                stop = true
+
+                //⬜
+              
+                //⬜
+                //⬜
+                //⬜
+                palavraSubir = palavrasNumericas[pNumber]
+                wordposition = posicaoPalavras[pNumber]
+                for (posicao = pNumber; posicao > n; posicao--) {
+                  //⬜
+                  palavrasNumericas[posicao] = palavrasNumericas[posicao - 1]
+                  posicaoPalavras[posicao] = posicaoPalavras[posicao - 1]
+                }
+                palavrasNumericas[n] = palavraSubir
+                posicaoPalavras[n] = wordposition
+                //⬜
+                //⬜
+              }else{
+                  pare = false
+              }
+             }
+           }else{
+            //⬜
+            pare = false
+            for (numb = 0; numb < palavraOrigin.length && pare == false; numb++) {
+                //⬜
+                //⬜
+                if (Number(palavraAnalisar[numb]) < Number(palavraOrigin[numb])) {
+                    //⬜
+                    pare = true
+                    //⬜
+                  }else if (Number(palavraAnalisar[numb]) > Number(palavraOrigin[numb])) {
+                    //⬜
+                    pare = true
+                    //⬜
+                    //⬜
+                    //⬜
+                    stop = true
+
+                    //⬜
+
+                    //⬜
+                    //⬜
+                    //⬜
+                    palavraSubir = palavrasNumericas[pNumber]
+                    wordposition = posicaoPalavras[pNumber]
+                    for (posicao = pNumber; posicao > n; posicao--) {
+                      //⬜
+                      palavrasNumericas[posicao] = palavrasNumericas[posicao - 1]
+                      posicaoPalavras[posicao] = posicaoPalavras[posicao - 1]
+                    }
+                    palavrasNumericas[n] = palavraSubir
+                    posicaoPalavras[n] = wordposition
+                    //⬜
+                    //⬜
+                  }else{
+                      pare = false
+                  }
+               }
+           }
+          
+        }
+    }
+
+}
+//⬜
+
+newlista = []
+for (p in palavrasNumericas) {
+//⬜
+newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
+}
+
+return newlista
 }
