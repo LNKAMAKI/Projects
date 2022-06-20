@@ -1,36 +1,35 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
-    {word: 'abacaxi'},
-    {word: 'abc'},
-    {word: 'aaa'}
+    {word: 'abacaxi', url: 'http://abacaxi'},
+    {word: 'abc',url: 'http://abc'},
+    {word: 'aaa', url: 'http://aaa'}
     
 ]
 
 songs = sortWords(songs,'word')
 
+window.addEventListener('keydown', function(event) {
+    
+    if (document.getElementById('searcher') == document.activeElement && event.key == 'Enter') { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
+
+        quantasopções = document.getElementById('main').getElementsByClassName('psearcher').length
+        console.log(quantasopções,Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
+        if (quantasopções == 1) {
+           dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
+        }
+    }
+    
+})
 
 var songsSearched = []
 // Cria o "vídeos"
 function search() {
     pesquisa = document.getElementById('searcher').value
 
-    if (songsSearched.indexOf(pesquisa.toLowerCase()) == -1) {
-    allvidholders = document.getElementsByClassName('video-holder')
-   // window.alert(allvidholders.length)
-       songsSearched.length = 0
-        songsSearched.unshift(pesquisa.toLowerCase())
-        for (n = allvidholders.length - 1; n >= 0; n--) {
-        document.body.removeChild(allvidholders[n])
-    }
-    
-        vidhold =  document.createElement('div')
-        vidhold.setAttribute('class', 'video-holder')
-        vidhold.id = pesquisa.toLowerCase()
-        document.body.appendChild(vidhold)
-     
-        par = document.createElement('p')
-        par.innerText = pesquisa.toLowerCase()
-        vidhold.appendChild(par)
+    songsSearched.length = 0
+    songsSearched.unshift(pesquisa.toLowerCase())
+
+        document.getElementById('se').innerText = pesquisa.toLowerCase()
         
 
         wordSearched = songs.find(function(songs){
@@ -38,40 +37,8 @@ function search() {
        })
       
        //⬜
-
-       if (wordSearched.examples.length > 0) {
-       splitexamples = wordSearched.examples.split('/')
-       dosplit = true
-       }else{ 
-        dosplit = false
-       }
-       splitmeanings = wordSearched.meaning.split('/')
     
-       for (n in splitmeanings) {
-       console.log(splitmeanings[n])
-       //⬜
-       //⬜
-       //⬜
-       lit = document.createElement('li')
-       lit.setAttribute('class', 'numb-ex')
-       lit.innerText = `${Number(n) + 1}. ` + splitmeanings[n].replace(splitmeanings[n].charAt(0), splitmeanings[n].charAt(0).toUpperCase())
-       //⬜
-       if (dosplit == true) {
-       if (n <= splitexamples.length - 1) {
-        splitmore = splitexamples[n].split('*')
-           for (a in splitmore) {
-               if (splitmore[a].length > 0) {
-       lit = document.createElement('li')
-       lit.innerText = splitmore[a]
-       //⬜
-           }
-        }
-    }
 
-       }
-
-}
-}
 }
   
 function dothesearch(whichid) {
@@ -178,6 +145,7 @@ function search2() {
      document.getElementById('main').style.display = 'none'
  }
 }
+
 function fclic() {
     pesquisa = document.getElementById('searcher').value
     if (pesquisa.length == 0) {
