@@ -1,6 +1,6 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
-    {word: 'hunk', type: 'noun countable', meaning: 'a large piece of a solid substance',examples:'a hunk of meat,bread,plastic,concrete'},
+    {word: 'hunk', type: 'noun countable', meaning: 'a large piece of a solid substance/a strong and attractive man',examples:'a hunk of meat,bread,plastic,concrete'},
 
     {word: 'hourglass',type: 'noun countable', meaning: 'ampulheta', examples: 'Life is an hourglass(Mindy Gledhill)'},
 
@@ -621,7 +621,7 @@ function search() {
            for (a in splitmore) {
                if (splitmore[a].length > 0) {
        lit = document.createElement('li')
-       lit.innerText = splitmore[a]
+       lit.innerText = splitmore[a].replace(splitmore[a].charAt(0), splitmore[a].charAt(0).toUpperCase())
        ulist.appendChild(lit)
            }
         }
