@@ -2,10 +2,11 @@
 var songs = [
     {word: 'abacaxi', url: 'http://abacaxi'},
     {word: 'abc',url: 'http://abc'},
-    {word: 'aaa', url: 'http://aaa'}
+    {word: 'aaa', url: 'http://aaa'},
     
 ]
 
+pselected = -1
 songs = sortWords(songs,'word')
 
 window.addEventListener('keydown', function(event) {
@@ -16,8 +17,12 @@ window.addEventListener('keydown', function(event) {
         console.log(quantasopções,Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
         if (quantasopções == 1) {
            dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
+
+
         }
     }
+    
+    // Selecionando a sugestão com as setas
     
 })
 
@@ -51,10 +56,14 @@ function dothesearch(whichid) {
        }
     }
     search()
+
+    //pselected = -1
 }
 
 
 function search2() {
+    //pselected = -1
+
     pnumber = 0
     pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
@@ -83,7 +92,8 @@ function search2() {
              psearcher.id = 'a' + n
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-            // window.alert(pesquise)
+            
+
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight: normal";">${pesquise}</span>`)
              if (pnumber < 7) {
              document.getElementById('main').appendChild(psearcher)
@@ -106,7 +116,7 @@ function search2() {
                  psearcher.id = 'a' + n
                  psearcher.style.fontWeight = 'bold'
                  psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-                // window.alert(pesquise)
+               
                  psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
                  if (pnumber < 7) {
                     document.getElementById('main').appendChild(psearcher)
@@ -131,7 +141,7 @@ function search2() {
              psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-            // window.alert(pesquise)
+
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
              if (pnumber < 7) {
                 document.getElementById('main').appendChild(psearcher)
