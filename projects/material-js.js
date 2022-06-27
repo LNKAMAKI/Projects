@@ -122,6 +122,8 @@ function search2() { // => Cada vez que o usuário digite um caractere na barra 
              psearcher.id = 'a' + n
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
+             psearcher.setAttribute('onmouseenter', `entrou(${psearcher.id.replace('a', '')})`)
+             psearcher.setAttribute('onmouseout', `saiu(${psearcher.id.replace('a', '')})`)
             
 
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight: normal";">${pesquise}</span>`)
@@ -146,7 +148,9 @@ function search2() { // => Cada vez que o usuário digite um caractere na barra 
                  psearcher.id = 'a' + n
                  psearcher.style.fontWeight = 'bold'
                  psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-               
+                 psearcher.setAttribute('onmouseenter', `entrou(${psearcher.id.replace('a', '')})`)
+                 psearcher.setAttribute('onmouseout', `saiu(${psearcher.id.replace('a', '')})`)
+
                  psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
                  if (pnumber < 7) {
                     document.getElementById('main').appendChild(psearcher)
@@ -171,6 +175,8 @@ function search2() { // => Cada vez que o usuário digite um caractere na barra 
              psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
+             psearcher.setAttribute('onmouseenter', `entrou(${psearcher.id.replace('a', '')})`)
+             psearcher.setAttribute('onmouseout', `saiu(${psearcher.id.replace('a', '')})`)
 
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
              if (pnumber < 7) {
@@ -379,4 +385,21 @@ newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
 }
 
 return newlista
+}
+
+function entrou(thing) {
+    ps = document.getElementById('main').getElementsByClassName('psearcher')
+
+    if (pselected != -1) {
+    ps[pselected].style.backgroundColor = 'white'
+    pselected = thing
+    }
+
+    ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
+    
+}
+
+function saiu(thing) {
+    ps = document.getElementById('main').getElementsByClassName('psearcher')
+    ps[thing].style.backgroundColor = 'white'
 }
