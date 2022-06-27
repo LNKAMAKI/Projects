@@ -395,7 +395,7 @@ ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 function entrou(thing) {
     console.log(thing)
-  //  window.alert('A!')
+ 
     ps = document.getElementById('main').getElementsByClassName('psearcher')
 
     podeir = false 
