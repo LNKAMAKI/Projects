@@ -86,11 +86,11 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
 
 document.getElementById('searcher').addEventListener('keyup',function(event) {
     if (event.key != 'ArrowDown' && event.key != 'ArrowUp') {
-        search2() // => Cada vez que o usuário digite um caractere na barra de pesquisa
+        search2()
     }
 })
 
-function search2() {
+function search2() { // => Cada vez que o usuário digite um caractere na barra de pesquisa
     
     pselected = -1
 
