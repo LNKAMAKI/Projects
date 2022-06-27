@@ -1,8 +1,12 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
     {word: 'abacaxi', url: 'http://abacaxi'},
-    {word: 'abc',url: 'http://abc'},
-    {word: 'aaa', url: 'http://aaa'},
+    {word: 'abóbora',url: 'http://abc'},
+    {word: 'alcateia', url: 'http://aaa'},
+    {word: 'areia', url: 'http://aaa'},
+    {word: 'almôndega', url: 'http://aaa'},
+    {word: 'avião', url: 'http://aaa'},
+    {word: 'begônia', url: 'http://aaa'},
     
 ]
 
@@ -27,10 +31,23 @@ window.addEventListener('keyup', function(event) {
     if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
         console.log(ps.length)
         if (pselected < ps.length - 1) {
+            if (pselected != -1)
+            ps[pselected].style.backgroundColor = 'white'
+
             pselected++
-            this.window.alert(pselected)
+            //this.window.alert(pselected)
+            ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         }
-    }   
+    }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
+        if (pselected >= 1) {
+            if (pselected != -1)
+            ps[pselected].style.backgroundColor = 'white'
+
+            pselected--
+           // this.window.alert(pselected)
+           ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
+        }
+    }
 })
 
 var songsSearched = []
@@ -64,9 +81,15 @@ function dothesearch(whichid) {
     }
     search()
 
-    //pselected = -1
+    pselected = -1
 }
 
+document.getElementById('searcher').addEventListener('keyup',function(event) {
+    if (event.key != 'ArrowDown' && event.key != 'ArrowUp') {
+       // window.alert(event.key)
+        search2()
+    }
+})
 
 function search2() {
     
