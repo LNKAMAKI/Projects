@@ -70,10 +70,10 @@ function search() {
 
 }
   
-function dothesearch(whichid) {
+function dothesearch(whichid) { // => Quando a pesquisa é realizada
     document.getElementById('searcher').value = songs[whichid].word
     allps = document.getElementsByClassName('psearcher')
-   // window.alert(document.getElementById('a' + whichid))
+  
    for (n = allps.length - 1; n >= 0; n--) {
        if (allps[n].id != 'a' + whichid) {
    document.getElementById('main').removeChild(allps[n])
@@ -86,8 +86,7 @@ function dothesearch(whichid) {
 
 document.getElementById('searcher').addEventListener('keyup',function(event) {
     if (event.key != 'ArrowDown' && event.key != 'ArrowUp') {
-       // window.alert(event.key)
-        search2()
+        search2() // => Cada vez que o usuário digite um caractere na barra de pesquisa
     }
 })
 
