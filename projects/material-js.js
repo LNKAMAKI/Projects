@@ -16,7 +16,7 @@ songs = sortWords(songs,'word')
 
 window.addEventListener('keyup', function(event) {
     
-    if (document.getElementById('searcher') == document.activeElement && event.key == 'Enter') { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
+    if (document.getElementById('searcher') == document.activeElement && event.key == 'Enter' && pselected == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
         if (pselected == -1) {
         quantasopções = document.getElementById('main').getElementsByClassName('psearcher').length
@@ -394,6 +394,7 @@ return newlista
 ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 function entrou(thing) {
+    if (document.getElementById('searcher') == document.activeElement) {
     console.log(thing)
  
     ps = document.getElementById('main').getElementsByClassName('psearcher')
@@ -408,10 +409,13 @@ function entrou(thing) {
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
     
 }
+}
 
 function saiu(thing) {
+    if (document.getElementById('searcher') == document.activeElement) {
     podeir = true
     pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
+    }
 }
