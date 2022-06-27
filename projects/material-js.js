@@ -7,6 +7,20 @@ var songs = [
     {word: 'almôndega', url: 'http://aaa'},
     {word: 'avião', url: 'http://aaa'},
     {word: 'begônia', url: 'http://aaa'},
+    {word: 'berço', url: 'http://abacaxi'},
+    {word: 'catedral',url: 'http://abc'},
+    {word: 'ouvido', url: 'http://aaa'},
+    {word: 'jacaré', url: 'http://aaa'},
+    {word: 'ornitorrinco', url: 'http://aaa'},
+    {word: 'válvula', url: 'http://aaa'},
+    {word: 'pudim', url: 'http://aaa'},
+    {word: 'pedra', url: 'http://abacaxi'},
+    {word: 'oficina',url: 'http://abc'},
+    {word: 'piscina', url: 'http://aaa'},
+    {word: 'telha', url: 'http://aaa'},
+    {word: 'tijolo', url: 'http://aaa'},
+    {word: 'abodrinha', url: 'http://aaa'},
+    {word: 'tirinha', url: 'http://aaa'},
     
 ]
 
@@ -30,8 +44,8 @@ window.addEventListener('keyup', function(event) {
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){
         console.log('UEPA!')
         dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[pselected].id.replace('a','')))
-        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
-        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
+       // document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
+       // document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
     }
     
     // Selecionando a sugestão com as setas
@@ -87,7 +101,11 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
    document.getElementById('main').removeChild(allps[n])
        }
     }
+
     search()
+
+    document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
+        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
 
     pselected = -1
 }
