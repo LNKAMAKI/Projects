@@ -20,21 +20,21 @@ window.addEventListener('keyup', function(event) {
 
         if (pselected == -1) {
         quantasopções = document.getElementById('main').getElementsByClassName('psearcher').length
-        console.log(quantasopções,Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
+       
         if (quantasopções == 1) {
            dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
 
         }
         }
-        
+
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){
-        this.window.alert('UEPA!')
+        console.log('UEPA!')
     }
     
     // Selecionando a sugestão com as setas
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
-        console.log(ps.length)
+        
         if (pselected < ps.length - 1 && podeir ==  true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
@@ -90,7 +90,7 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
 }
 
 document.getElementById('searcher').addEventListener('keyup',function(event) {
-    if (event.key != 'ArrowDown' && event.key != 'ArrowUp') {
+    if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
         search2()
     }
 })
@@ -396,7 +396,7 @@ ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 function entrou(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
-    console.log(thing)
+    
  
     ps = document.getElementById('main').getElementsByClassName('psearcher')
 
