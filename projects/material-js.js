@@ -25,9 +25,10 @@ window.addEventListener('keyup', function(event) {
            dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
 
         }
-        }else{
-            console.log('EPA!')
         }
+        
+    }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){
+        this.window.alert('UEPA!')
     }
     
     // Selecionando a sugestão com as setas
