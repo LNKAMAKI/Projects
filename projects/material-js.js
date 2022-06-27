@@ -9,7 +9,7 @@ var songs = [
 pselected = -1
 songs = sortWords(songs,'word')
 
-window.addEventListener('keydown', function(event) {
+window.addEventListener('keyup', function(event) {
     
     if (document.getElementById('searcher') == document.activeElement && event.key == 'Enter') { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
@@ -23,7 +23,14 @@ window.addEventListener('keydown', function(event) {
     }
     
     // Selecionando a sugestão com as setas
-    
+    ps = document.getElementById('main').getElementsByClassName('psearcher')
+    if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
+        console.log(ps.length)
+        if (pselected < ps.length - 1) {
+            pselected++
+            this.window.alert(pselected)
+        }
+    }   
 })
 
 var songsSearched = []
@@ -62,7 +69,8 @@ function dothesearch(whichid) {
 
 
 function search2() {
-    //pselected = -1
+    
+    pselected = -1
 
     pnumber = 0
     pesquisa = document.getElementById('searcher').value
