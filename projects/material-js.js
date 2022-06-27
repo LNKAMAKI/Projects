@@ -29,6 +29,9 @@ window.addEventListener('keyup', function(event) {
 
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){
         console.log('UEPA!')
+        dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[pselected].id.replace('a','')))
+        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
+        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
     }
     
     // Selecionando a sugestão com as setas
