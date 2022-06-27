@@ -11,18 +11,22 @@ var songs = [
 ]
 
 pselected = -1
+podeir = true
 songs = sortWords(songs,'word')
 
 window.addEventListener('keyup', function(event) {
     
     if (document.getElementById('searcher') == document.activeElement && event.key == 'Enter') { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
+        if (pselected == -1) {
         quantasopções = document.getElementById('main').getElementsByClassName('psearcher').length
         console.log(quantasopções,Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
         if (quantasopções == 1) {
            dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
 
-
+        }
+        }else{
+            console.log('EPA!')
         }
     }
     
@@ -30,7 +34,7 @@ window.addEventListener('keyup', function(event) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
         console.log(ps.length)
-        if (pselected < ps.length - 1) {
+        if (pselected < ps.length - 1 && podeir ==  true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
 
@@ -39,7 +43,7 @@ window.addEventListener('keyup', function(event) {
             ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
-        if (pselected >= 1) {
+        if (pselected >= 1 && podeir == true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
 
@@ -94,7 +98,7 @@ function search2() { // => Cada vez que o usuário digite um caractere na barra 
     
     pselected = -1
 
-    pnumber = 0
+    pnumber = -1
     pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
@@ -122,8 +126,8 @@ function search2() { // => Cada vez que o usuário digite um caractere na barra 
              psearcher.id = 'a' + n
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-             psearcher.setAttribute('onmouseenter', `entrou(${psearcher.id.replace('a', '')})`)
-             psearcher.setAttribute('onmouseout', `saiu(${psearcher.id.replace('a', '')})`)
+             psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
             
 
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight: normal";">${pesquise}</span>`)
@@ -148,8 +152,8 @@ function search2() { // => Cada vez que o usuário digite um caractere na barra 
                  psearcher.id = 'a' + n
                  psearcher.style.fontWeight = 'bold'
                  psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-                 psearcher.setAttribute('onmouseenter', `entrou(${psearcher.id.replace('a', '')})`)
-                 psearcher.setAttribute('onmouseout', `saiu(${psearcher.id.replace('a', '')})`)
+                 psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+                 psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
 
                  psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
                  if (pnumber < 7) {
@@ -175,8 +179,8 @@ function search2() { // => Cada vez que o usuário digite um caractere na barra 
              psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-             psearcher.setAttribute('onmouseenter', `entrou(${psearcher.id.replace('a', '')})`)
-             psearcher.setAttribute('onmouseout', `saiu(${psearcher.id.replace('a', '')})`)
+             psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
 
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
              if (pnumber < 7) {
@@ -387,12 +391,18 @@ newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
 return newlista
 }
 
+ps = document.getElementById('main').getElementsByClassName('psearcher')
+
 function entrou(thing) {
+    console.log(thing)
+  //  window.alert('A!')
     ps = document.getElementById('main').getElementsByClassName('psearcher')
 
-    if (pselected != -1) {
+    podeir = false 
+
+    if (pselected != -1 && pselected != thing) {
     ps[pselected].style.backgroundColor = 'white'
-    pselected = thing
+    pselected = -1
     }
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
@@ -400,6 +410,8 @@ function entrou(thing) {
 }
 
 function saiu(thing) {
+    podeir = true
+    pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
 }
