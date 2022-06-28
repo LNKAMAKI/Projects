@@ -97,16 +97,17 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
     allps = document.getElementsByClassName('psearcher')
   
    for (n = allps.length - 1; n >= 0; n--) {
-       if (allps[n].id != 'a' + whichid) {
+       //if (allps[n].id != 'a' + whichid) {
    document.getElementById('main').removeChild(allps[n])
-       }
+      // }
     }
 
     search()
 
-    document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
-        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
+   // document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
+        //document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
 
+        document.getElementById('main').style.display = 'none'
     pselected = -1
 }
 
