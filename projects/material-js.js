@@ -29,7 +29,8 @@ podeir = true
 songs = sortWords(songs,'word')
 
 window.addEventListener('keyup', function(event) {
-    
+    console.log(event.key)
+    console.log('pselected:', pselected,'ps:',ps.length)
     if (document.getElementById('searcher') == document.activeElement && event.key == 'Enter' && pselected == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
         if (pselected == -1) {
@@ -51,7 +52,7 @@ window.addEventListener('keyup', function(event) {
     // Selecionando a sugestão com as setas
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
-        
+        console.log('VAI',ps.length, pselected)
         if (pselected < ps.length - 1 && podeir ==  true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
@@ -95,7 +96,8 @@ function search() {
 function dothesearch(whichid) { // => Quando a pesquisa é realizada
     document.getElementById('searcher').value = songs[whichid].word
     allps = document.getElementsByClassName('psearcher')
-  
+    podeir = true
+    
    for (n = allps.length - 1; n >= 0; n--) {
        //if (allps[n].id != 'a' + whichid) {
    document.getElementById('main').removeChild(allps[n])
@@ -104,8 +106,8 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
 
     search()
 
-   // document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
-        //document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
+    document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
+        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
 
         document.getElementById('main').style.display = 'none'
     pselected = -1
