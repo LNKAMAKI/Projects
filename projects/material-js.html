@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Material JS</title>
    <style>
-  
+  a {
+    padding: 0px;
+    margin: 0px;
+    outline-width: 0px;
+    border-width: 0px;
+  }
   body {
           margin: 0;
           padding: 0;
           overflow-x: hidden;
-          background-color: gray;
+          
       }
        span.tipo {
            color: rgb(158, 158, 158);
@@ -83,10 +89,10 @@
             width: 100%;
         }
         #searcher {
-            width:70px;
+            width:110px;
         }
         #searcher:focus {
-            width:220px;
+            width:240px;
         }
         #circle {
             width: 30px;
@@ -102,7 +108,7 @@
             width:110px;
         }
         #searcher:focus {
-            width:230px;
+            width:270px;
         }
         #circle {
             width: 40px;
@@ -182,7 +188,7 @@
            padding-right: 12px;
            border-image: none;
            border-radius: 5px;
-           height: 24px;
+           height: 35px;
            box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.19);
            border: 2px solid white;
           color: rgba(36, 84, 146, 0.623);
@@ -281,9 +287,9 @@
     <div id="contain">
         <div id="ali">
         
-            <a href="https://github.com/LNKAMAKI" target="_blank">
+            
                 <div id="circle"><img id="fav" src="favicon copy.ico" alt=""></div>
-            </a>
+            
             <div id="rev">
                 <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
                 <div id="main">
@@ -295,8 +301,9 @@
     </div>
 
     <p id="se">HEY!!!</p>
-
+    <button class="btn btn-primary">Press me</button>
   
         <script src="material-js.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
