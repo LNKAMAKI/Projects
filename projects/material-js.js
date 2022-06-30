@@ -1,27 +1,6 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
-    {word: 'abacaxi', url: 'http://abacaxi'},
-    {word: 'abóbora',url: 'http://abc'},
-    {word: 'alcateia', url: 'http://aaa'},
-    {word: 'areia', url: 'http://aaa'},
-    {word: 'almôndega', url: 'http://aaa'},
-    {word: 'avião', url: 'http://aaa'},
-    {word: 'begônia', url: 'http://aaa'},
-    {word: 'berço', url: 'http://abacaxi'},
-    {word: 'catedral',url: 'http://abc'},
-    {word: 'ouvido', url: 'http://aaa'},
-    {word: 'jacaré', url: 'http://aaa'},
-    {word: 'ornitorrinco', url: 'http://aaa'},
-    {word: 'válvula', url: 'http://aaa'},
-    {word: 'pudim', url: 'http://aaa'},
-    {word: 'pedra', url: 'http://abacaxi'},
-    {word: 'oficina',url: 'http://abc'},
-    {word: 'piscina', url: 'http://aaa'},
-    {word: 'telha', url: 'http://aaa'},
-    {word: 'tijolo', url: 'http://aaa'},
-    {word: 'abodrinha', url: 'http://aaa'},
-    {word: 'tirinha', url: 'http://aaa'},
-    
+    {word: 'Tabelas - HTML e CSS', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
 ]
 
 pselected = -1
@@ -73,7 +52,7 @@ window.addEventListener('keyup', function(event) {
 })
 
 var songsSearched = []
-// Cria o "vídeos"
+// Cria o conteúdo
 function search() {
     pesquisa = document.getElementById('searcher').value
 
@@ -228,7 +207,7 @@ function fclic() {
     }
 }
 
-
+// Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
 
     alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
