@@ -30,9 +30,7 @@ div#fontypes {
     background-color: white ;
     margin: auto;
     max-width: 880px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     height: fit-content;
     font: italic bold 0.4cm Arial;
     margin-bottom: 0px;
