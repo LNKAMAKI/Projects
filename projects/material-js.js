@@ -106,10 +106,11 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
     }
 
     search()
-
-    document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseenter', `entrou(${0})`)
-        document.getElementById('main').getElementsByClassName('psearcher')[0].setAttribute('onmouseout', `saiu(${0})`)
-
+    
+    console.log('HERE', document.getElementById('main').style.display)
+    document.getElementById('main').style.display = 'none'
+    console.log('HERE', document.getElementById('main').style.display)
+    
     pselected = -1
 }
 
