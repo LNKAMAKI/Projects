@@ -94,7 +94,6 @@ function search() {
   
 function dothesearch(whichid) { // => Quando a pesquisa é realizada
 
-    window.alert('AAAAAAAAAAA')
     document.getElementById('searcher').value = songs[whichid].word
     allps = document.getElementsByClassName('psearcher')
     podeir = true
@@ -110,7 +109,7 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
     console.log('HERE', document.getElementById('main').style.display)
     document.getElementById('main').style.display = 'none'
     console.log('HERE', document.getElementById('main').style.display)
-    
+
     pselected = -1
 }
 
