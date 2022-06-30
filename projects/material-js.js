@@ -1,6 +1,6 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
-    {word: 'Tabelas - HTML e CSS', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
+    {word: 'tabelas - html e css', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
  
 ]
 
