@@ -1,6 +1,7 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
     {word: 'Tabelas - HTML e CSS', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
+ 
 ]
 
 pselected = -1
@@ -53,13 +54,13 @@ window.addEventListener('keyup', function(event) {
 
 var songsSearched = []
 // Cria o conteúdo
-function search() {
+function search(path) {
     pesquisa = document.getElementById('searcher').value
 
     songsSearched.length = 0
     songsSearched.unshift(pesquisa.toLowerCase())
 
-        document.getElementById('se').innerText = pesquisa.toLowerCase()
+        document.getElementsByTagName('iframe')[0].src = path
         
 
         wordSearched = songs.find(function(songs){
@@ -83,7 +84,7 @@ function dothesearch(whichid) { // => Quando a pesquisa é realizada
       // }
     }
 
-    search()
+    search(songs[whichid].url)
     
     console.log('HERE', document.getElementById('main').style.display)
     document.getElementById('main').style.display = 'none'
