@@ -149,10 +149,10 @@ function ir() {
     
         if (vez == 0) {
         pegs = document.getElementsByClassName('eg')
-        console.log('TIME', pegs.length - 1)
+        
     for (iveco in pegs) {
         if (iveco.search('[0-9]') != -1) {
-        console.log(iveco, pegs[iveco])
+        
         pegs[iveco].setAttribute('onclick', `mudar(${iveco})`)
         }
     }
