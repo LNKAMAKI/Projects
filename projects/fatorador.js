@@ -83,38 +83,37 @@ function ir() {
     ground = ''
     expression = []
     for (phy in qualexp) {
-        console.log(qualexp[phy])
+        
         if (qualexp[phy].search('[0-9]') != -1) {
-        //console.log('NÚMERO', ground, ground.search('[0-9]'))
+        
         if (ground.search('[0-9]') != -1) {
             console.log('ADICIONAR')
         ground+= qualexp[phy]
-       // console.log(ground)
+       
         }else if(ground.length > 0){
             expression.push(ground)
             ground = qualexp[phy]
-           // console.log(ground)
+           
         }else{
             ground = qualexp[phy]
-            //console.log(ground)
+            
         }
     
         }else{
             if (ground.length > 0) {
-               // console.log(ground)
+               
                 expression.push(ground)
             }
             ground = qualexp[phy]
-            //console.log('LETRA', ground)
+            
         }
         if (phy == qualexp.length - 1) {
-            //console.log('ÚLTIMO')
+            
             expression.push(ground)
         }
     }
     
     resultado = FATORAR(expression)
-   // console.log(resultado)
     
     document.getElementById('result').innerHTML = "Resultado:"
     document.getElementById('fatoracao').innerText= resultado
@@ -2509,7 +2508,7 @@ e = [...roller]
           
        }
        youdumb = [...grtols]
-       
+
        heya = [...youdumb]
        for (imback in youdumb) {
           // 
