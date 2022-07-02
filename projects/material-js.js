@@ -202,6 +202,8 @@ pselected = -1
 podeir = true
 songs = sortWords(songs,'word')
 
+var songsSearched = []
+
 window.addEventListener('keyup', function(event) {
     console.log(event.key)
     console.log('pselected:', pselected,'ps:',ps.length)
@@ -246,48 +248,7 @@ window.addEventListener('keyup', function(event) {
     }
 })
 
-var songsSearched = []
-// Cria o conteúdo
-function search(path) {
-    pesquisa = document.getElementById('searcher').value
-
-    songsSearched.length = 0
-    songsSearched.unshift(pesquisa.toLowerCase())
-
-       // document.getElementsByTagName('iframe')[0].src = path
-        
-
-        wordSearched = songs.find(function(songs){
-        return songs.word == pesquisa.toLowerCase()
-       })
-      
-       //⬜
-    
-
-}
-
-// Quando a pesquisa é realizada
-function dothesearch(whichid) {
-
-    document.getElementById('searcher').value = songs[whichid].word
-    allps = document.getElementsByClassName('psearcher')
-    podeir = true
-
-   for (n = allps.length - 1; n >= 0; n--) {
-       //if (allps[n].id != 'a' + whichid) {
-   document.getElementById('main').removeChild(allps[n])
-      // }
-    }
-
-    search(songs[whichid].url)
-    
-    console.log('HERE', document.getElementById('main').style.display)
-    document.getElementById('main').style.display = 'none'
-    console.log('HERE', document.getElementById('main').style.display)
-
-    pselected = -1
-}
-
+// Quando uma tecla é pressionada
 document.getElementById('searcher').addEventListener('keyup',function(event) {
     if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
         search2()
@@ -396,6 +357,47 @@ function search2() {
      document.getElementById('main').style.display = 'none'
  }
 }
+
+// Quando a pesquisa é realizada
+function dothesearch(whichid) {
+
+    document.getElementById('searcher').value = songs[whichid].word
+    allps = document.getElementsByClassName('psearcher')
+    podeir = true
+
+   for (n = allps.length - 1; n >= 0; n--) {
+       //if (allps[n].id != 'a' + whichid) {
+   document.getElementById('main').removeChild(allps[n])
+      // }
+    }
+
+    search(songs[whichid].url)
+    
+    console.log('HERE', document.getElementById('main').style.display)
+    document.getElementById('main').style.display = 'none'
+    console.log('HERE', document.getElementById('main').style.display)
+
+    pselected = -1
+}
+
+// Cria o conteúdo
+function search(path) {
+    pesquisa = document.getElementById('searcher').value
+
+    songsSearched.length = 0
+    songsSearched.unshift(pesquisa.toLowerCase())
+
+       //document.getElementsByTagName('iframe')[0].src = path
+
+        wordSearched = songs.find(function(songs){
+        return songs.word == pesquisa.toLowerCase()
+       })
+      
+       //⬜
+    
+
+}
+
 
 function fclic() {
     pesquisa = document.getElementById('searcher').value
