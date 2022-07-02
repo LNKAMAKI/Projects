@@ -437,3 +437,23 @@ function saiu(thing) {
     ps[thing].style.backgroundColor = 'white'
     }
 }
+
+
+/*MATERIAL*/
+
+contents = [
+    {title:'HTML', url:'html-logo.jpg'}
+]
+
+d = document.createElement('div')
+d.setAttribute('class','container-lg my-5')
+document.body.appendChild(d)
+
+d2 = document.createElement('div')
+d2.setAttribute('class','row justify-content-center')
+d2.setAttribute('name','select-content')
+d.appendChild(d2)
+
+for (i in contents) {
+d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="p-4 bg-light" name="icon-img"><img src="./\imagens/${contents[i].url}"></div></div>`
+}
