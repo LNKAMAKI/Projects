@@ -16,7 +16,6 @@
   }
   iframe {
     width: 100vw;
-    height: 100vw;
   }
   body {
           margin: 0;
@@ -102,6 +101,9 @@
         #circle {
             width: 30px;
           height: 30px;
+        }
+        iframe {
+            height: 92vh;
         }
     }
 
@@ -281,6 +283,13 @@
           height: 60%;
        }
       
+       div[name="icone"] {
+        max-width: 400px;
+       }
+    
+       div[name="icon-img"] {
+        border-radius: 10px;
+       }
     </style>
 </head>
 <body>
@@ -300,10 +309,44 @@
         </div>
     </div>
 
-    <p id="se"></p>
-    <iframe src="" frameborder="0"></iframe>
+    <div class="container-lg my-5">
+        <div class="row justify-content-center" name='select-content'>
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
+                <div class="p-4 bg-light" name='icon-img'> <!--  p = padding -->
+                    col 1
+                  </div>
+            </div>
+          
+            <!--
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
+                <div class="p-4 bg-light">
+                    col 1
+                  </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
+                <div class="p-4 bg-light"> 
+                    col 1
+                  </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
+                <div class="p-4 bg-light"> 
+                    col 1
+                  </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
+                <div class="p-4 bg-light"> 
+                    col 1
+                  </div>
+            </div>
+        -->
+        </div>
+    </div>
   
         <script src="material-js.js"></script>
+    
     
 </body>
 </html>
