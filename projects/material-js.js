@@ -1,4 +1,5 @@
-//  {word: '',type: '', meaning: '', examples: ''},
+/*PESQUISA*/
+
 var songs = [
     {word: 'tabelas - html e css', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
     {word: 'love', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
@@ -408,6 +409,7 @@ function fclic() {
 
 ps = document.getElementById('main').getElementsByClassName('psearcher')
 
+// Quando o mouse entra em uma opção(psearcher)
 function entrou(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
     
@@ -426,6 +428,7 @@ function entrou(thing) {
 }
 }
 
+// Quando o mouse sai de uma opção(psearcher)
 function saiu(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
     podeir = true
