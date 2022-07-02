@@ -288,11 +288,17 @@
        }
     
        div[name="icon-img"] {
+        position: relative;
         border-radius: 10px;
+        padding-bottom: 70%;
        }
 
        div[name="icon-img"] > img {
-        width: 100%;
+        position: absolute;
+        width: calc(100% - 20px);
+        left: 10px;
+        right: 10px;
+        border-radius: 10px;
         height: 100%;
        }
     </style>
