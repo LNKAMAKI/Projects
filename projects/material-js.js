@@ -457,5 +457,17 @@ d2.setAttribute('name','select-content')
 d.appendChild(d2)
 
 for (i in contents) {
-d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="bg-light" name="icon-img"><img src="./\imagens/${contents[i].url}"> <p>${contents[i].title}</p></div></div>`
+d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="bg-light" name="icon-img" onclick="mostrarlista(${i})"><img src="./\imagens/${contents[i].url}"> <p>${contents[i].title}</p></div></div>`
+}
+
+function mostrarlista(which1) {
+
+    linha = document.getElementsByName('select-content')[0]
+    colslinha = linha.getElementsByClassName('col-lg-6 col-md-6 col-sm-6 mt-3')
+    console.log(colslinha.length)
+
+    for (i = colslinha.length - 1; i >= 0; i--) {
+        console.log(colslinha[i])
+        linha.removeChild(colslinha[i])
+    }
 }
