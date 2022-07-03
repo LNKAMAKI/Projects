@@ -444,7 +444,7 @@ function saiu(thing) {
 contents = [
     {title:'HTML', url:'html-logo.svg'},
     {title:'CSS', url:'css-logo.svg'},
-    {title:'JS', url:'js-logo.svg'},
+    {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
 
 d = document.createElement('div')
