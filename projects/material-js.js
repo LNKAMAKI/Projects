@@ -470,4 +470,10 @@ function mostrarlista(which1) {
         console.log(colslinha[i])
         linha.removeChild(colslinha[i])
     }
+
+    container = document.getElementsByClassName('container-lg my-5')[0]
+    dv = document.createElement('div')
+    dv.setAttribute('id', 'index')
+    dv.innerText = contents[which1].title
+    container.appendChild(dv)
 }
