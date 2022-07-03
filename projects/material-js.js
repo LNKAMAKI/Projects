@@ -462,15 +462,7 @@ d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div
 
 function mostrarlista(which1) {
 
-    linha = document.getElementsByName('select-content')[0]
-    colslinha = linha.getElementsByClassName('col-lg-6 col-md-6 col-sm-6 mt-3')
-    console.log(colslinha.length)
-
-    for (i = colslinha.length - 1; i >= 0; i--) {
-        console.log(colslinha[i])
-        linha.removeChild(colslinha[i])
-    }
-
+document.getElementsByName('select-content')[0].style.display = 'none'
     container = document.getElementsByClassName('container-lg my-5')[0]
     dv = document.createElement('div')
     dv.setAttribute('id', 'index')
