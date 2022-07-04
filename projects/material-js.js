@@ -504,8 +504,9 @@ bigicons.style.display = 'none'
 layer = 0
 function voltar() {
     if (layer == 2) {
-        cont.getElementsByClassName('ps2')[0].style.display = 'inline-block'
+        cont.getElementsByClassName('ps2')[0].innerText = contents[qualicon].title
         listsubs.style.display = 'block'
+        dv.removeChild(dv.getElementsByTagName('iframe')[0])
     }else if(layer == 1){
     container.removeChild(dv)
     bigicons.style.display = 'flex'
@@ -515,14 +516,16 @@ function voltar() {
 
 function criariframe(a,b) {
     layer = 2
-    window.alert('CRIAR IFRAME:')
-    console.log(a,b)
-    console.log(contents[a].subs[b].url)
+   
     cont = document.getElementsByClassName('cont')[0]
-    console.log(cont)
     listsubs = document.getElementsByClassName('names')[0]
-    console.log(listsubs)
-   // cont.getElementsByClassName('ps2')[0].style.display = 'none'
+    
    cont.getElementsByClassName('ps2')[0].innerText = contents[a].subs[b].title
     listsubs.style.display = 'none'
+
+    iframe = document.createElement('iframe')
+    iframe.setAttribute('src',contents[a].subs[b].url)
+    iframe.style.width = '100%'
+    iframe.style.height = '732px'
+    dv.appendChild(iframe)
 }
