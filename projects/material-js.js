@@ -442,7 +442,7 @@ function saiu(thing) {
 /*MATERIAL*/
 
 contents = [
-    {title:'HTML', url:'html-logo.svg'},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Tabelas',url:'https://lnkamaki.github.io/Projects/projects/tabelas.html'}]},
     {title:'CSS', url:'css-logo.svg'},
     {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
@@ -468,4 +468,14 @@ document.getElementsByName('select-content')[0].style.display = 'none'
     dv.setAttribute('id', 'index')
     dv.innerText = contents[which1].title
     container.appendChild(dv)
+    for (f in contents[which1].subs) {
+    ps = document.createElement('p')
+    ps.innerText = contents[which1].subs[f].title
+    ps.setAttribute('class', 'ps')
+    dv.appendChild(ps)
+    }
+    btn = document.createElement('button')
+    btn.setAttribute('class','button')
+    btn.innerText = '<'
+    dv.appendChild(btn)
 }
