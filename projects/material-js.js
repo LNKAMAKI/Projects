@@ -442,7 +442,7 @@ function saiu(thing) {
 /*MATERIAL*/
 
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Tabelas',url:'https://lnkamaki.github.io/Projects/projects/tabelas.html'}]},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Tabelas',url:'https://lnkamaki.github.io/Projects/projects/tabelas.html'},{title:'Tabelas',url:'https://lnkamaki.github.io/Projects/projects/tabelas.html'}]},
     {title:'CSS', url:'css-logo.svg'},
     {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
@@ -462,20 +462,37 @@ d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div
 
 function mostrarlista(which1) {
 
-document.getElementsByName('select-content')[0].style.display = 'none'
+bigicons = document.getElementsByName('select-content')[0]
+bigicons.style.display = 'none'
     container = document.getElementsByClassName('container-lg my-5')[0]
     dv = document.createElement('div')
     dv.setAttribute('id', 'index')
-    dv.innerText = contents[which1].title
     container.appendChild(dv)
+
+    cont = document.createElement('div')
+    cont.setAttribute('class', 'cont')
+    dv.appendChild(cont)
+    ps = document.createElement('p')
+    ps.innerText = contents[which1].title
+    ps.setAttribute('class','ps2')
+    cont.appendChild(ps)
+    btn = document.createElement('button')
+    btn.setAttribute('onclick','voltar()')
+    btn.setAttribute('class','button')
+    btn.innerText = 'Voltar'
+    cont.appendChild(btn)
+
     for (f in contents[which1].subs) {
     ps = document.createElement('p')
     ps.innerText = contents[which1].subs[f].title
     ps.setAttribute('class', 'ps')
     dv.appendChild(ps)
     }
-    btn = document.createElement('button')
-    btn.setAttribute('class','button')
-    btn.innerText = '<'
-    dv.appendChild(btn)
+   
+}
+
+function voltar() {
+    window.alert('RETORNAR')
+    container.removeChild(dv)
+    bigicons.style.display = 'flex'
 }
