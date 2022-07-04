@@ -460,8 +460,10 @@ for (i in contents) {
 d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="bg-light" name="icon-img" onclick="mostrarlista(${i})"><img src="./\imagens/${contents[i].url}"> <p>${contents[i].title}</p></div></div>`
 }
 
+qualicon = -1
 function mostrarlista(which1) {
 
+qualicon = which1
 layer = 1
 bigicons = document.getElementsByName('select-content')[0]
 bigicons.style.display = 'none'
