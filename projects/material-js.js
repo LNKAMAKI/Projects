@@ -462,6 +462,7 @@ d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div
 
 function mostrarlista(which1) {
 
+layer = 1
 bigicons = document.getElementsByName('select-content')[0]
 bigicons.style.display = 'none'
     container = document.getElementsByClassName('container-lg my-5')[0]
@@ -482,17 +483,44 @@ bigicons.style.display = 'none'
     btn.innerText = 'Voltar'
     cont.appendChild(btn)
 
+    list = document.createElement('div')
+    list.setAttribute('class','names')
+    list.style.backgroundColor = 'pink'
+    dv.appendChild(list)
     for (f in contents[which1].subs) {
     ps = document.createElement('p')
     ps.innerText = contents[which1].subs[f].title
     ps.setAttribute('class', 'ps')
-    dv.appendChild(ps)
+    
+   
+    ps.setAttribute('onclick',`criariframe(${which1},${f})`)
+    list.appendChild(ps)
     }
    
 }
 
+layer = 0
 function voltar() {
-    window.alert('RETORNAR')
+    if (layer == 2) {
+        cont.getElementsByClassName('ps2')[0].style.display = 'inline-block'
+        listsubs.style.display = 'block'
+    }else if(layer == 1){
     container.removeChild(dv)
     bigicons.style.display = 'flex'
+    }
+    layer--
+}
+
+function criariframe(a,b) {
+    layer = 2
+    window.alert('CRIAR IFRAME:')
+    console.log(a,b)
+    console.log(contents[a].subs[b].url)
+    cont = document.getElementsByClassName('cont')[0]
+    console.log(cont)
+    listsubs = document.getElementsByClassName('names')[0]
+    console.log(listsubs)
+   // cont.getElementsByClassName('ps2')[0].style.display = 'none'
+   cont.getElementsByClassName('ps2')[0].innerText = contents[a].subs[b].title
+    listsubs.style.display = 'none'
 }
