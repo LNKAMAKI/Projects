@@ -526,6 +526,5 @@ function criariframe(a,b) {
     iframe = document.createElement('iframe')
     iframe.setAttribute('src',contents[a].subs[b].url)
     iframe.style.width = '100%'
-    iframe.style.height = '732px'
     dv.appendChild(iframe)
 }
