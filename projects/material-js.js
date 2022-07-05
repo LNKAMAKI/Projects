@@ -2,11 +2,6 @@
 
 var songs = [
     {word: 'tabelas - html e css', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
-    {word: 'love', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
-    {word: 'abacaxi', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
-    {word: 'avocado', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
-    {word: 'alface', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
-    {word: 'almoxarifado', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
 ]
 
 // Ordena as palavras alfabeticamente
@@ -442,7 +437,7 @@ function saiu(thing) {
 /*MATERIAL*/
 
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'HTML: Hypertext Markup Language',url:'tabelas.html'},{title:'Estrutura da HTML',url:'tabelas.html'}]},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'HTML: Introdução',url:'introducao-html.html'}]},
     {title:'CSS', url:'css-logo.svg'},
     {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
@@ -487,7 +482,7 @@ bigicons.style.display = 'none'
 
     list = document.createElement('div')
     list.setAttribute('class','names')
-    list.style.backgroundColor = 'pink'
+   
     dv.appendChild(list)
     for (f in contents[which1].subs) {
     ps = document.createElement('p')
