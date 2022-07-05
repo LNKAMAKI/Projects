@@ -15,72 +15,84 @@
     </style>
 </head>
 <body>
-
-<h2 id="tipograf" style="text-align: center; font-family: Time;">HTML - INTRODUÇÃO</h2>
-<div id="efect"></div>
-
-<div id="fontypes" style="text-align: center;">
-
-<span class="title">HYPERTEXT MARKUP LANGUAGE</span>
-<p>HTMl significa Hypertext Markup Language, ou seja, não é uma linguagem de programação e, sim, de marcação. Ela faz parte do conjunto das 3 linguagens que geralmente fazem parte de um site: HTML, CSS e JS(Javascript). </p>
-<p>Essa linguagem pode ser considerada a base da construção de um site, pois ela serve para criarmos o conteúdo que fará parte dele(vídeos, imagens, áudios, textos, tabelas, etc).</p>
-
-<img src="./imagens/wireframe.png" alt="">
-
-<p>HTML faz uso de tags ou etiquetas para criar os conteúdos. Para fazer um parágrafo, por exemplo, utilizamos a tag <span class="tag">p</span>:</p>
-
-<code>
-    <span class="tag2">p</span>Estrutura de uma tag<span class="tag3">p</span><br>
-</code>
-
-<p>Portanto, para abrir uma tag colocamos o seu nome dentro de colchetes angulares (&lt;<span class="tag">...</span>&gt;) e a fechamos usando colocando / na frente (&lt;/<span class="tag">...</span>&gt;).</p>
-
-<p>Podemos, assim, colocar texto ou outras tags dentro de uma tag.</p>
-
-<span class="title">ESTRUTURA HTML BÁSICA</span>
-<p>Primeiramente, para criar um site precisamos gerar a estrutura a seguir, digitando ! e dando Enter na primeira opção (referente à HTML-5, a versão mais recente)</p>
-
-<code style="text-align: left;">
-   <span class="tag2"><span class="n">!</span>DOCTYPE <span class="prop">html</span></span><br>
-
-   <span class="tag2">html <span class="prop">lang</span><span class="n">=</span><span class="str">"en"</span></span><br>
-
-   <span class="tag2">head</span><br>
-
-   <span class="tag2">meta <span class="prop">charset</span><span class="n">=</span><span class="str">"UTF-8"</span></span><br>
-
-   <span class="tag2">meta <span class="prop">http-equiv</span><span class="n">=</span><span class="str">"X-UA-Compatible" </span>
-   <span class="prop">content</span><span class="n">=</span><span class="str">"IE=edge"</span></span><br>
-
-   <span class="tag2">meta <span class="prop">name</span><span class="n">=</span><span class="str">"viewport" </span>
-   <span class="prop">content</span><span class="n">=</span><span class="str">"width=width-device-width, initial-scale=1.0" </span></span><br>
-
-
-   <span class="tag2">title</span>Document<span class="tag3">title</span><br>
-   
-   <span class="tag3">head</span><br>
-   <span class="tag2">body</span><br><br>
-   <span class="tag3">body</span><br>
-   <span class="tag3">html</span>
-
-   </code>
-
-   <p>Explicar o que cada parte significa não é necessário. O mais importante é saber que podemos mudar a propriedade <span class="prop">lang</span>, atribuída à tag <span class="tag">html</span> e o título do documento. A língua padrão é inglês, mas podemos mudar para português brasileiro, colocando <span class="str">"pt-br" </span> no lugar de <span class="str">"en"</span></p>
-
-   <p>O body é onde o conteúdo irá ficar. Então se quisermos, por exemplo, colocar um cabeçalho principal, podemos adicionar a tag <span class="tag">h1</span> dentro do body: </p>
-
-   <code>
-     ...<br>
-     <span class="tag2">body</span><br>
-     <span class="tag2">h1</span>Olá Mundo!<span class="tag3">h1</span><br>
-     <span class="tag3">body</span>
-   </code>
-
-   <p>Só por curiosidade mesmo, mas há uma "superstição" acerca do "Olá mundo", razão por qual é comum vermos essa frase em programação ou coisa do tipo. Segundo essa "superstição", se você não escrever "Olá Mundo" no seu primeiro projeto, digamos assim, então você não será bem-sucedido na área de computação.</p>
-
-   <img src="./imagens/hello-world-scratch.jpeg" alt="" style="max-width:250px">
-
-   <span class="title">H1, H2, H3, H4, H5, H6</span>
-</div><div id="efect2"></div>
+<div>
+    
+    <h2 id="tipograf" style="text-align: center; font-family: Time;">HTML - INTRODUÇÃO</h2>
+    <div id="efect"></div>
+    
+    <div id="fontypes" style="text-align: center;">
+    
+    <span class="title">HYPERTEXT MARKUP LANGUAGE</span>
+    <p>HTMl significa Hypertext Markup Language, ou seja, não é uma linguagem de programação e, sim, de marcação. Ela faz parte do conjunto das 3 linguagens que geralmente fazem parte de um site: HTML, CSS e JS(Javascript). </p>
+    <p>Essa linguagem pode ser considerada a base da construção de um site, pois ela serve para criarmos o conteúdo que fará parte dele(vídeos, imagens, áudios, textos, tabelas, etc).</p>
+    
+    <img src="./imagens/wireframe.png" alt="">
+    
+    <p>HTML faz uso de tags ou etiquetas para criar os conteúdos. Para fazer um parágrafo, por exemplo, utilizamos a tag <span class="tag">p</span>:</p>
+    
+    <code>
+        <span class="tag2">p</span>Estrutura de uma tag<span class="tag3">p</span><br>
+    </code>
+    
+    <p>Portanto, para abrir uma tag colocamos o seu nome dentro de colchetes angulares (&lt;<span class="tag">...</span>&gt;) e a fechamos usando colocando / na frente (&lt;/<span class="tag">...</span>&gt;).</p>
+    
+    <p>Podemos, assim, colocar texto ou outras tags dentro de uma tag.</p>
+    
+    <span class="title">ESTRUTURA HTML BÁSICA</span>
+    <p>Primeiramente, para criar um site precisamos gerar a estrutura a seguir, digitando ! e dando Enter na primeira opção (referente à HTML-5, a versão mais recente)</p>
+    
+    <code style="text-align: left;border-radius: 10px;padding: 10px;box-shadow: 0px 0px 15px rgb(202, 202, 202);background-color: aliceblue;">
+       <span class="tag2"><span class="n">!</span>DOCTYPE <span class="prop">html</span></span><br>
+    
+       <span class="tag2">html <span class="prop">lang</span><span class="n">=</span><span class="str">"en"</span></span><br>
+    
+       <span class="tag2">head</span><br>
+    
+       <span class="tag2">meta <span class="prop">charset</span><span class="n">=</span><span class="str">"UTF-8"</span></span><br>
+    
+       <span class="tag2">meta <span class="prop">http-equiv</span><span class="n">=</span><span class="str">"X-UA-Compatible" </span>
+       <span class="prop">content</span><span class="n">=</span><span class="str">"IE=edge"</span></span><br>
+    
+       <span class="tag2">meta <span class="prop">name</span><span class="n">=</span><span class="str">"viewport" </span>
+       <span class="prop">content</span><span class="n">=</span><span class="str">"width=width-device-width, initial-scale=1.0" </span></span><br>
+    
+    
+       <span class="tag2">title</span>Document<span class="tag3">title</span><br>
+    
+       <span class="tag3">head</span><br>
+       <span class="tag2">body</span><br><br>
+       <span class="tag3">body</span><br>
+       <span class="tag3">html</span>
+    
+       </code>
+    
+       <p>Explicar o que cada parte significa não é necessário. O mais importante é saber que podemos mudar a propriedade <span class="prop">lang</span>, atribuída à tag <span class="tag">html</span> e o título do documento. A língua padrão é inglês, mas podemos mudar para português brasileiro, colocando <span class="str">"pt-br" </span> no lugar de <span class="str">"en"</span></p>
+    
+       <p>O body é onde o conteúdo irá ficar. Então se quisermos, por exemplo, colocar um cabeçalho principal, podemos adicionar a tag <span class="tag">h1</span> dentro do body: </p>
+    
+       <code>
+         ...<br>
+         <span class="tag2">body</span><br>
+         <span class="tag2">h1</span>Olá Mundo!<span class="tag3">h1</span><br>
+         <span class="tag3">body</span>
+       </code>
+    
+       <p>Só por curiosidade mesmo, mas há uma "superstição" acerca do "Olá mundo", razão por qual é comum vermos essa frase em programação ou coisa do tipo. Segundo essa "superstição", se você não escrever "Olá Mundo" no seu primeiro projeto, digamos assim, então você não será bem-sucedido na área de computação.</p>
+    
+       <img src="./imagens/hello-world-scratch.jpeg" alt="" style="max-width:250px">
+    
+       <span class="title">H1, H2, H3, H4, H5, H6</span>
+    
+       <p>Falando em h1, vamos dar uma olhada nos outros 5 h's (headers) que existem. O que diferem um do outro visualmente é o tamanho da fonte - o h1 é maior que o h2, o h2 maior que o h3 e assim por diante:</p>
+        <h1 style="color:#3ca3df;">H1</h1>
+        <h2 style="font-size: 1.5em;color:#f24040;">H2</h2>
+        <h3 style="color:rgb(83, 218, 119);">H3</h3>
+        <h4 style="color:palevioletred;">H4</h4>
+        <h5 style="color:rgb(255, 130, 84)">H5</h5>
+        <h6 style="color:rgb(255 231 59);">H6</h6>
+        <p>Porém, eles também têm valores semânticos, ou seja, significados diferentes, já que o h1, por ser maior, está em um nível superior que os demais. </p>
+    
+    </div><div id="efect2"></div>
+</div>
 </body>
 </html>

@@ -171,961 +171,963 @@
 
 <body>
 
-<h2 id="tipograf" style="text-align: center; font-family: Time;">TABELAS</h2>
-<div id="efect"></div>
-<div id="fontypes" style="text-align: center;">
-    <span class="title">HIERARQUIA DE TABELAS SIMPLES</span>
-    <p>As tabelas simples têm a seguinte hierarquia:</p>
-    <code>
+<div>
+    <h2 id="tipograf" style="text-align: center; font-family: Time;">TABELAS</h2>
+    <div id="efect"></div>
+    <div id="fontypes" style="text-align: center;">
+        <span class="title">HIERARQUIA DE TABELAS SIMPLES</span>
+        <p>As tabelas simples têm a seguinte hierarquia:</p>
+        <code>
+            <span class="tag2">table</span><br>
+            <span class="tag2" style="color: orange;">tr</span>
+            <br><span class="tag2" style="color: palevioletred;">th</span>
+            <span class="tag3" style="color: palevioletred;">th</span><br>
+            <span class="tag2" style="color: lightseagreen;">td</span>
+            <span class="tag3" style="color: lightseagreen;">td</span><br>
+            <span class="tag3" style="color: orange;">tr</span><br>
+          <span class="tag3">table</span>
+        </code><br>
+    
+            <p class="impor" style="width: 120px;">
+                <span class="color" style="background-color: orange ;"></span> table row <br>
+                <span class="color" style="background-color: palevioletred ;"></span> table header <br>
+                <span class="color" style="background-color: lightseagreen;"></span> table data <br>
+            </p>
+        <p>Exemplo de tabela simples:</p>
+        <table style="margin: 10px auto 10px auto;" id="lixo">
+            <caption>a</caption>
+            <tr> <!--Primeira linha-->
+                <td class="dado">A1
+                <td>B1
+                <td>C1
+    
+            </tr>
+            <tr class="linha"> <!--Primeira linha-->
+                <td>A2
+                <td>B2
+                <td>C2
+    
+            </tr>
+            <tr> <!--Primeira linha-->
+                <td>A3</td>
+                <td>B3</td>
+                <td>C3</td>
+    
+            </tr>
+            <tr class="linha"> <!--Primeira linha-->
+                <td>A4</td>
+                <td>B4</td>
+                <td>C4</td>
+    
+            </tr>
+        </table>
+        <p class="impor">OBS: Para que as células não fiquem com espaço entre si, é preciso mudar a propriedade <span class="prop">border-collapse</span> da tabela para <span class="str">collapse</span>, que por padrão recebe o valor <span class="str">sepparate</span></p>
+        <span class="title">ALINHAMENTO EM TABELA</span>
+        <p>O alinhamento horizontal em tabelas é feito usando a propriedade <span class="prop">text-align</span>, que já vimos antes. Agora, o alinhamento vertical é feito usando a propriedade <span class="prop">vertical-align</span>, que pode receber os valores <span class="str">top</span>, <span class="str">middle</span> e <span class="str">bottom</span>:</p>
+        <code>
+            <span class="tag2">style</span><br>
+      <span class="sel">th, td</span> { <br>
+          <span class="prop">vertical-align</span>: <span class="str">top/middle/bottom</span>;<br>
+           } <br>
+          <span class="tag3">style</span><br>
+      </code>
+      <span class="title">ANATOMIA PARA TABELAS GRANDES</span>
+      <p></p>
+      <code>
         <span class="tag2">table</span><br>
+        <span class="tag2" style="color: rebeccapurple;">caption</span>
+        <span class="tag3" style="color: rebeccapurple;">caption </span><br>
+        <span class="tag2" style="color: cornflowerblue;">thead</span><br>
         <span class="tag2" style="color: orange;">tr</span>
-        <br><span class="tag2" style="color: palevioletred;">th</span>
-        <span class="tag3" style="color: palevioletred;">th</span><br>
-        <span class="tag2" style="color: lightseagreen;">td</span>
-        <span class="tag3" style="color: lightseagreen;">td</span><br>
         <span class="tag3" style="color: orange;">tr</span><br>
+        <span class="tag3" style="color: cornflowerblue;">thead</span><br>
+        <span class="tag2" style="color: coral;">tbody</span><br>
+        <span class="tag2" style="color: orange;">tr</span>
+        <span class="tag3" style="color: orange;">tr</span><br>
+        <span class="tag2" style="color: orange;">tr</span>
+        <span class="tag3" style="color: orange;">tr</span><br>
+        <span class="tag3" style="color: coral;">tbody</span><br>
+        <span class="tag2" style="color: rosybrown;">tfoot</span><br>
+        <span class="tag2" style="color: orange;">tr</span>
+        <span class="tag3" style="color: orange;">tr</span><br>
+        <span class="tag3" style="color: rosybrown;">tfoot</span><br>
       <span class="tag3">table</span>
     </code><br>
+    <p>Exemplo de tabela grande:</p>
+    <div class="scroll" style="margin-bottom: 10px;">
+        <table style="margin: 10px auto;position: relative;">
+            <colgroup>
+                <!--
+                    <col class="cnome">
+                    <col class="csexo">
+                    <col class="cidade">
+                    <col class="cgrupo" span="3">
+                    <col class="cprof">
+                    -->
+                    <col class="amarelo">
+                    <col class="verde">
+                    <col class="amarelo">
+                    <col class="verde">
+            </colgroup>
+            <caption>Cadastro</caption>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Profissão</th>
+            </tr>
+            <tr>
+                <td>Ana Maria</td>
+                <td>F</td>
+                <td>25</td>
+                <td>Jornalista</td>
+            </tr>
+            <tr>
+                <td>Carmen</td>
+                <td>F</td>
+                <td>31</td>
+                <td>Empresária</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>F</td>
+                <td>42</td>
+                <td>Administradora</td>
+            </tr>
+            <tr>
+                <td>Cláudio</td>
+                <td>M</td>
+                <td>28</td>
+                <td>Farmacêutico</td>
+            </tr>
+            <tr>
+                <td>Mariel</td>
+                <td>M</td>
+                <td>23</td>
+                <td>Advogado</td>
+            </tr>
+            <tr>
+                <td>Gustavo</td>
+                <td>M</td>
+                <td>43</td>
+                <td>Programador</td>
+            </tr>
+            <tr>
+                <td>Roberta</td>
+                <td>F</td>
+                <td>36</td>
+                <td>Engenheira Civil</td>
+            </tr>
+            <tr>
+                <td>Olávio</td>
+                <td>M</td>
+                <td>24</td>
+                <td>Dentista</td>
+            </tr>
+            <tr>
+                <td>Rosanne</td>
+                <td>F</td>
+                <td>52</td>
+                <td>Diretora</td>
+            </tr>
+            <tr>
+                <td>Juliana</td>
+                <td>F</td>
+                <td>48</td>
+                <td>Coordenadora</td>
+            </tr>
+            <tr>
+                <td>Ricardo</td>
+                <td>M</td>
+                <td>44</td>
+                <td>Lixeiro</td>
+            </tr>
+            <tr>
+                <td>Milena</td>
+                <td>F</td>
+                <td>31</td>
+                <td>Bióloga</td>
+            </tr>
+            <tr>
+                <td>Márcio</td>
+                <td>M</td>
+                <td>42</td>
+                <td>Historiador</td>
+            </tr>
+            <tr>
+                <td>Eloise</td>
+                <td>F</td>
+                <td>23</td>
+                <td>Engenheira de Software</td>
+            </tr>
+            <tr>
+                <td>Pedro</td>
+                <td>M</td>
+                <td>38</td>
+                <td>Pedreiro</td>
+            </tr>
+            <tr>
+                <td>Marta</td>
+                <td>F</td>
+                <td>29</td>
+                <td>Cientista</td>
+            </tr>
+            <tr>
+                <td>Carlos</td>
+                <td>M</td>
+                <td>34</td>
+                <td>Youtuber</td>
+            </tr>
+            <tr>
+                <td>Débora</td>
+                <td>F</td>
+                <td>47</td>
+                <td>Médica</td>
+            </tr>
+            <tr>
+                <td>Gilberto</td>
+                <td>M</td>
+                <td>62</td>
+                <td>Pediátra</td>
+            </tr>
+            <tr>
+                <td>Cláudia</td>
+                <td>F</td>
+                <td>43</td>
+                <td>Cozinheira</td>
+            </tr>
+            <tr>
+                <td>Kleiton</td>
+                <td>M</td>
+                <td>25</td>
+                <td>Skatista</td>
+            </tr>
+        </table>
+    </div>
+    <span class="title">ESCOPO DE TH EM TABELAS</span>
+    <p>É importante perceber a diferença entre <span class="tag">th</span> e <span class="tag">td</span>: <span class="tag">th</span> se refere a um título(ex.: População) e <span class="tag">td</span> se refere a um dado(ex.: 15000) </p>
+    <p>Um dado pode estar localizado na mesma coluna(<span class="str">column</span>) ou na mesma linha(<span class="str">row</span>) do título correspondente e, para que o navegador saiba essa localização, devemos colocar sempre um <span class="prop">scope</span> dentro da tag <span class="tag">th</span>.</p>
     
-        <p class="impor" style="width: 120px;">
-            <span class="color" style="background-color: orange ;"></span> table row <br>
-            <span class="color" style="background-color: palevioletred ;"></span> table header <br>
-            <span class="color" style="background-color: lightseagreen;"></span> table data <br>
-        </p>
-    <p>Exemplo de tabela simples:</p>
-    <table style="margin: 10px auto 10px auto;" id="lixo">    
-        <caption>a</caption>         
-        <tr> <!--Primeira linha-->
-            <td class="dado">A1
-            <td>B1
-            <td>C1
-
-        </tr> 
-        <tr class="linha"> <!--Primeira linha-->
-            <td>A2
-            <td>B2
-            <td>C2
-
-        </tr> 
-        <tr> <!--Primeira linha-->
-            <td>A3</td>
-            <td>B3</td>
-            <td>C3</td>
-
-        </tr> 
-        <tr class="linha"> <!--Primeira linha-->
-            <td>A4</td>
-            <td>B4</td>
-            <td>C4</td>
-
-        </tr> 
-    </table>
-    <p class="impor">OBS: Para que as células não fiquem com espaço entre si, é preciso mudar a propriedade <span class="prop">border-collapse</span> da tabela para <span class="str">collapse</span>, que por padrão recebe o valor <span class="str">sepparate</span></p>
-    <span class="title">ALINHAMENTO EM TABELA</span>
-    <p>O alinhamento horizontal em tabelas é feito usando a propriedade <span class="prop">text-align</span>, que já vimos antes. Agora, o alinhamento vertical é feito usando a propriedade <span class="prop">vertical-align</span>, que pode receber os valores <span class="str">top</span>, <span class="str">middle</span> e <span class="str">bottom</span>:</p>
-    <code>
-        <span class="tag2">style</span><br>
-  <span class="sel">th, td</span> { <br>
-      <span class="prop">vertical-align</span>: <span class="str">top/middle/bottom</span>;<br>
-       } <br>
-      <span class="tag3">style</span><br>
-  </code>
-  <span class="title">ANATOMIA PARA TABELAS GRANDES</span>
-  <p></p>
-  <code>
-    <span class="tag2">table</span><br>
-    <span class="tag2" style="color: rebeccapurple;">caption</span>
-    <span class="tag3" style="color: rebeccapurple;">caption </span><br>
-    <span class="tag2" style="color: cornflowerblue;">thead</span><br>
-    <span class="tag2" style="color: orange;">tr</span>
-    <span class="tag3" style="color: orange;">tr</span><br>
-    <span class="tag3" style="color: cornflowerblue;">thead</span><br>
-    <span class="tag2" style="color: coral;">tbody</span><br>
-    <span class="tag2" style="color: orange;">tr</span>
-    <span class="tag3" style="color: orange;">tr</span><br>
-    <span class="tag2" style="color: orange;">tr</span>
-    <span class="tag3" style="color: orange;">tr</span><br>
-    <span class="tag3" style="color: coral;">tbody</span><br>
-    <span class="tag2" style="color: rosybrown;">tfoot</span><br>
-    <span class="tag2" style="color: orange;">tr</span>
-    <span class="tag3" style="color: orange;">tr</span><br>
-    <span class="tag3" style="color: rosybrown;">tfoot</span><br>
-  <span class="tag3">table</span>
-</code><br>
-<p>Exemplo de tabela grande:</p>
-<div class="scroll" style="margin-bottom: 10px;">
-    <table style="margin: 10px auto;position: relative;">
-        <colgroup>
-            <!--
-                <col class="cnome">
-                <col class="csexo">
-                <col class="cidade">
-                <col class="cgrupo" span="3">
-                <col class="cprof">
-                -->
-                <col class="amarelo">
-                <col class="verde">
-                <col class="amarelo">
-                <col class="verde">
-        </colgroup>
-        <caption>Cadastro</caption>
-        <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Idade</th>
-            <th scope="col">Profissão</th>
-        </tr>
-        <tr>
-            <td>Ana Maria</td>
-            <td>F</td>
-            <td>25</td>
-            <td>Jornalista</td>
-        </tr>
-        <tr>
-            <td>Carmen</td>
-            <td>F</td>
-            <td>31</td>
-            <td>Empresária</td>
-        </tr>
-        <tr>
-            <td>Maria</td>
-            <td>F</td>
-            <td>42</td>
-            <td>Administradora</td>
-        </tr>
-        <tr>
-            <td>Cláudio</td>
-            <td>M</td>
-            <td>28</td>
-            <td>Farmacêutico</td>
-        </tr>
-        <tr>
-            <td>Mariel</td>
-            <td>M</td>
-            <td>23</td>
-            <td>Advogado</td>
-        </tr>
-        <tr>
-            <td>Gustavo</td>
-            <td>M</td>
-            <td>43</td>
-            <td>Programador</td>
-        </tr>
-        <tr>
-            <td>Roberta</td>
-            <td>F</td>
-            <td>36</td>
-            <td>Engenheira Civil</td>
-        </tr>
-        <tr>
-            <td>Olávio</td>
-            <td>M</td>
-            <td>24</td>
-            <td>Dentista</td>
-        </tr>
-        <tr>
-            <td>Rosanne</td>
-            <td>F</td>
-            <td>52</td>
-            <td>Diretora</td>
-        </tr>
-        <tr>
-            <td>Juliana</td>
-            <td>F</td>
-            <td>48</td>
-            <td>Coordenadora</td>
-        </tr>
-        <tr>
-            <td>Ricardo</td>
-            <td>M</td>
-            <td>44</td>
-            <td>Lixeiro</td>
-        </tr>
-        <tr>
-            <td>Milena</td>
-            <td>F</td>
-            <td>31</td>
-            <td>Bióloga</td>
-        </tr>
-        <tr>
-            <td>Márcio</td>
-            <td>M</td>
-            <td>42</td>
-            <td>Historiador</td>
-        </tr>
-        <tr>
-            <td>Eloise</td>
-            <td>F</td>
-            <td>23</td>
-            <td>Engenheira de Software</td>
-        </tr>
-        <tr>
-            <td>Pedro</td>
-            <td>M</td>
-            <td>38</td>
-            <td>Pedreiro</td>
-        </tr>
-        <tr>
-            <td>Marta</td>
-            <td>F</td>
-            <td>29</td>
-            <td>Cientista</td>
-        </tr>
-        <tr>
-            <td>Carlos</td>
-            <td>M</td>
-            <td>34</td>
-            <td>Youtuber</td>
-        </tr>
-        <tr>
-            <td>Débora</td>
-            <td>F</td>
-            <td>47</td>
-            <td>Médica</td>
-        </tr>
-        <tr>
-            <td>Gilberto</td>
-            <td>M</td>
-            <td>62</td>
-            <td>Pediátra</td>
-        </tr>
-        <tr>
-            <td>Cláudia</td>
-            <td>F</td>
-            <td>43</td>
-            <td>Cozinheira</td>
-        </tr>
-        <tr>
-            <td>Kleiton</td>
-            <td>M</td>
-            <td>25</td>
-            <td>Skatista</td>
-        </tr>
-    </table>
-</div>
-<span class="title">ESCOPO DE TH EM TABELAS</span>
-<p>É importante perceber a diferença entre <span class="tag">th</span> e <span class="tag">td</span>: <span class="tag">th</span> se refere a um título(ex.: População) e <span class="tag">td</span> se refere a um dado(ex.: 15000) </p>
-<p>Um dado pode estar localizado na mesma coluna(<span class="str">column</span>) ou na mesma linha(<span class="str">row</span>) do título correspondente e, para que o navegador saiba essa localização, devemos colocar sempre um <span class="prop">scope</span> dentro da tag <span class="tag">th</span>.</p>
-
-<p>Exemplo:</p>
-<table>
-    <thead>
-        <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Idade</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>Ellen</th>
-            <th>14</th>
-        </tr>
-    </tbody>
-</table>
-<code>
-    <span class="tag2">table</span><br>
-    <span class="tag2" style="color: cornflowerblue;">thead</span><br>
-    <span class="tag2" style="color: orange;">tr</span><br>
-    <span class="tag2" style="color: palevioletred;">th <span style="text-decoration: underline;"><span class="prop">scope</span><span style="color: black;">=</span><span class="str">"col"</span></span></span>Nome<span class="tag3" style="color: palevioletred;">th</span><br>
-    <span class="tag2" style="color: palevioletred;">th <span style="text-decoration: underline;"><span class="prop">scope</span><span style="color: black;">=</span><span class="str">"col"</span></span></span>Idade<span class="tag3" style="color: palevioletred;">th</span><br>
-    <span class="tag3" style="color: orange;">tr</span><br>
-    <span class="tag3" style="color: cornflowerblue;">thead</span><br>
-    <span class="tag2" style="color: coral;">tbody</span><br>
-    <span class="tag2" style="color: orange;">tr</span><br>
-    <span class="tag2" style="color: lightseagreen;">td</span>Ellen<span class="tag3" style="color: lightseagreen;">td</span><br>
-    <span class="tag2" style="color: lightseagreen;">td</span>14<span class="tag3" style="color: lightseagreen;">td</span><br>
-    <span class="tag3" style="color: orange;">tr</span><br>
-    <span class="tag3" style="color: coral;">tbody</span><br>
- 
-  <span class="tag3">table</span>
-</code><br>
-<span class="title">EFEITO ZEBRADO EM TABELAS</span>
-<p>Uma técnica que facilita a leitura de tabelas é o efeito zebrado, que é quando as linhas ou colunas seguem um padrão de cor, por exemplo, uma linha tem cor azul, a outra amarela, a outra é azul novamente, e assim por diante.</p>
-<p>Exemplo 1:</p>
-<table class="zebrado">
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-        
-     
-    </tr>
-    <tr>
-        
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-       
-    </tr>
-    <tr>
-       
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-       
-        
-    </tr>
-    <tr>
-        
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-       
-       
-    </tr>
-    <tr>
-      
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-       
-    </tr>
-   
-</table>
-<p>Exemplo 2:</p>
-<table class="zebrado2">
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-        
-        
-     
-    </tr>
-    <tr>
-        
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-        
-       
-    </tr>
-    <tr>
-       
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-       
-        
-    </tr>
-    <tr>
-        
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-       
-       
-    </tr>
-    <tr>
-      
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-       
-    </tr>
-    <tr>
-      
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-       
-    </tr>
-   
-</table>
-<p>Para fazermos esse efeito, precisamos ver outra pseudo-classe chamada <span class="sel">nth-child()</span>: </p>
-<code>
-    <span class="tag2">style</span><br>
-    <span class="sel">table tr:nth-child(2n)</span> { <br>
-        <span class="prop">background-color</span>: <span class="str">blue</span>;<br>
-         } <br>
- 
-  <span class="tag3">style</span>
-</code><br>
-<p>Fazendo essa configuração teremos o seguinte resultado:</p>
-<table id="n2">
-    <tr>
-        <th></th>
-       
-    </tr>
-    <tr>
-        <th>2</th>
-       
-    </tr>
-    <tr>
-        <th></th>
-        
-    </tr>
-    <tr>
-        <th>4</th>
-        
-    </tr>
-    <tr>
-        <th></th>
-        
-    </tr>
-    <tr>
-        <th>6</th>
-        
-    </tr>
-    
-</table>
-<p>Como pode perceber as linhas pintadas de azul são múltiplas de 2, por isso <span class="sel">2n</span>. </p>
-<p>Agora, se colocássemos <span class="sel">3n</span>, as linhas de azul seriam múltiplas de 3:</p>
-<table id="n3">
-    <tr>
-        <th></th>
-        
-    </tr>
-    <tr>
-        <th></th>
-        
-    </tr>
-    <tr>
-        <th>3</th>
-        
-    </tr>
-    <tr>
-        <th></th>
-        
-    </tr>
-    <tr>
-        <th></th>
-        
-    </tr>
-    <tr>
-        <th>6</th>
-        
-    </tr>
-    
-</table>
-<p>Também é possível fazer com que fiquem azuis as linhas que correspondem aos números que vem imediatamente antes dos múltiplos de 2(por exemplo): </p>
-<table id="n2-1">
-    <tr>
-        <th>2 - 1</th>
-        
-    </tr>
-    <tr>
-        <th></th>
-        
-    </tr>
-    <tr>
-        <th>4 - 1 </th>
-        
-    </tr>
-    <tr>
-        <th></tr>
-        
-    </tr>
-    <tr>
-        <th>6 - 1</th>
-        
-    </tr>
-    <tr>
-        <th></th>
-        
-    </tr>
-    
-</table>
-<p>E para isso basta escrevermos <span class="sel">- 1</span> depois de <span class="sel">2n</span>:</p>
-<code>
-    <span class="tag2">style</span><br>
-    <span class="sel">table tr:nth-child(2n - 1)</span> { <br>
-        <span class="prop">background-color</span>: <span class="str">blue</span>;<br>
-         } <br>
- 
-  <span class="tag3">style</span>
-</code><br>
-<p class="impor">Em vez de <span class="sel">2n</span>, você pode escrever <span class="sel">even</span> e, em vez de <span class="sel">2n - 1</span>, você pode escrever <span class="sel">odd</span></p>
-
-<span class="title">CABEÇALHO FIXO EM TABELAS GRANDES</span>
-<p>Outro recurso que pode ser usado em tabelas grandes é o cabeçalho fixo, que permite que o leitor role para baixo sem ter que voltar atrás para ver as informações presentes nele:</p>
-<div class="scroll" style="margin-bottom: 10px;">
-    <table style="margin: 10px auto;position: relative;">
-        <colgroup>
-            <!--
-                <col class="cnome">
-                <col class="csexo">
-                <col class="cidade">
-                <col class="cgrupo" span="3">
-                <col class="cprof">
-                -->
-                <col class="amarelo">
-                <col class="verde">
-                <col class="amarelo">
-                <col class="verde">
-        </colgroup>
-        <caption class="stick">Cadastro</caption>
-        <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Idade</th>
-            <th scope="col">Profissão</th>
-        </tr>
-        <tr>
-            <td>Ana Maria</td>
-            <td>F</td>
-            <td>25</td>
-            <td>Jornalista</td>
-        </tr>
-        <tr>
-            <td>Carmen</td>
-            <td>F</td>
-            <td>31</td>
-            <td>Empresária</td>
-        </tr>
-        <tr>
-            <td>Maria</td>
-            <td>F</td>
-            <td>42</td>
-            <td>Administradora</td>
-        </tr>
-        <tr>
-            <td>Cláudio</td>
-            <td>M</td>
-            <td>28</td>
-            <td>Farmacêutico</td>
-        </tr>
-        <tr>
-            <td>Mariel</td>
-            <td>M</td>
-            <td>23</td>
-            <td>Advogado</td>
-        </tr>
-        <tr>
-            <td>Gustavo</td>
-            <td>M</td>
-            <td>43</td>
-            <td>Programador</td>
-        </tr>
-        <tr>
-            <td>Roberta</td>
-            <td>F</td>
-            <td>36</td>
-            <td>Engenheira Civil</td>
-        </tr>
-        <tr>
-            <td>Olávio</td>
-            <td>M</td>
-            <td>24</td>
-            <td>Dentista</td>
-        </tr>
-        <tr>
-            <td>Rosanne</td>
-            <td>F</td>
-            <td>52</td>
-            <td>Diretora</td>
-        </tr>
-        <tr>
-            <td>Juliana</td>
-            <td>F</td>
-            <td>48</td>
-            <td>Coordenadora</td>
-        </tr>
-        <tr>
-            <td>Ricardo</td>
-            <td>M</td>
-            <td>44</td>
-            <td>Lixeiro</td>
-        </tr>
-        <tr>
-            <td>Milena</td>
-            <td>F</td>
-            <td>31</td>
-            <td>Bióloga</td>
-        </tr>
-        <tr>
-            <td>Márcio</td>
-            <td>M</td>
-            <td>42</td>
-            <td>Historiador</td>
-        </tr>
-        <tr>
-            <td>Eloise</td>
-            <td>F</td>
-            <td>23</td>
-            <td>Engenheira de Software</td>
-        </tr>
-        <tr>
-            <td>Pedro</td>
-            <td>M</td>
-            <td>38</td>
-            <td>Pedreiro</td>
-        </tr>
-        <tr>
-            <td>Marta</td>
-            <td>F</td>
-            <td>29</td>
-            <td>Cientista</td>
-        </tr>
-        <tr>
-            <td>Carlos</td>
-            <td>M</td>
-            <td>34</td>
-            <td>Youtuber</td>
-        </tr>
-        <tr>
-            <td>Débora</td>
-            <td>F</td>
-            <td>47</td>
-            <td>Médica</td>
-        </tr>
-        <tr>
-            <td>Gilberto</td>
-            <td>M</td>
-            <td>62</td>
-            <td>Pediátra</td>
-        </tr>
-        <tr>
-            <td>Cláudia</td>
-            <td>F</td>
-            <td>43</td>
-            <td>Cozinheira</td>
-        </tr>
-        <tr>
-            <td>Kleiton</td>
-            <td>M</td>
-            <td>25</td>
-            <td>Skatista</td>
-        </tr>
-    </table>
-</div>
-<p>O código usado para chegar a esse resultado é bem simples: basta atribuir o valor <span class="str">relative</span> para a propriedade <span class="prop">position</span> da tabela e mudar a posição do <span class="tag">caption</span> para <span class="str">sticky</span>:</p>
-<code>
-    <span class="tag2">style</span><br>
-    <span class="sel">table</span> { <br>
-        <span class="prop">position</span>: <span class="str">relative</span>;<br>
-         } <br>
-
-         <span class="sel">caption</span> { <br>
-            <span class="prop">position</span>: <span class="str">sticky</span>;<br>
-                <span class="prop">top</span>: <span class="str">0px</span>;<br>
-             } <br>
- 
-  <span class="tag3">style</span>
-</code><br>
-<p class="impor">Lembrando que a posição <span class="str">sticky</span> só funciona quando atribuimos um valor para a propriedade <span class="prop">top</span></p>
-<span class="title">MESCLAGEM DE CÉLULAS</span>
-<p>Agora vamos falar sobre como expandir células, ou seja, fazer com que elas ocupem mais de uma linha ou mais de uma coluna:</p>
-<table>
-   <tr>
-    <th>A</th>
-    <th colspan="2">B</th>
-   </tr>
-   <tr>
-    <TH>C</TH>
-    <TH>D</TH>
-    <TH>E</TH>
-   </tr>
-   <tr>
-    <TH>F</TH>
-    <TH>G</TH>
-    <TH>H</TH>
-   </tr>
-</table>
-<p>Na tabela acima a célula B está ocupando duas colunas, ou seja, seu <span class="prop">colspan</span> equivale a<span class="str"> 2</span>:</p>
-<code>
-    <span class="tag2">th <span class="prop">colspan</span><span style="color: black;">=</span><span class="str">"2"</span></span>B<span class="tag3">th</span><br>
-</code><br>
-<table>
-    <tr>
-     <th rowspan="3">A</th>
-     <th colspan="2">B</th>
-    </tr>
-    <tr>
-     <TH>D</TH>
-     <TH>E</TH>
-    </tr>
-    <tr>
-     <TH>G</TH>
-     <TH>H</TH>
-    </tr>
- </table>
- <p>Já no exemplo acima a célula A está ocupando 3 linhas, ou seja, seu rowspan equivale a 3:</p>
- <code>
-    <span class="tag2">th <span class="prop">rowspan</span><span style="color: black;">=</span><span class="str">"3"</span></span>A<span class="tag3">th</span><br>
-</code><br>
-<span class="title">ESCOPOS DE GRUPO</span>
-<p>Além de col e row, podemos também atribuir os valores colgroup e rowgroup a um escopo de <span class="tag">th</span>.</p>
-<p>Isso acontece quando um th tem um col/rowspan, já que ele se refere aos dados de mais de uma coluna/linha.</p>
-<div class="scroll2">
-    <table id="filme">
-        <caption>
-            Filmes favoritos
-        </caption>
+    <p>Exemplo:</p>
+    <table>
         <thead>
             <tr>
-                <th scope="col">Grupo</th>
-                <th scope="row">Nomes</th>
-                <th colspan="3" scope="colgroup" id="focus">Filmes</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th colspan="4" scope="row">Total</th>
-                <td>1000</td>
-            </tr>
-        </tfoot>
         <tbody>
             <tr>
-                <th rowspan="3" scope="rowgroup" id="focus2">Mulheres</th>
-                <td>Ana Maria Santos</td>
-                <td>Allen</td>
-                <td>Rambo</td>
-                <td>Vingadores</td>
-            </tr>
-            <tr>
-                <td>Beatriz Souza</td>
-                <td>Hulk</td>
-                <td>Inception</td>
-                <td>Batman</td>
-            </tr>
-            <tr>
-                <td>Cláudia Melo</td>
-                <td>Oblivion</td>
-                <td>Matriz</td>
-                <td>Big hero</td>
-            </tr>
-            <tr>
-                <th rowspan="3" scope="rowgroup">Homens</th>
-                <td>Bruno Mendonça</td>
-                <td>Intocáveis</td>
-                <td>Amnésia</td>
-                <td>Gladiador</td>
-            </tr>
-            <tr>
-                <td>Daniel Lourenço</td>
-                <td>Wall-E</td>
-                <td>Oldboy</td>
-                <td>Dangal</td>
-            </tr>
-            <tr>
-                <td>Fabiano Mota</td>
-                <td>Star Wars 5</td>
-                <td>Taxi Driver</td>
-                <td>Toy Story</td>
+                <th>Ellen</th>
+                <th>14</th>
             </tr>
         </tbody>
     </table>
-</div>
-<p>Na tabela acima, o <span class="tag">th</span> Filmes tem um colspan de 3 colunas e, portanto, ele se refere aos dados de 3 colunas e, portanto, o seu escopo é de colgroup:</p>
-<code>
-    <span class="tag2">th <span class="prop">colspan</span><span style="color: black;">=</span><span class="str">"3"</span> <span class="prop">scope</span><span style="color: black;">=</span><span class="str">"colgroup"</span></span>
-    Filmes<span class="tag3">th</span><br>
-</code><br>
-<p>Agora, se analisarmos o <span class="tag">th</span> Mulheres, ele tem um rowspan de 3 linhas e o seu escopo é de rowgroup:</p>
-<code>
-    <span class="tag2">th <span class="prop">rowspan</span><span style="color: black;">=</span><span class="str">"3"</span> <span class="prop">scope</span><span style="color: black;">=</span><span class="str">"rowgroup"</span></span>
-    Mulheres<span class="tag3">th</span><br>
-</code><br>
-<span class="title">AGRUPAMENTO DE COLUNAS COM COLGROUP</span>
-<p>Tendo como exemplo a tabela abaixo, suponhamos que você queira que todo <span class="tag">td</span> pertencente a coluna 1 tenha a cor verde. Como você faria isso? </p>
-<p>Usando os conhecimentos que vimos até agora, a única maneira de fazer isso seria mudando de um por um a cor de cada <span class="tag">td</span> da coluna.</p>
-<table>
-    <tr>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
+    <code>
+        <span class="tag2">table</span><br>
+        <span class="tag2" style="color: cornflowerblue;">thead</span><br>
+        <span class="tag2" style="color: orange;">tr</span><br>
+        <span class="tag2" style="color: palevioletred;">th <span style="text-decoration: underline;"><span class="prop">scope</span><span style="color: black;">=</span><span class="str">"col"</span></span></span>Nome<span class="tag3" style="color: palevioletred;">th</span><br>
+        <span class="tag2" style="color: palevioletred;">th <span style="text-decoration: underline;"><span class="prop">scope</span><span style="color: black;">=</span><span class="str">"col"</span></span></span>Idade<span class="tag3" style="color: palevioletred;">th</span><br>
+        <span class="tag3" style="color: orange;">tr</span><br>
+        <span class="tag3" style="color: cornflowerblue;">thead</span><br>
+        <span class="tag2" style="color: coral;">tbody</span><br>
+        <span class="tag2" style="color: orange;">tr</span><br>
+        <span class="tag2" style="color: lightseagreen;">td</span>Ellen<span class="tag3" style="color: lightseagreen;">td</span><br>
+        <span class="tag2" style="color: lightseagreen;">td</span>14<span class="tag3" style="color: lightseagreen;">td</span><br>
+        <span class="tag3" style="color: orange;">tr</span><br>
+        <span class="tag3" style="color: coral;">tbody</span><br>
     
-</table>
-<p>Porém, essa solução não é muito prática e por isso existe uma melhor, usando a tag <span class="tag">colgroup</span> dentro da tabela:</p>
-<code>
-    <span class="tag2">table</span>
-    <br><span class="tag2">colgroup</span>
-
-    <br><span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col1"</span></span><br>
-    <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col2"</span></span><br>
-    <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col3"</span></span><br>
-    <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col4"</span></span><br>
-    <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col5"</span></span><br>
-    <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col6"</span></span><br>
-
-    <span class="tag3">colgroup</span><br>
-  ...<span class="tag3">table</span>
-</code><br>
-<p>Depois de identificar a primeira coluna como <span class="str">"col1"</span>, só falta mudar sua cor dentro do estilo:</p>
-<code>
-    <span class="tag2">style</span><br>
-         <span class="sel">#col1</span> { <br>
-            <span class="prop">background-color</span>: <span class="str">green</span>;<br>
+      <span class="tag3">table</span>
+    </code><br>
+    <span class="title">EFEITO ZEBRADO EM TABELAS</span>
+    <p>Uma técnica que facilita a leitura de tabelas é o efeito zebrado, que é quando as linhas ou colunas seguem um padrão de cor, por exemplo, uma linha tem cor azul, a outra amarela, a outra é azul novamente, e assim por diante.</p>
+    <p>Exemplo 1:</p>
+    <table class="zebrado">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+        </tr>
+    
+    </table>
+    <p>Exemplo 2:</p>
+    <table class="zebrado2">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+        </tr>
+        <tr>
+    
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    
+    
+        </tr>
+    
+    </table>
+    <p>Para fazermos esse efeito, precisamos ver outra pseudo-classe chamada <span class="sel">nth-child()</span>: </p>
+    <code>
+        <span class="tag2">style</span><br>
+        <span class="sel">table tr:nth-child(2n)</span> { <br>
+            <span class="prop">background-color</span>: <span class="str">blue</span>;<br>
              } <br>
-  <span class="tag3">style</span>
-</code><br>
-<p>E o resultado será o seguinte:</p>
-<table>
-    <colgroup>
-        <col id="col1">
-    </colgroup>
-    <tr>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-</table>
-<p>É possível agrupar mais de uma coluna usando a tag <span class="tag">col</span> junto com <span class="prop">span</span> para que, por exemplo, as colunas 2, 3 e 4 fiquem da cor roxa:</p>
-<code>
-    <span class="tag2">table</span>
-    <br><span class="tag2">colgroup</span>
-
-    <br><span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col1"</span></span><br>
-    <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col2,3,4" </span><span class="prop">span</span><span style="color: black;">=</span><span class="str">"3"</span></span><br>
-
-    <span class="tag3">colgroup</span><br>
-  ...<span class="tag3">table</span>
-</code><br>
-<table>
-    <colgroup>
-        <col id="col1">
-        <col id="col234" span="3">
-    </colgroup>
-    <tr>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-</table>
-<p class="impor">Não esqueça que para agrupar colunas com a tag <span class="tag">col</span> basta colocar <span class="prop">span</span>(sem o <span class="prop">col</span> na frente)</p>
-</div>  
-<div id="efect2"></div>
+    
+      <span class="tag3">style</span>
+    </code><br>
+    <p>Fazendo essa configuração teremos o seguinte resultado:</p>
+    <table id="n2">
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th>2</th>
+    
+        </tr>
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th>4</th>
+    
+        </tr>
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th>6</th>
+    
+        </tr>
+    
+    </table>
+    <p>Como pode perceber as linhas pintadas de azul são múltiplas de 2, por isso <span class="sel">2n</span>. </p>
+    <p>Agora, se colocássemos <span class="sel">3n</span>, as linhas de azul seriam múltiplas de 3:</p>
+    <table id="n3">
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th>3</th>
+    
+        </tr>
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th>6</th>
+    
+        </tr>
+    
+    </table>
+    <p>Também é possível fazer com que fiquem azuis as linhas que correspondem aos números que vem imediatamente antes dos múltiplos de 2(por exemplo): </p>
+    <table id="n2-1">
+        <tr>
+            <th>2 - 1</th>
+    
+        </tr>
+        <tr>
+            <th></th>
+    
+        </tr>
+        <tr>
+            <th>4 - 1 </th>
+    
+        </tr>
+        <tr>
+            <th></tr>
+    
+        </tr>
+        <tr>
+            <th>6 - 1</th>
+    
+        </tr>
+        <tr>
+            <th></th>
+    
+        </tr>
+    
+    </table>
+    <p>E para isso basta escrevermos <span class="sel">- 1</span> depois de <span class="sel">2n</span>:</p>
+    <code>
+        <span class="tag2">style</span><br>
+        <span class="sel">table tr:nth-child(2n - 1)</span> { <br>
+            <span class="prop">background-color</span>: <span class="str">blue</span>;<br>
+             } <br>
+    
+      <span class="tag3">style</span>
+    </code><br>
+    <p class="impor">Em vez de <span class="sel">2n</span>, você pode escrever <span class="sel">even</span> e, em vez de <span class="sel">2n - 1</span>, você pode escrever <span class="sel">odd</span></p>
+    
+    <span class="title">CABEÇALHO FIXO EM TABELAS GRANDES</span>
+    <p>Outro recurso que pode ser usado em tabelas grandes é o cabeçalho fixo, que permite que o leitor role para baixo sem ter que voltar atrás para ver as informações presentes nele:</p>
+    <div class="scroll" style="margin-bottom: 10px;">
+        <table style="margin: 10px auto;position: relative;">
+            <colgroup>
+                <!--
+                    <col class="cnome">
+                    <col class="csexo">
+                    <col class="cidade">
+                    <col class="cgrupo" span="3">
+                    <col class="cprof">
+                    -->
+                    <col class="amarelo">
+                    <col class="verde">
+                    <col class="amarelo">
+                    <col class="verde">
+            </colgroup>
+            <caption class="stick">Cadastro</caption>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Profissão</th>
+            </tr>
+            <tr>
+                <td>Ana Maria</td>
+                <td>F</td>
+                <td>25</td>
+                <td>Jornalista</td>
+            </tr>
+            <tr>
+                <td>Carmen</td>
+                <td>F</td>
+                <td>31</td>
+                <td>Empresária</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>F</td>
+                <td>42</td>
+                <td>Administradora</td>
+            </tr>
+            <tr>
+                <td>Cláudio</td>
+                <td>M</td>
+                <td>28</td>
+                <td>Farmacêutico</td>
+            </tr>
+            <tr>
+                <td>Mariel</td>
+                <td>M</td>
+                <td>23</td>
+                <td>Advogado</td>
+            </tr>
+            <tr>
+                <td>Gustavo</td>
+                <td>M</td>
+                <td>43</td>
+                <td>Programador</td>
+            </tr>
+            <tr>
+                <td>Roberta</td>
+                <td>F</td>
+                <td>36</td>
+                <td>Engenheira Civil</td>
+            </tr>
+            <tr>
+                <td>Olávio</td>
+                <td>M</td>
+                <td>24</td>
+                <td>Dentista</td>
+            </tr>
+            <tr>
+                <td>Rosanne</td>
+                <td>F</td>
+                <td>52</td>
+                <td>Diretora</td>
+            </tr>
+            <tr>
+                <td>Juliana</td>
+                <td>F</td>
+                <td>48</td>
+                <td>Coordenadora</td>
+            </tr>
+            <tr>
+                <td>Ricardo</td>
+                <td>M</td>
+                <td>44</td>
+                <td>Lixeiro</td>
+            </tr>
+            <tr>
+                <td>Milena</td>
+                <td>F</td>
+                <td>31</td>
+                <td>Bióloga</td>
+            </tr>
+            <tr>
+                <td>Márcio</td>
+                <td>M</td>
+                <td>42</td>
+                <td>Historiador</td>
+            </tr>
+            <tr>
+                <td>Eloise</td>
+                <td>F</td>
+                <td>23</td>
+                <td>Engenheira de Software</td>
+            </tr>
+            <tr>
+                <td>Pedro</td>
+                <td>M</td>
+                <td>38</td>
+                <td>Pedreiro</td>
+            </tr>
+            <tr>
+                <td>Marta</td>
+                <td>F</td>
+                <td>29</td>
+                <td>Cientista</td>
+            </tr>
+            <tr>
+                <td>Carlos</td>
+                <td>M</td>
+                <td>34</td>
+                <td>Youtuber</td>
+            </tr>
+            <tr>
+                <td>Débora</td>
+                <td>F</td>
+                <td>47</td>
+                <td>Médica</td>
+            </tr>
+            <tr>
+                <td>Gilberto</td>
+                <td>M</td>
+                <td>62</td>
+                <td>Pediátra</td>
+            </tr>
+            <tr>
+                <td>Cláudia</td>
+                <td>F</td>
+                <td>43</td>
+                <td>Cozinheira</td>
+            </tr>
+            <tr>
+                <td>Kleiton</td>
+                <td>M</td>
+                <td>25</td>
+                <td>Skatista</td>
+            </tr>
+        </table>
+    </div>
+    <p>O código usado para chegar a esse resultado é bem simples: basta atribuir o valor <span class="str">relative</span> para a propriedade <span class="prop">position</span> da tabela e mudar a posição do <span class="tag">caption</span> para <span class="str">sticky</span>:</p>
+    <code>
+        <span class="tag2">style</span><br>
+        <span class="sel">table</span> { <br>
+            <span class="prop">position</span>: <span class="str">relative</span>;<br>
+             } <br>
+    
+             <span class="sel">caption</span> { <br>
+                <span class="prop">position</span>: <span class="str">sticky</span>;<br>
+                    <span class="prop">top</span>: <span class="str">0px</span>;<br>
+                 } <br>
+    
+      <span class="tag3">style</span>
+    </code><br>
+    <p class="impor">Lembrando que a posição <span class="str">sticky</span> só funciona quando atribuimos um valor para a propriedade <span class="prop">top</span></p>
+    <span class="title">MESCLAGEM DE CÉLULAS</span>
+    <p>Agora vamos falar sobre como expandir células, ou seja, fazer com que elas ocupem mais de uma linha ou mais de uma coluna:</p>
+    <table>
+       <tr>
+        <th>A</th>
+        <th colspan="2">B</th>
+       </tr>
+       <tr>
+        <TH>C</TH>
+        <TH>D</TH>
+        <TH>E</TH>
+       </tr>
+       <tr>
+        <TH>F</TH>
+        <TH>G</TH>
+        <TH>H</TH>
+       </tr>
+    </table>
+    <p>Na tabela acima a célula B está ocupando duas colunas, ou seja, seu <span class="prop">colspan</span> equivale a<span class="str"> 2</span>:</p>
+    <code>
+        <span class="tag2">th <span class="prop">colspan</span><span style="color: black;">=</span><span class="str">"2"</span></span>B<span class="tag3">th</span><br>
+    </code><br>
+    <table>
+        <tr>
+         <th rowspan="3">A</th>
+         <th colspan="2">B</th>
+        </tr>
+        <tr>
+         <TH>D</TH>
+         <TH>E</TH>
+        </tr>
+        <tr>
+         <TH>G</TH>
+         <TH>H</TH>
+        </tr>
+     </table>
+     <p>Já no exemplo acima a célula A está ocupando 3 linhas, ou seja, seu rowspan equivale a 3:</p>
+     <code>
+        <span class="tag2">th <span class="prop">rowspan</span><span style="color: black;">=</span><span class="str">"3"</span></span>A<span class="tag3">th</span><br>
+    </code><br>
+    <span class="title">ESCOPOS DE GRUPO</span>
+    <p>Além de col e row, podemos também atribuir os valores colgroup e rowgroup a um escopo de <span class="tag">th</span>.</p>
+    <p>Isso acontece quando um th tem um col/rowspan, já que ele se refere aos dados de mais de uma coluna/linha.</p>
+    <div class="scroll2">
+        <table id="filme">
+            <caption>
+                Filmes favoritos
+            </caption>
+            <thead>
+                <tr>
+                    <th scope="col">Grupo</th>
+                    <th scope="row">Nomes</th>
+                    <th colspan="3" scope="colgroup" id="focus">Filmes</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th colspan="4" scope="row">Total</th>
+                    <td>1000</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th rowspan="3" scope="rowgroup" id="focus2">Mulheres</th>
+                    <td>Ana Maria Santos</td>
+                    <td>Allen</td>
+                    <td>Rambo</td>
+                    <td>Vingadores</td>
+                </tr>
+                <tr>
+                    <td>Beatriz Souza</td>
+                    <td>Hulk</td>
+                    <td>Inception</td>
+                    <td>Batman</td>
+                </tr>
+                <tr>
+                    <td>Cláudia Melo</td>
+                    <td>Oblivion</td>
+                    <td>Matriz</td>
+                    <td>Big hero</td>
+                </tr>
+                <tr>
+                    <th rowspan="3" scope="rowgroup">Homens</th>
+                    <td>Bruno Mendonça</td>
+                    <td>Intocáveis</td>
+                    <td>Amnésia</td>
+                    <td>Gladiador</td>
+                </tr>
+                <tr>
+                    <td>Daniel Lourenço</td>
+                    <td>Wall-E</td>
+                    <td>Oldboy</td>
+                    <td>Dangal</td>
+                </tr>
+                <tr>
+                    <td>Fabiano Mota</td>
+                    <td>Star Wars 5</td>
+                    <td>Taxi Driver</td>
+                    <td>Toy Story</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Na tabela acima, o <span class="tag">th</span> Filmes tem um colspan de 3 colunas e, portanto, ele se refere aos dados de 3 colunas e, portanto, o seu escopo é de colgroup:</p>
+    <code>
+        <span class="tag2">th <span class="prop">colspan</span><span style="color: black;">=</span><span class="str">"3"</span> <span class="prop">scope</span><span style="color: black;">=</span><span class="str">"colgroup"</span></span>
+        Filmes<span class="tag3">th</span><br>
+    </code><br>
+    <p>Agora, se analisarmos o <span class="tag">th</span> Mulheres, ele tem um rowspan de 3 linhas e o seu escopo é de rowgroup:</p>
+    <code>
+        <span class="tag2">th <span class="prop">rowspan</span><span style="color: black;">=</span><span class="str">"3"</span> <span class="prop">scope</span><span style="color: black;">=</span><span class="str">"rowgroup"</span></span>
+        Mulheres<span class="tag3">th</span><br>
+    </code><br>
+    <span class="title">AGRUPAMENTO DE COLUNAS COM COLGROUP</span>
+    <p>Tendo como exemplo a tabela abaixo, suponhamos que você queira que todo <span class="tag">td</span> pertencente a coluna 1 tenha a cor verde. Como você faria isso? </p>
+    <p>Usando os conhecimentos que vimos até agora, a única maneira de fazer isso seria mudando de um por um a cor de cada <span class="tag">td</span> da coluna.</p>
+    <table>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    
+    </table>
+    <p>Porém, essa solução não é muito prática e por isso existe uma melhor, usando a tag <span class="tag">colgroup</span> dentro da tabela:</p>
+    <code>
+        <span class="tag2">table</span>
+        <br><span class="tag2">colgroup</span>
+    
+        <br><span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col1"</span></span><br>
+        <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col2"</span></span><br>
+        <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col3"</span></span><br>
+        <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col4"</span></span><br>
+        <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col5"</span></span><br>
+        <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col6"</span></span><br>
+    
+        <span class="tag3">colgroup</span><br>
+      ...<span class="tag3">table</span>
+    </code><br>
+    <p>Depois de identificar a primeira coluna como <span class="str">"col1"</span>, só falta mudar sua cor dentro do estilo:</p>
+    <code>
+        <span class="tag2">style</span><br>
+             <span class="sel">#col1</span> { <br>
+                <span class="prop">background-color</span>: <span class="str">green</span>;<br>
+                 } <br>
+      <span class="tag3">style</span>
+    </code><br>
+    <p>E o resultado será o seguinte:</p>
+    <table>
+        <colgroup>
+            <col id="col1">
+        </colgroup>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+    <p>É possível agrupar mais de uma coluna usando a tag <span class="tag">col</span> junto com <span class="prop">span</span> para que, por exemplo, as colunas 2, 3 e 4 fiquem da cor roxa:</p>
+    <code>
+        <span class="tag2">table</span>
+        <br><span class="tag2">colgroup</span>
+    
+        <br><span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col1"</span></span><br>
+        <span class="tag2">col <span class="prop">id</span><span style="color: black;">=</span><span class="str">"col2,3,4" </span><span class="prop">span</span><span style="color: black;">=</span><span class="str">"3"</span></span><br>
+    
+        <span class="tag3">colgroup</span><br>
+      ...<span class="tag3">table</span>
+    </code><br>
+    <table>
+        <colgroup>
+            <col id="col1">
+            <col id="col234" span="3">
+        </colgroup>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+    <p class="impor">Não esqueça que para agrupar colunas com a tag <span class="tag">col</span> basta colocar <span class="prop">span</span>(sem o <span class="prop">col</span> na frente)</p>
+    </div>
+    <div id="efect2"></div>
+</div>
 </body>
 </html>

@@ -13,8 +13,8 @@ main {
 .title {
     font-size: 1.5em;
      font-family: 'Time';
-     display: inline-block;
-     margin: 10px 0px 0px 0px;
+     display: block;
+     margin: 5px 0px;
 }
 h2{
  font-size: 35px;
@@ -33,11 +33,11 @@ div#fontypes {
     height: fit-content;
     font: italic bold 0.4cm Arial;
     margin-bottom: 0px;
-    box-shadow:0px 0px 10px #b7b7b7;
+   /* box-shadow:0px 0px 10px #b7b7b7; */
 }
 
 h2#tipograf {
-box-shadow:0px 0px 10px #b7b7b7;
+/*box-shadow:0px 0px 10px #b7b7b7;*/
 background-color: #B54EDD;
 margin: auto;
 border-top-left-radius: 10px;
@@ -67,7 +67,7 @@ div#efect2 {
     text-align: center;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow:0px 0px 10px #b7b7b7;
+    /*box-shadow:0px 0px 10px #b7b7b7;*/
     }
 .prop {
     color: cadetblue;
