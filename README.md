@@ -3,6 +3,7 @@
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico">
 <u type= "circle">
 
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/material-js.html"><span style=" font-weight: normal; font-size: 1.3em;">MATERIAIS</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/fatorador.html"><span style=" font-weight: normal; font-size: 1.3em;">FATORADOR</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/calculadora.html"><span style=" font-weight: normal; font-size: 1.3em;">Calculadora</span></a></li>
 <li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html"><span style=" font-weight: normal; font-size: 1.3em;">Palavreto</span></a></li> 
