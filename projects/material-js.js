@@ -442,13 +442,13 @@ function saiu(thing) {
 /*MATERIAL*/
 
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Tabelas',url:'https://lnkamaki.github.io/Projects/projects/tabelas.html'},{title:'Tabelas',url:'https://lnkamaki.github.io/Projects/projects/tabelas.html'}]},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'HTML: Hypertext Markup Language',url:'tabelas.html'},{title:'Estrutura da HTML',url:'tabelas.html'}]},
     {title:'CSS', url:'css-logo.svg'},
     {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
 
 d = document.createElement('div')
-d.setAttribute('class','container-lg my-5')
+d.setAttribute('class','container-lg')
 document.body.appendChild(d)
 
 d2 = document.createElement('div')
@@ -467,7 +467,7 @@ qualicon = which1
 layer = 1
 bigicons = document.getElementsByName('select-content')[0]
 bigicons.style.display = 'none'
-    container = document.getElementsByClassName('container-lg my-5')[0]
+    container = document.getElementsByClassName('container-lg')[0]
     dv = document.createElement('div')
     dv.setAttribute('id', 'index')
     container.appendChild(dv)
@@ -504,8 +504,9 @@ bigicons.style.display = 'none'
 layer = 0
 function voltar() {
     if (layer == 2) {
-        cont.getElementsByClassName('ps2')[0].innerText = contents[qualicon].title
+      
         listsubs.style.display = 'block'
+        dv.removeChild(dv.getElementsByClassName('pt')[0])
         dv.removeChild(dv.getElementsByTagName('iframe')[0])
     }else if(layer == 1){
     container.removeChild(dv)
@@ -520,9 +521,14 @@ function criariframe(a,b) {
     cont = document.getElementsByClassName('cont')[0]
     listsubs = document.getElementsByClassName('names')[0]
     
-   cont.getElementsByClassName('ps2')[0].innerText = contents[a].subs[b].title
+   //cont.getElementsByClassName('ps2')[0].innerText = contents[a].subs[b].title
+   //cont.getElementsByClassName('ps2')[0].style.fontWeight = 'bold'
     listsubs.style.display = 'none'
-
+    
+    p = document.createElement('p')
+    p.innerText =  contents[a].subs[b].title
+    p.setAttribute('class', 'pt')
+    dv.appendChild(p)
     iframe = document.createElement('iframe')
     iframe.setAttribute('src',contents[a].subs[b].url)
     iframe.style.width = '100%'
