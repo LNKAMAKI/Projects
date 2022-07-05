@@ -14,7 +14,7 @@ main {
     font-size: 1.5em;
      font-family: 'Time';
      display: inline-block;
-     margin: 0px;
+     margin: 10px 0px 0px 0px;
 }
 h2{
  font-size: 35px;
