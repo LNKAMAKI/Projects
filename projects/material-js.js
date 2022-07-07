@@ -425,7 +425,7 @@ function entrou(thing) {
  
     ps = document.getElementById('main').getElementsByClassName('psearcher')
 
-  //  podeir = false 
+    podeir = false 
 
     if (pselected != -1 && pselected != thing) {
     ps[pselected].style.backgroundColor = 'white'
@@ -440,7 +440,7 @@ function entrou(thing) {
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
-    //podeir = true
+    podeir = true
     pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
