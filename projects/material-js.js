@@ -238,7 +238,7 @@ window.addEventListener('keyup', function(event) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
         console.log('VAI',ps.length, pselected)
-        if (pselected < ps.length - 1 && podeir ==  true) {
+        if (pselected < ps.length - 1 && podeir == true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
 
