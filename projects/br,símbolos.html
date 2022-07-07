@@ -22,6 +22,18 @@
             font-size: 1.1em;
         }
     }
+    table {
+        border-collapse: collapse;
+        margin: auto;
+    }
+    td,th {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    div.table {
+        overflow: auto;
+        max-height: 350px;
+    }
 </style>
 </head>
 <body>
@@ -43,8 +55,269 @@
     <p>Portanto, não basta dar um Enter para quebrar a linha, motivo por qual existe a tag <span class="tag">br</span>, que tem esse propósito. Diferente da maioria das tags, a tag <span class="tag">br</span> não tem fechamento, isso porque ela não recebe conteúdo.</p>
     <p>Seja só como ficaria o parágrafo anterior se colocássemos <span class="tag2">br</span> depois de "Estou escrevendo":</p>
     <img src="./imagens/combrdisplay.jpeg" alt="">
-</div>
+    <p>Como foi observado, os espaços também não são considerados, então precisamos utilizar uma simbologia para indicar que queremos a presença de um espaço dentro no nosso código. A seguir está uma tabela com essa e outras simbologias referentes a alguns símbolos e caracteres:</p>
 
-    <div id="efect2"></div>
+    <div class="table">
+        <table>
+            <tr>
+                <th scope="col">Resultado</th>
+                <th scope="col">Entidade(Simbologia)</th>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>(&)nbsp;</td>
+            </tr>
+            <tr>
+                <td>&amp;</td>
+                <td>(&)amp;</td>
+            </tr>
+            <tr>
+                <td>&alpha;</td>
+                <td>(&)alpha;</td>
+            </tr>
+            <tr>
+                <td>&beta;</td>
+                <td>(&)beta;</td>
+            </tr>
+                <td>&gamma;</td>
+                <td>(&)gamma;</td>
+            </tr>
+            <tr>
+                <td>&delta;</td>
+                <td>(&)delta;</td>
+            </tr>
+            <tr>
+                <td>&theta;</td>
+                <td>(&)theta;</td>
+            </tr>
+            <tr>
+                <td>&lambda;</td>
+                <td>(&)lambda;</td>
+            </tr>
+            <tr>
+                <td>&larr;</td>
+                <td>(&)larr;</td>
+            </tr>
+            <tr>
+                <td>&rarr;</td>
+                <td>(&)rarr;</td>
+            </tr>
+            <tr>
+                <td>&uarr;</td>
+                <td>(&)uarr;</td>
+            </tr>
+            <tr>
+                <td>&darr;</td>
+                <td>(&)darr;</td>
+            </tr>
+            <tr>
+                <td>&cent;</td>
+                <td>(&)cent;</td>
+            </tr>
+            <tr>
+                <td>&pound;</td>
+                <td>(&)pound;</td>
+            </tr>
+            <tr>
+                <td>&yen;</td>
+                <td>(&)yen;</td>
+            </tr>
+            <tr>
+                <td>&euro;</td>
+                <td>(&)euro;</td>
+            </tr>
+            <tr>
+                <td>&trade;</td>
+                <td>(&)trade;</td>
+            </tr>
+            <tr>
+                <td>&copy;</td>
+                <td>(&)copy;</td>
+            </tr>
+            <tr>
+                <td>&reg;</td>
+                <td>(&)reg;</td>
+            </tr>
+            <tr>
+                <td>&spades;</td>
+                <td>(&)spades;</td>
+            </tr>
+            <tr>
+                <td>&clubs;</td>
+                <td>(&)clubs;</td>
+            </tr>
+            <tr>
+                <td>&hearts;</td>
+                <td>(&)hearts;</td>
+            </tr>
+            <tr>
+                <td>&diams;</td>
+                <td>(&)diams;</td>
+            </tr>
+            <tr>
+                <td>&prime;</td>
+                <td>(&)prime;</td>
+            </tr>
+            <tr>
+                <td>&Prime;</td>
+                <td>(&)Prime;</td>
+            </tr>
+            <tr>
+                <td>&deg;</td>
+                <td>(&)deg;</td>
+            </tr>
+            <tr>
+                <td>&plusmn;</td>
+                <td>(&)plusmn;</td>
+            </tr>
+            <tr>
+                <td>&cong;</td>
+                <td>(&)cong;</td>
+            </tr>
+            <tr>
+                <td>&equiv;</td>
+                <td>(&)equiv;</td>
+            </tr>
+            <tr>
+                <td>&prop;</td>
+                <td>(&)prop;</td>
+            </tr>
+            <tr>
+                <td>&ang;</td>
+                <td>(&)ang;</td>
+            </tr>
+            <tr>
+                <td>&divide;</td>
+                <td>(&)divide;</td>
+            </tr>
+            <tr>
+                <td>&ne;</td>
+                <td>(&)ne;</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>(&)lt;</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>(&)gt;</td>
+            </tr>
+            <tr>
+                <td>&le;</td>
+                <td>(&)le;</td>
+            </tr>
+            <tr>
+                <td>&ge;</td>
+                <td>(&)ge;</td>
+            </tr>
+            <tr>
+                <td>&times;</td>
+                <td>(&)times;</td>
+            </tr>
+            <tr>
+                <td>&minus;</td>
+                <td>(&)minus;</td>
+            </tr>
+            <tr>
+                <td>&radic;</td>
+                <td>(&)radic;</td>
+            </tr>
+            <tr>
+                <td>&infin;</td>
+                <td>(&)infin;</td>
+            </tr>
+            <tr>
+                <td>&isin;</td>
+                <td>(&)isin;</td>
+            </tr>
+            <tr>
+                <td>&notin;</td>
+                <td>(&)notin;</td>
+            </tr>
+            <tr>
+                <td>&exist;</td>
+                <td>(&)exist;</td>
+            </tr>
+            <tr>
+                <td>&cup;</td>
+                <td>(&)cup;</td>
+            </tr>
+            <tr>
+                <td>&sub;</td>
+                <td>(&)sub;</td>
+            </tr>
+            <tr>
+                <td>&empty;</td>
+                <td>(&)empty</td>
+            </tr>
+            <tr>
+                <td>&loz;</td>
+                <td>(&)loz;</td>
+            </tr>
+            <tr>
+                <td>&pi;</td>
+                <td>(&)pi;</td>
+            </tr>
+            <tr>
+                <td>&parallel;</td>
+                <td>(&)parallel;</td>
+            </tr>
+            <tr>
+                <td>&fnof;</td>
+                <td>(&)fnof;</td>
+            </tr>
+            <tr>
+                <td>&bull;</td>
+                <td>(&)bull;</td>
+            </tr>
+            <tr>
+                <td>&harr;</td>
+                <td>(&)harr;</td>
+            </tr>
+            <tr>
+                <td>&crarr;</td>
+                <td>(&)crarr;</td>
+            </tr>
+            <tr>
+                <td>&hksearow;</td>
+                <td>(&)cong;</td>
+            </tr>
+            <tr>
+                <td>&bkarow;</td>
+                <td>(&)bkarow;</td>
+            </tr>
+            <tr>
+                <td>&pitchfork;</td>
+                <td>(&)pitchfork;</td>
+            </tr>
+            <tr>
+                <td>&psi;</td>
+                <td>(&)psi;</td>
+            </tr>
+            <tr>
+                <td>&iquest;</td>
+                <td>(&)iquest;</td>
+            </tr>
+            <tr>
+                <td>&raquo;</td>
+                <td>(&)raquo;</td>
+            </tr>
+            <tr>
+                <td>&sect;</td>
+                <td>(&)sect;</td>
+            </tr>
+            <tr>
+                <td>&ncongdot;(?)</td>
+                <td>(&)ncongdot;</td>
+            </tr>
+            <tr>
+                <td>&gnapprox;(!?)</td>
+                <td>(&)gnapprox;</td>
+            </tr>
+        </table>
+    </div>
+    <p>Acabou que esses "alguns" virou um monte!😂🤣. E olha que ainda tem mais... 😐</p>
+
+</div><div id="efect2"></div>
 </body>
 </html>
