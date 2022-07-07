@@ -238,7 +238,7 @@ window.addEventListener('keyup', function(event) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
         console.log('VAI',ps.length, pselected)
-        if (pselected < ps.length - 1 && podeir == true) {
+        if (pselected < ps.length - 1 /*&& podeir == true*/) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
 
@@ -247,7 +247,7 @@ window.addEventListener('keyup', function(event) {
             ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
-        if (pselected >= 1 && podeir == true) {
+        if (pselected >= 1 /*&& podeir == true*/) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
 
@@ -425,7 +425,7 @@ function entrou(thing) {
  
     ps = document.getElementById('main').getElementsByClassName('psearcher')
 
-    podeir = false 
+  //  podeir = false 
 
     if (pselected != -1 && pselected != thing) {
     ps[pselected].style.backgroundColor = 'white'
@@ -440,7 +440,7 @@ function entrou(thing) {
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
-    podeir = true
+    //podeir = true
     pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
