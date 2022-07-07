@@ -437,7 +437,7 @@ function saiu(thing) {
 /*MATERIAL*/
 
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'HTML: Introdução',url:'introducao-html.html'}]},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'Quebras de linha e símbolos',url:'br,símbolos.html'}]},
     {title:'CSS', url:'css-logo.svg'},
     {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
