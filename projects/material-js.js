@@ -1,8 +1,22 @@
 /*PESQUISA*/
 
-var songs = [
-    {word: 'tabelas - html e css', url: 'https://lnkamaki.github.io/Projects/projects/tabelas.html'},
+// Materiais Array
+contents = [
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'Quebras de linha e símbolos',url:'br,símbolos.html'}]},
+    {title:'CSS', url:'css-logo.svg'},
+    {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
+
+var subjects = []
+
+for (i in contents) {
+
+    for (e in contents[i].subs) {
+        console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
+        subjects.push({title1: contents[i].title, title2: contents[i].subs[e].title, url:contents[i].subs[e].url})
+    }
+}
+
 
 // Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
@@ -196,7 +210,7 @@ return newlista
 
 pselected = -1
 podeir = true
-songs = sortWords(songs,'word')
+subjects = sortWords(subjects,'title2')
 
 var songsSearched = []
 
@@ -271,15 +285,15 @@ function search2() {
    document.getElementById('main').removeChild(allps[n])
     }
    opnumbers = 0
-    for (n in songs) {
-        // window.alert(songs[n])
-        // window.alert(songs[n].includes(pesquisa.toLowerCase()))
+    for (n in subjects) {
+        // window.alert(subjects[n])
+        // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
-         if (songs[n].word.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+         if (subjects[n].title2.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
              pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
-             psearcher.innerText = songs[n].word
+             psearcher.innerText = subjects[n].title2
              psearcher.setAttribute('class', 'psearcher')
              psearcher.id = 'a' + n
              psearcher.style.fontWeight = 'bold'
@@ -297,15 +311,15 @@ function search2() {
          }
     }
     if (pesquise.length != 0 && opnumbers == 0) {
-        for (n in songs) {
-            // window.alert(songs[n])
-            // window.alert(songs[n].includes(pesquisa.toLowerCase()))
+        for (n in subjects) {
+            // window.alert(subjects[n])
+            // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
              pesquise = pesquisa.toLowerCase()
-             if (songs[n].word.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+             if (subjects[n].title2.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
                 pnumber++
                 psearcher = document.createElement('p')
                  psearcher.style.position = 'sticky'
-                 psearcher.innerText = songs[n].word
+                 psearcher.innerText = subjects[n].title2
                  psearcher.setAttribute('class', 'psearcher')
                  psearcher.id = 'a' + n
                  psearcher.style.fontWeight = 'bold'
@@ -324,15 +338,15 @@ function search2() {
      
     }
  if (pesquise.length != 0 && opnumbers == 0){
-    for (n in songs) {
-        // window.alert(songs[n])
-        // window.alert(songs[n].includes(pesquisa.toLowerCase()))
+    for (n in subjects) {
+        // window.alert(subjects[n])
+        // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
-         if (songs[n].word.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+         if (subjects[n].title2.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
             pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
-             psearcher.innerText = songs[n].word
+             psearcher.innerText = subjects[n].title2
              psearcher.setAttribute('class', 'psearcher')
              psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
@@ -357,7 +371,7 @@ function search2() {
 // Quando a pesquisa é realizada
 function dothesearch(whichid) {
 
-    document.getElementById('searcher').value = songs[whichid].word
+    document.getElementById('searcher').value = subjects[whichid].title2
     allps = document.getElementsByClassName('psearcher')
     podeir = true
 
@@ -367,7 +381,7 @@ function dothesearch(whichid) {
       // }
     }
 
-    search(songs[whichid].url)
+    search(subjects[whichid].url)
     
     console.log('HERE', document.getElementById('main').style.display)
     document.getElementById('main').style.display = 'none'
@@ -385,8 +399,8 @@ function search(path) {
 
        //document.getElementsByTagName('iframe')[0].src = path
 
-        wordSearched = songs.find(function(songs){
-        return songs.word == pesquisa.toLowerCase()
+        wordSearched = subjects.find(function(subjects){
+        return subjects.title2 == pesquisa.toLowerCase()
        })
       
        //⬜
@@ -435,12 +449,6 @@ function saiu(thing) {
 
 
 /*MATERIAL*/
-
-contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'Quebras de linha e símbolos',url:'br,símbolos.html'}]},
-    {title:'CSS', url:'css-logo.svg'},
-    {title:'JAVASCRIPT', url:'js-logo.svg'},
-]
 
 d = document.createElement('div')
 d.setAttribute('class','container-lg')
