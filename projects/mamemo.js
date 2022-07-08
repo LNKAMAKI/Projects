@@ -211,7 +211,7 @@ function doTheMath(list) {
         personal.setAttribute('class', 'person')
         personal.setAttribute('onclick', 'redo()')
         gr.appendChild(personal)
-        personal.innerHTML = '<img src="gear.png" alt="" id= "f">'
+        personal.innerHTML = '<img src="./imagens/gear.png" alt="" id= "f">'
 
         config = document.createElement('div')
         config.setAttribute('class', 'config')
@@ -1247,14 +1247,14 @@ function sort2(n, p) {
             gear.style.top = 'calc(100% - 112px)'
             
 
-            gear.innerHTML = '<img src="x-mark.png" alt="x-mark" id= "s">'
+            gear.innerHTML = '<img src="./imagens/x-mark.png" alt="x-mark" id= "s">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.visibility = 'visible'
             config.style.opacity = '100'
             config.style.top = '-7px'
 
-                config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <div class= "o"><p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" onchange="change()" id= "cor" > <img src="paint-brush.png" style= "width: 25px; height: 25px;"> <img src="rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb"></div>`
+                config.innerHTML = `<p style= "position: relative; top: -1px;">Esconder o gráfico de pareto:</p><input type="checkbox" onclick= "check()"> <div class= "o"><p style= "padding-top: 5px; position: relative; top: -6px;">Cor das barras:</p> <input type= "color" onchange="change()" id= "cor" > <img src="./imagens/paint-brush.png" style= "width: 25px; height: 25px;"> <img src="./imagens/rainbow-circle.png" style= "width: 30px; height: 30px; position: relative; top: 3px;" onclick= "random()" id="rb"></div>`
                 config.getElementsByTagName('input')[1].value = valueColor
 
                 if (ischeck == true) {
@@ -1306,7 +1306,7 @@ function sort2(n, p) {
 
             gear.style.left = 'calc(100% - 45px)'
             gear.style.top = 'calc(100% - 45px)'
-            gear.innerHTML = '<img src="gear.png" alt="configuration gear" id= "f">'
+            gear.innerHTML = '<img src="./imagens/gear.png" alt="configuration gear" id= "f">'
             config = document.getElementsByClassName('config')[0]
             config.style.transitionDuration = '0.4s'
             config.style.visibility = 'hidden'
