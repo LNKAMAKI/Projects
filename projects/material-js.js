@@ -2,9 +2,9 @@
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'quebras de linha e símbolos',url:'br,símbolos.html'},{title:'h',url:'--'}]},
-    {title:'CSS', url:'css-logo.svg',subs:[{title:'TESTE',url:'--'}]},
-    {title:'JAVASCRIPT', url:'js-logo.svg'},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'quebras de linha e símbolos',url:'br,símbolos.html'}]},
+    {title:'CSS', url:'css-logo.svg',subs:[]},
+    {title:'JAVASCRIPT', url:'js-logo.svg',subs:[]},
 ]
 
 var subjects = []
