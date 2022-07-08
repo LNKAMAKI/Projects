@@ -238,7 +238,7 @@ window.addEventListener('keyup', function(event) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
         console.log('VAI',ps.length, pselected)
-        if (pselected < ps.length - 1 /*&& podeir == true*/) {
+        if (pselected < ps.length - 1 && podeir == true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
 
@@ -247,7 +247,7 @@ window.addEventListener('keyup', function(event) {
             ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
-        if (pselected >= 1 /*&& podeir == true*/) {
+        if (pselected >= 1 && podeir == true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
 
@@ -298,13 +298,17 @@ function search2() {
              psearcher.id = 'a' + n
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-             psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
              psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
-            
+             d = document.createElement('span')
+             //d.innerText = 'o'
+             d.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             d.setAttribute('class','phelp')
 
-             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight: normal";">${pesquise}</span>`)
+             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
              if (pnumber < 7) {
              document.getElementById('main').appendChild(psearcher)
+             document.getElementById('main').getElementsByClassName('psearcher')[n].appendChild(d)
              }
              opnumbers++
              document.getElementById('main').style.display = 'block'
@@ -324,12 +328,17 @@ function search2() {
                  psearcher.id = 'a' + n
                  psearcher.style.fontWeight = 'bold'
                  psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-                 psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+                 //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
                  psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
+                 d = document.createElement('span')
+                 d.setAttribute('onmouseenter', `entrou(${pnumber})`)
+                 //d.innerText = 'o'
+                 d.setAttribute('class','phelp')
 
-                 psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
+                 psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
                  if (pnumber < 7) {
                     document.getElementById('main').appendChild(psearcher)
+                    document.getElementById('main').getElementsByClassName('psearcher')[n].appendChild(d)
                     }
                  opnumbers++
                  document.getElementById('main').style.display = 'block'
@@ -351,12 +360,17 @@ function search2() {
              psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-             psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
              psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
+             d = document.createElement('span')
+             d.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             //d.innerText = 'o'
+             d.setAttribute('class','phelp')
 
-             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight: normal">${pesquise}</span>`)
+             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
              if (pnumber < 7) {
                 document.getElementById('main').appendChild(psearcher)
+                document.getElementById('main').getElementsByClassName('psearcher')[n].appendChild(d)
                 }
              opnumbers++
              document.getElementById('main').style.display = 'block'
@@ -420,16 +434,16 @@ ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 // Quando o mouse entra em uma opção(psearcher)
 function entrou(thing) {
+
     if (document.getElementById('searcher') == document.activeElement) {
-    
- 
     ps = document.getElementById('main').getElementsByClassName('psearcher')
 
     podeir = false 
+    //document.getElementById('searcher').value = 'entrou' + thing + podeir
 
     if (pselected != -1 && pselected != thing) {
-    ps[pselected].style.backgroundColor = 'white'
-    pselected = -1
+        ps[pselected].style.backgroundColor = 'white'
+        pselected = -1
     }
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
@@ -441,6 +455,8 @@ function entrou(thing) {
 function saiu(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
     podeir = true
+    //document.getElementById('searcher').value = 'saiu' + thing + podeir
+
     pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
