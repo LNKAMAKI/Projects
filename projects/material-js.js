@@ -140,7 +140,7 @@ window.addEventListener('keyup', function(event) {
         }
         }
 
-    }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){
+    }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
         console.log('UEPA!')
         dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[pselected].id.replace('a','')))
      
@@ -318,7 +318,7 @@ function dothesearch(whichid) {
     pselected = -1
 }
 
-// Cria o conteúdo
+// Cria o conteúdo(quando é feita a pesquisa)
 function search(path) {
     pesquisa = document.getElementById('searcher').value
 
@@ -402,6 +402,7 @@ d2.setAttribute('class','row justify-content-center')
 d2.setAttribute('name','select-content')
 d.appendChild(d2)
 
+// Cria os bigicons/ícones
 for (i in contents) {
 d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="bg-light" name="icon-img" onclick="mostrarlista(${i})"><img src="./\imagens/${contents[i].url}"> <p>${contents[i].title}</p></div></div>`
 }
@@ -475,6 +476,7 @@ function voltar() {
     layer--
 }
 
+// Cria o iframe
 function criariframe(a,b) {
     
     layer = 2
