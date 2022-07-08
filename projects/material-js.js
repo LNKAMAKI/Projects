@@ -2,7 +2,7 @@
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'Quebras de linha e símbolos',url:'br,símbolos.html'}]},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'quebras de linha e símbolos',url:'br,símbolos.html'},{title:'h',url:'--'}]},
     {title:'CSS', url:'css-logo.svg'},
     {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
@@ -13,7 +13,7 @@ for (i in contents) {
 
     for (e in contents[i].subs) {
         console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
-        subjects.push({title1: contents[i].title, title2: contents[i].subs[e].title, url:contents[i].subs[e].url})
+        subjects.push({title1: contents[i].title.toLowerCase(), title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url})
     }
 }
 
@@ -26,7 +26,7 @@ palavrasNumericas = []
 posicaoPalavras = []
 
 for (palavra in palavrasPrimitivas) {
-    word = palavrasPrimitivas[palavra][s]
+    word = palavrasPrimitivas[palavra][s].toLowerCase()
     wordToNumber = ''
     for (letra = 0; letra < word.length; letra++) {
         if (letra != word.length - 1) {
@@ -222,7 +222,7 @@ function search2() {
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
              if (pnumber < 7) {
              document.getElementById('main').appendChild(psearcher)
-             document.getElementById('main').getElementsByClassName('psearcher')[n].appendChild(d)
+             document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
              }
              opnumbers++
              document.getElementById('main').style.display = 'block'
@@ -252,7 +252,7 @@ function search2() {
                  psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
                  if (pnumber < 7) {
                     document.getElementById('main').appendChild(psearcher)
-                    document.getElementById('main').getElementsByClassName('psearcher')[n].appendChild(d)
+                    document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
                     }
                  opnumbers++
                  document.getElementById('main').style.display = 'block'
@@ -284,7 +284,7 @@ function search2() {
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
              if (pnumber < 7) {
                 document.getElementById('main').appendChild(psearcher)
-                document.getElementById('main').getElementsByClassName('psearcher')[n].appendChild(d)
+                document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
                 }
              opnumbers++
              document.getElementById('main').style.display = 'block'
@@ -309,7 +309,7 @@ function dothesearch(whichid) {
       // }
     }
 
-    search(subjects[whichid].url)
+    search(whichid)
     
     console.log('HERE', document.getElementById('main').style.display)
     document.getElementById('main').style.display = 'none'
@@ -327,6 +327,7 @@ function search(path) {
 
        //document.getElementsByTagName('iframe')[0].src = path
        
+    console.log('VEJA:',subjects[path].title,subjects[path])
 
         wordSearched = subjects.find(function(subjects){
         return subjects.title2 == pesquisa.toLowerCase()
