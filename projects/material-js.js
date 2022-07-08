@@ -25,7 +25,6 @@ function sortWords(palavrasPrimitivas,s) {
 palavrasNumericas = []
 posicaoPalavras = []
 
-
 for (palavra in palavrasPrimitivas) {
     word = palavrasPrimitivas[palavra][s]
     wordToNumber = ''
