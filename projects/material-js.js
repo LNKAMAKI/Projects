@@ -243,7 +243,8 @@ window.addEventListener('keyup', function(event) {
             ps[pselected].style.backgroundColor = 'white'
 
             pselected++
-            //this.window.alert(pselected)
+            //this.document.getElementById('searcher').value = pselected
+        
             ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
@@ -252,7 +253,8 @@ window.addEventListener('keyup', function(event) {
             ps[pselected].style.backgroundColor = 'white'
 
             pselected--
-           // this.window.alert(pselected)
+            //this.document.getElementById('searcher').value = pselected
+           
            ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }
@@ -440,11 +442,12 @@ function entrou(thing) {
 
     podeir = false 
     //document.getElementById('searcher').value = 'entrou' + thing + podeir
-
+    
     if (pselected != -1 && pselected != thing) {
         ps[pselected].style.backgroundColor = 'white'
         pselected = -1
     }
+    document.getElementById('searcher').value += 'thing' + thing
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
     
@@ -455,7 +458,7 @@ function entrou(thing) {
 function saiu(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
     podeir = true
-    //document.getElementById('searcher').value = 'saiu' + thing + podeir
+    document.getElementById('searcher').value = 'saiu' + thing + podeir
 
     pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
