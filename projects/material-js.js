@@ -126,8 +126,6 @@ newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
 return newlista
 }
 
-
-
 pselected = -1
 podeir = true
 subjects = sortWords(subjects,'title2')
@@ -334,6 +332,7 @@ function search(path) {
     songsSearched.unshift(pesquisa.toLowerCase())
 
        //document.getElementsByTagName('iframe')[0].src = path
+       
 
         wordSearched = subjects.find(function(subjects){
         return subjects.title2 == pesquisa.toLowerCase()
