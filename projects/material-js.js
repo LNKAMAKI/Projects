@@ -13,7 +13,7 @@ for (i in contents) {
 
     for (e in contents[i].subs) {
         console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
-        subjects.push({title1: contents[i].title.toLowerCase(), title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url})
+        subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
     }
 }
 
@@ -327,8 +327,18 @@ function search(path) {
 
        //document.getElementsByTagName('iframe')[0].src = path
        
-    console.log('VEJA:',subjects[path].title,subjects[path])
+    console.log('VEJA:',subjects[path].title1,subjects[path])
 
+    if (layer == 0) {
+        //window.alert('ok')
+        //window.alert(subjects[path].title1,subjects[path].index)
+        mostrarlista(subjects[path].title1)
+        criariframe(subjects[path].title1,subjects[path].index)
+    }else if(layer == 1){
+        criariframe(subjects[path].title1,subjects[path].index)
+        document.getElementsByClassName('cont')[0].getElementsByClassName('ps2')[0].innerText = contents[subjects[path].title1].title
+        qualicon = subjects[path].title1
+    }
         wordSearched = subjects.find(function(subjects){
         return subjects.title2 == pesquisa.toLowerCase()
        })
@@ -457,7 +467,7 @@ function voltar() {
         ps.setAttribute('onclick',`criariframe(${qualicon},${f})`)
         list.appendChild(ps)
         }
-        
+
     }else if(layer == 1){
     container.removeChild(dv)
     bigicons.style.display = 'flex'
