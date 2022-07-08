@@ -3,7 +3,7 @@
 // Materiais Array
 contents = [
     {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'introducao-html.html'},{title:'quebras de linha e símbolos',url:'br,símbolos.html'},{title:'h',url:'--'}]},
-    {title:'CSS', url:'css-logo.svg'},
+    {title:'CSS', url:'css-logo.svg',subs:[{title:'TESTE',url:'--'}]},
     {title:'JAVASCRIPT', url:'js-logo.svg'},
 ]
 
@@ -425,13 +425,13 @@ bigicons.style.display = 'none'
     list.setAttribute('class','names')
    
     dv.appendChild(list)
-    for (f in contents[which1].subs) {
+    for (f in contents[qualicon].subs) {
     ps = document.createElement('p')
-    ps.innerText = contents[which1].subs[f].title
+    ps.innerText = contents[qualicon].subs[f].title
     ps.setAttribute('class', 'ps')
     
    
-    ps.setAttribute('onclick',`criariframe(${which1},${f})`)
+    ps.setAttribute('onclick',`criariframe(${qualicon},${f})`)
     list.appendChild(ps)
     }
    
@@ -441,9 +441,23 @@ layer = 0
 function voltar() {
     if (layer == 2) {
       
-        listsubs.style.display = 'block'
         dv.removeChild(dv.getElementsByClassName('pt')[0])
         dv.removeChild(dv.getElementsByTagName('iframe')[0])
+        
+        list = document.createElement('div')
+        list.setAttribute('class','names')
+       
+        dv.appendChild(list)
+        for (f in contents[qualicon].subs) {
+        ps = document.createElement('p')
+        ps.innerText = contents[qualicon].subs[f].title
+        ps.setAttribute('class', 'ps')
+        
+       
+        ps.setAttribute('onclick',`criariframe(${qualicon},${f})`)
+        list.appendChild(ps)
+        }
+        
     }else if(layer == 1){
     container.removeChild(dv)
     bigicons.style.display = 'flex'
@@ -452,14 +466,17 @@ function voltar() {
 }
 
 function criariframe(a,b) {
+    
     layer = 2
    
     cont = document.getElementsByClassName('cont')[0]
     listsubs = document.getElementsByClassName('names')[0]
+
+    listsubs.parentNode.removeChild(listsubs)
+    
     
    //cont.getElementsByClassName('ps2')[0].innerText = contents[a].subs[b].title
    //cont.getElementsByClassName('ps2')[0].style.fontWeight = 'bold'
-    listsubs.style.display = 'none'
     
     p = document.createElement('p')
     p.innerText =  contents[a].subs[b].title
