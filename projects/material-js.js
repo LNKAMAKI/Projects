@@ -110,13 +110,7 @@ for (pNumber in palavrasNumericas) {
                     posicaoPalavras[n] = wordposition
                   }else{
                       pare = false
-                  }
-               }
-           }
-        }
-    }
-}
-
+                  }}}}}}
 
 newlista = []
 for (p in palavrasNumericas) {
