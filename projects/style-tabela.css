@@ -14,7 +14,7 @@ main {
     font-size: 1.5em;
      font-family: 'Time';
      display: block;
-     margin: 5px 0px;
+     margin: 15px 0px 5px 0px;
 }
 h2{
  font-size: 35px;
@@ -29,7 +29,7 @@ div#fontypes {
     background-color: white ;
     margin: auto;
     max-width: 880px;
-    padding: 10px;
+    padding: 0px 10px 10px 10px;
     height: fit-content;
     font: italic bold 0.4cm Arial;
     margin-bottom: 0px;
@@ -119,6 +119,8 @@ div#d {
     padding: 10px;
     text-align: center;
     max-width: 550px;
+    margin-bottom: 5px;
+    display: block;
 }
 ul {
     list-style-position: inside;
