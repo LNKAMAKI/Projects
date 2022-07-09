@@ -1060,6 +1060,9 @@ function ir() {
              return repetido.monum == u
              }).letr += `.${monomios[u].numero[e]}`
             
+             console.log('LOOK AT THIS =============',repetido.find(function(repetido) {
+                return repetido.monum == u
+                }).letr)
          }
              //reps.push(monomios[u].numero[e])
            
@@ -6307,6 +6310,9 @@ numerinhos.push(correto[decisao])
              repetido.find(function(repetido) {
                  return repetido.monum == u
                  }).letr += `.${monomios[u].numero[e]}`
+                 console.log('LOOK AT THIS =============',repetido.find(function(repetido) {
+                    return repetido.monum == u
+                    }).letr)
                 
              }
                  //reps.push(monomios[u].numero[e])
