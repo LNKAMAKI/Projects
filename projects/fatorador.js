@@ -1158,7 +1158,7 @@ function ir() {
 
                         }else{
                             console.log('______________________>>>>>>>>>>>>>>>---------', repetido[moe].letr)
-                            segs.push({car: repetido[moe].letr, mons: [m]})
+                           // segs.push({car: repetido[moe].letr, mons: [m]})
 
                             splitUp(repetido[moe].letr)
                             function splitUp(str) {
@@ -1167,10 +1167,12 @@ function ir() {
                                     
                                     if (str[i] == '.' && estado != '-') {
                                         console.log('OPA',estado)
+                                        segs.push({car: estado, mons: [m]})
                                     }
                                     estado+= str[i]
                                     if (i == str.length - 1) {
                                         console.log('OPA',estado)
+                                        segs.push({car: estado, mons: [m]})
                                     }
                                 }
                                 }
