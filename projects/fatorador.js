@@ -1333,7 +1333,7 @@ function ir() {
        }
        
        ////
-       segs = grtols
+      // segs = grtols
        
       
        //DIVS
@@ -6610,7 +6610,7 @@ if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
            }
            
            ////
-           segs = grtols
+          // segs = grtols
            
           
            //DIVS
