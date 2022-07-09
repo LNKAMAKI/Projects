@@ -1018,55 +1018,55 @@ function ir() {
                            return repetido.monum == u
                            }) === undefined) {
        
-                               ocs2.find(function(ocs2) {
-                                   return ocs2.ed == monomios[m].numero[oc]
-                                   }).el++
+ ocs2.find(function(ocs2) {
+     return ocs2.ed == monomios[m].numero[oc]
+     }).el++
        
                            
        
                             
        
-                                   if (ocs2.find(function(ocs2) {
-                                       return ocs2.ed == monomios[m].numero[oc]
-                                       }).el <= ocs) {
+     if (ocs2.find(function(ocs2) {
+         return ocs2.ed == monomios[m].numero[oc]
+         }).el <= ocs) {
        
-                                           
+             
                        repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
        
                       
        
-                                   }
+     }
        
                        //reps.push({mns: [u, m],alg: monomios[u].numero[e])
                       // reps.push(monomios[u].numero[e])
                            }else{
-                               //
-                              // if (repetido.find(function(repetido) {
-                                  // return repetido.monum == u
-                                  // }).letr.indexOf(monomios[u].numero[e]) == -1) {
+ //
+// if (repetido.find(function(repetido) {
+    // return repetido.monum == u
+    // }).letr.indexOf(monomios[u].numero[e]) == -1) {
        
-                                       ocs2.find(function(ocs2) {
-                                           return ocs2.ed == monomios[m].numero[oc]
-                                           }).el++
+         ocs2.find(function(ocs2) {
+             return ocs2.ed == monomios[m].numero[oc]
+             }).el++
        
-                                    
-                                          
+      
+            
        
-                                               if (ocs2.find(function(ocs2) {
-                                                   return ocs2.ed == monomios[m].numero[oc]
-                                                   }).el <= ocs) {
-                                          
-                                       repetido.find(function(repetido) {
-                                           return repetido.monum == u
-                                           }).letr += `.${monomios[u].numero[e]}`
-                                          
-                                       }
-                                           //reps.push(monomios[u].numero[e])
+                 if (ocs2.find(function(ocs2) {
+                     return ocs2.ed == monomios[m].numero[oc]
+                     }).el <= ocs) {
+            
+         repetido.find(function(repetido) {
+             return repetido.monum == u
+             }).letr += `.${monomios[u].numero[e]}`
+            
+         }
+             //reps.push(monomios[u].numero[e])
            
                      
-                                  // }else{
-                                       ////
-                                 // }
+    // }else{
+         ////
+   // }
                            }
                        
                        //
@@ -1152,9 +1152,9 @@ function ir() {
        
                          
                           if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                              
+
                         }else{
-                               segs.push({car: repetido[moe].letr, mons: [m]})
+ segs.push({car: repetido[moe].letr, mons: [m]})
                            }
                      
                       
@@ -1164,7 +1164,7 @@ function ir() {
                            
                            segs[qual].mons.push(m)
        
-                               
+ 
                    }
                }
                
@@ -1379,11 +1379,11 @@ function ir() {
                            if(segs[anchor].car[fall] != '.') {
                            lpisthebest = segs[anchor].car[fall]
                            }else{
-                               if (segs[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
-                               lpisthebest = '*'
-                               }else{
-                                   lpisthebest = ''
-                               }
+ if (segs[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
+ lpisthebest = '*'
+ }else{
+     lpisthebest = ''
+ }
                            }
                       //
                        }
@@ -1441,9 +1441,9 @@ function ir() {
                            right = ''
                            for (feet in pain) {
                              //  
-                               if (pain[feet] != '+') {
-                                   right+= pain[feet]
-                               }
+ if (pain[feet] != '+') {
+     right+= pain[feet]
+ }
                            }
                         //   
                           
@@ -1461,7 +1461,7 @@ function ir() {
                            }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
                           //
                            }else{
-                               uy+= right[xarope]
+ uy+= right[xarope]
                            }
                           }
                           
@@ -1470,8 +1470,8 @@ function ir() {
                           if (uy[0] == '-') {
                            holdon = ''
                            for (qual in uy) { 
-                               if (uy[qual] != '-')
-                               holdon+= uy[qual]
+ if (uy[qual] != '-')
+ holdon+= uy[qual]
                            }
                            
                            uy = holdon
@@ -1832,10 +1832,10 @@ e = [...roller]
                           // 
                            if (sendocomparado[0] != comparador[0]) {
                              //  
-                               igualar.push(true)
+ igualar.push(true)
                            }else{
-                              // 
-                               igualar.push(false)
+// 
+ igualar.push(false)
                            }
                        }
                       // 
@@ -1890,8 +1890,8 @@ e = [...roller]
                            
                            modificar = ['-','.']
                            for (saved in lista) {
-                              // 
-                               modificar.push(lista[saved])
+// 
+ modificar.push(lista[saved])
                            }
                           // 
                            scarecrow[arranjar[presa].origin].divisor = modificar
@@ -1985,11 +1985,11 @@ e = [...roller]
                              roller.push({rept: repwri,opl:[...repeated],position:[eep,quad]})
                          }else{
                              if (roller.find(function(roller) {
-                                 return roller.rept == repwri
+   return roller.rept == repwri
                              }).position.indexOf(eep) == -1) {
      
                              roller.find(function(roller) {
-                                 return roller.rept == repwri
+   return roller.rept == repwri
                              }).position.push(eep)
                          }
      
@@ -2039,9 +2039,9 @@ e = [...roller]
                          for (denovo in podeser[idk].opl) {
                              
                              if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                                // 
+  // 
                              }else{
-                                 esigual = false
+   esigual = false
                              }
                          }
                          if (esigual == true) {
@@ -2118,12 +2118,12 @@ e = [...roller]
                          fi = ''
                          for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
                              if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
-                                 fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
+   fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
                              }
                          }
                         // 
                          if (yehaa != 0) {
-                              ficaassim += ` - ${fi}`
+ficaassim += ` - ${fi}`
                          }else{
                              ficaassim += `-${fi}`
                          }
@@ -2254,42 +2254,42 @@ e = [...roller]
                        for (estudar in eg2) {
                       
                            if (eg2[estudar] == '.') {
-                               teri = true
-                               if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
-                                 
-                                   whythat.push(juntar)
-                                   juntar = ''
-                               whythat.push('*')
-                              
-                               }
+ teri = true
+ if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
+   
+     whythat.push(juntar)
+     juntar = ''
+ whythat.push('*')
+
+ }
                            }else{
-                              
+
                           
                         
-                               if (juntar.length == 0) {
-                                   juntar = eg2[estudar]
+ if (juntar.length == 0) {
+     juntar = eg2[estudar]
                              
-                                   if (estudar == eg2.length - 1) {
-                                       whythat.push(juntar)
-                                  
-                                   }
+     if (estudar == eg2.length - 1) {
+         whythat.push(juntar)
+    
+     }
        
-                               }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                              
-                                   juntar+= eg2[estudar]
-                              
-                                   if (estudar == eg2.length - 1) {
-                                  
-                                       whythat.push(juntar)
-                                   
-                                   }
-                               }else{
-                                   whythat.push(juntar)
-                                   juntar= eg2[estudar]
-                                   if (estudar == eg2.length - 1) {
-                                       whythat.push(juntar)
-                                   }
-                               }
+ }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
+
+     juntar+= eg2[estudar]
+
+     if (estudar == eg2.length - 1) {
+    
+         whythat.push(juntar)
+     
+     }
+ }else{
+     whythat.push(juntar)
+     juntar= eg2[estudar]
+     if (estudar == eg2.length - 1) {
+         whythat.push(juntar)
+     }
+ }
                            }
                              
                         }
@@ -2300,7 +2300,7 @@ e = [...roller]
                            whythat.push(eg2[t])
                            }
                            for (t in eg) {
-                               whythat.push(eg[t])
+ whythat.push(eg[t])
                            }
                        }
        
@@ -2310,9 +2310,9 @@ e = [...roller]
                        numerinhos = []
                        for (decisao in correto) {
                            if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
-                              numerinhos.push(correto[decisao])
-                              
-                               }
+numerinhos.push(correto[decisao])
+
+ }
                       
                        }
                       
@@ -2320,22 +2320,22 @@ e = [...roller]
        
        
                            for (poder in whythat){
-                               if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
+ if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
                           
                           
-                               numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
+ numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
        
-                               }
+ }
                            }
        
                            for (pombo = whythat.length - 1; pombo >= 0; pombo--){
                           
-                               if (whythat[pombo] == '*' || whythat[pombo] == '1') {
-                              
-                                   whythat.splice(pombo,1)
+ if (whythat[pombo] == '*' || whythat[pombo] == '1') {
+
+     whythat.splice(pombo,1)
                              
-                               }
-                               
+ }
+ 
                            }
        
                       
@@ -2354,7 +2354,7 @@ e = [...roller]
        
                            if (numerinhos.length == 0 && thatway.length == whythat.length) {
                           
-                               conseguiu = true
+ conseguiu = true
                            }
                        }
                        older++
@@ -2400,8 +2400,8 @@ e = [...roller]
                        for (sofar in youdumb[armenia].mons) {
                       
                            if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
-                               doeshave = false
-                              
+ doeshave = false
+
                            }
                        }
                   
@@ -2743,7 +2743,7 @@ e = [...roller]
                       
        
                            if (estudar == el.length - 1) {
-                               quase.push(juntar)
+ quase.push(juntar)
                            }
        
                        }else if(el[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
@@ -2752,13 +2752,13 @@ e = [...roller]
                       
                            if (estudar == el.length - 1) {
                           
-                               quase.push(juntar)
+ quase.push(juntar)
                            }
                        }else{
                            quase.push(juntar)
                            juntar= el[estudar]
                            if (estudar == el.length - 1) {
-                               quase.push(juntar)
+ quase.push(juntar)
                            }
                        }
                    }
@@ -2809,16 +2809,16 @@ e = [...roller]
        
                            if (patience == quase.length - 1) {
                              //  
-                               aconta+= `^${elevar}`
-                              // 
+ aconta+= `^${elevar}`
+// 
                            }
        
                        }else{
                          
                            if (elevar > 1) {
-                              // 
-                               aconta+= `^${elevar}`
-                               
+// 
+ aconta+= `^${elevar}`
+ 
                            }
        
                            aconta+= quase[patience]
@@ -2875,8 +2875,8 @@ e = [...roller]
                        for (member in aconta) {
                            
                            if (aconta[member] != '-') {
-                              // 
-                               mood+= aconta[member]
+// 
+ mood+= aconta[member]
                            }
                        }
                        
@@ -2974,7 +2974,7 @@ e = [...roller]
                           // 
        
                            if (estudar == triste.length - 1) {
-                               quase.push(juntar)
+ quase.push(juntar)
                            }
                           // 
        
@@ -2985,14 +2985,14 @@ e = [...roller]
                         //   
                            if (estudar == triste.length - 1) {
                             //  
-                               quase.push(juntar)
+ quase.push(juntar)
                             //   
                            }
                        }else{
                            quase.push(juntar)
                            juntar= triste[estudar]
                            if (estudar == triste.length - 1) {
-                               quase.push(juntar)
+ quase.push(juntar)
                              //  
                            }
                        }
@@ -3043,16 +3043,16 @@ e = [...roller]
                            elevar++
        
                            if (patience == quase.length - 1) {
-                               
-                               aconta+= `^${elevar}`
-                               
+ 
+ aconta+= `^${elevar}`
+ 
                            }
        
                        }else{
                            if (elevar > 1) {
                              
-                               aconta+= `^${elevar}`
-                               
+ aconta+= `^${elevar}`
+ 
                            }
        
                            aconta+= quase[patience]
@@ -3528,9 +3528,9 @@ e = [...roller]
                            var leng = yposition.length
        
                            for (c = 0; c < itens; c++) {
-                               maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
-                               posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
-                               leng--
+ maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+ posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+ leng--
                            }
                            maiorparamenor[volume] = yposition[item][pam]
                            posiçõesnumeros[volume] = Number(item)
@@ -5636,7 +5636,7 @@ e = [...roller]
                            ground = ''
                            ground += carac
                            if (b == monomios[ji[bye].quais[misery]].numero.length - 1) {
-                               comofica.push(ground)
+ comofica.push(ground)
                            }
                        }
                    }
@@ -6263,59 +6263,59 @@ e = [...roller]
                          //  
            
                            if (repetido.find(function(repetido) {
-                               return repetido.monum == u
-                               }) === undefined) {
+ return repetido.monum == u
+ }) === undefined) {
            
-                                   ocs2.find(function(ocs2) {
-                                       return ocs2.ed == monomios[m].numero[oc]
-                                       }).el++
+     ocs2.find(function(ocs2) {
+         return ocs2.ed == monomios[m].numero[oc]
+         }).el++
            
-                               
+ 
            
-                                
+  
            
-                                       if (ocs2.find(function(ocs2) {
-                                           return ocs2.ed == monomios[m].numero[oc]
-                                           }).el <= ocs) {
+         if (ocs2.find(function(ocs2) {
+             return ocs2.ed == monomios[m].numero[oc]
+             }).el <= ocs) {
            
-                                               
+                 
                            repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
            
                           
            
-                                       }
+         }
            
                            //reps.push({mns: [u, m],alg: monomios[u].numero[e])
                           // reps.push(monomios[u].numero[e])
-                               }else{
-                                   //
-                                  // if (repetido.find(function(repetido) {
-                                      // return repetido.monum == u
-                                      // }).letr.indexOf(monomios[u].numero[e]) == -1) {
+ }else{
+     //
+    // if (repetido.find(function(repetido) {
+        // return repetido.monum == u
+        // }).letr.indexOf(monomios[u].numero[e]) == -1) {
            
-                                           ocs2.find(function(ocs2) {
-                                               return ocs2.ed == monomios[m].numero[oc]
-                                               }).el++
+             ocs2.find(function(ocs2) {
+                 return ocs2.ed == monomios[m].numero[oc]
+                 }).el++
            
-                                        
-                                              
+          
+                
            
-                                                   if (ocs2.find(function(ocs2) {
-                                                       return ocs2.ed == monomios[m].numero[oc]
-                                                       }).el <= ocs) {
-                                              
-                                           repetido.find(function(repetido) {
-                                               return repetido.monum == u
-                                               }).letr += `.${monomios[u].numero[e]}`
-                                              
-                                           }
-                                               //reps.push(monomios[u].numero[e])
+                     if (ocs2.find(function(ocs2) {
+                         return ocs2.ed == monomios[m].numero[oc]
+                         }).el <= ocs) {
+                
+             repetido.find(function(repetido) {
+                 return repetido.monum == u
+                 }).letr += `.${monomios[u].numero[e]}`
+                
+             }
+                 //reps.push(monomios[u].numero[e])
                
                          
-                                      // }else{
-                                           ////
-                                     // }
-                               }
+        // }else{
+             ////
+       // }
+ }
                            
                            //
                            //
@@ -6370,27 +6370,27 @@ e = [...roller]
                        
                             array1 = []
                             for (d in segs[meow].car) {
-                                array1.push(segs[meow].car[d])
+  array1.push(segs[meow].car[d])
                             }
         
                             array2 = []
                             for (d in repetido[moe].letr) {
-                                array2.push(repetido[moe].letr[d])
+  array2.push(repetido[moe].letr[d])
                             }
         
                             if (segs[meow].car.length < repetido[moe].letr.length) {
         
-                                divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
+  divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
                            // 
                              }else{
-                                 divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
+   divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
                           //  
                              }
         
                              if (divisao == '' || divisao == '-') {
-                              //  
-                                podeir = false
-                                qual = meow
+//  
+  podeir = false
+  qual = meow
                              }
                           
                       }
@@ -6399,20 +6399,20 @@ e = [...roller]
                        if (podeir == true) {
            
                             // 
-                              if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                                  
+if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
+    
                             }else{
-                                   segs.push({car: repetido[moe].letr, mons: [m]})
-                               }
+     segs.push({car: repetido[moe].letr, mons: [m]})
+ }
                          
                           
            
                        }else if(segs[qual].mons.indexOf(m) == -1){
                          
-                               
-                               segs[qual].mons.push(m)
+ 
+ segs[qual].mons.push(m)
            
-                                   
+     
                        }
                    }
                    
@@ -6615,28 +6615,28 @@ e = [...roller]
                        lpisthebest = ''
                            for (fall in segs[anchor].car) {
                            if (lpisthebest.length == 0) {
-                               
-                               lpisthebest = segs[anchor].car[fall]
-                               
+ 
+ lpisthebest = segs[anchor].car[fall]
+ 
                            }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
-                               
-                               lpisthebest += segs[anchor].car[fall]
+ 
+ lpisthebest += segs[anchor].car[fall]
                            }else{
-                               
-                               army.push(lpisthebest)
-                               if(segs[anchor].car[fall] != '.') {
-                               lpisthebest = segs[anchor].car[fall]
-                               }else{
-                                   if (segs[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
-                                   lpisthebest = '*'
-                                   }else{
-                                       lpisthebest = ''
-                                   }
-                               }
+ 
+ army.push(lpisthebest)
+ if(segs[anchor].car[fall] != '.') {
+ lpisthebest = segs[anchor].car[fall]
+ }else{
+     if (segs[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
+     lpisthebest = '*'
+     }else{
+         lpisthebest = ''
+     }
+ }
                           //
                            }
                            if (fall == segs[anchor].car.length - 1) {
-                               army.push(lpisthebest)
+ army.push(lpisthebest)
                            }
                        }
                        bell = [...army]
@@ -6647,7 +6647,7 @@ e = [...roller]
                        for (pahh in army) {
                           // 
                            if (army[pahh] == '*') {
-                               army[pahh] = '.'
+ army[pahh] = '.'
                            }
                        }
                        scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
@@ -6667,64 +6667,64 @@ e = [...roller]
                           
                           if (lightson.indexOf('-') != -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') == -1) {
            
-                              pain = '-1'
+pain = '-1'
                              // 
-                              scarecrow[anchor].divididos.push('1')
-                               scarecrow[anchor].outrodiv.push(pain)
+scarecrow[anchor].divididos.push('1')
+ scarecrow[anchor].outrodiv.push(pain)
                           }else if(lightson.indexOf('-') == -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') != -1) {
-                              
-                               pain = '-1'
+
+ pain = '-1'
                              //  
-                               scarecrow[anchor].divididos.push('1')
-                               scarecrow[anchor].outrodiv.push(pain)
+ scarecrow[anchor].divididos.push('1')
+ scarecrow[anchor].outrodiv.push(pain)
                           }else{
                            pain = '1'
                            scarecrow[anchor].divididos.push(pain)
-                               scarecrow[anchor].outrodiv.push(pain)
+ scarecrow[anchor].outrodiv.push(pain)
                           }
                            
            
                            }else{
                    
-                               right = ''
-                               for (feet in pain) {
-                                 //  
-                                   if (pain[feet] != '+') {
-                                       right+= pain[feet]
-                                   }
-                               }
+ right = ''
+ for (feet in pain) {
+   //  
+     if (pain[feet] != '+') {
+         right+= pain[feet]
+     }
+ }
                             //   
-                              
-                               uy = ''
+
+ uy = ''
                              //  
            
-                              for (xarope in right) {
+for (xarope in right) {
                             //   
-                               if (xarope == 0 && right[xarope] == '*') { // *2
-                              //   
-                               }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
+ if (xarope == 0 && right[xarope] == '*') { // *2
+//   
+ }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
                              // 
-                               }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
+ }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
                             //  
-                               }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
-                              //
-                               }else{
-                                   uy+= right[xarope]
-                               }
-                              }
-                              
-                              scarecrow[anchor].outrodiv.push(uy)
+ }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
+//
+ }else{
+     uy+= right[xarope]
+ }
+}
+
+scarecrow[anchor].outrodiv.push(uy)
            
-                              if (uy[0] == '-') {
-                               holdon = ''
-                               for (qual in uy) { 
-                                   if (uy[qual] != '-')
-                                   holdon+= uy[qual]
-                               }
-                               
-                               uy = holdon
-                              }
-                              scarecrow[anchor].divididos.push(uy)
+if (uy[0] == '-') {
+ holdon = ''
+ for (qual in uy) { 
+     if (uy[qual] != '-')
+     holdon+= uy[qual]
+ }
+ 
+ uy = holdon
+}
+scarecrow[anchor].divididos.push(uy)
                            }
                           
                        }
@@ -6810,11 +6810,11 @@ e = [...roller]
                            roller.push({rept: repwri,opl:[...repeated],position:[eep,quad]})
                        }else{
                            if (roller.find(function(roller) {
-                               return roller.rept == repwri
+ return roller.rept == repwri
                            }).position.indexOf(eep) == -1) {
    
                            roller.find(function(roller) {
-                               return roller.rept == repwri
+ return roller.rept == repwri
                            }).position.push(eep)
                        }
    
@@ -6864,9 +6864,9 @@ e = [...roller]
                        for (denovo in podeser[idk].opl) {
                            
                            if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                              // 
+// 
                            }else{
-                               esigual = false
+ esigual = false
                            }
                        }
                        if (esigual == true) {
@@ -6943,7 +6943,7 @@ e = [...roller]
                        fi = ''
                        for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
                            if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
-                               fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
+ fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
                            }
                        }
                       // 
@@ -7005,7 +7005,7 @@ e = [...roller]
                            
                            if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
                              //  
-                               igual++
+ igual++
                            }
                        }
                       // 
@@ -7013,11 +7013,11 @@ e = [...roller]
                           // 
                              // 
            
-                              if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
-                               
+if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
+ 
                            }else{
                              //  
-                               roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
+ roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
                            }
                        }
                          // 
@@ -7075,23 +7075,23 @@ e = [...roller]
                            equals = true
                            igualar =[]
                            for (boring in arranjar[calor].ocupa) {
-                               sendocomparado = arranjar[calor].ocupa[boring]
-                               comparador= arranjar[tosse].ocupa[boring]
+ sendocomparado = arranjar[calor].ocupa[boring]
+ comparador= arranjar[tosse].ocupa[boring]
                              //  
-                              // 
-                               if (sendocomparado[0] != comparador[0]) {
-                                 //  
-                                   igualar.push(true)
-                               }else{
-                                  // 
-                                   igualar.push(false)
-                               }
+// 
+ if (sendocomparado[0] != comparador[0]) {
+   //  
+     igualar.push(true)
+ }else{
+    // 
+     igualar.push(false)
+ }
                            }
                           // 
                            if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
-                               
-                               jafoi.push(calor)
-                               organizer.agrupar.push(calor)
+ 
+ jafoi.push(calor)
+ organizer.agrupar.push(calor)
            
                            }
                        }
@@ -7120,12 +7120,12 @@ e = [...roller]
                            vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
                           // 
                            if (vaiir != ficarassim[moon]) {
-                               diferente = true
+ diferente = true
            
-                               
-                              
+ 
+
            
-                              scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
+scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
                            }
                
                          
@@ -7136,16 +7136,16 @@ e = [...roller]
            
                            lista = scarecrow[arranjar[presa].origin].divisor
                            if (lista != '-') {
-                               
-                               modificar = ['-','.']
-                               for (saved in lista) {
-                                  // 
-                                   modificar.push(lista[saved])
-                               }
-                              // 
-                               scarecrow[arranjar[presa].origin].divisor = modificar
+ 
+ modificar = ['-','.']
+ for (saved in lista) {
+    // 
+     modificar.push(lista[saved])
+ }
+// 
+ scarecrow[arranjar[presa].origin].divisor = modificar
                            }else{
-                               lista.splice(0,2)
+ lista.splice(0,2)
                            }
                        }
                    }
@@ -7227,26 +7227,26 @@ e = [...roller]
                             // console.log('repetido:',repeated,'repwri',repwri)
                           
                              if (roller.find(function(roller) {
-                                 return roller.rept == repwri
+   return roller.rept == repwri
                              }) == undefined) {
-                                // console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
-                                 roller.push({rept: repwri,opl:[...repeated],position:[eep,quad]})
+  // console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
+   roller.push({rept: repwri,opl:[...repeated],position:[eep,quad]})
                              }else{
-                                 if (roller.find(function(roller) {
-                                     return roller.rept == repwri
-                                 }).position.indexOf(eep) == -1) {
+   if (roller.find(function(roller) {
+       return roller.rept == repwri
+   }).position.indexOf(eep) == -1) {
          
-                                 roller.find(function(roller) {
-                                     return roller.rept == repwri
-                                 }).position.push(eep)
+   roller.find(function(roller) {
+       return roller.rept == repwri
+   }).position.push(eep)
                              }
          
                              if (roller.find(function(roller) {
-                                 return roller.rept == repwri
+   return roller.rept == repwri
                              }).position.indexOf(quad) == -1) {
-                                 
+   
                              roller.find(function(roller) {
-                                 return roller.rept == repwri
+   return roller.rept == repwri
                              }).position.push(quad)
                          }
          
@@ -7275,7 +7275,7 @@ e = [...roller]
            
                              if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
                              
-                                 presentes.push(fatorzinho)
+   presentes.push(fatorzinho)
                              }
                          }
                          
@@ -7285,16 +7285,16 @@ e = [...roller]
                             // 
                              esigual = true
                              for (denovo in podeser[idk].opl) {
-                                 
-                                 if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                                    // 
-                                 }else{
-                                     esigual = false
-                                 }
+   
+   if (podeser[idk].opl[denovo] == presentes[denovo]) {
+      // 
+   }else{
+       esigual = false
+   }
                              }
                              if (esigual == true) {
-                                // podeser[idk].position.push(outro)
-                                 adicionou = true
+  // podeser[idk].position.push(outro)
+   adicionou = true
                              }
                          }
                          if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
@@ -7365,15 +7365,15 @@ e = [...roller]
                              
                              fi = ''
                              for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
-                                 if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
-                                     fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
-                                 }
+   if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
+       fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
+   }
                              }
                             // 
                              if (yehaa != 0) {
-                                  ficaassim += ` - ${fi}`
+    ficaassim += ` - ${fi}`
                              }else{
-                                 ficaassim += `-${fi}`
+   ficaassim += `-${fi}`
                              }
                          }else if(yehaa != 0){
                              ficaassim += ' + '
@@ -7438,7 +7438,7 @@ e = [...roller]
                            if (still != 0) {
                            mylife+= ' + ' + miss[roll[raging].posições[still2]].dividido
                            }else{
-                               mylife+= miss[roll[raging].posições[still2]].dividido
+ mylife+= miss[roll[raging].posições[still2]].dividido
                            }
            
                          
@@ -7461,26 +7461,26 @@ e = [...roller]
                            eassim = []
                            solo = ''
                            for (ne in eg) {
-                               
-                               if (eg[ne] != '.') {
+ 
+ if (eg[ne] != '.') {
                            if (solo.length == 0) {
-                               
-                               solo+= eg[ne]
+ 
+ solo+= eg[ne]
                            }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-                               
-                               solo+= eg[ne]
+ 
+ solo+= eg[ne]
                            }else{
-                               eassim.push(solo)
-                               solo = ''
-                               solo += eg[ne]
-                               
+ eassim.push(solo)
+ solo = ''
+ solo += eg[ne]
+ 
                            }
                            if (ne == eg.length - 1) {
-                               eassim.push(solo)
+ eassim.push(solo)
                            }
-                               }else{
-                              
-                               }
+ }else{
+
+ }
                            }
                            
                            eg = eassim
@@ -7491,65 +7491,65 @@ e = [...roller]
                          /*
                            for (ponto in eg2) {
                              //  
-                               if (eg2[ponto] != '.') {
-                               whythat.push(eg2[ponto])
+ if (eg2[ponto] != '.') {
+ whythat.push(eg2[ponto])
                              //  
-                               }
+ }
                            }
                            */
                           teri = false
                            juntar = ''
                            for (estudar in eg2) {
                           
-                               if (eg2[estudar] == '.') {
-                                   teri = true
-                                   if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
-                                     
-                                       whythat.push(juntar)
-                                       juntar = ''
-                                   whythat.push('*')
-                                  
-                                   }
-                               }else{
-                                  
-                              
+ if (eg2[estudar] == '.') {
+     teri = true
+     if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
+       
+         whythat.push(juntar)
+         juntar = ''
+     whythat.push('*')
+    
+     }
+ }else{
+    
+
                             
-                                   if (juntar.length == 0) {
-                                       juntar = eg2[estudar]
-                                 
-                                       if (estudar == eg2.length - 1) {
-                                           whythat.push(juntar)
-                                      
-                                       }
+     if (juntar.length == 0) {
+         juntar = eg2[estudar]
+   
+         if (estudar == eg2.length - 1) {
+             whythat.push(juntar)
+        
+         }
            
-                                   }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                                  
-                                       juntar+= eg2[estudar]
-                                  
-                                       if (estudar == eg2.length - 1) {
-                                      
-                                           whythat.push(juntar)
-                                       
-                                       }
-                                   }else{
-                                       whythat.push(juntar)
-                                       juntar= eg2[estudar]
-                                       if (estudar == eg2.length - 1) {
-                                           whythat.push(juntar)
-                                       }
-                                   }
-                               }
-                                 
+     }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
+    
+         juntar+= eg2[estudar]
+    
+         if (estudar == eg2.length - 1) {
+        
+             whythat.push(juntar)
+         
+         }
+     }else{
+         whythat.push(juntar)
+         juntar= eg2[estudar]
+         if (estudar == eg2.length - 1) {
+             whythat.push(juntar)
+         }
+     }
+ }
+   
                             }
                             if (teri == false) {
                              whythat = []
                           
-                               for (t in eg2) {
-                               whythat.push(eg2[t])
-                               }
-                               for (t in eg) {
-                                   whythat.push(eg[t])
-                               }
+ for (t in eg2) {
+ whythat.push(eg2[t])
+ }
+ for (t in eg) {
+     whythat.push(eg[t])
+ }
                            }
            
                  // 
@@ -7557,34 +7557,34 @@ e = [...roller]
                            
                            numerinhos = []
                            for (decisao in correto) {
-                               if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
-                                  numerinhos.push(correto[decisao])
-                                  
-                                   }
+ if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
+    numerinhos.push(correto[decisao])
+    
+     }
                           
                            }
                           
-                               thatway = [...numerinhos]
+ thatway = [...numerinhos]
            
            
-                               for (poder in whythat){
-                                   if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
-                              
-                              
-                                   numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
+ for (poder in whythat){
+     if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
+
+
+     numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
            
-                                   }
-                               }
+     }
+ }
            
-                               for (pombo = whythat.length - 1; pombo >= 0; pombo--){
-                              
-                                   if (whythat[pombo] == '*' || whythat[pombo] == '1') {
-                                  
-                                       whythat.splice(pombo,1)
-                                 
-                                   }
-                                   
-                               }
+ for (pombo = whythat.length - 1; pombo >= 0; pombo--){
+
+     if (whythat[pombo] == '*' || whythat[pombo] == '1') {
+    
+         whythat.splice(pombo,1)
+   
+     }
+     
+ }
            
                           
                           
@@ -7596,14 +7596,14 @@ e = [...roller]
            
                              for (pray = whythat.length - 1; pray>=0 ; pray--) {
                           
-                               if (whythat[pray] == '-')
-                               whythat.splice(pray, 1)
+ if (whythat[pray] == '-')
+ whythat.splice(pray, 1)
                              }
            
-                               if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                              
-                                   conseguiu = true
-                               }
+ if (numerinhos.length == 0 && thatway.length == whythat.length) {
+
+     conseguiu = true
+ }
                            }
                            older++
                            }
@@ -7647,10 +7647,10 @@ e = [...roller]
                            doeshave = true
                            for (sofar in youdumb[armenia].mons) {
                           
-                               if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
-                                   doeshave = false
-                                  
-                               }
+ if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
+     doeshave = false
+    
+ }
                            }
                       
                            if (doeshave == true) {
@@ -7978,8 +7978,8 @@ e = [...roller]
                            teri = true
                            if (el[Number(estudar) + 1].search('[0-9]') != -1) {
                              
-                               quase.push(juntar)
-                               juntar = ''
+ quase.push(juntar)
+ juntar = ''
                            quase.push('*')
                       
                            }
@@ -7988,27 +7988,27 @@ e = [...roller]
                       
                     
                            if (juntar.length == 0) {
-                               juntar = el[estudar]
+ juntar = el[estudar]
                           
            
-                               if (estudar == el.length - 1) {
-                                   quase.push(juntar)
-                               }
+ if (estudar == el.length - 1) {
+     quase.push(juntar)
+ }
            
                            }else if(el[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
                           
-                               juntar+= el[estudar]
+ juntar+= el[estudar]
                           
-                               if (estudar == el.length - 1) {
-                              
-                                   quase.push(juntar)
-                               }
+ if (estudar == el.length - 1) {
+
+     quase.push(juntar)
+ }
                            }else{
-                               quase.push(juntar)
-                               juntar= el[estudar]
-                               if (estudar == el.length - 1) {
-                                   quase.push(juntar)
-                               }
+ quase.push(juntar)
+ juntar= el[estudar]
+ if (estudar == el.length - 1) {
+     quase.push(juntar)
+ }
                            }
                        }
                          
@@ -8054,27 +8054,27 @@ e = [...roller]
                           friend+= quase[patience]
                            if (quase[patience] == quase[Number(patience) - 1]) {
                           
-                               elevar++
+ elevar++
            
-                               if (patience == quase.length - 1) {
-                                 //  
-                                   aconta+= `^${elevar}`
-                                  // 
-                               }
+ if (patience == quase.length - 1) {
+   //  
+     aconta+= `^${elevar}`
+    // 
+ }
            
                            }else{
                              
-                               if (elevar > 1) {
-                                  // 
-                                   aconta+= `^${elevar}`
-                                   
-                               }
+ if (elevar > 1) {
+    // 
+     aconta+= `^${elevar}`
+     
+ }
            
-                               aconta+= quase[patience]
+ aconta+= quase[patience]
                            
-                              // 
+// 
                              
-                               elevar = 1
+ elevar = 1
                            }
                          //  
                           
@@ -8122,11 +8122,11 @@ e = [...roller]
                         //   
                            mood = ''
                            for (member in aconta) {
-                               
-                               if (aconta[member] != '-') {
-                                  // 
-                                   mood+= aconta[member]
-                               }
+ 
+ if (aconta[member] != '-') {
+    // 
+     mood+= aconta[member]
+ }
                            }
                            
                            tobreak+= `-${mood}`
@@ -8150,7 +8150,7 @@ e = [...roller]
                        for (okay in aconta) {
                           // 
                            if (aconta[okay]!= '-'){
-                               correct+= aconta[okay]
+ correct+= aconta[okay]
                              //  
                            }
                        }
@@ -8207,8 +8207,8 @@ e = [...roller]
                            teri = true
                            if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
                              
-                               quase.push(juntar)
-                               juntar = ''
+ quase.push(juntar)
+ juntar = ''
                            quase.push('*')
                          //  
                            }
@@ -8217,31 +8217,31 @@ e = [...roller]
                            //quase.push(triste[estudar])
                         // 
                            if (juntar.length == 0) {
-                               juntar = triste[estudar]
-                              // 
+ juntar = triste[estudar]
+// 
            
-                               if (estudar == triste.length - 1) {
-                                   quase.push(juntar)
-                               }
-                              // 
+ if (estudar == triste.length - 1) {
+     quase.push(juntar)
+ }
+// 
            
                            }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
            
                             //  
-                               juntar+= triste[estudar]
+ juntar+= triste[estudar]
                             //   
-                               if (estudar == triste.length - 1) {
-                                //  
-                                   quase.push(juntar)
-                                //   
-                               }
+ if (estudar == triste.length - 1) {
+  //  
+     quase.push(juntar)
+  //   
+ }
                            }else{
-                               quase.push(juntar)
-                               juntar= triste[estudar]
-                               if (estudar == triste.length - 1) {
-                                   quase.push(juntar)
-                                 //  
-                               }
+ quase.push(juntar)
+ juntar= triste[estudar]
+ if (estudar == triste.length - 1) {
+     quase.push(juntar)
+   //  
+ }
                            }
                        }
                          
@@ -8286,26 +8286,26 @@ e = [...roller]
                           // 
                             friend+= quase[patience]
                            if (quase[patience] == quase[Number(patience) - 1]) {
-                               
-                               elevar++
+ 
+ elevar++
            
-                               if (patience == quase.length - 1) {
-                                   
-                                   aconta+= `^${elevar}`
-                                   
-                               }
+ if (patience == quase.length - 1) {
+     
+     aconta+= `^${elevar}`
+     
+ }
            
                            }else{
-                               if (elevar > 1) {
-                                 
-                                   aconta+= `^${elevar}`
-                                   
-                               }
+ if (elevar > 1) {
+   
+     aconta+= `^${elevar}`
+     
+ }
            
-                               aconta+= quase[patience]
-                              
+ aconta+= quase[patience]
+
                              
-                               elevar = 1
+ elevar = 1
                            }
                            
                           
@@ -8494,8 +8494,8 @@ e = [...roller]
                         miya = ''
                         for (n in novomon) {
                             if (novomon[n] != '-') {
-                                miya+= novomon[n]                 
-                               }
+  miya+= novomon[n]                 
+ }
                         }
                        // 
                         newexpress.push('-')
@@ -8572,16 +8572,16 @@ e = [...roller]
                             elevar++
            
                             if (patience == quase.length - 1) {
-                              //  
-                                aconta+= `^${elevar}`
-                               // 
+//  
+  aconta+= `^${elevar}`
+ // 
                             }
            
                         }else{
                             if (elevar > 1) {
-                               // 
-                                aconta+= `^${elevar}`
-                                
+ // 
+  aconta+= `^${elevar}`
+  
                             }
            
                             aconta+= quase[patience]
@@ -8693,17 +8693,17 @@ e = [...roller]
                    for (volume in yposition) {
                        if (dn == 0) {
                            if (yposition[item][pam] > maiorparamenor[volume]) {
-                               var itens = yposition.length - (Number(volume) + 1)
-                               var leng = yposition.length
+ var itens = yposition.length - (Number(volume) + 1)
+ var leng = yposition.length
            
-                               for (c = 0; c < itens; c++) {
-                                   maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
-                                   posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
-                                   leng--
-                               }
-                               maiorparamenor[volume] = yposition[item][pam]
-                               posiçõesnumeros[volume] = Number(item)
-                               dn = 10
+ for (c = 0; c < itens; c++) {
+     maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+     posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+     leng--
+ }
+ maiorparamenor[volume] = yposition[item][pam]
+ posiçõesnumeros[volume] = Number(item)
+ dn = 10
            
            
                            }
@@ -8819,10 +8819,10 @@ e = [...roller]
                        
            
                           //  numapars.find(function(numapars) {
-                              // return numapars.num == lista[g]
+// return numapars.num == lista[g]
                              //   }).vezes--
            
-                                
+  
                     }
                 }
                 
@@ -8887,11 +8887,11 @@ e = [...roller]
                        
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                            
-                                outrorel.fix[hu] =  outrorel.falt[ou]
-                                outrorel.falt[ou] = -10
-                                
+  outrorel.fix[hu] =  outrorel.falt[ou]
+  outrorel.falt[ou] = -10
+  
                            
-                                y++
+  y++
                             }
                         }
                     }
@@ -9259,10 +9259,10 @@ e = [...roller]
                        
            
                           //  numapars.find(function(numapars) {
-                              // return numapars.num == lista[g]
+// return numapars.num == lista[g]
                              //   }).vezes--
            
-                                
+  
                     }
                 }
               //  
@@ -9327,11 +9327,11 @@ e = [...roller]
                          ///   
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                             
-                                outrorel.fix[hu] =  outrorel.falt[ou]
-                                outrorel.falt[ou] = -10
-                                
+  outrorel.fix[hu] =  outrorel.falt[ou]
+  outrorel.falt[ou] = -10
+  
                              //   
-                                y++
+  y++
                             }
                         }
                     }
@@ -9564,10 +9564,10 @@ e = [...roller]
                        
            
                           //  numapars.find(function(numapars) {
-                              // return numapars.num == lista[g]
+// return numapars.num == lista[g]
                              //   }).vezes--
            
-                                
+  
                     }
                 }
                 //
@@ -9631,12 +9631,12 @@ e = [...roller]
            
                             //
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                                //
-                                outrorel.fix[hu] =  outrorel.falt[ou]
-                                outrorel.falt[ou] = -10
-                                
-                                //
-                                y++
+  //
+  outrorel.fix[hu] =  outrorel.falt[ou]
+  outrorel.falt[ou] = -10
+  
+  //
+  y++
                             }
                         }
                     }
@@ -9895,10 +9895,10 @@ e = [...roller]
                        
            
                           //  numapars.find(function(numapars) {
-                              // return numapars.num == lista[g]
+// return numapars.num == lista[g]
                              //   }).vezes--
            
-                                
+  
                     }
                 }
               //  
@@ -9963,11 +9963,11 @@ e = [...roller]
                          ///   
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                             
-                                outrorel.fix[hu] =  outrorel.falt[ou]
-                                outrorel.falt[ou] = -10
-                                
+  outrorel.fix[hu] =  outrorel.falt[ou]
+  outrorel.falt[ou] = -10
+  
                              
-                                y++
+  y++
                             }
                         }
                     }
@@ -10530,9 +10530,9 @@ e = [...roller]
                             var leng = yposition.length
         
                             for (c = 0; c < itens; c++) {
-                                maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
-                                posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
-                                leng--
+  maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+  posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+  leng--
                             }
                             maiorparamenor[volume] = yposition[item]
                             posiçõesnumeros[volume] = Number(item)
