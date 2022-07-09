@@ -1,7 +1,5 @@
 
 
-splitUp('10.x')
-
 function splitUp(str) {
 comp = ''
 for (i in str) {
@@ -15,6 +13,10 @@ for (i in str) {
     }
 }
 }
+
+
+
+splitUp('11.x')
 
 function versetem(comp) {
 podeir = true
