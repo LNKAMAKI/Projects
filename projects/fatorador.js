@@ -6747,12 +6747,13 @@ e = [...roller]
                   
                   quantosfatores = Number(monomios.length)/Number(divs[okentao])
                   quantasposições = Number(monomios.length)/Number(quantosfatores)
-           
-                 // 
-           
-           // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
-           
-                  grtols = []
+                
+
+            
+            //ORDENANDO O MISS DE ACORDO COM O NÚMERO DE APARIÇÕES
+
+
+            grtols = []
            for (hi in miss) {
                ////
                miss[hi].length = miss[hi].aparicoes.length
@@ -6783,7 +6784,7 @@ e = [...roller]
            roller = []
            for (eep in miss) {
                //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss[eep].aparicoes)
-               
+        
                //console.log('---')
                for (quad in miss) {
                    console.log('')
