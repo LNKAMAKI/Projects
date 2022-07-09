@@ -202,9 +202,9 @@ function ir() {
            fator = 1
            
            for (e = 2; stop == false; e++) {
-           //    
-           //    
-           //    
+           
+           
+           
            
                sob = Number(expression[n])
              
@@ -2181,7 +2181,7 @@ e = [...roller]
                    asitwas2 = []
                    aswillbe = []
        
-                  //    
+                  
                 //   
        
                    mylife = '('
@@ -2208,7 +2208,7 @@ e = [...roller]
                        
                        function DESFATORAR(correto, eg2, eg) {
        
-                       //    
+                       
        
                        eassim = []
                        solo = ''
@@ -2608,7 +2608,7 @@ e = [...roller]
                 //
                  // youdumb[h].w.what.splice(tempo, 1)
                  //imback++
-             //    
+             
                   }
               }
            }
@@ -4132,10 +4132,10 @@ e = [...roller]
              //   
                relation[c].fix.push(relation[c].falt[f])
               
-           //    
+           
                relation[c].falt[f] = -10
        
-           //    
+           
             }
           //  
        
@@ -4157,7 +4157,7 @@ e = [...roller]
        
                      ///   
                         if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                        //    
+                        
                             outrorel.fix[hu] =  outrorel.falt[ou]
                             outrorel.falt[ou] = -10
                             
@@ -4525,7 +4525,7 @@ e = [...roller]
        for (wish in relation) {
        // 
         for (edge in relation[wish].fix) {
-       //    
+       
            tirados.push(relation[wish].fix[edge])
         }
        }
@@ -4768,10 +4768,10 @@ e = [...roller]
              //   
                relation[c].fix.push(relation[c].falt[f])
               
-           //    
+           
                relation[c].falt[f] = -10
        
-           //    
+           
             }
           //  
        
@@ -4793,7 +4793,7 @@ e = [...roller]
        
                      ///   
                         if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                        //    
+                        
                             outrorel.fix[hu] =  outrorel.falt[ou]
                             outrorel.falt[ou] = -10
                             
@@ -5448,9 +5448,9 @@ e = [...roller]
                fator = 1
                
                for (e = 2; stop == false; e++) {
-               //    
-               //    
-               //    
+               
+               
+               
                
                    sob = Number(expression[n])
                  
@@ -7429,7 +7429,7 @@ e = [...roller]
                        asitwas2 = []
                        aswillbe = []
            
-                      //    
+                      
                     //   
            
                        mylife = '('
@@ -7456,7 +7456,7 @@ e = [...roller]
                            
                            function DESFATORAR(correto, eg2, eg) {
            
-                           //    
+                           
            
                            eassim = []
                            solo = ''
@@ -7857,7 +7857,7 @@ e = [...roller]
                     //
                      // youdumb[h].w.what.splice(tempo, 1)
                      //imback++
-                 //    
+                 
                       }
                   }
                }
@@ -9301,10 +9301,10 @@ e = [...roller]
                  //   
                    relation[c].fix.push(relation[c].falt[f])
                   
-               //    
+               
                    relation[c].falt[f] = -10
            
-               //    
+               
                 }
               //  
            
@@ -9326,7 +9326,7 @@ e = [...roller]
            
                          ///   
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                            //    
+                            
                                 outrorel.fix[hu] =  outrorel.falt[ou]
                                 outrorel.falt[ou] = -10
                                 
@@ -9694,7 +9694,7 @@ e = [...roller]
            for (wish in relation) {
            // 
             for (edge in relation[wish].fix) {
-           //    
+           
                tirados.push(relation[wish].fix[edge])
             }
            }
@@ -9937,10 +9937,10 @@ e = [...roller]
                  //   
                    relation[c].fix.push(relation[c].falt[f])
                   
-               //    
+               
                    relation[c].falt[f] = -10
            
-               //    
+               
                 }
               //  
            
@@ -9962,7 +9962,7 @@ e = [...roller]
            
                          ///   
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                            //    
+                            
                                 outrorel.fix[hu] =  outrorel.falt[ou]
                                 outrorel.falt[ou] = -10
                                 
