@@ -1,9 +1,11 @@
 
-str = '-.30.x.l'
 
+splitUp('10.x')
+
+function splitUp(str) {
 estado = ''
 for (i in str) {
-    console.log(str[i])
+    
     if (str[i] == '.' && estado != '-') {
         console.log('OPA',estado)
     }
@@ -11,6 +13,7 @@ for (i in str) {
     if (i == str.length - 1) {
         console.log('OPA',estado)
     }
+}
 }
 
 
