@@ -1167,11 +1167,15 @@ function ir() {
                                     
                                     if (str[i] == '.' && estado != '-') {
                                         console.log('OPA',estado)
-                                        segs.push({car: estado, mons: [m]})
-                                    }
+                                        
+                                    console.log('PODEIR?', podeir)
+                                    segs.push({car: estado, mons: [m]})
+                                }
                                     estado+= str[i]
                                     if (i == str.length - 1) {
                                         console.log('OPA',estado)
+                                        
+                                        console.log('PODEIR?', podeir)
                                         segs.push({car: estado, mons: [m]})
                                     }
                                 }
@@ -10576,4 +10580,30 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         return [concatenar, pans.length, todososnumeros.length]
         
         }
-          
+
+        function versetem(comp) {
+            podeir = true
+            qual = -1
+            for (meow in segs) {
+                  array1 = []
+                  for (d in segs[meow].car) {
+                      array1.push(segs[meow].car[d])
+                  }
+                  array2 = []
+                  for (d in comp) {
+                      array2.push(comp[d])
+                  }
+                  if (segs[meow].car.length < comp.length) {
+            
+                      divisao =  DIVIDIR(VAI(segs[meow].car), VAI(comp))
+                   }else{
+                       divisao = DIVIDIR(VAI(comp),VAI(segs[meow].car))
+                   }
+                   if (divisao == '' || divisao == '-') {
+                     // 
+                      podeir = false
+                      qual = meow
+                   }
+            }
+            return podeir
+            }
