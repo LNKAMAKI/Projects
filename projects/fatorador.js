@@ -1157,6 +1157,7 @@ function ir() {
                           if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
 
                         }else{
+                            console.log('______________________>>>>>>>>>>>>>>>---------', repetido[moe].letr)
  segs.push({car: repetido[moe].letr, mons: [m]})
                            }
                      
@@ -6408,6 +6409,7 @@ numerinhos.push(correto[decisao])
 if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
     
                             }else{
+     console.log(repetido)
      segs.push({car: repetido[moe].letr, mons: [m]})
  }
                          

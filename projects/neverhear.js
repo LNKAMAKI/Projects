@@ -1,15 +1,16 @@
--8x + 3xy + 4xy - 6x + 2xy - 4x
 
-a^2 + a - 5a - 5
+str = '-.30.x.l'
 
-ab + ac + bb + bc + xa + xc
+estado = ''
+for (i in str) {
+    console.log(str[i])
+    if (str[i] == '.' && estado != '-') {
+        console.log('OPA',estado)
+    }
+    estado+= str[i]
+    if (i == str.length - 1) {
+        console.log('OPA',estado)
+    }
+}
 
--3x - 5x + 4x^2 + 3y + 5y - 4xy
 
-14y + 7x + 9x
-
-2y^2 - 6y - 2xy^2 + 6xy - 2ay - 6a
-
-10y - 338xy + 20y^2 - 169x + ab + bb + ac + bc
-
-6x+15x^2+6ax+15x^2a
