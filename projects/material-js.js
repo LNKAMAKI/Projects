@@ -2,7 +2,7 @@
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'../materiais/introducao-html.html'},{title:'Quebras de linha e símbolos',url:'../materiais/br,símbolos.html'}]},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'../materiais/introducao-html.html'},{title:'Quebras de linha e símbolos',url:'../materiais/br,símbolos.html'},{title:'Imagens',url:'../materiais/imagens.html'}]},
     {title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[]},
 ]

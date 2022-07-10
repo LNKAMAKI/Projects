@@ -1316,7 +1316,7 @@ function ir() {
        
        for (hi in segs) {
            ////
-           segs[hi].length = segs[hi].mons.length
+           segs[hi].length = segs[hi].car.length
        
            grtols.push(segs[hi])
        }
@@ -1333,7 +1333,7 @@ function ir() {
        }
        
        ////
-      // segs = grtols
+       segs = grtols
        
       
        //DIVS
@@ -6593,7 +6593,7 @@ if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
            
            for (hi in segs) {
                ////
-               segs[hi].length = segs[hi].mons.length
+               segs[hi].length = segs[hi].car.length
            
                grtols.push(segs[hi])
            }
@@ -6610,7 +6610,7 @@ if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
            }
            
            ////
-          // segs = grtols
+           segs = grtols
            
           
            //DIVS
