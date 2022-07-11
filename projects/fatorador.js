@@ -3072,17 +3072,13 @@ ficaassim += ` - ${fi}`
                     newexpress.push(novomon)
                 }
             }
-    
-    
         }
         
            
            for (e in pans[bababa].todos) {
             numsdesfat.push(pans[bababa].todos[e])
            }
-           
           }
-    
        }
        
        if (numsdesfat.length > 0) {
