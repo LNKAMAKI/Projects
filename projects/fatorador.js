@@ -1981,13 +1981,10 @@ e = [...roller]
                              return roller.rept == repwri
                          }).position.push(quad)
                      }
-     
                          }
                         }
                      }
-     
-                      }
-                     
+                      } 
                  }
              }
 
@@ -1996,14 +1993,11 @@ e = [...roller]
                 // FOCO
              podeser = []
              for (outro in miss) {
-                // 
                  if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-                    
-       
+                
                      presentes = []
                      for (quecoisa in miss[outro].aparicoes) {
                          fatorzinho = miss[outro].aparicoes[quecoisa]
-                        
        
                          if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
                          
@@ -2011,7 +2005,6 @@ e = [...roller]
                          }
                      }
                      
-       
                      adicionou = false
                      for (idk in podeser) {
                         // 
@@ -2021,7 +2014,7 @@ e = [...roller]
                              if (podeser[idk].opl[denovo] == presentes[denovo]) {
   // 
                              }else{
-   esigual = false
+                                esigual = false
                              }
                          }
                          if (esigual == true) {
