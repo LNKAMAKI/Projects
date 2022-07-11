@@ -1897,12 +1897,10 @@ e = [...roller]
            }
              }
        
-            // 
              for (sei in scarecrow) {
                
                
                for (ai in scarecrow[sei].divididos) {
-                   
                    scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai]
                }
              }
@@ -1910,7 +1908,6 @@ e = [...roller]
              miss = []
        
              for (ah in scarecrow) {
-                 
                  for (é in scarecrow[ah].divididos) {
                      
                  if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
@@ -1924,7 +1921,6 @@ e = [...roller]
        
              grtols = []
              for (hi in miss) {
-                 ////
                  miss[hi].length = miss[hi].aparicoes.length
              
                  grtols.push(miss[hi])
@@ -1933,7 +1929,6 @@ e = [...roller]
              
              grtols = []
              for (ah in organizado) {
-                // //
                  grtols.push(miss[organizado[ah]])
                 
              }
@@ -1952,26 +1947,17 @@ e = [...roller]
 
              roller = []
              for (eep in miss) {
-                 //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss[eep].aparicoes)
-                 
-                 //console.log('---')
                  for (quad in miss) {
-                     console.log('')
                       if (quad != eep) {
-                  //   console.log(quad,miss[quad].aparicoes)
-     
                      repeated = []
                      repwri = ''
                      for (vespa in miss[eep].aparicoes) {
-                       // console.log(miss[eep].aparicoes[vespa])
+
                         if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
-                         //console.log(miss[quad].aparicoes,'indexOf(',miss[eep].aparicoes[vespa],') não é igual a -1')
                          repeated.push(miss[eep].aparicoes[vespa])
      
                          repwri+= ',' + miss[eep].aparicoes[vespa]
      
-                        // console.log('repetido:',repeated,'repwri',repwri)
-                      
                          if (roller.find(function(roller) {
                              return roller.rept == repwri
                          }) == undefined) {
@@ -1979,11 +1965,11 @@ e = [...roller]
                              roller.push({rept: repwri,opl:[...repeated],position:[eep,quad]})
                          }else{
                              if (roller.find(function(roller) {
-   return roller.rept == repwri
+                             return roller.rept == repwri
                              }).position.indexOf(eep) == -1) {
      
                              roller.find(function(roller) {
-   return roller.rept == repwri
+                             return roller.rept == repwri
                              }).position.push(eep)
                          }
      
