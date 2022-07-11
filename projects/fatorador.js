@@ -3393,75 +3393,52 @@ ficaassim += ` - ${fi}`
        
         util = []
         for (t in segs2) {
-       
-       
-       
             if (segs2[t].mons.length >= quanto) {
                 util.push(segs2[t])
             }
-            //
         }
        
-        //
         
         for (m in monomios) {
             aparic = 0
-            //
             for (t in util) {
-                //
-                //
-       
+               
                 if (util[t].mons.indexOf(Number(m)) != -1) {
                     aparic++
                 }
             }
-            //
             numapars.push({num: Number(m), vezes: aparic})
             }
        
         present = []
-        
-        //
+      
         for (r in util) {
        
-            //
            lista = util[r].mons
             present = {fix: [], falt: []}
-            //
-          
+            
             rep = 0
             for (g = 0; g < lista.length && rep < quanto; g++) {
-                //
-       
+                
        
                 if (numapars.find(function(numapars) {
                     return numapars.num == lista[g]
                     }).vezes == 1) {
-                    //
+            
                       rep++
                       present.fix.push(lista[g])
                      
                 }
        
             }
-            //
-            //
+           
        
             if (present.fix.length < quanto) {
             for (g in lista) {
-                //
                
                 if (present.fix.indexOf(lista[g]) == -1) {
-                  //  
                     present.falt.push(lista[g])
-       
-                   
-       
-                      //  numapars.find(function(numapars) {
-                          // return numapars.num == lista[g]
-                         //   }).vezes--
-       
-                            
+         
                 }
             }
             
@@ -3469,15 +3446,11 @@ ficaassim += ` - ${fi}`
             
             if (present.fix.length == 0) {
             for (ti in present.falt) {
-              //  
-       
-               
-       
+             
                     numapars.find(function(numapars) {
                         return numapars.num == present.falt[ti]
                         }).vezes--
        
-                     
             }
         }
             
@@ -3487,49 +3460,36 @@ ficaassim += ` - ${fi}`
         relation[r].car = segs2[r].car
         
         }
-    //.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
+ 
         for (c in relation) {
-            //
             if (relation[c].fix.length > 0) {
        
-       
             faltam = Number(quanto) - Number(relation[c].fix.length)
-       
        
             for (f = 0; f < faltam; f++) {
            
                relation[c].fix.push(relation[c].falt[f])
-              
-          
                relation[c].falt[f] = -10
-       
-          
             }
        
        
             for (tel = 0; tel < c; tel++){
-       
                 if (relation[tel].fix.length > 0) {
-           
                 }
                 
                 outrorel = relation[tel]
                 
             for (hu in outrorel.fix) {
-           
                 if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-               
                
                     y = 0
                     for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
        
-                   
                         if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                        
                             outrorel.fix[hu] =  outrorel.falt[ou]
                             outrorel.falt[ou] = -10
                             
-                       
                             y++
                         }
                     }
@@ -3539,18 +3499,14 @@ ficaassim += ` - ${fi}`
             }
         }
        
-        //
-       
-       ////
+        
        
        groups = 0
        conts = []
        for (yougo in relation) {
        if (relation[yougo].fix.length > 0) {
        
-       
        for (pals in relation[yougo].fix) {
-      //  
         conts.push(relation[yougo].fix[pals])
        }
        groups++
@@ -3562,11 +3518,6 @@ ficaassim += ` - ${fi}`
        
        
        if (groups < divs[okentao]) {
-        
-       
-    //.log('SERÁ QUE DEU CERTO?')
-       
-       //
        
        groups = 0
        conts = []
@@ -3575,33 +3526,25 @@ ficaassim += ` - ${fi}`
        
        
        for (pals in relation[yougo].fix) {
-        //
         conts.push(relation[yougo].fix[pals])
        }
        groups++
        }
        }
-       //
+    
        if (divs[okentao] != groups) {
-       
-       //
        
        tirados = []
        for (wish in relation) {
-        //
         for (edge in relation[wish].fix) {
-           //
            tirados.push(relation[wish].fix[edge])
         }
        }
-       //
-       
+      
        
        
        for (die in segs2) {
            tirar = []
-       
-       
        for (h in segs2[die].mons) {
        
        if (tirados.indexOf(segs2[die].mons[h]) != -1) {
@@ -3612,7 +3555,6 @@ ficaassim += ` - ${fi}`
        
     
        for (far = tirar.length - 1; far >= 0; far--) {
-       //.log(segs[die].mons[tirar[far]])
        segs2[die].mons.splice(tirar[far], 1)
        
        }
@@ -3627,16 +3569,11 @@ ficaassim += ` - ${fi}`
        imor = 0
        
        for (b = 0; b < grupos; b++) {
-           
           
            ob = {car: segs2[sorrow].car, fix: [],problem:false}
        
            for (live = 0; live < quanto; live++) {
                
-          
-       
-          // 
-       
                   if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                       ob.problem = true
                   }
@@ -3645,31 +3582,17 @@ ficaassim += ` - ${fi}`
                tirados.push(segs2[sorrow].mons[imor])
                imor++
                
-              
            }
-          
-          
-       //.log('In THE EnD', ob)
-       
-           
            
            if (ob.problem == false || temnaLista(ob.fix) == true) {
            relation.push(ob)
            }
        }
-       
        }
-       
-       
-       
        }
        
        males = []
        for (nah = relation.length - 1; nah >= 0; nah--) {
-            // if (relation[nah].fix.length > 0) {
-                 
-        // 
-       
          
          for (nop in relation) {
            if (relation[nop].fix.length > 0 && nop != nah) {
@@ -3688,7 +3611,6 @@ ficaassim += ` - ${fi}`
        
        males.push(Number(nop))
        }
-       //}
        
            }
        
@@ -3701,9 +3623,7 @@ ficaassim += ` - ${fi}`
        
          for (nah = relation.length - 1; nah >= 0; nah--) {
              
-            // 
            if (males.indexOf(nah) != -1) {
-             //  
                relation.splice(nah, 1)
            }
          }
