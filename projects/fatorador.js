@@ -8233,7 +8233,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                   // 
                    concatenar+= `${naonao}( ${tobreak} )`
                }
-        
               // 
               // 
         
