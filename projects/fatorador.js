@@ -3003,6 +3003,7 @@ ficaassim += ` - ${fi}`
            
            }
 
+          
          console.log('WHATTTTTTTTTT??????????*****___', expression)
 
 
@@ -3298,7 +3299,7 @@ ficaassim += ` - ${fi}`
         }
     }else{
         console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-            console.log(concatenar)
+            console.log(concatenar,monomios)
             return concatenar
     }
        }
