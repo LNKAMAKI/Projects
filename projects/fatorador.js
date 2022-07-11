@@ -3669,44 +3669,25 @@ ficaassim += ` - ${fi}`
        
            for (uf in relation) {
            
-              // 
-              // segs2.push(segs[uf])
-             //  segs[tie].godhelpme = [...segs[tie].mons]
              fireonfire[uf] = {}
                fireonfire[uf].mons = [...relation[uf].fix]
                fireonfire[uf].car = relation[uf].car
        
         }
-       
-       // 
-       // 
-       // c/onsole.log(fireonfire)
-       
         
         for (red in fireonfire) {
-          // 
            relation.push({fix: fireonfire[red].mons, car: fireonfire[red].car})
         }
        
        }else if(groups > divs[okentao]){
            
        
-        //
-        //
-       
         mia = []
        for (idk in segs2) {
-       ////
-       //
-       
        
        for (mcr in segs2) {
        if (mcr != idk) {
        
-           ////
-          // 
-          
-          // 
            if (segs2[mcr].mons.length <= segs2[idk].mons.length) {
        
                sames = []
@@ -3727,9 +3708,6 @@ ficaassim += ` - ${fi}`
            if (mia.indexOf(mcr) == -1) {
            mia.push(mcr)
            }
-           
-           //
-           
           }
        }
            
@@ -3739,11 +3717,8 @@ ficaassim += ` - ${fi}`
        }
        
        for (f = mia.length - 1; f >= 0; f--) {
-           //segs2.splice(mia[f],1)
-           
           }
        
-          
         numapars = []
         
        relation = []
@@ -3754,23 +3729,16 @@ ficaassim += ` - ${fi}`
         util = []
         for (t in segs2) {
        
-           //
-         //  
-       
             if (segs2[t].mons.length >= quanto) {
                 util.push(segs2[t])
             }
-            //
         }
        
         
         
         for (m in monomios) {
             aparic = 0
-           //
             for (t in util) {
-             //   
-             //   
        
                 if (util[t].mons.indexOf(Number(m)) != -1) {
                     aparic++
@@ -3784,25 +3752,19 @@ ficaassim += ` - ${fi}`
         //
         for (r in util) {
        
-            //
            lista = util[r].mons
             present = {fix: [], falt: []}
-            //
-          
+            
             rep = 0
             for (g = 0; g < lista.length && rep < quanto; g++) {
-             //   
-       
-       
+           
                 if (numapars.find(function(numapars) {
                     return numapars.num == lista[g]
                     }).vezes == 1) {
-                    //
+                    
                       rep++
                       present.fix.push(lista[g])
-                     
                 }
-       
             }
            // 
             //
@@ -3814,30 +3776,18 @@ ficaassim += ` - ${fi}`
                 if (present.fix.indexOf(lista[g]) == -1) {
                  //   
                     present.falt.push(lista[g])
-       
-                   
-       
-                      //  numapars.find(function(numapars) {
-                          // return numapars.num == lista[g]
-                         //   }).vezes--
-       
-                            
+           
                 }
             }
-          //  
-       
+          
             
             if (present.fix.length == 0) {
             for (ti in present.falt) {
-              //  
-       
-               
-       
+
                     numapars.find(function(numapars) {
                         return numapars.num == present.falt[ti]
                         }).vezes--
        
-                     
             }
         }
             
