@@ -2989,23 +2989,18 @@ ficaassim += ` - ${fi}`
            
                }else{
                    if (ground.length > 0) {
-                      
                        expression.push(ground)
                    }
                    ground = qualexp[phy]
                    
                }
                if (phy == qualexp.length - 1) {
-                   
                    expression.push(ground)
                }
            }
-           
            }
 
-          
          console.log('WHATTTTTTTTTT??????????*****___', expression)
-
 
        // FAZENDO A CONTA
           primeirocaso = SOMANDOMONOMIOS(amount)
