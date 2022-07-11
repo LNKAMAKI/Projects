@@ -10368,8 +10368,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                             maiorparamenor[volume] = yposition[item]
                             posiçõesnumeros[volume] = Number(item)
                             dn = 10
-        
-        
                         }
                     }
                 }
@@ -10379,5 +10377,4 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         
     //.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
         return [concatenar, pans.length, todososnumeros.length]
-        
         }
