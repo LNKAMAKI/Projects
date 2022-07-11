@@ -1637,7 +1637,7 @@ function ir() {
            }
        }
 e = [...roller]
-       console.log('HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY', e)
+       
        while(java < miss.length && deucerto == false) {
          
           // FOCO
@@ -2989,8 +2989,63 @@ ficaassim += ` - ${fi}`
            console.log('-------------**********________')
            console.log(naonao,',', tobreak)
            console.log('-------------**********________')
-    
-         
+          
+           qualexp1 = naonao
+           qualexp = ''
+           
+           parar = false
+           for (copy in qualexp1) {
+              // console.log(qualexp1[copy])
+               if (qualexp1[copy] != ' ') {
+                   if (qualexp1[copy].search('[0-9]') != -1 || qualexp1[copy].search('[a-z]') != -1 || qualexp1[copy].search('[\\+\\-\\^]') != -1) {
+                   //console.log(qualexp1[copy],'ir')
+                   qualexp+= qualexp1[copy]
+                   }else{
+                       parar = true
+                   }
+               }
+           }
+           //console.log('É ESSE:', qualexp)
+           
+           if (qualexp!= '' && parar == false) {
+           ground = ''
+           expression = []
+           for (phy in qualexp) {
+               
+               if (qualexp[phy].search('[0-9]') != -1) {
+               
+               if (ground.search('[0-9]') != -1) {
+                   console.log('ADICIONAR')
+               ground+= qualexp[phy]
+              
+               }else if(ground.length > 0){
+                   expression.push(ground)
+                   ground = qualexp[phy]
+                  
+               }else{
+                   ground = qualexp[phy]
+                   
+               }
+           
+               }else{
+                   if (ground.length > 0) {
+                      
+                       expression.push(ground)
+                   }
+                   ground = qualexp[phy]
+                   
+               }
+               if (phy == qualexp.length - 1) {
+                   
+                   expression.push(ground)
+               }
+           }
+           
+           }
+
+         console.log('WHATTTTTTTTTT??????????*****___', expression)
+
+
        // FAZENDO A CONTA
           primeirocaso = SOMANDOMONOMIOS(amount)
           segundocaso = SOMANDOMONOMIOS(amontoado)
