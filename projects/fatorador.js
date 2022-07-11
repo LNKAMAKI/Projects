@@ -1749,6 +1749,8 @@ e = [...roller]
                }
            }
            
+           console.log('and we remain',ficaassim)
+
           for (ruin in podeser[cold].opl) {
            emotion = ''
            for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
@@ -2083,7 +2085,6 @@ ficaassim += ` - ${fi}`
                }
                 }
              }
-       
              }
                 java++
             }
