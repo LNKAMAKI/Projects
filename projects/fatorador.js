@@ -1779,8 +1779,6 @@ e = [...roller]
           java++
       }
               okentao++
-       
-       
               
               for (nao in roll) {
               
@@ -1802,33 +1800,17 @@ e = [...roller]
                    }
                   // 
                    if (igual == roll[nao].repetidos.length) {
-                      // 
-                         // 
-       
                           if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
-                           
                        }else{
-                         //  
                            roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
                        }
                    }
-                     // 
-                      
                    }
                }
                
-              
-             //  
-       
-       
-             
              for (ne in roll) {
               //for (ne = 0; ne < 1; ne++) {
                  
-               
-               
-               
-       
                arranjar = []
                for (pq in roll[ne].repetidos) {
                    gosto = roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
@@ -1836,15 +1818,10 @@ e = [...roller]
                    arranjar.push({pos: pq, ocupa: [], origin: gosto})
        
                for (moon in roll[ne].posições) {
-       
-                  
                    vaiir = scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
-                   
-       
                   arranjar[pq].ocupa.push(vaiir)
                }
            }
-           
            
            
            jafoi = []
@@ -1854,32 +1831,24 @@ e = [...roller]
        
                if (jafoi.indexOf(tosse) == -1) {
                    organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-              // 
-              // 
-             //  
-             
+        
                for (calor in arranjar) {
            
                    if (calor != tosse) {
-                      // 
-                       
-       
+                      
                        equals = true
                        igualar =[]
                        for (boring in arranjar[calor].ocupa) {
                            sendocomparado = arranjar[calor].ocupa[boring]
                            comparador= arranjar[tosse].ocupa[boring]
-                         //  
-                          // 
+                         
                            if (sendocomparado[0] != comparador[0]) {
-                             //  
- igualar.push(true)
+                        
+                                igualar.push(true)
                            }else{
-// 
- igualar.push(false)
+                                igualar.push(false)
                            }
                        }
-                      // 
                        if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
                            
                            jafoi.push(calor)
@@ -1892,19 +1861,13 @@ e = [...roller]
            }
            }
            
-          // 
            for (youchoose in perfectwave) {
-               
                
                ficarassim =  perfectwave[youchoose].referencia
        
                for (catraca in perfectwave[youchoose].agrupar) {
-                   
                    presa = perfectwave[youchoose].agrupar[catraca]
                  
-                  // 
-                  // 
-       
                    diferente = false
                    for (moon in roll[ne].posições) {
        
@@ -1913,26 +1876,16 @@ e = [...roller]
                       // 
                        if (vaiir != ficarassim[moon]) {
                            diferente = true
-       
-                           
-                          
-       
                           scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
                        }
-           
-                     
                    }
-                  // 
                    if (diferente == true) {
-                       
-       
                        lista = scarecrow[arranjar[presa].origin].divisor
                        if (lista != '-') {
                            
                            modificar = ['-','.']
                            for (saved in lista) {
-// 
- modificar.push(lista[saved])
+                            modificar.push(lista[saved])
                            }
                           // 
                            scarecrow[arranjar[presa].origin].divisor = modificar
