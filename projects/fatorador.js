@@ -1085,9 +1085,6 @@ function ir() {
              return repetido.monum == u
              }).letr += `.${monomios[u].numero[e]}`
             
-             console.log('LOOK AT THIS =============',repetido.find(function(repetido) {
-                return repetido.monum == u
-                }).letr)
          }
              //reps.push(monomios[u].numero[e])
            
@@ -2989,6 +2986,8 @@ ficaassim += ` - ${fi}`
                concatenar+= `${naonao}(${tobreak})`
            }
     
+           console.log('-------------**********________')
+           console.log(naonao, tobreak)
            
     
          
@@ -6143,9 +6142,7 @@ ficaassim += ` - ${fi}`
              repetido.find(function(repetido) {
                  return repetido.monum == u
                  }).letr += `.${monomios[u].numero[e]}`
-                 console.log('LOOK AT THIS =============',repetido.find(function(repetido) {
-                    return repetido.monum == u
-                    }).letr)
+                
                 
              }
                  //reps.push(monomios[u].numero[e])
