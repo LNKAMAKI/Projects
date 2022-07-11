@@ -2987,8 +2987,8 @@ ficaassim += ` - ${fi}`
            }
     
            console.log('-------------**********________')
-           console.log(naonao, tobreak)
-           
+           console.log(naonao,',', tobreak)
+           console.log('-------------**********________')
     
          
        // FAZENDO A CONTA
