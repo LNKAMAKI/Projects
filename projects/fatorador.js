@@ -1633,13 +1633,10 @@ function ir() {
                        return roller.rept == repwri
                    }).position.push(quad)
                }
-
                    }
                   }
                }
-
                 }
-               
            }
        }
 e = [...roller]
@@ -1649,22 +1646,18 @@ e = [...roller]
           // FOCO
        podeser = []
        for (outro in miss) {
-          // 
            if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-              
  
                presentes = []
                for (quecoisa in miss[outro].aparicoes) {
                    fatorzinho = miss[outro].aparicoes[quecoisa]
                   
- 
                    if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
                    
                        presentes.push(fatorzinho)
                    }
                }
                
- 
                adicionou = false
                for (idk in podeser) {
                   // 
@@ -1685,7 +1678,6 @@ e = [...roller]
                if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                    //podeser.push({opl: presentes, position: [outro]})
                }
-               
            }
           }
          // 
@@ -1696,26 +1688,17 @@ e = [...roller]
              // podeser[belief].position.push(String(java))
               }
  
-           
- 
            shot = ''
            for (gun in podeser[belief].opl) {
                
                shot+= podeser[belief].opl[gun] + ','
            }
-          // 
  
            if (roll.length == 0) {
-              // 
                roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
            }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-               
               
- 
                for (capital in podeser[belief].position) {
-                   
- 
-                 // 
  
                if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                   
