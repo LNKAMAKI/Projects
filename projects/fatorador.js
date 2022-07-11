@@ -1210,27 +1210,15 @@ function ir() {
        }
        
        
-       //
-       //
        
        
        for (nl = 0; nl < segs.length; nl++) {
-           
-           
-           
-       
-           
            
            for (n = 0; n < segs.length; n++) {
        
                
                if (n != nl) {
                
-               //music1 = VAI(segs[n].car)
-               //music2 = VAI(segs[nl].car)
-    
-              // inter = DIVIDIR(music2, music1)
-    
                
                stay = VAI(segs[n].car)
                contido = true
@@ -1243,25 +1231,19 @@ function ir() {
                     }else{
                         contido = false
                     }
-                   
                 }
-               
                }
                if (contido == true) {
-                
                }
     
               // if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
                   if (contido == true) {
                    
-                   
-       
                    for (u in segs[n].mons) {
                        
                        if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
                            
                        }else{
-                         
                          
                            segs[nl].mons.push(segs[n].mons[u])
                          
@@ -1269,9 +1251,7 @@ function ir() {
                    }
                }
                }
-           
            }
-       
        }
        
     
@@ -2971,9 +2951,9 @@ ficaassim += ` - ${fi}`
                concatenar+= `${naonao}(${tobreak})`
            }
     
-           console.log('-------------**********________')
+           console.log('__________________')
            console.log(naonao,',', tobreak)
-           console.log('-------------**********________')
+           console.log('__________________')
           
            qualexp1 = naonao
            qualexp = ''
@@ -2990,7 +2970,6 @@ ficaassim += ` - ${fi}`
                    }
                }
            }
-           //console.log('É ESSE:', qualexp)
            
            if (qualexp!= '' && parar == false) {
            ground = ''
@@ -3000,7 +2979,6 @@ ficaassim += ` - ${fi}`
                if (qualexp[phy].search('[0-9]') != -1) {
                
                if (ground.search('[0-9]') != -1) {
-                   console.log('ADICIONAR')
                ground+= qualexp[phy]
               
                }else if(ground.length > 0){
