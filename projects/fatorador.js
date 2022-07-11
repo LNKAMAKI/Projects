@@ -8228,6 +8228,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                if (edge.length > 1) {
               // 
                concatenar+= `( ${naonao} )( ${tobreak} )`
+               
                }else{
                   // 
                    concatenar+= `${naonao}( ${tobreak} )`
