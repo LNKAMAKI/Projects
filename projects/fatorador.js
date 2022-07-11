@@ -2998,39 +2998,22 @@ ficaassim += ` - ${fi}`
     
           mudou = false
           if (primeirocaso[1] == primeirocaso[2]) {
-            
-            
           }else{
-    
               mudou = true
-              
-             
           }
-       
     
           if (segundocaso[1] == segundocaso[2]) {
-            
           }else{
-    
               mudou = true
-            
-            
           }
-    
-    
     
           if (mudou == true) {
             naonao = primeirocaso[0]
             tobreak = segundocaso[0] 
     
           
-          
-    
-          
-    
           reason = []
           for (k in naonao) {
-          // 
             if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
                 deserve = naonao[k - 1]
                 reason.push(k - 1)
@@ -3039,13 +3022,10 @@ ficaassim += ` - ${fi}`
                 naonao[k] = deserve
             }
           }
-    
-        //  
+     
          
        for (time = naonao.length - 1; time >= 0; time--) {
-        
         if (reason.indexOf(time) != -1) {
-            
             naonao.splice(time, 1)
             }
        }
@@ -3058,33 +3038,25 @@ ficaassim += ` - ${fi}`
                 deserve = tobreak[k - 1]
                 deserve+= tobreak[k]
                 reason.push(k - 1)
-               // 
                tobreak[k] = deserve
             }
           }
     
-         // 
           for (time = tobreak.length - 1; time >= 0; time--) {
-          //  
             if (reason.indexOf(time) != -1) {
-               // 
                 tobreak.splice(time, 1)
                 }
            }
           
     
-          
     
           
           for (roberto in naonao) {
-              
-            
-            
             for (vaidarcerto in tobreak) {
                 
                 novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
                 
-               // console.warn(newexpress)
+                console.warn('newexpress',newexpress)
                 if (novomon[0] == '-') {
                     miya = ''
                     for (n in novomon) {
