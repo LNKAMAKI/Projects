@@ -1733,8 +1733,6 @@ e = [...roller]
           whyis = java
           if (podeser.length > 0) {
               
-              
- 
               for(cold in podeser) {
           if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
           // 
@@ -1766,18 +1764,13 @@ e = [...roller]
                }else{
                    ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
                }
-               
-           
            }
            
           for (ruin in podeser[cold].opl) {
-          // 
            emotion = ''
            for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-         // 
                emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
            }
-          // 
          }
           }
        }
@@ -1793,12 +1786,6 @@ e = [...roller]
        
               
               for (nao in roll) {
-                 // 
-              // 
-               
-              // 
-             //  
-       
               
                    shot = ''
                    for (gun in roll[nao].repetidos) {
