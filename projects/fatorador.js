@@ -61,7 +61,7 @@
 
 
 function ir() {
-    console.log('VAIIIIIIIII');
+   
     qualexp1 = document.getElementById('typearea').value
     qualexp = ''
     
@@ -87,7 +87,6 @@ function ir() {
         if (qualexp[phy].search('[0-9]') != -1) {
         
         if (ground.search('[0-9]') != -1) {
-            console.log('ADICIONAR')
         ground+= qualexp[phy]
        
         }else if(ground.length > 0){
@@ -133,7 +132,7 @@ function ir() {
     abriu = false
     vez = 0
     function showegs() {
-        console.log('EXEMPLOS')
+       
         if (abriu == false) {
         document.getElementById('tab').style.height = 'fit-content'
         document.getElementById('exemplos').value= 'Fechar'
@@ -1186,7 +1185,7 @@ function ir() {
                                 for (i in str) {
                                     if (str[i] == '.' && estado != '-') {
                                     permission = versetem(estado)
-                                    console.log(permission)
+                                    //console.log(permission)
                                     if (permission == true) {
                                     segs.push({car: estado, mons: [m]})
                                     }
@@ -1710,8 +1709,6 @@ e = [...roller]
                    ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
                }
            }
-           
-           console.log('and we remain',ficaassim)
 
           for (ruin in podeser[cold].opl) {
            emotion = ''
@@ -8242,11 +8239,11 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                }
                if (edge.length > 1) {
               // 
-               concatenar+= `( ${naonao} )( ${tobreak} )`
+               concatenar+= `(${naonao})(${tobreak})`
                
                }else{
                   // 
-                   concatenar+= `${naonao}( ${tobreak} )`
+                   concatenar+= `${naonao}(${tobreak})`
                }
               // 
               // 
