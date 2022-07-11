@@ -9834,11 +9834,11 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                          ///   
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                             
-  outrorel.fix[hu] =  outrorel.falt[ou]
-  outrorel.falt[ou] = -10
-  
-                             
-  y++
+                                outrorel.fix[hu] =  outrorel.falt[ou]
+                                outrorel.falt[ou] = -10
+                                
+                                                            
+                                y++
                             }
                         }
                     }
@@ -9899,22 +9899,14 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
            }
            
            for (sorrow in segs2) {
-           
            grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-           
            
            imor = 0
            
            for (b = 0; b < grupos; b++) {
-               
-              
                ob = {car: segs2[sorrow].car, fix: [],problem:false}
            
-               for (live = 0; live < quanto; live++) {
-                 //  
-                //   
-           
-               //   
+               for (live = 0; live < quanto; live++) {  
            
                       if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                            //ob.problem = true
@@ -9923,8 +9915,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                    ob.fix.push(segs2[sorrow].mons[imor])
                    tirados.push(segs2[sorrow].mons[imor])
                    imor++
-                   
-                  
                }
               
                if (ob.problem == false || temnaLista(ob.fix) == true) {
@@ -9935,7 +9925,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
            }
            }
            }
-           
            return [relation, segs2]
            }
            
@@ -9955,15 +9944,12 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         particles.push({numero: ''})
         obnum++
         }
-        
         particles[obnum].numero += list[n]
-        
         }
         
         
         
         for (huh in particles) {
-           // 
         
             partlet = ''
             for (y in particles[huh].numero) {
@@ -9974,14 +9960,11 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
              }
             }
             particles[huh].partletral = partlet
-           // 
         }
         
         
         exp = []
         for (bye in particles) {
-            
-        
             comofica = []
             ground = ''
         
@@ -10007,8 +9990,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                     }
             }
         
-           // 
-            //
             particles[bye].numero = comofica
         }
         
@@ -10032,8 +10013,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         }
         
         
-          
-        
         
         for (chuva in agruparsoma) {
             
@@ -10051,7 +10030,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         divisor.push(agruparsoma[chuva].que[flowers])
         }
         
-        
         tu = [...divisor]
         resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
         
@@ -10061,12 +10039,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         add = ''
         
         for (past in resultadoDaDivisão) {
-           
-         
-        
          if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
-        
-        
         if (add.length == 0) {
             if (resultadoDaDivisão[past - 1] != '-') {
             add+= resultadoDaDivisão[past]
@@ -10098,9 +10071,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         
         if (plan.length == 3) {
             
-            
             plan = [String(Number(plan[0])*Number(plan[2]))]
-            
             }
         
             if (particles[agruparsoma[chuva].quais[da]].numero[0] == '+' || particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
@@ -10126,11 +10097,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         }
         
         
-        
-        
         comehome = fazerConta(conta)
-        
-        
         
         
         if (comehome[0][0] == '-') {
@@ -10168,7 +10135,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
             }
             
         
-        
         if (exp.length == 0) {
             fat += agruparsoma[chuva].que
             exp.push(fat)
@@ -10205,11 +10171,9 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         
         operation = []
         for (patience in storer) {
-            
-           
+    
             if (storer[patience] == '*') {
                 wasmultiplicated = true
-                
                 
                 operation.push(storer[Number(patience) - 1])
                 operation.push('x')
