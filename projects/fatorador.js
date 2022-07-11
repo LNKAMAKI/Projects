@@ -1179,17 +1179,12 @@ function ir() {
                           if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
 
                         }else{
-                            console.log('______________________>>>>>>>>>>>>>>>---------', repetido[moe].letr)
-                           // segs.push({car: repetido[moe].letr, mons: [m]})
 
                             splitUp(repetido[moe].letr)
                             function splitUp(str) {
                                 estado = ''
                                 for (i in str) {
-                                    
                                     if (str[i] == '.' && estado != '-') {
-                                        console.log('OPA',estado)
-                                        
                                     permission = versetem(estado)
                                     console.log(permission)
                                     if (permission == true) {
@@ -1198,30 +1193,20 @@ function ir() {
                                 }
                                     estado+= str[i]
                                     if (i == str.length - 1) {
-                                        console.log('OPA',estado)
-                                
                                         permission = versetem(estado)
-                                        console.log(permission)
                                         if (permission == true) {
                                         segs.push({car: estado, mons: [m]})
                                         }
                                     }
                                 }
                                 }
-    
                            }
                      
-                      
        
                    }else if(segs[qual].mons.indexOf(m) == -1){
-                     
-                           
                            segs[qual].mons.push(m)
-       
- 
                    }
                }
-               
        }
        
        
