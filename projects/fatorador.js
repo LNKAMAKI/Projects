@@ -3366,16 +3366,7 @@ ficaassim += ` - ${fi}`
         }
        
        
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
        
        
        function doit(par) {
@@ -3384,13 +3375,9 @@ ficaassim += ` - ${fi}`
        
            for (uf in par) {
            
-              // 
-              // segs2.push(segs[uf])
-             //  segs[tie].godhelpme = [...segs[tie].mons]
              segs2[uf] = {}
                segs2[uf].mons = [...par[uf].mons]
                segs2[uf].car = par[uf].car
-       
         }
        
         relation = []
