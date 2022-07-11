@@ -1580,9 +1580,9 @@ function ir() {
        
        //15 + 5b + 15l + 5bl
        
-       console.log('OK, LET ME FIX THIS THING')
+       //console.log('OK, LET ME FIX THIS THING')
        for (nal in miss) {
-        console.log(miss[nal].aparicoes)
+        //console.log(miss[nal].aparicoes)
        }
 
        roller = []
@@ -1922,9 +1922,9 @@ e = [...roller]
              deucerto = false
        
 
-             console.log('OK, LET ME FIX THIS THING')
+             //console.log('OK, LET ME FIX THIS THING')
              for (nal in miss) {
-                console.log(miss[nal].aparicoes)
+                //console.log(miss[nal].aparicoes)
                }
 
              roller = []
@@ -6613,9 +6613,9 @@ scarecrow[anchor].divididos.push(uy)
            
            
            
-           console.log('OK, LET ME FIX THIS THING')
+           //console.log('OK, LET ME FIX THIS THING')
            for (nal in miss) {
-              console.log(miss[nal].aparicoes)
+              //console.log(miss[nal].aparicoes)
              }
 
            roller = []
@@ -7036,9 +7036,9 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                  deucerto = false
            
                  
-                 console.log('OK, LET ME FIX THIS THING')
+                 //console.log('OK, LET ME FIX THIS THING')
                  for (nal in miss) {
-                    console.log(miss[nal].aparicoes)
+                    //console.log(miss[nal].aparicoes)
                    }
     
                  roller = []
