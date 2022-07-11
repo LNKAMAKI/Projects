@@ -9927,25 +9927,14 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                   
                }
               
-              
-               
-           
-               
-               
                if (ob.problem == false || temnaLista(ob.fix) == true) {
                relation.push(ob)
                }
            }
            
            }
-           
-           
-           
            }
            }
-           
-          // 
-           
            
            return [relation, segs2]
            }
@@ -10001,9 +9990,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                 
                 carac = particles[bye].numero[misery]
                
-              
-        
-              // 
                     if (ground.length == 0) {
                        // 
                         ground+= carac
@@ -10046,10 +10032,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         }
         
         
-                  
-        
-        
-        
+          
         
         
         for (chuva in agruparsoma) {
@@ -10095,23 +10078,14 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         }else{
             plan.push(add)
             add = ''
-            
-           
             add+= resultadoDaDivisão[past]
             
-            
         }
-        // 
-        
         
         if (plan.length == 3) {
-        
-        
-        
         plan = [String(Number(plan[0])*Number(plan[2]))]
         }
          }
-        
         }
         
         
@@ -10149,8 +10123,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                
                 conta.push(plan[0])
             }
-           
-            
         }
         
         
@@ -10209,10 +10181,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
               //  
             }
         }
-        
-        
-        
-        
         }
         
         return[exp, agruparsoma.length, particles.length]
@@ -10274,13 +10242,8 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                     }
         
                     resultobtained+= storer[patience]
-                
-                    
-                  
                     elevar = 1
                 }
-                
-               
             } 
         }
         
@@ -10310,7 +10273,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         }else{
             return resultobtained
         }
-           
         }
         
         
@@ -10363,11 +10325,9 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                 }
             
             
-                sónumero+= sónumero2
+                    sónumero+= sónumero2
             
                     sóletra+= sóletra2
-                
-                   
                     if (sinal1 == sinal2) {
                        
                         resultmult = sónumero+= sóletra
