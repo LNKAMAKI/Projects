@@ -2011,8 +2011,7 @@ e = [...roller]
                          esigual = true
                          for (denovo in podeser[idk].opl) {
                              
-                             if (podeser[idk].opl[denovo] == presentes[denovo]) {
-  // 
+                             if (podeser[idk].opl[denovo] == presentes[denovo]) { 
                              }else{
                                 esigual = false
                              }
@@ -2025,10 +2024,8 @@ e = [...roller]
                      if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                          //podeser.push({opl: presentes, position: [outro]})
                      }
-                     
                  }
                 }
-               // 
                 podeser = [...roller]
                 
                 for (belief in podeser) {
@@ -2036,35 +2033,25 @@ e = [...roller]
                    // podeser[belief].position.push(String(java))
                     }
        
-                 
-       
                  shot = ''
                  for (gun in podeser[belief].opl) {
                      
                      shot+= podeser[belief].opl[gun] + ','
                  }
-                // 
-       
+              
                  if (roll.length == 0) {
-                    // 
+               
                      roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                  }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                     
-                    
-       
                      for (capital in podeser[belief].position) {
-                         
-       
-                       // 
-       
+                        
                      if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                         
                         roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                      }
                      }
        
-                 }else{
-                     
+                 }else{  
                      roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                  }
                 }
@@ -2073,8 +2060,6 @@ e = [...roller]
                 whyis = java
                 if (podeser.length > 0) {
                     
-                    
-       
                     for(cold in podeser) {
                 if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
                 // 
@@ -2094,7 +2079,6 @@ e = [...roller]
    fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
                              }
                          }
-                        // 
                          if (yehaa != 0) {
 ficaassim += ` - ${fi}`
                          }else{
@@ -2106,35 +2090,23 @@ ficaassim += ` - ${fi}`
                      }else{
                          ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
                      }
-                     
-                 
                  }
                  
                 for (ruin in podeser[cold].opl) {
-                // 
                  emotion = ''
                  for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-               // 
                      emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
                  }
-                // 
                }
                 }
              }
        
              }
-       
-              //  }
-       
                 java++
             }
        
        
-       
-       
-       
-       
-       
+
        
               youdumb = []
        
@@ -2144,18 +2116,10 @@ ficaassim += ` - ${fi}`
                    asitwas = [] 
                
                    obe = {what:[]}
-       
-                 //  
-                  // 
-       
-                  
                
                   for (still in roll[raging].repetidos) {
                    asitwas2 = []
                    aswillbe = []
-       
-                  
-                //   
        
                    mylife = '('
                    for (still2 in roll[raging].posições) {
@@ -2165,9 +2129,6 @@ ficaassim += ` - ${fi}`
                        }else{
                            mylife+= miss[roll[raging].posições[still2]].dividido
                        }
-       
-                     
-                     //  
        
                        conseguiu = false
                        older = 0
@@ -2180,8 +2141,6 @@ ficaassim += ` - ${fi}`
                        // eg == '2x' (NÚMERO QUE VAI SER MULTIPLICADO)
                        
                        function DESFATORAR(correto, eg2, eg) {
-       
-                       
        
                        eassim = []
                        solo = ''
@@ -2198,13 +2157,11 @@ ficaassim += ` - ${fi}`
                            eassim.push(solo)
                            solo = ''
                            solo += eg[ne]
-                           
                        }
                        if (ne == eg.length - 1) {
                            eassim.push(solo)
                        }
                            }else{
-                          
                            }
                        }
                        
@@ -2212,80 +2169,62 @@ ficaassim += ` - ${fi}`
                        
                        
                        whythat = [...eg]
-                     //  
-                     /*
-                       for (ponto in eg2) {
-                         //  
-                           if (eg2[ponto] != '.') {
-                           whythat.push(eg2[ponto])
-                         //  
-                           }
-                       }
-                       */
+                     
                       teri = false
                        juntar = ''
                        for (estudar in eg2) {
-                      
                            if (eg2[estudar] == '.') {
- teri = true
- if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
-   
-     whythat.push(juntar)
-     juntar = ''
- whythat.push('*')
+                            teri = true
+                            if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
+                            
+                                whythat.push(juntar)
+                                juntar = ''
+                            whythat.push('*')
 
- }
+                            }
                            }else{
 
-                          
-                        
- if (juntar.length == 0) {
-     juntar = eg2[estudar]
-                             
-     if (estudar == eg2.length - 1) {
-         whythat.push(juntar)
-    
-     }
-       
- }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
+                            if (juntar.length == 0) {
+                                juntar = eg2[estudar]
+                                                        
+                                if (estudar == eg2.length - 1) {
+                                    whythat.push(juntar)
+                                }
+                                
+                            }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
 
-     juntar+= eg2[estudar]
+                                juntar+= eg2[estudar]
 
-     if (estudar == eg2.length - 1) {
-    
-         whythat.push(juntar)
-     
-     }
- }else{
-     whythat.push(juntar)
-     juntar= eg2[estudar]
-     if (estudar == eg2.length - 1) {
-         whythat.push(juntar)
-     }
- }
-                           }
-                             
+                                if (estudar == eg2.length - 1) {
+                                
+                                    whythat.push(juntar)
+                                
+                                }
+                            }else{
+                                whythat.push(juntar)
+                                juntar= eg2[estudar]
+                                if (estudar == eg2.length - 1) {
+                                    whythat.push(juntar)
+                                }
+                            }
+                          }
                         }
                         if (teri == false) {
                          whythat = []
-                      
                            for (t in eg2) {
                            whythat.push(eg2[t])
                            }
                            for (t in eg) {
- whythat.push(eg[t])
+                            whythat.push(eg[t])
                            }
                        }
-       
-             // 
-              // 
                        
                        numerinhos = []
                        for (decisao in correto) {
                            if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
-numerinhos.push(correto[decisao])
+                            numerinhos.push(correto[decisao])
 
- }
+                       }
                       
                        }
                       
@@ -2293,31 +2232,25 @@ numerinhos.push(correto[decisao])
        
        
                            for (poder in whythat){
- if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
-                          
-                          
- numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
+                            if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
+                                              
+                            numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
        
- }
+                            }
                            }
        
                            for (pombo = whythat.length - 1; pombo >= 0; pombo--){
                           
- if (whythat[pombo] == '*' || whythat[pombo] == '1') {
+                            if (whythat[pombo] == '*' || whythat[pombo] == '1') {
 
-     whythat.splice(pombo,1)
-                             
- }
+                                whythat.splice(pombo,1)
+                                                        
+                            }
  
                            }
        
+
                       
-                      
-                      
-       
-                    
-                         
-                    
        
                          for (pray = whythat.length - 1; pray>=0 ; pray--) {
                       
@@ -2326,29 +2259,19 @@ numerinhos.push(correto[decisao])
                          }
        
                            if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                          
- conseguiu = true
+                            conseguiu = true
                            }
                        }
                        older++
                        }
-                 
-                 
-              
                       asitwas.push(older - 1)
                       asitwas2.push(older - 1)
                       aswillbe.push(older - 1)
-                      
                   }
                
-       
-             
-                 // 
-    
-    
                   obe.what.push({ar: asitwas2, indice: still})
                   aswillbe2.push({oque:aswillbe, onde:raging})
-                  
+                
                }
                
                youdumb.push({mons: asitwas, rag: raging, w: obe, polen: raging})
@@ -2360,10 +2283,6 @@ numerinhos.push(correto[decisao])
                dontworry = []
                for (behappy in youdumb) {
        
-              
-              
-       
-                   
                    for (armenia in youdumb) {
                        
                        if (armenia != behappy) {
@@ -2373,44 +2292,35 @@ numerinhos.push(correto[decisao])
                        for (sofar in youdumb[armenia].mons) {
                       
                            if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
- doeshave = false
+                            doeshave = false
 
                            }
                        }
                   
                        if (doeshave == true) {
-                  
                       if (dontworry.indexOf(behappy) == -1) {
                        dontworry.push(armenia)
                       }
                        }
                    }
-       
                    }
-                 
                }
        
                
                for (da = youdumb.length - 1; da >= 0; da--) {
                    if (dontworry.indexOf(String(da)) != -1) {
-                  
                       // youdumb.splice(da,1)
                    }
                }
                
-       
                grtols = []
        
-       
-           
        for (hi in youdumb) {
           // 
            youdumb[hi].length = youdumb[hi].mons.length
        
            grtols.push(youdumb[hi])
        }
-       
-       
        
        
        
@@ -2424,38 +2334,19 @@ numerinhos.push(correto[decisao])
        }
             
        
-       
        youdumb = []
        for (erro in grtols) {
           
            youdumb.push(grtols[erro])
        }
        
-       
-       
-       
-       /*
-       for (yourlife in grtols) {
-       
-           
-       
-           for (bolinho in grtols[yourlife].w.what) {
-          
-       
-               vagem = grtols[yourlife].w.what[bolinho]
-               for (ahnao in vagem) {
-              
-               }
-           }
-       }
-       */
+    
        
        pans = []
        numerospresentes = []
        
        
        for (AH in youdumb) {
-           
        }
        for (wrecked in youdumb) {
            
@@ -2494,11 +2385,6 @@ numerinhos.push(correto[decisao])
            if (initial.length > 0) {
            inside = {which: [], numberyoudumb: youdumb[imback].polen}
           
-           
-       
-       
-           
-           
            
            for (agg in initial) {
           
