@@ -58,11 +58,12 @@
 <img src="/Projects/projects/imagens/direitos-de-uso.jpeg" alt="" srcset="" style="max-width:530px;">
 <p>Podemos optar por Licença Creative Commons, que já irá atender as nossas necessidades.</p>
 
-<span class="impor"><h3>Sugestões:</h3>
-    <p>Aqui estão alguns sites que fornecem, em grande parte, imagens licenciadas:</p>
-        <a href="https://unsplash.com/">Unsplash</a><br>
-        <a href="https://www.pexels.com/pt-br/">Pexels</a><br>
-        <a href="https://pixabay.com/pt/">Pixabay</a>
+<span class="impor"><h3>DICA!</h3>
+    Aqui estão alguns sites que fornecem, em grande parte, imagens licenciadas:<br><br>
+        <a href="https://unsplash.com/" target="_blank">Unsplash</a>,
+        <a href="https://www.pexels.com/pt-br/" target="_blank">Pexels</a>,
+        <a href="https://pixabay.com/pt/" target="_blank">Pixabay</a>
+        <br><br>
 </span>
 <span class="title">JPEG, PNG E GIF</span>
 <p>Os principais formatos de imagem encontrados em um site são jpeg, png e gif. A principal diferença entre eles é
@@ -81,11 +82,9 @@
 
 <span class="title">IMAGENS RESPONSIVAS</span>
 
-<p>Agora vamos falar sobre como deixar as imagens adaptadas ao tamanho da dela, ou seja, "responsivas", já 
-    que se somente diminuíssemos a largura da imagem, poderia comprometer a sua visualização, tornando mais interessante
-    ter pelo menos mais duas fotos para telas médias e pequenas.
+<p>Agora vamos falar sobre como deixar as imagens adaptadas ao tamanho da dela, ou seja, "responsivas", já que em telas pequenas, como o celular, a imagem ficaria muito apertada, deixando, provavelmente, o conteúdo difícil de se visualizar. É por isso que é bom ter, no mínimo, 3 tamanhos da mesma imagem: pequeno, médio e grande.
 </p>
-<p>Para fazermos isso, primeiro devemos criar uma tag <span class="tag">picture</span> e inserir dentro tela uma <span class="tag">img</span></p>
+<p>Para fazermos isso, primeiro devemos criar uma tag <span class="tag">picture</span> e inserir dentro tela uma <span class="tag">img</span>:</p>
 <code>
     <span class="tag2">picture</span> <br>
     <span class="tag2">img <span class="prop">src</span><span class="n">=</span><span class="str">""</span> <span class="prop">alt</span><span class="n">=</span><span class="str">""</span></span> <br>
@@ -116,6 +115,13 @@
     <span class="tag2">img <span class="prop">src</span><span class="n">=</span><span class="str">"imagem-grande.png"</span> <span class="prop">alt</span><span class="n">=</span><span class="str">"imagem grande"</span></span> <br>
     <span class="tag3">picture</span>
 </code>
+
+<p>Veja um exemplo prático agora (diminua a tela para ver o que acontece):</p>
+<picture>
+    <source media="(min-width: 700px)" srcset="/fixacao-html-e-css-master/ct010/foto-g.png" type="image/png">
+    <source media="(min-width: 460px)" srcset="/fixacao-html-e-css-master/ct010/foto-m.png" type="image/png">
+    <img src="/fixacao-html-e-css-master/ct010/foto-p.png" alt="" srcset="">
+</picture>
 
 
 </div>
