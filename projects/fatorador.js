@@ -5532,25 +5532,17 @@ ficaassim += ` - ${fi}`
                fator = 1
                
                for (e = 2; stop == false; e++) {
-                   //
-                   //
-                   //
-               
+                
                    sob = Number(potn)
                  
                       if (ehprimo(e) == true) {
                        while (sob%e == 0) {
                        if (sob%e == 0) {
-                           //
-                           
-                           
+                       
                        }
            
                        sob = sob/e
                        
-                       
-                       
-           
                        fator = fator*e
            
                        st = false
@@ -5567,7 +5559,6 @@ ficaassim += ` - ${fi}`
                return fatorado
            }
            }
-           //
            
         
            
@@ -5590,7 +5581,6 @@ ficaassim += ` - ${fi}`
                    anterior.splice(n + 1, 1)
                    n = n - 3
            
-                   
                }else{
                    
                }
@@ -5606,10 +5596,7 @@ ficaassim += ` - ${fi}`
                    anterior.splice(n + 3, 1)
                    anterior.splice(n + 1, 1)
                    n = n - 3
-           
-                   
                }else{
-                   
                }
            }
            }
@@ -5673,7 +5660,6 @@ ficaassim += ` - ${fi}`
                            anterior.splice(n + 1, 1)
                            n = n - 3
            
-                           
                        }else{
                            
                        }
@@ -5718,13 +5704,11 @@ ficaassim += ` - ${fi}`
                        
                        n = n - 3
                        
-                       if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                           
+                       if (anterior[n + 1] == '(' && anterior[n + 3] == ')') { 
                            anterior.splice(n + 3, 1)
                            anterior.splice(n + 1, 1)
                            n = n - 3
            
-                           
                        }else{
                            
                        }
@@ -5741,9 +5725,7 @@ ficaassim += ` - ${fi}`
                            anterior.splice(n + 1, 1)
                            n = n - 3
            
-                           
                        }else{
-                           
                        }
                    }else if(anterior[n] == '√' && anterior[n + 1] != '(') {
                        
@@ -5758,21 +5740,18 @@ ficaassim += ` - ${fi}`
                            anterior.splice(n + 1, 1)
                            n = n - 3
                    
-                           
-                       }else{
-                           
+                       }else{  
                        }
                    }
                }
-           // }
            }
            
                
            }
            return anterior
            }
-           //
            
+
            function versetem(comp) {
             podeir = true
             qual = -1
@@ -5792,7 +5771,6 @@ ficaassim += ` - ${fi}`
                        divisao = DIVIDIR(VAI(comp),VAI(segs[meow].car))
                    }
                    if (divisao == '' || divisao == '-') {
-                     // 
                       podeir = false
                       qual = meow
                    }
@@ -5802,7 +5780,6 @@ ficaassim += ` - ${fi}`
            
            function DIVIDIR(T, qual) {
                
-           
                Tfix = []
            for (h in T) {
                Tfix.push(T[h])
@@ -5810,14 +5787,12 @@ ficaassim += ` - ${fi}`
            }
            //egs = [...qual]
            
-           
            egs = []
            for (norte in qual) {
            
            if (qual[norte] == '*' || qual[norte] == '.') {
                
            }else{
-           
            
            egs.push(qual[norte])
            
@@ -5832,14 +5807,10 @@ ficaassim += ` - ${fi}`
            
            if (T.indexOf(egs[n]) != -1) {
            
-              // 
            T.splice(T.lastIndexOf(egs[n]), 1)
            takeout.push(Number(n))
            }
-           
            }
-           
-           
            
            
            
