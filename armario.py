@@ -116,7 +116,7 @@ peçainforms = ''
 
 for i in range(quantidade):
   print('peça',i)
-  properties = ['tamanho','preço','data','cor']
+  properties = ['tamanho','preço','data','cor','tipo']
   values = []
 
   for a in range(len(properties)):
