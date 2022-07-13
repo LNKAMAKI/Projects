@@ -5069,8 +5069,6 @@ ficaassim += ` - ${fi}`
         ground = ''
     for (bye in str) {
         
-    
-            
             carac = str[bye]
           
                 if (ground.length == 0) {
@@ -5127,24 +5125,14 @@ ficaassim += ` - ${fi}`
                
                for (e = 2; stop == false; e++) {
                
-               
-               
-               
                    sob = Number(expression[n])
                  
                       if (ehprimo(e) == true) {
                        while (sob%e == 0) {
                        if (sob%e == 0) {
-                      //
-                           
-                           
                        }
-           
                        sob = sob/e
                        
-                     //  
-                     //  
-           
                        fator = fator*e
            
                        st = false
@@ -5158,7 +5146,6 @@ ficaassim += ` - ${fi}`
                       }
                    }
                }
-               
                expression[n] = fatorado
            }
            }
@@ -5169,23 +5156,14 @@ ficaassim += ` - ${fi}`
            
            //
            for (y in expression) {
-             
-           
                if (expression[y] == '^') {
-                  // 
-                  // 
-                   
-           
                   ad =  expression[Number(y) - 1] 
                    for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
-                      // 
                        expression[Number(y) - 1]+= ad
                    }
            
                    expression.splice(Number(y) + 1, 1)
                    expression.splice(y, 1)
-                  // 
-                  // 
                }
            }
            
@@ -5220,18 +5198,11 @@ ficaassim += ` - ${fi}`
                ground = ''
            
                for (misery in monomios[bye].numero) { 
-                // 
-                   
                    carac = monomios[bye].numero[misery]
                   
-                 
-           
-                 // 
                        if (ground.length == 0) {
-                          // 
                            ground+= carac
                        }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-                          // 
                            ground+= carac
                        }else{
                            comofica.push(ground)
@@ -5243,16 +5214,11 @@ ficaassim += ` - ${fi}`
                            comofica.push(ground)
                        }
                }
-           
-              // 
-               //
                monomios[bye].numero = comofica
            }
            
         
            for (huh in monomios) {
-               
-           
                partlet = ''
                for (y in monomios[huh].numero) {
                 
@@ -5262,15 +5228,13 @@ ficaassim += ` - ${fi}`
                 }
                }
                monomios[huh].partletral = partlet
-               
            }
            
            
            ji = []
            // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
            for (huh in monomios) {
-               
-               
+    
                if (ji.find(function (ji) {
                    return ji.que == monomios[huh].partletral
                   }) == undefined) {
@@ -5281,7 +5245,6 @@ ficaassim += ` - ${fi}`
                        return ji.que == monomios[huh].partletral
                       }).quais.push(Number(huh))
                   }
-               
            }
            
            
