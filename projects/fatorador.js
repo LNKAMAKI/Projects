@@ -1571,7 +1571,7 @@ function FATORAR(expression) {
   }
   okentao++;
 
-  INDIRETARROLL()
+  INDIRETARROLL();
 
   for (ne in roll) {
     //for (ne = 0; ne < 1; ne++) {
@@ -1919,7 +1919,7 @@ function FATORAR(expression) {
 
   console.log("HORA DA VERDADE!");
 
-  INDIRETARROLL()
+  INDIRETARROLL();
   for (n in roll) {
     console.log(roll[n].posições);
   }
@@ -5918,7 +5918,7 @@ function FATORAR2(expression) {
   }
   okentao++;
 
-  INDIRETARROLL()
+  INDIRETARROLL();
 
   //
 
@@ -6294,8 +6294,8 @@ function FATORAR2(expression) {
     java++;
   }
 
-  console.log('HORA DA VERDADE!')
-  INDIRETARROLL()
+  console.log("HORA DA VERDADE!");
+  INDIRETARROLL();
   youdumb = [];
 
   aswillbe2 = [];
@@ -8819,26 +8819,36 @@ function FATORE(q) {
 }
 
 function INDIRETARROLL() {
-    for (nao in roll) {
-           shot = ''
-           for (gun in roll[nao].repetidos) {
-               shot+= roll[nao].repetidos[gun] + ','
-           }
+  for (nao in roll) {
+    shot = "";
+    for (gun in roll[nao].repetidos) {
+      shot += roll[nao].repetidos[gun] + ",";
+    }
 
-       for (whyso in miss) {
-           igual = 0
-           for (heat in miss[whyso].aparicoes) {
-               if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
-                   igual++
-               }
-           }
-          
-           if (igual == roll[nao].repetidos.length) {
-                  if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
-               }else{
-                   roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
-               }
-           }
-           }
-       }
+    for (whyso in miss) {
+      igual = 0;
+      for (heat in miss[whyso].aparicoes) {
+        if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
+          igual++;
+        }
+      }
+
+      if (igual == roll[nao].repetidos.length) {
+        if (
+          roll
+            .find(function (roll) {
+              return roll.way == shot;
+            })
+            .posições.indexOf(whyso) != -1
+        ) {
+        } else {
+          roll
+            .find(function (roll) {
+              return roll.way == shot;
+            })
+            .posições.push(whyso);
+        }
+      }
+    }
+  }
 }
