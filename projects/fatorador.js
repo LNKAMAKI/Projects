@@ -1604,7 +1604,99 @@ function FATORAR(expression) {
     }
   }
 
-  INDIRETARROLL();
+  for (ne in roll) {
+    //for (ne = 0; ne < 1; ne++) {
+    console.log(roll[ne].posições);
+    arranjar = [];
+    for (pq in roll[ne].repetidos) {
+      (gosto = roll[ne].repetidos[pq]),
+        scarecrow[roll[ne].repetidos[pq]].divididos;
+
+      arranjar.push({ pos: pq, ocupa: [], origin: gosto });
+
+      for (moon in roll[ne].posições) {
+        vaiir =
+          scarecrow[gosto].outrodiv[
+            scarecrow[gosto].divididos.indexOf(
+              miss[roll[ne].posições[moon]].dividido
+            )
+          ];
+        arranjar[pq].ocupa.push(vaiir);
+      }
+    }
+
+    jafoi = [];
+
+    perfectwave = [];
+    for (tosse in arranjar) {
+      if (jafoi.indexOf(tosse) == -1) {
+        organizer = { agrupar: [tosse], referencia: arranjar[tosse].ocupa };
+
+        for (calor in arranjar) {
+          if (calor != tosse) {
+            equals = true;
+            igualar = [];
+            for (boring in arranjar[calor].ocupa) {
+              sendocomparado = arranjar[calor].ocupa[boring];
+              comparador = arranjar[tosse].ocupa[boring];
+
+              if (sendocomparado[0] != comparador[0]) {
+                igualar.push(true);
+              } else {
+                igualar.push(false);
+              }
+            }
+            if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
+              jafoi.push(calor);
+              organizer.agrupar.push(calor);
+            }
+          }
+        }
+        perfectwave.push(organizer);
+      }
+    }
+
+    for (youchoose in perfectwave) {
+      ficarassim = perfectwave[youchoose].referencia;
+
+      for (catraca in perfectwave[youchoose].agrupar) {
+        presa = perfectwave[youchoose].agrupar[catraca];
+
+        diferente = false;
+        for (moon in roll[ne].posições) {
+          //
+          vaiir =
+            scarecrow[arranjar[presa].origin].outrodiv[
+              scarecrow[arranjar[presa].origin].divididos.indexOf(
+                miss[roll[ne].posições[moon]].dividido
+              )
+            ];
+          //
+          if (vaiir != ficarassim[moon]) {
+            diferente = true;
+            scarecrow[arranjar[presa].origin].outrodiv[
+              scarecrow[arranjar[presa].origin].divididos.indexOf(
+                miss[roll[ne].posições[moon]].dividido
+              )
+            ] = ficarassim[moon];
+          }
+        }
+        if (diferente == true) {
+          lista = scarecrow[arranjar[presa].origin].divisor;
+          if (lista != "-") {
+            modificar = ["-", "."];
+            for (saved in lista) {
+              modificar.push(lista[saved]);
+            }
+            //
+            scarecrow[arranjar[presa].origin].divisor = modificar;
+          } else {
+            lista.splice(0, 2);
+          }
+        }
+      }
+    }
+  }
 
   for (sei in scarecrow) {
     for (ai in scarecrow[sei].divididos) {
@@ -5892,7 +5984,99 @@ function FATORAR2(expression) {
 
   //
 
-  INDIRETARROLL();
+  for (ne in roll) {
+    //for (ne = 0; ne < 1; ne++) {
+    console.log(roll[ne].posições);
+    arranjar = [];
+    for (pq in roll[ne].repetidos) {
+      (gosto = roll[ne].repetidos[pq]),
+        scarecrow[roll[ne].repetidos[pq]].divididos;
+
+      arranjar.push({ pos: pq, ocupa: [], origin: gosto });
+
+      for (moon in roll[ne].posições) {
+        vaiir =
+          scarecrow[gosto].outrodiv[
+            scarecrow[gosto].divididos.indexOf(
+              miss[roll[ne].posições[moon]].dividido
+            )
+          ];
+        arranjar[pq].ocupa.push(vaiir);
+      }
+    }
+
+    jafoi = [];
+
+    perfectwave = [];
+    for (tosse in arranjar) {
+      if (jafoi.indexOf(tosse) == -1) {
+        organizer = { agrupar: [tosse], referencia: arranjar[tosse].ocupa };
+
+        for (calor in arranjar) {
+          if (calor != tosse) {
+            equals = true;
+            igualar = [];
+            for (boring in arranjar[calor].ocupa) {
+              sendocomparado = arranjar[calor].ocupa[boring];
+              comparador = arranjar[tosse].ocupa[boring];
+
+              if (sendocomparado[0] != comparador[0]) {
+                igualar.push(true);
+              } else {
+                igualar.push(false);
+              }
+            }
+            if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
+              jafoi.push(calor);
+              organizer.agrupar.push(calor);
+            }
+          }
+        }
+        perfectwave.push(organizer);
+      }
+    }
+
+    for (youchoose in perfectwave) {
+      ficarassim = perfectwave[youchoose].referencia;
+
+      for (catraca in perfectwave[youchoose].agrupar) {
+        presa = perfectwave[youchoose].agrupar[catraca];
+
+        diferente = false;
+        for (moon in roll[ne].posições) {
+          //
+          vaiir =
+            scarecrow[arranjar[presa].origin].outrodiv[
+              scarecrow[arranjar[presa].origin].divididos.indexOf(
+                miss[roll[ne].posições[moon]].dividido
+              )
+            ];
+          //
+          if (vaiir != ficarassim[moon]) {
+            diferente = true;
+            scarecrow[arranjar[presa].origin].outrodiv[
+              scarecrow[arranjar[presa].origin].divididos.indexOf(
+                miss[roll[ne].posições[moon]].dividido
+              )
+            ] = ficarassim[moon];
+          }
+        }
+        if (diferente == true) {
+          lista = scarecrow[arranjar[presa].origin].divisor;
+          if (lista != "-") {
+            modificar = ["-", "."];
+            for (saved in lista) {
+              modificar.push(lista[saved]);
+            }
+            //
+            scarecrow[arranjar[presa].origin].divisor = modificar;
+          } else {
+            lista.splice(0, 2);
+          }
+        }
+      }
+    }
+  }
 
   //
   for (sei in scarecrow) {
