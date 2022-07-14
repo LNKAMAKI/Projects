@@ -8816,7 +8816,7 @@ function FATORE(q) {
   }
 }
 
-function INDIRETARROLL() {
+function INDIRETARROLL() { // CÓDIGO PARA ADICIONAR POSIÇÕES QUE POSSUEM  O TERMO (REPETIDO) DO ROLL[N] E QUE NÃO ESTÃO INSERIDAS
   for (nao in roll) {
     shot = "";
     for (gun in roll[nao].repetidos) {
