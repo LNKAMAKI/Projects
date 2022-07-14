@@ -170,7 +170,7 @@ function ir() {
         startexp = [...expression]
     
     if (expression[0] !== '-' && expression[0] !== '+') {
-        // 
+        //
            expo = ['+']
            for (ent in expression) {
              //
@@ -1426,7 +1426,7 @@ function ir() {
                       
                        army = [...bell]
                 
-                    // 
+                    //
                
                    
                     lightson = [...army]
@@ -1463,15 +1463,15 @@ function ir() {
      right+= pain[feet]
  }
                            }
-                        // 
+                        //
                           
                            uy = ''
                          //
        
                           for (xarope in right) {
-                        // 
+                        //
                            if (xarope == 0 && right[xarope] == '*') { //*2
-                          // 
+                          //
                            }else if(xarope == right.length - 1 && right[xarope] == '*'){ //2*
                          //
                            }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ //2*x
@@ -2646,7 +2646,7 @@ ficaassim += ` - ${fi}`
     
     
            if (aster == false) {
-            // 
+            //
                antes = ''
                for (eyes in quase) {
                    
@@ -2672,7 +2672,7 @@ ficaassim += ` - ${fi}`
                    
                       negativo = true
                    if (aconta[0] == '-') {
-                    // 
+                    //
                        mood = ''
                        for (member in aconta) {
                            
@@ -2784,11 +2784,11 @@ ficaassim += ` - ${fi}`
        
                         //
                            juntar+= triste[estudar]
-                        // 
+                        //
                            if (estudar == triste.length - 1) {
                             //
  quase.push(juntar)
-                            // 
+                            //
                            }
                        }else{
                            quase.push(juntar)
@@ -3224,7 +3224,7 @@ ficaassim += ` - ${fi}`
                  friend = direitando
                 }
         if (aster == false) {
-         // 
+         //
             antes = ''
             for (eyes in quase) {
                 
@@ -3634,7 +3634,7 @@ ficaassim += ` - ${fi}`
            //
        
              for (nop in relation[nah].fix) {
-              // 
+              //
                  numerosquetem.push(relation[nah].fix[nop])
              }
              }
@@ -3774,7 +3774,7 @@ ficaassim += ` - ${fi}`
                //
                //
                 if (present.fix.indexOf(lista[g]) == -1) {
-                 // 
+                 //
                     present.falt.push(lista[g])
            
                 }
@@ -3807,7 +3807,7 @@ ficaassim += ` - ${fi}`
             //
        
             for (f = 0; f < faltam; f++) {
-             // 
+             //
                relation[c].fix.push(relation[c].falt[f])
               
            
@@ -3828,18 +3828,18 @@ ficaassim += ` - ${fi}`
             for (hu in outrorel.fix) {
               //
                 if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-                 // 
+                 //
                     //
                     y = 0
                     for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
        
-                     /// 
+                     ///
                         if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                         
                             outrorel.fix[hu] =  outrorel.falt[ou]
                             outrorel.falt[ou] = -10
                             
-                         // 
+                         //
                             y++
                         }
                     }
@@ -4074,7 +4074,7 @@ ficaassim += ` - ${fi}`
        
                       //numapars.find(function(numapars) {
                           //return numapars.num == lista[g]
-                         // }).vezes--
+                         //}).vezes--
        
                             
                 }
@@ -4299,7 +4299,7 @@ ficaassim += ` - ${fi}`
           for(y = 0; y < segs2[mcr].mons.length; y++) {
            //
                if (segs2[idk].mons.indexOf(segs2[mcr].mons[y]) != -1) {
-              // 
+              //
                    sames.push('igual')
                }else{
                //
@@ -4355,8 +4355,8 @@ ficaassim += ` - ${fi}`
             aparic = 0
            //
             for (t in util) {
-             // 
-             // 
+             //
+             //
        
                 if (util[t].mons.indexOf(Number(m)) != -1) {
                     aparic++
@@ -4377,7 +4377,7 @@ ficaassim += ` - ${fi}`
           
             rep = 0
             for (g = 0; g < lista.length && rep < quanto; g++) {
-             // 
+             //
        
        
                 if (numapars.find(function(numapars) {
@@ -4398,14 +4398,14 @@ ficaassim += ` - ${fi}`
                //
                //
                 if (present.fix.indexOf(lista[g]) == -1) {
-                 // 
+                 //
                     present.falt.push(lista[g])
        
                    
        
                       //numapars.find(function(numapars) {
                           //return numapars.num == lista[g]
-                         // }).vezes--
+                         //}).vezes--
        
                             
                 }
@@ -4443,7 +4443,7 @@ ficaassim += ` - ${fi}`
             //
        
             for (f = 0; f < faltam; f++) {
-             // 
+             //
                relation[c].fix.push(relation[c].falt[f])
               
            
@@ -4469,7 +4469,7 @@ ficaassim += ` - ${fi}`
                     y = 0
                     for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
        
-                     /// 
+                     ///
                         if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                         
                             outrorel.fix[hu] =  outrorel.falt[ou]
@@ -4551,14 +4551,14 @@ ficaassim += ` - ${fi}`
        
            for (live = 0; live < quanto; live++) {
              //
-            // 
+            //
        
-           // 
+           //
        
                   if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                        //ob.problem = true
                   }
-                // 
+                //
                ob.fix.push(segs2[sorrow].mons[imor])
                tirados.push(segs2[sorrow].mons[imor])
                imor++
@@ -4924,7 +4924,7 @@ ficaassim += ` - ${fi}`
     }
     
     if (wasmultiplicated == false) {
-        // 
+        //
            addingnumber = ''
            for (eyes in storer) {
                
@@ -5093,7 +5093,7 @@ ficaassim += ` - ${fi}`
     
     function FATORAR2(expression) {
         if (expression[0] !== '-' && expression[0] !== '+') {
-            // 
+            //
                expo = ['+']
                for (ent in expression) {
                  //
@@ -6295,7 +6295,7 @@ if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
                           
                            army = [...bell]
                     
-                        // 
+                        //
                    
                        
                         lightson = [...army]
@@ -6332,15 +6332,15 @@ scarecrow[anchor].divididos.push('1')
          right+= pain[feet]
      }
  }
-                            // 
+                            //
 
  uy = ''
                              //
            
 for (xarope in right) {
-                            // 
+                            //
  if (xarope == 0 && right[xarope] == '*') { //*2
-// 
+//
  }else if(xarope == right.length - 1 && right[xarope] == '*'){ //2*
                              //
  }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ //2*x
@@ -6428,7 +6428,7 @@ scarecrow[anchor].divididos.push(uy)
                for (quad in miss) {
                    console.log('')
                     if (quad != eep) {
-                // console.log(quad,miss[quad].aparicoes)
+                //console.log(quad,miss[quad].aparicoes)
    
                    repeated = []
                    repwri = ''
@@ -6851,7 +6851,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                      for (quad in miss) {
                          console.log('')
                           if (quad != eep) {
-                      // console.log(quad,miss[quad].aparicoes)
+                      //console.log(quad,miss[quad].aparicoes)
          
                          repeated = []
                          repwri = ''
@@ -7069,7 +7069,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                        aswillbe = []
            
                       
-                    // 
+                    //
            
                        mylife = '('
                        for (still2 in roll[raging].posições) {
@@ -7732,7 +7732,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         
         
                if (aster == false) {
-                // 
+                //
                    antes = ''
                    for (eyes in quase) {
                        
@@ -7758,7 +7758,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                        
                           negativo = true
                        if (aconta[0] == '-') {
-                        // 
+                        //
                            mood = ''
                            for (member in aconta) {
  
@@ -7868,11 +7868,11 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
            
                             //
  juntar+= triste[estudar]
-                            // 
+                            //
  if (estudar == triste.length - 1) {
   //
      quase.push(juntar)
-  // 
+  //
  }
                            }else{
  quase.push(juntar)
@@ -8240,7 +8240,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                      friend = direitando
                     }
             if (aster == false) {
-             // 
+             //
                 antes = ''
                 for (eyes in quase) {
                     
@@ -8457,7 +8457,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
            
                           //numapars.find(function(numapars) {
 //return numapars.num == lista[g]
-                             // }).vezes--
+                             //}).vezes--
            
   
                     }
@@ -8712,7 +8712,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                //
            
                  for (nop in relation[nah].fix) {
-                  // 
+                  //
                      numerosquetem.push(relation[nah].fix[nop])
                  }
                  }
@@ -8847,8 +8847,8 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                 aparic = 0
                //
                 for (t in util) {
-                 // 
-                 // 
+                 //
+                 //
            
                     if (util[t].mons.indexOf(Number(m)) != -1) {
                         aparic++
@@ -8869,7 +8869,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
               
                 rep = 0
                 for (g = 0; g < lista.length && rep < quanto; g++) {
-                 // 
+                 //
            
            
                     if (numapars.find(function(numapars) {
@@ -8890,14 +8890,14 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                    //
                    //
                     if (present.fix.indexOf(lista[g]) == -1) {
-                     // 
+                     //
                         present.falt.push(lista[g])
            
                        
            
                           //numapars.find(function(numapars) {
 //return numapars.num == lista[g]
-                             // }).vezes--
+                             //}).vezes--
            
   
                     }
@@ -8935,7 +8935,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                 //
            
                 for (f = 0; f < faltam; f++) {
-                 // 
+                 //
                    relation[c].fix.push(relation[c].falt[f])
                   
                
@@ -8956,18 +8956,18 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                 for (hu in outrorel.fix) {
                   //
                     if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-                     // 
+                     //
                         //
                         y = 0
                         for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
            
-                         /// 
+                         ///
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                             
   outrorel.fix[hu] =  outrorel.falt[ou]
   outrorel.falt[ou] = -10
   
-                             // 
+                             //
   y++
                             }
                         }
@@ -9202,7 +9202,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
            
                           //numapars.find(function(numapars) {
 //return numapars.num == lista[g]
-                             // }).vezes--
+                             //}).vezes--
            
   
                     }
@@ -9427,7 +9427,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
               for(y = 0; y < segs2[mcr].mons.length; y++) {
                //
                    if (segs2[idk].mons.indexOf(segs2[mcr].mons[y]) != -1) {
-                  // 
+                  //
                        sames.push('igual')
                    }else{
                    //
@@ -9483,8 +9483,8 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                 aparic = 0
                //
                 for (t in util) {
-                 // 
-                 // 
+                 //
+                 //
            
                     if (util[t].mons.indexOf(Number(m)) != -1) {
                         aparic++
@@ -9505,7 +9505,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
               
                 rep = 0
                 for (g = 0; g < lista.length && rep < quanto; g++) {
-                 // 
+                 //
            
            
                     if (numapars.find(function(numapars) {
@@ -9526,14 +9526,14 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                    //
                    //
                     if (present.fix.indexOf(lista[g]) == -1) {
-                     // 
+                     //
                         present.falt.push(lista[g])
            
                        
            
                           //numapars.find(function(numapars) {
 //return numapars.num == lista[g]
-                             // }).vezes--
+                             //}).vezes--
            
   
                     }
@@ -9571,7 +9571,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                 //
            
                 for (f = 0; f < faltam; f++) {
-                 // 
+                 //
                    relation[c].fix.push(relation[c].falt[f])
                   
                
@@ -9597,7 +9597,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                         y = 0
                         for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
            
-                         /// 
+                         ///
                             if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
                             
                                 outrorel.fix[hu] =  outrorel.falt[ou]
@@ -9677,7 +9677,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                       if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                            //ob.problem = true
                       }
-                    // 
+                    //
                    ob.fix.push(segs2[sorrow].mons[imor])
                    tirados.push(segs2[sorrow].mons[imor])
                    imor++
@@ -9978,7 +9978,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         }
         
         if (wasmultiplicated == false) {
-            // 
+            //
                addingnumber = ''
                for (eyes in storer) {
                    
