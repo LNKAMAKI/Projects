@@ -106,6 +106,16 @@ function ir() {
     resultadogeral = FATORAR(expression);
     resultado = resultadogeral[0];
 
+    console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
+    console.log('expression:',resultadogeral[0])
+    console.log('LET\'s SPLIT IT!')
+    res = SPLITEXPS(resultadogeral[0])
+    console.log(res)
+    for (g in res) {
+       // fatorando = FATORAR(res[g].exp)
+        console.log(res[g].exp)
+    }
+
     document.getElementById("result").innerHTML = "Resultado:";
     document.getElementById("fatoracao").innerText = resultado;
 
