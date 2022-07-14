@@ -108,13 +108,13 @@ function ir() {
 
     console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
     console.log('expression:',resultadogeral[0])
-    console.log('LET\'s SPLIT IT!')
-    res = SPLITEXPS(resultadogeral[0])
-    console.log(res)
-    for (g in res) {
+    //console.log('LET\'s SPLIT IT!')
+    //res = SPLITEXPS(resultadogeral[0])
+    //console.log(res)
+    //for (g in res) {
        //FATORAR(res[g].exp)
-        console.log(res[g].exp)
-    }
+     //   console.log(res[g].exp)
+   // }
 
     document.getElementById("result").innerHTML = "Resultado:";
     document.getElementById("fatoracao").innerText = resultado;
