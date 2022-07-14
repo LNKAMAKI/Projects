@@ -6294,6 +6294,8 @@ function FATORAR2(expression) {
     java++;
   }
 
+  console.log('HORA DA VERDADE!')
+  INDIRETARROLL()
   youdumb = [];
 
   aswillbe2 = [];
