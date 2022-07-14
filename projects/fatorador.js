@@ -10108,3 +10108,62 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
     //.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
         return [concatenar, pans.length, todososnumeros.length,segs.length]
         }
+
+
+
+
+        function FATORE(q) {
+            qualexp1 = q
+            qualexp = ''
+            
+            parar = false
+            for (copy in qualexp1) {
+               // console.log(qualexp1[copy])
+                if (qualexp1[copy] != ' ') {
+                    if (qualexp1[copy].search('[0-9]') != -1 || qualexp1[copy].search('[a-z]') != -1 || qualexp1[copy].search('[\\+\\-\\^]') != -1) {
+                    //console.log(qualexp1[copy],'ir')
+                    qualexp+= qualexp1[copy]
+                    }else{
+                        parar = true
+                    }
+                }
+            }
+            //console.log('É ESSE:', qualexp)
+            
+            if (qualexp!= '' && parar == false) {
+            ground = ''
+            expression = []
+            for (phy in qualexp) {
+                
+                if (qualexp[phy].search('[0-9]') != -1) {
+                
+                if (ground.search('[0-9]') != -1) {
+                ground+= qualexp[phy]
+               
+                }else if(ground.length > 0){
+                    expression.push(ground)
+                    ground = qualexp[phy]
+                   
+                }else{
+                    ground = qualexp[phy]
+                    
+                }
+            
+                }else{
+                    if (ground.length > 0) {
+                       
+                        expression.push(ground)
+                    }
+                    ground = qualexp[phy]
+                    
+                }
+                if (phy == qualexp.length - 1) {
+                    
+                    expression.push(ground)
+                }
+            }
+            
+            resultado = FATORAR(expression)
+            return resultado
+            }
+        }
