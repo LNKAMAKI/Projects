@@ -642,25 +642,16 @@ function ir() {
            fator = 1
            
            for (e = 2; stop == false; e++) {
-               //
-               //
-               //
-           
+            
                sob = Number(potn)
              
                   if (ehprimo(e) == true) {
                    while (sob%e == 0) {
                    if (sob%e == 0) {
-                       //
-                       
-                       
                    }
        
                    sob = sob/e
                    
-                   
-                   
-       
                    fator = fator*e
        
                    st = false
@@ -677,7 +668,6 @@ function ir() {
            return fatorado
        }
        }
-       //
        
     
        
@@ -867,21 +857,18 @@ function ir() {
                        anterior.splice(n + 3, 1)
                        anterior.splice(n + 1, 1)
                        n = n - 3
-               
-                       
                    }else{
                        
                    }
                }
            }
-       //}
        }
        
            
        }
        return anterior
        }
-       //
+     
        function versetem(comp) {
         podeir = true
         qual = -1
@@ -1053,12 +1040,8 @@ function ir() {
      if (ocs2.find(function(ocs2) {
          return ocs2.ed == monomios[m].numero[oc]
          }).el <= ocs) {
-       
-             
-                       repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
-       
-                      
-       
+
+        repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
      }
        
                        //reps.push({mns: [u, m],alg: monomios[u].numero[e])
@@ -1073,9 +1056,6 @@ function ir() {
              return ocs2.ed == monomios[m].numero[oc]
              }).el++
        
-      
-            
-       
                  if (ocs2.find(function(ocs2) {
                      return ocs2.ed == monomios[m].numero[oc]
                      }).el <= ocs) {
@@ -1084,25 +1064,13 @@ function ir() {
              return repetido.monum == u
              }).letr += `.${monomios[u].numero[e]}`
             
+            }
          }
-             //reps.push(monomios[u].numero[e])
-           
-                     
-    //}else{
-         ////
-   //}
-                           }
-                       
-                       //
-                       //
                    }else{
-                       
                    }
-                   //
                  }
                }
                }
-               //
            }
            }
            }
@@ -1125,25 +1093,19 @@ function ir() {
                    return repetido.letr == la
                })) {
                    
-                   repetido.splice(nope, 1)
-                   
+                   repetido.splice(nope, 1) 
                }
            }
        }
        
        
-           //
            
                for (moe = repetido.length - 1; moe >= 0; moe--) {
-                 //
-    
+                 
                   podeir = true
                   qual = -1
                   for (meow in segs) {
-                      
-                    
-                   //
-                   
+                     
                         array1 = []
                         for (d in segs[meow].car) {
                             array1.push(segs[meow].car[d])
@@ -1155,28 +1117,21 @@ function ir() {
                         }
     
                         if (segs[meow].car.length < repetido[moe].letr.length) {
-    
                             divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
-                        
                          }else{
                              divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
-                        
                          }
     
                          if (divisao == '' || divisao == '-') {
-                           //
                             podeir = false
                             qual = meow
                          }
-                      
                   }
     
                   
                    if (podeir == true) {
        
-                         
                           if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-
                         }else{
 
                             splitUp(repetido[moe].letr)
@@ -1210,14 +1165,11 @@ function ir() {
        
        
        
-       
        for (nl = 0; nl < segs.length; nl++) {
            
            for (n = 0; n < segs.length; n++) {
        
-               
                if (n != nl) {
-               
                
                stay = VAI(segs[n].car)
                contido = true
@@ -1243,9 +1195,7 @@ function ir() {
                        if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
                            
                        }else{
-                         
                            segs[nl].mons.push(segs[n].mons[u])
-                         
                        }
                    }
                }
@@ -1269,45 +1219,34 @@ function ir() {
        }
        
        
-       ////
-       
        
        grtols = []
        
        
        for (hi in segs) {
-           ////
+     
            segs[hi].length = segs[hi].car.length
        
            grtols.push(segs[hi])
        }
        
-       ////
-       ////
        organizado = sortob(grtols, 'length')[1]
        
        grtols = []
        for (ah in organizado) {
-          ////
            grtols.push(segs[organizado[ah]])
           
        }
        
-       ////
        segs = grtols
        
       
        //DIVS
        ml = monomios.length
-       ////
+      
        
        divs = ehprimo2(ml)
-       ////
-       
-       for (n in divs) {
-           ////
-           
-       }
+     
        
        if (divs.length == 0) {
        divs = [1]
@@ -1317,7 +1256,6 @@ function ir() {
        goaway = []
        for (nah in segs) {
         
-           
            if (segs[nah].car[0] == '-') {
             
             semmenos = ''
@@ -1328,14 +1266,11 @@ function ir() {
                 }
             }
             
-            
             if (segs.find(function(segs) {return segs.car == semmenos}) != undefined) {
                 goaway.push(Number(nah))
             }
            }
        }
-       
-       
     
        for (time = segs.length - 1; time >= 0; time--) {
         
@@ -1346,16 +1281,6 @@ function ir() {
        }
     */
        //divs = [2,3]
-       
-       ////
-       ////
-       
-       
-           ////
-       
-           //
-       
-        
        
            //const HATEYOU = []
            //for (HATEDEVTOOLS in segs) {
@@ -1371,16 +1296,12 @@ function ir() {
           }
          
           okentao = 0
-          //for (okentao in divs) {
+         
                roll = [] 
        
-              //
-               //const vi = 0
                scarecrow = []
                for(anchor in segs) {
-                  //
-                   
-               
+                
                    army = []
                    lpisthebest = ''
                        for (fall in segs[anchor].car) {
@@ -1403,17 +1324,13 @@ function ir() {
      lpisthebest = ''
  }
                            }
-                      //
                        }
                        if (fall == segs[anchor].car.length - 1) {
                            army.push(lpisthebest)
                        }
                    }
                    bell = [...army]
-                  //
-       
-                  //
-                   
+                
                    for (pahh in army) {
                       //
                        if (army[pahh] == '*') {
@@ -1421,13 +1338,9 @@ function ir() {
                        }
                    }
                    scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
-                   for (high in segs[anchor].mons) {
-                       
+                   for (high in segs[anchor].mons) {  
                       
                        army = [...bell]
-                
-                    //
-               
                    
                     lightson = [...army]
                        pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
@@ -1453,18 +1366,16 @@ function ir() {
                            scarecrow[anchor].outrodiv.push(pain)
                       }
                        
-       
                        }else{
                
                            right = ''
                            for (feet in pain) {
-                             //
- if (pain[feet] != '+') {
-     right+= pain[feet]
- }
+                           
+                            if (pain[feet] != '+') {
+                                right+= pain[feet]
+                            }
                            }
-                        //
-                          
+                       
                            uy = ''
                          //
        
@@ -1479,7 +1390,7 @@ function ir() {
                            }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ //x*2
                           //
                            }else{
- uy+= right[xarope]
+                                uy+= right[xarope]
                            }
                           }
                           
@@ -1488,8 +1399,8 @@ function ir() {
                           if (uy[0] == '-') {
                            holdon = ''
                            for (qual in uy) { 
- if (uy[qual] != '-')
- holdon+= uy[qual]
+                                if (uy[qual] != '-')
+                                holdon+= uy[qual]
                            }
                            
                            uy = holdon
