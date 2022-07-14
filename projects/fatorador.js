@@ -10001,9 +10001,9 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                             var leng = yposition.length
         
                             for (c = 0; c < itens; c++) {
-  maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
-  posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
-  leng--
+                            maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+                            posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+                            leng--
                             }
                             maiorparamenor[volume] = yposition[item]
                             posiçõesnumeros[volume] = Number(item)
