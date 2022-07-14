@@ -2170,18 +2170,7 @@ function FATORAR(expression) {
         pans.push(inside);
       }
 
-      //youdumb.splice(imback, 1)
-
-      /*
-           for (invest in pans) {
-          
-               for (plat in pans[invest].which) {
-              
-               }
-           }
-           */
-
-      //youdumb.splice(imback, 1)
+     
       for (h in youdumb) {
         if (h != imback) {
           if (youdumb[h].w.what.length > 0) {
