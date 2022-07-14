@@ -8195,78 +8195,55 @@ function FATORAR2(expression) {
 
       relation = [];
 
-      ////
-
       util = [];
       for (t in segs2) {
-        //
-        //
-
         if (segs2[t].mons.length >= quanto) {
           util.push(segs2[t]);
         }
-        //
       }
 
       for (m in monomios) {
         aparic = 0;
-        //
         for (t in util) {
-          //
-          //
 
           if (util[t].mons.indexOf(Number(m)) != -1) {
             aparic++;
           }
         }
-        //
         numapars.push({ num: Number(m), vezes: aparic });
       }
 
       present = [];
-      //
       for (r in util) {
-        //
         lista = util[r].mons;
         present = { fix: [], falt: [] };
-        //
-
+       
         rep = 0;
         for (g = 0; g < lista.length && rep < quanto; g++) {
-          //
-
+        
           if (
             numapars.find(function (numapars) {
               return numapars.num == lista[g];
             }).vezes == 1
           ) {
-            //
             rep++;
             present.fix.push(lista[g]);
           }
         }
-        //
-        //
+      
 
         if (present.fix.length < quanto) {
           for (g in lista) {
-            //
-            //
+           
             if (present.fix.indexOf(lista[g]) == -1) {
-              //
               present.falt.push(lista[g]);
 
-              //numapars.find(function(numapars) {
-              //return numapars.num == lista[g]
-              //}).vezes--
             }
           }
-          //
-
+         
           if (present.fix.length == 0) {
             for (ti in present.falt) {
-              //
-
+             
               numapars.find(function (numapars) {
                 return numapars.num == present.falt[ti];
               }).vezes--;
@@ -8278,36 +8255,23 @@ function FATORAR2(expression) {
       }
 
       for (c in relation) {
-        //
         if (relation[c].fix.length > 0) {
-          //
-
           faltam = Number(quanto) - Number(relation[c].fix.length);
-          //
-
           for (f = 0; f < faltam; f++) {
-            //
+            
             relation[c].fix.push(relation[c].falt[f]);
 
             relation[c].falt[f] = -10;
           }
-          //
-
+         
           for (tel = 0; tel < c; tel++) {
-            if (relation[tel].fix.length > 0) {
-              //
-            }
-
+    
             outrorel = relation[tel];
 
             for (hu in outrorel.fix) {
-              //
               if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-                //
-                //
                 y = 0;
                 for (ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
-                  ///
                   if (
                     relation[c].fix.indexOf(outrorel.falt[ou]) == -1 &&
                     outrorel.falt[ou] != -10
@@ -8339,11 +8303,9 @@ function FATORAR2(expression) {
         tirados = [];
         for (wish in relation) {
           for (edge in relation[wish].fix) {
-            //
             tirados.push(relation[wish].fix[edge]);
           }
         }
-        //
 
         for (die in segs2) {
           tirar = [];
@@ -8416,18 +8378,16 @@ function FATORAR2(expression) {
       ground = "";
 
       for (misery in particles[bye].numero) {
-        //
-
+      
         carac = particles[bye].numero[misery];
 
         if (ground.length == 0) {
-          //
           ground += carac;
         } else if (
           String(ground.search("[0-9]")) != -1 &&
           String(carac).search("[0-9]") != -1
         ) {
-          //
+          
           ground += carac;
         } else {
           comofica.push(ground);
@@ -8634,17 +8594,13 @@ function FATORAR2(expression) {
     }
 
     if (wasmultiplicated == false) {
-      //
       addingnumber = "";
       for (eyes in storer) {
-        //
         if (storer[eyes].search("[0-9]") != -1) {
-          //
           addingnumber += storer[eyes];
         }
       }
       addingnumber += resultobtained;
-      //
 
       resultobtained = addingnumber;
     }
@@ -8661,7 +8617,6 @@ function FATORAR2(expression) {
 
   function MULTIPLICARDIREITO(num1, num2) {
     if (num1 == "1" || num2 == "1") {
-      //
       if (num1 == "1") {
         resultmult = num2;
       } else {
