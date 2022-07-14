@@ -103,7 +103,7 @@ function ir() {
       }
     }
 
-    resultadogeral = FATORAR(expression);
+    resultadogeral = FATORAR(expression,1);
     resultado = resultadogeral[0];
 
     console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
