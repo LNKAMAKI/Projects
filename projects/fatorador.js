@@ -106,8 +106,6 @@ function ir() {
     resultadogeral = FATORAR(expression);
     resultado = resultadogeral[0];
 
-    document.getElementById("tst").innerHTML =
-      "ROLL LENGTH: " + resultadogeral[2];
     document.getElementById("result").innerHTML = "Resultado:";
     document.getElementById("fatoracao").innerText = resultado;
 
