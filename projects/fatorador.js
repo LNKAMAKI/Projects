@@ -103,7 +103,7 @@ function ir() {
       }
     }
 
-    resultadogeral = FATORAR(expression,0);
+    resultadogeral = FATORAR(expression);
     resultado = resultadogeral[0];
 
     console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
@@ -160,7 +160,7 @@ function mudar(index) {
   document.getElementById("typearea").value =
     document.getElementsByClassName("eg")[index].innerText;
 }
-function FATORAR(expression, state) {
+function FATORAR(expression) {
   startexp = [...expression];
 
   if (expression[0] !== "-" && expression[0] !== "+") {
@@ -2686,11 +2686,8 @@ function FATORAR(expression, state) {
     }
 
     console.log('__________________')
-    if (state == 1) {
     console.log(naonao,',', tobreak)
-    console.log(FATORE(naonao))
     console.log('__________________')
-    } 
 
     qualexp1 = naonao;
     qualexp = "";
