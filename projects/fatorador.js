@@ -162,7 +162,7 @@ function ir() {
     }
     
     function mudar(index) {
-     console.log(index,'foi chamado')
+     //console.log(index,'foi chamado')
      document.getElementById('typearea').value = document.getElementsByClassName('eg')[index].innerText
     }
     function FATORAR(expression) {
@@ -2948,9 +2948,9 @@ ficaassim += ` - ${fi}`
                concatenar+= `${naonao}(${tobreak})`
            }
     
-           console.log('__________________')
-           console.log(naonao,',', tobreak)
-           console.log('__________________')
+           //console.log('__________________')
+           //console.log(naonao,',', tobreak)
+           //console.log('__________________')
           
            qualexp1 = naonao
            qualexp = ''
@@ -3000,7 +3000,7 @@ ficaassim += ` - ${fi}`
            }
            }
 
-         console.log('WHATTTTTTTTTT??????????*****___', expression)
+         //console.log('WHATTTTTTTTTT??????????*****___', expression)
 
        //FAZENDO A CONTA
           primeirocaso = SOMANDOMONOMIOS(amount)
@@ -3266,35 +3266,35 @@ ficaassim += ` - ${fi}`
        }
     }
        
-    console.log(pans.length)
+    //console.log(pans.length)
        if (pans.length >= 1 && todososnumeros.length == 0) {
-        console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-        console.log(concatenar)
-        console.log('CERTNHO')
+        //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+        //console.log(concatenar)
+        //console.log('CERTNHO')
         return concatenar
        
        }else{
-           console.log('CERTINHO?')
+           //console.log('CERTINHO?')
            if (monomios.length > 1) {
              
            hei = concatenar
            otherway = FATORAR2(startexp)
-           console.log(otherway[1], otherway[2])
+           //console.log(otherway[1], otherway[2])
     
         if (otherway[1] >= 1 && otherway[2] == 0) {
-            console.log(otherway[1], otherway[2])
-            console.log('IS IT SERIOUS?')
-            console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-            console.log(otherway[0])
+           //console.log(otherway[1], otherway[2])
+            //console.log('IS IT SERIOUS?')
+            //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+           //console.log(otherway[0])
             return otherway[0]
         }else{
-            console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-            console.log(hei)
+            //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+            //console.log(hei)
             return hei
         }
     }else{
-        console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-            console.log(concatenar,monomios)
+        //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+            //console.log(concatenar,monomios)
             return concatenar
     }
        }
@@ -6040,7 +6040,7 @@ ficaassim += ` - ${fi}`
 if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
     
                             }else{
-     console.log(repetido)
+     //console.log(repetido)
      segs.push({car: repetido[moe].letr, mons: [m]})
  }
                          
@@ -6426,7 +6426,7 @@ scarecrow[anchor].divididos.push(uy)
         
                //console.log('---')
                for (quad in miss) {
-                   console.log('')
+                   //console.log('')
                     if (quad != eep) {
                 //console.log(quad,miss[quad].aparicoes)
    
@@ -6849,7 +6849,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                      
                      //console.log('---')
                      for (quad in miss) {
-                         console.log('')
+                         //console.log('')
                           if (quad != eep) {
                       //console.log(quad,miss[quad].aparicoes)
          
@@ -7379,7 +7379,6 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
                }
            }
            
-           console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
            grtols = []
            for (hi in youdumb) {
                
