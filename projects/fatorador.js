@@ -1858,6 +1858,7 @@ function FATORAR(expression) {
 
   console.log("HORA DA VERDADE!");
 
+  INDIRETARROLL()
   for (n in roll) {
     console.log(roll[n].posições);
   }
