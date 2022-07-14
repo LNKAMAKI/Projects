@@ -3816,9 +3816,6 @@ function FATORAR(expression) {
               //
               present.falt.push(lista[g]);
 
-              //numapars.find(function(numapars) {
-              //return numapars.num == lista[g]
-              //}).vezes--
             }
           }
           //
