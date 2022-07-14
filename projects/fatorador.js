@@ -1573,7 +1573,7 @@ function FATORAR(expression) {
 
   for (ne in roll) {
     //for (ne = 0; ne < 1; ne++) {
-    console.log(roll[ne].posições);
+    
     arranjar = [];
     for (pq in roll[ne].repetidos) {
       (gosto = roll[ne].repetidos[pq]),
@@ -1918,9 +1918,7 @@ function FATORAR(expression) {
   console.log("HORA DA VERDADE!");
 
   INDIRETARROLL();
-  for (n in roll) {
-    console.log(roll[n].posições);
-  }
+ 
 
   youdumb = [];
 
@@ -5922,7 +5920,7 @@ function FATORAR2(expression) {
 
   for (ne in roll) {
     //for (ne = 0; ne < 1; ne++) {
-    console.log(roll[ne].posições);
+   
     arranjar = [];
     for (pq in roll[ne].repetidos) {
       (gosto = roll[ne].repetidos[pq]),
