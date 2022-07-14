@@ -8755,3 +8755,26 @@ function INDIRETARROLL() { // CÓDIGO PARA ADICIONAR POSIÇÕES QUE POSSUEM  O T
     }
   }
 }
+
+function SPLITEXPS(expression) {
+    splitedExps = []
+    str = ''
+    c1 = -1
+    c2 = -1
+    for (c in expression) {
+      if (expression[c] == '(') {
+        console.log('ABRIR')
+        c1 = c
+        str = ''
+      }else if(expression[c] == ')') {
+        c2 = c
+        splitedExps.push({exp: str,open:c1,close:c2})
+        console.log('FECHAR',str,c1,c2)
+        str = ''
+      }else{
+        str+= expression[c]
+      }
+    }
+    return splitedExps
+    }
+    
