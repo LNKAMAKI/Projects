@@ -6934,8 +6934,7 @@ function FATORAR2(expression) {
             //
           }
         } else {
-          //quase.push(triste[estudar])
-          //
+          
           if (juntar.length == 0) {
             juntar = triste[estudar];
             //
@@ -7036,13 +7035,10 @@ function FATORAR2(expression) {
           }
         }
         antes += aconta;
-        //
-        //for (t in quase) {
-        //aconta+= quase[t]
-        //}
+       
         aconta = antes;
       }
-      //
+      
 
       edge.push(aconta);
 
@@ -7083,8 +7079,7 @@ function FATORAR2(expression) {
     } else {
       concatenar += `${naonao}(${tobreak})`;
     }
-    //
-    //
+    
 
     //FAZENDO A CONTA
     primeirocaso = SOMANDOMONOMIOS(amount);
@@ -7108,11 +7103,6 @@ function FATORAR2(expression) {
       naonao = primeirocaso[0];
       tobreak = segundocaso[0];
 
-      //
-      //
-
-      //
-
       reason = [];
       for (k in naonao) {
         //
@@ -7125,7 +7115,6 @@ function FATORAR2(expression) {
         }
       }
 
-      //
 
       for (time = naonao.length - 1; time >= 0; time--) {
         if (reason.indexOf(time) != -1) {
@@ -7139,16 +7128,12 @@ function FATORAR2(expression) {
           deserve = tobreak[k - 1];
           deserve += tobreak[k];
           reason.push(k - 1);
-          //
           tobreak[k] = deserve;
         }
       }
 
-      //
       for (time = tobreak.length - 1; time >= 0; time--) {
-        //
         if (reason.indexOf(time) != -1) {
-          //
           tobreak.splice(time, 1);
         }
       }
@@ -7156,8 +7141,7 @@ function FATORAR2(expression) {
       for (roberto in naonao) {
         for (vaidarcerto in tobreak) {
           novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto]);
-          //
-          //console.warn(newexpress)
+          
           if (novomon[0] == "-") {
             miya = "";
             for (n in novomon) {
@@ -7181,8 +7165,7 @@ function FATORAR2(expression) {
     }
   }
 
-  //
-  //
+  
   todososnumeros = [];
   for (acaba in monomios) {
     //
@@ -7208,14 +7191,12 @@ function FATORAR2(expression) {
     for (patience in quase) {
       if (quase[patience] == "*") {
         aster = true;
-        //
-        //
+        
         gates.push(quase[Number(patience) - 1]);
         gates.push("x");
         gates.push(quase[Number(patience) + 1]);
-        //
+        
 
-        //
         quase[Number(patience) + 1] = fazerConta(gates)[0];
         aconta = fazerConta(gates)[0];
 
@@ -7225,27 +7206,21 @@ function FATORAR2(expression) {
           elevar++;
 
           if (patience == quase.length - 1) {
-            //
             aconta += `^${elevar}`;
-            //
           }
         } else {
           if (elevar > 1) {
-            //
             aconta += `^${elevar}`;
           }
 
           aconta += quase[patience];
-          //
 
           elevar = 1;
         }
-        //
       }
     }
 
     if (aster == false) {
-      //
       direitando = "";
       for (h in quase) {
         direitando += quase[h];
@@ -7253,21 +7228,15 @@ function FATORAR2(expression) {
       friend = direitando;
     }
     if (aster == false) {
-      //
       antes = "";
       for (eyes in quase) {
-        //
         if (quase[eyes].search("[0-9]") != -1) {
-          //
           antes += quase[eyes];
         }
       }
       antes += aconta;
-      //
-
       aconta = antes;
     }
-    //
 
     if (bye == 0) {
       //('PRIMEIRO')
@@ -7359,9 +7328,6 @@ function FATORAR2(expression) {
     segs2 = [];
 
     for (uf in par) {
-      //
-      //segs2.push(segs[uf])
-      //segs[tie].godhelpme = [...segs[tie].mons]
       segs2[uf] = {};
       segs2[uf].mons = [...par[uf].mons];
       segs2[uf].car = par[uf].car;
@@ -7378,63 +7344,47 @@ function FATORAR2(expression) {
       if (segs2[t].mons.length >= quanto) {
         util.push(segs2[t]);
       }
-      //
     }
 
-    //
+   
 
     for (m in monomios) {
       aparic = 0;
-      //
       for (t in util) {
-        //
-        //
-
+      
         if (util[t].mons.indexOf(Number(m)) != -1) {
           aparic++;
         }
       }
-      //
       numapars.push({ num: Number(m), vezes: aparic });
     }
 
     present = [];
 
-    //
     for (r in util) {
-      //
       lista = util[r].mons;
       present = { fix: [], falt: [] };
-      //
-
+      
       rep = 0;
       for (g = 0; g < lista.length && rep < quanto; g++) {
-        //
-
+       
         if (
           numapars.find(function (numapars) {
             return numapars.num == lista[g];
           }).vezes == 1
         ) {
-          //
+        
           rep++;
           present.fix.push(lista[g]);
         }
       }
-      //
-      //
+      
 
       if (present.fix.length < quanto) {
         for (g in lista) {
-          //
-
           if (present.fix.indexOf(lista[g]) == -1) {
-            //
             present.falt.push(lista[g]);
 
-            //numapars.find(function(numapars) {
-            //return numapars.num == lista[g]
-            //}).vezes--
           }
         }
 
