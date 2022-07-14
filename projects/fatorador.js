@@ -6751,19 +6751,19 @@ scarecrow[anchor].divididos.push(uy)
                             //console.log('repetido:',repeated,'repwri',repwri)
                           
                              if (roller.find(function(roller) {
-   return roller.rept == repwri
+                                return roller.rept == repwri
                              }) == undefined) {
   //console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
-   roller.push({rept: repwri,opl:[...repeated],position:[eep,quad]})
+                               roller.push({rept: repwri,opl:[...repeated],position:[eep,quad]})
                              }else{
-   if (roller.find(function(roller) {
-       return roller.rept == repwri
-   }).position.indexOf(eep) == -1) {
-         
-   roller.find(function(roller) {
-       return roller.rept == repwri
-   }).position.push(eep)
-                             }
+                            if (roller.find(function(roller) {
+                                return roller.rept == repwri
+                            }).position.indexOf(eep) == -1) {
+                                    
+                            roller.find(function(roller) {
+                                return roller.rept == repwri
+                            }).position.push(eep)
+                                                        }
          
                              if (roller.find(function(roller) {
    return roller.rept == repwri
@@ -6778,7 +6778,7 @@ scarecrow[anchor].divididos.push(uy)
                             }
                          }
          
-                          }
+                    }             
                          
                      }
                  }
