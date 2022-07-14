@@ -8820,37 +8820,23 @@ function FATORE(q) {
 
 function INDIRETARROLL() {
     for (nao in roll) {
-        console.log('_____________________________________________________________________')
-      console.log(`roll[${nao}]:`,roll[nao].repetidos)
            shot = ''
            for (gun in roll[nao].repetidos) {
-               
                shot+= roll[nao].repetidos[gun] + ','
            }
-           console.log(shot)
 
        for (whyso in miss) {
-           console.log(`miss[${whyso}]:`,miss[whyso].aparicoes)
            igual = 0
            for (heat in miss[whyso].aparicoes) {
-               console.log('-->',miss[whyso].aparicoes[heat])
-               
                if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
-                console.log(`${roll[nao].repetidos}.indexOf(${miss[whyso].aparicoes[heat]}) = ${roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat])}`)
-                 
                    igual++
                }
            }
           
            if (igual == roll[nao].repetidos.length) {
-            console.log('TEEEEMMMMMMMMMMMMMMMMMMMMMMMMM!!!', roll[nao].repetidos, 'está na posição', whyso)
-            console.log(roll.find(function (roll){return roll.way == shot}).posições)
-
                   if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
                }else{
-                console.log('WHYYYYYYYYYYYYY?????????????')
                    roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
-                   console.log(roll.find(function (roll){return roll.way == shot}).posições)
                }
            }
            }
