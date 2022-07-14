@@ -112,7 +112,7 @@ function ir() {
     res = SPLITEXPS(resultadogeral[0])
     console.log(res)
     for (g in res) {
-       // fatorando = FATORAR(res[g].exp)
+       //FATORAR(res[g].exp)
         console.log(res[g].exp)
     }
 
@@ -160,7 +160,7 @@ function mudar(index) {
   document.getElementById("typearea").value =
     document.getElementsByClassName("eg")[index].innerText;
 }
-function FATORAR(expression) {
+function FATORAR(expression, state) {
   startexp = [...expression];
 
   if (expression[0] !== "-" && expression[0] !== "+") {
@@ -2685,9 +2685,9 @@ function FATORAR(expression) {
       concatenar += `${naonao}(${tobreak})`;
     }
 
-    //console.log('__________________')
-    //console.log(naonao,',', tobreak)
-    //console.log('__________________')
+    console.log('__________________')
+    console.log(naonao,',', tobreak)
+    console.log('__________________')
 
     qualexp1 = naonao;
     qualexp = "";
