@@ -2273,12 +2273,7 @@ function FATORAR(expression) {
       gates = [];
 
       quase = [];
-      /*
-               for (power in el) {
-                   quase.push(el[power])
-              
-               }
-       */
+    
       teri = false;
       juntar = "";
       //
