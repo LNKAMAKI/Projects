@@ -2686,8 +2686,11 @@ function FATORAR(expression, state) {
     }
 
     console.log('__________________')
+    if (state == 1) {
     console.log(naonao,',', tobreak)
+    console.log(FATORE(naonao))
     console.log('__________________')
+    } 
 
     qualexp1 = naonao;
     qualexp = "";
@@ -8726,7 +8729,7 @@ function FATORE(q) {
       }
     }
 
-    resultado = FATORAR(expression);
+    resultado = FATORAR(expression,0);
     return resultado;
   }
 }
