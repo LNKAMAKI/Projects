@@ -1965,7 +1965,11 @@ ficaassim += ` - ${fi}`
                 java++
             }
        
-       
+            console.log('HORA DA VERDADE!')
+            
+           for (n in roll) {
+            console.log(roll[n].posições)
+           }
 
        
               youdumb = []
