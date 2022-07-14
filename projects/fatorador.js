@@ -112,7 +112,7 @@ function ir() {
         }
     }
     
-    resultado = FATORAR(expression)
+    resultado = FATORAR(expression)[0]
     
     document.getElementById('result').innerHTML = "Resultado:"
     document.getElementById('fatoracao').innerText= resultado
@@ -3271,7 +3271,7 @@ ficaassim += ` - ${fi}`
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         //console.log(concatenar)
         //console.log('CERTNHO')
-        return concatenar
+        return [concatenar,segs.length]
        
        }else{
            //console.log('CERTINHO?')
@@ -3286,16 +3286,16 @@ ficaassim += ` - ${fi}`
             //console.log('IS IT SERIOUS?')
             //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
            //console.log(otherway[0])
-            return otherway[0]
+            return [otherway[0],otherway[3]]
         }else{
             //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
             //console.log(hei)
-            return hei
+            return [hei, segs.length]
         }
     }else{
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
             //console.log(concatenar,monomios)
-            return concatenar
+            return [concatenar,segs.length]
     }
        }
       
