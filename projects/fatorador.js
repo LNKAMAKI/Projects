@@ -1131,9 +1131,6 @@ function ir() {
                   
                    if (podeir == true) {
        
-                          if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                        }else{
-
                             splitUp(repetido[moe].letr)
                             function splitUp(str) {
                                 estado = ''
@@ -1141,21 +1138,19 @@ function ir() {
                                     if (str[i] == '.' && estado != '-') {
                                     permission = versetem(estado)
                                     //console.log(permission)
-                                    if (permission == true) {
+                                    if (permission == true && estado != ' ' && estado != '-') {
                                     segs.push({car: estado, mons: [m]})
                                     }
                                 }
                                     estado+= str[i]
                                     if (i == str.length - 1) {
                                         permission = versetem(estado)
-                                        if (permission == true) {
+                                        if (permission == true && estado != ' ' && estado != '-') {
                                         segs.push({car: estado, mons: [m]})
                                         }
                                     }
                                 }
                                 }
-                           }
-                     
        
                    }else if(segs[qual].mons.indexOf(m) == -1){
                            segs[qual].mons.push(m)
@@ -5946,23 +5941,30 @@ ficaassim += ` - ${fi}`
         
                       
                        if (podeir == true) {
-           
-                            //
-if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-    
-                            }else{
-     //console.log(repetido)
-     segs.push({car: repetido[moe].letr, mons: [m]})
- }
-                         
-                          
-           
+
+                            splitUp(repetido[moe].letr)
+                                function splitUp(str) {
+                                    estado = ''
+                                    for (i in str) {
+                                        if (str[i] == '.' && estado != '-') {
+                                        permission = versetem(estado)
+                                        //console.log(permission)
+                                        if (permission == true && estado != ' ' && estado != '-') {
+                                        segs.push({car: estado, mons: [m]})
+                                        }
+                                    }
+                                        estado+= str[i]
+                                        if (i == str.length - 1) {
+                                            permission = versetem(estado)
+                                            if (permission == true && estado != ' ' && estado != '-') {
+                                            segs.push({car: estado, mons: [m]})
+                                            }
+                                        }
+                                    }
+                                    }
+       
                        }else if(segs[qual].mons.indexOf(m) == -1){
-                         
- 
- segs[qual].mons.push(m)
-           
-     
+                            segs[qual].mons.push(m)
                        }
                    }
                    
