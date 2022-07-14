@@ -103,7 +103,7 @@ function ir() {
       }
     }
 
-    resultadogeral = FATORAR(expression,1);
+    resultadogeral = FATORAR(expression,0);
     resultado = resultadogeral[0];
 
     console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
@@ -8729,8 +8729,9 @@ function FATORE(q) {
       }
     }
 
-    resultado = FATORAR(expression,0);
-    return resultado;
+    //resultado = FATORAR(expression,0);
+    //return resultado;
+    return expression
   }
 }
 
