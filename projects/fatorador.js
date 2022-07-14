@@ -3173,7 +3173,7 @@ ficaassim += ` - ${fi}`
     }
        
     //console.log(pans.length)
-       if (pans.length >= 1 && todososnumeros.length == 0) {
+       if (pans.length == 1 && todososnumeros.length == 0) {
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         //console.log(concatenar)
         //console.log('CERTNHO')
@@ -3187,7 +3187,7 @@ ficaassim += ` - ${fi}`
            otherway = FATORAR2(startexp)
            //console.log(otherway[1], otherway[2])
     
-        if (otherway[1] >= 1 && otherway[2] == 0) {
+        if (otherway[1] == 1 && otherway[2] == 0) {
            //console.log(otherway[1], otherway[2])
             //console.log('IS IT SERIOUS?')
             //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
