@@ -6051,16 +6051,8 @@ function FATORAR2(expression) {
             eg = eassim;
 
             whythat = [...eg];
-            //
-            /*
-                           for (ponto in eg2) {
-                             //
- if (eg2[ponto] != '.') {
- whythat.push(eg2[ponto])
-                             //
- }
-                           }
-                           */
+            
+            
             teri = false;
             juntar = "";
             for (estudar in eg2) {
