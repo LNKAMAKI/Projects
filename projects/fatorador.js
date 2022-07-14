@@ -114,6 +114,7 @@ function ir() {
     
     resultado = FATORAR(expression)[0]
     
+    document.getElementById('tst').innerHTML = 'ROLL LENGTH: ' + resultado[2]
     document.getElementById('result').innerHTML = "Resultado:"
     document.getElementById('fatoracao').innerText= resultado
     
@@ -3255,9 +3256,9 @@ ficaassim += ` - ${fi}`
                            var leng = yposition.length
        
                            for (c = 0; c < itens; c++) {
- maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
- posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
- leng--
+                                maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+                                posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+                                leng--
                            }
                            maiorparamenor[volume] = yposition[item][pam]
                            posiçõesnumeros[volume] = Number(item)
