@@ -4929,13 +4929,7 @@ function FATORAR2(expression) {
                       });
                     }
 
-                    //reps.push({mns: [u, m],alg: monomios[u].numero[e])
-                    //reps.push(monomios[u].numero[e])
                   } else {
-                    //
-                    //if (repetido.find(function(repetido) {
-                    //return repetido.monum == u
-                    //}).letr.indexOf(monomios[u].numero[e]) == -1) {
 
                     ocs2.find(function (ocs2) {
                       return ocs2.ed == monomios[m].numero[oc];
@@ -4950,11 +4944,7 @@ function FATORAR2(expression) {
                         return repetido.monum == u;
                       }).letr += `.${monomios[u].numero[e]}`;
                     }
-                    //reps.push(monomios[u].numero[e])
-
-                    //}else{
-                    ////
-                    //}
+                    
                   }
 
                   //
@@ -6052,7 +6042,7 @@ function FATORAR2(expression) {
 
             whythat = [...eg];
             
-            
+
             teri = false;
             juntar = "";
             for (estudar in eg2) {
