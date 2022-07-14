@@ -1143,15 +1143,6 @@ function FATORAR(expression) {
     divs = [1];
   }
 
-  
-  //divs = [2,3]
-
-  //const HATEYOU = []
-  //for (HATEDEVTOOLS in segs) {
-
-  //
-  //HATEYOU.push(segs[HATEDEVTOOLS])
-  //}
 
   for (tie in segs) {
     //
