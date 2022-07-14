@@ -1041,6 +1041,7 @@ function FATORAR(expression) {
         splitUp(repetido[moe].letr);
         function splitUp(str) {
           estado = "";
+          // CÓDIGO PARA ADICIONAR OS TERMOS EM COMUM DOS MONÔMIOS NA LISTA SEGS(SEGMENTOS)
           for (i in str) {
             if (str[i] == "." && estado != "-") {
               permission = versetem(estado);
@@ -1057,6 +1058,7 @@ function FATORAR(expression) {
               }
             }
           }
+          //
         }
       } else if (segs[qual].mons.indexOf(m) == -1) {
         segs[qual].mons.push(m);
