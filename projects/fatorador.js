@@ -3177,7 +3177,7 @@ ficaassim += ` - ${fi}`
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         //console.log(concatenar)
         //console.log('CERTNHO')
-        return [concatenar,segs.length]
+        return [concatenar,segs.length,roll.length]
        
        }else{
            //console.log('CERTINHO?')
@@ -3192,16 +3192,16 @@ ficaassim += ` - ${fi}`
             //console.log('IS IT SERIOUS?')
             //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
            //console.log(otherway[0])
-            return [otherway[0],otherway[3]]
+            return [otherway[0],otherway[3],otherway[4]]
         }else{
             //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
             //console.log(hei)
-            return [hei, segs.length]
+            return [hei,segs.length,roll.length]
         }
     }else{
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
             //console.log(concatenar,monomios)
-            return [concatenar,segs.length]
+            return [concatenar,segs.length,roll.length]
     }
        }
       
@@ -10018,7 +10018,7 @@ scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].div
         }
         
     //.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
-        return [concatenar, pans.length, todososnumeros.length,segs.length]
+        return [concatenar, pans.length, todososnumeros.length,segs.length,roll.length]
         }
 
 
