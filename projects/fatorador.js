@@ -2627,19 +2627,19 @@ function FATORAR(expression) {
     if (concatenar.length > 0) {
       concatenar += " + ";
     }
+
+    console.log('__________________')
+    console.log(naonao,',', tobreak)
+    console.log(FATORAR2(FATORE(naonao)))
+    console.log(FATORAR2(FATORE(tobreak)))
+    console.log('__________________')
+
     if (edge.length > 1) {
       concatenar += `(${naonao})(${tobreak})`;
     } else {
       concatenar += `${naonao}(${tobreak})`;
     }
 
-    console.log('__________________')
-    console.log('numberyoudumb',roll[pans[bababa].numberyoudumb].posições)
-    console.log(naonao,',', tobreak)
-    console.log(FATORAR2(FATORE(naonao)))
-    console.log(FATORAR2(FATORE(tobreak)))
-    console.log('numberyoudumb',roll[pans[bababa].numberyoudumb].posições)
-    console.log('__________________')
 
     qualexp1 = naonao;
     qualexp = "";
