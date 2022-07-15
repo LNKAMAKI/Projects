@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-tabela.css">
+    <style>
+    table {
+        border-collapse: collapse;
+        margin: auto;
+    }
+    td,th {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    div.table {
+        overflow: auto;
+        max-height: 350px;
+    }
+    abbr {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<h2 id="tipograf" style="text-align: center; font-family: Time;">FORMATAÇÕES DE TEXTO</h2>
+<div id="efect"></div>
+
+<div id="fontypes" style="text-align: center;">
+
+<span class="title">NEGRITO E ITÁLICO</span>
+<p>Agora vamos falar de como podemos formatar o nosso texto usando tags HTML, como negrito e itálico.</p>
+<p>Há, na verdade, duas formas de deixar o texto em itálico e negrito, uma semântica e outra não semântica, mas optemos por a opção semântica(que traz um signficado para o trecho selecionado).</p>
+<p>Forma não semântica:</p>
+<code>
+    Texto em <span class="tag2">b</span>negrito<span class="tag3">b</span>
+</code>
+<br>
+<code>
+    Texto em <span class="tag2">i</span>itálico<span class="tag3">i</span>
+</code>
+
+<p>Forma semântica:</p>
+<code>
+    Texto em <span class="tag2">strong</span>negrito<span class="tag3">strong</span>
+</code>
+<br>
+<code>
+    Texto em <span class="tag2">em</span>itálico<span class="tag3">em</span>
+</code>
+<span class="title">TEXTO <mark>MARCADO</mark></span>
+<p>Também conseguimos marcar um texto em nosso código, usando a tag <span class="tag">mark</span>:</p>
+<code>
+    Texto <span class="tag2">mark</span>marcado<span class="tag3">mark</span>
+</code>
+
+<p>É possível mudar a cor do "marca texto", porém, precisariamos usar CSS para isso, já que se refere ao estilo do texto.</p>
+
+<span class="title"><del>TEXTO DELETADO</del></span>
+<p>O texto deletado significa que o deve ser lido, mas não considerado, e faz uso da tag <span class="tag">del</span>:</p>
+<code>
+    Texto <span class="tag2">del</span>deletado<span class="tag3">del</span>
+</code>
+
+<span class="title"><ins>TEXTO INSERIDO</ins></span>
+<p>Podemos formatar um texto inserido com a tag <span class="tag">ins</span>:</p>
+<code>
+    Texto <span class="tag2">ins</span>inserido<span class="tag3">ins</span>
+</code>
+<span class="title">TEXTOS <big>GRANDES</big> E <small>PEQUENOS</small></span>
+<p>Também existem tags para textos grandes e pequenos, que usam as tags <span class="tag">big</span> e <span class="tag">small</span>. A primeira, no entanto, é considerada uma tag obsoleta, o que significa que não devemos usá-la, embora ela ainda funcione.</p>
+<code>
+    Texto <span class="tag2"><span style="color: red;">big</span></span>grande<span class="tag3"><span style="color:red;">big</span></span>
+</code><br>
+<code>
+    Texto <span class="tag2">small</span>pequeno<span class="tag3">small</span>
+</code>
+<span class="title">TEXTOS <sup>SOBREESCRITOS</sup> E <sub>SUBESCRITOS</sub></span>
+<p>Podemos deixar textos sobreescritos e subescritos usando as tags <span class="tag">sup</span> e <span class="tag">sub</span>:</p>
+<code>
+    Texto <span class="tag2">sup</span>sobreescrito<span class="tag3">sup</span>
+</code><br>
+<code>
+    Texto <span class="tag2">sub</span>subescrito<span class="tag3">sub</span>
+</code>
+</div><div id="efect2"></div>
+</div>
+</body>
+</html>
+
+
+
