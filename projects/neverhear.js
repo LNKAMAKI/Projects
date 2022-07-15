@@ -1,12 +1,13 @@
-function FATORAR2(expression_2) {
-    if (expression_2[0] !== "-" && expression_2[0] !== "+") {
+console.log(FATORAR2(['a','^','2', '+', 'a', '-', '5','a', '-', '5']))
+function FATORAR2(expression) {
+    if (expression[0] !== "-" && expression[0] !== "+") {
       //
-      expo_2 = ["+"];
-      for (ent in expression_2) {
+      expo = ["+"];
+      for (ent in expression) {
         //
-        expo_2.push(expression_2[ent]);
+        expo.push(expression[ent]);
       }
-      expression_2 = expo_2;
+      expression = expo;
     }
   
     //6x^2 + 3 + 14x^2y + 7y
@@ -15,11 +16,11 @@ function FATORAR2(expression_2) {
   
     //FATORAnDO OS nÚMEROS
   
-    for (n = 0; n < expression_2.length; n++) {
+    for (n = 0; n < expression.length; n++) {
       if (
-        ehprimo(expression_2[n]) == false &&
-        String(expression_2[n]).search("[0-9]") != -1 &&
-        expression_2[n - 1] != "^"
+        ehprimo(expression[n]) == false &&
+        String(expression[n]).search("[0-9]") != -1 &&
+        expression[n - 1] != "^"
       ) {
         fatorado = "";
   
@@ -32,7 +33,7 @@ function FATORAR2(expression_2) {
         fator = 1;
   
         for (e = 2; stop == false; e++) {
-          sob = Number(expression_2[n]);
+          sob = Number(expression[n]);
   
           if (ehprimo(e) == true) {
             while (sob % e == 0) {
@@ -44,7 +45,7 @@ function FATORAR2(expression_2) {
   
               st = false;
   
-              if (fator == expression_2[n]) {
+              if (fator == expression[n]) {
                 stop = true;
                 fatorado += `${e}`;
               } else {
@@ -53,7 +54,7 @@ function FATORAR2(expression_2) {
             }
           }
         }
-        expression_2[n] = fatorado;
+        expression[n] = fatorado;
       }
     }
     //
@@ -61,44 +62,44 @@ function FATORAR2(expression_2) {
     //FAZEnDO AS POTÊnCIAS COM LETRAS
   
     //
-    for (y in expression_2) {
-      if (expression_2[y] == "^") {
-        ad = expression_2[Number(y) - 1];
-        for (h = 0; h < Number(expression_2[Number(y) + 1]) - 1; h++) {
-          expression_2[Number(y) - 1] += ad;
+    for (y in expression) {
+      if (expression[y] == "^") {
+        ad = expression[Number(y) - 1];
+        for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
+          expression[Number(y) - 1] += ad;
         }
   
-        expression_2.splice(Number(y) + 1, 1);
-        expression_2.splice(y, 1);
+        expression.splice(Number(y) + 1, 1);
+        expression.splice(y, 1);
       }
     }
   
     //SEPARAnDO OS MOnÔMIOS
   
-    monomios_2 = [{ numero: "" }];
+    monomios = [{ numero: "" }];
     obnum = 0;
-    for (n = 0; n < expression_2.length; n++) {
-      if (String(expression_2[n]).search("[\\-\\+]") != -1 && n != 0) {
-        monomios_2.push({ numero: "" });
+    for (n = 0; n < expression.length; n++) {
+      if (String(expression[n]).search("[\\-\\+]") != -1 && n != 0) {
+        monomios.push({ numero: "" });
         obnum++;
       }
   
-      monomios_2[obnum].numero += expression_2[n];
+      monomios[obnum].numero += expression[n];
     }
   
-    for (surprise in monomios_2) {
+    for (surprise in monomios) {
       //
     }
-    //monomios_2 = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
+    //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
   
-    //TRANSFORMA  O monomios_2.NUMERO(STRING) EM UM ARRAY
+    //TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
   
-    for (bye in monomios_2) {
+    for (bye in monomios) {
       comofica = [];
       ground = "";
   
-      for (misery in monomios_2[bye].numero) {
-        carac = monomios_2[bye].numero[misery];
+      for (misery in monomios[bye].numero) {
+        carac = monomios[bye].numero[misery];
   
         if (ground.length == 0) {
           ground += carac;
@@ -112,35 +113,35 @@ function FATORAR2(expression_2) {
           ground = "";
           ground += carac;
         }
-        if (misery == monomios_2[bye].numero.length - 1) {
+        if (misery == monomios[bye].numero.length - 1) {
           comofica.push(ground);
         }
       }
-      monomios_2[bye].numero = comofica;
+      monomios[bye].numero = comofica;
     }
   
-    for (huh in monomios_2) {
+    for (huh in monomios) {
       partlet = "";
-      for (y in monomios_2[huh].numero) {
-        if (String(monomios_2[huh].numero[y]).search("[a-z]") != -1) {
-          partlet += String(monomios_2[huh].numero[y]);
+      for (y in monomios[huh].numero) {
+        if (String(monomios[huh].numero[y]).search("[a-z]") != -1) {
+          partlet += String(monomios[huh].numero[y]);
         }
       }
-      monomios_2[huh].partletral = partlet;
+      monomios[huh].partletral = partlet;
     }
   
     ji = [];
     //JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
-    for (huh in monomios_2) {
+    for (huh in monomios) {
       if (
         ji.find(function (ji) {
-          return ji.que == monomios_2[huh].partletral;
+          return ji.que == monomios[huh].partletral;
         }) == undefined
       ) {
-        ji.push({ quais: [Number(huh)], que: monomios_2[huh].partletral });
+        ji.push({ quais: [Number(huh)], que: monomios[huh].partletral });
       } else {
         ji.find(function (ji) {
-          return ji.que == monomios_2[huh].partletral;
+          return ji.que == monomios[huh].partletral;
         }).quais.push(Number(huh));
       }
     }
@@ -421,19 +422,19 @@ function FATORAR2(expression_2) {
     function versetem(comp) {
       podeir = true;
       qual = -1;
-      for (meow in segs_2) {
+      for (meow in segs) {
         array1 = [];
-        for (d in segs_2[meow].car) {
-          array1.push(segs_2[meow].car[d]);
+        for (d in segs[meow].car) {
+          array1.push(segs[meow].car[d]);
         }
         array2 = [];
         for (d in comp) {
           array2.push(comp[d]);
         }
-        if (segs_2[meow].car.length < comp.length) {
-          divisao = DIVIDIR(VAI(segs_2[meow].car), VAI(comp));
+        if (segs[meow].car.length < comp.length) {
+          divisao = DIVIDIR(VAI(segs[meow].car), VAI(comp));
         } else {
-          divisao = DIVIDIR(VAI(comp), VAI(segs_2[meow].car));
+          divisao = DIVIDIR(VAI(comp), VAI(segs[meow].car));
         }
         if (divisao == "" || divisao == "-") {
           podeir = false;
@@ -492,14 +493,14 @@ function FATORAR2(expression_2) {
   
       return depois;
     }
-    //expression_2 = exp
+    //expression = exp
   
     //
     reps = [];
-    segs_2 = [];
+    segs = [];
     let = [];
   
-    for (m = 0; m < monomios_2.length; m++) {
+    for (m = 0; m < monomios.length; m++) {
       //CADA MOnÔMIO
       repetido = [];
   
@@ -510,16 +511,16 @@ function FATORAR2(expression_2) {
       //
       //
   
-      for (oc = 0; oc < monomios_2[m].numero.length; oc++) {
+      for (oc = 0; oc < monomios[m].numero.length; oc++) {
         //CADA LETRA DE CADA MOnÔMIO
   
-        if (monomios_2[m].numero[oc].search("[\\*\\+\\/]") == -1) {
+        if (monomios[m].numero[oc].search("[\\*\\+\\/]") == -1) {
           //
   
-          if (numerosrep.indexOf(monomios_2[m].numero[oc]) == -1) {
-            numerosrep.push(monomios_2[m].numero[oc]);
+          if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
+            numerosrep.push(monomios[m].numero[oc]);
   
-            for (u = 0; u < monomios_2.length; u++) {
+            for (u = 0; u < monomios.length; u++) {
               //OUTROS MOnÔMIOS
               ocs2 = [];
   
@@ -527,25 +528,25 @@ function FATORAR2(expression_2) {
                 //OCAS
                 if (
                   ocs2.find(function (ocs2) {
-                    return ocs2.ed == monomios_2[m].numero[oc];
+                    return ocs2.ed == monomios[m].numero[oc];
                   }) == undefined
                 ) {
                   //
-                  ocs2.push({ ed: monomios_2[m].numero[oc], el: 0 });
+                  ocs2.push({ ed: monomios[m].numero[oc], el: 0 });
   
                   ocs = 0;
-                  for (ao = 0; ao < monomios_2[m].numero.length; ao++) {
+                  for (ao = 0; ao < monomios[m].numero.length; ao++) {
                     //
-                    if (monomios_2[m].numero[ao] == monomios_2[m].numero[oc]) {
+                    if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
                       ocs++;
                     }
                   }
                 }
   
-                for (e = 0; e < monomios_2[u].numero.length; e++) {
+                for (e = 0; e < monomios[u].numero.length; e++) {
                   //CADA LETRA DE CADA MOnÔMIO
   
-                  if (monomios_2[u].numero[e] == monomios_2[m].numero[oc]) {
+                  if (monomios[u].numero[e] == monomios[m].numero[oc]) {
                     //
   
                     if (
@@ -554,35 +555,35 @@ function FATORAR2(expression_2) {
                       }) === undefined
                     ) {
                       ocs2.find(function (ocs2) {
-                        return ocs2.ed == monomios_2[m].numero[oc];
+                        return ocs2.ed == monomios[m].numero[oc];
                       }).el++;
   
                       if (
                         ocs2.find(function (ocs2) {
-                          return ocs2.ed == monomios_2[m].numero[oc];
+                          return ocs2.ed == monomios[m].numero[oc];
                         }).el <= ocs
                       ) {
                         repetido.push({
                           monum: u,
                           wc: [m],
-                          letr: monomios_2[u].numero[e],
+                          letr: monomios[u].numero[e],
                         });
                       }
   
                     } else {
   
                       ocs2.find(function (ocs2) {
-                        return ocs2.ed == monomios_2[m].numero[oc];
+                        return ocs2.ed == monomios[m].numero[oc];
                       }).el++;
   
                       if (
                         ocs2.find(function (ocs2) {
-                          return ocs2.ed == monomios_2[m].numero[oc];
+                          return ocs2.ed == monomios[m].numero[oc];
                         }).el <= ocs
                       ) {
                         repetido.find(function (repetido) {
                           return repetido.monum == u;
-                        }).letr += `.${monomios_2[u].numero[e]}`;
+                        }).letr += `.${monomios[u].numero[e]}`;
                       }
                       
                     }
@@ -628,10 +629,10 @@ function FATORAR2(expression_2) {
   
         podeir = true;
         qual = -1;
-        for (meow in segs_2) {
+        for (meow in segs) {
           array1 = [];
-          for (d in segs_2[meow].car) {
-            array1.push(segs_2[meow].car[d]);
+          for (d in segs[meow].car) {
+            array1.push(segs[meow].car[d]);
           }
   
           array2 = [];
@@ -639,11 +640,11 @@ function FATORAR2(expression_2) {
             array2.push(repetido[moe].letr[d]);
           }
   
-          if (segs_2[meow].car.length < repetido[moe].letr.length) {
-            divisao = DIVIDIR(VAI(segs_2[meow].car), VAI(repetido[moe].letr));
+          if (segs[meow].car.length < repetido[moe].letr.length) {
+            divisao = DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr));
             //
           } else {
-            divisao = DIVIDIR(VAI(repetido[moe].letr), VAI(segs_2[meow].car));
+            divisao = DIVIDIR(VAI(repetido[moe].letr), VAI(segs[meow].car));
             //
           }
   
@@ -663,36 +664,36 @@ function FATORAR2(expression_2) {
                 permission = versetem(estado);
                 //console.log(permission)
                 if (permission == true && estado != " " && estado != "-") {
-                  segs_2.push({ car: estado, mons: [m] });
+                  segs.push({ car: estado, mons: [m] });
                 }
               }
               estado += str[i];
               if (i == str.length - 1) {
                 permission = versetem(estado);
                 if (permission == true && estado != " " && estado != "-") {
-                  segs_2.push({ car: estado, mons: [m] });
+                  segs.push({ car: estado, mons: [m] });
                 }
               }
             }
           }
-        } else if (segs_2[qual].mons.indexOf(m) == -1) {
-          segs_2[qual].mons.push(m);
+        } else if (segs[qual].mons.indexOf(m) == -1) {
+          segs[qual].mons.push(m);
         }
       }
     }
   
     
   
-    for (nl = 0; nl < segs_2.length; nl++) {
-      for (n = 0; n < segs_2.length; n++) {
+    for (nl = 0; nl < segs.length; nl++) {
+      for (n = 0; n < segs.length; n++) {
         if (n != nl) {
   
-          stay = VAI(segs_2[n].car);
+          stay = VAI(segs[n].car);
           contido = true;
-          for (dry in segs_2[nl].car) {
-            if (segs_2[nl].car[dry] != "." && segs_2[nl].car[dry] != "-") {
-              if (stay.indexOf(segs_2[nl].car[dry]) != -1) {
-                stay.splice(stay.indexOf(segs_2[nl].car[dry]), 1);
+          for (dry in segs[nl].car) {
+            if (segs[nl].car[dry] != "." && segs[nl].car[dry] != "-") {
+              if (stay.indexOf(segs[nl].car[dry]) != -1) {
+                stay.splice(stay.indexOf(segs[nl].car[dry]), 1);
               } else {
                 contido = false;
               }
@@ -702,10 +703,10 @@ function FATORAR2(expression_2) {
           }
   
           if (contido == true) {
-            for (u in segs_2[n].mons) {
-              if (segs_2[nl].mons.indexOf(segs_2[n].mons[u]) != -1) {
+            for (u in segs[n].mons) {
+              if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
               } else {
-                segs_2[nl].mons.push(segs_2[n].mons[u]);
+                segs[nl].mons.push(segs[n].mons[u]);
               }
             }
           }
@@ -726,30 +727,30 @@ function FATORAR2(expression_2) {
   
     ////
   
-    grtols_2 = [];
+    grtols = [];
   
-    for (hi in segs_2) {
+    for (hi in segs) {
       ////
-      segs_2[hi].length = segs_2[hi].car.length;
+      segs[hi].length = segs[hi].car.length;
   
-      grtols_2.push(segs_2[hi]);
+      grtols.push(segs[hi]);
     }
   
     ////
     ////
-    organizado = sortob(grtols_2, "length")[1];
+    organizado = sortob(grtols, "length")[1];
   
-    grtols_2 = [];
+    grtols = [];
     for (ah in organizado) {
       ////
-      grtols_2.push(segs_2[organizado[ah]]);
+      grtols.push(segs[organizado[ah]]);
     }
   
     ////
-    segs_2 = grtols_2;
+    segs = grtols;
   
     //DIVS
-    ml = monomios_2.length;
+    ml = monomios.length;
     ////
   
     divs = ehprimo2(ml);
@@ -765,37 +766,37 @@ function FATORAR2(expression_2) {
   
     
   
-    for (tie in segs_2) {
+    for (tie in segs) {
       //
-      segs_2[tie].godhelpme = [...segs_2[tie].mons];
+      segs[tie].godhelpme = [...segs[tie].mons];
     }
   
     okentao = 0;
     //for (okentao in divs) {
-    roll_2 = [];
+    roll = [];
   
     //
     //const vi = 0
-    scarecrow_2 = [];
-    for (anchor in segs_2) {
+    scarecrow = [];
+    for (anchor in segs) {
       //
   
       army = [];
       lpisthebest = "";
-      for (fall in segs_2[anchor].car) {
+      for (fall in segs[anchor].car) {
         if (lpisthebest.length == 0) {
-          lpisthebest = segs_2[anchor].car[fall];
+          lpisthebest = segs[anchor].car[fall];
         } else if (
           lpisthebest.search("[0-9]") != -1 &&
-          segs_2[anchor].car[fall].search("[0-9]") != -1
+          segs[anchor].car[fall].search("[0-9]") != -1
         ) {
-          lpisthebest += segs_2[anchor].car[fall];
+          lpisthebest += segs[anchor].car[fall];
         } else {
           army.push(lpisthebest);
-          if (segs_2[anchor].car[fall] != ".") {
-            lpisthebest = segs_2[anchor].car[fall];
+          if (segs[anchor].car[fall] != ".") {
+            lpisthebest = segs[anchor].car[fall];
           } else {
-            if (segs_2[anchor].car[Number(fall) + 1].search("[0-9]") != -1) {
+            if (segs[anchor].car[Number(fall) + 1].search("[0-9]") != -1) {
               lpisthebest = "*";
             } else {
               lpisthebest = "";
@@ -803,7 +804,7 @@ function FATORAR2(expression_2) {
           }
           //
         }
-        if (fall == segs_2[anchor].car.length - 1) {
+        if (fall == segs[anchor].car.length - 1) {
           army.push(lpisthebest);
         }
       }
@@ -818,42 +819,42 @@ function FATORAR2(expression_2) {
           army[pahh] = ".";
         }
       }
-      scarecrow_2.push({
+      scarecrow.push({
         divididos: [],
         outrodiv: [],
-        poss: [...segs_2[anchor].mons],
+        poss: [...segs[anchor].mons],
         divisor: [...army],
-        positions: [...segs_2[anchor].mons],
+        positions: [...segs[anchor].mons],
       });
-      for (high in segs_2[anchor].mons) {
+      for (high in segs[anchor].mons) {
         army = [...bell];
   
         //
   
         lightson = [...army];
-        pain = DIVIDIR(army, monomios_2[segs_2[anchor].mons[high]].numero);
+        pain = DIVIDIR(army, monomios[segs[anchor].mons[high]].numero);
   
         if (pain.length == 0 || pain.search("([0-9]|[a-z)])") == -1) {
           if (
             lightson.indexOf("-") != -1 &&
-            monomios_2[segs_2[anchor].mons[high]].numero.indexOf("-") == -1
+            monomios[segs[anchor].mons[high]].numero.indexOf("-") == -1
           ) {
             pain = "-1";
             //
-            scarecrow_2[anchor].divididos.push("1");
-            scarecrow_2[anchor].outrodiv.push(pain);
+            scarecrow[anchor].divididos.push("1");
+            scarecrow[anchor].outrodiv.push(pain);
           } else if (
             lightson.indexOf("-") == -1 &&
-            monomios_2[segs_2[anchor].mons[high]].numero.indexOf("-") != -1
+            monomios[segs[anchor].mons[high]].numero.indexOf("-") != -1
           ) {
             pain = "-1";
             //
-            scarecrow_2[anchor].divididos.push("1");
-            scarecrow_2[anchor].outrodiv.push(pain);
+            scarecrow[anchor].divididos.push("1");
+            scarecrow[anchor].outrodiv.push(pain);
           } else {
             pain = "1";
-            scarecrow_2[anchor].divididos.push(pain);
-            scarecrow_2[anchor].outrodiv.push(pain);
+            scarecrow[anchor].divididos.push(pain);
+            scarecrow[anchor].outrodiv.push(pain);
           }
         } else {
           right = "";
@@ -893,7 +894,7 @@ function FATORAR2(expression_2) {
             }
           }
   
-          scarecrow_2[anchor].outrodiv.push(uy);
+          scarecrow[anchor].outrodiv.push(uy);
   
           if (uy[0] == "-") {
             holdon = "";
@@ -903,83 +904,83 @@ function FATORAR2(expression_2) {
   
             uy = holdon;
           }
-          scarecrow_2[anchor].divididos.push(uy);
+          scarecrow[anchor].divididos.push(uy);
         }
       }
     }
   
-    miss_2 = [];
+    miss = [];
   
-    for (ah in scarecrow_2) {
-      for (é in scarecrow_2[ah].divididos) {
+    for (ah in scarecrow) {
+      for (é in scarecrow[ah].divididos) {
         if (
-          miss_2.find(function (miss_2) {
-            return miss_2.dividido == scarecrow_2[ah].divididos[é];
+          miss.find(function (miss) {
+            return miss.dividido == scarecrow[ah].divididos[é];
           }) == undefined
         ) {
-          miss_2.push({
-            dividido: scarecrow_2[ah].divididos[é],
+          miss.push({
+            dividido: scarecrow[ah].divididos[é],
             aparicoes: [Number(ah)],
-            divisor: scarecrow_2[ah].divisor,
+            divisor: scarecrow[ah].divisor,
           });
         } else {
-          miss_2
-            .find(function (miss_2) {
-              return miss_2.dividido == scarecrow_2[ah].divididos[é];
+          miss
+            .find(function (miss) {
+              return miss.dividido == scarecrow[ah].divididos[é];
             })
             .aparicoes.push(Number(ah));
         }
       }
     }
   
-    quantosfatores = Number(monomios_2.length) / Number(divs[okentao]);
-    quantasposições = Number(monomios_2.length) / Number(quantosfatores);
+    quantosfatores = Number(monomios.length) / Number(divs[okentao]);
+    quantasposições = Number(monomios.length) / Number(quantosfatores);
   
-    //ORDENANDO O miss_2 DE ACORDO COM O NÚMERO DE APARIÇÕES
+    //ORDENANDO O MISS DE ACORDO COM O NÚMERO DE APARIÇÕES
   
-    grtols_2 = [];
-    for (hi in miss_2) {
+    grtols = [];
+    for (hi in miss) {
       ////
-      miss_2[hi].length = miss_2[hi].aparicoes.length;
+      miss[hi].length = miss[hi].aparicoes.length;
   
-      grtols_2.push(miss_2[hi]);
+      grtols.push(miss[hi]);
     }
-    organizado = sortob(grtols_2, "length")[1];
+    organizado = sortob(grtols, "length")[1];
   
-    grtols_2 = [];
+    grtols = [];
     for (ah in organizado) {
       ////
-      grtols_2.push(miss_2[organizado[ah]]);
+      grtols.push(miss[organizado[ah]]);
     }
-    miss_2 = [...grtols_2];
+    miss = [...grtols];
     //
     deucerto = false;
     java = 0;
   
     //console.log('OK, LET ME FIX THIS THING')
-    for (nal in miss_2) {
-      //console.log(miss_2[nal].aparicoes)
+    for (nal in miss) {
+      //console.log(miss[nal].aparicoes)
     }
   
     roller = [];
-    for (eep in miss_2) {
-      //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss_2[eep].aparicoes)
+    for (eep in miss) {
+      //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss[eep].aparicoes)
   
       //console.log('---')
-      for (quad in miss_2) {
+      for (quad in miss) {
         //console.log('')
         if (quad != eep) {
-          //console.log(quad,miss_2[quad].aparicoes)
+          //console.log(quad,miss[quad].aparicoes)
   
           repeated = [];
           repwri = "";
-          for (vespa in miss_2[eep].aparicoes) {
-            //console.log(miss_2[eep].aparicoes[vespa])
-            if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1) {
-              //console.log(miss_2[quad].aparicoes,'indexOf(',miss_2[eep].aparicoes[vespa],') não é igual a -1')
-              repeated.push(miss_2[eep].aparicoes[vespa]);
+          for (vespa in miss[eep].aparicoes) {
+            //console.log(miss[eep].aparicoes[vespa])
+            if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+              //console.log(miss[quad].aparicoes,'indexOf(',miss[eep].aparicoes[vespa],') não é igual a -1')
+              repeated.push(miss[eep].aparicoes[vespa]);
   
-              repwri += "," + miss_2[eep].aparicoes[vespa];
+              repwri += "," + miss[eep].aparicoes[vespa];
   
               //console.log('repetido:',repeated,'repwri',repwri)
   
@@ -1029,36 +1030,36 @@ function FATORAR2(expression_2) {
       }
     }
   
-    while (java < miss_2.length && deucerto == false) {
+    while (java < miss.length && deucerto == false) {
       //FOCO
-      podeser_2 = [];
-      for (outro in miss_2) {
+      podeser = [];
+      for (outro in miss) {
         //
         if (
-          outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/
+          outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/
         ) {
           presentes = [];
-          for (quecoisa in miss_2[outro].aparicoes) {
-            fatorzinho = miss_2[outro].aparicoes[quecoisa];
+          for (quecoisa in miss[outro].aparicoes) {
+            fatorzinho = miss[outro].aparicoes[quecoisa];
   
-            if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
+            if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
               presentes.push(fatorzinho);
             }
           }
   
           adicionou = false;
-          for (idk in podeser_2) {
+          for (idk in podeser) {
             //
             esigual = true;
-            for (denovo in podeser_2[idk].opl) {
-              if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
+            for (denovo in podeser[idk].opl) {
+              if (podeser[idk].opl[denovo] == presentes[denovo]) {
                 //
               } else {
                 esigual = false;
               }
             }
             if (esigual == true) {
-              //podeser_2[idk].position.push(outro)
+              //podeser[idk].position.push(outro)
               adicionou = true;
             }
           }
@@ -1067,88 +1068,88 @@ function FATORAR2(expression_2) {
             presentes.length > 0 &&
             adicionou == false
           ) {
-            //podeser_2.push({opl: presentes, position: [outro]})
+            //podeser.push({opl: presentes, position: [outro]})
           }
         }
       }
       //
-      podeser_2 = [...roller];
+      podeser = [...roller];
   
-      for (belief in podeser_2) {
-        if (podeser_2[belief].position.indexOf(java) == -1) {
-          //podeser_2[belief].position.push(String(java))
+      for (belief in podeser) {
+        if (podeser[belief].position.indexOf(java) == -1) {
+          //podeser[belief].position.push(String(java))
         }
   
         shot = "";
-        for (gun in podeser_2[belief].opl) {
-          shot += podeser_2[belief].opl[gun] + ",";
+        for (gun in podeser[belief].opl) {
+          shot += podeser[belief].opl[gun] + ",";
         }
         //
   
-        if (roll_2.length == 0) {
+        if (roll.length == 0) {
           //
-          roll_2.push({
-            repetidos: [...podeser_2[belief].opl],
+          roll.push({
+            repetidos: [...podeser[belief].opl],
             way: shot,
-            posições: [...podeser_2[belief].position],
+            posições: [...podeser[belief].position],
           });
         } else if (
-          roll_2.find(function (roll_2) {
-            return roll_2.way == shot;
+          roll.find(function (roll) {
+            return roll.way == shot;
           }) != undefined
         ) {
           //SE JÁ TIVER NA LSITA
   
-          for (capital in podeser_2[belief].position) {
+          for (capital in podeser[belief].position) {
             //
   
             if (
-              roll_2
-                .find(function (roll_2) {
-                  return roll_2.way == shot;
+              roll
+                .find(function (roll) {
+                  return roll.way == shot;
                 })
-                .posições.indexOf(podeser_2[belief].position[capital]) == -1
+                .posições.indexOf(podeser[belief].position[capital]) == -1
             ) {
-              roll_2
-                .find(function (roll_2) {
-                  return roll_2.way == shot;
+              roll
+                .find(function (roll) {
+                  return roll.way == shot;
                 })
-                .posições.push(podeser_2[belief].position[capital]);
+                .posições.push(podeser[belief].position[capital]);
             }
           }
         } else {
-          roll_2.push({
-            repetidos: [...podeser_2[belief].opl],
+          roll.push({
+            repetidos: [...podeser[belief].opl],
             way: shot,
-            posições: [...podeser_2[belief].position],
+            posições: [...podeser[belief].position],
           });
         }
       }
   
       whyis = java;
-      if (podeser_2.length > 0) {
-        for (cold in podeser_2) {
+      if (podeser.length > 0) {
+        for (cold in podeser) {
           if (
-            podeser_2[cold].position.length == quantosfatores &&
-            podeser_2[cold].opl.length == quantasposições &&
-            miss_2[whyis].aparicoes.length == quantasposições
+            podeser[cold].position.length == quantosfatores &&
+            podeser[cold].opl.length == quantasposições &&
+            miss[whyis].aparicoes.length == quantasposições
           ) {
             //
             deucerto = true;
   
             ficaassim = "";
-            //podeser_2[cold].position.push(whyis)
+            //podeser[cold].position.push(whyis)
   
-            for (yehaa in podeser_2[cold].position) {
+            for (yehaa in podeser[cold].position) {
               //
   
-              if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == "-") {
+              if (miss[podeser[cold].position[yehaa]].dividido[0] == "-") {
                 fi = "";
-                for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
+                for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
                   if (
-                    miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != "-"
+                    miss[podeser[cold].position[yehaa]].dividido[ohjesus] != "-"
                   ) {
-                    fi += miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus];
+                    fi += miss[podeser[cold].position[yehaa]].dividido[ohjesus];
                   }
                 }
                 //
@@ -1159,18 +1160,18 @@ function FATORAR2(expression_2) {
                 }
               } else if (yehaa != 0) {
                 ficaassim += " + ";
-                ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
+                ficaassim += miss[podeser[cold].position[yehaa]].dividido;
               } else {
-                ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
+                ficaassim += miss[podeser[cold].position[yehaa]].dividido;
               }
             }
   
-            for (ruin in podeser_2[cold].opl) {
+            for (ruin in podeser[cold].opl) {
               //
               emotion = "";
-              for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor) {
+              for (scream in scarecrow[podeser[cold].opl[ruin]].divisor) {
                 //
-                emotion += scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream];
+                emotion += scarecrow[podeser[cold].opl[ruin]].divisor[scream];
               }
               //
             }
@@ -1188,21 +1189,21 @@ function FATORAR2(expression_2) {
   
     //
   
-    for (ne in roll_2) {
+    for (ne in roll) {
       //for (ne = 0; ne < 1; ne++) {
      
       arranjar = [];
-      for (pq in roll_2[ne].repetidos) {
-        (gosto = roll_2[ne].repetidos[pq]),
-          scarecrow_2[roll_2[ne].repetidos[pq]].divididos;
+      for (pq in roll[ne].repetidos) {
+        (gosto = roll[ne].repetidos[pq]),
+          scarecrow[roll[ne].repetidos[pq]].divididos;
   
         arranjar.push({ pos: pq, ocupa: [], origin: gosto });
   
-        for (moon in roll_2[ne].posições) {
+        for (moon in roll[ne].posições) {
           vaiir =
-            scarecrow_2[gosto].outrodiv[
-              scarecrow_2[gosto].divididos.indexOf(
-                miss_2[roll_2[ne].posições[moon]].dividido
+            scarecrow[gosto].outrodiv[
+              scarecrow[gosto].divididos.indexOf(
+                miss[roll[ne].posições[moon]].dividido
               )
             ];
           arranjar[pq].ocupa.push(vaiir);
@@ -1247,33 +1248,33 @@ function FATORAR2(expression_2) {
           presa = perfectwave[youchoose].agrupar[catraca];
   
           diferente = false;
-          for (moon in roll_2[ne].posições) {
+          for (moon in roll[ne].posições) {
             //
             vaiir =
-              scarecrow_2[arranjar[presa].origin].outrodiv[
-                scarecrow_2[arranjar[presa].origin].divididos.indexOf(
-                  miss_2[roll_2[ne].posições[moon]].dividido
+              scarecrow[arranjar[presa].origin].outrodiv[
+                scarecrow[arranjar[presa].origin].divididos.indexOf(
+                  miss[roll[ne].posições[moon]].dividido
                 )
               ];
             //
             if (vaiir != ficarassim[moon]) {
               diferente = true;
-              scarecrow_2[arranjar[presa].origin].outrodiv[
-                scarecrow_2[arranjar[presa].origin].divididos.indexOf(
-                  miss_2[roll_2[ne].posições[moon]].dividido
+              scarecrow[arranjar[presa].origin].outrodiv[
+                scarecrow[arranjar[presa].origin].divididos.indexOf(
+                  miss[roll[ne].posições[moon]].dividido
                 )
               ] = ficarassim[moon];
             }
           }
           if (diferente == true) {
-            lista = scarecrow_2[arranjar[presa].origin].divisor;
+            lista = scarecrow[arranjar[presa].origin].divisor;
             if (lista != "-") {
               modificar = ["-", "."];
               for (saved in lista) {
                 modificar.push(lista[saved]);
               }
               //
-              scarecrow_2[arranjar[presa].origin].divisor = modificar;
+              scarecrow[arranjar[presa].origin].divisor = modificar;
             } else {
               lista.splice(0, 2);
             }
@@ -1283,80 +1284,80 @@ function FATORAR2(expression_2) {
     }
   
     //
-    for (sei in scarecrow_2) {
-      for (ai in scarecrow_2[sei].divididos) {
-        scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai];
+    for (sei in scarecrow) {
+      for (ai in scarecrow[sei].divididos) {
+        scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai];
       }
     }
   
-    miss_2 = [];
+    miss = [];
   
-    for (ah in scarecrow_2) {
-      for (é in scarecrow_2[ah].divididos) {
+    for (ah in scarecrow) {
+      for (é in scarecrow[ah].divididos) {
         if (
-          miss_2.find(function (miss_2) {
-            return miss_2.dividido == scarecrow_2[ah].divididos[é];
+          miss.find(function (miss) {
+            return miss.dividido == scarecrow[ah].divididos[é];
           }) == undefined
         ) {
-          miss_2.push({
-            dividido: scarecrow_2[ah].divididos[é],
+          miss.push({
+            dividido: scarecrow[ah].divididos[é],
             aparicoes: [Number(ah)],
-            divisor: scarecrow_2[ah].divisor,
+            divisor: scarecrow[ah].divisor,
           });
         } else {
-          miss_2
-            .find(function (miss_2) {
-              return miss_2.dividido == scarecrow_2[ah].divididos[é];
+          miss
+            .find(function (miss) {
+              return miss.dividido == scarecrow[ah].divididos[é];
             })
             .aparicoes.push(Number(ah));
         }
       }
     }
   
-    grtols_2 = [];
-    for (hi in miss_2) {
+    grtols = [];
+    for (hi in miss) {
       ////
-      miss_2[hi].length = miss_2[hi].aparicoes.length;
+      miss[hi].length = miss[hi].aparicoes.length;
   
-      grtols_2.push(miss_2[hi]);
+      grtols.push(miss[hi]);
     }
-    organizado = sortob(grtols_2, "length")[1];
+    organizado = sortob(grtols, "length")[1];
   
-    grtols_2 = [];
+    grtols = [];
     for (ah in organizado) {
       ////
-      grtols_2.push(miss_2[organizado[ah]]);
+      grtols.push(miss[organizado[ah]]);
     }
-    miss_2 = [...grtols_2];
+    miss = [...grtols];
   
     java = 0;
-    roll_2 = [];
+    roll = [];
     deucerto = false;
   
     //console.log('OK, LET ME FIX THIS THING')
-    for (nal in miss_2) {
-      //console.log(miss_2[nal].aparicoes)
+    for (nal in miss) {
+      //console.log(miss[nal].aparicoes)
     }
   
     roller = [];
-    for (eep in miss_2) {
-      //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss_2[eep].aparicoes)
+    for (eep in miss) {
+      //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss[eep].aparicoes)
   
       //console.log('---')
-      for (quad in miss_2) {
+      for (quad in miss) {
         //console.log('')
         if (quad != eep) {
-          //console.log(quad,miss_2[quad].aparicoes)
+          //console.log(quad,miss[quad].aparicoes)
   
           repeated = [];
           repwri = "";
-          for (vespa in miss_2[eep].aparicoes) {
-            //console.log(miss_2[eep].aparicoes[vespa])
-            if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1) {
-              //console.log(miss_2[quad].aparicoes,'indexOf(',miss_2[eep].aparicoes[vespa],') não é igual a -1')
-              repeated.push(miss_2[eep].aparicoes[vespa]);
+          for (vespa in miss[eep].aparicoes) {
+            //console.log(miss[eep].aparicoes[vespa])
+            if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+              //console.log(miss[quad].aparicoes,'indexOf(',miss[eep].aparicoes[vespa],') não é igual a -1')
+              repeated.push(miss[eep].aparicoes[vespa]);
   
-              repwri += "," + miss_2[eep].aparicoes[vespa];
+              repwri += "," + miss[eep].aparicoes[vespa];
   
               //console.log('repetido:',repeated,'repwri',repwri)
   
@@ -1406,36 +1407,36 @@ function FATORAR2(expression_2) {
       }
     }
   
-    while (java < miss_2.length && deucerto == false) {
+    while (java < miss.length && deucerto == false) {
       //FOCO
-      podeser_2 = [];
-      for (outro in miss_2) {
+      podeser = [];
+      for (outro in miss) {
         //
         if (
-          outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/
+          outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/
         ) {
           presentes = [];
-          for (quecoisa in miss_2[outro].aparicoes) {
-            fatorzinho = miss_2[outro].aparicoes[quecoisa];
+          for (quecoisa in miss[outro].aparicoes) {
+            fatorzinho = miss[outro].aparicoes[quecoisa];
   
-            if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
+            if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
               presentes.push(fatorzinho);
             }
           }
   
           adicionou = false;
-          for (idk in podeser_2) {
+          for (idk in podeser) {
             //
             esigual = true;
-            for (denovo in podeser_2[idk].opl) {
-              if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
+            for (denovo in podeser[idk].opl) {
+              if (podeser[idk].opl[denovo] == presentes[denovo]) {
                 //
               } else {
                 esigual = false;
               }
             }
             if (esigual == true) {
-              //podeser_2[idk].position.push(outro)
+              //podeser[idk].position.push(outro)
               adicionou = true;
             }
           }
@@ -1444,88 +1445,88 @@ function FATORAR2(expression_2) {
             presentes.length > 0 &&
             adicionou == false
           ) {
-            //podeser_2.push({opl: presentes, position: [outro]})
+            //podeser.push({opl: presentes, position: [outro]})
           }
         }
       }
       //
-      podeser_2 = [...roller];
+      podeser = [...roller];
   
-      for (belief in podeser_2) {
-        if (podeser_2[belief].position.indexOf(java) == -1) {
-          //podeser_2[belief].position.push(String(java))
+      for (belief in podeser) {
+        if (podeser[belief].position.indexOf(java) == -1) {
+          //podeser[belief].position.push(String(java))
         }
   
         shot = "";
-        for (gun in podeser_2[belief].opl) {
-          shot += podeser_2[belief].opl[gun] + ",";
+        for (gun in podeser[belief].opl) {
+          shot += podeser[belief].opl[gun] + ",";
         }
         //
   
-        if (roll_2.length == 0) {
+        if (roll.length == 0) {
           //
-          roll_2.push({
-            repetidos: [...podeser_2[belief].opl],
+          roll.push({
+            repetidos: [...podeser[belief].opl],
             way: shot,
-            posições: [...podeser_2[belief].position],
+            posições: [...podeser[belief].position],
           });
         } else if (
-          roll_2.find(function (roll_2) {
-            return roll_2.way == shot;
+          roll.find(function (roll) {
+            return roll.way == shot;
           }) != undefined
         ) {
           //SE JÁ TIVER NA LSITA
   
-          for (capital in podeser_2[belief].position) {
+          for (capital in podeser[belief].position) {
             //
   
             if (
-              roll_2
-                .find(function (roll_2) {
-                  return roll_2.way == shot;
+              roll
+                .find(function (roll) {
+                  return roll.way == shot;
                 })
-                .posições.indexOf(podeser_2[belief].position[capital]) == -1
+                .posições.indexOf(podeser[belief].position[capital]) == -1
             ) {
-              roll_2
-                .find(function (roll_2) {
-                  return roll_2.way == shot;
+              roll
+                .find(function (roll) {
+                  return roll.way == shot;
                 })
-                .posições.push(podeser_2[belief].position[capital]);
+                .posições.push(podeser[belief].position[capital]);
             }
           }
         } else {
-          roll_2.push({
-            repetidos: [...podeser_2[belief].opl],
+          roll.push({
+            repetidos: [...podeser[belief].opl],
             way: shot,
-            posições: [...podeser_2[belief].position],
+            posições: [...podeser[belief].position],
           });
         }
       }
   
       whyis = java;
-      if (podeser_2.length > 0) {
-        for (cold in podeser_2) {
+      if (podeser.length > 0) {
+        for (cold in podeser) {
           if (
-            podeser_2[cold].position.length == quantosfatores &&
-            podeser_2[cold].opl.length == quantasposições &&
-            miss_2[whyis].aparicoes.length == quantasposições
+            podeser[cold].position.length == quantosfatores &&
+            podeser[cold].opl.length == quantasposições &&
+            miss[whyis].aparicoes.length == quantasposições
           ) {
             //
             deucerto = true;
   
             ficaassim = "";
-            //podeser_2[cold].position.push(whyis)
+            //podeser[cold].position.push(whyis)
   
-            for (yehaa in podeser_2[cold].position) {
+            for (yehaa in podeser[cold].position) {
               //
   
-              if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == "-") {
+              if (miss[podeser[cold].position[yehaa]].dividido[0] == "-") {
                 fi = "";
-                for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
+                for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
                   if (
-                    miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != "-"
+                    miss[podeser[cold].position[yehaa]].dividido[ohjesus] != "-"
                   ) {
-                    fi += miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus];
+                    fi += miss[podeser[cold].position[yehaa]].dividido[ohjesus];
                   }
                 }
                 //
@@ -1536,18 +1537,18 @@ function FATORAR2(expression_2) {
                 }
               } else if (yehaa != 0) {
                 ficaassim += " + ";
-                ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
+                ficaassim += miss[podeser[cold].position[yehaa]].dividido;
               } else {
-                ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
+                ficaassim += miss[podeser[cold].position[yehaa]].dividido;
               }
             }
   
-            for (ruin in podeser_2[cold].opl) {
+            for (ruin in podeser[cold].opl) {
               //
               emotion = "";
-              for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor) {
+              for (scream in scarecrow[podeser[cold].opl[ruin]].divisor) {
                 //
-                emotion += scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream];
+                emotion += scarecrow[podeser[cold].opl[ruin]].divisor[scream];
               }
               //
             }
@@ -1562,10 +1563,10 @@ function FATORAR2(expression_2) {
   
     console.log("HORA DA VERDADE!");
     INDIRETARROLL();
-    youdumb_2 = [];
+    youdumb = [];
   
     aswillbe2 = [];
-    for (raging = 0; raging < roll_2.length; raging++) {
+    for (raging = 0; raging < roll.length; raging++) {
       asitwas = [];
   
       obe = { what: [] };
@@ -1573,29 +1574,29 @@ function FATORAR2(expression_2) {
       //
       //
   
-      for (still in roll_2[raging].repetidos) {
+      for (still in roll[raging].repetidos) {
         asitwas2 = [];
         aswillbe = [];
   
         //
   
         mylife = "(";
-        for (still2 in roll_2[raging].posições) {
+        for (still2 in roll[raging].posições) {
           if (still != 0) {
-            mylife += " + " + miss_2[roll_2[raging].posições[still2]].dividido;
+            mylife += " + " + miss[roll[raging].posições[still2]].dividido;
           } else {
-            mylife += miss_2[roll_2[raging].posições[still2]].dividido;
+            mylife += miss[roll[raging].posições[still2]].dividido;
           }
   
           //
   
           conseguiu = false;
           older = 0;
-          while (older < monomios_2.length && conseguiu == false) {
+          while (older < monomios.length && conseguiu == false) {
             DESFATORAR(
-              monomios_2[older].numero,
-              scarecrow_2[roll_2[raging].repetidos[still]].divisor,
-              miss_2[roll_2[raging].posições[still2]].dividido
+              monomios[older].numero,
+              scarecrow[roll[raging].repetidos[still]].divisor,
+              miss[roll[raging].posições[still2]].dividido
             );
   
             //correto == ['2','*','10','x'] (NÚMERO QUE VAI SER COMPARADO)
@@ -1733,17 +1734,17 @@ function FATORAR2(expression_2) {
         aswillbe2.push({ oque: aswillbe, onde: raging });
       }
   
-      youdumb_2.push({ mons: asitwas, rag: raging, w: obe, polen: raging });
+      youdumb.push({ mons: asitwas, rag: raging, w: obe, polen: raging });
     }
   
     dontworry = [];
-    for (behappy in youdumb_2) {
-      for (armenia in youdumb_2) {
+    for (behappy in youdumb) {
+      for (armenia in youdumb) {
         if (armenia != behappy) {
           doeshave = true;
-          for (sofar in youdumb_2[armenia].mons) {
+          for (sofar in youdumb[armenia].mons) {
             if (
-              youdumb_2[behappy].mons.indexOf(youdumb_2[armenia].mons[sofar]) == -1
+              youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1
             ) {
               doeshave = false;
             }
@@ -1758,42 +1759,42 @@ function FATORAR2(expression_2) {
       }
     }
   
-    for (da = youdumb_2.length - 1; da >= 0; da--) {
+    for (da = youdumb.length - 1; da >= 0; da--) {
       if (dontworry.indexOf(String(da)) != -1) {
-        //youdumb_2.splice(da,1)
+        //youdumb.splice(da,1)
       }
     }
   
-    grtols_2 = [];
+    grtols = [];
   
-    for (hi in youdumb_2) {
+    for (hi in youdumb) {
       //
-      youdumb_2[hi].length = youdumb_2[hi].mons.length;
+      youdumb[hi].length = youdumb[hi].mons.length;
   
-      grtols_2.push(youdumb_2[hi]);
+      grtols.push(youdumb[hi]);
     }
   
-    organizado = sortob(grtols_2, "length")[1];
+    organizado = sortob(grtols, "length")[1];
   
-    grtols_2 = [];
+    grtols = [];
     for (ah in organizado) {
-      grtols_2.push(youdumb_2[organizado[ah]]);
+      grtols.push(youdumb[organizado[ah]]);
     }
   
-    youdumb_2 = [];
-    for (erro in grtols_2) {
-      youdumb_2.push(grtols_2[erro]);
+    youdumb = [];
+    for (erro in grtols) {
+      youdumb.push(grtols[erro]);
     }
   
     /*
-             for (yourlife in grtols_2) {
+             for (yourlife in grtols) {
              
                  
              
-                 for (bolinho in grtols_2[yourlife].w.what) {
+                 for (bolinho in grtols[yourlife].w.what) {
                 
              
-                     vagem = grtols_2[yourlife].w.what[bolinho]
+                     vagem = grtols[yourlife].w.what[bolinho]
                      for (ahnao in vagem) {
                     
                      }
@@ -1801,41 +1802,41 @@ function FATORAR2(expression_2) {
              }
              */
   
-    pans_2 = [];
+    pans = [];
     numerospresentes = [];
   
-    for (AH in youdumb_2) {
+    for (AH in youdumb) {
     }
-    for (wrecked in youdumb_2) {
-      initial = youdumb_2[wrecked].w.what;
+    for (wrecked in youdumb) {
+      initial = youdumb[wrecked].w.what;
       for (agg in initial) {
       }
     }
   
-    grtols_2 = [];
-    for (hi in youdumb_2) {
-      youdumb_2[hi].length = youdumb_2[hi].w.what.length;
+    grtols = [];
+    for (hi in youdumb) {
+      youdumb[hi].length = youdumb[hi].w.what.length;
   
-      grtols_2.push(youdumb_2[hi]);
+      grtols.push(youdumb[hi]);
     }
-    organizado = sortob(grtols_2, "length")[1];
+    organizado = sortob(grtols, "length")[1];
   
-    grtols_2 = [];
+    grtols = [];
     for (ah in organizado) {
       ////
-      grtols_2.push(youdumb_2[organizado[ah]]);
+      grtols.push(youdumb[organizado[ah]]);
     }
-    youdumb_2 = [...grtols_2];
+    youdumb = [...grtols];
   
-    heya_2 = [...youdumb_2];
-    for (imback in youdumb_2) {
+    heya = [...youdumb];
+    for (imback in youdumb) {
       //
   
       sticky = [];
-      initial = youdumb_2[imback].w.what;
+      initial = youdumb[imback].w.what;
   
       if (initial.length > 0) {
-        inside = { which: [], numberyoudumb_2_2: youdumb_2[imback].polen };
+        inside = { which: [], numberyoudumb: youdumb[imback].polen };
   
         for (agg in initial) {
           taai = false;
@@ -1864,36 +1865,36 @@ function FATORAR2(expression_2) {
   
         if (inside.which.length > 0) {
           inside.todos = sticky;
-          pans_2.push(inside);
+          pans.push(inside);
         }
   
-        //youdumb_2.splice(imback, 1)
+        //youdumb.splice(imback, 1)
   
         /*
-                 for (invest in pans_2) {
+                 for (invest in pans) {
                 
-                     for (plat in pans_2[invest].which) {
+                     for (plat in pans[invest].which) {
                     
                      }
                  }
                  */
   
-        //youdumb_2.splice(imback, 1)
-        for (h in youdumb_2) {
+        //youdumb.splice(imback, 1)
+        for (h in youdumb) {
           if (h != imback) {
-            if (youdumb_2[h].w.what.length > 0) {
+            if (youdumb[h].w.what.length > 0) {
               //
             }
   
-            for (tempo = youdumb_2[h].w.what.length - 1; tempo >= 0; tempo--) {
+            for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
               //
   
               dulu = false;
   
-              for (and in youdumb_2[h].w.what[tempo].ar) {
+              for (and in youdumb[h].w.what[tempo].ar) {
                 //
                 if (
-                  numerospresentes.indexOf(youdumb_2[h].w.what[tempo].ar[and]) != -1
+                  numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[and]) != -1
                 ) {
                   //
                   dulu = true;
@@ -1903,7 +1904,7 @@ function FATORAR2(expression_2) {
                 //
               } else {
                 //
-                //youdumb_2[h].w.what.splice(tempo, 1)
+                //youdumb[h].w.what.splice(tempo, 1)
                 //imback++
               }
             }
@@ -1911,54 +1912,54 @@ function FATORAR2(expression_2) {
         }
   
         //
-        for (vixi in youdumb_2) {
-          //if (youdumb_2[vixi].w.what.length > 0) {
+        for (vixi in youdumb) {
+          //if (youdumb[vixi].w.what.length > 0) {
           //
-          for (ainao in youdumb_2[vixi].w.what) {
+          for (ainao in youdumb[vixi].w.what) {
             //
           }
           //}
         }
   
-        for (força in youdumb_2) {
+        for (força in youdumb) {
           //
           entao = [];
-          for (areo in youdumb_2[força].w.what) {
+          for (areo in youdumb[força].w.what) {
             //
-            for (paris in youdumb_2[força].w.what[areo].ar) {
+            for (paris in youdumb[força].w.what[areo].ar) {
               //
-              entao.push(Number(youdumb_2[força].w.what[areo].ar[paris]));
+              entao.push(Number(youdumb[força].w.what[areo].ar[paris]));
             }
           }
           //
-          youdumb_2[força].t = entao;
+          youdumb[força].t = entao;
           //
         }
   
-        grtols_2 = [];
+        grtols = [];
   
-        for (hi in youdumb_2) {
+        for (hi in youdumb) {
           ////
-          youdumb_2[hi].length = youdumb_2[hi].t.length;
+          youdumb[hi].length = youdumb[hi].t.length;
   
-          grtols_2.push(youdumb_2[hi]);
+          grtols.push(youdumb[hi]);
         }
   
         ////
         ////
   
-        organizado = sortob(grtols_2, "length")[1];
+        organizado = sortob(grtols, "length")[1];
   
-        grtols_2 = [];
+        grtols = [];
         for (ah in organizado) {
           ////
-          grtols_2.push(youdumb_2[organizado[ah]]);
+          grtols.push(youdumb[organizado[ah]]);
         }
   
-        youdumb_2 = [];
-        for (erro in grtols_2) {
+        youdumb = [];
+        for (erro in grtols) {
           //
-          youdumb_2.push(grtols_2[erro]);
+          youdumb.push(grtols[erro]);
         }
       }
     }
@@ -1967,7 +1968,7 @@ function FATORAR2(expression_2) {
     numsdesfat = [];
     newexpress = [];
   
-    for (bababa in pans_2) {
+    for (bababa in pans) {
       edge = [];
       naonao = "";
       amount = [];
@@ -1975,8 +1976,8 @@ function FATORAR2(expression_2) {
       tobreak = "";
       realife = [];
       amontoado = [];
-      for (quassao in roll_2[pans_2[bababa].numberyoudumb_2].posições) {
-        el = miss_2[roll_2[pans_2[bababa].numberyoudumb_2].posições[quassao]].dividido;
+      for (quassao in roll[pans[bababa].numberyoudumb].posições) {
+        el = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido;
   
         gates = [];
   
@@ -2165,11 +2166,11 @@ function FATORAR2(expression_2) {
         }
       }
   
-      for (repr in pans_2[bababa].which) {
+      for (repr in pans[bababa].which) {
         triste =
-          scarecrow_2[
-            roll_2[pans_2[bababa].numberyoudumb_2].repetidos[
-              pans_2[bababa].which[repr].numberwhat
+          scarecrow[
+            roll[pans[bababa].numberyoudumb].repetidos[
+              pans[bababa].which[repr].numberwhat
             ]
           ].divisor;
   
@@ -2342,8 +2343,8 @@ function FATORAR2(expression_2) {
       
   
       //FAZENDO A CONTA
-      primeirocaso = SOMANDOmonomios_2(amount);
-      segundocaso = SOMANDOmonomios_2(amontoado);
+      primeirocaso = SOMANDOMONOMIOS(amount);
+      segundocaso = SOMANDOMONOMIOS(amontoado);
   
       mudou = false;
       if (primeirocaso[1] == primeirocaso[2]) {
@@ -2419,28 +2420,28 @@ function FATORAR2(expression_2) {
           }
         }
   
-        for (e in pans_2[bababa].todos) {
-          numsdesfat.push(pans_2[bababa].todos[e]);
+        for (e in pans[bababa].todos) {
+          numsdesfat.push(pans[bababa].todos[e]);
         }
       }
     }
   
     
-    todososnumeros_2 = [];
-    for (acaba in monomios_2) {
+    todososnumeros = [];
+    for (acaba in monomios) {
       //
-      todososnumeros_2.push(acaba);
+      todososnumeros.push(acaba);
     }
     cancelar = [];
-    for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
+    for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
       //
-      if (numerospresentes.indexOf(Number(todososnumeros_2[feliz])) != -1) {
-        todososnumeros_2.splice(feliz, 1);
+      if (numerospresentes.indexOf(Number(todososnumeros[feliz])) != -1) {
+        todososnumeros.splice(feliz, 1);
       }
     }
   
-    for (bye in todososnumeros_2) {
-      quase = monomios_2[todososnumeros_2[bye]].numero;
+    for (bye in todososnumeros) {
+      quase = monomios[todososnumeros[bye]].numero;
       aconta = "";
       elevar = 1;
       aster = false;
@@ -2585,30 +2586,30 @@ function FATORAR2(expression_2) {
     }
   
     function doit(par) {
-      segs_22 = [];
+      segs2 = [];
   
       for (uf in par) {
-        segs_22[uf] = {};
-        segs_22[uf].mons = [...par[uf].mons];
-        segs_22[uf].car = par[uf].car;
+        segs2[uf] = {};
+        segs2[uf].mons = [...par[uf].mons];
+        segs2[uf].car = par[uf].car;
       }
   
       relation = [];
   
-      quanto = Number(monomios_2.length) / Number(divs[okentao]);
+      quanto = Number(monomios.length) / Number(divs[okentao]);
   
       numapars = [];
   
       util = [];
-      for (t in segs_22) {
-        if (segs_22[t].mons.length >= quanto) {
-          util.push(segs_22[t]);
+      for (t in segs2) {
+        if (segs2[t].mons.length >= quanto) {
+          util.push(segs2[t]);
         }
       }
   
      
   
-      for (m in monomios_2) {
+      for (m in monomios) {
         aparic = 0;
         for (t in util) {
         
@@ -2659,7 +2660,7 @@ function FATORAR2(expression_2) {
           }
         }
         relation[r] = present;
-        relation[r].car = segs_22[r].car;
+        relation[r].car = segs2[r].car;
       }
       //
       for (c in relation) {
@@ -2743,35 +2744,35 @@ function FATORAR2(expression_2) {
           }
           //
   
-          for (die in segs_22) {
+          for (die in segs2) {
             tirar = [];
   
-            for (h in segs_22[die].mons) {
-              if (tirados.indexOf(segs_22[die].mons[h]) != -1) {
+            for (h in segs2[die].mons) {
+              if (tirados.indexOf(segs2[die].mons[h]) != -1) {
                 tirar.push(Number(h));
               }
             }
   
             for (far = tirar.length - 1; far >= 0; far--) {
-              segs_22[die].mons.splice(tirar[far], 1);
+              segs2[die].mons.splice(tirar[far], 1);
             }
           }
   
-          for (sorrow in segs_22) {
-            grupos = Math.floor(Number(segs_22[sorrow].mons.length) / quanto);
+          for (sorrow in segs2) {
+            grupos = Math.floor(Number(segs2[sorrow].mons.length) / quanto);
   
             imor = 0;
   
             for (b = 0; b < grupos; b++) {
-              ob = { car: segs_22[sorrow].car, fix: [], problem: false };
+              ob = { car: segs2[sorrow].car, fix: [], problem: false };
   
               for (live = 0; live < quanto; live++) {
-                if (tirados.indexOf(segs_22[sorrow].mons[imor]) != -1) {
+                if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                   ob.problem = true;
                 }
   
-                ob.fix.push(segs_22[sorrow].mons[imor]);
-                tirados.push(segs_22[sorrow].mons[imor]);
+                ob.fix.push(segs2[sorrow].mons[imor]);
+                tirados.push(segs2[sorrow].mons[imor]);
                 imor++;
               }
   
@@ -2830,21 +2831,21 @@ function FATORAR2(expression_2) {
         }
         //
   
-        segs_22 = [];
+        segs2 = [];
   
         for (uf in par) {
           //
-          //segs_22.push(segs_2[uf])
-          //segs_2[tie].godhelpme = [...segs_2[tie].mons]
-          segs_22[uf] = {};
-          segs_22[uf].mons = [...par[uf].mons];
-          segs_22[uf].car = par[uf].car;
+          //segs2.push(segs[uf])
+          //segs[tie].godhelpme = [...segs[tie].mons]
+          segs2[uf] = {};
+          segs2[uf].mons = [...par[uf].mons];
+          segs2[uf].car = par[uf].car;
         }
   
-        for (pose in segs_22) {
-          for (me = segs_22[pose].mons.length - 1; me >= 0; me--) {
-            if (numerosquetem.indexOf(segs_22[pose].mons[me]) != -1) {
-              segs_22[pose].mons.splice(me, 1);
+        for (pose in segs2) {
+          for (me = segs2[pose].mons.length - 1; me >= 0; me--) {
+            if (numerosquetem.indexOf(segs2[pose].mons[me]) != -1) {
+              segs2[pose].mons.splice(me, 1);
             }
           }
         }
@@ -2853,8 +2854,8 @@ function FATORAR2(expression_2) {
   
         for (uf in relation) {
           //
-          //segs_22.push(segs_2[uf])
-          //segs_2[tie].godhelpme = [...segs_2[tie].mons]
+          //segs2.push(segs[uf])
+          //segs[tie].godhelpme = [...segs[tie].mons]
           fireonfire[uf] = {};
           fireonfire[uf].mons = [...relation[uf].fix];
           fireonfire[uf].car = relation[uf].car;
@@ -2870,21 +2871,21 @@ function FATORAR2(expression_2) {
         //
   
         mia = [];
-        for (idk in segs_22) {
+        for (idk in segs2) {
           ////
           //
   
-          for (mcr in segs_22) {
+          for (mcr in segs2) {
             if (mcr != idk) {
               ////
               //
   
               //
-              if (segs_22[mcr].mons.length <= segs_22[idk].mons.length) {
+              if (segs2[mcr].mons.length <= segs2[idk].mons.length) {
                 sames = [];
-                for (y = 0; y < segs_22[mcr].mons.length; y++) {
+                for (y = 0; y < segs2[mcr].mons.length; y++) {
                   //
-                  if (segs_22[idk].mons.indexOf(segs_22[mcr].mons[y]) != -1) {
+                  if (segs2[idk].mons.indexOf(segs2[mcr].mons[y]) != -1) {
                     //
                     sames.push("igual");
                   } else {
@@ -2908,7 +2909,7 @@ function FATORAR2(expression_2) {
         }
   
         for (f = mia.length - 1; f >= 0; f--) {
-          //segs_22.splice(mia[f],1)
+          //segs2.splice(mia[f],1)
         }
   
         numapars = [];
@@ -2918,17 +2919,17 @@ function FATORAR2(expression_2) {
         ////
   
         util = [];
-        for (t in segs_22) {
+        for (t in segs2) {
           //
           //
   
-          if (segs_22[t].mons.length >= quanto) {
-            util.push(segs_22[t]);
+          if (segs2[t].mons.length >= quanto) {
+            util.push(segs2[t]);
           }
           //
         }
   
-        for (m in monomios_2) {
+        for (m in monomios) {
           aparic = 0;
           //
           for (t in util) {
@@ -2994,7 +2995,7 @@ function FATORAR2(expression_2) {
             }
           }
           relation[r] = present;
-          relation[r].car = segs_22[r].car;
+          relation[r].car = segs2[r].car;
         }
   
         for (c in relation) {
@@ -3067,35 +3068,35 @@ function FATORAR2(expression_2) {
             }
           }
   
-          for (die in segs_22) {
+          for (die in segs2) {
             tirar = [];
   
-            for (h in segs_22[die].mons) {
-              if (tirados.indexOf(segs_22[die].mons[h]) != -1) {
+            for (h in segs2[die].mons) {
+              if (tirados.indexOf(segs2[die].mons[h]) != -1) {
                 tirar.push(Number(h));
               }
             }
   
             for (far = tirar.length - 1; far >= 0; far--) {
-              segs_22[die].mons.splice(tirar[far], 1);
+              segs2[die].mons.splice(tirar[far], 1);
             }
           }
   
-          for (sorrow in segs_22) {
-            grupos = Math.floor(Number(segs_22[sorrow].mons.length) / quanto);
+          for (sorrow in segs2) {
+            grupos = Math.floor(Number(segs2[sorrow].mons.length) / quanto);
   
             imor = 0;
   
             for (b = 0; b < grupos; b++) {
-              ob = { car: segs_22[sorrow].car, fix: [], problem: false };
+              ob = { car: segs2[sorrow].car, fix: [], problem: false };
   
               for (live = 0; live < quanto; live++) {
-                if (tirados.indexOf(segs_22[sorrow].mons[imor]) != -1) {
+                if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                   ob.problem = true;
                 }
   
-                ob.fix.push(segs_22[sorrow].mons[imor]);
-                tirados.push(segs_22[sorrow].mons[imor]);
+                ob.fix.push(segs2[sorrow].mons[imor]);
+                tirados.push(segs2[sorrow].mons[imor]);
                 imor++;
               }
   
@@ -3106,7 +3107,7 @@ function FATORAR2(expression_2) {
           }
         }
       }
-      return [relation, segs_22];
+      return [relation, segs2];
     }
   
     function temnaLista(h) {
@@ -3127,34 +3128,34 @@ function FATORAR2(expression_2) {
     }
   
     function doit2(par) {
-      segs_22 = [];
+      segs2 = [];
   
       for (uf in par) {
         //
-        //segs_22.push(segs_2[uf])
-        //segs_2[tie].godhelpme = [...segs_2[tie].mons]
-        segs_22[uf] = {};
-        segs_22[uf].mons = [...par[uf].mons];
-        segs_22[uf].car = par[uf].car;
+        //segs2.push(segs[uf])
+        //segs[tie].godhelpme = [...segs[tie].mons]
+        segs2[uf] = {};
+        segs2[uf].mons = [...par[uf].mons];
+        segs2[uf].car = par[uf].car;
       }
   
       relation = [];
   
-      quanto = Number(monomios_2.length) / Number(divs[okentao]);
+      quanto = Number(monomios.length) / Number(divs[okentao]);
   
       numapars = [];
   
       util = [];
-      for (t in segs_22) {
-        if (segs_22[t].mons.length >= quanto) {
-          util.push(segs_22[t]);
+      for (t in segs2) {
+        if (segs2[t].mons.length >= quanto) {
+          util.push(segs2[t]);
         }
         //
       }
   
       //
   
-      for (m in monomios_2) {
+      for (m in monomios) {
         aparic = 0;
         //
         for (t in util) {
@@ -3212,7 +3213,7 @@ function FATORAR2(expression_2) {
           }
         }
         relation[r] = present;
-        relation[r].car = segs_22[r].car;
+        relation[r].car = segs2[r].car;
       }
       //
       for (c in relation) {
@@ -3303,36 +3304,36 @@ function FATORAR2(expression_2) {
             }
           }
   
-          for (die in segs_22) {
+          for (die in segs2) {
             tirar = [];
   
-            for (h in segs_22[die].mons) {
-              if (tirados.indexOf(segs_22[die].mons[h]) != -1) {
+            for (h in segs2[die].mons) {
+              if (tirados.indexOf(segs2[die].mons[h]) != -1) {
                 tirar.push(Number(h));
               }
             }
   
             for (far = tirar.length - 1; far >= 0; far--) {
               //
-              segs_22[die].mons.splice(tirar[far], 1);
+              segs2[die].mons.splice(tirar[far], 1);
             }
           }
   
-          for (sorrow in segs_22) {
-            grupos = Math.floor(Number(segs_22[sorrow].mons.length) / quanto);
+          for (sorrow in segs2) {
+            grupos = Math.floor(Number(segs2[sorrow].mons.length) / quanto);
   
             imor = 0;
   
             for (b = 0; b < grupos; b++) {
-              ob = { car: segs_22[sorrow].car, fix: [], problem: false };
+              ob = { car: segs2[sorrow].car, fix: [], problem: false };
   
               for (live = 0; live < quanto; live++) {
-                if (tirados.indexOf(segs_22[sorrow].mons[imor]) != -1) {
+                if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                   //ob.problem = true
                 }
   
-                ob.fix.push(segs_22[sorrow].mons[imor]);
-                tirados.push(segs_22[sorrow].mons[imor]);
+                ob.fix.push(segs2[sorrow].mons[imor]);
+                tirados.push(segs2[sorrow].mons[imor]);
                 imor++;
               }
   
@@ -3346,19 +3347,19 @@ function FATORAR2(expression_2) {
         //
   
         mia = [];
-        for (idk in segs_22) {
+        for (idk in segs2) {
           ////
   
-          for (mcr in segs_22) {
+          for (mcr in segs2) {
             if (mcr != idk) {
               ////
               //
   
-              if (segs_22[mcr].mons.length <= segs_22[idk].mons.length) {
+              if (segs2[mcr].mons.length <= segs2[idk].mons.length) {
                 sames = [];
-                for (y = 0; y < segs_22[mcr].mons.length; y++) {
+                for (y = 0; y < segs2[mcr].mons.length; y++) {
                   //
-                  if (segs_22[idk].mons.indexOf(segs_22[mcr].mons[y]) != -1) {
+                  if (segs2[idk].mons.indexOf(segs2[mcr].mons[y]) != -1) {
                     //
                     sames.push("igual");
                   } else {
@@ -3380,7 +3381,7 @@ function FATORAR2(expression_2) {
         }
   
         for (f = mia.length - 1; f >= 0; f--) {
-          //segs_22.splice(mia[f],1)
+          //segs2.splice(mia[f],1)
         }
   
         numapars = [];
@@ -3388,13 +3389,13 @@ function FATORAR2(expression_2) {
         relation = [];
   
         util = [];
-        for (t in segs_22) {
-          if (segs_22[t].mons.length >= quanto) {
-            util.push(segs_22[t]);
+        for (t in segs2) {
+          if (segs2[t].mons.length >= quanto) {
+            util.push(segs2[t]);
           }
         }
   
-        for (m in monomios_2) {
+        for (m in monomios) {
           aparic = 0;
           for (t in util) {
   
@@ -3443,7 +3444,7 @@ function FATORAR2(expression_2) {
             }
           }
           relation[r] = present;
-          relation[r].car = segs_22[r].car;
+          relation[r].car = segs2[r].car;
         }
   
         for (c in relation) {
@@ -3499,35 +3500,35 @@ function FATORAR2(expression_2) {
             }
           }
   
-          for (die in segs_22) {
+          for (die in segs2) {
             tirar = [];
   
-            for (h in segs_22[die].mons) {
-              if (tirados.indexOf(segs_22[die].mons[h]) != -1) {
+            for (h in segs2[die].mons) {
+              if (tirados.indexOf(segs2[die].mons[h]) != -1) {
                 tirar.push(Number(h));
               }
             }
   
             for (far = tirar.length - 1; far >= 0; far--) {
-              segs_22[die].mons.splice(tirar[far], 1);
+              segs2[die].mons.splice(tirar[far], 1);
             }
           }
   
-          for (sorrow in segs_22) {
-            grupos = Math.floor(Number(segs_22[sorrow].mons.length) / quanto);
+          for (sorrow in segs2) {
+            grupos = Math.floor(Number(segs2[sorrow].mons.length) / quanto);
   
             imor = 0;
   
             for (b = 0; b < grupos; b++) {
-              ob = { car: segs_22[sorrow].car, fix: [], problem: false };
+              ob = { car: segs2[sorrow].car, fix: [], problem: false };
   
               for (live = 0; live < quanto; live++) {
-                if (tirados.indexOf(segs_22[sorrow].mons[imor]) != -1) {
+                if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                   //ob.problem = true
                 }
                 //
-                ob.fix.push(segs_22[sorrow].mons[imor]);
-                tirados.push(segs_22[sorrow].mons[imor]);
+                ob.fix.push(segs2[sorrow].mons[imor]);
+                tirados.push(segs2[sorrow].mons[imor]);
                 imor++;
               }
   
@@ -3538,12 +3539,12 @@ function FATORAR2(expression_2) {
           }
         }
       }
-      return [relation, segs_22];
+      return [relation, segs2];
     }
   
     //DESFATORAR(['-','3'],['3'],['1'])
   
-    function SOMANDOmonomios_2(list) {
+    function SOMANDOMONOMIOS(list) {
       particles = [{ numero: "" }];
       obnum = 0;
       for (n = 0; n < list.length; n++) {
@@ -3902,13 +3903,73 @@ function FATORAR2(expression_2) {
       return [maiorparamenor, posiçõesnumeros];
     }
   
-    //.log('Poxa segs_2, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
+    //.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
     return [
       concatenar,
-      pans_2.length,
-      todososnumeros_2.length,
-      segs_2.length,
-      roll_2.length,
+      pans.length,
+      todososnumeros.length,
+      segs.length,
+      roll.length,
     ];
   }
+
+  function INDIRETARROLL() { // CÓDIGO PARA ADICIONAR POSIÇÕES QUE POSSUEM  O TERMO (REPETIDO) DO ROLL[N] E QUE NÃO ESTÃO INSERIDAS
+    for (nao in roll) {
+      shot = "";
+      for (gun in roll[nao].repetidos) {
+        shot += roll[nao].repetidos[gun] + ",";
+      }
   
+      for (whyso in miss) {
+        igual = 0;
+        for (heat in miss[whyso].aparicoes) {
+          if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
+            igual++;
+          }
+        }
+  
+        if (igual == roll[nao].repetidos.length) {
+          if (
+            roll
+              .find(function (roll) {
+                return roll.way == shot;
+              })
+              .posições.indexOf(whyso) != -1
+          ) {
+          } else {
+            roll
+              .find(function (roll) {
+                return roll.way == shot;
+              })
+              .posições.push(whyso);
+          }
+        }
+      }
+    }
+  }
+  function VAI(str) {
+    comofica = [];
+    ground = "";
+    for (bye in str) {
+      carac = str[bye];
+  
+      if (ground.length == 0) {
+        ground += carac;
+      } else if (
+        String(ground.search("[0-9]")) != -1 &&
+        String(carac).search("[0-9]") != -1
+      ) {
+        ground += carac;
+      } else {
+        comofica.push(ground);
+        ground = "";
+        ground += carac;
+      }
+      if (bye == str.length - 1) {
+        comofica.push(ground);
+      }
+      str[bye].numero = comofica;
+    }
+  
+    return comofica;
+  }
