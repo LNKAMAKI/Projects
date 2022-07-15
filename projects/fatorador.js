@@ -2635,6 +2635,7 @@ function FATORAR(expression) {
 
     console.log('__________________')
     console.log(naonao,',', tobreak)
+    console.log(expression)
     console.log('__________________')
 
     qualexp1 = naonao;
@@ -5129,53 +5130,7 @@ function FATORAR2(expression) {
     divs = [1];
   }
 
-  /*
-           goaway = []
-           for (nah in segs) {
-            
-               
-               if (segs[nah].car[0] == '-') {
-                
-                semmenos = ''
-                for (memories in segs[nah].car) {
-                    
-                    if (memories != 0 && memories!= 1){
-                     semmenos+= segs[nah].car[memories]
-                    }
-                }
-                
-                
-                if (segs.find(function(segs) {return segs.car == semmenos}) != undefined) {
-                    goaway.push(Number(nah))
-                }
-               }
-           }
-           
-           
-        
-           for (time = segs.length - 1; time >= 0; time--) {
-            
-            if (goaway.indexOf(time) != -1) {
-                
-                segs.splice(time, 1)
-                }
-           }
-        */
-  //divs = [2,3]
-
-  ////
-  ////
-
-  ////
-
-  //
-
-  //const HATEYOU = []
-  //for (HATEDEVTOOLS in segs) {
-
-  //
-  //HATEYOU.push(segs[HATEDEVTOOLS])
-  //}
+  
 
   for (tie in segs) {
     //
