@@ -233,19 +233,13 @@ function FATORAR(expression) {
   //
   for (y in expression) {
     if (expression[y] == "^") {
-      //
-      //
-
       ad = expression[Number(y) - 1];
       for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
-        //
         expression[Number(y) - 1] += ad;
       }
 
       expression.splice(Number(y) + 1, 1);
       expression.splice(y, 1);
-      //
-      //
     }
   }
 
@@ -262,9 +256,6 @@ function FATORAR(expression) {
     monomios[obnum].numero += expression[n];
   }
 
-  for (surprise in monomios) {
-    //
-  }
   //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
 
   //TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
@@ -4470,9 +4461,6 @@ function FATORAR2(expression_2) {
     monomios_2[obnum].numero += expression_2[n];
   }
 
-  for (surprise in monomios_2) {
-    //
-  }
   //monomios_2 = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
 
   //TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
