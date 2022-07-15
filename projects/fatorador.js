@@ -2636,7 +2636,8 @@ function FATORAR(expression) {
     console.log('__________________')
     console.log('numberyoudumb',roll[pans[bababa].numberyoudumb].posições)
     console.log(naonao,',', tobreak)
-    //console.log(FATORAR2(FATORE(naonao)))
+    console.log(FATORAR2(FATORE(naonao)))
+    console.log(FATORAR2(FATORE(tobreak)))
     console.log('numberyoudumb',roll[pans[bababa].numberyoudumb].posições)
     console.log('__________________')
 
@@ -2851,27 +2852,20 @@ function FATORAR(expression) {
             elevar++;
 
             if (patience == quase.length - 1) {
-              //
               aconta += `^${elevar}`;
-              //
             }
           } else {
             if (elevar > 1) {
-              //
               aconta += `^${elevar}`;
             }
-
             aconta += quase[patience];
-            //
-
+            
             elevar = 1;
           }
-          //
         }
       }
 
       if (aster == false) {
-        //
         direitando = "";
         for (h in quase) {
           direitando += quase[h];
