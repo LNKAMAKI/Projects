@@ -2942,6 +2942,7 @@ if (expression[0] !== '-' && expression[0] !== '+') {
 
    }
    
+   //ESSE DAQUI!!! OLHE! VAI! EEEEEEEE
    if (numsdesfat.length > 0) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros = []
