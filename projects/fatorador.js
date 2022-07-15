@@ -7558,23 +7558,14 @@ function FATORAR2(expression) {
 
       if (present.fix.length < quanto) {
         for (g in lista) {
-          //
-          //
           if (present.fix.indexOf(lista[g]) == -1) {
-            //
             present.falt.push(lista[g]);
 
-            //numapars.find(function(numapars) {
-            //return numapars.num == lista[g]
-            //}).vezes--
           }
         }
-        //
 
         if (present.fix.length == 0) {
           for (ti in present.falt) {
-            //
-
             numapars.find(function (numapars) {
               return numapars.num == present.falt[ti];
             }).vezes--;
@@ -7588,25 +7579,19 @@ function FATORAR2(expression) {
     for (c in relation) {
       //
       if (relation[c].fix.length > 0) {
-        //
-
+        
         faltam = Number(quanto) - Number(relation[c].fix.length);
-        //
-
+      
         for (f = 0; f < faltam; f++) {
-          //
+
           relation[c].fix.push(relation[c].falt[f]);
 
-          //
           relation[c].falt[f] = -10;
 
-          //
         }
-        //
-
+     
         for (tel = 0; tel < c; tel++) {
           if (relation[tel].fix.length > 0) {
-            //
           }
 
           outrorel = relation[tel];
@@ -7614,8 +7599,7 @@ function FATORAR2(expression) {
           for (hu in outrorel.fix) {
             //
             if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-              //
-              //
+            
               y = 0;
               for (ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
                 //
@@ -7637,9 +7621,7 @@ function FATORAR2(expression) {
       }
     }
 
-    //
-
-    ////
+   
 
     groups = 0;
     conts = [];
