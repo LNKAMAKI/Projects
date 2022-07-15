@@ -5042,16 +5042,11 @@ function FATORAR2(expression) {
     }
   }
 
-  //
-  //
+  
 
   for (nl = 0; nl < segs.length; nl++) {
     for (n = 0; n < segs.length; n++) {
       if (n != nl) {
-        //music1 = VAI(segs[n].car)
-        //music2 = VAI(segs[nl].car)
-
-        //inter = DIVIDIR(music2, music1)
 
         stay = VAI(segs[n].car);
         contido = true;
@@ -5067,7 +5062,6 @@ function FATORAR2(expression) {
         if (contido == true) {
         }
 
-        //if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
         if (contido == true) {
           for (u in segs[n].mons) {
             if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
