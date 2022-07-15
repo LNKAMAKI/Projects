@@ -6325,7 +6325,7 @@ function FATORAR2(expression_2) {
   newexpress_2 = [];
 
   for (bababa in pans_2) {
-    edge = [];
+    edge_2 = [];
     naonao_2 = "";
     amount = [];
 
@@ -6657,7 +6657,7 @@ function FATORAR2(expression_2) {
       }
       
 
-      edge.push(aconta_2);
+      edge_2.push(aconta_2);
 
       if (quase_2[0] == "-") {
         uh = "";
@@ -6691,7 +6691,7 @@ function FATORAR2(expression_2) {
     if (concatenar_2.length > 0) {
       concatenar_2 += " + ";
     }
-    if (edge.length > 1) {
+    if (edge_2.length > 1) {
       concatenar_2 += `(${naonao_2})(${tobreak_2})`;
     } else {
       concatenar_2 += `${naonao_2}(${tobreak_2})`;
@@ -7093,9 +7093,9 @@ function FATORAR2(expression_2) {
         tirados_2 = [];
         for (wish in relation_2) {
           //
-          for (edge in relation_2[wish].fix) {
+          for (edge_2 in relation_2[wish].fix) {
             //
-            tirados_2.push(relation_2[wish].fix[edge]);
+            tirados_2.push(relation_2[wish].fix[edge_2]);
           }
         }
         //
@@ -7419,8 +7419,8 @@ function FATORAR2(expression_2) {
       if (divs_2[okentao] != groups) {
         tirados_2 = [];
         for (wish in relation_2) {
-          for (edge in relation_2[wish].fix) {
-            tirados_2.push(relation_2[wish].fix[edge]);
+          for (edge_2 in relation_2[wish].fix) {
+            tirados_2.push(relation_2[wish].fix[edge_2]);
           }
         }
 
@@ -7655,8 +7655,8 @@ function FATORAR2(expression_2) {
         tirados_2 = [];
         for (wish in relation_2) {
           //
-          for (edge in relation_2[wish].fix) {
-            tirados_2.push(relation_2[wish].fix[edge]);
+          for (edge_2 in relation_2[wish].fix) {
+            tirados_2.push(relation_2[wish].fix[edge_2]);
           }
         }
 
@@ -7851,8 +7851,8 @@ function FATORAR2(expression_2) {
       if (divs_2[okentao] != groups) {
         tirados_2 = [];
         for (wish in relation_2) {
-          for (edge in relation_2[wish].fix) {
-            tirados_2.push(relation_2[wish].fix[edge]);
+          for (edge_2 in relation_2[wish].fix) {
+            tirados_2.push(relation_2[wish].fix[edge_2]);
           }
         }
 
