@@ -265,11 +265,8 @@ function FATORAR(expression) {
     ground = "";
 
     for (misery in monomios[bye].numero) {
-      //
-
       carac = monomios[bye].numero[misery];
 
-      //
       if (ground.length == 0) {
         //
         ground += carac;
@@ -288,9 +285,6 @@ function FATORAR(expression) {
         comofica.push(ground);
       }
     }
-
-    //
-    //
     monomios[bye].numero = comofica;
   }
 
@@ -321,7 +315,7 @@ function FATORAR(expression) {
   }
 
   //SEPARAnDO/JUnTAnDO OS nÚMEROS
-
+// ==> SOMANDO OS MONÔMIOS...
   exp = [];
 
   for (bye in ji) {
@@ -538,6 +532,8 @@ function FATORAR(expression) {
 
     monomios[bye].numero = comofica;
   }
+
+// AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
 
   //FATORAR SÓ UM nÚMERO
 
