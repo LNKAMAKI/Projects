@@ -1060,7 +1060,7 @@ function FATORAR2(expression_2) {
 
   while (java < miss_2.length && deucerto == false) {
     //FOCO
-    podeser = [];
+    podeser_2 = [];
     for (outro in miss_2) {
       //
       if (
@@ -1076,18 +1076,18 @@ function FATORAR2(expression_2) {
         }
 
         adicionou = false;
-        for (idk in podeser) {
+        for (idk in podeser_2) {
           //
           esigual = true;
-          for (denovo in podeser[idk].opl) {
-            if (podeser[idk].opl[denovo] == presentes[denovo]) {
+          for (denovo in podeser_2[idk].opl) {
+            if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
               //
             } else {
               esigual = false;
             }
           }
           if (esigual == true) {
-            //podeser[idk].position.push(outro)
+            //podeser_2[idk].position.push(outro)
             adicionou = true;
           }
         }
@@ -1096,30 +1096,30 @@ function FATORAR2(expression_2) {
           presentes.length > 0 &&
           adicionou == false
         ) {
-          //podeser.push({opl: presentes, position: [outro]})
+          //podeser_2.push({opl: presentes, position: [outro]})
         }
       }
     }
     //
-    podeser = [...roller_2];
+    podeser_2 = [...roller_2];
 
-    for (belief in podeser) {
-      if (podeser[belief].position.indexOf(java) == -1) {
-        //podeser[belief].position.push(String(java))
+    for (belief in podeser_2) {
+      if (podeser_2[belief].position.indexOf(java) == -1) {
+        //podeser_2[belief].position.push(String(java))
       }
 
       shot = "";
-      for (gun in podeser[belief].opl) {
-        shot += podeser[belief].opl[gun] + ",";
+      for (gun in podeser_2[belief].opl) {
+        shot += podeser_2[belief].opl[gun] + ",";
       }
       //
 
       if (roll_2.length == 0) {
         //
         roll_2.push({
-          repetidos: [...podeser[belief].opl],
+          repetidos: [...podeser_2[belief].opl],
           way: shot,
-          posições: [...podeser[belief].position],
+          posições: [...podeser_2[belief].position],
         });
       } else if (
         roll_2.find(function (roll_2) {
@@ -1128,7 +1128,7 @@ function FATORAR2(expression_2) {
       ) {
         //SE JÁ TIVER NA LSITA
 
-        for (capital in podeser[belief].position) {
+        for (capital in podeser_2[belief].position) {
           //
 
           if (
@@ -1136,48 +1136,48 @@ function FATORAR2(expression_2) {
               .find(function (roll_2) {
                 return roll_2.way == shot;
               })
-              .posições.indexOf(podeser[belief].position[capital]) == -1
+              .posições.indexOf(podeser_2[belief].position[capital]) == -1
           ) {
             roll_2
               .find(function (roll_2) {
                 return roll_2.way == shot;
               })
-              .posições.push(podeser[belief].position[capital]);
+              .posições.push(podeser_2[belief].position[capital]);
           }
         }
       } else {
         roll_2.push({
-          repetidos: [...podeser[belief].opl],
+          repetidos: [...podeser_2[belief].opl],
           way: shot,
-          posições: [...podeser[belief].position],
+          posições: [...podeser_2[belief].position],
         });
       }
     }
 
     whyis = java;
-    if (podeser.length > 0) {
-      for (cold in podeser) {
+    if (podeser_2.length > 0) {
+      for (cold in podeser_2) {
         if (
-          podeser[cold].position.length == quantosfatores_2 &&
-          podeser[cold].opl.length == quantasposições_2 &&
+          podeser_2[cold].position.length == quantosfatores_2 &&
+          podeser_2[cold].opl.length == quantasposições_2 &&
           miss_2[whyis].aparicoes.length == quantasposições_2
         ) {
           //
           deucerto = true;
 
           ficaassim = "";
-          //podeser[cold].position.push(whyis)
+          //podeser_2[cold].position.push(whyis)
 
-          for (yehaa in podeser[cold].position) {
+          for (yehaa in podeser_2[cold].position) {
             //
 
-            if (miss_2[podeser[cold].position[yehaa]].dividido[0] == "-") {
+            if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == "-") {
               fi = "";
-              for (ohjesus in miss_2[podeser[cold].position[yehaa]].dividido) {
+              for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
                 if (
-                  miss_2[podeser[cold].position[yehaa]].dividido[ohjesus] != "-"
+                  miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != "-"
                 ) {
-                  fi += miss_2[podeser[cold].position[yehaa]].dividido[ohjesus];
+                  fi += miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus];
                 }
               }
               //
@@ -1188,18 +1188,18 @@ function FATORAR2(expression_2) {
               }
             } else if (yehaa != 0) {
               ficaassim += " + ";
-              ficaassim += miss_2[podeser[cold].position[yehaa]].dividido;
+              ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
             } else {
-              ficaassim += miss_2[podeser[cold].position[yehaa]].dividido;
+              ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
             }
           }
 
-          for (ruin in podeser[cold].opl) {
+          for (ruin in podeser_2[cold].opl) {
             //
             emotion = "";
-            for (scream in scarecrow_2[podeser[cold].opl[ruin]].divisor) {
+            for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor) {
               //
-              emotion += scarecrow_2[podeser[cold].opl[ruin]].divisor[scream];
+              emotion += scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream];
             }
             //
           }
@@ -1437,7 +1437,7 @@ function FATORAR2(expression_2) {
 
   while (java < miss_2.length && deucerto == false) {
     //FOCO
-    podeser = [];
+    podeser_2 = [];
     for (outro in miss_2) {
       //
       if (
@@ -1453,18 +1453,18 @@ function FATORAR2(expression_2) {
         }
 
         adicionou = false;
-        for (idk in podeser) {
+        for (idk in podeser_2) {
           //
           esigual = true;
-          for (denovo in podeser[idk].opl) {
-            if (podeser[idk].opl[denovo] == presentes[denovo]) {
+          for (denovo in podeser_2[idk].opl) {
+            if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
               //
             } else {
               esigual = false;
             }
           }
           if (esigual == true) {
-            //podeser[idk].position.push(outro)
+            //podeser_2[idk].position.push(outro)
             adicionou = true;
           }
         }
@@ -1473,30 +1473,30 @@ function FATORAR2(expression_2) {
           presentes.length > 0 &&
           adicionou == false
         ) {
-          //podeser.push({opl: presentes, position: [outro]})
+          //podeser_2.push({opl: presentes, position: [outro]})
         }
       }
     }
     //
-    podeser = [...roller_2];
+    podeser_2 = [...roller_2];
 
-    for (belief in podeser) {
-      if (podeser[belief].position.indexOf(java) == -1) {
-        //podeser[belief].position.push(String(java))
+    for (belief in podeser_2) {
+      if (podeser_2[belief].position.indexOf(java) == -1) {
+        //podeser_2[belief].position.push(String(java))
       }
 
       shot = "";
-      for (gun in podeser[belief].opl) {
-        shot += podeser[belief].opl[gun] + ",";
+      for (gun in podeser_2[belief].opl) {
+        shot += podeser_2[belief].opl[gun] + ",";
       }
       //
 
       if (roll_2.length == 0) {
         //
         roll_2.push({
-          repetidos: [...podeser[belief].opl],
+          repetidos: [...podeser_2[belief].opl],
           way: shot,
-          posições: [...podeser[belief].position],
+          posições: [...podeser_2[belief].position],
         });
       } else if (
         roll_2.find(function (roll_2) {
@@ -1505,7 +1505,7 @@ function FATORAR2(expression_2) {
       ) {
         //SE JÁ TIVER NA LSITA
 
-        for (capital in podeser[belief].position) {
+        for (capital in podeser_2[belief].position) {
           //
 
           if (
@@ -1513,48 +1513,48 @@ function FATORAR2(expression_2) {
               .find(function (roll_2) {
                 return roll_2.way == shot;
               })
-              .posições.indexOf(podeser[belief].position[capital]) == -1
+              .posições.indexOf(podeser_2[belief].position[capital]) == -1
           ) {
             roll_2
               .find(function (roll_2) {
                 return roll_2.way == shot;
               })
-              .posições.push(podeser[belief].position[capital]);
+              .posições.push(podeser_2[belief].position[capital]);
           }
         }
       } else {
         roll_2.push({
-          repetidos: [...podeser[belief].opl],
+          repetidos: [...podeser_2[belief].opl],
           way: shot,
-          posições: [...podeser[belief].position],
+          posições: [...podeser_2[belief].position],
         });
       }
     }
 
     whyis = java;
-    if (podeser.length > 0) {
-      for (cold in podeser) {
+    if (podeser_2.length > 0) {
+      for (cold in podeser_2) {
         if (
-          podeser[cold].position.length == quantosfatores_2 &&
-          podeser[cold].opl.length == quantasposições_2 &&
+          podeser_2[cold].position.length == quantosfatores_2 &&
+          podeser_2[cold].opl.length == quantasposições_2 &&
           miss_2[whyis].aparicoes.length == quantasposições_2
         ) {
           //
           deucerto = true;
 
           ficaassim = "";
-          //podeser[cold].position.push(whyis)
+          //podeser_2[cold].position.push(whyis)
 
-          for (yehaa in podeser[cold].position) {
+          for (yehaa in podeser_2[cold].position) {
             //
 
-            if (miss_2[podeser[cold].position[yehaa]].dividido[0] == "-") {
+            if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == "-") {
               fi = "";
-              for (ohjesus in miss_2[podeser[cold].position[yehaa]].dividido) {
+              for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
                 if (
-                  miss_2[podeser[cold].position[yehaa]].dividido[ohjesus] != "-"
+                  miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != "-"
                 ) {
-                  fi += miss_2[podeser[cold].position[yehaa]].dividido[ohjesus];
+                  fi += miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus];
                 }
               }
               //
@@ -1565,18 +1565,18 @@ function FATORAR2(expression_2) {
               }
             } else if (yehaa != 0) {
               ficaassim += " + ";
-              ficaassim += miss_2[podeser[cold].position[yehaa]].dividido;
+              ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
             } else {
-              ficaassim += miss_2[podeser[cold].position[yehaa]].dividido;
+              ficaassim += miss_2[podeser_2[cold].position[yehaa]].dividido;
             }
           }
 
-          for (ruin in podeser[cold].opl) {
+          for (ruin in podeser_2[cold].opl) {
             //
             emotion = "";
-            for (scream in scarecrow_2[podeser[cold].opl[ruin]].divisor) {
+            for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor) {
               //
-              emotion += scarecrow_2[podeser[cold].opl[ruin]].divisor[scream];
+              emotion += scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream];
             }
             //
           }
