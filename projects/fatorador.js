@@ -2634,8 +2634,10 @@ function FATORAR(expression) {
     }
 
     console.log('__________________')
+    console.log('numberyoudumb',roll[pans[bababa].numberyoudumb].posições)
     console.log(naonao,',', tobreak)
-    console.log(expression)
+    console.log(FATORAR2(FATORE(naonao)))
+    console.log('numberyoudumb',roll[pans[bababa].numberyoudumb].posições)
     console.log('__________________')
 
     qualexp1 = naonao;
