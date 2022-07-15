@@ -6348,12 +6348,7 @@ function FATORAR2(expression_2) {
       gates = [];
 
       quase_2 = [];
-      /*
-                   for (power in el) {
-                       quase_2.push(el[power])
-                  
-                   }
-           */
+      
       teri = false;
       juntar = "";
       //
