@@ -316,7 +316,7 @@ function FATORAR(expression) {
   //SEPARAnDO/JUnTAnDO OS nÚMEROS
 // ==> SOMANDO OS MONÔMIOS...
   exp = [];
-/*
+
   for (bye in ji) {
     //
 
@@ -533,7 +533,7 @@ function FATORAR(expression) {
   }
 
 // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
-*/
+
   //FATORAR SÓ UM nÚMERO
 
   function FATORARSInGULAR(potn) {
