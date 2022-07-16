@@ -1168,10 +1168,6 @@ function mudar(index) {
   
     //15 + 5b + 15l + 5bl
   
-    //console.log('OK, LET ME FIX THIS THING')
-    for (nal in miss) {
-      //console.log(miss[nal].aparicoes)
-    }
   
     roller = [];
     for (eep in miss) {
@@ -1243,7 +1239,6 @@ function mudar(index) {
     e = [...roller];
   
     while (java < miss.length && deucerto == false) {
-      //FOCO
       podeser = [];
       for (outro in miss) {
         if (
@@ -1260,11 +1255,9 @@ function mudar(index) {
   
           adicionou = false;
           for (idk in podeser) {
-            //
             esigual = true;
             for (denovo in podeser[idk].opl) {
               if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                //
               } else {
                 esigual = false;
               }
@@ -1274,11 +1267,7 @@ function mudar(index) {
               adicionou = true;
             }
           }
-          if (
-            presentes.length > 0 &&
-            presentes.length > 0 &&
-            adicionou == false
-          ) {
+          if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
             //podeser.push({opl: presentes, position: [outro]})
           }
         }
