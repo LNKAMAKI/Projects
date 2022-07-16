@@ -1,5 +1,4 @@
 
-
   function FATORAR(expression) {
     startexp = [...expression];
   
