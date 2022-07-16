@@ -15,7 +15,14 @@
 <!--#af3434-->
 
 
-
+<!--Your mom will steal someone else's hair. This will ruin your life.
+Your neighbor will steal someone else's pumpkin. Enjoy it.
+A random person will learn about your hopeless career. It wil bring you much joy.
+A random person will grab your ugly cat. Be prepared.
+Your mom will steal your hair.
+Your grandma seeks to learn about someone else's pumpkin. Watch out.
+Your grandma has to steal your bacon. It will be over soon.
+-->
 
  
 
