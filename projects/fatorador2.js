@@ -3,7 +3,7 @@
 
 //expression = ['6','x','^','2','b', '-', '42','x','^','2', '+', '7','y','^','2','-','y','^','2','b']
 
-//expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x','-','169','h','^','4','k','^','2']
+expression = [ '-', '8','x','+','3', 'x', 'y', '+', '4','x','y', '-','6','x','+','2','x','y', '-','4','x']
 
 //expression = ['7','x', '+', '14','x','^','2', '+', '35', '+', '2','x', '+', '4','x','^','2', '+', '10', '+', '3','x', '+', '6','x','^','2', '+', '15','+','5','x','+','10','x','^','2','+','25']
 
@@ -45,14 +45,14 @@
 //expression = ['37','x','+','21','x','^','4']
 //expression = ['13*2y','+','13xy']
 //expression = ['-','50','x','x','y','-','60','x','x','-','40','x','x','-','30','x','x','y']
-expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
+//expression = ['+','5x','+','3x','-','7','x','+','4','y','+','10','y']
 //expression = ['-','2y','-','5y','+','4','x','+','10','x','-','6','y','-','15','y','+','49','+','63','+','ab','+','bb']
 //expression = ['-','3x','-','5x','+','4','x','x','+','3y','+','5y','-','4','x','y']
 //expression = ['a','^','2','+','a','-','5a','-','5']
-
+expression = '-8x + 8y - 4xy'
 // BIOLOGIA, FÍSICA, QUÍMICA
 
-FATORAR(expression)
+FATORAR(FATORE(expression))
 function FATORAR(expression) {
 if (expression[0] !== '-' && expression[0] !== '+') {
     //   console.log('EPAAAAAAAAAAAAAAA')
@@ -5021,3 +5021,55 @@ function sort(n) {
     return [maiorparamenor, posiçõesnumeros]
 }
 }
+
+function FATORE(q) {
+    qualexp1 = q;
+    qualexp = "";
+  
+    parar = false;
+    for (copy in qualexp1) {
+      //console.log(qualexp1[copy])
+      if (qualexp1[copy] != " ") {
+        if (
+          qualexp1[copy].search("[0-9]") != -1 ||
+          qualexp1[copy].search("[a-z]") != -1 ||
+          qualexp1[copy].search("[\\+\\-\\^]") != -1
+        ) {
+          //console.log(qualexp1[copy],'ir')
+          qualexp += qualexp1[copy];
+        } else {
+          parar = true;
+        }
+      }
+    }
+    //console.log('É ESSE:', qualexp)
+  
+    if (qualexp != "" && parar == false) {
+      ground = "";
+      expression = [];
+      for (phy in qualexp) {
+        if (qualexp[phy].search("[0-9]") != -1) {
+          if (ground.search("[0-9]") != -1) {
+            ground += qualexp[phy];
+          } else if (ground.length > 0) {
+            expression.push(ground);
+            ground = qualexp[phy];
+          } else {
+            ground = qualexp[phy];
+          }
+        } else {
+          if (ground.length > 0) {
+            expression.push(ground);
+          }
+          ground = qualexp[phy];
+        }
+        if (phy == qualexp.length - 1) {
+          expression.push(ground);
+        }
+      }
+  
+      //resultado = FATORAR(expression,0);
+      //return resultado;
+      return expression
+    }
+  }
