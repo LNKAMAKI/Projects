@@ -52,9 +52,10 @@
 //expression = ['15','+','15','x','+','15','x','x'] //15(1 + x + xx)
 //expression = ['58','x','+','74','x','+','29','+','37'] 
 //expression = ['14','y','+','9','x','+','7','x']
-// BIOLOGIA, FÍSICA, QUÍMICA, MATEMÁTICA
+expression = '-8x + 8y - 4xy'
+expression = '15 + 5b + 15l + 5bl'
 
-FATORAR(expression)
+FATORAR(FATORE(expression))
 function FATORAR(expression) {
 
     startexp = [...expression];
@@ -467,8 +468,31 @@ function FATORAR(expression) {
    return anterior
    }
    //
-   
-   
+   function versetem(comp) {
+    podeir = true;
+    qual = -1;
+    for (meow in segs) {
+      array1 = [];
+      for (d in segs[meow].car) {
+        array1.push(segs[meow].car[d]);
+      }
+      array2 = [];
+      for (d in comp) {
+        array2.push(comp[d]);
+      }
+      if (segs[meow].car.length < comp.length) {
+        divisao = DIVIDIR(VAI(segs[meow].car), VAI(comp));
+      } else {
+        divisao = DIVIDIR(VAI(comp), VAI(segs[meow].car));
+      }
+      if (divisao == "" || divisao == "-") {
+        //
+        podeir = false;
+        qual = meow;
+      }
+    }
+    return podeir;
+  }
    
    function DIVIDIR(T, qual) {
        
@@ -733,22 +757,31 @@ function FATORAR(expression) {
 
               console.log('PODE IR?????????????????????????', podeir, qual)
                if (podeir == true) {
-   
-                     console.log('NÃO TEM',repetido[moe].letr)
-                      if (repetido[moe].letr == '-' || repetido[moe].letr == '1') {
-                          console.log('ARE YOU SERIOUS?')
-                    }else{
-                           segs.push({car: repetido[moe].letr, mons: [m]})
-                       }
-                 
-                  
-   
+
+                splitUp(repetido[moe].letr);
+                function splitUp(str) {
+                  estado = "";
+                  // CÓDIGO PARA ADICIONAR OS TERMOS EM COMUM DOS MONÔMIOS NA LISTA SEGS(SEGMENTOS)
+                  for (i in str) {
+                    if (str[i] == "." && estado != "-") {
+                      permission = versetem(estado);
+                      //console.log(permission)
+                      if (permission == true && estado != " " && estado != "-") {
+                        segs.push({ car: estado, mons: [m] });
+                      }
+                    }
+                    estado += str[i];
+                    if (i == str.length - 1) {
+                      permission = versetem(estado);
+                      if (permission == true && estado != " " && estado != "-") {
+                        segs.push({ car: estado, mons: [m] });
+                      }
+                    }
+                  }
+                  //
+                }
                }else if(segs[qual].mons.indexOf(m) == -1){
-                 
-                       console.log('TEM MAS FALTA',repetido[moe].letr)
                        segs[qual].mons.push(m)
-   
-                           
                }
            }
            
@@ -1435,7 +1468,24 @@ function FATORAR(expression) {
           }
          }
          
-   
+         
+         grtols = []
+         for (hi in miss) {
+             //////console.log(segs[hi], segs[hi].mons.length)
+             miss[hi].length = miss[hi].aparicoes.length
+         
+             grtols.push(miss[hi])
+         }
+         organizado = sortob(grtols, 'length')[1]
+         
+         grtols = []
+         for (ah in organizado) {
+            // ////console.log(segs[organizado[ah]])
+             grtols.push(miss[organizado[ah]])
+            
+         }
+         miss = [...grtols]
+         
          java = 0
          roll = []
          deucerto = false
@@ -4868,3 +4918,55 @@ for (bye in str) {
 
  return comofica
 }
+
+function FATORE(q) {
+    qualexp1 = q;
+    qualexp = "";
+  
+    parar = false;
+    for (copy in qualexp1) {
+      //console.log(qualexp1[copy])
+      if (qualexp1[copy] != " ") {
+        if (
+          qualexp1[copy].search("[0-9]") != -1 ||
+          qualexp1[copy].search("[a-z]") != -1 ||
+          qualexp1[copy].search("[\\+\\-\\^]") != -1
+        ) {
+          //console.log(qualexp1[copy],'ir')
+          qualexp += qualexp1[copy];
+        } else {
+          parar = true;
+        }
+      }
+    }
+    //console.log('É ESSE:', qualexp)
+  
+    if (qualexp != "" && parar == false) {
+      ground = "";
+      expression = [];
+      for (phy in qualexp) {
+        if (qualexp[phy].search("[0-9]") != -1) {
+          if (ground.search("[0-9]") != -1) {
+            ground += qualexp[phy];
+          } else if (ground.length > 0) {
+            expression.push(ground);
+            ground = qualexp[phy];
+          } else {
+            ground = qualexp[phy];
+          }
+        } else {
+          if (ground.length > 0) {
+            expression.push(ground);
+          }
+          ground = qualexp[phy];
+        }
+        if (phy == qualexp.length - 1) {
+          expression.push(ground);
+        }
+      }
+  
+      //resultado = FATORAR(expression,0);
+      //return resultado;
+      return expression
+    }
+  }

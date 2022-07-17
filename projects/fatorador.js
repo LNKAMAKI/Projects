@@ -1676,9 +1676,6 @@ function FATORAR(expression) {
   deucerto = false;
 
   //console.log('OK, LET ME FIX THIS THING')
-  for (nal in miss) {
-    //console.log(miss[nal].aparicoes)
-  }
 
   roller = [];
   for (eep in miss) {
