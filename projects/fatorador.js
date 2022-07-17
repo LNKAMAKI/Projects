@@ -1106,7 +1106,7 @@ function FATORAR(expression) {
   grtols = [];
 
   for (hi in segs) {
-    segs[hi].length = segs[hi].car.length;
+    segs[hi].length = segs[hi].mons.length;
 
     grtols.push(segs[hi]);
   }
