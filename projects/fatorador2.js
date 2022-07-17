@@ -52,8 +52,8 @@
 //expression = ['15','+','15','x','+','15','x','x'] //15(1 + x + xx)
 //expression = ['58','x','+','74','x','+','29','+','37'] 
 //expression = ['14','y','+','9','x','+','7','x']
-expression = '-8x + 8y - 4xy'
-expression = '15 + 5b + 15l + 5bl'
+//expression = '-8x + 8y - 4xy'
+expression = '15l + 5bl + 15 + 5b'
 
 FATORAR(FATORE(expression))
 function FATORAR(expression) {
@@ -1198,6 +1198,7 @@ function FATORAR(expression) {
   }
   e = [...roller];
 
+  podeser = [...roller]
   while (java < miss.length && deucerto == false) {
     //FOCO
     podeser = [];
@@ -1342,6 +1343,7 @@ function FATORAR(expression) {
   }
   okentao++;
   
+  //roll = [...roller]
   INDIRETARROLL();
 
          //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
@@ -1574,6 +1576,7 @@ function FATORAR(expression) {
     }
   }
 
+      
          while(java < miss.length && deucerto == false) {
            
    
@@ -1620,35 +1623,37 @@ function FATORAR(expression) {
             }
            // console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
             
-            
+          //  podeser = [...roller]
+
+          console.log('PODESEEEEEEEEEEEEEEEEEERRRRRRRRRRRR____________________--------**', podeser)
             for (belief in podeser) {
                 if (podeser[belief].position.indexOf(java) == -1) {
                 podeser[belief].position.push(String(java))
                 }
    
-             //console.log(podeser[belief].opl)
+             console.log(podeser[belief].opl)
    
              shot = ''
              for (gun in podeser[belief].opl) {
-                 //console.log(podeser[belief].opl[gun])
+                 console.log(podeser[belief].opl[gun])
                  shot+= podeser[belief].opl[gun] + ','
              }
-            // console.log('THAT WE LET IT GO:', shot)
+         console.log('THAT WE LET IT GO:', shot)
    
              if (roll.length == 0) {
-                // console.log('ADICIONAR(LISTA VAZIA)')
+                 console.log('ADICIONAR(LISTA VAZIA)')
                  roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
              }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                 //console.log('JÁ TEM')
-                //console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
+                 console.log('JÁ TEM')
+                console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
    
                  for (capital in podeser[belief].position) {
-                     //console.log(podeser[belief].position[capital])
+                     console.log(podeser[belief].position[capital])
    
-                   // console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+                    console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
    
                  if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                    //console.log('NÃO TEM') 
+                    console.log('NÃO TEM') 
                     roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
                  }
                  }
@@ -1718,9 +1723,12 @@ function FATORAR(expression) {
    
             java++
         }
-   
-        console.log("HORA DA VERDADE!");
 
+        podeser = [...roller]
+
+        console.log("HORA DA VERDADE!");
+  
+        //roll = [...roller]
         INDIRETARROLL();
 
           youdumb = []
@@ -5051,6 +5059,8 @@ function FATORE(q) {
       return expression
     }
   }
+ 
+
   function INDIRETARROLL() { // CÓDIGO PARA ADICIONAR POSIÇÕES QUE POSSUEM  O TERMO (REPETIDO) DO ROLL[N] E QUE NÃO ESTÃO INSERIDAS
     for (nao in roll) {
       shot = "";
