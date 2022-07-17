@@ -1314,9 +1314,6 @@ function FATORAR(expression) {
   //15 + 5b + 15l + 5bl
 
   //console.log('OK, LET ME FIX THIS THING')
-  for (nal in miss) {
-    //console.log(miss[nal].aparicoes)
-  }
 
   roller = [];
   for (eep in miss) {
@@ -5321,9 +5318,6 @@ function FATORAR2(expression_2) {
   java = 0;
 
   //console.log('OK, LET ME FIX THIS THING')
-  for (nal in miss_2) {
-    //console.log(miss_2[nal].aparicoes)
-  }
 
   roller_2 = [];
   for (eep in miss_2) {
@@ -5698,9 +5692,6 @@ function FATORAR2(expression_2) {
   deucerto = false;
 
   //console.log('OK, LET ME FIX THIS THING')
-  for (nal in miss_2) {
-    //console.log(miss_2[nal].aparicoes)
-  }
 
   roller_2 = [];
   for (eep in miss_2) {
