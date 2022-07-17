@@ -955,141 +955,149 @@ function FATORAR(expression) {
           // console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
            //const vi = 0
            scarecrow = []
-           for(anchor in segs) {
-              // console.log('i feel the light betrayed me', segs[anchor].mons)
-               
-           
-               army = []
-               lpisthebest = ''
-                   for (fall in segs[anchor].car) {
-                   if (lpisthebest.length == 0) {
-                       //console.log('LISTA VAZIA - ADD')
-                       lpisthebest = segs[anchor].car[fall]
-                       //console.log(lpisthebest)
-                   }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
-                       //console.log('VAI - ADD')
-                       lpisthebest += segs[anchor].car[fall]
-                   }else{
-                       //console.log('nÃO VAI nÃO')
-                       army.push(lpisthebest)
-                       if(segs[anchor].car[fall] != '.') {
-                       lpisthebest = segs[anchor].car[fall]
-                       }else{
-                           if (segs[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
-                           lpisthebest = '*'
-                           }else{
-                               lpisthebest = ''
-                           }
-                       }
-                  ////console.log('LPISTHEBEST', lpisthebest)
-                   }
-                   if (fall == segs[anchor].car.length - 1) {
-                       army.push(lpisthebest)
-                   }
-               }
-               bell = [...army]
-              // console.log('OAHAHA', army)
-   
-              // console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
-               
-               for (pahh in army) {
-                  // console.log(army[pahh])
-                   if (army[pahh] == '*') {
-                       army[pahh] = '.'
-                   }
-               }
-               scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
-               for (high in segs[anchor].mons) {
-                   
-                  
-                   army = [...bell]
-            
-                //   console.log(monomios[segs[anchor].mons[high]].numero,army)
-           
-               
-                lightson = [...army]
-                   pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
-                   //console.log(lightson,monomios[segs[anchor].mons[high]].numero)
-   
-                   if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-                  //console.log('É 1')
-                  if (lightson.indexOf('-') != -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') == -1) {
-   
-                      pain = '-1'
-                     // console.log('opa')
-                      scarecrow[anchor].divididos.push('1')
-                       scarecrow[anchor].outrodiv.push(pain)
-                  }else if(lightson.indexOf('-') == -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') != -1) {
-                      
-                       pain = '-1'
-                     //  console.log('opa')
-                       scarecrow[anchor].divididos.push('1')
-                       scarecrow[anchor].outrodiv.push(pain)
-                  }else{
-                   pain = '1'
-                   scarecrow[anchor].divididos.push(pain)
-                       scarecrow[anchor].outrodiv.push(pain)
+           for (anchor in segs) {
+            army = [];
+            lpisthebest = "";
+            for (fall in segs[anchor].car) {
+              if (lpisthebest.length == 0) {
+                lpisthebest = segs[anchor].car[fall];
+              } else if (
+                lpisthebest.search("[0-9]") != -1 &&
+                segs[anchor].car[fall].search("[0-9]") != -1
+              ) {
+                lpisthebest += segs[anchor].car[fall];
+              } else {
+                army.push(lpisthebest);
+                if (segs[anchor].car[fall] != ".") {
+                  lpisthebest = segs[anchor].car[fall];
+                } else {
+                  if (segs[anchor].car[Number(fall) + 1].search("[0-9]") != -1) {
+                    lpisthebest = "*";
+                  } else {
+                    lpisthebest = "";
                   }
-                   
-   
-                   }else{
-           
-                       right = ''
-                       for (feet in pain) {
-                         //  console.log(pain[feet])
-                           if (pain[feet] != '+') {
-                               right+= pain[feet]
-                           }
-                       }
-                    //   console.log('É ESSE:', right)
-                      
-                       uy = ''
-                     //  console.log(right, 'RIGHT') 
-   
-                      for (xarope in right) {
-                    //   console.log(right[xarope])
-                       if (xarope == 0 && right[xarope] == '*') { // *2
-                      //   console.log('ERRADO!', '*2')
-                       }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
-                     // //console.log('ERRADO', '2*')
-                       }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
-                    //  //console.log('ERRADO', '2*x')
-                       }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
-                      ////console.log('ERRADO', 'x*2')
-                       }else{
-                           uy+= right[xarope]
-                       }
-                      }
-                      //console.log('UY',uy)
-                      scarecrow[anchor].outrodiv.push(uy)
-   
-                      if (uy[0] == '-') {
-                       holdon = ''
-                       for (qual in uy) { 
-                           if (uy[qual] != '-')
-                           holdon+= uy[qual]
-                       }
-                       //console.log('FIXED', holdon)
-                       uy = holdon
-                      }
-                      scarecrow[anchor].divididos.push(uy)
-                   }
-                  
-               }
-           }
+                }
+              }
+              if (fall == segs[anchor].car.length - 1) {
+                army.push(lpisthebest);
+              }
+            }
+            bell = [...army];
+        
+            for (pahh in army) {
+              //
+              if (army[pahh] == "*") {
+                army[pahh] = ".";
+              }
+            }
+            scarecrow.push({
+              divididos: [],
+              outrodiv: [],
+              poss: [...segs[anchor].mons],
+              divisor: [...army],
+              positions: [...segs[anchor].mons],
+            });
+            for (high in segs[anchor].mons) {
+              army = [...bell];
+        
+              lightson = [...army];
+              pain = DIVIDIR(army, monomios[segs[anchor].mons[high]].numero);
+        
+              if (pain.length == 0 || pain.search("([0-9]|[a-z)])") == -1) {
+                if (
+                  lightson.indexOf("-") != -1 &&
+                  monomios[segs[anchor].mons[high]].numero.indexOf("-") == -1
+                ) {
+                  pain = "-1";
+                  //
+                  scarecrow[anchor].divididos.push("1");
+                  scarecrow[anchor].outrodiv.push(pain);
+                } else if (
+                  lightson.indexOf("-") == -1 &&
+                  monomios[segs[anchor].mons[high]].numero.indexOf("-") != -1
+                ) {
+                  pain = "-1";
+                  //
+                  scarecrow[anchor].divididos.push("1");
+                  scarecrow[anchor].outrodiv.push(pain);
+                } else {
+                  pain = "1";
+                  scarecrow[anchor].divididos.push(pain);
+                  scarecrow[anchor].outrodiv.push(pain);
+                }
+              } else {
+                right = "";
+                for (feet in pain) {
+                  if (pain[feet] != "+") {
+                    right += pain[feet];
+                  }
+                }
+        
+                uy = "";
+                //
+        
+                for (xarope in right) {
+                  //
+                  if (xarope == 0 && right[xarope] == "*") {
+                    //*2
+                    //
+                  } else if (xarope == right.length - 1 && right[xarope] == "*") {
+                    //2*
+                    //
+                  } else if (
+                    right[xarope] == "*" &&
+                    String(right[Number(xarope) + 1]).search("[0-9]") == -1
+                  ) {
+                    //2*x
+                    //
+                  } else if (
+                    right[xarope] == "*" &&
+                    String(right[Number(xarope) - 1]).search("[0-9]") == -1
+                  ) {
+                    //x*2
+                    //
+                  } else {
+                    uy += right[xarope];
+                  }
+                }
+        
+                scarecrow[anchor].outrodiv.push(uy);
+        
+                if (uy[0] == "-") {
+                  holdon = "";
+                  for (qual in uy) {
+                    if (uy[qual] != "-") holdon += uy[qual];
+                  }
+        
+                  uy = holdon;
+                }
+                scarecrow[anchor].divididos.push(uy);
+              }
+            }
+          }
       
           miss = []
    
           for (ah in scarecrow) {
-              //console.log('SCARECROW', scarecrow[ah].divididos)
-              for (é in scarecrow[ah].divididos) {
-                  //console.log(scarecrow[ah].divididos[é])
-              if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
-               miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
-              }else{
-               miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}).aparicoes.push(Number(ah))
+            for (é in scarecrow[ah].divididos) {
+              if (
+                miss.find(function (miss) {
+                  return miss.dividido == scarecrow[ah].divididos[é];
+                }) == undefined
+              ) {
+                miss.push({
+                  dividido: scarecrow[ah].divididos[é],
+                  aparicoes: [Number(ah)],
+                  divisor: scarecrow[ah].divisor,
+                });
+              } else {
+                miss
+                  .find(function (miss) {
+                    return miss.dividido == scarecrow[ah].divididos[é];
+                  })
+                  .aparicoes.push(Number(ah));
               }
-           }
+            }
           }
    
           
@@ -1121,203 +1129,221 @@ function FATORAR(expression) {
    java = 0
    
    //console.log('MISS.LENGTH',miss.length)
-   
-   
-   while(java < miss.length && deucerto == false) {
-              
-             // if (miss[java].aparicoes.length >= quantasposições) {
-           //    console.log('')
-        //   console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
-   
-           podeser = []
-           for (outro in miss) {
-              // console.log('')
-               if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-               //   console.log(miss[outro], outro)
-   
-                   presentes = []
-                   for (quecoisa in miss[outro].aparicoes) {
-                       fatorzinho = miss[outro].aparicoes[quecoisa]
-                    //   console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
-   
-                       if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    //   console.log('TEM', fatorzinho)
-                           presentes.push(fatorzinho)
-                       }
-                   }
-                 //  console.log('OLHA', presentes)
-   
-                   adicionou = false
-                   for (idk in podeser) {
-                    //   console.log(podeser[idk])
-                       esigual = true
-                       for (denovo in podeser[idk].opl) {
-                          // console.log(podeser[idk].opl[denovo], presentes[denovo])
-                           if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                              // console.log('É IGUAL')
-                           }else{
-                               esigual = false
-                           }
-                       }
-                       if (esigual == true) {
-                           podeser[idk].position.push(outro)
-                           adicionou = true
-                       }
-                   }
-                   if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
-                       podeser.push({opl: presentes, position: [outro]})
-                   }
-                   
-               }
+   roller = [];
+  for (eep in miss) {
+    //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss[eep].aparicoes)
+
+    //console.log('---')
+    for (quad in miss) {
+      //console.log('')
+      if (quad != eep) {
+        //console.log(quad,miss[quad].aparicoes)
+
+        repeated = [];
+        repwri = "";
+        for (vespa in miss[eep].aparicoes) {
+          //console.log(miss[eep].aparicoes[vespa])
+          if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+            //console.log(miss[quad].aparicoes,'indexOf(',miss[eep].aparicoes[vespa],') não é igual a -1')
+            repeated.push(miss[eep].aparicoes[vespa]);
+
+            repwri += "," + miss[eep].aparicoes[vespa];
+
+            //console.log('repetido:',repeated,'repwri',repwri)
+
+            if (
+              roller.find(function (roller) {
+                return roller.rept == repwri;
+              }) == undefined
+            ) {
+              //console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
+              roller.push({
+                rept: repwri,
+                opl: [...repeated],
+                position: [eep, quad],
+              });
+            } else {
+              if (
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.indexOf(eep) == -1
+              ) {
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.push(eep);
               }
-              //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
-              
-              
-              for (belief in podeser) {
-                  if (podeser[belief].position.indexOf(java) == -1) {
-                  podeser[belief].position.push(String(java))
-                  }
-   
-               //console.log(podeser[belief].opl)
-   
-               shot = ''
-               for (gun in podeser[belief].opl) {
-                   //console.log(podeser[belief].opl[gun])
-                   shot+= podeser[belief].opl[gun] + ','
-               }
-              // console.log('THAT WE LET IT GO:', shot)
-   
-               if (roll.length == 0) {
-                  // console.log('ADICIONAR(LISTA VAZIA)')
-                   roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
-               }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                   //console.log('JÁ TEM')
-                  //console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
-   
-                   for (capital in podeser[belief].position) {
-                       //console.log(podeser[belief].position[capital])
-   
-                     // console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
-   
-                   if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                      //console.log('NÃO TEM') 
-                      roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
-                   }
-                   }
-   
-               }else{
-                   //console.log('NÃO TEM')
-                   roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
-               }
+
+              if (
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.indexOf(quad) == -1
+              ) {
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.push(quad);
               }
-   
-              //console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
-              whyis = java
-              if (podeser.length > 0) {
-                  //console.log('fatores', quantosfatores, 'posições', quantasposições)
-                  //console.log(podeser)
-   
-                  for(cold in podeser) {
-              if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
-              // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
-               deucerto = true
-   
-               ficaassim = ''
-              // podeser[cold].position.push(whyis)
-   
-               for (yehaa in podeser[cold].position) {
-                 //  console.log(podeser[cold])
-                  // console.log(miss[podeser[cold].position[yehaa]].dividido)
-                   if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
-                       
-                       fi = ''
-                       for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
-                           if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
-                               fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
-                           }
-                       }
-                     //  console.log(fi)
-                       if (yehaa != 0) {
-                            ficaassim += ` - ${fi}`
-                       }else{
-                           ficaassim += `-${fi}`
-                       }
-                   }else if(yehaa != 0){
-                       ficaassim += ' + '
-                       ficaassim+= miss[podeser[cold].position[yehaa]].dividido
-                   }else{
-                       ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
-                   }
-                   
-               
-               }
-              // console.log('FICA ASSIM', `(${ficaassim})`)
-              for (ruin in podeser[cold].opl) {
-             //  console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
-               emotion = ''
-               for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-              ////console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
-                   emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
-               }
-             //  console.log(`${emotion}(${ficaassim})`)
-             }
-              }
-           }
-   
-           }
-   
-            //  }
-              
-            //  console.log('continuar', miss[java])
-   
-              java++
+            }
           }
-          okentao++
-   
-   
-          
-          for (nao in roll) {
-             // console.log('-------------------------------------------------------------------')
-          // console.log('esse é o negócio',roll[nao].repetidos)
-           
-          // console.log('---------------------------------------------')
-         //  console.log('ANALISANDO O MISS')
-   
-          
-               shot = ''
-               for (gun in roll[nao].repetidos) {
-                   //console.log(podeser[belief].opl[gun])
-                   shot+= roll[nao].repetidos[gun] + ','
-               }
-   
-           for (whyso in miss) {
-               //console.log(miss[whyso].aparicoes)
-               igual = 0
-               for (heat in miss[whyso].aparicoes) {
-                   //console.log(miss[whyso].aparicoes[heat])
-                   if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
-                     //  console.log('TEM')
-                       igual++
-                   }
-               }
-              // console.log('HÁ', igual, 'numero repetidos')
-               if (igual == roll[nao].repetidos.length) {
-                  // console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
-                     // console.log(roll.find(function (roll){return roll.way == shot}).posições)
-   
-                      if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
-                       //console.log('NAO ADICIONAR, JÁ TEM')
-                   }else{
-                     //  console.log('ADICIONAR EFETIVAMENTE')
-                       roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
-                   }
-               }
-                 // console.log('THAT WE LET IT GO:', shot)
-                  
-               }
-           }
-           
-          
+        }
+      }
+    }
+  }
+  e = [...roller];
+
+  while (java < miss.length && deucerto == false) {
+    //FOCO
+    podeser = [];
+    for (outro in miss) {
+      if (
+        outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/
+      ) {
+        presentes = [];
+        for (quecoisa in miss[outro].aparicoes) {
+          fatorzinho = miss[outro].aparicoes[quecoisa];
+
+          if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
+            presentes.push(fatorzinho);
+          }
+        }
+
+        adicionou = false;
+        for (idk in podeser) {
+          //
+          esigual = true;
+          for (denovo in podeser[idk].opl) {
+            if (podeser[idk].opl[denovo] == presentes[denovo]) {
+              //
+            } else {
+              esigual = false;
+            }
+          }
+          if (esigual == true) {
+            //podeser[idk].position.push(outro)
+            adicionou = true;
+          }
+        }
+        if (
+          presentes.length > 0 &&
+          presentes.length > 0 &&
+          adicionou == false
+        ) {
+          //podeser.push({opl: presentes, position: [outro]})
+        }
+      }
+    }
+    //
+    podeser = [...roller];
+
+    for (belief in podeser) {
+      if (podeser[belief].position.indexOf(java) == -1) {
+        //podeser[belief].position.push(String(java))
+      }
+
+      shot = "";
+      for (gun in podeser[belief].opl) {
+        shot += String(podeser[belief].opl[gun]) + ",";
+      }
+
+      if (roll.length == 0) {
+        roll.push({
+          repetidos: [...podeser[belief].opl],
+          way: shot,
+          posições: [...podeser[belief].position],
+        });
+      } else if (
+        roll.find(function (roll) {
+          return roll.way == shot;
+        }) != undefined
+      ) {
+        //SE JÁ TIVER NA LSITA
+
+        for (capital in podeser[belief].position) {
+          if (
+            roll
+              .find(function (roll) {
+                return roll.way == shot;
+              })
+              .posições.indexOf(podeser[belief].position[capital]) == -1
+          ) {
+            roll
+              .find(function (roll) {
+                return roll.way == shot;
+              })
+              .posições.push(podeser[belief].position[capital]);
+          }
+        }
+      } else {
+        roll.push({
+          repetidos: [...podeser[belief].opl],
+          way: shot,
+          posições: [...podeser[belief].position],
+        });
+      }
+    }
+
+    whyis = java;
+    if (podeser.length > 0) {
+      for (cold in podeser) {
+        if (
+          podeser[cold].position.length == quantosfatores &&
+          podeser[cold].opl.length == quantasposições &&
+          miss[whyis].aparicoes.length == quantasposições
+        ) {
+          //
+          deucerto = true;
+
+          ficaassim = "";
+          //podeser[cold].position.push(whyis)
+
+          for (yehaa in podeser[cold].position) {
+            //
+
+            if (miss[podeser[cold].position[yehaa]].dividido[0] == "-") {
+              fi = "";
+              for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
+                if (
+                  miss[podeser[cold].position[yehaa]].dividido[ohjesus] != "-"
+                ) {
+                  fi += miss[podeser[cold].position[yehaa]].dividido[ohjesus];
+                }
+              }
+              //
+              if (yehaa != 0) {
+                ficaassim += ` - ${fi}`;
+              } else {
+                ficaassim += `-${fi}`;
+              }
+            } else if (yehaa != 0) {
+              ficaassim += " + ";
+              ficaassim += miss[podeser[cold].position[yehaa]].dividido;
+            } else {
+              ficaassim += miss[podeser[cold].position[yehaa]].dividido;
+            }
+          }
+
+          for (ruin in podeser[cold].opl) {
+            emotion = "";
+            for (scream in scarecrow[podeser[cold].opl[ruin]].divisor) {
+              emotion += scarecrow[podeser[cold].opl[ruin]].divisor[scream];
+            }
+          }
+        }
+      }
+    }
+    java++;
+  }
+  okentao++;
+  
+  INDIRETARROLL();
+
          //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
    
    
@@ -1485,11 +1511,69 @@ function FATORAR(expression) {
             
          }
          miss = [...grtols]
-         
+
          java = 0
          roll = []
          deucerto = false
    
+         roller = [];
+  for (eep in miss) {
+    for (quad in miss) {
+      if (quad != eep) {
+        repeated = [];
+        repwri = "";
+        for (vespa in miss[eep].aparicoes) {
+          if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+            repeated.push(miss[eep].aparicoes[vespa]);
+
+            repwri += "," + miss[eep].aparicoes[vespa];
+
+            if (
+              roller.find(function (roller) {
+                return roller.rept == repwri;
+              }) == undefined
+            ) {
+              //console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
+              roller.push({
+                rept: repwri,
+                opl: [...repeated],
+                position: [eep, quad],
+              });
+            } else {
+              if (
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.indexOf(eep) == -1
+              ) {
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.push(eep);
+              }
+
+              if (
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.indexOf(quad) == -1
+              ) {
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.push(quad);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
          while(java < miss.length && deucerto == false) {
            
    
@@ -1635,13 +1719,10 @@ function FATORAR(expression) {
             java++
         }
    
-   
-   
-   
-   
-   
-   
-   
+        console.log("HORA DA VERDADE!");
+
+        INDIRETARROLL();
+
           youdumb = []
    
            aswillbe2 = []
@@ -4968,5 +5049,39 @@ function FATORE(q) {
       //resultado = FATORAR(expression,0);
       //return resultado;
       return expression
+    }
+  }
+  function INDIRETARROLL() { // CÓDIGO PARA ADICIONAR POSIÇÕES QUE POSSUEM  O TERMO (REPETIDO) DO ROLL[N] E QUE NÃO ESTÃO INSERIDAS
+    for (nao in roll) {
+      shot = "";
+      for (gun in roll[nao].repetidos) {
+        shot += roll[nao].repetidos[gun] + ",";
+      }
+  
+      for (whyso in miss) {
+        igual = 0;
+        for (heat in miss[whyso].aparicoes) {
+          if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
+            igual++;
+          }
+        }
+  
+        if (igual == roll[nao].repetidos.length) {
+          if (
+            roll
+              .find(function (roll) {
+                return roll.way == shot;
+              })
+              .posições.indexOf(whyso) != -1
+          ) {
+          } else {
+            roll
+              .find(function (roll) {
+                return roll.way == shot;
+              })
+              .posições.push(whyso);
+          }
+        }
+      }
     }
   }
