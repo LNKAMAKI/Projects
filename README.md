@@ -22,6 +22,10 @@ A random person will grab your ugly cat. Be prepared.
 Your mom will steal your hair.
 Your grandma seeks to learn about someone else's pumpkin. Watch out.
 Your grandma has to steal your bacon. It will be over soon.
+Your best friend seeks to steal your pants. It will be awesome.
+You should sit on an instrument.
+Don't forget to steal chores.
+A misterious person seeks to eat someone else's pants. Beware.
 -->
 
  
