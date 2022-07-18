@@ -3401,7 +3401,36 @@ for (bye in monomios) {
 }
    
    console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
-   //}
+
+   if (pans.length == 1 && todososnumeros.length == 0) {
+    //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+    //console.log(concatenar)
+    //console.log('CERTNHO')
+    return [concatenar, segs.length, roll.length];
+  } else {
+    //console.log('CERTINHO?')
+    if (monomios.length > 1) {
+      hei = concatenar;
+      otherway = FATORAR2(startexp);
+      //console.log(otherway[1], otherway[2])
+
+      if (otherway[1] == 1 && otherway[2] == 0) {
+        //console.log(otherway[1], otherway[2])
+        //console.log('IS IT SERIOUS?')
+        //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+        //console.log(otherway[0])
+        return [otherway[0], otherway[3], otherway[4]];
+      } else {
+        //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+        //console.log(hei)
+        return [hei, segs.length, roll.length];
+      }
+    } else {
+      //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
+      //console.log(concatenar,monomios)
+      return [concatenar, segs.length, roll.length];
+    }
+  }
    
    /*
    vai = []
@@ -3540,19 +3569,6 @@ for (bye in monomios) {
        }
        return [maiorparamenor, posiçõesnumeros]
     }
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
    function doit(par) {
    
