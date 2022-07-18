@@ -2949,7 +2949,7 @@ function FATORAR(expression) {
       return [concatenar, segs.length, roll.length];
     }
   }
-
+  
   //Vendo se o número é primo
   function ehprimo(Number) {
     parar = false;
