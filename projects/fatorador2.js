@@ -1483,22 +1483,47 @@ for (bye in monomios) {
    
    roller = [];
   for (eep in miss) {
+    console.log('__________________________________________')
+    console.log(`*miss[${eep}]*: `, miss[eep].aparicoes, miss[eep].dividido)
+
+          console.log('//\//\//\//\//\//\//\/', miss[eep].aparicoes)
+          for (b in miss[eep].aparicoes) {
+            console.log(scarecrow[miss[eep].aparicoes[b]].divididos,`.indexOf(${miss[eep].dividido}) = `,scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido))
+            console.log('O MONÔMIO QUE RESULTA EM', miss[eep].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[eep].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)],monomios[scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]].numero)
+          }
+          console.log('//\//\//\//\//\//\//\/')
+
+    console.log('GOING THROUGH MISS')
     for (quad in miss) {
+     
+      console.log('--------------------------------------')
       if (quad != eep) {
+        console.log(`miss[${quad}]: `,miss[quad].aparicoes, String(miss[quad].dividido))
         repeated = [];
         repwri = "";
+        console.log('//\//\//\//\//\//\//\/', miss[quad].aparicoes)
+          for (b in miss[quad].aparicoes) {
+            console.log(scarecrow[miss[quad].aparicoes[b]].divididos,`.indexOf(${miss[quad].dividido}) = `,scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido))
+            console.log('O MONÔMIO QUE RESULTA EM', miss[quad].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[quad].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)],monomios[scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]].numero)
+          }
+          console.log('//\//\//\//\//\//\//\/')
+
         for (vespa in miss[eep].aparicoes) {
+
+          console.log(`*miss[${eep}]*.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
           if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+            console.log(`*${miss[quad].aparicoes}* possui ${miss[eep].aparicoes[vespa]}`)
             repeated.push(miss[eep].aparicoes[vespa]);
 
             repwri += "," + miss[eep].aparicoes[vespa];
+            console.log('REPWRI: ', '<<<||',repwri,'||>>>')
 
             if (
               roller.find(function (roller) {
                 return roller.rept == repwri;
               }) == undefined
             ) {
-              //console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
+              console.log('PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
               roller.push({
                 rept: repwri,
                 opl: [...repeated],
@@ -1537,6 +1562,7 @@ for (bye in monomios) {
         }
       }
     }
+    console.log('__________________________________________')
   }
    for (r in roller) {
        //console.log(roller[r].opl, roller[r].position, roller[r].rept)
