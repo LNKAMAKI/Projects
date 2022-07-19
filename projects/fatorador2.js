@@ -111,6 +111,7 @@ function ir() {
    // }
 
     document.getElementById("result").innerHTML = "Resultado:";
+    document.getElementById('result').style.display = 'block';
     document.getElementById("fatoracao").innerText = resultado;
 
     document.getElementById("tab").style.height = "0px";
