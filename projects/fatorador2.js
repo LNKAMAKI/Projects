@@ -5482,7 +5482,7 @@ function FATORE(q) {
   }
 
 
-  function FATORAR(expression) {
+  function FATORAR2(expression) {
 
     startexp = [...expression];
 
