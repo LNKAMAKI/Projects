@@ -8512,109 +8512,7 @@ function FATORE(q) {
    
    console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
 
-   if (pans.length == 1 && todososnumeros.length == 0) {
-    //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-    //console.log(concatenar)
-    //console.log('CERTNHO')
-    return [concatenar, segs.length, roll.length];
-  } else {
-    //console.log('CERTINHO?')
-    if (monomios.length > 1) {
-      hei = concatenar;
-      otherway = FATORAR2(startexp);
-      //console.log(otherway[1], otherway[2])
-
-      if (otherway[1] == 1 && otherway[2] == 0) {
-        //console.log(otherway[1], otherway[2])
-        //console.log('IS IT SERIOUS?')
-        //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-        //console.log(otherway[0])
-        return [otherway[0], otherway[3], otherway[4]];
-      } else {
-        //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-        //console.log(hei)
-        return [hei, segs.length, roll.length];
-      }
-    } else {
-      //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
-      //console.log(concatenar,monomios)
-      return [concatenar, segs.length, roll.length];
-    }
-  }
-   
-   /*
-   vai = []
-   posições = []
-   y = 0
-   while (posições.length < monomios.length) {
-       console.log('-------------------------------------')
-       console.log(y, heya[y].w.what, heya[y].mons)
-       vai.push(heya[y].mons)
-   
-       for (uh in heya[y].mons) {
-      //console.log(heya[y].mons[uh])
-           if (posições.indexOf(heya[y].mons[uh]) == -1) {
-               posições.push(heya[y].mons[uh])
-           }
-       }
-   
-       for (data in heya[y].w.what) {
-      //console.log(heya[y].w.what[data].indice, heya[y].w.what[data].ar)
-       }
-       for (miya in vai) {
-           if (miya != y) {
-      //console.log('****',vai[miya])
-           for (redacao = vai[miya].length - 1; redacao >= 0; redacao--) {
-          //console.log(vai[miya][redacao])
-               if (heya[y].mons.indexOf(vai[miya][redacao]) != -1) {
-              //console.log('TEM')
-                   vai[miya].splice(redacao, 1)
-               }
-           }
-           }
-       }
-       y++
-   }
-   
-   
-   for (yehaa in podeser[cold].position) {
-       console.log(podeser[cold])
-       console.log(miss[podeser[cold].position[yehaa]].dividido)
-       if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
-           
-           fi = ''
-           for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
-               if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
-                   fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
-               }
-           }
-      //console.log(fi)
-           if (yehaa != 0) {
-                ficaassim += ` - ${fi}`
-           }else{
-               ficaassim += `-${fi}`
-           }
-       }else if(yehaa != 0){
-           ficaassim += ' + '
-           ficaassim+= miss[podeser[cold].position[yehaa]].dividido
-       }else{
-           ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
-       }
-       
-   
-   }
-   console.log('FICA ASSIM', `(${ficaassim})`)
-   for (ruin in podeser[cold].opl) {
-   console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
-   emotion = ''
-   for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-       console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
-       emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
-   }
-   console.log(`${emotion}(${ficaassim})`)
-   }
-   */
-   
+ 
    // Vendo se o número é primo
    function ehprimo(Number) {
        parar = false
@@ -9395,10 +9293,6 @@ function FATORE(q) {
    return [relation, segs2]
    }
    
-   
-   
-   
-   
    function temnaLista(h) {
    //console.log('THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR')
    
@@ -9423,8 +9317,6 @@ function FATORE(q) {
        }
    }
    }
-   
-   
    
    function doit2(par) {
    
@@ -10502,8 +10394,7 @@ function sort(n) {
     return [maiorparamenor, posiçõesnumeros]
 }
 
+return []
 console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
 
-
-return [concatenar, segs.length]
 }
