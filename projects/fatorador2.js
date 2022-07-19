@@ -10446,7 +10446,7 @@ function devtools() {
 
        for (i in segs) {
         p = document.createElement('p')
-        p.innerText = `{ fator comum: '${segs[i].car}', monômios: [ ${segs[i].mons} ]}`
+        p.innerText = `${i}: { fator comum: '${segs[i].car}', monômios: [ ${segs[i].mons} ]}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
        }
@@ -10458,7 +10458,7 @@ function devtools() {
 
        for (i in scarecrow) {
         p = document.createElement('p')
-        p.innerText = `{ divisor: '${scarecrow[i].divisor}', divididos: [ ${scarecrow[i].divididos} ]}`
+        p.innerText = `${i}: { divisor: '${scarecrow[i].divisor}', divididos: [ ${scarecrow[i].divididos} ]}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
        }
@@ -10470,7 +10470,7 @@ function devtools() {
 
        for (i in miss) {
         p = document.createElement('p')
-        p.innerText = `{ termo: '${miss[i].dividido}', aparicoes: [ ${miss[i].aparicoes} ]}`
+        p.innerText = `${i}: { termo: '${miss[i].dividido}', aparicoes: [ ${miss[i].aparicoes} ]}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
        }
@@ -10482,7 +10482,7 @@ function devtools() {
 
        for (i in roll) {
         p = document.createElement('p')
-        p.innerText = `{ repetidos: '${roll[i].repetidos}', posições: [ ${roll[i].posições} ]}`
+        p.innerText = `${i}: { repetidos: '${roll[i].repetidos}', posições: [ ${roll[i].posições} ]}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
        }
@@ -10492,7 +10492,7 @@ function devtools() {
       }else{
         for (i in segs_2) {
           p = document.createElement('p')
-          p.innerText = `{ fator comum: '${segs_2[i].car}', monômios: [ ${segs_2[i].mons} ]}`
+          p.innerText = `${i}: { fator comum: '${segs_2[i].car}', monômios: [ ${segs_2[i].mons} ]}`
           p.style.textAlign = 'center'
           tab.appendChild(p)
          }
