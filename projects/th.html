@@ -74,14 +74,16 @@
     
            div#testarea {
               height: 500px;
-            width: 700px;
+            max-width: 1000px;
                margin: 70px auto 0px auto;
               
                justify-content: center;
            }
            #typearea {
               width: 100%;
-              margin: 0px;
+              display: block;
+              max-width: 700px;
+              margin: auto;
               left: 0px;
               right: 0px;
              background-color:white;
@@ -98,15 +100,50 @@
             outline: 2px solid black;
            
            }
+           #exemplos {
+              width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: auto;
+            padding: 2px 0px 2px 0px;
+         }
+
+         #tab {
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+            height: 0px;
+            background-color: black;
+            color: white;
+           /*animation: surgir 2s forwards;*/
+            overflow: hidden;
+         }
+
            @media screen and (max-width: 750px) {
-           div#testarea {
-               width: 550px;
+           #typearea {
+             width: 550px;
+             
+            }
+            #tab {
+             width: 550px;
+             
+            }
+            #exemplos {
+             width: 550px;
              
             }
            }
 
            @media screen and (max-width: 580px) {
-            div#testarea {
+            #typearea {
+               width: 400px;
+               
+            }
+            #tab {
+               width: 400px;
+               
+            }
+            #exemplos {
                width: 400px;
                
             }
@@ -116,7 +153,15 @@
            }
 
            @media screen and (max-width: 460px) {
-            div#testarea {
+            #typearea {
+               width: 345px;
+            
+            }
+            #tab {
+               width: 345px;
+            
+            }
+            #exemplos {
                width: 345px;
             
             }
@@ -125,14 +170,6 @@
             }
            }
 
-         div#tab {
-            width: 100%;
-            height: 0px;
-            background-color: black;
-            color: white;
-           /*animation: surgir 2s forwards;*/
-            overflow: hidden;
-         }
          @keyframes surgir {
             0%{
                height: 0px;
@@ -140,10 +177,6 @@
             100% {
                height: fit-content;
             }
-         }
-         input#exemplos {
-            width: 100%;
-            padding: 2px 0px 2px 0px;
          }
          p.eg {
             border-radius: 20px;
@@ -188,12 +221,26 @@
             font-family: monospace;
          }
          #devtab {
-            display: none;
+            position: relative;
             padding: 10px;
             background-color: black;
             color: rgb(84, 127, 157);
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
+         }
+         .slot {
+            background-color: pink;
+            width: calc(50% - 2.3px);
+            position: relative;
+            margin: 0px;
+            outline-width: 0px;
+            display: inline-block;
+         }
+
+         @media screen and (max-width:740px) {
+            .slot {
+               width: 100%;
+            }
          }
     </style>
 </head>
@@ -238,10 +285,22 @@
                   <p id='result'></p>
                   <p id='fatoracao'></p>
 
-            <input type="button" value="DEVTOOLS" id="dev" onclick="devtools()">
-            <div id="devtab">
-
-            </div>
+                  <input type="button" value="DEVTOOLS" id="dev" onclick="devtools()">
+                  <div id="devtab">
+                     <div class="slot">
+                       
+                     </div>
+                     <div class="slot">
+                  
+                     </div>
+                     <div class="slot">
+                
+                     </div>
+                     <div class="slot">
+                       
+                     </div>
+                  </div>
         </div>
+       
       </body>
       </html>

@@ -1498,7 +1498,7 @@ for (bye in monomios) {
                 return roller.rept == repwri;
               }) == undefined
             ) {
-              //console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
+              console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
               roller.push({
                 rept: repwri,
                 opl: [...repeated],
@@ -10411,6 +10411,7 @@ console.log('Poxa segs_2, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR
 devtoolsstate = 'closed'
 function devtools() {
   tab = document.getElementById('devtab')
+  part = tab.getElementsByClassName('slot')
   if (devtoolsstate == 'closed') {
     console.log('OPEN DEV TOOLS')
     devtoolsstate = 'open'
@@ -10421,7 +10422,7 @@ function devtools() {
         p = document.createElement('p')
         p.innerText = `segs.length: ${segs.length}`
         p.style.textAlign = 'center'
-        tab.appendChild(p)
+       tab.appendChild(p)
 
         p = document.createElement('p')
         p.innerText = `scarecrow.length: ${scarecrow.length}`
@@ -10441,50 +10442,50 @@ function devtools() {
         p = document.createElement('p')
         p.innerText = `SEGS`
         p.style.textAlign = 'center'
-        tab.appendChild(p)
+        part[0].appendChild(p)
 
 
        for (i in segs) {
         p = document.createElement('p')
         p.innerText = `${i}: { fator comum: '${segs[i].car}', monômios: [ ${segs[i].mons} ]}`
         p.style.textAlign = 'center'
-        tab.appendChild(p)
+        part[0].appendChild(p)
        }
 
        p = document.createElement('p')
        p.innerText = `SCARECROW`
        p.style.textAlign = 'center'
-       tab.appendChild(p)
+       part[1].appendChild(p)
 
        for (i in scarecrow) {
         p = document.createElement('p')
         p.innerText = `${i}: { divisor: '${scarecrow[i].divisor}', divididos: [ ${scarecrow[i].divididos} ]}`
         p.style.textAlign = 'center'
-        tab.appendChild(p)
+        part[1].appendChild(p)
        }
 
        p = document.createElement('p')
        p.innerText = `MISS`
        p.style.textAlign = 'center'
-       tab.appendChild(p)
+       part[2].appendChild(p)
 
        for (i in miss) {
         p = document.createElement('p')
         p.innerText = `${i}: { termo: '${miss[i].dividido}', aparicoes: [ ${miss[i].aparicoes} ]}`
         p.style.textAlign = 'center'
-        tab.appendChild(p)
+        part[2].appendChild(p)
        }
 
        p = document.createElement('p')
        p.innerText = `ROLL`
        p.style.textAlign = 'center'
-       tab.appendChild(p)
+       part[3].appendChild(p)
 
        for (i in roll) {
         p = document.createElement('p')
         p.innerText = `${i}: { repetidos: '${roll[i].repetidos}', posições: [ ${roll[i].posições} ]}`
         p.style.textAlign = 'center'
-        tab.appendChild(p)
+        part[3].appendChild(p)
        }
 
       
@@ -10494,7 +10495,7 @@ function devtools() {
           p = document.createElement('p')
           p.innerText = `${i}: { fator comum: '${segs_2[i].car}', monômios: [ ${segs_2[i].mons} ]}`
           p.style.textAlign = 'center'
-          tab.appendChild(p)
+          part[0].appendChild(p)
          }
       }
   }else{
