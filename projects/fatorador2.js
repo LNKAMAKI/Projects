@@ -10394,7 +10394,13 @@ function sort(n) {
     return [maiorparamenor, posiçõesnumeros]
 }
 
-return []
+return [
+  concatenar,
+  pans.length,
+  todososnumeros.length,
+  segs.length,
+  roll.length,
+];
 console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
 
 }
