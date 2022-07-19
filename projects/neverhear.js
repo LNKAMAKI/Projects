@@ -84,27 +84,27 @@ function FATORAR2(expression) {
 
   //SEPARAnDO OS MOnÔMIOS
 
-  monomios = [{ numero: "" }];
+  monomios_2 = [{ numero: "" }];
   obnum = 0;
   for (n = 0; n < expression.length; n++) {
     if (String(expression[n]).search("[\\-\\+]") != -1 && n != 0) {
-      monomios.push({ numero: "" });
+      monomios_2.push({ numero: "" });
       obnum++;
     }
 
-    monomios[obnum].numero += expression[n];
+    monomios_2[obnum].numero += expression[n];
   }
 
-  //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
+  //monomios_2 = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
 
-  //TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
+  //TRANSFORMA  O MONOMIOS_2.NUMERO(STRING) EM UM ARRAY
 
-  for (bye in monomios) {
+  for (bye in monomios_2) {
     comofica = [];
     ground = "";
 
-    for (misery in monomios[bye].numero) {
-      carac = monomios[bye].numero[misery];
+    for (misery in monomios_2[bye].numero) {
+      carac = monomios_2[bye].numero[misery];
 
       if (ground.length == 0) {
         //
@@ -120,35 +120,35 @@ function FATORAR2(expression) {
         ground = "";
         ground += carac;
       }
-      if (misery == monomios[bye].numero.length - 1) {
+      if (misery == monomios_2[bye].numero.length - 1) {
         comofica.push(ground);
       }
     }
-    monomios[bye].numero = comofica;
+    monomios_2[bye].numero = comofica;
   }
 
-  for (huh in monomios) {
+  for (huh in monomios_2) {
     partlet = "";
-    for (y in monomios[huh].numero) {
-      if (String(monomios[huh].numero[y]).search("[a-z]") != -1) {
-        partlet += String(monomios[huh].numero[y]);
+    for (y in monomios_2[huh].numero) {
+      if (String(monomios_2[huh].numero[y]).search("[a-z]") != -1) {
+        partlet += String(monomios_2[huh].numero[y]);
       }
     }
-    monomios[huh].partletral = partlet;
+    monomios_2[huh].partletral = partlet;
   }
 
   ji = [];
   //JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
-  for (huh in monomios) {
+  for (huh in monomios_2) {
     if (
       ji.find(function (ji) {
-        return ji.que == monomios[huh].partletral;
+        return ji.que == monomios_2[huh].partletral;
       }) == undefined
     ) {
-      ji.push({ quais: [Number(huh)], que: monomios[huh].partletral });
+      ji.push({ quais: [Number(huh)], que: monomios_2[huh].partletral });
     } else {
       ji.find(function (ji) {
-        return ji.que == monomios[huh].partletral;
+        return ji.que == monomios_2[huh].partletral;
       }).quais.push(Number(huh));
     }
   }
@@ -507,12 +507,12 @@ function FATORAR2(expression) {
    }
    //expression = exp_2
    
-   ////console.log('--------------------------------------------MOnOMIOS--------------------------------------')
+   ////console.log('--------------------------------------------Monomios_2--------------------------------------')
    reps = []
    segs_2 = []
    let  = []
    
-   for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
+   for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
        repetido = []
        
        col = false
@@ -521,56 +521,56 @@ function FATORAR2(expression) {
       numerosrep = []
        ////console.log('BURRO')
     ////console.log('--------------------')
-       //console.log(monomios[m].numero)
+       //console.log(monomios_2[m].numero)
        
     
-       for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
+       for (oc = 0; oc < monomios_2[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
            
    
-           if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-         // console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
+           if (monomios_2[m].numero[oc].search('[\\*\\+\\/]') == -1) {
+         // console.log('LETRA OU nÚMERO ISOLADO: ' + monomios_2[m].numero[oc])
    
-          //console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
-           if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
-           numerosrep.push(monomios[m].numero[oc])
+          //console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios_2[m].numero[oc]))
+           if (numerosrep.indexOf(monomios_2[m].numero[oc]) == -1) {
+           numerosrep.push(monomios_2[m].numero[oc])
    
-           for (u = 0; u < monomios.length; u++) { // OUTROS MOnÔMIOS
+           for (u = 0; u < monomios_2.length; u++) { // OUTROS MOnÔMIOS
                ocs2 = []
    
                if(u != m) {
            //console.log(`monomio ${u}: `)
-           //console.log(monomios[u])   
+           //console.log(monomios_2[u])   
                
    
              // OCAS
              if(ocs2.find(function(ocs2) {
-               return ocs2.ed == monomios[m].numero[oc]
+               return ocs2.ed == monomios_2[m].numero[oc]
                }) == undefined) {
                 // console.log('====================')
-                   ocs2.push({ed: monomios[m].numero[oc], el: 0})
+                   ocs2.push({ed: monomios_2[m].numero[oc], el: 0})
    
                    ocs = 0
-             for (ao = 0; ao < monomios[m].numero.length; ao++) {
-             // console.log('AAAAAAAAAA' + monomios[m].numero[ao])
-               if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
+             for (ao = 0; ao < monomios_2[m].numero.length; ao++) {
+             // console.log('AAAAAAAAAA' + monomios_2[m].numero[ao])
+               if (monomios_2[m].numero[ao] == monomios_2[m].numero[oc]) {
                    ocs++
                }
              }
            }
              //console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
              
-             for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
-             //console.log(monomios[u].numero[e])
+             for (e = 0; e < monomios_2[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
+             //console.log(monomios_2[u].numero[e])
                
-               if (monomios[u].numero[e] == monomios[m].numero[oc]) {
-                 //  //console.log(monomios[m].numero[oc] + ' é igual a ' + monomios[u].numero[e])
+               if (monomios_2[u].numero[e] == monomios_2[m].numero[oc]) {
+                 //  //console.log(monomios_2[m].numero[oc] + ' é igual a ' + monomios_2[u].numero[e])
    
                    if (repetido.find(function(repetido) {
                        return repetido.monum == u
                        }) === undefined) {
    
                            ocs2.find(function(ocs2) {
-                               return ocs2.ed == monomios[m].numero[oc]
+                               return ocs2.ed == monomios_2[m].numero[oc]
                                }).el++
    
                        
@@ -578,41 +578,41 @@ function FATORAR2(expression) {
                         
    
                                if (ocs2.find(function(ocs2) {
-                                   return ocs2.ed == monomios[m].numero[oc]
+                                   return ocs2.ed == monomios_2[m].numero[oc]
                                    }).el <= ocs) {
    
-                                       //console.log('________uuuuuuuuuuuuuuuuuuuuuu________',{monum: u, wc: [m], letr: monomios[u].numero[e]})
-                   repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
+                                       //console.log('________uuuuuuuuuuuuuuuuuuuuuu________',{monum: u, wc: [m], letr: monomios_2[u].numero[e]})
+                   repetido.push({monum: u, wc: [m], letr: monomios_2[u].numero[e]})
    
                   
    
                                }
    
-                   //reps.push({mns: [u, m],alg: monomios[u].numero[e])
-                  // reps.push(monomios[u].numero[e])
+                   //reps.push({mns: [u, m],alg: monomios_2[u].numero[e])
+                  // reps.push(monomios_2[u].numero[e])
                        }else{
                            ////console.log('OOOOOBABAOBABEI')
                           // if (repetido.find(function(repetido) {
                               // return repetido.monum == u
-                              // }).letr.indexOf(monomios[u].numero[e]) == -1) {
+                              // }).letr.indexOf(monomios_2[u].numero[e]) == -1) {
    
                                    ocs2.find(function(ocs2) {
-                                       return ocs2.ed == monomios[m].numero[oc]
+                                       return ocs2.ed == monomios_2[m].numero[oc]
                                        }).el++
    
                                 
                                       
    
                                            if (ocs2.find(function(ocs2) {
-                                               return ocs2.ed == monomios[m].numero[oc]
+                                               return ocs2.ed == monomios_2[m].numero[oc]
                                                }).el <= ocs) {
                                       
                                    repetido.find(function(repetido) {
                                        return repetido.monum == u
-                                       }).letr += `.${monomios[u].numero[e]}`
+                                       }).letr += `.${monomios_2[u].numero[e]}`
                                       
                                    }
-                                       //reps.push(monomios[u].numero[e])
+                                       //reps.push(monomios_2[u].numero[e])
        
                  
                               // }else{
@@ -858,7 +858,7 @@ function FATORAR2(expression) {
    segs_2 = [...segs_2ordered]
 
    //DIVS_2
-   ml = monomios.length
+   ml = monomios_2.length
    //////console.log(ml)
    
    divs_2 = ehprimo2(ml)
@@ -986,22 +986,22 @@ function FATORAR2(expression) {
                   
                    army = [...bell]
             
-                //   console.log(monomios[segs_2[anchor].mons[high]].numero,army)
+                //   console.log(monomios_2[segs_2[anchor].mons[high]].numero,army)
            
                
                 lightson = [...army]
-                   pain = DIVIDIR(army,monomios[segs_2[anchor].mons[high]].numero)
-                   //console.log(lightson,monomios[segs_2[anchor].mons[high]].numero)
+                   pain = DIVIDIR(army,monomios_2[segs_2[anchor].mons[high]].numero)
+                   //console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
    
                    if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
                   //console.log('É 1')
-                  if (lightson.indexOf('-') != -1 && monomios[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) {
+                  if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) {
    
                       pain = '-1'
                      // console.log('opa')
                       scarecrow_2[anchor].divididos.push('1')
                        scarecrow_2[anchor].outrodiv.push(pain)
-                  }else if(lightson.indexOf('-') == -1 && monomios[segs_2[anchor].mons[high]].numero.indexOf('-') != -1) {
+                  }else if(lightson.indexOf('-') == -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') != -1) {
                       
                        pain = '-1'
                      //  console.log('opa')
@@ -1075,8 +1075,8 @@ function FATORAR2(expression) {
           }
    
           
-          quantosfatores = Number(monomios.length)/Number(divs_2[okentao])
-          quantasposições = Number(monomios.length)/Number(quantosfatores)
+          quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao])
+          quantasposições = Number(monomios_2.length)/Number(quantosfatores)
    
          // console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
    
@@ -1780,9 +1780,9 @@ function FATORAR2(expression) {
    
                    conseguiu = false
                    older = 0
-                   while (older < monomios.length && conseguiu == false) {
-                   DESFATORAR(monomios[older].numero, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
-                   //console.log('ISOOOOOOOOO', monomios[older].numero, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
+                   while (older < monomios_2.length && conseguiu == false) {
+                   DESFATORAR(monomios_2[older].numero, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
+                   //console.log('ISOOOOOOOOO', monomios_2[older].numero, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
                    
                    // correto == ['2','*','10','x'] (NÚMERO QUE VAI SER COMPARADO)
                    // eg2 == ['10'] (NÚMERO QUE VAI MULTIPLICAR)
@@ -1942,8 +1942,8 @@ function FATORAR2(expression) {
                    older++
                    }
              //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
-             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
-          //console.log(older - 1, monomios[older - 1].numero)
+             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios_2[older - 1].numero)
+          //console.log(older - 1, monomios_2[older - 1].numero)
                   asitwas.push(older - 1)
                   asitwas2.push(older - 1)
                   aswillbe.push(older - 1)
@@ -2731,8 +2731,8 @@ function FATORAR2(expression) {
 
      
    // FAZENDO A CONTA
-      primeirocaso = SOMANDOMONOMIOS(amount)
-      segundocaso = SOMANDOMONOMIOS(amontoado)
+      primeirocaso = SOMANDOMONOMIOS_2(amount)
+      segundocaso = SOMANDOMONOMIOS_2(amontoado)
 
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
@@ -2854,7 +2854,7 @@ function FATORAR2(expression) {
    if (numsdesfat.length > 0) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros_2 = []
-    for (acaba in monomios) {
+    for (acaba in monomios_2) {
        // console.log(acaba)
         todososnumeros_2.push(acaba)
     }
@@ -2865,23 +2865,23 @@ function FATORAR2(expression) {
             todososnumeros_2.splice(feliz, 1)
          }
  }
-    console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios( tem', monomios.length, 'ao todo):',todososnumeros_2)
+    console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios_2( tem', monomios_2.length, 'ao todo):',todososnumeros_2)
     for (eh in todososnumeros_2) {
-        console.log(todososnumeros_2[eh], monomios[todososnumeros_2[eh]].numero)
+        console.log(todososnumeros_2[eh], monomios_2[todososnumeros_2[eh]].numero)
 
         join = ''
-        for (sempresei in monomios[todososnumeros_2[eh]].numero) {
-            if (monomios[todososnumeros_2[eh]].numero[sempresei] != '+' && monomios[todososnumeros_2[eh]].numero[sempresei] != '-') {
-            ter = monomios[todososnumeros_2[eh]].numero[sempresei]
+        for (sempresei in monomios_2[todososnumeros_2[eh]].numero) {
+            if (monomios_2[todososnumeros_2[eh]].numero[sempresei] != '+' && monomios_2[todososnumeros_2[eh]].numero[sempresei] != '-') {
+            ter = monomios_2[todososnumeros_2[eh]].numero[sempresei]
             console.log(ter)
             join+= ter
             }
         }
-        if (monomios[todososnumeros_2[eh]].numero[0] == '+') {
+        if (monomios_2[todososnumeros_2[eh]].numero[0] == '+') {
             console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
-        }else if(monomios[todososnumeros_2[eh]].numero[0] == '-') {
+        }else if(monomios_2[todososnumeros_2[eh]].numero[0] == '-') {
             console.log('MENOS')
             newexpress.push('-')
             newexpress.push(join)
@@ -2903,7 +2903,7 @@ function FATORAR2(expression) {
    console.log('VENDO OS QUE FALTAM:')
    console.log(numerospresentes_2)
    todososnumeros_2 = []
-   for (acaba in monomios) {
+   for (acaba in monomios_2) {
       // console.log(acaba)
        todososnumeros_2.push(acaba)
    }
@@ -2917,9 +2917,9 @@ function FATORAR2(expression) {
    console.log(todososnumeros_2)
    
    for (bye in todososnumeros_2) {
-       //console.log(monomios[todososnumeros_2[bye]].numero)
+       //console.log(monomios_2[todososnumeros_2[bye]].numero)
    
-       quase = monomios[todososnumeros_2[bye]].numero
+       quase = monomios_2[todososnumeros_2[bye]].numero
        aconta = ''
        elevar = 1
        aster = false
@@ -3112,7 +3112,7 @@ function FATORAR2(expression) {
     relation_2 = []
    
    
-    quanto = Number(monomios.length)/Number(divs_2[okentao])
+    quanto = Number(monomios_2.length)/Number(divs_2[okentao])
    
    
     numapars = []
@@ -3133,7 +3133,7 @@ function FATORAR2(expression) {
    
     ////console.log('util', util)
     
-    for (m in monomios) {
+    for (m in monomios_2) {
         aparic = 0
         ////console.log(m)
         for (t in util) {
@@ -3574,7 +3574,7 @@ function FATORAR2(expression) {
    
     //console.log('util', util)
     
-    for (m in monomios) {
+    for (m in monomios_2) {
         aparic = 0
        ////console.log(m)
         for (t in util) {
@@ -3852,7 +3852,7 @@ function FATORAR2(expression) {
     relation_2 = []
    
    
-    quanto = Number(monomios.length)/Number(divs_2[okentao])
+    quanto = Number(monomios_2.length)/Number(divs_2[okentao])
    
    
     numapars = []
@@ -3873,7 +3873,7 @@ function FATORAR2(expression) {
    
     ////console.log('util', util)
     
-    for (m in monomios) {
+    for (m in monomios_2) {
         aparic = 0
         ////console.log(m)
         for (t in util) {
@@ -4205,7 +4205,7 @@ function FATORAR2(expression) {
    
     //console.log('util', util)
     
-    for (m in monomios) {
+    for (m in monomios_2) {
         aparic = 0
        ////console.log(m)
         for (t in util) {
@@ -4447,7 +4447,7 @@ function FATORAR2(expression) {
    //DESFATORAR(['-','3'],['3'],['1'])
    //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', DIVIDIR(['x'], ['10','x']))
    
- function SOMANDOMONOMIOS(list) {
+ function SOMANDOMONOMIOS_2(list) {
         
 particles = [{numero: ''}]
 obnum = 0
