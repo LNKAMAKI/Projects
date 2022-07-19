@@ -100,14 +100,14 @@ function ir() {
     resultadogeral = FATORAR(expression);
     resultado = resultadogeral[0];
 
-    console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
-    console.log('expression:',resultadogeral[0])
+    //console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
+    //console.log('expression:',resultadogeral[0])
     //console.log('LET\'s SPLIT IT!')
     //res = SPLITEXPS(resultadogeral[0])
     //console.log(res)
     //for (g in res) {
        //FATORAR(res[g].exp)
-     //   console.log(res[g].exp)
+     //console.log(res[g].exp)
    // }
 
     document.getElementById("result").innerHTML = "Resultado:";
@@ -846,7 +846,7 @@ for (bye in monomios) {
    
    if (T.indexOf(egs[n]) != -1) {
    
-      // console.log('TAKE OUT', egs[n])
+      //console.log('TAKE OUT', egs[n])
    T.splice(T.lastIndexOf(egs[n]), 1)
    takeout.push(Number(n))
    }
@@ -859,9 +859,9 @@ for (bye in monomios) {
    
    for (giro = egs.length - 1; giro >= 0; giro--) {
        if (takeout.indexOf(Number(giro)) == -1) {
-      // console.log(egs[giro],'egs[giro]')
+      //console.log(egs[giro],'egs[giro]')
        }else{
-          // console.log('SPLICE')
+          //console.log('SPLICE')
            egs.splice(giro,1)
        }
    }
@@ -869,11 +869,11 @@ for (bye in monomios) {
    //console.log('GIRRRRRRRRRROOOOO', egs)
    depois = ''
    for (n in egs) {
-      // console.log('yo',egs[n])
+      //console.log('yo',egs[n])
            depois += String(egs[n])
    
         if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
-         //  console.log('HUmm')
+         //console.log('HUmm')
            depois+= '*'
         }
    }
@@ -905,7 +905,7 @@ for (bye in monomios) {
            
    
            if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-         // console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
+         //console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
    
           //console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
            if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
@@ -923,12 +923,12 @@ for (bye in monomios) {
              if(ocs2.find(function(ocs2) {
                return ocs2.ed == monomios[m].numero[oc]
                }) == undefined) {
-                // console.log('====================')
+                //console.log('====================')
                    ocs2.push({ed: monomios[m].numero[oc], el: 0})
    
                    ocs = 0
              for (ao = 0; ao < monomios[m].numero.length; ao++) {
-             // console.log('AAAAAAAAAA' + monomios[m].numero[ao])
+             //console.log('AAAAAAAAAA' + monomios[m].numero[ao])
                if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
                    ocs++
                }
@@ -1039,14 +1039,14 @@ for (bye in monomios) {
        ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
        
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              console.log('**********************************************************************esse',repetido[moe], segs)
+              //console.log('**********************************************************************esse',repetido[moe], segs)
 
               podeir = true
               qual = -1
               for (meow in segs) {
                   
-                console.log('')
-                console.log('',segs[meow].car)
+                //console.log('')
+                //console.log('',segs[meow].car)
                
                     array1 = []
                     for (d in segs[meow].car) {
@@ -1061,21 +1061,21 @@ for (bye in monomios) {
                     if (segs[meow].car.length < repetido[moe].letr.length) {
 
                         divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
-                    console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
+                    //console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                      }else{
                          divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
-                    console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
+                    //console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                      }
 
                      if (divisao == '' || divisao == '-') {
-                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
+                        //console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                         podeir = false
                         qual = meow
                      }
                   
               }
 
-              console.log('PODE IR?????????????????????????', podeir, qual)
+              //console.log('PODE IR?????????????????????????', podeir, qual)
                if (podeir == true) {
                 splitUp(repetido[moe].letr);
                     function splitUp(str) {
@@ -1113,33 +1113,33 @@ for (bye in monomios) {
    
    
    for (nl = 0; nl < segs.length; nl++) {
-       console.log('-----------------------------------------------------------------------------------------')
+       //console.log('-----------------------------------------------------------------------------------------')
        
-       console.log(segs[nl])
+       //console.log(segs[nl])
    
-       console.log('AnALISAR CADA ITEM')
-       console.log('nUMERO: ', segs[nl].car)
+       //console.log('AnALISAR CADA ITEM')
+       //console.log('nUMERO: ', segs[nl].car)
        for (n = 0; n < segs.length; n++) {
    
-           console.log('---------------------------------------------------------------------')
+           //console.log('---------------------------------------------------------------------')
            if (n != nl) {
-           console.log(`${segs[n].car}.search('${segs[nl].car}')`, String(segs[n].car).search(String(segs[nl].car)))
+           //console.log(`${segs[n].car}.search('${segs[nl].car}')`, String(segs[n].car).search(String(segs[nl].car)))
            for (dry in segs[nl].car) {
-            console.log('_|(o u o)|_', segs[nl].car[dry])
+            //console.log('_|(o u o)|_', segs[nl].car[dry])
            }
 
            if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
               
-               console.log(`${segs[n].car}: ${segs[n].mons}`)
-               console.log(`${segs[nl].car}: ${segs[nl].mons}`)
+               //console.log(`${segs[n].car}: ${segs[n].mons}`)
+               //console.log(`${segs[nl].car}: ${segs[nl].mons}`)
    
                for (u in segs[n].mons) {
-                   console.log(segs[n].mons[u])
+                   //console.log(segs[n].mons[u])
                    if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
-                       console.log('TEM')
+                       //console.log('TEM')
                    }else{
-                     console.log('nÃO TEM')
-                     console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
+                     //console.log('nÃO TEM')
+                     //console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
                        segs[nl].mons.push(segs[n].mons[u])
                      
                    }
@@ -1226,7 +1226,7 @@ for (bye in monomios) {
       }
    
       its = grtols
-     console.log(its)
+     //console.log(its)
      for (c in its) {
        segsordered.push(its[c])
      }
@@ -1254,30 +1254,30 @@ for (bye in monomios) {
    goaway = []
    for (nah in segs) {
     
-       console.log(segs[nah].car)
+       //console.log(segs[nah].car)
        if (segs[nah].car[0] == '-') {
-        console.log('NEGATIVO')
+        //console.log('NEGATIVO')
         semmenos = ''
         for (memories in segs[nah].car) {
-            console.log(segs[nah].car[memories])
+            //console.log(segs[nah].car[memories])
             if (memories != 0 && memories!= 1){
              semmenos+= segs[nah].car[memories]
             }
         }
-        console.log('pesquisar:', semmenos)
-        console.log(segs.find(function(segs) {return segs.car == semmenos}))
+        //console.log('pesquisar:', semmenos)
+        //console.log(segs.find(function(segs) {return segs.car == semmenos}))
         if (segs.find(function(segs) {return segs.car == semmenos}) != undefined) {
             goaway.push(Number(nah))
         }
        }
    }
-   console.log('TIRAR TUDO')
-   console.log(goaway)
+   //console.log('TIRAR TUDO')
+   //console.log(goaway)
 
    for (time = segs.length - 1; time >= 0; time--) {
-    console.log(time, segs[time])
+    //console.log(time, segs[time])
     if (goaway.indexOf(time) != -1) {
-        console.log('TIRAR')
+        //console.log('TIRAR')
         segs.splice(time, 1)
         }
    }
@@ -1297,13 +1297,13 @@ for (bye in monomios) {
        //const HATEYOU = []
        //for (HATEDEVTOOLS in segs) {
           
-         //  console.log(segs[HATEDEVTOOLS].mons)
+         //console.log(segs[HATEDEVTOOLS].mons)
            //HATEYOU.push(segs[HATEDEVTOOLS])
       // }
        
       //console.log(segs)
       for (tie in segs) {
-      // console.log(segs[tie])
+      //console.log(segs[tie])
        segs[tie].godhelpme = [...segs[tie].mons]
       }
      
@@ -1311,11 +1311,11 @@ for (bye in monomios) {
       // for (okentao in divs) {
            roll = [] 
    
-          // console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
+          //console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
            //const vi = 0
            scarecrow = []
            for(anchor in segs) {
-              // console.log('i feel the light betrayed me', segs[anchor].mons)
+              //console.log('i feel the light betrayed me', segs[anchor].mons)
                
            
                army = []
@@ -1347,12 +1347,12 @@ for (bye in monomios) {
                    }
                }
                bell = [...army]
-              // console.log('OAHAHA', army)
+              //console.log('OAHAHA', army)
    
-              // console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
+              //console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
                
                for (pahh in army) {
-                  // console.log(army[pahh])
+                  //console.log(army[pahh])
                    if (army[pahh] == '*') {
                        army[pahh] = '.'
                    }
@@ -1363,7 +1363,7 @@ for (bye in monomios) {
                   
                    army = [...bell]
             
-                //   console.log(monomios[segs[anchor].mons[high]].numero,army)
+                //console.log(monomios[segs[anchor].mons[high]].numero,army)
            
                
                 lightson = [...army]
@@ -1375,13 +1375,13 @@ for (bye in monomios) {
                   if (lightson.indexOf('-') != -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') == -1) {
    
                       pain = '-1'
-                     // console.log('opa')
+                     //console.log('opa')
                       scarecrow[anchor].divididos.push('1')
                        scarecrow[anchor].outrodiv.push(pain)
                   }else if(lightson.indexOf('-') == -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') != -1) {
                       
                        pain = '-1'
-                     //  console.log('opa')
+                     //console.log('opa')
                        scarecrow[anchor].divididos.push('1')
                        scarecrow[anchor].outrodiv.push(pain)
                   }else{
@@ -1395,20 +1395,20 @@ for (bye in monomios) {
            
                        right = ''
                        for (feet in pain) {
-                         //  console.log(pain[feet])
+                         //console.log(pain[feet])
                            if (pain[feet] != '+') {
                                right+= pain[feet]
                            }
                        }
-                    //   console.log('É ESSE:', right)
+                    //console.log('É ESSE:', right)
                       
                        uy = ''
-                     //  console.log(right, 'RIGHT') 
+                     //console.log(right, 'RIGHT') 
    
                       for (xarope in right) {
-                    //   console.log(right[xarope])
+                    //console.log(right[xarope])
                        if (xarope == 0 && right[xarope] == '*') { // *2
-                      //   console.log('ERRADO!', '*2')
+                      //console.log('ERRADO!', '*2')
                        }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
                      // //console.log('ERRADO', '2*')
                        }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
@@ -1455,7 +1455,7 @@ for (bye in monomios) {
           quantosfatores = Number(monomios.length)/Number(divs[okentao])
           quantasposições = Number(monomios.length)/Number(quantosfatores)
    
-         // console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
+         //console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
    
    // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
    
@@ -1498,7 +1498,7 @@ for (bye in monomios) {
                 return roller.rept == repwri;
               }) == undefined
             ) {
-              console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
+              //console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
               roller.push({
                 rept: repwri,
                 opl: [...repeated],
@@ -1539,41 +1539,41 @@ for (bye in monomios) {
     }
   }
    for (r in roller) {
-       console.log(roller[r].opl, roller[r].position, roller[r].rept)
+       //console.log(roller[r].opl, roller[r].position, roller[r].rept)
        roll.push({repetidos: roller[r].opl, posições: roller[r].position, way: roller[r].rept})
    }
    while(java < miss.length && deucerto == false) {
               
              // if (miss[java].aparicoes.length >= quantasposições) {
-           //    console.log('')
-        //   console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
+           //console.log('')
+        //console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
    
            podeser = []
            for (outro in miss) {
-              // console.log('')
+              //console.log('')
                if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-               //   console.log(miss[outro], outro)
+               //console.log(miss[outro], outro)
    
                    presentes = []
                    for (quecoisa in miss[outro].aparicoes) {
                        fatorzinho = miss[outro].aparicoes[quecoisa]
-                    //   console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
+                    //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
    
                        if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    //   console.log('TEM', fatorzinho)
+                    //console.log('TEM', fatorzinho)
                            presentes.push(fatorzinho)
                        }
                    }
-                 //  console.log('OLHA', presentes)
+                 //console.log('OLHA', presentes)
    
                    adicionou = false
                    for (idk in podeser) {
-                    //   console.log(podeser[idk])
+                    //console.log(podeser[idk])
                        esigual = true
                        for (denovo in podeser[idk].opl) {
-                          // console.log(podeser[idk].opl[denovo], presentes[denovo])
+                          //console.log(podeser[idk].opl[denovo], presentes[denovo])
                            if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                              // console.log('É IGUAL')
+                              //console.log('É IGUAL')
                            }else{
                                esigual = false
                            }
@@ -1604,10 +1604,10 @@ for (bye in monomios) {
                    //console.log(podeser[belief].opl[gun])
                    shot+= podeser[belief].opl[gun] + ','
                }
-              // console.log('THAT WE LET IT GO:', shot)
+              //console.log('THAT WE LET IT GO:', shot)
    
                if (roll.length == 0) {
-                  // console.log('ADICIONAR(LISTA VAZIA)')
+                  //console.log('ADICIONAR(LISTA VAZIA)')
                    //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                    //console.log('JÁ TEM')
@@ -1616,7 +1616,7 @@ for (bye in monomios) {
                    for (capital in podeser[belief].position) {
                        //console.log(podeser[belief].position[capital])
    
-                     // console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+                     //console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
    
                    if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                       //console.log('NÃO TEM') 
@@ -1638,15 +1638,15 @@ for (bye in monomios) {
    
                   for(cold in podeser) {
               if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
-              // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+              //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
                deucerto = true
    
                ficaassim = ''
               // podeser[cold].position.push(whyis)
    
                for (yehaa in podeser[cold].position) {
-                 //  console.log(podeser[cold])
-                  // console.log(miss[podeser[cold].position[yehaa]].dividido)
+                 //console.log(podeser[cold])
+                  //console.log(miss[podeser[cold].position[yehaa]].dividido)
                    if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
                        
                        fi = ''
@@ -1655,7 +1655,7 @@ for (bye in monomios) {
                                fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
                            }
                        }
-                     //  console.log(fi)
+                     //console.log(fi)
                        if (yehaa != 0) {
                             ficaassim += ` - ${fi}`
                        }else{
@@ -1670,15 +1670,15 @@ for (bye in monomios) {
                    
                
                }
-              // console.log('FICA ASSIM', `(${ficaassim})`)
+              //console.log('FICA ASSIM', `(${ficaassim})`)
               for (ruin in podeser[cold].opl) {
-             //  console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
+             //console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
                emotion = ''
                for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
               ////console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
                    emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
                }
-             //  console.log(`${emotion}(${ficaassim})`)
+             //console.log(`${emotion}(${ficaassim})`)
              }
               }
            }
@@ -1687,7 +1687,7 @@ for (bye in monomios) {
    
             //  }
               
-            //  console.log('continuar', miss[java])
+            //console.log('continuar', miss[java])
    
               java++
           }
@@ -1696,11 +1696,11 @@ for (bye in monomios) {
    
           /*
           for (nao in roll) {
-             // console.log('-------------------------------------------------------------------')
-          // console.log('esse é o negócio',roll[nao].repetidos)
+             //console.log('-------------------------------------------------------------------')
+          //console.log('esse é o negócio',roll[nao].repetidos)
            
-          // console.log('---------------------------------------------')
-         //  console.log('ANALISANDO O MISS')
+          //console.log('---------------------------------------------')
+         //console.log('ANALISANDO O MISS')
    
           
                shot = ''
@@ -1715,29 +1715,29 @@ for (bye in monomios) {
                for (heat in miss[whyso].aparicoes) {
                    //console.log(miss[whyso].aparicoes[heat])
                    if (roll[nao].repetidos.indexOf(miss[whyso].aparicoes[heat]) != -1) {
-                     //  console.log('TEM')
+                     //console.log('TEM')
                        igual++
                    }
                }
-              // console.log('HÁ', igual, 'numero repetidos')
+              //console.log('HÁ', igual, 'numero repetidos')
                if (igual == roll[nao].repetidos.length) {
-                  // console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
-                     // console.log(roll.find(function (roll){return roll.way == shot}).posições)
+                  //console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
+                     //console.log(roll.find(function (roll){return roll.way == shot}).posições)
    
                       if (roll.find(function (roll){return roll.way == shot}).posições.indexOf(whyso) != -1) {
                        //console.log('NAO ADICIONAR, JÁ TEM')
                    }else{
-                     //  console.log('ADICIONAR EFETIVAMENTE')
+                     //console.log('ADICIONAR EFETIVAMENTE')
                        roll.find(function (roll){return roll.way == shot}).posições.push(whyso)
                    }
                }
-                 // console.log('THAT WE LET IT GO:', shot)
+                 //console.log('THAT WE LET IT GO:', shot)
                   
                }
            }
            */
           
-         //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
+         //console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll)
    
    
          //console.log('PARAR PARA ANALISAR')
@@ -1773,14 +1773,14 @@ for (bye in monomios) {
    
            if (jafoi.indexOf(tosse) == -1) {
                organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-          // console.log('___________________________________________')
-          // console.log(tosse, arranjar[tosse].ocupa)
-         //  console.log('')
+          //console.log('___________________________________________')
+          //console.log(tosse, arranjar[tosse].ocupa)
+         //console.log('')
          
            for (calor in arranjar) {
        
                if (calor != tosse) {
-                  // console.log('------------------------------')
+                  //console.log('------------------------------')
                    //console.log(calor, arranjar[calor].ocupa)
    
                    equals = true
@@ -1788,17 +1788,17 @@ for (bye in monomios) {
                    for (boring in arranjar[calor].ocupa) {
                        sendocomparado = arranjar[calor].ocupa[boring]
                        comparador= arranjar[tosse].ocupa[boring]
-                     //  console.log(sendocomparado, '=>', comparador)
-                      // console.log(sendocomparado[0],'==', comparador[0])
+                     //console.log(sendocomparado, '=>', comparador)
+                      //console.log(sendocomparado[0],'==', comparador[0])
                        if (sendocomparado[0] != comparador[0]) {
-                         //  console.log(true)
+                         //console.log(true)
                            igualar.push(true)
                        }else{
-                          // console.log(false)
+                          //console.log(false)
                            igualar.push(false)
                        }
                    }
-                  // console.log('igualar:', igualar)
+                  //console.log('igualar:', igualar)
                    if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
                        //console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`,tosse, calor)                     
                        jafoi.push(calor)
@@ -1811,7 +1811,7 @@ for (bye in monomios) {
        }
        }
        
-      // console.log(roll[ne].posições)
+      //console.log(roll[ne].posições)
        for (youchoose in perfectwave) {
            //console.log('_______________________________________',perfectwave[youchoose].agrupar)
            //console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
@@ -1821,15 +1821,15 @@ for (bye in monomios) {
                //console.log('-----------------------------------------------------------')
                presa = perfectwave[youchoose].agrupar[catraca]
              
-              // console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
-              // console.log(scarecrow[arranjar[presa].origin].divisor)
+              //console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
+              //console.log(scarecrow[arranjar[presa].origin].divisor)
    
                diferente = false
                for (moon in roll[ne].posições) {
    
-                  // console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[arranjar[presa].origin].divididos)
+                  //console.log(roll[ne].posições[moon], miss[roll[ne].posições[moon]].dividido, scarecrow[arranjar[presa].origin].divididos)
                    vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
-                  // console.log(vaiir, ficarassim[moon])
+                  //console.log(vaiir, ficarassim[moon])
                    if (vaiir != ficarassim[moon]) {
                        diferente = true
    
@@ -1841,7 +1841,7 @@ for (bye in monomios) {
        
                  
                }
-              // console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
+              //console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
                if (diferente == true) {
                    //console.log('ALTERAR...', scarecrow[arranjar[presa].origin].divisor)
    
@@ -1850,10 +1850,10 @@ for (bye in monomios) {
                        //console.log('aff... >:')
                        modificar = ['-','.']
                        for (saved in lista) {
-                          // console.log(lista[saved])
+                          //console.log(lista[saved])
                            modificar.push(lista[saved])
                        }
-                      // console.log(modificar)
+                      //console.log(modificar)
                        scarecrow[arranjar[presa].origin].divisor = modificar
                    }else{
                        lista.splice(0,2)
@@ -1863,7 +1863,7 @@ for (bye in monomios) {
        }
          }
    
-        // console.log('OKAY, LET\'S DO IT!')
+        //console.log('OKAY, LET\'S DO IT!')
          for (sei in scarecrow) {
            //console.log(scarecrow[sei].divididos)
            
@@ -1966,7 +1966,7 @@ for (bye in monomios) {
   }
 
   for (r in roller) {
-    console.log(roller[r].opl, roller[r].position, roller[r].rept)
+    //console.log(roller[r].opl, roller[r].position, roller[r].rept)
     roll.push({repetidos: roller[r].opl, posições: roller[r].position, way: roller[r].rept})
 }
 
@@ -1975,7 +1975,7 @@ for (bye in monomios) {
    
          podeser = []
          for (outro in miss) {
-            // console.log('')
+            //console.log('')
              if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
                 //console.log(miss[outro].aparicoes, outro)
    
@@ -1993,12 +1993,12 @@ for (bye in monomios) {
    
                  adicionou = false
                  for (idk in podeser) {
-                    // console.log(podeser[idk])
+                    //console.log(podeser[idk])
                      esigual = true
                      for (denovo in podeser[idk].opl) {
                          //console.log(podeser[idk].opl[denovo], presentes[denovo])
                          if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                            // console.log('É IGUAL')
+                            //console.log('É IGUAL')
                          }else{
                              esigual = false
                          }
@@ -2014,7 +2014,7 @@ for (bye in monomios) {
                  
              }
             }
-           // console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
+           //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
             
             
             for (belief in podeser) {
@@ -2029,10 +2029,10 @@ for (bye in monomios) {
                  //console.log(podeser[belief].opl[gun])
                  shot+= podeser[belief].opl[gun] + ','
              }
-            // console.log('THAT WE LET IT GO:', shot)
+            //console.log('THAT WE LET IT GO:', shot)
    
              if (roll.length == 0) {
-                // console.log('ADICIONAR(LISTA VAZIA)')
+                //console.log('ADICIONAR(LISTA VAZIA)')
                  //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
              }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                  //console.log('JÁ TEM')
@@ -2041,7 +2041,7 @@ for (bye in monomios) {
                  for (capital in podeser[belief].position) {
                      //console.log(podeser[belief].position[capital])
    
-                   // console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
+                   //console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
    
                  if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
                     //console.log('NÃO TEM') 
@@ -2063,14 +2063,14 @@ for (bye in monomios) {
    
                 for(cold in podeser) {
             if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
-            // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+            //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
              deucerto = true
    
              ficaassim = ''
              podeser[cold].position.push(whyis)
    
              for (yehaa in podeser[cold].position) {
-                // console.log(podeser[cold])
+                //console.log(podeser[cold])
                  //console.log(miss[podeser[cold].position[yehaa]].dividido)
                  if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
                      
@@ -2080,7 +2080,7 @@ for (bye in monomios) {
                              fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
                          }
                      }
-                    // console.log(fi)
+                    //console.log(fi)
                      if (yehaa != 0) {
                           ficaassim += ` - ${fi}`
                      }else{
@@ -2097,13 +2097,13 @@ for (bye in monomios) {
              }
              //console.log('FICA ASSIM', `(${ficaassim})`)
             for (ruin in podeser[cold].opl) {
-            // console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
+            //console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
              emotion = ''
              for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-           // console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
+           //console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
                  emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
              }
-            // console.log(`${emotion}(${ficaassim})`)
+            //console.log(`${emotion}(${ficaassim})`)
            }
             }
          }
@@ -2131,8 +2131,8 @@ for (bye in monomios) {
            
                obe = {what:[]}
    
-             //  console.log('')
-              // console.log(roll[raging].repetidos, roll[raging].posições)
+             //console.log('')
+              //console.log(roll[raging].repetidos, roll[raging].posições)
    
               
            
@@ -2140,8 +2140,8 @@ for (bye in monomios) {
                asitwas2 = []
                aswillbe = []
    
-              //    console.log('')
-            //   console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
+              //console.log('')
+            //console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
    
                mylife = '('
                for (still2 in roll[raging].posições) {
@@ -2153,7 +2153,7 @@ for (bye in monomios) {
                    }
    
                  
-                 //  console.log(miss[roll[raging].posições[still2]].dividido)
+                 //console.log(miss[roll[raging].posições[still2]].dividido)
    
                    conseguiu = false
                    older = 0
@@ -2167,7 +2167,7 @@ for (bye in monomios) {
                    
                    function DESFATORAR(correto, eg2, eg) {
    
-                   //    console.log('eg', eg)
+                   //console.log('eg', eg)
    
                    eassim = []
                    solo = ''
@@ -2198,13 +2198,13 @@ for (bye in monomios) {
                    
                    
                    whythat = [...eg]
-                 //  console.log(correto)
+                 //console.log(correto)
                  /*
                    for (ponto in eg2) {
-                     //  console.log(eg2[ponto])
+                     //console.log(eg2[ponto])
                        if (eg2[ponto] != '.') {
                        whythat.push(eg2[ponto])
-                     //  console.log('I FOLLOW YOu')
+                     //console.log('I FOLLOW YOu')
                        }
                    }
                    */
@@ -2263,8 +2263,8 @@ for (bye in monomios) {
                        }
                    }
    
-         // console.log('MULTIPLICAR', eg2,'*',eg)
-          // console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+         //console.log('MULTIPLICAR', eg2,'*',eg)
+          //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                    
                    numerinhos = []
                    for (decisao in correto) {
@@ -2329,7 +2329,7 @@ for (bye in monomios) {
            
    
          //console.log('ASITWAS',asitwas, asitwas2, aswillbe)
-             // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
+             //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
 
 
               obe.what.push({ar: asitwas2, indice: still})
@@ -2390,7 +2390,7 @@ for (bye in monomios) {
    
        
    for (hi in youdumb) {
-      // console.log(segs[hi], segs[hi].mons.length)
+      //console.log(segs[hi], segs[hi].mons.length)
        youdumb[hi].length = youdumb[hi].mons.length
    
        grtols.push(youdumb[hi])
@@ -2423,7 +2423,7 @@ for (bye in monomios) {
    /*
    for (yourlife in grtols) {
    
-       console.log(grtols[yourlife].w.what)
+       //console.log(grtols[yourlife].w.what)
    
        for (bolinho in grtols[yourlife].w.what) {
       //console.log(grtols[yourlife].w.what[bolinho])
@@ -2468,7 +2468,7 @@ for (bye in monomios) {
 
    heya = [...youdumb]
    for (imback in youdumb) {
-      // console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
+      //console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
    
        sticky = []
        initial = youdumb[imback].w.what
@@ -2489,7 +2489,7 @@ for (bye in monomios) {
    
            taai = false
             for (eng in initial[agg].ar) {
-              // console.log(initial[agg].ar[eng])
+              //console.log(initial[agg].ar[eng])
                if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
               //console.log('OK')
                   
@@ -2543,29 +2543,29 @@ for (bye in monomios) {
    
            if (h != imback) {
                if (youdumb[h].w.what.length > 0) {
-         //  console.log(youdumb[h].w.what, h)
+         //console.log(youdumb[h].w.what, h)
                }
    
            //console.log('-----------------------------')
            for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
-           //  console.log(youdumb[h].w.what[tempo].ar, tempo)
+           //console.log(youdumb[h].w.what[tempo].ar, tempo)
                
                dulu = false
                
               for (and in youdumb[h].w.what[tempo].ar) {
-              // console.log(youdumb[h].w.what[tempo].ar[and])
+              //console.log(youdumb[h].w.what[tempo].ar[and])
                if (numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[and]) != -1) {
-                 //  console.log('ESTÁ EM: ', numerospresentes)
+                 //console.log('ESTÁ EM: ', numerospresentes)
                    dulu = true
                }
               }
               if (dulu == false) {
-             //  console.log('PODE FICAR :)', h, tempo)
+             //console.log('PODE FICAR :)', h, tempo)
               }else{
             ////console.log('NÃO PODE!!!!!!!!!!!!!')
              // youdumb[h].w.what.splice(tempo, 1)
              //imback++
-         //    console.log('IMBAACK',imback)
+         //console.log('IMBAACK',imback)
               }
           }
        }
@@ -2575,13 +2575,13 @@ for (bye in monomios) {
    
      
     
-      // console.log('OLHA, eu tentei...', youdumb.length)
+      //console.log('OLHA, eu tentei...', youdumb.length)
        for (vixi in youdumb) {
         
         // if (youdumb[vixi].w.what.length > 0) {
-          // console.log('aaa',youdumb[vixi].w.what)
+          //console.log('aaa',youdumb[vixi].w.what)
            for (ainao in youdumb[vixi].w.what) {
-           // console.log('AI NÃO',youdumb[vixi].w.what[ainao].ar)
+           //console.log('AI NÃO',youdumb[vixi].w.what[ainao].ar)
            
              
        }
@@ -2589,18 +2589,18 @@ for (bye in monomios) {
    }
    
    for (força in youdumb) {
-      // console.log(força, youdumb[força],youdumb[força].w.what.length)
+      //console.log(força, youdumb[força],youdumb[força].w.what.length)
        entao = []
        for (areo in youdumb[força].w.what) {
-          // console.log(areo,youdumb[força].w.what[areo].ar)
+          //console.log(areo,youdumb[força].w.what[areo].ar)
            for (paris in youdumb[força].w.what[areo].ar) {
-              // console.log(paris,youdumb[força].w.what[areo].ar[paris])
+              //console.log(paris,youdumb[força].w.what[areo].ar[paris])
                entao.push(Number(youdumb[força].w.what[areo].ar[paris]))
            }
        }
-      // console.log(entao)
+      //console.log(entao)
        youdumb[força].t = entao
-      // console.log(youdumb[força].t)
+      //console.log(youdumb[força].t)
     }
    
    //console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
@@ -2632,7 +2632,7 @@ for (bye in monomios) {
    
    youdumb = []
    for (erro in grtols) {
-      // console.log('RAINY DAY',grtols[erro])
+      //console.log('RAINY DAY',grtols[erro])
        youdumb.push(grtols[erro])
    }
    
@@ -2641,7 +2641,7 @@ for (bye in monomios) {
    }
    
    }
-   console.log('pans é', pans)
+   //console.log('pans é', pans)
    concatenar = ''
    numsdesfat = []
    newexpress = []
@@ -2679,7 +2679,7 @@ for (bye in monomios) {
    */
            teri = false
            juntar = ''
-         //  console.log('NADAAAAAAAAAA')
+         //console.log('NADAAAAAAAAAA')
            for (estudar in el) {
           //console.log(el[estudar])
                if (el[estudar] == '*') {
@@ -2726,7 +2726,7 @@ for (bye in monomios) {
             if (teri == false) {
                
                quase = []
-             //  console.log('SEM ASTERISCO')
+             //console.log('SEM ASTERISCO')
                for (t in el) {
                quase.push(el[t])
                }
@@ -2743,8 +2743,8 @@ for (bye in monomios) {
               
                if (quase[patience] == '*') {
                    aster = true
-                  // console.log('AND THE CLSDADWDWD', patience)
-                  // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                  //console.log('AND THE CLSDADWDWD', patience)
+                  //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
@@ -2765,33 +2765,33 @@ for (bye in monomios) {
                        elevar++
    
                        if (patience == quase.length - 1) {
-                         //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                         //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta+= `^${elevar}`
-                          // console.log(aconta)
+                          //console.log(aconta)
                        }
    
                    }else{
                      
                        if (elevar > 1) {
-                          // console.log('UEPA')
+                          //console.log('UEPA')
                            aconta+= `^${elevar}`
                            
                        }
    
                        aconta+= quase[patience]
                    
-                      // console.log(aconta)
+                      //console.log(aconta)
                      
                        elevar = 1
                    }
-                 //  console.log(elevar)
+                 //console.log(elevar)
                   
                } 
            }
          
            //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
            if (aster == false) {
-           // console.log('<<<<<<<<<<<<<',quase)
+           //console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
             for (h in quase) {
                     direitando+= quase[h]
@@ -2801,18 +2801,18 @@ for (bye in monomios) {
 
 
        if (aster == false) {
-        //   console.log('SEM ASTERISCO',aconta)
+        //console.log('SEM ASTERISCO',aconta)
            antes = ''
            for (eyes in quase) {
                
-              // console.log(quase[eyes])
+              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  // console.log('CRY')
+                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
            antes+= aconta
-          // console.log('ANTEEEES:', antes)
+          //console.log('ANTEEEES:', antes)
            
            aconta = antes
         
@@ -2827,12 +2827,12 @@ for (bye in monomios) {
                
                   negativo = true
                if (aconta[0] == '-') {
-                //   console.log('PROBLEM')
+                //console.log('PROBLEM')
                    mood = ''
                    for (member in aconta) {
                        //console.log('VAMOS LOGO!!!', aconta[member])
                        if (aconta[member] != '-') {
-                          // console.log('PUSHAR')
+                          //console.log('PUSHAR')
                            mood+= aconta[member]
                        }
                    }
@@ -2846,9 +2846,9 @@ for (bye in monomios) {
                }else{
                    negativo = false
                    tobreak+= aconta
-                  // console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
+                  //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
                    for (now in aconta) {
-                   // console.log(aconta[now])
+                   //console.log(aconta[now])
                    }
                }
            }else if(quase[0]== '-'){
@@ -2856,26 +2856,26 @@ for (bye in monomios) {
             negativo = true
                correct = ''
                for (okay in aconta) {
-                  // console.log(el[okay])
+                  //console.log(el[okay])
                    if (aconta[okay]!= '-'){
                        correct+= aconta[okay]
-                     //  console.log('MESS', aconta[okay])
+                     //console.log('MESS', aconta[okay])
                    }
                }
-              // console.log('ASSIM: ', correct)
+              //console.log('ASSIM: ', correct)
                tobreak+= ` - ${correct}`
                //console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
                negativo = false
-             //  console.log(el)
+             //console.log(el)
                tobreak+= ` + ${aconta}`
                //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
            }
-          // console.log('THE COLOURS THAT I SAW', tobreak)
+          //console.log('THE COLOURS THAT I SAW', tobreak)
 
 
-         // console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
-          // console.log(amontoado)
+         //console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
+          //console.log(amontoado)
            
            if (negativo == true) {
           
@@ -2897,7 +2897,7 @@ for (bye in monomios) {
    
        for (repr in pans[bababa].which) {
            
-        //  console.log(' ')
+        //console.log(' ')
            //console.log(pans[bababa].which[repr].monos, pans[bababa].which[repr].numberwhat, Number(repr))
             //console.log('repetidos(não fixo) - scarecrow: ',roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat], scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor)
    
@@ -2905,14 +2905,14 @@ for (bye in monomios) {
             //console.log(triste)
    
             quase = []
-           // console.log(quase, 'k')
+           //console.log(quase, 'k')
             juntar = ''
             teri = false
             for (estudar in triste) {
-             //  console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
+             //console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
                //console.log('asasasa',triste[estudar])
                ohjeez = triste[Number(estudar) - 1] != '-'
-             //  console.log(ohjeez)
+             //console.log(ohjeez)
                if (triste[estudar] == '.') {
                    teri = true
                    if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
@@ -2920,48 +2920,48 @@ for (bye in monomios) {
                        quase.push(juntar)
                        juntar = ''
                    quase.push('*')
-                 //  console.log(quase)
+                 //console.log(quase)
                    }
                }else{
                   
                    //quase.push(triste[estudar])
-                // console.log('juntar',juntar)
+                //console.log('juntar',juntar)
                    if (juntar.length == 0) {
                        juntar = triste[estudar]
-                      // console.log('LISTA VAZIA', juntar)
+                      //console.log('LISTA VAZIA', juntar)
    
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
                        }
-                      // console.log('MENMEN',quase)
+                      //console.log('MENMEN',quase)
    
                    }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
    
-                    //  console.log('I\'M NEVER WHAT I LIKE')
+                    //console.log('I\'M NEVER WHAT I LIKE')
                        juntar+= triste[estudar]
-                    //   console.log('juntar', juntar)
+                    //console.log('juntar', juntar)
                        if (estudar == triste.length - 1) {
-                        //  console.log('UAISO')
+                        //console.log('UAISO')
                            quase.push(juntar)
-                        //   console.log(quase)
+                        //console.log(quase)
                        }
                    }else{
                        quase.push(juntar)
                        juntar= triste[estudar]
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
-                         //  console.log(quase)
+                         //console.log(quase)
                        }
                    }
                }
                  
             }
-           // console.log('MAIS RÁPIDO',quase)
+           //console.log('MAIS RÁPIDO',quase)
    
             if (teri == false) {
                
                quase = []
-            //  console.log('SEM ASTERISCO')
+            //console.log('SEM ASTERISCO')
                for (t in triste) {
                quase.push(triste[t])
                }
@@ -2993,7 +2993,7 @@ for (bye in monomios) {
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  // console.log('É LETRA', quase[patience])
+                  //console.log('É LETRA', quase[patience])
                     friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                        //console.log('ELEVAR!')
@@ -3024,7 +3024,7 @@ for (bye in monomios) {
            //console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
 
            if (aster == false) {
-            // console.log('<<<<<<<<<<<<<',quase)
+            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -3034,25 +3034,25 @@ for (bye in monomios) {
 
            if (aster == false) {
              
-              // console.log('SEM ASTERISCO2', aconta, quase)
+              //console.log('SEM ASTERISCO2', aconta, quase)
    
                antes = ''
            for (eyes in quase) {
                
-              // console.log(quase[eyes])
+              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  // console.log('CRY')
+                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
            antes+= aconta
-          // console.log('ANTEEEES:', antes)
+          //console.log('ANTEEEES:', antes)
               // for (t in quase) {
               // aconta+= quase[t]
              //  }
              aconta = antes
            }
-          // console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
+          //console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
    
           edge.push(aconta)
 
@@ -3096,15 +3096,15 @@ for (bye in monomios) {
            concatenar+= ' + '
        }
        if (edge.length > 1) {
-       console.log('                                ','( ',naonao,' )','( ',tobreak,' )','                         ')
+       //console.log('                                ','( ',naonao,' )','( ',tobreak,' )','                         ')
        concatenar+= `( ${naonao} )( ${tobreak} )`
        }else{
-           console.log('                            ',naonao,'( ',tobreak,' )','                          ')
+           //console.log('                            ',naonao,'( ',tobreak,' )','                          ')
            concatenar+= `${naonao}( ${tobreak} )`
        }
 
-       console.log('ESSE É O AMONTOADO', amontoado)
-       console.log('ESSE É O AMOUNT', amount)
+       //console.log('ESSE É O AMONTOADO', amontoado)
+       //console.log('ESSE É O AMOUNT', amount)
 
      
    // FAZENDO A CONTA
@@ -3113,22 +3113,22 @@ for (bye in monomios) {
 
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
-        console.log(primeirocaso[0], 'continua igual')
+        //console.log(primeirocaso[0], 'continua igual')
         
       }else{
 
           mudou = true
-          console.log(amount,'=>',primeirocaso[0])
+          //console.log(amount,'=>',primeirocaso[0])
          
       }
    
 
       if (segundocaso[1] == segundocaso[2]) {
-        console.log(segundocaso[0], 'continua igual')
+        //console.log(segundocaso[0], 'continua igual')
       }else{
 
           mudou = true
-        console.log(amontoado,'=>',segundocaso[0])
+        //console.log(amontoado,'=>',segundocaso[0])
         
       }
 
@@ -3138,14 +3138,14 @@ for (bye in monomios) {
         naonao = primeirocaso[0]
         tobreak = segundocaso[0] 
 
-      console.log('')
-      console.log('SOMANDO FICA ASSIM:')
+      //console.log('')
+      //console.log('SOMANDO FICA ASSIM:')
 
-      console.log('')
+      //console.log('')
 
       reason = []
       for (k in naonao) {
-      // console.log(k, naonao[k])
+      //console.log(k, naonao[k])
         if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
             deserve = naonao[k - 1]
             reason.push(k - 1)
@@ -3155,7 +3155,7 @@ for (bye in monomios) {
         }
       }
 
-    //  console.log('reason')
+    //console.log('reason')
      
    for (time = naonao.length - 1; time >= 0; time--) {
     //console.log(time, naonao[time])
@@ -3173,32 +3173,32 @@ for (bye in monomios) {
             deserve = tobreak[k - 1]
             deserve+= tobreak[k]
             reason.push(k - 1)
-           // console.log('anterior:',deserve)
+           //console.log('anterior:',deserve)
            tobreak[k] = deserve
         }
       }
 
-     // console.log('reason')
+     //console.log('reason')
       for (time = tobreak.length - 1; time >= 0; time--) {
-      //  console.log(time, tobreak[time])
+      //console.log(time, tobreak[time])
         if (reason.indexOf(time) != -1) {
-           // console.log('TIRAR')
+           //console.log('TIRAR')
             tobreak.splice(time, 1)
             }
        }
       //console.log('', tobreak)
 
-      console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
+      //console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
 
-      console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
+      //console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
       for (roberto in naonao) {
-          console.log('---------------------------------------------------------------______')
-        console.log(naonao[roberto])
+          //console.log('---------------------------------------------------------------______')
+        //console.log(naonao[roberto])
         
         for (vaidarcerto in tobreak) {
-            console.log(tobreak[vaidarcerto])
+            //console.log(tobreak[vaidarcerto])
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
-            console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
+            //console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
             console.warn(newexpress)
             if (novomon[0] == '-') {
                 miya = ''
@@ -3207,7 +3207,7 @@ for (bye in monomios) {
                         miya+= novomon[n]                 
                        }
                 }
-                console.log(miya)
+                //console.log(miya)
                 newexpress.push('-')
                 newexpress.push(miya)
             }else{
@@ -3232,66 +3232,66 @@ for (bye in monomios) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros = []
     for (acaba in monomios) {
-       // console.log(acaba)
+       //console.log(acaba)
         todososnumeros.push(acaba)
     }
 
     for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
-        // console.log(todososnumeros[feliz])
+        //console.log(todososnumeros[feliz])
          if (numsdesfat.indexOf(Number(todososnumeros[feliz])) != -1) {
             todososnumeros.splice(feliz, 1)
          }
  }
-    console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios( tem', monomios.length, 'ao todo):',todososnumeros)
+    //console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios( tem', monomios.length, 'ao todo):',todososnumeros)
     for (eh in todososnumeros) {
-        console.log(todososnumeros[eh], monomios[todososnumeros[eh]].numero)
+        //console.log(todososnumeros[eh], monomios[todososnumeros[eh]].numero)
 
         join = ''
         for (sempresei in monomios[todososnumeros[eh]].numero) {
             if (monomios[todososnumeros[eh]].numero[sempresei] != '+' && monomios[todososnumeros[eh]].numero[sempresei] != '-') {
             ter = monomios[todososnumeros[eh]].numero[sempresei]
-            console.log(ter)
+            //console.log(ter)
             join+= ter
             }
         }
         if (monomios[todososnumeros[eh]].numero[0] == '+') {
-            console.log('MAIS')
+            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }else if(monomios[todososnumeros[eh]].numero[0] == '-') {
-            console.log('MENOS')
+            //console.log('MENOS')
             newexpress.push('-')
             newexpress.push(join)
         }else{
-            console.log('MAIS')
+            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }
-        console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
+        //console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
     }
 
-    console.log('_____________________________________________newexpression:_____________________________________________ ')
-        console.log(newexpress)
-        console.log('_______________________________________________________________________________________   _______________')
+    //console.log('_____________________________________________newexpression:_____________________________________________ ')
+        //console.log(newexpress)
+        //console.log('_______________________________________________________________________________________   _______________')
 
         FATORAR(newexpress)
    }else{
 
-   console.log('VENDO OS QUE FALTAM:')
-   console.log(numerospresentes)
+   //console.log('VENDO OS QUE FALTAM:')
+   //console.log(numerospresentes)
    todososnumeros = []
    for (acaba in monomios) {
-      // console.log(acaba)
+      //console.log(acaba)
        todososnumeros.push(acaba)
    }
    cancelar = []
    for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
-          // console.log(todososnumeros[feliz])
+          //console.log(todososnumeros[feliz])
            if (numerospresentes.indexOf(Number(todososnumeros[feliz])) != -1) {
               todososnumeros.splice(feliz, 1)
    }
    }
-   console.log(todososnumeros)
+   //console.log(todososnumeros)
    
    for (bye in todososnumeros) {
        //console.log(monomios[todososnumeros[bye]].numero)
@@ -3310,14 +3310,14 @@ for (bye in monomios) {
            
             if (quase[patience] == '*') {
                 aster = true
-               // console.log('AND THE CLSDADWDWD', patience)
-               // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+               //console.log('AND THE CLSDADWDWD', patience)
+               //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-              //  console.log(gates, fazerConta(gates))
+              //console.log(gates, fazerConta(gates))
    
-             //  console.log(quase, Number(patience) + 1)
+             //console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
               
@@ -3330,30 +3330,30 @@ for (bye in monomios) {
                     elevar++
    
                     if (patience == quase.length - 1) {
-                      //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                      //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                       // console.log(aconta)
+                       //console.log(aconta)
                     }
    
                 }else{
                     if (elevar > 1) {
-                       // console.log('UEPA')
+                       //console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
    
                     aconta+= quase[patience]
-                   // console.log(aconta)
+                   //console.log(aconta)
                   
                     elevar = 1
                 }
-              //  console.log(elevar)
+              //console.log(elevar)
                
             } 
         }
         
         if (aster == false) {
-            // console.log('<<<<<<<<<<<<<',quase)
+            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -3361,25 +3361,25 @@ for (bye in monomios) {
              friend = direitando
             }
     if (aster == false) {
-     //   console.log('SEM ASTERISCO',aconta)
+     //console.log('SEM ASTERISCO',aconta)
         antes = ''
         for (eyes in quase) {
             
-           // console.log(quase[eyes])
+           //console.log(quase[eyes])
             if (quase[eyes].search('[0-9]') != -1) {
-               // console.log('CRY')
+               //console.log('CRY')
                 antes+= quase[eyes]
             }
         }
         antes+= aconta
-       // console.log('ANTEEEES:', antes)
+       //console.log('ANTEEEES:', antes)
         
         aconta = antes
     }
-    console.log('A CONTA',aconta, quase)
+    //console.log('A CONTA',aconta, quase)
    
     if (bye == 0) {
-       console.log('PRIMEIRO')
+       //console.log('PRIMEIRO')
        if (concatenar.length > 0) {
            if (quase[0] == '-') {
                concatenar+= ` - ${aconta}`
@@ -3403,7 +3403,7 @@ for (bye in monomios) {
    }
 }
    
-   console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
+   //console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
 
    if (pans.length == 1 && todososnumeros.length == 0) {
     //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
@@ -3441,8 +3441,8 @@ for (bye in monomios) {
    posições = []
    y = 0
    while (posições.length < monomios.length) {
-       console.log('-------------------------------------')
-       console.log(y, heya[y].w.what, heya[y].mons)
+       //console.log('-------------------------------------')
+       //console.log(y, heya[y].w.what, heya[y].mons)
        vai.push(heya[y].mons)
    
        for (uh in heya[y].mons) {
@@ -3472,8 +3472,8 @@ for (bye in monomios) {
    
    
    for (yehaa in podeser[cold].position) {
-       console.log(podeser[cold])
-       console.log(miss[podeser[cold].position[yehaa]].dividido)
+       //console.log(podeser[cold])
+       //console.log(miss[podeser[cold].position[yehaa]].dividido)
        if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
            
            fi = ''
@@ -3497,15 +3497,15 @@ for (bye in monomios) {
        
    
    }
-   console.log('FICA ASSIM', `(${ficaassim})`)
+   //console.log('FICA ASSIM', `(${ficaassim})`)
    for (ruin in podeser[cold].opl) {
-   console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
+   //console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
    emotion = ''
    for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-       console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
+       //console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
        emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
    }
-   console.log(`${emotion}(${ficaassim})`)
+   //console.log(`${emotion}(${ficaassim})`)
    }
    */
    
@@ -3580,7 +3580,7 @@ for (bye in monomios) {
    
        for (uf in par) {
        
-          // console.log(segs[uf].godhelpme)
+          //console.log(segs[uf].godhelpme)
           // segs2.push(segs[uf])
          //  segs[tie].godhelpme = [...segs[tie].mons]
          segs2[uf] = {}
@@ -3661,7 +3661,7 @@ for (bye in monomios) {
             ////console.log('')
            //console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
-              //  console.log('FALTA')
+              //console.log('FALTA')
                 present.falt.push(lista[g])
    
                
@@ -3678,7 +3678,7 @@ for (bye in monomios) {
         
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-          //  console.log(present.falt[ti])
+          //console.log(present.falt[ti])
    
            
    
@@ -3696,7 +3696,7 @@ for (bye in monomios) {
     relation[r].car = segs2[r].car
     
     }
-    console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
+    //console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
     for (c in relation) {
         ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation[c].fix.length > 0) {
@@ -3756,24 +3756,24 @@ for (bye in monomios) {
    conts = []
    for (yougo in relation) {
    if (relation[yougo].fix.length > 0) {
-   console.log(relation[yougo].fix)
+   //console.log(relation[yougo].fix)
    
    for (pals in relation[yougo].fix) {
-    console.log(relation[yougo].fix[pals])
+    //console.log(relation[yougo].fix[pals])
     conts.push(relation[yougo].fix[pals])
    }
    groups++
    }
    }
    
-   console.log('divs é igual a ', divs[okentao])
-   console.log('groups é igual a', groups)
+   //console.log('divs é igual a ', divs[okentao])
+   //console.log('groups é igual a', groups)
    
    
    if (groups < divs[okentao]) {
     //console.log('DEU CERTO!!!EBAAAAAA')
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    ////console.log(relation)
    
@@ -3781,7 +3781,7 @@ for (bye in monomios) {
    conts = []
    for (yougo in relation) {
    if (relation[yougo].fix.length > 0) {
-   console.log(relation[yougo].fix)
+   //console.log(relation[yougo].fix)
    
    for (pals in relation[yougo].fix) {
     ////console.log(relation[yougo].fix[pals])
@@ -3812,20 +3812,20 @@ for (bye in monomios) {
    
    //console.log('break', segs2[die].mons)
    for (h in segs2[die].mons) {
-   console.log(segs2[die].mons[h])
+   //console.log(segs2[die].mons[h])
    if (tirados.indexOf(segs2[die].mons[h]) != -1) {
    tirar.push(Number(h))
    }
    }
 
-   console.log('tirar de ',segs2[die].mons, tirar)
+   //console.log('tirar de ',segs2[die].mons, tirar)
 
    for (far = tirar.length - 1; far >= 0; far--) {
-       console.log(segs[die].mons[tirar[far]])
+       //console.log(segs[die].mons[tirar[far]])
    segs2[die].mons.splice(tirar[far], 1)
    
    }
-   console.log('ficou assim:', segs2[die].mons)
+   //console.log('ficou assim:', segs2[die].mons)
    }
    
    for (sorrow in segs2) {
@@ -3844,7 +3844,7 @@ for (bye in monomios) {
            //console.log('TIRADOS')
       //console.log(segs2[sorrow].mons[imor])
    
-       console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
+       //console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
    
               if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                   ob.problem = true
@@ -3858,7 +3858,7 @@ for (bye in monomios) {
        }
       
       
-       console.log('In THE EnD', ob)
+       //console.log('In THE EnD', ob)
    
        //console.log(segs2)
        //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
@@ -3877,7 +3877,7 @@ for (bye in monomios) {
    for (nah = relation.length - 1; nah >= 0; nah--) {
         // if (relation[nah].fix.length > 0) {
              
-    // console.log('fix',relation[nah].fix)
+    //console.log('fix',relation[nah].fix)
    
      //console.log('---VEnDO TODA A LISTA---')
      for (nop in relation) {
@@ -3910,9 +3910,9 @@ for (bye in monomios) {
    
      for (nah = relation.length - 1; nah >= 0; nah--) {
          //console.log('dream',nah, relation[nah])
-        // console.log(males)
+        //console.log(males)
        if (males.indexOf(nah) != -1) {
-         //  console.log('HEY')
+         //console.log('HEY')
            relation.splice(nah, 1)
        }
      }
@@ -3920,21 +3920,21 @@ for (bye in monomios) {
      numerosquetem = []
      for (nah in relation) {
          if (relation[nah].fix.length > 0) {
-       //  console.log(relation[nah].fix)
+       //console.log(relation[nah].fix)
    
          for (nop in relation[nah].fix) {
-          //   console.log(relation[nah].fix[nop])
+          //console.log(relation[nah].fix[nop])
              numerosquetem.push(relation[nah].fix[nop])
          }
          }
      }
-     console.log('----------------------------------------------------------------')
+     //console.log('----------------------------------------------------------------')
    
      segs2 = []
    
      for (uf in par) {
      
-        // console.log(segs[uf].godhelpme)
+        //console.log(segs[uf].godhelpme)
         // segs2.push(segs[uf])
        //  segs[tie].godhelpme = [...segs[tie].mons]
        segs2[uf] = {}
@@ -3958,7 +3958,7 @@ for (bye in monomios) {
    
        for (uf in relation) {
        
-          // console.log(segs[uf].godhelpme)
+          //console.log(segs[uf].godhelpme)
           // segs2.push(segs[uf])
          //  segs[tie].godhelpme = [...segs[tie].mons]
          fireonfire[uf] = {}
@@ -3967,19 +3967,19 @@ for (bye in monomios) {
    
     }
    
-    console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
-    console.log(doit2(segs2)[0])
-    console.log(fireonfire)
+    //console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
+    //console.log(doit2(segs2)[0])
+    //console.log(fireonfire)
    
     //console.log('relation', relation)
     for (red in fireonfire) {
-      // console.log(fireonfire[red])
+      //console.log(fireonfire[red])
        relation.push({fix: fireonfire[red].mons, car: fireonfire[red].car})
     }
    
    }else if(groups > divs[okentao]){
        
-   console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+   //console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
     ////console.log('números que têm: ', conts)
     ////console.log(segs)
    
@@ -4188,7 +4188,7 @@ for (bye in monomios) {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation)
    
@@ -4285,7 +4285,7 @@ for (bye in monomios) {
    
    }
    }
-   console.log('aaaaaaaaaaaaaaaaaaaaaaaa',segs2, relation)
+   //console.log('aaaaaaaaaaaaaaaaaaaaaaaa',segs2, relation)
    return [relation, segs2]
    }
    
@@ -4326,7 +4326,7 @@ for (bye in monomios) {
    
        for (uf in par) {
        
-          // console.log(segs[uf].godhelpme)
+          //console.log(segs[uf].godhelpme)
           // segs2.push(segs[uf])
          //  segs[tie].godhelpme = [...segs[tie].mons]
          segs2[uf] = {}
@@ -4525,29 +4525,29 @@ for (bye in monomios) {
    conts = []
    for (yougo in relation) {
    if (relation[yougo].fix.length > 0) {
-   console.log(relation[yougo].fix)
+   //console.log(relation[yougo].fix)
    
    for (pals in relation[yougo].fix) {
-   console.log(relation[yougo].fix[pals])
+   //console.log(relation[yougo].fix[pals])
     conts.push(relation[yougo].fix[pals])
    }
    groups++
    }
    }
-   console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[okentao], 'and', groups)
+   //console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[okentao], 'and', groups)
    if (divs[okentao] != groups) {
-   console.log('THEn WHY ARE WE LAUGHInG?')
-   console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
+   //console.log('THEn WHY ARE WE LAUGHInG?')
+   //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
    
    tirados = []
    for (wish in relation) {
-   // console.log(relation[wish].fix)
+   //console.log(relation[wish].fix)
     for (edge in relation[wish].fix) {
-   //    console.log(relation[wish].fix[edge])
+   //console.log(relation[wish].fix[edge])
        tirados.push(relation[wish].fix[edge])
     }
    }
-   console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
+   //console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
    
    
    
@@ -4563,7 +4563,7 @@ for (bye in monomios) {
    }
    //console.log('tirar de ',segs2[die].mons, tirar)
    for (far = tirar.length - 1; far >= 0; far--) {
-      // console.log(segs[die].mons[tirar[far]])
+      //console.log(segs[die].mons[tirar[far]])
    segs2[die].mons.splice(tirar[far], 1)
    
    }
@@ -4630,7 +4630,7 @@ for (bye in monomios) {
    if (mcr != idk) {
    
        //////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-     // console.log('outro',segs[mcr].mons)
+     //console.log('outro',segs[mcr].mons)
       
       //console.log(segs[idk].mons.length)
        if (segs2[mcr].mons.length <= segs2[idk].mons.length) {
@@ -4639,14 +4639,14 @@ for (bye in monomios) {
       for(y = 0; y < segs2[mcr].mons.length; y++) {
        //  //console.log(segs[idk].mons, segs[mcr].mons[y], segs[idk].mons.indexOf(segs[mcr].mons[y]))
            if (segs2[idk].mons.indexOf(segs2[mcr].mons[y]) != -1) {
-          //   console.log('igual')
+          //console.log('igual')
                sames.push('igual')
            }else{
-           //  console.log('diferente')
+           //console.log('diferente')
                sames.push('diferente')
            }
       }
-   // console.log(sames)
+   //console.log(sames)
       if (sames.indexOf('diferente') == -1){
     //console.log('TIRAR', segs[mcr])
    
@@ -4654,7 +4654,7 @@ for (bye in monomios) {
        mia.push(mcr)
        }
        
-    //  console.log(segs)
+    //console.log(segs)
        
       }
    }
@@ -4804,7 +4804,7 @@ for (bye in monomios) {
         for (hu in outrorel.fix) {
           //  //console.log(outrorel.fix[hu])
             if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-           // console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
+           //console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
                 ////console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
@@ -4825,7 +4825,7 @@ for (bye in monomios) {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation)
    
@@ -4851,11 +4851,11 @@ for (bye in monomios) {
    for (wish in relation) {
     //console.log(relation[wish].fix)
     for (edge in relation[wish].fix) {
-      // console.log(relation[wish].fix[edge])
+      //console.log(relation[wish].fix[edge])
        tirados.push(relation[wish].fix[edge])
     }
    }
-   console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
+   //console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
    
    
    for (die in segs2) {
@@ -4878,7 +4878,7 @@ for (bye in monomios) {
    }
    
    for (sorrow in segs2) {
-   console.log(segs2[sorrow].mons)
+   //console.log(segs2[sorrow].mons)
    grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
    //console.log('dá para formar', grupos,'grupos')
    
@@ -4890,15 +4890,15 @@ for (bye in monomios) {
        ob = {car: segs2[sorrow].car, fix: [],problem:false}
    
        for (live = 0; live < quanto; live++) {
-         //  console.log('TIRADOS')
-        //   console.log(segs2[sorrow].mons[imor])
+         //console.log('TIRADOS')
+        //console.log(segs2[sorrow].mons[imor])
    
-       //   console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
+       //console.log(tirados.indexOf(segs2[sorrow].mons[imor]) == -1) 
    
               if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                    //ob.problem = true
               }
-            //   console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
+            //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
            ob.fix.push(segs2[sorrow].mons[imor])
            tirados.push(segs2[sorrow].mons[imor])
            imor++
@@ -4923,7 +4923,7 @@ for (bye in monomios) {
    }
    }
    
-   console.log('HELLO')
+   //console.log('HELLO')
    
    
    return [relation, segs2]
@@ -4953,7 +4953,7 @@ particles[obnum].numero += list[n]
 
 
 for (huh in particles) {
-   // console.log('HUH',particles[huh].numero)
+   //console.log('HUH',particles[huh].numero)
 
     partlet = ''
     for (y in particles[huh].numero) {
@@ -4964,7 +4964,7 @@ for (huh in particles) {
      }
     }
     particles[huh].partletral = partlet
-   // console.log('PARTLETRAL',particles[huh].partletral)
+   //console.log('PARTLETRAL',particles[huh].partletral)
 }
 
 
@@ -4976,18 +4976,18 @@ for (bye in particles) {
     ground = ''
 
     for (misery in particles[bye].numero) { 
-     // console.log(particles[bye].numero[misery])
+     //console.log(particles[bye].numero[misery])
         
         carac = particles[bye].numero[misery]
        //console.log('CARACTER' + carac)
       //console.log(ground.length)
 
-      // console.log('OH COME On',ground, String(ground.search('[0-9]')))
+      //console.log('OH COME On',ground, String(ground.search('[0-9]')))
             if (ground.length == 0) {
-               // console.log('LISTA VAZIA')
+               //console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-               // console.log('É UM nÚMERO')
+               //console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
@@ -5000,7 +5000,7 @@ for (bye in particles) {
             }
     }
 
-   // console.log('COMOFICA', comofica)
+   //console.log('COMOFICA', comofica)
     ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',particles[bye].numero)
     particles[bye].numero = comofica
 }
@@ -5033,7 +5033,7 @@ for (huh in particles) {
 
 for (chuva in agruparsoma) {
     //console.log('')
-   // console.log('')
+   //console.log('')
     //console.log('')
 
     conta = []
@@ -5080,7 +5080,7 @@ add+= resultadoDaDivisão[past]
     
     
 }
-// console.log('ADD', add)
+//console.log('ADD', add)
 //console.log('PLAn É:', plan)
 
 if (plan.length == 3) {
@@ -5147,15 +5147,15 @@ if (comehome[0][0] == '-') {
      t+= comehome[0][b]
    }
    }
-  // console.log(t)
+  //console.log(t)
    //console.log(typeof t)
    at = t
    if (ehprimo(t) == false) {
       //console.log(at)
    fat = FATORARSInGULAR(at)
-  // console.log(String(fat))
+  //console.log(String(fat))
    }else{
-     // console.log('É PRIMOOOOOOOOOOOOOOOOO')
+     //console.log('É PRIMOOOOOOOOOOOOOOOOO')
     fat = at
    }
    oop = '-'
@@ -5185,7 +5185,7 @@ if (exp.length == 0) {
         exp.push('+')
         fat += agruparsoma[chuva].que
         exp.push(fat)
-      //  console.log('PARTE LETRAL:', agruparsoma[chuva].que)
+      //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
     }
 }
 
@@ -5297,7 +5297,7 @@ function MULTIPLICARDIREITO(num1, num2) {
     
 
     if (num1 == '1' || num2 == '1') {
-        console.log('É 1')
+        //console.log('É 1')
         if (num1 == '1') {
             resultmult = num2
         }else{
@@ -5396,13 +5396,13 @@ function sort(n) {
     return [maiorparamenor, posiçõesnumeros]
 }
 
-console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
+//console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
 
 
 return [concatenar, segs.length]
 }
 
-console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'))
+//console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'))
 function VAI(str) {
 
     
@@ -5956,7 +5956,7 @@ function FATORE(q) {
    
    if (T.indexOf(egs[n]) != -1) {
    
-      // console.log('TAKE OUT', egs[n])
+      //console.log('TAKE OUT', egs[n])
    T.splice(T.lastIndexOf(egs[n]), 1)
    takeout.push(Number(n))
    }
@@ -5969,9 +5969,9 @@ function FATORE(q) {
    
    for (giro = egs.length - 1; giro >= 0; giro--) {
        if (takeout.indexOf(Number(giro)) == -1) {
-      // console.log(egs[giro],'egs[giro]')
+      //console.log(egs[giro],'egs[giro]')
        }else{
-          // console.log('SPLICE')
+          //console.log('SPLICE')
            egs.splice(giro,1)
        }
    }
@@ -5979,11 +5979,11 @@ function FATORE(q) {
    //console.log('GIRRRRRRRRRROOOOO', egs)
    depois = ''
    for (n in egs) {
-      // console.log('yo',egs[n])
+      //console.log('yo',egs[n])
            depois += String(egs[n])
    
         if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
-         //  console.log('HUmm')
+         //console.log('HUmm')
            depois+= '*'
         }
    }
@@ -6015,7 +6015,7 @@ function FATORE(q) {
            
    
            if (monomios_2[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-         // console.log('LETRA OU nÚMERO ISOLADO: ' + monomios_2[m].numero[oc])
+         //console.log('LETRA OU nÚMERO ISOLADO: ' + monomios_2[m].numero[oc])
    
           //console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios_2[m].numero[oc]))
            if (numerosrep.indexOf(monomios_2[m].numero[oc]) == -1) {
@@ -6033,12 +6033,12 @@ function FATORE(q) {
              if(ocs2.find(function(ocs2) {
                return ocs2.ed == monomios_2[m].numero[oc]
                }) == undefined) {
-                // console.log('====================')
+                //console.log('====================')
                    ocs2.push({ed: monomios_2[m].numero[oc], el: 0})
    
                    ocs = 0
              for (ao = 0; ao < monomios_2[m].numero.length; ao++) {
-             // console.log('AAAAAAAAAA' + monomios_2[m].numero[ao])
+             //console.log('AAAAAAAAAA' + monomios_2[m].numero[ao])
                if (monomios_2[m].numero[ao] == monomios_2[m].numero[oc]) {
                    ocs++
                }
@@ -6149,14 +6149,14 @@ function FATORE(q) {
        ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
        
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              console.log('**********************************************************************esse',repetido[moe], segs_2)
+              //console.log('**********************************************************************esse',repetido[moe], segs_2)
 
               podeir = true
               qual = -1
               for (meow in segs_2) {
                   
-                console.log('')
-                console.log('',segs_2[meow].car)
+                //console.log('')
+                //console.log('',segs_2[meow].car)
                
                     array1 = []
                     for (d in segs_2[meow].car) {
@@ -6171,21 +6171,21 @@ function FATORE(q) {
                     if (segs_2[meow].car.length < repetido[moe].letr.length) {
 
                         divisao =  DIVIDIR(VAI(segs_2[meow].car), VAI(repetido[moe].letr))
-                    console.log('DIVIDIR', segs_2[meow].car, 'por', repetido[moe].letr, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
+                    //console.log('DIVIDIR', segs_2[meow].car, 'por', repetido[moe].letr, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                      }else{
                          divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs_2[meow].car))
-                    console.log('DIVIDIR', repetido[moe].letr, 'por', segs_2[meow].car, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
+                    //console.log('DIVIDIR', repetido[moe].letr, 'por', segs_2[meow].car, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                      }
 
                      if (divisao == '' || divisao == '-') {
-                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
+                        //console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                         podeir = false
                         qual = meow
                      }
                   
               }
 
-              console.log('PODE IR?????????????????????????', podeir, qual)
+              //console.log('PODE IR?????????????????????????', podeir, qual)
                if (podeir == true) {
                 splitUp(repetido[moe].letr);
                     function splitUp(str) {
@@ -6223,33 +6223,33 @@ function FATORE(q) {
    
    
    for (nl = 0; nl < segs_2.length; nl++) {
-       console.log('-----------------------------------------------------------------------------------------')
+       //console.log('-----------------------------------------------------------------------------------------')
        
-       console.log(segs_2[nl])
+       //console.log(segs_2[nl])
    
-       console.log('AnALISAR CADA ITEM')
-       console.log('nUMERO: ', segs_2[nl].car)
+       //console.log('AnALISAR CADA ITEM')
+       //console.log('nUMERO: ', segs_2[nl].car)
        for (n = 0; n < segs_2.length; n++) {
    
-           console.log('---------------------------------------------------------------------')
+           //console.log('---------------------------------------------------------------------')
            if (n != nl) {
-           console.log(`${segs_2[n].car}.search('${segs_2[nl].car}')`, String(segs_2[n].car).search(String(segs_2[nl].car)))
+           //console.log(`${segs_2[n].car}.search('${segs_2[nl].car}')`, String(segs_2[n].car).search(String(segs_2[nl].car)))
            for (dry in segs_2[nl].car) {
-            console.log('_|(o u o)|_', segs_2[nl].car[dry])
+            //console.log('_|(o u o)|_', segs_2[nl].car[dry])
            }
 
            if (String(segs_2[n].car).search(String(segs_2[nl].car)) != -1) {
               
-               console.log(`${segs_2[n].car}: ${segs_2[n].mons}`)
-               console.log(`${segs_2[nl].car}: ${segs_2[nl].mons}`)
+               //console.log(`${segs_2[n].car}: ${segs_2[n].mons}`)
+               //console.log(`${segs_2[nl].car}: ${segs_2[nl].mons}`)
    
                for (u in segs_2[n].mons) {
-                   console.log(segs_2[n].mons[u])
+                   //console.log(segs_2[n].mons[u])
                    if (segs_2[nl].mons.indexOf(segs_2[n].mons[u]) != -1) {
-                       console.log('TEM')
+                       //console.log('TEM')
                    }else{
-                     console.log('nÃO TEM')
-                     console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs_2[nl].mons)
+                     //console.log('nÃO TEM')
+                     //console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs_2[nl].mons)
                        segs_2[nl].mons.push(segs_2[n].mons[u])
                      
                    }
@@ -6336,7 +6336,7 @@ function FATORE(q) {
       }
    
       its = grtols_2
-     console.log(its)
+     //console.log(its)
      for (c in its) {
        segs_2ordered.push(its[c])
      }
@@ -6364,30 +6364,30 @@ function FATORE(q) {
    goaway = []
    for (nah in segs_2) {
     
-       console.log(segs_2[nah].car)
+       //console.log(segs_2[nah].car)
        if (segs_2[nah].car[0] == '-') {
-        console.log('NEGATIVO')
+        //console.log('NEGATIVO')
         semmenos = ''
         for (memories in segs_2[nah].car) {
-            console.log(segs_2[nah].car[memories])
+            //console.log(segs_2[nah].car[memories])
             if (memories != 0 && memories!= 1){
              semmenos+= segs_2[nah].car[memories]
             }
         }
-        console.log('pesquisar:', semmenos)
-        console.log(segs_2.find(function(segs_2) {return segs_2.car == semmenos}))
+        //console.log('pesquisar:', semmenos)
+        //console.log(segs_2.find(function(segs_2) {return segs_2.car == semmenos}))
         if (segs_2.find(function(segs_2) {return segs_2.car == semmenos}) != undefined) {
             goaway.push(Number(nah))
         }
        }
    }
-   console.log('TIRAR TUDO')
-   console.log(goaway)
+   //console.log('TIRAR TUDO')
+   //console.log(goaway)
 
    for (time = segs_2.length - 1; time >= 0; time--) {
-    console.log(time, segs_2[time])
+    //console.log(time, segs_2[time])
     if (goaway.indexOf(time) != -1) {
-        console.log('TIRAR')
+        //console.log('TIRAR')
         segs_2.splice(time, 1)
         }
    }
@@ -6407,13 +6407,13 @@ function FATORE(q) {
        //const HATEYOU = []
        //for (HATEDEVTOOLS in segs_2) {
           
-         //  console.log(segs_2[HATEDEVTOOLS].mons)
+         //console.log(segs_2[HATEDEVTOOLS].mons)
            //HATEYOU.push(segs_2[HATEDEVTOOLS])
       // }
        
       //console.log(segs_2)
       for (tie in segs_2) {
-      // console.log(segs_2[tie])
+      //console.log(segs_2[tie])
        segs_2[tie].godhelpme = [...segs_2[tie].mons]
       }
      
@@ -6421,11 +6421,11 @@ function FATORE(q) {
       // for (okentao in divs_2) {
            roll_2 = [] 
    
-          // console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
+          //console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
            //const vi = 0
            scarecrow_2 = []
            for(anchor in segs_2) {
-              // console.log('i feel the light betrayed me', segs_2[anchor].mons)
+              //console.log('i feel the light betrayed me', segs_2[anchor].mons)
                
            
                army = []
@@ -6457,12 +6457,12 @@ function FATORE(q) {
                    }
                }
                bell = [...army]
-              // console.log('OAHAHA', army)
+              //console.log('OAHAHA', army)
    
-              // console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
+              //console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
                
                for (pahh in army) {
-                  // console.log(army[pahh])
+                  //console.log(army[pahh])
                    if (army[pahh] == '*') {
                        army[pahh] = '.'
                    }
@@ -6473,7 +6473,7 @@ function FATORE(q) {
                   
                    army = [...bell]
             
-                //   console.log(monomios_2[segs_2[anchor].mons[high]].numero,army)
+                //console.log(monomios_2[segs_2[anchor].mons[high]].numero,army)
            
                
                 lightson = [...army]
@@ -6485,13 +6485,13 @@ function FATORE(q) {
                   if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) {
    
                       pain = '-1'
-                     // console.log('opa')
+                     //console.log('opa')
                       scarecrow_2[anchor].divididos.push('1')
                        scarecrow_2[anchor].outrodiv.push(pain)
                   }else if(lightson.indexOf('-') == -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') != -1) {
                       
                        pain = '-1'
-                     //  console.log('opa')
+                     //console.log('opa')
                        scarecrow_2[anchor].divididos.push('1')
                        scarecrow_2[anchor].outrodiv.push(pain)
                   }else{
@@ -6505,20 +6505,20 @@ function FATORE(q) {
            
                        right = ''
                        for (feet in pain) {
-                         //  console.log(pain[feet])
+                         //console.log(pain[feet])
                            if (pain[feet] != '+') {
                                right+= pain[feet]
                            }
                        }
-                    //   console.log('É ESSE:', right)
+                    //console.log('É ESSE:', right)
                       
                        uy = ''
-                     //  console.log(right, 'RIGHT') 
+                     //console.log(right, 'RIGHT') 
    
                       for (xarope in right) {
-                    //   console.log(right[xarope])
+                    //console.log(right[xarope])
                        if (xarope == 0 && right[xarope] == '*') { // *2
-                      //   console.log('ERRADO!', '*2')
+                      //console.log('ERRADO!', '*2')
                        }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
                      // //console.log('ERRADO', '2*')
                        }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
@@ -6565,7 +6565,7 @@ function FATORE(q) {
           quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao])
           quantasposições = Number(monomios_2.length)/Number(quantosfatores)
    
-         // console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
+         //console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
    
    // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
    
@@ -6649,41 +6649,41 @@ function FATORE(q) {
     }
   }
    for (r in roller_2) {
-       console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
+       //console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
        roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
    }
    while(java < miss_2.length && deucerto == false) {
               
              // if (miss_2[java].aparicoes.length >= quantasposições) {
-           //    console.log('')
-        //   console.log('SEnDO AnALISADO nO MOMEnTO', miss_2[java].aparicoes)
+           //console.log('')
+        //console.log('SEnDO AnALISADO nO MOMEnTO', miss_2[java].aparicoes)
    
            podeser_2 = []
            for (outro in miss_2) {
-              // console.log('')
+              //console.log('')
                if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
-               //   console.log(miss_2[outro], outro)
+               //console.log(miss_2[outro], outro)
    
                    presentes = []
                    for (quecoisa in miss_2[outro].aparicoes) {
                        fatorzinho = miss_2[outro].aparicoes[quecoisa]
-                    //   console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss_2[java].aparicoes)
+                    //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss_2[java].aparicoes)
    
                        if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    //   console.log('TEM', fatorzinho)
+                    //console.log('TEM', fatorzinho)
                            presentes.push(fatorzinho)
                        }
                    }
-                 //  console.log('OLHA', presentes)
+                 //console.log('OLHA', presentes)
    
                    adicionou = false
                    for (idk in podeser_2) {
-                    //   console.log(podeser_2[idk])
+                    //console.log(podeser_2[idk])
                        esigual = true
                        for (denovo in podeser_2[idk].opl) {
-                          // console.log(podeser_2[idk].opl[denovo], presentes[denovo])
+                          //console.log(podeser_2[idk].opl[denovo], presentes[denovo])
                            if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
-                              // console.log('É IGUAL')
+                              //console.log('É IGUAL')
                            }else{
                                esigual = false
                            }
@@ -6714,10 +6714,10 @@ function FATORE(q) {
                    //console.log(podeser_2[belief].opl[gun])
                    shot+= podeser_2[belief].opl[gun] + ','
                }
-              // console.log('THAT WE LET IT GO:', shot)
+              //console.log('THAT WE LET IT GO:', shot)
    
                if (roll_2.length == 0) {
-                  // console.log('ADICIONAR(LISTA VAZIA)')
+                  //console.log('ADICIONAR(LISTA VAZIA)')
                    //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
                }else if(roll_2.find(function(roll_2){return roll_2.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                    //console.log('JÁ TEM')
@@ -6726,7 +6726,7 @@ function FATORE(q) {
                    for (capital in podeser_2[belief].position) {
                        //console.log(podeser_2[belief].position[capital])
    
-                     // console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
+                     //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
    
                    if (roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital])== -1) {
                       //console.log('NÃO TEM') 
@@ -6748,15 +6748,15 @@ function FATORE(q) {
    
                   for(cold in podeser_2) {
               if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
-              // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+              //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
                deucerto = true
    
                ficaassim = ''
               // podeser_2[cold].position.push(whyis)
    
                for (yehaa in podeser_2[cold].position) {
-                 //  console.log(podeser_2[cold])
-                  // console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
+                 //console.log(podeser_2[cold])
+                  //console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
                    if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
                        
                        fi = ''
@@ -6765,7 +6765,7 @@ function FATORE(q) {
                                fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
                            }
                        }
-                     //  console.log(fi)
+                     //console.log(fi)
                        if (yehaa != 0) {
                             ficaassim += ` - ${fi}`
                        }else{
@@ -6780,15 +6780,15 @@ function FATORE(q) {
                    
                
                }
-              // console.log('FICA ASSIM', `(${ficaassim})`)
+              //console.log('FICA ASSIM', `(${ficaassim})`)
               for (ruin in podeser_2[cold].opl) {
-             //  console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
+             //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
                emotion = ''
                for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor ) {
               ////console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
                    emotion+= scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream]
                }
-             //  console.log(`${emotion}(${ficaassim})`)
+             //console.log(`${emotion}(${ficaassim})`)
              }
               }
            }
@@ -6797,7 +6797,7 @@ function FATORE(q) {
    
             //  }
               
-            //  console.log('continuar', miss_2[java])
+            //console.log('continuar', miss_2[java])
    
               java++
           }
@@ -6806,11 +6806,11 @@ function FATORE(q) {
    
           /*
           for (nao in roll_2) {
-             // console.log('-------------------------------------------------------------------')
-          // console.log('esse é o negócio',roll_2[nao].repetidos)
+             //console.log('-------------------------------------------------------------------')
+          //console.log('esse é o negócio',roll_2[nao].repetidos)
            
-          // console.log('---------------------------------------------')
-         //  console.log('ANALISANDO O MISS')
+          //console.log('---------------------------------------------')
+         //console.log('ANALISANDO O MISS')
    
           
                shot = ''
@@ -6825,29 +6825,29 @@ function FATORE(q) {
                for (heat in miss_2[whyso].aparicoes) {
                    //console.log(miss_2[whyso].aparicoes[heat])
                    if (roll_2[nao].repetidos.indexOf(miss_2[whyso].aparicoes[heat]) != -1) {
-                     //  console.log('TEM')
+                     //console.log('TEM')
                        igual++
                    }
                }
-              // console.log('HÁ', igual, 'numero repetidos')
+              //console.log('HÁ', igual, 'numero repetidos')
                if (igual == roll_2[nao].repetidos.length) {
-                  // console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
-                     // console.log(roll_2.find(function (roll_2){return roll_2.way == shot}).posições)
+                  //console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
+                     //console.log(roll_2.find(function (roll_2){return roll_2.way == shot}).posições)
    
                       if (roll_2.find(function (roll_2){return roll_2.way == shot}).posições.indexOf(whyso) != -1) {
                        //console.log('NAO ADICIONAR, JÁ TEM')
                    }else{
-                     //  console.log('ADICIONAR EFETIVAMENTE')
+                     //console.log('ADICIONAR EFETIVAMENTE')
                        roll_2.find(function (roll_2){return roll_2.way == shot}).posições.push(whyso)
                    }
                }
-                 // console.log('THAT WE LET IT GO:', shot)
+                 //console.log('THAT WE LET IT GO:', shot)
                   
                }
            }
            */
           
-         //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll_2)
+         //console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll_2)
    
    
          //console.log('PARAR PARA ANALISAR')
@@ -6883,14 +6883,14 @@ function FATORE(q) {
    
            if (jafoi.indexOf(tosse) == -1) {
                organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-          // console.log('___________________________________________')
-          // console.log(tosse, arranjar[tosse].ocupa)
-         //  console.log('')
+          //console.log('___________________________________________')
+          //console.log(tosse, arranjar[tosse].ocupa)
+         //console.log('')
          
            for (calor in arranjar) {
        
                if (calor != tosse) {
-                  // console.log('------------------------------')
+                  //console.log('------------------------------')
                    //console.log(calor, arranjar[calor].ocupa)
    
                    equals = true
@@ -6898,17 +6898,17 @@ function FATORE(q) {
                    for (boring in arranjar[calor].ocupa) {
                        sendocomparado = arranjar[calor].ocupa[boring]
                        comparador= arranjar[tosse].ocupa[boring]
-                     //  console.log(sendocomparado, '=>', comparador)
-                      // console.log(sendocomparado[0],'==', comparador[0])
+                     //console.log(sendocomparado, '=>', comparador)
+                      //console.log(sendocomparado[0],'==', comparador[0])
                        if (sendocomparado[0] != comparador[0]) {
-                         //  console.log(true)
+                         //console.log(true)
                            igualar.push(true)
                        }else{
-                          // console.log(false)
+                          //console.log(false)
                            igualar.push(false)
                        }
                    }
-                  // console.log('igualar:', igualar)
+                  //console.log('igualar:', igualar)
                    if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
                        //console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`,tosse, calor)                     
                        jafoi.push(calor)
@@ -6921,7 +6921,7 @@ function FATORE(q) {
        }
        }
        
-      // console.log(roll_2[ne].posições)
+      //console.log(roll_2[ne].posições)
        for (youchoose in perfectwave) {
            //console.log('_______________________________________',perfectwave[youchoose].agrupar)
            //console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
@@ -6931,15 +6931,15 @@ function FATORE(q) {
                //console.log('-----------------------------------------------------------')
                presa = perfectwave[youchoose].agrupar[catraca]
              
-              // console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
-              // console.log(scarecrow_2[arranjar[presa].origin].divisor)
+              //console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
+              //console.log(scarecrow_2[arranjar[presa].origin].divisor)
    
                diferente = false
                for (moon in roll_2[ne].posições) {
    
-                  // console.log(roll_2[ne].posições[moon], miss_2[roll_2[ne].posições[moon]].dividido, scarecrow_2[arranjar[presa].origin].divididos)
+                  //console.log(roll_2[ne].posições[moon], miss_2[roll_2[ne].posições[moon]].dividido, scarecrow_2[arranjar[presa].origin].divididos)
                    vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
-                  // console.log(vaiir, ficarassim[moon])
+                  //console.log(vaiir, ficarassim[moon])
                    if (vaiir != ficarassim[moon]) {
                        diferente = true
    
@@ -6951,7 +6951,7 @@ function FATORE(q) {
        
                  
                }
-              // console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
+              //console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
                if (diferente == true) {
                    //console.log('ALTERAR...', scarecrow_2[arranjar[presa].origin].divisor)
    
@@ -6960,10 +6960,10 @@ function FATORE(q) {
                        //console.log('aff... >:')
                        modificar = ['-','.']
                        for (saved in lista) {
-                          // console.log(lista[saved])
+                          //console.log(lista[saved])
                            modificar.push(lista[saved])
                        }
-                      // console.log(modificar)
+                      //console.log(modificar)
                        scarecrow_2[arranjar[presa].origin].divisor = modificar
                    }else{
                        lista.splice(0,2)
@@ -6973,7 +6973,7 @@ function FATORE(q) {
        }
          }
    
-        // console.log('OKAY, LET\'S DO IT!')
+        //console.log('OKAY, LET\'S DO IT!')
          for (sei in scarecrow_2) {
            //console.log(scarecrow_2[sei].divididos)
            
@@ -7076,7 +7076,7 @@ function FATORE(q) {
   }
 
   for (r in roller_2) {
-    console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
+    //console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
     roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
 }
 
@@ -7085,7 +7085,7 @@ function FATORE(q) {
    
          podeser_2 = []
          for (outro in miss_2) {
-            // console.log('')
+            //console.log('')
              if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
                 //console.log(miss_2[outro].aparicoes, outro)
    
@@ -7103,12 +7103,12 @@ function FATORE(q) {
    
                  adicionou = false
                  for (idk in podeser_2) {
-                    // console.log(podeser_2[idk])
+                    //console.log(podeser_2[idk])
                      esigual = true
                      for (denovo in podeser_2[idk].opl) {
                          //console.log(podeser_2[idk].opl[denovo], presentes[denovo])
                          if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
-                            // console.log('É IGUAL')
+                            //console.log('É IGUAL')
                          }else{
                              esigual = false
                          }
@@ -7124,7 +7124,7 @@ function FATORE(q) {
                  
              }
             }
-           // console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser_2)
+           //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser_2)
             
             
             for (belief in podeser_2) {
@@ -7139,10 +7139,10 @@ function FATORE(q) {
                  //console.log(podeser_2[belief].opl[gun])
                  shot+= podeser_2[belief].opl[gun] + ','
              }
-            // console.log('THAT WE LET IT GO:', shot)
+            //console.log('THAT WE LET IT GO:', shot)
    
              if (roll_2.length == 0) {
-                // console.log('ADICIONAR(LISTA VAZIA)')
+                //console.log('ADICIONAR(LISTA VAZIA)')
                  //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
              }else if(roll_2.find(function(roll_2){return roll_2.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                  //console.log('JÁ TEM')
@@ -7151,7 +7151,7 @@ function FATORE(q) {
                  for (capital in podeser_2[belief].position) {
                      //console.log(podeser_2[belief].position[capital])
    
-                   // console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
+                   //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
    
                  if (roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital])== -1) {
                     //console.log('NÃO TEM') 
@@ -7173,14 +7173,14 @@ function FATORE(q) {
    
                 for(cold in podeser_2) {
             if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
-            // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+            //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
              deucerto = true
    
              ficaassim = ''
              podeser_2[cold].position.push(whyis)
    
              for (yehaa in podeser_2[cold].position) {
-                // console.log(podeser_2[cold])
+                //console.log(podeser_2[cold])
                  //console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
                  if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
                      
@@ -7190,7 +7190,7 @@ function FATORE(q) {
                              fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
                          }
                      }
-                    // console.log(fi)
+                    //console.log(fi)
                      if (yehaa != 0) {
                           ficaassim += ` - ${fi}`
                      }else{
@@ -7207,13 +7207,13 @@ function FATORE(q) {
              }
              //console.log('FICA ASSIM', `(${ficaassim})`)
             for (ruin in podeser_2[cold].opl) {
-            // console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
+            //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
              emotion = ''
              for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor ) {
-           // console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
+           //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
                  emotion+= scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream]
              }
-            // console.log(`${emotion}(${ficaassim})`)
+            //console.log(`${emotion}(${ficaassim})`)
            }
             }
          }
@@ -7241,8 +7241,8 @@ function FATORE(q) {
            
                obe = {what:[]}
    
-             //  console.log('')
-              // console.log(roll_2[raging].repetidos, roll_2[raging].posições)
+             //console.log('')
+              //console.log(roll_2[raging].repetidos, roll_2[raging].posições)
    
               
            
@@ -7250,8 +7250,8 @@ function FATORE(q) {
                asitwas2 = []
                aswillbe = []
    
-              //    console.log('')
-            //   console.log(scarecrow_2[roll_2[raging].repetidos[still]].divisor, still)
+              //console.log('')
+            //console.log(scarecrow_2[roll_2[raging].repetidos[still]].divisor, still)
    
                mylife = '('
                for (still2 in roll_2[raging].posições) {
@@ -7263,7 +7263,7 @@ function FATORE(q) {
                    }
    
                  
-                 //  console.log(miss_2[roll_2[raging].posições[still2]].dividido)
+                 //console.log(miss_2[roll_2[raging].posições[still2]].dividido)
    
                    conseguiu = false
                    older = 0
@@ -7277,7 +7277,7 @@ function FATORE(q) {
                    
                    function DESFATORAR(correto, eg2, eg) {
    
-                   //    console.log('eg', eg)
+                   //console.log('eg', eg)
    
                    eassim = []
                    solo = ''
@@ -7308,13 +7308,13 @@ function FATORE(q) {
                    
                    
                    whythat = [...eg]
-                 //  console.log(correto)
+                 //console.log(correto)
                  /*
                    for (ponto in eg2) {
-                     //  console.log(eg2[ponto])
+                     //console.log(eg2[ponto])
                        if (eg2[ponto] != '.') {
                        whythat.push(eg2[ponto])
-                     //  console.log('I FOLLOW YOu')
+                     //console.log('I FOLLOW YOu')
                        }
                    }
                    */
@@ -7373,8 +7373,8 @@ function FATORE(q) {
                        }
                    }
    
-         // console.log('MULTIPLICAR', eg2,'*',eg)
-          // console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+         //console.log('MULTIPLICAR', eg2,'*',eg)
+          //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                    
                    numerinhos = []
                    for (decisao in correto) {
@@ -7439,7 +7439,7 @@ function FATORE(q) {
            
    
          //console.log('ASITWAS',asitwas, asitwas2, aswillbe)
-             // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
+             //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
 
 
               obe.what.push({ar: asitwas2, indice: still})
@@ -7500,7 +7500,7 @@ function FATORE(q) {
    
        
    for (hi in youdumb_2) {
-      // console.log(segs_2[hi], segs_2[hi].mons.length)
+      //console.log(segs_2[hi], segs_2[hi].mons.length)
        youdumb_2[hi].length = youdumb_2[hi].mons.length
    
        grtols_2.push(youdumb_2[hi])
@@ -7533,7 +7533,7 @@ function FATORE(q) {
    /*
    for (yourlife in grtols_2) {
    
-       console.log(grtols_2[yourlife].w.what)
+       //console.log(grtols_2[yourlife].w.what)
    
        for (bolinho in grtols_2[yourlife].w.what) {
       //console.log(grtols_2[yourlife].w.what[bolinho])
@@ -7578,7 +7578,7 @@ function FATORE(q) {
 
    heya_2 = [...youdumb_2]
    for (imback in youdumb_2) {
-      // console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
+      //console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
    
        sticky = []
        initial = youdumb_2[imback].w.what
@@ -7599,7 +7599,7 @@ function FATORE(q) {
    
            taai = false
             for (eng in initial[agg].ar) {
-              // console.log(initial[agg].ar[eng])
+              //console.log(initial[agg].ar[eng])
                if (numerospresentes_2.indexOf(initial[agg].ar[eng]) == -1) {
               //console.log('OK')
                   
@@ -7653,29 +7653,29 @@ function FATORE(q) {
    
            if (h != imback) {
                if (youdumb_2[h].w.what.length > 0) {
-         //  console.log(youdumb_2[h].w.what, h)
+         //console.log(youdumb_2[h].w.what, h)
                }
    
            //console.log('-----------------------------')
            for (tempo = youdumb_2[h].w.what.length - 1; tempo >= 0; tempo--) {
-           //  console.log(youdumb_2[h].w.what[tempo].ar, tempo)
+           //console.log(youdumb_2[h].w.what[tempo].ar, tempo)
                
                dulu = false
                
               for (and in youdumb_2[h].w.what[tempo].ar) {
-              // console.log(youdumb_2[h].w.what[tempo].ar[and])
+              //console.log(youdumb_2[h].w.what[tempo].ar[and])
                if (numerospresentes_2.indexOf(youdumb_2[h].w.what[tempo].ar[and]) != -1) {
-                 //  console.log('ESTÁ EM: ', numerospresentes_2)
+                 //console.log('ESTÁ EM: ', numerospresentes_2)
                    dulu = true
                }
               }
               if (dulu == false) {
-             //  console.log('PODE FICAR :)', h, tempo)
+             //console.log('PODE FICAR :)', h, tempo)
               }else{
             ////console.log('NÃO PODE!!!!!!!!!!!!!')
              // youdumb_2[h].w.what.splice(tempo, 1)
              //imback++
-         //    console.log('IMBAACK',imback)
+         //console.log('IMBAACK',imback)
               }
           }
        }
@@ -7685,13 +7685,13 @@ function FATORE(q) {
    
      
     
-      // console.log('OLHA, eu tentei...', youdumb_2.length)
+      //console.log('OLHA, eu tentei...', youdumb_2.length)
        for (vixi in youdumb_2) {
         
         // if (youdumb_2[vixi].w.what.length > 0) {
-          // console.log('aaa',youdumb_2[vixi].w.what)
+          //console.log('aaa',youdumb_2[vixi].w.what)
            for (ainao in youdumb_2[vixi].w.what) {
-           // console.log('AI NÃO',youdumb_2[vixi].w.what[ainao].ar)
+           //console.log('AI NÃO',youdumb_2[vixi].w.what[ainao].ar)
            
              
        }
@@ -7699,18 +7699,18 @@ function FATORE(q) {
    }
    
    for (força in youdumb_2) {
-      // console.log(força, youdumb_2[força],youdumb_2[força].w.what.length)
+      //console.log(força, youdumb_2[força],youdumb_2[força].w.what.length)
        entao = []
        for (areo in youdumb_2[força].w.what) {
-          // console.log(areo,youdumb_2[força].w.what[areo].ar)
+          //console.log(areo,youdumb_2[força].w.what[areo].ar)
            for (paris in youdumb_2[força].w.what[areo].ar) {
-              // console.log(paris,youdumb_2[força].w.what[areo].ar[paris])
+              //console.log(paris,youdumb_2[força].w.what[areo].ar[paris])
                entao.push(Number(youdumb_2[força].w.what[areo].ar[paris]))
            }
        }
-      // console.log(entao)
+      //console.log(entao)
        youdumb_2[força].t = entao
-      // console.log(youdumb_2[força].t)
+      //console.log(youdumb_2[força].t)
     }
    
    //console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
@@ -7742,7 +7742,7 @@ function FATORE(q) {
    
    youdumb_2 = []
    for (erro in grtols_2) {
-      // console.log('RAINY DAY',grtols_2[erro])
+      //console.log('RAINY DAY',grtols_2[erro])
        youdumb_2.push(grtols_2[erro])
    }
    
@@ -7751,7 +7751,7 @@ function FATORE(q) {
    }
    
    }
-   console.log('pans_2 é', pans_2)
+   //console.log('pans_2 é', pans_2)
    concatenar_2 = ''
    numsdesfat = []
    newexpress = []
@@ -7789,7 +7789,7 @@ function FATORE(q) {
    */
            teri = false
            juntar = ''
-         //  console.log('NADAAAAAAAAAA')
+         //console.log('NADAAAAAAAAAA')
            for (estudar in el) {
           //console.log(el[estudar])
                if (el[estudar] == '*') {
@@ -7836,7 +7836,7 @@ function FATORE(q) {
             if (teri == false) {
                
                quase = []
-             //  console.log('SEM ASTERISCO')
+             //console.log('SEM ASTERISCO')
                for (t in el) {
                quase.push(el[t])
                }
@@ -7853,8 +7853,8 @@ function FATORE(q) {
               
                if (quase[patience] == '*') {
                    aster = true
-                  // console.log('AND THE CLSDADWDWD', patience)
-                  // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                  //console.log('AND THE CLSDADWDWD', patience)
+                  //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
@@ -7875,33 +7875,33 @@ function FATORE(q) {
                        elevar++
    
                        if (patience == quase.length - 1) {
-                         //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                         //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta+= `^${elevar}`
-                          // console.log(aconta)
+                          //console.log(aconta)
                        }
    
                    }else{
                      
                        if (elevar > 1) {
-                          // console.log('UEPA')
+                          //console.log('UEPA')
                            aconta+= `^${elevar}`
                            
                        }
    
                        aconta+= quase[patience]
                    
-                      // console.log(aconta)
+                      //console.log(aconta)
                      
                        elevar = 1
                    }
-                 //  console.log(elevar)
+                 //console.log(elevar)
                   
                } 
            }
          
            //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
            if (aster == false) {
-           // console.log('<<<<<<<<<<<<<',quase)
+           //console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
             for (h in quase) {
                     direitando+= quase[h]
@@ -7911,18 +7911,18 @@ function FATORE(q) {
 
 
        if (aster == false) {
-        //   console.log('SEM ASTERISCO',aconta)
+        //console.log('SEM ASTERISCO',aconta)
            antes = ''
            for (eyes in quase) {
                
-              // console.log(quase[eyes])
+              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  // console.log('CRY')
+                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
            antes+= aconta
-          // console.log('ANTEEEES:', antes)
+          //console.log('ANTEEEES:', antes)
            
            aconta = antes
         
@@ -7937,12 +7937,12 @@ function FATORE(q) {
                
                   negativo = true
                if (aconta[0] == '-') {
-                //   console.log('PROBLEM')
+                //console.log('PROBLEM')
                    mood = ''
                    for (member in aconta) {
                        //console.log('VAMOS LOGO!!!', aconta[member])
                        if (aconta[member] != '-') {
-                          // console.log('PUSHAR')
+                          //console.log('PUSHAR')
                            mood+= aconta[member]
                        }
                    }
@@ -7956,9 +7956,9 @@ function FATORE(q) {
                }else{
                    negativo = false
                    tobreak+= aconta
-                  // console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
+                  //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
                    for (now in aconta) {
-                   // console.log(aconta[now])
+                   //console.log(aconta[now])
                    }
                }
            }else if(quase[0]== '-'){
@@ -7966,26 +7966,26 @@ function FATORE(q) {
             negativo = true
                correct = ''
                for (okay in aconta) {
-                  // console.log(el[okay])
+                  //console.log(el[okay])
                    if (aconta[okay]!= '-'){
                        correct+= aconta[okay]
-                     //  console.log('MESS', aconta[okay])
+                     //console.log('MESS', aconta[okay])
                    }
                }
-              // console.log('ASSIM: ', correct)
+              //console.log('ASSIM: ', correct)
                tobreak+= ` - ${correct}`
                //console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
                negativo = false
-             //  console.log(el)
+             //console.log(el)
                tobreak+= ` + ${aconta}`
                //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
            }
-          // console.log('THE COLOURS THAT I SAW', tobreak)
+          //console.log('THE COLOURS THAT I SAW', tobreak)
 
 
-         // console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
-          // console.log(amontoado)
+         //console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
+          //console.log(amontoado)
            
            if (negativo == true) {
           
@@ -8007,7 +8007,7 @@ function FATORE(q) {
    
        for (repr in pans_2[bababa].which) {
            
-        //  console.log(' ')
+        //console.log(' ')
            //console.log(pans_2[bababa].which[repr].monos, pans_2[bababa].which[repr].numberwhat, Number(repr))
             //console.log('repetidos(não fixo) - scarecrow_2: ',roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat], scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor)
    
@@ -8015,14 +8015,14 @@ function FATORE(q) {
             //console.log(triste)
    
             quase = []
-           // console.log(quase, 'k')
+           //console.log(quase, 'k')
             juntar = ''
             teri = false
             for (estudar in triste) {
-             //  console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
+             //console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
                //console.log('asasasa',triste[estudar])
                ohjeez = triste[Number(estudar) - 1] != '-'
-             //  console.log(ohjeez)
+             //console.log(ohjeez)
                if (triste[estudar] == '.') {
                    teri = true
                    if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
@@ -8030,48 +8030,48 @@ function FATORE(q) {
                        quase.push(juntar)
                        juntar = ''
                    quase.push('*')
-                 //  console.log(quase)
+                 //console.log(quase)
                    }
                }else{
                   
                    //quase.push(triste[estudar])
-                // console.log('juntar',juntar)
+                //console.log('juntar',juntar)
                    if (juntar.length == 0) {
                        juntar = triste[estudar]
-                      // console.log('LISTA VAZIA', juntar)
+                      //console.log('LISTA VAZIA', juntar)
    
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
                        }
-                      // console.log('MENMEN',quase)
+                      //console.log('MENMEN',quase)
    
                    }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
    
-                    //  console.log('I\'M NEVER WHAT I LIKE')
+                    //console.log('I\'M NEVER WHAT I LIKE')
                        juntar+= triste[estudar]
-                    //   console.log('juntar', juntar)
+                    //console.log('juntar', juntar)
                        if (estudar == triste.length - 1) {
-                        //  console.log('UAISO')
+                        //console.log('UAISO')
                            quase.push(juntar)
-                        //   console.log(quase)
+                        //console.log(quase)
                        }
                    }else{
                        quase.push(juntar)
                        juntar= triste[estudar]
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
-                         //  console.log(quase)
+                         //console.log(quase)
                        }
                    }
                }
                  
             }
-           // console.log('MAIS RÁPIDO',quase)
+           //console.log('MAIS RÁPIDO',quase)
    
             if (teri == false) {
                
                quase = []
-            //  console.log('SEM ASTERISCO')
+            //console.log('SEM ASTERISCO')
                for (t in triste) {
                quase.push(triste[t])
                }
@@ -8103,7 +8103,7 @@ function FATORE(q) {
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  // console.log('É LETRA', quase[patience])
+                  //console.log('É LETRA', quase[patience])
                     friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                        //console.log('ELEVAR!')
@@ -8134,7 +8134,7 @@ function FATORE(q) {
            //console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
 
            if (aster == false) {
-            // console.log('<<<<<<<<<<<<<',quase)
+            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -8144,25 +8144,25 @@ function FATORE(q) {
 
            if (aster == false) {
              
-              // console.log('SEM ASTERISCO2', aconta, quase)
+              //console.log('SEM ASTERISCO2', aconta, quase)
    
                antes = ''
            for (eyes in quase) {
                
-              // console.log(quase[eyes])
+              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  // console.log('CRY')
+                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
            antes+= aconta
-          // console.log('ANTEEEES:', antes)
+          //console.log('ANTEEEES:', antes)
               // for (t in quase) {
               // aconta+= quase[t]
              //  }
              aconta = antes
            }
-          // console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
+          //console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
    
           edge_2.push(aconta)
 
@@ -8206,15 +8206,15 @@ function FATORE(q) {
            concatenar_2+= ' + '
        }
        if (edge_2.length > 1) {
-       console.log('                                ','( ',naonao,' )','( ',tobreak,' )','                         ')
+       //console.log('                                ','( ',naonao,' )','( ',tobreak,' )','                         ')
        concatenar_2+= `( ${naonao} )( ${tobreak} )`
        }else{
-           console.log('                            ',naonao,'( ',tobreak,' )','                          ')
+           //console.log('                            ',naonao,'( ',tobreak,' )','                          ')
            concatenar_2+= `${naonao}( ${tobreak} )`
        }
 
-       console.log('ESSE É O AMONTOADO', amontoado)
-       console.log('ESSE É O AMOUNT', amount)
+       //console.log('ESSE É O AMONTOADO', amontoado)
+       //console.log('ESSE É O AMOUNT', amount)
 
      
    // FAZENDO A CONTA
@@ -8223,22 +8223,22 @@ function FATORE(q) {
 
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
-        console.log(primeirocaso[0], 'continua igual')
+        //console.log(primeirocaso[0], 'continua igual')
         
       }else{
 
           mudou = true
-          console.log(amount,'=>',primeirocaso[0])
+          //console.log(amount,'=>',primeirocaso[0])
          
       }
    
 
       if (segundocaso[1] == segundocaso[2]) {
-        console.log(segundocaso[0], 'continua igual')
+        //console.log(segundocaso[0], 'continua igual')
       }else{
 
           mudou = true
-        console.log(amontoado,'=>',segundocaso[0])
+        //console.log(amontoado,'=>',segundocaso[0])
         
       }
 
@@ -8248,14 +8248,14 @@ function FATORE(q) {
         naonao = primeirocaso[0]
         tobreak = segundocaso[0] 
 
-      console.log('')
-      console.log('SOMANDO FICA ASSIM:')
+      //console.log('')
+      //console.log('SOMANDO FICA ASSIM:')
 
-      console.log('')
+      //console.log('')
 
       reason = []
       for (k in naonao) {
-      // console.log(k, naonao[k])
+      //console.log(k, naonao[k])
         if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
             deserve = naonao[k - 1]
             reason.push(k - 1)
@@ -8265,7 +8265,7 @@ function FATORE(q) {
         }
       }
 
-    //  console.log('reason')
+    //console.log('reason')
      
    for (time = naonao.length - 1; time >= 0; time--) {
     //console.log(time, naonao[time])
@@ -8283,32 +8283,32 @@ function FATORE(q) {
             deserve = tobreak[k - 1]
             deserve+= tobreak[k]
             reason.push(k - 1)
-           // console.log('anterior:',deserve)
+           //console.log('anterior:',deserve)
            tobreak[k] = deserve
         }
       }
 
-     // console.log('reason')
+     //console.log('reason')
       for (time = tobreak.length - 1; time >= 0; time--) {
-      //  console.log(time, tobreak[time])
+      //console.log(time, tobreak[time])
         if (reason.indexOf(time) != -1) {
-           // console.log('TIRAR')
+           //console.log('TIRAR')
             tobreak.splice(time, 1)
             }
        }
       //console.log('', tobreak)
 
-      console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
+      //console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
 
-      console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
+      //console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
       for (roberto in naonao) {
-          console.log('---------------------------------------------------------------______')
-        console.log(naonao[roberto])
+          //console.log('---------------------------------------------------------------______')
+        //console.log(naonao[roberto])
         
         for (vaidarcerto in tobreak) {
-            console.log(tobreak[vaidarcerto])
+            //console.log(tobreak[vaidarcerto])
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
-            console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
+            //console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
             console.warn(newexpress)
             if (novomon[0] == '-') {
                 miya = ''
@@ -8317,7 +8317,7 @@ function FATORE(q) {
                         miya+= novomon[n]                 
                        }
                 }
-                console.log(miya)
+                //console.log(miya)
                 newexpress.push('-')
                 newexpress.push(miya)
             }else{
@@ -8342,66 +8342,66 @@ function FATORE(q) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros_2 = []
     for (acaba in monomios_2) {
-       // console.log(acaba)
+       //console.log(acaba)
         todososnumeros_2.push(acaba)
     }
 
     for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
-        // console.log(todososnumeros_2[feliz])
+        //console.log(todososnumeros_2[feliz])
          if (numsdesfat.indexOf(Number(todososnumeros_2[feliz])) != -1) {
             todososnumeros_2.splice(feliz, 1)
          }
  }
-    console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios_2( tem', monomios_2.length, 'ao todo):',todososnumeros_2)
+    //console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios_2( tem', monomios_2.length, 'ao todo):',todososnumeros_2)
     for (eh in todososnumeros_2) {
-        console.log(todososnumeros_2[eh], monomios_2[todososnumeros_2[eh]].numero)
+        //console.log(todososnumeros_2[eh], monomios_2[todososnumeros_2[eh]].numero)
 
         join = ''
         for (sempresei in monomios_2[todososnumeros_2[eh]].numero) {
             if (monomios_2[todososnumeros_2[eh]].numero[sempresei] != '+' && monomios_2[todososnumeros_2[eh]].numero[sempresei] != '-') {
             ter = monomios_2[todososnumeros_2[eh]].numero[sempresei]
-            console.log(ter)
+            //console.log(ter)
             join+= ter
             }
         }
         if (monomios_2[todososnumeros_2[eh]].numero[0] == '+') {
-            console.log('MAIS')
+            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }else if(monomios_2[todososnumeros_2[eh]].numero[0] == '-') {
-            console.log('MENOS')
+            //console.log('MENOS')
             newexpress.push('-')
             newexpress.push(join)
         }else{
-            console.log('MAIS')
+            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }
-        console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
+        //console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
     }
 
-    console.log('_____________________________________________newexpression:_____________________________________________ ')
-        console.log(newexpress)
-        console.log('_______________________________________________________________________________________   _______________')
+    //console.log('_____________________________________________newexpression:_____________________________________________ ')
+        //console.log(newexpress)
+        //console.log('_______________________________________________________________________________________   _______________')
 
         FATORAR(newexpress)
    }else{
 
-   console.log('VENDO OS QUE FALTAM:')
-   console.log(numerospresentes_2)
+   //console.log('VENDO OS QUE FALTAM:')
+   //console.log(numerospresentes_2)
    todososnumeros_2 = []
    for (acaba in monomios_2) {
-      // console.log(acaba)
+      //console.log(acaba)
        todososnumeros_2.push(acaba)
    }
    cancelar = []
    for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
-          // console.log(todososnumeros_2[feliz])
+          //console.log(todososnumeros_2[feliz])
            if (numerospresentes_2.indexOf(Number(todososnumeros_2[feliz])) != -1) {
               todososnumeros_2.splice(feliz, 1)
    }
    }
-   console.log(todososnumeros_2)
+   //console.log(todososnumeros_2)
    
    for (bye in todososnumeros_2) {
        //console.log(monomios_2[todososnumeros_2[bye]].numero)
@@ -8420,14 +8420,14 @@ function FATORE(q) {
            
             if (quase[patience] == '*') {
                 aster = true
-               // console.log('AND THE CLSDADWDWD', patience)
-               // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+               //console.log('AND THE CLSDADWDWD', patience)
+               //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-              //  console.log(gates, fazerConta(gates))
+              //console.log(gates, fazerConta(gates))
    
-             //  console.log(quase, Number(patience) + 1)
+             //console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
               
@@ -8440,30 +8440,30 @@ function FATORE(q) {
                     elevar++
    
                     if (patience == quase.length - 1) {
-                      //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                      //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                       // console.log(aconta)
+                       //console.log(aconta)
                     }
    
                 }else{
                     if (elevar > 1) {
-                       // console.log('UEPA')
+                       //console.log('UEPA')
                         aconta+= `^${elevar}`
                         
                     }
    
                     aconta+= quase[patience]
-                   // console.log(aconta)
+                   //console.log(aconta)
                   
                     elevar = 1
                 }
-              //  console.log(elevar)
+              //console.log(elevar)
                
             } 
         }
         
         if (aster == false) {
-            // console.log('<<<<<<<<<<<<<',quase)
+            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -8471,25 +8471,25 @@ function FATORE(q) {
              friend = direitando
             }
     if (aster == false) {
-     //   console.log('SEM ASTERISCO',aconta)
+     //console.log('SEM ASTERISCO',aconta)
         antes = ''
         for (eyes in quase) {
             
-           // console.log(quase[eyes])
+           //console.log(quase[eyes])
             if (quase[eyes].search('[0-9]') != -1) {
-               // console.log('CRY')
+               //console.log('CRY')
                 antes+= quase[eyes]
             }
         }
         antes+= aconta
-       // console.log('ANTEEEES:', antes)
+       //console.log('ANTEEEES:', antes)
         
         aconta = antes
     }
-    console.log('A CONTA',aconta, quase)
+    //console.log('A CONTA',aconta, quase)
    
     if (bye == 0) {
-       console.log('PRIMEIRO')
+       //console.log('PRIMEIRO')
        if (concatenar_2.length > 0) {
            if (quase[0] == '-') {
                concatenar_2+= ` - ${aconta}`
@@ -8513,7 +8513,7 @@ function FATORE(q) {
    }
 }
    
-   console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar_2)
+   //console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar_2)
 
  
    // Vendo se o número é primo
@@ -8587,7 +8587,7 @@ function FATORE(q) {
    
        for (uf in par) {
        
-          // console.log(segs_2[uf].godhelpme)
+          //console.log(segs_2[uf].godhelpme)
           // segs_22.push(segs_2[uf])
          //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          segs_22[uf] = {}
@@ -8668,7 +8668,7 @@ function FATORE(q) {
             ////console.log('')
            //console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
-              //  console.log('FALTA')
+              //console.log('FALTA')
                 present.falt.push(lista[g])
    
                
@@ -8685,7 +8685,7 @@ function FATORE(q) {
         
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-          //  console.log(present.falt[ti])
+          //console.log(present.falt[ti])
    
            
    
@@ -8703,7 +8703,7 @@ function FATORE(q) {
     relation_2[r].car = segs_22[r].car
     
     }
-    console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
+    //console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
     for (c in relation_2) {
         ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation_2[c].fix.length > 0) {
@@ -8763,24 +8763,24 @@ function FATORE(q) {
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   console.log(relation_2[yougo].fix)
+   //console.log(relation_2[yougo].fix)
    
    for (pals in relation_2[yougo].fix) {
-    console.log(relation_2[yougo].fix[pals])
+    //console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
    }
    }
    
-   console.log('divs_2 é igual a ', divs_2[okentao])
-   console.log('groups é igual a', groups)
+   //console.log('divs_2 é igual a ', divs_2[okentao])
+   //console.log('groups é igual a', groups)
    
    
    if (groups < divs_2[okentao]) {
     //console.log('DEU CERTO!!!EBAAAAAA')
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    ////console.log(relation_2)
    
@@ -8788,7 +8788,7 @@ function FATORE(q) {
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   console.log(relation_2[yougo].fix)
+   //console.log(relation_2[yougo].fix)
    
    for (pals in relation_2[yougo].fix) {
     ////console.log(relation_2[yougo].fix[pals])
@@ -8819,20 +8819,20 @@ function FATORE(q) {
    
    //console.log('break', segs_22[die].mons)
    for (h in segs_22[die].mons) {
-   console.log(segs_22[die].mons[h])
+   //console.log(segs_22[die].mons[h])
    if (tirados_2.indexOf(segs_22[die].mons[h]) != -1) {
    tirar.push(Number(h))
    }
    }
 
-   console.log('tirar de ',segs_22[die].mons, tirar)
+   //console.log('tirar de ',segs_22[die].mons, tirar)
 
    for (far = tirar.length - 1; far >= 0; far--) {
-       console.log(segs_2[die].mons[tirar[far]])
+       //console.log(segs_2[die].mons[tirar[far]])
    segs_22[die].mons.splice(tirar[far], 1)
    
    }
-   console.log('ficou assim:', segs_22[die].mons)
+   //console.log('ficou assim:', segs_22[die].mons)
    }
    
    for (sorrow in segs_22) {
@@ -8851,7 +8851,7 @@ function FATORE(q) {
            //console.log('TIRADOS_2')
       //console.log(segs_22[sorrow].mons[imor])
    
-       console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
+       //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
    
               if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
                   ob.problem = true
@@ -8865,7 +8865,7 @@ function FATORE(q) {
        }
       
       
-       console.log('In THE EnD', ob)
+       //console.log('In THE EnD', ob)
    
        //console.log(segs_22)
        //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
@@ -8884,7 +8884,7 @@ function FATORE(q) {
    for (nah = relation_2.length - 1; nah >= 0; nah--) {
         // if (relation_2[nah].fix.length > 0) {
              
-    // console.log('fix',relation_2[nah].fix)
+    //console.log('fix',relation_2[nah].fix)
    
      //console.log('---VEnDO TODA A LISTA---')
      for (nop in relation_2) {
@@ -8917,9 +8917,9 @@ function FATORE(q) {
    
      for (nah = relation_2.length - 1; nah >= 0; nah--) {
          //console.log('dream',nah, relation_2[nah])
-        // console.log(males)
+        //console.log(males)
        if (males.indexOf(nah) != -1) {
-         //  console.log('HEY')
+         //console.log('HEY')
            relation_2.splice(nah, 1)
        }
      }
@@ -8927,21 +8927,21 @@ function FATORE(q) {
      numerosquetem = []
      for (nah in relation_2) {
          if (relation_2[nah].fix.length > 0) {
-       //  console.log(relation_2[nah].fix)
+       //console.log(relation_2[nah].fix)
    
          for (nop in relation_2[nah].fix) {
-          //   console.log(relation_2[nah].fix[nop])
+          //console.log(relation_2[nah].fix[nop])
              numerosquetem.push(relation_2[nah].fix[nop])
          }
          }
      }
-     console.log('----------------------------------------------------------------')
+     //console.log('----------------------------------------------------------------')
    
      segs_22 = []
    
      for (uf in par) {
      
-        // console.log(segs_2[uf].godhelpme)
+        //console.log(segs_2[uf].godhelpme)
         // segs_22.push(segs_2[uf])
        //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
        segs_22[uf] = {}
@@ -8965,7 +8965,7 @@ function FATORE(q) {
    
        for (uf in relation_2) {
        
-          // console.log(segs_2[uf].godhelpme)
+          //console.log(segs_2[uf].godhelpme)
           // segs_22.push(segs_2[uf])
          //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          fireonfire[uf] = {}
@@ -8974,19 +8974,19 @@ function FATORE(q) {
    
     }
    
-    console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
-    console.log(doit2(segs_22)[0])
-    console.log(fireonfire)
+    //console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
+    //console.log(doit2(segs_22)[0])
+    //console.log(fireonfire)
    
     //console.log('relation_2', relation_2)
     for (red in fireonfire) {
-      // console.log(fireonfire[red])
+      //console.log(fireonfire[red])
        relation_2.push({fix: fireonfire[red].mons, car: fireonfire[red].car})
     }
    
    }else if(groups > divs_2[okentao]){
        
-   console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+   //console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
     ////console.log('números que têm: ', conts)
     ////console.log(segs_2)
    
@@ -9195,7 +9195,7 @@ function FATORE(q) {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation_2)
    
@@ -9292,7 +9292,7 @@ function FATORE(q) {
    
    }
    }
-   console.log('aaaaaaaaaaaaaaaaaaaaaaaa',segs_22, relation_2)
+   //console.log('aaaaaaaaaaaaaaaaaaaaaaaa',segs_22, relation_2)
    return [relation_2, segs_22]
    }
    
@@ -9327,7 +9327,7 @@ function FATORE(q) {
    
        for (uf in par) {
        
-          // console.log(segs_2[uf].godhelpme)
+          //console.log(segs_2[uf].godhelpme)
           // segs_22.push(segs_2[uf])
          //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          segs_22[uf] = {}
@@ -9526,29 +9526,29 @@ function FATORE(q) {
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   console.log(relation_2[yougo].fix)
+   //console.log(relation_2[yougo].fix)
    
    for (pals in relation_2[yougo].fix) {
-   console.log(relation_2[yougo].fix[pals])
+   //console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
    }
    }
-   console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
+   //console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
    if (divs_2[okentao] != groups) {
-   console.log('THEn WHY ARE WE LAUGHInG?')
-   console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
+   //console.log('THEn WHY ARE WE LAUGHInG?')
+   //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
    
    tirados_2 = []
    for (wish in relation_2) {
-   // console.log(relation_2[wish].fix)
+   //console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-   //    console.log(relation_2[wish].fix[edge_2])
+   //console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
+   //console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
    
    
    
@@ -9564,7 +9564,7 @@ function FATORE(q) {
    }
    //console.log('tirar de ',segs_22[die].mons, tirar)
    for (far = tirar.length - 1; far >= 0; far--) {
-      // console.log(segs_2[die].mons[tirar[far]])
+      //console.log(segs_2[die].mons[tirar[far]])
    segs_22[die].mons.splice(tirar[far], 1)
    
    }
@@ -9631,7 +9631,7 @@ function FATORE(q) {
    if (mcr != idk) {
    
        //////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-     // console.log('outro',segs_2[mcr].mons)
+     //console.log('outro',segs_2[mcr].mons)
       
       //console.log(segs_2[idk].mons.length)
        if (segs_22[mcr].mons.length <= segs_22[idk].mons.length) {
@@ -9640,14 +9640,14 @@ function FATORE(q) {
       for(y = 0; y < segs_22[mcr].mons.length; y++) {
        //  //console.log(segs_2[idk].mons, segs_2[mcr].mons[y], segs_2[idk].mons.indexOf(segs_2[mcr].mons[y]))
            if (segs_22[idk].mons.indexOf(segs_22[mcr].mons[y]) != -1) {
-          //   console.log('igual')
+          //console.log('igual')
                sames.push('igual')
            }else{
-           //  console.log('diferente')
+           //console.log('diferente')
                sames.push('diferente')
            }
       }
-   // console.log(sames)
+   //console.log(sames)
       if (sames.indexOf('diferente') == -1){
     //console.log('TIRAR', segs_2[mcr])
    
@@ -9655,7 +9655,7 @@ function FATORE(q) {
        mia.push(mcr)
        }
        
-    //  console.log(segs_2)
+    //console.log(segs_2)
        
       }
    }
@@ -9805,7 +9805,7 @@ function FATORE(q) {
         for (hu in outrorel.fix) {
           //  //console.log(outrorel.fix[hu])
             if (relation_2[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-           // console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
+           //console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
                 ////console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
@@ -9826,7 +9826,7 @@ function FATORE(q) {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation_2)
    
@@ -9852,11 +9852,11 @@ function FATORE(q) {
    for (wish in relation_2) {
     //console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-      // console.log(relation_2[wish].fix[edge_2])
+      //console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
+   //console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
    
    
    for (die in segs_22) {
@@ -9879,7 +9879,7 @@ function FATORE(q) {
    }
    
    for (sorrow in segs_22) {
-   console.log(segs_22[sorrow].mons)
+   //console.log(segs_22[sorrow].mons)
    grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
    //console.log('dá para formar', grupos,'grupos')
    
@@ -9891,15 +9891,15 @@ function FATORE(q) {
        ob = {car: segs_22[sorrow].car, fix: [],problem:false}
    
        for (live = 0; live < quanto; live++) {
-         //  console.log('TIRADOS_2')
-        //   console.log(segs_22[sorrow].mons[imor])
+         //console.log('TIRADOS_2')
+        //console.log(segs_22[sorrow].mons[imor])
    
-       //   console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
+       //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
    
               if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
                    //ob.problem = true
               }
-            //   console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
+            //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
            ob.fix.push(segs_22[sorrow].mons[imor])
            tirados_2.push(segs_22[sorrow].mons[imor])
            imor++
@@ -9924,7 +9924,7 @@ function FATORE(q) {
    }
    }
    
-   console.log('HELLO')
+   //console.log('HELLO')
    
    
    return [relation_2, segs_22]
@@ -9954,7 +9954,7 @@ particles[obnum].numero += list[n]
 
 
 for (huh in particles) {
-   // console.log('HUH',particles[huh].numero)
+   //console.log('HUH',particles[huh].numero)
 
     partlet = ''
     for (y in particles[huh].numero) {
@@ -9965,7 +9965,7 @@ for (huh in particles) {
      }
     }
     particles[huh].partletral = partlet
-   // console.log('PARTLETRAL',particles[huh].partletral)
+   //console.log('PARTLETRAL',particles[huh].partletral)
 }
 
 
@@ -9977,18 +9977,18 @@ for (bye in particles) {
     ground = ''
 
     for (misery in particles[bye].numero) { 
-     // console.log(particles[bye].numero[misery])
+     //console.log(particles[bye].numero[misery])
         
         carac = particles[bye].numero[misery]
        //console.log('CARACTER' + carac)
       //console.log(ground.length)
 
-      // console.log('OH COME On',ground, String(ground.search('[0-9]')))
+      //console.log('OH COME On',ground, String(ground.search('[0-9]')))
             if (ground.length == 0) {
-               // console.log('LISTA VAZIA')
+               //console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-               // console.log('É UM nÚMERO')
+               //console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
@@ -10001,7 +10001,7 @@ for (bye in particles) {
             }
     }
 
-   // console.log('COMOFICA', comofica)
+   //console.log('COMOFICA', comofica)
     ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',particles[bye].numero)
     particles[bye].numero = comofica
 }
@@ -10034,7 +10034,7 @@ for (huh in particles) {
 
 for (chuva in agruparsoma) {
     //console.log('')
-   // console.log('')
+   //console.log('')
     //console.log('')
 
     conta = []
@@ -10081,7 +10081,7 @@ add+= resultadoDaDivisão[past]
     
     
 }
-// console.log('ADD', add)
+//console.log('ADD', add)
 //console.log('PLAn É:', plan)
 
 if (plan.length == 3) {
@@ -10148,15 +10148,15 @@ if (comehome[0][0] == '-') {
      t+= comehome[0][b]
    }
    }
-  // console.log(t)
+  //console.log(t)
    //console.log(typeof t)
    at = t
    if (ehprimo(t) == false) {
       //console.log(at)
    fat = FATORARSInGULAR(at)
-  // console.log(String(fat))
+  //console.log(String(fat))
    }else{
-     // console.log('É PRIMOOOOOOOOOOOOOOOOO')
+     //console.log('É PRIMOOOOOOOOOOOOOOOOO')
     fat = at
    }
    oop = '-'
@@ -10186,7 +10186,7 @@ if (exp_2.length == 0) {
         exp_2.push('+')
         fat += agruparsoma[chuva].que
         exp_2.push(fat)
-      //  console.log('PARTE LETRAL:', agruparsoma[chuva].que)
+      //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
     }
 }
 
@@ -10298,7 +10298,7 @@ function MULTIPLICARDIREITO(num1, num2) {
     
 
     if (num1 == '1' || num2 == '1') {
-        console.log('É 1')
+        //console.log('É 1')
         if (num1 == '1') {
             resultmult = num2
         }else{
@@ -10404,7 +10404,7 @@ return [
   segs_2.length,
   roll_2.length,
 ];
-console.log('Poxa segs_2, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
+//console.log('Poxa segs_2, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
 
 }
 
@@ -10413,11 +10413,11 @@ function devtools() {
   tab = document.getElementById('devtab')
   part = tab.getElementsByClassName('slot')
   if (devtoolsstate == 'closed') {
-    console.log('OPEN DEV TOOLS')
+    //console.log('OPEN DEV TOOLS')
     devtoolsstate = 'open'
      
     tab.style.display= 'block'
-    console.log(segs, alt)
+    //console.log(segs, alt)
       if (alt == 1) {
         p = document.createElement('p')
         p.innerText = `segs.length: ${segs.length}`
@@ -10499,7 +10499,7 @@ function devtools() {
          }
       }
   }else{
-    console.log('CLOSE DEV TOOLS')
+    //console.log('CLOSE DEV TOOLS')
     devtoolsstate = 'closed'
     ps = tab.getElementsByTagName('p')
     for (c = ps.length - 1; c >= 0; c--) {
