@@ -159,6 +159,7 @@ function mudar(index) {
 
 function FATORAR(expression) {
 
+    alt = 1
     startexp = [...expression];
 
   if (expression[0] !== "-" && expression[0] !== "+") {
@@ -3421,6 +3422,7 @@ for (bye in monomios) {
         //console.log('IS IT SERIOUS?')
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         //console.log(otherway[0])
+        alt = 2
         return [otherway[0], otherway[3], otherway[4]];
       } else {
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
@@ -10403,5 +10405,22 @@ return [
   roll.length,
 ];
 console.log('Poxa segs, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
+
+}
+
+devtoolsstate = 'closed'
+function devtools() {
+  tab = document.getElementById('devtab')
+  if (devtoolsstate == 'closed') {
+    console.log('OPEN DEV TOOLS')
+    devtoolsstate = 'open'
+     
+    console.log(segs, alt)
+      p = document.createElement('p')
+    
+  }else{
+    console.log('CLOSE DEV TOOLS')
+    devtoolsstate = 'closed'
+  }
 
 }
