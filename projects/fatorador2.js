@@ -1548,14 +1548,16 @@ for (bye in monomios) {
 
             rap+= ',' + miss[eep].aparicoes[vespa]
 
+            console.log('MOIPON',monspos)
+        
             if (roller.find(function(roller) {return roller.rept == rap}) != undefined) {
 
+              if (cango == true && monspos.indexOf(posmon) == -1) {
+
+             // monspos.push(posmon)
               what = roller.find(function(roller) {return roller.rept == rap})
             console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
             console.log(what.mons, monspos, posmon)
-
-            console.log('MOIPON',monspos)
-            monspos.push(posmon)
 
             if (what.mons.indexOf(posmon) == -1) {
               console.log(posmon, 'não está em,', what.mons, 'portanto, pode pushar')
@@ -1570,7 +1572,9 @@ for (bye in monomios) {
 
             }
             console.log(rap)
-          }else{
+          }
+          console.log('CAN GO?', cango, `${monspos}.indexOf(${posmon}) = ${monspos.indexOf(posmon)}`)
+        }else{
 
             if (monspos.indexOf(posmon) == -1 && cango == true) {
               console.log(posmon, 'não está em', monspos)
