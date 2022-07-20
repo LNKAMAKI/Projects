@@ -1572,6 +1572,8 @@ for (bye in monomios) {
 
             }
             console.log(rap)
+          }else{
+            console.log('EITAAAAAAAAAAAA_______________%%%%%%%%%%%%%%%%$$$$$$$^^^^^^~~~~~~')
           }
           console.log('CAN GO?', cango, `${monspos}.indexOf(${posmon}) = ${monspos.indexOf(posmon)}`)
         }else{
