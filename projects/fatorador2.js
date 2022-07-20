@@ -1532,6 +1532,7 @@ for (bye in monomios) {
           
           monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
 
+          console.log('MONPOS:',monpos, 'MONSPOS:', monspos)
           if (monspos.indexOf(monpos) == -1) {
         monspos.push(monpos)
           }else{
@@ -1553,6 +1554,9 @@ for (bye in monomios) {
             console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
             console.log(what.mons, monspos, posmon)
 
+            console.log('MOIPON',monspos)
+            monspos.push(posmon)
+
             if (what.mons.indexOf(posmon) == -1) {
               console.log(posmon, 'não está em,', what.mons, 'portanto, pode pushar')
               console.log('------------',monpos,'------------')
@@ -1562,7 +1566,6 @@ for (bye in monomios) {
               what.mons.push(posmon)
               if (what.mons.indexOf(monpos) == -1) {
                 console.log(monpos, 'não está em,', what.mons, 'portanto, pode pushar')
-               
               }
 
             }
@@ -1614,7 +1617,7 @@ for (bye in monomios) {
               }) == undefined
             ) {
               console.log('ASSIM FICOU OS MONÔMIOS:',result)
-              console.log('==============*******>>>>>>PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
+              console.log('==============(((((((((((&&&&&&####*******>>>>>>PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
               console.log( 'mons:', result,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
               roller.push({
                 mons: [...result],
