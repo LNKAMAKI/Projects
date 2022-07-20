@@ -1481,6 +1481,11 @@ for (bye in monomios) {
    
    //console.log('MISS.LENGTH',miss.length)
    
+   
+   for (w in miss) {
+    console.log(w,miss[w].aparicoes)
+   }
+
    roller = [];
   for (eep in miss) {
     console.log('__________________________________________')
@@ -1520,12 +1525,12 @@ for (bye in monomios) {
 
           rap = ''
 
-          monspos = []
+         // monspos = []
           result = []
         for (vespa in miss[eep].aparicoes) {
           
-          monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
-          monspos.push(monpos)
+          //monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
+        //monspos.push(monpos)
 
           console.log(`*miss[${eep}]*.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
           if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
@@ -1986,6 +1991,7 @@ for (bye in monomios) {
          deucerto = false
    
          roller = [];
+
   for (eep in miss) {
     for (quad in miss) {
       if (quad != eep) {
