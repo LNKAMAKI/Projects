@@ -1576,7 +1576,8 @@ for (bye in monomios) {
               result.push(monpos)
               result.push(posmon)
           }else{
-            if (cango == false) {
+            console.log('THIS IS THE RAP!!&&&&&&&&&&&&&&&&&&&&&&',rap)
+            if (cango == true) {
             console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             }else{
             console.log(monpos, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
