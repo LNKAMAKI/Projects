@@ -1525,12 +1525,18 @@ for (bye in monomios) {
 
           rap = ''
 
-         // monspos = []
+          cango = true
+          monspos = []
           result = []
         for (vespa in miss[eep].aparicoes) {
           
-          //monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
-        //monspos.push(monpos)
+          monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
+
+          if (monspos.indexOf(monpos) == -1) {
+        monspos.push(monpos)
+          }else{
+            cango = false
+          }
 
           console.log(`*miss[${eep}]*.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
           if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
@@ -1563,14 +1569,20 @@ for (bye in monomios) {
             console.log(rap)
           }else{
 
-            if (monspos.indexOf(posmon) == -1) {
+            if (monspos.indexOf(posmon) == -1 && cango == true) {
               console.log(posmon, 'não está em', monspos)
               console.log(monpos)
+              monspos.push(posmon)
               result.push(monpos)
               result.push(posmon)
+          }else{
+            if (cango == false) {
+            console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            }else{
+            console.log(monpos, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             }
           }
-
+        }
             console.log(rap)
             repwri += "," + miss[eep].aparicoes[vespa];
             console.log('REPWRI: ', '<<<||',repwri,'||>>>')
@@ -1582,14 +1594,14 @@ for (bye in monomios) {
             ) {
               console.log('ASSIM FICOU OS MONÔMIOS:',result)
               console.log('==============*******>>>>>>PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
-              console.log( 'mons:', monspos,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
+              console.log( 'mons:', result,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
               roller.push({
                 mons: [...result],
                 rept: repwri,
                 opl: [...repeated],
                 position: [eep, quad]
               });
-              console.log(`NAO É POSSÓVEL!!!!!!!!!!!!!!!!${roller[roller.length - 1].mons}`)
+              
             } else {
               if (roller.find(function (roller) {return roller.rept == repwri;}).position.indexOf(eep) == -1) {
                 roller.find(function (roller) {return roller.rept == repwri;})
