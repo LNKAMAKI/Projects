@@ -1521,6 +1521,7 @@ for (bye in monomios) {
           rap = ''
 
           monspos = []
+          result = []
         for (vespa in miss[eep].aparicoes) {
           
           monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
@@ -1540,12 +1541,29 @@ for (bye in monomios) {
               what = roller.find(function(roller) {return roller.rept == rap})
             console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
             console.log(what.mons, monspos, posmon)
+
+            if (what.mons.indexOf(posmon) == -1) {
+              console.log(posmon, 'não está em,', what.mons, 'portanto, pode pushar')
+              console.log('------------',monpos,'------------')
+              result.push(posmon)
+              result.push(monpos)
+
+              what.mons.push(posmon)
+              if (what.mons.indexOf(monpos) == -1) {
+                console.log(monpos, 'não está em,', what.mons, 'portanto, pode pushar')
+               
+              }
+
+            }
+            console.log(rap)
           }else{
 
             if (monspos.indexOf(posmon) == -1) {
               console.log(posmon, 'não está em', monspos)
+              console.log(monpos)
+              result.push(monpos)
+              result.push(posmon)
             }
-            monspos.push(posmon)
           }
 
             console.log(rap)
@@ -1557,11 +1575,11 @@ for (bye in monomios) {
                 return roller.rept == repwri;
               }) == undefined
             ) {
-              console.log('ASSIM FICOU OS MONÔMIOS:',monspos)
-              console.log('PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
+              console.log('ASSIM FICOU OS MONÔMIOS:',result)
+              console.log('==============*******>>>>>>PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
               console.log( 'mons:', monspos,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
               roller.push({
-                mons: [...monspos],
+                mons: [...result],
                 rept: repwri,
                 opl: [...repeated],
                 position: [eep, quad]
