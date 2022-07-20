@@ -1581,9 +1581,9 @@ for (bye in monomios) {
             parar = false
 
             novorap = ''
-            for (h = rap.length - 1; h >=0; h--) {
+            for (h = rap.length - 1; h >= 0; h--) {
               console.log(rap[h])
-              if (rap[h] == ',') {
+              if (rap[h] == ',' && parar == false) {
                 parar = true
                 console.log('PARAR!')
               }else if(parar == true) {
@@ -1591,7 +1591,13 @@ for (bye in monomios) {
                 console.log('ADICIONAR', rap[h])
             }
           }
-            console.log('NOVO RAPP!!!!:', novorap)
+
+          nov = ''
+          for (u = novorap.length - 1; u >= 0; u--) {
+            nov+= novorap[u]
+          }
+            console.log('NOVO RAPP!!!!:', nov)
+            rap = nov
 
             if (cango == true) {
             console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
@@ -1601,7 +1607,7 @@ for (bye in monomios) {
           }
         }
             console.log(rap)
-            repwri += "," + miss[eep].aparicoes[vespa];
+            repwri = rap          //repwri += "," + miss[eep].aparicoes[vespa];
             console.log('REPWRI: ', '<<<||',repwri,'||>>>')
 
             if (
@@ -1647,7 +1653,7 @@ for (bye in monomios) {
   }
 
   for (world in roller) {
-    console.log(`${roller[world].mons}`, roller[world].position, roller[world].opl)
+    console.log(`${roller[world].mons}`, roller[world].position, roller[world].opl, roller[world].rept)
   }
 
    for (r in roller) {
