@@ -1577,6 +1577,22 @@ for (bye in monomios) {
               result.push(posmon)
           }else{
             console.log('THIS IS THE RAP!!&&&&&&&&&&&&&&&&&&&&&&',rap)
+
+            parar = false
+
+            novorap = ''
+            for (h = rap.length - 1; h >=0; h--) {
+              console.log(rap[h])
+              if (rap[h] == ',') {
+                parar = true
+                console.log('PARAR!')
+              }else if(parar == true) {
+                novorap+= rap[h]
+                console.log('ADICIONAR', rap[h])
+            }
+          }
+            console.log('NOVO RAPP!!!!:', novorap)
+
             if (cango == true) {
             console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             }else{
