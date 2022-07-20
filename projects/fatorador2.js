@@ -1585,10 +1585,8 @@ for (bye in monomios) {
               console.log(rap[h])
               if (rap[h] == ',' && parar == false) {
                 parar = true
-                console.log('PARAR!')
               }else if(parar == true) {
                 novorap+= rap[h]
-                console.log('ADICIONAR', rap[h])
             }
           }
 
