@@ -1487,11 +1487,16 @@ for (bye in monomios) {
     console.log(`*miss[${eep}]*: `, miss[eep].aparicoes, miss[eep].dividido)
 
           console.log('//\//\//\//\//\//\//\/', miss[eep].aparicoes)
+
+          monspos = []
           for (b in miss[eep].aparicoes) {
             console.log(scarecrow[miss[eep].aparicoes[b]].divididos,`.indexOf(${miss[eep].dividido}) = `,scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido))
             console.log('O MONÔMIO QUE RESULTA EM', miss[eep].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[eep].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)],monomios[scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]].numero)
+            monpos = scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]
+            monspos.push(monpos)
           }
-          console.log('//\//\//\//\//\//\//\/')
+          
+          console.log('//\//\//\//\//\//\//\/ =>', 'posições dos monômios: ',monspos)
 
     console.log('GOING THROUGH MISS')
     for (quad in miss) {
@@ -1501,20 +1506,49 @@ for (bye in monomios) {
         console.log(`miss[${quad}]: `,miss[quad].aparicoes, String(miss[quad].dividido))
         repeated = [];
         repwri = "";
+
         console.log('//\//\//\//\//\//\//\/', miss[quad].aparicoes)
+
+        monspos2 = []
           for (b in miss[quad].aparicoes) {
             console.log(scarecrow[miss[quad].aparicoes[b]].divididos,`.indexOf(${miss[quad].dividido}) = `,scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido))
             console.log('O MONÔMIO QUE RESULTA EM', miss[quad].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[quad].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)],monomios[scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]].numero)
+            monpos = scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]
+            monspos2.push(monpos)
           }
-          console.log('//\//\//\//\//\//\//\/')
+          console.log('//\//\//\//\//\//\//\/','posições dos monômios: ',monspos2)
 
+          rap = ''
+
+          monspos = []
         for (vespa in miss[eep].aparicoes) {
+          
+          monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
+          monspos.push(monpos)
 
           console.log(`*miss[${eep}]*.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
           if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
-            console.log(`*${miss[quad].aparicoes}* possui ${miss[eep].aparicoes[vespa]}`)
+            console.log('(miss',quad,')',`${miss[quad].aparicoes} possui *${miss[eep].aparicoes[vespa]}*`,' -> index:', miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]),`monomio [${monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]}]`)
+            posmon = monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]
+          
             repeated.push(miss[eep].aparicoes[vespa]);
 
+            rap+= ',' + miss[eep].aparicoes[vespa]
+
+            if (roller.find(function(roller) {return roller.rept == rap}) != undefined) {
+
+              what = roller.find(function(roller) {return roller.rept == rap})
+            console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
+            console.log(what.mons, monspos, posmon)
+          }else{
+
+            if (monspos.indexOf(posmon) == -1) {
+              console.log(posmon, 'não está em', monspos)
+            }
+            monspos.push(posmon)
+          }
+
+            console.log(rap)
             repwri += "," + miss[eep].aparicoes[vespa];
             console.log('REPWRI: ', '<<<||',repwri,'||>>>')
 
@@ -1523,24 +1557,19 @@ for (bye in monomios) {
                 return roller.rept == repwri;
               }) == undefined
             ) {
+              console.log('ASSIM FICOU OS MONÔMIOS:',monspos)
               console.log('PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
+              console.log( 'mons:', monspos,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
               roller.push({
+                mons: [...monspos],
                 rept: repwri,
                 opl: [...repeated],
-                position: [eep, quad],
+                position: [eep, quad]
               });
+              console.log(`NAO É POSSÓVEL!!!!!!!!!!!!!!!!${roller[roller.length - 1].mons}`)
             } else {
-              if (
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
-                  })
-                  .position.indexOf(eep) == -1
-              ) {
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
-                  })
+              if (roller.find(function (roller) {return roller.rept == repwri;}).position.indexOf(eep) == -1) {
+                roller.find(function (roller) {return roller.rept == repwri;})
                   .position.push(eep);
               }
 
@@ -1564,6 +1593,11 @@ for (bye in monomios) {
     }
     console.log('__________________________________________')
   }
+
+  for (world in roller) {
+    console.log(`${roller[world].mons}`, roller[world].position, roller[world].opl)
+  }
+
    for (r in roller) {
        //console.log(roller[r].opl, roller[r].position, roller[r].rept)
        roll.push({repetidos: roller[r].opl, posições: roller[r].position, way: roller[r].rept})
@@ -10535,4 +10569,3 @@ function devtools() {
   }
 
 }
-//COMPARAR ESSE COM O OUTRO FATORADOR2(PARA RESOLVER O PROBLEMA DO YOUDUMB)
