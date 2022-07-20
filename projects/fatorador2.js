@@ -1554,7 +1554,7 @@ for (bye in monomios) {
 
               if (cango == true && monspos.indexOf(posmon) == -1) {
 
-             // monspos.push(posmon)
+              monspos.push(posmon)
               what = roller.find(function(roller) {return roller.rept == rap})
             console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
             console.log(what.mons, monspos, posmon)
@@ -1620,7 +1620,7 @@ for (bye in monomios) {
                 return roller.rept == repwri;
               }) == undefined
             ) {
-              console.log('ASSIM FICOU OS MONÔMIOS:',result)
+              console.log('ASSIM FICOU OS MONÔMIOS:',result, '(',[...monspos],')')
               console.log('==============(((((((((((&&&&&&####*******>>>>>>PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
               console.log( 'mons:', result,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
               roller.push({
