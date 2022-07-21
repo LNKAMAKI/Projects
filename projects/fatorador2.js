@@ -8722,7 +8722,7 @@ function FATORE(q) {
         //console.log(newexpress)
         //console.log('_______________________________________________________________________________________   _______________')
 
-        FATORAR(newexpress)
+        FATORAR2(newexpress)
    }else{
 
    //console.log('VENDO OS QUE FALTAM:')
