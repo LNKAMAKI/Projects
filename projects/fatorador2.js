@@ -1493,15 +1493,15 @@ for (bye in monomios) {
 
           console.log('//\//\//\//\//\//\//\/', miss[eep].aparicoes)
 
-          monspos = []
+          monspos_ = []
           for (b in miss[eep].aparicoes) {
             console.log(scarecrow[miss[eep].aparicoes[b]].divididos,`.indexOf(${miss[eep].dividido}) = `,scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido))
             console.log('O MONÔMIO QUE RESULTA EM', miss[eep].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[eep].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)],monomios[scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]].numero)
             monpos = scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]
-            monspos.push(monpos)
+            monspos_.push(monpos)
           }
           
-          console.log('//\//\//\//\//\//\//\/ =>', 'posições dos monômios: ',monspos)
+          console.log('//\//\//\//\//\//\//\/ =>', 'posições dos monômios: ',monspos_)
 
     console.log('GOING THROUGH MISS')
     for (quad in miss) {
@@ -1525,23 +1525,27 @@ for (bye in monomios) {
 
           rap = ''
 
-          cango = true
           monspos = []
           result = []
         for (vespa in miss[eep].aparicoes) {
           
+          cango = true
           monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
 
-          console.log('MONPOS:',monpos, 'MONSPOS:', [...monspos])
-          if (monspos.indexOf(monpos) == -1) {
-        monspos.push(monpos)
-          }else{
-            console.log('CANGO = FALSE!!!!!!!!')
-            cango = false
-          }
+          console.log('¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨',vespa,'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨')
+          console.log(`${monspos_}[${vespa}] = `,monpos, 'MONSPOS:', [...monspos])
 
-          console.log(`*miss[${eep}]*.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
+          console.log(`${miss[eep].aparicoes}|*miss[${eep}]*|.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
           if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+
+            if (monspos.indexOf(monpos) == -1) {
+              monspos.push(monpos)
+              console.log('PUSHE',monpos)
+                }else{
+                  console.log('CANGO = FALSE!!!!!!!!')
+                  cango = false
+                }
+
             console.log('(miss',quad,')',`${miss[quad].aparicoes} possui *${miss[eep].aparicoes[vespa]}*`,' -> index:', miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]),`monomio [${monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]}]`)
             posmon = monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]
           
@@ -1676,8 +1680,8 @@ for (bye in monomios) {
               }
             }
           }else{
-            cango = true
-            console.log('MUDANDO DE IDEIA!!!! CANGO = TRUE', cango)
+            //cango = true
+            //console.log('MUDANDO DE IDEIA!!!! CANGO = TRUE', cango)
           }
         }
       }
@@ -10661,4 +10665,4 @@ function devtools() {
   }
 
 }
-//aa
+//aaa
