@@ -1532,10 +1532,11 @@ for (bye in monomios) {
           
           monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
 
-          console.log('MONPOS:',monpos, 'MONSPOS:', monspos)
+          console.log('MONPOS:',monpos, 'MONSPOS:', [...monspos])
           if (monspos.indexOf(monpos) == -1) {
         monspos.push(monpos)
           }else{
+            console.log('CANGO = FALSE!!!!!!!!')
             cango = false
           }
 
@@ -1552,30 +1553,45 @@ for (bye in monomios) {
         
             if (roller.find(function(roller) {return roller.rept == rap}) != undefined) {
 
+              console.log('CAN GO?', cango, `${[...monspos]}.indexOf(${posmon}) = ${[...monspos].indexOf(posmon)}`)
               if (cango == true && monspos.indexOf(posmon) == -1) {
 
               monspos.push(posmon)
               what = roller.find(function(roller) {return roller.rept == rap})
             console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
             console.log(what.mons, monspos, posmon)
-
+            console.log(what.opl,'REPEEEEEEEEEEATED&*&&&&&&777####@22%%%$++===+=__-;;;´´´´`[[}}]ººººº')
+            
+            for (h in monspos) {
+              console.log(monspos[h])
+              if (what.mons.indexOf(monspos[h]) == -1) {
+                console.log('PODE PUSHAR', monspos[h])
+                what.mons.push(monspos[h])
+              }
+            }
+            /*
             if (what.mons.indexOf(posmon) == -1) {
               console.log(posmon, 'não está em,', what.mons, 'portanto, pode pushar')
               console.log('------------',monpos,'------------')
-              result.push(posmon)
-              result.push(monpos)
+
+             result.push(posmon)
+             result.push(monpos)
 
               what.mons.push(posmon)
               if (what.mons.indexOf(monpos) == -1) {
                 console.log(monpos, 'não está em,', what.mons, 'portanto, pode pushar')
+                what.mons.push(monpos)
+
               }
 
             }
+            */
             console.log(rap)
           }else{
             console.log('EITAAAAAAAAAAAA_______________%%%%%%%%%%%%%%%%$$$$$$$^^^^^^~~~~~~')
+            monspos.splice(monspos.length - 1,1)
           }
-          console.log('CAN GO?', cango, `${monspos}.indexOf(${posmon}) = ${monspos.indexOf(posmon)}`)
+          
         }else{
 
             if (monspos.indexOf(posmon) == -1 && cango == true) {
@@ -1585,6 +1601,17 @@ for (bye in monomios) {
               result.push(monpos)
               result.push(posmon)
           }else{
+
+            if (cango == true) {
+              console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+              monspos.splice(monspos.length - 1,1)
+              console.log(monspos)
+              }else{
+              cango = true
+              console.log(monpos, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+              }
+
+            console.log('AUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAU')
             console.log('THIS IS THE RAP!!&&&&&&&&&&&&&&&&&&&&&&',rap)
 
             parar = false
@@ -1606,11 +1633,6 @@ for (bye in monomios) {
             console.log('NOVO RAPP!!!!:', nov)
             rap = nov
 
-            if (cango == true) {
-            console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-            }else{
-            console.log(monpos, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-            }
           }
         }
             console.log(rap)
@@ -1631,6 +1653,7 @@ for (bye in monomios) {
                 opl: [...repeated],
                 position: [eep, quad]
               });
+             console.log(roller[roller.length - 1].opl,'(REPEATEEEEED)%%¨¨¨¨¬¬¬¬¬¬¬¬¬66666¬¬6¬¬')
               
             } else {
               if (roller.find(function (roller) {return roller.rept == repwri;}).position.indexOf(eep) == -1) {
@@ -1652,6 +1675,9 @@ for (bye in monomios) {
                   .position.push(quad);
               }
             }
+          }else{
+            cango = true
+            console.log('MUDANDO DE IDEIA!!!! CANGO = TRUE', cango)
           }
         }
       }
