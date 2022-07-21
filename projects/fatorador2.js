@@ -2064,62 +2064,208 @@ for (bye in monomios) {
    
          roller = [];
 
-  for (eep in miss) {
-    for (quad in miss) {
-      if (quad != eep) {
-        repeated = [];
-        repwri = "";
-        for (vespa in miss[eep].aparicoes) {
-          if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
-            repeated.push(miss[eep].aparicoes[vespa]);
-
-            repwri += "," + miss[eep].aparicoes[vespa];
-
-            if (
-              roller.find(function (roller) {
-                return roller.rept == repwri;
-              }) == undefined
-            ) {
-              //console.log('PODE PUSHAR',{rept: repwri,opl:repeated,position: [eep,quad]}, repeated, repeated.length)
-              roller.push({
-                rept: repwri,
-                opl: [...repeated],
-                position: [eep, quad],
-              });
-            } else {
-              if (
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
-                  })
-                  .position.indexOf(eep) == -1
-              ) {
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
-                  })
-                  .position.push(eep);
+       
+         for (eep in miss) {
+          console.log('__________________________________________')
+          console.log(`*miss[${eep}]*: `, miss[eep].aparicoes, miss[eep].dividido)
+      
+                console.log('//\//\//\//\//\//\//\/', miss[eep].aparicoes)
+      
+                monspos_ = []
+                for (b in miss[eep].aparicoes) {
+                  console.log(scarecrow[miss[eep].aparicoes[b]].divididos,`.indexOf(${miss[eep].dividido}) = `,scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido))
+                  console.log('O MONÔMIO QUE RESULTA EM', miss[eep].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[eep].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)],monomios[scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]].numero)
+                  monpos = scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]
+                  monspos_.push(monpos)
+                }
+                
+                console.log('//\//\//\//\//\//\//\/ =>', 'posições dos monômios: ',monspos_)
+      
+          console.log('GOING THROUGH MISS')
+          for (quad in miss) {
+           
+            console.log('--------------------------------------')
+            if (quad != eep) {
+              console.log(`miss[${quad}]: `,miss[quad].aparicoes, String(miss[quad].dividido))
+              repeated = [];
+              repwri = "";
+      
+              console.log('//\//\//\//\//\//\//\/', miss[quad].aparicoes)
+      
+              monspos2 = []
+                for (b in miss[quad].aparicoes) {
+                  console.log(scarecrow[miss[quad].aparicoes[b]].divididos,`.indexOf(${miss[quad].dividido}) = `,scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido))
+                  console.log('O MONÔMIO QUE RESULTA EM', miss[quad].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[quad].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)],monomios[scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]].numero)
+                  monpos = scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]
+                  monspos2.push(monpos)
+                }
+                console.log('//\//\//\//\//\//\//\/','posições dos monômios: ',monspos2)
+      
+                rap = ''
+      
+                monspos = []
+                result = []
+              for (vespa in miss[eep].aparicoes) {
+                
+                cango = true
+                monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
+      
+                console.log('¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨',vespa,'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨')
+                console.log(`${monspos_}[${vespa}] = `,monpos, 'MONSPOS:', [...monspos])
+      
+                console.log(`${miss[eep].aparicoes}|*miss[${eep}]*|.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
+                if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+      
+                  if (monspos.indexOf(monpos) == -1) {
+                    monspos.push(monpos)
+                    console.log('PUSHE',monpos)
+                      }else{
+                        console.log('CANGO = FALSE!!!!!!!!')
+                        cango = false
+                      }
+      
+                  console.log('(miss',quad,')',`${miss[quad].aparicoes} possui *${miss[eep].aparicoes[vespa]}*`,' -> index:', miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]),`monomio [${monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]}]`)
+                  posmon = monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]
+                
+                  repeated.push(miss[eep].aparicoes[vespa]);
+      
+                  rap+= ',' + miss[eep].aparicoes[vespa]
+      
+                  console.log('MOIPON',monspos)
+              
+                  if (roller.find(function(roller) {return roller.rept == rap}) != undefined) {
+      
+                    console.log('CAN GO?', cango, `${[...monspos]}.indexOf(${posmon}) = ${[...monspos].indexOf(posmon)}`)
+                    if (cango == true && monspos.indexOf(posmon) == -1) {
+      
+                    monspos.push(posmon)
+                    what = roller.find(function(roller) {return roller.rept == rap})
+                  console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
+                  console.log(what.mons, monspos, posmon)
+                  console.log(what.opl,'REPEEEEEEEEEEATED&*&&&&&&777####@22%%%$++===+=__-;;;´´´´`[[}}]ººººº')
+                  
+                  for (h in monspos) {
+                    console.log(monspos[h])
+                    if (what.mons.indexOf(monspos[h]) == -1) {
+                      console.log('PODE PUSHAR', monspos[h])
+                      what.mons.push(monspos[h])
+                    }
+                  }
+                  /*
+                  if (what.mons.indexOf(posmon) == -1) {
+                    console.log(posmon, 'não está em,', what.mons, 'portanto, pode pushar')
+                    console.log('------------',monpos,'------------')
+      
+                   result.push(posmon)
+                   result.push(monpos)
+      
+                    what.mons.push(posmon)
+                    if (what.mons.indexOf(monpos) == -1) {
+                      console.log(monpos, 'não está em,', what.mons, 'portanto, pode pushar')
+                      what.mons.push(monpos)
+      
+                    }
+      
+                  }
+                  */
+                  console.log(rap)
+                }else{
+                  console.log('EITAAAAAAAAAAAA_______________%%%%%%%%%%%%%%%%$$$$$$$^^^^^^~~~~~~')
+                  monspos.splice(monspos.length - 1,1)
+                }
+                
+              }else{
+      
+                  if (monspos.indexOf(posmon) == -1 && cango == true) {
+                    console.log(posmon, 'não está em', monspos)
+                    console.log(monpos)
+                    monspos.push(posmon)
+                    result.push(monpos)
+                    result.push(posmon)
+                }else{
+      
+                  if (cango == true) {
+                    console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                    monspos.splice(monspos.length - 1,1)
+                    console.log(monspos)
+                    }else{
+                    cango = true
+                    console.log(monpos, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                    }
+      
+                  console.log('AUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAU')
+                  console.log('THIS IS THE RAP!!&&&&&&&&&&&&&&&&&&&&&&',rap)
+      
+                  parar = false
+      
+                  novorap = ''
+                  for (h = rap.length - 1; h >= 0; h--) {
+                    console.log(rap[h])
+                    if (rap[h] == ',' && parar == false) {
+                      parar = true
+                    }else if(parar == true) {
+                      novorap+= rap[h]
+                  }
+                }
+      
+                nov = ''
+                for (u = novorap.length - 1; u >= 0; u--) {
+                  nov+= novorap[u]
+                }
+                  console.log('NOVO RAPP!!!!:', nov)
+                  rap = nov
+      
+                }
               }
-
-              if (
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
-                  })
-                  .position.indexOf(quad) == -1
-              ) {
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
-                  })
-                  .position.push(quad);
+                  console.log(rap)
+                  repwri = rap          //repwri += "," + miss[eep].aparicoes[vespa];
+                  console.log('REPWRI: ', '<<<||',repwri,'||>>>')
+      
+                  if (
+                    roller.find(function (roller) {
+                      return roller.rept == repwri;
+                    }) == undefined
+                  ) {
+                    console.log('ASSIM FICOU OS MONÔMIOS:',result, '(',[...monspos],')')
+                    console.log('==============(((((((((((&&&&&&####*******>>>>>>PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
+                    console.log( 'mons:', result,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
+                    roller.push({
+                      mons: [...result],
+                      rept: repwri,
+                      opl: [...repeated],
+                      position: [eep, quad]
+                    });
+                   console.log(roller[roller.length - 1].opl,'(REPEATEEEEED)%%¨¨¨¨¬¬¬¬¬¬¬¬¬66666¬¬6¬¬')
+                    
+                  } else {
+                    if (roller.find(function (roller) {return roller.rept == repwri;}).position.indexOf(eep) == -1) {
+                      roller.find(function (roller) {return roller.rept == repwri;})
+                        .position.push(eep);
+                    }
+      
+                    if (
+                      roller
+                        .find(function (roller) {
+                          return roller.rept == repwri;
+                        })
+                        .position.indexOf(quad) == -1
+                    ) {
+                      roller
+                        .find(function (roller) {
+                          return roller.rept == repwri;
+                        })
+                        .position.push(quad);
+                    }
+                  }
+                }else{
+                  //cango = true
+                  //console.log('MUDANDO DE IDEIA!!!! CANGO = TRUE', cango)
+                }
               }
             }
           }
+          console.log('__________________________________________')
         }
-      }
-    }
-  }
 
   for (r in roller) {
     //console.log(roller[r].opl, roller[r].position, roller[r].rept)
