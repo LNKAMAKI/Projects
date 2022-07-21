@@ -3400,23 +3400,27 @@ for (bye in monomios) {
 
        //console.log('__________________')
        //console.log(naonao,',', tobreak)
-       fat1 = FATORAR2(FATORE(naonao))
-       fat2 = FATORAR2(FATORE(tobreak))
+       //fat1 = FATORAR2(FATORE(naonao))
+       //fat2 = FATORAR2(FATORE(tobreak))
        //console.log(fat1[0],'segs.length:',fat1[3])
-       //console.log(fat2[0],'segs.length:',fat2[3])
+      // console.log(fat2[0],'segs.length:',fat2[3])
    
        daprafat1 = false
+       /*
        if (fat1[1] == 1 && fat1[2] == 0) { // IF PANS EQUALS TO 1 AND TODOSOSNUMEROS EQUALS TO ZERO(WHICH MEANS THERE IS NO MONOMIO LEFT)
      //  naonao = fat1[0]
        daprafat1 = true
        }
+       */
    
        daprafat2 = false
+       /*
        if (fat2[1] == 1 && fat2[2] == 0) {
       // tobreak = fat2[0]
        daprafat2 = true
        }
-   
+   */
+
        //console.log('__________________')
 
        if (edge.length > 1) {
