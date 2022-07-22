@@ -1,15 +1,15 @@
-function FATORAR2(expression) {
+function FATORAR2(expression_2) {
 
-    startexp_2 = [...expression];
+    startexp_2 = [...expression_2];
 
-  if (expression[0] !== "-" && expression[0] !== "+") {
+  if (expression_2[0] !== "-" && expression_2[0] !== "+") {
     //
     expo_2 = ["+"];
-    for (ent in expression) {
+    for (ent in expression_2) {
       //
-      expo_2.push(expression[ent]);
+      expo_2.push(expression_2[ent]);
     }
-    expression = expo_2;
+    expression_2 = expo_2;
   }
 
   //6x^2 + 3 + 14x^2y + 7y
@@ -18,11 +18,11 @@ function FATORAR2(expression) {
 
   //FATORAnDO OS nÚMEROS
 
-  for (n = 0; n < expression.length; n++) {
+  for (n = 0; n < expression_2.length; n++) {
     if (
-      ehprimo(expression[n]) == false &&
-      String(expression[n]).search("[0-9]") != -1 &&
-      expression[n - 1] != "^"
+      ehprimo(expression_2[n]) == false &&
+      String(expression_2[n]).search("[0-9]") != -1 &&
+      expression_2[n - 1] != "^"
     ) {
       fatorado = "";
 
@@ -35,7 +35,7 @@ function FATORAR2(expression) {
       fator = 1;
 
       for (e = 2; stop == false; e++) {
-        sob = Number(expression[n]);
+        sob = Number(expression_2[n]);
 
         if (ehprimo(e) == true) {
           while (sob % e == 0) {
@@ -52,7 +52,7 @@ function FATORAR2(expression) {
 
             st = false;
 
-            if (fator == expression[n]) {
+            if (fator == expression_2[n]) {
               stop = true;
               fatorado += `${e}`;
             } else {
@@ -62,7 +62,7 @@ function FATORAR2(expression) {
         }
       }
 
-      expression[n] = fatorado;
+      expression_2[n] = fatorado;
     }
   }
   //
@@ -70,15 +70,15 @@ function FATORAR2(expression) {
   //FAZEnDO AS POTÊnCIAS COM LETRAS
 
   //
-  for (y in expression) {
-    if (expression[y] == "^") {
-      ad = expression[Number(y) - 1];
-      for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
-        expression[Number(y) - 1] += ad;
+  for (y in expression_2) {
+    if (expression_2[y] == "^") {
+      ad = expression_2[Number(y) - 1];
+      for (h = 0; h < Number(expression_2[Number(y) + 1]) - 1; h++) {
+        expression_2[Number(y) - 1] += ad;
       }
 
-      expression.splice(Number(y) + 1, 1);
-      expression.splice(y, 1);
+      expression_2.splice(Number(y) + 1, 1);
+      expression_2.splice(y, 1);
     }
   }
 
@@ -86,13 +86,13 @@ function FATORAR2(expression) {
 
   monomios_2 = [{ numero: "" }];
   obnum = 0;
-  for (n = 0; n < expression.length; n++) {
-    if (String(expression[n]).search("[\\-\\+]") != -1 && n != 0) {
+  for (n = 0; n < expression_2.length; n++) {
+    if (String(expression_2[n]).search("[\\-\\+]") != -1 && n != 0) {
       monomios_2.push({ numero: "" });
       obnum++;
     }
 
-    monomios_2[obnum].numero += expression[n];
+    monomios_2[obnum].numero += expression_2[n];
   }
 
   //monomios_2 = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
@@ -469,7 +469,7 @@ function FATORAR2(expression) {
    
    if (T.indexOf(egs[n]) != -1) {
    
-      // console.log('TAKE OUT', egs[n])
+      //console.log('TAKE OUT', egs[n])
    T.splice(T.lastIndexOf(egs[n]), 1)
    takeout.push(Number(n))
    }
@@ -482,9 +482,9 @@ function FATORAR2(expression) {
    
    for (giro = egs.length - 1; giro >= 0; giro--) {
        if (takeout.indexOf(Number(giro)) == -1) {
-      // console.log(egs[giro],'egs[giro]')
+      //console.log(egs[giro],'egs[giro]')
        }else{
-          // console.log('SPLICE')
+          //console.log('SPLICE')
            egs.splice(giro,1)
        }
    }
@@ -492,11 +492,11 @@ function FATORAR2(expression) {
    //console.log('GIRRRRRRRRRROOOOO', egs)
    depois = ''
    for (n in egs) {
-      // console.log('yo',egs[n])
+      //console.log('yo',egs[n])
            depois += String(egs[n])
    
         if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
-         //  console.log('HUmm')
+         //console.log('HUmm')
            depois+= '*'
         }
    }
@@ -505,7 +505,7 @@ function FATORAR2(expression) {
    
    
    }
-   //expression = exp_2
+   //expression_2 = exp_2
    
    ////console.log('--------------------------------------------Monomios_2--------------------------------------')
    reps = []
@@ -528,7 +528,7 @@ function FATORAR2(expression) {
            
    
            if (monomios_2[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-         // console.log('LETRA OU nÚMERO ISOLADO: ' + monomios_2[m].numero[oc])
+         //console.log('LETRA OU nÚMERO ISOLADO: ' + monomios_2[m].numero[oc])
    
           //console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios_2[m].numero[oc]))
            if (numerosrep.indexOf(monomios_2[m].numero[oc]) == -1) {
@@ -546,12 +546,12 @@ function FATORAR2(expression) {
              if(ocs2.find(function(ocs2) {
                return ocs2.ed == monomios_2[m].numero[oc]
                }) == undefined) {
-                // console.log('====================')
+                //console.log('====================')
                    ocs2.push({ed: monomios_2[m].numero[oc], el: 0})
    
                    ocs = 0
              for (ao = 0; ao < monomios_2[m].numero.length; ao++) {
-             // console.log('AAAAAAAAAA' + monomios_2[m].numero[ao])
+             //console.log('AAAAAAAAAA' + monomios_2[m].numero[ao])
                if (monomios_2[m].numero[ao] == monomios_2[m].numero[oc]) {
                    ocs++
                }
@@ -662,14 +662,14 @@ function FATORAR2(expression) {
        ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
        
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              console.log('**********************************************************************esse',repetido[moe], segs_2)
+              //console.log('**********************************************************************esse',repetido[moe], segs_2)
 
               podeir = true
               qual = -1
               for (meow in segs_2) {
                   
-                console.log('')
-                console.log('',segs_2[meow].car)
+                //console.log('')
+                //console.log('',segs_2[meow].car)
                
                     array1 = []
                     for (d in segs_2[meow].car) {
@@ -684,21 +684,21 @@ function FATORAR2(expression) {
                     if (segs_2[meow].car.length < repetido[moe].letr.length) {
 
                         divisao =  DIVIDIR(VAI(segs_2[meow].car), VAI(repetido[moe].letr))
-                    console.log('DIVIDIR', segs_2[meow].car, 'por', repetido[moe].letr, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
+                    //console.log('DIVIDIR', segs_2[meow].car, 'por', repetido[moe].letr, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                      }else{
                          divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs_2[meow].car))
-                    console.log('DIVIDIR', repetido[moe].letr, 'por', segs_2[meow].car, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
+                    //console.log('DIVIDIR', repetido[moe].letr, 'por', segs_2[meow].car, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                      }
 
                      if (divisao == '' || divisao == '-') {
-                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
+                        //console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                         podeir = false
                         qual = meow
                      }
                   
               }
 
-              console.log('PODE IR?????????????????????????', podeir, qual)
+              //console.log('PODE IR?????????????????????????', podeir, qual)
                if (podeir == true) {
                 splitUp(repetido[moe].letr);
                     function splitUp(str) {
@@ -736,33 +736,33 @@ function FATORAR2(expression) {
    
    
    for (nl = 0; nl < segs_2.length; nl++) {
-       console.log('-----------------------------------------------------------------------------------------')
+       //console.log('-----------------------------------------------------------------------------------------')
        
-       console.log(segs_2[nl])
+       //console.log(segs_2[nl])
    
-       console.log('AnALISAR CADA ITEM')
-       console.log('nUMERO: ', segs_2[nl].car)
+       //console.log('AnALISAR CADA ITEM')
+       //console.log('nUMERO: ', segs_2[nl].car)
        for (n = 0; n < segs_2.length; n++) {
    
-           console.log('---------------------------------------------------------------------')
+           //console.log('---------------------------------------------------------------------')
            if (n != nl) {
-           console.log(`${segs_2[n].car}.search('${segs_2[nl].car}')`, String(segs_2[n].car).search(String(segs_2[nl].car)))
+           //console.log(`${segs_2[n].car}.search('${segs_2[nl].car}')`, String(segs_2[n].car).search(String(segs_2[nl].car)))
            for (dry in segs_2[nl].car) {
-            console.log('_|(o u o)|_', segs_2[nl].car[dry])
+            //console.log('_|(o u o)|_', segs_2[nl].car[dry])
            }
 
            if (String(segs_2[n].car).search(String(segs_2[nl].car)) != -1) {
               
-               console.log(`${segs_2[n].car}: ${segs_2[n].mons}`)
-               console.log(`${segs_2[nl].car}: ${segs_2[nl].mons}`)
+               //console.log(`${segs_2[n].car}: ${segs_2[n].mons}`)
+               //console.log(`${segs_2[nl].car}: ${segs_2[nl].mons}`)
    
                for (u in segs_2[n].mons) {
-                   console.log(segs_2[n].mons[u])
+                   //console.log(segs_2[n].mons[u])
                    if (segs_2[nl].mons.indexOf(segs_2[n].mons[u]) != -1) {
-                       console.log('TEM')
+                       //console.log('TEM')
                    }else{
-                     console.log('nÃO TEM')
-                     console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs_2[nl].mons)
+                     //console.log('nÃO TEM')
+                     //console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs_2[nl].mons)
                        segs_2[nl].mons.push(segs_2[n].mons[u])
                      
                    }
@@ -849,7 +849,7 @@ function FATORAR2(expression) {
       }
    
       its = grtols_2
-     console.log(its)
+     //console.log(its)
      for (c in its) {
        segs_2ordered.push(its[c])
      }
@@ -877,30 +877,30 @@ function FATORAR2(expression) {
    goaway = []
    for (nah in segs_2) {
     
-       console.log(segs_2[nah].car)
+       //console.log(segs_2[nah].car)
        if (segs_2[nah].car[0] == '-') {
-        console.log('NEGATIVO')
+        //console.log('NEGATIVO')
         semmenos = ''
         for (memories in segs_2[nah].car) {
-            console.log(segs_2[nah].car[memories])
+            //console.log(segs_2[nah].car[memories])
             if (memories != 0 && memories!= 1){
              semmenos+= segs_2[nah].car[memories]
             }
         }
-        console.log('pesquisar:', semmenos)
-        console.log(segs_2.find(function(segs_2) {return segs_2.car == semmenos}))
+        //console.log('pesquisar:', semmenos)
+        //console.log(segs_2.find(function(segs_2) {return segs_2.car == semmenos}))
         if (segs_2.find(function(segs_2) {return segs_2.car == semmenos}) != undefined) {
             goaway.push(Number(nah))
         }
        }
    }
-   console.log('TIRAR TUDO')
-   console.log(goaway)
+   //console.log('TIRAR TUDO')
+   //console.log(goaway)
 
    for (time = segs_2.length - 1; time >= 0; time--) {
-    console.log(time, segs_2[time])
+    //console.log(time, segs_2[time])
     if (goaway.indexOf(time) != -1) {
-        console.log('TIRAR')
+        //console.log('TIRAR')
         segs_2.splice(time, 1)
         }
    }
@@ -920,13 +920,13 @@ function FATORAR2(expression) {
        //const HATEYOU = []
        //for (HATEDEVTOOLS in segs_2) {
           
-         //  console.log(segs_2[HATEDEVTOOLS].mons)
+         //console.log(segs_2[HATEDEVTOOLS].mons)
            //HATEYOU.push(segs_2[HATEDEVTOOLS])
       // }
        
       //console.log(segs_2)
       for (tie in segs_2) {
-      // console.log(segs_2[tie])
+      //console.log(segs_2[tie])
        segs_2[tie].godhelpme = [...segs_2[tie].mons]
       }
      
@@ -934,11 +934,11 @@ function FATORAR2(expression) {
       // for (okentao in divs_2) {
            roll_2 = [] 
    
-          // console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
+          //console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
            //const vi = 0
            scarecrow_2 = []
            for(anchor in segs_2) {
-              // console.log('i feel the light betrayed me', segs_2[anchor].mons)
+              //console.log('i feel the light betrayed me', segs_2[anchor].mons)
                
            
                army = []
@@ -970,12 +970,12 @@ function FATORAR2(expression) {
                    }
                }
                bell = [...army]
-              // console.log('OAHAHA', army)
+              //console.log('OAHAHA', army)
    
-              // console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
+              //console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
                
                for (pahh in army) {
-                  // console.log(army[pahh])
+                  //console.log(army[pahh])
                    if (army[pahh] == '*') {
                        army[pahh] = '.'
                    }
@@ -986,7 +986,7 @@ function FATORAR2(expression) {
                   
                    army = [...bell]
             
-                //   console.log(monomios_2[segs_2[anchor].mons[high]].numero,army)
+                //console.log(monomios_2[segs_2[anchor].mons[high]].numero,army)
            
                
                 lightson = [...army]
@@ -998,13 +998,13 @@ function FATORAR2(expression) {
                   if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) {
    
                       pain = '-1'
-                     // console.log('opa')
+                     //console.log('opa')
                       scarecrow_2[anchor].divididos.push('1')
                        scarecrow_2[anchor].outrodiv.push(pain)
                   }else if(lightson.indexOf('-') == -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') != -1) {
                       
                        pain = '-1'
-                     //  console.log('opa')
+                     //console.log('opa')
                        scarecrow_2[anchor].divididos.push('1')
                        scarecrow_2[anchor].outrodiv.push(pain)
                   }else{
@@ -1018,20 +1018,20 @@ function FATORAR2(expression) {
            
                        right = ''
                        for (feet in pain) {
-                         //  console.log(pain[feet])
+                         //console.log(pain[feet])
                            if (pain[feet] != '+') {
                                right+= pain[feet]
                            }
                        }
-                    //   console.log('É ESSE:', right)
+                    //console.log('É ESSE:', right)
                       
                        uy = ''
-                     //  console.log(right, 'RIGHT') 
+                     //console.log(right, 'RIGHT') 
    
                       for (xarope in right) {
-                    //   console.log(right[xarope])
+                    //console.log(right[xarope])
                        if (xarope == 0 && right[xarope] == '*') { // *2
-                      //   console.log('ERRADO!', '*2')
+                      //console.log('ERRADO!', '*2')
                        }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
                      // //console.log('ERRADO', '2*')
                        }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
@@ -1078,7 +1078,7 @@ function FATORAR2(expression) {
           quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao])
           quantasposições = Number(monomios_2.length)/Number(quantosfatores)
    
-         // console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
+         //console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
    
    // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
    
@@ -1162,41 +1162,41 @@ function FATORAR2(expression) {
     }
   }
    for (r in roller_2) {
-       console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
+       //console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
        roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
    }
    while(java < miss_2.length && deucerto == false) {
               
              // if (miss_2[java].aparicoes.length >= quantasposições) {
-           //    console.log('')
-        //   console.log('SEnDO AnALISADO nO MOMEnTO', miss_2[java].aparicoes)
+           //console.log('')
+        //console.log('SEnDO AnALISADO nO MOMEnTO', miss_2[java].aparicoes)
    
            podeser_2 = []
            for (outro in miss_2) {
-              // console.log('')
+              //console.log('')
                if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
-               //   console.log(miss_2[outro], outro)
+               //console.log(miss_2[outro], outro)
    
                    presentes = []
                    for (quecoisa in miss_2[outro].aparicoes) {
                        fatorzinho = miss_2[outro].aparicoes[quecoisa]
-                    //   console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss_2[java].aparicoes)
+                    //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss_2[java].aparicoes)
    
                        if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    //   console.log('TEM', fatorzinho)
+                    //console.log('TEM', fatorzinho)
                            presentes.push(fatorzinho)
                        }
                    }
-                 //  console.log('OLHA', presentes)
+                 //console.log('OLHA', presentes)
    
                    adicionou = false
                    for (idk in podeser_2) {
-                    //   console.log(podeser_2[idk])
+                    //console.log(podeser_2[idk])
                        esigual = true
                        for (denovo in podeser_2[idk].opl) {
-                          // console.log(podeser_2[idk].opl[denovo], presentes[denovo])
+                          //console.log(podeser_2[idk].opl[denovo], presentes[denovo])
                            if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
-                              // console.log('É IGUAL')
+                              //console.log('É IGUAL')
                            }else{
                                esigual = false
                            }
@@ -1227,10 +1227,10 @@ function FATORAR2(expression) {
                    //console.log(podeser_2[belief].opl[gun])
                    shot+= podeser_2[belief].opl[gun] + ','
                }
-              // console.log('THAT WE LET IT GO:', shot)
+              //console.log('THAT WE LET IT GO:', shot)
    
                if (roll_2.length == 0) {
-                  // console.log('ADICIONAR(LISTA VAZIA)')
+                  //console.log('ADICIONAR(LISTA VAZIA)')
                    //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
                }else if(roll_2.find(function(roll_2){return roll_2.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                    //console.log('JÁ TEM')
@@ -1239,7 +1239,7 @@ function FATORAR2(expression) {
                    for (capital in podeser_2[belief].position) {
                        //console.log(podeser_2[belief].position[capital])
    
-                     // console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
+                     //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
    
                    if (roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital])== -1) {
                       //console.log('NÃO TEM') 
@@ -1261,15 +1261,15 @@ function FATORAR2(expression) {
    
                   for(cold in podeser_2) {
               if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
-              // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+              //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
                deucerto = true
    
                ficaassim = ''
               // podeser_2[cold].position.push(whyis)
    
                for (yehaa in podeser_2[cold].position) {
-                 //  console.log(podeser_2[cold])
-                  // console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
+                 //console.log(podeser_2[cold])
+                  //console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
                    if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
                        
                        fi = ''
@@ -1278,7 +1278,7 @@ function FATORAR2(expression) {
                                fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
                            }
                        }
-                     //  console.log(fi)
+                     //console.log(fi)
                        if (yehaa != 0) {
                             ficaassim += ` - ${fi}`
                        }else{
@@ -1293,15 +1293,15 @@ function FATORAR2(expression) {
                    
                
                }
-              // console.log('FICA ASSIM', `(${ficaassim})`)
+              //console.log('FICA ASSIM', `(${ficaassim})`)
               for (ruin in podeser_2[cold].opl) {
-             //  console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
+             //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
                emotion = ''
                for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor ) {
               ////console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
                    emotion+= scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream]
                }
-             //  console.log(`${emotion}(${ficaassim})`)
+             //console.log(`${emotion}(${ficaassim})`)
              }
               }
            }
@@ -1310,7 +1310,7 @@ function FATORAR2(expression) {
    
             //  }
               
-            //  console.log('continuar', miss_2[java])
+            //console.log('continuar', miss_2[java])
    
               java++
           }
@@ -1319,11 +1319,11 @@ function FATORAR2(expression) {
    
           /*
           for (nao in roll_2) {
-             // console.log('-------------------------------------------------------------------')
-          // console.log('esse é o negócio',roll_2[nao].repetidos)
+             //console.log('-------------------------------------------------------------------')
+          //console.log('esse é o negócio',roll_2[nao].repetidos)
            
-          // console.log('---------------------------------------------')
-         //  console.log('ANALISANDO O MISS')
+          //console.log('---------------------------------------------')
+         //console.log('ANALISANDO O MISS')
    
           
                shot = ''
@@ -1338,29 +1338,29 @@ function FATORAR2(expression) {
                for (heat in miss_2[whyso].aparicoes) {
                    //console.log(miss_2[whyso].aparicoes[heat])
                    if (roll_2[nao].repetidos.indexOf(miss_2[whyso].aparicoes[heat]) != -1) {
-                     //  console.log('TEM')
+                     //console.log('TEM')
                        igual++
                    }
                }
-              // console.log('HÁ', igual, 'numero repetidos')
+              //console.log('HÁ', igual, 'numero repetidos')
                if (igual == roll_2[nao].repetidos.length) {
-                  // console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
-                     // console.log(roll_2.find(function (roll_2){return roll_2.way == shot}).posições)
+                  //console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
+                     //console.log(roll_2.find(function (roll_2){return roll_2.way == shot}).posições)
    
                       if (roll_2.find(function (roll_2){return roll_2.way == shot}).posições.indexOf(whyso) != -1) {
                        //console.log('NAO ADICIONAR, JÁ TEM')
                    }else{
-                     //  console.log('ADICIONAR EFETIVAMENTE')
+                     //console.log('ADICIONAR EFETIVAMENTE')
                        roll_2.find(function (roll_2){return roll_2.way == shot}).posições.push(whyso)
                    }
                }
-                 // console.log('THAT WE LET IT GO:', shot)
+                 //console.log('THAT WE LET IT GO:', shot)
                   
                }
            }
            */
           
-         //  console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll_2)
+         //console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll_2)
    
    
          //console.log('PARAR PARA ANALISAR')
@@ -1396,14 +1396,14 @@ function FATORAR2(expression) {
    
            if (jafoi.indexOf(tosse) == -1) {
                organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-          // console.log('___________________________________________')
-          // console.log(tosse, arranjar[tosse].ocupa)
-         //  console.log('')
+          //console.log('___________________________________________')
+          //console.log(tosse, arranjar[tosse].ocupa)
+         //console.log('')
          
            for (calor in arranjar) {
        
                if (calor != tosse) {
-                  // console.log('------------------------------')
+                  //console.log('------------------------------')
                    //console.log(calor, arranjar[calor].ocupa)
    
                    equals = true
@@ -1411,17 +1411,17 @@ function FATORAR2(expression) {
                    for (boring in arranjar[calor].ocupa) {
                        sendocomparado = arranjar[calor].ocupa[boring]
                        comparador= arranjar[tosse].ocupa[boring]
-                     //  console.log(sendocomparado, '=>', comparador)
-                      // console.log(sendocomparado[0],'==', comparador[0])
+                     //console.log(sendocomparado, '=>', comparador)
+                      //console.log(sendocomparado[0],'==', comparador[0])
                        if (sendocomparado[0] != comparador[0]) {
-                         //  console.log(true)
+                         //console.log(true)
                            igualar.push(true)
                        }else{
-                          // console.log(false)
+                          //console.log(false)
                            igualar.push(false)
                        }
                    }
-                  // console.log('igualar:', igualar)
+                  //console.log('igualar:', igualar)
                    if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
                        //console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`,tosse, calor)                     
                        jafoi.push(calor)
@@ -1434,7 +1434,7 @@ function FATORAR2(expression) {
        }
        }
        
-      // console.log(roll_2[ne].posições)
+      //console.log(roll_2[ne].posições)
        for (youchoose in perfectwave) {
            //console.log('_______________________________________',perfectwave[youchoose].agrupar)
            //console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
@@ -1444,15 +1444,15 @@ function FATORAR2(expression) {
                //console.log('-----------------------------------------------------------')
                presa = perfectwave[youchoose].agrupar[catraca]
              
-              // console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
-              // console.log(scarecrow_2[arranjar[presa].origin].divisor)
+              //console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
+              //console.log(scarecrow_2[arranjar[presa].origin].divisor)
    
                diferente = false
                for (moon in roll_2[ne].posições) {
    
-                  // console.log(roll_2[ne].posições[moon], miss_2[roll_2[ne].posições[moon]].dividido, scarecrow_2[arranjar[presa].origin].divididos)
+                  //console.log(roll_2[ne].posições[moon], miss_2[roll_2[ne].posições[moon]].dividido, scarecrow_2[arranjar[presa].origin].divididos)
                    vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
-                  // console.log(vaiir, ficarassim[moon])
+                  //console.log(vaiir, ficarassim[moon])
                    if (vaiir != ficarassim[moon]) {
                        diferente = true
    
@@ -1464,7 +1464,7 @@ function FATORAR2(expression) {
        
                  
                }
-              // console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
+              //console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
                if (diferente == true) {
                    //console.log('ALTERAR...', scarecrow_2[arranjar[presa].origin].divisor)
    
@@ -1473,10 +1473,10 @@ function FATORAR2(expression) {
                        //console.log('aff... >:')
                        modificar = ['-','.']
                        for (saved in lista) {
-                          // console.log(lista[saved])
+                          //console.log(lista[saved])
                            modificar.push(lista[saved])
                        }
-                      // console.log(modificar)
+                      //console.log(modificar)
                        scarecrow_2[arranjar[presa].origin].divisor = modificar
                    }else{
                        lista.splice(0,2)
@@ -1486,7 +1486,7 @@ function FATORAR2(expression) {
        }
          }
    
-        // console.log('OKAY, LET\'S DO IT!')
+        //console.log('OKAY, LET\'S DO IT!')
          for (sei in scarecrow_2) {
            //console.log(scarecrow_2[sei].divididos)
            
@@ -1589,7 +1589,7 @@ function FATORAR2(expression) {
   }
 
   for (r in roller_2) {
-    console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
+    //console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
     roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
 }
 
@@ -1598,7 +1598,7 @@ function FATORAR2(expression) {
    
          podeser_2 = []
          for (outro in miss_2) {
-            // console.log('')
+            //console.log('')
              if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
                 //console.log(miss_2[outro].aparicoes, outro)
    
@@ -1616,12 +1616,12 @@ function FATORAR2(expression) {
    
                  adicionou = false
                  for (idk in podeser_2) {
-                    // console.log(podeser_2[idk])
+                    //console.log(podeser_2[idk])
                      esigual = true
                      for (denovo in podeser_2[idk].opl) {
                          //console.log(podeser_2[idk].opl[denovo], presentes[denovo])
                          if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
-                            // console.log('É IGUAL')
+                            //console.log('É IGUAL')
                          }else{
                              esigual = false
                          }
@@ -1637,7 +1637,7 @@ function FATORAR2(expression) {
                  
              }
             }
-           // console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser_2)
+           //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser_2)
             
             
             for (belief in podeser_2) {
@@ -1652,10 +1652,10 @@ function FATORAR2(expression) {
                  //console.log(podeser_2[belief].opl[gun])
                  shot+= podeser_2[belief].opl[gun] + ','
              }
-            // console.log('THAT WE LET IT GO:', shot)
+            //console.log('THAT WE LET IT GO:', shot)
    
              if (roll_2.length == 0) {
-                // console.log('ADICIONAR(LISTA VAZIA)')
+                //console.log('ADICIONAR(LISTA VAZIA)')
                  //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
              }else if(roll_2.find(function(roll_2){return roll_2.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
                  //console.log('JÁ TEM')
@@ -1664,7 +1664,7 @@ function FATORAR2(expression) {
                  for (capital in podeser_2[belief].position) {
                      //console.log(podeser_2[belief].position[capital])
    
-                   // console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
+                   //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
    
                  if (roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital])== -1) {
                     //console.log('NÃO TEM') 
@@ -1686,14 +1686,14 @@ function FATORAR2(expression) {
    
                 for(cold in podeser_2) {
             if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
-            // console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+            //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
              deucerto = true
    
              ficaassim = ''
              podeser_2[cold].position.push(whyis)
    
              for (yehaa in podeser_2[cold].position) {
-                // console.log(podeser_2[cold])
+                //console.log(podeser_2[cold])
                  //console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
                  if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
                      
@@ -1703,7 +1703,7 @@ function FATORAR2(expression) {
                              fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
                          }
                      }
-                    // console.log(fi)
+                    //console.log(fi)
                      if (yehaa != 0) {
                           ficaassim += ` - ${fi}`
                      }else{
@@ -1720,13 +1720,13 @@ function FATORAR2(expression) {
              }
              //console.log('FICA ASSIM', `(${ficaassim})`)
             for (ruin in podeser_2[cold].opl) {
-            // console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
+            //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
              emotion = ''
              for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor ) {
-           // console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
+           //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
                  emotion+= scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream]
              }
-            // console.log(`${emotion}(${ficaassim})`)
+            //console.log(`${emotion}(${ficaassim})`)
            }
             }
          }
@@ -1754,8 +1754,8 @@ function FATORAR2(expression) {
            
                obe = {what:[]}
    
-             //  console.log('')
-              // console.log(roll_2[raging].repetidos, roll_2[raging].posições)
+             //console.log('')
+              //console.log(roll_2[raging].repetidos, roll_2[raging].posições)
    
               
            
@@ -1763,8 +1763,8 @@ function FATORAR2(expression) {
                asitwas2 = []
                aswillbe = []
    
-              //    console.log('')
-            //   console.log(scarecrow_2[roll_2[raging].repetidos[still]].divisor, still)
+              //console.log('')
+            //console.log(scarecrow_2[roll_2[raging].repetidos[still]].divisor, still)
    
                mylife = '('
                for (still2 in roll_2[raging].posições) {
@@ -1776,7 +1776,7 @@ function FATORAR2(expression) {
                    }
    
                  
-                 //  console.log(miss_2[roll_2[raging].posições[still2]].dividido)
+                 //console.log(miss_2[roll_2[raging].posições[still2]].dividido)
    
                    conseguiu = false
                    older = 0
@@ -1790,7 +1790,7 @@ function FATORAR2(expression) {
                    
                    function DESFATORAR(correto, eg2, eg) {
    
-                   //    console.log('eg', eg)
+                   //console.log('eg', eg)
    
                    eassim = []
                    solo = ''
@@ -1821,13 +1821,13 @@ function FATORAR2(expression) {
                    
                    
                    whythat = [...eg]
-                 //  console.log(correto)
+                 //console.log(correto)
                  /*
                    for (ponto in eg2) {
-                     //  console.log(eg2[ponto])
+                     //console.log(eg2[ponto])
                        if (eg2[ponto] != '.') {
                        whythat.push(eg2[ponto])
-                     //  console.log('I FOLLOW YOu')
+                     //console.log('I FOLLOW YOu')
                        }
                    }
                    */
@@ -1886,8 +1886,8 @@ function FATORAR2(expression) {
                        }
                    }
    
-         // console.log('MULTIPLICAR', eg2,'*',eg)
-          // console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
+         //console.log('MULTIPLICAR', eg2,'*',eg)
+          //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
                    
                    numerinhos = []
                    for (decisao in correto) {
@@ -1952,7 +1952,7 @@ function FATORAR2(expression) {
            
    
          //console.log('ASITWAS',asitwas, asitwas2, aswillbe)
-             // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
+             //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
 
 
               obe.what.push({ar: asitwas2, indice: still})
@@ -2013,7 +2013,7 @@ function FATORAR2(expression) {
    
        
    for (hi in youdumb_2) {
-      // console.log(segs_2[hi], segs_2[hi].mons.length)
+      //console.log(segs_2[hi], segs_2[hi].mons.length)
        youdumb_2[hi].length = youdumb_2[hi].mons.length
    
        grtols_2.push(youdumb_2[hi])
@@ -2046,7 +2046,7 @@ function FATORAR2(expression) {
    /*
    for (yourlife in grtols_2) {
    
-       console.log(grtols_2[yourlife].w.what)
+       //console.log(grtols_2[yourlife].w.what)
    
        for (bolinho in grtols_2[yourlife].w.what) {
       //console.log(grtols_2[yourlife].w.what[bolinho])
@@ -2091,7 +2091,7 @@ function FATORAR2(expression) {
 
    heya_2 = [...youdumb_2]
    for (imback in youdumb_2) {
-      // console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
+      //console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
    
        sticky = []
        initial = youdumb_2[imback].w.what
@@ -2112,7 +2112,7 @@ function FATORAR2(expression) {
    
            taai = false
             for (eng in initial[agg].ar) {
-              // console.log(initial[agg].ar[eng])
+              //console.log(initial[agg].ar[eng])
                if (numerospresentes_2.indexOf(initial[agg].ar[eng]) == -1) {
               //console.log('OK')
                   
@@ -2166,29 +2166,29 @@ function FATORAR2(expression) {
    
            if (h != imback) {
                if (youdumb_2[h].w.what.length > 0) {
-         //  console.log(youdumb_2[h].w.what, h)
+         //console.log(youdumb_2[h].w.what, h)
                }
    
            //console.log('-----------------------------')
            for (tempo = youdumb_2[h].w.what.length - 1; tempo >= 0; tempo--) {
-           //  console.log(youdumb_2[h].w.what[tempo].ar, tempo)
+           //console.log(youdumb_2[h].w.what[tempo].ar, tempo)
                
                dulu = false
                
               for (and in youdumb_2[h].w.what[tempo].ar) {
-              // console.log(youdumb_2[h].w.what[tempo].ar[and])
+              //console.log(youdumb_2[h].w.what[tempo].ar[and])
                if (numerospresentes_2.indexOf(youdumb_2[h].w.what[tempo].ar[and]) != -1) {
-                 //  console.log('ESTÁ EM: ', numerospresentes_2)
+                 //console.log('ESTÁ EM: ', numerospresentes_2)
                    dulu = true
                }
               }
               if (dulu == false) {
-             //  console.log('PODE FICAR :)', h, tempo)
+             //console.log('PODE FICAR :)', h, tempo)
               }else{
             ////console.log('NÃO PODE!!!!!!!!!!!!!')
              // youdumb_2[h].w.what.splice(tempo, 1)
              //imback++
-         //    console.log('IMBAACK',imback)
+         //console.log('IMBAACK',imback)
               }
           }
        }
@@ -2198,13 +2198,13 @@ function FATORAR2(expression) {
    
      
     
-      // console.log('OLHA, eu tentei...', youdumb_2.length)
+      //console.log('OLHA, eu tentei...', youdumb_2.length)
        for (vixi in youdumb_2) {
         
         // if (youdumb_2[vixi].w.what.length > 0) {
-          // console.log('aaa',youdumb_2[vixi].w.what)
+          //console.log('aaa',youdumb_2[vixi].w.what)
            for (ainao in youdumb_2[vixi].w.what) {
-           // console.log('AI NÃO',youdumb_2[vixi].w.what[ainao].ar)
+           //console.log('AI NÃO',youdumb_2[vixi].w.what[ainao].ar)
            
              
        }
@@ -2212,18 +2212,18 @@ function FATORAR2(expression) {
    }
    
    for (força in youdumb_2) {
-      // console.log(força, youdumb_2[força],youdumb_2[força].w.what.length)
+      //console.log(força, youdumb_2[força],youdumb_2[força].w.what.length)
        entao = []
        for (areo in youdumb_2[força].w.what) {
-          // console.log(areo,youdumb_2[força].w.what[areo].ar)
+          //console.log(areo,youdumb_2[força].w.what[areo].ar)
            for (paris in youdumb_2[força].w.what[areo].ar) {
-              // console.log(paris,youdumb_2[força].w.what[areo].ar[paris])
+              //console.log(paris,youdumb_2[força].w.what[areo].ar[paris])
                entao.push(Number(youdumb_2[força].w.what[areo].ar[paris]))
            }
        }
-      // console.log(entao)
+      //console.log(entao)
        youdumb_2[força].t = entao
-      // console.log(youdumb_2[força].t)
+      //console.log(youdumb_2[força].t)
     }
    
    //console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
@@ -2255,7 +2255,7 @@ function FATORAR2(expression) {
    
    youdumb_2 = []
    for (erro in grtols_2) {
-      // console.log('RAINY DAY',grtols_2[erro])
+      //console.log('RAINY DAY',grtols_2[erro])
        youdumb_2.push(grtols_2[erro])
    }
    
@@ -2264,7 +2264,7 @@ function FATORAR2(expression) {
    }
    
    }
-   console.log('pans_2 é', pans_2)
+   //console.log('pans_2 é', pans_2)
    concatenar_2 = ''
    numsdesfat = []
    newexpress = []
@@ -2273,7 +2273,7 @@ function FATORAR2(expression) {
       
        //console.log('A PARTIR DA QUI')
        edge_2 = []
-       naonao = ''
+       naonao_2 = ''
        amount = []
    
      //console.log(pans_2[bababa], Number(bababa))
@@ -2281,9 +2281,9 @@ function FATORAR2(expression) {
       //console.log(roll_2[pans_2[bababa].numberyoudumb])
     //console.log('posições(fixas) - miss_2: ',roll_2[pans_2[bababa].numberyoudumb].posições)
    
-         tobreak = ''
+         tobreak_2 = ''
          realife = []
-         amontoado = []
+         amontoado_2 = []
          for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) {
       //console.log(quassao,':', roll_2[pans_2[bababa].numberyoudumb].posições[quassao],miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido)
    
@@ -2302,7 +2302,7 @@ function FATORAR2(expression) {
    */
            teri = false
            juntar = ''
-         //  console.log('NADAAAAAAAAAA')
+         //console.log('NADAAAAAAAAAA')
            for (estudar in el) {
           //console.log(el[estudar])
                if (el[estudar] == '*') {
@@ -2349,12 +2349,12 @@ function FATORAR2(expression) {
             if (teri == false) {
                
                quase = []
-             //  console.log('SEM ASTERISCO')
+             //console.log('SEM ASTERISCO')
                for (t in el) {
                quase.push(el[t])
                }
            }
-           aconta = ''
+           aconta_2 = ''
            friend = ''
    
           elevar = 1
@@ -2366,8 +2366,8 @@ function FATORAR2(expression) {
               
                if (quase[patience] == '*') {
                    aster = true
-                  // console.log('AND THE CLSDADWDWD', patience)
-                  // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+                  //console.log('AND THE CLSDADWDWD', patience)
+                  //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
@@ -2375,9 +2375,9 @@ function FATORAR2(expression) {
    
                   //console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
-                   aconta = fazerConta(gates)[0]
+                   aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   //console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
+                   //console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta_2)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
@@ -2388,33 +2388,33 @@ function FATORAR2(expression) {
                        elevar++
    
                        if (patience == quase.length - 1) {
-                         //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-                           aconta+= `^${elevar}`
-                          // console.log(aconta)
+                         //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                           aconta_2+= `^${elevar}`
+                          //console.log(aconta_2)
                        }
    
                    }else{
                      
                        if (elevar > 1) {
-                          // console.log('UEPA')
-                           aconta+= `^${elevar}`
+                          //console.log('UEPA')
+                           aconta_2+= `^${elevar}`
                            
                        }
    
-                       aconta+= quase[patience]
+                       aconta_2+= quase[patience]
                    
-                      // console.log(aconta)
+                      //console.log(aconta_2)
                      
                        elevar = 1
                    }
-                 //  console.log(elevar)
+                 //console.log(elevar)
                   
                } 
            }
          
-           //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
+           //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta_2)
            if (aster == false) {
-           // console.log('<<<<<<<<<<<<<',quase)
+           //console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
             for (h in quase) {
                     direitando+= quase[h]
@@ -2424,81 +2424,81 @@ function FATORAR2(expression) {
 
 
        if (aster == false) {
-        //   console.log('SEM ASTERISCO',aconta)
+        //console.log('SEM ASTERISCO',aconta_2)
            antes = ''
            for (eyes in quase) {
                
-              // console.log(quase[eyes])
+              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  // console.log('CRY')
+                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
-           antes+= aconta
-          // console.log('ANTEEEES:', antes)
+           antes+= aconta_2
+          //console.log('ANTEEEES:', antes)
            
-           aconta = antes
+           aconta_2 = antes
         
        }
-       //console.log('A CONTA',aconta)
+       //console.log('A CONTA',aconta_2)
    
-       realife.push(aconta)
-           if (tobreak.length == 0) {
+       realife.push(aconta_2)
+           if (tobreak_2.length == 0) {
               
               
                if(quase[0]== '-'){
                
                   negativo = true
-               if (aconta[0] == '-') {
-                //   console.log('PROBLEM')
+               if (aconta_2[0] == '-') {
+                //console.log('PROBLEM')
                    mood = ''
-                   for (member in aconta) {
-                       //console.log('VAMOS LOGO!!!', aconta[member])
-                       if (aconta[member] != '-') {
-                          // console.log('PUSHAR')
-                           mood+= aconta[member]
+                   for (member in aconta_2) {
+                       //console.log('VAMOS LOGO!!!', aconta_2[member])
+                       if (aconta_2[member] != '-') {
+                          //console.log('PUSHAR')
+                           mood+= aconta_2[member]
                        }
                    }
                    //console.log('THIS IS MOOOOOOOOOOOOD', mood)
-                   tobreak+= `-${mood}`
+                   tobreak_2+= `-${mood}`
                }else{
-                   tobreak += `-${aconta}`
-                   //console.log('THIS IS ACONTAAAAAAAAAAA', aconta)
+                   tobreak_2 += `-${aconta_2}`
+                   //console.log('THIS IS ACONTAAAAAAAAAAA', aconta_2)
                }
    
                }else{
                    negativo = false
-                   tobreak+= aconta
-                  // console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
-                   for (now in aconta) {
-                   // console.log(aconta[now])
+                   tobreak_2+= aconta_2
+                  //console.log('THIS IS ACONTA_2||||||||||||||||||||||||||||||||||||||||||', aconta_2)
+                   for (now in aconta_2) {
+                   //console.log(aconta_2[now])
                    }
                }
            }else if(quase[0]== '-'){
             
             negativo = true
                correct = ''
-               for (okay in aconta) {
-                  // console.log(el[okay])
-                   if (aconta[okay]!= '-'){
-                       correct+= aconta[okay]
-                     //  console.log('MESS', aconta[okay])
+               for (okay in aconta_2) {
+                  //console.log(el[okay])
+                   if (aconta_2[okay]!= '-'){
+                       correct+= aconta_2[okay]
+                     //console.log('MESS', aconta_2[okay])
                    }
                }
-              // console.log('ASSIM: ', correct)
-               tobreak+= ` - ${correct}`
+              //console.log('ASSIM: ', correct)
+               tobreak_2+= ` - ${correct}`
                //console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
                negativo = false
-             //  console.log(el)
-               tobreak+= ` + ${aconta}`
-               //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
+             //console.log(el)
+               tobreak_2+= ` + ${aconta_2}`
+               //console.log('THIS IS ACONTA_2||||||||||||||||||||||||||||||||||||||||||', aconta_2)
            }
-          // console.log('THE COLOURS THAT I SAW', tobreak)
+          //console.log('THE COLOURS THAT I SAW', tobreak_2)
 
 
-         // console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
-          // console.log(amontoado)
+         //console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
+          //console.log(amontoado_2)
            
            if (negativo == true) {
           
@@ -2508,19 +2508,19 @@ function FATORAR2(expression) {
                    uh+= friend[i]
                }
            }
-           amontoado.push('-')
-           amontoado.push(uh)
+           amontoado_2.push('-')
+           amontoado_2.push(uh)
            }else{
-               amontoado.push('+')
-               amontoado.push(friend)
+               amontoado_2.push('+')
+               amontoado_2.push(friend)
            }
            
          }
-         //console.log('ENTÃO:','(', tobreak,')')
+         //console.log('ENTÃO:','(', tobreak_2,')')
    
        for (repr in pans_2[bababa].which) {
            
-        //  console.log(' ')
+        //console.log(' ')
            //console.log(pans_2[bababa].which[repr].monos, pans_2[bababa].which[repr].numberwhat, Number(repr))
             //console.log('repetidos(não fixo) - scarecrow_2: ',roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat], scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor)
    
@@ -2528,14 +2528,14 @@ function FATORAR2(expression) {
             //console.log(triste)
    
             quase = []
-           // console.log(quase, 'k')
+           //console.log(quase, 'k')
             juntar = ''
             teri = false
             for (estudar in triste) {
-             //  console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
+             //console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
                //console.log('asasasa',triste[estudar])
                ohjeez = triste[Number(estudar) - 1] != '-'
-             //  console.log(ohjeez)
+             //console.log(ohjeez)
                if (triste[estudar] == '.') {
                    teri = true
                    if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
@@ -2543,54 +2543,54 @@ function FATORAR2(expression) {
                        quase.push(juntar)
                        juntar = ''
                    quase.push('*')
-                 //  console.log(quase)
+                 //console.log(quase)
                    }
                }else{
                   
                    //quase.push(triste[estudar])
-                // console.log('juntar',juntar)
+                //console.log('juntar',juntar)
                    if (juntar.length == 0) {
                        juntar = triste[estudar]
-                      // console.log('LISTA VAZIA', juntar)
+                      //console.log('LISTA VAZIA', juntar)
    
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
                        }
-                      // console.log('MENMEN',quase)
+                      //console.log('MENMEN',quase)
    
                    }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
    
-                    //  console.log('I\'M NEVER WHAT I LIKE')
+                    //console.log('I\'M NEVER WHAT I LIKE')
                        juntar+= triste[estudar]
-                    //   console.log('juntar', juntar)
+                    //console.log('juntar', juntar)
                        if (estudar == triste.length - 1) {
-                        //  console.log('UAISO')
+                        //console.log('UAISO')
                            quase.push(juntar)
-                        //   console.log(quase)
+                        //console.log(quase)
                        }
                    }else{
                        quase.push(juntar)
                        juntar= triste[estudar]
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
-                         //  console.log(quase)
+                         //console.log(quase)
                        }
                    }
                }
                  
             }
-           // console.log('MAIS RÁPIDO',quase)
+           //console.log('MAIS RÁPIDO',quase)
    
             if (teri == false) {
                
                quase = []
-            //  console.log('SEM ASTERISCO')
+            //console.log('SEM ASTERISCO')
                for (t in triste) {
                quase.push(triste[t])
                }
            }
    
-            aconta = ''
+            aconta_2 = ''
             friend = ''
             aster = false
             elevar = 1
@@ -2610,13 +2610,13 @@ function FATORAR2(expression) {
    
                    //console.log(quase, Number(patience) + 1)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
-                   aconta = fazerConta(gates)[0]
+                   aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
                    //console.log(friend)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  // console.log('É LETRA', quase[patience])
+                  //console.log('É LETRA', quase[patience])
                     friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                        //console.log('ELEVAR!')
@@ -2624,19 +2624,19 @@ function FATORAR2(expression) {
    
                        if (patience == quase.length - 1) {
                            //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-                           aconta+= `^${elevar}`
-                           //console.log(aconta)
+                           aconta_2+= `^${elevar}`
+                           //console.log(aconta_2)
                        }
    
                    }else{
                        if (elevar > 1) {
                          //console.log('UEPA')
-                           aconta+= `^${elevar}`
+                           aconta_2+= `^${elevar}`
                            
                        }
    
-                       aconta+= quase[patience]
-                      //console.log(aconta)
+                       aconta_2+= quase[patience]
+                      //console.log(aconta_2)
                      
                        elevar = 1
                    }
@@ -2647,7 +2647,7 @@ function FATORAR2(expression) {
            //console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
 
            if (aster == false) {
-            // console.log('<<<<<<<<<<<<<',quase)
+            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -2657,27 +2657,27 @@ function FATORAR2(expression) {
 
            if (aster == false) {
              
-              // console.log('SEM ASTERISCO2', aconta, quase)
+              //console.log('SEM ASTERISCO2', aconta_2, quase)
    
                antes = ''
            for (eyes in quase) {
                
-              // console.log(quase[eyes])
+              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  // console.log('CRY')
+                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
-           antes+= aconta
-          // console.log('ANTEEEES:', antes)
+           antes+= aconta_2
+          //console.log('ANTEEEES:', antes)
               // for (t in quase) {
-              // aconta+= quase[t]
+              // aconta_2+= quase[t]
              //  }
-             aconta = antes
+             aconta_2 = antes
            }
-          // console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
+          //console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta_2)
    
-          edge_2.push(aconta)
+          edge_2.push(aconta_2)
 
           if (quase[0] == '-') {
             uh = ''
@@ -2688,28 +2688,28 @@ function FATORAR2(expression) {
             }
             amount.push('-')
             amount.push(uh)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta,'____________________')
+            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta_2,'____________________')
         }else{
             amount.push('+')
             amount.push(friend)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta)
+            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta_2)
         }
 
-           if (naonao.length == 0) {
+           if (naonao_2.length == 0) {
                //console.log('TÁ VAZio')
                if (quase[0] == '-') {
-                   naonao+= `-${aconta}`
+                   naonao_2+= `-${aconta_2}`
                   
                }else{
-                   naonao+= aconta
+                   naonao_2+= aconta_2
                    
                }
            }else{
                if (quase[0] == '-') {
-                   naonao+= ` - ${aconta}`
+                   naonao_2+= ` - ${aconta_2}`
                   
                }else{
-                   naonao+= ` + ${aconta}`
+                   naonao_2+= ` + ${aconta_2}`
                   
                }
            }
@@ -2719,109 +2719,109 @@ function FATORAR2(expression) {
            concatenar_2+= ' + '
        }
        if (edge_2.length > 1) {
-       console.log('                                ','( ',naonao,' )','( ',tobreak,' )','                         ')
-       concatenar_2+= `( ${naonao} )( ${tobreak} )`
+       //console.log('                                ','( ',naonao_2,' )','( ',tobreak_2,' )','                         ')
+       concatenar_2+= `( ${naonao_2} )( ${tobreak_2} )`
        }else{
-           console.log('                            ',naonao,'( ',tobreak,' )','                          ')
-           concatenar_2+= `${naonao}( ${tobreak} )`
+           //console.log('                            ',naonao_2,'( ',tobreak_2,' )','                          ')
+           concatenar_2+= `${naonao_2}( ${tobreak_2} )`
        }
 
-       console.log('ESSE É O AMONTOADO', amontoado)
-       console.log('ESSE É O AMOUNT', amount)
+       //console.log('ESSE É O AMONTOADO_2', amontoado_2)
+       //console.log('ESSE É O AMOUNT', amount)
 
      
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS_2(amount)
-      segundocaso = SOMANDOMONOMIOS_2(amontoado)
+      segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
 
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
-        console.log(primeirocaso[0], 'continua igual')
+        //console.log(primeirocaso[0], 'continua igual')
         
       }else{
 
           mudou = true
-          console.log(amount,'=>',primeirocaso[0])
+          //console.log(amount,'=>',primeirocaso[0])
          
       }
    
 
       if (segundocaso[1] == segundocaso[2]) {
-        console.log(segundocaso[0], 'continua igual')
+        //console.log(segundocaso[0], 'continua igual')
       }else{
 
           mudou = true
-        console.log(amontoado,'=>',segundocaso[0])
+        //console.log(amontoado_2,'=>',segundocaso[0])
         
       }
 
 
 
       if (mudou == true) {
-        naonao = primeirocaso[0]
-        tobreak = segundocaso[0] 
+        naonao_2 = primeirocaso[0]
+        tobreak_2 = segundocaso[0] 
 
-      console.log('')
-      console.log('SOMANDO FICA ASSIM:')
+      //console.log('')
+      //console.log('SOMANDO FICA ASSIM:')
 
-      console.log('')
+      //console.log('')
 
       reason = []
-      for (k in naonao) {
-      // console.log(k, naonao[k])
-        if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
-            deserve = naonao[k - 1]
+      for (k in naonao_2) {
+      //console.log(k, naonao_2[k])
+        if (k != 0 && naonao_2[k] != '-' && naonao_2[k] != '+') {
+            deserve = naonao_2[k - 1]
             reason.push(k - 1)
-            deserve+= naonao[k]
+            deserve+= naonao_2[k]
             //console.log('anterior:',deserve)
-            naonao[k] = deserve
+            naonao_2[k] = deserve
         }
       }
 
-    //  console.log('reason')
+    //console.log('reason')
      
-   for (time = naonao.length - 1; time >= 0; time--) {
-    //console.log(time, naonao[time])
+   for (time = naonao_2.length - 1; time >= 0; time--) {
+    //console.log(time, naonao_2[time])
     if (reason.indexOf(time) != -1) {
         //console.log('TIRAR')
-        naonao.splice(time, 1)
+        naonao_2.splice(time, 1)
         }
    }
-      //console.log('', naonao)
+      //console.log('', naonao_2)
 
    reason = []
-      for (k in tobreak) {
-        //console.log(k, tobreak[k])
-        if (k != 0 && tobreak[k] != '-' && tobreak[k] != '+') {
-            deserve = tobreak[k - 1]
-            deserve+= tobreak[k]
+      for (k in tobreak_2) {
+        //console.log(k, tobreak_2[k])
+        if (k != 0 && tobreak_2[k] != '-' && tobreak_2[k] != '+') {
+            deserve = tobreak_2[k - 1]
+            deserve+= tobreak_2[k]
             reason.push(k - 1)
-           // console.log('anterior:',deserve)
-           tobreak[k] = deserve
+           //console.log('anterior:',deserve)
+           tobreak_2[k] = deserve
         }
       }
 
-     // console.log('reason')
-      for (time = tobreak.length - 1; time >= 0; time--) {
-      //  console.log(time, tobreak[time])
+     //console.log('reason')
+      for (time = tobreak_2.length - 1; time >= 0; time--) {
+      //console.log(time, tobreak_2[time])
         if (reason.indexOf(time) != -1) {
-           // console.log('TIRAR')
-            tobreak.splice(time, 1)
+           //console.log('TIRAR')
+            tobreak_2.splice(time, 1)
             }
        }
-      //console.log('', tobreak)
+      //console.log('', tobreak_2)
 
-      console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
+      //console.log('____________________','( ',naonao_2,' )','( ',tobreak_2,' )','___________________________')
 
-      console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
-      for (roberto in naonao) {
-          console.log('---------------------------------------------------------------______')
-        console.log(naonao[roberto])
+      //console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
+      for (roberto in naonao_2) {
+          //console.log('---------------------------------------------------------------______')
+        //console.log(naonao_2[roberto])
         
-        for (vaidarcerto in tobreak) {
-            console.log(tobreak[vaidarcerto])
-            novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
-            console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
+        for (vaidarcerto in tobreak_2) {
+            //console.log(tobreak_2[vaidarcerto])
+            novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
+            //console.log(naonao_2[roberto], 'multiplicado por',tobreak_2[vaidarcerto],'=',novomon)
             console.warn(newexpress)
             if (novomon[0] == '-') {
                 miya = ''
@@ -2830,7 +2830,7 @@ function FATORAR2(expression) {
                         miya+= novomon[n]                 
                        }
                 }
-                console.log(miya)
+                //console.log(miya)
                 newexpress.push('-')
                 newexpress.push(miya)
             }else{
@@ -2855,72 +2855,72 @@ function FATORAR2(expression) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros_2 = []
     for (acaba in monomios_2) {
-       // console.log(acaba)
+       //console.log(acaba)
         todososnumeros_2.push(acaba)
     }
 
     for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
-        // console.log(todososnumeros_2[feliz])
+        //console.log(todososnumeros_2[feliz])
          if (numsdesfat.indexOf(Number(todososnumeros_2[feliz])) != -1) {
             todososnumeros_2.splice(feliz, 1)
          }
  }
-    console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios_2( tem', monomios_2.length, 'ao todo):',todososnumeros_2)
+    //console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios_2( tem', monomios_2.length, 'ao todo):',todososnumeros_2)
     for (eh in todososnumeros_2) {
-        console.log(todososnumeros_2[eh], monomios_2[todososnumeros_2[eh]].numero)
+        //console.log(todososnumeros_2[eh], monomios_2[todososnumeros_2[eh]].numero)
 
         join = ''
         for (sempresei in monomios_2[todososnumeros_2[eh]].numero) {
             if (monomios_2[todososnumeros_2[eh]].numero[sempresei] != '+' && monomios_2[todososnumeros_2[eh]].numero[sempresei] != '-') {
             ter = monomios_2[todososnumeros_2[eh]].numero[sempresei]
-            console.log(ter)
+            //console.log(ter)
             join+= ter
             }
         }
         if (monomios_2[todososnumeros_2[eh]].numero[0] == '+') {
-            console.log('MAIS')
+            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }else if(monomios_2[todososnumeros_2[eh]].numero[0] == '-') {
-            console.log('MENOS')
+            //console.log('MENOS')
             newexpress.push('-')
             newexpress.push(join)
         }else{
-            console.log('MAIS')
+            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }
-        console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
+        //console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
     }
 
-    console.log('_____________________________________________newexpression:_____________________________________________ ')
-        console.log(newexpress)
-        console.log('_______________________________________________________________________________________   _______________')
+    //console.log('_____________________________________________newexpression:_____________________________________________ ')
+        //console.log(newexpress)
+        //console.log('_______________________________________________________________________________________   _______________')
 
-        FATORAR(newexpress)
+        FATORAR2(newexpress)
    }else{
 
-   console.log('VENDO OS QUE FALTAM:')
-   console.log(numerospresentes_2)
+   //console.log('VENDO OS QUE FALTAM:')
+   //console.log(numerospresentes_2)
    todososnumeros_2 = []
    for (acaba in monomios_2) {
-      // console.log(acaba)
+      //console.log(acaba)
        todososnumeros_2.push(acaba)
    }
    cancelar = []
    for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
-          // console.log(todososnumeros_2[feliz])
+          //console.log(todososnumeros_2[feliz])
            if (numerospresentes_2.indexOf(Number(todososnumeros_2[feliz])) != -1) {
               todososnumeros_2.splice(feliz, 1)
    }
    }
-   console.log(todososnumeros_2)
+   //console.log(todososnumeros_2)
    
    for (bye in todososnumeros_2) {
        //console.log(monomios_2[todososnumeros_2[bye]].numero)
    
        quase = monomios_2[todososnumeros_2[bye]].numero
-       aconta = ''
+       aconta_2 = ''
        elevar = 1
        aster = false
        friend = ''
@@ -2933,16 +2933,16 @@ function FATORAR2(expression) {
            
             if (quase[patience] == '*') {
                 aster = true
-               // console.log('AND THE CLSDADWDWD', patience)
-               // console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
+               //console.log('AND THE CLSDADWDWD', patience)
+               //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-              //  console.log(gates, fazerConta(gates))
+              //console.log(gates, fazerConta(gates))
    
-             //  console.log(quase, Number(patience) + 1)
+             //console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
-                aconta = fazerConta(gates)[0]
+                aconta_2 = fazerConta(gates)[0]
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
@@ -2953,30 +2953,30 @@ function FATORAR2(expression) {
                     elevar++
    
                     if (patience == quase.length - 1) {
-                      //  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-                        aconta+= `^${elevar}`
-                       // console.log(aconta)
+                      //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                        aconta_2+= `^${elevar}`
+                       //console.log(aconta_2)
                     }
    
                 }else{
                     if (elevar > 1) {
-                       // console.log('UEPA')
-                        aconta+= `^${elevar}`
+                       //console.log('UEPA')
+                        aconta_2+= `^${elevar}`
                         
                     }
    
-                    aconta+= quase[patience]
-                   // console.log(aconta)
+                    aconta_2+= quase[patience]
+                   //console.log(aconta_2)
                   
                     elevar = 1
                 }
-              //  console.log(elevar)
+              //console.log(elevar)
                
             } 
         }
         
         if (aster == false) {
-            // console.log('<<<<<<<<<<<<<',quase)
+            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -2984,49 +2984,49 @@ function FATORAR2(expression) {
              friend = direitando
             }
     if (aster == false) {
-     //   console.log('SEM ASTERISCO',aconta)
+     //console.log('SEM ASTERISCO',aconta_2)
         antes = ''
         for (eyes in quase) {
             
-           // console.log(quase[eyes])
+           //console.log(quase[eyes])
             if (quase[eyes].search('[0-9]') != -1) {
-               // console.log('CRY')
+               //console.log('CRY')
                 antes+= quase[eyes]
             }
         }
-        antes+= aconta
-       // console.log('ANTEEEES:', antes)
+        antes+= aconta_2
+       //console.log('ANTEEEES:', antes)
         
-        aconta = antes
+        aconta_2 = antes
     }
-    console.log('A CONTA',aconta, quase)
+    //console.log('A CONTA',aconta_2, quase)
    
     if (bye == 0) {
-       console.log('PRIMEIRO')
+       //console.log('PRIMEIRO')
        if (concatenar_2.length > 0) {
            if (quase[0] == '-') {
-               concatenar_2+= ` - ${aconta}`
+               concatenar_2+= ` - ${aconta_2}`
            }else{
-               concatenar_2+= ` + ${aconta}`
+               concatenar_2+= ` + ${aconta_2}`
            }
        }else{
            if (quase[0] == '-') {
-               concatenar_2+= `-${aconta}`
+               concatenar_2+= `-${aconta_2}`
            }else{
-               concatenar_2+= `${aconta}`
+               concatenar_2+= `${aconta_2}`
            }
        }
     }else{
        if (quase[0] == '-') {
-           concatenar_2+= ` - ${aconta}`
+           concatenar_2+= ` - ${aconta_2}`
        }else{
-           concatenar_2+= ` + ${aconta}`
+           concatenar_2+= ` + ${aconta_2}`
        }
     }
    }
 }
    
-   console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar_2)
+   //console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar_2)
 
  
    // Vendo se o número é primo
@@ -3100,7 +3100,7 @@ function FATORAR2(expression) {
    
        for (uf in par) {
        
-          // console.log(segs_2[uf].godhelpme)
+          //console.log(segs_2[uf].godhelpme)
           // segs_22.push(segs_2[uf])
          //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          segs_22[uf] = {}
@@ -3181,7 +3181,7 @@ function FATORAR2(expression) {
             ////console.log('')
            //console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
-              //  console.log('FALTA')
+              //console.log('FALTA')
                 present.falt.push(lista[g])
    
                
@@ -3198,7 +3198,7 @@ function FATORAR2(expression) {
         
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-          //  console.log(present.falt[ti])
+          //console.log(present.falt[ti])
    
            
    
@@ -3216,7 +3216,7 @@ function FATORAR2(expression) {
     relation_2[r].car = segs_22[r].car
     
     }
-    console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
+    //console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
     for (c in relation_2) {
         ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation_2[c].fix.length > 0) {
@@ -3276,24 +3276,24 @@ function FATORAR2(expression) {
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   console.log(relation_2[yougo].fix)
+   //console.log(relation_2[yougo].fix)
    
    for (pals in relation_2[yougo].fix) {
-    console.log(relation_2[yougo].fix[pals])
+    //console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
    }
    }
    
-   console.log('divs_2 é igual a ', divs_2[okentao])
-   console.log('groups é igual a', groups)
+   //console.log('divs_2 é igual a ', divs_2[okentao])
+   //console.log('groups é igual a', groups)
    
    
    if (groups < divs_2[okentao]) {
     //console.log('DEU CERTO!!!EBAAAAAA')
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    ////console.log(relation_2)
    
@@ -3301,7 +3301,7 @@ function FATORAR2(expression) {
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   console.log(relation_2[yougo].fix)
+   //console.log(relation_2[yougo].fix)
    
    for (pals in relation_2[yougo].fix) {
     ////console.log(relation_2[yougo].fix[pals])
@@ -3332,20 +3332,20 @@ function FATORAR2(expression) {
    
    //console.log('break', segs_22[die].mons)
    for (h in segs_22[die].mons) {
-   console.log(segs_22[die].mons[h])
+   //console.log(segs_22[die].mons[h])
    if (tirados_2.indexOf(segs_22[die].mons[h]) != -1) {
    tirar.push(Number(h))
    }
    }
 
-   console.log('tirar de ',segs_22[die].mons, tirar)
+   //console.log('tirar de ',segs_22[die].mons, tirar)
 
    for (far = tirar.length - 1; far >= 0; far--) {
-       console.log(segs_2[die].mons[tirar[far]])
+       //console.log(segs_2[die].mons[tirar[far]])
    segs_22[die].mons.splice(tirar[far], 1)
    
    }
-   console.log('ficou assim:', segs_22[die].mons)
+   //console.log('ficou assim:', segs_22[die].mons)
    }
    
    for (sorrow in segs_22) {
@@ -3364,7 +3364,7 @@ function FATORAR2(expression) {
            //console.log('TIRADOS_2')
       //console.log(segs_22[sorrow].mons[imor])
    
-       console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
+       //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
    
               if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
                   ob.problem = true
@@ -3378,7 +3378,7 @@ function FATORAR2(expression) {
        }
       
       
-       console.log('In THE EnD', ob)
+       //console.log('In THE EnD', ob)
    
        //console.log(segs_22)
        //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
@@ -3397,7 +3397,7 @@ function FATORAR2(expression) {
    for (nah = relation_2.length - 1; nah >= 0; nah--) {
         // if (relation_2[nah].fix.length > 0) {
              
-    // console.log('fix',relation_2[nah].fix)
+    //console.log('fix',relation_2[nah].fix)
    
      //console.log('---VEnDO TODA A LISTA---')
      for (nop in relation_2) {
@@ -3430,9 +3430,9 @@ function FATORAR2(expression) {
    
      for (nah = relation_2.length - 1; nah >= 0; nah--) {
          //console.log('dream',nah, relation_2[nah])
-        // console.log(males)
+        //console.log(males)
        if (males.indexOf(nah) != -1) {
-         //  console.log('HEY')
+         //console.log('HEY')
            relation_2.splice(nah, 1)
        }
      }
@@ -3440,21 +3440,21 @@ function FATORAR2(expression) {
      numerosquetem = []
      for (nah in relation_2) {
          if (relation_2[nah].fix.length > 0) {
-       //  console.log(relation_2[nah].fix)
+       //console.log(relation_2[nah].fix)
    
          for (nop in relation_2[nah].fix) {
-          //   console.log(relation_2[nah].fix[nop])
+          //console.log(relation_2[nah].fix[nop])
              numerosquetem.push(relation_2[nah].fix[nop])
          }
          }
      }
-     console.log('----------------------------------------------------------------')
+     //console.log('----------------------------------------------------------------')
    
      segs_22 = []
    
      for (uf in par) {
      
-        // console.log(segs_2[uf].godhelpme)
+        //console.log(segs_2[uf].godhelpme)
         // segs_22.push(segs_2[uf])
        //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
        segs_22[uf] = {}
@@ -3478,7 +3478,7 @@ function FATORAR2(expression) {
    
        for (uf in relation_2) {
        
-          // console.log(segs_2[uf].godhelpme)
+          //console.log(segs_2[uf].godhelpme)
           // segs_22.push(segs_2[uf])
          //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          fireonfire[uf] = {}
@@ -3487,19 +3487,19 @@ function FATORAR2(expression) {
    
     }
    
-    console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
-    console.log(doit2(segs_22)[0])
-    console.log(fireonfire)
+    //console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
+    //console.log(doit2(segs_22)[0])
+    //console.log(fireonfire)
    
     //console.log('relation_2', relation_2)
     for (red in fireonfire) {
-      // console.log(fireonfire[red])
+      //console.log(fireonfire[red])
        relation_2.push({fix: fireonfire[red].mons, car: fireonfire[red].car})
     }
    
    }else if(groups > divs_2[okentao]){
        
-   console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
+   //console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
     ////console.log('números que têm: ', conts)
     ////console.log(segs_2)
    
@@ -3708,7 +3708,7 @@ function FATORAR2(expression) {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation_2)
    
@@ -3805,7 +3805,7 @@ function FATORAR2(expression) {
    
    }
    }
-   console.log('aaaaaaaaaaaaaaaaaaaaaaaa',segs_22, relation_2)
+   //console.log('aaaaaaaaaaaaaaaaaaaaaaaa',segs_22, relation_2)
    return [relation_2, segs_22]
    }
    
@@ -3840,7 +3840,7 @@ function FATORAR2(expression) {
    
        for (uf in par) {
        
-          // console.log(segs_2[uf].godhelpme)
+          //console.log(segs_2[uf].godhelpme)
           // segs_22.push(segs_2[uf])
          //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          segs_22[uf] = {}
@@ -4039,29 +4039,29 @@ function FATORAR2(expression) {
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   console.log(relation_2[yougo].fix)
+   //console.log(relation_2[yougo].fix)
    
    for (pals in relation_2[yougo].fix) {
-   console.log(relation_2[yougo].fix[pals])
+   //console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
    }
    }
-   console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
+   //console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
    if (divs_2[okentao] != groups) {
-   console.log('THEn WHY ARE WE LAUGHInG?')
-   console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
+   //console.log('THEn WHY ARE WE LAUGHInG?')
+   //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
    
    tirados_2 = []
    for (wish in relation_2) {
-   // console.log(relation_2[wish].fix)
+   //console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-   //    console.log(relation_2[wish].fix[edge_2])
+   //console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
+   //console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
    
    
    
@@ -4077,7 +4077,7 @@ function FATORAR2(expression) {
    }
    //console.log('tirar de ',segs_22[die].mons, tirar)
    for (far = tirar.length - 1; far >= 0; far--) {
-      // console.log(segs_2[die].mons[tirar[far]])
+      //console.log(segs_2[die].mons[tirar[far]])
    segs_22[die].mons.splice(tirar[far], 1)
    
    }
@@ -4144,7 +4144,7 @@ function FATORAR2(expression) {
    if (mcr != idk) {
    
        //////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-     // console.log('outro',segs_2[mcr].mons)
+     //console.log('outro',segs_2[mcr].mons)
       
       //console.log(segs_2[idk].mons.length)
        if (segs_22[mcr].mons.length <= segs_22[idk].mons.length) {
@@ -4153,14 +4153,14 @@ function FATORAR2(expression) {
       for(y = 0; y < segs_22[mcr].mons.length; y++) {
        //  //console.log(segs_2[idk].mons, segs_2[mcr].mons[y], segs_2[idk].mons.indexOf(segs_2[mcr].mons[y]))
            if (segs_22[idk].mons.indexOf(segs_22[mcr].mons[y]) != -1) {
-          //   console.log('igual')
+          //console.log('igual')
                sames.push('igual')
            }else{
-           //  console.log('diferente')
+           //console.log('diferente')
                sames.push('diferente')
            }
       }
-   // console.log(sames)
+   //console.log(sames)
       if (sames.indexOf('diferente') == -1){
     //console.log('TIRAR', segs_2[mcr])
    
@@ -4168,7 +4168,7 @@ function FATORAR2(expression) {
        mia.push(mcr)
        }
        
-    //  console.log(segs_2)
+    //console.log(segs_2)
        
       }
    }
@@ -4318,7 +4318,7 @@ function FATORAR2(expression) {
         for (hu in outrorel.fix) {
           //  //console.log(outrorel.fix[hu])
             if (relation_2[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-           // console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
+           //console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
                 ////console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
@@ -4339,7 +4339,7 @@ function FATORAR2(expression) {
         }
     }
    
-    console.log('SERÁ QUE DEU CERTO?')
+    //console.log('SERÁ QUE DEU CERTO?')
    
    //console.log(relation_2)
    
@@ -4365,11 +4365,11 @@ function FATORAR2(expression) {
    for (wish in relation_2) {
     //console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-      // console.log(relation_2[wish].fix[edge_2])
+      //console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
+   //console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
    
    
    for (die in segs_22) {
@@ -4392,7 +4392,7 @@ function FATORAR2(expression) {
    }
    
    for (sorrow in segs_22) {
-   console.log(segs_22[sorrow].mons)
+   //console.log(segs_22[sorrow].mons)
    grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
    //console.log('dá para formar', grupos,'grupos')
    
@@ -4404,15 +4404,15 @@ function FATORAR2(expression) {
        ob = {car: segs_22[sorrow].car, fix: [],problem:false}
    
        for (live = 0; live < quanto; live++) {
-         //  console.log('TIRADOS_2')
-        //   console.log(segs_22[sorrow].mons[imor])
+         //console.log('TIRADOS_2')
+        //console.log(segs_22[sorrow].mons[imor])
    
-       //   console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
+       //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
    
               if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
                    //ob.problem = true
               }
-            //   console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
+            //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
            ob.fix.push(segs_22[sorrow].mons[imor])
            tirados_2.push(segs_22[sorrow].mons[imor])
            imor++
@@ -4437,7 +4437,7 @@ function FATORAR2(expression) {
    }
    }
    
-   console.log('HELLO')
+   //console.log('HELLO')
    
    
    return [relation_2, segs_22]
@@ -4467,7 +4467,7 @@ particles[obnum].numero += list[n]
 
 
 for (huh in particles) {
-   // console.log('HUH',particles[huh].numero)
+   //console.log('HUH',particles[huh].numero)
 
     partlet = ''
     for (y in particles[huh].numero) {
@@ -4478,7 +4478,7 @@ for (huh in particles) {
      }
     }
     particles[huh].partletral = partlet
-   // console.log('PARTLETRAL',particles[huh].partletral)
+   //console.log('PARTLETRAL',particles[huh].partletral)
 }
 
 
@@ -4490,18 +4490,18 @@ for (bye in particles) {
     ground = ''
 
     for (misery in particles[bye].numero) { 
-     // console.log(particles[bye].numero[misery])
+     //console.log(particles[bye].numero[misery])
         
         carac = particles[bye].numero[misery]
        //console.log('CARACTER' + carac)
       //console.log(ground.length)
 
-      // console.log('OH COME On',ground, String(ground.search('[0-9]')))
+      //console.log('OH COME On',ground, String(ground.search('[0-9]')))
             if (ground.length == 0) {
-               // console.log('LISTA VAZIA')
+               //console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-               // console.log('É UM nÚMERO')
+               //console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
@@ -4514,7 +4514,7 @@ for (bye in particles) {
             }
     }
 
-   // console.log('COMOFICA', comofica)
+   //console.log('COMOFICA', comofica)
     ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',particles[bye].numero)
     particles[bye].numero = comofica
 }
@@ -4547,7 +4547,7 @@ for (huh in particles) {
 
 for (chuva in agruparsoma) {
     //console.log('')
-   // console.log('')
+   //console.log('')
     //console.log('')
 
     conta = []
@@ -4594,7 +4594,7 @@ add+= resultadoDaDivisão[past]
     
     
 }
-// console.log('ADD', add)
+//console.log('ADD', add)
 //console.log('PLAn É:', plan)
 
 if (plan.length == 3) {
@@ -4661,15 +4661,15 @@ if (comehome[0][0] == '-') {
      t+= comehome[0][b]
    }
    }
-  // console.log(t)
+  //console.log(t)
    //console.log(typeof t)
    at = t
    if (ehprimo(t) == false) {
       //console.log(at)
    fat = FATORARSInGULAR(at)
-  // console.log(String(fat))
+  //console.log(String(fat))
    }else{
-     // console.log('É PRIMOOOOOOOOOOOOOOOOO')
+     //console.log('É PRIMOOOOOOOOOOOOOOOOO')
     fat = at
    }
    oop = '-'
@@ -4699,7 +4699,7 @@ if (exp_2.length == 0) {
         exp_2.push('+')
         fat += agruparsoma[chuva].que
         exp_2.push(fat)
-      //  console.log('PARTE LETRAL:', agruparsoma[chuva].que)
+      //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
     }
 }
 
@@ -4811,7 +4811,7 @@ function MULTIPLICARDIREITO(num1, num2) {
     
 
     if (num1 == '1' || num2 == '1') {
-        console.log('É 1')
+        //console.log('É 1')
         if (num1 == '1') {
             resultmult = num2
         }else{
@@ -4917,6 +4917,6 @@ return [
   segs_2.length,
   roll_2.length,
 ];
-console.log('Poxa segs_2, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
+//console.log('Poxa segs_2, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
 
 }
