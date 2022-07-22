@@ -3398,51 +3398,51 @@ for (bye in monomios) {
            concatenar+= ' + '
        }
 
-       //console.log('__________________')
-       //console.log(naonao,',', tobreak)
-       //fat1 = FATORAR2(FATORE(naonao))
-       //fat2 = FATORAR2(FATORE(tobreak))
-       //console.log(fat1[0],'segs.length:',fat1[3])
-      // console.log(fat2[0],'segs.length:',fat2[3])
+       console.log('__________________')
+       console.log(naonao,',', tobreak)
+       fat1 = FATORAR2(FATORE(naonao))
+       fat2 = FATORAR2(FATORE(tobreak))
+       console.log(fat1[0],'segs.length:',fat1[3])
+       console.log(fat2[0],'segs.length:',fat2[3])
    
        daprafat1 = false
-       /*
+       
        if (fat1[1] == 1 && fat1[2] == 0) { // IF PANS EQUALS TO 1 AND TODOSOSNUMEROS EQUALS TO ZERO(WHICH MEANS THERE IS NO MONOMIO LEFT)
-     //  naonao = fat1[0]
+       naonao = fat1[0]
        daprafat1 = true
        }
-       */
+       
    
        daprafat2 = false
-       /*
+       
        if (fat2[1] == 1 && fat2[2] == 0) {
       // tobreak = fat2[0]
        daprafat2 = true
        }
-   */
+   
 
-       //console.log('__________________')
+       console.log('__________________')
 
        if (edge.length > 1) {
-      //  if (daprafat1 == false && daprafat2 == false) { // OS DOIS NÃO DÃO PARA FATORAR
+        if (daprafat1 == false && daprafat2 == false) { // OS DOIS NÃO DÃO PARA FATORAR
         concatenar += `(${naonao})(${tobreak})`;
-      // }else if(daprafat1 == true && daprafat2 == true){ // OS DOIS DÃO PARA FATORAR
-        //  concatenar += `${naonao}${tobreak}`;
-       // }else if(daprafat1 == true && daprafat2 == false) { // SOMENTE O PRIMEIRO DÁ PARA FATORAR
-         // concatenar += `${naonao}(${tobreak})`;
-        //}else{ // SOMENTE O SEGUNDO DÁ PARA FATORAR
-        //  concatenar += `(${naonao})${tobreak}`;
-       // }
+       }else if(daprafat1 == true && daprafat2 == true){ // OS DOIS DÃO PARA FATORAR
+          concatenar += `${naonao}${tobreak}`;
+        }else if(daprafat1 == true && daprafat2 == false) { // SOMENTE O PRIMEIRO DÁ PARA FATORAR
+          concatenar += `${naonao}(${tobreak})`;
+        }else{ // SOMENTE O SEGUNDO DÁ PARA FATORAR
+          concatenar += `(${naonao})${tobreak}`;
+        }
       } else {
-       // if (daprafat2 == false) { // SE O SEGUNDO NÃO DER PARA FATORAR
+        if (daprafat2 == false) { // SE O SEGUNDO NÃO DER PARA FATORAR
         concatenar += `${naonao}(${tobreak})`;
-        //}else{ // SE O SEGUNDO DER PARA FATORAR
-          //concatenar += `${naonao}${tobreak}`;
-        //}
+        }else{ // SE O SEGUNDO DER PARA FATORAR
+          concatenar += `${naonao}${tobreak}`;
+        }
       }
 
-       //console.log('ESSE É O AMONTOADO', amontoado)
-       //console.log('ESSE É O AMOUNT', amount)
+       console.log('ESSE É O AMONTOADO', amontoado)
+       console.log('ESSE É O AMOUNT', amount)
 
      
    // FAZENDO A CONTA
@@ -5823,18 +5823,18 @@ function FATORE(q) {
   }
 
 
-  function FATORAR2(expression) {
+  function FATORAR2(expression_2) {
 
-    startexp_2 = [...expression];
+    startexp_2 = [...expression_2];
 
-  if (expression[0] !== "-" && expression[0] !== "+") {
+  if (expression_2[0] !== "-" && expression_2[0] !== "+") {
     //
     expo_2 = ["+"];
-    for (ent in expression) {
+    for (ent in expression_2) {
       //
-      expo_2.push(expression[ent]);
+      expo_2.push(expression_2[ent]);
     }
-    expression = expo_2;
+    expression_2 = expo_2;
   }
 
   //6x^2 + 3 + 14x^2y + 7y
@@ -5843,11 +5843,11 @@ function FATORE(q) {
 
   //FATORAnDO OS nÚMEROS
 
-  for (n = 0; n < expression.length; n++) {
+  for (n = 0; n < expression_2.length; n++) {
     if (
-      ehprimo(expression[n]) == false &&
-      String(expression[n]).search("[0-9]") != -1 &&
-      expression[n - 1] != "^"
+      ehprimo(expression_2[n]) == false &&
+      String(expression_2[n]).search("[0-9]") != -1 &&
+      expression_2[n - 1] != "^"
     ) {
       fatorado = "";
 
@@ -5860,7 +5860,7 @@ function FATORE(q) {
       fator = 1;
 
       for (e = 2; stop == false; e++) {
-        sob = Number(expression[n]);
+        sob = Number(expression_2[n]);
 
         if (ehprimo(e) == true) {
           while (sob % e == 0) {
@@ -5877,7 +5877,7 @@ function FATORE(q) {
 
             st = false;
 
-            if (fator == expression[n]) {
+            if (fator == expression_2[n]) {
               stop = true;
               fatorado += `${e}`;
             } else {
@@ -5887,7 +5887,7 @@ function FATORE(q) {
         }
       }
 
-      expression[n] = fatorado;
+      expression_2[n] = fatorado;
     }
   }
   //
@@ -5895,15 +5895,15 @@ function FATORE(q) {
   //FAZEnDO AS POTÊnCIAS COM LETRAS
 
   //
-  for (y in expression) {
-    if (expression[y] == "^") {
-      ad = expression[Number(y) - 1];
-      for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
-        expression[Number(y) - 1] += ad;
+  for (y in expression_2) {
+    if (expression_2[y] == "^") {
+      ad = expression_2[Number(y) - 1];
+      for (h = 0; h < Number(expression_2[Number(y) + 1]) - 1; h++) {
+        expression_2[Number(y) - 1] += ad;
       }
 
-      expression.splice(Number(y) + 1, 1);
-      expression.splice(y, 1);
+      expression_2.splice(Number(y) + 1, 1);
+      expression_2.splice(y, 1);
     }
   }
 
@@ -5911,13 +5911,13 @@ function FATORE(q) {
 
   monomios_2 = [{ numero: "" }];
   obnum = 0;
-  for (n = 0; n < expression.length; n++) {
-    if (String(expression[n]).search("[\\-\\+]") != -1 && n != 0) {
+  for (n = 0; n < expression_2.length; n++) {
+    if (String(expression_2[n]).search("[\\-\\+]") != -1 && n != 0) {
       monomios_2.push({ numero: "" });
       obnum++;
     }
 
-    monomios_2[obnum].numero += expression[n];
+    monomios_2[obnum].numero += expression_2[n];
   }
 
   //monomios_2 = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
@@ -6330,7 +6330,7 @@ function FATORE(q) {
    
    
    }
-   //expression = exp_2
+   //expression_2 = exp_2
    
    ////console.log('--------------------------------------------Monomios_2--------------------------------------')
    reps = []
@@ -8098,7 +8098,7 @@ function FATORE(q) {
       
        //console.log('A PARTIR DA QUI')
        edge_2 = []
-       naonao = ''
+       naonao_2 = ''
        amount = []
    
      //console.log(pans_2[bababa], Number(bababa))
@@ -8106,9 +8106,9 @@ function FATORE(q) {
       //console.log(roll_2[pans_2[bababa].numberyoudumb])
     //console.log('posições(fixas) - miss_2: ',roll_2[pans_2[bababa].numberyoudumb].posições)
    
-         tobreak = ''
+         tobreak_2 = ''
          realife = []
-         amontoado = []
+         amontoado_2 = []
          for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) {
       //console.log(quassao,':', roll_2[pans_2[bababa].numberyoudumb].posições[quassao],miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido)
    
@@ -8179,7 +8179,7 @@ function FATORE(q) {
                quase.push(el[t])
                }
            }
-           aconta = ''
+           aconta_2 = ''
            friend = ''
    
           elevar = 1
@@ -8200,9 +8200,9 @@ function FATORE(q) {
    
                   //console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
-                   aconta = fazerConta(gates)[0]
+                   aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   //console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
+                   //console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta_2)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
@@ -8214,21 +8214,21 @@ function FATORE(q) {
    
                        if (patience == quase.length - 1) {
                          //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-                           aconta+= `^${elevar}`
-                          //console.log(aconta)
+                           aconta_2+= `^${elevar}`
+                          //console.log(aconta_2)
                        }
    
                    }else{
                      
                        if (elevar > 1) {
                           //console.log('UEPA')
-                           aconta+= `^${elevar}`
+                           aconta_2+= `^${elevar}`
                            
                        }
    
-                       aconta+= quase[patience]
+                       aconta_2+= quase[patience]
                    
-                      //console.log(aconta)
+                      //console.log(aconta_2)
                      
                        elevar = 1
                    }
@@ -8237,7 +8237,7 @@ function FATORE(q) {
                } 
            }
          
-           //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
+           //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta_2)
            if (aster == false) {
            //console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
@@ -8249,7 +8249,7 @@ function FATORE(q) {
 
 
        if (aster == false) {
-        //console.log('SEM ASTERISCO',aconta)
+        //console.log('SEM ASTERISCO',aconta_2)
            antes = ''
            for (eyes in quase) {
                
@@ -8259,71 +8259,71 @@ function FATORE(q) {
                    antes+= quase[eyes]
                }
            }
-           antes+= aconta
+           antes+= aconta_2
           //console.log('ANTEEEES:', antes)
            
-           aconta = antes
+           aconta_2 = antes
         
        }
-       //console.log('A CONTA',aconta)
+       //console.log('A CONTA',aconta_2)
    
-       realife.push(aconta)
-           if (tobreak.length == 0) {
+       realife.push(aconta_2)
+           if (tobreak_2.length == 0) {
               
               
                if(quase[0]== '-'){
                
                   negativo = true
-               if (aconta[0] == '-') {
+               if (aconta_2[0] == '-') {
                 //console.log('PROBLEM')
                    mood = ''
-                   for (member in aconta) {
-                       //console.log('VAMOS LOGO!!!', aconta[member])
-                       if (aconta[member] != '-') {
+                   for (member in aconta_2) {
+                       //console.log('VAMOS LOGO!!!', aconta_2[member])
+                       if (aconta_2[member] != '-') {
                           //console.log('PUSHAR')
-                           mood+= aconta[member]
+                           mood+= aconta_2[member]
                        }
                    }
                    //console.log('THIS IS MOOOOOOOOOOOOD', mood)
-                   tobreak+= `-${mood}`
+                   tobreak_2+= `-${mood}`
                }else{
-                   tobreak += `-${aconta}`
-                   //console.log('THIS IS ACONTAAAAAAAAAAA', aconta)
+                   tobreak_2 += `-${aconta_2}`
+                   //console.log('THIS IS ACONTAAAAAAAAAAA', aconta_2)
                }
    
                }else{
                    negativo = false
-                   tobreak+= aconta
-                  //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
-                   for (now in aconta) {
-                   //console.log(aconta[now])
+                   tobreak_2+= aconta_2
+                  //console.log('THIS IS ACONTA_2||||||||||||||||||||||||||||||||||||||||||', aconta_2)
+                   for (now in aconta_2) {
+                   //console.log(aconta_2[now])
                    }
                }
            }else if(quase[0]== '-'){
             
             negativo = true
                correct = ''
-               for (okay in aconta) {
+               for (okay in aconta_2) {
                   //console.log(el[okay])
-                   if (aconta[okay]!= '-'){
-                       correct+= aconta[okay]
-                     //console.log('MESS', aconta[okay])
+                   if (aconta_2[okay]!= '-'){
+                       correct+= aconta_2[okay]
+                     //console.log('MESS', aconta_2[okay])
                    }
                }
               //console.log('ASSIM: ', correct)
-               tobreak+= ` - ${correct}`
+               tobreak_2+= ` - ${correct}`
                //console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
                negativo = false
              //console.log(el)
-               tobreak+= ` + ${aconta}`
-               //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
+               tobreak_2+= ` + ${aconta_2}`
+               //console.log('THIS IS ACONTA_2||||||||||||||||||||||||||||||||||||||||||', aconta_2)
            }
-          //console.log('THE COLOURS THAT I SAW', tobreak)
+          //console.log('THE COLOURS THAT I SAW', tobreak_2)
 
 
          //console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
-          //console.log(amontoado)
+          //console.log(amontoado_2)
            
            if (negativo == true) {
           
@@ -8333,15 +8333,15 @@ function FATORE(q) {
                    uh+= friend[i]
                }
            }
-           amontoado.push('-')
-           amontoado.push(uh)
+           amontoado_2.push('-')
+           amontoado_2.push(uh)
            }else{
-               amontoado.push('+')
-               amontoado.push(friend)
+               amontoado_2.push('+')
+               amontoado_2.push(friend)
            }
            
          }
-         //console.log('ENTÃO:','(', tobreak,')')
+         //console.log('ENTÃO:','(', tobreak_2,')')
    
        for (repr in pans_2[bababa].which) {
            
@@ -8415,7 +8415,7 @@ function FATORE(q) {
                }
            }
    
-            aconta = ''
+            aconta_2 = ''
             friend = ''
             aster = false
             elevar = 1
@@ -8435,7 +8435,7 @@ function FATORE(q) {
    
                    //console.log(quase, Number(patience) + 1)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
-                   aconta = fazerConta(gates)[0]
+                   aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
                    //console.log(friend)
                  
@@ -8449,19 +8449,19 @@ function FATORE(q) {
    
                        if (patience == quase.length - 1) {
                            //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-                           aconta+= `^${elevar}`
-                           //console.log(aconta)
+                           aconta_2+= `^${elevar}`
+                           //console.log(aconta_2)
                        }
    
                    }else{
                        if (elevar > 1) {
                          //console.log('UEPA')
-                           aconta+= `^${elevar}`
+                           aconta_2+= `^${elevar}`
                            
                        }
    
-                       aconta+= quase[patience]
-                      //console.log(aconta)
+                       aconta_2+= quase[patience]
+                      //console.log(aconta_2)
                      
                        elevar = 1
                    }
@@ -8482,7 +8482,7 @@ function FATORE(q) {
 
            if (aster == false) {
              
-              //console.log('SEM ASTERISCO2', aconta, quase)
+              //console.log('SEM ASTERISCO2', aconta_2, quase)
    
                antes = ''
            for (eyes in quase) {
@@ -8493,16 +8493,16 @@ function FATORE(q) {
                    antes+= quase[eyes]
                }
            }
-           antes+= aconta
+           antes+= aconta_2
           //console.log('ANTEEEES:', antes)
               // for (t in quase) {
-              // aconta+= quase[t]
+              // aconta_2+= quase[t]
              //  }
-             aconta = antes
+             aconta_2 = antes
            }
-          //console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
+          //console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta_2)
    
-          edge_2.push(aconta)
+          edge_2.push(aconta_2)
 
           if (quase[0] == '-') {
             uh = ''
@@ -8513,28 +8513,28 @@ function FATORE(q) {
             }
             amount.push('-')
             amount.push(uh)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta,'____________________')
+            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta_2,'____________________')
         }else{
             amount.push('+')
             amount.push(friend)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta)
+            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta_2)
         }
 
-           if (naonao.length == 0) {
+           if (naonao_2.length == 0) {
                //console.log('TÁ VAZio')
                if (quase[0] == '-') {
-                   naonao+= `-${aconta}`
+                   naonao_2+= `-${aconta_2}`
                   
                }else{
-                   naonao+= aconta
+                   naonao_2+= aconta_2
                    
                }
            }else{
                if (quase[0] == '-') {
-                   naonao+= ` - ${aconta}`
+                   naonao_2+= ` - ${aconta_2}`
                   
                }else{
-                   naonao+= ` + ${aconta}`
+                   naonao_2+= ` + ${aconta_2}`
                   
                }
            }
@@ -8544,20 +8544,20 @@ function FATORE(q) {
            concatenar_2+= ' + '
        }
        if (edge_2.length > 1) {
-       //console.log('                                ','( ',naonao,' )','( ',tobreak,' )','                         ')
-       concatenar_2+= `( ${naonao} )( ${tobreak} )`
+       //console.log('                                ','( ',naonao_2,' )','( ',tobreak_2,' )','                         ')
+       concatenar_2+= `( ${naonao_2} )( ${tobreak_2} )`
        }else{
-           //console.log('                            ',naonao,'( ',tobreak,' )','                          ')
-           concatenar_2+= `${naonao}( ${tobreak} )`
+           //console.log('                            ',naonao_2,'( ',tobreak_2,' )','                          ')
+           concatenar_2+= `${naonao_2}( ${tobreak_2} )`
        }
 
-       //console.log('ESSE É O AMONTOADO', amontoado)
+       //console.log('ESSE É O AMONTOADO_2', amontoado_2)
        //console.log('ESSE É O AMOUNT', amount)
 
      
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS_2(amount)
-      segundocaso = SOMANDOMONOMIOS_2(amontoado)
+      segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
 
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
@@ -8576,15 +8576,15 @@ function FATORE(q) {
       }else{
 
           mudou = true
-        //console.log(amontoado,'=>',segundocaso[0])
+        //console.log(amontoado_2,'=>',segundocaso[0])
         
       }
 
 
 
       if (mudou == true) {
-        naonao = primeirocaso[0]
-        tobreak = segundocaso[0] 
+        naonao_2 = primeirocaso[0]
+        tobreak_2 = segundocaso[0] 
 
       //console.log('')
       //console.log('SOMANDO FICA ASSIM:')
@@ -8592,61 +8592,61 @@ function FATORE(q) {
       //console.log('')
 
       reason = []
-      for (k in naonao) {
-      //console.log(k, naonao[k])
-        if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
-            deserve = naonao[k - 1]
+      for (k in naonao_2) {
+      //console.log(k, naonao_2[k])
+        if (k != 0 && naonao_2[k] != '-' && naonao_2[k] != '+') {
+            deserve = naonao_2[k - 1]
             reason.push(k - 1)
-            deserve+= naonao[k]
+            deserve+= naonao_2[k]
             //console.log('anterior:',deserve)
-            naonao[k] = deserve
+            naonao_2[k] = deserve
         }
       }
 
     //console.log('reason')
      
-   for (time = naonao.length - 1; time >= 0; time--) {
-    //console.log(time, naonao[time])
+   for (time = naonao_2.length - 1; time >= 0; time--) {
+    //console.log(time, naonao_2[time])
     if (reason.indexOf(time) != -1) {
         //console.log('TIRAR')
-        naonao.splice(time, 1)
+        naonao_2.splice(time, 1)
         }
    }
-      //console.log('', naonao)
+      //console.log('', naonao_2)
 
    reason = []
-      for (k in tobreak) {
-        //console.log(k, tobreak[k])
-        if (k != 0 && tobreak[k] != '-' && tobreak[k] != '+') {
-            deserve = tobreak[k - 1]
-            deserve+= tobreak[k]
+      for (k in tobreak_2) {
+        //console.log(k, tobreak_2[k])
+        if (k != 0 && tobreak_2[k] != '-' && tobreak_2[k] != '+') {
+            deserve = tobreak_2[k - 1]
+            deserve+= tobreak_2[k]
             reason.push(k - 1)
            //console.log('anterior:',deserve)
-           tobreak[k] = deserve
+           tobreak_2[k] = deserve
         }
       }
 
      //console.log('reason')
-      for (time = tobreak.length - 1; time >= 0; time--) {
-      //console.log(time, tobreak[time])
+      for (time = tobreak_2.length - 1; time >= 0; time--) {
+      //console.log(time, tobreak_2[time])
         if (reason.indexOf(time) != -1) {
            //console.log('TIRAR')
-            tobreak.splice(time, 1)
+            tobreak_2.splice(time, 1)
             }
        }
-      //console.log('', tobreak)
+      //console.log('', tobreak_2)
 
-      //console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
+      //console.log('____________________','( ',naonao_2,' )','( ',tobreak_2,' )','___________________________')
 
       //console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
-      for (roberto in naonao) {
+      for (roberto in naonao_2) {
           //console.log('---------------------------------------------------------------______')
-        //console.log(naonao[roberto])
+        //console.log(naonao_2[roberto])
         
-        for (vaidarcerto in tobreak) {
-            //console.log(tobreak[vaidarcerto])
-            novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
-            //console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
+        for (vaidarcerto in tobreak_2) {
+            //console.log(tobreak_2[vaidarcerto])
+            novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
+            //console.log(naonao_2[roberto], 'multiplicado por',tobreak_2[vaidarcerto],'=',novomon)
             console.warn(newexpress)
             if (novomon[0] == '-') {
                 miya = ''
@@ -8745,7 +8745,7 @@ function FATORE(q) {
        //console.log(monomios_2[todososnumeros_2[bye]].numero)
    
        quase = monomios_2[todososnumeros_2[bye]].numero
-       aconta = ''
+       aconta_2 = ''
        elevar = 1
        aster = false
        friend = ''
@@ -8767,7 +8767,7 @@ function FATORE(q) {
    
              //console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
-                aconta = fazerConta(gates)[0]
+                aconta_2 = fazerConta(gates)[0]
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
@@ -8779,19 +8779,19 @@ function FATORE(q) {
    
                     if (patience == quase.length - 1) {
                       //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-                        aconta+= `^${elevar}`
-                       //console.log(aconta)
+                        aconta_2+= `^${elevar}`
+                       //console.log(aconta_2)
                     }
    
                 }else{
                     if (elevar > 1) {
                        //console.log('UEPA')
-                        aconta+= `^${elevar}`
+                        aconta_2+= `^${elevar}`
                         
                     }
    
-                    aconta+= quase[patience]
-                   //console.log(aconta)
+                    aconta_2+= quase[patience]
+                   //console.log(aconta_2)
                   
                     elevar = 1
                 }
@@ -8809,7 +8809,7 @@ function FATORE(q) {
              friend = direitando
             }
     if (aster == false) {
-     //console.log('SEM ASTERISCO',aconta)
+     //console.log('SEM ASTERISCO',aconta_2)
         antes = ''
         for (eyes in quase) {
             
@@ -8819,33 +8819,33 @@ function FATORE(q) {
                 antes+= quase[eyes]
             }
         }
-        antes+= aconta
+        antes+= aconta_2
        //console.log('ANTEEEES:', antes)
         
-        aconta = antes
+        aconta_2 = antes
     }
-    //console.log('A CONTA',aconta, quase)
+    //console.log('A CONTA',aconta_2, quase)
    
     if (bye == 0) {
        //console.log('PRIMEIRO')
        if (concatenar_2.length > 0) {
            if (quase[0] == '-') {
-               concatenar_2+= ` - ${aconta}`
+               concatenar_2+= ` - ${aconta_2}`
            }else{
-               concatenar_2+= ` + ${aconta}`
+               concatenar_2+= ` + ${aconta_2}`
            }
        }else{
            if (quase[0] == '-') {
-               concatenar_2+= `-${aconta}`
+               concatenar_2+= `-${aconta_2}`
            }else{
-               concatenar_2+= `${aconta}`
+               concatenar_2+= `${aconta_2}`
            }
        }
     }else{
        if (quase[0] == '-') {
-           concatenar_2+= ` - ${aconta}`
+           concatenar_2+= ` - ${aconta_2}`
        }else{
-           concatenar_2+= ` + ${aconta}`
+           concatenar_2+= ` + ${aconta_2}`
        }
     }
    }
