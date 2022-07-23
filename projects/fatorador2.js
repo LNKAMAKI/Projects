@@ -10749,7 +10749,7 @@ return [
 devtoolsstate = 'closed'
 function devtools() {
   tab = document.getElementById('devtab')
-  part = tab.getElementsByClassName('slot')
+  
   if (devtoolsstate == 'closed') {
     //console.log('OPEN DEV TOOLS')
     devtoolsstate = 'open'
@@ -10777,6 +10777,12 @@ function devtools() {
         p.style.textAlign = 'center'
         tab.appendChild(p)
 
+        for (j = 0; j < 4; j++) {
+          s = document.createElement('div')
+          s.setAttribute('class','slot')
+          tab.appendChild(s)
+        }
+        part = tab.getElementsByClassName('slot')
         p = document.createElement('p')
         p.innerText = `SEGS`
         p.style.textAlign = 'center'
@@ -10838,6 +10844,13 @@ function devtools() {
       }
   }else{
     //console.log('CLOSE DEV TOOLS')
+    part = tab.getElementsByClassName('slot')
+
+    console.log(part)
+    for (g = part.length - 1; g >= 0; g--) {
+      console.log(g, part[g])
+      tab.removeChild(part[g])
+    }
     devtoolsstate = 'closed'
     ps = tab.getElementsByTagName('p')
     for (c = ps.length - 1; c >= 0; c--) {
