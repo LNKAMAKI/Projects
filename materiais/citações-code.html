@@ -30,8 +30,34 @@
 <div id="efect"></div>
 
 <div id="fontypes" style="text-align: center;">
+<span class="title">TRECHOS DE CÓDIGO</span>
+<p>O compartilhamento de código entre desenvolvedores e programadores é muito comum, por isso, existe uma tag para indicar esse tipo de texto: a tag <span class="tag">code</span>.</p>
+<code>
+    <span class="tag2">code</span><br>
+    function () {<br>
+        console.log('hey') <br>
+    } <br>
+    <span class="tag3">code</span>
+</code>
 
-<!--AQUI FICA O CONTEÚDO-->
+<p>Colocando esse código no documento HTMl, o resultado na tela será o seguinte:</p>
+<code>
+    function () {
+        console.log('hey')
+    }
+</code>
+<p>Isso porque a tag <span class="tag">code</span> serve somente para indicar um trecho de código, ou seja, possui um valor semântico, e deixa a fonte monoespaçada; ela não deixa o código formatado do jeito que nós o escrevemos. Se quisermos fazer isso, utilizamos a tag <span class="tag">pre</span>:</p>
+
+<code>
+    <span class="tag2">pre</span><br>
+    <span class="tag2">code</span><br>
+    function () {<br>
+        console.log('hey') <br>
+    } <br>
+    <span class="tag3">code</span><br>
+    <span class="tag3">pre</span><br>
+</code>
+
 
 </div>
 
