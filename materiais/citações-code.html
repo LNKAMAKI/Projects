@@ -34,7 +34,7 @@
 <p>O compartilhamento de código entre desenvolvedores e programadores é muito comum, por isso, existe uma tag para indicar esse tipo de texto: a tag <span class="tag">code</span>.</p>
 <code>
     <span class="tag2">code</span><br>
-    function () {<br>
+    function print() {<br>
         console.log('hey') <br>
     } <br>
     <span class="tag3">code</span>
@@ -42,7 +42,7 @@
 
 <p>Colocando esse código no documento HTMl, o resultado na tela será o seguinte:</p>
 <code>
-    function () {
+    function print() {
         console.log('hey')
     }
 </code>
@@ -51,14 +51,29 @@
 <code>
     <span class="tag2">pre</span><br>
     <span class="tag2">code</span><br>
-    function () {<br>
+    function print() {<br>
         console.log('hey') <br>
     } <br>
     <span class="tag3">code</span><br>
     <span class="tag3">pre</span><br>
 </code>
-
-
+<span class="title">CITAÇÕES</span>
+<p>Também é comum os sites possuírem trechos de citações retirados de outras referências. É justamente para isso que existem a tag <span class="tag">q</span> e <span class="tag">blockquote</span>:</p>
+<code>
+    <span class="tag2">q</span><br>
+    Tell me and I forget, Teach me and I remember, Involve me and I learn. <br>
+    <span class="tag3">q</span>
+</code><br>
+<q>Tell me and I forget, Teach me and I remember, Involve me and I learn.</q><br><br>
+<code>
+    <span class="tag2">blockquote</span><br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eos quo error quos ea sint consequatur ipsum quis soluta. Autem ut sed saepe, explicabo minima aspernatur et ipsa deserunt.<br>
+    <span class="tag3">blockquote</span>
+</code>
+<blockquote>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eos quo error quos ea sint consequatur ipsum quis soluta. Autem ut sed saepe, explicabo minima aspernatur et ipsa deserunt.
+</blockquote>
+<p>Ainda é possível colocar o parâmetro <span class="prop">cite</span> dentro da tag <span class="tag">blockquote</span>, que recebe o link para o site de onde foi retirado.</p>
 </div>
 
     <div id="efect2"></div>
