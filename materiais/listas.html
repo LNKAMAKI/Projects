@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-tabela.css">
+    <style>
+    table {
+        border-collapse: collapse;
+        margin: auto;
+    }
+    td,th {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    div.table {
+        overflow: auto;
+        max-height: 350px;
+    }
+    abbr {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<h2 id="tipograf" style="text-align: center; font-family: Time;">LISTAS</h2>
+<div id="efect"></div>
+
+<div id="fontypes" style="text-align: center;">
+
+    <span class="title">LISTAS OL</span>
+    <p>As listas ordenadas são aquelas em que há uma contagem do primeiro ao último itens contidos nelas:</p>
+    <ol>
+        <li mar>Melancia</li>
+        <li mar>Maça</li>
+        <li mar>Banana</li>
+        <li mar>Manga</li>
+        <li mar>Laranja</li>
+        <li mar>Morango</li>
+    </ol>
+  <p>O tipo dessa lista de cima é <span class="str">"1"</span>, pois começa no número 1.</p>
+  <ol type="a">
+    <li mar>Melancia</li>
+    <li mar>Maça</li>
+    <li mar>Banana</li>
+    <li mar>Manga</li>
+    <li mar>Laranja</li>
+    <li mar>Morango</li>
+</ol>
+<p>Já o tipo dessa é <span class="str">"a"</span></p>
+<ol type="A">
+    <li mar>Melancia</li>
+    <li mar>Maça</li>
+    <li mar>Banana</li>
+    <li mar>Manga</li>
+    <li mar>Laranja</li>
+    <li mar>Morango</li>
+</ol>
+<p class="str">"A"</p>
+<ol type="i">
+    <li mar>Melancia</li>
+    <li mar>Maça</li>
+    <li mar>Banana</li>
+    <li mar>Manga</li>
+    <li mar>Laranja</li>
+    <li mar>Morango</li>
+</ol>
+<p class="str">"i"</p>
+<ol type="I">
+    <li mar>Melancia</li>
+    <li mar>Maça</li>
+    <li mar>Banana</li>
+    <li mar>Manga</li>
+    <li mar>Laranja</li>
+    <li mar>Morango</li>
+</ol>
+<p class="str">"I"</p>
+
+<p>Cada item dessas listas está contido em uma tag <span class="tag">li</span>, de list item, que pode ou não possuir fechamento (opcional).</p>
+<p>Veja o código para criar uma lista ordenada simples:</p>
+<code>
+    <span class="tag2">ol</span><br>
+    <span class="tag2">li</span>
+    ITEM 1
+    <span class="tag3">li</span><br>
+    <span class="tag2">li</span>
+    ITEM 2
+    <span class="tag3">li</span><br>
+    <span class="tag2">li</span>
+    ITEM 3
+    <span class="tag3">li</span><br>
+    <span class="tag3">ol</span><br>
+</code>
+</div>
+
+    <div id="efect2"></div>
+</body>
+</html>

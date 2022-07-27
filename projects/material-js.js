@@ -2,9 +2,9 @@
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura básica e tags HTML',url:'../materiais/introducao-html.html'},{title:'Quebras de linha e símbolos',url:'../materiais/br,símbolos.html'},{title:'Imagens',url:'../materiais/imagens.html'},{title:'Favicon e links',url:'../materiais/favicon-links.html'},{title:'Formatações de texto',url:'../materiais/tipostexto.html'},{title:'Citações e códigos',url:'../materiais/citações-code.html'}]},
+    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura HTML básica, tags HTML e hierarquia de títulos',url:'../materiais/introducao-html.html'},{title:'Parágrafos, quebras de linha, símbolos e emojis',url:'../materiais/br,símbolos.html'},{title:'Formatos de imagem, tag img, direitos autorais e imagens responsivas',url:'../materiais/imagens.html'},{title:'Favicon e links internos, externos e para download',url:'../materiais/favicon-links.html'},{title:'Formatações de texto',url:'../materiais/tipostexto.html'},{title:'Citações, códigos e abreviações',url:'../materiais/citações-code.html'},{title:'Listas ol, ul, mistas e de definição',url:'../materiais/listas.html'}]},
     {title:'CSS', url:'css-logo.svg',subs:[]},
-    {title:'JAVASCRIPT', url:'js-logo.svg',subs:[]},
+    {title:'JAVASCRIPT ----------------------------------------------------------------------------------------', url:'js-logo.svg',subs:[]},
 ]
 
 var subjects = []

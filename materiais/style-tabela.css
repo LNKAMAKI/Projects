@@ -122,11 +122,23 @@ div#d {
     margin-bottom: 5px;
     display: block;
 }
-ul {
+ul,ol {
     list-style-position: inside;
     padding: 0px;
+    width: fit-content;
+    margin: auto;
 }
-li::marker {
+ul > li {
+    width: fit-content;
+    margin: 0px;
+}
+
+ol > li {
+    width: fit-content;
+    margin: 0px;
+}
+
+ul > li::marker {
     content: '➡ ';
 }
 code {

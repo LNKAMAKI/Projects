@@ -19,9 +19,7 @@
         overflow: auto;
         max-height: 350px;
     }
-    abbr {
-        text-decoration: underline;
-    }
+   
 </style>
 </head>
 <body>
@@ -74,6 +72,16 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eos quo error quos ea sint consequatur ipsum quis soluta. Autem ut sed saepe, explicabo minima aspernatur et ipsa deserunt.
 </blockquote>
 <p>Ainda é possível colocar o parâmetro <span class="prop">cite</span> dentro da tag <span class="tag">blockquote</span>, que recebe o link para o site de onde foi retirado.</p>
+<span class="title">ABREVIAÇÕES</span>
+<p>Existem também a tag <span class="tag">abbr</span>, de abbreviation, que permite que a frase ou palavra original seja mostrada ao passar o mouse em cima.</p>
+<p>Veja um exemplo abaixo:</p>
+<p><abbr title="Hypertext Markup Language">HTML</abbr> é uma linguagem de marcação, diferente de Javascript, por exemplo.</p>
+<p>O código usado para ter esse efeito visual foi o seguinte:</p>
+<code>
+    <span class="tag2">abbr <span class="prop">title</span><span class="n">=</span><span class="str">"Hypertext Markup Language"</span></span><br>
+    HTML <br>
+    <span class="tag3">abbr</span>
+</code>
 </div>
 
     <div id="efect2"></div>
