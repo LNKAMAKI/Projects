@@ -404,7 +404,7 @@ d.appendChild(d2)
 
 // Cria os bigicons/ícones
 for (i in contents) {
-d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="bg-light" name="icon-img" onclick="mostrarlista(${i})"><img src="./\imagens/${contents[i].url}"> <p>${contents[i].title}</p></div></div>`
+d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="bg-light" name="icon-img" onclick="mostrarlista(${i})"><img src="./\imagens/${contents[i].url}" alt="${contents[i].title}"> <p>${contents[i].title}</p></div></div>`
 }
 
 qualicon = -1
