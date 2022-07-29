@@ -19,11 +19,21 @@ function solve() {
             i1.push('-')
           }
         }
-       simplificar = SOMAR(i1)
-       console.log(simplificar)
+
+        int = SOMAR(i1)
+       simplificar = int[0]
+       console.log(simplificar,int)
+
+       btexp = ''
        for (c in simplificar) {
-        console.log(REDONUMFACTORING(simplificar[c]))
+        if (simplificar[c] != '-' && simplificar[c] != '+') {
+        a = REDONUMFACTORING(simplificar[c])
+        }else{
+          a = simplificar[c]
+        }
+        btexp += a
        }
+       console.log(btexp)
     }
 }
 
@@ -554,7 +564,7 @@ function REFORMATAR(q) {
         }
       }
 
-      return exp
+      return [exp,monomios,ji]
 
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
 }
