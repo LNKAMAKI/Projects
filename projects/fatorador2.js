@@ -8779,10 +8779,10 @@ if (quad != eep) {
        }
        if (edge_2.length > 1) {
        //console.log('                                ','( ',naonao_2,' )','( ',tobreak_2,' )','                         ')
-       concatenar_2+= `( ${naonao_2} )( ${tobreak_2} )`
+       concatenar_2+= `(${naonao_2})(${tobreak_2})`
        }else{
            //console.log('                            ',naonao_2,'( ',tobreak_2,' )','                          ')
-           concatenar_2+= `${naonao_2}( ${tobreak_2} )`
+           concatenar_2+= `${naonao_2}(${tobreak_2})`
        }
 
        //console.log('ESSE É O AMONTOADO_2', amontoado_2)
