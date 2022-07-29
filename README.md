@@ -12,10 +12,18 @@
  <li><a href= "https://lnkamaki.github.io/Projects/projects/calcular-imc.html"><span style=" font-weight: normal; font-size: 1.3em;">Calculador de IMC</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/dicionario.html"><span style=" font-weight: normal; font-size: 1.3em;">Dicionário</span></a></li>   
 
-<!--#af3434-->
 
 
-<!--Your mom will steal someone else's hair. This will ruin your life.
+<!--
+Don't play with a donut. Seriously.
+It's a good idea to destroy food off the floor.
+Don't talk to your car.
+Never sit on chores.
+Just love chores.
+Don't forget to make a wall.
+A mysterious person will throw something at your pumpkin. It will bring you much joy.
+Don't forget to eat the floor. Seriously.
+Your mom will steal someone else's hair. This will ruin your life.
 Your neighbor will steal someone else's pumpkin. Enjoy it.
 A random person will learn about your hopeless career. It wil bring you much joy.
 A random person will grab your ugly cat. Be prepared.
@@ -27,8 +35,3 @@ You should sit on an instrument.
 Don't forget to steal chores.
 A misterious person seeks to eat someone else's pants. Beware.
 -->
-
- 
-
- 
-a
