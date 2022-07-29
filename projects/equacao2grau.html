@@ -31,18 +31,6 @@
             width: fit-content;
             z-index: 0;
             margin: auto;
-            
-        }
-        p#obs {
-            text-align: center;
-            position: relative;
-            background-color: rgba(0, 0, 0, 0);
-           margin: 0;
-            color: rgb(65, 173, 216);
-            text-align: center;
-            font-size: 2em;
-            font-family: 'Macondo';
-            text-shadow: 2px 3px 8px;
         }
         div#header {
             position: relative;
@@ -61,131 +49,21 @@
             font-size: 4em;
             font-family: 'Macondo';
             text-shadow: 2px 3px 8px;
-           }
-           
-           @media screen and (max-width: 500px) {
-             h1 {
-                 font-size: 3.5em;
-             }
-             p#obs {
-                 font-size: 1.5em;
-             }
-           }
-    
-           div#testarea {
-              height: 500px;
-            width: 700px;
-               margin: 70px auto 0px auto;
-              
-               justify-content: center;
-           }
-           #typearea {
-              width: 100%;
-              margin: 0px;
-              left: 0px;
-              right: 0px;
-             background-color:white;
-             border-width: 0px;
-             border-radius: 7px;
-              padding: 0px;
-              outline: 1px solid black;
-               height: 35px;
-               font-size: 1.5em;
-               text-align: center;
-           }
-
-           input#typearea:focus {
-            outline: 2px solid black;
-           
-           }
-           @media screen and (max-width: 750px) {
-           div#testarea {
-               width: 550px;
-             
-            }
-           }
-
-           @media screen and (max-width: 580px) {
-            div#testarea {
-               width: 400px;
-               
-            }
-            #typearea {
-               font-size: 1.2em;
-            }
-           }
-
-           @media screen and (max-width: 460px) {
-            div#testarea {
-               width: 345px;
-            
-            }
-            #typearea {
-               font-size: 1.1em;
-            }
-           }
-
-         div#tab {
-            width: 100%;
-            height: 0px;
-            background-color: black;
-            color: white;
-           /*animation: surgir 2s forwards;*/
-            overflow: hidden;
-         }
-         @keyframes surgir {
-            0%{
-               height: 0px;
-            }
-            100% {
-               height: fit-content;
-            }
-         }
-         input#exemplos {
-            width: 100%;
-            padding: 2px 0px 2px 0px;
-         }
-         p.eg {
-            border-radius: 20px;
-            cursor: pointer;
-            background-color: var(--themecolor);
-            width: calc(100% - 20px);
-            text-align: center;
-            padding: 10px 0px 10px 0px;
-            margin: 5px 0px 5px 0px;
-            margin: 10px;
-            color:black;
-            font-family: monospace;
-            font-size: 1.5em;
-         }
-
-         input#fatorar {
-            cursor: pointer;
-            width: 100px;
-            display: block;
-            margin: auto;
-            margin-top: 20px;
-            border-radius: 30px;
-            padding: 10px;
-            border-width: 0px;
-            color: var(--themecolor);
-            background-color: black;
-            text-shadow: 2px 3px 8px var(--themecolor);
-         }
-       
-         #result {
-            text-align: center;
-            font-family: 'Macondo';
             font-weight: bold;
-            font-size: 1.9em;
-            margin: 50px 0px 10px 0px;
-         }
-         #fatoracao {
+           }
+
+           #eq {
             text-align: center;
-            margin: 10px 0px 10px 0px;
-            font-size: 2em;
-            font-family: monospace;
-         }
+           }
+
+           input {
+            outline-width: 0px;
+           border: 1px solid black;
+           border-radius: 4px;
+           margin-right: 10px;
+           padding: 10px;
+           font-size: 1.5em;
+           }
     </style>
 </head>
 <body>
@@ -201,32 +79,8 @@
              
             </div>
         </div>
+      <p id="eq"><input type="text" name="" id=""><input type="text" name="" id=""></p>
 
-        <div id="testarea">
-           
-            <input type="text" name="" id="typearea" spellcheck="false" placeholder="Digite a expressão...">
-            <div id="tab">
-               
-               <p class="eg">15 + 5b + 15l + 5bl</p>
-               <p class="eg">x^2 - 3x - 2x + 6</p>
-               <p class="eg">10y - 338xy + 20y^2 - 169x + ab + bb + ac + bc</p>
-               <p class="eg">ab + ac + bb + bc + xa + xc</p>
-               <p class="eg">-8x + 4x^2 + 8y - 4xy</p>
-               <p class="eg">14y + 7x + 9x</p>
-               <p class="eg">-121y + xz + 11yz - 11x</p>
-               <p class="eg">x^3 + x - 2xy + x^2y - 2x^2 + y</p>
-               <p class="eg">-8x + 3xy + 4xy - 6x + 2xy - 4x</p>
-               <p class="eg">29 + 37 + 74x + 58x</p>
-               <p class="eg">a^2 + a - 5a - 5</p>
-               
-            </div>
-            <input type="button" value="Exemplos" id="exemplos" onclick="showegs()">
-
-            <input type="button" value="FATORAR" id="fatorar" onclick="ir()">
-             
-            
-                  <p id='result'></p>
-                  <p id='fatoracao'></p>
-        </div>
+      
 </body>
 </html>
