@@ -4,9 +4,11 @@ function solve() {
 
     if (i1.search('([0-9]|[a-z])') != -1 && i2.search('([0-9]|[a-z])') != -1) { // SE OS VALORES FOREM VÁLIDOS
         window.alert('PODE IR')
-        console.log(REFORMATAR(i1))
+        i1 = REFORMATAR(i1)
+        i2 = REFORMATAR(i2)
+        console.log(i1,i2)
+        console.log(i2.replace('+','-'))
 
-        console.log(SOMAR(expression))
     }
 }
 
