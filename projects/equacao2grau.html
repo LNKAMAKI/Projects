@@ -53,18 +53,39 @@
            }
 
            #eq {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
            }
 
-           input {
-            outline-width: 0px;
-           border: 1px solid black;
-           border-radius: 4px;
-           margin-right: 10px;
-           padding: 10px;
-           font-size: 1.5em;
+           .inp {
+              display: inline-block;
+             background-color:white;
+             border-width: 0px;
+             border-radius: 7px;
+              padding: 0px;
+              outline: 1px solid black;
+               height: 35px;
+               text-align: center;
+               font-size: 1.5em;
            }
-    </style>
+           #equalsign {
+            font-size: 1.9em;
+            font-weight: bold;
+           }
+
+           @media screen and (max-width: 630px) {
+            #eq {
+            display: grid;
+            justify-content: center;
+           }
+           }
+           span {
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 10px;
+           }
+</style>
 </head>
 <body>
     <script src="fatorador.js"></script>
@@ -79,7 +100,7 @@
              
             </div>
         </div>
-      <p id="eq"><input type="text" name="" id=""><input type="text" name="" id=""></p>
+      <div id="eq"><input type="text" name="" id="" class="inp"> <span id="equalsign">&#61;</span> <input type="text" name="" id="" class="inp"></div>
 
       
 </body>
