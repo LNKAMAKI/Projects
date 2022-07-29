@@ -160,6 +160,8 @@ function mudar(index) {
     document.getElementsByClassName("eg")[index].innerText;
 }
 function FATORAR(expression) {
+
+  alt = 1
   startexp = [...expression];
 
   if (expression[0] !== "-" && expression[0] !== "+") {
@@ -2937,6 +2939,7 @@ function FATORAR(expression) {
         //console.log('IS IT SERIOUS?')
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
         //console.log(otherway[0])
+        alt = 2
         return [otherway[0], otherway[3], otherway[4]];
       } else {
         //console.log('RESULTADO DA EXPRESSÃO',startexp,'é')
@@ -8371,3 +8374,118 @@ function SPLITEXPS(expression) {
     return splitedExps
     }
     
+    devtoolsstate = 'closed'
+    function devtools() {
+      tab = document.getElementById('devtab')
+      
+      if (devtoolsstate == 'closed') {
+        //console.log('OPEN DEV TOOLS')
+        devtoolsstate = 'open'
+         
+        tab.style.display= 'block'
+        //console.log(segs, alt)
+          if (alt == 1) {
+            p = document.createElement('p')
+            p.innerText = `segs.length: ${segs.length}`
+            p.style.textAlign = 'center'
+           tab.appendChild(p)
+    
+            p = document.createElement('p')
+            p.innerText = `scarecrow.length: ${scarecrow.length}`
+            p.style.textAlign = 'center'
+            tab.appendChild(p)
+    
+            p = document.createElement('p')
+            p.innerText = `miss.length: ${miss.length}`
+            p.style.textAlign = 'center'
+            tab.appendChild(p)
+    
+            p = document.createElement('p')
+            p.innerText = `roll.length: ${roll.length}`
+            p.style.textAlign = 'center'
+            tab.appendChild(p)
+    
+            for (j = 0; j < 4; j++) {
+              s = document.createElement('div')
+              s.setAttribute('class','slot')
+              tab.appendChild(s)
+            }
+    
+            part = tab.getElementsByClassName('slot')
+            p = document.createElement('p')
+            p.innerText = `SEGS`
+            p.style.textAlign = 'center'
+            part[0].appendChild(p)
+    
+    
+           for (i in segs) {
+            p = document.createElement('p')
+            p.innerText = `${i}: { fator comum: '${segs[i].car}', monômios: [ ${segs[i].mons} ]}`
+            p.style.textAlign = 'center'
+            part[0].appendChild(p)
+           }
+    
+           p = document.createElement('p')
+           p.innerText = `SCARECROW`
+           p.style.textAlign = 'center'
+           part[1].appendChild(p)
+    
+           for (i in scarecrow) {
+            p = document.createElement('p')
+            p.innerText = `${i}: { divisor: '${scarecrow[i].divisor}', divididos: [ ${scarecrow[i].divididos} ]}`
+            p.style.textAlign = 'center'
+            part[1].appendChild(p)
+           }
+    
+           p = document.createElement('p')
+           p.innerText = `MISS`
+           p.style.textAlign = 'center'
+           part[2].appendChild(p)
+    
+           for (i in miss) {
+            p = document.createElement('p')
+            p.innerText = `${i}: { termo: '${miss[i].dividido}', aparicoes: [ ${miss[i].aparicoes} ]}`
+            p.style.textAlign = 'center'
+            part[2].appendChild(p)
+           }
+    
+           p = document.createElement('p')
+           p.innerText = `ROLL`
+           p.style.textAlign = 'center'
+           part[3].appendChild(p)
+    
+           for (i in roll) {
+            p = document.createElement('p')
+            p.innerText = `${i}: { repetidos: '${roll[i].repetidos}', posições: [ ${roll[i].posições} ]}`
+            p.style.textAlign = 'center'
+            part[3].appendChild(p)
+           }
+    
+          
+    
+          }else{
+            for (i in segs_2) {
+              p = document.createElement('p')
+              p.innerText = `${i}: { fator comum: '${segs_2[i].car}', monômios: [ ${segs_2[i].mons} ]}`
+              p.style.textAlign = 'center'
+              part[0].appendChild(p)
+             }
+          }
+      }else{
+        //console.log('CLOSE DEV TOOLS')
+        part = tab.getElementsByClassName('slot')
+    
+        console.log(part)
+        for (g = part.length - 1; g >= 0; g--) {
+          console.log(g, part[g])
+          tab.removeChild(part[g])
+        }
+        devtoolsstate = 'closed'
+        ps = tab.getElementsByTagName('p')
+        for (c = ps.length - 1; c >= 0; c--) {
+          tab.removeChild(ps[c])
+          tab.style.display = 'none'
+        }
+      }
+    
+    }
