@@ -3,12 +3,27 @@ function solve() {
     i2 = document.getElementById('inp2').value
 
     if (i1.search('([0-9]|[a-z])') != -1 && i2.search('([0-9]|[a-z])') != -1) { // SE OS VALORES FOREM VÁLIDOS
-        window.alert('PODE IR')
         i1 = REFORMATAR(i1)
         i2 = REFORMATAR(i2)
         console.log(i1,i2)
-        console.log(i2.replace('+','-'))
-
+        for (c in i2) {
+          console.log(i2[c])
+          if (c == 0 && i2[c] != '-') {
+            i1.push('-')
+          }
+          if (i2[c] != '-' && i2[c] != '+') {
+          i1.push(i2[c])
+          }else if(i2[c] == '-') {
+            i1.push('+')
+          }else{
+            i1.push('-')
+          }
+        }
+       simplificar = SOMAR(i1)
+       console.log(simplificar)
+       for (c in simplificar) {
+        console.log(REDONUMFACTORING(simplificar[c]))
+       }
     }
 }
 
