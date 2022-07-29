@@ -67,28 +67,70 @@
               outline: 1px solid black;
                height: 35px;
                text-align: center;
-               font-size: 1.5em;
+               font-size: 1.4em;
+               width: 400px;
+              
+           }
+           #inp1 {
+            margin-left: 20px;
+           }
+           #inp2 {
+            margin-right: 20px;
            }
            #equalsign {
             font-size: 1.9em;
             font-weight: bold;
            }
 
-           @media screen and (max-width: 630px) {
+           @media screen and (max-width: 670px) {
             #eq {
             display: grid;
             justify-content: center;
            }
+           #inp1 {
+            margin: 0px;
            }
+           
+           #inp2 {
+            margin: 0px;
+           }
+
+           .inp {
+            font-size: 1.2em;
+           }
+
            span {
             text-align: center;
             margin-right: 10px;
             margin-left: 10px;
            }
+         }
+
+         @media screen and (max-width: 420px) {
+            .inp {
+               width: 300px;
+               font-size: 1em;
+            }
+         }
+
+         input[type='button'] {
+            cursor: pointer;
+            width: 100px;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 30px;
+            padding: 10px;
+            font-size: 0.8em;
+            border-width: 0px;
+            color: var(--themecolor);
+            background-color: black;
+            text-shadow: 2px 3px 8px var(--themecolor);
+         }
 </style>
 </head>
 <body>
-    <script src="fatorador.js"></script>
+    <script src="equacao2grau.js"></script>
     
         <div id="header">
           
@@ -100,7 +142,9 @@
              
             </div>
         </div>
-      <div id="eq"><input type="text" name="" id="" class="inp"> <span id="equalsign">&#61;</span> <input type="text" name="" id="" class="inp"></div>
+      <div id="eq"><input type="text" name="" id="inp1" class="inp" value="2x + 10x + 5"><span id="equalsign">&nbsp;&#61;&nbsp;</span><input type="text" name="" id="inp2" class="inp" value="1"></div>
+
+      <input type="button" value="RESOLVER" onclick="solve()">
 
       
 </body>
