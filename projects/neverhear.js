@@ -1,7 +1,7 @@
 for (eep in miss_2) {
           monspos_ = []
           for (b in miss_2[eep].aparicoes) {
-            monpos = scarecrow[miss_2[eep].aparicoes[b]].positions[scarecrow[miss_2[eep].aparicoes[b]].divididos.indexOf(miss_2[eep].dividido)]
+            monpos = scarecrow_2[miss_2[eep].aparicoes[b]].positions[scarecrow_2[miss_2[eep].aparicoes[b]].divididos.indexOf(miss_2[eep].dividido)]
             monspos_.push(monpos)
           }
        
@@ -15,7 +15,7 @@ for (eep in miss_2) {
         monspos2 = []
           for (b in miss_2[quad].aparicoes) {
             
-            monpos = scarecrow[miss_2[quad].aparicoes[b]].positions[scarecrow[miss_2[quad].aparicoes[b]].divididos.indexOf(miss_2[quad].dividido)]
+            monpos = scarecrow_2[miss_2[quad].aparicoes[b]].positions[scarecrow_2[miss_2[quad].aparicoes[b]].divididos.indexOf(miss_2[quad].dividido)]
             monspos2.push(monpos)
           }
           
@@ -26,7 +26,7 @@ for (eep in miss_2) {
         for (vespa in miss_2[eep].aparicoes) {
           
           cango = true
-          monpos = scarecrow[miss_2[eep].aparicoes[vespa]].positions[scarecrow[miss_2[eep].aparicoes[vespa]].divididos.indexOf(miss_2[eep].dividido)]
+          monpos = scarecrow_2[miss_2[eep].aparicoes[vespa]].positions[scarecrow_2[miss_2[eep].aparicoes[vespa]].divididos.indexOf(miss_2[eep].dividido)]
 
           if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1) {
 
@@ -43,13 +43,13 @@ for (eep in miss_2) {
 
             rap+= ',' + miss_2[eep].aparicoes[vespa]
 
-            if (roller.find(function(roller) {return roller.rept == rap}) != undefined) {
+            if (roller_2.find(function(roller_2) {return roller_2.rept == rap}) != undefined) {
 
               
               if (cango == true && monspos.indexOf(posmon) == -1) {
 
               monspos.push(posmon)
-              what = roller.find(function(roller) {return roller.rept == rap})
+              what = roller_2.find(function(roller_2) {return roller_2.rept == rap})
             
             for (h in monspos) {
               
@@ -103,12 +103,12 @@ for (eep in miss_2) {
             repwri = rap          
 
             if (
-              roller.find(function (roller) {
-                return roller.rept == repwri;
+              roller_2.find(function (roller_2) {
+                return roller_2.rept == repwri;
               }) == undefined
             ) {
               
-              roller.push({
+              roller_2.push({
                 mons: [...result],
                 rept: repwri,
                 opl: [...repeated],
@@ -116,20 +116,20 @@ for (eep in miss_2) {
               });
              
             } else {
-              if (roller.find(function (roller) {return roller.rept == repwri;}).position.indexOf(eep) == -1) {
-                roller.find(function (roller) {return roller.rept == repwri;})
+              if (roller_2.find(function (roller_2) {return roller_2.rept == repwri;}).position.indexOf(eep) == -1) {
+                roller_2.find(function (roller_2) {return roller_2.rept == repwri;})
                   .position.push(eep);
               }
               if (
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
+                roller_2
+                  .find(function (roller_2) {
+                    return roller_2.rept == repwri;
                   })
                   .position.indexOf(quad) == -1
               ) {
-                roller
-                  .find(function (roller) {
-                    return roller.rept == repwri;
+                roller_2
+                  .find(function (roller_2) {
+                    return roller_2.rept == repwri;
                   })
                   .position.push(quad);
               }
