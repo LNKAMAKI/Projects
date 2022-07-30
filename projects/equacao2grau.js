@@ -184,6 +184,7 @@ function REFORMATAR(q) {
   
     //TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
   
+    /*
     for (bye in monomios) {
       comofica = [];
       ground = "";
@@ -211,7 +212,8 @@ function REFORMATAR(q) {
       }
       monomios[bye].numero = comofica;
     }
-  
+    */
+
     for (huh in monomios) {
       partlet = "";
       for (y in monomios[huh].numero) {
@@ -415,6 +417,7 @@ function REFORMATAR(q) {
   
     //SEPARAR CORRETAMEnTE OS nÚMEROS
   
+    /*
     for (bye in monomios) {
       //
   
@@ -448,6 +451,7 @@ function REFORMATAR(q) {
   
       monomios[bye].numero = comofica;
     }
+    */
   
     function ehprimo(Number) {
         parar = false;
