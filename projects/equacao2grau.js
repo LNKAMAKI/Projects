@@ -69,7 +69,25 @@ function solve() {
         }
 
         if (tudocerto == true) {
+
+          if (c == -0) {
+            c = 0
+          }
           console.log('A:',a, 'B:',b, 'C:',c)
+          console.log('HORA DE RESOLVER')
+          delta = b**2 - 4*a*c
+          console.log('this is delta:', delta)
+          if (delta >= 0) {
+            console.log('OK, DÁ PARA CONTINUAR')
+            console.log('raiz de delta é:', delta**(1/2))
+            sol1 = (-b + delta**(1/2))/(2*a)
+            sol2 = (-b - delta**(1/2))/(2*a)
+            if (delta != 0) {
+            console.log('SOLUÇÃO 1:', sol1, 'SOLUÇÃO 2:', sol2)
+            }else{
+              console.log('SOLUÇÃO:', sol1)
+            }
+          }
         }
        }
 
@@ -228,39 +246,6 @@ function REFORMATAR(q) {
       monomios[obnum].numero += expression[n];
     }
   
-    //monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
-  
-    //TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
-  
-    /*
-    for (bye in monomios) {
-      comofica = [];
-      ground = "";
-  
-      for (misery in monomios[bye].numero) {
-        carac = monomios[bye].numero[misery];
-  
-        if (ground.length == 0) {
-          //
-          ground += carac;
-        } else if (
-          String(ground.search("[0-9]")) != -1 &&
-          String(carac).search("[0-9]") != -1
-        ) {
-          //
-          ground += carac;
-        } else {
-          comofica.push(ground);
-          ground = "";
-          ground += carac;
-        }
-        if (misery == monomios[bye].numero.length - 1) {
-          comofica.push(ground);
-        }
-      }
-      monomios[bye].numero = comofica;
-    }
-    */
 
     for (huh in monomios) {
       partlet = "";
@@ -461,45 +446,6 @@ function REFORMATAR(q) {
       monomios[obnum].numero += exp[n];
     }
   
-    //
-  
-    //SEPARAR CORRETAMEnTE OS nÚMEROS
-  
-    /*
-    for (bye in monomios) {
-      //
-  
-      comofica = [];
-      ground = "";
-  
-      for (misery in monomios[bye].numero) {
-        //
-  
-        carac = monomios[bye].numero[misery];
-        //
-        //
-  
-        //
-        if (ground.length == 0) {
-          ground += carac;
-        } else if (
-          String(ground.search("[0-9]")) != -1 &&
-          String(carac).search("[0-9]") != -1
-        ) {
-          ground += carac;
-        } else {
-          comofica.push(ground);
-          ground = "";
-          ground += carac;
-        }
-        if (misery == monomios[bye].numero.length - 1) {
-          comofica.push(ground);
-        }
-      }
-  
-      monomios[bye].numero = comofica;
-    }
-    */
   
     function ehprimo(Number) {
         parar = false;
@@ -563,45 +509,6 @@ function REFORMATAR(q) {
         return depois;
       }
 
-      /*
-      function FATORARSInGULAR(potn) {
-        if (ehprimo(potn) == false && String(potn).search("[0-9]") != -1) {
-          fatorado = "";
-    
-          first = 1;
-    
-          div = 0;
-    
-          stop = false;
-          fator = 1;
-    
-          for (e = 2; stop == false; e++) {
-            sob = Number(potn);
-    
-            if (ehprimo(e) == true) {
-              while (sob % e == 0) {
-                if (sob % e == 0) {
-                }
-    
-                sob = sob / e;
-    
-                fator = fator * e;
-    
-                st = false;
-    
-                if (fator == potn) {
-                  stop = true;
-                  fatorado += `${e}`;
-                } else {
-                  fatorado += `${e}*`;
-                }
-              }
-            }
-          }
-          return fatorado;
-        }
-      }
-      */
 
       return [exp,monomios,ji]
 
