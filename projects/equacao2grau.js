@@ -22,8 +22,36 @@ function solve() {
 
         int = SOMAR(i1)
        simplificar = int[0]
-       console.log(simplificar,int[1])
+       console.log(simplificar)
        intfinal = SOMAR(simplificar)
+       console.log(intfinal[1])
+       console.log(intfinal[2])
+      
+       monomios = intfinal[1]
+       if (monomios.length <= 3) { // Se tiver 3 ou menos monômios
+        console.log('Ok, go through the ji')
+
+        ji = ORDENAROB(intfinal[2],'que')
+        console.log(ji)
+        tudocerto = true
+        for (c = 0; c < ji.length && tudocerto == true; c++) {
+            console.log(ji[c].quais[0], ji[c].que)
+
+            if (c == 0) {
+            if (ji[c].que.length == 2 && ji[c].que[0] == ji[c].que[1]) {
+              console.log('ESSE É O A')
+              num = ji[c].que[0]
+            }else{
+              tudocerto = false
+            }
+          }else if (ji[c].que == '') {
+            console.log('ESSE É O C')
+          }else if(ji[c].que.length == 1 && ji[c].que[0] == num) {
+            console.log('ESSE É O B')
+          }
+        }
+        console.log(tudocerto)
+       }
 
       }
 }
@@ -858,3 +886,55 @@ function REDONUMFACTORING(storer) {
     }
     return anterior;
   }
+
+  
+function ORDENAROB(ar,prop) {
+  grtols = []
+     for (hi in ar) {
+         ar[hi].length = ar[hi][prop].length
+         grtols.push(ar[hi])
+     }
+     organizado = sortob(grtols, 'length')[1]
+     grtols = []
+     for (ah in organizado) {
+         grtols.push(ar[organizado[ah]])
+     }
+     return grtols
+  }
+
+  function sortob(n, pam) {
+    var maiorparamenor = []
+    var posiçõesnumeros = []
+    var yposition = n
+
+    for (n in yposition) {
+        maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
+        posiçõesnumeros.push(-1)
+
+    }
+
+    for (item in yposition) {
+        var volume = 0
+        var dn = 0
+        for (volume in yposition) {
+            if (dn == 0) {
+                if (yposition[item][pam] > maiorparamenor[volume]) {
+                    var itens = yposition.length - (Number(volume) + 1)
+                    var leng = yposition.length
+
+                    for (c = 0; c < itens; c++) {
+                        maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+                        posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+                        leng--
+                    }
+                    maiorparamenor[volume] = yposition[item][pam]
+                    posiçõesnumeros[volume] = Number(item)
+                    dn = 10
+
+
+                }
+            }
+        }
+    }
+    return [maiorparamenor, posiçõesnumeros]
+ }
