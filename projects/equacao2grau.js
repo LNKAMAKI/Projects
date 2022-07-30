@@ -22,7 +22,7 @@ function solve() {
 
         int = SOMAR(i1)
        simplificar = int[0]
-       console.log(simplificar,int)
+       console.log(simplificar,int[1])
        intfinal = SOMAR(simplificar)
 
       }
