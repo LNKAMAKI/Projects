@@ -6,14 +6,14 @@ function solve() {
         i1 = REFORMATAR(i1)
         i2 = REFORMATAR(i2)
         console.log(i1,i2)
-        for (c in i2) {
-          console.log(i2[c])
-          if (c == 0 && i2[c] != '-') {
+        for (i in i2) {
+          console.log(i2[i])
+          if (i == 0 && i2[i] != '-') {
             i1.push('-')
           }
-          if (i2[c] != '-' && i2[c] != '+') {
-          i1.push(i2[c])
-          }else if(i2[c] == '-') {
+          if (i2[i] != '-' && i2[i] != '+') {
+          i1.push(i2[i])
+          }else if(i2[i] == '-') {
             i1.push('+')
           }else{
             i1.push('-')
@@ -28,29 +28,49 @@ function solve() {
        console.log(intfinal[2])
       
        monomios = intfinal[1]
+       a = 0
+       b = 0
+       c = 0
        if (monomios.length <= 3) { // Se tiver 3 ou menos monômios
         console.log('Ok, go through the ji')
 
         ji = ORDENAROB(intfinal[2],'que')
         console.log(ji)
         tudocerto = true
-        for (c = 0; c < ji.length && tudocerto == true; c++) {
-            console.log(ji[c].quais[0], ji[c].que)
+        for (i = 0; i < ji.length && tudocerto == true; i++) {
+            console.log(ji[i].quais[0], ji[i].que)
 
-            if (c == 0) {
-            if (ji[c].que.length == 2 && ji[c].que[0] == ji[c].que[1]) {
+            if (i == 0) {
+            if (ji[i].que.length == 2 && ji[i].que[0] == ji[i].que[1]) {
               console.log('ESSE É O A')
-              num = ji[c].que[0]
+              partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
+              console.log(partnum)
+              a = Number(partnum)
+              num = ji[i].que[0]
             }else{
               tudocerto = false
             }
-          }else if (ji[c].que == '') {
+          }else if (ji[i].que == '') {
             console.log('ESSE É O C')
-          }else if(ji[c].que.length == 1 && ji[c].que[0] == num) {
+            console.log(monomios[ji[i].quais[0]].numero)
+            c = Number(monomios[ji[i].quais[0]].numero)
+
+          }else if(ji[i].que.length == 1) {
+            if ( ji[i].que[0] == num) {
             console.log('ESSE É O B')
+            partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
+            console.log(partnum)
+            b = Number(partnum)
+
+            }else{
+              tudocerto = false
+            }
           }
         }
-        console.log(tudocerto)
+
+        if (tudocerto == true) {
+          console.log('A:',a, 'B:',b, 'C:',c)
+        }
        }
 
       }
@@ -585,7 +605,7 @@ function REFORMATAR(q) {
 
       return [exp,monomios,ji]
 
-  // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
+  // AQUI ACABA O IÓDIGO PARA SOMAR OS MONÔMIOS
 }
 
 function REDONUMFACTORING(storer) {
@@ -922,7 +942,7 @@ function ORDENAROB(ar,prop) {
                     var itens = yposition.length - (Number(volume) + 1)
                     var leng = yposition.length
 
-                    for (c = 0; c < itens; c++) {
+                    for (i = 0; i < itens; i++) {
                         maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
                         posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
                         leng--
