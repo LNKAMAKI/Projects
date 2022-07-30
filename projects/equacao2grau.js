@@ -23,18 +23,9 @@ function solve() {
         int = SOMAR(i1)
        simplificar = int[0]
        console.log(simplificar,int)
+       intfinal = SOMAR(simplificar)
 
-       btexp = ''
-       for (c in simplificar) {
-        if (simplificar[c] != '-' && simplificar[c] != '+') {
-        a = REDONUMFACTORING(simplificar[c])
-        }else{
-          a = simplificar[c]
-        }
-        btexp += a
-       }
-       console.log(btexp)
-    }
+      }
 }
 
 function REFORMATAR(q) {
@@ -110,6 +101,7 @@ function REFORMATAR(q) {
   
     //FATORAnDO OS nÚMEROS
   
+    /*
     for (n = 0; n < expression.length; n++) {
       if (
         ehprimo(expression[n]) == false &&
@@ -157,6 +149,7 @@ function REFORMATAR(q) {
         expression[n] = fatorado;
       }
     }
+    */
     //
   
     //FAZEnDO AS POTÊnCIAS COM LETRAS
@@ -378,13 +371,8 @@ function REFORMATAR(q) {
         //
   
         at = t;
-        if (ehprimo(t) == false) {
-          fat = FATORARSInGULAR(at);
-          //
-        } else {
-          //
           fat = at;
-        }
+
         oop = "-";
         oop += String(fat);
   
@@ -392,11 +380,8 @@ function REFORMATAR(q) {
         fat += ji[chuva].que;
         exp.push(fat);
       } else {
-        if (ehprimo(comehome) == false) {
-          fat = FATORARSInGULAR(comehome);
-        } else {
           fat = comehome;
-        }
+
   
         if (exp.length == 0) {
           fat += ji[chuva].que;
@@ -526,6 +511,7 @@ function REFORMATAR(q) {
         return depois;
       }
 
+      /*
       function FATORARSInGULAR(potn) {
         if (ehprimo(potn) == false && String(potn).search("[0-9]") != -1) {
           fatorado = "";
@@ -563,6 +549,7 @@ function REFORMATAR(q) {
           return fatorado;
         }
       }
+      */
 
       return [exp,monomios,ji]
 
