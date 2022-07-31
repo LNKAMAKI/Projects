@@ -22,8 +22,8 @@ function solve() {
 
       console.log(i1)
 
-      int = SOMAR(i1)
-     simplificar = int[0]
+      int = FATORAR(i1)
+     simplificar = int[1]
      console.log(simplificar)
      intfinal = SOMAR(simplificar)
      console.log(intfinal[1])
@@ -1084,7 +1084,7 @@ for (huh in monomios) {
 }
 
 ji = [];
-//JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
+//JUNTANDO OS MONÔMIOS QUE DÁ PARA somar
 for (huh in monomios) {
   if (
     ji.find(function (ji) {
@@ -1319,7 +1319,7 @@ for (misery in monomios[bye].numero) {
 monomios[bye].numero = comofica;
 }
 
-// AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
+// AQUI ACABA O CÓDIGO PARA somar OS MONÔMIOS
 
  function FATORARSInGULAR(potn) {
  if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
