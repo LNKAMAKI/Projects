@@ -55,7 +55,7 @@
            #eq {
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 70px;
            }
 
            .inp {
@@ -127,6 +127,20 @@
             background-color: black;
             text-shadow: 2px 3px 8px var(--themecolor);
          }
+         #result {
+            text-align: center;
+            font-family: 'Macondo';
+            font-weight: bold;
+            font-size: 1.9em;
+            display: none;
+            margin: 50px 0px 10px 0px;
+         }
+         #solucao {
+            text-align: center;
+            margin: 10px;
+            font-size: 2em;
+            font-family: monospace;
+         }
 </style>
 </head>
 <body>
@@ -142,9 +156,12 @@
              
             </div>
         </div>
-      <div id="eq"><input type="text" name="" id="inp1" class="inp" value="2x^2 - 5x - 7"><span id="equalsign">&nbsp;&#61;&nbsp;</span><input type="text" name="" id="inp2" class="inp" value="0"></div>
+      <div id="eq"><input type="text" name="" id="inp1" class="inp" value=""><span id="equalsign">&nbsp;&#61;&nbsp;</span><input type="text" name="" id="inp2" class="inp" value="0"></div>
 
       <input type="button" value="RESOLVER" onclick="solve()">
+
+      <p id='result'>Resultado:</p>
+      <p id='solucao'></p>
 
       
 </body>

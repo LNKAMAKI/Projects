@@ -189,7 +189,20 @@ function solve() {
           console.log('solução 1:',sol1)
           console.log('solução 2:',sol2)
         }
+
+        document.getElementById('result').style.display = 'block'
+
+        if (sol1 != sol2) {
+      document.getElementById('solucao').innerText = `x¹: ${sol1}, x²: ${sol2}`
+        }else{
+      document.getElementById('solucao').innerText = `x: ${sol1}`
+        }
+      }else{
+        
+      document.getElementById('result').style.display = 'block'
+      document.getElementById('solucao').innerText = 'Sem solução pertencente aos ℝ'
       }
+
       }
      }
 
