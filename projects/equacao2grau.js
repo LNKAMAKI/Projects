@@ -1644,9 +1644,6 @@ monomios[bye].numero = comofica;
  }
 }
 
-
-
-
 function desfat(quase) {
   quase = REFORMATAR(quase)
 gates = []
