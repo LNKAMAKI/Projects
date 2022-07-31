@@ -49,10 +49,15 @@ function solve() {
 
             if (partnum == '') {
               partnum = '1'
+            }else if(partnum == '-') {
+              partnum = '-1'
+            }else if(partnum == '+') {
+              partnum = '+1'
             }
+            
             console.log(partnum)
 
-            if (partnum.replace('-','').length > 1) {
+            if (partnum.replace('+','').replace('-','').length > 1) {
             a = Number(desfat(partnum))
             }else{
               a = partnum
@@ -65,11 +70,13 @@ function solve() {
           console.log('ESSE É O C')
           console.log(monomios[ji[i].quais[0]].numero)
 
-          if (monomios[ji[i].quais[0]].numero.replace('-','').length > 1) {
+          if (monomios[ji[i].quais[0]].numero.replace('+','').replace('-','').length > 1) {
           c = Number(desfat(String(monomios[ji[i].quais[0]].numero)))
           }else{
+            console.log('numero',monomios[ji[i].quais[0]].numero)
             c = monomios[ji[i].quais[0]].numero
           }
+          console.log(c)
 
         }else if(ji[i].que.length == 1) {
           if ( ji[i].que[0] == num) {
@@ -78,9 +85,13 @@ function solve() {
 
           if (partnum == '') {
             partnum = '1'
+          }else if(partnum == '-') {
+            partnum = '-1'
+          }else if(partnum == '+') {
+            partnum = '+1'
           }
           console.log(partnum)
-          if (partnum.replace('-','').length > 1) {
+          if (partnum.replace('+','').replace('-','').length > 1) {
             b = Number(desfat(partnum))
             }else{
               b = partnum
@@ -105,6 +116,7 @@ function solve() {
           console.log('OK, DÁ PARA CONTINUAR')
           console.log('raiz de delta é:', delta**(1/2))
 
+          if (String(delta**(1/2)).search('\\.') == -1) {
           upper = -b + delta**(1/2)
           lower = 2*a
 
@@ -160,7 +172,14 @@ function solve() {
             console.log('SOLUÇÃO:', sol1)
           }
 
+        }else{
+          console.log('EPA, PERAÍ')
+          sol1 = `(${-b} + √${delta})/${2*a}`
+          sol2 = `(${-b} - √${delta})/${2*a}`
+          console.log('solução 1:',sol1)
+          console.log('solução 2:',sol2)
         }
+      }
       }
      }
 
@@ -176,7 +195,7 @@ function REFORMATAR(q) {
     
     if (qualexp1[copy] != " ") {
       if (
-        qualexp1[copy].search("[0-9]") != -1 ||
+        qualexp1[copy].search("([0-9]|\\.)") != -1 ||
         qualexp1[copy].search("[a-z]") != -1 ||
         qualexp1[copy].search("[\\+\\-\\^\\*]") != -1
       ) {
@@ -193,8 +212,8 @@ function REFORMATAR(q) {
     ground = "";
     expression = [];
     for (phy in qualexp) {
-      if (qualexp[phy].search("[0-9]") != -1) {
-        if (ground.search("[0-9]") != -1) {
+      if (qualexp[phy].search("([0-9]|\\.)") != -1) {
+        if (ground.search("([0-9]|\\.)") != -1) {
           ground += qualexp[phy];
         } else if (ground.length > 0) {
           expression.push(ground);
