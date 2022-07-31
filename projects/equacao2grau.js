@@ -150,7 +150,8 @@ function solve() {
           sol1 = res
         }else{
           console.log(upper/lower)
-          res = upper + '/' + lower
+
+          res = Arredondar(upper,2) + '/' + Arredondar(lower,2)
           sol1 = res
         }
         }
@@ -188,6 +189,8 @@ function solve() {
         sol2 = res
       }else{
         console.log(upper/lower)
+        fix = upper.replace('[0-9]+(?=\\.)\\.','')
+        console.log(fix)
         res = upper + '/' + lower
         sol2 = res
       }
@@ -211,7 +214,7 @@ function solve() {
         document.getElementById('result').style.display = 'block'
 
         if (sol1 != sol2) {
-      document.getElementById('solucao').innerText = `x¹: ${sol1}, x²: ${sol2}`
+      document.getElementById('solucao').innerText = `x': ${sol1}, x": ${sol2}`
         }else{
       document.getElementById('solucao').innerText = `x: ${sol1}`
         }
@@ -1714,3 +1717,15 @@ function countDecimals(string) {
   }
   return count
   }
+
+  function Arredondar(num,numcasas) {
+    if (String(num).search('\\.') != -1) {
+    fi = String(num).replace(new RegExp('(?<=\\.)[0-9]+'),'')
+              fix = String(num).replace(new RegExp('[0-9]+(?=\\.)\\.'),'')
+              c2 = fix.replace(new RegExp(`(?<=[0-9]{${numcasas}})[0-9]+`),'')
+              console.log(fi, fix,c2)
+              return fi + c2
+    }else{
+      return num
+    }
+    }
