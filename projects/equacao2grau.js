@@ -129,6 +129,7 @@ function solve() {
           simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))[0]
           console.log('fator comum:',simp)
           
+          if (simp != 'empty') {
           if (simp.length > 1) {
           comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
           console.log(comum)
@@ -139,6 +140,10 @@ function solve() {
           res = upper/comum + '/' + lower/comum
           console.log(res)
           sol1 = res
+        }else{
+          res = upper + '/' + lower
+          sol1 = res
+        }
         }
 
         upper = -b - delta**(1/2)
@@ -153,6 +158,7 @@ function solve() {
         simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))[0]
         console.log('fator comum:',simp)
         
+        if (simp != 'empty') {
         if (simp.length > 1) {
         comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
         console.log(comum)
@@ -163,6 +169,10 @@ function solve() {
         res = upper/comum + '/' + lower/comum
         console.log(res)
         sol2 = res
+      }else{
+        res = upper + '/' + lower
+        sol2 = res
+      }
       }
 
       
