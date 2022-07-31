@@ -57,7 +57,7 @@ function solve() {
 
             console.log(partnum)
 
-            if (partnum.replace('+','').replace('-','').length > 1) {
+            if (partnum.search('\\*') != -1) {
             a = Number(desfat(partnum))
             }else{
               a = partnum
@@ -70,7 +70,7 @@ function solve() {
           console.log('ESSE É O C')
           console.log(monomios[ji[i].quais[0]].numero)
 
-          if (monomios[ji[i].quais[0]].numero.replace('+','').replace('-','').length > 1) {
+          if (monomios[ji[i].quais[0]].numero.search('\\*') != -1) {
           c = Number(desfat(String(monomios[ji[i].quais[0]].numero)))
           }else{
             console.log('numero',monomios[ji[i].quais[0]].numero)
@@ -91,7 +91,7 @@ function solve() {
             partnum = '+1'
           }
           console.log(partnum)
-          if (partnum.replace('+','').replace('-','').length > 1) {
+          if (partnum.search('\\*') != -1) {
             b = Number(desfat(partnum))
             }else{
               b = partnum
@@ -116,7 +116,7 @@ function solve() {
           console.log('OK, DÁ PARA CONTINUAR')
           console.log('raiz de delta é:', delta**(1/2))
 
-          if (String(delta**(1/2)).search('\\.') == -1) {
+         // if (String(delta**(1/2)).search('\\.') == -1) {
           upper = -b + delta**(1/2)
           lower = 2*a
 
@@ -131,6 +131,7 @@ function solve() {
           
           if (simp != 'empty') {
 
+            console.log('&&&&simp&&&&',simp)
             if(simp[0] == '-') {
               simp = simp.replace('.','')
               console.log('SIMP:',simp)
@@ -148,6 +149,7 @@ function solve() {
           console.log(res)
           sol1 = res
         }else{
+          console.log(upper/lower)
           res = upper + '/' + lower
           sol1 = res
         }
@@ -167,6 +169,7 @@ function solve() {
         
         if (simp != 'empty') {
 
+          console.log('&&&&simp&&&&',simp)
           if(simp[0] == '-') {
             simp = simp.replace('.','')
             console.log('SIMP:',simp)
@@ -184,6 +187,7 @@ function solve() {
         console.log(res)
         sol2 = res
       }else{
+        console.log(upper/lower)
         res = upper + '/' + lower
         sol2 = res
       }
@@ -196,13 +200,13 @@ function solve() {
             console.log('SOLUÇÃO:', sol1)
           }
 
-        }else{
-          console.log('EPA, PERAÍ')
-          sol1 = `(${-b} + √${delta})/${2*a}`
-          sol2 = `(${-b} - √${delta})/${2*a}`
-          console.log('solução 1:',sol1)
-          console.log('solução 2:',sol2)
-        }
+       // }else{
+         // console.log('EPA, PERAÍ')
+         // sol1 = `(${-b} + √${delta})/${2*a}`
+          //sol2 = `(${-b} - √${delta})/${2*a}`
+         // console.log('solução 1:',sol1)
+         // console.log('solução 2:',sol2)
+       // }
 
         document.getElementById('result').style.display = 'block'
 
@@ -663,12 +667,16 @@ if (expression[0] !== "-" && expression[0] !== "+") {
 
 //FATORAnDO OS nÚMEROS
 
+console.log('FATORAR')
 for (n = 0; n < expression.length; n++) {
+  console.log(expression[n],ehprimo(expression[n]))
   if (
     ehprimo(expression[n]) == false &&
     String(expression[n]).search("[0-9]") != -1 &&
     expression[n - 1] != "^"
   ) {
+
+    console.log('OK')
     fatorado = "";
 
     first = 1;
@@ -708,6 +716,7 @@ for (n = 0; n < expression.length; n++) {
     }
 
     expression[n] = fatorado;
+    console.log(expression[n],'=>',fatorado)
   }
 }
 //
@@ -755,8 +764,8 @@ for (bye in monomios) {
       //
       ground += carac;
     } else if (
-      String(ground.search("[0-9]")) != -1 &&
-      String(carac).search("[0-9]") != -1
+      String(ground.search("([0-9]|\\.)")) != -1 &&
+      String(carac).search("([0-9]|\\.)") != -1
     ) {
       //
       ground += carac;
@@ -818,8 +827,8 @@ for (misery in ji[bye].quais) {
       //
       ground += carac;
     } else if (
-      String(ground.search("[0-9]")) != -1 &&
-      String(carac).search("[0-9]") != -1
+      String(ground.search("([0-9]|\\.)")) != -1 &&
+      String(carac).search("([0-9]|\\.)") != -1
     ) {
       //
       ground += carac;
@@ -859,15 +868,15 @@ for (da in ji[chuva].quais) {
   for (past in resultadoDaDivisão) {
     if (
       resultadoDaDivisão[past].search("\\*") != -1 ||
-      resultadoDaDivisão[past].search("[0-9]") != -1
+      resultadoDaDivisão[past].search("([0-9]|\\.)") != -1
     ) {
       if (add.length == 0) {
         if (resultadoDaDivisão[past - 1] != "-") {
           add += resultadoDaDivisão[past];
         }
       } else if (
-        resultadoDaDivisão[past].search("[0-9]") != -1 &&
-        add.search("[0-9]") != -1
+        resultadoDaDivisão[past].search("([0-9]|\\.)") != -1 &&
+        add.search("([0-9]|\\.)") != -1
       ) {
         add += resultadoDaDivisão[past];
       } else {
@@ -933,6 +942,7 @@ if (comehome[0][0] == "-") {
 
   at = t;
   if (ehprimo(t) == false) {
+    console.log('AT:',at)
     fat = FATORARSInGULAR(at);
     //
   } else {
@@ -947,6 +957,7 @@ if (comehome[0][0] == "-") {
   exp.push(fat);
 } else {
   if (ehprimo(comehome) == false) {
+    console.log('AT:',comehome)
     fat = FATORARSInGULAR(comehome);
   } else {
     fat = comehome;
@@ -1694,3 +1705,16 @@ return aconta
   return `-${aconta}`
 }
 }
+
+function countDecimals(string) {
+  iniciar = false
+  count = 0
+  for (i in string) {
+    if (string[i] == '.') {
+      iniciar = true
+    }else if(iniciar == true) {
+      count+=1
+    }
+  }
+  return count
+  }
