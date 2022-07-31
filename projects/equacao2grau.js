@@ -130,10 +130,17 @@ function solve() {
           console.log('fator comum:',simp)
           
           if (simp != 'empty') {
-          if (simp.length > 1) {
+
+            if(simp[0] == '-') {
+              simp = simp.replace('.','')
+              console.log('SIMP:',simp)
+            }
+
+          if (simp.replace('-','').replace('+','').length > 1) {
           comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
           console.log(comum)
           }else{
+            console.log('simp.length = 1')
             comum = simp
           }
 
@@ -159,10 +166,17 @@ function solve() {
         console.log('fator comum:',simp)
         
         if (simp != 'empty') {
-        if (simp.length > 1) {
+
+          if(simp[0] == '-') {
+            simp = simp.replace('.','')
+            console.log('SIMP:',simp)
+          }
+
+        if (simp.replace('-','').replace('+','').length > 1) {
         comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
         console.log(comum)
         }else{
+          console.log('simp.length = 1')
           comum = simp
         }
 
