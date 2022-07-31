@@ -90,7 +90,9 @@ function solve() {
         }else{
           console.log(int[0])
           sol1 = 'decimal'
-          console.log(REFORMATAR(`${upper} + ${lower}x`))
+          simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))
+          a = '2.10.3'
+          console.log(REDONUMFACTORING(a.replace(new RegExp('\\.','g'),'*')))
         }
 
           sol2 = (-b - delta**(1/2))/(2*a)
@@ -117,7 +119,7 @@ function REFORMATAR(q) {
       if (
         qualexp1[copy].search("[0-9]") != -1 ||
         qualexp1[copy].search("[a-z]") != -1 ||
-        qualexp1[copy].search("[\\+\\-\\^]") != -1
+        qualexp1[copy].search("[\\+\\-\\^\\*]") != -1
       ) {
         
         qualexp += qualexp1[copy];
@@ -459,206 +461,6 @@ function SOMAR(expression) {
   }
 
 
-    function fazerConta(anterior) {
-   
-      if(0 == 0) {// falta == false
-  //Primeiro raizes e potências
-  for (n = 0; n < anterior.length; n++) {
-  if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
-      //console.log('POTEnCIALIZAÇÃO')
-      anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
-      anterior.splice(n - 1, 2)
-      
-      n = n - 3 // n = n - 3
-      //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-      if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-          //console.log('TIRAR')
-          anterior.splice(n + 3, 1)
-          anterior.splice(n + 1, 1)
-          n = n - 3
-  
-          //console.log(anterior)
-      }else{
-          //console.log(anterior)
-      }
-  }else if(anterior[n] == '√' && anterior[n + 1] != '(' ) {
-      //console.log('RAIZ')
-      anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
-      anterior.splice(n, 1)
-      //console.log(n)
-      n = n - 2
-      //console.log(n)
-      if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-          //console.log('TIRAR')
-          anterior.splice(n + 3, 1)
-          anterior.splice(n + 1, 1)
-          n = n - 3
-  
-          //console.log(anterior)
-      }else{
-          //console.log(anterior)
-      }
-  }
-  }
-  
-  // Segundo multiplicações e divisões
-  for (n = 0; n < anterior.length; n++) {
-  if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-  //console.log('MULTIPLICAÇÃO')
-  anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
-  anterior.splice(n - 1, 2)
-  
-  n = n - 3
-  //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-  
-  if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-      //console.log('TIRAR')
-      anterior.splice(n + 3, 1)
-      anterior.splice(n + 1, 1)
-      n = n - 3
-  
-      //console.log(anterior)
-  }else{
-      //console.log(anterior)
-  }
-  }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-  //console.log('DIVISÃO')
-  anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
-  anterior.splice(n - 1, 2)
-  
-  n = n - 3
-  //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-  if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-      //console.log('TIRAR')
-      anterior.splice(n + 3, 1)
-      anterior.splice(n + 1, 1)
-      n = n - 3
-  
-      //console.log(anterior)
-  }else{
-      //console.log(anterior)
-  }
-  }
-  }
-  
-  
-  if (anterior.length > 1) {
-  
-  // while(anterior.length != 1 && anterior.indexOf('nan') == -1) {
-      for (n = 0; n < anterior.length && anterior.length != 1; n++) {
-          //console.log(anterior[n])
-          if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
-              //console.log('ADIÇÃO')
-              anterior[n + 1] = String(Number(anterior[n - 1]) + Number(anterior[n + 1]))
-              anterior.splice(n - 1, 2)
-            
-              n = n - 3
-              //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-              if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                  //console.log('TIRAR')
-                  anterior.splice(n + 3, 1)
-                  anterior.splice(n + 1, 1)
-                  n = n - 3
-  
-                  //console.log(anterior)
-              }else{
-                  //console.log(anterior)
-              }
-          }else if(anterior[n] == '-' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
-              //console.log('SUBTRAÇÃO') 
-              anterior[n + 1] = String(Number(anterior[n - 1]) - Number(anterior[n + 1]))
-              anterior.splice(n - 1, 2)
-              
-              n = n - 3
-              //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-              if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                  //console.log('TIRAR')
-                  anterior.splice(n + 3, 1)
-                  anterior.splice(n + 1, 1)
-                  n = n - 3
-  
-                  //console.log(anterior)
-              }else{
-                  //console.log(anterior)
-              }
-          }else if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-              //console.log('MULTIPLICAÇÃO')
-              anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
-              anterior.splice(n - 1, 2)
-              
-              n = n - 3
-              //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-              if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                  //console.log('TIRAR')
-                  anterior.splice(n + 3, 1)
-                  anterior.splice(n + 1, 1)
-                  n = n - 3
-  
-                  //console.log(anterior)
-              }else{
-                  //console.log(anterior)
-              }
-          }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-              //console.log('DIVISÃO')
-              anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
-              anterior.splice(n - 1, 2)
-              
-              n = n - 3
-              //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-              if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                  //console.log('TIRAR')
-                  anterior.splice(n + 3, 1)
-                  anterior.splice(n + 1, 1)
-                  n = n - 3
-  
-                  //console.log(anterior)
-              }else{
-                  //console.log(anterior)
-              }
-          }else if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
-              //console.log('DIVISÃO')
-              anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
-              anterior.splice(n - 1, 2)
-              
-              n = n - 3
-              //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-              if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                  //console.log('TIRAR')
-                  anterior.splice(n + 3, 1)
-                  anterior.splice(n + 1, 1)
-                  n = n - 3
-  
-                  //console.log(anterior)
-              }else{
-                  //console.log(anterior)
-              }
-          }else if(anterior[n] == '√' && anterior[n + 1] != '(') {
-              //console.log('RAIZ')
-              anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
-              anterior.splice(n, 1)
-              
-              n = n - 2
-              //console.log(n)
-              if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                  //console.log('TIRAR')
-                  anterior.splice(n + 3, 1)
-                  anterior.splice(n + 1, 1)
-                  n = n - 3
-          
-                  //console.log(anterior)
-              }else{
-                  //console.log(anterior)
-              }
-          }
-      }
-  // }
-  }
-  
-      
-  }
-  return anterior
-  }
-
   function DIVIDIR(T, qual) {
        
    
@@ -731,78 +533,205 @@ return depois
     return [exp,monomios,ji]
 }
 
-function REDONUMFACTORING(storer) {
-  if (typeof storer === "string") {
-    other = [];
-    for (h in storer) {
-      other.push(storer[h]);
-    }
-    storer = other;
+function fazerConta(anterior) {
+   
+  if(0 == 0) {// falta == false
+//Primeiro raizes e potências
+for (n = 0; n < anterior.length; n++) {
+if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
+  //console.log('POTEnCIALIZAÇÃO')
+  anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
+  anterior.splice(n - 1, 2)
+  
+  n = n - 3 // n = n - 3
+  //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+  if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+      //console.log('TIRAR')
+      anterior.splice(n + 3, 1)
+      anterior.splice(n + 1, 1)
+      n = n - 3
+
+      //console.log(anterior)
+  }else{
+      //console.log(anterior)
   }
+}else if(anterior[n] == '√' && anterior[n + 1] != '(' ) {
+  //console.log('RAIZ')
+  anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
+  anterior.splice(n, 1)
+  //console.log(n)
+  n = n - 2
+  //console.log(n)
+  if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+      //console.log('TIRAR')
+      anterior.splice(n + 3, 1)
+      anterior.splice(n + 1, 1)
+      n = n - 3
 
-  resultobtained = "";
-
-  elevar = 1;
-  wasmultiplicated = false;
-
-  operation = [];
-  for (patience in storer) {
-    if (storer[patience] == "*") {
-      wasmultiplicated = true;
-
-      operation.push(storer[Number(patience) - 1]);
-      operation.push("x");
-      operation.push(storer[Number(patience) + 1]);
-
-      storer[Number(patience) + 1] = fazerConta(operation)[0];
-      resultobtained = fazerConta(operation)[0];
-
-      operation = [];
-    } else if (storer[patience].search("[a-z]") != -1) {
-      if (storer[patience] == storer[Number(patience) - 1]) {
-        elevar++;
-
-        if (patience == storer.length - 1) {
-          resultobtained += `^${elevar}`;
-        }
-      } else {
-        if (elevar > 1) {
-          resultobtained += `^${elevar}`;
-        }
-
-        resultobtained += storer[patience];
-
-        elevar = 1;
-      }
-    }
-  }
-
-  if (wasmultiplicated == false) {
-    //
-    addingnumber = "";
-    for (eyes in storer) {
-      //
-      if (storer[eyes].search("[0-9]") != -1) {
-        //
-        addingnumber += storer[eyes];
-      }
-    }
-    addingnumber += resultobtained;
-    //
-
-    resultobtained = addingnumber;
-  }
-  if (storer[0] == "-") {
-    confirmedresult = "-";
-    for (caracter in resultobtained) {
-      confirmedresult += resultobtained[caracter];
-    }
-    return confirmedresult;
-  } else {
-    return resultobtained;
+      //console.log(anterior)
+  }else{
+      //console.log(anterior)
   }
 }
+}
 
+// Segundo multiplicações e divisões
+for (n = 0; n < anterior.length; n++) {
+if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
+//console.log('MULTIPLICAÇÃO')
+anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
+anterior.splice(n - 1, 2)
+
+n = n - 3
+//console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+
+if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+  //console.log('TIRAR')
+  anterior.splice(n + 3, 1)
+  anterior.splice(n + 1, 1)
+  n = n - 3
+
+  //console.log(anterior)
+}else{
+  //console.log(anterior)
+}
+}else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
+//console.log('DIVISÃO')
+anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
+anterior.splice(n - 1, 2)
+
+n = n - 3
+//console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+  //console.log('TIRAR')
+  anterior.splice(n + 3, 1)
+  anterior.splice(n + 1, 1)
+  n = n - 3
+
+  //console.log(anterior)
+}else{
+  //console.log(anterior)
+}
+}
+}
+
+
+if (anterior.length > 1) {
+
+// while(anterior.length != 1 && anterior.indexOf('nan') == -1) {
+  for (n = 0; n < anterior.length && anterior.length != 1; n++) {
+      //console.log(anterior[n])
+      if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
+          //console.log('ADIÇÃO')
+          anterior[n + 1] = String(Number(anterior[n - 1]) + Number(anterior[n + 1]))
+          anterior.splice(n - 1, 2)
+        
+          n = n - 3
+          //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+          if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+              //console.log('TIRAR')
+              anterior.splice(n + 3, 1)
+              anterior.splice(n + 1, 1)
+              n = n - 3
+
+              //console.log(anterior)
+          }else{
+              //console.log(anterior)
+          }
+      }else if(anterior[n] == '-' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
+          //console.log('SUBTRAÇÃO') 
+          anterior[n + 1] = String(Number(anterior[n - 1]) - Number(anterior[n + 1]))
+          anterior.splice(n - 1, 2)
+          
+          n = n - 3
+          //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+          if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+              //console.log('TIRAR')
+              anterior.splice(n + 3, 1)
+              anterior.splice(n + 1, 1)
+              n = n - 3
+
+              //console.log(anterior)
+          }else{
+              //console.log(anterior)
+          }
+      }else if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
+          //console.log('MULTIPLICAÇÃO')
+          anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
+          anterior.splice(n - 1, 2)
+          
+          n = n - 3
+          //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+          if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+              //console.log('TIRAR')
+              anterior.splice(n + 3, 1)
+              anterior.splice(n + 1, 1)
+              n = n - 3
+
+              //console.log(anterior)
+          }else{
+              //console.log(anterior)
+          }
+      }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
+          //console.log('DIVISÃO')
+          anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
+          anterior.splice(n - 1, 2)
+          
+          n = n - 3
+          //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+          if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+              //console.log('TIRAR')
+              anterior.splice(n + 3, 1)
+              anterior.splice(n + 1, 1)
+              n = n - 3
+
+              //console.log(anterior)
+          }else{
+              //console.log(anterior)
+          }
+      }else if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
+          //console.log('DIVISÃO')
+          anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
+          anterior.splice(n - 1, 2)
+          
+          n = n - 3
+          //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+          if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+              //console.log('TIRAR')
+              anterior.splice(n + 3, 1)
+              anterior.splice(n + 1, 1)
+              n = n - 3
+
+              //console.log(anterior)
+          }else{
+              //console.log(anterior)
+          }
+      }else if(anterior[n] == '√' && anterior[n + 1] != '(') {
+          //console.log('RAIZ')
+          anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
+          anterior.splice(n, 1)
+          
+          n = n - 2
+          //console.log(n)
+          if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+              //console.log('TIRAR')
+              anterior.splice(n + 3, 1)
+              anterior.splice(n + 1, 1)
+              n = n - 3
+      
+              //console.log(anterior)
+          }else{
+              //console.log(anterior)
+          }
+      }
+  }
+// }
+}
+
+  
+}
+return anterior
+}
 
 
 function ehprimo(Number) {
@@ -1965,4 +1894,53 @@ monomios[bye].numero = comofica;
  }
  
  return ORDENAROB(segs,'car')[0].car
+}
+
+
+
+
+function desfat(quase) {
+  quase = REFORMATAR(quase)
+gates = []
+aconta = ''
+friend = ''
+
+elevar = 1
+aster = false
+
+for (patience in quase) {
+   
+    if (quase[patience] == '*') {
+        aster = true
+      
+        gates.push(quase[Number(patience) - 1])
+        gates.push('x')
+        gates.push(quase[Number(patience) + 1])
+       
+        quase[Number(patience) + 1] = fazerConta(gates)[0]
+        aconta = fazerConta(gates)[0]
+        friend = fazerConta(gates)[0]
+       
+        gates = []
+    }else if(quase[patience].search('[a-z]') != -1)  {
+      
+       friend+= quase[patience]
+        if (quase[patience] == quase[Number(patience) - 1]) {
+            elevar++
+
+            if (patience == quase.length - 1) {
+                aconta+= `^${elevar}`
+            }
+        }else{
+            if (elevar > 1) {
+                aconta+= `^${elevar}` 
+            }
+
+            aconta+= quase[patience]
+        
+            elevar = 1
+        }
+    } 
+}
+return aconta
 }
