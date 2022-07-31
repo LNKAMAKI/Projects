@@ -48,10 +48,15 @@ function solve() {
             partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
 
             if (partnum == '') {
-              partnum = 1
+              partnum = '1'
             }
             console.log(partnum)
-            a = Number(partnum)
+
+            if (partnum.replace('-','').length > 1) {
+            a = Number(desfat(partnum))
+            }else{
+              a = partnum
+            }
             num = ji[i].que[0]
           }else{
             tudocerto = false
@@ -59,7 +64,12 @@ function solve() {
         }else if (ji[i].que == '') {
           console.log('ESSE É O C')
           console.log(monomios[ji[i].quais[0]].numero)
+
+          if (monomios[ji[i].quais[0]].numero.replace('-','').length > 1) {
           c = Number(desfat(String(monomios[ji[i].quais[0]].numero)))
+          }else{
+            c = monomios[ji[i].quais[0]].numero
+          }
 
         }else if(ji[i].que.length == 1) {
           if ( ji[i].que[0] == num) {
@@ -67,10 +77,14 @@ function solve() {
           partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
 
           if (partnum == '') {
-            partnum = 1
+            partnum = '1'
           }
           console.log(partnum)
-          b = Number(partnum)
+          if (partnum.replace('-','').length > 1) {
+            b = Number(desfat(partnum))
+            }else{
+              b = partnum
+            }
 
           }else{
             tudocerto = false
