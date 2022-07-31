@@ -1052,9 +1052,7 @@ monomios[bye].numero = comofica;
        
             if (ehprimo(e) == true) {
              while (sob%e == 0) {
-             if (sob%e == 0) {
-                 
-             }
+           
  
              sob = sob/e
              
