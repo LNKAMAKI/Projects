@@ -54,7 +54,7 @@ function solve() {
             }else if(partnum == '+') {
               partnum = '+1'
             }
-            
+
             console.log(partnum)
 
             if (partnum.replace('+','').replace('-','').length > 1) {
@@ -1971,7 +1971,7 @@ monomios[bye].numero = comofica;
  
  }
  
- if (segs.length > 1) {
+ if (segs.length >= 1) {
  return [ORDENAROB(segs,'car')[0].car,expression,monomios,ji]
  }else{
   return ['empty',expression,monomios,ji]
