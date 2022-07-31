@@ -100,7 +100,7 @@ function solve() {
         }else{
           console.log(int[0])
           console.log(`${upper} + ${lower}x`)
-          simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))
+          simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))[0]
           console.log('fator comum:',simp)
           
           if (simp.length > 1) {
@@ -124,7 +124,7 @@ function solve() {
       }else{
         console.log(int[0])
         console.log(`${upper} + ${lower}x`)
-        simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))
+        simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))[0]
         console.log('fator comum:',simp)
         
         if (simp.length > 1) {
@@ -1937,7 +1937,11 @@ monomios[bye].numero = comofica;
  
  }
  
- return ORDENAROB(segs,'car')[0].car
+ if (segs.length > 1) {
+ return [ORDENAROB(segs,'car')[0].car,expression]
+ }else{
+  return ['empty',expression]
+ }
 }
 
 
