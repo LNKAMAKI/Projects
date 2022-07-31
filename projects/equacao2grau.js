@@ -25,18 +25,18 @@ function solve() {
       int = FATORAR(i1)
      simplificar = int[1]
      console.log(simplificar)
-     intfinal = SOMAR(simplificar)
-     console.log(intfinal[1])
+     intfinal = FATORAR(simplificar)
      console.log(intfinal[2])
+     console.log(intfinal[3])
     
-     monomios = intfinal[1]
+     monomios = intfinal[2]
      a = 0
      b = 0
      c = 0
      if (monomios.length <= 3) { 
       console.log('Ok, go through the ji')
 
-      ji = ORDENAROB(intfinal[2],'que')
+      ji = ORDENAROB(intfinal[3],'que')
       console.log(ji)
       tudocerto = true
       for (i = 0; i < ji.length && tudocerto == true; i++) {
@@ -59,7 +59,7 @@ function solve() {
         }else if (ji[i].que == '') {
           console.log('ESSE É O C')
           console.log(monomios[ji[i].quais[0]].numero)
-          c = Number(monomios[ji[i].quais[0]].numero)
+          c = Number(desfat(String(monomios[ji[i].quais[0]].numero)))
 
         }else if(ji[i].que.length == 1) {
           if ( ji[i].que[0] == num) {
@@ -1285,6 +1285,7 @@ monomios[obnum].numero += exp[n];
 
 //SEPARAR CORRETAMEnTE OS nÚMEROS
 
+/*
 for (bye in monomios) {
 //
 
@@ -1318,7 +1319,7 @@ for (misery in monomios[bye].numero) {
 
 monomios[bye].numero = comofica;
 }
-
+*/
 // AQUI ACABA O CÓDIGO PARA somar OS MONÔMIOS
 
  function FATORARSInGULAR(potn) {
@@ -1938,9 +1939,9 @@ monomios[bye].numero = comofica;
  }
  
  if (segs.length > 1) {
- return [ORDENAROB(segs,'car')[0].car,expression]
+ return [ORDENAROB(segs,'car')[0].car,expression,monomios,ji]
  }else{
-  return ['empty',expression]
+  return ['empty',expression,monomios,ji]
  }
 }
 
@@ -1990,5 +1991,10 @@ for (patience in quase) {
         }
     } 
 }
+
+if (quase[0] != '-') {
 return aconta
+}else{
+  return `-${aconta}`
+}
 }
