@@ -1053,8 +1053,6 @@ monomios[bye].numero = comofica;
             if (ehprimo(e) == true) {
              while (sob%e == 0) {
              if (sob%e == 0) {
-                 ////console.log(sob + '/' + e + ': ' + sob/e)
-                 
                  
              }
  
