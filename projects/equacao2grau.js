@@ -84,12 +84,13 @@ function solve() {
           upper = -b + delta**(1/2)
           lower = 2*a
 
-          console.log()
+          console.log(upper,'/',lower)
           if (String(upper/lower).search('\\.') == -1) {
           sol1 = upper/lower
         }else{
           console.log(int[0])
           sol1 = 'decimal'
+          console.log(REFORMATAR(`${upper} + ${lower}x`))
         }
 
           sol2 = (-b - delta**(1/2))/(2*a)
@@ -1963,5 +1964,5 @@ monomios[bye].numero = comofica;
  
  }
  
- return segs
+ return ORDENAROB(segs,'car')[0].car
 }
