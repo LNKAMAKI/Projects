@@ -20,6 +20,8 @@ function solve() {
         }
       }
 
+      console.log(i1)
+
       int = SOMAR(i1)
      simplificar = int[0]
      console.log(simplificar)
@@ -44,6 +46,10 @@ function solve() {
           if (ji[i].que.length == 2 && ji[i].que[0] == ji[i].que[1]) {
             console.log('ESSE É O A')
             partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
+
+            if (partnum == '') {
+              partnum = 1
+            }
             console.log(partnum)
             a = Number(partnum)
             num = ji[i].que[0]
@@ -59,6 +65,10 @@ function solve() {
           if ( ji[i].que[0] == num) {
           console.log('ESSE É O B')
           partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
+
+          if (partnum == '') {
+            partnum = 1
+          }
           console.log(partnum)
           b = Number(partnum)
 
@@ -494,7 +504,6 @@ function SOMAR(expression) {
 
     monomios[obnum].numero += exp[n];
   }
-
 
   function DIVIDIR(T, qual) {
        
