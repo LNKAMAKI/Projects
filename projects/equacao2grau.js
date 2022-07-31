@@ -89,18 +89,53 @@ function solve() {
           sol1 = upper/lower
         }else{
           console.log(int[0])
-          sol1 = 'decimal'
+          console.log(`${upper} + ${lower}x`)
           simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))
-          a = '2.10.3'
-          console.log(REDONUMFACTORING(a.replace(new RegExp('\\.','g'),'*')))
+          console.log('fator comum:',simp)
+          
+          if (simp.length > 1) {
+          comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
+          console.log(comum)
+          }else{
+            comum = simp
+          }
+
+          res = upper/comum + '/' + lower/comum
+          console.log(res)
+          sol1 = res
         }
 
-          sol2 = (-b - delta**(1/2))/(2*a)
+        upper = -b - delta**(1/2)
+        lower = 2*a
+
+        console.log(upper,'/',lower)
+        if (String(upper/lower).search('\\.') == -1) {
+        sol2 = upper/lower
+      }else{
+        console.log(int[0])
+        console.log(`${upper} + ${lower}x`)
+        simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))
+        console.log('fator comum:',simp)
+        
+        if (simp.length > 1) {
+        comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
+        console.log(comum)
+        }else{
+          comum = simp
+        }
+
+        res = upper/comum + '/' + lower/comum
+        console.log(res)
+        sol2 = res
+      }
+
+      
           if (delta != 0) {
           console.log('SOLUÇÃO 1:', sol1, 'SOLUÇÃO 2:', sol2)
           }else{
             console.log('SOLUÇÃO:', sol1)
           }
+
         }
       }
      }
@@ -298,8 +333,8 @@ function SOMAR(expression) {
       ground = "";
 
       comofica = [];
-      for (b in monomios[ji[bye].quais[misery]].numero) {
-        carac = monomios[ji[bye].quais[misery]].numero[b];
+      for (bo in monomios[ji[bye].quais[misery]].numero) {
+        carac = monomios[ji[bye].quais[misery]].numero[bo];
         //
 
         if (ground.length == 0) {
@@ -315,7 +350,7 @@ function SOMAR(expression) {
           comofica.push(ground);
           ground = "";
           ground += carac;
-          if (b == monomios[ji[bye].quais[misery]].numero.length - 1) {
+          if (bo == monomios[ji[bye].quais[misery]].numero.length - 1) {
             comofica.push(ground);
           }
         }
@@ -412,9 +447,9 @@ function SOMAR(expression) {
 
     if (comehome[0][0] == "-") {
       t = "";
-      for (b in comehome[0]) {
-        if (comehome[0][b] != "-") {
-          t += comehome[0][b];
+      for (bo in comehome[0]) {
+        if (comehome[0][bo] != "-") {
+          t += comehome[0][bo];
         }
       }
       //
@@ -1067,8 +1102,8 @@ for (misery in ji[bye].quais) {
   ground = "";
 
   comofica = [];
-  for (b in monomios[ji[bye].quais[misery]].numero) {
-    carac = monomios[ji[bye].quais[misery]].numero[b];
+  for (bo in monomios[ji[bye].quais[misery]].numero) {
+    carac = monomios[ji[bye].quais[misery]].numero[bo];
     //
 
     if (ground.length == 0) {
@@ -1084,7 +1119,7 @@ for (misery in ji[bye].quais) {
       comofica.push(ground);
       ground = "";
       ground += carac;
-      if (b == monomios[ji[bye].quais[misery]].numero.length - 1) {
+      if (bo == monomios[ji[bye].quais[misery]].numero.length - 1) {
         comofica.push(ground);
       }
     }
@@ -1181,9 +1216,9 @@ comehome = fazerConta(conta);
 
 if (comehome[0][0] == "-") {
   t = "";
-  for (b in comehome[0]) {
-    if (comehome[0][b] != "-") {
-      t += comehome[0][b];
+  for (bo in comehome[0]) {
+    if (comehome[0][bo] != "-") {
+      t += comehome[0][bo];
     }
   }
   //
