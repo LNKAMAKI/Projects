@@ -121,7 +121,7 @@ function solve() {
           lower = 2*a
 
           console.log(upper,'/',lower)
-          if (String(upper/lower).search('\\.') == -1) {
+          if (String(upper/lower).search('\\.') == -1 || countDecimals(String(upper/lower)) == 1) {
           sol1 = upper/lower
         }else{
           console.log(int[0])
@@ -137,7 +137,7 @@ function solve() {
               console.log('SIMP:',simp)
             }
 
-          if (simp.replace('-','').replace('+','').length > 1) {
+          if (simp.search('\\.') != -1) {
           comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
           console.log(comum)
           }else{
@@ -159,7 +159,7 @@ function solve() {
         lower = 2*a
 
         console.log(upper,'/',lower)
-        if (String(upper/lower).search('\\.') == -1) {
+        if (String(upper/lower).search('\\.') == -1 || countDecimals(String(upper/lower)) == 1) {
         sol2 = upper/lower
       }else{
         console.log(int[0])
@@ -175,7 +175,7 @@ function solve() {
             console.log('SIMP:',simp)
           }
 
-        if (simp.replace('-','').replace('+','').length > 1) {
+        if (simp.search('\\.') != -1) {
         comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
         console.log(comum)
         }else{
