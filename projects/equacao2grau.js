@@ -145,7 +145,7 @@ function solve() {
             comum = simp
           }
 
-          res = upper/comum + '/' + lower/comum
+          res = Arredondar(String(upper/comum),2) + '/' + Arredondar(String(lower/comum),2)
           console.log(res)
           sol1 = res
         }else{
@@ -184,14 +184,14 @@ function solve() {
           comum = simp
         }
 
-        res = upper/comum + '/' + lower/comum
+        res = Arredondar(String(upper/comum),2) + '/' + Arredondar(String(lower/comum),2)
         console.log(res)
         sol2 = res
       }else{
         console.log(upper/lower)
         fix = upper.replace('[0-9]+(?=\\.)\\.','')
         console.log(fix)
-        res = upper + '/' + lower
+        res = Arredondar(String(upper),2) + '/' + Arredondar(String(lower),2)
         sol2 = res
       }
       }
