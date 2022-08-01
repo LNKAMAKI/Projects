@@ -1721,7 +1721,7 @@ function countDecimals(string) {
   function Arredondar(num,numcasas) {
     if (String(num).search('\\.') != -1) {
     fi = String(num).replace(new RegExp('(?<=\\.)[0-9]+'),'')
-              fix = String(num).replace(new RegExp('[0-9]+(?=\\.)\\.'),'')
+              fix = String(num).replace(new RegExp('.+(?=\\.)\\.'),'')
               c2 = fix.replace(new RegExp(`(?<=[0-9]{${numcasas}})[0-9]+`),'')
               console.log(fi, fix,c2)
               return fi + c2
