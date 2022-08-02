@@ -214,9 +214,7 @@ function REFORMATAR(q) {
         qualexp += qualexp1[copy];
       } else {
         parar = true;
-      }
-    }
-  }
+      }}}
   if (qualexp != "" && parar == false) {
     ground = "";
     expression = [];
@@ -238,11 +236,9 @@ function REFORMATAR(q) {
       }
       if (phy == qualexp.length - 1) {
         expression.push(ground);
-      }
-    }
+      }}
     return expression
-  }
-}
+  }}
 
 function fazerConta(anterior) {  
   if(0 == 0) {
@@ -392,7 +388,6 @@ function sortob(n, pam) {
  }}}}
   return [maiorparamenor, posiçõesnumeros]
 }
-
 function FATORARSInGULAR(potn) {
   if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
       fatorado = ''
@@ -463,7 +458,6 @@ for (bye in str) {
  }
  return comofica
 }
-
 function FATORAR(expression) {
   alt = 1
   startexp = [...expression];
@@ -474,15 +468,12 @@ if (expression[0] !== "-" && expression[0] !== "+") {
   }
   expression = expo;
 }
-console.log('FATORAR')
 for (n = 0; n < expression.length; n++) {
-  console.log(expression[n],ehprimo(expression[n]))
   if (
     ehprimo(expression[n]) == false &&
     String(expression[n]).search("[0-9]") != -1 &&
     expression[n - 1] != "^"
   ) {
-    console.log('OK')
     fatorado = "";
     first = 1;
     div = 0;
@@ -504,7 +495,6 @@ for (n = 0; n < expression.length; n++) {
             fatorado += `${e}*`;
           }}}}
     expression[n] = fatorado;
-    console.log(expression[n],'=>',fatorado)
   }}
 for (y in expression) {
   if (expression[y] == "^") {
@@ -543,8 +533,7 @@ for (bye in monomios) {
     }
     if (misery == monomios[bye].numero.length - 1) {
       comofica.push(ground);
-    }
-  }
+    }}
   monomios[bye].numero = comofica;
 }
 for (huh in monomios) {
@@ -552,8 +541,7 @@ for (huh in monomios) {
   for (y in monomios[huh].numero) {
     if (String(monomios[huh].numero[y]).search("[a-z]") != -1) {
       partlet += String(monomios[huh].numero[y]);
-    }
-  }
+    }}
   monomios[huh].partletral = partlet;
 }
 ji = [];
@@ -591,8 +579,7 @@ for (misery in ji[bye].quais) {
         comofica.push(ground);
       }}}
   monomios[ji[bye].quais[misery]].numero = comofica;
-}
-}
+}}
 for (chuva in ji) {
 conta = [];
 for (da in ji[chuva].quais) {
@@ -643,8 +630,7 @@ for (da in ji[chuva].quais) {
     sinal = monomios[ji[chuva].quais[da]].numero[0];
     if (conta.length != 0) {
       conta.push(monomios[ji[chuva].quais[da]].numero[0]);
-    }
-  }
+    }}
   if (conta.length == 0 && monomios[ji[chuva].quais[da]].numero[0] == "-") {
     entao = "-";
     entao += plan[0];
@@ -1033,8 +1019,7 @@ function countDecimals(string) {
       iniciar = true
     }else if(iniciar == true) {
       count+=1
-    }
-  }
+    }}
   return count
   }
   function Arredondar(num,numcasas) {
@@ -1046,5 +1031,4 @@ function countDecimals(string) {
               return fi + c2
     }else{
       return num
-    }
-    }
+    }}
