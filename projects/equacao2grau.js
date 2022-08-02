@@ -129,6 +129,7 @@ function solve() {
           simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))[0]
           console.log('fator comum:',simp)
           
+          if (String(upper).search('\\.') == -1 && String(lower).search('\\.') == -1) {
           if (simp != 'empty') {
 
             console.log('&&&&simp&&&&',simp)
@@ -151,10 +152,14 @@ function solve() {
         }else{
           console.log(upper/lower)
 
-          res = Arredondar(upper,2) + '/' + Arredondar(lower,2)
-          sol1 = res
+            res = Arredondar(String(upper),2) + '/' + Arredondar(String(lower),2)
+            sol1 = res
         }
-        }
+        }else{
+        res = Arredondar(String(upper/lower),2)
+        sol1 = res
+       }
+      }
 
         upper = -b - delta**(1/2)
         lower = 2*a
@@ -168,6 +173,7 @@ function solve() {
         simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))[0]
         console.log('fator comum:',simp)
         
+        if (String(upper).search('\\.') == -1 && String(lower).search('\\.') == -1) {
         if (simp != 'empty') {
 
           console.log('&&&&simp&&&&',simp)
@@ -189,12 +195,16 @@ function solve() {
         sol2 = res
       }else{
         console.log(upper/lower)
-        fix = upper.replace('[0-9]+(?=\\.)\\.','')
-        console.log(fix)
+       
         res = Arredondar(String(upper),2) + '/' + Arredondar(String(lower),2)
+
         sol2 = res
       }
+      }else{
+        res = Arredondar(String(upper/lower),2)
+        sol2 = res
       }
+    }
 
       
           if (delta != 0) {
