@@ -19,16 +19,13 @@ function solve() {
           i1.push('-')
         }
       }
-
       console.log(i1)
-
       int = FATORAR(i1)
      simplificar = int[1]
      console.log(simplificar)
      intfinal = FATORAR(simplificar)
      console.log(intfinal[2])
      console.log(intfinal[3])
-    
      monomios = intfinal[2]
      a = 0
      b = 0
@@ -41,12 +38,10 @@ function solve() {
       tudocerto = true
       for (i = 0; i < ji.length && tudocerto == true; i++) {
           console.log(ji[i].quais[0], ji[i].que)
-
           if (i == 0) {
           if (ji[i].que.length == 2 && ji[i].que[0] == ji[i].que[1]) {
             console.log('ESSE É O A')
             partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
-
             if (partnum == '') {
               partnum = '1'
             }else if(partnum == '-') {
@@ -54,9 +49,7 @@ function solve() {
             }else if(partnum == '+') {
               partnum = '+1'
             }
-
             console.log(partnum)
-
             if (partnum.search('\\*') != -1) {
             a = Number(desfat(partnum))
             }else{
@@ -69,7 +62,6 @@ function solve() {
         }else if (ji[i].que == '') {
           console.log('ESSE É O C')
           console.log(monomios[ji[i].quais[0]].numero)
-
           if (monomios[ji[i].quais[0]].numero.search('\\*') != -1) {
           c = Number(desfat(String(monomios[ji[i].quais[0]].numero)))
           }else{
@@ -77,12 +69,10 @@ function solve() {
             c = monomios[ji[i].quais[0]].numero
           }
           console.log(c)
-
         }else if(ji[i].que.length == 1) {
           if ( ji[i].que[0] == num) {
           console.log('ESSE É O B')
           partnum = monomios[ji[i].quais[0]].numero.replace(ji[i].que,'')
-
           if (partnum == '') {
             partnum = '1'
           }else if(partnum == '-') {
@@ -96,15 +86,12 @@ function solve() {
             }else{
               b = partnum
             }
-
           }else{
             tudocerto = false
           }
         }
       }
-
       if (tudocerto == true) {
-
         if (c == -0) {
           c = 0
         }
@@ -114,12 +101,9 @@ function solve() {
         console.log('this is delta:', delta)
         if (delta >= 0) {
           console.log('OK, DÁ PARA CONTINUAR')
-          console.log('raiz de delta é:', delta**(1/2))
-
-         // if (String(delta**(1/2)).search('\\.') == -1) {
+          console.log('raiz de delta é:', delta**(1/2))   
           upper = -b + delta**(1/2)
           lower = 2*a
-
           console.log(upper,'/',lower)
           if (String(upper/lower).search('\\.') == -1 || countDecimals(String(upper/lower)) == 1) {
           sol1 = upper/lower
@@ -131,13 +115,11 @@ function solve() {
           
           if (String(upper).search('\\.') == -1 && String(lower).search('\\.') == -1) {
           if (simp != 'empty') {
-
             console.log('&&&&simp&&&&',simp)
             if(simp[0] == '-') {
               simp = simp.replace('.','')
               console.log('SIMP:',simp)
             }
-
           if (simp.search('\\.') != -1) {
           comum = desfat(simp.replace(new RegExp('\\.','g'),'*'))
           console.log(comum)
@@ -145,13 +127,11 @@ function solve() {
             console.log('simp.length = 1')
             comum = simp
           }
-
           res = Arredondar(String(upper/comum),2) + '/' + Arredondar(String(lower/comum),2)
           console.log(res)
           sol1 = res
         }else{
           console.log(upper/lower)
-
             res = Arredondar(String(upper),2) + '/' + Arredondar(String(lower),2)
             sol1 = res
         }
@@ -160,10 +140,8 @@ function solve() {
         sol1 = res
        }
       }
-
         upper = -b - delta**(1/2)
         lower = 2*a
-
         console.log(upper,'/',lower)
         if (String(upper/lower).search('\\.') == -1 || countDecimals(String(upper/lower)) == 1) {
         sol2 = upper/lower
@@ -171,8 +149,7 @@ function solve() {
         console.log(int[0])
         console.log(`${upper} + ${lower}x`)
         simp = FATORAR(REFORMATAR(`${upper} + ${lower}x`))[0]
-        console.log('fator comum:',simp)
-        
+        console.log('fator comum:',simp)        
         if (String(upper).search('\\.') == -1 && String(lower).search('\\.') == -1) {
         if (simp != 'empty') {
 
@@ -194,10 +171,8 @@ function solve() {
         console.log(res)
         sol2 = res
       }else{
-        console.log(upper/lower)
-       
+        console.log(upper/lower)       
         res = Arredondar(String(upper),2) + '/' + Arredondar(String(lower),2)
-
         sol2 = res
       }
       }else{
@@ -205,63 +180,43 @@ function solve() {
         sol2 = res
       }
     }
-
-      
           if (delta != 0) {
           console.log('SOLUÇÃO 1:', sol1, 'SOLUÇÃO 2:', sol2)
           }else{
             console.log('SOLUÇÃO:', sol1)
           }
-
-       // }else{
-         // console.log('EPA, PERAÍ')
-         // sol1 = `(${-b} + √${delta})/${2*a}`
-          //sol2 = `(${-b} - √${delta})/${2*a}`
-         // console.log('solução 1:',sol1)
-         // console.log('solução 2:',sol2)
-       // }
-
         document.getElementById('result').style.display = 'block'
-
         if (sol1 != sol2) {
       document.getElementById('solucao').innerText = `x': ${sol1}, x": ${sol2}`
         }else{
       document.getElementById('solucao').innerText = `x: ${sol1}`
         }
-      }else{
-        
+      }else{       
       document.getElementById('result').style.display = 'block'
       document.getElementById('solucao').innerText = 'Sem solução pertencente aos ℝ'
       }
-
       }
      }
-
     }
 }
 
 function REFORMATAR(q) {
   qualexp1 = q;
   qualexp = "";
-
   parar = false;
   for (copy in qualexp1) {
-    
     if (qualexp1[copy] != " ") {
       if (
         qualexp1[copy].search("([0-9]|\\.)") != -1 ||
         qualexp1[copy].search("[a-z]") != -1 ||
         qualexp1[copy].search("[\\+\\-\\^\\*]") != -1
       ) {
-        
         qualexp += qualexp1[copy];
       } else {
         parar = true;
       }
     }
   }
-  
-
   if (qualexp != "" && parar == false) {
     ground = "";
     expression = [];
@@ -285,23 +240,17 @@ function REFORMATAR(q) {
         expression.push(ground);
       }
     }
-
-    
-    
     return expression
   }
 }
 
-
-function fazerConta(anterior) {
-   
-  if(0 == 0) {// falta == false
-//Primeiro raizes e potências
+function fazerConta(anterior) {  
+  if(0 == 0) {
 for (n = 0; n < anterior.length; n++) {
 if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
   anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
   anterior.splice(n - 1, 2)
-  n = n - 3 // n = n - 3
+  n = n - 3 
   if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
       anterior.splice(n + 3, 1)
       anterior.splice(n + 1, 1)
@@ -315,11 +264,7 @@ if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && ant
       anterior.splice(n + 3, 1)
       anterior.splice(n + 1, 1)
       n = n - 3
-  }
-}
-}
-
-// Segundo multiplicações e divisões
+  }}}
 for (n = 0; n < anterior.length; n++) {
 if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
 anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
@@ -338,14 +283,8 @@ if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
   anterior.splice(n + 3, 1)
   anterior.splice(n + 1, 1)
   n = n - 3
-}
-}
-}
-
-
+}}}
 if (anterior.length > 1) {
-
-// while(anterior.length != 1 && anterior.indexOf('nan') == -1) {
   for (n = 0; n < anterior.length && anterior.length != 1; n++) {
       if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
           anterior[n + 1] = String(Number(anterior[n - 1]) + Number(anterior[n + 1]))
@@ -400,24 +339,16 @@ if (anterior.length > 1) {
               anterior.splice(n + 3, 1)
               anterior.splice(n + 1, 1)
               n = n - 3
-          }
-      }
-  }
-}
-
-  
-}
+          }}}}}
 return anterior
 }
-
 
 function ehprimo(Number) {
   parar = false;
   for (t = 2; t < Number && parar == false; t++) {
     if (Number % t == 0) {
       parar = true;
-    }
-  }
+    }}
   if (parar) return false;
   else return true;
 }
@@ -434,18 +365,14 @@ grtols = []
    }
    return grtols
 }
-
 function sortob(n, pam) {
   var maiorparamenor = []
   var posiçõesnumeros = []
   var yposition = n
-
   for (n in yposition) {
       maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
       posiçõesnumeros.push(-1)
-
   }
-
   for (item in yposition) {
       var volume = 0
       var dn = 0
@@ -454,7 +381,6 @@ function sortob(n, pam) {
               if (yposition[item][pam] > maiorparamenor[volume]) {
                   var itens = yposition.length - (Number(volume) + 1)
                   var leng = yposition.length
-
                   for (i = 0; i < itens; i++) {
                       maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
                       posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
@@ -463,62 +389,34 @@ function sortob(n, pam) {
                   maiorparamenor[volume] = yposition[item][pam]
                   posiçõesnumeros[volume] = Number(item)
                   dn = 10
-
-
-              }
-          }
-      }
-  }
+ }}}}
   return [maiorparamenor, posiçõesnumeros]
 }
 
 function FATORARSInGULAR(potn) {
   if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
       fatorado = ''
-  
       first = 1
-  
       div = 0
-  
       stop = false
       fator = 1
-      
       for (e = 2; stop == false; e++) {
-          
-          
-          
-      
           sob = Number(potn)
-        
              if (ehprimo(e) == true) {
               while (sob%e == 0) {
               if (sob%e == 0) {
-                  
-                  
-                  
               }
-  
               sob = sob/e
-              
-              
-              
-  
               fator = fator*e
-  
               st = false
-              
               if (fator == potn) {
               stop = true
               fatorado += `${e}`
               }else{
                   fatorado += `${e}*`
-              }
-             }
-          }
-      }
+              }}}}
       return fatorado
-  }
-  }
+  }}
   function versetem(comp) {
     podeir = true;
     qual = -1;
@@ -545,16 +443,10 @@ function FATORARSInGULAR(potn) {
     return podeir;
   }
   function VAI(str) {
-
-    
     comofica = []
     ground = ''
 for (bye in str) {
-    
-
-        
         carac = str[bye]
-      
             if (ground.length == 0) {
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
@@ -563,38 +455,25 @@ for (bye in str) {
                 comofica.push(ground)
                 ground = ''
                 ground += carac
-               
             }
             if (bye == str.length - 1) {
                 comofica.push(ground)
             }
     str[bye].numero = comofica
  }
-
  return comofica
 }
 
 function FATORAR(expression) {
-
   alt = 1
   startexp = [...expression];
-
 if (expression[0] !== "-" && expression[0] !== "+") {
-  //
   expo = ["+"];
   for (ent in expression) {
-    //
     expo.push(expression[ent]);
   }
   expression = expo;
 }
-
-//6x^2 + 3 + 14x^2y + 7y
-
-//FAZEnDO AS COnTAS COM nÚMEROS
-
-//FATORAnDO OS nÚMEROS
-
 console.log('FATORAR')
 for (n = 0; n < expression.length; n++) {
   console.log(expression[n],ehprimo(expression[n]))
@@ -603,69 +482,39 @@ for (n = 0; n < expression.length; n++) {
     String(expression[n]).search("[0-9]") != -1 &&
     expression[n - 1] != "^"
   ) {
-
     console.log('OK')
     fatorado = "";
-
     first = 1;
-
     div = 0;
-    //
-
     stop = false;
     fator = 1;
-
     for (e = 2; stop == false; e++) {
       sob = Number(expression[n]);
-
       if (ehprimo(e) == true) {
         while (sob % e == 0) {
           if (sob % e == 0) {
-            //
           }
-
           sob = sob / e;
-
-          //
-          //
-
           fator = fator * e;
-
           st = false;
-
           if (fator == expression[n]) {
             stop = true;
             fatorado += `${e}`;
           } else {
             fatorado += `${e}*`;
-          }
-        }
-      }
-    }
-
+          }}}}
     expression[n] = fatorado;
     console.log(expression[n],'=>',fatorado)
-  }
-}
-//
-
-//FAZEnDO AS POTÊnCIAS COM LETRAS
-
-//
+  }}
 for (y in expression) {
   if (expression[y] == "^") {
     ad = expression[Number(y) - 1];
     for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
       expression[Number(y) - 1] += ad;
     }
-
     expression.splice(Number(y) + 1, 1);
     expression.splice(y, 1);
-  }
-}
-
-//SEPARAnDO OS MOnÔMIOS
-
+  }}
 monomios = [{ numero: "" }];
 obnum = 0;
 for (n = 0; n < expression.length; n++) {
@@ -673,29 +522,19 @@ for (n = 0; n < expression.length; n++) {
     monomios.push({ numero: "" });
     obnum++;
   }
-
   monomios[obnum].numero += expression[n];
 }
-
-//monomios = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
-
-//TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
-
 for (bye in monomios) {
   comofica = [];
   ground = "";
-
   for (misery in monomios[bye].numero) {
     carac = monomios[bye].numero[misery];
-
     if (ground.length == 0) {
-      //
       ground += carac;
     } else if (
       String(ground.search("([0-9]|\\.)")) != -1 &&
       String(carac).search("([0-9]|\\.)") != -1
     ) {
-      //
       ground += carac;
     } else {
       comofica.push(ground);
@@ -708,7 +547,6 @@ for (bye in monomios) {
   }
   monomios[bye].numero = comofica;
 }
-
 for (huh in monomios) {
   partlet = "";
   for (y in monomios[huh].numero) {
@@ -718,9 +556,7 @@ for (huh in monomios) {
   }
   monomios[huh].partletral = partlet;
 }
-
 ji = [];
-//JUNTANDO OS MONÔMIOS QUE DÁ PARA somar
 for (huh in monomios) {
   if (
     ji.find(function (ji) {
@@ -732,33 +568,20 @@ for (huh in monomios) {
     ji.find(function (ji) {
       return ji.que == monomios[huh].partletral;
     }).quais.push(Number(huh));
-  }
-}
-
-//SEPARAnDO/JUnTAnDO OS nÚMEROS
-// ==> SOMANDO OS MONÔMIOS...
-
+  }}
 exp = [];
-
 for (bye in ji) {
-//
-
 for (misery in ji[bye].quais) {
   ground = "";
-
   comofica = [];
   for (bo in monomios[ji[bye].quais[misery]].numero) {
     carac = monomios[ji[bye].quais[misery]].numero[bo];
-    //
-
     if (ground.length == 0) {
-      //
       ground += carac;
     } else if (
       String(ground.search("([0-9]|\\.)")) != -1 &&
       String(carac).search("([0-9]|\\.)") != -1
     ) {
-      //
       ground += carac;
     } else {
       comofica.push(ground);
@@ -766,33 +589,24 @@ for (misery in ji[bye].quais) {
       ground += carac;
       if (bo == monomios[ji[bye].quais[misery]].numero.length - 1) {
         comofica.push(ground);
-      }
-    }
-  }
-
+      }}}
   monomios[ji[bye].quais[misery]].numero = comofica;
 }
 }
-
 for (chuva in ji) {
-//
-
 conta = [];
 for (da in ji[chuva].quais) {
   divisor = [];
   for (flowers in ji[chuva].que) {
     divisor.push(ji[chuva].que[flowers]);
   }
-
   tu = [...divisor];
   resultadoDaDivisão = DIVIDIR(
     divisor,
     monomios[ji[chuva].quais[da]].numero
   );
-
   plan = [];
   add = "";
-
   for (past in resultadoDaDivisão) {
     if (
       resultadoDaDivisão[past].search("\\*") != -1 ||
@@ -810,76 +624,50 @@ for (da in ji[chuva].quais) {
       } else {
         plan.push(add);
         add = "";
-
         add += resultadoDaDivisão[past];
       }
-      //
-
       if (plan.length == 3) {
         plan = [String(Number(plan[0]) * Number(plan[2]))];
-      }
-    }
-  }
-
+      }}}
   if (add == "" && ji[chuva].quais.length > 1) {
     add = "1";
-    //
   }
   plan.push(add);
-
   if (plan.length == 3) {
-    //
-    //
     plan = [String(Number(plan[0]) * Number(plan[2]))];
-    //
   }
-
   if (
     monomios[ji[chuva].quais[da]].numero[0] == "+" ||
     monomios[ji[chuva].quais[da]].numero[0] == "-"
   ) {
-    //
-
     sinal = monomios[ji[chuva].quais[da]].numero[0];
-
     if (conta.length != 0) {
       conta.push(monomios[ji[chuva].quais[da]].numero[0]);
     }
   }
-
   if (conta.length == 0 && monomios[ji[chuva].quais[da]].numero[0] == "-") {
     entao = "-";
     entao += plan[0];
-    //
     conta.push(entao);
   } else {
     conta.push(plan[0]);
-  }
-}
-
+  }}
 comehome = fazerConta(conta);
-
 if (comehome[0][0] == "-") {
   t = "";
   for (bo in comehome[0]) {
     if (comehome[0][bo] != "-") {
       t += comehome[0][bo];
-    }
-  }
-  //
-
+    }}
   at = t;
   if (ehprimo(t) == false) {
     console.log('AT:',at)
     fat = FATORARSInGULAR(at);
-    //
-  } else {
-    //
+  } else { 
     fat = at;
   }
   oop = "-";
   oop += String(fat);
-
   exp.push("-");
   fat += ji[chuva].que;
   exp.push(fat);
@@ -890,7 +678,6 @@ if (comehome[0][0] == "-") {
   } else {
     fat = comehome;
   }
-
   if (exp.length == 0) {
     fat += ji[chuva].que;
     exp.push(fat);
@@ -898,119 +685,46 @@ if (comehome[0][0] == "-") {
     exp.push("+");
     fat += ji[chuva].que;
     exp.push(fat);
-    //
-  }
-}
-}
-
+  }}}
 expression = exp;
-
-//SEPARAnDO OS MOnÔMIOS DEnOVO
-
 monomios = [{ numero: "" }];
 obnum = 0;
-
 for (n = 0; n < exp.length; n++) {
 if (String(exp[n]).search("[\\-\\+]") != -1 && n != 0) {
   monomios.push({ numero: "" });
   obnum++;
 }
-
 monomios[obnum].numero += exp[n];
 }
-
-//
-
-//SEPARAR CORRETAMEnTE OS nÚMEROS
-
-/*
-for (bye in monomios) {
-//
-
-comofica = [];
-ground = "";
-
-for (misery in monomios[bye].numero) {
-  //
-
-  carac = monomios[bye].numero[misery];
-  //
-  //
-
-  //
-  if (ground.length == 0) {
-    ground += carac;
-  } else if (
-    String(ground.search("[0-9]")) != -1 &&
-    String(carac).search("[0-9]") != -1
-  ) {
-    ground += carac;
-  } else {
-    comofica.push(ground);
-    ground = "";
-    ground += carac;
-  }
-  if (misery == monomios[bye].numero.length - 1) {
-    comofica.push(ground);
-  }
-}
-
-monomios[bye].numero = comofica;
-}
-*/
-// AQUI ACABA O CÓDIGO PARA somar OS MONÔMIOS
-
  function FATORARSInGULAR(potn) {
  if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
-     fatorado = ''
- 
+     fatorado = '' 
      first = 1
- 
-     div = 0
- 
+     div = 0 
      stop = false
-     fator = 1
-     
+     fator = 1     
      for (e = 2; stop == false; e++) {
-     
          sob = Number(potn)
-       
             if (ehprimo(e) == true) {
              while (sob%e == 0) {
-           
-             sob = sob/e
-            
+             sob = sob/e           
              fator = fator*e
- 
              st = false
-             
              if (fator == potn) {
              stop = true
              fatorado += `${e}`
              }else{
                  fatorado += `${e}*`
-             }
-            }
-         }
-     }
+             }}}}
      return fatorado
- }
- }
- //
- 
-
- 
- // FAZER COnTA COM nÚMEROS
+ }}
  function fazerConta(anterior) {
- 
-     if(0 == 0) {// falta == false
- //Primeiro raizes e potências
+     if(0 == 0) {
  for (n = 0; n < anterior.length; n++) {
  if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
      anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
-     anterior.splice(n - 1, 2)
-     
-     n = n - 3 // n = n - 3
+     anterior.splice(n - 1, 2)   
+     n = n - 3 
      if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
          anterior.splice(n + 3, 1)
          anterior.splice(n + 1, 1)
@@ -1024,11 +738,7 @@ monomios[bye].numero = comofica;
          anterior.splice(n + 3, 1)
          anterior.splice(n + 1, 1)
          n = n - 3
-     }
- }
- }
- 
- // Segundo multiplicações e divisões
+     }}}
  for (n = 0; n < anterior.length; n++) {
  if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
  anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
@@ -1047,14 +757,8 @@ monomios[bye].numero = comofica;
      anterior.splice(n + 3, 1)
      anterior.splice(n + 1, 1)
      n = n - 3
- }
- }
- }
- 
- 
+ }}}
  if (anterior.length > 1) {
- 
- // while(anterior.length != 1 && anterior.indexOf('nan') == -1) {
      for (n = 0; n < anterior.length && anterior.length != 1; n++) {
          if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
              anterior[n + 1] = String(Number(anterior[n - 1]) + Number(anterior[n + 1]))
@@ -1109,18 +813,9 @@ monomios[bye].numero = comofica;
                  anterior.splice(n + 3, 1)
                  anterior.splice(n + 1, 1)
                  n = n - 3
-             }
-         }
-     }
- // }
- }
- 
-     
- }
+             }}}}}
  return anterior
  }
- //
- 
  function versetem(comp) {
   podeir = true;
   qual = -1;
@@ -1139,97 +834,70 @@ monomios[bye].numero = comofica;
       divisao = DIVIDIR(VAI(comp), VAI(segs[meow].car));
     }
     if (divisao == "" || divisao == "-") {
-      //
       podeir = false;
       qual = meow;
-    }
-  }
+    }}
   return podeir;
 }
- 
  function DIVIDIR(T, qual) {
-     
- 
      Tfix = []
  for (h in T) {
      Tfix.push(T[h])
  }
- //egs = [...qual]
  egs = []
  for (norte in qual) {
  if (qual[norte] == '*' || qual[norte] == '.') {
  }else{
  egs.push(qual[norte])
- }
- }
- 
+ }}
  takeout = []
  for (n in egs) {
  if (T.indexOf(egs[n]) != -1) {
  T.splice(T.lastIndexOf(egs[n]), 1)
  takeout.push(Number(n))
- }
- }
- 
+ }}
  for (giro = egs.length - 1; giro >= 0; giro--) {
      if (takeout.indexOf(Number(giro)) == -1) {
      }else{
          egs.splice(giro,1)
-     }
- }
- 
+     }}
  depois = ''
  for (n in egs) {
          depois += String(egs[n])
       if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
          depois+= '*'
-      }
- }
- 
+      }}
  return depois
- 
- 
  }
- //expression = exp
- 
  reps = []
  segs = []
  let  = []
- 
- for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
+ for (m = 0; m < monomios.length; m++) { 
      repetido = []
-     
      col = false
      repetido = []
- 
     numerosrep = []
-  
-     for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
+     for (oc = 0; oc < monomios[m].numero.length; oc++) { 
          if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
          if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
          numerosrep.push(monomios[m].numero[oc])
-         for (u = 0; u < monomios.length; u++) { // OUTROS MOnÔMIOS
+         for (u = 0; u < monomios.length; u++) { 
              ocs2 = []
              if(u != m) {
            if(ocs2.find(function(ocs2) {
              return ocs2.ed == monomios[m].numero[oc]
              }) == undefined) {
                  ocs2.push({ed: monomios[m].numero[oc], el: 0})
- 
                  ocs = 0
            for (ao = 0; ao < monomios[m].numero.length; ao++) {
              if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
                  ocs++
-             }
-           }
-         }
-           for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
+             }}}
+           for (e = 0; e < monomios[u].numero.length; e++) { 
              if (monomios[u].numero[e] == monomios[m].numero[oc]) {
-             
                  if (repetido.find(function(repetido) {
                      return repetido.monum == u
                      }) === undefined) {
- 
                          ocs2.find(function(ocs2) {
                              return ocs2.ed == monomios[m].numero[oc]
                              }).el++
@@ -1237,16 +905,12 @@ monomios[bye].numero = comofica;
                              if (ocs2.find(function(ocs2) {
                                  return ocs2.ed == monomios[m].numero[oc]
                                  }).el <= ocs) {
- 
                  repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
- 
                              }
- 
                      }else{
                                  ocs2.find(function(ocs2) {
                                      return ocs2.ed == monomios[m].numero[oc]
                                      }).el++
- 
                                          if (ocs2.find(function(ocs2) {
                                              return ocs2.ed == monomios[m].numero[oc]
                                              }).el <= ocs) {
@@ -1254,18 +918,8 @@ monomios[bye].numero = comofica;
                                  repetido.find(function(repetido) {
                                      return repetido.monum == u
                                      }).letr += `.${monomios[u].numero[e]}`
-                                 }
-                     }
-             }
-           }
-         }
-        }
-     }
-     }
-     }
-    
+                                 }}}}}}}}}
      reps.push(repetido)
-     
      for (nope in repetido) {
      if (repetido[nope].letr[0] == '-') {
          la = ''
@@ -1278,10 +932,7 @@ monomios[bye].numero = comofica;
              return repetido.letr == la
          })) {
              repetido.splice(nope, 1)
-         }
-     }
- }
- 
+         }}}
          for (moe = repetido.length - 1; moe >= 0; moe--) {
             podeir = true
             qual = -1
@@ -1290,31 +941,23 @@ monomios[bye].numero = comofica;
                   for (d in segs[meow].car) {
                       array1.push(segs[meow].car[d])
                   }
-
                   array2 = []
                   for (d in repetido[moe].letr) {
                       array2.push(repetido[moe].letr[d])
                   }
-
                   if (segs[meow].car.length < repetido[moe].letr.length) {
-
                       divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
                    }else{
                        divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
                    }
-
                    if (divisao == '' || divisao == '-') {
                       podeir = false
                       qual = meow
-                   }
-                
-            }
-
+                   }}
              if (podeir == true) {
               splitUp(repetido[moe].letr);
                   function splitUp(str) {
                   estado = "";
-                  // CÓDIGO PARA ADICIONAR OS TERMOS EM COMUM DOS MONÔMIOS NA LISTA SEGS(SEGMENTOS)
                   for (i in str) {
                       if (str[i] == "." && estado != "-") {
                       permission = versetem(estado);
@@ -1327,18 +970,10 @@ monomios[bye].numero = comofica;
                       permission = versetem(estado);
                       if (permission == true && estado != " " && estado != "-") {
                           segs.push({ car: estado, mons: [m] });
-                      }
-                      }
-                  }
-                  }
- 
+                      }}}}
              }else if(segs[qual].mons.indexOf(m) == -1){
                   segs[qual].mons.push(m)      
-             }
-         }
-         
- }
- 
+             }}}
  for (nl = 0; nl < segs.length; nl++) {
      for (n = 0; n < segs.length; n++) {
          if (n != nl) {
@@ -1347,49 +982,34 @@ monomios[bye].numero = comofica;
                  if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
                  }else{
                      segs[nl].mons.push(segs[n].mons[u])
-                 }
-             }
-         }
-         }
-     }
- }
- 
+                 }}}}}}
  if (segs.length >= 1) {
  return [ORDENAROB(segs,'car')[0].car,expression,monomios,ji]
  }else{
   return ['empty',expression,monomios,ji]
  }
 }
-
 function desfat(quase) {
   quase = REFORMATAR(quase)
 gates = []
 aconta = ''
 friend = ''
-
 elevar = 1
 aster = false
-
 for (patience in quase) {
-   
     if (quase[patience] == '*') {
         aster = true
-      
         gates.push(quase[Number(patience) - 1])
         gates.push('x')
         gates.push(quase[Number(patience) + 1])
-       
         quase[Number(patience) + 1] = fazerConta(gates)[0]
         aconta = fazerConta(gates)[0]
         friend = fazerConta(gates)[0]
-       
         gates = []
     }else if(quase[patience].search('[a-z]') != -1)  {
-      
        friend+= quase[patience]
         if (quase[patience] == quase[Number(patience) - 1]) {
             elevar++
-
             if (patience == quase.length - 1) {
                 aconta+= `^${elevar}`
             }
@@ -1397,21 +1017,14 @@ for (patience in quase) {
             if (elevar > 1) {
                 aconta+= `^${elevar}` 
             }
-
-            aconta+= quase[patience]
-        
+            aconta+= quase[patience]      
             elevar = 1
-        }
-    } 
-}
-
+        }}}
 if (quase[0] != '-') {
 return aconta
 }else{
   return `-${aconta}`
-}
-}
-
+}}
 function countDecimals(string) {
   iniciar = false
   count = 0
@@ -1424,7 +1037,6 @@ function countDecimals(string) {
   }
   return count
   }
-
   function Arredondar(num,numcasas) {
     if (String(num).search('\\.') != -1) {
     fi = String(num).replace(new RegExp('(?<=\\.)[0-9]+'),'')
