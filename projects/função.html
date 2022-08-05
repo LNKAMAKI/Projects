@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+        :root {
+           --themecolor: rgb(114, 215, 255);
+        }
+        body {
+            margin: 0;
+            background-color: rgb(156, 156, 156);
+        }
+        div#shade {
+            background-color: rgba(0, 0, 0, 0.726);
+            position: absolute;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            margin: 0;
+        }
+        div#title {
+            position: relative;
+        padding: 40px 0px 40px 0px;
+            height: 100%;
+            width: fit-content;
+            z-index: 0;
+            margin: auto;
+        }
+        div#header {
+            position: relative;
+            background: url('imagens/code.jpg');
+            background-repeat: repeat;
+           background-position: right bottom;
+           margin: 0;
+        }
+
+        h1{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+           margin: 0;
+            color: rgb(65, 173, 216);
+            text-align: center;
+            font-size: 4em;
+            font-family: 'Macondo';
+            text-shadow: 2px 3px 8px;
+            font-weight: bold;
+           }
+           #maq {
+            position: relative;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2em;
+            text-align: center;
+            margin-top: 50px;
+            padding: 0px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+           }
+           #formula {
+            background-color: white;
+            outline: none;
+            width: 350px;
+            height: 40px;
+            border: 1px solid black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            text-align: center;
+           }
+           @media screen and (max-width: 600px){
+            #formula {
+                width: 300px;
+            }
+            #maq {
+                font-size: 1.7em;
+            }
+           }
+           @media screen and (max-width: 450px){
+            #formula {
+                width: 250px;
+            }
+            #maq {
+                font-size: 1.5em;
+            }
+           }
+           @media screen and (max-width: 370px){
+            #formula {
+                width: 210px;
+            }
+            #maq {
+                font-size: 1.3em;
+            }
+           }
+</style>
+</head>
+<body>
+    <script src="equacao2grau.js"></script>
+    
+        <div id="header">
+          
+            <div id="shade">
+                
+            </div>
+            <div id="title">
+                <h1>FUNÇÃO</h1>
+            </div>
+        </div>
+
+        <div id="maq">x &rarr;&nbsp;<input type="text" name="" id="formula">&nbsp;&rarr;&nbsp;y</div>
+
+
+      
+</body>
+</html>
