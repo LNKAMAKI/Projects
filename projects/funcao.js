@@ -1,4 +1,5 @@
 tudocerto = true
+formula = []
 function resolverFuncao() {
     form = document.getElementById('formula').value
     console.log(form)
@@ -12,8 +13,10 @@ function resolverFuncao() {
     error = false
     
     console.log(form.search('x'))
+    if (form.search('x') != -1) {
+
     for (qualq in form) {
-        if (String(form[qualq]).search('[0-9]') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/\\^r=Backspace]') != -1) {
+        if (String(form[qualq]).search('[0-9]') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/\\^\\*r=Backspace]') != -1) {
             if (String(form[qualq]).search('[=Backspace]') == -1) {
             if (ansd == false) {
             if (expression.length > 0) {
@@ -29,7 +32,7 @@ function resolverFuncao() {
                 expression[position] =String(form[qualq])
                }
             }else{
-                if (String(form[qualq]) == '-' && String(expression[expression.length - 1]).search('[\\x\\^\\+\\(\\/]') != -1 ||String(form[qualq]) == '-' && expression[expression.length - 1] == '-') {
+                if (String(form[qualq]) == '-' && String(expression[expression.length - 1]).search('[\\x\\^\\+\\(\\/\\*]') != -1 ||String(form[qualq]) == '-' && expression[expression.length - 1] == '-') {
                     juntar = true
                 }
                 if (expression.length > 0) {
@@ -91,22 +94,57 @@ function resolverFuncao() {
         }} 
     stop = false
    for (h = 0; h < degs.length && stop == false; h++){
-    if (degs[h].end == undefined) {
-        stop = true
-    }
-   }
-
+    if (degs[h].end == undefined) {stop = true}}
    if (stop == true) {
     tudocerto = false
-   }else{
-    tudocerto = true
+   }else{tudocerto = true}
+   degs = []
+    parents = 0
+    for (e = expression.length - 1; e >= 0; e--) {
+      console.log(expression[e])
+        if (expression[e] == ')') {
+            continuar = false
+            stop2 = false
+            pares = 0
+            degs.push({})
+            degs[parents].start = e
+            calcular = ''
+            for (n = e - 1; stop2 == false && n >= 0; n--) {
+              console.log(n, expression[n])
+                if (expression[n] == ')') {
+                    pares++
+                    continuar = true
+                    degs[parents].par = pares
+                }else if (continuar == true && expression[n] == '('){ 
+                        if (pares == 1) { continuar = false}
+                        pares--
+                }else if (continuar == false && expression[n] == '(') {
+                    if (degs[parents].par == undefined) {degs[parents].par = 0}
+                    stop2 = true
+                  console.log(e)
+                    degs[parents].end = expression[n]
+                }}
+            parents++
+        }} 
+        stop = false
+   for (h = 0; h < degs.length && stop == false; h++){
+    if (degs[h].end == undefined) {
+        stop = true
+    }}
+   if (stop == true) {
+    tudocerto = false
    }
 
    if (tudocerto == true) {
+    formula = expression
+    document.getElementById('p2').innerText = 'fórmula atual: ' + formula
     document.getElementById('p').innerText = expression
    }else{
     document.getElementById('p').innerText = 'Há erro de parênteses'
    }
+}else{
+    document.getElementById('p').innerText = 'Não há x! Portanto, deve já ter uma expressão com x'
+}
 }
 
 function fazerConta(anterior) {
