@@ -140,15 +140,16 @@ function resolverFuncao() {
 
    if (tudocerto == true) {
     formula = expression
-    document.getElementById('p2').innerText = 'fórmula atual: ' + formula
-    document.getElementById('p').innerText = expression
+    //document.getElementById('p2').innerText = 'fórmula atual: ' + formula
+    //document.getElementById('p').innerText = expression
    }else{
-    document.getElementById('p').innerText = 'Há erro de parênteses'
+    //document.getElementById('p').innerText = 'Há erro de parênteses'
    }
 }else{
-    document.getElementById('p').innerText = 'Não há x!'
+    //document.getElementById('p').innerText = 'Não há x!'
 }
 xis = document.getElementById('valx').value
+if (xis != '') {
 console.log(formula,xis)
 
 caso = []
@@ -176,6 +177,8 @@ for (todos in caso) {
     str+= caso[todos]
 }
 document.getElementById('formula').value = str
+document.getElementById('p3').innerText = fazerConta(caso)
+}
 }
 
 function fazerConta(anterior) {
