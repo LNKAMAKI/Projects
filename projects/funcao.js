@@ -13,7 +13,7 @@ function resolverFuncao() {
     
     console.log(form.search('x'))
     for (qualq in form) {
-        if (String(form[qualq]).search('[0-9]') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/r*=Backspace]') != -1) {
+        if (String(form[qualq]).search('[0-9]') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/\\^r=Backspace]') != -1) {
             if (String(form[qualq]).search('[=Backspace]') == -1) {
             if (ansd == false) {
             if (expression.length > 0) {
@@ -29,7 +29,7 @@ function resolverFuncao() {
                 expression[position] =String(form[qualq])
                }
             }else{
-                if (String(form[qualq]) == '-' && String(expression[expression.length - 1]).search('[\\x\\*\\+\\(\\/]') != -1 ||String(form[qualq]) == '-' && expression[expression.length - 1] == '-') {
+                if (String(form[qualq]) == '-' && String(expression[expression.length - 1]).search('[\\x\\^\\+\\(\\/]') != -1 ||String(form[qualq]) == '-' && expression[expression.length - 1] == '-') {
                     juntar = true
                 }
                 if (expression.length > 0) {
@@ -93,9 +93,15 @@ function resolverFuncao() {
    for (h = 0; h < degs.length && stop == false; h++){
     if (degs[h].end == undefined) {
         stop = true
-        tudocerto = false
     }
    }
+
+   if (stop == true) {
+    tudocerto = false
+   }else{
+    tudocerto = true
+   }
+
    if (tudocerto == true) {
     document.getElementById('p').innerText = expression
    }else{
