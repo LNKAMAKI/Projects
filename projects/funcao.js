@@ -176,9 +176,16 @@ str = ''
 for (todos in caso) {
     str+= caso[todos]
 }
+answer = fazerConta(caso)
 document.getElementById('formula').value = str
-document.getElementById('p3').innerText = fazerConta(caso)
+document.getElementById('x').innerText = xis
+document.getElementById('y').innerText = answer
 }
+}
+
+function change() {
+    document.getElementById('x').innerText = 'x'
+    document.getElementById('y').innerText = 'y'
 }
 
 function fazerConta(anterior) {
