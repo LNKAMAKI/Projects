@@ -149,7 +149,7 @@ function resolverFuncao() {
     //document.getElementById('p').innerText = 'Não há x!'
 }
 xis = document.getElementById('valx').value
-if (xis != '') {
+if (xis != '' && formula.length != 0) {
 console.log(formula,xis)
 
 caso = []
