@@ -101,9 +101,28 @@
                 font-size: 1.3em;
             }
            }
-           #resbut {
+           #callfun {
+            position: relative;
+            display: inline-block;
+            background-color: blue;
+            width: 100%;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
+            font-size: 1.5em;
+            margin-top: 10px;
+           }
+           #valx {
+            outline: none;
+            border: 1px solid black;
+            height: 30px;
+            font-size: 20px;
+            width: 50px;
+           }
+           #resbut {
+            position:relative;
+            margin-left: 10px;
+           width: 100%;
+           padding: 0px;
            }
 </style>
 </head>
@@ -121,7 +140,7 @@
         </div>
 
         <div id="maq">x &rarr;&nbsp;<input type="text" name="" id="formula" placeholder="fórmula">&nbsp;&rarr;&nbsp;y</div>
-        <div id="resbut">Resolver função com x = <input type="text" name="" id="" placeholder="número"></div>
+        <div id="callfun">f(<input type="text" name="" id="valx">)<input type="button" value="Resolver" id="resbut"></div> 
 
       
 </body>
