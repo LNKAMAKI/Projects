@@ -10,6 +10,8 @@ function resolverFuncao() {
     juntar = false
     anstxt = ''
     error = false
+    
+    console.log(form.search('x'))
     for (qualq in form) {
         if (String(form[qualq]).search('[0-9]') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/r*=Backspace]') != -1) {
             if (String(form[qualq]).search('[=Backspace]') == -1) {
@@ -104,7 +106,7 @@ function resolverFuncao() {
 function fazerConta(anterior) {
     //Primeiro raizes e potências
     for (n = 0; n < expression.length; n++) {
-    if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
+    if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
         expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
         expression.splice(n - 1, 2)
         n = n - 3 // n = n - 3
@@ -124,7 +126,7 @@ function fazerConta(anterior) {
         }}}
     // Segundo multiplicações e divisões
     for (n = 0; n < expression.length; n++) {
-    if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+    if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
     expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
     expression.splice(n - 1, 2)
     n = n - 3
@@ -133,7 +135,7 @@ function fazerConta(anterior) {
         expression.splice(n + 1, 1)
         n = n - 3
     }
-    }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+    }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
     expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
     expression.splice(n - 1, 2)
     n = n - 3
@@ -144,7 +146,7 @@ function fazerConta(anterior) {
     }}}
     if (expression.length > 1) {
         for (n = 0; n < expression.length && expression.length != 1; n++) {
-            if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\*]') == -1 && String(expression[n - 2]).search('[x\\/\\*\\-]') == -1) {
+            if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[*\\/\\^]') == -1 && String(expression[n - 2]).search('[*\\/\\^\\-]') == -1) {
                 expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 n = n - 3
@@ -153,7 +155,7 @@ function fazerConta(anterior) {
                     expression.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[x\\/\\*]') == -1 && String(expression[n - 2]).search('[x\\/\\*\\-]') == -1) {
+            }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[*\\/\\^]') == -1 && String(expression[n - 2]).search('[*\\/\\^\\-]') == -1) {
                 expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 n = n - 3
@@ -162,7 +164,7 @@ function fazerConta(anterior) {
                     expression.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == 'x' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+            }else if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
                 expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 n = n - 3
@@ -171,7 +173,7 @@ function fazerConta(anterior) {
                     expression.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\*') == -1 && String(expression[n - 2]).search('\\*') == -1) {
+            }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
                 expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 n = n - 3
@@ -180,7 +182,7 @@ function fazerConta(anterior) {
                     expression.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
+            }else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
                 expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
                 expression.splice(n - 1, 2)
                 n = n - 3
