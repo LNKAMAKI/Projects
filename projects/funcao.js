@@ -94,6 +94,11 @@ function resolverFuncao() {
         tudocerto = false
     }
    }
+   if (tudocerto == true) {
+    document.getElementById('p').innerText = expression
+   }else{
+    document.getElementById('p').innerText = 'Há erro de parênteses'
+   }
 }
 
 function fazerConta(anterior) {
