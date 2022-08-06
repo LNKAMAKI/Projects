@@ -101,15 +101,19 @@
                 font-size: 1.3em;
             }
            }
-           #callfun {
+           #resbut {
+            cursor: pointer;
             position: relative;
             display: inline-block;
-            background-color: blue;
-            width: 100%;
+            border-radius: 5px;
+            margin-top: 15px;
+            padding: 5px 0px;
+            left: calc((100% - 185px)/2);
+            background-color: rgb(190, 190, 190);
+            width: 185px;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-            font-size: 1.5em;
-            margin-top: 10px;
+            font-size: 1.3em;
            }
            #valx {
             outline: none;
@@ -117,13 +121,10 @@
             height: 30px;
             font-size: 20px;
             width: 50px;
+            text-align: center;
            }
-           #resbut {
-            position:relative;
-            margin-left: 10px;
-           width: 100%;
-           padding: 0px;
-           }
+          
+         
 </style>
 </head>
 <body>
@@ -140,7 +141,7 @@
         </div>
 
         <div id="maq">x &rarr;&nbsp;<input type="text" name="" id="formula" placeholder="fórmula">&nbsp;&rarr;&nbsp;y</div>
-        <div id="callfun">f(<input type="text" name="" id="valx">)<input type="button" value="Resolver" id="resbut"></div> 
+        <div id="resbut" onclick="resolverFuncao()">Resolver &fnof;(<input type="text" name="" id="valx" placeholder="x">)</div> 
 
       
 </body>
