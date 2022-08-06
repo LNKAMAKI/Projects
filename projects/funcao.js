@@ -148,104 +148,132 @@ function resolverFuncao() {
 }else{
     document.getElementById('p').innerText = 'Não há x!'
 }
+xis = document.getElementById('valx').value
+console.log(formula,xis)
+
+caso = []
+for (i in formula) {
+    if (formula[i].search('x') != -1){
+        if (formula[i] != 'x') {
+            num = ''
+            for (u in formula[i]) {
+                if (formula[i][u] != 'x') {
+                    num+= formula[i][u]
+                }
+            }
+            caso.push(num)
+            caso.push('*')
+            caso.push(xis)
+        }else{
+            caso.push(xis)
+        }
+    }else{
+        caso.push(formula[i])
+    }
+}
+str = ''
+for (todos in caso) {
+    str+= caso[todos]
+}
+document.getElementById('formula').value = str
 }
 
 function fazerConta(anterior) {
     //Primeiro raizes e potências
-    for (n = 0; n < expression.length; n++) {
-    if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
-        expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
-        expression.splice(n - 1, 2)
+    for (n = 0; n < anterior.length; n++) {
+    if(anterior[n] == '^' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
+        anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
+        anterior.splice(n - 1, 2)
         n = n - 3 // n = n - 3
-        if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-            expression.splice(n + 3, 1)
-            expression.splice(n + 1, 1)
+        if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+            anterior.splice(n + 3, 1)
+            anterior.splice(n + 1, 1)
             n = n - 3
         }
-    }else if(expression[n] == '√' && expression[n + 1] != '(' ) {
-        expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
-        expression.splice(n, 1)
+    }else if(anterior[n] == '√' && anterior[n + 1] != '(' ) {
+        anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
+        anterior.splice(n, 1)
         n = n - 2
-        if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-            expression.splice(n + 3, 1)
-            expression.splice(n + 1, 1)
+        if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+            anterior.splice(n + 3, 1)
+            anterior.splice(n + 1, 1)
             n = n - 3
         }}}
     // Segundo multiplicações e divisões
-    for (n = 0; n < expression.length; n++) {
-    if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
-    expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
-    expression.splice(n - 1, 2)
+    for (n = 0; n < anterior.length; n++) {
+    if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
+    anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
+    anterior.splice(n - 1, 2)
     n = n - 3
-    if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-        expression.splice(n + 3, 1)
-        expression.splice(n + 1, 1)
+    if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+        anterior.splice(n + 3, 1)
+        anterior.splice(n + 1, 1)
         n = n - 3
     }
-    }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
-    expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
-    expression.splice(n - 1, 2)
+    }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
+    anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
+    anterior.splice(n - 1, 2)
     n = n - 3
-    if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-        expression.splice(n + 3, 1)
-        expression.splice(n + 1, 1)
+    if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+        anterior.splice(n + 3, 1)
+        anterior.splice(n + 1, 1)
         n = n - 3
     }}}
-    if (expression.length > 1) {
-        for (n = 0; n < expression.length && expression.length != 1; n++) {
-            if (expression[n] == '+' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[*\\/\\^]') == -1 && String(expression[n - 2]).search('[*\\/\\^\\-]') == -1) {
-                expression[n + 1] = String(Number(expression[n - 1]) + Number(expression[n + 1]))
-                expression.splice(n - 1, 2)
+    if (anterior.length > 1) {
+        for (n = 0; n < anterior.length && anterior.length != 1; n++) {
+            if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[\\*\\/\\^]') == -1 && String(anterior[n - 2]).search('[\\*\\/\\^\\-]') == -1) {
+                anterior[n + 1] = String(Number(anterior[n - 1]) + Number(anterior[n + 1]))
+                anterior.splice(n - 1, 2)
                 n = n - 3
-                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-                    expression.splice(n + 3, 1)
-                    expression.splice(n + 1, 1)
+                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+                    anterior.splice(n + 3, 1)
+                    anterior.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '-' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('[*\\/\\^]') == -1 && String(expression[n - 2]).search('[*\\/\\^\\-]') == -1) {
-                expression[n + 1] = String(Number(expression[n - 1]) - Number(expression[n + 1]))
-                expression.splice(n - 1, 2)
+            }else if(anterior[n] == '-' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[\\*\\/\\^]') == -1 && String(anterior[n - 2]).search('[\\*\\/\\^\\-]') == -1) {
+                anterior[n + 1] = String(Number(anterior[n - 1]) - Number(anterior[n + 1]))
+                anterior.splice(n - 1, 2)
                 n = n - 3
-                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-                    expression.splice(n + 3, 1)
-                    expression.splice(n + 1, 1)
+                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+                    anterior.splice(n + 3, 1)
+                    anterior.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '*' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
-                expression[n + 1] = String(Number(expression[n - 1]) * Number(expression[n + 1]))
-                expression.splice(n - 1, 2)
+            }else if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
+                anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
+                anterior.splice(n - 1, 2)
                 n = n - 3
-                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-                    expression.splice(n + 3, 1)
-                    expression.splice(n + 1, 1)
+                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+                    anterior.splice(n + 3, 1)
+                    anterior.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '/' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√' && String(expression[n + 2]).search('\\^') == -1 && String(expression[n - 2]).search('\\^') == -1) {
-                expression[n + 1] = String(Number(expression[n - 1]) / Number(expression[n + 1]))
-                expression.splice(n - 1, 2)
+            }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
+                anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
+                anterior.splice(n - 1, 2)
                 n = n - 3
-                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-                    expression.splice(n + 3, 1)
-                    expression.splice(n + 1, 1)
+                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+                    anterior.splice(n + 3, 1)
+                    anterior.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '^' && expression[n - 1] != '(' && expression[n - 1] != ')' && expression[n + 1] != '(' && expression[n + 1] != ')' && expression[n + 1] != '√') {
-                expression[n + 1] = String(Number(expression[n - 1]) ** Number(expression[n + 1]))
-                expression.splice(n - 1, 2)
+            }else if(anterior[n] == '^' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
+                anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
+                anterior.splice(n - 1, 2)
                 n = n - 3
-                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-                    expression.splice(n + 3, 1)
-                    expression.splice(n + 1, 1)
+                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+                    anterior.splice(n + 3, 1)
+                    anterior.splice(n + 1, 1)
                     n = n - 3
                 }
-            }else if(expression[n] == '√' && expression[n + 1] != '(') {
-                expression[n + 1] = String(Number(expression[n + 1]) ** (1/2))
-                expression.splice(n, 1)
+            }else if(anterior[n] == '√' && anterior[n + 1] != '(') {
+                anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
+                anterior.splice(n, 1)
                 n = n - 2
-                if (expression[n + 1] == '(' && expression[n + 3] == ')') {
-                    expression.splice(n + 3, 1)
-                    expression.splice(n + 1, 1)
+                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
+                    anterior.splice(n + 3, 1)
+                    anterior.splice(n + 1, 1)
                     n = n - 3
                 }}}}
-                return expression
+                return anterior
     }
