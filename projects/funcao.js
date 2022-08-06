@@ -16,15 +16,15 @@ function resolverFuncao() {
     if (form.search('x') != -1) {
 
     for (qualq in form) {
-        if (String(form[qualq]).search('[0-9]') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/\\^\\*r=Backspace]') != -1) {
+        if (String(form[qualq]).search('([0-9]|x)') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/\\^\\*r=Backspace]') != -1) {
             if (String(form[qualq]).search('[=Backspace]') == -1) {
             if (ansd == false) {
             if (expression.length > 0) {
-            if (String(form[qualq]).search('[0-9]') != -1 ||String(form[qualq]) == '.') {
+            if (String(form[qualq]).search('([0-9]|x)') != -1 ||String(form[qualq]) == '.') {
                 if (ansd == true) {
                     ansd = false
                 }
-               if (String(expression[expression.length - 1]).search('[0-9]') != -1 || String(expression[expression.length - 1]) == '.' || juntar == true) {
+               if (String(expression[expression.length - 1]).search('([0-9]|x)') != -1 || String(expression[expression.length - 1]) == '.' || juntar == true) {
                 expression[position] +=String(form[qualq])
                 juntar = false
                }else{
@@ -34,6 +34,7 @@ function resolverFuncao() {
             }else{
                 if (String(form[qualq]) == '-' && String(expression[expression.length - 1]).search('[\\x\\^\\+\\(\\/\\*]') != -1 ||String(form[qualq]) == '-' && expression[expression.length - 1] == '-') {
                     juntar = true
+                    console.log(form[qualq])
                 }
                 if (expression.length > 0) {
                 position++
@@ -41,14 +42,15 @@ function resolverFuncao() {
                 expression[position] =String(form[qualq])
             }
         }else{
-            if (String(form[qualq]).search('[0-9]') != -1 ||String(form[qualq]) == '.' ||String(form[qualq]) == '(' ||String(form[qualq]) == '-' ||String(form[qualq]) == '√')  {
+            if (String(form[qualq]).search('([0-9]|x)') != -1 ||String(form[qualq]) == '.' ||String(form[qualq]) == '(' ||String(form[qualq]) == '-' ||String(form[qualq]) == '√')  {
            expression.push(String(form[qualq]))
             }
            if (form[qualq] == '-') {
             juntar = true
+            console.log(form[qualq])
            }}
             }else{
-                if (String(form[qualq]).search('[0-9]') != -1 ||String(form[qualq]) == '.' ||String(form[qualq]) == '(' ||String(form[qualq]) == '√') {
+                if (String(form[qualq]).search('([0-9]|x)') != -1 ||String(form[qualq]) == '.' ||String(form[qualq]) == '(' ||String(form[qualq]) == '√') {
                     expression[0] =form[qualq]
                     ansd = false
                     error = false
@@ -62,6 +64,7 @@ function resolverFuncao() {
                 if (String(form[qualq]) == '-') {
                     expression[0] =form[qualq]
                     juntar = true
+                    console.log(form[qualq])
                 }}}}}} 
     degs = []
     parents = 0
@@ -143,7 +146,7 @@ function resolverFuncao() {
     document.getElementById('p').innerText = 'Há erro de parênteses'
    }
 }else{
-    document.getElementById('p').innerText = 'Não há x! Portanto, deve já ter uma expressão com x'
+    document.getElementById('p').innerText = 'Não há x!'
 }
 }
 
