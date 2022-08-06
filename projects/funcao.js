@@ -16,7 +16,7 @@ function resolverFuncao() {
     if (form.search('x') != -1) {
 
     for (qualq in form) {
-        if (String(form[qualq]).search('([0-9]|x)') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\x\\/\\^\\*r=Backspace]') != -1) {
+        if (String(form[qualq]).search('([0-9]|x)') != -1 || form[qualq].search('[\\.\\(\\)\\+\\-\\/\\^\\*r=Backspace]') != -1) {
             if (String(form[qualq]).search('[=Backspace]') == -1) {
             if (ansd == false) {
             if (expression.length > 0) {
@@ -32,9 +32,9 @@ function resolverFuncao() {
                 expression[position] =String(form[qualq])
                }
             }else{
-                if (String(form[qualq]) == '-' && String(expression[expression.length - 1]).search('[\\x\\^\\+\\(\\/\\*]') != -1 ||String(form[qualq]) == '-' && expression[expression.length - 1] == '-') {
+                if (String(form[qualq]) == '-' && String(expression[expression.length - 1]).search('[\\^\\+\\(\\/\\*]') != -1 ||String(form[qualq]) == '-' && expression[expression.length - 1] == '-') {
                     juntar = true
-                    console.log(form[qualq])
+                    console.log('JUNTAR: TRUE',form[qualq])
                 }
                 if (expression.length > 0) {
                 position++
@@ -47,7 +47,7 @@ function resolverFuncao() {
             }
            if (form[qualq] == '-') {
             juntar = true
-            console.log(form[qualq])
+            console.log('JUNTAR: TRUE',form[qualq])
            }}
             }else{
                 if (String(form[qualq]).search('([0-9]|x)') != -1 ||String(form[qualq]) == '.' ||String(form[qualq]) == '(' ||String(form[qualq]) == '√') {
@@ -64,7 +64,7 @@ function resolverFuncao() {
                 if (String(form[qualq]) == '-') {
                     expression[0] =form[qualq]
                     juntar = true
-                    console.log(form[qualq])
+                    console.log('JUNTAR: TRUE',form[qualq])
                 }}}}}} 
     degs = []
     parents = 0
