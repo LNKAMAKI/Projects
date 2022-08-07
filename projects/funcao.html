@@ -210,12 +210,19 @@
             max-width: fit-content;
         }
        }
-       table {
-        border-collapse: collapse;
-        margin-top: 20px;
-        margin: 20px auto 0px auto;
-       width: 100%;
+
+       #cont {
+        position: relative;
+        overflow: auto;
+        max-height: 400px;
+        width: 100%;
        max-width: 600px;
+       margin: 20px auto 0px auto;
+       }
+       table {
+        position: relative;
+        border-collapse: collapse;
+        width: 100%;
        display: none;
        }
        th {
@@ -230,10 +237,6 @@
         background-color: aliceblue;
         font-weight: 600;
         font-size: 1.1em;
-       }
-       #cont {
-        overflow: auto;
-        margin: 0px 5px 0px 5px;
        }
 </style>
 </head>
@@ -289,22 +292,23 @@
             </div>
         </div>
         <div id="montartab" onclick="montarTabela()">Montar Tabela</div>
-       <div id="cont">
-           <table id="tb">
-            <tbody id="table">
-                <tr>
-                    <th>
-                        x
-                    </th>
-                    <th>
-                        fórmula
-                    </th>
-                    <th>
-                        y
-                    </th>
-                </tr>
-            </tbody>
-           </table>
-       </div>
+           <div id="cont">
+
+               <table id="tb">
+                <tbody id="table">
+                    <tr>
+                        <th>
+                            x
+                        </th>
+                        <th>
+                            fórmula
+                        </th>
+                        <th>
+                            y
+                        </th>
+                    </tr>
+                </tbody>
+               </table>
+           </div>
 </body>
 </html>
