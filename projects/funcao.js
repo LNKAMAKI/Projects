@@ -11,7 +11,7 @@ function resolverFuncao() {
     juntar = false
     anstxt = ''
     error = false
-    
+    pros = 'sim'
     console.log(form.search('x'))
     if (form.search('x') != -1) {
 
@@ -140,18 +140,14 @@ function resolverFuncao() {
 
    if (tudocerto == true) {
     formula = expression
-    //document.getElementById('p2').innerText = 'fórmula atual: ' + formula
-    //document.getElementById('p').innerText = expression
    }else{
     console.log('EPA')
     window.alert('Faltam parênteses')
-    //document.getElementById('p').innerText = 'Há erro de parênteses'
+    pros = 'não'
    }
-}else{
-    //document.getElementById('p').innerText = 'Não há x!'
 }
 xis = document.getElementById('valx').value
-if (xis != '' && formula.length != 0) {
+if (xis != '' && formula.length != 0 && pros == 'sim') {
 console.log(formula,xis)
 
 caso = []
