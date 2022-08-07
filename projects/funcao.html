@@ -8,6 +8,46 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+        .test {
+        margin-left: 6px;
+        display: inline-block;
+        position: relative;
+        background-color: black;
+        width: 12px;
+        height: 4px;
+        z-index: 1;
+        overflow: hidden;
+    }
+        .test::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        content: '';
+        background-color: rgb(156, 156, 156);
+        animation: slide 0.9s ease-out infinite;
+        z-index: 3;
+    }
+        #arrow {
+            width: 13px;
+            height: 13px;
+            margin-left: 4px;
+        }
+        @keyframes slide {
+            0% {
+                left: -100%;
+            }
+            100%{
+                left: 100%;
+            }
+        }
+        #flwarr {
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 5px;
+        }
+
         :root {
            --themecolor: rgb(114, 215, 255);
         }
@@ -140,7 +180,16 @@
             </div>
         </div>
 
-        <div id="maq"><span id="x">x</span>&nbsp;&rarr;&nbsp;<input type="text" name="" id="formula" placeholder="fórmula" onkeyup="change()">&nbsp;&rarr;&nbsp;<span id="y">y</span></div>
+        <div id="maq">
+            <div id="flwarr">
+                <span id="x">x</span>
+                <div class="test"></div>
+                <div class="test"></div>
+                <div class="test"></div>
+                <div class="test"></div>
+                <img id="arrow" src="/Bootstrap/triangle-right.webp" alt="">
+            </div>
+            <input type="text" name="" id="formula" placeholder="fórmula" onkeyup="change()">&nbsp;&rarr;&nbsp;<span id="y">y</span></div>
         <div id="resbut" onclick="resolverFuncao()">Resolver &fnof;(<input type="number" name="" id="valx" oninput="resolverFuncao()">)</div> 
         <!--<p id="p2" style="text-align:center;font-size: 1.8em;font-family: Arial, Helvetica, sans-serif;"></p>
         <p id="p" style="text-align:center;font-size: 1.8em;font-family: Arial, Helvetica, sans-serif;"></p>-->
