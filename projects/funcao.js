@@ -298,9 +298,15 @@ console.log(caso, start, end, steps)
 
 tab = document.getElementById('table')
 document.getElementById('tb').style.display = 'table'
+trs = tab.getElementsByTagName('tr')
+for (b = trs.length - 1; b > 0; b--) {
+    console.log(b, trs[b])
+    tab.removeChild(trs[b])
+}
+        
 if (start < end) {
     casos = []
-    
+
     direction = 'add'
     tr = document.createElement('tr')
     tab.append(tr) 
@@ -385,6 +391,14 @@ if (start < end) {
 
 }else if(start > end) {
     
+}
+trs = tab.getElementsByTagName('tr')
+for (j in casos) {
+    res = fazerConta(casos[j])
+    console.log(j,trs[Number(j)+1],res)
+    td = document.createElement('td')
+    td.innerText = res
+    trs[Number(j)+1].append(td)
 }
 
     }
