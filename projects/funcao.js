@@ -1,5 +1,7 @@
 tudocerto = true
 formula = []
+caso = ['2','*','5']
+
 function resolverFuncao() {
     form = document.getElementById('formula').value
     console.log(form)
@@ -285,3 +287,105 @@ function fazerConta(anterior) {
                 }}}}
                 return anterior
     }
+
+function montarTabela() {
+    start = Number(document.getElementById('start').value)
+    end = Number(document.getElementById('end').value)
+    steps = Number(document.getElementById('steps').value)
+    if (formula.length > 0) {
+    
+console.log(caso, start, end, steps)
+
+tab = document.getElementById('table')
+document.getElementById('tb').style.display = 'table'
+if (start < end) {
+    casos = []
+    
+    direction = 'add'
+    tr = document.createElement('tr')
+    tab.append(tr) 
+    console.log(start)
+    caso = []
+    for (i in formula) {
+        if (formula[i].search('x') != -1){
+            if (formula[i] != 'x') {
+                num = ''
+                for (u in formula[i]) {
+                    if (formula[i][u] != 'x') {
+                        num+= formula[i][u]
+                    }
+                }
+                caso.push(num)
+                caso.push('*')
+                caso.push(String(start))
+            }else{
+                caso.push(String(start))
+            }
+        }else{
+            caso.push(formula[i])
+        }
+    }
+    console.log(caso)
+    str = ''
+        for (todos in caso) {
+            str+= caso[todos]
+        }
+        console.log(str)
+    td = document.createElement('td')
+    td.innerText = start
+    tr.append(td)
+
+    td = document.createElement('td')
+    td.innerText = str
+    tr.append(td)
+
+   casos.push(caso)
+
+    for (n = start; n + steps <= end; n+= steps) {
+        tr = document.createElement('tr')
+        tab.append(tr) 
+        console.log(n + steps)
+        caso = []
+        for (i in formula) {
+            if (formula[i].search('x') != -1){
+                if (formula[i] != 'x') {
+                    num = ''
+                    for (u in formula[i]) {
+                        if (formula[i][u] != 'x') {
+                            num+= formula[i][u]
+                        }
+                    }
+                    caso.push(num)
+                    caso.push('*')
+                    caso.push(String(n + steps))
+                }else{
+                    caso.push(String(n + steps))
+                }
+            }else{
+                caso.push(formula[i])
+            }
+        }
+        console.log(caso)
+        str = ''
+        for (todos in caso) {
+            str+= caso[todos]
+        }
+        console.log(str)
+        td = document.createElement('td')
+        td.innerText = n + steps
+        tr.append(td)
+    
+        td = document.createElement('td')
+        td.innerText = str
+        tr.append(td)
+        
+        casos.push(caso)
+    }
+   
+
+}else if(start > end) {
+    
+}
+
+    }
+}

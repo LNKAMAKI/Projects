@@ -172,7 +172,7 @@
                 font-size: 1.3em;
             }
            }
-           #resbut {
+           #resbut,#montartab {
             cursor: pointer;
             position: relative;
             display: inline-block;
@@ -197,18 +197,32 @@
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.2em;
+            margin-top: 40px;
           }
          .t {
-            width: 50px;
+            width: 60px;
             height: 25px;
             font-size: 1.1em;
          }
        @media screen and (min-width:577px) {
         .col-sm-4 {
-            background-color: purple;
             max-width: fit-content;
         }
        }
+       table {
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin: 20px auto 0px auto;
+       width: 100%;
+       max-width: 600px;
+       display: none;
+       }
+       td,th {
+        border: 1px solid black;
+        text-align: center;
+        width: 50px;
+       }
+       
 </style>
 </head>
 <body>
@@ -252,15 +266,33 @@
         <div id="tablespace" class="container-lg">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-4">
-                    <div class="it">x inicial: <input type="number" name="" id="" class="t"></div>
+                    <div>x inicial: <input type="number" name=""  class="t" id="start"></div>
                 </div>
                     <div class="col-12 col-sm-4">
-                        <div class="it">x final: <input type="number" name="" id="" class="t"></div>
+                        <div>x final: <input type="number" name=""  class="t" id="end"></div>
                     </div>
                 <div class="col-12 col-sm-4">
-                    <div class="it">passos: <input type="number" name="" id="" class="t"></div>
+                    <div>passos: <input type="number" name=""  class="t" id="steps"></div>
                 </div>
             </div>
         </div>
+        <div id="montartab" onclick="montarTabela()">Montar Tabela</div>
+       <div style="margin-left: 10px;margin-right:10px;">
+           <table id="tb">
+            <tbody id="table">
+                <tr>
+                    <th>
+                        x
+                    </th>
+                    <th>
+                        fórmula
+                    </th>
+                    <th>
+                        y
+                    </th>
+                </tr>
+            </tbody>
+           </table>
+       </div>
 </body>
 </html>
