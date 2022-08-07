@@ -179,7 +179,7 @@ for (todos in caso) {
 answer = fazerConta(caso)
 document.getElementById('formula').value = str
 document.getElementById('x').innerText = xis
-document.getElementById('y').innerText = answer
+document.getElementById('y').innerText = Arredondar(answer,2)
 }
 }
 
@@ -480,9 +480,19 @@ for (j in casos) {
     res = fazerConta(casos[j])
     console.log(j,trs[Number(j)+1],res)
     td = document.createElement('td')
-    td.innerText = res
+    td.innerText = Arredondar(res,2)
     trs[Number(j)+1].append(td)
 }
 
     }
 }
+function Arredondar(num,numcasas) {
+    if (String(num).search('\\.') != -1) {
+    fi = String(num).replace(new RegExp('(?<=\\.)[0-9]+'),'')
+              fix = String(num).replace(new RegExp('.+(?=\\.)\\.'),'')
+              c2 = fix.replace(new RegExp(`(?<=[0-9]{${numcasas}})[0-9]+`),'')
+              console.log(fi, fix,c2)
+              return fi + c2
+    }else{
+      return num
+    }}
