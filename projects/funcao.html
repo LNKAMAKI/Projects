@@ -45,9 +45,12 @@
             width: fit-content;
             display: inline-flex;
             align-items: center;
-            margin-right: 10px;
+            margin-right: 8px;
+            background-color: transparent;
         }
-
+        .ar {
+            display: none;
+        }
         :root {
            --themecolor: rgb(114, 215, 255);
         }
@@ -115,7 +118,7 @@
             text-align: center;
             font-weight: 400;
            }
-           @media screen and (max-width: 600px){
+           @media screen and (max-width: 620px){
             #formula {
                 width: 300px;
                 font-size: 25px;
@@ -123,8 +126,19 @@
             #maq {
                 font-size: 1.7em;
             }
+            .test {
+                width: 9px;
+                height: 3px;
+            }
+            .arrow {
+                width: 10px;
+                height: 10px;
+            }
+            .flwarr {
+                margin-right: 5px;
+            }
            }
-           @media screen and (max-width: 450px){
+           @media screen and (max-width: 520px){
             #formula {
                 width: 250px;
                 font-size: 22px;
@@ -132,8 +146,14 @@
             #maq {
                 font-size: 1.5em;
             }
+            .flwarr {
+              display: none;
+            }
+            .ar {
+                display: inline;
+            }
            }
-           @media screen and (max-width: 370px){
+           @media screen and (max-width: 410px){
             #formula {
                 width: 210px;
                 font-size: 19px;
@@ -180,12 +200,12 @@
             </div>
         </div>
 
-        <div id="maq"><span id="x">x</span>
+        <div id="maq"><span id="x">x</span><span class="ar">&nbsp;&rarr;&nbsp;</span>
             <div class="flwarr">
-                <div class="test"></div>
-                <div class="test"></div>
-                <div class="test"></div>
-                <div class="test"></div>
+                    <div class="test"></div>
+                    <div class="test"></div>
+                    <div class="test"></div>
+                    <div class="test"></div>
                 <img class="arrow" src="/Bootstrap/triangle-right.webp" alt="">
             </div>
             <input type="text" name="" id="formula" placeholder="fórmula" onkeyup="change()">
@@ -196,6 +216,7 @@
                 <div class="test"></div>
                 <img class="arrow" src="/Bootstrap/triangle-right.webp" alt="">
             </div>
+            <span class="ar">&nbsp;&rarr;&nbsp;</span>
             <span id="y">y</span></div>
         <div id="resbut" onclick="resolverFuncao()">Resolver &fnof;(<input type="number" name="" id="valx" oninput="resolverFuncao()">)</div> 
         <!--<p id="p2" style="text-align:center;font-size: 1.8em;font-family: Arial, Helvetica, sans-serif;"></p>
