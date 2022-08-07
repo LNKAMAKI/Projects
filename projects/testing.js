@@ -1,99 +1,56 @@
-function fazerConta(anterior) {
-    //Primeiro raizes e potências
-    for (n = 0; n < anterior.length; n++) {
-    if(anterior[n] == '^' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
-        anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
-        anterior.splice(n - 1, 2)
-        n = n - 3 // n = n - 3
-        if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-            anterior.splice(n + 3, 1)
-            anterior.splice(n + 1, 1)
-            n = n - 3
+//CASO VC QUISER TIRAR DEPOIS, TÁ AQUI:
+  for (eep in miss) {
+    for (quad in miss) {
+      if (quad != eep) {
+        repeated = [];
+        repwri = "";
+        for (vespa in miss[eep].aparicoes) {
+          if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
+            repeated.push(miss[eep].aparicoes[vespa]);
+
+            repwri += "," + miss[eep].aparicoes[vespa];
+
+            if (
+              roller.find(function (roller) {
+                return roller.rept == repwri;
+              }) == undefined
+            ) {
+              roller.push({
+                rept: repwri,
+                opl: [...repeated],
+                position: [eep, quad],
+              });
+            } else {
+              if (
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.indexOf(eep) == -1
+              ) {
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.push(eep);
+              }
+
+              if (
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.indexOf(quad) == -1
+              ) {
+                roller
+                  .find(function (roller) {
+                    return roller.rept == repwri;
+                  })
+                  .position.push(quad);
+              }
+            }
+          }
         }
-    }else if(anterior[n] == '√' && anterior[n + 1] != '(' ) {
-        anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
-        anterior.splice(n, 1)
-        n = n - 2
-        if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-            anterior.splice(n + 3, 1)
-            anterior.splice(n + 1, 1)
-            n = n - 3
-        }}}
-    // Segundo multiplicações e divisões
-    for (n = 0; n < anterior.length; n++) {
-    if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
-    anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
-    anterior.splice(n - 1, 2)
-    n = n - 3
-    if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-        anterior.splice(n + 3, 1)
-        anterior.splice(n + 1, 1)
-        n = n - 3
+      }
     }
-    }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
-    anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
-    anterior.splice(n - 1, 2)
-    n = n - 3
-    if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-        anterior.splice(n + 3, 1)
-        anterior.splice(n + 1, 1)
-        n = n - 3
-    }}}
-    if (anterior.length > 1) {
-        for (n = 0; n < anterior.length && anterior.length != 1; n++) {
-            if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[\\*\\/\\^]') == -1 && String(anterior[n - 2]).search('[\\*\\/\\^\\-]') == -1) {
-                anterior[n + 1] = String(Number(anterior[n - 1]) + Number(anterior[n + 1]))
-                anterior.splice(n - 1, 2)
-                n = n - 3
-                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                    anterior.splice(n + 3, 1)
-                    anterior.splice(n + 1, 1)
-                    n = n - 3
-                }
-            }else if(anterior[n] == '-' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[\\*\\/\\^]') == -1 && String(anterior[n - 2]).search('[\\*\\/\\^\\-]') == -1) {
-                anterior[n + 1] = String(Number(anterior[n - 1]) - Number(anterior[n + 1]))
-                anterior.splice(n - 1, 2)
-                n = n - 3
-                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                    anterior.splice(n + 3, 1)
-                    anterior.splice(n + 1, 1)
-                    n = n - 3
-                }
-            }else if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
-                anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
-                anterior.splice(n - 1, 2)
-                n = n - 3
-                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                    anterior.splice(n + 3, 1)
-                    anterior.splice(n + 1, 1)
-                    n = n - 3
-                }
-            }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\^') == -1 && String(anterior[n - 2]).search('\\^') == -1) {
-                anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
-                anterior.splice(n - 1, 2)
-                n = n - 3
-                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                    anterior.splice(n + 3, 1)
-                    anterior.splice(n + 1, 1)
-                    n = n - 3
-                }
-            }else if(anterior[n] == '^' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
-                anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
-                anterior.splice(n - 1, 2)
-                n = n - 3
-                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                    anterior.splice(n + 3, 1)
-                    anterior.splice(n + 1, 1)
-                    n = n - 3
-                }
-            }else if(anterior[n] == '√' && anterior[n + 1] != '(') {
-                anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
-                anterior.splice(n, 1)
-                n = n - 2
-                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                    anterior.splice(n + 3, 1)
-                    anterior.splice(n + 1, 1)
-                    n = n - 3
-                }}}}
-                return anterior
-    }
+  }
