@@ -3538,7 +3538,7 @@ for (bye in monomios) {
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
             //console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
             for (life in youdumb_2) {
-              console.log(youdumb_2[life].mons)
+              console.log(life,'juntar os monomios',youdumb_2[life].mons,'/ grupos:',youdumb_2[life].w.what)
             }
             console.warn(newexpress,monomios_2.length)
             if (novomon[0] == '-') {
@@ -8890,7 +8890,7 @@ if (quad != eep) {
             novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
             //console.log(naonao_2[roberto], 'multiplicado por',tobreak_2[vaidarcerto],'=',novomon)
             for (life in youdumb_2) {
-              console.log(youdumb_2[life].mons)
+              console.log(life,'juntar os monomios',youdumb_2[life].mons,'/ grupos:',youdumb_2[life].w.what)
             }
             console.warn(newexpress,monomios_2.length)
             
