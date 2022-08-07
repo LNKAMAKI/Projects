@@ -224,13 +224,17 @@
        td,th {
         border: 1px solid black;
         text-align: center;
-        width: 50px;
+        padding: 2px;
        }
        td {
         background-color: aliceblue;
         font-weight: 600;
+        font-size: 1.1em;
        }
-       
+       #cont {
+        overflow: auto;
+        margin: 0px 5px 0px 5px;
+       }
 </style>
 </head>
 <body>
@@ -285,7 +289,7 @@
             </div>
         </div>
         <div id="montartab" onclick="montarTabela()">Montar Tabela</div>
-       <div style="margin-left: 10px;margin-right:10px;">
+       <div id="cont">
            <table id="tb">
             <tbody id="table">
                 <tr>
