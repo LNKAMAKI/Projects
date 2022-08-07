@@ -143,6 +143,8 @@ function resolverFuncao() {
     //document.getElementById('p2').innerText = 'fórmula atual: ' + formula
     //document.getElementById('p').innerText = expression
    }else{
+    console.log('EPA')
+    window.alert('Faltam parênteses')
     //document.getElementById('p').innerText = 'Há erro de parênteses'
    }
 }else{

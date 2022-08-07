@@ -3567,6 +3567,8 @@ for (bye in monomios) {
    }
    
    if (numsdesfat.length > 0) {
+    
+
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros = []
     for (acaba in monomios) {
