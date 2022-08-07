@@ -3537,7 +3537,10 @@ for (bye in monomios) {
             //console.log(tobreak[vaidarcerto])
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
             //console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
-            console.warn(newexpress)
+            for (life in youdumb_2) {
+              console.log(youdumb_2[life].mons)
+            }
+            console.warn(newexpress,monomios_2.length)
             if (novomon[0] == '-') {
                 miya = ''
                 for (n in novomon) {
@@ -3570,6 +3573,9 @@ for (bye in monomios) {
     
 
     console.warn('VAI TER QUE FATORAR DE NOVO')
+    for (life in youdumb_2) {
+     console.log(youdumb_2[life].mons)
+    }
     todososnumeros = []
     for (acaba in monomios) {
        //console.log(acaba)
@@ -8883,7 +8889,11 @@ if (quad != eep) {
             //console.log(tobreak_2[vaidarcerto])
             novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
             //console.log(naonao_2[roberto], 'multiplicado por',tobreak_2[vaidarcerto],'=',novomon)
-            console.warn(newexpress)
+            for (life in youdumb_2) {
+              console.log(youdumb_2[life].mons)
+            }
+            console.warn(newexpress,monomios_2.length)
+            
             if (novomon[0] == '-') {
                 miya = ''
                 for (n in novomon) {
@@ -8913,6 +8923,10 @@ if (quad != eep) {
    }
    
    if (numsdesfat.length > 0) {
+    for (life in youdumb_2) {
+      console.log(youdumb_2[life].mons)
+     }
+
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros_2 = []
     for (acaba in monomios_2) {
