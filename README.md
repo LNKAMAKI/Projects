@@ -3,14 +3,17 @@
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico">
 <u type= "circle">
 
-<li><a href= "https://lnkamaki.github.io/Projects/projects/equacao2grau.html"><span style=" font-weight: normal; font-size: 1.3em;">EQUAÇÃO DO 2º GRAU</span></a></li> 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/funcao.html"><span style=" font-weight: normal; font-size: 1.3em;">Função</span></a></li> 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/equacao2grau.html"><span style=" font-weight: normal; font-size: 1.3em;">Equação do 2º grau</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/fatorador.html"><span style=" font-weight: normal; font-size: 1.3em;">FATORADOR</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/material-js.html"><span style=" font-weight: normal; font-size: 1.3em;">Materiais(CSS, HTML e Javascript)</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/calculadora.html"><span style=" font-weight: normal; font-size: 1.3em;">Calculadora</span></a></li>
 <li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html"><span style=" font-weight: normal; font-size: 1.3em;">Palavreto</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html"><span style=" font-weight: normal; font-size: 1.3em;">Medidas de Tendência Central e Frequências</span></a> </li>
  <li><a href= "https://lnkamaki.github.io/Projects/projects/conversor-temperatura.html"><span style=" font-weight: normal; font-size: 1.3em;">Conversor de Temperatura</span></a></li> 
+ <!--
  <li><a href= "https://lnkamaki.github.io/Projects/projects/calcular-imc.html"><span style=" font-weight: normal; font-size: 1.3em;">Calculador de IMC</span></a></li> 
+ -->
  <li><a href= "https://lnkamaki.github.io/Projects/projects/dicionario.html"><span style=" font-weight: normal; font-size: 1.3em;">Dicionário</span></a></li>   
 
 
