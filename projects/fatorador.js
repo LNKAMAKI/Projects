@@ -683,44 +683,30 @@ for (bye in monomios) {
                    n = n - 3
    
                    //console.log(anterior)
-               }else{
-                   //console.log(anterior)
                }
            }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-               //console.log('DIVISÃO')
                anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
                anterior.splice(n - 1, 2)
-               
                n = n - 3
-               //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                   //console.log('TIRAR')
                    anterior.splice(n + 3, 1)
                    anterior.splice(n + 1, 1)
                    n = n - 3
-   
-                   //console.log(anterior)
-               }else{
-                   //console.log(anterior)
                }
            }else if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
-               //console.log('DIVISÃO')
                anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
                anterior.splice(n - 1, 2)
                n = n - 3
                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                   //console.log('TIRAR')
                    anterior.splice(n + 3, 1)
                    anterior.splice(n + 1, 1)
                    n = n - 3
                }
            }else if(anterior[n] == '√' && anterior[n + 1] != '(') {
-               //console.log('RAIZ')
                anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
                anterior.splice(n, 1)
                n = n - 2
                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                   //console.log('TIRAR')
                    anterior.splice(n + 3, 1)
                    anterior.splice(n + 1, 1)
                    n = n - 3
