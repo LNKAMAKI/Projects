@@ -9444,52 +9444,22 @@ if (quad != eep) {
         ////console.log('faltam', faltam)
    
         for (f = 0; f < faltam; f++) {
-         //   //console.log(relation_2[c].falt[f])
            relation_2[c].fix.push(relation_2[c].falt[f])
-          
-       //    //console.log('AnTES: ', relation_2[c].falt)
            relation_2[c].falt[f] = -10
-   
-       //    //console.log('DEPOIS: ', relation_2[c].falt)
         }
-      //  //console.log(relation_2[c].fix)
    
         for (tel = 0; tel < c; tel++){
-   
-            if (relation_2[tel].fix.length > 0) {
-          //  //console.log('relation_2[tel]', relation_2[tel])
-            }
-            
             outrorel = relation_2[tel]
-            
         for (hu in outrorel.fix) {
-          //  //console.log(outrorel.fix[hu])
             if (relation_2[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-           //console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
-                ////console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
-   
-                 ///   //console.log(outrorel.falt[ou])
                     if (relation_2[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                    //    //console.log('pode ir')
                         outrorel.fix[hu] =  outrorel.falt[ou]
                         outrorel.falt[ou] = -10
-                        
-                     //console.log('isso aí:', outrorel.fix)
                         y++
-                    }
-                }
-            }
-        }
-    }
-        }
-    }
-   
-    //console.log('SERÁ QUE DEU CERTO?')
-   
-   //console.log(relation_2)
-   
+                    }}}}}}}
+  
    groups = 0
    conts = []
    for (yougo in relation_2) {
@@ -9501,168 +9471,89 @@ if (quad != eep) {
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
-   }
-   }
-   //console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
+   }}
+
    if (divs_2[okentao] != groups) {
-   //console.log('THEn WHY ARE WE LAUGHInG?')
-   //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
-   
    tirados_2 = []
    for (wish in relation_2) {
-    //console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-      //console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   //console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
-   
-   
+  
    for (die in segs_22) {
        tirar = []
-   
-   //console.log('break', segs_22[die].mons)
    for (h in segs_22[die].mons) {
-   //console.log(segs_22[die].mons[h])
    if (tirados_2.indexOf(segs_22[die].mons[h]) != -1) {
    tirar.push(Number(h))
-   }
-   }
-   //console.log('tirar de ',segs_22[die].mons, tirar)
-   for (far = tirar.length - 1; far >= 0; far--) {
-       
+   }}
+   for (far = tirar.length - 1; far >= 0; far--) { 
    segs_22[die].mons.splice(tirar[far], 1)
-   
    }
-   //console.log('ficou assim:', segs_22[die].mons)
    }
    
    for (sorrow in segs_22) {
-   //console.log(segs_22[sorrow].mons)
    grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
-   //console.log('dá para formar', grupos,'grupos')
-   
+
    imor = 0
    
    for (b = 0; b < grupos; b++) {
-       //console.log(b, 'vez----------------------------------------------------------------------------------------')
-      
        ob = {car: segs_22[sorrow].car, fix: [],problem:false}
-   
        for (live = 0; live < quanto; live++) {
-         //console.log('TIRADOS_2')
-        //console.log(segs_22[sorrow].mons[imor])
-   
-       //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
-   
-              if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
-                   //ob.problem = true
-              }
-            //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
            ob.fix.push(segs_22[sorrow].mons[imor])
            tirados_2.push(segs_22[sorrow].mons[imor])
            imor++
-           
-          
        }
       
-      
-       //console.log('In THE EnD', ob)
-   
-       //console.log(segs_22)
-       //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
        if (ob.problem == false || temnaLista(ob.fix) == true) {
        relation_2.push(ob)
-       }
-   }
-   
-   }
-   
-   
-   
-   }
-   }
-   
-   //console.log('HELLO')
-   
-   
+       }}}}}
    return [relation_2, segs_22]
    }
-   
-   //console.log('PERAÍIIIIIIIII', DIVIDIR(['2'],['2', '*', '2', '*', '3', 'x', 'x']))
-   //DESFATORAR(['-','3'],['3'],['1'])
-   //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', DIVIDIR(['x'], ['10','x']))
    
  function SOMANDOMONOMIOS_2(list) {
         
 particles = [{numero: ''}]
 obnum = 0
 for (n = 0; n < list.length; n++) {
-
-
 if (String(list[n]).search('[\\-\\+]') != -1 && n != 0) {
-//console.log('DEVTOOLS EU TE ODEIOoooooooooooooooooo')
 particles.push({numero: ''})
 obnum++
 }
-
 particles[obnum].numero += list[n]
-//console.log('número----------------------------------------------:',particles[obnum].numero)
 }
 
 
 
 for (huh in particles) {
-   //console.log('HUH',particles[huh].numero)
-
     partlet = ''
     for (y in particles[huh].numero) {
-     //console.log(particles[huh].numero[y])
      if (String(particles[huh].numero[y]).search('[a-z]') != -1) {
-        //console.log('EEEEEE')
         partlet+= String(particles[huh].numero[y])
-     }
-    }
+     }}
     particles[huh].partletral = partlet
-   //console.log('PARTLETRAL',particles[huh].partletral)
 }
 
 
 exp_2 = []
 for (bye in particles) {
-    //console.log(particles[bye])
-
     comofica = []
     ground = ''
-
     for (misery in particles[bye].numero) { 
-     //console.log(particles[bye].numero[misery])
-        
         carac = particles[bye].numero[misery]
-       //console.log('CARACTER' + carac)
-      //console.log(ground.length)
-
-      //console.log('OH COME On',ground, String(ground.search('[0-9]')))
+      
             if (ground.length == 0) {
-               //console.log('LISTA VAZIA')
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
-               //console.log('É UM nÚMERO')
                 ground+= carac
             }else{
                 comofica.push(ground)
                 ground = ''
-                ground += carac
-                
+                ground += carac  
             }
             if (misery == particles[bye].numero.length - 1) {
                 comofica.push(ground)
-            }
-    }
-
-   //console.log('COMOFICA', comofica)
-    ////console.log('nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',particles[bye].numero)
+            }}
     particles[bye].numero = comofica
 }
 
@@ -9670,37 +9561,21 @@ for (bye in particles) {
 agruparsoma = []
 // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
 for (huh in particles) {
-    //console.log(particles[huh].numero, particles[huh].partletral,'_________________')
-    
     if (agruparsoma.find(function (agruparsoma) {
         return agruparsoma.que == particles[huh].partletral
        }) == undefined) {
-           //console.log('ARRRRRROZ')
     agruparsoma.push({quais: [Number(huh)], que:  particles[huh].partletral})
        }else{
         agruparsoma.find(function (agruparsoma) {
             return agruparsoma.que == particles[huh].partletral
            }).quais.push(Number(huh))
-       }
-    
-}
-
-
-          
-
-
-
+       }}
 
 
 for (chuva in agruparsoma) {
-    //console.log('')
-   //console.log('')
-    //console.log('')
 
     conta = []
 for (da in agruparsoma[chuva].quais) {
-
-
 
 divisor = []
 for (flowers in agruparsoma[chuva].que) {
@@ -9708,98 +9583,54 @@ for (flowers in agruparsoma[chuva].que) {
 divisor.push(agruparsoma[chuva].que[flowers])
 }
 
-//console.log(particles[agruparsoma[chuva].quais[da]].numero, '/',divisor)
 tu = [...divisor]
 resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
-
-//console.log('A DIVISÃO É IGUAL DE',particles[agruparsoma[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
 
 plan = []
 add = ''
 
 for (past in resultadoDaDivisão) {
-   
- //console.log(resultadoDaDivisão[past])
-
  if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
-//console.log('ADICIOnAR')
-
 if (add.length == 0) {
     if (resultadoDaDivisão[past - 1] != '-') {
     add+= resultadoDaDivisão[past]
     }
-
 }else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
-    //console.log('OK')
 add+= resultadoDaDivisão[past]
 }else{
     plan.push(add)
     add = ''
-    //console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
-   
     add+= resultadoDaDivisão[past]
-    
-    
 }
-//console.log('ADD', add)
-//console.log('PLAn É:', plan)
 
 if (plan.length == 3) {
-//console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-//console.log('___________________number1:', Number(plan[0]), 'number2:', Number(plan[2]),'__________________')
-//console.log(Number(plan[0])*Number(plan[2]))
 plan = [String(Number(plan[0])*Number(plan[2]))]
-}
- }
+}}}
 
-}
-
-//console.log(agruparsoma[chuva].quais.length, '---------')
 if (add == '' && agruparsoma[chuva].quais.length > 1) {
     add = '1'
-   //console.log('VAIIIIIIIIIIIIIII')
 }
 plan.push(add)
-//console.log('PLAn', plan)
 
 if (plan.length == 3) {
-    //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-    //console.log(Number(plan[0])*Number(plan[2]))
     plan = [String(Number(plan[0])*Number(plan[2]))]
-    //console.log('É ISSO!!', plan)
     }
 
     if (particles[agruparsoma[chuva].quais[da]].numero[0] == '+' || particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
-   //console.log('O SInAL É: ', particles[agruparsoma[chuva].quais[da]].numero[0])
-
     sinal = particles[agruparsoma[chuva].quais[da]].numero[0]
-
     if (conta.length != 0) {
     conta.push(particles[agruparsoma[chuva].quais[da]].numero[0])
     }
     }
-
     if (conta.length == 0 && particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
-
  entao = '-'
  entao+= plan[0]
- //console.log(entao)
  conta.push(entao)
-    }else{
-       
+    }else{  
         conta.push(plan[0])
-    }
-   
-    
-}
-
-
-//console.log('OK, FICOU ASSIM:', conta)
+    }}
 
 comehome = fazerConta(conta)
-//console.log('E RESOLVEnDO FICA ASSIM:', comehome)
-
-
 
 if (comehome[0][0] == '-') {
     t = ''
@@ -9808,59 +9639,37 @@ if (comehome[0][0] == '-') {
      t+= comehome[0][b]
    }
    }
-  //console.log(t)
-   //console.log(typeof t)
+ 
    at = t
    if (ehprimo(t) == false) {
-      //console.log(at)
    fat = FATORARSInGULAR(at)
-  //console.log(String(fat))
    }else{
-     //console.log('É PRIMOOOOOOOOOOOOOOOOO')
     fat = at
    }
    oop = '-'
    oop+= String(fat)
-//console.log(oop)
-
 exp_2.push('-')
 fat += agruparsoma[chuva].que
 exp_2.push(fat)
-
 }else{
-    
     if (ehprimo(comehome) == false) {
 fat = FATORARSInGULAR(comehome)
     }else{
         fat = comehome
     }
-    
-//console.log(fat)
-
 if (exp_2.length == 0) {
     fat += agruparsoma[chuva].que
     exp_2.push(fat)
-    //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
-   
     }else {
         exp_2.push('+')
         fat += agruparsoma[chuva].que
         exp_2.push(fat)
-      //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
-    }
-}
-
-
-
-
-}
+    }}}
 
 return[exp_2, agruparsoma.length, particles.length]
  }
 
-
  function REDONUMFACTORING(storer) {
-
     if (typeof storer === 'string') {
         other = []
         for (h in storer) {
@@ -9868,78 +9677,42 @@ return[exp_2, agruparsoma.length, particles.length]
         }
         storer = other
     }
-
 resultobtained = ''
-
 elevar = 1
 wasmultiplicated = false
 
-
 operation = []
 for (patience in storer) {
-    
-   
     if (storer[patience] == '*') {
         wasmultiplicated = true
-        
-        
         operation.push(storer[Number(patience) - 1])
         operation.push('x')
         operation.push(storer[Number(patience) + 1])
-        
-
         storer[Number(patience) + 1] = fazerConta(operation)[0]
         resultobtained = fazerConta(operation)[0]
-        
-      
         operation = []
     }else if(storer[patience].search('[a-z]') != -1)  {
-       
         if (storer[patience] == storer[Number(patience) - 1]) {
-       
             elevar++
-
             if (patience == storer.length - 1) {
-                
                 resultobtained+= `^${elevar}`
-                
             }
-
         }else{
-          
-            if (elevar > 1) {
-                
+            if (elevar > 1) { 
                 resultobtained+= `^${elevar}`
-                
             }
-
             resultobtained+= storer[patience]
-        
-            
-          
             elevar = 1
-        }
-        
-       
-    } 
-}
+        }} }
 
-if (wasmultiplicated == false) {
-    //   
+if (wasmultiplicated == false){
        addingnumber = ''
        for (eyes in storer) {
-           
-          // 
            if (storer[eyes].search('[0-9]') != -1) {
-              // 
                addingnumber+= storer[eyes]
-           }
-       }
+           }}
        addingnumber+= resultobtained
-      // 
-       
        resultobtained = addingnumber
-    
    }
 if(storer[0] == '-') {
     confirmedresult = '-'
@@ -9949,14 +9722,9 @@ if(storer[0] == '-') {
     return [confirmedresult]
 }else{
     return [resultobtained]
-}
-   
-}
-
+}}
 
 function MULTIPLICARDIREITO(num1, num2) {
-    
-
     if (num1 == '1' || num2 == '1') {
         //console.log('É 1')
         if (num1 == '1') {
@@ -9973,9 +9741,7 @@ function MULTIPLICARDIREITO(num1, num2) {
             }else if(num1[car].search('[a-z]') != -1) {
                 sóletra += num1[car]
             }
-        }
-        
-    
+          }
         sónumero2 = ''
         sóletra2 = ''
         for (car in num2) {
@@ -9985,38 +9751,27 @@ function MULTIPLICARDIREITO(num1, num2) {
                 sóletra2 += num2[car]
             }
         }
-        
         if (sónumero.length > 0 && sónumero2.length > 0) {
             sónumero+= '*'
         }
-    
         if (num1[0] == '-') {
             sinal1 = 'neg'
         }else{
             sinal1 = 'pos'
         }
-        
         if (num2[0] == '-') {
             sinal2 = 'neg'
         }else{
             sinal2 = 'pos'
         }
-    
-    
         sónumero+= sónumero2
-    
             sóletra+= sóletra2
-        
-           
             if (sinal1 == sinal2) {
-               
                 resultmult = sónumero+= sóletra
             }else{
-               
                 resultmult = '-'
                 resultmult += sónumero+= sóletra
-            }
-    }
+            }}
     return resultmult
     }
 
@@ -10024,13 +9779,10 @@ function sort(n) {
     var maiorparamenor = []
     var posiçõesnumeros = []
     var yposition = n
-
     for (n in yposition) {
         maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
         posiçõesnumeros.push(-1)
-
     }
-
     for (item in yposition) {
         var volume = 0
         var dn = 0
@@ -10039,7 +9791,6 @@ function sort(n) {
                 if (yposition[item] > maiorparamenor[volume]) {
                     var itens = yposition.length - (Number(volume) + 1)
                     var leng = yposition.length
-
                     for (c = 0; c < itens; c++) {
                         maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
                         posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
@@ -10048,8 +9799,6 @@ function sort(n) {
                     maiorparamenor[volume] = yposition[item]
                     posiçõesnumeros[volume] = Number(item)
                     dn = 10
-
-
                 }}}}
     return [maiorparamenor, posiçõesnumeros]
 }
@@ -10159,141 +9908,74 @@ function devtools(close) {
 
    // FAZER COnTA COM nÚMEROS
    function fazerConta(anterior) {
-   
-    if(0 == 0) {// falta == false
-//Primeiro raizes e potências
+    if(0 == 0) {
 for (n = 0; n < anterior.length; n++) {
 if(anterior[n] == '*' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√') {
-    //console.log('POTEnCIALIZAÇÃO')
     anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
     anterior.splice(n - 1, 2)
-    
-    n = n - 3 // n = n - 3
-    //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
+    n = n - 3 
     if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-        //console.log('TIRAR')
         anterior.splice(n + 3, 1)
         anterior.splice(n + 1, 1)
         n = n - 3
-
-        //console.log(anterior)
-    }else{
-        //console.log(anterior)
     }
 }else if(anterior[n] == '√' && anterior[n + 1] != '(' ) {
-    //console.log('RAIZ')
     anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
     anterior.splice(n, 1)
-    //console.log(n)
     n = n - 2
-    //console.log(n)
     if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-        //console.log('TIRAR')
         anterior.splice(n + 3, 1)
         anterior.splice(n + 1, 1)
         n = n - 3
-
-        //console.log(anterior)
-    }else{
-        //console.log(anterior)
-    }
-}
-}
-
-// Segundo multiplicações e divisões
+    }}}
 for (n = 0; n < anterior.length; n++) {
 if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-//console.log('MULTIPLICAÇÃO')
 anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
 anterior.splice(n - 1, 2)
-
 n = n - 3
-//console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
-
 if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-    //console.log('TIRAR')
     anterior.splice(n + 3, 1)
     anterior.splice(n + 1, 1)
     n = n - 3
-
-    //console.log(anterior)
-}else{
-    //console.log(anterior)
 }
 }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-//console.log('DIVISÃO')
 anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
 anterior.splice(n - 1, 2)
-
 n = n - 3
-//console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
 if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-    //console.log('TIRAR')
     anterior.splice(n + 3, 1)
     anterior.splice(n + 1, 1)
     n = n - 3
-
-    //console.log(anterior)
-}else{
-    //console.log(anterior)
-}
-}
-}
-
-
+}}}
 if (anterior.length > 1) {
-
-// while(anterior.length != 1 && anterior.indexOf('nan') == -1) {
     for (n = 0; n < anterior.length && anterior.length != 1; n++) {
-        //console.log(anterior[n])
         if (anterior[n] == '+' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
-            //console.log('ADIÇÃO')
             anterior[n + 1] = String(Number(anterior[n - 1]) + Number(anterior[n + 1]))
             anterior.splice(n - 1, 2)
-          
             n = n - 3
-            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
                 anterior.splice(n + 1, 1)
                 n = n - 3
-
-                //console.log(anterior)
-            }else{
-                //console.log(anterior)
             }
         }else if(anterior[n] == '-' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
             //console.log('SUBTRAÇÃO') 
             anterior[n + 1] = String(Number(anterior[n - 1]) - Number(anterior[n + 1]))
             anterior.splice(n - 1, 2)
-            
             n = n - 3
-            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
                 anterior.splice(n + 1, 1)
                 n = n - 3
-
-                //console.log(anterior)
-            }else{
-                //console.log(anterior)
             }
         }else if(anterior[n] == 'x' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
-            //console.log('MULTIPLICAÇÃO')
             anterior[n + 1] = String(Number(anterior[n - 1]) * Number(anterior[n + 1]))
             anterior.splice(n - 1, 2)
-            
             n = n - 3
-            //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
             if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
-                //console.log('TIRAR')
                 anterior.splice(n + 3, 1)
                 anterior.splice(n + 1, 1)
                 n = n - 3
-
-                //console.log(anterior)
             }
         }else if(anterior[n] == '/' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('\\*') == -1 && String(anterior[n - 2]).search('\\*') == -1) {
             anterior[n + 1] = String(Number(anterior[n - 1]) / Number(anterior[n + 1]))
@@ -10321,7 +10003,6 @@ if (anterior.length > 1) {
                 anterior.splice(n + 3, 1)
                 anterior.splice(n + 1, 1)
                 n = n - 3
-            } }}}
-}
+            } }}}}
 return anterior
 }
