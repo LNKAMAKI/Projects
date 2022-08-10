@@ -2647,33 +2647,16 @@ for (bye in monomios) {
                    if (quase[patience] == quase[Number(patience) - 1]) {
                        elevar++
                        if (patience == quase.length - 1) {
-                         //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta+= `^${elevar}`
-                          //console.log(aconta)
                        }
-   
                    }else{
-                     
                        if (elevar > 1) {
-                          //console.log('UEPA')
                            aconta+= `^${elevar}`
-                           
                        }
-   
                        aconta+= quase[patience]
-                   
-                      //console.log(aconta)
-                     
                        elevar = 1
-                   }
-                 //console.log(elevar)
-                  
-               } 
-           }
-         
-           //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta)
+                   }} }
            if (aster == false) {
-           //console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
             for (h in quase) {
                     direitando+= quase[h]
