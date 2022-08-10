@@ -2459,6 +2459,7 @@ for (bye in monomios) {
    
                    conseguiu = false
                    older = 0
+                   
                    while (older < monomios.length && conseguiu == false) {
                    DESFATORAR(monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
                    //console.log('ISOOOOOOOOO', monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
@@ -2621,7 +2622,7 @@ for (bye in monomios) {
                    older++
                    }
              //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-             console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
           //console.log(older - 1, monomios[older - 1].numero)
                   asitwas.push(older - 1)
                   asitwas2.push(older - 1)
