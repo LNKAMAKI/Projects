@@ -2428,7 +2428,7 @@ for (bye in monomios) {
    
            aswillbe2 = []
            for (raging = 0; raging < roll.length; raging++) {
-   
+            console.log(raging, roll[raging].repetidos, roll[raging].posições)
                asitwas = [] 
            
                obe = {what:[]}
@@ -2439,6 +2439,7 @@ for (bye in monomios) {
               
            
               for (still in roll[raging].repetidos) {
+                console.log(`roll[${raging}].repetidos[${still}]:`,roll[raging].repetidos[still])
                asitwas2 = []
                aswillbe = []
    
@@ -2448,6 +2449,7 @@ for (bye in monomios) {
                mylife = '('
                for (still2 in roll[raging].posições) {
    
+                  console.log(`roll[${raging}].posições[${still2}]:`,roll[raging].posições[still2],miss[roll[raging].posições[still2]].dividido)
                    if (still != 0) {
                    mylife+= ' + ' + miss[roll[raging].posições[still2]].dividido
                    }else{
@@ -2456,7 +2458,7 @@ for (bye in monomios) {
    
                  
                  //console.log(miss[roll[raging].posições[still2]].dividido)
-   
+                   /*
                    conseguiu = false
                    older = 0
                    
@@ -2502,7 +2504,7 @@ for (bye in monomios) {
                    
                    whythat = [...eg]
                  //console.log(correto)
-                 /*
+                 
                    for (ponto in eg2) {
                      //console.log(eg2[ponto])
                        if (eg2[ponto] != '.') {
@@ -2510,7 +2512,7 @@ for (bye in monomios) {
                      //console.log('I FOLLOW YOu')
                        }
                    }
-                   */
+                   
                   teri = false
                    juntar = ''
                    for (estudar in eg2) {
@@ -2621,12 +2623,16 @@ for (bye in monomios) {
                    }
                    older++
                    }
+                   */
              //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
              //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
           //console.log(older - 1, monomios[older - 1].numero)
-                  asitwas.push(older - 1)
-                  asitwas2.push(older - 1)
-                  aswillbe.push(older - 1)
+         // older = 1
+         older = scarecrow[roll[raging].repetidos[still]].positions[scarecrow[roll[raging].repetidos[still]].divididos.indexOf(miss[roll[raging].posições[still2]].dividido)]
+         console.log('ISSO:>>>>>>',older)
+                  asitwas.push(older)
+                  asitwas2.push(older)
+                  aswillbe.push(older)
                   
               }
            
