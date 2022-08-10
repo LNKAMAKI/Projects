@@ -495,53 +495,53 @@ for (bye in monomios) {
 
 // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
 
-   function FATORARSInGULAR(potn) {
-   if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
-       fatorado = ''
-   
-       first = 1
-   
-       div = 0
-   
-       stop = false
-       fator = 1
-       
-       for (e = 2; stop == false; e++) {
-           ////console.log('')
-           ////console.log(e)
-           ////console.log('')
-       
-           sob = Number(potn)
-         
-              if (ehprimo(e) == true) {
-               while (sob%e == 0) {
-               if (sob%e == 0) {
-                   ////console.log(sob + '/' + e + ': ' + sob/e)
-                   
-                   
-               }
-   
-               sob = sob/e
-               
-               //console.log('SIM')
-               //console.log(fator + ' x ' + e + ': ' + fator*e)
-   
-               fator = fator*e
-   
-               st = false
-               
-               if (fator == potn) {
-               stop = true
-               fatorado += `${e}`
-               }else{
-                   fatorado += `${e}*`
-               }
+function FATORARSInGULAR(potn) {
+  if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
+      fatorado = ''
+  
+      first = 1
+  
+      div = 0
+  
+      stop = false
+      fator = 1
+      
+      for (e = 2; stop == false; e++) {
+          ////console.log('')
+          ////console.log(e)
+          ////console.log('')
+      
+          sob = Number(potn)
+        
+             if (ehprimo(e) == true) {
+              while (sob%e == 0) {
+              if (sob%e == 0) {
+                  ////console.log(sob + '/' + e + ': ' + sob/e)
+                  
+                  
               }
-           }
-       }
-       return fatorado
-   }
-   }
+  
+              sob = sob/e
+              
+              //console.log('SIM')
+              //console.log(fator + ' x ' + e + ': ' + fator*e)
+  
+              fator = fator*e
+  
+              st = false
+              
+              if (fator == potn) {
+              stop = true
+              fatorado += `${e}`
+              }else{
+                  fatorado += `${e}*`
+              }
+             }
+          }
+      }
+      return fatorado
+  }
+  }
    //
    
    function versetem(comp) {
@@ -9370,84 +9370,39 @@ if (quad != eep) {
     present = []
     ////console.log('----------------------------------------------------------------------------------------------------')
     for (r in util) {
-   
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------')
        lista = util[r].mons
         present = {fix: [], falt: []}
-        ////console.log(lista)
-      
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
-         //   //console.log(lista[g])
-   
-   
             if (numapars.find(function(numapars) {
                 return numapars.num == lista[g]
                 }).vezes == 1) {
-                ////console.log('ADICIOnAR')
                   rep++
                   present.fix.push(lista[g])
-                 
-            }
-   
-        }
-       // //console.log('present', present)
-        ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
-   
+            }}
+      
         if (present.fix.length < quanto) {
         for (g in lista) {
-           // //console.log('')
-           // //console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
-             //   //console.log('FALTA')
-                present.falt.push(lista[g])
-   
-               
-   
-                  //  numapars.find(function(numapars) {
-                      // return numapars.num == lista[g]
-                     //   }).vezes--
-   
-                        
-            }
-        }
-      //  //console.log('FALTAM OS nÚMEROS', present.falt)
-   
-        
+                present.falt.push(lista[g])     
+            }}
+
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-          //  //console.log(present.falt[ti])
-   
-           
-   
                 numapars.find(function(numapars) {
                     return numapars.num == present.falt[ti]
-                    }).vezes--
-   
-                 
-        }
-    }
-        
-   
-    }
+                    }).vezes--    
+        }}}
     relation_2[r] = present
     relation_2[r].car = segs_22[r].car
-    
     }
-    //console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
     for (c in relation_2) {
-       // //console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation_2[c].fix.length > 0) {
-       // //console.log(relation_2[c].fix, relation_2[c].falt)
-   
         faltam = Number(quanto) - Number(relation_2[c].fix.length)
-        ////console.log('faltam', faltam)
-   
         for (f = 0; f < faltam; f++) {
            relation_2[c].fix.push(relation_2[c].falt[f])
            relation_2[c].falt[f] = -10
         }
-   
         for (tel = 0; tel < c; tel++){
             outrorel = relation_2[tel]
         for (hu in outrorel.fix) {
