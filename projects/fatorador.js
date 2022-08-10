@@ -2204,7 +2204,6 @@ function FATORARSInGULAR(potn) {
    
                mylife = '('
                for (still2 in roll[raging].posições) {
-   
                   console.log(`roll[${raging}].posições[${still2}]:`,roll[raging].posições[still2],miss[roll[raging].posições[still2]].dividido)
                    if (still != 0) {
                    mylife+= ' + ' + miss[roll[raging].posições[still2]].dividido
@@ -6907,192 +6906,18 @@ if (quad != eep) {
    
                mylife = '('
                for (still2 in roll_2[raging].posições) {
-   
                    if (still != 0) {
                    mylife+= ' + ' + miss_2[roll_2[raging].posições[still2]].dividido
                    }else{
                        mylife+= miss_2[roll_2[raging].posições[still2]].dividido
                    }
    
-                 
-                 //console.log(miss_2[roll_2[raging].posições[still2]].dividido)
-   
-                   conseguiu = false
-                   older = 0
-                   while (older < monomios_2.length && conseguiu == false) {
-                   DESFATORAR(monomios_2[older].numero, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
-                   //console.log('ISOOOOOOOOO', monomios_2[older].numero, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
-                   
-                   // correto == ['2','*','10','x'] (NÚMERO QUE VAI SER COMPARADO)
-                   // eg2 == ['10'] (NÚMERO QUE VAI MULTIPLICAR)
-                   // eg == '2x' (NÚMERO QUE VAI SER MULTIPLICADO)
-                   
-                   function DESFATORAR(correto, eg2, eg) {
-   
-                   //console.log('eg', eg)
-   
-                   eassim = []
-                   solo = ''
-                   for (ne in eg) {
-                       //console.log('EGGGGGG',eg[ne])
-                       if (eg[ne] != '.') {
-                   if (solo.length == 0) {
-                       //console.log('LISTA VAZIA')
-                       solo+= eg[ne]
-                   }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-                       //console.log('É UM nÚMERO')
-                       solo+= eg[ne]
-                   }else{
-                       eassim.push(solo)
-                       solo = ''
-                       solo += eg[ne]
-                       
-                   }
-                   if (ne == eg.length - 1) {
-                       eassim.push(solo)
-                   }
-                       }else{
-                      //console.log('NAO')
-                       }
-                   }
-                   
-                   eg = eassim
-                   
-                   
-                   whythat = [...eg]
-                 //console.log(correto)
-                 /*
-                   for (ponto in eg2) {
-                     //console.log(eg2[ponto])
-                       if (eg2[ponto] != '.') {
-                       whythat.push(eg2[ponto])
-                     //console.log('I FOLLOW YOu')
-                       }
-                   }
-                   */
-                  teri = false
-                   juntar = ''
-                   for (estudar in eg2) {
-                  //console.log(eg2[estudar])
-                       if (eg2[estudar] == '.') {
-                           teri = true
-                           if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
-                             
-                               whythat.push(juntar)
-                               juntar = ''
-                           whythat.push('*')
-                          
-                           }
-                       }else{
-                          
-                      
-                    //console.log('juntar',juntar)
-                           if (juntar.length == 0) {
-                               juntar = eg2[estudar]
-                         //console.log('LISTA VAZIA', juntar)
-                               if (estudar == eg2.length - 1) {
-                                   whythat.push(juntar)
-                              //console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
-                               }
-   
-                           }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                          //console.log('I\'M NEVER WHAT I LIKE')
-                               juntar+= eg2[estudar]
-                          //console.log('juntar', juntar)
-                               if (estudar == eg2.length - 1) {
-                              //console.log('UAISO')
-                                   whythat.push(juntar)
-                               
-                               }
-                           }else{
-                               whythat.push(juntar)
-                               juntar= eg2[estudar]
-                               if (estudar == eg2.length - 1) {
-                                   whythat.push(juntar)
-                               }
-                           }
-                       }
-                         
-                    }
-                    if (teri == false) {
-                     whythat = []
-                  //console.log('SEM ASTERISCO')
-                       for (t in eg2) {
-                       whythat.push(eg2[t])
-                       }
-                       for (t in eg) {
-                           whythat.push(eg[t])
-                       }
-                   }
-   
-         //console.log('MULTIPLICAR', eg2,'*',eg)
-          //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
-                   
-                   numerinhos = []
-                   for (decisao in correto) {
-                       if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
-                          numerinhos.push(correto[decisao])
-                          
-                           }
-                  //console.log(correto[decisao],'AH, NAO')
-                   }
-                  //console.log(numerinhos)
-                       thatway = [...numerinhos]
-   
-   
-                       for (poder in whythat){
-                           if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
-                      //console.log(whythat[poder], numerinhos)
-                      //console.log(numerinhos.indexOf(whythat[poder]))
-                           numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
-   
-                           }
-                       }
-   
-                       for (pombo = whythat.length - 1; pombo >= 0; pombo--){
-                      //console.log('______________________', whythat[pombo])
-                           if (whythat[pombo] == '*' || whythat[pombo] == '1') {
-                          //console.log('?',whythat[pombo])
-                               whythat.splice(pombo,1)
-                         //console.log(whythat)
-                           }
-                           
-                       }
-   
-                  //console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
-                  //console.log(numerinhos)
-                  //console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
-   
-                //console.log('_U__U__U__U__U__U__U__U_ooooo_U_U_U__U_U__U__U_U_U__U__', thatway)
-                     
-                //console.log('PLEAAAAAAAAAAAAAAASE, GOD', numerinhos, whythat, thatway)
-   
-                     for (pray = whythat.length - 1; pray>=0 ; pray--) {
-                  //console.log(whythat[pray])
-                       if (whythat[pray] == '-')
-                       whythat.splice(pray, 1)
-                     }
-   
-                       if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                      //console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
-                           conseguiu = true
-                       }
-                   }
-                   older++
-                   }
-             //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow_2[roll_2[raging].repetidos[still]].divisor, miss_2[roll_2[raging].posições[still2]].dividido)
-             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios_2[older - 1].numero)
-          //console.log(older - 1, monomios_2[older - 1].numero)
-                  asitwas.push(older - 1)
-                  asitwas2.push(older - 1)
-                  aswillbe.push(older - 1)
-                  
+                   older = 
+                   scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
+                  asitwas.push(older)
+                  asitwas2.push(older)
+                  aswillbe.push(older)
               }
-           
-   
-         //console.log('ASITWAS',asitwas, asitwas2, aswillbe)
-             //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
-
 
               obe.what.push({ar: asitwas2, indice: still})
               aswillbe2.push({oque:aswillbe, onde:raging})
