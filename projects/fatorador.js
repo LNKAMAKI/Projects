@@ -99,7 +99,7 @@ function ir() {
 
     resultadogeral = FATORAR(expression);
     resultado = resultadogeral[0];
-
+    devtools(false)
     //console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
     //console.log('expression:',resultadogeral[0])
     //console.log('LET\'s SPLIT IT!')
@@ -10997,16 +10997,29 @@ return [
 }
 
 devtoolsstate = 'closed'
-function devtools() {
+function devtools(close) {
   tab = document.getElementById('devtab')
-  
-  if (devtoolsstate == 'closed') {
+  if (devtoolsstate == 'closed' || close == false) {
+    part = tab.getElementsByClassName('slot')
+
+    console.log(part)
+    for (g = part.length - 1; g >= 0; g--) {
+      console.log(g, part[g])
+      tab.removeChild(part[g])
+    }
+    
+    ps = tab.getElementsByTagName('p')
+    for (c = ps.length - 1; c >= 0; c--) {
+      tab.removeChild(ps[c])
+    }
     //console.log('OPEN DEV TOOLS')
     devtoolsstate = 'open'
      
     tab.style.display= 'block'
     //console.log(segs, alt)
-      if (alt == 1) {
+      //if (alt == 1) {
+      //}else{
+//}
         p = document.createElement('p')
         p.innerText = `segs.length: ${segs.length}`
         p.style.textAlign = 'center'
@@ -11085,29 +11098,10 @@ function devtools() {
 
       
 
-      }else{
-        for (i in segs_2) {
-          p = document.createElement('p')
-          p.innerText = `${i}: { fator comum: '${segs_2[i].car}', monômios: [ ${segs_2[i].mons} ]}`
-          p.style.textAlign = 'center'
-          part[0].appendChild(p)
-         }
-      }
   }else{
     //console.log('CLOSE DEV TOOLS')
-    part = tab.getElementsByClassName('slot')
-
-    console.log(part)
-    for (g = part.length - 1; g >= 0; g--) {
-      console.log(g, part[g])
-      tab.removeChild(part[g])
-    }
     devtoolsstate = 'closed'
-    ps = tab.getElementsByTagName('p')
-    for (c = ps.length - 1; c >= 0; c--) {
-      tab.removeChild(ps[c])
-      tab.style.display = 'none'
-    }
+    tab.style.display = 'none'
   }
 
 }
