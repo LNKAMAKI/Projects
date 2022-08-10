@@ -2531,8 +2531,7 @@ for (bye in monomios) {
                if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
                }else{
                    taai = true
-               }
-            }
+               }}
             if (taai == false) {
                inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
                inside.which.push(inform)
@@ -2548,30 +2547,9 @@ for (bye in monomios) {
            inside.todos = sticky
     pans.push(inside)
        }
-   
-       //youdumb.splice(imback, 1)
-       //console.log('FICOU ASSIM Ó:', numerospresentes, sticky)
-       /*
-       for (invest in pans) {
-      //console.log('índice',invest)
-           for (plat in pans[invest].which) {
-          //console.log(pans[invest].which[plat].monos)
-           }
-       }
-       */
-       
-      // youdumb.splice(imback, 1)
        for (h in youdumb) {
-   
            if (h != imback) {
-               if (youdumb[h].w.what.length > 0) {
-         //console.log(youdumb[h].w.what, h)
-               }
-   
-           //console.log('-----------------------------')
            for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
-           //console.log(youdumb[h].w.what[tempo].ar, tempo)
-               
                dulu = false
                
               for (and in youdumb[h].w.what[tempo].ar) {
