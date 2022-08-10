@@ -10998,6 +10998,18 @@ return [
 
 devtoolsstate = 'closed'
 function devtools(close) {
+  if (alt == 1){
+    psegs = segs
+    pscarecrow = scarecrow
+    proll = roll
+    pmiss = miss
+  }else{
+    psegs = segs_2
+    pscarecrow = scarecrow_2
+    proll = roll_2
+    pmiss = miss_2
+  }
+
   tab = document.getElementById('devtab')
   if (devtoolsstate == 'closed' || close == false) {
     part = tab.getElementsByClassName('slot')
