@@ -2456,308 +2456,51 @@ for (bye in monomios) {
                        mylife+= miss[roll[raging].posições[still2]].dividido
                    }
    
-                 
-                 //console.log(miss[roll[raging].posições[still2]].dividido)
-                   /*
-                   conseguiu = false
-                   older = 0
-                   
-                   while (older < monomios.length && conseguiu == false) {
-                   DESFATORAR(monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-                   //console.log('ISOOOOOOOOO', monomios[older].numero, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-                   
-                   // correto == ['2','*','10','x'] (NÚMERO QUE VAI SER COMPARADO)
-                   // eg2 == ['10'] (NÚMERO QUE VAI MULTIPLICAR)
-                   // eg == '2x' (NÚMERO QUE VAI SER MULTIPLICADO)
-                   
-                   function DESFATORAR(correto, eg2, eg) {
-   
-                   //console.log('eg', eg)
-   
-                   eassim = []
-                   solo = ''
-                   for (ne in eg) {
-                       //console.log('EGGGGGG',eg[ne])
-                       if (eg[ne] != '.') {
-                   if (solo.length == 0) {
-                       //console.log('LISTA VAZIA')
-                       solo+= eg[ne]
-                   }else if(String(solo.search('[0-9]')) != -1 && String(eg[ne]).search('[0-9]') != -1){
-                       //console.log('É UM nÚMERO')
-                       solo+= eg[ne]
-                   }else{
-                       eassim.push(solo)
-                       solo = ''
-                       solo += eg[ne]
-                       
-                   }
-                   if (ne == eg.length - 1) {
-                       eassim.push(solo)
-                   }
-                       }else{
-                      //console.log('NAO')
-                       }
-                   }
-                   
-                   eg = eassim
-                   
-                   
-                   whythat = [...eg]
-                 //console.log(correto)
-                 
-                   for (ponto in eg2) {
-                     //console.log(eg2[ponto])
-                       if (eg2[ponto] != '.') {
-                       whythat.push(eg2[ponto])
-                     //console.log('I FOLLOW YOu')
-                       }
-                   }
-                   
-                  teri = false
-                   juntar = ''
-                   for (estudar in eg2) {
-                  //console.log(eg2[estudar])
-                       if (eg2[estudar] == '.') {
-                           teri = true
-                           if (eg2[Number(estudar) + 1].search('[0-9]') != -1) {
-                             
-                               whythat.push(juntar)
-                               juntar = ''
-                           whythat.push('*')
-                          
-                           }
-                       }else{
-                          
-                      
-                    //console.log('juntar',juntar)
-                           if (juntar.length == 0) {
-                               juntar = eg2[estudar]
-                         //console.log('LISTA VAZIA', juntar)
-                               if (estudar == eg2.length - 1) {
-                                   whythat.push(juntar)
-                              //console.log('WHYTHAAAAAAAAAAAAAAAAT', whythat)
-                               }
-   
-                           }else if(eg2[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                          //console.log('I\'M NEVER WHAT I LIKE')
-                               juntar+= eg2[estudar]
-                          //console.log('juntar', juntar)
-                               if (estudar == eg2.length - 1) {
-                              //console.log('UAISO')
-                                   whythat.push(juntar)
-                               
-                               }
-                           }else{
-                               whythat.push(juntar)
-                               juntar= eg2[estudar]
-                               if (estudar == eg2.length - 1) {
-                                   whythat.push(juntar)
-                               }
-                           }
-                       }
-                         
-                    }
-                    if (teri == false) {
-                     whythat = []
-                  //console.log('SEM ASTERISCO')
-                       for (t in eg2) {
-                       whythat.push(eg2[t])
-                       }
-                       for (t in eg) {
-                           whythat.push(eg[t])
-                       }
-                   }
-   
-         //console.log('MULTIPLICAR', eg2,'*',eg)
-          //console.log('YOU ARE YES AND YOU ARE NO---------',whythat)
-                   
-                   numerinhos = []
-                   for (decisao in correto) {
-                       if (correto[decisao] != '*' && correto[decisao] != '.' && correto[decisao] != '+' && correto[decisao] != '-') {
-                          numerinhos.push(correto[decisao])
-                          
-                           }
-                  //console.log(correto[decisao],'AH, NAO')
-                   }
-                  //console.log(numerinhos)
-                       thatway = [...numerinhos]
-   
-   
-                       for (poder in whythat){
-                           if (whythat[poder] != '*' && whythat[poder] != '.' && whythat[poder] != '+' && numerinhos.indexOf(whythat[poder]) != -1) {
-                      //console.log(whythat[poder], numerinhos)
-                      //console.log(numerinhos.indexOf(whythat[poder]))
-                           numerinhos.splice(numerinhos.indexOf(whythat[poder]),1)
-   
-                           }
-                       }
-   
-                       for (pombo = whythat.length - 1; pombo >= 0; pombo--){
-                      //console.log('______________________', whythat[pombo])
-                           if (whythat[pombo] == '*' || whythat[pombo] == '1') {
-                          //console.log('?',whythat[pombo])
-                               whythat.splice(pombo,1)
-                         //console.log(whythat)
-                           }
-                           
-                       }
-   
-                  //console.log('WHYTHATTTTTTTTTTTTTTT', whythat, thatway, 'THATWAAAAAAAAAAAY')
-                  //console.log(numerinhos)
-                  //console.log('WERE BROKEN PEOPLE', thatway, 'thatway', whythat, 'numerinhos')
-   
-                //console.log('_U__U__U__U__U__U__U__U_ooooo_U_U_U__U_U__U__U_U_U__U__', thatway)
-                     
-                //console.log('PLEAAAAAAAAAAAAAAASE, GOD', numerinhos, whythat, thatway)
-   
-                     for (pray = whythat.length - 1; pray>=0 ; pray--) {
-                  //console.log(whythat[pray])
-                       if (whythat[pray] == '-')
-                       whythat.splice(pray, 1)
-                     }
-   
-                       if (numerinhos.length == 0 && thatway.length == whythat.length) {
-                      //console.log('ENTÃO', eg2,'*',eg,'=',correto, older, 'ONE MORE MOMNET')
-                           conseguiu = true
-                       }
-                   }
-                   older++
-                   }
-                   */
-             //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
-          //console.log(older - 1, monomios[older - 1].numero)
-         // older = 1
          older = scarecrow[roll[raging].repetidos[still]].positions[scarecrow[roll[raging].repetidos[still]].divididos.indexOf(miss[roll[raging].posições[still2]].dividido)]
-         console.log('ISSO:>>>>>>',older)
                   asitwas.push(older)
                   asitwas2.push(older)
                   aswillbe.push(older)
-                  
               }
-           
-   
-         //console.log('ASITWAS',asitwas, asitwas2, aswillbe)
-             //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', asitwas)
-
-
               obe.what.push({ar: asitwas2, indice: still})
               aswillbe2.push({oque:aswillbe, onde:raging})
-              
            }
-           
            youdumb.push({mons: asitwas, rag: raging, w: obe, polen: raging})
-      //console.log(obe)
           }
-   
-    //console.log('YOUDUMB',youdumb)
-          
            dontworry = []
            for (behappy in youdumb) {
-   
-          //console.log('_______________________________')
-          //console.log(youdumb[behappy].mons)
-   
-               //console.log('---------------------------------------')
                for (armenia in youdumb) {
-                   
                    if (armenia != behappy) {
-              //console.log(youdumb[armenia].mons)
-   
                    doeshave = true
                    for (sofar in youdumb[armenia].mons) {
-                  //console.log(youdumb[armenia].mons[sofar])
                        if (youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
                            doeshave = false
-                          
                        }
                    }
-              //console.log(doeshave)
                    if (doeshave == true) {
-              //console.log(youdumb[behappy].mons,'TEM', youdumb[armenia].mons)
                   if (dontworry.indexOf(behappy) == -1) {
                    dontworry.push(armenia)
-                  }
-                   }
-               }
-   
-               }
-             
-           }
-   
-           
-           for (da = youdumb.length - 1; da >= 0; da--) {
-               if (dontworry.indexOf(String(da)) != -1) {
-              //console.log('TEM COISA AÍ',youdumb[da].mons)
-                  // youdumb.splice(da,1)
-               }
-           }
-           
-   
+                  }}}}}
            grtols = []
-   
-   
-       
    for (hi in youdumb) {
-      //console.log(segs[hi], segs[hi].mons.length)
        youdumb[hi].length = youdumb[hi].mons.length
-   
        grtols.push(youdumb[hi])
    }
-   
-   //console.log('grtols: ', segs)
-   //console.log(sortob(grtols, 'length'))
-   
-   
    organizado = sortob(grtols, 'length')[1]
    
    grtols = []
    for (ah in organizado) {
-      //console.log(segs[organizado[ah]])
        grtols.push(youdumb[organizado[ah]])
-      
    }
-        
-   //console.log('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
-   
    youdumb = []
    for (erro in grtols) {
-      //console.log(grtols[erro])
        youdumb.push(grtols[erro])
    }
    
-   
-   
-   //console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
-   /*
-   for (yourlife in grtols) {
-   
-       //console.log(grtols[yourlife].w.what)
-   
-       for (bolinho in grtols[yourlife].w.what) {
-      //console.log(grtols[yourlife].w.what[bolinho])
-   
-           vagem = grtols[yourlife].w.what[bolinho]
-           for (ahnao in vagem) {
-          //console.log(vagem[ahnao])
-           }
-       }
-   }
-   */
-   
    pans = []
    numerospresentes = []
-   
-   //console.log('WHAT IS IN YOUR MIND??????????????????__________LLLLLLLLLLLLLLLLLLLLLLLLL_______________')
-   for (AH in youdumb) {
-       //console.log(youdumb[AH])
-   }
+  
    for (wrecked in youdumb) {
-       //console.log('YOUDUMB[WRECKED]',youdumb[wrecked])
        initial = youdumb[wrecked].w.what
-       for (agg in initial) {
-      //console.log(initial[agg].ar, Number(agg))
-       }
    }
    
    grtols = [];
@@ -2777,60 +2520,30 @@ for (bye in monomios) {
 
    heya = [...youdumb]
    for (imback in youdumb) {
-      //console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
-   
        sticky = []
        initial = youdumb[imback].w.what
-   
-     
-   
        if (initial.length > 0) {
        inside = {which: [], numberyoudumb: youdumb[imback].polen}
-      //console.log(imback)
-       //console.log('THERE\'S NOTHING TO SAY NOW',youdumb[imback].mons)
-   
-   
-       //console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
-       
-       
+      
        for (agg in initial) {
-      //console.log('IN THIS WORLD',initial[agg].ar)
-   
            taai = false
             for (eng in initial[agg].ar) {
-              //console.log(initial[agg].ar[eng])
                if (numerospresentes.indexOf(initial[agg].ar[eng]) == -1) {
-              //console.log('OK')
-                  
                }else{
-          //console.log('WE HAVE A PROBLEM')
                    taai = true
                }
             }
-        
             if (taai == false) {
-          //console.log('SEM PROBLEMAS', imback, agg)
                inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
-              
-          //console.log('I\'M TWISTED UP',inside, inform)
                inside.which.push(inform)
-          //console.log('INFORM', inform.monos)
                for (darkening in inform.monos) {
-                  
                    sticky.push(inform.monos[darkening])
                }
-          //console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
-   
+          
                for (eng in initial[agg].ar) {
-               
                    numerospresentes.push(initial[agg].ar[eng])
-                  
-                }
-           //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes)
-            }
-       }
+                }}}
    
-       
        if (inside.which.length > 0) {
            inside.todos = sticky
     pans.push(inside)
