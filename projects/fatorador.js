@@ -71,8 +71,6 @@ function ir() {
       }
     }
   }
-  //console.log('É ESSE:', qualexp)
-
   if (qualexp != "" && parar == false) {
     ground = "";
     expression = [];
@@ -118,9 +116,7 @@ function ir() {
     document.getElementById("exemplos").value = "Exemplos";
 
     abriu = false;
-  }
-}
-
+  }}
 abriu = false;
 vez = 0;
 function showegs() {
@@ -139,34 +135,24 @@ function showegs() {
 
   if (vez == 0) {
     pegs = document.getElementsByClassName("eg");
-
     for (iveco in pegs) {
       if (iveco.search("[0-9]") != -1) {
         pegs[iveco].setAttribute("onclick", `mudar(${iveco})`);
-      }
-    }
-  }
+      }}}
 
   vez++;
 }
-
 function mudar(index) {
-  //console.log(index,'foi chamado')
   document.getElementById("typearea").value =
     document.getElementsByClassName("eg")[index].innerText;
 }
 
-
 function FATORAR(expression) {
-
     alt = 1
     startexp = [...expression];
-
   if (expression[0] !== "-" && expression[0] !== "+") {
-    //
     expo = ["+"];
     for (ent in expression) {
-      //
       expo.push(expression[ent]);
     }
     expression = expo;
@@ -185,62 +171,36 @@ function FATORAR(expression) {
       expression[n - 1] != "^"
     ) {
       fatorado = "";
-
       first = 1;
-
       div = 0;
-      //
-
       stop = false;
       fator = 1;
-
       for (e = 2; stop == false; e++) {
         sob = Number(expression[n]);
-
         if (ehprimo(e) == true) {
           while (sob % e == 0) {
-            if (sob % e == 0) {
-              //
-            }
-
             sob = sob / e;
-
-            //
-            //
-
             fator = fator * e;
-
             st = false;
-
             if (fator == expression[n]) {
               stop = true;
               fatorado += `${e}`;
             } else {
               fatorado += `${e}*`;
-            }
-          }
-        }
-      }
-
+            }}}}
       expression[n] = fatorado;
-    }
-  }
-  //
+    }}
 
   //FAZEnDO AS POTÊnCIAS COM LETRAS
-
-  //
   for (y in expression) {
     if (expression[y] == "^") {
       ad = expression[Number(y) - 1];
       for (h = 0; h < Number(expression[Number(y) + 1]) - 1; h++) {
         expression[Number(y) - 1] += ad;
       }
-
       expression.splice(Number(y) + 1, 1);
       expression.splice(y, 1);
-    }
-  }
+    }}
 
   //SEPARAnDO OS MOnÔMIOS
 
@@ -747,42 +707,24 @@ for (bye in monomios) {
                //console.log('DIVISÃO')
                anterior[n + 1] = String(Number(anterior[n - 1]) ** Number(anterior[n + 1]))
                anterior.splice(n - 1, 2)
-               
                n = n - 3
-               //console.log('EnEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: ' + n, anterior[n])
                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
                    //console.log('TIRAR')
                    anterior.splice(n + 3, 1)
                    anterior.splice(n + 1, 1)
                    n = n - 3
-   
-                   //console.log(anterior)
-               }else{
-                   //console.log(anterior)
                }
            }else if(anterior[n] == '√' && anterior[n + 1] != '(') {
                //console.log('RAIZ')
                anterior[n + 1] = String(Number(anterior[n + 1]) ** (1/2))
                anterior.splice(n, 1)
-               
                n = n - 2
-               //console.log(n)
                if (anterior[n + 1] == '(' && anterior[n + 3] == ')') {
                    //console.log('TIRAR')
                    anterior.splice(n + 3, 1)
                    anterior.splice(n + 1, 1)
                    n = n - 3
-           
-                   //console.log(anterior)
-               }else{
-                   //console.log(anterior)
-               }
-           }
-       }
-   // }
-   }
-   
-       
+               } }}}
    }
    return anterior
    }
@@ -2664,86 +2606,48 @@ for (bye in monomios) {
             friend = direitando
            }
 
-
        if (aster == false) {
-        //console.log('SEM ASTERISCO',aconta)
            antes = ''
            for (eyes in quase) {
-               
-              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
            antes+= aconta
-          //console.log('ANTEEEES:', antes)
-           
            aconta = antes
-        
        }
-       //console.log('A CONTA',aconta)
-   
        realife.push(aconta)
            if (tobreak.length == 0) {
-              
-              
                if(quase[0]== '-'){
-               
                   negativo = true
                if (aconta[0] == '-') {
-                //console.log('PROBLEM')
                    mood = ''
                    for (member in aconta) {
-                       //console.log('VAMOS LOGO!!!', aconta[member])
                        if (aconta[member] != '-') {
-                          //console.log('PUSHAR')
                            mood+= aconta[member]
-                       }
-                   }
-                   //console.log('THIS IS MOOOOOOOOOOOOD', mood)
+                       } }
                    tobreak+= `-${mood}`
                }else{
                    tobreak += `-${aconta}`
-                   //console.log('THIS IS ACONTAAAAAAAAAAA', aconta)
                }
-   
                }else{
                    negativo = false
                    tobreak+= aconta
-                  //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
-                   for (now in aconta) {
-                   //console.log(aconta[now])
-                   }
                }
            }else if(quase[0]== '-'){
-            
             negativo = true
                correct = ''
                for (okay in aconta) {
-                  //console.log(el[okay])
                    if (aconta[okay]!= '-'){
                        correct+= aconta[okay]
-                     //console.log('MESS', aconta[okay])
                    }
                }
-              //console.log('ASSIM: ', correct)
                tobreak+= ` - ${correct}`
-               //console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
                negativo = false
-             //console.log(el)
                tobreak+= ` + ${aconta}`
-               //console.log('THIS IS ACONTA||||||||||||||||||||||||||||||||||||||||||', aconta)
            }
-          //console.log('THE COLOURS THAT I SAW', tobreak)
-
-
-         //console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
-          //console.log(amontoado)
-           
            if (negativo == true) {
-          
            uh = ''
            for (i in friend) {
                if (friend[i] != '-') {
@@ -2755,11 +2659,7 @@ for (bye in monomios) {
            }else{
                amontoado.push('+')
                amontoado.push(friend)
-           }
-           
-         }
-         //console.log('ENTÃO:','(', tobreak,')')
-   
+           }}
        for (repr in pans[bababa].which) {
            
         //console.log(' ')
