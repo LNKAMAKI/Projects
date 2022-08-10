@@ -10427,13 +10427,9 @@ function sort(n) {
                     dn = 10
 
 
-                }
-            }
-        }
-    }
+                }}}}
     return [maiorparamenor, posiçõesnumeros]
 }
-
 return [
   concatenar_2,
   pans_2.length,
@@ -10441,10 +10437,7 @@ return [
   segs_2.length,
   roll_2.length,
 ];
-//console.log('Poxa segs_2, você me decepcionou... ;-; (D:)', VAI('13x'), DIVIDIR(['-','.','13'],['2','.','13']))
-
 }
-
 devtoolsstate = 'closed'
 function devtools(close) {
   if (alt == 1){
@@ -10458,111 +10451,85 @@ function devtools(close) {
     proll = roll_2
     pmiss = miss_2
   }
-
   tab = document.getElementById('devtab')
   if (devtoolsstate == 'closed' || close == false) {
     part = tab.getElementsByClassName('slot')
-
     console.log(part)
     for (g = part.length - 1; g >= 0; g--) {
       console.log(g, part[g])
       tab.removeChild(part[g])
     }
-    
     ps = tab.getElementsByTagName('p')
     for (c = ps.length - 1; c >= 0; c--) {
       tab.removeChild(ps[c])
     }
-
-    
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.display= 'block'
       }
-    
         p = document.createElement('p')
         p.innerText = `psegs.length: ${psegs.length}`
         p.style.textAlign = 'center'
        tab.appendChild(p)
-
         p = document.createElement('p')
         p.innerText = `pscarecrow.length: ${pscarecrow.length}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
-
         p = document.createElement('p')
         p.innerText = `pmiss.length: ${pmiss.length}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
-
         p = document.createElement('p')
         p.innerText = `proll.length: ${proll.length}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
-
         for (j = 0; j < 4; j++) {
           s = document.createElement('div')
           s.setAttribute('class','slot')
           tab.appendChild(s)
         }
-
         part = tab.getElementsByClassName('slot')
         p = document.createElement('p')
         p.innerText = `PSEGS`
         p.style.textAlign = 'center'
         part[0].appendChild(p)
-
-
        for (i in psegs) {
         p = document.createElement('p')
         p.innerText = `${i}: { fator comum: '${psegs[i].car}', monômios: [ ${psegs[i].mons} ]}`
         p.style.textAlign = 'center'
         part[0].appendChild(p)
        }
-
        p = document.createElement('p')
        p.innerText = `PSCARECROW`
        p.style.textAlign = 'center'
        part[1].appendChild(p)
-
        for (i in pscarecrow) {
         p = document.createElement('p')
         p.innerText = `${i}: { divisor: '${pscarecrow[i].divisor}', divididos: [ ${pscarecrow[i].divididos} ]}`
         p.style.textAlign = 'center'
         part[1].appendChild(p)
        }
-
        p = document.createElement('p')
        p.innerText = `PMISS`
        p.style.textAlign = 'center'
        part[2].appendChild(p)
-
        for (i in pmiss) {
         p = document.createElement('p')
         p.innerText = `${i}: { termo: '${pmiss[i].dividido}', aparicoes: [ ${pmiss[i].aparicoes} ]}`
         p.style.textAlign = 'center'
         part[2].appendChild(p)
        }
-
        p = document.createElement('p')
        p.innerText = `PROLL`
        p.style.textAlign = 'center'
        part[3].appendChild(p)
-
        for (i in proll) {
         p = document.createElement('p')
         p.innerText = `${i}: { repetidos: '${proll[i].repetidos}', posições: [ ${proll[i].posições} ]}`
         p.style.textAlign = 'center'
         part[3].appendChild(p)
        }
-
-      
-
   }else{
-    //console.log('CLOSE DEV TOOLS')
     devtoolsstate = 'closed'
     tab.style.display = 'none'
-  }
-
-}
-//aaa
+  }}
