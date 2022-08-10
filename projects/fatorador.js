@@ -2551,56 +2551,19 @@ for (bye in monomios) {
            if (h != imback) {
            for (tempo = youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
                dulu = false
-               
               for (and in youdumb[h].w.what[tempo].ar) {
-              //console.log(youdumb[h].w.what[tempo].ar[and])
                if (numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[and]) != -1) {
-                 //console.log('ESTÁ EM: ', numerospresentes)
                    dulu = true
-               }
-              }
-              if (dulu == false) {
-             //console.log('PODE FICAR :)', h, tempo)
-              }else{
-            ////console.log('NÃO PODE!!!!!!!!!!!!!')
-             // youdumb[h].w.what.splice(tempo, 1)
-             //imback++
-         //console.log('IMBAACK',imback)
-              }
-          }
-       }
-       }
-       
-       //console.log('YOUDUMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMB' )
-   
-     
-    
-      //console.log('OLHA, eu tentei...', youdumb.length)
-       for (vixi in youdumb) {
-        
-        // if (youdumb[vixi].w.what.length > 0) {
-          //console.log('aaa',youdumb[vixi].w.what)
-           for (ainao in youdumb[vixi].w.what) {
-           //console.log('AI NÃO',youdumb[vixi].w.what[ainao].ar)
-           
-             
-       }
-   //}
-   }
+               }}}}}
    
    for (força in youdumb) {
-      //console.log(força, youdumb[força],youdumb[força].w.what.length)
        entao = []
        for (areo in youdumb[força].w.what) {
-          //console.log(areo,youdumb[força].w.what[areo].ar)
            for (paris in youdumb[força].w.what[areo].ar) {
-              //console.log(paris,youdumb[força].w.what[areo].ar[paris])
                entao.push(Number(youdumb[força].w.what[areo].ar[paris]))
            }
        }
-      //console.log(entao)
        youdumb[força].t = entao
-      //console.log(youdumb[força].t)
     }
    
    //console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
