@@ -11016,27 +11016,27 @@ function devtools(close) {
     devtoolsstate = 'open'
      
     tab.style.display= 'block'
-    //console.log(segs, alt)
+    //console.log(psegs, alt)
       //if (alt == 1) {
       //}else{
 //}
         p = document.createElement('p')
-        p.innerText = `segs.length: ${segs.length}`
+        p.innerText = `psegs.length: ${psegs.length}`
         p.style.textAlign = 'center'
        tab.appendChild(p)
 
         p = document.createElement('p')
-        p.innerText = `scarecrow.length: ${scarecrow.length}`
+        p.innerText = `pscarecrow.length: ${pscarecrow.length}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
 
         p = document.createElement('p')
-        p.innerText = `miss.length: ${miss.length}`
+        p.innerText = `pmiss.length: ${pmiss.length}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
 
         p = document.createElement('p')
-        p.innerText = `roll.length: ${roll.length}`
+        p.innerText = `proll.length: ${proll.length}`
         p.style.textAlign = 'center'
         tab.appendChild(p)
 
@@ -11048,50 +11048,50 @@ function devtools(close) {
 
         part = tab.getElementsByClassName('slot')
         p = document.createElement('p')
-        p.innerText = `SEGS`
+        p.innerText = `PSEGS`
         p.style.textAlign = 'center'
         part[0].appendChild(p)
 
 
-       for (i in segs) {
+       for (i in psegs) {
         p = document.createElement('p')
-        p.innerText = `${i}: { fator comum: '${segs[i].car}', monômios: [ ${segs[i].mons} ]}`
+        p.innerText = `${i}: { fator comum: '${psegs[i].car}', monômios: [ ${psegs[i].mons} ]}`
         p.style.textAlign = 'center'
         part[0].appendChild(p)
        }
 
        p = document.createElement('p')
-       p.innerText = `SCARECROW`
+       p.innerText = `PSCARECROW`
        p.style.textAlign = 'center'
        part[1].appendChild(p)
 
-       for (i in scarecrow) {
+       for (i in pscarecrow) {
         p = document.createElement('p')
-        p.innerText = `${i}: { divisor: '${scarecrow[i].divisor}', divididos: [ ${scarecrow[i].divididos} ]}`
+        p.innerText = `${i}: { divisor: '${pscarecrow[i].divisor}', divididos: [ ${pscarecrow[i].divididos} ]}`
         p.style.textAlign = 'center'
         part[1].appendChild(p)
        }
 
        p = document.createElement('p')
-       p.innerText = `MISS`
+       p.innerText = `PMISS`
        p.style.textAlign = 'center'
        part[2].appendChild(p)
 
-       for (i in miss) {
+       for (i in pmiss) {
         p = document.createElement('p')
-        p.innerText = `${i}: { termo: '${miss[i].dividido}', aparicoes: [ ${miss[i].aparicoes} ]}`
+        p.innerText = `${i}: { termo: '${pmiss[i].dividido}', aparicoes: [ ${pmiss[i].aparicoes} ]}`
         p.style.textAlign = 'center'
         part[2].appendChild(p)
        }
 
        p = document.createElement('p')
-       p.innerText = `ROLL`
+       p.innerText = `PROLL`
        p.style.textAlign = 'center'
        part[3].appendChild(p)
 
-       for (i in roll) {
+       for (i in proll) {
         p = document.createElement('p')
-        p.innerText = `${i}: { repetidos: '${roll[i].repetidos}', posições: [ ${roll[i].posições} ]}`
+        p.innerText = `${i}: { repetidos: '${proll[i].repetidos}', posições: [ ${proll[i].posições} ]}`
         p.style.textAlign = 'center'
         part[3].appendChild(p)
        }
