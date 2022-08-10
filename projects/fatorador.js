@@ -2621,7 +2621,7 @@ for (bye in monomios) {
                    older++
                    }
              //console.log('ALL THE SORROW I\'VE SEEN', older - 1, scarecrow[roll[raging].repetidos[still]].divisor, miss[roll[raging].posições[still2]].dividido)
-             //console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
+             console.log(whythat,'está na posição', older - 1, 'em monômios',monomios[older - 1].numero)
           //console.log(older - 1, monomios[older - 1].numero)
                   asitwas.push(older - 1)
                   asitwas2.push(older - 1)
@@ -11024,14 +11024,13 @@ function devtools(close) {
     for (c = ps.length - 1; c >= 0; c--) {
       tab.removeChild(ps[c])
     }
-    //console.log('OPEN DEV TOOLS')
-    devtoolsstate = 'open'
-     
-    tab.style.display= 'block'
-    //console.log(psegs, alt)
-      //if (alt == 1) {
-      //}else{
-//}
+
+    
+      if (close == true) {
+        devtoolsstate = 'open'
+        tab.style.display= 'block'
+      }
+    
         p = document.createElement('p')
         p.innerText = `psegs.length: ${psegs.length}`
         p.style.textAlign = 'center'
