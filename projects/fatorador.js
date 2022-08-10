@@ -2565,113 +2565,56 @@ for (bye in monomios) {
        }
        youdumb[força].t = entao
     }
-   
-   //console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
-   
-   
+  
    grtols = []
-   
-   
-       
    for (hi in youdumb) {
-       //////console.log(segs[hi], segs[hi].mons.length)
        youdumb[hi].length = youdumb[hi].t.length
-   
        grtols.push(youdumb[hi])
    }
-   
-   //////console.log('grtols: ', segs)
-   //////console.log(sortob(grtols, 'length'))
-   
-   
    organizado = sortob(grtols, 'length')[1]
-   
    grtols = []
    for (ah in organizado) {
-      // ////console.log(segs[organizado[ah]])
        grtols.push(youdumb[organizado[ah]])
-      
    }
    
    youdumb = []
    for (erro in grtols) {
-      //console.log('RAINY DAY',grtols[erro])
        youdumb.push(grtols[erro])
-   }
-   
-   //console.log('IMAGENS', youdumb)
-   
-   }
-   
-   }
-   //console.log('pans é', pans)
+   }}}
    concatenar = ''
    numsdesfat = []
    newexpress = []
 
    for (bababa in pans) {
-      
-       //console.log('A PARTIR DA QUI')
        edge = []
        naonao = ''
        amount = []
-   
-     //console.log(pans[bababa], Number(bababa))
-      //console.log(pans[bababa].which)
-      //console.log(roll[pans[bababa].numberyoudumb])
-    //console.log('posições(fixas) - miss: ',roll[pans[bababa].numberyoudumb].posições)
-   
          tobreak = ''
          realife = []
          amontoado = []
          for (quassao in roll[pans[bababa].numberyoudumb].posições) {
-      //console.log(quassao,':', roll[pans[bababa].numberyoudumb].posições[quassao],miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido)
-   
            el = miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
-   
-      //console.log('ALL I WANTED WAS TO FINISH THIS THING :D', el)
-   
            gates = []
-   
            quase = []
-           /*
-           for (power in el) {
-               quase.push(el[power])
-          //console.log('EL POWER!',el[power])
-           }
-   */
            teri = false
            juntar = ''
-         //console.log('NADAAAAAAAAAA')
            for (estudar in el) {
-          //console.log(el[estudar])
                if (el[estudar] == '*') {
                    teri = true
                    if (el[Number(estudar) + 1].search('[0-9]') != -1) {
-                     
                        quase.push(juntar)
                        juntar = ''
                    quase.push('*')
-              //console.log('aaaaaaaaaaaaaaaaa', quase)
                    }
                }else{
-                  
-              
-            //console.log('juntar',juntar)
                    if (juntar.length == 0) {
                        juntar = el[estudar]
-                  //console.log('LISTA VAZIA', juntar)
-   
                        if (estudar == el.length - 1) {
                            quase.push(juntar)
                        }
-   
                    }else if(el[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                  //console.log('I\'M NEVER WHAT I LIKE')
                        juntar+= el[estudar]
-                  //console.log('juntar', juntar)
                        if (estudar == el.length - 1) {
-                      //console.log('UAISO')
                            quase.push(juntar)
                        }
                    }else{
@@ -2679,54 +2622,30 @@ for (bye in monomios) {
                        juntar= el[estudar]
                        if (estudar == el.length - 1) {
                            quase.push(juntar)
-                       }
-                   }
-               }
-                 
-            }
-       //console.log('QUASSSSEEEE',quase)
-   
+                       }}}}
             if (teri == false) {
-               
                quase = []
-             //console.log('SEM ASTERISCO')
                for (t in el) {
                quase.push(el[t])
-               }
-           }
+               }}
            aconta = ''
            friend = ''
-   
           elevar = 1
           aster = false
-          
-          //console.log('QUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASE',quase)
            for (patience in quase) {
-               //console.log('_________uuuuuuuuuuu_______',quase[patience])       
-              
                if (quase[patience] == '*') {
                    aster = true
-                  //console.log('AND THE CLSDADWDWD', patience)
-                  //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                   //console.log('gates',gates, fazerConta(gates))
-   
-                  //console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   //console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta)
-                 
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  //console.log('É LETRA!!!!')
                   friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
-                  //console.log('ELEVAR!')
                        elevar++
-   
                        if (patience == quase.length - 1) {
                          //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta+= `^${elevar}`
