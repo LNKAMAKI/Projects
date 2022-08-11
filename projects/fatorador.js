@@ -7594,24 +7594,16 @@ if (quad != eep) {
    
                    }else{
                        if (elevar > 1) {
-                         //console.log('UEPA')
                            aconta_2+= `^${elevar}`
                            
                        }
-   
                        aconta_2+= quase[patience]
-                      //console.log(aconta_2)
-                     
                        elevar = 1
-                   }
-                   //console.log(elevar)
-                  
+                   }    
                } 
            }
-           //console.log('CETRTINHO? vaaaaaaaaaaaaaaaaaai', friend)
 
            if (aster == false) {
-            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -7620,9 +7612,6 @@ if (quad != eep) {
             }
 
            if (aster == false) {
-             
-              //console.log('SEM ASTERISCO2', aconta_2, quase)
-   
                antes = ''
            for (eyes in quase) {
                
@@ -7633,13 +7622,8 @@ if (quad != eep) {
                }
            }
            antes+= aconta_2
-          //console.log('ANTEEEES:', antes)
-              // for (t in quase) {
-              // aconta_2+= quase[t]
-             //  }
              aconta_2 = antes
            }
-          //console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta_2)
    
           edge_2.push(aconta_2)
 
@@ -7652,11 +7636,9 @@ if (quad != eep) {
             }
             amount.push('-')
             amount.push(uh)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta_2,'____________________')
         }else{
             amount.push('+')
             amount.push(friend)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta_2)
         }
 
            if (naonao_2.length == 0) {
@@ -7683,15 +7665,10 @@ if (quad != eep) {
            concatenar_2+= ' + '
        }
        if (edge_2.length > 1) {
-       //console.log('                                ','( ',naonao_2,' )','( ',tobreak_2,' )','                         ')
        concatenar_2+= `(${naonao_2})(${tobreak_2})`
        }else{
-           //console.log('                            ',naonao_2,'( ',tobreak_2,' )','                          ')
            concatenar_2+= `${naonao_2}(${tobreak_2})`
        }
-
-       //console.log('ESSE É O AMONTOADO_2', amontoado_2)
-       //console.log('ESSE É O AMOUNT', amount)
 
      
    // FAZENDO A CONTA
@@ -7700,92 +7677,57 @@ if (quad != eep) {
 
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
-        //console.log(primeirocaso[0], 'continua igual')
-        
       }else{
-
           mudou = true
-          //console.log(amount,'=>',primeirocaso[0])
-         
       }
    
 
       if (segundocaso[1] == segundocaso[2]) {
-        //console.log(segundocaso[0], 'continua igual')
       }else{
-
           mudou = true
-        //console.log(amontoado_2,'=>',segundocaso[0])
-        
       }
-
-
 
       if (mudou == true) {
         naonao_2 = primeirocaso[0]
         tobreak_2 = segundocaso[0] 
 
-      //console.log('')
-      //console.log('SOMANDO FICA ASSIM:')
-
-      //console.log('')
 
       reason = []
       for (k in naonao_2) {
-      //console.log(k, naonao_2[k])
         if (k != 0 && naonao_2[k] != '-' && naonao_2[k] != '+') {
             deserve = naonao_2[k - 1]
             reason.push(k - 1)
             deserve+= naonao_2[k]
-            //console.log('anterior:',deserve)
             naonao_2[k] = deserve
-        }
-      }
+        }}
 
-    //console.log('reason')
-     
+
    for (time = naonao_2.length - 1; time >= 0; time--) {
-    //console.log(time, naonao_2[time])
     if (reason.indexOf(time) != -1) {
-        //console.log('TIRAR')
         naonao_2.splice(time, 1)
         }
    }
-      //console.log('', naonao_2)
+
 
    reason = []
       for (k in tobreak_2) {
-        //console.log(k, tobreak_2[k])
         if (k != 0 && tobreak_2[k] != '-' && tobreak_2[k] != '+') {
             deserve = tobreak_2[k - 1]
             deserve+= tobreak_2[k]
             reason.push(k - 1)
-           //console.log('anterior:',deserve)
            tobreak_2[k] = deserve
         }
       }
 
-     //console.log('reason')
       for (time = tobreak_2.length - 1; time >= 0; time--) {
-      //console.log(time, tobreak_2[time])
         if (reason.indexOf(time) != -1) {
-           //console.log('TIRAR')
             tobreak_2.splice(time, 1)
             }
        }
-      //console.log('', tobreak_2)
 
-      //console.log('____________________','( ',naonao_2,' )','( ',tobreak_2,' )','___________________________')
-
-      //console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
       for (roberto in naonao_2) {
-          //console.log('---------------------------------------------------------------______')
-        //console.log(naonao_2[roberto])
-        
         for (vaidarcerto in tobreak_2) {
-            //console.log(tobreak_2[vaidarcerto])
             novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
-            //console.log(naonao_2[roberto], 'multiplicado por',tobreak_2[vaidarcerto],'=',novomon)
             for (life in youdumb_2) {
               console.log(life,'juntar os monomios',youdumb_2[life].mons,'/ grupos:',youdumb_2[life].w.what)
             }
@@ -7798,26 +7740,17 @@ if (quad != eep) {
                         miya+= novomon[n]                 
                        }
                 }
-                //console.log(miya)
                 newexpress.push('-')
                 newexpress.push(miya)
             }else{
                 newexpress.push('+')
                 newexpress.push(novomon)
-            }
-        }
-
-
-    }
+            }}}
     
        
        for (e in pans_2[bababa].todos) {
         numsdesfat.push(pans_2[bababa].todos[e])
-       }
-       
-      }
-
-   }
+       }}}
    
    if (numsdesfat.length > 0) {
     for (life in youdumb_2) {
@@ -7827,20 +7760,16 @@ if (quad != eep) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros_2 = []
     for (acaba in monomios_2) {
-       //console.log(acaba)
         todososnumeros_2.push(acaba)
     }
 
     for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
-        //console.log(todososnumeros_2[feliz])
          if (numsdesfat.indexOf(Number(todososnumeros_2[feliz])) != -1) {
             todososnumeros_2.splice(feliz, 1)
          }
  }
-    //console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios_2( tem', monomios_2.length, 'ao todo):',todososnumeros_2)
+ 
     for (eh in todososnumeros_2) {
-        //console.log(todososnumeros_2[eh], monomios_2[todososnumeros_2[eh]].numero)
-
         join = ''
         for (sempresei in monomios_2[todososnumeros_2[eh]].numero) {
             if (monomios_2[todososnumeros_2[eh]].numero[sempresei] != '+' && monomios_2[todososnumeros_2[eh]].numero[sempresei] != '-') {
@@ -7850,30 +7779,20 @@ if (quad != eep) {
             }
         }
         if (monomios_2[todososnumeros_2[eh]].numero[0] == '+') {
-            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }else if(monomios_2[todososnumeros_2[eh]].numero[0] == '-') {
-            //console.log('MENOS')
             newexpress.push('-')
             newexpress.push(join)
         }else{
-            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }
-        //console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
     }
-
-    //console.log('_____________________________________________newexpression:_____________________________________________ ')
-        //console.log(newexpress)
-        //console.log('_______________________________________________________________________________________   _______________')
 
         FATORAR2(newexpress)
    }else{
 
-   //console.log('VENDO OS QUE FALTAM:')
-   //console.log(numerospresentes_2)
    todososnumeros_2 = []
    for (acaba in monomios_2) {
       //console.log(acaba)
@@ -7905,31 +7824,19 @@ if (quad != eep) {
            
             if (quase[patience] == '*') {
                 aster = true
-               //console.log('AND THE CLSDADWDWD', patience)
-               //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-              //console.log(gates, fazerConta(gates))
-   
-             //console.log(quase, Number(patience) + 1)
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta_2 = fazerConta(gates)[0]
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-               //console.log('É LETRA')
-              
                 if (quase[patience] == quase[Number(patience) - 1]) {
-               //console.log('ELEVAR!')
                     elevar++
-   
                     if (patience == quase.length - 1) {
-                      //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta_2+= `^${elevar}`
-                       //console.log(aconta_2)
                     }
-   
                 }else{
                     if (elevar > 1) {
                         aconta_2+= `^${elevar}`
@@ -7940,7 +7847,6 @@ if (quad != eep) {
                 }} }
         
         if (aster == false) {
-            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -7948,25 +7854,18 @@ if (quad != eep) {
              friend = direitando
             }
     if (aster == false) {
-     //console.log('SEM ASTERISCO',aconta_2)
         antes = ''
         for (eyes in quase) {
-            
-           //console.log(quase[eyes])
             if (quase[eyes].search('[0-9]') != -1) {
                //console.log('CRY')
                 antes+= quase[eyes]
             }
         }
         antes+= aconta_2
-       //console.log('ANTEEEES:', antes)
-        
         aconta_2 = antes
     }
-    //console.log('A CONTA',aconta_2, quase)
    
     if (bye == 0) {
-       //console.log('PRIMEIRO')
        if (concatenar_2.length > 0) {
            if (quase[0] == '-') {
                concatenar_2+= ` - ${aconta_2}`
