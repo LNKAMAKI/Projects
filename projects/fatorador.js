@@ -4648,14 +4648,12 @@ if (quad != eep) {
       for (roberto in naonao_2) {
         for (vaidarcerto in tobreak_2) {
             novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
-            
             if (novomon[0] == '-') {
                 miya = ''
                 for (n in novomon) {
                     if (novomon[n] != '-') {
                         miya+= novomon[n]                 
-                       }
-                }
+                       }  }
                 newexpress.push('-')
                 newexpress.push(miya)
             }else{
@@ -4663,7 +4661,6 @@ if (quad != eep) {
                 newexpress.push(novomon)
             }}}
     
-       
        for (e in pans_2[bababa].todos) {
         numsdesfat.push(pans_2[bababa].todos[e])
        }}}
@@ -4718,7 +4715,6 @@ if (quad != eep) {
        aster = false
        friend = ''
        gates = []
-   
         for (patience in quase) {   
             if (quase[patience] == '*') {
                 aster = true
@@ -4727,7 +4723,6 @@ if (quad != eep) {
                 gates.push(quase[Number(patience) + 1])
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta_2 = fazerConta(gates)[0]
-              
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
                 if (quase[patience] == quase[Number(patience) - 1]) {
@@ -4739,7 +4734,6 @@ if (quad != eep) {
                     if (elevar > 1) {
                         aconta_2+= `^${elevar}`
                     }
-   
                     aconta_2+= quase[patience]
                     elevar = 1
                 }} }
@@ -4756,8 +4750,7 @@ if (quad != eep) {
         for (eyes in quase) {
             if (quase[eyes].search('[0-9]') != -1) {
                 antes+= quase[eyes]
-            }
-        }
+            }}
         antes+= aconta_2
         aconta_2 = antes
     }
@@ -4774,8 +4767,7 @@ if (quad != eep) {
                concatenar_2+= `-${aconta_2}`
            }else{
                concatenar_2+= `${aconta_2}`
-           }
-       }
+           }}
     }else{
        if (quase[0] == '-') {
            concatenar_2+= ` - ${aconta_2}`
@@ -4786,11 +4778,9 @@ if (quad != eep) {
    function ehprimo(Number) {
        parar = false
        for (t = 2; t < Number && parar == false; t++) {
-       
            if (Number%t == 0) {
                parar = true
-           }
-       }
+           }}
        if (parar) 
        return false
        else
@@ -4805,8 +4795,7 @@ if (quad != eep) {
        
            if (Number%t == 0) {
               divisores.push(t)
-           }
-       }
+           }  }
       return divisores
    }
    
