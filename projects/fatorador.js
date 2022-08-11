@@ -3114,60 +3114,36 @@ function FATORARSInGULAR(potn) {
    
     util = []
     for (t in segs2) {
-   
-   
-   
         if (segs2[t].mons.length >= quanto) {
             util.push(segs2[t])
         }
-        ////console.log('')
     }
-   
-    ////console.log('util', util)
     
     for (m in monomios) {
         aparic = 0
-        ////console.log(m)
         for (t in util) {
-            ////console.log('util[t].mons', util[t].mons)
-            ////console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
-   
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
-            }
-        }
-        ////console.log('aparic',m, aparic)
+            }}
+  
         numapars.push({num: Number(m), vezes: aparic})
         }
    
     present = []
-    //console.log('numapars',numapars)
-    ////console.log('----------------------------------------------------------------------------------------------------')
+
     for (r in util) {
-   
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------')
        lista = util[r].mons
         present = {fix: [], falt: []}
-        ////console.log(lista)
-      
+
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
-            ////console.log(lista[g])
-   
-   
             if (numapars.find(function(numapars) {
                 return numapars.num == lista[g]
                 }).vezes == 1) {
-                ////console.log('ADICIOnAR')
                   rep++
-                  present.fix.push(lista[g])
-                 
-            }
-   
-        }
-        ////console.log('present', present)
-        ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
-   
+                  present.fix.push(lista[g])   
+            }}
+  
         if (present.fix.length < quanto) {
         for (g in lista) {
             ////console.log('')
