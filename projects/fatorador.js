@@ -7932,20 +7932,12 @@ if (quad != eep) {
    
                 }else{
                     if (elevar > 1) {
-                       //console.log('UEPA')
                         aconta_2+= `^${elevar}`
-                        
                     }
    
                     aconta_2+= quase[patience]
-                   //console.log(aconta_2)
-                  
                     elevar = 1
-                }
-              //console.log(elevar)
-               
-            } 
-        }
+                }} }
         
         if (aster == false) {
             //console.log('<<<<<<<<<<<<<',quase)
