@@ -8367,44 +8367,25 @@ if (quad != eep) {
    
    males = []
    for (nah = relation_2.length - 1; nah >= 0; nah--) {
-        // if (relation_2[nah].fix.length > 0) {
-             
-    //console.log('fix',relation_2[nah].fix)
-   
-     //console.log('---VEnDO TODA A LISTA---')
      for (nop in relation_2) {
        if (relation_2[nop].fix.length > 0 && nop != nah) {
-   //console.log(relation_2[nop].fix, relation_2[nop].car)
    
    igual = true
    for (uh in relation_2[nop].fix) {
-   //console.log(relation_2[nop].fix[uh])
    if (relation_2[nah].fix.indexOf(relation_2[nop].fix[uh]) == -1) {
    igual = false
-   }
-   }
-   //console.log(igual)
+   }}
    if (igual == true) {
    if (relation_2[nah].car.length > relation_2[nop].car.length) {
-   //console.log('ESSE É UM MAL QUE PRECISA SER RETIRADO DA SOCIEDADE')
    males.push(Number(nop))
-   }
-   //}
-   
-       }
+   }}
    
    }else if(relation_2[nop].fix.length == 0) {
        males.push(Number(nop))
-   }
-         }
-     
-     }
+   }}}
    
      for (nah = relation_2.length - 1; nah >= 0; nah--) {
-         //console.log('dream',nah, relation_2[nah])
-        //console.log(males)
        if (males.indexOf(nah) != -1) {
-         //console.log('HEY')
            relation_2.splice(nah, 1)
        }
      }
@@ -8412,23 +8393,13 @@ if (quad != eep) {
      numerosquetem = []
      for (nah in relation_2) {
          if (relation_2[nah].fix.length > 0) {
-       //console.log(relation_2[nah].fix)
-   
          for (nop in relation_2[nah].fix) {
-          //console.log(relation_2[nah].fix[nop])
              numerosquetem.push(relation_2[nah].fix[nop])
-         }
-         }
-     }
-     //console.log('----------------------------------------------------------------')
-   
+         }}}
+
      segs_22 = []
    
      for (uf in par) {
-     
-        //console.log(segs_2[uf].godhelpme)
-        // segs_22.push(segs_2[uf])
-       //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
        segs_22[uf] = {}
          segs_22[uf].mons = [...par[uf].mons]
          segs_22[uf].car = par[uf].car
@@ -8436,88 +8407,43 @@ if (quad != eep) {
    }
    
    for (pose in segs_22) {
-   //console.log(segs_22[pose].mons)
    for (me = segs_22[pose].mons.length - 1; me >= 0; me--) {
-   //console.log(segs_22[pose].mons[me])
    if (numerosquetem.indexOf(segs_22[pose].mons[me]) != -1) {
-   //console.log('tirar')
    segs_22[pose].mons.splice(me, 1)
-   }
-   }
-   }
+   }}}
    
    fireonfire = []
    
        for (uf in relation_2) {
-       
-          //console.log(segs_2[uf].godhelpme)
-          // segs_22.push(segs_2[uf])
-         //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          fireonfire[uf] = {}
            fireonfire[uf].mons = [...relation_2[uf].fix]
            fireonfire[uf].car = relation_2[uf].car
-   
     }
    
-    //console.log('OK, AGORA PRECISAMOS EnCOnTRAR O RESTO')
-    //console.log(doit2(segs_22)[0])
-    //console.log(fireonfire)
-   
-    //console.log('relation_2', relation_2)
     for (red in fireonfire) {
-      //console.log(fireonfire[red])
        relation_2.push({fix: fireonfire[red].mons, car: fireonfire[red].car})
     }
    
    }else if(groups > divs_2[okentao]){
-       
-   //console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
-    ////console.log('números que têm: ', conts)
-    ////console.log(segs_2)
    
     mia = []
    for (idk in segs_22) {
-   //////console.log('---------------------------------------------------------------------')
-   ////console.log('aqui ó',segs_2[idk].mons)
-   
-   
    for (mcr in segs_22) {
    if (mcr != idk) {
-   
-       //////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-      // //console.log('outro',segs_2[mcr].mons)
-      
-      // //console.log(segs_2[idk].mons.length)
        if (segs_22[mcr].mons.length <= segs_22[idk].mons.length) {
    
            sames = []
       for(y = 0; y < segs_22[mcr].mons.length; y++) {
-       //  //console.log(segs_2[idk].mons, segs_2[mcr].mons[y], segs_2[idk].mons.indexOf(segs_2[mcr].mons[y]))
            if (segs_22[idk].mons.indexOf(segs_22[mcr].mons[y]) != -1) {
-             ////console.log('igual')
                sames.push('igual')
            }else{
-             // //console.log('diferente')
                sames.push('diferente')
            }
       }
-    // //console.log(sames)
       if (sames.indexOf('diferente') == -1){
-     // //console.log('TIRAR', segs_2[mcr])
-   
        if (mia.indexOf(mcr) == -1) {
        mia.push(mcr)
-       }
-       
-       ////console.log(segs_2)
-       
-      }
-   }
-       
-   }
-   }
-   
-   }
+       }}}}}}
    
       
     numapars = []
