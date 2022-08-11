@@ -4057,85 +4057,50 @@ for (huh in particles) {
 
 
 for (chuva in agruparsoma) {
-    //console.log('')
-   //console.log('')
-    //console.log('')
-
     conta = []
 for (da in agruparsoma[chuva].quais) {
-
-
-
 divisor = []
 for (flowers in agruparsoma[chuva].que) {
 
 divisor.push(agruparsoma[chuva].que[flowers])
 }
 
-//console.log(particles[agruparsoma[chuva].quais[da]].numero, '/',divisor)
 tu = [...divisor]
 resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
-
-//console.log('A DIVISÃO É IGUAL DE',particles[agruparsoma[chuva].quais[da]].numero,'por',tu, resultadoDaDivisão)
 
 plan = []
 add = ''
 
 for (past in resultadoDaDivisão) {
-   
- //console.log(resultadoDaDivisão[past])
-
  if (resultadoDaDivisão[past].search('\\*') != -1 || resultadoDaDivisão[past].search('[0-9]') != -1) {
-//console.log('ADICIOnAR')
-
 if (add.length == 0) {
     if (resultadoDaDivisão[past - 1] != '-') {
     add+= resultadoDaDivisão[past]
     }
 
 }else if (resultadoDaDivisão[past].search('[0-9]') != -1 && add.search('[0-9]') != -1) {
-    //console.log('OK')
 add+= resultadoDaDivisão[past]
 }else{
     plan.push(add)
     add = ''
-    //console.log('AASADWHDUWHDU',resultadoDaDivisão[past - 1])
-   
     add+= resultadoDaDivisão[past]
-    
-    
 }
-//console.log('ADD', add)
-//console.log('PLAn É:', plan)
+
 
 if (plan.length == 3) {
-//console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-//console.log('___________________number1:', Number(plan[0]), 'number2:', Number(plan[2]),'__________________')
-//console.log(Number(plan[0])*Number(plan[2]))
 plan = [String(Number(plan[0])*Number(plan[2]))]
-}
- }
+}}}
 
-}
-
-//console.log(agruparsoma[chuva].quais.length, '---------')
 if (add == '' && agruparsoma[chuva].quais.length > 1) {
     add = '1'
-   //console.log('VAIIIIIIIIIIIIIII')
 }
 plan.push(add)
-//console.log('PLAn', plan)
 
 if (plan.length == 3) {
-    //console.log('É TRÊEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEIS')
-    //console.log(Number(plan[0])*Number(plan[2]))
     plan = [String(Number(plan[0])*Number(plan[2]))]
-    //console.log('É ISSO!!', plan)
     }
 
     if (particles[agruparsoma[chuva].quais[da]].numero[0] == '+' || particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
-   //console.log('O SInAL É: ', particles[agruparsoma[chuva].quais[da]].numero[0])
-
     sinal = particles[agruparsoma[chuva].quais[da]].numero[0]
 
     if (conta.length != 0) {
@@ -4150,74 +4115,49 @@ if (plan.length == 3) {
  //console.log(entao)
  conta.push(entao)
     }else{
-       
         conta.push(plan[0])
-    }
-   
-    
-}
+    }}
 
-
-//console.log('OK, FICOU ASSIM:', conta)
 
 comehome = fazerConta(conta)
-//console.log('E RESOLVEnDO FICA ASSIM:', comehome)
-
-
 
 if (comehome[0][0] == '-') {
     t = ''
    for (b in comehome[0]) {
    if (comehome[0][b] != '-') {
      t+= comehome[0][b]
-   }
-   }
-  //console.log(t)
-   //console.log(typeof t)
+   }}
+ 
    at = t
    if (ehprimo(t) == false) {
-      //console.log(at)
    fat = FATORARSInGULAR(at)
-  //console.log(String(fat))
    }else{
-     //console.log('É PRIMOOOOOOOOOOOOOOOOO')
     fat = at
    }
    oop = '-'
    oop+= String(fat)
-//console.log(oop)
 
 exp.push('-')
 fat += agruparsoma[chuva].que
 exp.push(fat)
 
 }else{
-    
+  
     if (ehprimo(comehome) == false) {
 fat = FATORARSInGULAR(comehome)
     }else{
         fat = comehome
     }
     
-//console.log(fat)
 
 if (exp.length == 0) {
     fat += agruparsoma[chuva].que
     exp.push(fat)
-    //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
-   
     }else {
         exp.push('+')
         fat += agruparsoma[chuva].que
         exp.push(fat)
-      //console.log('PARTE LETRAL:', agruparsoma[chuva].que)
-    }
-}
-
-
-
-
-}
+    }}}
 
 return[exp, agruparsoma.length, particles.length]
  }
@@ -4241,52 +4181,31 @@ wasmultiplicated = false
 
 operation = []
 for (patience in storer) {
-    
-   
     if (storer[patience] == '*') {
         wasmultiplicated = true
-        
-        
         operation.push(storer[Number(patience) - 1])
         operation.push('x')
         operation.push(storer[Number(patience) + 1])
-        
 
         storer[Number(patience) + 1] = fazerConta(operation)[0]
         resultobtained = fazerConta(operation)[0]
-        
       
         operation = []
     }else if(storer[patience].search('[a-z]') != -1)  {
-       
         if (storer[patience] == storer[Number(patience) - 1]) {
-       
             elevar++
 
             if (patience == storer.length - 1) {
-                
                 resultobtained+= `^${elevar}`
-                
             }
-
         }else{
-          
             if (elevar > 1) {
-                
                 resultobtained+= `^${elevar}`
-                
             }
-
             resultobtained+= storer[patience]
-        
-            
           
             elevar = 1
-        }
-        
-       
-    } 
-}
+        }} }
 
 if (wasmultiplicated == false) {
     //   
@@ -4513,46 +4432,27 @@ function FATORE(q) {
       expression_2[n - 1] != "^"
     ) {
       fatorado = "";
-
       first = 1;
-
       div = 0;
-      //
-
+    
       stop = false;
       fator = 1;
 
       for (e = 2; stop == false; e++) {
         sob = Number(expression_2[n]);
-
         if (ehprimo(e) == true) {
           while (sob % e == 0) {
-            if (sob % e == 0) {
-              //
-            }
-
             sob = sob / e;
-
-            //
-            //
-
             fator = fator * e;
-
             st = false;
-
             if (fator == expression_2[n]) {
               stop = true;
               fatorado += `${e}`;
             } else {
               fatorado += `${e}*`;
-            }
-          }
-        }
-      }
-
+            } } }}
       expression_2[n] = fatorado;
-    }
-  }
+    }}
   //
 
   //FAZEnDO AS POTÊnCIAS COM LETRAS
@@ -5018,12 +4918,10 @@ function FATORE(q) {
 
                    if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
                   if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) {
-   
                       pain = '-1'
                       scarecrow_2[anchor].divididos.push('1')
                        scarecrow_2[anchor].outrodiv.push(pain)
                   }else if(lightson.indexOf('-') == -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') != -1) {
-                      
                        pain = '-1'
                        scarecrow_2[anchor].divididos.push('1')
                        scarecrow_2[anchor].outrodiv.push(pain)
@@ -5070,7 +4968,6 @@ function FATORE(q) {
               }else{
                miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
               }}  }
-   
           
           quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao])
           quantasposições = Number(monomios_2.length)/Number(quantosfatores)
@@ -5349,7 +5246,6 @@ if (quad != eep) {
    
                for (yehaa in podeser_2[cold].position) {
                    if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
-                       
                        fi = ''
                        for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
                            if (miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != '-') {
@@ -5448,12 +5344,8 @@ if (quad != eep) {
                        lista.splice(0,2)
                    }}}} }
    
-        //console.log('OKAY, LET\'S DO IT!')
          for (sei in scarecrow_2) {
-           //console.log(scarecrow_2[sei].divididos)
-           
            for (ai in scarecrow_2[sei].divididos) {
-               //console.log(scarecrow_2[sei].divididos[ai],'=', scarecrow_2[sei].outrodiv[ai])
                scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai]
            }
          }
@@ -5461,17 +5353,12 @@ if (quad != eep) {
          miss_2 = []
    
          for (ah in scarecrow_2) {
-             //console.log('SCARECROW', scarecrow_2[ah].divididos)
              for (é in scarecrow_2[ah].divididos) {
-                 //console.log(scarecrow_2[ah].divididos[é])
              if (miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}) == undefined) {
               miss_2.push({dividido: scarecrow_2[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow_2[ah].divisor})
              }else{
               miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
-             }
-          }
-         }
-         
+             }} }
    
          grtols_2 = [];
   for (hi in miss_2) {
@@ -5487,7 +5374,6 @@ if (quad != eep) {
   }
   miss_2 = [...grtols_2];
 
-
          java = 0
          roll_2 = []
          deucerto = false
@@ -5502,12 +5388,10 @@ if (quad != eep) {
           }
        
     for (quad in miss_2) {
-     
       if (quad != eep) {
         
         repeated = [];
         repwri = "";
-
         monspos2 = []
           for (b in miss_2[quad].aparicoes) {
             
@@ -5540,41 +5424,30 @@ if (quad != eep) {
             rap+= ',' + miss_2[eep].aparicoes[vespa]
 
             if (roller_2.find(function(roller_2) {return roller_2.rept == rap}) != undefined) {
-
-              
               if (cango == true && monspos.indexOf(posmon) == -1) {
-
               monspos.push(posmon)
               what = roller_2.find(function(roller_2) {return roller_2.rept == rap})
             
             for (h in monspos) {
-              
               if (what.mons.indexOf(monspos[h]) == -1) {
                 
                 what.mons.push(monspos[h])
-              }
-            }
-            
+              }}
           }else{
-            
             monspos.splice(monspos.length - 1,1)
           }
           
         }else{
             if (monspos.indexOf(posmon) == -1 && cango == true) {
-              
               monspos.push(posmon)
               result.push(monpos)
               result.push(posmon)
           }else{
 
             if (cango == true) {
-              
               monspos.splice(monspos.length - 1,1)
-              
               }else{
               cango = true
-              
               }
 
             parar = false
@@ -5594,8 +5467,7 @@ if (quad != eep) {
             nov+= novorap[u]
           }
             rap = nov
-          }
-        }
+          }}
             repwri = rap          
 
             if (
@@ -6420,7 +6292,6 @@ if (quad != eep) {
        for (n in yposition) {
            maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
            posiçõesnumeros.push(-1)
-   
        }
    
        for (item in yposition) {
