@@ -8628,25 +8628,14 @@ if (quad != eep) {
     relation_2[r].car = segs_22[r].car
     
     }
-    //console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
     for (c in relation_2) {
-       // //console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation_2[c].fix.length > 0) {
-       // //console.log(relation_2[c].fix, relation_2[c].falt)
-   
         faltam = Number(quanto) - Number(relation_2[c].fix.length)
-        ////console.log('faltam', faltam)
    
         for (f = 0; f < faltam; f++) {
-         //   //console.log(relation_2[c].falt[f])
            relation_2[c].fix.push(relation_2[c].falt[f])
-          
-       //    //console.log('AnTES: ', relation_2[c].falt)
            relation_2[c].falt[f] = -10
-   
-       //    //console.log('DEPOIS: ', relation_2[c].falt)
         }
-      //  //console.log(relation_2[c].fix)
    
         for (tel = 0; tel < c; tel++){
    
