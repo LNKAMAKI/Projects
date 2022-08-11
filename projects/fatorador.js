@@ -5498,34 +5498,17 @@ if (quad != eep) {
            }
            */
           
-         //console.log('ROOLLLLLLLLLLLLLLLLLLLLLLLLLLL', roll_2)
-   
-   
-         //console.log('PARAR PARA ANALISAR')
          for (ne in roll_2) {
-          //for (ne = 0; ne < 1; ne++) {
-             //console.log('_______________________________')
-           //console.log(roll_2[ne].posições, '(MISS):')
-           //console.log('')
-           //console.log(roll_2[ne].repetidos, '(SCARECROW)')
-   
            arranjar = []
            for (pq in roll_2[ne].repetidos) {
                gosto = roll_2[ne].repetidos[pq], scarecrow_2[roll_2[ne].repetidos[pq]].divididos
-               //console.log('----', gosto, scarecrow_2[gosto].divisor)
                arranjar.push({pos: pq, ocupa: [], origin: gosto})
    
            for (moon in roll_2[ne].posições) {
-   
-              //console.log(roll_2[ne].posições[moon], miss_2[roll_2[ne].posições[moon]].dividido, scarecrow_2[gosto].divididos)
                vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
-               //console.log(vaiir)
-   
               arranjar[pq].ocupa.push(vaiir)
-           }
-       }
-       //console.log('_______________ANALISANDO O ARRANJAR!!!!!!!!!!!_______________')
-       
+           }}
+      
        
        jafoi = []
        
@@ -5534,95 +5517,56 @@ if (quad != eep) {
    
            if (jafoi.indexOf(tosse) == -1) {
                organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-          //console.log('___________________________________________')
-          //console.log(tosse, arranjar[tosse].ocupa)
-         //console.log('')
-         
+          
            for (calor in arranjar) {
-       
                if (calor != tosse) {
-                  //console.log('------------------------------')
-                   //console.log(calor, arranjar[calor].ocupa)
-   
                    equals = true
                    igualar =[]
                    for (boring in arranjar[calor].ocupa) {
                        sendocomparado = arranjar[calor].ocupa[boring]
                        comparador= arranjar[tosse].ocupa[boring]
-                     //console.log(sendocomparado, '=>', comparador)
-                      //console.log(sendocomparado[0],'==', comparador[0])
                        if (sendocomparado[0] != comparador[0]) {
-                         //console.log(true)
                            igualar.push(true)
                        }else{
-                          //console.log(false)
                            igualar.push(false)
                        }
                    }
-                  //console.log('igualar:', igualar)
-                   if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {
-                       //console.log(`======================> ${arranjar[calor].ocupa} é igual a ${arranjar[tosse].ocupa}`,tosse, calor)                     
+
+                   if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {               
                        jafoi.push(calor)
                        organizer.agrupar.push(calor)
    
-                   }
-               }
-           }
+                   }}}
            perfectwave.push(organizer)
-       }
-       }
+       }}
        
-      //console.log(roll_2[ne].posições)
+      
        for (youchoose in perfectwave) {
-           //console.log('_______________________________________',perfectwave[youchoose].agrupar)
-           //console.log('COMO É PARA FICAR:', perfectwave[youchoose].referencia)
            ficarassim =  perfectwave[youchoose].referencia
    
            for (catraca in perfectwave[youchoose].agrupar) {
-               //console.log('-----------------------------------------------------------')
                presa = perfectwave[youchoose].agrupar[catraca]
              
-              //console.log(perfectwave[youchoose].agrupar[catraca], arranjar[presa].origin)
-              //console.log(scarecrow_2[arranjar[presa].origin].divisor)
-   
                diferente = false
                for (moon in roll_2[ne].posições) {
-   
-                  //console.log(roll_2[ne].posições[moon], miss_2[roll_2[ne].posições[moon]].dividido, scarecrow_2[arranjar[presa].origin].divididos)
                    vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
-                  //console.log(vaiir, ficarassim[moon])
+
                    if (vaiir != ficarassim[moon]) {
                        diferente = true
-   
-                       //console.log('MUDARR!!!!!!')
-                      //console.log(scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)])
-   
                       scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon]
-                   }
-       
-                 
-               }
-              //console.log('SOME LIKE TO PLAY, I LIKE TO CODE')
+                   } }
+  
                if (diferente == true) {
-                   //console.log('ALTERAR...', scarecrow_2[arranjar[presa].origin].divisor)
-   
                    lista = scarecrow_2[arranjar[presa].origin].divisor
                    if (lista != '-') {
-                       //console.log('aff... >:')
                        modificar = ['-','.']
                        for (saved in lista) {
-                          //console.log(lista[saved])
                            modificar.push(lista[saved])
                        }
-                      //console.log(modificar)
                        scarecrow_2[arranjar[presa].origin].divisor = modificar
                    }else{
                        lista.splice(0,2)
-                   }
-               }
-           }
-       }
-         }
+                   }}}} }
    
         //console.log('OKAY, LET\'S DO IT!')
          for (sei in scarecrow_2) {
