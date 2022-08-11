@@ -1115,29 +1115,18 @@ function FATORARSInGULAR(potn) {
                }
                scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
                for (high in segs[anchor].mons) {
-                   
-                  
                    army = [...bell]
             
-                //console.log(monomios[segs[anchor].mons[high]].numero,army)
-           
-               
                 lightson = [...army]
                    pain = DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
-                   //console.log(lightson,monomios[segs[anchor].mons[high]].numero)
    
                    if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-                  //console.log('É 1')
                   if (lightson.indexOf('-') != -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') == -1) {
-   
                       pain = '-1'
-                     //console.log('opa')
                       scarecrow[anchor].divididos.push('1')
                        scarecrow[anchor].outrodiv.push(pain)
                   }else if(lightson.indexOf('-') == -1 && monomios[segs[anchor].mons[high]].numero.indexOf('-') != -1) {
-                      
                        pain = '-1'
-                     //console.log('opa')
                        scarecrow[anchor].divididos.push('1')
                        scarecrow[anchor].outrodiv.push(pain)
                   }else{
@@ -1145,37 +1134,24 @@ function FATORARSInGULAR(potn) {
                    scarecrow[anchor].divididos.push(pain)
                        scarecrow[anchor].outrodiv.push(pain)
                   }
-                   
    
                    }else{
-           
                        right = ''
                        for (feet in pain) {
-                         //console.log(pain[feet])
                            if (pain[feet] != '+') {
                                right+= pain[feet]
-                           }
-                       }
-                    //console.log('É ESSE:', right)
+                           } }
                       
                        uy = ''
-                     //console.log(right, 'RIGHT') 
    
                       for (xarope in right) {
-                    //console.log(right[xarope])
                        if (xarope == 0 && right[xarope] == '*') { // *2
-                      //console.log('ERRADO!', '*2')
                        }else if(xarope == right.length - 1 && right[xarope] == '*'){ // 2*
-                     // //console.log('ERRADO', '2*')
                        }else if(right[xarope] == '*' && String(right[Number(xarope) + 1]).search('[0-9]') == -1){ // 2*x
-                    //  //console.log('ERRADO', '2*x')
                        }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
-                      ////console.log('ERRADO', 'x*2')
                        }else{
                            uy+= right[xarope]
-                       }
-                      }
-                      //console.log('UY',uy)
+                       } }
                       scarecrow[anchor].outrodiv.push(uy)
    
                       if (uy[0] == '-') {
@@ -1184,82 +1160,50 @@ function FATORARSInGULAR(potn) {
                            if (uy[qual] != '-')
                            holdon+= uy[qual]
                        }
-                       //console.log('FIXED', holdon)
                        uy = holdon
                       }
                       scarecrow[anchor].divididos.push(uy)
-                   }
-                  
-               }
-           }
+                   }}}
       
           miss = []
    
           for (ah in scarecrow) {
-              //console.log('SCARECROW', scarecrow[ah].divididos)
               for (é in scarecrow[ah].divididos) {
-                  //console.log(scarecrow[ah].divididos[é])
               if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
                miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
               }else{
                miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}).aparicoes.push(Number(ah))
-              }
-           }
-          }
+              }}}
    
-          
           quantosfatores = Number(monomios.length)/Number(divs[okentao])
           quantasposições = Number(monomios.length)/Number(quantosfatores)
-   
-         //console.log('número de fatoes:', quantosfatores, '     número de posições:', quantasposições)
    
    // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
    
           grtols = []
    for (hi in miss) {
-       //////console.log(segs[hi], segs[hi].mons.length)
        miss[hi].length = miss[hi].aparicoes.length
-   
        grtols.push(miss[hi])
    }
    organizado = sortob(grtols, 'length')[1]
    
    grtols = []
    for (ah in organizado) {
-      // ////console.log(segs[organizado[ah]])
        grtols.push(miss[organizado[ah]])
-      
    }
    miss = [...grtols]
-   //
    deucerto = false
    java = 0
    
-   //console.log('MISS.LENGTH',miss.length)
-   
-   
-   for (w in miss) {
-    //console.log(w,miss[w].aparicoes)
-   }
-
    roller = [];
+
   for (eep in miss) {
-    //console.log('__________________________________________')
-    //console.log(`*miss[${eep}]*: `, miss[eep].aparicoes, miss[eep].dividido)
-
-          //console.log('//\//\//\//\//\//\//\/', miss[eep].aparicoes)
-
           monspos_ = []
           for (b in miss[eep].aparicoes) {
-            //console.log(scarecrow[miss[eep].aparicoes[b]].divididos,`.indexOf(${miss[eep].dividido}) = `,scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido))
-            //console.log('O MONÔMIO QUE RESULTA EM', miss[eep].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[eep].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)],monomios[scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]].numero)
             monpos = scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]
             monspos_.push(monpos)
           }
           
-          //console.log('//\//\//\//\//\//\//\/ =>', 'posições dos monômios: ',monspos_)
-
-    //console.log('GOING THROUGH MISS')
     for (quad in miss) {
       if (quad != eep) {
         repeated = [];
