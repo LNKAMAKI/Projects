@@ -6542,23 +6542,12 @@ if (quad != eep) {
          //console.log('ENTÃO:','(', tobreak_2,')')
    
        for (repr in pans_2[bababa].which) {
-           
-        //console.log(' ')
-           //console.log(pans_2[bababa].which[repr].monos, pans_2[bababa].which[repr].numberwhat, Number(repr))
-            //console.log('repetidos(não fixo) - scarecrow_2: ',roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat], scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor)
-   
             triste = scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor
-            //console.log(triste)
-   
             quase = []
-           //console.log(quase, 'k')
             juntar = ''
             teri = false
             for (estudar in triste) {
-             //console.log('O QUE ESTÁ ACONTECENDO?', triste[estudar])
-               //console.log('asasasa',triste[estudar])
                ohjeez = triste[Number(estudar) - 1] != '-'
-             //console.log(ohjeez)
                if (triste[estudar] == '.') {
                    teri = true
                    if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
@@ -6566,49 +6555,30 @@ if (quad != eep) {
                        quase.push(juntar)
                        juntar = ''
                    quase.push('*')
-                 //console.log(quase)
                    }
                }else{
-                  
-                   //quase.push(triste[estudar])
-                //console.log('juntar',juntar)
                    if (juntar.length == 0) {
                        juntar = triste[estudar]
-                      //console.log('LISTA VAZIA', juntar)
-   
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
                        }
-                      //console.log('MENMEN',quase)
-   
                    }else if(triste[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-   
-                    //console.log('I\'M NEVER WHAT I LIKE')
                        juntar+= triste[estudar]
-                    //console.log('juntar', juntar)
                        if (estudar == triste.length - 1) {
-                        //console.log('UAISO')
                            quase.push(juntar)
-                        //console.log(quase)
                        }
                    }else{
                        quase.push(juntar)
                        juntar= triste[estudar]
                        if (estudar == triste.length - 1) {
                            quase.push(juntar)
-                         //console.log(quase)
-                       }
-                   }
-               }
-                 
-            }
+                       }} } }
    
             if (teri == false) {
                quase = []
                for (t in triste) {
                quase.push(triste[t])
-               }
-           }
+               }}
    
             aconta_2 = ''
             friend = ''
@@ -6634,17 +6604,13 @@ if (quad != eep) {
                        if (patience == quase.length - 1) {
                            aconta_2+= `^${elevar}`
                        }
-   
                    }else{
                        if (elevar > 1) {
-                           aconta_2+= `^${elevar}`
-                           
+                           aconta_2+= `^${elevar}` 
                        }
                        aconta_2+= quase[patience]
                        elevar = 1
-                   }    
-               } 
-           }
+                   } } }
 
            if (aster == false) {
              direitando = ''
@@ -6657,10 +6623,7 @@ if (quad != eep) {
            if (aster == false) {
                antes = ''
            for (eyes in quase) {
-               
-              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
@@ -6685,7 +6648,6 @@ if (quad != eep) {
         }
 
            if (naonao_2.length == 0) {
-               //console.log('TÁ VAZio')
                if (quase[0] == '-') {
                    naonao_2+= `-${aconta_2}`
                   
