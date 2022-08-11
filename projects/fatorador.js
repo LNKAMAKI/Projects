@@ -7993,14 +7993,7 @@ if (quad != eep) {
            concatenar_2+= ` - ${aconta_2}`
        }else{
            concatenar_2+= ` + ${aconta_2}`
-       }
-    }
-   }
-}
-   
-   //console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar_2)
-
- 
+       }}}}
    // Vendo se o número é primo
    function ehprimo(Number) {
        parar = false
@@ -8057,109 +8050,65 @@ if (quad != eep) {
                        maiorparamenor[volume] = yposition[item][pam]
                        posiçõesnumeros[volume] = Number(item)
                        dn = 10
-   
-   
-                   }
-               }
-           }
-       }
+                   } } }}
        return [maiorparamenor, posiçõesnumeros]
     }
    
    function doit(par) {
-   
        segs_22 = []
    
        for (uf in par) {
-       
-          //console.log(segs_2[uf].godhelpme)
-          // segs_22.push(segs_2[uf])
-         //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          segs_22[uf] = {}
            segs_22[uf].mons = [...par[uf].mons]
            segs_22[uf].car = par[uf].car
-   
     }
    
     relation_2 = []
-   
-   
     quanto = Number(monomios_2.length)/Number(divs_2[okentao])
-   
-   
     numapars = []
-   
-   
-   
    
     util = []
     for (t in segs_22) {
-   
-   
-   
         if (segs_22[t].mons.length >= quanto) {
             util.push(segs_22[t])
-        }
-        ////console.log('')
-    }
-   
-    ////console.log('util', util)
-    
+        }}
+
     for (m in monomios_2) {
         aparic = 0
-        ////console.log(m)
         for (t in util) {
-            ////console.log('util[t].mons', util[t].mons)
-            ////console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
-   
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
             }
         }
-        ////console.log('aparic',m, aparic)
         numapars.push({num: Number(m), vezes: aparic})
         }
    
     present = []
-    //console.log('numapars',numapars)
-    ////console.log('----------------------------------------------------------------------------------------------------')
     for (r in util) {
-   
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------')
        lista = util[r].mons
         present = {fix: [], falt: []}
-        ////console.log(lista)
-      
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
-            ////console.log(lista[g])
-   
-   
             if (numapars.find(function(numapars) {
                 return numapars.num == lista[g]
                 }).vezes == 1) {
                   rep++
                   present.fix.push(lista[g])
-            }
-        }
+            }}
    
         if (present.fix.length < quanto) {
         for (g in lista) {
             if (present.fix.indexOf(lista[g]) == -1) {
                 present.falt.push(lista[g])      
-            }
-        }
+            }}
         
         if (present.fix.length == 0) {
         for (ti in present.falt) {
                 numapars.find(function(numapars) {
                     return numapars.num == present.falt[ti]
                     }).vezes--
-        }
-    }
-        
-   
-    }
+        }}}
+
     relation_2[r] = present
     relation_2[r].car = segs_22[r].car
     }
