@@ -5804,49 +5804,28 @@ if (quad != eep) {
                     return roller_2.rept == repwri;
                   })
                   .position.push(quad);
-              }
-            }
-          }
-        }
-      }
-    }
-    
-  }
+              }} }}} } }
 
   for (r in roller_2) {
-    //console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
     roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
 }
 
          while(java < miss_2.length && deucerto == false) {
-           
-   
          podeser_2 = []
          for (outro in miss_2) {
-            //console.log('')
-             if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
-                //console.log(miss_2[outro].aparicoes, outro)
-   
+             if (outro != java ) {
                  presentes = []
                  for (quecoisa in miss_2[outro].aparicoes) {
                      fatorzinho = miss_2[outro].aparicoes[quecoisa]
-                    //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss_2[java].aparicoes)
-   
                      if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
-                     //console.log('TEM', fatorzinho)
                          presentes.push(fatorzinho)
-                     }
-                 }
-                 //console.log('OLHA', presentes)
+                     }}
    
                  adicionou = false
                  for (idk in podeser_2) {
-                    //console.log(podeser_2[idk])
                      esigual = true
                      for (denovo in podeser_2[idk].opl) {
-                         //console.log(podeser_2[idk].opl[denovo], presentes[denovo])
                          if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
-                            //console.log('É IGUAL')
                          }else{
                              esigual = false
                          }
@@ -5858,77 +5837,43 @@ if (quad != eep) {
                  }
                  if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                      podeser_2.push({opl: presentes, position: [outro]})
-                 }
-                 
-             }
-            }
-           //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser_2)
-            
-            
+                 } }}
+
             for (belief in podeser_2) {
                 if (podeser_2[belief].position.indexOf(java) == -1) {
                 podeser_2[belief].position.push(String(java))
                 }
    
-             //console.log(podeser_2[belief].opl)
-   
              shot = ''
              for (gun in podeser_2[belief].opl) {
-                 //console.log(podeser_2[belief].opl[gun])
                  shot+= podeser_2[belief].opl[gun] + ','
              }
-            //console.log('THAT WE LET IT GO:', shot)
    
              if (roll_2.length == 0) {
-                //console.log('ADICIONAR(LISTA VAZIA)')
-                 //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
              }else if(roll_2.find(function(roll_2){return roll_2.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                 //console.log('JÁ TEM')
-                //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}),'esse',podeser_2[belief])
-   
+                
                  for (capital in podeser_2[belief].position) {
-                     //console.log(podeser_2[belief].position[capital])
-   
-                   //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
-   
                  if (roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital])== -1) {
-                    //console.log('NÃO TEM') 
                     roll_2.find(function(roll_2){return roll_2.way == shot}).posições.push(podeser_2[belief].position[capital])
-                 }
-                 }
+                 } } }}
    
-             }else{
-                 //console.log('NÃO TEM')
-                 //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
-             }
-            }
-   
-            //console.log('E ESSE É O ORIGInAL: ', miss_2[java].aparicoes, java)
             whyis = java
             if (podeser_2.length > 0) {
-                //console.log('fatores', quantosfatores, 'posições', quantasposições)
-                //console.log(podeser_2)
-   
                 for(cold in podeser_2) {
             if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
-            //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
              deucerto = true
    
              ficaassim = ''
              podeser_2[cold].position.push(whyis)
    
              for (yehaa in podeser_2[cold].position) {
-                //console.log(podeser_2[cold])
-                 //console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
                  if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
-                     
                      fi = ''
                      for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
                          if (miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != '-') {
                              fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
                          }
                      }
-                    //console.log(fi)
                      if (yehaa != 0) {
                           ficaassim += ` - ${fi}`
                      }else{
@@ -5939,58 +5884,29 @@ if (quad != eep) {
                      ficaassim+= miss_2[podeser_2[cold].position[yehaa]].dividido
                  }else{
                      ficaassim+= miss_2[podeser_2[cold].position[yehaa]].dividido 
-                 }
-                 
-             
-             }
-             //console.log('FICA ASSIM', `(${ficaassim})`)
+                 }}
             for (ruin in podeser_2[cold].opl) {
-            //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
              emotion = ''
              for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor ) {
-           //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
                  emotion+= scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream]
              }
-            //console.log(`${emotion}(${ficaassim})`)
-           }
-            }
-         }
-   
-         }
-   
-          //  }
-   
+           }}}}
             java++
         }
    
-   
-   
-   
-   
-   
-   
+
    
           youdumb_2 = []
    
            aswillbe2 = []
            for (raging = 0; raging < roll_2.length; raging++) {
-   
                asitwas = [] 
-           
                obe = {what:[]}
-   
-             //console.log('')
-              //console.log(roll_2[raging].repetidos, roll_2[raging].posições)
-   
-              
            
               for (still in roll_2[raging].repetidos) {
                asitwas2 = []
                aswillbe = []
-   
-              //console.log('')
-            //console.log(scarecrow_2[roll_2[raging].repetidos[still]].divisor, still)
-   
+
                mylife = '('
                for (still2 in roll_2[raging].posições) {
                    if (still != 0) {
@@ -5998,131 +5914,60 @@ if (quad != eep) {
                    }else{
                        mylife+= miss_2[roll_2[raging].posições[still2]].dividido
                    }
-   
                    older = 
                    scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
                   asitwas.push(older)
                   asitwas2.push(older)
                   aswillbe.push(older)
               }
-
               obe.what.push({ar: asitwas2, indice: still})
               aswillbe2.push({oque:aswillbe, onde:raging})
-              
            }
-           
            youdumb_2.push({mons: asitwas, rag: raging, w: obe, polen: raging})
-      //console.log(obe)
           }
-   
-    //console.log('YOUDUMB',youdumb_2)
           
            dontworry = []
            for (behappy in youdumb_2) {
-   
-          //console.log('_______________________________')
-          //console.log(youdumb_2[behappy].mons)
-   
-               //console.log('---------------------------------------')
                for (armenia in youdumb_2) {
-                   
                    if (armenia != behappy) {
-              //console.log(youdumb_2[armenia].mons)
-   
                    doeshave = true
                    for (sofar in youdumb_2[armenia].mons) {
-                  //console.log(youdumb_2[armenia].mons[sofar])
                        if (youdumb_2[behappy].mons.indexOf(youdumb_2[armenia].mons[sofar]) == -1) {
                            doeshave = false
-                          
                        }
                    }
-              //console.log(doeshave)
                    if (doeshave == true) {
-              //console.log(youdumb_2[behappy].mons,'TEM', youdumb_2[armenia].mons)
                   if (dontworry.indexOf(behappy) == -1) {
                    dontworry.push(armenia)
-                  }
-                   }
-               }
+                  } }} }}
    
-               }
-             
-           }
-   
-           
-           for (da = youdumb_2.length - 1; da >= 0; da--) {
-               if (dontworry.indexOf(String(da)) != -1) {
-              //console.log('TEM COISA AÍ',youdumb_2[da].mons)
-                  // youdumb_2.splice(da,1)
-               }
-           }
-           
-   
+      
            grtols_2 = []
    
-   
-       
    for (hi in youdumb_2) {
-      //console.log(segs_2[hi], segs_2[hi].mons.length)
        youdumb_2[hi].length = youdumb_2[hi].mons.length
-   
        grtols_2.push(youdumb_2[hi])
    }
-   
-   //console.log('grtols_2: ', segs_2)
-   //console.log(sortob(grtols_2, 'length'))
-   
-   
+  
    organizado = sortob(grtols_2, 'length')[1]
    
    grtols_2 = []
    for (ah in organizado) {
-      //console.log(segs_2[organizado[ah]])
        grtols_2.push(youdumb_2[organizado[ah]])
       
    }
-        
-   //console.log('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
-   
+  
    youdumb_2 = []
    for (erro in grtols_2) {
-      //console.log(grtols_2[erro])
        youdumb_2.push(grtols_2[erro])
    }
-   
-   
-   
-   //console.log('111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
-   /*
-   for (yourlife in grtols_2) {
-   
-       //console.log(grtols_2[yourlife].w.what)
-   
-       for (bolinho in grtols_2[yourlife].w.what) {
-      //console.log(grtols_2[yourlife].w.what[bolinho])
-   
-           vagem = grtols_2[yourlife].w.what[bolinho]
-           for (ahnao in vagem) {
-          //console.log(vagem[ahnao])
-           }
-       }
-   }
-   */
    
    pans_2 = []
    numerospresentes_2 = []
    
-   //console.log('WHAT IS IN YOUR MIND??????????????????__________LLLLLLLLLLLLLLLLLLLLLLLLL_______________')
-   for (AH in youdumb_2) {
-       //console.log(youdumb_2[AH])
-   }
+  
    for (wrecked in youdumb_2) {
-       //console.log('YOUDUMB[WRECKED]',youdumb_2[wrecked])
        initial = youdumb_2[wrecked].w.what
-       for (agg in initial) {
-      //console.log(initial[agg].ar, Number(agg))
-       }
    }
    
    grtols_2 = [];
@@ -6135,65 +5980,38 @@ if (quad != eep) {
  
    grtols_2 = [];
    for (ah in organizado) {
-     ////
      grtols_2.push(youdumb_2[organizado[ah]]);
    }
    youdumb_2 = [...grtols_2];
 
    heya_2 = [...youdumb_2]
    for (imback in youdumb_2) {
-      //console.log('AAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', imback)
-   
        sticky = []
        initial = youdumb_2[imback].w.what
    
-     
-   
        if (initial.length > 0) {
        inside = {which: [], numberyoudumb: youdumb_2[imback].polen}
-      //console.log(imback)
-       //console.log('THERE\'S NOTHING TO SAY NOW',youdumb_2[imback].mons)
-   
-   
-       //console.log('///////\\\\\\\ESPERE POR UM SEGUNDO...///////\\\\\\')
-       
        
        for (agg in initial) {
-      //console.log('IN THIS WORLD',initial[agg].ar)
-   
            taai = false
             for (eng in initial[agg].ar) {
-              //console.log(initial[agg].ar[eng])
                if (numerospresentes_2.indexOf(initial[agg].ar[eng]) == -1) {
-              //console.log('OK')
-                  
                }else{
-          //console.log('WE HAVE A PROBLEM')
                    taai = true
-               }
-            }
+               } }
         
             if (taai == false) {
-          //console.log('SEM PROBLEMAS', imback, agg)
                inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
               
-          //console.log('I\'M TWISTED UP',inside, inform)
                inside.which.push(inform)
-          //console.log('INFORM', inform.monos)
+
                for (darkening in inform.monos) {
-                  
                    sticky.push(inform.monos[darkening])
                }
-          //console.log('DODODODODODODODDODOODDODODOODDDODODODO', inside.which)
-   
+ 
                for (eng in initial[agg].ar) {
-               
                    numerospresentes_2.push(initial[agg].ar[eng])
-                  
-                }
-           //console.log('NUMEROS PRESENTES ATÉ O MOMENTO:',numerospresentes_2)
-            }
-       }
+                } }}
    
        
        if (inside.which.length > 0) {
@@ -6201,186 +6019,88 @@ if (quad != eep) {
     pans_2.push(inside)
        }
    
-       //youdumb_2.splice(imback, 1)
-       //console.log('FICOU ASSIM Ó:', numerospresentes_2, sticky)
-       /*
-       for (invest in pans_2) {
-      //console.log('índice',invest)
-           for (plat in pans_2[invest].which) {
-          //console.log(pans_2[invest].which[plat].monos)
-           }
-       }
-       */
-       
-      // youdumb_2.splice(imback, 1)
        for (h in youdumb_2) {
-   
            if (h != imback) {
-               if (youdumb_2[h].w.what.length > 0) {
-         //console.log(youdumb_2[h].w.what, h)
-               }
-   
-           //console.log('-----------------------------')
            for (tempo = youdumb_2[h].w.what.length - 1; tempo >= 0; tempo--) {
-           //console.log(youdumb_2[h].w.what[tempo].ar, tempo)
                
                dulu = false
                
               for (and in youdumb_2[h].w.what[tempo].ar) {
-              //console.log(youdumb_2[h].w.what[tempo].ar[and])
                if (numerospresentes_2.indexOf(youdumb_2[h].w.what[tempo].ar[and]) != -1) {
-                 //console.log('ESTÁ EM: ', numerospresentes_2)
                    dulu = true
-               }
-              }
-              if (dulu == false) {
-             //console.log('PODE FICAR :)', h, tempo)
-              }else{
-            ////console.log('NÃO PODE!!!!!!!!!!!!!')
-             // youdumb_2[h].w.what.splice(tempo, 1)
-             //imback++
-         //console.log('IMBAACK',imback)
-              }
-          }
-       }
-       }
+               }}}}}
        
-       //console.log('YOUDUMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMB' )
-   
-     
-    
-      //console.log('OLHA, eu tentei...', youdumb_2.length)
-       for (vixi in youdumb_2) {
-        
-        // if (youdumb_2[vixi].w.what.length > 0) {
-          //console.log('aaa',youdumb_2[vixi].w.what)
-           for (ainao in youdumb_2[vixi].w.what) {
-           //console.log('AI NÃO',youdumb_2[vixi].w.what[ainao].ar)
-           
-             
-       }
-   //}
-   }
    
    for (força in youdumb_2) {
-      //console.log(força, youdumb_2[força],youdumb_2[força].w.what.length)
        entao = []
        for (areo in youdumb_2[força].w.what) {
-          //console.log(areo,youdumb_2[força].w.what[areo].ar)
            for (paris in youdumb_2[força].w.what[areo].ar) {
-              //console.log(paris,youdumb_2[força].w.what[areo].ar[paris])
                entao.push(Number(youdumb_2[força].w.what[areo].ar[paris]))
-           }
-       }
-      //console.log(entao)
+           }}
        youdumb_2[força].t = entao
-      //console.log(youdumb_2[força].t)
     }
-   
-   //console.log('EU NÃO SEI MAS O QUE EU ESTOU FAZENDO....A, A, A, A, A, A, A, A, A, A, A, A,')
-   
-   
+ 
    grtols_2 = []
-   
-   
        
    for (hi in youdumb_2) {
-       //////console.log(segs_2[hi], segs_2[hi].mons.length)
        youdumb_2[hi].length = youdumb_2[hi].t.length
    
        grtols_2.push(youdumb_2[hi])
    }
-   
-   //////console.log('grtols_2: ', segs_2)
-   //////console.log(sortob(grtols_2, 'length'))
    
    
    organizado = sortob(grtols_2, 'length')[1]
    
    grtols_2 = []
    for (ah in organizado) {
-      // ////console.log(segs_2[organizado[ah]])
        grtols_2.push(youdumb_2[organizado[ah]])
       
    }
    
    youdumb_2 = []
    for (erro in grtols_2) {
-      //console.log('RAINY DAY',grtols_2[erro])
        youdumb_2.push(grtols_2[erro])
-   }
-   
-   //console.log('IMAGENS', youdumb_2)
-   
-   }
-   
-   }
-   //console.log('pans_2 é', pans_2)
+   }} }
+
    concatenar_2 = ''
    numsdesfat = []
    newexpress = []
 
    for (bababa in pans_2) {
-      
-       //console.log('A PARTIR DA QUI')
        edge_2 = []
        naonao_2 = ''
        amount = []
-   
-     //console.log(pans_2[bababa], Number(bababa))
-      //console.log(pans_2[bababa].which)
-      //console.log(roll_2[pans_2[bababa].numberyoudumb])
-    //console.log('posições(fixas) - miss_2: ',roll_2[pans_2[bababa].numberyoudumb].posições)
-   
+
          tobreak_2 = ''
          realife = []
          amontoado_2 = []
          for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) {
-      //console.log(quassao,':', roll_2[pans_2[bababa].numberyoudumb].posições[quassao],miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido)
-   
            el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido
-   
-      //console.log('ALL I WANTED WAS TO FINISH THIS THING :D', el)
-   
            gates = []
    
            quase = []
-           /*
-           for (power in el) {
-               quase.push(el[power])
-          //console.log('EL POWER!',el[power])
-           }
-   */
+       
            teri = false
            juntar = ''
-         //console.log('NADAAAAAAAAAA')
+
            for (estudar in el) {
-          //console.log(el[estudar])
                if (el[estudar] == '*') {
                    teri = true
                    if (el[Number(estudar) + 1].search('[0-9]') != -1) {
-                     
                        quase.push(juntar)
                        juntar = ''
                    quase.push('*')
-              //console.log('aaaaaaaaaaaaaaaaa', quase)
                    }
                }else{
-                  
-              
-            //console.log('juntar',juntar)
+  
                    if (juntar.length == 0) {
                        juntar = el[estudar]
-                  //console.log('LISTA VAZIA', juntar)
-   
+
                        if (estudar == el.length - 1) {
                            quase.push(juntar)
                        }
-   
                    }else if(el[estudar].search('[0-9]') != -1 && juntar.search('[0-9]') != -1){
-                  //console.log('I\'M NEVER WHAT I LIKE')
                        juntar+= el[estudar]
-                  //console.log('juntar', juntar)
                        if (estudar == el.length - 1) {
                            quase.push(juntar)
                        }
@@ -6392,12 +6112,10 @@ if (quad != eep) {
                        }}} }
    
             if (teri == false) {
-               
                quase = []
                for (t in el) {
                quase.push(el[t])
-               }
-           }
+               } }
            aconta_2 = ''
            friend = ''
    
@@ -6423,21 +6141,15 @@ if (quad != eep) {
                        if (patience == quase.length - 1) {
                            aconta_2+= `^${elevar}`
                        }
-   
                    }else{
-                     
                        if (elevar > 1) {
                            aconta_2+= `^${elevar}`
-                           
                        }
-   
                        aconta_2+= quase[patience]           
                        elevar = 1
                    }}}
          
-           //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta_2)
            if (aster == false) {
-           //console.log('<<<<<<<<<<<<<',quase)
             direitando = ''
             for (h in quase) {
                     direitando+= quase[h]
@@ -6447,55 +6159,34 @@ if (quad != eep) {
 
 
        if (aster == false) {
-        //console.log('SEM ASTERISCO',aconta_2)
            antes = ''
            for (eyes in quase) {
-               
-              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
            antes+= aconta_2
-          //console.log('ANTEEEES:', antes)
-           
            aconta_2 = antes
-        
        }
-       //console.log('A CONTA',aconta_2)
    
        realife.push(aconta_2)
            if (tobreak_2.length == 0) {
-              
-              
                if(quase[0]== '-'){
-               
                   negativo = true
                if (aconta_2[0] == '-') {
-                //console.log('PROBLEM')
                    mood = ''
                    for (member in aconta_2) {
-                       //console.log('VAMOS LOGO!!!', aconta_2[member])
                        if (aconta_2[member] != '-') {
-                          //console.log('PUSHAR')
                            mood+= aconta_2[member]
-                       }
-                   }
-                   //console.log('THIS IS MOOOOOOOOOOOOD', mood)
+                       } }
                    tobreak_2+= `-${mood}`
                }else{
                    tobreak_2 += `-${aconta_2}`
-                   //console.log('THIS IS ACONTAAAAAAAAAAA', aconta_2)
                }
    
                }else{
                    negativo = false
                    tobreak_2+= aconta_2
-                  //console.log('THIS IS ACONTA_2||||||||||||||||||||||||||||||||||||||||||', aconta_2)
-                   for (now in aconta_2) {
-                   //console.log(aconta_2[now])
-                   }
                }
            }else if(quase[0]== '-'){
             
@@ -6505,24 +6196,14 @@ if (quad != eep) {
                   //console.log(el[okay])
                    if (aconta_2[okay]!= '-'){
                        correct+= aconta_2[okay]
-                     //console.log('MESS', aconta_2[okay])
                    }
                }
-              //console.log('ASSIM: ', correct)
                tobreak_2+= ` - ${correct}`
-               //console.log('THIS IS CORRECTTTT||||||||||||||||||||||||||||||||||||||||||', correct)
            }else{
                negativo = false
-             //console.log(el)
                tobreak_2+= ` + ${aconta_2}`
-               //console.log('THIS IS ACONTA_2||||||||||||||||||||||||||||||||||||||||||', aconta_2)
            }
-          //console.log('THE COLOURS THAT I SAW', tobreak_2)
 
-
-         //console.log('CERTINHO?????vaaaaaaaaaaaaaaaaaaai', friend, negativo)
-          //console.log(amontoado_2)
-           
            if (negativo == true) {
           
            uh = ''
@@ -6536,10 +6217,7 @@ if (quad != eep) {
            }else{
                amontoado_2.push('+')
                amontoado_2.push(friend)
-           }
-           
-         }
-         //console.log('ENTÃO:','(', tobreak_2,')')
+           }}
    
        for (repr in pans_2[bababa].which) {
             triste = scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor
@@ -7201,41 +6879,19 @@ if (quad != eep) {
         if (present.fix.length < quanto) {
         for (g in lista) {
             if (present.fix.indexOf(lista[g]) == -1) {
-             //   //console.log('FALTA')
-                present.falt.push(lista[g])
-   
-               
-   
-                  //  numapars.find(function(numapars) {
-                      // return numapars.num == lista[g]
-                     //   }).vezes--
-   
-                        
-            }
-        }
-      //  //console.log('FALTAM OS nÚMEROS', present.falt)
-   
-        
+                present.falt.push(lista[g])       
+            }}
+
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-          //  //console.log(present.falt[ti])
-   
-           
-   
                 numapars.find(function(numapars) {
                     return numapars.num == present.falt[ti]
-                    }).vezes--
-   
-                 
-        }
-    }
-        
-   
-    }
+                    }).vezes--   
+        }} }
     relation_2[r] = present
     relation_2[r].car = segs_22[r].car
-    
     }
+
     for (c in relation_2) {
         if (relation_2[c].fix.length > 0) {
         faltam = Number(quanto) - Number(relation_2[c].fix.length)
