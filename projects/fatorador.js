@@ -4636,14 +4636,12 @@ if (quad != eep) {
             deserve+= tobreak_2[k]
             reason.push(k - 1)
            tobreak_2[k] = deserve
-        }
-      }
+        }}
 
       for (time = tobreak_2.length - 1; time >= 0; time--) {
         if (reason.indexOf(time) != -1) {
             tobreak_2.splice(time, 1)
-            }
-       }
+            }}
 
       for (roberto in naonao_2) {
         for (vaidarcerto in tobreak_2) {
@@ -4683,8 +4681,7 @@ if (quad != eep) {
             if (monomios_2[todososnumeros_2[eh]].numero[sempresei] != '+' && monomios_2[todososnumeros_2[eh]].numero[sempresei] != '-') {
             ter = monomios_2[todososnumeros_2[eh]].numero[sempresei]
             join+= ter
-            }
-        }
+            } }
         if (monomios_2[todososnumeros_2[eh]].numero[0] == '+') {
             newexpress.push('+')
             newexpress.push(join)
