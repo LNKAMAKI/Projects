@@ -1998,8 +1998,7 @@ function FATORARSInGULAR(potn) {
       } else {
         if (pans.length == 1 && todososnumeros.length == 0) {
           return [hei, segs.length, roll.length];
-        }
-      }
+        }}
     } else {
       return [concatenar, segs.length, roll.length];
     }
@@ -2011,8 +2010,7 @@ function FATORARSInGULAR(potn) {
        
            if (Number%t == 0) {
                parar = true
-           }
-       }
+           } }
        if (parar) 
        return false
        else
@@ -2024,11 +2022,9 @@ function FATORARSInGULAR(potn) {
    function ehprimo2(Number) {
        divisores = []
        for (t = 2; t < Number && parar == false; t++) {
-       
            if (Number%t == 0) {
               divisores.push(t)
-           }
-       }
+           }}
       return divisores
    }
    
@@ -2040,7 +2036,6 @@ function FATORARSInGULAR(potn) {
        for (n in yposition) {
            maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
            posiçõesnumeros.push(-1)
-   
        }
    
        for (item in yposition) {
@@ -2051,7 +2046,6 @@ function FATORARSInGULAR(potn) {
                    if (yposition[item][pam] > maiorparamenor[volume]) {
                        var itens = yposition.length - (Number(volume) + 1)
                        var leng = yposition.length
-   
                        for (c = 0; c < itens; c++) {
                            maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
                            posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
@@ -2060,47 +2054,27 @@ function FATORARSInGULAR(potn) {
                        maiorparamenor[volume] = yposition[item][pam]
                        posiçõesnumeros[volume] = Number(item)
                        dn = 10
-   
-   
-                   }
-               }
-           }
-       }
+                   } } }  }
        return [maiorparamenor, posiçõesnumeros]
     }
    
    function doit(par) {
-   
        segs2 = []
-   
        for (uf in par) {
-       
-          //console.log(segs[uf].godhelpme)
-          // segs2.push(segs[uf])
-         //  segs[tie].godhelpme = [...segs[tie].mons]
          segs2[uf] = {}
            segs2[uf].mons = [...par[uf].mons]
            segs2[uf].car = par[uf].car
-   
     }
    
     relation = []
-   
-   
     quanto = Number(monomios.length)/Number(divs[okentao])
-   
-   
     numapars = []
-   
-   
-   
    
     util = []
     for (t in segs2) {
         if (segs2[t].mons.length >= quanto) {
             util.push(segs2[t])
-        }
-    }
+        } }
     
     for (m in monomios) {
         aparic = 0
@@ -2108,7 +2082,6 @@ function FATORARSInGULAR(potn) {
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
             }}
-  
         numapars.push({num: Number(m), vezes: aparic})
         }
    
@@ -3534,7 +3507,6 @@ function FATORE(q) {
    grtols_2 = []
    for (ah in organizado) {
        grtols_2.push(segs_2[organizado[ah]])
-      
    }
 
    segs_2 = grtols_2
@@ -3564,7 +3536,6 @@ function FATORE(q) {
       
       for (hi in its) {
           its[hi].length = its[hi].car.length
-      
           grtols_2.push(its[hi])
       }
       
@@ -3573,11 +3544,9 @@ function FATORE(q) {
       grtols_2 = []
       for (ah in organizado) {
           grtols_2.push(its[organizado[ah]])
-         
       }
    
       its = grtols_2
-     //console.log(its)
      for (c in its) {
        segs_2ordered.push(its[c])
      }
@@ -3587,22 +3556,14 @@ function FATORE(q) {
 
    //DIVS_2
    ml = monomios_2.length
-   //////console.log(ml)
    
    divs_2 = ehprimo2(ml)
-   //////console.log(divs_2)
-   
-   for (n in divs_2) {
-       //////console.log(divs_2[okentao])
-       
-   }
    
    if (divs_2.length == 0) {
    divs_2 = [1]
    }
    
       for (tie in segs_2) {
-      //console.log(segs_2[tie])
        segs_2[tie].godhelpme = [...segs_2[tie].mons]
       }
      
@@ -3640,8 +3601,6 @@ function FATORE(q) {
                }
                scarecrow_2.push({divididos: [], outrodiv: [], poss: [...segs_2[anchor].mons], divisor: [...army], positions: [...segs_2[anchor].mons]})
                for (high in segs_2[anchor].mons) {
-                   
-                  
                    army = [...bell]
      
                 lightson = [...army]
@@ -3834,54 +3793,39 @@ if (quad != eep) {
         what = roller_2.find(function(roller_2) {return roller_2.rept == rap})
       
       for (h in monspos) {
-        
         if (what.mons.indexOf(monspos[h]) == -1) {
-          
           what.mons.push(monspos[h])
-        }
-      }
-      
+        }}
     }else{
-      
       monspos.splice(monspos.length - 1,1)
     }
     
   }else{
       if (monspos.indexOf(posmon) == -1 && cango == true) {
-        
         monspos.push(posmon)
         result.push(monpos)
         result.push(posmon)
     }else{
-
       if (cango == true) {
-        
         monspos.splice(monspos.length - 1,1)
-        
         }else{
         cango = true
-        
         }
-
       parar = false
-
       novorap = ''
       for (h = rap.length - 1; h >= 0; h--) {
-        
         if (rap[h] == ',' && parar == false) {
           parar = true
         }else if(parar == true) {
           novorap+= rap[h]
-      }
-    }
+      } }
 
     nov = ''
     for (u = novorap.length - 1; u >= 0; u--) {
       nov+= novorap[u]
     }
       rap = nov
-    }
-  }
+    } }
       repwri = rap          
 
       if (
@@ -3931,7 +3875,6 @@ if (quad != eep) {
                            presentes.push(fatorzinho)
                        }}
 
-   
                    adicionou = false
                    for (idk in podeser_2) {
                        esigual = true
@@ -3947,7 +3890,6 @@ if (quad != eep) {
                    if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                        podeser_2.push({opl: presentes, position: [outro]})
                    } }}
-             
               
               for (belief in podeser_2) {
                   if (podeser_2[belief].position.indexOf(java) == -1) {
@@ -3972,9 +3914,8 @@ if (quad != eep) {
                   for(cold in podeser_2) {
               if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
                deucerto = true
-   
                ficaassim = ''
-   
+               
                for (yehaa in podeser_2[cold].position) {
                    if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
                        fi = ''
