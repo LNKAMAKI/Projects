@@ -5033,13 +5033,11 @@ function FATORE(q) {
                        scarecrow_2[anchor].outrodiv.push(pain)
                   }
                    }else{
-           
                        right = ''
                        for (feet in pain) {
                            if (pain[feet] != '+') {
                                right+= pain[feet]
                            } }
-                      
                        uy = ''
    
                       for (xarope in right) {
@@ -5049,8 +5047,7 @@ function FATORE(q) {
                        }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
                        }else{
                            uy+= right[xarope]
-                       }
-                      }
+                       }}
                       scarecrow_2[anchor].outrodiv.push(uy)
    
                       if (uy[0] == '-') {
@@ -5091,7 +5088,6 @@ function FATORE(q) {
        grtols_2.push(miss_2[organizado[ah]])
    }
    miss_2 = [...grtols_2]
-   //
    deucerto = false
    java = 0
    
@@ -5290,124 +5286,68 @@ if (quad != eep) {
               return roller_2.rept == repwri;
             })
             .position.push(quad);
-        }
-      }
-    }
-  }
-}
-}
-
-}
+        }}}}}}}
 
    for (r in roller_2) {
-       //console.log(roller_2[r].opl, roller_2[r].position, roller_2[r].rept)
        roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
    }
    while(java < miss_2.length && deucerto == false) {
-              
-             // if (miss_2[java].aparicoes.length >= quantasposições) {
-           //console.log('')
-        //console.log('SEnDO AnALISADO nO MOMEnTO', miss_2[java].aparicoes)
-   
            podeser_2 = []
            for (outro in miss_2) {
-              //console.log('')
                if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
-               //console.log(miss_2[outro], outro)
-   
                    presentes = []
                    for (quecoisa in miss_2[outro].aparicoes) {
                        fatorzinho = miss_2[outro].aparicoes[quecoisa]
-                    //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss_2[java].aparicoes)
    
                        if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    //console.log('TEM', fatorzinho)
                            presentes.push(fatorzinho)
-                       }
-                   }
-                 //console.log('OLHA', presentes)
+                       }}
+
    
                    adicionou = false
                    for (idk in podeser_2) {
-                    //console.log(podeser_2[idk])
                        esigual = true
                        for (denovo in podeser_2[idk].opl) {
-                          //console.log(podeser_2[idk].opl[denovo], presentes[denovo])
                            if (podeser_2[idk].opl[denovo] == presentes[denovo]) {
-                              //console.log('É IGUAL')
                            }else{
                                esigual = false
-                           }
-                       }
+                           }}
                        if (esigual == true) {
                            podeser_2[idk].position.push(outro)
                            adicionou = true
-                       }
-                   }
+                       } }
                    if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                        podeser_2.push({opl: presentes, position: [outro]})
-                   }
-                   
-               }
-              }
-              //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser_2)
-              
+                   } }}
+             
               
               for (belief in podeser_2) {
                   if (podeser_2[belief].position.indexOf(java) == -1) {
                   podeser_2[belief].position.push(String(java))
                   }
    
-               //console.log(podeser_2[belief].opl)
-   
                shot = ''
                for (gun in podeser_2[belief].opl) {
-                   //console.log(podeser_2[belief].opl[gun])
                    shot+= podeser_2[belief].opl[gun] + ','
                }
-              //console.log('THAT WE LET IT GO:', shot)
    
                if (roll_2.length == 0) {
-                  //console.log('ADICIONAR(LISTA VAZIA)')
-                   //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
                }else if(roll_2.find(function(roll_2){return roll_2.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                   //console.log('JÁ TEM')
-                  //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}),'esse',podeser_2[belief])
-   
+                
                    for (capital in podeser_2[belief].position) {
-                       //console.log(podeser_2[belief].position[capital])
-   
-                     //console.log(roll_2.find(function(roll_2){return roll_2.way == shot}).posições, roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital]),podeser_2[belief].position[capital])
-   
                    if (roll_2.find(function(roll_2){return roll_2.way == shot}).posições.indexOf(podeser_2[belief].position[capital])== -1) {
-                      //console.log('NÃO TEM') 
                       roll_2.find(function(roll_2){return roll_2.way == shot}).posições.push(podeser_2[belief].position[capital])
-                   }
-                   }
+                   }}}}
    
-               }else{
-                   //console.log('NÃO TEM')
-                   //roll_2.push({repetidos: [...podeser_2[belief].opl], way: shot, posições: [...podeser_2[belief].position]})
-               }
-              }
-   
-              //console.log('E ESSE É O ORIGInAL: ', miss_2[java].aparicoes, java)
               whyis = java
               if (podeser_2.length > 0) {
-                  //console.log('fatores', quantosfatores, 'posições', quantasposições)
-                  //console.log(podeser_2)
-   
                   for(cold in podeser_2) {
               if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
-              //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
                deucerto = true
    
                ficaassim = ''
-              // podeser_2[cold].position.push(whyis)
    
                for (yehaa in podeser_2[cold].position) {
-                 //console.log(podeser_2[cold])
-                  //console.log(miss_2[podeser_2[cold].position[yehaa]].dividido)
                    if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
                        
                        fi = ''
@@ -5416,7 +5356,6 @@ if (quad != eep) {
                                fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
                            }
                        }
-                     //console.log(fi)
                        if (yehaa != 0) {
                             ficaassim += ` - ${fi}`
                        }else{
@@ -5427,76 +5366,17 @@ if (quad != eep) {
                        ficaassim+= miss_2[podeser_2[cold].position[yehaa]].dividido
                    }else{
                        ficaassim+= miss_2[podeser_2[cold].position[yehaa]].dividido 
-                   }
-                   
-               
-               }
-              //console.log('FICA ASSIM', `(${ficaassim})`)
+                   }}
               for (ruin in podeser_2[cold].opl) {
-             //console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor)
                emotion = ''
                for (scream in scarecrow_2[podeser_2[cold].opl[ruin]].divisor ) {
-              ////console.log(scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream])
                    emotion+= scarecrow_2[podeser_2[cold].opl[ruin]].divisor[scream]
                }
-             //console.log(`${emotion}(${ficaassim})`)
-             }
-              }
-           }
-   
-           }
-   
-            //  }
-              
-            //console.log('continuar', miss_2[java])
-   
+             }} } }
               java++
           }
           okentao++
    
-   
-          /*
-          for (nao in roll_2) {
-             //console.log('-------------------------------------------------------------------')
-          //console.log('esse é o negócio',roll_2[nao].repetidos)
-           
-          //console.log('---------------------------------------------')
-         //console.log('ANALISANDO O MISS')
-   
-          
-               shot = ''
-               for (gun in roll_2[nao].repetidos) {
-                   //console.log(podeser_2[belief].opl[gun])
-                   shot+= roll_2[nao].repetidos[gun] + ','
-               }
-   
-           for (whyso in miss_2) {
-               //console.log(miss_2[whyso].aparicoes)
-               igual = 0
-               for (heat in miss_2[whyso].aparicoes) {
-                   //console.log(miss_2[whyso].aparicoes[heat])
-                   if (roll_2[nao].repetidos.indexOf(miss_2[whyso].aparicoes[heat]) != -1) {
-                     //console.log('TEM')
-                       igual++
-                   }
-               }
-              //console.log('HÁ', igual, 'numero repetidos')
-               if (igual == roll_2[nao].repetidos.length) {
-                  //console.log('TEM SIMMMMMMMMMMMMMMM', whyso)
-                     //console.log(roll_2.find(function (roll_2){return roll_2.way == shot}).posições)
-   
-                      if (roll_2.find(function (roll_2){return roll_2.way == shot}).posições.indexOf(whyso) != -1) {
-                       //console.log('NAO ADICIONAR, JÁ TEM')
-                   }else{
-                     //console.log('ADICIONAR EFETIVAMENTE')
-                       roll_2.find(function (roll_2){return roll_2.way == shot}).posições.push(whyso)
-                   }
-               }
-                 //console.log('THAT WE LET IT GO:', shot)
-                  
-               }
-           }
-           */
           
          for (ne in roll_2) {
            arranjar = []
