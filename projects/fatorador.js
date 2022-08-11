@@ -6698,7 +6698,6 @@ if (quad != eep) {
                        juntar+= el[estudar]
                   //console.log('juntar', juntar)
                        if (estudar == el.length - 1) {
-                      //console.log('UAISO')
                            quase.push(juntar)
                        }
                    }else{
@@ -6706,17 +6705,11 @@ if (quad != eep) {
                        juntar= el[estudar]
                        if (estudar == el.length - 1) {
                            quase.push(juntar)
-                       }
-                   }
-               }
-                 
-            }
-       //console.log('QUASSSSEEEE',quase)
+                       }}} }
    
             if (teri == false) {
                
                quase = []
-             //console.log('SEM ASTERISCO')
                for (t in el) {
                quase.push(el[t])
                }
@@ -6727,57 +6720,36 @@ if (quad != eep) {
           elevar = 1
           aster = false
           
-          //console.log('QUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASE',quase)
-           for (patience in quase) {
-               //console.log('_________uuuuuuuuuuu_______',quase[patience])       
-              
+           for (patience in quase) {     
                if (quase[patience] == '*') {
                    aster = true
-                  //console.log('AND THE CLSDADWDWD', patience)
-                  //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                   //console.log('gates',gates, fazerConta(gates))
-   
-                  //console.log(friend)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   //console.log('AI QUE COISA MAIS ESTRESSANTE É ESSA', aconta_2)
-                 
+
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  //console.log('É LETRA!!!!')
                   friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
-                  //console.log('ELEVAR!')
                        elevar++
    
                        if (patience == quase.length - 1) {
-                         //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta_2+= `^${elevar}`
-                          //console.log(aconta_2)
                        }
    
                    }else{
                      
                        if (elevar > 1) {
-                          //console.log('UEPA')
                            aconta_2+= `^${elevar}`
                            
                        }
    
-                       aconta_2+= quase[patience]
-                   
-                      //console.log(aconta_2)
-                     
+                       aconta_2+= quase[patience]           
                        elevar = 1
-                   }
-                 //console.log(elevar)
-                  
-               } 
-           }
+                   }}}
          
            //console.log( 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__________',aconta_2)
            if (aster == false) {
