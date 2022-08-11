@@ -1,4 +1,3 @@
-
 function ir() {
   qualexp1 = document.getElementById("typearea").value;
   qualexp = "";
@@ -2970,10 +2969,10 @@ for (bye in str) {
 
  return comofica
 }
+
 function FATORE(q) {
     qualexp1 = q;
     qualexp = "";
-  
     parar = false;
     for (copy in qualexp1) {
       if (qualexp1[copy] != " ") {
@@ -3013,24 +3012,16 @@ function FATORE(q) {
       return expression
     }}
 
-
   function FATORAR2(expression_2) {
-
     startexp_2 = [...expression_2];
 
   if (expression_2[0] !== "-" && expression_2[0] !== "+") {
-    //
     expo_2 = ["+"];
     for (ent in expression_2) {
-      //
       expo_2.push(expression_2[ent]);
     }
     expression_2 = expo_2;
   }
-
-  //6x^2 + 3 + 14x^2y + 7y
-
-  //FAZEnDO AS COnTAS COM nÚMEROS
 
   //FATORAnDO OS nÚMEROS
 
@@ -3043,7 +3034,6 @@ function FATORE(q) {
       fatorado = "";
       first = 1;
       div = 0;
-    
       stop = false;
       fator = 1;
 
@@ -3062,18 +3052,15 @@ function FATORE(q) {
             } } }}
       expression_2[n] = fatorado;
     }}
-  //
 
   //FAZEnDO AS POTÊnCIAS COM LETRAS
 
-  //
   for (y in expression_2) {
     if (expression_2[y] == "^") {
       ad = expression_2[Number(y) - 1];
       for (h = 0; h < Number(expression_2[Number(y) + 1]) - 1; h++) {
         expression_2[Number(y) - 1] += ad;
       }
-
       expression_2.splice(Number(y) + 1, 1);
       expression_2.splice(y, 1);
     }
@@ -3088,11 +3075,8 @@ function FATORE(q) {
       monomios_2.push({ numero: "" });
       obnum++;
     }
-
     monomios_2[obnum].numero += expression_2[n];
   }
-
-  //monomios_2 = [{numero: ['11','x']},{numero: ['11','*','3','x']}]
 
   //TRANSFORMA  O MONOMIOS_2.NUMERO(STRING) EM UM ARRAY
 
@@ -3102,15 +3086,12 @@ function FATORE(q) {
 
     for (misery in monomios_2[bye].numero) {
       carac = monomios_2[bye].numero[misery];
-
       if (ground.length == 0) {
-        //
         ground += carac;
       } else if (
         String(ground.search("[0-9]")) != -1 &&
         String(carac).search("[0-9]") != -1
       ) {
-        //
         ground += carac;
       } else {
         comofica.push(ground);
@@ -3119,8 +3100,7 @@ function FATORE(q) {
       }
       if (misery == monomios_2[bye].numero.length - 1) {
         comofica.push(ground);
-      }
-    }
+      } }
     monomios_2[bye].numero = comofica;
   }
 
@@ -3129,8 +3109,7 @@ function FATORE(q) {
     for (y in monomios_2[huh].numero) {
       if (String(monomios_2[huh].numero[y]).search("[a-z]") != -1) {
         partlet += String(monomios_2[huh].numero[y]);
-      }
-    }
+      }}
     monomios_2[huh].partletral = partlet;
   }
 
@@ -3147,8 +3126,7 @@ function FATORE(q) {
       ji.find(function (ji) {
         return ji.que == monomios_2[huh].partletral;
       }).quais.push(Number(huh));
-    }
-  }
+    }}
 
   //SEPARAnDO/JUnTAnDO OS nÚMEROS
 // ==> SOMANDO OS MONÔMIOS...
@@ -3162,16 +3140,13 @@ function FATORE(q) {
        div = 0
        stop = false
        fator = 1
-       
        for (e = 2; stop == false; e++) {
            sob = Number(potn)
               if (ehprimo(e) == true) {
                while (sob%e == 0) {
                sob = sob/e
                fator = fator*e
-   
                st = false
-               
                if (fator == potn) {
                stop = true
                fatorado += `${e}`
@@ -3201,8 +3176,7 @@ function FATORE(q) {
       if (divisao == "" || divisao == "-") {
         podeir = false;
         qual = meow;
-      }
-    }
+      }}
     return podeir;
   }
    
