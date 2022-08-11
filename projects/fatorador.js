@@ -2600,26 +2600,15 @@ function FATORARSInGULAR(potn) {
             }
 
            if (aster == false) {
-             
-              //console.log('SEM ASTERISCO2', aconta, quase)
-   
                antes = ''
            for (eyes in quase) {
-               
-              //console.log(quase[eyes])
                if (quase[eyes].search('[0-9]') != -1) {
-                  //console.log('CRY')
                    antes+= quase[eyes]
                }
            }
            antes+= aconta
-          //console.log('ANTEEEES:', antes)
-              // for (t in quase) {
-              // aconta+= quase[t]
-             //  }
              aconta = antes
            }
-          //console.log(quase[0],'VAIIIIIIIIIIIIIIIIIIIIIIIIIIII', aconta)
    
           edge.push(aconta)
 
@@ -2628,25 +2617,19 @@ function FATORARSInGULAR(potn) {
             for (i in friend) {
                 if (friend[i] != '-') {
                     uh+= friend[i]
-                }
-            }
+                }}
             amount.push('-')
             amount.push(uh)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', '-',aconta,'____________________')
         }else{
             amount.push('+')
             amount.push(friend)
-            //console.log('ANOTHERRRRRRRRRRRRRRRRRRRRRRR', aconta)
         }
 
            if (naonao.length == 0) {
-               //console.log('TÁ VAZio')
                if (quase[0] == '-') {
                    naonao+= `-${aconta}`
-                  
                }else{
                    naonao+= aconta
-                   
                }
            }else{
                if (quase[0] == '-') {
@@ -2654,10 +2637,7 @@ function FATORARSInGULAR(potn) {
                   
                }else{
                    naonao+= ` + ${aconta}`
-                  
-               }
-           }
-       }
+               }}}
    
        if (concatenar.length > 0) {
            concatenar+= ' + '
@@ -2703,84 +2683,47 @@ function FATORARSInGULAR(potn) {
 
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
-        //console.log(primeirocaso[0], 'continua igual')
-        
       }else{
-
           mudou = true
-          //console.log(amount,'=>',primeirocaso[0])
-         
       }
-   
 
       if (segundocaso[1] == segundocaso[2]) {
-        //console.log(segundocaso[0], 'continua igual')
       }else{
-
           mudou = true
-        //console.log(amontoado,'=>',segundocaso[0])
-        
       }
-
-
 
       if (mudou == true) {
         naonao = primeirocaso[0]
         tobreak = segundocaso[0] 
-
-      //console.log('')
-      //console.log('SOMANDO FICA ASSIM:')
-
-      //console.log('')
-
       reason = []
       for (k in naonao) {
-      //console.log(k, naonao[k])
         if (k != 0 && naonao[k] != '-' && naonao[k] != '+') {
             deserve = naonao[k - 1]
             reason.push(k - 1)
             deserve+= naonao[k]
-            //console.log('anterior:',deserve)
             naonao[k] = deserve
-        }
-      }
+        }}
 
-    //console.log('reason')
      
    for (time = naonao.length - 1; time >= 0; time--) {
-    //console.log(time, naonao[time])
     if (reason.indexOf(time) != -1) {
-        //console.log('TIRAR')
         naonao.splice(time, 1)
-        }
-   }
-      //console.log('', naonao)
+        }}
 
    reason = []
       for (k in tobreak) {
-        //console.log(k, tobreak[k])
         if (k != 0 && tobreak[k] != '-' && tobreak[k] != '+') {
             deserve = tobreak[k - 1]
             deserve+= tobreak[k]
             reason.push(k - 1)
-           //console.log('anterior:',deserve)
            tobreak[k] = deserve
-        }
-      }
+        }}
 
-     //console.log('reason')
       for (time = tobreak.length - 1; time >= 0; time--) {
-      //console.log(time, tobreak[time])
         if (reason.indexOf(time) != -1) {
-           //console.log('TIRAR')
             tobreak.splice(time, 1)
-            }
-       }
-      //console.log('', tobreak)
-
-      //console.log('____________________','( ',naonao,' )','( ',tobreak,' )','___________________________')
-
-      //console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
+            }}
+      
       for (roberto in naonao) {
         for (vaidarcerto in tobreak) {
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
