@@ -8186,51 +8186,24 @@ if (quad != eep) {
     }
     relation_2[r] = present
     relation_2[r].car = segs_22[r].car
-    
     }
-    //console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
     for (c in relation_2) {
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation_2[c].fix.length > 0) {
-   //console.log(relation_2[c].fix, relation_2[c].falt)
-   
         faltam = Number(quanto) - Number(relation_2[c].fix.length)
-   //console.log('faltam', faltam)
-   
         for (f = 0; f < faltam; f++) {
-       //console.log(relation_2[c].falt[f])
            relation_2[c].fix.push(relation_2[c].falt[f])
-          
-      //console.log('AnTES: ', relation_2[c].falt)
            relation_2[c].falt[f] = -10
-   
-      //console.log('DEPOIS: ', relation_2[c].falt)
         }
-   //console.log(relation_2[c].fix)
    
         for (tel = 0; tel < c; tel++){
-   
-            if (relation_2[tel].fix.length > 0) {
-       //console.log('relation_2[tel]', relation_2[tel])
-            }
-            
             outrorel = relation_2[tel]
-            
         for (hu in outrorel.fix) {
-       //console.log(outrorel.fix[hu])
             if (relation_2[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-           //console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
-           //console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
-   
-               //console.log(outrorel.falt[ou])
                     if (relation_2[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                   //console.log('pode ir')
                         outrorel.fix[hu] =  outrorel.falt[ou]
                         outrorel.falt[ou] = -10
-                        
-                   //console.log('isso aí:', outrorel.fix)
                         y++
                     }
                 }
