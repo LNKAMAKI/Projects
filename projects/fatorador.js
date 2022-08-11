@@ -8529,20 +8529,11 @@ if (quad != eep) {
     
    relation_2 = []
    
-    //////console.log('--------------------------------------------------------------------------------------------------------------------------------')
-   
-   
     util = []
     for (t in segs_22) {
-   
-       ////console.log(segs_2[n],'.mons: ',segs_2[t].mons,'.length: ', segs_2[t].mons.length)
-     //  //console.log(`${segs_2[t].mons.length} é maior que ou igual a ${quanto}? ${segs_2[t].mons.length >= quanto}`)
-   
         if (segs_22[t].mons.length >= quanto) {
             util.push(segs_22[t])
-        }
-        ////console.log('')
-    }
+        }}
    
     //console.log('util', util)
     
