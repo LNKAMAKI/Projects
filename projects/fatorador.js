@@ -1261,160 +1261,88 @@ function FATORARSInGULAR(potn) {
 
     //console.log('GOING THROUGH MISS')
     for (quad in miss) {
-     
-      //console.log('--------------------------------------')
       if (quad != eep) {
-        //console.log(`miss[${quad}]: `,miss[quad].aparicoes, String(miss[quad].dividido))
         repeated = [];
         repwri = "";
 
-        //console.log('//\//\//\//\//\//\//\/', miss[quad].aparicoes)
-
         monspos2 = []
           for (b in miss[quad].aparicoes) {
-            //console.log(scarecrow[miss[quad].aparicoes[b]].divididos,`.indexOf(${miss[quad].dividido}) = `,scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido))
-            //console.log('O MONÔMIO QUE RESULTA EM', miss[quad].dividido, `QUANDO DIVIDIDO POR ${scarecrow[miss[quad].aparicoes[b]].divisor} É O MONÔMIO`,scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)],monomios[scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]].numero)
             monpos = scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]
             monspos2.push(monpos)
           }
-          //console.log('//\//\//\//\//\//\//\/','posições dos monômios: ',monspos2)
 
           rap = ''
 
           monspos = []
           result = []
         for (vespa in miss[eep].aparicoes) {
-          
           cango = true
           monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
 
-          //console.log('¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨',vespa,'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨')
-          //console.log(`${monspos_}[${vespa}] = `,monpos, 'MONSPOS:', [...monspos])
-
-          //console.log(`${miss[eep].aparicoes}|*miss[${eep}]*|.aparicoes[${vespa}] => `,miss[eep].aparicoes[vespa])
           if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
-
             if (monspos.indexOf(monpos) == -1) {
               monspos.push(monpos)
-              //console.log('PUSHE',monpos)
                 }else{
-                  //console.log('CANGO = FALSE!!!!!!!!')
                   cango = false
                 }
 
-            //console.log('(miss',quad,')',`${miss[quad].aparicoes} possui *${miss[eep].aparicoes[vespa]}*`,' -> index:', miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]),`monomio [${monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]}]`)
             posmon = monspos2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]
-          
             repeated.push(miss[eep].aparicoes[vespa]);
-
             rap+= ',' + miss[eep].aparicoes[vespa]
 
-            //console.log('MOIPON',monspos)
-        
             if (roller.find(function(roller) {return roller.rept == rap}) != undefined) {
-
-              //console.log('CAN GO?', cango, `${[...monspos]}.indexOf(${posmon}) = ${[...monspos].indexOf(posmon)}`)
               if (cango == true && monspos.indexOf(posmon) == -1) {
-
               monspos.push(posmon)
               what = roller.find(function(roller) {return roller.rept == rap})
-            //console.log('AAAAAAAAAAAAAAAAAAAAA_______--------_________------------__________AAAAAAAAAA',what)
-            //console.log(what.mons, monspos, posmon)
-            //console.log(what.opl,'REPEEEEEEEEEEATED&*&&&&&&777####@22%%%$++===+=__-;;;´´´´`[[}}]ººººº')
-            
+           
             for (h in monspos) {
-              //console.log(monspos[h])
               if (what.mons.indexOf(monspos[h]) == -1) {
-                //console.log('PODE PUSHAR', monspos[h])
                 what.mons.push(monspos[h])
-              }
-            }
-            /*
-            if (what.mons.indexOf(posmon) == -1) {
-              //console.log(posmon, 'não está em,', what.mons, 'portanto, pode pushar')
-              //console.log('------------',monpos,'------------')
-
-             result.push(posmon)
-             result.push(monpos)
-
-              what.mons.push(posmon)
-              if (what.mons.indexOf(monpos) == -1) {
-                //console.log(monpos, 'não está em,', what.mons, 'portanto, pode pushar')
-                what.mons.push(monpos)
-
-              }
-
-            }
-            */
-            //console.log(rap)
+              } }
           }else{
-            //console.log('EITAAAAAAAAAAAA_______________%%%%%%%%%%%%%%%%$$$$$$$^^^^^^~~~~~~')
             monspos.splice(monspos.length - 1,1)
           }
           
         }else{
-
             if (monspos.indexOf(posmon) == -1 && cango == true) {
-              //console.log(posmon, 'não está em', monspos)
-              //console.log(monpos)
               monspos.push(posmon)
               result.push(monpos)
               result.push(posmon)
           }else{
-
             if (cango == true) {
-              //console.log(posmon, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
               monspos.splice(monspos.length - 1,1)
-              //console.log(monspos)
               }else{
               cango = true
-              //console.log(monpos, 'está em', monspos,'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
               }
 
-            //console.log('AUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAU')
-            //console.log('THIS IS THE RAP!!&&&&&&&&&&&&&&&&&&&&&&',rap)
-
             parar = false
-
             novorap = ''
             for (h = rap.length - 1; h >= 0; h--) {
-              //console.log(rap[h])
               if (rap[h] == ',' && parar == false) {
                 parar = true
               }else if(parar == true) {
                 novorap+= rap[h]
-            }
-          }
+            }  }
 
           nov = ''
           for (u = novorap.length - 1; u >= 0; u--) {
             nov+= novorap[u]
           }
-            //console.log('NOVO RAPP!!!!:', nov)
             rap = nov
-
-          }
-        }
-            //console.log(rap)
-            repwri = rap          //repwri += "," + miss[eep].aparicoes[vespa];
-            //console.log('REPWRI: ', '<<<||',repwri,'||>>>')
+          } }
+            repwri = rap          
 
             if (
               roller.find(function (roller) {
                 return roller.rept == repwri;
               }) == undefined
             ) {
-              //console.log('ASSIM FICOU OS MONÔMIOS:',result, '(',[...monspos],')')
-              //console.log('==============(((((((((((&&&&&&####*******>>>>>>PODE PUSHAR',`{rept: ${repwri}| opl:${repeated}| position: [${eep},${quad}]}`)
-              //console.log( 'mons:', result,'rept:', repwri,'opl:', [...repeated],'position:', [eep, quad])
               roller.push({
                 mons: [...result],
                 rept: repwri,
                 opl: [...repeated],
                 position: [eep, quad]
               });
-             //console.log(roller[roller.length - 1].opl,'(REPEATEEEEED)%%¨¨¨¨¬¬¬¬¬¬¬¬¬66666¬¬6¬¬')
-              
             } else {
               if (roller.find(function (roller) {return roller.rept == repwri;}).position.indexOf(eep) == -1) {
                 roller.find(function (roller) {return roller.rept == repwri;})
@@ -1433,140 +1361,73 @@ function FATORARSInGULAR(potn) {
                     return roller.rept == repwri;
                   })
                   .position.push(quad);
-              }
-            }
-          }else{
-            //cango = true
-            //console.log('MUDANDO DE IDEIA!!!! CANGO = TRUE', cango)
-          }
-        }
-      }
-    }
-    //console.log('__________________________________________')
-  }
+              }}}}}}}
 
-  for (world in roller) {
-    //console.log(`${roller[world].mons}`, roller[world].position, roller[world].opl, roller[world].rept)
-  }
 
    for (r in roller) {
-       //console.log(roller[r].opl, roller[r].position, roller[r].rept)
        roll.push({repetidos: roller[r].opl, posições: roller[r].position, way: roller[r].rept})
    }
    while(java < miss.length && deucerto == false) {
-              
-             // if (miss[java].aparicoes.length >= quantasposições) {
-           //console.log('')
-        //console.log('SEnDO AnALISADO nO MOMEnTO', miss[java].aparicoes)
-   
            podeser = []
            for (outro in miss) {
-              //console.log('')
                if (outro != java /*&& miss[outro].aparicoes.length >= quantasposições*/) {
-               //console.log(miss[outro], outro)
-   
                    presentes = []
                    for (quecoisa in miss[outro].aparicoes) {
                        fatorzinho = miss[outro].aparicoes[quecoisa]
-                    //console.log('FATORZINHO', fatorzinho, 'MISS[JAVA]', miss[java].aparicoes)
    
                        if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
-                    //console.log('TEM', fatorzinho)
                            presentes.push(fatorzinho)
-                       }
-                   }
-                 //console.log('OLHA', presentes)
+                       }}
    
                    adicionou = false
                    for (idk in podeser) {
-                    //console.log(podeser[idk])
                        esigual = true
                        for (denovo in podeser[idk].opl) {
-                          //console.log(podeser[idk].opl[denovo], presentes[denovo])
                            if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                              //console.log('É IGUAL')
                            }else{
                                esigual = false
-                           }
-                       }
+                           } }
                        if (esigual == true) {
                            podeser[idk].position.push(outro)
                            adicionou = true
-                       }
-                   }
+                       } }
                    if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                        podeser.push({opl: presentes, position: [outro]})
-                   }
-                   
-               }
-              }
-              //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
-              
-              
+                   } }}
+             
               for (belief in podeser) {
                   if (podeser[belief].position.indexOf(java) == -1) {
                   podeser[belief].position.push(String(java))
                   }
    
-               //console.log(podeser[belief].opl)
-   
                shot = ''
                for (gun in podeser[belief].opl) {
-                   //console.log(podeser[belief].opl[gun])
                    shot+= podeser[belief].opl[gun] + ','
                }
-              //console.log('THAT WE LET IT GO:', shot)
    
                if (roll.length == 0) {
-                  //console.log('ADICIONAR(LISTA VAZIA)')
-                   //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
                }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                   //console.log('JÁ TEM')
-                  //console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
-   
                    for (capital in podeser[belief].position) {
-                       //console.log(podeser[belief].position[capital])
-   
-                     //console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
-   
                    if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                      //console.log('NÃO TEM') 
                       roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
-                   }
-                   }
+                   }} } }
    
-               }else{
-                   //console.log('NÃO TEM')
-                   //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
-               }
-              }
-   
-              //console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
               whyis = java
               if (podeser.length > 0) {
-                  //console.log('fatores', quantosfatores, 'posições', quantasposições)
-                  //console.log(podeser)
-   
                   for(cold in podeser) {
               if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
-              //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
                deucerto = true
    
                ficaassim = ''
-              // podeser[cold].position.push(whyis)
    
                for (yehaa in podeser[cold].position) {
-                 //console.log(podeser[cold])
-                  //console.log(miss[podeser[cold].position[yehaa]].dividido)
                    if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
-                       
                        fi = ''
                        for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
                            if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
                                fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
-                           }
-                       }
-                     //console.log(fi)
+                           }}
+
                        if (yehaa != 0) {
                             ficaassim += ` - ${fi}`
                        }else{
@@ -1577,29 +1438,13 @@ function FATORARSInGULAR(potn) {
                        ficaassim+= miss[podeser[cold].position[yehaa]].dividido
                    }else{
                        ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
-                   }
-                   
-               
-               }
-              //console.log('FICA ASSIM', `(${ficaassim})`)
+                   }}
+      
               for (ruin in podeser[cold].opl) {
-             //console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
                emotion = ''
                for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-              ////console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
                    emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
-               }
-             //console.log(`${emotion}(${ficaassim})`)
-             }
-              }
-           }
-   
-           }
-   
-            //  }
-              
-            //console.log('continuar', miss[java])
-   
+               } }}}}
               java++
           }
           okentao++
