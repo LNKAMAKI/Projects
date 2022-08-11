@@ -2782,13 +2782,8 @@ function FATORARSInGULAR(potn) {
 
       //console.log('ESSA É A HORA DECISIVA: MULTIPLICAR OS MONÔMIOS! DEUS ME AJUDE!!')
       for (roberto in naonao) {
-          //console.log('---------------------------------------------------------------______')
-        //console.log(naonao[roberto])
-        
         for (vaidarcerto in tobreak) {
-            //console.log(tobreak[vaidarcerto])
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
-            //console.log(naonao[roberto], 'multiplicado por',tobreak[vaidarcerto],'=',novomon)
             for (life in youdumb_2) {
               console.log(life,'juntar os monomios',youdumb_2[life].mons,'/ grupos:',youdumb_2[life].w.what)
             }
@@ -2798,160 +2793,102 @@ function FATORARSInGULAR(potn) {
                 for (n in novomon) {
                     if (novomon[n] != '-') {
                         miya+= novomon[n]                 
-                       }
-                }
-                //console.log(miya)
+                       }}
                 newexpress.push('-')
                 newexpress.push(miya)
             }else{
                 newexpress.push('+')
                 newexpress.push(novomon)
-            }
-        }
-
-
-    }
+            }}}
     
        
        for (e in pans[bababa].todos) {
         numsdesfat.push(pans[bababa].todos[e])
-       }
-       
-      }
-
-   }
+       }}}
    
    if (numsdesfat.length > 0) {
-    
-
     console.warn('VAI TER QUE FATORAR DE NOVO')
     for (life in youdumb_2) {
      console.log(youdumb_2[life].mons)
     }
     todososnumeros = []
     for (acaba in monomios) {
-       //console.log(acaba)
         todososnumeros.push(acaba)
     }
 
     for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
-        //console.log(todososnumeros[feliz])
          if (numsdesfat.indexOf(Number(todososnumeros[feliz])) != -1) {
             todososnumeros.splice(feliz, 1)
-         }
- }
-    //console.log('tirando', sort(numsdesfat)[0], 'dos outros monomios( tem', monomios.length, 'ao todo):',todososnumeros)
+         }}
+   
     for (eh in todososnumeros) {
-        //console.log(todososnumeros[eh], monomios[todososnumeros[eh]].numero)
-
         join = ''
         for (sempresei in monomios[todososnumeros[eh]].numero) {
             if (monomios[todososnumeros[eh]].numero[sempresei] != '+' && monomios[todososnumeros[eh]].numero[sempresei] != '-') {
             ter = monomios[todososnumeros[eh]].numero[sempresei]
-            //console.log(ter)
             join+= ter
             }
         }
         if (monomios[todososnumeros[eh]].numero[0] == '+') {
-            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
         }else if(monomios[todososnumeros[eh]].numero[0] == '-') {
-            //console.log('MENOS')
             newexpress.push('-')
             newexpress.push(join)
         }else{
-            //console.log('MAIS')
             newexpress.push('+')
             newexpress.push(join)
-        }
-        //console.log('PREPARADO PARA ENTRAR NA LISTA:', join)
-    }
-
-    //console.log('_____________________________________________newexpression:_____________________________________________ ')
-        //console.log(newexpress)
-        //console.log('_______________________________________________________________________________________   _______________')
+        }}
 
         FATORAR(newexpress)
    }else{
-
-   //console.log('VENDO OS QUE FALTAM:')
-   //console.log(numerospresentes)
    todososnumeros = []
    for (acaba in monomios) {
-      //console.log(acaba)
        todososnumeros.push(acaba)
    }
    cancelar = []
    for (feliz = todososnumeros.length - 1; feliz >= 0; feliz--) {
-          //console.log(todososnumeros[feliz])
            if (numerospresentes.indexOf(Number(todososnumeros[feliz])) != -1) {
               todososnumeros.splice(feliz, 1)
-   }
-   }
-   //console.log(todososnumeros)
+   }}
    
    for (bye in todososnumeros) {
-       //console.log(monomios[todososnumeros[bye]].numero)
-   
        quase = monomios[todososnumeros[bye]].numero
        aconta = ''
        elevar = 1
        aster = false
        friend = ''
        
-       //console.log(quase)
        gates = []
    
         for (patience in quase) {
-            //console.log('EFEEDEDEDEED',quase[patience])       
-           
             if (quase[patience] == '*') {
                 aster = true
-               //console.log('AND THE CLSDADWDWD', patience)
-               //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                 gates.push(quase[Number(patience) - 1])
                 gates.push('x')
                 gates.push(quase[Number(patience) + 1])
-              //console.log(gates, fazerConta(gates))
-   
-             //console.log(quase, Number(patience) + 1)
+        
                 quase[Number(patience) + 1] = fazerConta(gates)[0]
                 aconta = fazerConta(gates)[0]
               
                 gates = []
             }else if(quase[patience].search('[a-z]') != -1)  {
-               //console.log('É LETRA')
-              
                 if (quase[patience] == quase[Number(patience) - 1]) {
-               //console.log('ELEVAR!')
                     elevar++
    
                     if (patience == quase.length - 1) {
-                      //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                         aconta+= `^${elevar}`
-                       //console.log(aconta)
                     }
-   
                 }else{
                     if (elevar > 1) {
-                       //console.log('UEPA')
                         aconta+= `^${elevar}`
-                        
                     }
-   
                     aconta+= quase[patience]
-                   //console.log(aconta)
-                  
+                   
                     elevar = 1
-                }
-              //console.log(elevar)
-               
-            } 
-        }
+                }} }
         
         if (aster == false) {
-            //console.log('<<<<<<<<<<<<<',quase)
              direitando = ''
              for (h in quase) {
                      direitando+= quase[h]
@@ -2959,25 +2896,17 @@ function FATORARSInGULAR(potn) {
              friend = direitando
             }
     if (aster == false) {
-     //console.log('SEM ASTERISCO',aconta)
         antes = ''
         for (eyes in quase) {
-            
-           //console.log(quase[eyes])
             if (quase[eyes].search('[0-9]') != -1) {
-               //console.log('CRY')
                 antes+= quase[eyes]
             }
         }
         antes+= aconta
-       //console.log('ANTEEEES:', antes)
-        
         aconta = antes
     }
-    //console.log('A CONTA',aconta, quase)
    
     if (bye == 0) {
-       //console.log('PRIMEIRO')
        if (concatenar.length > 0) {
            if (quase[0] == '-') {
                concatenar+= ` - ${aconta}`
@@ -2996,12 +2925,8 @@ function FATORARSInGULAR(potn) {
            concatenar+= ` - ${aconta}`
        }else{
            concatenar+= ` + ${aconta}`
-       }
-    }
-   }
-}
-   
-   //console.log('FINALMENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ', concatenar)
+       }}}}
+  
 
     console.log('CERTINHO?')
     if (monomios.length > 1) {
