@@ -4918,66 +4918,27 @@ function FATORE(q) {
                                        return repetido.monum == u
                                        }).letr += `.${monomios_2[u].numero[e]}`
                                       
-                                   }
-                                       //reps.push(monomios_2[u].numero[e])
-       
-                 
-                              // }else{
-                                   //////console.log('DO nOT ADD')
-                             // }
-                       }
-                   
-                   ////console.log('REPETIDO: ', repetido)
-                   ////console.log('OCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAS34246352645263546345:', ocs2)
-               }else{
-                   
-               }
-               ////console.log('')
-             }
-           }
-           }
-           ////console.log('------------------------------------------------------------------------------------------')
-       }
-       }
-       }
-      
-       //console.log('REPETIDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', repetido)
+                                   }}}}}}}}}
        reps.push(repetido)
    
-       
        for (nope in repetido) {
        if (repetido[nope].letr[0] == '-') {
-           //console.log('hei')
            la = ''
            for (u in repetido[nope].letr) {
                if (u != 0 && u != 1) {
                    la+= repetido[nope].letr[u]
-               }
-           }
-           //console.log(la, 'aaaaaaaaa')
+               }}
            if (repetido.find(function(repetido){
                return repetido.letr == la
            })) {
-               //console.log(':(', nope)
                repetido.splice(nope, 1)
                
-           }
-       }
-   }
+           }}}
    
-   
-       ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
-       
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              //console.log('**********************************************************************esse',repetido[moe], segs_2)
-
               podeir = true
               qual = -1
               for (meow in segs_2) {
-                  
-                //console.log('')
-                //console.log('',segs_2[meow].car)
-               
                     array1 = []
                     for (d in segs_2[meow].car) {
                         array1.push(segs_2[meow].car[d])
@@ -4991,30 +4952,22 @@ function FATORE(q) {
                     if (segs_2[meow].car.length < repetido[moe].letr.length) {
 
                         divisao =  DIVIDIR(VAI(segs_2[meow].car), VAI(repetido[moe].letr))
-                    //console.log('DIVIDIR', segs_2[meow].car, 'por', repetido[moe].letr, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                      }else{
                          divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs_2[meow].car))
-                    //console.log('DIVIDIR', repetido[moe].letr, 'por', segs_2[meow].car, '(', VAI(segs_2[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                      }
 
                      if (divisao == '' || divisao == '-') {
-                        //console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                         podeir = false
                         qual = meow
-                     }
-                  
-              }
+                     }}
 
-              //console.log('PODE IR?????????????????????????', podeir, qual)
                if (podeir == true) {
                 splitUp(repetido[moe].letr);
                     function splitUp(str) {
                     estado = "";
-                    // CÓDIGO PARA ADICIONAR OS TERMOS EM COMUM DOS MONÔMIOS NA LISTA SEGS(SEGMENTOS)
                     for (i in str) {
                         if (str[i] == "." && estado != "-") {
                         permission = versetem(estado);
-                        //console.log(permission)
                         if (permission == true && estado != " " && estado != "-") {
                             segs_2.push({ car: estado, mons: [m] });
                         }
@@ -5024,34 +4977,14 @@ function FATORE(q) {
                         permission = versetem(estado);
                         if (permission == true && estado != " " && estado != "-") {
                             segs_2.push({ car: estado, mons: [m] });
-                        }
-                        }
-                    }
-                    //
-                    }
+                        }}}}
    
                }else if(segs_2[qual].mons.indexOf(m) == -1){
                     segs_2[qual].mons.push(m)      
-               }
-           }
-           
-   }
-   
-   
-   ////console.log('RELAÇÃO EnTRE OS MOnÔMIOS')
-   ////console.log(segs_2)
-   
+               }}}
    
    for (nl = 0; nl < segs_2.length; nl++) {
-       //console.log('-----------------------------------------------------------------------------------------')
-       
-       //console.log(segs_2[nl])
-   
-       //console.log('AnALISAR CADA ITEM')
-       //console.log('nUMERO: ', segs_2[nl].car)
        for (n = 0; n < segs_2.length; n++) {
-   
-           //console.log('---------------------------------------------------------------------')
            if (n != nl) {
            //console.log(`${segs_2[n].car}.search('${segs_2[nl].car}')`, String(segs_2[n].car).search(String(segs_2[nl].car)))
            for (dry in segs_2[nl].car) {
