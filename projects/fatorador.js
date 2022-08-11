@@ -2051,94 +2051,53 @@ function FATORARSInGULAR(potn) {
    
                  adicionou = false
                  for (idk in podeser) {
-                    //console.log(podeser[idk])
                      esigual = true
                      for (denovo in podeser[idk].opl) {
-                         //console.log(podeser[idk].opl[denovo], presentes[denovo])
                          if (podeser[idk].opl[denovo] == presentes[denovo]) {
-                            //console.log('É IGUAL')
                          }else{
                              esigual = false
-                         }
-                     }
+                         } }
                      if (esigual == true) {
                          podeser[idk].position.push(outro)
                          adicionou = true
-                     }
-                 }
+                     }}
                  if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                      podeser.push({opl: presentes, position: [outro]})
-                 }
-                 
-             }
-            }
-           //console.log('ESSE É O PODESERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR', podeser)
-            
-            
+                 }}}
+          
             for (belief in podeser) {
                 if (podeser[belief].position.indexOf(java) == -1) {
                 podeser[belief].position.push(String(java))
                 }
    
-             //console.log(podeser[belief].opl)
-   
              shot = ''
              for (gun in podeser[belief].opl) {
-                 //console.log(podeser[belief].opl[gun])
                  shot+= podeser[belief].opl[gun] + ','
              }
-            //console.log('THAT WE LET IT GO:', shot)
    
              if (roll.length == 0) {
-                //console.log('ADICIONAR(LISTA VAZIA)')
-                 //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
              }else if(roll.find(function(roll){return roll.way == shot}) != undefined) { // SE JÁ TIVER NA LSITA
-                 //console.log('JÁ TEM')
-                //console.log(roll.find(function(roll){return roll.way == shot}),'esse',podeser[belief])
-   
                  for (capital in podeser[belief].position) {
-                     //console.log(podeser[belief].position[capital])
-   
-                   //console.log(roll.find(function(roll){return roll.way == shot}).posições, roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital]),podeser[belief].position[capital])
-   
                  if (roll.find(function(roll){return roll.way == shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                    //console.log('NÃO TEM') 
                     roll.find(function(roll){return roll.way == shot}).posições.push(podeser[belief].position[capital])
-                 }
-                 }
+                 }}}}
    
-             }else{
-                 //console.log('NÃO TEM')
-                 //roll.push({repetidos: [...podeser[belief].opl], way: shot, posições: [...podeser[belief].position]})
-             }
-            }
-   
-            //console.log('E ESSE É O ORIGInAL: ', miss[java].aparicoes, java)
             whyis = java
             if (podeser.length > 0) {
-                //console.log('fatores', quantosfatores, 'posições', quantasposições)
-                //console.log(podeser)
-   
                 for(cold in podeser) {
             if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
-            //console.log('É ISSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
              deucerto = true
    
              ficaassim = ''
              podeser[cold].position.push(whyis)
    
              for (yehaa in podeser[cold].position) {
-                //console.log(podeser[cold])
-                 //console.log(miss[podeser[cold].position[yehaa]].dividido)
                  if (miss[podeser[cold].position[yehaa]].dividido[0] == '-') {
-                     
                      fi = ''
                      for (ohjesus in miss[podeser[cold].position[yehaa]].dividido) {
                          if (miss[podeser[cold].position[yehaa]].dividido[ohjesus] != '-') {
                              fi+= miss[podeser[cold].position[yehaa]].dividido[ohjesus]
-                         }
-                     }
-                    //console.log(fi)
+                         }}
                      if (yehaa != 0) {
                           ficaassim += ` - ${fi}`
                      }else{
@@ -2149,43 +2108,20 @@ function FATORARSInGULAR(potn) {
                      ficaassim+= miss[podeser[cold].position[yehaa]].dividido
                  }else{
                      ficaassim+= miss[podeser[cold].position[yehaa]].dividido 
-                 }
-                 
-             
-             }
-             //console.log('FICA ASSIM', `(${ficaassim})`)
+                 }}
             for (ruin in podeser[cold].opl) {
-            //console.log(scarecrow[podeser[cold].opl[ruin]].divisor)
              emotion = ''
              for (scream in scarecrow[podeser[cold].opl[ruin]].divisor ) {
-           //console.log(scarecrow[podeser[cold].opl[ruin]].divisor[scream])
                  emotion+= scarecrow[podeser[cold].opl[ruin]].divisor[scream]
-             }
-            //console.log(`${emotion}(${ficaassim})`)
-           }
-            }
-         }
-   
-         }
-   
-          //  }
-   
+             }}}}}
             java++
         }
    
    
-   
-   
-   
-   
-   
-   
           youdumb = []
-   
            aswillbe2 = []
            for (raging = 0; raging < roll.length; raging++) {
                asitwas = [] 
-           
                obe = {what:[]}
            
               for (still in roll[raging].repetidos) {
