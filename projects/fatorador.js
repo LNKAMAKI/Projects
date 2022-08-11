@@ -3915,7 +3915,7 @@ if (quad != eep) {
               if (podeser_2[cold].position.length == quantosfatores && podeser_2[cold].opl.length == quantasposições && miss_2[whyis].aparicoes.length == quantasposições) {
                deucerto = true
                ficaassim = ''
-               
+
                for (yehaa in podeser_2[cold].position) {
                    if (miss_2[podeser_2[cold].position[yehaa]].dividido[0] == '-') {
                        fi = ''
@@ -4960,12 +4960,10 @@ if (quad != eep) {
        var maiorparamenor = []
        var posiçõesnumeros = []
        var yposition = n
-   
        for (n in yposition) {
            maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
            posiçõesnumeros.push(-1)
        }
-   
        for (item in yposition) {
            var volume = 0
            var dn = 0
@@ -4974,7 +4972,6 @@ if (quad != eep) {
                    if (yposition[item][pam] > maiorparamenor[volume]) {
                        var itens = yposition.length - (Number(volume) + 1)
                        var leng = yposition.length
-   
                        for (c = 0; c < itens; c++) {
                            maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
                            posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
@@ -4986,7 +4983,6 @@ if (quad != eep) {
                    } } }}
        return [maiorparamenor, posiçõesnumeros]
     }
-   
    function doit(par) {
        segs_22 = []
    
@@ -5089,7 +5085,6 @@ if (quad != eep) {
    }
   
    if (divs_2[okentao] != groups) {
- 
    tirados_2 = []
    for (wish in relation_2) {
     for (edge_2 in relation_2[wish].fix) {
@@ -5116,7 +5111,6 @@ if (quad != eep) {
    imor = 0
    
    for (b = 0; b < grupos; b++) {
-   
        for (live = 0; live < quanto; live++) {
               if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
                   ob.problem = true
@@ -5166,7 +5160,6 @@ if (quad != eep) {
        segs_22[uf] = {}
          segs_22[uf].mons = [...par[uf].mons]
          segs_22[uf].car = par[uf].car
-   
    }
    
    for (pose in segs_22) {
@@ -5201,8 +5194,7 @@ if (quad != eep) {
                sames.push('igual')
            }else{
                sames.push('diferente')
-           }
-      }
+           } }
       if (sames.indexOf('diferente') == -1){
        if (mia.indexOf(mcr) == -1) {
        mia.push(mcr)
@@ -5224,8 +5216,7 @@ if (quad != eep) {
         for (t in util) {
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
-            }
-        }
+            } }
         numapars.push({num: Number(m), vezes: aparic})
         }
    
@@ -5240,7 +5231,6 @@ if (quad != eep) {
                 }).vezes == 1) {
                   rep++
                   present.fix.push(lista[g])
-                 
             }}
      
         if (present.fix.length < quanto) {
@@ -5338,11 +5328,9 @@ if (quad != eep) {
        home = 0
        for (fear in relation_2[t].fix) {
            if (relation_2[t].fix[fear] == h[fear]) {
-               //console.log('WOW')
                home++
            }}
        if (home == h.length) {
-           //console.log('É IGUAL')
            return true 
        }} }}
    
