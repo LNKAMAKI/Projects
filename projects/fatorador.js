@@ -3370,12 +3370,11 @@ function FATORE(q) {
                }}}
              
              for (e = 0; e < monomios_2[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
-    
                if (monomios_2[u].numero[e] == monomios_2[m].numero[oc]) {
                    if (repetido.find(function(repetido) {
                        return repetido.monum == u
                        }) === undefined) {
-   
+
                            ocs2.find(function(ocs2) {
                                return ocs2.ed == monomios_2[m].numero[oc]
                                }).el++
@@ -3385,7 +3384,6 @@ function FATORE(q) {
                                    }).el <= ocs) {
                    repetido.push({monum: u, wc: [m], letr: monomios_2[u].numero[e]})
                       }
-
                        }else{
                                    ocs2.find(function(ocs2) {
                                        return ocs2.ed == monomios_2[m].numero[oc]
@@ -3398,7 +3396,6 @@ function FATORE(q) {
                                    repetido.find(function(repetido) {
                                        return repetido.monum == u
                                        }).letr += `.${monomios_2[u].numero[e]}`
-                                      
                                    }}}}}}}}}
        reps.push(repetido)
    
@@ -3413,7 +3410,6 @@ function FATORE(q) {
                return repetido.letr == la
            })) {
                repetido.splice(nope, 1)
-               
            }}}
    
            for (moe = repetido.length - 1; moe >= 0; moe--) {
@@ -3431,7 +3427,6 @@ function FATORE(q) {
                     }
 
                     if (segs_2[meow].car.length < repetido[moe].letr.length) {
-
                         divisao =  DIVIDIR(VAI(segs_2[meow].car), VAI(repetido[moe].letr))
                      }else{
                          divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs_2[meow].car))
@@ -3459,7 +3454,6 @@ function FATORE(q) {
                         if (permission == true && estado != " " && estado != "-") {
                             segs_2.push({ car: estado, mons: [m] });
                         }}}}
-   
                }else if(segs_2[qual].mons.indexOf(m) == -1){
                     segs_2[qual].mons.push(m)      
                }}}
@@ -3468,7 +3462,6 @@ function FATORE(q) {
        for (n = 0; n < segs_2.length; n++) {
            if (n != nl) {
            if (String(segs_2[n].car).search(String(segs_2[nl].car)) != -1) {
-   
                for (u in segs_2[n].mons) {
                    if (segs_2[nl].mons.indexOf(segs_2[n].mons[u]) != -1) {
                    }else{
@@ -3479,7 +3472,6 @@ function FATORE(q) {
    function ehprimo(Number) {
        parar = false
        for (t = 2; t < Number && parar == false; t++) {
-       
            if (Number%t == 0) {
                parar = true
            }
@@ -3495,7 +3487,6 @@ function FATORE(q) {
    
    for (hi in segs_2) {
        segs_2[hi].length = segs_2[hi].mons.length
-   
        grtols_2.push(segs_2[hi])
    }
    
@@ -3521,7 +3512,7 @@ function FATORE(q) {
      }
    }
    
-   
+  
    segs_2ordered = []
    for (f in lengs) {
      its = []
