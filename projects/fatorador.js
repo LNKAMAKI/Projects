@@ -8138,47 +8138,23 @@ if (quad != eep) {
             if (numapars.find(function(numapars) {
                 return numapars.num == lista[g]
                 }).vezes == 1) {
-                ////console.log('ADICIOnAR')
                   rep++
                   present.fix.push(lista[g])
-                 
             }
-   
         }
-        ////console.log('present', present)
-        ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
    
         if (present.fix.length < quanto) {
         for (g in lista) {
-            ////console.log('')
-           //console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
-              //console.log('FALTA')
-                present.falt.push(lista[g])
-   
-               
-   
-                  //  numapars.find(function(numapars) {
-                      // return numapars.num == lista[g]
-                     //   }).vezes--
-   
-                        
+                present.falt.push(lista[g])      
             }
         }
-        //console.log('FALTAM OS nÚMEROS', present.falt)
-   
         
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-          //console.log(present.falt[ti])
-   
-           
-   
                 numapars.find(function(numapars) {
                     return numapars.num == present.falt[ti]
                     }).vezes--
-   
-                 
         }
     }
         
@@ -8267,28 +8243,15 @@ if (quad != eep) {
            tirados_2.push(segs_22[sorrow].mons[imor])
            imor++
        }
-      
-      
-       //console.log('In THE EnD', ob)
-   
-       //console.log(segs_22)
-       //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
+    
        if (ob.problem == false || temnaLista(ob.fix) == true) {
        relation_2.push(ob)
-       }
-   }
-   
-   }
-   
-   
-   
-   }
+       }}}}
    
    males = []
    for (nah = relation_2.length - 1; nah >= 0; nah--) {
      for (nop in relation_2) {
        if (relation_2[nop].fix.length > 0 && nop != nah) {
-   
    igual = true
    for (uh in relation_2[nop].fix) {
    if (relation_2[nah].fix.indexOf(relation_2[nop].fix[uh]) == -1) {
@@ -8306,8 +8269,7 @@ if (quad != eep) {
      for (nah = relation_2.length - 1; nah >= 0; nah--) {
        if (males.indexOf(nah) != -1) {
            relation_2.splice(nah, 1)
-       }
-     }
+       }}
    
      numerosquetem = []
      for (nah in relation_2) {
