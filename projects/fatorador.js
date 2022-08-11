@@ -54,7 +54,6 @@
 function ir() {
   qualexp1 = document.getElementById("typearea").value;
   qualexp = "";
-
   parar = false;
   for (copy in qualexp1) {
     if (qualexp1[copy] != " ") {
@@ -1264,9 +1263,7 @@ function FATORARSInGULAR(potn) {
                           return roller.rept == repwri;
                         })
                         .position.push(quad);
-                    }
-                  }
-                }} } }}
+                    } }  }} } }}
 
   for (r in roller) {
     roll.push({repetidos: roller[r].opl, posições: roller[r].position, way: roller[r].rept})
@@ -2269,8 +2266,7 @@ function FATORARSInGULAR(potn) {
                sames.push('igual')
            }else{
                sames.push('diferente')
-           }
-      }
+           } }
 
       if (sames.indexOf('diferente') == -1){
        if (mia.indexOf(mcr) == -1) {
@@ -2285,15 +2281,13 @@ function FATORARSInGULAR(potn) {
         if (segs2[t].mons.length >= quanto) {
             util.push(segs2[t])
         }}
-   
     
     for (m in monomios) {
         aparic = 0
         for (t in util) {
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
-            }
-        }
+            } }
         numapars.push({num: Number(m), vezes: aparic})
         }
    
@@ -2315,8 +2309,7 @@ function FATORARSInGULAR(potn) {
         for (g in lista) {
             if (present.fix.indexOf(lista[g]) == -1) {
                 present.falt.push(lista[g])         
-            }
-        }
+            }}
         
         if (present.fix.length == 0) {
         for (ti in present.falt) {
@@ -2377,8 +2370,7 @@ function FATORARSInGULAR(potn) {
    for (h in segs2[die].mons) {
    if (tirados.indexOf(segs2[die].mons[h]) != -1) {
    tirar.push(Number(h))
-   }
-   }
+   }}
 
    for (far = tirar.length - 1; far >= 0; far--) {
    segs2[die].mons.splice(tirar[far], 1)
@@ -2527,8 +2519,7 @@ function FATORARSInGULAR(potn) {
    for (wish in relation) {
     for (edge in relation[wish].fix) {
        tirados.push(relation[wish].fix[edge])
-    }
-   }
+    }}
 
    
    for (die in segs2) {
@@ -2579,8 +2570,7 @@ function FATORARSInGULAR(potn) {
       if (sames.indexOf('diferente') == -1){
        if (mia.indexOf(mcr) == -1) {
        mia.push(mcr)
-       }
-      }}}}}
+       } }}}}}
    
     numapars = []
    relation = []
@@ -2607,7 +2597,6 @@ function FATORARSInGULAR(potn) {
     for (r in util) {
        lista = util[r].mons
         present = {fix: [], falt: []}
-    
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
             if (numapars.find(function(numapars) {
@@ -2643,8 +2632,7 @@ function FATORARSInGULAR(potn) {
         }
    
         for (tel = 0; tel < c; tel++){
-            outrorel = relation[tel]
-            
+            outrorel = relation[tel] 
         for (hu in outrorel.fix) {
             if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
                 y = 0
@@ -2655,7 +2643,6 @@ function FATORARSInGULAR(potn) {
                         y++
                     }}}}}}}
    
-    
    groups = 0
    conts = []
    for (yougo in relation) {
@@ -2699,7 +2686,7 @@ function FATORARSInGULAR(potn) {
            tirados.push(segs2[sorrow].mons[imor])
            imor++
        }
-      
+    
        if (ob.problem == false || temnaLista(ob.fix) == true) {
        relation.push(ob)
        }}}}}
@@ -2716,10 +2703,8 @@ if (String(list[n]).search('[\\-\\+]') != -1 && n != 0) {
 particles.push({numero: ''})
 obnum++
 }
-
 particles[obnum].numero += list[n]
 }
-
 
 
 for (huh in particles) {
@@ -2736,10 +2721,8 @@ exp = []
 for (bye in particles) {
     comofica = []
     ground = ''
-
     for (misery in particles[bye].numero) { 
         carac = particles[bye].numero[misery]
-       
             if (ground.length == 0) {
                 ground+= carac
             }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
@@ -2748,7 +2731,6 @@ for (bye in particles) {
                 comofica.push(ground)
                 ground = ''
                 ground += carac
-                
             }
             if (misery == particles[bye].numero.length - 1) {
                 comofica.push(ground)
@@ -2768,14 +2750,7 @@ for (huh in particles) {
         agruparsoma.find(function (agruparsoma) {
             return agruparsoma.que == particles[huh].partletral
            }).quais.push(Number(huh))
-       }
-}
-
-
-          
-
-
-
+       }}
 
 
 for (chuva in agruparsoma) {
@@ -2783,13 +2758,11 @@ for (chuva in agruparsoma) {
 for (da in agruparsoma[chuva].quais) {
 divisor = []
 for (flowers in agruparsoma[chuva].que) {
-
 divisor.push(agruparsoma[chuva].que[flowers])
 }
 
 tu = [...divisor]
 resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
-
 plan = []
 add = ''
 
@@ -2821,14 +2794,11 @@ plan.push(add)
 if (plan.length == 3) {
     plan = [String(Number(plan[0])*Number(plan[2]))]
     }
-
     if (particles[agruparsoma[chuva].quais[da]].numero[0] == '+' || particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
     sinal = particles[agruparsoma[chuva].quais[da]].numero[0]
-
     if (conta.length != 0) {
     conta.push(particles[agruparsoma[chuva].quais[da]].numero[0])
-    }
-    }
+    }}
 
     if (conta.length == 0 && particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
 
@@ -2863,7 +2833,6 @@ fat += agruparsoma[chuva].que
 exp.push(fat)
 
 }else{
-  
     if (ehprimo(comehome) == false) {
 fat = FATORARSInGULAR(comehome)
     }else{
@@ -2879,10 +2848,8 @@ if (exp.length == 0) {
         fat += agruparsoma[chuva].que
         exp.push(fat)
     }}}
-
 return[exp, agruparsoma.length, particles.length]
  }
-
 
  function REDONUMFACTORING(storer) {
 
@@ -2906,15 +2873,12 @@ for (patience in storer) {
         operation.push(storer[Number(patience) - 1])
         operation.push('x')
         operation.push(storer[Number(patience) + 1])
-
         storer[Number(patience) + 1] = fazerConta(operation)[0]
         resultobtained = fazerConta(operation)[0]
-      
         operation = []
     }else if(storer[patience].search('[a-z]') != -1)  {
         if (storer[patience] == storer[Number(patience) - 1]) {
             elevar++
-
             if (patience == storer.length - 1) {
                 resultobtained+= `^${elevar}`
             }
@@ -2923,7 +2887,6 @@ for (patience in storer) {
                 resultobtained+= `^${elevar}`
             }
             resultobtained+= storer[patience]
-          
             elevar = 1
         }} }
 
@@ -2932,8 +2895,7 @@ if (wasmultiplicated == false) {
        for (eyes in storer) {
            if (storer[eyes].search('[0-9]') != -1) {
                addingnumber+= storer[eyes]
-           }
-       }
+           } }
        addingnumber+= resultobtained
        resultobtained = addingnumber
     
@@ -2946,9 +2908,7 @@ if(storer[0] == '-') {
     return [confirmedresult]
 }else{
     return [resultobtained]
-}
-   
-}
+}}
 
 
 function MULTIPLICARDIREITO(num1, num2) {
