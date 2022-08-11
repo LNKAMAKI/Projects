@@ -8205,121 +8205,67 @@ if (quad != eep) {
                         outrorel.fix[hu] =  outrorel.falt[ou]
                         outrorel.falt[ou] = -10
                         y++
-                    }
-                }
-            }
-        }
-    }
-        }
-    }
-   
-    ////console.log('SERÁ QUE DEU CERTO?')
-   
-   //////console.log(relation_2)
+                    }}}}}}}
    
    groups = 0
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   //console.log(relation_2[yougo].fix)
-   
    for (pals in relation_2[yougo].fix) {
-    //console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
-   }
-   }
-   
-   //console.log('divs_2 é igual a ', divs_2[okentao])
-   //console.log('groups é igual a', groups)
-   
-   
+  }}
+  
    if (groups < divs_2[okentao]) {
-    //console.log('DEU CERTO!!!EBAAAAAA')
-   
-    //console.log('SERÁ QUE DEU CERTO?')
-   
-   ////console.log(relation_2)
    
    groups = 0
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   //console.log(relation_2[yougo].fix)
-   
    for (pals in relation_2[yougo].fix) {
-    ////console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
    }
    }
-   ////console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
+  
    if (divs_2[okentao] != groups) {
-   //console.log('SÓ QUE nÃO')
-   ////console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
-   
+ 
    tirados_2 = []
    for (wish in relation_2) {
-    ////console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-       ////console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   ////console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
-   
-   
    
    for (die in segs_22) {
        tirar = []
-   
-   //console.log('break', segs_22[die].mons)
    for (h in segs_22[die].mons) {
-   //console.log(segs_22[die].mons[h])
    if (tirados_2.indexOf(segs_22[die].mons[h]) != -1) {
    tirar.push(Number(h))
    }
    }
 
-   //console.log('tirar de ',segs_22[die].mons, tirar)
-
    for (far = tirar.length - 1; far >= 0; far--) {
-       //console.log(segs_2[die].mons[tirar[far]])
    segs_22[die].mons.splice(tirar[far], 1)
-   
    }
-   //console.log('ficou assim:', segs_22[die].mons)
    }
    
    for (sorrow in segs_22) {
-   //console.log(segs_22[sorrow].mons)
    grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
-   //console.log('dá para formar', grupos,'grupos')
    
    imor = 0
    
    for (b = 0; b < grupos; b++) {
-       //console.log(b, 'vez----------------------------------------------------------------------------------------')
-      
-       ob = {car: segs_22[sorrow].car, fix: [],problem:false}
    
        for (live = 0; live < quanto; live++) {
-           //console.log('TIRADOS_2')
-      //console.log(segs_22[sorrow].mons[imor])
-   
-       //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
-   
               if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
                   ob.problem = true
               }
-               //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
            ob.fix.push(segs_22[sorrow].mons[imor])
            tirados_2.push(segs_22[sorrow].mons[imor])
            imor++
-           
-          
        }
       
       
