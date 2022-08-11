@@ -3452,10 +3452,6 @@ function FATORARSInGULAR(potn) {
    return [relation, segs2]
    }
    
-   
-   
-   
-   
    function temnaLista(h) {
    for (t in relation) {
        if (relation[t].fix.length > 0) {
@@ -3468,8 +3464,6 @@ function FATORARSInGULAR(potn) {
        if (home == h.length) {
            return true 
        }}}}
-   
-   
    
    function doit2(par) {
        segs2 = []
@@ -3484,209 +3478,103 @@ function FATORARSInGULAR(potn) {
     numapars = []
    
    
-   
-   
     util = []
       for (t in segs2) {
         if (segs2[t].mons.length >= quanto) {
             util.push(segs2[t])
-        }
-        ////console.log('')
-    }
-   
-    ////console.log('util', util)
+        }}
+
     
     for (m in monomios) {
         aparic = 0
-        ////console.log(m)
         for (t in util) {
-            ////console.log('util[t].mons', util[t].mons)
-            ////console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
-   
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
             }
         }
-        ////console.log('aparic',m, aparic)
         numapars.push({num: Number(m), vezes: aparic})
         }
    
     present = []
-    //console.log('numapars',numapars)
-    ////console.log('----------------------------------------------------------------------------------------------------')
     for (r in util) {
-   
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------')
        lista = util[r].mons
         present = {fix: [], falt: []}
-        ////console.log(lista)
       
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
-            ////console.log(lista[g])
-   
-   
             if (numapars.find(function(numapars) {
                 return numapars.num == lista[g]
                 }).vezes == 1) {
-                ////console.log('ADICIOnAR')
                   rep++
-                  present.fix.push(lista[g])
-                 
-            }
-   
-        }
-        ////console.log('present', present)
-        ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
-   
+                  present.fix.push(lista[g])  
+                }}
+      
         if (present.fix.length < quanto) {
         for (g in lista) {
-            ////console.log('')
-            ////console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
-                ////console.log('FALTA')
-                present.falt.push(lista[g])
-   
-               
-   
-                  //  numapars.find(function(numapars) {
-                      // return numapars.num == lista[g]
-                     //   }).vezes--
-   
-                        
-            }
-        }
-        ////console.log('FALTAM OS nÚMEROS', present.falt)
-   
-        
+                present.falt.push(lista[g])            
+       }}
+       
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-            ////console.log(present.falt[ti])
-   
-           
-   
                 numapars.find(function(numapars) {
                     return numapars.num == present.falt[ti]
                     }).vezes--
-   
-                 
-        }
-    }
-        
-   
-    }
+        }}}
     relation[r] = present
     relation[r].car = segs2[r].car
-    
     }
-    ////console.log('RELATIOn!!!!!!!!!!!!!!!!!', relation)
+   
     for (c in relation) {
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation[c].fix.length > 0) {
-        ////console.log(relation[c].fix, relation[c].falt)
-   
         faltam = Number(quanto) - Number(relation[c].fix.length)
-        ////console.log('faltam', faltam)
-   
         for (f = 0; f < faltam; f++) {
-            ////console.log(relation[c].falt[f])
            relation[c].fix.push(relation[c].falt[f])
-          
-           ////console.log('AnTES: ', relation[c].falt)
            relation[c].falt[f] = -10
-   
-           ////console.log('DEPOIS: ', relation[c].falt)
         }
-        ////console.log(relation[c].fix)
    
         for (tel = 0; tel < c; tel++){
-   
-            if (relation[tel].fix.length > 0) {
-            ////console.log('relation[tel]', relation[tel])
-            }
-            
             outrorel = relation[tel]
             
         for (hu in outrorel.fix) {
-            ////console.log(outrorel.fix[hu])
             if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-                ////console.log(`${relation[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation[c].fix.indexOf(outrorel.fix[hu])}`)
-                ////console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
-   
-                    ////console.log(outrorel.falt[ou])
                     if (relation[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                        ////console.log('pode ir')
                         outrorel.fix[hu] =  outrorel.falt[ou]
                         outrorel.falt[ou] = -10
-                        
-                        ////console.log('isso aí:', outrorel.fix)
                         y++
-                    }
-                }
-            }
-        }
-    }
-        }
-    }
-   
-    ////console.log('SERÁ QUE DEU CERTO?')
-   
-   //////console.log(relation)
+                    }}}}}}}
    
    groups = 0
    conts = []
    for (yougo in relation) {
    if (relation[yougo].fix.length > 0) {
-   ////console.log(relation[yougo].fix)
-   
    for (pals in relation[yougo].fix) {
-    ////console.log(relation[yougo].fix[pals])
     conts.push(relation[yougo].fix[pals])
    }
    groups++
-   }
-   }
-   
-   ////console.log('divs é igual a ', divs[okentao])
-   ////console.log('groups é igual a', groups)
+   }}
+
    if (groups < divs[okentao]) {
-    //console.log('DEU CERTO!!!EBAAAAAA')
-   
-    ////console.log('SERÁ QUE DEU CERTO?')
-   
-   ////console.log(relation)
-   
    groups = 0
    conts = []
    for (yougo in relation) {
    if (relation[yougo].fix.length > 0) {
-   //console.log(relation[yougo].fix)
-   
    for (pals in relation[yougo].fix) {
-   //console.log(relation[yougo].fix[pals])
     conts.push(relation[yougo].fix[pals])
    }
    groups++
-   }
-   }
-   //console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs[okentao], 'and', groups)
+   }}
+
    if (divs[okentao] != groups) {
-   //console.log('THEn WHY ARE WE LAUGHInG?')
-   //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
-   
    tirados = []
    for (wish in relation) {
-   //console.log(relation[wish].fix)
     for (edge in relation[wish].fix) {
-   //console.log(relation[wish].fix[edge])
        tirados.push(relation[wish].fix[edge])
     }
    }
-   //console.log('nÚMEROS QUE SERÃO TIRADOS', tirados)
-   
-   
+
    
    for (die in segs2) {
        tirar = []
