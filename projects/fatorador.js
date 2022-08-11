@@ -57,20 +57,16 @@ function ir() {
 
   parar = false;
   for (copy in qualexp1) {
-    //console.log(qualexp1[copy])
     if (qualexp1[copy] != " ") {
       if (
         qualexp1[copy].search("[0-9]") != -1 ||
         qualexp1[copy].search("[a-z]") != -1 ||
         qualexp1[copy].search("[\\+\\-\\^]") != -1
       ) {
-        //console.log(qualexp1[copy],'ir')
         qualexp += qualexp1[copy];
       } else {
         parar = true;
-      }
-    }
-  }
+      }}}
   if (qualexp != "" && parar == false) {
     ground = "";
     expression = [];
@@ -92,29 +88,16 @@ function ir() {
       }
       if (phy == qualexp.length - 1) {
         expression.push(ground);
-      }
-    }
+      } }
 
     resultadogeral = FATORAR(expression);
     resultado = resultadogeral[0];
     devtools(false)
-    //console.log('PERAÍ! MAS SERÁ ESSE O VERDADEIRO RESULTADO??')
-    //console.log('expression:',resultadogeral[0])
-    //console.log('LET\'s SPLIT IT!')
-    //res = SPLITEXPS(resultadogeral[0])
-    //console.log(res)
-    //for (g in res) {
-       //FATORAR(res[g].exp)
-     //console.log(res[g].exp)
-   // }
-
     document.getElementById("result").innerHTML = "Resultado:";
     document.getElementById('result').style.display = 'block';
     document.getElementById("fatoracao").innerText = resultado;
-
     document.getElementById("tab").style.height = "0px";
     document.getElementById("exemplos").value = "Exemplos";
-
     abriu = false;
   }}
 abriu = false;
@@ -157,10 +140,6 @@ function FATORAR(expression) {
     }
     expression = expo;
   }
-
-  //6x^2 + 3 + 14x^2y + 7y
-
-  //FAZEnDO AS COnTAS COM nÚMEROS
 
   //FATORAnDO OS nÚMEROS
 
@@ -225,15 +204,12 @@ function FATORAR(expression) {
 
     for (misery in monomios[bye].numero) {
       carac = monomios[bye].numero[misery];
-
       if (ground.length == 0) {
-        //
         ground += carac;
       } else if (
         String(ground.search("[0-9]")) != -1 &&
         String(carac).search("[0-9]") != -1
       ) {
-        //
         ground += carac;
       } else {
         comofica.push(ground);
@@ -242,8 +218,7 @@ function FATORAR(expression) {
       }
       if (misery == monomios[bye].numero.length - 1) {
         comofica.push(ground);
-      }
-    }
+      }}
     monomios[bye].numero = comofica;
   }
 
@@ -252,8 +227,7 @@ function FATORAR(expression) {
     for (y in monomios[huh].numero) {
       if (String(monomios[huh].numero[y]).search("[a-z]") != -1) {
         partlet += String(monomios[huh].numero[y]);
-      }
-    }
+      } }
     monomios[huh].partletral = partlet;
   }
 
@@ -270,8 +244,7 @@ function FATORAR(expression) {
       ji.find(function (ji) {
         return ji.que == monomios[huh].partletral;
       }).quais.push(Number(huh));
-    }
-  }
+    }}
 
   //SEPARAnDO/JUnTAnDO OS nÚMEROS
 // ==> SOMANDO OS MONÔMIOS...
@@ -279,24 +252,18 @@ function FATORAR(expression) {
 exp = [];
 
 for (bye in ji) {
-  //
-
   for (misery in ji[bye].quais) {
     ground = "";
 
     comofica = [];
     for (b in monomios[ji[bye].quais[misery]].numero) {
       carac = monomios[ji[bye].quais[misery]].numero[b];
-      //
-
       if (ground.length == 0) {
-        //
         ground += carac;
       } else if (
         String(ground.search("[0-9]")) != -1 &&
         String(carac).search("[0-9]") != -1
       ) {
-        //
         ground += carac;
       } else {
         comofica.push(ground);
@@ -304,17 +271,12 @@ for (bye in ji) {
         ground += carac;
         if (b == monomios[ji[bye].quais[misery]].numero.length - 1) {
           comofica.push(ground);
-        }
-      }
-    }
+        }} }
 
     monomios[ji[bye].quais[misery]].numero = comofica;
-  }
-}
+  }}
 
 for (chuva in ji) {
-  //
-
   conta = [];
   for (da in ji[chuva].quais) {
     divisor = [];
@@ -348,52 +310,38 @@ for (chuva in ji) {
         } else {
           plan.push(add);
           add = "";
-
           add += resultadoDaDivisão[past];
         }
-        //
-
+       
         if (plan.length == 3) {
           plan = [String(Number(plan[0]) * Number(plan[2]))];
-        }
-      }
-    }
+        } } }
 
     if (add == "" && ji[chuva].quais.length > 1) {
       add = "1";
-      //
     }
     plan.push(add);
 
     if (plan.length == 3) {
-      //
-      //
       plan = [String(Number(plan[0]) * Number(plan[2]))];
-      //
     }
 
     if (
       monomios[ji[chuva].quais[da]].numero[0] == "+" ||
       monomios[ji[chuva].quais[da]].numero[0] == "-"
     ) {
-      //
-
       sinal = monomios[ji[chuva].quais[da]].numero[0];
-
       if (conta.length != 0) {
         conta.push(monomios[ji[chuva].quais[da]].numero[0]);
-      }
-    }
+      } }
 
     if (conta.length == 0 && monomios[ji[chuva].quais[da]].numero[0] == "-") {
       entao = "-";
       entao += plan[0];
-      //
       conta.push(entao);
     } else {
       conta.push(plan[0]);
-    }
-  }
+    }}
 
   comehome = fazerConta(conta);
 
@@ -402,21 +350,16 @@ for (chuva in ji) {
     for (b in comehome[0]) {
       if (comehome[0][b] != "-") {
         t += comehome[0][b];
-      }
-    }
-    //
+      }}
 
     at = t;
     if (ehprimo(t) == false) {
       fat = FATORARSInGULAR(at);
-      //
     } else {
-      //
       fat = at;
     }
     oop = "-";
     oop += String(fat);
-
     exp.push("-");
     fat += ji[chuva].que;
     exp.push(fat);
@@ -426,7 +369,6 @@ for (chuva in ji) {
     } else {
       fat = comehome;
     }
-
     if (exp.length == 0) {
       fat += ji[chuva].que;
       exp.push(fat);
@@ -434,10 +376,7 @@ for (chuva in ji) {
       exp.push("+");
       fat += ji[chuva].que;
       exp.push(fat);
-      //
-    }
-  }
-}
+    }}}
 
 expression = exp;
 
@@ -445,13 +384,11 @@ expression = exp;
 
 monomios = [{ numero: "" }];
 obnum = 0;
-
 for (n = 0; n < exp.length; n++) {
   if (String(exp[n]).search("[\\-\\+]") != -1 && n != 0) {
     monomios.push({ numero: "" });
     obnum++;
   }
-
   monomios[obnum].numero += exp[n];
 }
 
@@ -460,19 +397,10 @@ for (n = 0; n < exp.length; n++) {
 //SEPARAR CORRETAMEnTE OS nÚMEROS
 
 for (bye in monomios) {
-  //
-
   comofica = [];
   ground = "";
-
   for (misery in monomios[bye].numero) {
-    //
-
     carac = monomios[bye].numero[misery];
-    //
-    //
-
-    //
     if (ground.length == 0) {
       ground += carac;
     } else if (
@@ -487,9 +415,7 @@ for (bye in monomios) {
     }
     if (misery == monomios[bye].numero.length - 1) {
       comofica.push(ground);
-    }
-  }
-
+    }}
   monomios[bye].numero = comofica;
 }
 
@@ -498,51 +424,25 @@ for (bye in monomios) {
 function FATORARSInGULAR(potn) {
   if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
       fatorado = ''
-  
       first = 1
-  
       div = 0
-  
       stop = false
       fator = 1
-      
       for (e = 2; stop == false; e++) {
-          ////console.log('')
-          ////console.log(e)
-          ////console.log('')
-      
           sob = Number(potn)
-        
              if (ehprimo(e) == true) {
               while (sob%e == 0) {
-              if (sob%e == 0) {
-                  ////console.log(sob + '/' + e + ': ' + sob/e)
-                  
-                  
-              }
-  
               sob = sob/e
-              
-              //console.log('SIM')
-              //console.log(fator + ' x ' + e + ': ' + fator*e)
-  
               fator = fator*e
-  
               st = false
-              
               if (fator == potn) {
               stop = true
               fatorado += `${e}`
               }else{
                   fatorado += `${e}*`
-              }
-             }
-          }
-      }
+              } } }}
       return fatorado
-  }
-  }
-   //
+  }}
    
    function versetem(comp) {
     podeir = true;
@@ -562,38 +462,23 @@ function FATORARSInGULAR(potn) {
         divisao = DIVIDIR(VAI(comp), VAI(segs[meow].car));
       }
       if (divisao == "" || divisao == "-") {
-        //
         podeir = false;
         qual = meow;
-      }
-    }
+      }}
     return podeir;
   }
    
    function DIVIDIR(T, qual) {
-       
-   
        Tfix = []
    for (h in T) {
        Tfix.push(T[h])
-       //console.log(T[h])
    }
-   //egs = [...qual]
-   
-   //console.log('QUAL?',qual)
    egs = []
    for (norte in qual) {
-   //console.log(qual[norte])
    if (qual[norte] == '*' || qual[norte] == '.') {
-       //console.log('NÃOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
    }else{
-   //console.log('SIIIIIIIIIIM')
-   
    egs.push(qual[norte])
-   
-   }
-   
-   }
+   }}
    
    
    takeout = []
@@ -601,44 +486,25 @@ function FATORARSInGULAR(potn) {
    for (n in egs) {
    
    if (T.indexOf(egs[n]) != -1) {
-   
-      //console.log('TAKE OUT', egs[n])
    T.splice(T.lastIndexOf(egs[n]), 1)
    takeout.push(Number(n))
-   }
-   
-   }
-   
-   
-   //console.log('eeeeeeeeeeeeeeeeeeg', egs)
+   }}
    
    
    for (giro = egs.length - 1; giro >= 0; giro--) {
        if (takeout.indexOf(Number(giro)) == -1) {
-      //console.log(egs[giro],'egs[giro]')
        }else{
-          //console.log('SPLICE')
            egs.splice(giro,1)
-       }
-   }
+       }}
    
-   //console.log('GIRRRRRRRRRROOOOO', egs)
    depois = ''
    for (n in egs) {
-      //console.log('yo',egs[n])
            depois += String(egs[n])
-   
         if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
-         //console.log('HUmm')
            depois+= '*'
-        }
-   }
-   
+        }}
    return depois
-   
-   
-   }
-   //expression = exp
+  }
    
    ////console.log('--------------------------------------------MOnOMIOS--------------------------------------')
    reps = []
@@ -647,23 +513,12 @@ function FATORARSInGULAR(potn) {
    
    for (m = 0; m < monomios.length; m++) { // CADA MOnÔMIO
        repetido = []
-       
        col = false
        repetido = []
-   
       numerosrep = []
-       ////console.log('BURRO')
-    ////console.log('--------------------')
-       //console.log(monomios[m].numero)
        
-    
        for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
-           
-   
            if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-         //console.log('LETRA OU nÚMERO ISOLADO: ' + monomios[m].numero[oc])
-   
-          //console.log('nUMEROS REPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP', numerosrep.indexOf(monomios[m].numero[oc]))
            if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
            numerosrep.push(monomios[m].numero[oc])
    
@@ -671,71 +526,35 @@ function FATORARSInGULAR(potn) {
                ocs2 = []
    
                if(u != m) {
-           //console.log(`monomio ${u}: `)
-           //console.log(monomios[u])   
-               
-   
              // OCAS
              if(ocs2.find(function(ocs2) {
                return ocs2.ed == monomios[m].numero[oc]
                }) == undefined) {
-                //console.log('====================')
                    ocs2.push({ed: monomios[m].numero[oc], el: 0})
-   
                    ocs = 0
              for (ao = 0; ao < monomios[m].numero.length; ao++) {
-             //console.log('AAAAAAAAAA' + monomios[m].numero[ao])
                if (monomios[m].numero[ao] == monomios[m].numero[oc]) {
                    ocs++
-               }
-             }
-           }
-             //console.log('OOOOOOOOOOOOOOCS-------!!!!!!', ocs)
+               }}}
              
              for (e = 0; e < monomios[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
-             //console.log(monomios[u].numero[e])
-               
                if (monomios[u].numero[e] == monomios[m].numero[oc]) {
-                 //  //console.log(monomios[m].numero[oc] + ' é igual a ' + monomios[u].numero[e])
-   
                    if (repetido.find(function(repetido) {
                        return repetido.monum == u
                        }) === undefined) {
-   
                            ocs2.find(function(ocs2) {
                                return ocs2.ed == monomios[m].numero[oc]
                                }).el++
    
-                       
-   
-                        
-   
                                if (ocs2.find(function(ocs2) {
                                    return ocs2.ed == monomios[m].numero[oc]
                                    }).el <= ocs) {
-   
-                                       //console.log('________uuuuuuuuuuuuuuuuuuuuuu________',{monum: u, wc: [m], letr: monomios[u].numero[e]})
                    repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
-   
-                  
-   
-                               }
-   
-                   //reps.push({mns: [u, m],alg: monomios[u].numero[e])
-                  // reps.push(monomios[u].numero[e])
+   }
                        }else{
-                           ////console.log('OOOOOBABAOBABEI')
-                          // if (repetido.find(function(repetido) {
-                              // return repetido.monum == u
-                              // }).letr.indexOf(monomios[u].numero[e]) == -1) {
-   
                                    ocs2.find(function(ocs2) {
                                        return ocs2.ed == monomios[m].numero[oc]
                                        }).el++
-   
-                                
-                                      
-   
                                            if (ocs2.find(function(ocs2) {
                                                return ocs2.ed == monomios[m].numero[oc]
                                                }).el <= ocs) {
@@ -743,67 +562,30 @@ function FATORARSInGULAR(potn) {
                                    repetido.find(function(repetido) {
                                        return repetido.monum == u
                                        }).letr += `.${monomios[u].numero[e]}`
-                                      
-                                   }
-                                       //reps.push(monomios[u].numero[e])
-       
-                 
-                              // }else{
-                                   //////console.log('DO nOT ADD')
-                             // }
-                       }
-                   
-                   ////console.log('REPETIDO: ', repetido)
-                   ////console.log('OCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAS34246352645263546345:', ocs2)
-               }else{
-                   
-               }
-               ////console.log('')
-             }
-           }
-           }
-           ////console.log('------------------------------------------------------------------------------------------')
-       }
-       }
-       }
+                                   }}}}} }}}}
       
-       //console.log('REPETIDO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', repetido)
        reps.push(repetido)
    
        
        for (nope in repetido) {
        if (repetido[nope].letr[0] == '-') {
-           //console.log('hei')
            la = ''
            for (u in repetido[nope].letr) {
                if (u != 0 && u != 1) {
                    la+= repetido[nope].letr[u]
-               }
-           }
-           //console.log(la, 'aaaaaaaaa')
+               } }
            if (repetido.find(function(repetido){
                return repetido.letr == la
            })) {
-               //console.log(':(', nope)
                repetido.splice(nope, 1)
                
-           }
-       }
-   }
+           }}}
    
    
-       ////console.log('OALAALODLOALDAODLADOLADAOLAODLaaaaaaaaaaaa000000000000000OOOOOOooooooooooooooooooooIIIIIIIIIIIIIIAODALDLAOLDAO')
-       
            for (moe = repetido.length - 1; moe >= 0; moe--) {
-              //console.log('**********************************************************************esse',repetido[moe], segs)
-
               podeir = true
               qual = -1
               for (meow in segs) {
-                  
-                //console.log('')
-                //console.log('',segs[meow].car)
-               
                     array1 = []
                     for (d in segs[meow].car) {
                         array1.push(segs[meow].car[d])
@@ -815,23 +597,16 @@ function FATORARSInGULAR(potn) {
                     }
 
                     if (segs[meow].car.length < repetido[moe].letr.length) {
-
                         divisao =  DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
-                    //console.log('DIVIDIR', segs[meow].car, 'por', repetido[moe].letr, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')', divisao)
                      }else{
                          divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
-                    //console.log('DIVIDIR', repetido[moe].letr, 'por', segs[meow].car, '(', VAI(segs[meow].car), '*', VAI(repetido[moe].letr), ')',divisao)
                      }
 
                      if (divisao == '' || divisao == '-') {
-                        //console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> OPA, TEM!!!!!!!!!!!!!!!')
                         podeir = false
                         qual = meow
-                     }
-                  
-              }
+                     } }
 
-              //console.log('PODE IR?????????????????????????', podeir, qual)
                if (podeir == true) {
                 splitUp(repetido[moe].letr);
                     function splitUp(str) {
@@ -840,7 +615,6 @@ function FATORARSInGULAR(potn) {
                     for (i in str) {
                         if (str[i] == "." && estado != "-") {
                         permission = versetem(estado);
-                        //console.log(permission)
                         if (permission == true && estado != " " && estado != "-") {
                             segs.push({ car: estado, mons: [m] });
                         }
@@ -850,62 +624,25 @@ function FATORARSInGULAR(potn) {
                         permission = versetem(estado);
                         if (permission == true && estado != " " && estado != "-") {
                             segs.push({ car: estado, mons: [m] });
-                        }
-                        }
-                    }
-                    //
-                    }
+                        }} }}
    
                }else if(segs[qual].mons.indexOf(m) == -1){
                     segs[qual].mons.push(m)      
-               }
-           }
-           
-   }
-   
-   
-   ////console.log('RELAÇÃO EnTRE OS MOnÔMIOS')
-   ////console.log(segs)
+               } }}
    
    
    for (nl = 0; nl < segs.length; nl++) {
-       //console.log('-----------------------------------------------------------------------------------------')
-       
-       //console.log(segs[nl])
-   
-       //console.log('AnALISAR CADA ITEM')
        //console.log('nUMERO: ', segs[nl].car)
        for (n = 0; n < segs.length; n++) {
-   
-           //console.log('---------------------------------------------------------------------')
            if (n != nl) {
-           //console.log(`${segs[n].car}.search('${segs[nl].car}')`, String(segs[n].car).search(String(segs[nl].car)))
-           for (dry in segs[nl].car) {
-            //console.log('_|(o u o)|_', segs[nl].car[dry])
-           }
-
            if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
-              
-               //console.log(`${segs[n].car}: ${segs[n].mons}`)
-               //console.log(`${segs[nl].car}: ${segs[nl].mons}`)
    
                for (u in segs[n].mons) {
-                   //console.log(segs[n].mons[u])
                    if (segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
-                       //console.log('TEM')
                    }else{
-                     //console.log('nÃO TEM')
-                     //console.log('O DEVTOOLS É A PIOR COISA QUE JÁ EXISTIU nESSE MUnDO', segs[nl].mons)
                        segs[nl].mons.push(segs[n].mons[u])
                      
-                   }
-               }
-           }
-           }
-       
-       }
-   
-   }
+                   } }}}}}
    
 
    function ehprimo(Number) {
@@ -982,110 +719,37 @@ function FATORARSInGULAR(potn) {
       }
    
       its = grtols
-     //console.log(its)
      for (c in its) {
        segsordered.push(its[c])
-     }
-   }
+     }}
    
    segs = [...segsordered]
 
    //DIVS
    ml = monomios.length
-   //////console.log(ml)
-   
    divs = ehprimo2(ml)
-   //////console.log(divs)
-   
-   for (n in divs) {
-       //////console.log(divs[okentao])
-       
-   }
    
    if (divs.length == 0) {
    divs = [1]
    }
-   
-/*
-   goaway = []
-   for (nah in segs) {
-    
-       //console.log(segs[nah].car)
-       if (segs[nah].car[0] == '-') {
-        //console.log('NEGATIVO')
-        semmenos = ''
-        for (memories in segs[nah].car) {
-            //console.log(segs[nah].car[memories])
-            if (memories != 0 && memories!= 1){
-             semmenos+= segs[nah].car[memories]
-            }
-        }
-        //console.log('pesquisar:', semmenos)
-        //console.log(segs.find(function(segs) {return segs.car == semmenos}))
-        if (segs.find(function(segs) {return segs.car == semmenos}) != undefined) {
-            goaway.push(Number(nah))
-        }
-       }
-   }
-   //console.log('TIRAR TUDO')
-   //console.log(goaway)
 
-   for (time = segs.length - 1; time >= 0; time--) {
-    //console.log(time, segs[time])
-    if (goaway.indexOf(time) != -1) {
-        //console.log('TIRAR')
-        segs.splice(time, 1)
-        }
-   }
-*/
-   //divs = [2,3]
-   
-   //////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIÓÓOÓÓÓÓÓOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
-   //////console.log(segs)
-   
-   
-       //////console.log(segs, divs)
-   
-       ////console.log(segs)
-   
-    //console.log(segs)
-   
-       //const HATEYOU = []
-       //for (HATEDEVTOOLS in segs) {
-          
-         //console.log(segs[HATEDEVTOOLS].mons)
-           //HATEYOU.push(segs[HATEDEVTOOLS])
-      // }
-       
-      //console.log(segs)
       for (tie in segs) {
-      //console.log(segs[tie])
        segs[tie].godhelpme = [...segs[tie].mons]
       }
      
       okentao = 0
-      // for (okentao in divs) {
+
            roll = [] 
-   
-          //console.log('nAOOOOOOOOOOOOOOOOOOOOOOsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', n)
-           //const vi = 0
            scarecrow = []
            for(anchor in segs) {
-              //console.log('i feel the light betrayed me', segs[anchor].mons)
-               
-           
                army = []
                lpisthebest = ''
                    for (fall in segs[anchor].car) {
                    if (lpisthebest.length == 0) {
-                       //console.log('LISTA VAZIA - ADD')
                        lpisthebest = segs[anchor].car[fall]
-                       //console.log(lpisthebest)
                    }else if(lpisthebest.search('[0-9]') != -1 && segs[anchor].car[fall].search('[0-9]') != -1) {
-                       //console.log('VAI - ADD')
                        lpisthebest += segs[anchor].car[fall]
                    }else{
-                       //console.log('nÃO VAI nÃO')
                        army.push(lpisthebest)
                        if(segs[anchor].car[fall] != '.') {
                        lpisthebest = segs[anchor].car[fall]
@@ -1094,21 +758,14 @@ function FATORARSInGULAR(potn) {
                            lpisthebest = '*'
                            }else{
                                lpisthebest = ''
-                           }
-                       }
-                  ////console.log('LPISTHEBEST', lpisthebest)
+                           }}
                    }
                    if (fall == segs[anchor].car.length - 1) {
                        army.push(lpisthebest)
-                   }
-               }
+                   } }
                bell = [...army]
-              //console.log('OAHAHA', army)
-   
-              //console.log(army, '_____________YOU HAVE TO FIX WHAT YOU DID WRONG!_______________')
-               
+             
                for (pahh in army) {
-                  //console.log(army[pahh])
                    if (army[pahh] == '*') {
                        army[pahh] = '.'
                    }
