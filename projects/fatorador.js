@@ -2184,27 +2184,16 @@ function FATORARSInGULAR(potn) {
    
            aswillbe2 = []
            for (raging = 0; raging < roll.length; raging++) {
-            console.log(raging, roll[raging].repetidos, roll[raging].posições)
                asitwas = [] 
            
                obe = {what:[]}
-   
-             //console.log('')
-              //console.log(roll[raging].repetidos, roll[raging].posições)
-   
-              
            
               for (still in roll[raging].repetidos) {
-                console.log(`roll[${raging}].repetidos[${still}]:`,roll[raging].repetidos[still])
                asitwas2 = []
                aswillbe = []
-   
-              //console.log('')
-            //console.log(scarecrow[roll[raging].repetidos[still]].divisor, still)
-   
+
                mylife = '('
                for (still2 in roll[raging].posições) {
-                  console.log(`roll[${raging}].posições[${still2}]:`,roll[raging].posições[still2],miss[roll[raging].posições[still2]].dividido)
                    if (still != 0) {
                    mylife+= ' + ' + miss[roll[raging].posições[still2]].dividido
                    }else{
@@ -2674,12 +2663,8 @@ function FATORARSInGULAR(potn) {
            concatenar+= ' + '
        }
 
-       console.log('__________________')
-       console.log(naonao,',', tobreak)
        fat1 = FATORAR2(FATORE(naonao))
        fat2 = FATORAR2(FATORE(tobreak))
-       console.log(fat1[0],'segs.length:',fat1[3])
-       console.log(fat2[0],'segs.length:',fat2[3])
    
        daprafat1 = false
        
@@ -2688,16 +2673,11 @@ function FATORARSInGULAR(potn) {
        daprafat1 = true
        }
        
-   
        daprafat2 = false
        
        if (fat2[1] == 1 && fat2[2] == 0) {
-      // tobreak = fat2[0]
        daprafat2 = true
        }
-   
-
-       console.log('__________________')
 
        if (edge.length > 1) {
         if (daprafat1 == false && daprafat2 == false) { // OS DOIS NÃO DÃO PARA FATORAR
@@ -2716,10 +2696,6 @@ function FATORARSInGULAR(potn) {
           concatenar += `${naonao}${tobreak}`;
         }
       }
-
-       console.log('ESSE É O AMONTOADO', amontoado)
-       console.log('ESSE É O AMOUNT', amount)
-
      
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS(amount)
@@ -3032,12 +3008,12 @@ function FATORARSInGULAR(potn) {
     //console.log(concatenar)
     //console.log('CERTNHO')
     return [concatenar, segs.length, roll.length];
-  } else {
+  } //else {
     //console.log('CERTINHO?')
     if (monomios.length > 1) {
       hei = concatenar;
       otherway = FATORAR2(startexp);
-      //console.log(otherway[1], otherway[2])
+      console.log(otherway[1], otherway[2])
 
       if (otherway[1] == 1 && otherway[2] == 0) {
         //console.log(otherway[1], otherway[2])
@@ -3056,7 +3032,7 @@ function FATORARSInGULAR(potn) {
       //console.log(concatenar,monomios)
       return [concatenar, segs.length, roll.length];
     }
-  }
+  //}
    
    /*
    vai = []
@@ -7712,10 +7688,6 @@ if (quad != eep) {
       for (roberto in naonao_2) {
         for (vaidarcerto in tobreak_2) {
             novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
-            for (life in youdumb_2) {
-              console.log(life,'juntar os monomios',youdumb_2[life].mons,'/ grupos:',youdumb_2[life].w.what)
-            }
-            console.warn(newexpress,monomios_2.length)
             
             if (novomon[0] == '-') {
                 miya = ''
@@ -7737,10 +7709,6 @@ if (quad != eep) {
        }}}
    
    if (numsdesfat.length > 0) {
-    for (life in youdumb_2) {
-      console.log(youdumb_2[life].mons)
-     }
-
     console.warn('VAI TER QUE FATORAR DE NOVO')
     todososnumeros_2 = []
     for (acaba in monomios_2) {
@@ -8891,9 +8859,7 @@ function devtools(close) {
   tab = document.getElementById('devtab')
   if (devtoolsstate == 'closed' || close == false) {
     part = tab.getElementsByClassName('slot')
-    console.log(part)
     for (g = part.length - 1; g >= 0; g--) {
-      console.log(g, part[g])
       tab.removeChild(part[g])
     }
     ps = tab.getElementsByTagName('p')
