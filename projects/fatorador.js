@@ -8638,551 +8638,258 @@ if (quad != eep) {
         }
    
         for (tel = 0; tel < c; tel++){
-   
-            if (relation_2[tel].fix.length > 0) {
-          //  //console.log('relation_2[tel]', relation_2[tel])
-            }
-            
             outrorel = relation_2[tel]
             
         for (hu in outrorel.fix) {
-          //  //console.log(outrorel.fix[hu])
             if (relation_2[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-             //   //console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
-                ////console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
-   
-                 ///   //console.log(outrorel.falt[ou])
                     if (relation_2[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                    //    //console.log('pode ir')
                         outrorel.fix[hu] =  outrorel.falt[ou]
                         outrorel.falt[ou] = -10
-                        
-                     //   //console.log('isso aí:', outrorel.fix)
                         y++
-                    }
-                }
-            }
-        }
-    }
-        }
-    }
-   
-    //console.log('SERÁ QUE DEU CERTO?')
-   
-   //console.log(relation_2)
-   
+            }}}}}}}
+ 
    groups = 0
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   ////console.log(relation_2[yougo].fix)
-   
    for (pals in relation_2[yougo].fix) {
-    ////console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
    }
    }
-   //console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
+  
    if (divs_2[okentao] != groups) {
-   //console.log('THEn WHY ARE WE LAUGHInG?')
-   //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
-   
    tirados_2 = []
    for (wish in relation_2) {
-    //console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-       //console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   //console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
-   
    
    for (die in segs_22) {
        tirar = []
-   
-   //console.log('break', segs_22[die].mons)
+ 
    for (h in segs_22[die].mons) {
-   //console.log(segs_22[die].mons[h])
    if (tirados_2.indexOf(segs_22[die].mons[h]) != -1) {
    tirar.push(Number(h))
-   }
-   }
-   //console.log('tirar de ',segs_22[die].mons, tirar)
+   }}
    for (far = tirar.length - 1; far >= 0; far--) {
-       
    segs_22[die].mons.splice(tirar[far], 1)
-   
-   }
-   //console.log('ficou assim:', segs_22[die].mons)
-   }
+   }}
    
    for (sorrow in segs_22) {
-   //console.log(segs_22[sorrow].mons)
    grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
-   //console.log('dá para formar', grupos,'grupos')
-   
    imor = 0
    
    for (b = 0; b < grupos; b++) {
-       //console.log(b, 'vez----------------------------------------------------------------------------------------')
-      
        ob = {car: segs_22[sorrow].car, fix: [],problem:false}
-   
        for (live = 0; live < quanto; live++) {
-           //console.log('TIRADOS_2')
-           //console.log(segs_22[sorrow].mons[imor])
-   
-          //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
-   
               if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
                    ob.problem = true
               }
-               //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
            ob.fix.push(segs_22[sorrow].mons[imor])
            tirados_2.push(segs_22[sorrow].mons[imor])
            imor++
-           
-          
        }
-      
-      
-       //console.log('In THE EnD', ob)
-   
-       //console.log(segs_22)
-       //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
+     
        if (ob.problem == false || temnaLista(ob.fix) == true) {
        relation_2.push(ob)
-       }
-   }
-   
-   }
-   
-   
-   
-   }
-   }
-   //console.log('aaaaaaaaaaaaaaaaaaaaaaaa',segs_22, relation_2)
+       }}}}}
    return [relation_2, segs_22]
    }
    
    function temnaLista(h) {
-   //console.log('THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR, THIS IS HOW I DISAPPEAR')
-   
    for (t in relation_2) {
-   
        if (relation_2[t].fix.length > 0) {
-       //console.log(relation_2[t].fix)
-   
        home = 0
        for (fear in relation_2[t].fix) {
            if (relation_2[t].fix[fear] == h[fear]) {
                //console.log('WOW')
                home++
-           }
-       }
-   
+           }}
        if (home == h.length) {
            //console.log('É IGUAL')
            return true 
-       }
-   
-       }
-   }
-   }
+       }} }}
    
    function doit2(par) {
-   
        segs_22 = []
-   
        for (uf in par) {
-       
-          //console.log(segs_2[uf].godhelpme)
-          // segs_22.push(segs_2[uf])
-         //  segs_2[tie].godhelpme = [...segs_2[tie].mons]
          segs_22[uf] = {}
            segs_22[uf].mons = [...par[uf].mons]
            segs_22[uf].car = par[uf].car
-   
     }
    
     relation_2 = []
-   
-   
     quanto = Number(monomios_2.length)/Number(divs_2[okentao])
-   
-   
     numapars = []
-   
-   
-   
    
     util = []
     for (t in segs_22) {
-   
-   
-   
         if (segs_22[t].mons.length >= quanto) {
             util.push(segs_22[t])
-        }
-        ////console.log('')
-    }
-   
-    ////console.log('util', util)
+        }}
     
     for (m in monomios_2) {
         aparic = 0
-        ////console.log(m)
         for (t in util) {
-            ////console.log('util[t].mons', util[t].mons)
-            ////console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
-   
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
-            }
-        }
-        ////console.log('aparic',m, aparic)
+            }}
         numapars.push({num: Number(m), vezes: aparic})
         }
    
     present = []
-    //console.log('numapars',numapars)
-    ////console.log('----------------------------------------------------------------------------------------------------')
     for (r in util) {
-   
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------')
        lista = util[r].mons
         present = {fix: [], falt: []}
-        ////console.log(lista)
-      
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
-            ////console.log(lista[g])
-   
-   
             if (numapars.find(function(numapars) {
                 return numapars.num == lista[g]
                 }).vezes == 1) {
-                ////console.log('ADICIOnAR')
                   rep++
                   present.fix.push(lista[g])
-                 
-            }
-   
-        }
-        ////console.log('present', present)
-        ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
-   
+                 }}
+        
         if (present.fix.length < quanto) {
         for (g in lista) {
-            ////console.log('')
-            ////console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
-                ////console.log('FALTA')
-                present.falt.push(lista[g])
-   
-               
-   
-                  //  numapars.find(function(numapars) {
-                      // return numapars.num == lista[g]
-                     //   }).vezes--
-   
-                        
-            }
-        }
-        ////console.log('FALTAM OS nÚMEROS', present.falt)
-   
-        
+                present.falt.push(lista[g])            
+            }}
+      
         if (present.fix.length == 0) {
         for (ti in present.falt) {
-            ////console.log(present.falt[ti])
-   
-           
-   
                 numapars.find(function(numapars) {
                     return numapars.num == present.falt[ti]
                     }).vezes--
-   
-                 
-        }
-    }
-        
-   
-    }
+                  }}}
     relation_2[r] = present
     relation_2[r].car = segs_22[r].car
-    
     }
-    ////console.log('Relation_2!!!!!!!!!!!!!!!!!', relation_2)
+
     for (c in relation_2) {
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------')
         if (relation_2[c].fix.length > 0) {
-        ////console.log(relation_2[c].fix, relation_2[c].falt)
-   
         faltam = Number(quanto) - Number(relation_2[c].fix.length)
-        ////console.log('faltam', faltam)
-   
         for (f = 0; f < faltam; f++) {
-            ////console.log(relation_2[c].falt[f])
            relation_2[c].fix.push(relation_2[c].falt[f])
-          
-           ////console.log('AnTES: ', relation_2[c].falt)
            relation_2[c].falt[f] = -10
-   
-           ////console.log('DEPOIS: ', relation_2[c].falt)
         }
-        ////console.log(relation_2[c].fix)
    
         for (tel = 0; tel < c; tel++){
-   
-            if (relation_2[tel].fix.length > 0) {
-            ////console.log('relation_2[tel]', relation_2[tel])
-            }
-            
             outrorel = relation_2[tel]
             
         for (hu in outrorel.fix) {
-            ////console.log(outrorel.fix[hu])
             if (relation_2[c].fix.indexOf(outrorel.fix[hu]) != -1) {
-                ////console.log(`${relation_2[c].fix}.indexOf(${outrorel.fix[hu]}) = ${relation_2[c].fix.indexOf(outrorel.fix[hu])}`)
-                ////console.log(outrorel.falt)
                 y = 0
                 for(ou = 0; y < 1 && ou < outrorel.falt.length; ou++) {
-   
-                    ////console.log(outrorel.falt[ou])
                     if (relation_2[c].fix.indexOf(outrorel.falt[ou]) == -1 && outrorel.falt[ou] != -10){
-                        ////console.log('pode ir')
                         outrorel.fix[hu] =  outrorel.falt[ou]
                         outrorel.falt[ou] = -10
-                        
-                        ////console.log('isso aí:', outrorel.fix)
                         y++
-                    }
-                }
-            }
-        }
-    }
-        }
-    }
-   
-    ////console.log('SERÁ QUE DEU CERTO?')
-   
-   //////console.log(relation_2)
+                    }}}} }} }
    
    groups = 0
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   ////console.log(relation_2[yougo].fix)
-   
    for (pals in relation_2[yougo].fix) {
-    ////console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
-   }
-   }
+   }}
    
-   ////console.log('divs_2 é igual a ', divs_2[okentao])
-   ////console.log('groups é igual a', groups)
+  
    if (groups < divs_2[okentao]) {
-    //console.log('DEU CERTO!!!EBAAAAAA')
-   
-    ////console.log('SERÁ QUE DEU CERTO?')
-   
-   ////console.log(relation_2)
-   
    groups = 0
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   //console.log(relation_2[yougo].fix)
-   
    for (pals in relation_2[yougo].fix) {
-   //console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
-   }
-   }
-   //console.log('IF LIFE AIn\'T JUST A JOKE THEn WHY ARE WE LAUGHInG?', divs_2[okentao], 'and', groups)
-   if (divs_2[okentao] != groups) {
-   //console.log('THEn WHY ARE WE LAUGHInG?')
-   //console.log('I\'VE TRIED TO PUT THIS ALL BEHInD ME')
+   }}
    
+   if (divs_2[okentao] != groups) {
    tirados_2 = []
    for (wish in relation_2) {
-   //console.log(relation_2[wish].fix)
     for (edge_2 in relation_2[wish].fix) {
-   //console.log(relation_2[wish].fix[edge_2])
        tirados_2.push(relation_2[wish].fix[edge_2])
     }
    }
-   //console.log('nÚMEROS QUE SERÃO TIRADOS_2', tirados_2)
-   
    
    
    for (die in segs_22) {
        tirar = []
-   
-   //console.log('break', segs_22[die].mons)
    for (h in segs_22[die].mons) {
-   //console.log(segs_22[die].mons[h])
    if (tirados_2.indexOf(segs_22[die].mons[h]) != -1) {
    tirar.push(Number(h))
-   }
-   }
-   //console.log('tirar de ',segs_22[die].mons, tirar)
+   }}
    for (far = tirar.length - 1; far >= 0; far--) {
-      //console.log(segs_2[die].mons[tirar[far]])
    segs_22[die].mons.splice(tirar[far], 1)
-   
-   }
-   //console.log('ficou assim:', segs_22[die].mons)
-   }
+   }}
    
    for (sorrow in segs_22) {
-   //console.log(segs_22[sorrow].mons)
    grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
-   //console.log('dá para formar', grupos,'grupos')
-   
    imor = 0
    
    for (b = 0; b < grupos; b++) {
-       //console.log(b, 'vez----------------------------------------------------------------------------------------')
-      
        ob = {car: segs_22[sorrow].car, fix: [],problem:false}
    
        for (live = 0; live < quanto; live++) {
-           //console.log('TIRADOS_2')
-           //console.log(segs_22[sorrow].mons[imor])
-   
-          //console.log(tirados_2.indexOf(segs_22[sorrow].mons[imor]) == -1) 
-   
-              if (tirados_2.indexOf(segs_22[sorrow].mons[imor]) != -1) {
-                  // ob.problem = true
-              }
-               //console.log('PLEASE DOnT ASK ME FOR THE LAST WORDS',ob)
            ob.fix.push(segs_22[sorrow].mons[imor])
            tirados_2.push(segs_22[sorrow].mons[imor])
            imor++
-           
-          
        }
       
-      
-       //console.log('In THE EnD', ob)
-   
-       //console.log(segs_22)
-       //console.log('VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE',ob.fix,'----------------',temnaLista(ob.fix))
        if (ob.problem == false || temnaLista(ob.fix) == true) {
        relation_2.push(ob)
-       }
-   }
-   
-   }
-   
-   
-   
-   }
+       }}}}
    }else if(groups > divs_2[okentao]){
-       
-   //console.log('nÃO DEU CERTO! BUÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁ')
-    //console.log('números que têm: ', conts)
-    ////console.log(segs_2)
-   
     mia = []
    for (idk in segs_22) {
-   //////console.log('---------------------------------------------------------------------')
-   //console.log('aqui ó',segs_2[idk].mons)
-   
-   
    for (mcr in segs_22) {
    if (mcr != idk) {
-   
-       //////console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
-     //console.log('outro',segs_2[mcr].mons)
-      
-      //console.log(segs_2[idk].mons.length)
        if (segs_22[mcr].mons.length <= segs_22[idk].mons.length) {
    
            sames = []
       for(y = 0; y < segs_22[mcr].mons.length; y++) {
-       //  //console.log(segs_2[idk].mons, segs_2[mcr].mons[y], segs_2[idk].mons.indexOf(segs_2[mcr].mons[y]))
            if (segs_22[idk].mons.indexOf(segs_22[mcr].mons[y]) != -1) {
-          //console.log('igual')
                sames.push('igual')
            }else{
-           //console.log('diferente')
                sames.push('diferente')
-           }
-      }
-   //console.log(sames)
+           }}
       if (sames.indexOf('diferente') == -1){
-    //console.log('TIRAR', segs_2[mcr])
-   
        if (mia.indexOf(mcr) == -1) {
        mia.push(mcr)
-       }
-       
-    //console.log(segs_2)
-       
-      }
-   }
-       
-   }
-   }
-   
-   }
-   
-   for (f = mia.length - 1; f >= 0; f--) {
-       //segs_22.splice(mia[f],1)
-       
-      }
-   
+       }}}  }}}
       
     numapars = []
     
    relation_2 = []
    
-    //////console.log('--------------------------------------------------------------------------------------------------------------------------------')
-   
-   
     util = []
     for (t in segs_22) {
-   
-       ////console.log(segs_2[n],'.mons: ',segs_2[t].mons,'.length: ', segs_2[t].mons.length)
-     //  //console.log(`${segs_2[t].mons.length} é maior que ou igual a ${quanto}? ${segs_2[t].mons.length >= quanto}`)
-   
         if (segs_22[t].mons.length >= quanto) {
             util.push(segs_22[t])
-        }
-        ////console.log('')
-    }
+        }}
    
-    //console.log('util', util)
     
     for (m in monomios_2) {
         aparic = 0
-       ////console.log(m)
         for (t in util) {
-         //   //console.log('util[t].mons', util[t].mons)
-         //   //console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
-   
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
             }
         }
-       // //console.log('aparic',m, aparic)
         numapars.push({num: Number(m), vezes: aparic})
         }
    
     present = []
-    ////console.log('----------------------------------------------------------------------------------------------------')
     for (r in util) {
        lista = util[r].mons
         present = {fix: [], falt: []}
@@ -9233,10 +8940,7 @@ if (quad != eep) {
    conts = []
    for (yougo in relation_2) {
    if (relation_2[yougo].fix.length > 0) {
-   //console.log(relation_2[yougo].fix)
-   
    for (pals in relation_2[yougo].fix) {
-    //console.log(relation_2[yougo].fix[pals])
     conts.push(relation_2[yougo].fix[pals])
    }
    groups++
@@ -9247,8 +8951,7 @@ if (quad != eep) {
    for (wish in relation_2) {
     for (edge_2 in relation_2[wish].fix) {
        tirados_2.push(relation_2[wish].fix[edge_2])
-    }
-   }
+    }}
   
    for (die in segs_22) {
        tirar = []
@@ -9258,8 +8961,7 @@ if (quad != eep) {
    }}
    for (far = tirar.length - 1; far >= 0; far--) { 
    segs_22[die].mons.splice(tirar[far], 1)
-   }
-   }
+   }}
    
    for (sorrow in segs_22) {
    grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
@@ -9291,7 +8993,6 @@ obnum++
 }
 particles[obnum].numero += list[n]
 }
-
 
 
 for (huh in particles) {
