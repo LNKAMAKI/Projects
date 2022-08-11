@@ -8519,11 +8519,6 @@ if (quad != eep) {
    
    }
    
-   for (f = mia.length - 1; f >= 0; f--) {
-       //segs_22.splice(mia[f],1)
-       
-      }
-   
       
     numapars = []
     
@@ -8535,54 +8530,32 @@ if (quad != eep) {
             util.push(segs_22[t])
         }}
    
-    //console.log('util', util)
-    
     for (m in monomios_2) {
         aparic = 0
-       ////console.log(m)
         for (t in util) {
-         //   //console.log('util[t].mons', util[t].mons)
-         //   //console.log('util[t].mons.indexOf(Number(m))', util[t].mons.indexOf(Number(m)))
-   
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
             }
         }
-       // //console.log('aparic',m, aparic)
         numapars.push({num: Number(m), vezes: aparic})
         }
    
     present = []
-    ////console.log('----------------------------------------------------------------------------------------------------')
     for (r in util) {
-   
-        ////console.log('-----------------------------------------------------------------------------------------------------------------------------')
        lista = util[r].mons
         present = {fix: [], falt: []}
-        ////console.log(lista)
-      
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
-         //   //console.log(lista[g])
-   
-   
             if (numapars.find(function(numapars) {
                 return numapars.num == lista[g]
                 }).vezes == 1) {
-                ////console.log('ADICIOnAR')
                   rep++
                   present.fix.push(lista[g])
                  
-            }
-   
-        }
-       // //console.log('present', present)
-        ////console.log('--------------------------------------VEnDO O QUE FALTA-----------------------------------')
-   
+            }}
+     
         if (present.fix.length < quanto) {
         for (g in lista) {
-           // //console.log('')
-           // //console.log(lista[g])
             if (present.fix.indexOf(lista[g]) == -1) {
              //   //console.log('FALTA')
                 present.falt.push(lista[g])
