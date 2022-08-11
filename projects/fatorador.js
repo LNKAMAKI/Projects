@@ -632,7 +632,6 @@ function FATORARSInGULAR(potn) {
    
    
    for (nl = 0; nl < segs.length; nl++) {
-       //console.log('nUMERO: ', segs[nl].car)
        for (n = 0; n < segs.length; n++) {
            if (n != nl) {
            if (String(segs[n].car).search(String(segs[nl].car)) != -1) {
@@ -2596,7 +2595,6 @@ function FATORARSInGULAR(potn) {
     
     for (m in monomios) {
         aparic = 0
-       ////console.log(m)
         for (t in util) {
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
@@ -2836,7 +2834,6 @@ if (plan.length == 3) {
 
  entao = '-'
  entao+= plan[0]
- //console.log(entao)
  conta.push(entao)
     }else{
         conta.push(plan[0])
@@ -4561,7 +4558,6 @@ if (quad != eep) {
             negativo = true
                correct = ''
                for (okay in aconta_2) {
-                  //console.log(el[okay])
                    if (aconta_2[okay]!= '-'){
                        correct+= aconta_2[okay]
                    }
@@ -4809,15 +4805,13 @@ if (quad != eep) {
     for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
          if (numsdesfat.indexOf(Number(todososnumeros_2[feliz])) != -1) {
             todososnumeros_2.splice(feliz, 1)
-         }
- }
+         }}
  
     for (eh in todososnumeros_2) {
         join = ''
         for (sempresei in monomios_2[todososnumeros_2[eh]].numero) {
             if (monomios_2[todososnumeros_2[eh]].numero[sempresei] != '+' && monomios_2[todososnumeros_2[eh]].numero[sempresei] != '-') {
             ter = monomios_2[todososnumeros_2[eh]].numero[sempresei]
-            //console.log(ter)
             join+= ter
             }
         }
@@ -4830,41 +4824,29 @@ if (quad != eep) {
         }else{
             newexpress.push('+')
             newexpress.push(join)
-        }
-    }
+        }}
 
         FATORAR2(newexpress)
    }else{
-
    todososnumeros_2 = []
    for (acaba in monomios_2) {
-      //console.log(acaba)
        todososnumeros_2.push(acaba)
    }
    cancelar = []
    for (feliz = todososnumeros_2.length - 1; feliz >= 0; feliz--) {
-          //console.log(todososnumeros_2[feliz])
            if (numerospresentes_2.indexOf(Number(todososnumeros_2[feliz])) != -1) {
               todososnumeros_2.splice(feliz, 1)
-   }
-   }
-   //console.log(todososnumeros_2)
-   
+   }}
+  
    for (bye in todososnumeros_2) {
-       //console.log(monomios_2[todososnumeros_2[bye]].numero)
-   
        quase = monomios_2[todososnumeros_2[bye]].numero
        aconta_2 = ''
        elevar = 1
        aster = false
        friend = ''
-       
-       //console.log(quase)
        gates = []
    
-        for (patience in quase) {
-            //console.log('EFEEDEDEDEED',quase[patience])       
-           
+        for (patience in quase) {   
             if (quase[patience] == '*') {
                 aster = true
                 gates.push(quase[Number(patience) - 1])
@@ -4900,7 +4882,6 @@ if (quad != eep) {
         antes = ''
         for (eyes in quase) {
             if (quase[eyes].search('[0-9]') != -1) {
-               //console.log('CRY')
                 antes+= quase[eyes]
             }
         }
@@ -5815,7 +5796,6 @@ if(storer[0] == '-') {
 
 function MULTIPLICARDIREITO(num1, num2) {
     if (num1 == '1' || num2 == '1') {
-        //console.log('É 1')
         if (num1 == '1') {
             resultmult = num2
         }else{
@@ -6046,7 +6026,6 @@ if (anterior.length > 1) {
                 n = n - 3
             }
         }else if(anterior[n] == '-' && anterior[n - 1] != '(' && anterior[n - 1] != ')' && anterior[n + 1] != '(' && anterior[n + 1] != ')' && anterior[n + 1] != '√' && String(anterior[n + 2]).search('[x\\/\\*]') == -1 && String(anterior[n - 2]).search('[x\\/\\*\\-]') == -1) {
-            //console.log('SUBTRAÇÃO') 
             anterior[n + 1] = String(Number(anterior[n - 1]) - Number(anterior[n + 1]))
             anterior.splice(n - 1, 2)
             n = n - 3
