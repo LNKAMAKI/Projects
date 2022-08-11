@@ -7543,12 +7543,9 @@ if (quad != eep) {
                }
                  
             }
-           //console.log('MAIS RÁPIDO',quase)
    
             if (teri == false) {
-               
                quase = []
-            //console.log('SEM ASTERISCO')
                for (t in triste) {
                quase.push(triste[t])
                }
@@ -7558,38 +7555,25 @@ if (quad != eep) {
             friend = ''
             aster = false
             elevar = 1
-            //console.log('QUAAAAAAAASE', quase)
    
             for (patience in quase) {
-               //console.log(quase,'edededededededededed',quase[patience])   
-   
                if (quase[patience] == '*') {
                    aster = true
-                   //console.log('AND THE CLSDADWDWD', patience)
-                   //console.log(quase[Number(patience) - 1], quase[Number(patience) + 1])
                    gates.push(quase[Number(patience) - 1])
                    gates.push('x')
                    gates.push(quase[Number(patience) + 1])
-                   //console.log(gates, fazerConta(gates))
-   
-                   //console.log(quase, Number(patience) + 1)
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                   //console.log(friend)
                  
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
-                  //console.log('É LETRA', quase[patience])
                     friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
-                       //console.log('ELEVAR!')
                        elevar++
    
                        if (patience == quase.length - 1) {
-                           //console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
                            aconta_2+= `^${elevar}`
-                           //console.log(aconta_2)
                        }
    
                    }else{
