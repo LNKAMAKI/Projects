@@ -4216,7 +4216,8 @@ if (quad != eep) {
    concatenar_2 = ''
    numsdesfat = []
    newexpress = []
-
+   factors = []
+   edges = []
    for (bababa in pans_2) {
        edge_2 = []
        naonao_2 = ''
@@ -4489,10 +4490,15 @@ if (quad != eep) {
            concatenar_2+= ' + '
        }
        
+       console.log('(',naonao_2,')','(',tobreak_2,')')
+       edges.push(edge_2)
+       
         if (edge_2.length > 1) {
       concatenar_2 += `(${naonao_2})(${tobreak_2})`;
+      factors.push(`(${naonao_2})(${tobreak_2})`)
     } else {
       concatenar_2 += `${naonao_2}(${tobreak_2})`;
+      factors.push(`${naonao_2}(${tobreak_2})`)
     }
        
        
@@ -4655,6 +4661,13 @@ if (quad != eep) {
    }else{
 
     console.log('ACABOU',concatenar_2)
+    
+    for (f in factors) {
+        console.log(factors[f],edges[f].length)
+    }
+    fat1 = FATORAR(FATORE(naonao_2),false)
+    fat2 = FATORAR(FATORE(tobreak_2),false)
+    console.log(fat1, fat2)
 
    todososnumeros_2 = []
    for (acaba in monomios_2) {
