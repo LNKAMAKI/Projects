@@ -1,6 +1,3 @@
-for (i = 0; i < 2; i++) {
-  //console.log(FATORAR2(FATORE('x + 2x')))
-}
 function ir() {
   qualexp1 = document.getElementById("typearea").value;
   qualexp = "";
@@ -1933,6 +1930,7 @@ function FATORARSInGULAR(potn) {
   
 
     console.log('CERTINHO?')
+    
     if (monomios.length > 1) {
       hei = concatenar;
       otherway = FATORAR2(startexp);
