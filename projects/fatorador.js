@@ -1738,10 +1738,10 @@ function FATORARSInGULAR(potn) {
         }
       }
     }else{
-      if (daprafat2 == false) { // SE O SEGUNDO NÃO DER PARA FATORAR
-        concatenar += `${naonao}(${tobreak})`;
-        }else{ // SE O SEGUNDO DER PARA FATORAR
-          concatenar += `${naonao}${tobreak}`;
+      if (edge.length > 1) {
+        concatenar+= `(${naonao})(${tobreak})`
+        }else{
+            concatenar+= `${naonao}(${tobreak})`
         }
     }
      
@@ -1957,7 +1957,7 @@ function FATORARSInGULAR(potn) {
       return [concatenar, segs.length, roll.length];
     }
   }else{
-    return 
+    return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,]
   }
    
    // Vendo se o número é primo
