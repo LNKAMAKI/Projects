@@ -1701,6 +1701,7 @@ function FATORARSInGULAR(potn) {
            concatenar+= ' + '
        }
 
+       if (somarmons == true) {
        fat1 = FATORAR2(FATORE(naonao))
        fat2 = FATORAR2(FATORE(tobreak))
    
@@ -1717,6 +1718,8 @@ function FATORARSInGULAR(potn) {
        daprafat2 = true
        }
 
+       console.log('edge',edge)
+       
        if (edge.length > 1) {
         if (daprafat1 == false && daprafat2 == false) { // OS DOIS NÃO DÃO PARA FATORAR
         concatenar += `(${naonao})(${tobreak})`;
@@ -1734,6 +1737,13 @@ function FATORARSInGULAR(potn) {
           concatenar += `${naonao}${tobreak}`;
         }
       }
+    }else{
+      if (daprafat2 == false) { // SE O SEGUNDO NÃO DER PARA FATORAR
+        concatenar += `${naonao}(${tobreak})`;
+        }else{ // SE O SEGUNDO DER PARA FATORAR
+          concatenar += `${naonao}${tobreak}`;
+        }
+    }
      
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS(amount)
@@ -1931,6 +1941,7 @@ function FATORARSInGULAR(potn) {
 
     console.log('CERTINHO?')
     
+    if (somarmons == true) {
     if (monomios.length > 1) {
       hei = concatenar;
       otherway = FATORAR2(startexp);
@@ -1945,6 +1956,9 @@ function FATORARSInGULAR(potn) {
     } else {
       return [concatenar, segs.length, roll.length];
     }
+  }else{
+    return 
+  }
    
    // Vendo se o número é primo
    function ehprimo(Number) {
