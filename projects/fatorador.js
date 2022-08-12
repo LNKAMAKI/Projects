@@ -4590,8 +4590,14 @@ if (quad != eep) {
            concatenar_2+= ' + '
        }
        
+       /*
+        if (edge_2.length > 1) {
+      concatenar_2 += `(${naonao_2})(${tobreak_2})`;
+    } else {
+      concatenar_2 += `${naonao_2}(${tobreak_2})`;
+    }
+       */
        
-       //
        fat1 = FATORAR(FATORE(naonao_2),false)
        fat2 = FATORAR(FATORE(tobreak_2),false)
        
@@ -4628,7 +4634,7 @@ if (quad != eep) {
           concatenar_2 += `${naonao_2}${tobreak_2}`;
         }
        }
-    //
+    
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS_2(amount)
       segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
