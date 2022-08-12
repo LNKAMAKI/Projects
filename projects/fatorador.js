@@ -1371,7 +1371,6 @@ function FATORARSInGULAR(potn) {
  
    grtols = [];
    for (ah in organizado) {
-     ////
      grtols.push(youdumb[organizado[ah]]);
    }
    youdumb = [...grtols];
