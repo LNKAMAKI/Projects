@@ -961,7 +961,6 @@ function FATORARSInGULAR(potn) {
               java++
           }
           okentao++
-   
           
          for (ne in roll) {
            arranjar = []
@@ -974,14 +973,11 @@ function FATORARSInGULAR(potn) {
               arranjar[pq].ocupa.push(vaiir)
            }}
       
-       
        jafoi = []
-       
        perfectwave = []
        for (tosse in arranjar) {
            if (jafoi.indexOf(tosse) == -1) {
                organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-         
            for (calor in arranjar) {
                if (calor != tosse) {
                    equals = true
@@ -994,7 +990,6 @@ function FATORARSInGULAR(potn) {
                        }else{
                            igualar.push(false)
                        }}
-                  
                    if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {                   
                        jafoi.push(calor)
                        organizer.agrupar.push(calor)
@@ -1004,10 +999,8 @@ function FATORARSInGULAR(potn) {
       
        for (youchoose in perfectwave) {
            ficarassim =  perfectwave[youchoose].referencia
-   
            for (catraca in perfectwave[youchoose].agrupar) {
                presa = perfectwave[youchoose].agrupar[catraca]
-            
                diferente = false
                for (moon in roll[ne].posições) {
                    vaiir = scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
@@ -1015,7 +1008,6 @@ function FATORARSInGULAR(potn) {
                        diferente = true
                       scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = ficarassim[moon]
                    } }
-
                if (diferente == true) {
                    lista = scarecrow[arranjar[presa].origin].divisor
                    if (lista != '-') {
@@ -1027,7 +1019,7 @@ function FATORARSInGULAR(potn) {
                    }else{
                        lista.splice(0,2)
                    }}}}}
-   
+                   
          for (sei in scarecrow) {
            for (ai in scarecrow[sei].divididos) {
                scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai]
