@@ -68,7 +68,6 @@ function showegs() {
       if (iveco.search("[0-9]") != -1) {
         pegs[iveco].setAttribute("onclick", `mudar(${iveco})`);
       }}}
-
   vez++;
 }
 function mudar(index) {
@@ -136,7 +135,6 @@ function FATORAR(expression, somarmons) {
       monomios.push({ numero: "" });
       obnum++;
     }
-
     monomios[obnum].numero += expression[n];
   }
 
@@ -147,7 +145,6 @@ function FATORAR(expression, somarmons) {
   for (bye in monomios) {
     comofica = [];
     ground = "";
-
     for (misery in monomios[bye].numero) {
       carac = monomios[bye].numero[misery];
       if (ground.length == 0) {
@@ -436,7 +433,6 @@ function FATORARSInGULAR(potn) {
    takeout.push(Number(n))
    }}
    
-   
    for (giro = egs.length - 1; giro >= 0; giro--) {
        if (takeout.indexOf(Number(giro)) == -1) {
        }else{
@@ -462,7 +458,6 @@ function FATORARSInGULAR(potn) {
        col = false
        repetido = []
       numerosrep = []
-       
        for (oc = 0; oc < monomios[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
            if (monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
            if (numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
@@ -512,7 +507,6 @@ function FATORARSInGULAR(potn) {
       
        reps.push(repetido)
    
-       
        for (nope in repetido) {
        if (repetido[nope].letr[0] == '-') {
            la = ''
@@ -524,7 +518,6 @@ function FATORARSInGULAR(potn) {
                return repetido.letr == la
            })) {
                repetido.splice(nope, 1)
-               
            }}}
    
    
@@ -576,7 +569,6 @@ function FATORARSInGULAR(potn) {
                     segs[qual].mons.push(m)      
                } }}
    
-   
    for (nl = 0; nl < segs.length; nl++) {
        for (n = 0; n < segs.length; n++) {
            if (n != nl) {
@@ -589,7 +581,6 @@ function FATORARSInGULAR(potn) {
                      
                    } }}}}}
    
-
    function ehprimo(Number) {
        parar = false
        for (t = 2; t < Number && parar == false; t++) {
@@ -604,15 +595,12 @@ function FATORARSInGULAR(potn) {
        return true
    }
    
-   
    //////console.log('------------------------------ORDEnAnDO DO MAIOR PARA O MEnOR----------------------------')
-   
    
    grtols = []
    
    for (hi in segs) {
        segs[hi].length = segs[hi].mons.length
-   
        grtols.push(segs[hi])
    }
    
@@ -621,7 +609,6 @@ function FATORARSInGULAR(potn) {
    grtols = []
    for (ah in organizado) {
        grtols.push(segs[organizado[ah]])
-      
    }
 
    segs = grtols
@@ -636,9 +623,7 @@ function FATORARSInGULAR(potn) {
       lengs.find(function(lengs){
        return lengs.leng == segs[i].mons.length
      }).num.push(i)
-     }
-   }
-   
+     } }
    
    segsordered = []
    for (f in lengs) {
@@ -651,7 +636,6 @@ function FATORARSInGULAR(potn) {
       
       for (hi in its) {
           its[hi].length = its[hi].car.length
-      
           grtols.push(its[hi])
       }
       
@@ -660,7 +644,6 @@ function FATORARSInGULAR(potn) {
       grtols = []
       for (ah in organizado) {
           grtols.push(its[organizado[ah]])
-         
       }
    
       its = grtols
@@ -683,7 +666,6 @@ function FATORARSInGULAR(potn) {
       }
      
       okentao = 0
-
            roll = [] 
            scarecrow = []
            for(anchor in segs) {
@@ -703,8 +685,7 @@ function FATORARSInGULAR(potn) {
                            lpisthebest = '*'
                            }else{
                                lpisthebest = ''
-                           }}
-                   }
+                           }} }
                    if (fall == segs[anchor].car.length - 1) {
                        army.push(lpisthebest)
                    } }
@@ -713,8 +694,7 @@ function FATORARSInGULAR(potn) {
                for (pahh in army) {
                    if (army[pahh] == '*') {
                        army[pahh] = '.'
-                   }
-               }
+                   }}
                scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
                for (high in segs[anchor].mons) {
                    army = [...bell]
@@ -805,7 +785,6 @@ function FATORARSInGULAR(potn) {
             monpos = scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]
             monspos_.push(monpos)
           }
-          
     for (quad in miss) {
       if (quad != eep) {
         repeated = [];
@@ -818,7 +797,6 @@ function FATORARSInGULAR(potn) {
           }
 
           rap = ''
-
           monspos = []
           result = []
         for (vespa in miss[eep].aparicoes) {
@@ -847,9 +825,7 @@ function FATORARSInGULAR(potn) {
               } }
           }else{
             monspos.splice(monspos.length - 1,1)
-          }
-          
-        }else{
+          }}else{
             if (monspos.indexOf(posmon) == -1 && cango == true) {
               monspos.push(posmon)
               result.push(monpos)
@@ -860,7 +836,6 @@ function FATORARSInGULAR(potn) {
               }else{
               cango = true
               }
-
             parar = false
             novorap = ''
             for (h = rap.length - 1; h >= 0; h--) {
@@ -924,7 +899,6 @@ function FATORARSInGULAR(potn) {
                        if (miss[java].aparicoes.indexOf(fatorzinho) != -1) {
                            presentes.push(fatorzinho)
                        }}
-   
                    adicionou = false
                    for (idk in podeser) {
                        esigual = true
@@ -963,7 +937,6 @@ function FATORARSInGULAR(potn) {
                   for(cold in podeser) {
               if (podeser[cold].position.length == quantosfatores && podeser[cold].opl.length == quantasposições && miss[whyis].aparicoes.length == quantasposições) {
                deucerto = true
-   
                ficaassim = ''
    
                for (yehaa in podeser[cold].position) {
@@ -1093,13 +1066,10 @@ function FATORARSInGULAR(potn) {
   }
   miss = [...grtols];
 
-
          java = 0
          roll = []
          deucerto = false
-   
          roller = [];
-
        
          for (eep in miss) {
                 monspos_ = []
@@ -1112,7 +1082,6 @@ function FATORARSInGULAR(potn) {
             if (quad != eep) {
               repeated = [];
               repwri = "";
-      
               monspos2 = []
                 for (b in miss[quad].aparicoes) {
                   monpos = scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]
@@ -1150,7 +1119,6 @@ function FATORARSInGULAR(potn) {
                 }else{
                   monspos.splice(monspos.length - 1,1)
                 }
-                
               }else{
                   if (monspos.indexOf(posmon) == -1 && cango == true) {
                     monspos.push(posmon)
@@ -1962,7 +1930,6 @@ function FATORARSInGULAR(potn) {
    function ehprimo(Number) {
        parar = false
        for (t = 2; t < Number && parar == false; t++) {
-       
            if (Number%t == 0) {
                parar = true
            } }
@@ -1987,12 +1954,10 @@ function FATORARSInGULAR(potn) {
        var maiorparamenor = []
        var posiçõesnumeros = []
        var yposition = n
-   
        for (n in yposition) {
            maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
            posiçõesnumeros.push(-1)
        }
-   
        for (item in yposition) {
            var volume = 0
            var dn = 0
@@ -2075,12 +2040,10 @@ function FATORARSInGULAR(potn) {
     for (c in relation) {
         if (relation[c].fix.length > 0) {
         faltam = Number(quanto) - Number(relation[c].fix.length)
-   
         for (f = 0; f < faltam; f++) {
            relation[c].fix.push(relation[c].falt[f])
            relation[c].falt[f] = -10
         }
-   
         for (tel = 0; tel < c; tel++){
             outrorel = relation[tel]
             
@@ -2093,7 +2056,6 @@ function FATORARSInGULAR(potn) {
                         outrorel.falt[ou] = -10
                         y++
                     }}}}}}}
-   
    groups = 0
    conts = []
    for (yougo in relation) {
@@ -2120,8 +2082,7 @@ function FATORARSInGULAR(potn) {
    for (wish in relation) {
     for (edge in relation[wish].fix) {
        tirados.push(relation[wish].fix[edge])
-    }
-   }
+    }}
    
    for (die in segs2) {
        tirar = []
@@ -2142,7 +2103,6 @@ function FATORARSInGULAR(potn) {
    for (b = 0; b < grupos; b++) {
        ob = {car: segs2[sorrow].car, fix: [],problem:false}
        for (live = 0; live < quanto; live++) { 
-   
               if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                   ob.problem = true
               }
@@ -2176,8 +2136,7 @@ function FATORARSInGULAR(potn) {
      for (nah = relation.length - 1; nah >= 0; nah--) {
        if (males.indexOf(nah) != -1) {
            relation.splice(nah, 1)
-       }
-     }
+       } }
    
      numerosquetem = []
      for (nah in relation) {
@@ -2201,7 +2160,6 @@ function FATORARSInGULAR(potn) {
    }}}
    
    fireonfire = []
-   
        for (uf in relation) {
          fireonfire[uf] = {}
            fireonfire[uf].mons = [...relation[uf].fix]
@@ -2254,7 +2212,6 @@ function FATORARSInGULAR(potn) {
     for (r in util) {
        lista = util[r].mons
         present = {fix: [], falt: []}
-      
         rep = 0
         for (g = 0; g < lista.length && rep < quanto; g++) {
             if (numapars.find(function(numapars) {
@@ -2269,31 +2226,26 @@ function FATORARSInGULAR(potn) {
             if (present.fix.indexOf(lista[g]) == -1) {
                 present.falt.push(lista[g])         
             }}
-        
         if (present.fix.length == 0) {
         for (ti in present.falt) {
                 numapars.find(function(numapars) {
                     return numapars.num == present.falt[ti]
                     }).vezes--
                  }}}
-
     relation[r] = present
     relation[r].car = segs2[r].car
     }
 
     for (c in relation) {
         if (relation[c].fix.length > 0) {
-   
         faltam = Number(quanto) - Number(relation[c].fix.length)
-   
         for (f = 0; f < faltam; f++) {
            relation[c].fix.push(relation[c].falt[f])
            relation[c].falt[f] = -10
         }
    
         for (tel = 0; tel < c; tel++){
-            outrorel = relation[tel]
-            
+            outrorel = relation[tel] 
         for (hu in outrorel.fix) {
             if (relation[c].fix.indexOf(outrorel.fix[hu]) != -1) {
                 y = 0
@@ -2312,8 +2264,7 @@ function FATORARSInGULAR(potn) {
     conts.push(relation[yougo].fix[pals])
    }
    groups++
-   }
-   }
+   }}
  
    if (divs[okentao] != groups) {
    tirados = []
@@ -2322,10 +2273,8 @@ function FATORARSInGULAR(potn) {
        tirados.push(relation[wish].fix[edge])
     } }
   
-   
    for (die in segs2) {
        tirar = []
-
    for (h in segs2[die].mons) {
    if (tirados.indexOf(segs2[die].mons[h]) != -1) {
    tirar.push(Number(h))
@@ -2337,12 +2286,10 @@ function FATORARSInGULAR(potn) {
    
    for (sorrow in segs2) {
    grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-   
    imor = 0
    
    for (b = 0; b < grupos; b++) {
        ob = {car: segs2[sorrow].car, fix: [],problem:false}
-   
        for (live = 0; live < quanto; live++) {
               if (tirados.indexOf(segs2[sorrow].mons[imor]) != -1) {
                    ob.problem = true
@@ -2396,8 +2343,7 @@ function FATORARSInGULAR(potn) {
         for (t in util) {
             if (util[t].mons.indexOf(Number(m)) != -1) {
                 aparic++
-            }
-        }
+            } }
         numapars.push({num: Number(m), vezes: aparic})
         }
    
@@ -2451,7 +2397,6 @@ function FATORARSInGULAR(potn) {
                         outrorel.falt[ou] = -10
                         y++
                     }}}}}}}
-   
    groups = 0
    conts = []
    for (yougo in relation) {
@@ -2479,7 +2424,6 @@ function FATORARSInGULAR(potn) {
     for (edge in relation[wish].fix) {
        tirados.push(relation[wish].fix[edge])
     }}
-
    
    for (die in segs2) {
        tirar = []
@@ -2495,13 +2439,10 @@ function FATORARSInGULAR(potn) {
    
    for (sorrow in segs2) {
    grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-  
    imor = 0
    
    for (b = 0; b < grupos; b++) {
-     
        ob = {car: segs2[sorrow].car, fix: [],problem:false}
-   
        for (live = 0; live < quanto; live++) {
            ob.fix.push(segs2[sorrow].mons[imor])
            tirados.push(segs2[sorrow].mons[imor])
@@ -2534,13 +2475,11 @@ function FATORARSInGULAR(potn) {
     numapars = []
    relation = []
    
-   
     util = []
     for (t in segs2) {
         if (segs2[t].mons.length >= quanto) {
             util.push(segs2[t])
         }}
-   
     
     for (m in monomios) {
         aparic = 0
@@ -2601,7 +2540,6 @@ function FATORARSInGULAR(potn) {
                         outrorel.falt[ou] = -10
                         y++
                     }}}}}}}
-   
    groups = 0
    conts = []
    for (yougo in relation) {
@@ -2634,9 +2572,7 @@ function FATORARSInGULAR(potn) {
    
    for (sorrow in segs2) {
    grupos = Math.floor(Number(segs2[sorrow].mons.length)/quanto)
-  
    imor = 0
-   
    for (b = 0; b < grupos; b++) {
        ob = {car: segs2[sorrow].car, fix: [],problem:false}
    
@@ -2652,9 +2588,7 @@ function FATORARSInGULAR(potn) {
    return [relation, segs2]
    }
    
-   
  function SOMANDOMONOMIOS(list) {
-        
 particles = [{numero: ''}]
 obnum = 0
 for (n = 0; n < list.length; n++) {
@@ -2665,7 +2599,6 @@ obnum++
 particles[obnum].numero += list[n]
 }
 
-
 for (huh in particles) {
     partlet = ''
     for (y in particles[huh].numero) {
@@ -2674,7 +2607,6 @@ for (huh in particles) {
      }}
     particles[huh].partletral = partlet
 }
-
 
 exp = []
 for (bye in particles) {
@@ -2696,7 +2628,6 @@ for (bye in particles) {
             }}
     particles[bye].numero = comofica
 }
-
 
 agruparsoma = []
 // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
