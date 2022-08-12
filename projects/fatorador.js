@@ -1797,9 +1797,6 @@ function FATORARSInGULAR(potn) {
       for (roberto in naonao) {
         for (vaidarcerto in tobreak) {
             novomon = MULTIPLICARDIREITO(naonao[roberto], tobreak[vaidarcerto])
-            for (life in youdumb_2) {
-              console.log(life,'juntar os monomios',youdumb_2[life].mons,'/ grupos:',youdumb_2[life].w.what)
-            }
             console.warn(newexpress,monomios_2.length)
             if (novomon[0] == '-') {
                 miya = ''
@@ -1821,9 +1818,6 @@ function FATORARSInGULAR(potn) {
    
    if (numsdesfat.length > 0) {
     console.warn('VAI TER QUE FATORAR DE NOVO')
-    for (life in youdumb_2) {
-     console.log(youdumb_2[life].mons)
-    }
     todososnumeros = []
     for (acaba in monomios) {
         todososnumeros.push(acaba)
@@ -1940,8 +1934,6 @@ function FATORARSInGULAR(potn) {
            concatenar+= ` + ${aconta}`
        }}}}
   
-
-    console.log('CERTINHO?')
     
     if (somarmons == true) {
     if (monomios.length > 1) {
@@ -4664,10 +4656,10 @@ if (quad != eep) {
     
     for (f in factors) {
         console.log(factors[f],edges[f].length)
+        fat1 = FATORAR(FATORE('10x + 5'),false)
+        fat2 = FATORAR(FATORE('10x + 5'),false)
+        console.log(fat1,fat2)
     }
-    fat1 = FATORAR(FATORE(naonao_2),false)
-    fat2 = FATORAR(FATORE(tobreak_2),false)
-    console.log(fat1, fat2)
 
    todososnumeros_2 = []
    for (acaba in monomios_2) {
