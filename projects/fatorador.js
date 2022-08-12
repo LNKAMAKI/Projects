@@ -1902,30 +1902,34 @@ function FATORARSInGULAR(potn) {
            concatenar+= ` + ${aconta}`
        }}}}
   
-    
     if (somarmons == true) {
     if (monomios.length > 1) {
-      otherway = FATORAR2(startexp,false);
+      otherway = FATORAR2(startexp);
       console.log(otherway[1], otherway[2])
 
       if (otherway[1] == 1 && otherway[2] == 0) {
         alt = 2
-        return [otherway[0], otherway[3], otherway[4]];
+       // return [otherway[0], otherway[3], otherway[4]
+       okexp = otherway[0]
       } else {
         if (pans.length == 1 && todososnumeros.length == 0) {
-            return [concatenar, segs.length, roll.length];
+            okexp = concatenar
+           // return [concatenar, segs.length, roll.length];
         }else{
             alt = 2
-            return [otherway[0], otherway[3], otherway[4]]
+            okexp = otherway[0]
+           // return [otherway[0], otherway[3], otherway[4]]
         }
         }
     } else {
-      return [concatenar, segs.length, roll.length];
+        okexp = concatenar
+      //return [concatenar, segs.length, roll.length];
     }
   }/*else{
     return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,monomios.length]
   }*/
    
+
    // Vendo se o número é primo
    function ehprimo(Number) {
        parar = false
@@ -5719,3 +5723,25 @@ if (anterior.length > 1) {
             } }}}}
 return anterior
 }
+
+function SPLITEXPS(expression) {
+    splitedExps = []
+    str = ''
+    c1 = -1
+    c2 = -1
+    for (c in expression) {
+      if (expression[c] == '(') {
+        console.log('ABRIR')
+        c1 = c
+        str = ''
+      }else if(expression[c] == ')') {
+        c2 = c
+        splitedExps.push({exp: str,open:c1,close:c2})
+        console.log('FECHAR',str,c1,c2)
+        str = ''
+      }else{
+        str+= expression[c]
+      }}
+    return splitedExps
+    }
+    
