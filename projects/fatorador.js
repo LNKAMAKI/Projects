@@ -1360,20 +1360,6 @@ function FATORARSInGULAR(potn) {
    for (wrecked in youdumb) {
        initial = youdumb[wrecked].w.what
    }
-   
-   grtols = [];
-   for (hi in youdumb) {
-     youdumb[hi].length = youdumb[hi].w.what.length;
- 
-     grtols.push(youdumb[hi]);
-   }
-   organizado = sortob(grtols, "length")[1];
- 
-   grtols = [];
-   for (ah in organizado) {
-     grtols.push(youdumb[organizado[ah]]);
-   }
-   youdumb = [...grtols];
 
    heya = [...youdumb]
    for (imback in youdumb) {
@@ -1438,6 +1424,23 @@ function FATORARSInGULAR(potn) {
    for (erro in grtols) {
        youdumb.push(grtols[erro])
    }}}
+   
+    // Ordenando o youdumb pelo tamanho do what
+    grtols = [];
+    for (hi in youdumb) {
+      youdumb[hi].length = youdumb[hi].w.what.length;
+  
+      grtols.push(youdumb[hi]);
+    }
+    organizado = sortob(grtols, "length")[1];
+  
+    grtols = [];
+    for (ah in organizado) {
+      grtols.push(youdumb[organizado[ah]]);
+    }
+    youdumb = [...grtols];
+ //
+
    concatenar = ''
    numsdesfat = []
    newexpress = []
