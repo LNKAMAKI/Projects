@@ -746,9 +746,7 @@ function FATORARSInGULAR(potn) {
                       }
                       scarecrow[anchor].divididos.push(uy)
                    }}}
-      
           miss = []
-   
           for (ah in scarecrow) {
               for (é in scarecrow[ah].divididos) {
               if (miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}) == undefined) {
@@ -761,7 +759,6 @@ function FATORARSInGULAR(potn) {
           quantasposições = Number(monomios.length)/Number(quantosfatores)
    
    // ORDEnAnO O MISS DE ACORDO COM O TAMAnHO DO APARIÇÕES
-   
           grtols = []
    for (hi in miss) {
        miss[hi].length = miss[hi].aparicoes.length
@@ -778,7 +775,6 @@ function FATORARSInGULAR(potn) {
    java = 0
    
    roller = [];
-
   for (eep in miss) {
           monspos_ = []
           for (b in miss[eep].aparicoes) {
@@ -789,7 +785,6 @@ function FATORARSInGULAR(potn) {
       if (quad != eep) {
         repeated = [];
         repwri = "";
-
         monspos2 = []
           for (b in miss[quad].aparicoes) {
             monpos = scarecrow[miss[quad].aparicoes[b]].positions[scarecrow[miss[quad].aparicoes[b]].divididos.indexOf(miss[quad].dividido)]
@@ -869,7 +864,6 @@ function FATORARSInGULAR(potn) {
                 roller.find(function (roller) {return roller.rept == repwri;})
                   .position.push(eep);
               }
-
               if (
                 roller
                   .find(function (roller) {
@@ -914,7 +908,7 @@ function FATORARSInGULAR(potn) {
                    if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                        podeser.push({opl: presentes, position: [outro]})
                    } }}
-             
+            
               for (belief in podeser) {
                   if (podeser[belief].position.indexOf(java) == -1) {
                   podeser[belief].position.push(String(java))
@@ -1934,6 +1928,7 @@ function FATORARSInGULAR(potn) {
   for (i in seps) {
     console.log(`seps[${i}].exp`,seps[i].exp)
     fact = FATORAR2(FATORE(seps[i].exp))
+    console.log(fact)
   }
    // Vendo se o número é primo
    function ehprimo(Number) {
@@ -4378,7 +4373,7 @@ if (quad != eep) {
        if (concatenar_2.length > 0) {
            concatenar_2+= ' + '
        }
-       console.log('(',naonao_2,')','(',tobreak_2,')')
+       //console.log('(',naonao_2,')','(',tobreak_2,')')
        
         if (edge_2.length > 1) {
       concatenar_2 += `(${naonao_2})(${tobreak_2})`;
