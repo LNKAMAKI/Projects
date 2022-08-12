@@ -1019,7 +1019,7 @@ function FATORARSInGULAR(potn) {
                    }else{
                        lista.splice(0,2)
                    }}}}}
-                   
+
          for (sei in scarecrow) {
            for (ai in scarecrow[sei].divididos) {
                scarecrow[sei].divididos[ai] = scarecrow[sei].outrodiv[ai]
@@ -1033,15 +1033,11 @@ function FATORARSInGULAR(potn) {
               miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
              }else{
               miss.find(function(miss){return miss.dividido == scarecrow[ah].divididos[é]}).aparicoes.push(Number(ah))
-             }
-          }
-         }
-         
-   
+             }} }
+
          grtols = [];
   for (hi in miss) {
     miss[hi].length = miss[hi].aparicoes.length;
-
     grtols.push(miss[hi]);
   }
   organizado = sortob(grtols, "length")[1];
@@ -1056,14 +1052,13 @@ function FATORARSInGULAR(potn) {
          roll = []
          deucerto = false
          roller = [];
-       
          for (eep in miss) {
                 monspos_ = []
                 for (b in miss[eep].aparicoes) {
                   monpos = scarecrow[miss[eep].aparicoes[b]].positions[scarecrow[miss[eep].aparicoes[b]].divididos.indexOf(miss[eep].dividido)]
                   monspos_.push(monpos)
                 }
-               
+            
           for (quad in miss) {
             if (quad != eep) {
               repeated = [];
@@ -1074,13 +1069,11 @@ function FATORARSInGULAR(potn) {
                   monspos2.push(monpos)
                 }
                 rap = ''
-      
                 monspos = []
                 result = []
               for (vespa in miss[eep].aparicoes) {
                 cango = true
                 monpos = scarecrow[miss[eep].aparicoes[vespa]].positions[scarecrow[miss[eep].aparicoes[vespa]].divididos.indexOf(miss[eep].dividido)]
-      
                 if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
                   if (monspos.indexOf(monpos) == -1) {
                     monspos.push(monpos)
