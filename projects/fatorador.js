@@ -1,3 +1,6 @@
+for (i = 0; i < 2; i++) {
+  //console.log(FATORAR2(FATORE('x + 2x')))
+}
 function ir() {
   qualexp1 = document.getElementById("typearea").value;
   qualexp = "";
