@@ -1939,22 +1939,24 @@ function FATORARSInGULAR(potn) {
     if (monomios.length > 1) {
       otherway = FATORAR2(startexp,false);
       console.log(otherway[1], otherway[2])
+
       if (otherway[1] == 1 && otherway[2] == 0) {
         alt = 2
         return [otherway[0], otherway[3], otherway[4]];
       } else {
         if (pans.length == 1 && todososnumeros.length == 0) {
-          return [concatenar, segs.length, roll.length];
+            return [concatenar, segs.length, roll.length];
         }else{
             alt = 2
-        return [otherway[0], otherway[3], otherway[4]];
-        }}
+            return [otherway[0], otherway[3], otherway[4]]
+        }
+        }
     } else {
       return [concatenar, segs.length, roll.length];
     }
-  }else{
+  }/*else{
     return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,monomios.length]
-  }
+  }*/
    
    // Vendo se o número é primo
    function ehprimo(Number) {
