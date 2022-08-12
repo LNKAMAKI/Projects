@@ -36,7 +36,7 @@ function ir() {
         expression.push(ground);
       } }
 
-    resultadogeral = FATORAR(expression);
+    resultadogeral = FATORAR(expression,true);
     resultado = resultadogeral[0];
     devtools(false)
     document.getElementById("result").innerHTML = "Resultado:";
@@ -1937,7 +1937,6 @@ function FATORARSInGULAR(potn) {
     
     if (somarmons == true) {
     if (monomios.length > 1) {
-      hei = concatenar;
       otherway = FATORAR2(startexp,false);
       console.log(otherway[1], otherway[2])
       if (otherway[1] == 1 && otherway[2] == 0) {
@@ -1945,7 +1944,10 @@ function FATORARSInGULAR(potn) {
         return [otherway[0], otherway[3], otherway[4]];
       } else {
         if (pans.length == 1 && todososnumeros.length == 0) {
-          return [hei, segs.length, roll.length];
+          return [concatenar, segs.length, roll.length];
+        }else{
+            alt = 2
+        return [otherway[0], otherway[3], otherway[4]];
         }}
     } else {
       return [concatenar, segs.length, roll.length];
@@ -3021,7 +3023,6 @@ function FATORE(q) {
     }}
 
   function FATORAR2(expression_2,refat) {
-    alt = 2
     startexp_2 = [...expression_2];
 
   if (expression_2[0] !== "-" && expression_2[0] !== "+") {
@@ -4605,10 +4606,6 @@ if (quad != eep) {
    }else{
 
     console.log('ACABOU',concatenar_2)
-    
-    for (j in factors) {
-        console.log(FATORAR(FATORE('10y - 338xy + 20y^2 - 169x + ab + bb + ac + bc'),false))
-    }
 
    todososnumeros_2 = []
    for (acaba in monomios_2) {
