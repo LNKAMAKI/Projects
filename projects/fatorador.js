@@ -1957,7 +1957,7 @@ function FATORARSInGULAR(potn) {
       return [concatenar, segs.length, roll.length];
     }
   }else{
-    return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,]
+    return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,monomios.length]
   }
    
    // Vendo se o número é primo
@@ -4590,14 +4590,18 @@ if (quad != eep) {
            concatenar_2+= ' + '
        }
        
-       /*
+      // fat1 = FATORAR(FATORE(naonao_2),false)
+      // fat2 = FATORAR(FATORE(tobreak_2),false)
+       console.log('n',naonao_2,'t',tobreak_2)
+      
         if (edge_2.length > 1) {
       concatenar_2 += `(${naonao_2})(${tobreak_2})`;
     } else {
       concatenar_2 += `${naonao_2}(${tobreak_2})`;
     }
-       */
        
+       
+    /*
        fat1 = FATORAR(FATORE(naonao_2),false)
        fat2 = FATORAR(FATORE(tobreak_2),false)
        
@@ -4609,13 +4613,23 @@ if (quad != eep) {
        naonao_2 = fat1[0]
        daprafat1 = true
        }
+       if (fat1[5] == 1) {
+        naonao_2 = fat1[0]
+        daprafat1 = true
+        console.log('DaPRAFATTTT',daprafat1)
+       }
        
        daprafat2 = false
        
        if (fat2[1] == 1 && fat2[2] == 0) {
+       tobreak_2 = fat1[0]
        daprafat2 = true
        }
-       
+       if (fat2[5] == 1) {
+        tobreak_2 = fat1[0]
+        daprafat2 = true
+       }
+
        console.log(daprafat1, daprafat2)
        if (edge_2.length > 1) {
         if (daprafat1 == false && daprafat2 == false) { // OS DOIS NÃO DÃO PARA FATORAR
@@ -4634,7 +4648,7 @@ if (quad != eep) {
           concatenar_2 += `${naonao_2}${tobreak_2}`;
         }
        }
-    
+    */
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS_2(amount)
       segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
