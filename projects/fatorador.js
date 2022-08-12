@@ -36,7 +36,7 @@ function ir() {
         expression.push(ground);
       } }
 
-    resultadogeral = FATORAR(expression);
+    resultadogeral = FATORAR(expression,true);
     resultado = resultadogeral[0];
     devtools(false)
     document.getElementById("result").innerHTML = "Resultado:";
@@ -76,7 +76,7 @@ function mudar(index) {
     document.getElementsByClassName("eg")[index].innerText;
 }
 
-function FATORAR(expression) {
+function FATORAR(expression, somarmons) {
     alt = 1
     startexp = [...expression];
   if (expression[0] !== "-" && expression[0] !== "+") {
@@ -194,7 +194,7 @@ function FATORAR(expression) {
 
   //SEPARAnDO/JUnTAnDO OS nÚMEROS
 // ==> SOMANDO OS MONÔMIOS...
-
+if (somarmons == true) {
 exp = [];
 
 for (bye in ji) {
@@ -364,7 +364,7 @@ for (bye in monomios) {
     }}
   monomios[bye].numero = comofica;
 }
-
+}
 // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
 
 function FATORARSInGULAR(potn) {
@@ -4515,7 +4515,6 @@ if (quad != eep) {
                     friend+= quase[patience]
                    if (quase[patience] == quase[Number(patience) - 1]) {
                        elevar++
-   
                        if (patience == quase.length - 1) {
                            aconta_2+= `^${elevar}`
                        }
@@ -4540,8 +4539,7 @@ if (quad != eep) {
            for (eyes in quase) {
                if (quase[eyes].search('[0-9]') != -1) {
                    antes+= quase[eyes]
-               }
-           }
+               } }
            antes+= aconta_2
              aconta_2 = antes
            }
@@ -4553,8 +4551,7 @@ if (quad != eep) {
             for (i in friend) {
                 if (friend[i] != '-') {
                     uh+= friend[i]
-                }
-            }
+                }}
             amount.push('-')
             amount.push(uh)
         }else{
@@ -4565,21 +4562,15 @@ if (quad != eep) {
            if (naonao_2.length == 0) {
                if (quase[0] == '-') {
                    naonao_2+= `-${aconta_2}`
-                  
                }else{
                    naonao_2+= aconta_2
-                   
                }
            }else{
                if (quase[0] == '-') {
                    naonao_2+= ` - ${aconta_2}`
-                  
                }else{
-                   naonao_2+= ` + ${aconta_2}`
-                  
-               }
-           }
-       }
+                   naonao_2+= ` + ${aconta_2}`  
+               }}}
    
        if (concatenar_2.length > 0) {
            concatenar_2+= ' + '
@@ -4695,6 +4686,9 @@ if (quad != eep) {
 
         FATORAR2(newexpress)
    }else{
+
+    console.log('ACABOU',concatenar_2)
+
    todososnumeros_2 = []
    for (acaba in monomios_2) {
        todososnumeros_2.push(acaba)
