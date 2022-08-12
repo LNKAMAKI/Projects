@@ -4487,10 +4487,10 @@ if (quad != eep) {
        
         if (edge_2.length > 1) {
       concatenar_2 += `(${naonao_2})(${tobreak_2})`;
-      factors.push(`(${naonao_2})(${tobreak_2})`)
+      factors.push({n:`${naonao_2}`, t:`${tobreak_2}`})
     } else {
       concatenar_2 += `${naonao_2}(${tobreak_2})`;
-      factors.push(`${naonao_2}(${tobreak_2})`)
+      factors.push({n:`${naonao_2}`, t:`${tobreak_2}`})
     }
        
        
@@ -4498,10 +4498,11 @@ if (quad != eep) {
        fat1 = FATORAR(FATORE(naonao_2),false)
        fat2 = FATORAR(FATORE(tobreak_2),false)
        
-       daprafat1 = false
        
        console.log('na',naonao_2,'to',tobreak_2)
        console.log(fat1,'||',fat2)
+
+       daprafat1 = false
        if (fat1[1] == 1 && fat1[2] == 0) { // IF PANS EQUALS TO 1 AND TODOSOSNUMEROS EQUALS TO ZERO(WHICH MEANS THERE IS NO MONOMIO LEFT)
        naonao_2 = fat1[0]
        daprafat1 = true
@@ -4654,11 +4655,26 @@ if (quad != eep) {
 
     console.log('ACABOU',concatenar_2)
     
+    for (j in factors) {
+        console.log(FATORAR(FATORE('10y - 338xy + 20y^2 - 169x + ab + bb + ac + bc'),false))
+    }
     for (f in factors) {
-        console.log(factors[f],edges[f].length)
-        fat1 = FATORAR(FATORE('10x + 5'),false)
-        fat2 = FATORAR(FATORE('10x + 5'),false)
-        console.log(fat1,fat2)
+        console.log('////////////////')
+        console.log(factors[f].n, factors[f].t,edges[f].length)
+        fat1 = FATORAR(FATORE(factors[f].n),false)
+        fat2 = FATORAR(FATORE(factors[f].t),false)
+
+        daprafat1 = false
+        if (fat1[1] == 1 && fat1[2] == 0) {
+        daprafat1 = true
+        }
+        console.log(fat1,daprafat1)
+         
+        daprafat2 = false
+        if (fat2[1] == 1 && fat2[2] == 0) {
+        daprafat2 = true
+        }
+        console.log(fat2,daprafat2)
     }
 
    todososnumeros_2 = []
