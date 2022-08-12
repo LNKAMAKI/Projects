@@ -1424,7 +1424,7 @@ function FATORARSInGULAR(potn) {
    for (erro in grtols) {
        youdumb.push(grtols[erro])
    }}}
-   
+
     // Ordenando o youdumb pelo tamanho do what
     grtols = [];
     for (hi in youdumb) {
@@ -4489,10 +4489,6 @@ if (quad != eep) {
            concatenar_2+= ' + '
        }
        
-      // fat1 = FATORAR(FATORE(naonao_2),false)
-      // fat2 = FATORAR(FATORE(tobreak_2),false)
-       console.log('n',naonao_2,'t',tobreak_2)
-      
         if (edge_2.length > 1) {
       concatenar_2 += `(${naonao_2})(${tobreak_2})`;
     } else {
