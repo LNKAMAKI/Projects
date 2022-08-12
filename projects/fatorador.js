@@ -1929,7 +1929,12 @@ function FATORARSInGULAR(potn) {
     return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,monomios.length]
   }*/
    
-
+  console.log('RESULTADO(FATORAÇÃO):',okexp)
+  seps = SPLITEXPS(okexp)
+  for (i in seps) {
+    console.log(`seps[${i}].exp`,seps[i].exp)
+    fact = FATORAR2(FATORE(seps[i].exp))
+  }
    // Vendo se o número é primo
    function ehprimo(Number) {
        parar = false
@@ -4481,11 +4486,9 @@ if (quad != eep) {
             newexpress.push('+')
             newexpress.push(join)
         }}
-
         FATORAR2(newexpress)
    }else{
-
-    console.log('ACABOU',concatenar_2)
+    //console.log('ACABOU',concatenar_2)
 
    todososnumeros_2 = []
    for (acaba in monomios_2) {
@@ -5731,13 +5734,11 @@ function SPLITEXPS(expression) {
     c2 = -1
     for (c in expression) {
       if (expression[c] == '(') {
-        console.log('ABRIR')
         c1 = c
         str = ''
       }else if(expression[c] == ')') {
         c2 = c
         splitedExps.push({exp: str,open:c1,close:c2})
-        console.log('FECHAR',str,c1,c2)
         str = ''
       }else{
         str+= expression[c]
