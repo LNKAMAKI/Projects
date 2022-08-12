@@ -3722,7 +3722,6 @@ if (quad != eep) {
                    presentes = []
                    for (quecoisa in miss_2[outro].aparicoes) {
                        fatorzinho = miss_2[outro].aparicoes[quecoisa]
-   
                        if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
                            presentes.push(fatorzinho)
                        }}
@@ -3774,8 +3773,7 @@ if (quad != eep) {
                        for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
                            if (miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != '-') {
                                fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
-                           }
-                       }
+                           } }
                        if (yehaa != 0) {
                             ficaassim += ` - ${fi}`
                        }else{
@@ -3814,10 +3812,8 @@ if (quad != eep) {
        
        perfectwave = []
        for (tosse in arranjar) {
-   
            if (jafoi.indexOf(tosse) == -1) {
                organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
-          
            for (calor in arranjar) {
                if (calor != tosse) {
                    equals = true
@@ -3829,13 +3825,10 @@ if (quad != eep) {
                            igualar.push(true)
                        }else{
                            igualar.push(false)
-                       }
-                   }
-
+                       }}
                    if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {               
                        jafoi.push(calor)
                        organizer.agrupar.push(calor)
-   
                    }}}
            perfectwave.push(organizer)
        }}
@@ -3843,19 +3836,15 @@ if (quad != eep) {
       
        for (youchoose in perfectwave) {
            ficarassim =  perfectwave[youchoose].referencia
-   
            for (catraca in perfectwave[youchoose].agrupar) {
                presa = perfectwave[youchoose].agrupar[catraca]
-             
                diferente = false
                for (moon in roll_2[ne].posições) {
                    vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
-
                    if (vaiir != ficarassim[moon]) {
                        diferente = true
                       scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon]
                    } }
-  
                if (diferente == true) {
                    lista = scarecrow_2[arranjar[presa].origin].divisor
                    if (lista != '-') {
@@ -3871,8 +3860,7 @@ if (quad != eep) {
          for (sei in scarecrow_2) {
            for (ai in scarecrow_2[sei].divididos) {
                scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai]
-           }
-         }
+           } }
    
          miss_2 = []
    
@@ -3901,9 +3889,7 @@ if (quad != eep) {
          java = 0
          roll_2 = []
          deucerto = false
-   
          roller_2 = [];
-  
          for (eep in miss_2) {
             for (quad in miss_2) {
               if (quad != eep) {
@@ -3979,8 +3965,7 @@ if (quad != eep) {
                      if (esigual == true) {
                          podeser_2[idk].position.push(outro)
                          adicionou = true
-                     }
-                 }
+                     }}
                  if (presentes.length > 0 && presentes.length > 0 && adicionou == false) {
                      podeser_2.push({opl: presentes, position: [outro]})
                  } }}
@@ -4018,8 +4003,7 @@ if (quad != eep) {
                      for (ohjesus in miss_2[podeser_2[cold].position[yehaa]].dividido) {
                          if (miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus] != '-') {
                              fi+= miss_2[podeser_2[cold].position[yehaa]].dividido[ohjesus]
-                         }
-                     }
+                         }}
                      if (yehaa != 0) {
                           ficaassim += ` - ${fi}`
                      }else{
@@ -4040,10 +4024,7 @@ if (quad != eep) {
             java++
         }
    
-
-   
           youdumb_2 = []
-   
            aswillbe2 = []
            for (raging = 0; raging < roll_2.length; raging++) {
                asitwas = [] 
@@ -4080,13 +4061,11 @@ if (quad != eep) {
                    for (sofar in youdumb_2[armenia].mons) {
                        if (youdumb_2[behappy].mons.indexOf(youdumb_2[armenia].mons[sofar]) == -1) {
                            doeshave = false
-                       }
-                   }
+                       } }
                    if (doeshave == true) {
                   if (dontworry.indexOf(behappy) == -1) {
                    dontworry.push(armenia)
                   } }} }}
-   
       
            grtols_2 = []
    
@@ -4100,7 +4079,6 @@ if (quad != eep) {
    grtols_2 = []
    for (ah in organizado) {
        grtols_2.push(youdumb_2[organizado[ah]])
-      
    }
   
    youdumb_2 = []
@@ -4110,7 +4088,6 @@ if (quad != eep) {
    
    pans_2 = []
    numerospresentes_2 = []
-   
   
    for (wrecked in youdumb_2) {
        initial = youdumb_2[wrecked].w.what
@@ -4134,7 +4111,6 @@ if (quad != eep) {
    for (imback in youdumb_2) {
        sticky = []
        initial = youdumb_2[imback].w.what
-   
        if (initial.length > 0) {
        inside = {which: [], numberyoudumb: youdumb_2[imback].polen}
        
@@ -4145,10 +4121,8 @@ if (quad != eep) {
                }else{
                    taai = true
                } }
-        
             if (taai == false) {
                inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
-              
                inside.which.push(inform)
 
                for (darkening in inform.monos) {
@@ -4168,9 +4142,7 @@ if (quad != eep) {
        for (h in youdumb_2) {
            if (h != imback) {
            for (tempo = youdumb_2[h].w.what.length - 1; tempo >= 0; tempo--) {
-               
                dulu = false
-               
               for (and in youdumb_2[h].w.what[tempo].ar) {
                if (numerospresentes_2.indexOf(youdumb_2[h].w.what[tempo].ar[and]) != -1) {
                    dulu = true
@@ -4190,7 +4162,6 @@ if (quad != eep) {
        
    for (hi in youdumb_2) {
        youdumb_2[hi].length = youdumb_2[hi].t.length
-   
        grtols_2.push(youdumb_2[hi])
    }
    
@@ -4200,7 +4171,6 @@ if (quad != eep) {
    grtols_2 = []
    for (ah in organizado) {
        grtols_2.push(youdumb_2[organizado[ah]])
-      
    }
    
    youdumb_2 = []
@@ -4216,19 +4186,15 @@ if (quad != eep) {
        edge_2 = []
        naonao_2 = ''
        amount = []
-
          tobreak_2 = ''
          realife = []
          amontoado_2 = []
          for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) {
            el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido
            gates = []
-   
            quase = []
-       
            teri = false
            juntar = ''
-
            for (estudar in el) {
                if (el[estudar] == '*') {
                    teri = true
@@ -4238,7 +4204,6 @@ if (quad != eep) {
                    quase.push('*')
                    }
                }else{
-  
                    if (juntar.length == 0) {
                        juntar = el[estudar]
 
@@ -4264,7 +4229,6 @@ if (quad != eep) {
                } }
            aconta_2 = ''
            friend = ''
-   
           elevar = 1
           aster = false
           
@@ -4277,7 +4241,6 @@ if (quad != eep) {
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
                   friend+= quase[patience]
@@ -4303,14 +4266,12 @@ if (quad != eep) {
             friend = direitando
            }
 
-
        if (aster == false) {
            antes = ''
            for (eyes in quase) {
                if (quase[eyes].search('[0-9]') != -1) {
                    antes+= quase[eyes]
-               }
-           }
+               } }
            antes+= aconta_2
            aconta_2 = antes
        }
@@ -4341,8 +4302,7 @@ if (quad != eep) {
                for (okay in aconta_2) {
                    if (aconta_2[okay]!= '-'){
                        correct+= aconta_2[okay]
-                   }
-               }
+                   } }
                tobreak_2+= ` - ${correct}`
            }else{
                negativo = false
@@ -4350,13 +4310,11 @@ if (quad != eep) {
            }
 
            if (negativo == true) {
-          
            uh = ''
            for (i in friend) {
                if (friend[i] != '-') {
                    uh+= friend[i]
-               }
-           }
+               }}
            amontoado_2.push('-')
            amontoado_2.push(uh)
            }else{
@@ -4374,7 +4332,6 @@ if (quad != eep) {
                if (triste[estudar] == '.') {
                    teri = true
                    if (triste[Number(estudar) + 1].search('[0-9]') != -1 && ohjeez == true) {
-                     
                        quase.push(juntar)
                        juntar = ''
                    quase.push('*')
@@ -4407,7 +4364,6 @@ if (quad != eep) {
             friend = ''
             aster = false
             elevar = 1
-   
             for (patience in quase) {
                if (quase[patience] == '*') {
                    aster = true
@@ -4417,7 +4373,6 @@ if (quad != eep) {
                    quase[Number(patience) + 1] = fazerConta(gates)[0]
                    aconta_2 = fazerConta(gates)[0]
                    friend = fazerConta(gates)[0]
-                 
                    gates = []
                }else if(quase[patience].search('[a-z]') != -1)  {
                     friend+= quase[patience]
@@ -4483,7 +4438,6 @@ if (quad != eep) {
        if (concatenar_2.length > 0) {
            concatenar_2+= ' + '
        }
-       
        console.log('(',naonao_2,')','(',tobreak_2,')')
        
         if (edge_2.length > 1) {
@@ -4496,14 +4450,12 @@ if (quad != eep) {
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS_2(amount)
       segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
-
       mudou = false
       if (primeirocaso[1] == primeirocaso[2]) {
       }else{
           mudou = true
       }
    
-
       if (segundocaso[1] == segundocaso[2]) {
       }else{
           mudou = true
@@ -4512,8 +4464,6 @@ if (quad != eep) {
       if (mudou == true) {
         naonao_2 = primeirocaso[0]
         tobreak_2 = segundocaso[0] 
-
-
       reason = []
       for (k in naonao_2) {
         if (k != 0 && naonao_2[k] != '-' && naonao_2[k] != '+') {
@@ -4523,13 +4473,10 @@ if (quad != eep) {
             naonao_2[k] = deserve
         }}
 
-
    for (time = naonao_2.length - 1; time >= 0; time--) {
     if (reason.indexOf(time) != -1) {
         naonao_2.splice(time, 1)
-        }
-   }
-
+        } }
 
    reason = []
       for (k in tobreak_2) {
