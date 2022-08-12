@@ -1935,7 +1935,6 @@ function FATORARSInGULAR(potn) {
       hei = concatenar;
       otherway = FATORAR2(startexp);
       console.log(otherway[1], otherway[2])
-
       if (otherway[1] == 1 && otherway[2] == 0) {
         alt = 2
         return [otherway[0], otherway[3], otherway[4]];
