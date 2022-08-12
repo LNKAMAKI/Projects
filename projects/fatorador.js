@@ -1702,8 +1702,8 @@ function FATORARSInGULAR(potn) {
        }
 
        if (somarmons == true) {
-       fat1 = FATORAR2(FATORE(naonao))
-       fat2 = FATORAR2(FATORE(tobreak))
+       fat1 = FATORAR2(FATORE(naonao),false)
+       fat2 = FATORAR2(FATORE(tobreak),false)
    
        daprafat1 = false
        
@@ -1944,7 +1944,7 @@ function FATORARSInGULAR(potn) {
     if (somarmons == true) {
     if (monomios.length > 1) {
       hei = concatenar;
-      otherway = FATORAR2(startexp);
+      otherway = FATORAR2(startexp,false);
       console.log(otherway[1], otherway[2])
       if (otherway[1] == 1 && otherway[2] == 0) {
         alt = 2
@@ -3026,7 +3026,7 @@ function FATORE(q) {
       return expression
     }}
 
-  function FATORAR2(expression_2) {
+  function FATORAR2(expression_2,refat) {
     startexp_2 = [...expression_2];
 
   if (expression_2[0] !== "-" && expression_2[0] !== "+") {
@@ -4589,13 +4589,46 @@ if (quad != eep) {
        if (concatenar_2.length > 0) {
            concatenar_2+= ' + '
        }
-       if (edge_2.length > 1) {
-       concatenar_2+= `(${naonao_2})(${tobreak_2})`
-       }else{
-           concatenar_2+= `${naonao_2}(${tobreak_2})`
+       
+       
+       //
+       fat1 = FATORAR(FATORE(naonao_2),false)
+       fat2 = FATORAR(FATORE(tobreak_2),false)
+       
+       daprafat1 = false
+       
+       console.log('na',naonao_2,'to',tobreak_2)
+       console.log(fat1,'||',fat2)
+       if (fat1[1] == 1 && fat1[2] == 0) { // IF PANS EQUALS TO 1 AND TODOSOSNUMEROS EQUALS TO ZERO(WHICH MEANS THERE IS NO MONOMIO LEFT)
+       naonao_2 = fat1[0]
+       daprafat1 = true
        }
-
-     
+       
+       daprafat2 = false
+       
+       if (fat2[1] == 1 && fat2[2] == 0) {
+       daprafat2 = true
+       }
+       
+       console.log(daprafat1, daprafat2)
+       if (edge_2.length > 1) {
+        if (daprafat1 == false && daprafat2 == false) { // OS DOIS NÃO DÃO PARA FATORAR
+        concatenar_2 += `(${naonao_2})(${tobreak_2})`;
+       }else if(daprafat1 == true && daprafat2 == true){ // OS DOIS DÃO PARA FATORAR
+          concatenar_2 += `${naonao_2}${tobreak_2}`;
+        }else if(daprafat1 == true && daprafat2 == false) { // SOMENTE O PRIMEIRO DÁ PARA FATORAR
+          concatenar_2 += `${naonao_2}(${tobreak_2})`;
+        }else{ // SOMENTE O SEGUNDO DÁ PARA FATORAR
+          concatenar_2 += `(${naonao_2})${tobreak_2}`;
+        }
+       } else {
+        if (daprafat2 == false) { // SE O SEGUNDO NÃO DER PARA FATORAR
+        concatenar_2 += `${naonao_2}(${tobreak_2})`;
+        }else{ // SE O SEGUNDO DER PARA FATORAR
+          concatenar_2 += `${naonao_2}${tobreak_2}`;
+        }
+       }
+    //
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS_2(amount)
       segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
