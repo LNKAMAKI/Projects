@@ -1308,6 +1308,21 @@ function FATORARSInGULAR(potn) {
        initial = youdumb[wrecked].w.what
    }
 
+    // Ordenando o youdumb pelo tamanho do what
+    grtols = [];
+    for (hi in youdumb) {
+      youdumb[hi].length = youdumb[hi].w.what.length;
+  
+      grtols.push(youdumb[hi]);
+    }
+    organizado = sortob(grtols, "length")[1];
+  
+    grtols = [];
+    for (ah in organizado) {
+      grtols.push(youdumb[organizado[ah]]);
+    }
+    youdumb = [...grtols];
+ //
    heya = [...youdumb]
    for (imback in youdumb) {
        sticky = []
@@ -1371,22 +1386,6 @@ function FATORARSInGULAR(potn) {
    for (erro in grtols) {
        youdumb.push(grtols[erro])
    }}}
-
-    // Ordenando o youdumb pelo tamanho do what
-    grtols = [];
-    for (hi in youdumb) {
-      youdumb[hi].length = youdumb[hi].w.what.length;
-  
-      grtols.push(youdumb[hi]);
-    }
-    organizado = sortob(grtols, "length")[1];
-  
-    grtols = [];
-    for (ah in organizado) {
-      grtols.push(youdumb[organizado[ah]]);
-    }
-    youdumb = [...grtols];
- //
 
    concatenar = ''
    numsdesfat = []
@@ -1650,6 +1649,7 @@ function FATORARSInGULAR(potn) {
            concatenar+= ' + '
        }
 
+       /*
        if (somarmons == true) {
        fat1 = FATORAR2(FATORE(naonao),false)
        fat2 = FATORAR2(FATORE(tobreak),false)
@@ -1686,13 +1686,13 @@ function FATORARSInGULAR(potn) {
           concatenar += `${naonao}${tobreak}`;
         }
       }
-    }else{
+    }else{*/
       if (edge.length > 1) {
         concatenar+= `(${naonao})(${tobreak})`
         }else{
             concatenar+= `${naonao}(${tobreak})`
         }
-    }
+   // }
      
    // FAZENDO A CONTA
       primeirocaso = SOMANDOMONOMIOS(amount)
@@ -1909,6 +1909,7 @@ function FATORARSInGULAR(potn) {
   }*/
    
   console.log('RESULTADO(FATORAÇÃO):',okexp)
+  console.log('CONSOLE.LOG',concatenar)
   seps = SPLITEXPS(okexp)
   for (i in seps) {
     console.log(`seps[${i}].exp`,seps[i].exp)
