@@ -1444,7 +1444,7 @@ function FATORARSInGULAR(potn) {
    concatenar = ''
    numsdesfat = []
    newexpress = []
-
+   
    for (bababa in pans) {
        edge = []
        naonao = ''
@@ -4211,8 +4211,7 @@ if (quad != eep) {
    concatenar_2 = ''
    numsdesfat = []
    newexpress = []
-   factors = []
-   edges = []
+   
    for (bababa in pans_2) {
        edge_2 = []
        naonao_2 = ''
@@ -4486,14 +4485,11 @@ if (quad != eep) {
        }
        
        console.log('(',naonao_2,')','(',tobreak_2,')')
-       edges.push(edge_2)
        
         if (edge_2.length > 1) {
       concatenar_2 += `(${naonao_2})(${tobreak_2})`;
-      factors.push({n:`${naonao_2}`, t:`${tobreak_2}`})
     } else {
       concatenar_2 += `${naonao_2}(${tobreak_2})`;
-      factors.push({n:`${naonao_2}`, t:`${tobreak_2}`})
     }
        
 
