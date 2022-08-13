@@ -38,6 +38,7 @@ function ir() {
   
       resultadogeral = FATORAR(expression,true);
       resultado = resultadogeral[0];
+      devtools(false)
       document.getElementById("result").innerHTML = "Resultado:";
       document.getElementById('result').style.display = 'block';
       document.getElementById("fatoracao").innerText = resultado;
@@ -5554,98 +5555,99 @@ function ir() {
     roll_2.length,
   ];
   }
-  function devtools(close) {
-    if (alt == 1){
-      psegs = segs
-      pscarecrow = scarecrow
-      proll = roll
-      pmiss = miss
-    }else{
-      psegs = segs_2
-      pscarecrow = scarecrow_2
-      proll = roll_2
-      pmiss = miss_2
+  devtoolsstate = 'closed'
+function devtools(close) {
+  if (alt == 1){
+    psegs = segs
+    pscarecrow = scarecrow
+    proll = roll
+    pmiss = miss
+  }else{
+    psegs = segs_2
+    pscarecrow = scarecrow_2
+    proll = roll_2
+    pmiss = miss_2
+  }
+  tab = document.getElementById('devtab')
+  if (devtoolsstate == 'closed' || close == false) {
+    part = tab.getElementsByClassName('slot')
+    for (g = part.length - 1; g >= 0; g--) {
+      tab.removeChild(part[g])
     }
-    tab = document.getElementById('devtab')
-    if (devtoolsstate == 'closed' || close == false) {
-      part = tab.getElementsByClassName('slot')
-      for (g = part.length - 1; g >= 0; g--) {
-        tab.removeChild(part[g])
+    ps = tab.getElementsByTagName('p')
+    for (c = ps.length - 1; c >= 0; c--) {
+      tab.removeChild(ps[c])
+    }
+      if (close == true) {
+        devtoolsstate = 'open'
+        tab.style.display= 'block'
       }
-      ps = tab.getElementsByTagName('p')
-      for (c = ps.length - 1; c >= 0; c--) {
-        tab.removeChild(ps[c])
-      }
-        if (close == true) {
-          devtoolsstate = 'open'
-          tab.style.display= 'block'
+        p = document.createElement('p')
+        p.innerText = `psegs.length: ${psegs.length}`
+        p.style.textAlign = 'center'
+       tab.appendChild(p)
+        p = document.createElement('p')
+        p.innerText = `pscarecrow.length: ${pscarecrow.length}`
+        p.style.textAlign = 'center'
+        tab.appendChild(p)
+        p = document.createElement('p')
+        p.innerText = `pmiss.length: ${pmiss.length}`
+        p.style.textAlign = 'center'
+        tab.appendChild(p)
+        p = document.createElement('p')
+        p.innerText = `proll.length: ${proll.length}`
+        p.style.textAlign = 'center'
+        tab.appendChild(p)
+        for (j = 0; j < 4; j++) {
+          s = document.createElement('div')
+          s.setAttribute('class','slot')
+          tab.appendChild(s)
         }
-          p = document.createElement('p')
-          p.innerText = `psegs.length: ${psegs.length}`
-          p.style.textAlign = 'center'
-         tab.appendChild(p)
-          p = document.createElement('p')
-          p.innerText = `pscarecrow.length: ${pscarecrow.length}`
-          p.style.textAlign = 'center'
-          tab.appendChild(p)
-          p = document.createElement('p')
-          p.innerText = `pmiss.length: ${pmiss.length}`
-          p.style.textAlign = 'center'
-          tab.appendChild(p)
-          p = document.createElement('p')
-          p.innerText = `proll.length: ${proll.length}`
-          p.style.textAlign = 'center'
-          tab.appendChild(p)
-          for (j = 0; j < 4; j++) {
-            s = document.createElement('div')
-            s.setAttribute('class','slot')
-            tab.appendChild(s)
-          }
-          part = tab.getElementsByClassName('slot')
-          p = document.createElement('p')
-          p.innerText = `PSEGS`
-          p.style.textAlign = 'center'
-          part[0].appendChild(p)
-         for (i in psegs) {
-          p = document.createElement('p')
-          p.innerText = `${i}: { fator comum: '${psegs[i].car}', monômios: [ ${psegs[i].mons} ]}`
-          p.style.textAlign = 'center'
-          part[0].appendChild(p)
-         }
-         p = document.createElement('p')
-         p.innerText = `PSCARECROW`
-         p.style.textAlign = 'center'
-         part[1].appendChild(p)
-         for (i in pscarecrow) {
-          p = document.createElement('p')
-          p.innerText = `${i}: { divisor: '${pscarecrow[i].divisor}', divididos: [ ${pscarecrow[i].divididos} ]}`
-          p.style.textAlign = 'center'
-          part[1].appendChild(p)
-         }
-         p = document.createElement('p')
-         p.innerText = `PMISS`
-         p.style.textAlign = 'center'
-         part[2].appendChild(p)
-         for (i in pmiss) {
-          p = document.createElement('p')
-          p.innerText = `${i}: { termo: '${pmiss[i].dividido}', aparicoes: [ ${pmiss[i].aparicoes} ]}`
-          p.style.textAlign = 'center'
-          part[2].appendChild(p)
-         }
-         p = document.createElement('p')
-         p.innerText = `PROLL`
-         p.style.textAlign = 'center'
-         part[3].appendChild(p)
-         for (i in proll) {
-          p = document.createElement('p')
-          p.innerText = `${i}: { repetidos: '${proll[i].repetidos}', posições: [ ${proll[i].posições} ]}`
-          p.style.textAlign = 'center'
-          part[3].appendChild(p)
-         }
-    }else{
-      devtoolsstate = 'closed'
-      tab.style.display = 'none'
-    }}
+        part = tab.getElementsByClassName('slot')
+        p = document.createElement('p')
+        p.innerText = `PSEGS`
+        p.style.textAlign = 'center'
+        part[0].appendChild(p)
+       for (i in psegs) {
+        p = document.createElement('p')
+        p.innerText = `${i}: { fator comum: '${psegs[i].car}', monômios: [ ${psegs[i].mons} ]}`
+        p.style.textAlign = 'center'
+        part[0].appendChild(p)
+       }
+       p = document.createElement('p')
+       p.innerText = `PSCARECROW`
+       p.style.textAlign = 'center'
+       part[1].appendChild(p)
+       for (i in pscarecrow) {
+        p = document.createElement('p')
+        p.innerText = `${i}: { divisor: '${pscarecrow[i].divisor}', divididos: [ ${pscarecrow[i].divididos} ]}`
+        p.style.textAlign = 'center'
+        part[1].appendChild(p)
+       }
+       p = document.createElement('p')
+       p.innerText = `PMISS`
+       p.style.textAlign = 'center'
+       part[2].appendChild(p)
+       for (i in pmiss) {
+        p = document.createElement('p')
+        p.innerText = `${i}: { termo: '${pmiss[i].dividido}', aparicoes: [ ${pmiss[i].aparicoes} ]}`
+        p.style.textAlign = 'center'
+        part[2].appendChild(p)
+       }
+       p = document.createElement('p')
+       p.innerText = `PROLL`
+       p.style.textAlign = 'center'
+       part[3].appendChild(p)
+       for (i in proll) {
+        p = document.createElement('p')
+        p.innerText = `${i}: { repetidos: '${proll[i].repetidos}', posições: [ ${proll[i].posições} ]}`
+        p.style.textAlign = 'center'
+        part[3].appendChild(p)
+       }
+  }else{
+    devtoolsstate = 'closed'
+    tab.style.display = 'none'
+  }}
      // FAZER COnTA COM nÚMEROS
      function fazerConta(anterior) {
       if(0 == 0) {
