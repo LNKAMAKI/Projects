@@ -1870,6 +1870,7 @@ function ir() {
         ms = otherway[7]
         rol = otherway[8]
         yd = otherway[9]
+        mns = otherway[10]
         if (otherway[1] == 1 && otherway[2] == 0) {
           alt = 2
          // return [otherway[0], otherway[3], otherway[4]
@@ -5563,7 +5564,8 @@ function ir() {
     scarecrow_2,
     miss_2,
     roll_2,
-    youdumb_2
+    youdumb_2,
+    monomios_2
   ];
   }
   devtoolsstate = 'closed'
@@ -5573,11 +5575,15 @@ function devtools(close) {
     pscarecrow = scarecrow
     proll = roll
     pmiss = miss
+    pyou = youdumb
+    pmons = monomios
   }else{
     psegs = se
     pscarecrow = sc
     proll = rol
     pmiss = ms
+    pyou = yd
+    pmons = mns
   }
   tab = document.getElementById('devtab')
   but = document.getElementById('dev')
