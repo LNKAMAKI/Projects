@@ -5607,7 +5607,19 @@ function devtools(close) {
         relnum =  desfat(pmons[a].numero)
         console.log(relnum)
         span = document.createElement('span')
+        if (a == 0) {
         span.innerText = relnum
+        }else if(pmons[a].numero[0] == '+') {
+            span.innerText = ' + ' + relnum
+        }else if(pmons[a].numero[0] == '-'){
+            quest = ''
+            for (mens in relnum) {
+                if (mens != 0) {
+                    quest+= relnum[mens]
+                }
+            }
+            span.innerText = ' - ' + quest
+        }
         m.appendChild(span)
     }
   }else{
