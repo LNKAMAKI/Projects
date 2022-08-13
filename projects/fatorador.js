@@ -5586,11 +5586,13 @@ function devtools(close) {
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.height= '400px'
+        tab.style.padding= '10px'
         but.setAttribute('class','deven')
       }
   }else{
     devtoolsstate = 'closed'
     tab.style.height = '0'
+    tab.style.padding = '0'
     but.setAttribute('class','devin')
   }}
      // FAZER COnTA COM nÚMEROS
