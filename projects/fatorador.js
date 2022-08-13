@@ -5589,7 +5589,13 @@ function devtools(close) {
   but = document.getElementById('dev')
   dec = document.getElementById('dec')
   m = document.getElementById('mons')
+  
   if (devtoolsstate == 'closed' || close == false) {
+    mms = m.getElementsByTagName('span')
+     for (ret = mms.length - 1; ret >= 0; ret--) {
+        console.log(mms[0])
+        m.removeChild(mms[ret])
+     }
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.height= '400px'
@@ -5598,7 +5604,11 @@ function devtools(close) {
       }
       for (a in pmons) {
         console.log(pmons[a].numero)
-        console.log(desfat(pmons[a].numero))
+        relnum =  desfat(pmons[a].numero)
+        console.log(relnum)
+        span = document.createElement('span')
+        span.innerText = relnum
+        m.appendChild(span)
     }
   }else{
     devtoolsstate = 'closed'
@@ -5724,7 +5734,8 @@ function devtools(close) {
         }}
       return splitedExps
       }
-      function desfat(quase) {
+      function desfat(algo) {
+      quase = [...algo]
       gates = []
       aconta = ''
       friend = ''
