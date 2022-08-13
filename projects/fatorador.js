@@ -1309,6 +1309,7 @@ function ir() {
      }
   
       // Ordenando o youdumb pelo tamanho do what
+      /*
       grtols = [];
       for (hi in youdumb) {
         youdumb[hi].length = youdumb[hi].w.what.length;
@@ -1322,6 +1323,7 @@ function ir() {
         grtols.push(youdumb[organizado[ah]]);
       }
       youdumb = [...grtols];
+      */
    //
      heya = [...youdumb]
      for (imback in youdumb) {
@@ -1867,6 +1869,7 @@ function ir() {
         sc = otherway[6]
         ms = otherway[7]
         rol = otherway[8]
+        yd = otherway[9]
         if (otherway[1] == 1 && otherway[2] == 0) {
           alt = 2
          // return [otherway[0], otherway[3], otherway[4]
@@ -5559,7 +5562,8 @@ function ir() {
     segs_2,
     scarecrow_2,
     miss_2,
-    roll_2
+    roll_2,
+    youdumb_2
   ];
   }
   devtoolsstate = 'closed'
@@ -5570,10 +5574,10 @@ function devtools(close) {
     proll = roll
     pmiss = miss
   }else{
-    psegs = segs_2
-    pscarecrow = scarecrow_2
-    proll = roll_2
-    pmiss = miss_2
+    psegs = se
+    pscarecrow = sc
+    proll = rol
+    pmiss = ms
   }
   tab = document.getElementById('devtab')
   if (devtoolsstate == 'closed' || close == false) {
