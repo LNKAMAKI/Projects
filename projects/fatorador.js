@@ -363,29 +363,6 @@ function ir() {
   }
   }
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
-  
-  function FATORARSInGULAR(potn) {
-    if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
-        fatorado = ''
-        first = 1
-        div = 0
-        stop = false
-        fator = 1
-        for (e = 2; stop == false; e++) {
-            sob = Number(potn)
-               if (ehprimo(e) == true) {
-                while (sob%e == 0) {
-                sob = sob/e
-                fator = fator*e
-                st = false
-                if (fator == potn) {
-                stop = true
-                fatorado += `${e}`
-                }else{
-                    fatorado += `${e}*`
-                } } }}
-        return fatorado
-    }}
      
      function versetem(comp) {
       podeir = true;
@@ -580,21 +557,6 @@ function ir() {
                          segs[nl].mons.push(segs[n].mons[u])
                        
                      } }}}}}
-     
-     function ehprimo(Number) {
-         parar = false
-         for (t = 2; t < Number && parar == false; t++) {
-         
-             if (Number%t == 0) {
-                 parar = true
-             }
-         }
-         if (parar) 
-         return false
-         else
-         return true
-     }
-     
      //////console.log('------------------------------ORDEnAnDO DO MAIOR PARA O MEnOR----------------------------')
      
      grtols = []
@@ -1959,30 +1921,6 @@ function ir() {
     }else{
     return [concatenar]
     }
-
-     // Vendo se o número é primo
-     function ehprimo(Number) {
-         parar = false
-         for (t = 2; t < Number && parar == false; t++) {
-             if (Number%t == 0) {
-                 parar = true
-             } }
-         if (parar) 
-         return false
-         else
-         return true
-     }
-     
-     // Achando todos os divisores da quantidade de monômios
-     // Ex: 12: 4, 3, 2, 6
-     function ehprimo2(Number) {
-         divisores = []
-         for (t = 2; t < Number && parar == false; t++) {
-             if (Number%t == 0) {
-                divisores.push(t)
-             }}
-        return divisores
-     }
      
      function sortob(n, pam) {
          var maiorparamenor = []
@@ -3110,28 +3048,6 @@ function ir() {
   
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
   
-     function FATORARSInGULAR(potn) {
-     if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
-         fatorado = ''
-         first = 1
-         div = 0
-         stop = false
-         fator = 1
-         for (e = 2; stop == false; e++) {
-             sob = Number(potn)
-                if (ehprimo(e) == true) {
-                 while (sob%e == 0) {
-                 sob = sob/e
-                 fator = fator*e
-                 st = false
-                 if (fator == potn) {
-                 stop = true
-                 fatorado += `${e}`
-                 }else{
-                     fatorado += `${e}*`
-                 }}} }
-         return fatorado
-     }}
      
      function versetem(comp) {
       podeir = true;
@@ -3326,21 +3242,6 @@ function ir() {
                      }else{
                          segs_2[nl].mons.push(segs_2[n].mons[u])
                      }}}}}}
-     
-  
-     function ehprimo(Number) {
-         parar = false
-         for (t = 2; t < Number && parar == false; t++) {
-             if (Number%t == 0) {
-                 parar = true
-             }
-         }
-         if (parar) 
-         return false
-         else
-         return true
-     }
-     
      
      grtols_2 = []
      
@@ -4605,30 +4506,6 @@ function ir() {
          }else{
              concatenar_2+= ` + ${aconta_2}`
          }}}}
-     // Vendo se o número é primo
-     function ehprimo(Number) {
-         parar = false
-         for (t = 2; t < Number && parar == false; t++) {
-             if (Number%t == 0) {
-                 parar = true
-             }}
-         if (parar) 
-         return false
-         else
-         return true
-     }
-     
-     // Achando todos os divisores da quantidade de monômios
-     // Ex: 12: 4, 3, 2, 6
-     function ehprimo2(Number) {
-         divisores = []
-         for (t = 2; t < Number && parar == false; t++) {
-         
-             if (Number%t == 0) {
-                divisores.push(t)
-             }  }
-        return divisores
-     }
      
      function sortob(n, pam) {
          var maiorparamenor = []
@@ -5617,7 +5494,6 @@ function devtools(close) {
         relnum =  desfat(pmons[a].numero)
         //console.log(relnum)
         span = document.createElement('span')
-        span.style.backgroundColor = 'red'
         if (a == 0) {
         span.innerText = relnum
         }else if(pmons[a].numero[0] == '+') {
@@ -5796,3 +5672,48 @@ function devtools(close) {
       }else{
         return `-${aconta}`
       }}
+      function FATORARSInGULAR(potn) {
+        if (ehprimo(potn) == false && String(potn).search('[0-9]') != -1) {
+            fatorado = ''
+            first = 1
+            div = 0
+            stop = false
+            fator = 1
+            for (e = 2; stop == false; e++) {
+                sob = Number(potn)
+                   if (ehprimo(e) == true) {
+                    while (sob%e == 0) {
+                    sob = sob/e
+                    fator = fator*e
+                    st = false
+                    if (fator == potn) {
+                    stop = true
+                    fatorado += `${e}`
+                    }else{
+                        fatorado += `${e}*`
+                    }}} }
+            return fatorado
+        }}
+        function ehprimo(Number) {
+            parar = false
+            for (t = 2; t < Number && parar == false; t++) {
+            
+                if (Number%t == 0) {
+                    parar = true
+                }
+            }
+            if (parar) 
+            return false
+            else
+            return true
+        }
+         // Achando todos os divisores da quantidade de monômios
+     // Ex: 12: 4, 3, 2, 6
+     function ehprimo2(Number) {
+        divisores = []
+        for (t = 2; t < Number && parar == false; t++) {
+            if (Number%t == 0) {
+               divisores.push(t)
+            }}
+       return divisores
+    }
