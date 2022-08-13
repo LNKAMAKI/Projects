@@ -1899,6 +1899,7 @@ function ir() {
     plo = false
 
     while (plo == false) {
+        console.log('OKEXP!!!!!',okexp,'OKEXP.LENGTH',okexp.length)
         seps = SPLITEXPS(okexp)
         rexp =  ''
         chain = []
@@ -1925,18 +1926,22 @@ function ir() {
             }}
 
       }else{
-        console.log('anterior',seps[Number(varnot)- 1].close,'atual', start)
+        //console.log('anterior',seps[Number(varnot)- 1].close,'atual', start)
         for (kl = Number(seps[Number(varnot)- 1].close) + 1; kl < start; kl++) {
-            console.log(kl, okexp[kl])
+            //console.log(kl, okexp[kl])
             rexp+= okexp[kl]
         }}
+        if (varnot == seps.length - 1) {
+            console.log('ÚLTIMO!')
+          }
+
         if (daprafat1 == true) {
             rexp+= fat1[0]
         }else{
             rexp+= '(' + expin + ')'
         }
-      console.log(daprafat1)
-      console.log(rexp)
+      //console.log(daprafat1)
+      //console.log(rexp)
      }
      okexp = rexp
      if (chain.indexOf(true) == -1) {
@@ -5593,7 +5598,7 @@ function devtools(close) {
   if (devtoolsstate == 'closed' || close == false) {
     mms = m.getElementsByTagName('span')
      for (ret = mms.length - 1; ret >= 0; ret--) {
-        console.log(mms[0])
+        //console.log(mms[0])
         m.removeChild(mms[ret])
      }
       if (close == true) {
@@ -5603,9 +5608,9 @@ function devtools(close) {
         but.setAttribute('class','deven')
       }
       for (a in pmons) {
-        console.log(pmons[a].numero)
+      //  console.log(pmons[a].numero)
         relnum =  desfat(pmons[a].numero)
-        console.log(relnum)
+        //console.log(relnum)
         span = document.createElement('span')
         if (a == 0) {
         span.innerText = relnum
