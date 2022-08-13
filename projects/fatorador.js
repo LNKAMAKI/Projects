@@ -1931,15 +1931,20 @@ function ir() {
             //console.log(kl, okexp[kl])
             rexp+= okexp[kl]
         }}
-        if (varnot == seps.length - 1) {
-            console.log('ÚLTIMO!')
-          }
 
         if (daprafat1 == true) {
             rexp+= fat1[0]
         }else{
             rexp+= '(' + expin + ')'
         }
+
+        if (varnot == seps.length - 1) {
+            console.log('ÚLTIMO!',end,okexp.length - 1)
+            if (end != okexp.length - 1) {
+                for (c = Number(end) + 1; c < okexp.length;c++) {
+                    rexp+= okexp[c]
+                }}
+          }
       //console.log(daprafat1)
       //console.log(rexp)
      }
@@ -5612,10 +5617,11 @@ function devtools(close) {
         relnum =  desfat(pmons[a].numero)
         //console.log(relnum)
         span = document.createElement('span')
+        span.style.backgroundColor = 'red'
         if (a == 0) {
         span.innerText = relnum
         }else if(pmons[a].numero[0] == '+') {
-            span.innerText = ' + ' + relnum
+            span.innerText =  ' + ' + relnum
         }else if(pmons[a].numero[0] == '-'){
             quest = ''
             for (mens in relnum) {
