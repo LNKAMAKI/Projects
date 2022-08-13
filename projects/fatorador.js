@@ -5588,6 +5588,7 @@ function devtools(close) {
   tab = document.getElementById('devtab')
   but = document.getElementById('dev')
   dec = document.getElementById('dec')
+  m = document.getElementById('mons')
   if (devtoolsstate == 'closed' || close == false) {
       if (close == true) {
         devtoolsstate = 'open'
@@ -5595,6 +5596,10 @@ function devtools(close) {
         tab.style.padding= '10px'
         but.setAttribute('class','deven')
       }
+      for (a in pmons) {
+        console.log(pmons[a].numero)
+        console.log(desfat(pmons[a].numero))
+    }
   }else{
     devtoolsstate = 'closed'
     tab.style.height = '0'
@@ -5720,7 +5725,6 @@ function devtools(close) {
       return splitedExps
       }
       function desfat(quase) {
-        quase = REFORMATAR(quase)
       gates = []
       aconta = ''
       friend = ''
@@ -5749,7 +5753,10 @@ function devtools(close) {
                   }
                   aconta+= quase[patience]      
                   elevar = 1
-              }}}
+              }
+            }else if(quase[patience].search('[0-9]') != -1 && quase.indexOf('*') == -1) {
+                aconta+= quase[patience]
+              }}
       if (quase[0] != '-') {
       return aconta
       }else{
