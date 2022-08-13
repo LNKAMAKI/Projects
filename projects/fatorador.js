@@ -1863,7 +1863,10 @@ function ir() {
       if (monomios.length > 1) {
         otherway = FATORAR2(startexp);
         console.log(otherway[1], otherway[2])
-  
+        se = otherway[5]
+        sc = otherway[6]
+        ms = otherway[7]
+        rol = otherway[8]
         if (otherway[1] == 1 && otherway[2] == 0) {
           alt = 2
          // return [otherway[0], otherway[3], otherway[4]
@@ -5553,6 +5556,10 @@ function ir() {
     todososnumeros_2.length,
     segs_2.length,
     roll_2.length,
+    segs_2,
+    scarecrow_2,
+    miss_2,
+    roll_2
   ];
   }
   devtoolsstate = 'closed'
