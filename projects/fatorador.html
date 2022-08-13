@@ -9,6 +9,7 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
         :root {
            --themecolor: rgb(114, 215, 255);
         }
@@ -76,7 +77,7 @@
     
            div#testarea {
               height: 500px;
-            max-width: 1000px;
+            max-width: 700px;
                margin: 70px auto 0px auto;
               
                justify-content: center;
@@ -107,7 +108,7 @@
             max-width: 700px;
             display: block;
             margin: auto;
-            padding: 0px;
+            padding: 3px;
          }
 
          #tab {
@@ -215,7 +216,7 @@
             font-weight: bold;
             font-size: 1.9em;
             display: none;
-            margin: 50px 0px 10px 0px;
+            margin: 30px 0px 10px 0px;
          }
          #fatoracao {
             text-align: center;
@@ -223,16 +224,75 @@
             font-size: 2em;
             font-family: monospace;
          }
-         #dev {
+         #dec {
+            position: relative;
+            width: fit-content;
+            margin: auto;
+            z-index: 1;
+         }
+         @keyframes disappear {
+            0% {
+               opacity: 100;
+            }
+            100% {
+               opacity: 0;
+            }
+         }
+         .devin {
+            transition-property: border-radius;
+            transition-duration: 0.5s;
+            position: relative;
+            display: block ;
+            background-color: white;
+            padding: 0px 10px 0px 10px;
+            border-radius: 25px;
+            border: none;
+            font-family: 'Bungee';
+            font-size: 18px;
+            font-weight: bolder;
+            box-shadow: 0px 0px 10px rgb(79 196 251);
+            color: rgb(79, 196, 251);
+            cursor: pointer;
+         }
+         .deven {
+            transition-property: border-radius;
+            transition-duration: 0.5s;
+            position: relative;
+            display: block ;
+            background-color: white;
+            padding: 0px 10px 0px 10px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border: none;
+            font-family: 'Bungee';
+            font-size: 18px;
+            font-weight: bolder;
+            box-shadow: 0px 0px 10px rgb(79 196 251);
+            color: rgb(79, 196, 251);
+            cursor: pointer;
          }
          #devtab {
-            display: none;
+            transition-property: height;
+            transition-duration: 0.5s;
+            z-index: 2;
+            height: 0;
+            overflow: hidden;
             position: relative;
-            padding: 10px;
-            background-color: black;
+            padding: 0px;
+            background-color: white;
+            border-radius: 30px;
+            /*box-shadow: 0px 0px 10px rgb(79 196 251);*/
             color: rgb(84, 127, 157);
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
+         }
+         #esc {
+            position: absolute;
+            width: 120px;
+            height: 5px;
+            left: calc((100% - 120px)/2);
+            background-color: white;
+            margin: auto;
          }
        div.slot {
             background-color: pink;
@@ -302,9 +362,10 @@
                   <p id='result'></p>
                   <p id='fatoracao'></p>
 
-                  <input type="button" value="DEVTOOLS" id="dev" onclick="devtools(true)">
+                  <div id="dec"><input type="button" value="DEVTOOLS" id="dev" class="devin" onclick="devtools(true)"></div>
                   <div id="devtab">
-
+                     <div id="esc"></div>
+                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt nam architecto alias corporis corrupti unde nisi id asperiores at eum. Molestiae commodi sint officiis cupiditate quia pariatur amet ratione Lorem ipsum dolor sit amet consectetur adipisicing elit. Error recusandae non inventore et modi hic, voluptatibus, possimus minus porro maiores nostrum iste omnis rem! Quis enim dicta magnam ea corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero officiis, libero beatae voluptate modi corporis a unde exercitationem blanditiis veritatis voluptatum consequuntur vitae, quae id optio, repellendus odit vel iste? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi est aut molestiae. Amet, illo consectetur! Obcaecati temporibus doloremque aut culpa voluptates repellat perspiciatis, quibusdam qui corrupti praesentium hic id sunt! </p>
                   </div>
         </div>
        

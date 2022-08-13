@@ -5580,14 +5580,18 @@ function devtools(close) {
     pmiss = ms
   }
   tab = document.getElementById('devtab')
+  but = document.getElementById('dev')
+  dec = document.getElementById('dec')
   if (devtoolsstate == 'closed' || close == false) {
       if (close == true) {
         devtoolsstate = 'open'
-        tab.style.display= 'block'
+        tab.style.height= '400px'
+        but.setAttribute('class','deven')
       }
   }else{
     devtoolsstate = 'closed'
-    tab.style.display = 'none'
+    tab.style.height = '0'
+    but.setAttribute('class','devin')
   }}
      // FAZER COnTA COM nÚMEROS
      function fazerConta(anterior) {
