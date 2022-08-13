@@ -109,6 +109,7 @@
             display: block;
             margin: auto;
             padding: 3px;
+            cursor: pointer;
          }
 
          #tab {
@@ -291,16 +292,12 @@
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
          }
-         #esc {
-            position: absolute;
-            width: 120px;
-            height: 5px;
-            left: calc((100% - 120px)/2);
-            background-color: white;
-            margin: auto;
-         }
        div.slot {
             background-color: pink;
+         }
+         p#mons {
+            background-color: pink;
+            white-space: nowrap;
          }
          /*
          .slot {
@@ -312,7 +309,6 @@
             display: inline-block;
          }
 
-         
          @media screen and (max-width:740px) {
             .slot {
                width: 100%;
@@ -371,7 +367,7 @@
                      <div id="dec"><input type="button" value="DEVTOOLS" id="dev" class="devin" onclick="devtools(true)"></div>
                      <div id="xer">
                      <div id="devtab">
-                        <div id="esc"></div>
+                        <p id="mons">Cau'se the world is ugly, but you're beautiful to me. Are you thinking of me? Like I'm thinking of you. And I'm sorry</p>
                      </div>
                   </div>
         </div>
