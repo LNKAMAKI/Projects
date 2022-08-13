@@ -3221,8 +3221,7 @@ function ir() {
                           permission = versetem(estado);
                           if (permission == true && estado != " " && estado != "-") {
                               segs_2.push({ car: estado, mons: [m] });
-                          }
-                          }
+                          }}
                           estado += str[i];
                           if (i == str.length - 1) {
                           permission = versetem(estado);
