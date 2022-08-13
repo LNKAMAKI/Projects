@@ -5719,3 +5719,39 @@ function devtools(close) {
         }}
       return splitedExps
       }
+      function desfat(quase) {
+        quase = REFORMATAR(quase)
+      gates = []
+      aconta = ''
+      friend = ''
+      elevar = 1
+      aster = false
+      for (patience in quase) {
+          if (quase[patience] == '*') {
+              aster = true
+              gates.push(quase[Number(patience) - 1])
+              gates.push('x')
+              gates.push(quase[Number(patience) + 1])
+              quase[Number(patience) + 1] = fazerConta(gates)[0]
+              aconta = fazerConta(gates)[0]
+              friend = fazerConta(gates)[0]
+              gates = []
+          }else if(quase[patience].search('[a-z]') != -1)  {
+             friend+= quase[patience]
+              if (quase[patience] == quase[Number(patience) - 1]) {
+                  elevar++
+                  if (patience == quase.length - 1) {
+                      aconta+= `^${elevar}`
+                  }
+              }else{
+                  if (elevar > 1) {
+                      aconta+= `^${elevar}` 
+                  }
+                  aconta+= quase[patience]      
+                  elevar = 1
+              }}}
+      if (quase[0] != '-') {
+      return aconta
+      }else{
+        return `-${aconta}`
+      }}
