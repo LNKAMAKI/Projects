@@ -5479,7 +5479,7 @@ function devtools(close) {
   dec = document.getElementById('dec')
   m = document.getElementById('mons')
   slots = document.getElementsByClassName('slot')
-  
+
   if (devtoolsstate == 'closed' || close == false) {
     mms = m.getElementsByTagName('span')
      for (ret = mms.length - 1; ret >= 0; ret--) {
@@ -5487,13 +5487,18 @@ function devtools(close) {
         m.removeChild(mms[ret])
      }
   
+     for (erase in slots) {
+        slots[erase].innerHTML = ''
+    } 
+    
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.height= '400px'
         tab.style.overflowY = 'auto'
         tab.style.padding= '10px'
         but.setAttribute('class','deven')
-      }
+       }
+
       for (a in pmons) {
       //  console.log(pmons[a].numero)
         relnum =  desfat(pmons[a].numero)
