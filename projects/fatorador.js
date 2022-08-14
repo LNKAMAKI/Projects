@@ -5488,6 +5488,7 @@ function devtools(close) {
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.height= '400px'
+        tab.style.overflowY = 'auto'
         tab.style.padding= '10px'
         but.setAttribute('class','deven')
       }
@@ -5569,6 +5570,7 @@ function devtools(close) {
   }else{
     devtoolsstate = 'closed'
     tab.style.height = '0'
+    tab.style.overflowY = 'hidden'
     tab.style.padding = '0'
     but.setAttribute('class','devin')
   }}
