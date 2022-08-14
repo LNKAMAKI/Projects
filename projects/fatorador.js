@@ -5478,6 +5478,7 @@ function devtools(close) {
   but = document.getElementById('dev')
   dec = document.getElementById('dec')
   m = document.getElementById('mons')
+  slots = document.getElementsByClassName('slot')
   
   if (devtoolsstate == 'closed' || close == false) {
     mms = m.getElementsByTagName('span')
@@ -5485,6 +5486,7 @@ function devtools(close) {
         //console.log(mms[0])
         m.removeChild(mms[ret])
      }
+  
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.height= '400px'
