@@ -335,11 +335,24 @@
             position: relative;
             width: 100%;
             height: 100%;
-            max-height: 150px;
+            max-height: 145px;
             overflow-y: auto;
              background-color: rebeccapurple;
              height: 150px;
+             border: 4px solid black;
+             color: black;
          }
+         #s0,#s1 {
+            margin-top: 5px;
+         }
+         .col-sm-6 {
+            padding: 0px;
+         }
+         @media screen and (max-width:575px) {
+         .slot{
+            max-height: 72.5px;
+         }
+      }
          
     </style>
 </head>
@@ -396,7 +409,16 @@
                         <p id="mons"></p>
                         <div class="container-lg">
                            <div class="row">
-                              <div class="col-md-6 bg-info">
+                              <div class="col-sm-6">
+                                 <div class="slot" id="s0">a</div>
+                              </div>
+                              <div class="col-sm-6">
+                                 <div class="slot" id="s1">a</div>
+                              </div>
+                              <div class="col-sm-6">
+                                 <div class="slot" id="s2">a</div>
+                              </div>
+                              <div class="col-sm-6">
                                  <div class="slot">a</div>
                               </div>
                            </div>
