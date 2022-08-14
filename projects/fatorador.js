@@ -1749,7 +1749,7 @@ function ir() {
      }}
      
      for (bye in todososnumeros) {
-         quase = monomios[todososnumeros[bye]].numero
+         quase = [...monomios[todososnumeros[bye]].numero]
          aconta = ''
          elevar = 1
          aster = false
@@ -4443,7 +4443,7 @@ function ir() {
      }}
     
      for (bye in todososnumeros_2) {
-         quase = monomios_2[todososnumeros_2[bye]].numero
+         quase = [...monomios_2[todososnumeros_2[bye]].numero]
          aconta_2 = ''
          elevar = 1
          aster = false
