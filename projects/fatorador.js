@@ -2991,6 +2991,8 @@ function ir() {
         obnum++;
       }
       monomios_2[obnum].numero += expression_2[n];
+      change = [...monomios_2[obnum].numero]
+      console.log(change)
     }
   
     //TRANSFORMA  O MONOMIOS_2.NUMERO(STRING) EM UM ARRAY
@@ -3017,6 +3019,7 @@ function ir() {
           comofica.push(ground);
         } }
       monomios_2[bye].numero = comofica;
+      console.log('como fica',comofica)
     }
   
     for (huh in monomios_2) {
