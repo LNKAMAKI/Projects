@@ -87,7 +87,6 @@ function ir() {
     }
   
     //FATORAnDO OS nÚMEROS
-  
     for (n = 0; n < expression.length; n++) {
       if (
         ehprimo(expression[n]) == false &&
