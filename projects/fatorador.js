@@ -399,23 +399,17 @@ function ir() {
      }else{
      egs.push(qual[norte])
      }}
-     
-     
      takeout = []
-     
      for (n in egs) {
-     
      if (T.indexOf(egs[n]) != -1) {
      T.splice(T.lastIndexOf(egs[n]), 1)
      takeout.push(Number(n))
      }}
-     
      for (giro = egs.length - 1; giro >= 0; giro--) {
          if (takeout.indexOf(Number(giro)) == -1) {
          }else{
              egs.splice(giro,1)
          }}
-     
      depois = ''
      for (n in egs) {
              depois += String(egs[n])
@@ -3078,8 +3072,6 @@ function ir() {
     }
      
      function DIVIDIR(T, qual) {
-         
-     
          Tfix = []
      for (h in T) {
          Tfix.push(T[h])
