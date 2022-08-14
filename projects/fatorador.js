@@ -362,7 +362,7 @@ function ir() {
   }
   }
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
-     
+     /*
      function versetem(comp) {
       podeir = true;
       qual = -1;
@@ -386,7 +386,7 @@ function ir() {
         }}
       return podeir;
     }
-     
+     */
      ////console.log('--------------------------------------------MOnOMIOS--------------------------------------')
      reps = []
      segs = []
@@ -492,14 +492,14 @@ function ir() {
                       // CÓDIGO PARA ADICIONAR OS TERMOS EM COMUM DOS MONÔMIOS NA LISTA SEGS(SEGMENTOS)
                       for (i in str) {
                           if (str[i] == "." && estado != "-") {
-                          permission = versetem(estado);
+                          permission = versetem(estado,segs);
                           if (permission == true && estado != " " && estado != "-") {
                               segs.push({ car: estado, mons: [m] });
                           }
                           }
                           estado += str[i];
                           if (i == str.length - 1) {
-                          permission = versetem(estado);
+                          permission = versetem(estado,segs);
                           if (permission == true && estado != " " && estado != "-") {
                               segs.push({ car: estado, mons: [m] });
                           }} }}
@@ -3014,7 +3014,7 @@ function ir() {
   
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
   
-     
+     /*
      function versetem(comp) {
       podeir = true;
       qual = -1;
@@ -3038,7 +3038,7 @@ function ir() {
         }}
       return podeir;
     }
-     
+     */
      reps = []
      segs_2 = []
      let  = []
@@ -3144,13 +3144,13 @@ function ir() {
                       estado = "";
                       for (i in str) {
                           if (str[i] == "." && estado != "-") {
-                          permission = versetem(estado);
+                          permission = versetem(estado,segs_2);
                           if (permission == true && estado != " " && estado != "-") {
                               segs_2.push({ car: estado, mons: [m] });
                           }}
                           estado += str[i];
                           if (i == str.length - 1) {
-                          permission = versetem(estado);
+                          permission = versetem(estado,segs_2);
                           if (permission == true && estado != " " && estado != "-") {
                               segs_2.push({ car: estado, mons: [m] });
                           }}}}
@@ -5804,3 +5804,26 @@ function REFORMATAR(q) {
          }}
     return depois
    }
+   function versetem(comp,pam) {
+    podeir = true;
+    qual = -1;
+    for (meow in pam) {
+      array1 = [];
+      for (d in pam[meow].car) {
+        array1.push(pam[meow].car[d]);
+      }
+      array2 = [];
+      for (d in comp) {
+        array2.push(comp[d]);
+      }
+      if (pam[meow].car.length < comp.length) {
+        divisao = DIVIDIR(VAI(pam[meow].car), VAI(comp));
+      } else {
+        divisao = DIVIDIR(VAI(comp), VAI(pam[meow].car));
+      }
+      if (divisao == "" || divisao == "-") {
+        podeir = false;
+        qual = meow;
+      }}
+    return podeir;
+  }
