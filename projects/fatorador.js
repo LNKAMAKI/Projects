@@ -1833,6 +1833,7 @@ function ir() {
         rol = otherway[8]
         yd = otherway[9]
         mns = otherway[10]
+        pn = otherway[11]
         if (otherway[1] == 1 && otherway[2] == 0) {
           alt = 2
          // return [otherway[0], otherway[3], otherway[4]
@@ -5454,7 +5455,8 @@ function ir() {
     miss_2,
     roll_2,
     youdumb_2,
-    monomios_2
+    monomios_2,
+    pans
   ];
   }
   devtoolsstate = 'closed'
@@ -5490,7 +5492,7 @@ function devtools(close) {
      for (erase in slots) {
         slots[erase].innerHTML = ''
     } 
-    
+
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.height= '400px'
