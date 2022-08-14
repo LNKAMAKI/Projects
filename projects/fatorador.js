@@ -5521,7 +5521,18 @@ function devtools(close) {
             console.log(h, proud,pscarecrow[h].divididos[proud])
             pscarecrow[h].divididos[proud] = desfat(REFORMATAR(String(pscarecrow[h].divididos[proud])))
         }
-        p.innerText = h + ' - ' + psegs[h].car + ': ' +  ' [ ' + pscarecrow[h].divididos + ' ]'
+        go = desfat(REFORMATAR(psegs[h].car.replace(new RegExp('\\.','g'),'*')))
+        console.log('GO',go,desfat(go))
+        p.innerHTML = `<span style="color:rgb(79 196 251);">${h}</span> &nbsp;${go}: [ `
+        for (n in pscarecrow[h].divididos) {
+            console.log(pscarecrow[h].divididos[n])
+            p.innerHTML+= `<p class="part">${pscarecrow[h].divididos[n]}</p>`
+            if (n < Number(pscarecrow[h].divididos.length) - 1) {
+                p.innerHTML+= ','
+            }else{
+                p.innerHTML+= ' ]'
+            }
+        }
         slots[0].appendChild(p)
     }
     for (h in pmiss) {
@@ -5664,7 +5675,7 @@ function devtools(close) {
       elevar = 1
       aster = false
       for (patience in quase) {
-          if (quase[patience] == '*') {
+          if (quase[patience] == '*' && quase[Number(patience) - 1].search('[0-9]') != -1 && quase[Number(patience) + 1].search('[0-9]') != -1 ) {
               aster = true
               gates.push(quase[Number(patience) - 1])
               gates.push('x')
