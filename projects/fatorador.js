@@ -5506,20 +5506,17 @@ function devtools(close) {
             for (mens in relnum) {
                 if (mens != 0) {
                     quest+= relnum[mens]
-                }
-            }
+                }}
             span.innerText = ' - ' + quest
         }
         m.appendChild(span)
     }
-    slots = document.getElementsByClassName('slot')
 
     for (h in psegs) {
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
         for (proud in pscarecrow[h].divididos) {
-         //   console.log(h, proud,pscarecrow[h].divididos[proud])
             pscarecrow[h].divididos[proud] = desfat(REFORMATAR(String(pscarecrow[h].divididos[proud])))
         }
         go = REFORMATAR(psegs[h].car.replace(new RegExp('\\.','g'),'*'))
@@ -5537,27 +5534,22 @@ function devtools(close) {
             pc = document.createElement('div')
             pc.setAttribute('class','pcon')
             p.appendChild(pc)
-
-            ph = document.createElement('ph')
+            ph = document.createElement('p')
             ph.innerText = ' ' + pscarecrow[h].divididos[n]
             ph.setAttribute('class','part')
             pc.appendChild(ph)
-
             plen = document.createElement('span')
             plen.setAttribute('class','plen')
             plen.innerText = psegs[h].mons[n]
             pc.appendChild(plen)
-
-            //p.innerHTML+= `${pscarecrow[h].divididos[n]}`
             if (n < Number(pscarecrow[h].divididos.length) - 1) {
                 p.innerHTML+= ','
             }else{
                 p.innerHTML+= ' ]'
-            }
-        }
-        slots[0].appendChild(p)
+            } }
+        slots[0].appendChild(p) 
     }
-    for (h in pmiss) {
+        for (h in pmiss) {
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
@@ -5569,12 +5561,35 @@ function devtools(close) {
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
+        okl = []
         for (love in proll[h].posições) {
         console.log(love, proll[h].posições[love])
-        proll[h].posições[love] = desfat(REFORMATAR(pmiss[proll[h].posições[love]].dividido))
+        okl.push(` ${desfat(REFORMATAR(pmiss[proll[h].posições[love]].dividido))}`)
         }
-        p.innerHTML = `<span style="color: rgb(79 196 251);">${proll[h].repetidos}</span>` + ': [ ' + proll[h].posições + ' ]'
+        p.innerHTML = `<span style="color: rgb(79 196 251);">${proll[h].repetidos}</span>` + ': [ ' + okl + ' ]'
         slots[2].appendChild(p)
+    }
+    for (h in pyou) {
+        p = document.createElement('p')
+        p.style.whiteSpace = 'nowrap'
+        p.style.margin = '5px'
+        console.log('----')
+        for (sob in pyou[h].w.what) {
+            console.log('aaaaaaaa',pyou[h].w.what[sob].ar)
+            ser = pyou[h].w.what[sob].ar
+            p.innerHTML+= '[ '
+            for (gr in ser) {
+                pc = document.createElement('div')
+                pc.setAttribute('class','pcon')
+                pc.innerHTML =  `<p class="part"> ${ser[gr]}</p><p class="plen">${desfat(pmons[ser[gr]].numero)}</p>`
+                if (gr < ser.length - 1){
+                    pc.innerHTML+= ','
+                }
+                p.appendChild(pc)
+            } 
+            p.innerHTML += ' ] '
+        }
+        slots[3].appendChild(p)
     }
   }else{
     devtoolsstate = 'closed'
