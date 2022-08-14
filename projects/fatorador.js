@@ -388,37 +388,6 @@ function ir() {
       return podeir;
     }
      
-     function DIVIDIR(T, qual) {
-         Tfix = []
-     for (h in T) {
-         Tfix.push(T[h])
-     }
-     egs = []
-     for (norte in qual) {
-     if (qual[norte] == '*' || qual[norte] == '.') {
-     }else{
-     egs.push(qual[norte])
-     }}
-     takeout = []
-     for (n in egs) {
-     if (T.indexOf(egs[n]) != -1) {
-     T.splice(T.lastIndexOf(egs[n]), 1)
-     takeout.push(Number(n))
-     }}
-     for (giro = egs.length - 1; giro >= 0; giro--) {
-         if (takeout.indexOf(Number(giro)) == -1) {
-         }else{
-             egs.splice(giro,1)
-         }}
-     depois = ''
-     for (n in egs) {
-             depois += String(egs[n])
-          if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
-             depois+= '*'
-          }}
-     return depois
-    }
-     
      ////console.log('--------------------------------------------MOnOMIOS--------------------------------------')
      reps = []
      segs = []
@@ -3070,44 +3039,6 @@ function ir() {
         }}
       return podeir;
     }
-     
-     function DIVIDIR(T, qual) {
-         Tfix = []
-     for (h in T) {
-         Tfix.push(T[h])
-     }
-     
-     egs = []
-     for (norte in qual) {
-     if (qual[norte] == '*' || qual[norte] == '.') {
-     }else{
-     egs.push(qual[norte])
-     }}
-     
-     
-     takeout = []
-     
-     for (n in egs) {
-     if (T.indexOf(egs[n]) != -1) {
-     T.splice(T.lastIndexOf(egs[n]), 1)
-     takeout.push(Number(n))
-     }}
-     
-     
-     for (giro = egs.length - 1; giro >= 0; giro--) {
-         if (takeout.indexOf(Number(giro)) == -1) {
-         }else{
-             egs.splice(giro,1)
-         }}
-     
-     depois = ''
-     for (n in egs) {
-             depois += String(egs[n])
-          if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
-             depois+= '*'
-          } }
-     return depois
-     }
      
      reps = []
      segs_2 = []
@@ -5843,3 +5774,34 @@ function REFORMATAR(q) {
         }}
       return expression
     }}
+
+    function DIVIDIR(T, qual) {
+        Tfix = []
+    for (h in T) {
+        Tfix.push(T[h])
+    }
+    egs = []
+    for (norte in qual) {
+    if (qual[norte] == '*' || qual[norte] == '.') {
+    }else{
+    egs.push(qual[norte])
+    }}
+    takeout = []
+    for (n in egs) {
+    if (T.indexOf(egs[n]) != -1) {
+    T.splice(T.lastIndexOf(egs[n]), 1)
+    takeout.push(Number(n))
+    }}
+    for (giro = egs.length - 1; giro >= 0; giro--) {
+        if (takeout.indexOf(Number(giro)) == -1) {
+        }else{
+            egs.splice(giro,1)
+        }}
+    depois = ''
+    for (n in egs) {
+            depois += String(egs[n])
+         if (String(egs[Number(n) + 1]).search('[0-9]') != -1 && egs[n].search('[//-//+]') == -1) {
+            depois+= '*'
+         }}
+    return depois
+   }
