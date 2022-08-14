@@ -5512,11 +5512,24 @@ function devtools(close) {
         m.appendChild(span)
     }
     slots = document.getElementsByClassName('slot')
+
     for (h in psegs) {
         p = document.createElement('p')
+        p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
-        p.innerText = psegs[h].car + ': ' + psegs[h].mons
+        for (proud in pscarecrow[h].divididos) {
+            console.log(h, proud,pscarecrow[h].divididos[proud])
+            pscarecrow[h].divididos[proud] = desfat(REFORMATAR(String(pscarecrow[h].divididos[proud])))
+        }
+        p.innerText = h + ' - ' + psegs[h].car + ': ' +  ' [ ' + pscarecrow[h].divididos + ' ]'
         slots[0].appendChild(p)
+    }
+    for (h in pmiss) {
+        p = document.createElement('p')
+        p.style.whiteSpace = 'nowrap'
+        p.style.margin = '5px'
+        p.innerText = pmiss[h].dividido+ ': ' + pmiss[h].aparicoes
+        slots[1].appendChild(p)
     }
   }else{
     devtoolsstate = 'closed'
@@ -5643,6 +5656,7 @@ function devtools(close) {
       return splitedExps
       }
       function desfat(algo) {
+        console.log('ALGOOOOO',algo)
       quase = [...algo]
       gates = []
       aconta = ''
@@ -5674,6 +5688,8 @@ function devtools(close) {
                   elevar = 1
               }
             }else if(quase[patience].search('[0-9]') != -1 && quase.indexOf('*') == -1) {
+                aconta+= quase[patience]
+              }else if(quase[patience] == '^'){
                 aconta+= quase[patience]
               }}
       if (quase[0] != '-') {
@@ -5726,3 +5742,43 @@ function devtools(close) {
             }}
        return divisores
     }
+    
+function REFORMATAR(q) {
+    qualexp1 = q;
+    qualexp = "";
+    parar = false;
+    for (copy in qualexp1) {
+      if (qualexp1[copy] != " ") {
+        if (
+          qualexp1[copy].search("([0-9]|\\.)") != -1 ||
+          qualexp1[copy].search("[a-z]") != -1 ||
+          qualexp1[copy].search("[\\+\\-\\^\\*]") != -1
+        ) {
+          qualexp += qualexp1[copy];
+        } else {
+          parar = true;
+        }}}
+    if (qualexp != "" && parar == false) {
+      ground = "";
+      expression = [];
+      for (phy in qualexp) {
+        if (qualexp[phy].search("([0-9]|\\.)") != -1) {
+          if (ground.search("([0-9]|\\.)") != -1) {
+            ground += qualexp[phy];
+          } else if (ground.length > 0) {
+            expression.push(ground);
+            ground = qualexp[phy];
+          } else {
+            ground = qualexp[phy];
+          }
+        } else {
+          if (ground.length > 0) {
+            expression.push(ground);
+          }
+          ground = qualexp[phy];
+        }
+        if (phy == qualexp.length - 1) {
+          expression.push(ground);
+        }}
+      return expression
+    }}
