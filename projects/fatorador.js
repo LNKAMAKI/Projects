@@ -5511,6 +5511,13 @@ function devtools(close) {
         }
         m.appendChild(span)
     }
+    slots = document.getElementsByClassName('slot')
+    for (h in psegs) {
+        p = document.createElement('p')
+        p.style.margin = '5px'
+        p.innerText = psegs[h].car + ': ' + psegs[h].mons
+        slots[0].appendChild(p)
+    }
   }else{
     devtoolsstate = 'closed'
     tab.style.height = '0'
