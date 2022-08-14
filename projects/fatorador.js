@@ -5527,12 +5527,9 @@ function devtools(close) {
         for (j in go) {
             console.log(go[j])
             if (go[j] == '*' && go[Number(j) + 1].search('[0-9]') == -1) {
-                console.log('problem')
             }else{
                 refeito.push(go[j])
-            }
-        }
-        console.log('GO',refeito)
+            }}
         go = desfat(refeito)
         p.innerHTML = `<span style="color:rgb(79 196 251);">${h}</span> &nbsp;${go}: [ `
         for (n in pscarecrow[h].divididos) {
@@ -5566,6 +5563,18 @@ function devtools(close) {
         p.style.margin = '5px'
         p.innerHTML = desfat(REFORMATAR(pmiss[h].dividido))+ ': ' + '[ ' + `<span style="color: rgb(79 196 251);">${pmiss[h].aparicoes}</span>` + ' ]'
         slots[1].appendChild(p)
+    }
+    for (h in proll) {
+        console.log(proll[h].posições)
+        p = document.createElement('p')
+        p.style.whiteSpace = 'nowrap'
+        p.style.margin = '5px'
+        for (love in proll[h].posições) {
+        console.log(love, proll[h].posições[love])
+        proll[h].posições[love] = desfat(REFORMATAR(pmiss[proll[h].posições[love]].dividido))
+        }
+        p.innerHTML = `<span style="color: rgb(79 196 251);">${proll[h].repetidos}</span>` + ': [ ' + proll[h].posições + ' ]'
+        slots[2].appendChild(p)
     }
   }else{
     devtoolsstate = 'closed'
@@ -5693,7 +5702,6 @@ function devtools(close) {
       return splitedExps
       }
       function desfat(algo) {
-        console.log('ALGOOOOO',algo)
       quase = [...algo]
       gates = []
       aconta = ''
