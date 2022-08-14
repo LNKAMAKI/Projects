@@ -5518,15 +5518,39 @@ function devtools(close) {
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
         for (proud in pscarecrow[h].divididos) {
-            console.log(h, proud,pscarecrow[h].divididos[proud])
+         //   console.log(h, proud,pscarecrow[h].divididos[proud])
             pscarecrow[h].divididos[proud] = desfat(REFORMATAR(String(pscarecrow[h].divididos[proud])))
         }
-        go = desfat(REFORMATAR(psegs[h].car.replace(new RegExp('\\.','g'),'*')))
-        console.log('GO',go,desfat(go))
+        go = REFORMATAR(psegs[h].car.replace(new RegExp('\\.','g'),'*'))
+        refeito = []
+        for (j in go) {
+            console.log(go[j])
+            if (go[j] == '*' && go[Number(j) + 1].search('[0-9]') == -1) {
+                console.log('problem')
+            }else{
+                refeito.push(go[j])
+            }
+        }
+        console.log('GO',refeito)
+        go = desfat(refeito)
         p.innerHTML = `<span style="color:rgb(79 196 251);">${h}</span> &nbsp;${go}: [ `
         for (n in pscarecrow[h].divididos) {
-            console.log(pscarecrow[h].divididos[n])
-            p.innerHTML+= `<p class="part">${pscarecrow[h].divididos[n]}</p>`
+           // console.log(pscarecrow[h].divididos[n])
+            pc = document.createElement('div')
+            pc.setAttribute('class','pcon')
+            p.appendChild(pc)
+
+            ph = document.createElement('ph')
+            ph.innerText = ' ' + pscarecrow[h].divididos[n]
+            ph.setAttribute('class','part')
+            pc.appendChild(ph)
+
+            plen = document.createElement('span')
+            plen.setAttribute('class','plen')
+            plen.innerText = psegs[h].mons[n]
+            pc.appendChild(plen)
+
+            //p.innerHTML+= `${pscarecrow[h].divididos[n]}`
             if (n < Number(pscarecrow[h].divididos.length) - 1) {
                 p.innerHTML+= ','
             }else{
@@ -5539,7 +5563,7 @@ function devtools(close) {
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
-        p.innerText = pmiss[h].dividido+ ': ' + pmiss[h].aparicoes
+        p.innerHTML = desfat(REFORMATAR(pmiss[h].dividido))+ ': ' + '[ ' + `<span style="color: rgb(79 196 251);">${pmiss[h].aparicoes}</span>` + ' ]'
         slots[1].appendChild(p)
     }
   }else{
