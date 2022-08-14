@@ -1824,7 +1824,7 @@ function ir() {
          }}}}
     
       if (somarmons == true) {
-      if (monomios.length > 1) {
+   //   if (monomios.length > 1) {
         otherway = FATORAR2(startexp);
         console.log(otherway[1], otherway[2])
         se = otherway[5]
@@ -1847,10 +1847,10 @@ function ir() {
              // return [otherway[0], otherway[3], otherway[4]]
           }
           }
-      } else {
-          okexp = concatenar
+      //} else {
+        //  okexp = concatenar
         //return [concatenar, segs.length, roll.length];
-      }
+     // }
     }/*else{
       return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,monomios.length]
     }*/
