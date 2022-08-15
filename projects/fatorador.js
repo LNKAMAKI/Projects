@@ -5398,6 +5398,16 @@ function devtools(close) {
     pyou = yd
     pmons = mns
   }
+  for (away in pyou) {
+    console.log(away, pyou[away].mons)
+    omori = ''
+    for (ten in pyou[away].mons) {
+        console.log(pyou[away].mons[ten])
+        omori+= pyou[away].mons[ten] + ','
+    }
+    console.log('OMORI',omori)
+    pyou[away].str = omori
+  }
   tab = document.getElementById('devtab')
   but = document.getElementById('dev')
   dec = document.getElementById('dec')
@@ -5500,11 +5510,21 @@ function devtools(close) {
         p.innerHTML = `<span style="color: rgb(79 196 251);">${proll[h].repetidos}</span>` + ': [ ' + okl + ' ]'
         slots[2].appendChild(p)
     }
+
+    grupagens = []
     for (h in pyou) {
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
         console.log('----')
+
+        omori = ''
+        for (ten in pyou[h].mons) {
+            console.log(pyou[h].mons[ten])
+            omori+= pyou[h].mons[ten] + ','
+        }
+
+        if (grupagens.indexOf(omori) == -1) {
         for (sob in pyou[h].w.what) {
             console.log('aaaaaaaa',pyou[h].w.what[sob].ar)
             ser = pyou[h].w.what[sob].ar
@@ -5521,6 +5541,8 @@ function devtools(close) {
             p.innerHTML += ' ] '
         }
         slots[3].appendChild(p)
+        grupagens.push(omori)
+    }
     }
   }else{
     devtoolsstate = 'closed'
