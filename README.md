@@ -1,6 +1,7 @@
 # Sites 
 
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico">
+<img src="Projects/projects/imagens/devtoolsnofatorador.jpeg">
 <u type= "circle">
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/funcao.html"><span style=" font-weight: normal; font-size: 1.3em;">FUNÇÃO</span></a></li> 
