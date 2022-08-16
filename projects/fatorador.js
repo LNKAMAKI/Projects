@@ -1818,24 +1818,24 @@ function ir() {
       return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,monomios.length]
     }*/
      
-    console.log('RESULTADO(FATORAÇÃO):',okexp)
-    console.log('CONSOLE.LOG',concatenar)
+   // console.log('RESULTADO(FATORAÇÃO):',okexp)
+   // console.log('CONSOLE.LOG',concatenar)
     
     plo = false
 
     while (plo == false) {
-        console.log('OKEXP!!!!!',okexp,'OKEXP.LENGTH',okexp.length)
+        //console.log('OKEXP!!!!!',okexp,'OKEXP.LENGTH',okexp.length)
         seps = SPLITEXPS(okexp)
         rexp =  ''
         chain = []
     for (varnot in seps) {
-        console.log(varnot)
+       // console.log(varnot)
         start = seps[varnot].open
         end = seps[varnot].close
         expin = seps[varnot].exp
-      console.log(`seps[${varnot}].exp`,expin,start,end)
+     // console.log(`seps[${varnot}].exp`,expin,start,end)
       fat1 = FATORAR2(FATORE(seps[varnot].exp))
-      console.log(fat1)
+      //console.log(fat1)
       
       daprafat1 = false 
       if (fat1[1] == 1 && fat1[2] == 0) { 
@@ -1844,7 +1844,7 @@ function ir() {
      chain.push(daprafat1)
 
       if (varnot == 0) {
-        console.log('PRIMEIRO!')
+       //console.log('PRIMEIRO!')
         if (start != 0) {
             for (c = 0; c < start;c++) {
                 rexp+= okexp[c]
@@ -1864,7 +1864,7 @@ function ir() {
         }
 
         if (varnot == seps.length - 1) {
-            console.log('ÚLTIMO!',end,okexp.length - 1)
+           //console.log('ÚLTIMO!',end,okexp.length - 1)
             if (end != okexp.length - 1) {
                 for (c = Number(end) + 1; c < okexp.length;c++) {
                     rexp+= okexp[c]
@@ -2955,7 +2955,7 @@ function ir() {
       }
       monomios_2[obnum].numero += expression_2[n];
       change = [...monomios_2[obnum].numero]
-      console.log(change)
+      //console.log(change)
     }
   
     //TRANSFORMA  O MONOMIOS_2.NUMERO(STRING) EM UM ARRAY
@@ -2982,7 +2982,7 @@ function ir() {
           comofica.push(ground);
         } }
       monomios_2[bye].numero = comofica;
-      console.log('como fica',comofica)
+     // console.log('como fica',comofica)
     }
   
     for (huh in monomios_2) {
@@ -3682,52 +3682,64 @@ function ir() {
            deucerto = false
            roller_2 = [];
            for (eep in miss_2) {
+            console.log('__________',eep,'_________')
+            console.log(`miss_2[${eep}]:`,miss_2[eep].aparicoes,miss_2[eep].dividido)
+            varib = []
+            for (kel in miss_2[eep].aparicoes) {
+                pos = miss_2[eep].aparicoes[kel]
+                varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
+            }
+            console.log('--------------')
               for (quad in miss_2) {
                 if (quad != eep) {
+                    console.log('((((((((())))))))')
+                    compar = []
+                  console.log(`miss_2[${quad}]:`, miss_2[quad].aparicoes, miss_2[quad].dividido)
+                  varib2 = []
+                  for (kel in miss_2[quad].aparicoes) {
+                    pos = miss_2[quad].aparicoes[kel]
+                    varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)])
+                }
                   repeated = [];
                   repwri = "";
                   for (vespa in miss_2[eep].aparicoes) {
-                    if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1) {
+                    console.log(`miss_2[${eep}].aparicoes[${vespa}]:${miss_2[eep].aparicoes[vespa]}`,varib[vespa])
+                    if (compar.indexOf(varib[vespa]) == -1) {
+                    compar.push(varib[vespa])
+                    console.log('COMPARAR:',compar)
+
+                    if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) {
+                        console.log(miss_2[quad].aparicoes,'.indexOf(',miss_2[eep].aparicoes[vespa],') = ',miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]))
+                        console.log(miss_2[quad].aparicoes[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])],'=',varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])], `${compar}.indexOf(${varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]}) = ${compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])}`)
+
+                      compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])
+                      console.log('COMPARAR:',compar)
+
                       repeated.push(miss_2[eep].aparicoes[vespa]);
                       repwri += "," + miss_2[eep].aparicoes[vespa];
-                      if (
-                        roller_2.find(function (roller_2) {
-                          return roller_2.rept == repwri;
-                        }) == undefined
-                      ) {
-                        roller_2.push({
+                      if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { roller_2.push({
                           rept: repwri,
                           opl: [...repeated],
                           position: [eep, quad],
                         });
                       } else {
-                        if (
+                        if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}).position.indexOf(eep) == -1) {
                           roller_2
                             .find(function (roller_2) {
                               return roller_2.rept == repwri;
-                            })
-                            .position.indexOf(eep) == -1
-                        ) {
-                          roller_2
-                            .find(function (roller_2) {
-                              return roller_2.rept == repwri;
-                            })
-                            .position.push(eep);
+                            }).position.push(eep);
                         }
           
-                        if (
+                        if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}).position.indexOf(quad) == -1) {
                           roller_2
                             .find(function (roller_2) {
                               return roller_2.rept == repwri;
-                            })
-                            .position.indexOf(quad) == -1
-                        ) {
-                          roller_2
-                            .find(function (roller_2) {
-                              return roller_2.rept == repwri;
-                            })
-                            .position.push(quad);
-                        }} }}}}}
+                            }).position.push(quad);
+                        }} }else{
+                            compar.splice(compar.length - 1,1)
+                            console.log(compar)
+                        }
+                     }}}}}
   
     for (r in roller_2) {
       roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
@@ -4321,9 +4333,9 @@ function ir() {
      
      if (numsdesfat.length > 0) {
       console.warn('VAI TER QUE FATORAR DE NOVO')
-      console.log('youdumb')
+      //console.log('youdumb')
      
-      console.log(pans_2)
+      //console.log(pans_2)
       todososnumeros_2 = []
       for (acaba in monomios_2) {
           todososnumeros_2.push(acaba)
@@ -4351,7 +4363,7 @@ function ir() {
               newexpress.push('+')
               newexpress.push(join)
           }}
-          FATORAR2(newexpress)
+          //FATORAR2(newexpress)
      }else{
       //console.log('ACABOU',concatenar_2)
   
@@ -5399,13 +5411,13 @@ function devtools(close) {
     pmons = mns
   }
   for (away in pyou) {
-    console.log(away, pyou[away].mons)
+    //console.log(away, pyou[away].mons)
     omori = ''
     for (ten in pyou[away].mons) {
-        console.log(pyou[away].mons[ten])
+        //console.log(pyou[away].mons[ten])
         omori+= pyou[away].mons[ten] + ','
     }
-    console.log('OMORI',omori)
+    //console.log('OMORI',omori)
     pyou[away].str = omori
   }
   tab = document.getElementById('devtab')
@@ -5463,7 +5475,7 @@ function devtools(close) {
         go = REFORMATAR(psegs[h].car.replace(new RegExp('\\.','g'),'*'))
         refeito = []
         for (j in go) {
-            console.log(go[j])
+           // console.log(go[j])
             if (go[j] == '*' && go[Number(j) + 1].search('[0-9]') == -1) {
             }else{
                 refeito.push(go[j])
@@ -5498,13 +5510,13 @@ function devtools(close) {
         slots[1].appendChild(p)
     }
     for (h in proll) {
-        console.log(proll[h].posições)
+       //console.log(proll[h].posições)
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
         okl = []
         for (love in proll[h].posições) {
-        console.log(love, proll[h].posições[love])
+       //console.log(love, proll[h].posições[love])
         okl.push(` ${desfat(REFORMATAR(pmiss[proll[h].posições[love]].dividido))}`)
         }
         p.innerHTML = `<span style="color: rgb(79 196 251);">${proll[h].repetidos}</span>` + ': [ ' + okl + ' ]'
@@ -5516,17 +5528,17 @@ function devtools(close) {
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
-        console.log('----')
+       //console.log('----')
 
         omori = ''
         for (ten in pyou[h].mons) {
-            console.log(pyou[h].mons[ten])
+           //console.log(pyou[h].mons[ten])
             omori+= pyou[h].mons[ten] + ','
         }
 
         if (grupagens.indexOf(omori) == -1) {
         for (sob in pyou[h].w.what) {
-            console.log('aaaaaaaa',pyou[h].w.what[sob].ar)
+            //console.log('aaaaaaaa',pyou[h].w.what[sob].ar)
             ser = pyou[h].w.what[sob].ar
             p.innerHTML+= '[ '
             for (gr in ser) {
