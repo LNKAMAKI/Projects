@@ -3721,6 +3721,7 @@ function ir() {
                           rept: repwri,
                           opl: [...repeated],
                           position: [eep, quad],
+                          monomios: [...compar]
                         });
                       } else {
                         if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}).position.indexOf(eep) == -1) {
@@ -3742,7 +3743,7 @@ function ir() {
                      }}}}}
   
     for (r in roller_2) {
-      roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
+      roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
   }
   
            while(java < miss_2.length && deucerto == false) {
