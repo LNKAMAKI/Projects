@@ -1823,6 +1823,7 @@ function ir() {
     
     plo = false
 
+    /*
     while (plo == false) {
         //console.log('OKEXP!!!!!',okexp,'OKEXP.LENGTH',okexp.length)
         seps = SPLITEXPS(okexp)
@@ -1878,6 +1879,7 @@ function ir() {
         plo = true
         }
     }
+    */
 
     if (okexp != '') {
     return [okexp]
@@ -3735,11 +3737,15 @@ function ir() {
                         console.log('---------*****&&&&¨6%%%%))****#@@@@%¨&&7______$@@!!!!!!')
                         console.log(roller_2[magic].rept, roller_2[magic].position, roller_2[magic].monomios)
                         pos1 = roller_2[magic].position[0]
-                        console.log('position', pos,'(',miss_2[roller_2[magic].position[0]].dividido,')')
+                        console.log('position', pos1,'(',miss_2[roller_2[magic].position[0]].dividido,')')
                         console.log('monomios:')
+
                         mons1 = []
-                        for (photo = 0; photo < roller_2[magic].monomios.length;photo+=2) {
-                            mons1.push(roller_2[magic].monomios[photo])
+                        pi = 0
+                        for (photo = 0; photo < Number(roller_2[magic].rept.length)/2;photo+=1) {
+                            console.log(pi)
+                            mons1.push(roller_2[magic].monomios[pi])
+                            pi+= 2
                         } 
                         console.log(mons1)
 
@@ -3748,8 +3754,11 @@ function ir() {
                         console.log('monomios:')
 
                         mons2 = []
-                        for (photo = 1; photo < roller_2[magic].monomios.length;photo+=2) {
-                            mons2.push(roller_2[magic].monomios[photo])
+                        pi = 1
+                        for (photo = 0; photo < Number(roller_2[magic].rept.length)/2;photo+=1) {
+                            console.log(pi)
+                            mons2.push(roller_2[magic].monomios[pi])
+                            pi+= 2
                         } 
                         console.log(mons2)
 
@@ -3790,12 +3799,7 @@ function ir() {
                                     console.log(mons2[sant])
                                     complist.push(mons2[sant])
                                     console.log(complist)
-                                }
-                            }
-                            }
-                            }
-                        }
-                    }
+                                }}}}}}
 
     for (r in roller_2) {
       roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
@@ -3951,20 +3955,6 @@ function ir() {
      for (wrecked in youdumb_2) {
          initial = youdumb_2[wrecked].w.what
      }
-     
-     grtols_2 = [];
-     for (hi in youdumb_2) {
-       youdumb_2[hi].length = youdumb_2[hi].w.what.length;
-   
-       grtols_2.push(youdumb_2[hi]);
-     }
-     organizado = sortob(grtols_2, "length")[1];
-   
-     grtols_2 = [];
-     for (ah in organizado) {
-       grtols_2.push(youdumb_2[organizado[ah]]);
-     }
-     youdumb_2 = [...grtols_2];
   
      heya_2 = [...youdumb_2]
      for (imback in youdumb_2) {
@@ -4419,7 +4409,7 @@ function ir() {
               newexpress.push('+')
               newexpress.push(join)
           }}
-          //FATORAR2(newexpress)
+          FATORAR2(newexpress)
      }else{
       //console.log('ACABOU',concatenar_2)
   
