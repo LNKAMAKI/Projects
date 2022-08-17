@@ -3783,8 +3783,7 @@ function ir() {
                                     console.log(mons1[sant])
                                     complist.push(mons1[sant])
                                    console.log(complist)
-                                }
-                            }
+                                }}
 
                                 perm = true
                                 for (sept in mons2) {
