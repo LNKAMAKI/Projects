@@ -3682,19 +3682,19 @@ function ir() {
            deucerto = false
            roller_2 = [];
            for (eep in miss_2) {
-            console.log('__________',eep,'_________')
-            console.log(`miss_2[${eep}]:`,miss_2[eep].aparicoes,miss_2[eep].dividido)
+           // console.log('__________',eep,'_________')
+            //console.log(`miss_2[${eep}]:`,miss_2[eep].aparicoes,miss_2[eep].dividido)
             varib = []
             for (kel in miss_2[eep].aparicoes) {
                 pos = miss_2[eep].aparicoes[kel]
                 varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
             }
-            console.log('--------------')
+           // console.log('--------------')
               for (quad in miss_2) {
                 if (quad != eep) {
-                    console.log('((((((((())))))))')
+                    //console.log('((((((((())))))))')
                     compar = []
-                  console.log(`miss_2[${quad}]:`, miss_2[quad].aparicoes, miss_2[quad].dividido)
+                  //console.log(`miss_2[${quad}]:`, miss_2[quad].aparicoes, miss_2[quad].dividido)
                   varib2 = []
                   for (kel in miss_2[quad].aparicoes) {
                     pos = miss_2[quad].aparicoes[kel]
@@ -3703,45 +3703,100 @@ function ir() {
                   repeated = [];
                   repwri = "";
                   for (vespa in miss_2[eep].aparicoes) {
-                    console.log(`miss_2[${eep}].aparicoes[${vespa}]:${miss_2[eep].aparicoes[vespa]}`,varib[vespa])
+                    //console.log(`miss_2[${eep}].aparicoes[${vespa}]:${miss_2[eep].aparicoes[vespa]}`,varib[vespa])
                     if (compar.indexOf(varib[vespa]) == -1) {
                     compar.push(varib[vespa])
-                    console.log('COMPARAR:',compar)
+                    //console.log('COMPARAR:',compar)
 
                     if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) {
-                        console.log(miss_2[quad].aparicoes,'.indexOf(',miss_2[eep].aparicoes[vespa],') = ',miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]))
-                        console.log(miss_2[quad].aparicoes[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])],'=',varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])], `${compar}.indexOf(${varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]}) = ${compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])}`)
+                        //console.log(miss_2[quad].aparicoes,'.indexOf(',miss_2[eep].aparicoes[vespa],') = ',miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]))
+                        //console.log(miss_2[quad].aparicoes[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])],'=',varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])], `${compar}.indexOf(${varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]}) = ${compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])}`)
 
                       compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])
-                      console.log('COMPARAR:',compar)
-
-                      repeated.push(miss_2[eep].aparicoes[vespa]);
+                     // console.log('COMPARAR:',compar)
+                        
+                        repeated.push(miss_2[eep].aparicoes[vespa]);
                       repwri += "," + miss_2[eep].aparicoes[vespa];
-                      if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { roller_2.push({
+                      //if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
+                           roller_2.push({
                           rept: repwri,
                           opl: [...repeated],
                           position: [eep, quad],
                           monomios: [...compar]
                         });
-                      } else {
-                        if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}).position.indexOf(eep) == -1) {
-                          roller_2
-                            .find(function (roller_2) {
-                              return roller_2.rept == repwri;
-                            }).position.push(eep);
-                        }
-          
-                        if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}).position.indexOf(quad) == -1) {
-                          roller_2
-                            .find(function (roller_2) {
-                              return roller_2.rept == repwri;
-                            }).position.push(quad);
-                        }} }else{
+                      //}
+                    }else{
                             compar.splice(compar.length - 1,1)
-                            console.log(compar)
+                           //console.log(compar)
                         }
                      }}}}}
   
+                     for (magic in roller_2) {
+                        console.log('---------*****&&&&¨6%%%%))****#@@@@%¨&&7______$@@!!!!!!')
+                        console.log(roller_2[magic].rept, roller_2[magic].position, roller_2[magic].monomios)
+                        pos1 = roller_2[magic].position[0]
+                        console.log('position', pos,'(',miss_2[roller_2[magic].position[0]].dividido,')')
+                        console.log('monomios:')
+                        mons1 = []
+                        for (photo = 0; photo < roller_2[magic].monomios.length;photo+=2) {
+                            mons1.push(roller_2[magic].monomios[photo])
+                        } 
+                        console.log(mons1)
+
+                        pos2 = roller_2[magic].position[1]
+                        console.log('position',pos2,'(',miss_2[roller_2[magic].position[1]].dividido,')')
+                        console.log('monomios:')
+
+                        mons2 = []
+                        for (photo = 1; photo < roller_2[magic].monomios.length;photo+=2) {
+                            mons2.push(roller_2[magic].monomios[photo])
+                        } 
+                        console.log(mons2)
+
+                        for (keep in roller_2) {
+                            if (keep != magic) {
+                            if (roller_2[keep].rept == roller_2[magic].rept) {
+                                console.log('EPA! SÃO IGUAIS!!!!!!!!')
+                                complist = roller_2[keep].monomios
+                                console.log(keep, roller_2[keep].rept, roller_2[keep].position,complist)
+
+                                perm = true
+                                for (sept in mons1) {
+                                    if (complist.indexOf(mons1[sept]) != -1) {
+                                       perm = false 
+                                    }}
+                                console.log(pos1, mons1, perm)
+
+                                if (perm == true) {
+                                    roller_2[keep].position.push(pos1)
+                                    console.log(roller_2[keep].position)
+                                for (sant in mons1) {
+                                    console.log(mons1[sant])
+                                    complist.push(mons1[sant])
+                                   console.log(complist)
+                                }
+                            }
+
+                                perm = true
+                                for (sept in mons2) {
+                                    if (complist.indexOf(mons2[sept]) != -1) {
+                                       perm = false 
+                                    }}
+                                console.log(pos2, mons2, perm)
+                                if (perm == true) {
+                                    roller_2[keep].position.push(pos2)
+                                    console.log(roller_2[keep].position)
+                                for (sant in mons2) {
+                                    console.log(mons2[sant])
+                                    complist.push(mons2[sant])
+                                    console.log(complist)
+                                }
+                            }
+                            }
+                            }
+                        }
+                    }
+
     for (r in roller_2) {
       roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
   }
