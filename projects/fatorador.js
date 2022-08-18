@@ -3783,7 +3783,7 @@ function ir() {
          initial = youdumb_2[wrecked].w.what
      }
   
-        
+    
       grtols = [];
       for (hi in youdumb_2) {
         youdumb_2[hi].length = youdumb_2[hi].w.what.length;
@@ -3797,7 +3797,7 @@ function ir() {
         grtols.push(youdumb_2[organizado[ah]]);
       }
       youdumb_2 = [...grtols];
-      
+
      heya_2 = [...youdumb_2]
      for (imback in youdumb_2) {
          sticky = []
