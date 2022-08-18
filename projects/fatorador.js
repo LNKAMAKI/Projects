@@ -1805,7 +1805,7 @@ function ir() {
               alt = 2
               okexp = otherway[0]
           } }}
-          
+
     plo = false
     while (plo == false) {
         //console.log('OKEXP!!!!!',okexp,'OKEXP.LENGTH',okexp.length)
@@ -2468,15 +2468,13 @@ function ir() {
      }
      groups++
      }}
+
      if (divs[okentao] != groups) {
-    
-     
      tirados = []
      for (wish in relation) {
       for (edge in relation[wish].fix) {
          tirados.push(relation[wish].fix[edge])
       }}
-    
      
      for (die in segs2) {
          tirar = []
@@ -2560,7 +2558,6 @@ function ir() {
               return agruparsoma.que == particles[huh].partletral
              }).quais.push(Number(huh))
          }}
-  
   
   for (chuva in agruparsoma) {
       conta = []
@@ -2647,7 +2644,6 @@ function ir() {
       }else{
           fat = comehome
       }
-      
   
   if (exp.length == 0) {
       fat += agruparsoma[chuva].que
@@ -2719,7 +2715,6 @@ function ir() {
       return [resultobtained]
   }}
   
-  
   function MULTIPLICARDIREITO(num1, num2) {
       if (num1 == '1' || num2 == '1') {
           if (num1 == '1') {
@@ -2778,12 +2773,10 @@ function ir() {
       var maiorparamenor = []
       var posiçõesnumeros = []
       var yposition = n
-  
       for (n in yposition) {
           maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
           posiçõesnumeros.push(-1)
       }
-  
       for (item in yposition) {
           var volume = 0
           var dn = 0
@@ -2792,7 +2785,6 @@ function ir() {
                   if (yposition[item] > maiorparamenor[volume]) {
                       var itens = yposition.length - (Number(volume) + 1)
                       var leng = yposition.length
-  
                       for (c = 0; c < itens; c++) {
                           maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
                           posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
