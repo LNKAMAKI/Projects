@@ -104,7 +104,6 @@ for (vespa in miss[eep].aparicoes) {
       */
 
       for (eep in miss) {
-        console.log(`miss[${eep}]:`,miss[eep].aparicoes,miss[eep].dividido)
         varib = []
         for (kel in miss[eep].aparicoes) {
             pos = miss[eep].aparicoes[kel]
@@ -138,7 +137,6 @@ for (vespa in miss[eep].aparicoes) {
                   mons2 = []
                   pi = 1
                   for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
-                      console.log(pi)
                       mons2.push(compar[pi])
                       pi+= 2
                   } 

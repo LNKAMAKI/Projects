@@ -952,7 +952,6 @@ function ir() {
            deucerto = false
            roller = [];
            for (eep in miss) {
-            console.log(`miss[${eep}]:`,miss[eep].aparicoes,miss[eep].dividido)
             varib = []
             for (kel in miss[eep].aparicoes) {
                 pos = miss[eep].aparicoes[kel]
@@ -986,7 +985,6 @@ function ir() {
                       mons2 = []
                       pi = 1
                       for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
-                          console.log(pi)
                           mons2.push(compar[pi])
                           pi+= 2
                       } 
@@ -3449,7 +3447,7 @@ function ir() {
            roller_2 = [];
            for (eep in miss_2) {
             //console.log('__________',eep,'_________')
-            console.log(`miss_2[${eep}]:`,miss_2[eep].aparicoes,miss_2[eep].dividido)
+            //console.log(`miss_2[${eep}]:`,miss_2[eep].aparicoes,miss_2[eep].dividido)
             varib = []
             for (kel in miss_2[eep].aparicoes) {
                 pos = miss_2[eep].aparicoes[kel]
@@ -3501,7 +3499,7 @@ function ir() {
                       mons2 = []
                       pi = 1
                       for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
-                          console.log(pi)
+                          //console.log(pi)
                           mons2.push(compar[pi])
                           pi+= 2
                       } 
