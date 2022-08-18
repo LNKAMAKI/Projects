@@ -2925,7 +2925,6 @@ function ir() {
          col = false
          repetido = []
         numerosrep = []
-      
          for (oc = 0; oc < monomios_2[m].numero.length; oc++) { // CADA LETRA DE CADA MOnÔMIO
              if (monomios_2[m].numero[oc].search('[\\*\\+\\/]') == -1) {
              if (numerosrep.indexOf(monomios_2[m].numero[oc]) == -1) {
@@ -2955,8 +2954,7 @@ function ir() {
                                      return ocs2.ed == monomios_2[m].numero[oc]
                                      }).el <= ocs) {
                      repetido.push({monum: u, wc: [m], letr: monomios_2[u].numero[e]})
-                        }
-                         }else{
+                        } }else{
                                      ocs2.find(function(ocs2) {
                                          return ocs2.ed == monomios_2[m].numero[oc]
                                          }).el++
@@ -5273,7 +5271,7 @@ function ir() {
   }
   devtoolsstate = 'closed'
 function devtools(close) {
-  if (alt == 1){
+  if (alt == 2){
     psegs = segs
     pscarecrow = scarecrow
     proll = roll
