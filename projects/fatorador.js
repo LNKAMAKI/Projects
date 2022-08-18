@@ -3296,7 +3296,6 @@ function ir() {
                     })
                     .position.push(eep);
                 }
-  
                 if (
                   roller_2
                     .find(function (roller_2) {
@@ -3490,19 +3489,19 @@ function ir() {
            deucerto = false
            roller_2 = [];
            for (eep in miss_2) {
-            console.log('__________',eep,'_________')
+            //console.log('__________',eep,'_________')
             console.log(`miss_2[${eep}]:`,miss_2[eep].aparicoes,miss_2[eep].dividido)
             varib = []
             for (kel in miss_2[eep].aparicoes) {
                 pos = miss_2[eep].aparicoes[kel]
                 varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
             }
-            console.log('--------------')
+           //console.log('--------------')
               for (quad in miss_2) {
                 if (quad != eep) {
-                    console.log('((((((((())))))))')
+                    //console.log('((((((((())))))))')
                     compar = []
-                  console.log(`miss_2[${quad}]:`, miss_2[quad].aparicoes, miss_2[quad].dividido)
+                  //console.log(`miss_2[${quad}]:`, miss_2[quad].aparicoes, miss_2[quad].dividido)
                   varib2 = []
                   for (kel in miss_2[quad].aparicoes) {
                     pos = miss_2[quad].aparicoes[kel]
@@ -3511,7 +3510,7 @@ function ir() {
                   repeated = [];
                   repwri = "";
                   for (vespa in miss_2[eep].aparicoes) {
-                    console.log(`miss_2[${eep}].aparicoes[${vespa}]:${miss_2[eep].aparicoes[vespa]}`,varib[vespa])
+                    //console.log(`miss_2[${eep}].aparicoes[${vespa}]:${miss_2[eep].aparicoes[vespa]}`,varib[vespa])
                     if (compar.indexOf(varib[vespa]) == -1) {
                     compar.push(varib[vespa])
                     //console.log('COMPARAR:',compar)
@@ -3524,21 +3523,21 @@ function ir() {
                         
                         repeated.push(miss_2[eep].aparicoes[vespa]);
                       repwri += "," + miss_2[eep].aparicoes[vespa];
-                      console.log('COMPARAR:',compar,repwri)
+                      //console.log('COMPARAR:',compar,repwri)
 
                       mons1 = []
 
                       pos1 = eep
                       pi = 0
                       for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
-                          console.log(pi)
+                          //console.log(pi)
                           mons1.push(compar[pi])
                           pi+= 2
                       } 
-                      console.log('mons1',mons1)
+                      //console.log('mons1',mons1)
 
                       pos2 = quad
-                      console.log('monomios:')
+                      //console.log('monomios:')
 
                       mons2 = []
                       pi = 1
@@ -3547,7 +3546,7 @@ function ir() {
                           mons2.push(compar[pi])
                           pi+= 2
                       } 
-                      console.log('mons2',mons2)
+                      //console.log('mons2',mons2)
 
                       if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
                            roller_2.push({
@@ -3558,29 +3557,28 @@ function ir() {
                         });
                       }else{
                         func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
-                        console.log(func.rept, func.position, func.monomios)
-                        console.log(pos1,'=',mons1)
-                        console.log(pos2,'=',mons2)
+                        //console.log(func.rept, func.position, func.monomios)
+                        //console.log(pos1,'=',mons1)
+                        //console.log(pos2,'=',mons2)
 
                         perm = true
                         for (sept in mons1) {
                             if (func.monomios.indexOf(mons1[sept]) != -1) {
                                perm = false 
                             }}
-                        console.log(perm)
+                        //console.log(perm)
                         if (perm == true) {
                             func.position.push(pos1)
                             for (wake in mons1) {
                             func.monomios.push(mons1[wake])
-                            }
-                        }
+                            } }
 
                         perm = true
                         for (sept in mons2) {
                             if (func.monomios.indexOf(mons2[sept]) != -1) {
                                perm = false 
                             }}
-                        console.log(perm)
+                        //console.log(perm)
                         if (perm == true) {
                             func.position.push(pos2)
                             for (wake in mons2) {
@@ -3590,7 +3588,7 @@ function ir() {
                       }
                     }else{
                             compar.splice(compar.length - 1,1)
-                           console.log(compar)
+                           //console.log(compar)
                         }
                      }}}}}
   
