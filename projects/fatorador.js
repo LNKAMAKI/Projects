@@ -5271,7 +5271,7 @@ function ir() {
   }
   devtoolsstate = 'closed'
 function devtools(close) {
-  if (alt == 2){
+  if (alt == 1){
     psegs = segs
     pscarecrow = scarecrow
     proll = roll
