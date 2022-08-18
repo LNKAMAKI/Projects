@@ -1786,7 +1786,6 @@ function ir() {
          }}}}
     
       if (somarmons == true) {
-   //   if (monomios.length > 1) {
         otherway = FATORAR2(startexp);
         console.log(otherway[1], otherway[2])
         se = otherway[5]
@@ -1798,32 +1797,16 @@ function ir() {
         pn = otherway[11]
         if (otherway[1] == 1 && otherway[2] == 0) {
           alt = 2
-         // return [otherway[0], otherway[3], otherway[4]
          okexp = otherway[0]
         } else {
           if (pans.length == 1 && todososnumeros.length == 0) {
               okexp = concatenar
-             // return [concatenar, segs.length, roll.length];
           }else{
               alt = 2
               okexp = otherway[0]
-             // return [otherway[0], otherway[3], otherway[4]]
-          }
-          }
-      //} else {
-        //  okexp = concatenar
-        //return [concatenar, segs.length, roll.length];
-     // }
-    }/*else{
-      return   [concatenar, pans.length,todososnumeros.length,segs.length,roll.length,monomios.length]
-    }*/
-     
-   // console.log('RESULTADO(FATORAÇÃO):',okexp)
-   // console.log('CONSOLE.LOG',concatenar)
-    
+          } }}
+          
     plo = false
-
-    
     while (plo == false) {
         //console.log('OKEXP!!!!!',okexp,'OKEXP.LENGTH',okexp.length)
         seps = SPLITEXPS(okexp)
