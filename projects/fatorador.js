@@ -1747,7 +1747,7 @@ function ir() {
           } }}
 
     plo = false
-    /*
+    
     while (plo == false) {
         //console.log('OKEXP!!!!!',okexp,'OKEXP.LENGTH',okexp.length)
         seps = SPLITEXPS(okexp)
@@ -1761,7 +1761,6 @@ function ir() {
      // console.log(`seps[${varnot}].exp`,expin,start,end)
       fat1 = FATORAR2(FATORE(seps[varnot].exp))
       //console.log(fat1)
-      
       daprafat1 = false 
       if (fat1[1] == 1 && fat1[2] == 0) { 
       daprafat1 = true
@@ -1773,9 +1772,7 @@ function ir() {
         if (start != 0) {
             for (c = 0; c < start;c++) {
                 rexp+= okexp[c]
-            }}
-
-      }else{
+            }}}else{
         //console.log('anterior',seps[Number(varnot)- 1].close,'atual', start)
         for (kl = Number(seps[Number(varnot)- 1].close) + 1; kl < start; kl++) {
             //console.log(kl, okexp[kl])
@@ -1787,23 +1784,20 @@ function ir() {
         }else{
             rexp+= '(' + expin + ')'
         }
-
         if (varnot == seps.length - 1) {
            //console.log('ÚLTIMO!',end,okexp.length - 1)
             if (end != okexp.length - 1) {
                 for (c = Number(end) + 1; c < okexp.length;c++) {
                     rexp+= okexp[c]
-                }}
-          }
+                }}}
       //console.log(daprafat1)
       //console.log(rexp)
      }
      okexp = rexp
      if (chain.indexOf(true) == -1) {
         plo = true
-        }
-    }
-*/
+        }}
+
     if (okexp != '') {
     return [okexp]
     }else{
