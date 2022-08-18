@@ -2804,7 +2804,6 @@ function ir() {
       ground = ''
   for (bye in str) {
           carac = str[bye]
-        
               if (ground.length == 0) {
                   ground+= carac
               }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
@@ -2813,14 +2812,12 @@ function ir() {
                   comofica.push(ground)
                   ground = ''
                   ground += carac
-                 
               }
               if (bye == str.length - 1) {
                   comofica.push(ground)
               }
       str[bye].numero = comofica
    }
-  
    return comofica
   }
   
@@ -2839,7 +2836,6 @@ function ir() {
           } else {
             parar = true;
           }}}
-    
       if (qualexp != "" && parar == false) {
         ground = "";
         expression = [];
@@ -2862,13 +2858,12 @@ function ir() {
           if (phy == qualexp.length - 1) {
             expression.push(ground);
           }}
-    
         return expression
       }}
   
     function FATORAR2(expression_2,refat) {
       startexp_2 = [...expression_2];
-  
+
     if (expression_2[0] !== "-" && expression_2[0] !== "+") {
       expo_2 = ["+"];
       for (ent in expression_2) {
@@ -2917,8 +2912,7 @@ function ir() {
         }
         expression_2.splice(Number(y) + 1, 1);
         expression_2.splice(y, 1);
-      }
-    }
+      } }
   
     //SEPARAnDO OS MOnÔMIOS
   
@@ -2989,32 +2983,6 @@ function ir() {
   // ==> SOMANDO OS MONÔMIOS...
   
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
-  
-     /*
-     function versetem(comp) {
-      podeir = true;
-      qual = -1;
-      for (meow in segs_2) {
-        array1 = [];
-        for (d in segs_2[meow].car) {
-          array1.push(segs_2[meow].car[d]);
-        }
-        array2 = [];
-        for (d in comp) {
-          array2.push(comp[d]);
-        }
-        if (segs_2[meow].car.length < comp.length) {
-          divisao = DIVIDIR(VAI(segs_2[meow].car), VAI(comp));
-        } else {
-          divisao = DIVIDIR(VAI(comp), VAI(segs_2[meow].car));
-        }
-        if (divisao == "" || divisao == "-") {
-          podeir = false;
-          qual = meow;
-        }}
-      return podeir;
-    }
-     */
      reps = []
      segs_2 = []
      let  = []
@@ -3029,33 +2997,27 @@ function ir() {
              if (monomios_2[m].numero[oc].search('[\\*\\+\\/]') == -1) {
              if (numerosrep.indexOf(monomios_2[m].numero[oc]) == -1) {
              numerosrep.push(monomios_2[m].numero[oc])
-     
              for (u = 0; u < monomios_2.length; u++) { // OUTROS MOnÔMIOS
                  ocs2 = []
-     
                  if(u != m) {
                // OCAS
                if(ocs2.find(function(ocs2) {
                  return ocs2.ed == monomios_2[m].numero[oc]
                  }) == undefined) {
                      ocs2.push({ed: monomios_2[m].numero[oc], el: 0})
-     
                      ocs = 0
                for (ao = 0; ao < monomios_2[m].numero.length; ao++) {
                  if (monomios_2[m].numero[ao] == monomios_2[m].numero[oc]) {
                      ocs++
                  }}}
-               
                for (e = 0; e < monomios_2[u].numero.length; e++) { // CADA LETRA DE CADA MOnÔMIO
                  if (monomios_2[u].numero[e] == monomios_2[m].numero[oc]) {
                      if (repetido.find(function(repetido) {
                          return repetido.monum == u
                          }) === undefined) {
-  
                              ocs2.find(function(ocs2) {
                                  return ocs2.ed == monomios_2[m].numero[oc]
                                  }).el++
-  
                                  if (ocs2.find(function(ocs2) {
                                      return ocs2.ed == monomios_2[m].numero[oc]
                                      }).el <= ocs) {
@@ -3065,11 +3027,9 @@ function ir() {
                                      ocs2.find(function(ocs2) {
                                          return ocs2.ed == monomios_2[m].numero[oc]
                                          }).el++
-     
                                              if (ocs2.find(function(ocs2) {
                                                  return ocs2.ed == monomios_2[m].numero[oc]
                                                  }).el <= ocs) {
-                                        
                                      repetido.find(function(repetido) {
                                          return repetido.monum == u
                                          }).letr += `.${monomios_2[u].numero[e]}`
@@ -3097,18 +3057,15 @@ function ir() {
                       for (d in segs_2[meow].car) {
                           array1.push(segs_2[meow].car[d])
                       }
-  
                       array2 = []
                       for (d in repetido[moe].letr) {
                           array2.push(repetido[moe].letr[d])
                       }
-  
                       if (segs_2[meow].car.length < repetido[moe].letr.length) {
                           divisao =  DIVIDIR(VAI(segs_2[meow].car), VAI(repetido[moe].letr))
                        }else{
                            divisao = DIVIDIR(VAI(repetido[moe].letr),VAI(segs_2[meow].car))
                        }
-  
                        if (divisao == '' || divisao == '-') {
                           podeir = false
                           qual = meow
