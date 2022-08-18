@@ -5436,13 +5436,10 @@ function devtools(close) {
     pmons = mns
   }
   for (away in pyou) {
-    //console.log(away, pyou[away].mons)
     omori = ''
     for (ten in pyou[away].mons) {
-        //console.log(pyou[away].mons[ten])
         omori+= pyou[away].mons[ten] + ','
     }
-    //console.log('OMORI',omori)
     pyou[away].str = omori
   }
   tab = document.getElementById('devtab')
@@ -5450,18 +5447,14 @@ function devtools(close) {
   dec = document.getElementById('dec')
   m = document.getElementById('mons')
   slots = document.getElementsByClassName('slot')
-
   if (devtoolsstate == 'closed' || close == false) {
     mms = m.getElementsByTagName('span')
      for (ret = mms.length - 1; ret >= 0; ret--) {
-        //console.log(mms[0])
         m.removeChild(mms[ret])
      }
-  
      for (erase in slots) {
         slots[erase].innerHTML = ''
     } 
-
       if (close == true) {
         devtoolsstate = 'open'
         tab.style.height= '400px'
@@ -5469,11 +5462,8 @@ function devtools(close) {
         tab.style.padding= '10px'
         but.setAttribute('class','deven')
        }
-
       for (a in pmons) {
-      //  console.log(pmons[a].numero)
         relnum =  desfat(pmons[a].numero)
-        //console.log(relnum)
         span = document.createElement('span')
         if (a == 0) {
         span.innerText = relnum
@@ -5500,7 +5490,6 @@ function devtools(close) {
         go = REFORMATAR(psegs[h].car.replace(new RegExp('\\.','g'),'*'))
         refeito = []
         for (j in go) {
-           // console.log(go[j])
             if (go[j] == '*' && go[Number(j) + 1].search('[0-9]') == -1) {
             }else{
                 refeito.push(go[j])
@@ -5508,7 +5497,6 @@ function devtools(close) {
         go = desfat(refeito)
         p.innerHTML = `<span style="color:rgb(79 196 251);">${h}</span> &nbsp;${go}: [ `
         for (n in pscarecrow[h].divididos) {
-           // console.log(pscarecrow[h].divididos[n])
             pc = document.createElement('div')
             pc.setAttribute('class','pcon')
             p.appendChild(pc)
@@ -5535,13 +5523,11 @@ function devtools(close) {
         slots[1].appendChild(p)
     }
     for (h in proll) {
-       //console.log(proll[h].posições)
         p = document.createElement('p')
         p.style.whiteSpace = 'nowrap'
         p.style.margin = '5px'
         okl = []
         for (love in proll[h].posições) {
-       //console.log(love, proll[h].posições[love])
         okl.push(` ${desfat(REFORMATAR(pmiss[proll[h].posições[love]].dividido))}`)
         }
         p.innerHTML = `<span style="color: rgb(79 196 251);">${proll[h].repetidos}</span>` + ': [ ' + okl + ' ]'
@@ -5579,8 +5565,7 @@ function devtools(close) {
         }
         slots[3].appendChild(p)
         grupagens.push(omori)
-    }
-    }
+    }}
   }else{
     devtoolsstate = 'closed'
     tab.style.height = '0'
@@ -5772,11 +5757,9 @@ function devtools(close) {
         function ehprimo(Number) {
             parar = false
             for (t = 2; t < Number && parar == false; t++) {
-            
                 if (Number%t == 0) {
                     parar = true
-                }
-            }
+                }}
             if (parar) 
             return false
             else
