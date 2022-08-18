@@ -4253,8 +4253,6 @@ function ir() {
           }}
           FATORAR2(newexpress)
      }else{
-      //console.log('ACABOU',concatenar_2)
-  
      todososnumeros_2 = []
      for (acaba in monomios_2) {
          todososnumeros_2.push(acaba)
