@@ -1517,10 +1517,7 @@ function ir() {
                 concatenar+= ' - '
                 }else{
                     concatenar+= ' + '
-                }
-            }
-         }
-  
+                }}}
         
         if (edge.length > 1) {
           concatenar+= `(${naonao})(${tobreak})`
@@ -1530,8 +1527,7 @@ function ir() {
                 for (ho in naonao) {
                     if (ho != 0) {
                         rok+= naonao[ho]
-                    }
-                }
+                    }}
                 naonao = rok
             }
               concatenar+= `${naonao}(${tobreak})`
