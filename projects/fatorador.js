@@ -1520,7 +1520,7 @@ function ir() {
         if (edge.length > 1) {
           concatenar+= `(${naonao})(${tobreak})`
           }else{
-            if (naonao[0] == '-') {
+            if (naonao[0] == '-' && concatenar.length > 0) {
                 rok = ''
                 for (ho in naonao) {
                     if (ho != 0) {
@@ -4116,17 +4116,13 @@ function ir() {
                }else{
                 if (edge.length == 1) {
                    concatenar_2+= ' - '
-                }else{
-                    concatenar_2+= ' + '
-                }
-               }
-         }
+                }}}
          //console.log('(',naonao_2,')','(',tobreak_2,')')
          
           if (edge_2.length > 1) {
         concatenar_2 += `(${naonao_2})(${tobreak_2})`;
       } else {
-        if (naonao_2[0] == '-') {
+        if (naonao_2[0] == '-' && concatenar_2.length > 0) {
             rok = ''
             for (ho in naonao_2) {
                 if (ho != 0) {
