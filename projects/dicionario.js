@@ -8,7 +8,7 @@ var songs = [
 
 {word: 'wane',type: 'verb intransitive', meaning: 'to become weaker or less important', examples: 'My patiente is waning(Imagine Dragons)'},
 
-{word: 'hurtle',type: 'verb intransitive', meaning: 'chocar, bater contra, lançar violentamente', examples: 'He hurtled down the mountainside'},
+{word: 'hurtle',type: 'verb intransitive', meaning: 'chocar, bater contra, lançar violentamente', examples: 'hurtle towards, along, down, forward: A hunk of space debris is hurtling towards the Earth*He hurtled down the mountainside'},
 
 {word: 'lay out',type: 'phrasal verb transitive',meaning: 'to spread something out, or to arrange things so you can see them easily/to explain something carefully and clearly/to arrange something according to a detailed plan, for example rooms in a building, roads in a town, or areas on a piece of land/to spend an amount of money/to hit someone so hard that they fall to the ground and become unconscious',
 examples: 'She opened her suitcase and laid her clothes out on the bed*A display of local history material was laid out on the table/The documents lay out the principles clearly enough/The city was laid out with the town hall on a hill in its centre/They had already laid out a substantial sum for the wedding/Joe laid Ken out with one punch' 
@@ -552,6 +552,24 @@ examples: '/The air cushion reduces the boat\’s contact with water/Grayson’s
 {word: 'weave',type: 'verb', 
 meaning: 'to make cloth by crossing long threads over and under each other on a machine called a loom/to move somewhere by going around and between things/to create an object', 
 examples: 'The women shut themselves behind closed doors to weave their cloth/Samantha had to weave her way through the crowd*The taxi weaved in and out of traffic/Fresh or dried flowers can be woven into a garland'},
+{word: 'mend',type: 'verb', 
+meaning: 'remendar, to repair a tear or hole in a piece of clothing/to repair something that is broken or damaged so that it can be used again/if a bone mends, or if something mends it after it has broken, it grows back together and becomes healthy again', 
+examples: 'These socks need to be mended/the gate needs to be mended so it closes properly'},
+{word: 'allowance',type: 'noun countable', 
+meaning: 'an amount of money that someone receives regularly, in order to pay for the things they need/mesada, pocket money/an amount of something that you are officially allowed by a particular set of rules or by the law', 
+examples: 'She receives a monthly allowance of £500*a housing, clothing, fuel allowance (=money given to help people with their rent, clothes, or heating): an increase in the winter fuel allowance//the recommended daily allowance of Vitamin C*Your baggage allowance is 30 kilos.'},
+{word: 'grave',type: 'noun countable', 
+meaning: 'the place where a dead body is buried in a deep hole in the ground. A tomb is a structure above the ground that contains a dead body/the grave​', 
+examples: 'He’s never even visited his mother’s grave/His secret will go with me to the grave (=I will die without telling anyone)*beyond the grave: It seemed to him like a voice from beyond the grave (=the voice of a dead person)'},
+{word: 'engraving',type: 'noun', 
+meaning: 'gravura, a picture made by cutting a design into a metal plate, putting ink on it, and pressing it onto paper', 
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
 {word: '',type: '', 
 meaning: '', 
 examples: ''},
@@ -563,7 +581,10 @@ meaning: '',
 examples: ''},
 {word: '',type: '', 
 meaning: '', 
-examples: ''}
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
 ]
 
 songs = sortWords(songs,'word')
