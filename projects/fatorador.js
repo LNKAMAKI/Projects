@@ -1515,8 +1515,6 @@ function ir() {
             }else{
                 if (edge.length == 1) {
                 concatenar+= ' - '
-                }else{
-                    concatenar+= ' + '
                 }}}
         
         if (edge.length > 1) {
