@@ -5328,6 +5328,16 @@ function devtools(close) {
         for (proud in pscarecrow[h].divididos) {
             pscarecrow[h].divididos[proud] = desfat(REFORMATAR(String(pscarecrow[h].divididos[proud])))
         }
+       
+        if (psegs[h].car[0] == '-') {
+            sing = ''
+            for (tor in psegs[h].car) {
+                if (psegs[h].car[tor] == '.' && psegs[h].car[Number(tor) - 1] == '-') {
+                }else{
+                    sing+= psegs[h].car[tor]
+                }}
+                psegs[h].car = sing
+            }
         go = REFORMATAR(psegs[h].car.replace(new RegExp('\\.','g'),'*'))
         refeito = []
         for (j in go) {
