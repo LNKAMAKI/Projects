@@ -4226,7 +4226,7 @@ function ir() {
               newexpress.push('+')
               newexpress.push(join)
           }}
-         // FATORAR2(newexpress)
+         FATORAR2(newexpress)
      }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
