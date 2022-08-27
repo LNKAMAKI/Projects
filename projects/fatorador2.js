@@ -1319,18 +1319,11 @@ function FATORAR(expression) {
 
   roller = [];
   for (eep in miss) {
-    //console.log('>>>>>>>>>>>>>>>>>>>',eep, miss[eep].aparicoes)
-
-    //console.log('---')
     for (quad in miss) {
-      //console.log('')
       if (quad != eep) {
-        //console.log(quad,miss[quad].aparicoes)
-
         repeated = [];
         repwri = "";
         for (vespa in miss[eep].aparicoes) {
-          //console.log(miss[eep].aparicoes[vespa])
           if (miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1) {
             //console.log(miss[quad].aparicoes,'indexOf(',miss[eep].aparicoes[vespa],') não é igual a -1')
             repeated.push(miss[eep].aparicoes[vespa]);
