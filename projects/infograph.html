@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #graph {
+            position: relative;
+            margin: 200px auto 0px auto;
+            background-color: transparent;
+            width: 50%;
+            padding: 20px 0px;
+        }
+        canvas {
+            position: absolute;
+            background-color: transparent;
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            height: 100%;
+            z-index: 0;
+        }
+        #circ {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            background-color: transparent;
+            border-radius: 50%;
+            margin: auto;
+            z-index: 1;
+        }
+        .square1 {
+            position: relative;
+            display: inline-block;
+            background-color: white;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.22);
+            width: 300px;
+            height: fit-content;
+            left: 0px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .square2 {
+            position: relative;
+            display: inline-block;
+            background-color: white;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.22);
+            width: 300px;
+            height: fit-content;
+            left: calc(100% - 625px);
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="graph">
+        <canvas id="canvas"></canvas>
+        <div class="square1" style="top:20px;">
+            <p>Segundo dados do Soul Medicina, a média de médicos por mil habitantes no Brasil é de aproximadamente 2,18, cumprindo uma recomendação da OMS(1 atendendente por 1000 habitantes).  Entretanto, nem todos os municípios do país possuem esta meta cumprida, acarretando problemas associados à espera de atendimento e superlotação de leitos.</p>
+        </div>
+        <div class="square2">
+            <p>Os problemas mais destacados de uma má gestão de equipamentos são o mau uso dos mesmos, a falta de manutenção preventiva e a demora de conserto, quando o reparo acontece somente quando uma ferramenta já não tem mais condições de ser utilizada. Tudo isso afeta diretamente a qualidade dos serviços prestados.</p>
+        </div>
+
+        <div id="circ"></div>
+        <div class="square1">
+            <p>Por meio de um estudo do Instituto de Pesquisa Econômica Aplicada(IPEA), os serviços de urgência e emergência recebeu mais de 31% de avaliações negativas devido ao escasso atendimento em prontos cirúrgicos e condução de processos médicos. </p>
+
+        </div>
+        <div class="square2">
+            <p>Mediante dados do projeto Monitora Covid-19 da Fiocruz, em um ano e meio, 1,7 milhões de internações não foram realizadas, afetando bruscamente os atendimentos do Sistema Único de Sáude(SUS). </p>
+        </div>
+
+    </div>
+    <script>
+        canvas = document.getElementById('canvas')
+        c = canvas.getContext('2d')
+        console.log(c)
+        c.beginPath()
+        c.moveTo(90,35)
+        c.lineTo(120,35)
+        c.lineTo(150,75)
+        c.stroke()
+        c.beginPath()
+        c.moveTo(210,35)
+        c.lineTo(180,35)
+        c.lineTo(150,75)
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(90,120)
+        c.lineTo(120,120)
+        c.lineTo(150,75)
+        c.stroke()
+        c.beginPath()
+        c.moveTo(210,120)
+        c.lineTo(180,120)
+        c.lineTo(150,75)
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,0,Math.PI/4,false)
+        c.strokeStyle = 'yellow'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,Math.PI/4,Math.PI/2,false)
+        c.strokeStyle = 'purple'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,Math.PI/2,Math.PI*0.75,false)
+        c.strokeStyle = 'blue'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,Math.PI*0.75,Math.PI,false)
+        c.strokeStyle = 'green'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,Math.PI,Math.PI*1.25,false)
+        c.strokeStyle = 'red'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,Math.PI*1.25,Math.PI*1.5,false)
+        c.strokeStyle = 'rgb(251, 150, 36)'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,Math.PI*1.5,Math.PI*1.75,false)
+        c.strokeStyle = 'cyan'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,25,Math.PI*1.75,Math.PI*2,false)
+        c.strokeStyle = 'pink'
+        c.stroke()
+
+        c.beginPath()
+        c.arc(150,75,24.6,Math.PI*2,false)
+        c.strokeStyle = 'transparent'
+        c.stroke()
+        c.fillStyle = 'white'
+        c.fill()
+        //x: number, y: number, radius: number, startAngle: number, endAngle: number, counterclockwise?: boolean): void
+    </script>
+</body>
+</html>
