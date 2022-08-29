@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .type {
+            position: relative;
+            display: inline;
+            border: 1px solid black;
+            padding: 5px 10px;
+            border-top-left-radius:5px;
+            border-top-right-radius: 5px;
+            top: -4px;
+            cursor: pointer;
+            background-color: white;
+        }
+        #cont {
+            margin: auto;
+            width: fit-content;
+            height: fit-content;
+        }
+        canvas {
+            display: block;
+            border: 1px solid black;
+            margin: auto;
+            width: 50vw;
+            height: 27vw;
+        }
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .innum {
+            width: 50px;
+            text-align: end;
+            font-size: 1.2em;
+        }
+        #addbut {
+            height: 28px;
+            margin: 0px;
+            cursor: pointer;
+        }
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type='color'] {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            outline-width: 0px;
+            border-width: 0px;
+        }
+    </style>
+</head>
+<body onload="go()">
+    <h1>Gráfico de Setores</h1>
+        <script src="piechart.js"></script>
+        
+     <div id="cont">
+        <div class="type" onclick="change(1)" style="background-color: rgb(214, 214, 214);">Tipo 1</div>
+        <div class="type" onclick="change(2)">Tipo 2</div>
+         <canvas id="canvas"></canvas>
+     </div>
+
+    <p style="text-align: center;">
+        
+        cor:&nbsp;<input type="color" name="" id="">
+        <input type="number" id="num" class="innum">&nbsp;
+        <span style="font-size:1.2em;">%&nbsp;</span><span style="font-weight:bold;font-size: 1.4em;">&times;&nbsp;</span>&nbsp;
+        <input type="number" class="innum" value="1" id="times">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" value="Add" id="addbut" onclick="add(true)">
+    </p>
+
+</body>
+</html>
