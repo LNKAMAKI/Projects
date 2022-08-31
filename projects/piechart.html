@@ -39,9 +39,15 @@
             font-size: 1.2em;
         }
         #addbut {
+            margin-left: 4px;
             height: 28px;
-            margin: 0px;
+            width: 28px;
             cursor: pointer;
+            font-weight: bold;
+            background-color: rgb(124, 239, 239);
+            border-radius: 3px;
+            border: 1px solid black;
+            color: black;
         }
         p {
             display: flex;
@@ -55,6 +61,18 @@
             outline-width: 0px;
             border-width: 0px;
         }
+        #ali {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #t {
+            display: inline-flex;
+            background-color: rgb(234, 234, 234);
+            padding: 5px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body onload="go()">
@@ -67,15 +85,18 @@
          <canvas id="canvas"></canvas>
      </div>
 
-    <p style="text-align: center;">
+    <div id="ali">
         
         cor:&nbsp;<input type="color" name="" id="">
-        <input type="number" id="num" class="innum">&nbsp;
-        <span style="font-size:1.2em;">%&nbsp;</span><span style="font-weight:bold;font-size: 1.4em;">&times;&nbsp;</span>&nbsp;
-        <input type="number" class="innum" value="1" id="times">
-        &nbsp;&nbsp;&nbsp;
-        <input type="button" value="Add" id="addbut" onclick="add(true)">
-    </p>
+
+        <div id="t">
+            <input type="number" id="num" class="innum" placeholder="%">&nbsp;
+            <span style="font-size:1.2em;">&nbsp;</span><span style="font-weight:bold;font-size: 1.4em;">&times;&nbsp;</span>&nbsp;
+            <input type="number" class="innum" value="1" id="times">
+            <input type="button" value=">" id="addbut" onclick="add(true)">
+        </div>
+       
+    </div>
 
 </body>
 </html>
