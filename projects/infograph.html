@@ -19,7 +19,7 @@
             width: 100%;
             top: 0%;
             left: 0%;
-            height: 490px;
+            height: 500px;
             z-index: 0;
         }
         #circ {
@@ -30,8 +30,8 @@
             border-radius: 50%;
             margin: auto;
             z-index: 1;
-            top: -66px;
-            left: 8px;
+            top: -70px;
+            left: 6.9px;
         }
         #circ > img {
             position: absolute;
@@ -98,12 +98,15 @@
             width: calc(100% - 20px);
             height: calc(100% - 20px);
         }
-        .circle > img {
+        .circle > #ims {
             position: absolute;
             bottom: 0;
             bottom: 0;
             width: calc(100% - 50px);
             height: calc(100% - 50px);
+        }
+        img {
+            position: absolute;
         }
         </style>
 </head>
@@ -112,30 +115,30 @@
         <canvas id="canvas"></canvas>
         <div class="square1" style="top:-238px;border: 5px solid rgb(255, 174, 209);left: 100px;">
             <div class="circle">
-                <img src="/Projects/projects/imagens/hospital bed.jpg" alt="" style="top: 24px; width: 110px;height: 110px;">
+                <img src="/projects/imagens/hospital bed.jpg" alt="" style="top: 24px; width: 110px;height: 110px;"  id="ims">
             </div>
             <p>Segundo dados do Soul Medicina, a média de médicos por mil habitantes no Brasil é de aproximadamente 2,18, cumprindo uma recomendação da OMS(1 atendendente por 1000 habitantes).  Entretanto, nem todos os municípios do país possuem esta meta cumprida, acarretando problemas associados à espera de atendimento e superlotação de leitos.</p>
         </div>
         <div class="square2" style="border: 5px solid rgb(0, 195, 255);top: -238px;left: 200px;">
             <div class="circle">
-                <img src="/Projects/projects/imagens/admin.png" id="im" alt="" style="width: 110px;height: 105px;top:20px;left:30px;">
+                <img src="/projects/imagens/admin.webp" id="im" alt="" style="width: 120px;height: 120px;top:10px;">
             </div>
             <p>O baixo percentual de acertos em campos essenciais da Medicina, como Saúde Pública (49% de acertos), Obstetrícia (54,1%), Clínica Médica (56,5%) e Pediatria (59,3%) é alarmante. Aliás, os índices de reprovação desde que a avaliação foi criada, em 2007, mostram que muitos novos médicos não estão preparados para exercer a profissão.</p>
         </div>
 
         <div id="circ">
-            <img src="/Projects/projects/imagens/hospital.png" alt="" srcset="">
+            <img src="/projects/imagens/hospital.png" alt="" srcset="">
         </div>
         <div class="square1" style="border: 5px solid rgb(57, 200, 95);top: 135px;left: 100px;">
             <div class="circle2">
-                <img src="/Projects/projects/imagens/doctor.png" style="top: 10px; width: 115px;height: 115px;">
+                <img src="/projects/imagens/doctor.png" style="top: 10px; width: 115px;height: 115px;">
             </div>
             <p>Por meio de um estudo do Instituto de Pesquisa Econômica Aplicada(IPEA), os serviços de urgência e emergência receberam mais de 31% de avaliações negativas devido escasso atendimento em pontos cirúrgicos e condução de processos médicos. </p>
 
         </div>
         <div class="square2" style="border: 5px solid rgb(247, 146, 44);top: 117px;left: 200px;">
             <div class="circle2">
-                <img src="/Projects/projects/imagens/corona.png" style="top: 20px; width: 110px;height: 110px;position: absolute;">
+                <img src="/projects/imagens/corona.png" style="top: 20px; width: 110px;height: 110px;position: absolute;">
             </div>
             <p>Mediante dados do projeto Monitora Covid-19 da Fiocruz, em um ano e meio, 1,7 milhões de internações não foram realizadas, afetando bruscamente os atendimentos do Sistema Único de Sáude(SUS). </p>
         </div>
