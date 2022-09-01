@@ -3,6 +3,7 @@
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico"> 
 <u type= "circle">
 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/info2.html"><span style=" font-weight: normal; font-size: 1.3em;">INFO2</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/infograph.html"><span style=" font-weight: normal; font-size: 1.3em;">INFOGRAPH</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/funcao.html"><span style=" font-weight: normal; font-size: 1.3em;">FUNÇÃO</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/equacao2grau.html"><span style=" font-weight: normal; font-size: 1.3em;">Equação do 2º grau</span></a></li> 
