@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            display: block;
+            border: 1px solid black;
+            width: 60vw;
+            height: 31vw;
+            margin: 20px auto;
+        }
+        p {
+            color: rgb(211, 211, 211);
+            background-color: rgb(218, 218, 218);
+        }
+    </style>
+</head>
+<body onload="load()">
+    <p>AAAAAAAA</p>
+    <canvas id="canvas"></canvas>
+    <script>
+        function load() {
+        canvas = document.getElementById('canvas')
+        c = canvas.getContext('2d')
+        p = Math.PI*2
+
+        c.font = "bold 30px Arial";
+       c.fillText("Hello World",0,0)
+       
+        pos = 40
+        par = 55
+        def = 'up'
+        for (i = 0; i < 5; i++) {
+            if (def == 'up') {
+            docircle(pos,'d','rgb(218, 218, 218)')
+            def = 'd'
+            }else{
+                docircle(pos, 'up', 'rgb(218, 218, 218)')
+                def = 'up'
+            }
+            console.log(pos, par)
+            pos= pos + par
+            console.log(pos)
+        }
+
+        pos = 40
+        def = 'd'
+        color = ['orange','yellow','green','blue','red']
+        for (i = 0; i < 5; i++) {
+            if (def == 'up') {
+            docircle(pos,'d',color[i])
+            def = 'd'
+            }else{
+                docircle(pos, 'up', color[i])
+                def = 'up'
+            }
+            console.log(pos, par)
+            pos= pos + par
+            console.log(pos)
+        }
+
+        pos = 40
+        for (i = 0; i < 5; i++) {
+            c.beginPath()
+            c.arc(pos,75,20,0,p,false)
+            c.strokeStyle = 'white'
+            c.stroke()
+            c.fillStyle = 'white'
+            c.fill()
+            
+            console.log(pos, par)
+            pos= pos + par
+            console.log(pos)
+        }
+
+        function docircle(x,dir,color) {
+            c.beginPath()
+        c.arc(x,75,0,0,p,false)
+        c.stroke()
+        if (dir == 'up') {
+        c.arc(x,75,35,p*0.5,p,false)
+        }else{
+            c.arc(x,75,35,0,p*0.5)
+        }
+        c.arc(x,75,0,0,p,false)
+        c.strokeStyle = color
+        c.stroke()
+        c.fillStyle = color
+        c.fill()
+
+        }
+    }
+        
+    </script>
+</body>
+</html>
