@@ -8,7 +8,7 @@
     <style>
         #graph {
             position: relative;
-            margin: 200px auto 0px auto;
+            margin: 300px auto 0px auto;
             background-color: transparent;
             width: 50%;
             padding: 20px 0px;
@@ -19,7 +19,7 @@
             width: 100%;
             top: 0%;
             left: 0%;
-            height: 511.3px;
+            height: 490px;
             z-index: 0;
         }
         #circ {
@@ -69,9 +69,9 @@
             height: 150px;
             background-color: white;
             border-radius: 50%;
-            left: calc(100% + 10px);
             right: 0;
-            top: calc((100% - 150px)/2);
+            top:calc(100% + 8px);
+            left: calc((100% - 150px)/2);
             bottom: 0;
             display: flex;
             justify-content: center;
@@ -83,13 +83,12 @@
             height: 150px;
             background-color: white;
             border-radius: 50%;
-            left: calc(0% - 160px);
             right: 0;
-            top: calc((100% - 150px)/2);
+            top:calc(0% - 158px);
+            left: calc((100% - 150px)/2);
             bottom: 0;
-            display: inline-flex;
+            display: flex;
             justify-content: center;
-            align-content: center;
         }
         .circle2 > #im {
             position: absolute;
@@ -106,35 +105,35 @@
             width: calc(100% - 50px);
             height: calc(100% - 50px);
         }
-    </style>
+        </style>
 </head>
 <body>
     <div id="graph">
         <canvas id="canvas"></canvas>
-        <div class="square1" style="top:-10px;border: 5px solid rgb(255, 174, 209);left: -130px;">
+        <div class="square1" style="top:-238px;border: 5px solid rgb(255, 174, 209);left: 100px;">
             <div class="circle">
                 <img src="/Projects/projects/imagens/hospital bed.jpg" alt="" style="top: 24px; width: 110px;height: 110px;">
             </div>
             <p>Segundo dados do Soul Medicina, a média de médicos por mil habitantes no Brasil é de aproximadamente 2,18, cumprindo uma recomendação da OMS(1 atendendente por 1000 habitantes).  Entretanto, nem todos os municípios do país possuem esta meta cumprida, acarretando problemas associados à espera de atendimento e superlotação de leitos.</p>
         </div>
-        <div class="square2" style="border: 5px solid rgb(0, 195, 255);top:-30px;left: 440px;">
-            <div class="circle2">
+        <div class="square2" style="border: 5px solid rgb(0, 195, 255);top: -238px;left: 200px;">
+            <div class="circle">
                 <img src="/Projects/projects/imagens/admin.png" id="im" alt="" style="width: 110px;height: 105px;top:20px;left:30px;">
             </div>
-            <p>Gestão financeira hospitalar é um conjunto de medidas e processos que serve para controlar os gastos e receitas de forma contínua. Permite, ainda, que o hospital planeje as ações futuras com segurança, partindo de dados consistentes para projetar cenários.</p>
+            <p>O baixo percentual de acertos em campos essenciais da Medicina, como Saúde Pública (49% de acertos), Obstetrícia (54,1%), Clínica Médica (56,5%) e Pediatria (59,3%) é alarmante. Aliás, os índices de reprovação desde que a avaliação foi criada, em 2007, mostram que muitos novos médicos não estão preparados para exercer a profissão.</p>
         </div>
 
         <div id="circ">
             <img src="/Projects/projects/imagens/hospital.png" alt="" srcset="">
         </div>
-        <div class="square1" style="border: 5px solid rgb(57, 200, 95);top: -35px;left: -130px;">
-            <div class="circle">
+        <div class="square1" style="border: 5px solid rgb(57, 200, 95);top: 135px;left: 100px;">
+            <div class="circle2">
                 <img src="/Projects/projects/imagens/doctor.png" style="top: 10px; width: 115px;height: 115px;">
             </div>
             <p>Por meio de um estudo do Instituto de Pesquisa Econômica Aplicada(IPEA), os serviços de urgência e emergência receberam mais de 31% de avaliações negativas devido escasso atendimento em pontos cirúrgicos e condução de processos médicos. </p>
 
         </div>
-        <div class="square2" style="border: 5px solid rgb(247, 146, 44);top: -40px;left: 440px;">
+        <div class="square2" style="border: 5px solid rgb(247, 146, 44);top: 117px;left: 200px;">
             <div class="circle2">
                 <img src="/Projects/projects/imagens/corona.png" style="top: 20px; width: 110px;height: 110px;position: absolute;">
             </div>
