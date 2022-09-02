@@ -5251,7 +5251,7 @@ function ir() {
     roll_2,
     youdumb_2,
     monomios_2,
-    pans
+    pans_2
   ];
   }
   devtoolsstate = 'closed'
