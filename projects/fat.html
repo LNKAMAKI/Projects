@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Lilita+One&family=Rubik+Marker+Hatch&family=Signika:wght@600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=PT+Mono&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        :root{
+            --lightblue: rgb(82, 221, 246);
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+        }
+        #h1 {
+            font-family: 'Fugaz One';
+            text-align: center;
+            font-size: 4em;
+            background-color: var(--lightgray);
+            color: rgb(87, 164, 195);
+            padding: 30px;
+            margin: 0px;
+        }
+        #calc {
+            position: relative;
+            margin: 40px auto;
+            min-height: 400px;
+            width: 40vw;
+            border-radius: 10px;
+            background-color: var(--lightgray);
+        }
+        #writespace {
+            position: relative;
+            height: 30px;
+            padding: 0;
+            font-size: 1.1em;
+            padding: 0px 10px;
+            display: inline-block;
+            width: calc(100% - 200px);
+            background-color: black;
+            border-width: 0px;
+            font-weight: 500;
+            font-family: 'Inconsolata';
+            margin-top: 10px;
+            color: var(--lightblue);
+            text-align: center;
+        }
+        #writespace:focus-visible{
+            outline-width: 0;
+            font-weight: 700;
+            box-shadow: 0px 0px 5px rgb(116, 103, 103);
+        }
+        p {
+            position: relative;
+           top: 30px;
+           text-align: center;
+           font-family: 'Inconsolata';
+           font-size: 1.2em;
+        }
+        input[type="button"] {
+            cursor: pointer;
+            background-color: transparent;
+            border: 2px solid transparent;
+            font-family: 'Inconsolata';
+            border-radius: 5px;
+            padding: 7px 12px;
+            font-weight: 700;
+            font-size: 1em;
+        }
+        input[type="button"]:hover {
+           color: black;
+           background-color:var(--lightblue);
+           border: 2px solid black;
+        }
+        input[type="button"]:active {
+           background-color: var(--darkblue);
+        }
+    </style>
+</head>
+<body>
+    <script src="fat.js"></script>
+    <h1 id="h1">FATORADOR</h1>
+    <div id="calc">
+        <p>
+            /* Coloque a expressão abaixo: */<br>
+           "<input id="writespace" spellcheck="false"></input>"
+        </p>
+        <p><input type="button" value="FATORAR(expressão)"></p>
+    </div>
+</body>
+</html>
