@@ -5204,7 +5204,6 @@ function FATORE(q) {
       }}
     return expression
   }}
-  console.log(FATORAR2('5x + 10'))
   function fazerConta(anterior) {
     if(0 == 0) {
 for (n = 0; n < anterior.length; n++) {
@@ -5521,3 +5520,4 @@ for (bye in str) {
 }
 return comofica
 }
+console.log(FATORAR2('15x + 10x')[0])
