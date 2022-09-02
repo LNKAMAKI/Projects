@@ -1,4 +1,5 @@
-function FATORAR2(expression,refat) {
+function CreateEngine(expression,refat) {
+  this.FATORAR = function() {
 this.startexp = [...expression];
 
 if(this.expression[0] !== "-" && this.expression[0] !== "+") {
@@ -8,14 +9,14 @@ this.expo = ["+"];
   }
 this.expression = this.expo;
 }
-
+ 
 //FATORAnDO OS nÚMEROS
 
 for(this.n = 0;this.n < this.expression.length;this.n++) {
   if (
-    ehprimo(expression[n]) == false &&
-    String(expression[n]).search("[0-9]") != -1 &&
-    expression[n - 1] != "^"
+    ehprimo(this.expression[n]) == false &&
+    String(this.expression[n]).search("[0-9]") != -1 &&
+    this.expression[n - 1] != "^"
   ) {
 this.fatorado = "";
 this.first = 1;
@@ -26,7 +27,7 @@ this.fator = 1;
     for(this.e = 2; stop == false;this.e++) {
 this.sob = Number(expression[n]);
       if(this.ehprimo(e) == true) {
-        while (sob % e == 0) {
+        while (this.sob % e == 0) {
 this.sob = this.sob / e;
 this.fator = this.fator * e;
 this.st = false;
@@ -53,14 +54,14 @@ this.ad = this.expression[Number(y) - 1];
 
 //SEPARAnDO OS MOnÔMIOS
 
-monomios = [{ numero: "" }];
-obnum = 0;
+this.monomios = [{ numero: "" }];
+this.obnum = 0;
 for(this.n = 0;this.n < this.expression.length;this.n++) {
   if(this.String(expression[n]).search("[\\-\\+]") != -1 && this.this.n != 0) {
    this.monomios.push({ numero: "" });
    this.obnum++;
   }
-  monomios[obnum].numero += this.expression[n];
+  this.monomios[obnum].numero += this.expression[n];
 this.change = [...monomios[obnum].numero]
   //console.log(change)
 }
@@ -88,17 +89,17 @@ this.ground = "";
     if(this.misery == this.monomios[bye].numero.length - 1) {
      this.comofica.push(this.ground);
     } }
-  monomios[bye].numero = this.comofica;
+  this.monomios[bye].numero = this.comofica;
  // console.log('como fica',comofica)
 }
 
 for(this.huh in this.monomios) {
 this.partlet = "";
   for(this.y in this.monomios[huh].numero) {
-    if(this.String(monomios[huh].numero[y]).search("[a-z]") != -1) {
-     this.partlet += this.String(monomios[huh].numero[y]);
+    if(this.String(this.monomios[huh].numero[y]).search("[a-z]") != -1) {
+     this.partlet += this.String(this.monomios[huh].numero[y]);
     }}
-  monomios[huh].partletral = this.partlet;
+  this.monomios[huh].partletral = this.partlet;
 }
 
 ji = [];
@@ -109,7 +110,7 @@ for(this.huh in this.monomios) {
       return ji.que == this.monomios[huh].partletral;
     }) == this.undefined
   ) {
-   this.ji.push({ quais: [Number(huh)], que: monomios[huh].partletral });
+   this.ji.push({ quais: [Number(huh)], que: this.monomios[huh].partletral });
   } else {
     ji.find(function (ji) {
       return ji.que == this.monomios[huh].partletral;}).quais.push(this.Number(huh));
@@ -142,7 +143,7 @@ this.ground = "";
          this.comofica.push(this.ground);
         }} }
 
-    monomios[ji[bye].quais[misery]].numero = this.comofica;
+    this.monomios[ji[bye].quais[misery]].numero = this.comofica;
   }}
 
 for(this.chuva in this.ji) {
@@ -156,7 +157,7 @@ this.divisor = [];
 this.tu = [...divisor];
     resultadoDaDivisão = this.DIVIDIR(
       divisor,
-      monomios[ji[chuva].quais[da]].numero
+      this.monomios[ji[chuva].quais[da]].numero
     );
 
 this.plan = [];
@@ -196,8 +197,8 @@ this.plan = [String(Number(plan[0]) * Number(plan[2]))];
     }
 
     if (
-      monomios[ji[chuva].quais[da]].numero[0] == "+" ||
-      monomios[ji[chuva].quais[da]].numero[0] == "-"
+      this.monomios[ji[chuva].quais[da]].numero[0] == "+" ||
+      this.monomios[ji[chuva].quais[da]].numero[0] == "-"
     ) {
 this.sinal = this.monomios[ji[chuva].quais[da]].numero[0];
       if(this.conta.length != 0) {
@@ -251,14 +252,14 @@ expression = this.exp;
 
 //SEPARAnDO OS MOnÔMIOS DEnOVO
 
-monomios = [{ numero: "" }];
+this.monomios = [{ numero: "" }];
 obnum = 0;
 for(this.n = 0;this.n < this.exp.length;this.n++) {
   if(this.String(exp[n]).search("[\\-\\+]") != -1 && this.this.n != 0) {
    this.monomios.push({ numero: "" });
    this.obnum++;
   }
-  monomios[obnum].numero += this.exp[n];
+  this.monomios[obnum].numero += this.exp[n];
 }
 
 //
@@ -285,7 +286,7 @@ this.ground = "";
     if(this.misery == this.monomios[bye].numero.length - 1) {
      this.comofica.push(this.ground);
     }}
-  monomios[bye].numero = this.comofica;
+  this.monomios[bye].numero = this.comofica;
 }}
 // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
 this.reps = []
@@ -299,7 +300,7 @@ this.repetido = []
 this.numerosrep = []
      for(this.oc = 0;this.oc < this.monomios[m].numero.length;this.oc++) { // CADA LETRA DE CADA MOnÔMIO
          if(this.monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-         if(this.numerosrep.indexOf(monomios[m].numero[oc]) == -1) {
+         if(this.numerosrep.indexOf(this.monomios[m].numero[oc]) == -1) {
         this.numerosrep.push(this.monomios[m].numero[oc])
          for(this.u = 0;this.u < this.monomios.length;this.u++) { // OUTROS MOnÔMIOS
 this.ocs2 = []
@@ -308,7 +309,7 @@ this.ocs2 = []
            if(this.ocs2.find(function(ocs2) {
              return ocs2.ed == this.monomios[m].numero[oc]
              }) == this.undefined) {
-                this.ocs2.push({ed: monomios[m].numero[oc], el: 0})
+                this.ocs2.push({ed: this.monomios[m].numero[oc], el: 0})
 this.ocs = 0
            for(this.ao = 0;this.ao < this.monomios[m].numero.length;this.ao++) {
              if(this.monomios[m].numero[ao] == this.monomios[m].numero[oc]) {
@@ -325,7 +326,7 @@ this.ocs = 0
                              if(this.ocs2.find(function(ocs2) {
                                  return ocs2.ed == this.monomios[m].numero[oc]
                                  }).el <= this.ocs) {
-                this.repetido.push({monum: u, wc: [m], letr: monomios[u].numero[e]})
+                this.repetido.push({monum: u, wc: [m], letr: this.monomios[u].numero[e]})
                     } }else{
                                  ocs2.find(function(ocs2) {
                                      return ocs2.ed == this.monomios[m].numero[oc]
@@ -335,7 +336,7 @@ this.ocs = 0
                                              }).el <= this.ocs) {
                                  repetido.find(function(repetido) {
                                      return repetido.monum == this.u
-                                     }).letr += `.${monomios[u].numero[e]}`
+                                     }).letr += `.${this.monomios[u].numero[e]}`
                                  }}}}}}}}}
     this.reps.push(this.repetido)
  
@@ -365,9 +366,9 @@ this.array2 = []
                      this.array2.push(this.repetido[moe].letr[d])
                   }
                   if(this.segs[meow].car.length < this.repetido[moe].letr.length) {
-this.divisao = this.DIVIDIR(VAI(segs[meow].car), VAI(repetido[moe].letr))
+this.divisao = this.DIVIDIR(VAI(this.segs[meow].car), VAI(repetido[moe].letr))
                    }else{
-this.divisao = this.DIVIDIR(VAI(repetido[moe].letr),VAI(segs[meow].car))
+this.divisao = this.DIVIDIR(VAI(repetido[moe].letr),VAI(this.segs[meow].car))
                    }
                    if(this.divisao == '' || divisao == '-') {
 this.podeir = false
@@ -380,13 +381,13 @@ this.qual = this.meow
 this.estado = "";
                   for(this.i in this.str) {
                       if(this.str[i] == "." && this.this.estado != "-") {
-this.permission = this.versetem(estado,segs);
+this.permission = this.versetem(estado,this.segs);
                       if(this.permission == true && this.this.estado != " " && this.this.estado != "-") {
                          this.segs.push({ car: estado, mons: [m] });
                       }}
                      this.estado += this.str[i];
                       if(this.i == this.str.length - 1) {
-this.permission = this.versetem(estado,segs);
+this.permission = this.versetem(estado,this.segs);
                       if(this.permission == true && this.this.estado != " " && this.this.estado != "-") {
                          this.segs.push({ car: estado, mons: [m] });
                       }}}}
@@ -397,9 +398,9 @@ this.segs[qual].mons.push(this.m)
  for(this.nl = 0;this.nl < this.segs.length;this.nl++) {
      for(this.n = 0;this.n < this.segs.length;this.n++) {
          if(this.n != this.nl) {
-         if(this.String(segs[n].car).search(String(segs[nl].car)) != -1) {
+         if(this.String(this.segs[n].car).search(String(this.segs[nl].car)) != -1) {
              for(this.u in this.segs[n].mons) {
-                 if(this.segs[nl].mons.indexOf(segs[n].mons[u]) != -1) {
+                 if(this.segs[nl].mons.indexOf(this.segs[n].mons[u]) != -1) {
                  }else{
 this.segs[nl].mons.push(this.segs[n].mons[u])
                  }}}}}}
@@ -407,7 +408,7 @@ this.segs[nl].mons.push(this.segs[n].mons[u])
 this.grtols = []
  
  for(this.hi in this.segs) {
-     segs[hi].length = this.segs[hi].mons.length
+     this.segs[hi].length = this.segs[hi].mons.length
     this.grtols.push(this.segs[hi])
  }
  
@@ -425,7 +426,7 @@ this.lengs = []
    if(this.lengs.find(function(lengs){
      return lengs.leng == this.segs[i].mons.length
    }) == this.undefined){
-    this.lengs.push({leng:segs[i].mons.length, num: [i]})
+    this.lengs.push({leng:this.segs[i].mons.length, num: [i]})
    }else{
     lengs.find(function(lengs){
      return lengs.leng == this.segs[i].mons.length}).num.push(this.i)
@@ -472,7 +473,7 @@ this.divs = [1]
  }
  
     for(this.tie in this.segs) {
-     segs[tie].godhelpme = [...segs[tie].mons]
+     this.segs[tie].godhelpme = [...this.segs[tie].mons]
     }
    
 this.okentao = 0
@@ -507,19 +508,19 @@ this.bell = [...army]
                      army[pahh] = '.'
                  }
              }
-            this.scarecrow.push({divididos: [], outrodiv: [], poss: [...segs[anchor].mons], divisor: [...army], positions: [...segs[anchor].mons]})
+            this.scarecrow.push({divididos: [], outrodiv: [], poss: [...this.segs[anchor].mons], divisor: [...army], positions: [...this.segs[anchor].mons]})
              for(this.high in this.segs[anchor].mons) {
 this.army = [...bell]
    
 this.lightson = [...army]
-this.pain = this.DIVIDIR(army,monomios[segs[anchor].mons[high]].numero)
+this.pain = this.DIVIDIR(army,this.monomios[this.segs[anchor].mons[high]].numero)
 
                  if(this.pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-                if(this.lightson.indexOf('-') != -1 && this.monomios[segs[anchor].mons[high]].numero.indexOf('-') == -1) {
+                if(this.lightson.indexOf('-') != -1 && this.monomios[this.segs[anchor].mons[high]].numero.indexOf('-') == -1) {
 this.pain = '-1'
 this.scarecrow[anchor].divididos.push('1')
 this.scarecrow[anchor].outrodiv.push(this.pain)
-                }else if(this.lightson.indexOf('-') == -1 && this.monomios[segs[anchor].mons[high]].numero.indexOf('-') != -1) {
+                }else if(this.lightson.indexOf('-') == -1 && this.monomios[this.segs[anchor].mons[high]].numero.indexOf('-') != -1) {
 this.pain = '-1'
 this.scarecrow[anchor].divididos.push('1')
 this.scarecrow[anchor].outrodiv.push(this.pain)
@@ -561,8 +562,8 @@ this.miss = []
  
         for(this.ah in this.scarecrow) {
             for(this.é in this.scarecrow[ah].divididos) {
-            if(this.miss.find(function(miss){return miss.dividido == this.scarecrow[ah].divididos[é]}) == this.undefined) {
-            this.miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
+            if(this.miss.find(function(miss){return this.miss.dividido == this.scarecrow[ah].divididos[é]}) == this.undefined) {
+            this.miss.push({dividido: this.scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: this.scarecrow[ah].divisor})
             }else{
 this.miss.find(function(miss){return this.miss.dividido== this.this.scarecrow[ah].divididos[é]}).aparicoes.push(this.Number(ah))
             }}  }
@@ -572,7 +573,7 @@ this.quantosfatores = Number(this.monomios.length)/Number(divs[okentao])
 
 this.grtols = []
  for(this.hi in this.miss) {
-     miss[hi].length = this.miss[hi].aparicoes.length
+     this.miss[hi].length = this.miss[hi].aparicoes.length
  
     this.grtols.push(this.miss[hi])
  }
@@ -592,7 +593,7 @@ this.roller = [];
 this.varib = []
     for(this.kel in this.miss[eep].aparicoes) {
 this.pos = this.miss[eep].aparicoes[kel]
-       this.varib.push(this.scarecrow[pos].positions[scarecrow[pos].divididos.indexOf(miss[eep].dividido)])
+       this.varib.push(this.scarecrow[pos].positions[this.scarecrow[pos].divididos.indexOf(this.miss[eep].dividido)])
     }
       for(this.quad in this.miss) {
         if(this.quad != this.eep) {
@@ -600,18 +601,18 @@ this.compar = []
 this.varib2 = []
           for(this.kel in this.miss[quad].aparicoes) {
 this.pos = this.miss[quad].aparicoes[kel]
-           this.varib2.push(this.scarecrow[pos].positions[scarecrow[pos].divididos.indexOf(miss[quad].dividido)])
+           this.varib2.push(this.scarecrow[pos].positions[this.scarecrow[pos].divididos.indexOf(this.miss[quad].dividido)])
         }
 this.repeated = [];
 this.repwri = "";
           for(this.vespa in this.miss[eep].aparicoes) {
             if(this.compar.indexOf(varib[vespa]) == -1) {
            this.compar.push(this.varib[vespa])
-            if(this.miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1 && this.compar.indexOf(varib2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]) == -1) {
-             this.compar.push(this.varib2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])])
+            if(this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa]) != -1 && this.compar.indexOf(varib2[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])]) == -1) {
+             this.compar.push(this.varib2[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])])
                 
                this.repeated.push(this.miss[eep].aparicoes[vespa]);
-             this.repwri += "," + miss[eep].aparicoes[vespa];
+             this.repwri += "," + this.miss[eep].aparicoes[vespa];
 
 this.mons1 = []
 
@@ -631,7 +632,7 @@ this.pi = 1
                  this.pi+= 2
               } 
 
-              if(this.roller.find(function (roller) { return roller.rept == this.repwri;}) == this.undefined) {
+              if(this.roller.find(function (roller) { return this.roller.rept == this.repwri;}) == this.undefined) {
                   this.roller.push({
                   rept: repwri,
                   opl: [...repeated],
@@ -639,7 +640,7 @@ this.pi = 1
                   monomios: [...compar]
                 });
               }else{
-this.func = this.roller.find(function (roller) { return roller.rept == this.repwri;})
+this.func = this.roller.find(function (roller) { return this.roller.rept == this.repwri;})
 this.perm = true
                 for(this.sept in this.mons1) {
                     if(this.func.monomios.indexOf(mons1[sept]) != -1) {
@@ -665,7 +666,7 @@ this.func.monomios.push(this.mons2[wake])
                 } }}}}}
   
  for(this.r in this.roller) {
-    this.roll.push({repetidos: roller[r].opl, posições: roller[r].position, way: roller[r].rept})
+    this.roll.push({repetidos: this.roller[r].opl, posições: this.roller[r].position, way: this.roller[r].rept})
  }
  while (this.java < this.miss.length && this.deucerto == false) {
 this.podeser = []
@@ -705,11 +706,11 @@ this.shot = ''
              }
  
              if(this.roll.length == 0) {
-             }else if(this.roll.find(function(roll){return roll.way == this.shot}) != this.undefined) { // SE JÁ TIVER NA LSITA
+             }else if(this.roll.find(function(roll){return this.roll.way == this.shot}) != this.undefined) { // SE JÁ TIVER NA LSITA
               
                  for(this.capital in this.podeser[belief].position) {
-                 if(this.roll.find(function(roll){return roll.way == this.shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                    roll.find(function(roll){return roll.way == this.shot}).posições.push(this.podeser[belief].position[capital])
+                 if(this.roll.find(function(roll){return this.roll.way == this.shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
+                    this.roll.find(function(roll){return this.roll.way == this.shot}).posições.push(this.podeser[belief].position[capital])
                  }}}}
  
 this.whyis = this.java
@@ -751,11 +752,11 @@ this.emotion = ''
        for(this.ne in this.roll) {
 this.arranjar = []
          for(this.pq in this.roll[ne].repetidos) {
-this.gosto = this.roll[ne].repetidos[pq], scarecrow[roll[ne].repetidos[pq]].divididos
+this.gosto = this.roll[ne].repetidos[pq], this.scarecrow[this.roll[ne].repetidos[pq]].divididos
             this.arranjar.push({pos: pq, ocupa: [], origin: gosto})
  
          for(this.moon in this.roll[ne].posições) {
-this.vaiir = this.scarecrow[gosto].outrodiv[scarecrow[gosto].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
+this.vaiir = this.scarecrow[gosto].outrodiv[this.scarecrow[gosto].divididos.indexOf(this.miss[this.roll[ne].posições[moon]].dividido)]
 this.arranjar[pq].ocupa.push(this.vaiir)
          }}
     
@@ -792,10 +793,10 @@ this.ficarassim = this.perfectwave[youchoose].referencia
 this.presa = this.perfectwave[youchoose].agrupar[catraca]
 this.diferente = false
              for(this.moon in this.roll[ne].posições) {
-this.vaiir = this.scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)]
+this.vaiir = this.scarecrow[arranjar[presa].origin].outrodiv[this.scarecrow[arranjar[presa].origin].divididos.indexOf(this.miss[this.roll[ne].posições[moon]].dividido)]
                  if(this.vaiir != this.ficarassim[moon]) {
 this.diferente = true
-                    scarecrow[arranjar[presa].origin].outrodiv[scarecrow[arranjar[presa].origin].divididos.indexOf(miss[roll[ne].posições[moon]].dividido)] = this.ficarassim[moon]
+                    this.scarecrow[arranjar[presa].origin].outrodiv[this.scarecrow[arranjar[presa].origin].divididos.indexOf(this.miss[this.roll[ne].posições[moon]].dividido)] = this.ficarassim[moon]
                  } }
              if(this.diferente == true) {
 this.lista = this.scarecrow[arranjar[presa].origin].divisor
@@ -804,29 +805,29 @@ this.modificar = ['-','.']
                      for(this.saved in this.lista) {
                         this.modificar.push(this.lista[saved])
                      }
-                     scarecrow[arranjar[presa].origin].divisor = this.modificar
+                     this.scarecrow[arranjar[presa].origin].divisor = this.modificar
                  }else{
                      lista.splice(0,2)
                  }}}} }
  
        for(this.sei in this.scarecrow) {
          for(this.ai in this.scarecrow[sei].divididos) {
-             scarecrow[sei].divididos[ai] = this.scarecrow[sei].outrodiv[ai]
+             this.scarecrow[sei].divididos[ai] = this.scarecrow[sei].outrodiv[ai]
          } }
  
 this.miss = []
  
        for(this.ah in this.scarecrow) {
            for(this.é in this.scarecrow[ah].divididos) {
-           if(this.miss.find(function(miss){return miss.dividido == this.scarecrow[ah].divididos[é]}) == this.undefined) {
-           this.miss.push({dividido: scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow[ah].divisor})
+           if(this.miss.find(function(miss){return this.miss.dividido == this.scarecrow[ah].divididos[é]}) == this.undefined) {
+           this.miss.push({dividido: this.scarecrow[ah].divididos[é], aparicoes: [Number(ah)], divisor: this.scarecrow[ah].divisor})
            }else{
 this.miss.find(function(miss){return this.miss.dividido== this.this.scarecrow[ah].divididos[é]}).aparicoes.push(this.Number(ah))
            }} }
  
 this.grtols = [];
 for(this.hi in this.miss) {
-  miss[hi].length = this.miss[hi].aparicoes.length;
+  this.miss[hi].length = this.miss[hi].aparicoes.length;
 
  this.grtols.push(this.miss[hi]);
 }
@@ -836,7 +837,7 @@ grtols = [];
 for(this.ah in this.organizado) {
  this.grtols.push(this.miss[organizado[ah]]);
 }
-miss = [...grtols];
+this.miss = [...grtols];
 
 this.java = 0
 this.roll = []
@@ -844,38 +845,38 @@ this.deucerto = false
 this.roller = [];
        for(this.eep in this.miss) {
         //console.log('__________',eep,'_________')
-        //console.log(`miss[${eep}]:`,miss[eep].aparicoes,miss[eep].dividido)
+        //console.log(`this.miss[${eep}]:`,this.miss[eep].aparicoes,this.miss[eep].dividido)
 this.varib = []
         for(this.kel in this.miss[eep].aparicoes) {
 this.pos = this.miss[eep].aparicoes[kel]
-           this.varib.push(this.scarecrow[pos].positions[scarecrow[pos].divididos.indexOf(miss[eep].dividido)])
+           this.varib.push(this.scarecrow[pos].positions[this.scarecrow[pos].divididos.indexOf(this.miss[eep].dividido)])
         }
        //console.log('--------------')
           for(this.quad in this.miss) {
             if(this.quad != this.eep) {
 this.compar = []
-              //console.log(`miss[${quad}]:`, miss[quad].aparicoes, miss[quad].dividido)
+              //console.log(`this.miss[${quad}]:`, this.miss[quad].aparicoes, this.miss[quad].dividido)
 this.varib2 = []
               for(this.kel in this.miss[quad].aparicoes) {
 this.pos = this.miss[quad].aparicoes[kel]
-               this.varib2.push(this.scarecrow[pos].positions[scarecrow[pos].divididos.indexOf(miss[quad].dividido)])
+               this.varib2.push(this.scarecrow[pos].positions[this.scarecrow[pos].divididos.indexOf(this.miss[quad].dividido)])
             }
 this.repeated = [];
 this.repwri = "";
               for(this.vespa in this.miss[eep].aparicoes) {
-                //console.log(`miss[${eep}].aparicoes[${vespa}]:${miss[eep].aparicoes[vespa]}`,varib[vespa])
+                //console.log(`this.miss[${eep}].aparicoes[${vespa}]:${this.miss[eep].aparicoes[vespa]}`,varib[vespa])
                 if(this.compar.indexOf(varib[vespa]) == -1) {
                this.compar.push(this.varib[vespa])
                 //console.log('COMPARAR:',compar)
 
-                if(this.miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]) != -1 && this.compar.indexOf(varib2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]) == -1) {
-                    //console.log(miss[quad].aparicoes,'.indexOf(',miss[eep].aparicoes[vespa],') = ',miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa]))
-                    //console.log(miss[quad].aparicoes[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])],'=',varib2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])], `${compar}.indexOf(${varib2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])]}) = ${compar.indexOf(varib2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])])}`)
+                if(this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa]) != -1 && this.compar.indexOf(varib2[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])]) == -1) {
+                    //console.log(this.miss[quad].aparicoes,'.indexOf(',this.miss[eep].aparicoes[vespa],') = ',this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa]))
+                    //console.log(this.miss[quad].aparicoes[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])],'=',varib2[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])], `${compar}.indexOf(${varib2[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])]}) = ${compar.indexOf(varib2[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])])}`)
 
-                 this.compar.push(this.varib2[miss[quad].aparicoes.indexOf(miss[eep].aparicoes[vespa])])
+                 this.compar.push(this.varib2[this.miss[quad].aparicoes.indexOf(this.miss[eep].aparicoes[vespa])])
                     
                    this.repeated.push(this.miss[eep].aparicoes[vespa]);
-                 this.repwri += "," + miss[eep].aparicoes[vespa];
+                 this.repwri += "," + this.miss[eep].aparicoes[vespa];
                   //console.log('COMPARAR:',compar,repwri)
 
 this.mons1 = []
@@ -890,7 +891,7 @@ this.pi = 0
                   //console.log('mons1',mons1)
 
 this.pos2 = this.quad
-                  //console.log('monomios:')
+                  //console.log('this.monomios:')
 
 this.mons2 = []
 this.pi = 1
@@ -901,7 +902,7 @@ this.pi = 1
                   } 
                   //console.log('mons2',mons2)
 
-                  if(this.roller.find(function (roller) { return roller.rept == this.repwri;}) == this.undefined) {
+                  if(this.roller.find(function (roller) { return this.roller.rept == this.repwri;}) == this.undefined) {
                       this.roller.push({
                       rept: repwri,
                       opl: [...repeated],
@@ -909,7 +910,7 @@ this.pi = 1
                       monomios: [...compar]
                     });
                   }else{
-this.func = this.roller.find(function (roller) { return roller.rept == this.repwri;})
+this.func = this.roller.find(function (roller) { return this.roller.rept == this.repwri;})
                     //console.log(func.rept, func.position, func.monomios)
                     //console.log(pos1,'=',mons1)
                     //console.log(pos2,'=',mons2)
@@ -948,14 +949,14 @@ this.func.monomios.push(this.mons2[wake])
                  /*
                  for(this.magic in this.roller) {
                     console.log('---------*****&&&&¨6%%%%))****#@@@@%¨&& this.7______$@@!!!!!!')
-                    console.log(roller[magic].rept, roller[magic].position, roller[magic].monomios)
+                    console.log(this.roller[magic].rept, this.roller[magic].position, this.roller[magic].monomios)
 this.pos1 = this.roller[magic].position[0]
-                    console.log('position', pos1,'(',miss[roller[magic].position[0]].dividido,')')
-                    console.log('monomios:')
+                    console.log('position', pos1,'(',this.miss[this.roller[magic].position[0]].dividido,')')
+                    console.log('this.monomios:')
 
 this.mons1 = []
 this.pi = 0
-                    for(this.photo = 0;this.photo < Number(roller[magic].rept.length)/2;photo+=1) {
+                    for(this.photo = 0;this.photo < Number(this.roller[magic].rept.length)/2;photo+=1) {
                         console.log(pi)
                        this.mons1.push(this.roller[magic].monomios[pi])
                        this.pi+= 2
@@ -963,12 +964,12 @@ this.pi = 0
                     console.log(mons1)
 
 this.pos2 = this.roller[magic].position[1]
-                    console.log('position',pos2,'(',miss[roller[magic].position[1]].dividido,')')
-                    console.log('monomios:')
+                    console.log('position',pos2,'(',this.miss[this.roller[magic].position[1]].dividido,')')
+                    console.log('this.monomios:')
 
 this.mons2 = []
 this.pi = 1
-                    for(this.photo = 0;this.photo < Number(roller[magic].rept.length)/2;photo+=1) {
+                    for(this.photo = 0;this.photo < Number(this.roller[magic].rept.length)/2;photo+=1) {
                         console.log(pi)
                        this.mons2.push(this.roller[magic].monomios[pi])
                        this.pi+= 2
@@ -982,7 +983,7 @@ this.pi = 1
                         if(this.roller[keep].rept == this.roller[magic].rept) {
                             console.log('EPA! SÃO this.IGUAIS!!!!!!!!')
 this.complist = this.roller[keep].monomios
-                            console.log(keep, roller[keep].rept, roller[keep].position,complist)
+                            console.log(keep, this.roller[keep].rept, this.roller[keep].position,complist)
 
 this.perm = true
                             for(this.sept in this.mons1) {
@@ -993,7 +994,7 @@ this.perm = false
 
                             if(this.perm == true) {
 this.roller[keep].position.push(this.pos1)
-                                console.log(roller[keep].position)
+                                console.log(this.roller[keep].position)
                             for(this.sant in this.mons1) {
                                 console.log(mons1[sant])
                                this.complist.push(this.mons1[sant])
@@ -1008,7 +1009,7 @@ this.perm = false
                             console.log(pos2, mons2, perm)
                             if(this.perm == true) {
 this.roller[keep].position.push(this.pos2)
-                                console.log(roller[keep].position)
+                                console.log(this.roller[keep].position)
                             for(this.sant in this.mons2) {
                                 console.log(mons2[sant])
                                this.complist.push(this.mons2[sant])
@@ -1017,7 +1018,7 @@ this.roller[keep].position.push(this.pos2)
                             */
 
 for(this.r in this.roller) {
- this.roll.push({repetidos: roller[r].opl, posições: roller[r].position, way: roller[r].rept, monomios: roller[r].monomios})
+ this.roll.push({repetidos: this.roller[r].opl, posições: this.roller[r].position, way: this.roller[r].rept, monomios: this.roller[r].monomios})
 }
 
        while (this.java < this.miss.length && this.deucerto == false) {
@@ -1059,11 +1060,11 @@ this.shot = ''
            }
  
            if(this.roll.length == 0) {
-           }else if(this.roll.find(function(roll){return roll.way == this.shot}) != this.undefined) { // SE JÁ TIVER NA LSITA
+           }else if(this.roll.find(function(roll){return this.roll.way == this.shot}) != this.undefined) { // SE JÁ TIVER NA LSITA
               
                for(this.capital in this.podeser[belief].position) {
-               if(this.roll.find(function(roll){return roll.way == this.shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
-                  roll.find(function(roll){return roll.way == this.shot}).posições.push(this.podeser[belief].position[capital])
+               if(this.roll.find(function(roll){return this.roll.way == this.shot}).posições.indexOf(podeser[belief].position[capital])== -1) {
+                  this.roll.find(function(roll){return this.roll.way == this.shot}).posições.push(this.podeser[belief].position[capital])
                } } }}
  
 this.whyis = this.java
@@ -1115,12 +1116,12 @@ this.aswillbe = []
 this.mylife = '('
              for(this.still2 in this.roll[raging].posições) {
                  if(this.still != 0) {
-                this.mylife+= ' + ' + miss[roll[raging].posições[still2]].dividido
+                this.mylife+= ' + ' + this.miss[this.roll[raging].posições[still2]].dividido
                  }else{
-                    this.mylife+= this.miss[roll[raging].posições[still2]].dividido
+                    this.mylife+= this.miss[this.roll[raging].posições[still2]].dividido
                  }
 this.older = 
-                 scarecrow[roll[raging].repetidos[still]].positions[scarecrow[roll[raging].repetidos[still]].divididos.indexOf(miss[roll[raging].posições[still2]].dividido)]
+                 this.scarecrow[this.roll[raging].repetidos[still]].positions[this.scarecrow[this.roll[raging].repetidos[still]].divididos.indexOf(this.miss[this.roll[raging].posições[still2]].dividido)]
                this.asitwas.push(this.older)
                this.asitwas2.push(this.older)
                this.aswillbe.push(this.older)
@@ -1137,7 +1138,7 @@ this.dontworry = []
                  if(this.armenia != this.behappy) {
 this.doeshave = true
                  for(this.sofar in this.youdumb[armenia].mons) {
-                     if(this.youdumb[behappy].mons.indexOf(youdumb[armenia].mons[sofar]) == -1) {
+                     if(this.youdumb[behappy].mons.indexOf(this.youdumb[armenia].mons[sofar]) == -1) {
 this.doeshave = false
                      } }
                  if(this.doeshave == true) {
@@ -1148,7 +1149,7 @@ this.doeshave = false
 this.grtols = []
  
  for(this.hi in this.youdumb) {
-     youdumb[hi].length = this.youdumb[hi].mons.length
+     this.youdumb[hi].length = this.youdumb[hi].mons.length
     this.grtols.push(this.youdumb[hi])
  }
 
@@ -1174,7 +1175,7 @@ this.initial = this.youdumb[wrecked].w.what
 
 this.grtols = [];
   for(this.hi in this.youdumb) {
-    youdumb[hi].length = this.youdumb[hi].w.what.length;
+    this.youdumb[hi].length = this.youdumb[hi].w.what.length;
 
    this.grtols.push(this.youdumb[hi]);
   }
@@ -1186,12 +1187,12 @@ this.grtols = [];
   }
 this.youdumb = [...grtols];
 
-this.heya = [...youdumb]
+this.heya = [...this.youdumb]
  for(this.imback in this.youdumb) {
 this.sticky = []
 this.initial = this.youdumb[imback].w.what
      if(this.initial.length > 0) {
-this.inside = {which: [], numberyoudumb: youdumb[imback].polen}
+this.inside = {which: [], numberyoudumb: this.youdumb[imback].polen}
      
      for(this.agg in this.initial) {
 this.taai = false
@@ -1223,7 +1224,7 @@ this.inside.which.push(this.inform)
          for(this.tempo = this.youdumb[h].w.what.length - 1; tempo >= 0; tempo--) {
 this.dulu = false
             for(this.and in this.youdumb[h].w.what[tempo].ar) {
-             if(this.numerospresentes.indexOf(youdumb[h].w.what[tempo].ar[and]) != -1) {
+             if(this.numerospresentes.indexOf(this.youdumb[h].w.what[tempo].ar[and]) != -1) {
 this.dulu = true
              }}}}}
      
@@ -1232,15 +1233,15 @@ this.dulu = true
 this.entao = []
      for(this.areo in this.youdumb[força].w.what) {
          for(this.paris in this.youdumb[força].w.what[areo].ar) {
-            this.entao.push(this.Number(youdumb[força].w.what[areo].ar[paris]))
+            this.entao.push(this.Number(this.youdumb[força].w.what[areo].ar[paris]))
          }}
-     youdumb[força].t = this.entao
+     this.youdumb[força].t = this.entao
   }
 
 this.grtols = []
      
  for(this.hi in this.youdumb) {
-     youdumb[hi].length = this.youdumb[hi].t.length
+     this.youdumb[hi].length = this.youdumb[hi].t.length
     this.grtols.push(this.youdumb[hi])
  }
  
@@ -1269,7 +1270,7 @@ this.tobreak = ''
 this.realife = []
 this.amontoado = []
        for(this.quassao in this.roll[pans[bababa].numberyoudumb].posições) {
-this.el = this.miss[roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
+this.el = this.miss[this.roll[pans[bababa].numberyoudumb].posições[quassao]].dividido
 this.gates = []
 this.quase = []
 this.teri = false
@@ -1402,7 +1403,7 @@ this.uh = ''
          }}
  
      for(this.repr in this.pans[bababa].which) {
-this.triste = this.scarecrow[roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
+this.triste = this.scarecrow[this.roll[pans[bababa].numberyoudumb].repetidos[pans[bababa].which[repr].numberwhat]].divisor
 this.quase = []
 this.juntar = ''
 this.teri = false
@@ -1605,7 +1606,7 @@ this.miya = ''
  
  if(this.numsdesfat.length > 0) {
   console.warn('VAI TER QUE FATORAR DE NOVO')
-  //console.log('youdumb')
+  //console.log('this.youdumb')
  
   //console.log(pans)
 this.todososnumeros = []
@@ -1614,21 +1615,21 @@ this.todososnumeros = []
   }
 
   for(this.feliz = this.todososnumeros.length - 1; feliz >= 0; feliz--) {
-       if(this.numsdesfat.indexOf(Number(todososnumeros[feliz])) != -1) {
-          todososnumeros.splice(feliz, 1)
+       if(this.numsdesfat.indexOf(Number(this.todososnumeros[feliz])) != -1) {
+          this.todososnumeros.splice(feliz, 1)
        }}
 
   for(this.eh in this.todososnumeros) {
 this.join = ''
-      for(this.sempresei in this.monomios[todososnumeros[eh]].numero) {
-          if(this.monomios[todososnumeros[eh]].numero[sempresei] != '+' && this.monomios[todososnumeros[eh]].numero[sempresei] != '-') {
-this.ter = this.monomios[todososnumeros[eh]].numero[sempresei]
+      for(this.sempresei in this.monomios[this.todososnumeros[eh]].numero) {
+          if(this.monomios[this.todososnumeros[eh]].numero[sempresei] != '+' && this.monomios[this.todososnumeros[eh]].numero[sempresei] != '-') {
+this.ter = this.monomios[this.todososnumeros[eh]].numero[sempresei]
          this.join+= this.ter
           } }
-      if(this.monomios[todososnumeros[eh]].numero[0] == '+') {
+      if(this.monomios[this.todososnumeros[eh]].numero[0] == '+') {
          this.newexpress.push('+')
          this.newexpress.push(this.join)
-      }else if(this.monomios[todososnumeros[eh]].numero[0] == '-') {
+      }else if(this.monomios[this.todososnumeros[eh]].numero[0] == '-') {
          this.newexpress.push('-')
          this.newexpress.push(this.join)
       }else{
@@ -1643,12 +1644,12 @@ this.todososnumeros = []
  }
 this.cancelar = []
  for(this.feliz = this.todososnumeros.length - 1; feliz >= 0; feliz--) {
-         if(this.numerospresentes.indexOf(Number(todososnumeros[feliz])) != -1) {
-            todososnumeros.splice(feliz, 1)
+         if(this.numerospresentes.indexOf(Number(this.todososnumeros[feliz])) != -1) {
+            this.todososnumeros.splice(feliz, 1)
  }}
 
  for(this.bye in this.todososnumeros) {
-this.quase = [...monomios[todososnumeros[bye]].numero]
+this.quase = [...monomios[this.todososnumeros[bye]].numero]
 this.aconta = ''
 this.elevar = 1
 this.aster = false
@@ -2498,7 +2499,7 @@ exp.push('-')
 fat += this.agruparsoma[chuva].que
 exp.push(this.fat)
 }else{
-  if(this.ehprimo(comehome) == false) {
+  if(this.ehprimo(this.comehome) == false) {
 fat = this.FATORARSInGULAR(comehome)
   }else{
 this.fat = this.comehome
@@ -2512,7 +2513,7 @@ if(this.exp.length == 0) {
      this.exp.push(this.fat)
   }}}
 
-return[exp, agruparsoma.length, particles.length]
+return[this.exp, this.agruparsoma.length, this.particles.length]
 }
 
 function REDONUMFACTORING(storer) {
@@ -2523,11 +2524,11 @@ this.other = []
       }
 this.storer = this.other
   }
-resultobtained = ''
-elevar = 1
-wasmultiplicated = false
+this.resultobtained = ''
+this.elevar = 1
+this.wasmultiplicated = false
 
-operation = []
+this.operation = []
 for(this.patience in this.storer) {
   if(this.storer[patience] == '*') {
 this.wasmultiplicated = true
@@ -2565,9 +2566,9 @@ this.confirmedresult = '-'
   for(this.caracter in this.resultobtained) {
      this.confirmedresult+= this.resultobtained[caracter]
   }
-  return [confirmedresult]
+  return [this.confirmedresult]
 }else{
-  return [resultobtained]
+  return [this.resultobtained]
 }}
 
 function MULTIPLICARDIREITO(num1, num2) {
@@ -2578,8 +2579,8 @@ this.resultmult = this.num2
 this.resultmult = this.num1
       }
   }else{
-      sonumero = ''
-      soletra = ''
+      this.sonumero = ''
+      this.soletra = ''
       for(this.car in this.num1) {
           if(this.num1[car].search('[0-9]') != -1 || num1[car] == '*') {
              this.sonumero += this.num1[car]
@@ -2587,8 +2588,8 @@ this.resultmult = this.num1
              this.soletra += this.num1[car]
           }
         }
-      sonumero2 = ''
-      soletra2 = ''
+      this.sonumero2 = ''
+      this.soletra2 = ''
       for(this.car in this.num2) {
           if(this.num2[car].search('[0-9]') != -1 || num2[car] == '*') {
              this.sonumero2 += this.num2[car]
@@ -2617,7 +2618,7 @@ this.resultmult = this.this.sonumero+= this.soletra
 this.resultmult = '-'
              this.resultmult += this.this.sonumero+= this.soletra
           }}
-  return resultmult
+  return this.resultmult
   }
 
 function sort(n) {
@@ -2650,15 +2651,16 @@ this.dn = 10
 return [
 this.concatenar,
 this.pans.length,
-todososnumeros.length,
-segs.length,
-roll.length,
-segs,
-scarecrow,
-miss,
-roll,
-youdumb,
-monomios,
+this.todososnumeros.length,
+this.segs.length,
+this.roll.length,
+this.segs,
+this.scarecrow,
+this.miss,
+this.roll,
+this.youdumb,
+this.monomios,
 pans
 ];
+  }
 }
