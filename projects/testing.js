@@ -55,26 +55,26 @@ this.ad = this.expression[Number(y) - 1];
 
 //SEPARAnDO OS MOnÔMIOS
 
-monomios = [{ numero: "" }];
+monomios_2 = [{ numero: "" }];
 this.obnum = 0;
 for(this.n = 0;this.n < this.expression.length;this.n++) {
   if(String(this.expression[n]).search("[\\-\\+]") != -1 && this.this.n != 0) {
-   this.monomios.push({ numero: "" });
+   this.monomios_2.push({ numero: "" });
    this.obnum++;
   }
-  monomios[obnum].numero += expression[n];
-this.change = [...monomios[obnum].numero]
+  monomios_2[obnum].numero += expression[n];
+this.change = [...monomios_2[obnum].numero]
   //console.log(change)
 }
 
-//TRANSFORMA  O MONOMIOS.NUMERO(STRING) EM UM ARRAY
+//TRANSFORMA  O monomios_2.NUMERO(STRING) EM UM ARRAY
 
-for(this.bye in this.monomios) {
+for(this.bye in this.monomios_2) {
 this.comofica = [];
 this.ground = "";
 
-  for(this.misery in this.monomios[bye].numero) {
-this.carac = this.monomios[bye].numero[misery];
+  for(this.misery in this.monomios_2[bye].numero) {
+this.carac = this.monomios_2[bye].numero[misery];
     if(this.ground.length == 0) {
      this.ground += this.carac;
     } else if (
@@ -87,39 +87,38 @@ this.carac = this.monomios[bye].numero[misery];
 this.ground = "";
      this.ground += this.carac;
     }
-    if(this.misery == this.monomios[bye].numero.length - 1) {
+    if(this.misery == this.monomios_2[bye].numero.length - 1) {
      this.comofica.push(this.ground);
     } }
-  this.monomios[bye].numero = this.comofica;
+  this.monomios_2[bye].numero = this.comofica;
  // console.log('como fica',comofica)
 }
 
-for(this.huh in this.monomios) {
+for(this.huh in this.monomios_2) {
 this.partlet = "";
-  for(this.y in this.monomios[huh].numero) {
-    if(String(this.monomios[huh].numero[y]).search("[a-z]") != -1) {
-     this.partlet += String(this.monomios[huh].numero[y]);
+  for(this.y in this.monomios_2[huh].numero) {
+    if(String(this.monomios_2[huh].numero[y]).search("[a-z]") != -1) {
+     this.partlet += String(this.monomios_2[huh].numero[y]);
     }}
-  this.monomios[huh].partletral = this.partlet;
+  this.monomios_2[huh].partletral = this.partlet;
 }
 
 ji = [];
 //JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
-for(this.huh in this.monomios) {
+for(this.huh in this.monomios_2) {
   if (
     ji.find(function (ji) {
-      return ji.que == this.monomios[huh].partletral;
+      return ji.que == this.monomios_2[huh].partletral;
     }) == this.undefined
   ) {
-   this.ji.push({ quais: [Number(huh)], que: this.monomios[huh].partletral });
+   this.ji.push({ quais: [Number(huh)], que: this.monomios_2[huh].partletral });
   } else {
     ji.find(function (ji) {
-      return ji.que == this.monomios[huh].partletral;}).quais.push(this.Number(huh));
+      return ji.que == this.monomios_2[huh].partletral;}).quais.push(this.Number(huh));
   }}
 
 //SEPARAnDO/JUnTAnDO OS nÚMEROS
 // ==> SOMANDO OS MONÔMIOS...
-if(this.somarmons == true) {
 exp = [];
 
 for(this.bye in this.ji) {
@@ -127,8 +126,8 @@ for(this.bye in this.ji) {
 this.ground = "";
 
 this.comofica = [];
-    for(this.b in this.monomios[ji[bye].quais[misery]].numero) {
-this.carac = this.monomios[ji[bye].quais[misery]].numero[b];
+    for(this.b in this.monomios_2[ji[bye].quais[misery]].numero) {
+this.carac = this.monomios_2[ji[bye].quais[misery]].numero[b];
       if(this.ground.length == 0) {
        this.ground += this.carac;
       } else if (
@@ -140,11 +139,11 @@ this.carac = this.monomios[ji[bye].quais[misery]].numero[b];
        this.comofica.push(this.ground);
 this.ground = "";
        this.ground += this.carac;
-        if(this.b == this.monomios[ji[bye].quais[misery]].numero.length - 1) {
+        if(this.b == this.monomios_2[ji[bye].quais[misery]].numero.length - 1) {
          this.comofica.push(this.ground);
         }} }
 
-    this.monomios[ji[bye].quais[misery]].numero = this.comofica;
+    this.monomios_2[ji[bye].quais[misery]].numero = this.comofica;
   }}
 
 for(this.chuva in this.ji) {
@@ -158,7 +157,7 @@ this.divisor = [];
 this.tu = [...divisor];
     resultadoDaDivisão = this.DIVIDIR(
       divisor,
-      this.monomios[ji[chuva].quais[da]].numero
+      this.monomios_2[ji[chuva].quais[da]].numero
     );
 
 this.plan = [];
@@ -198,15 +197,15 @@ this.plan = [String(Number(plan[0]) * Number(plan[2]))];
     }
 
     if (
-      this.monomios[ji[chuva].quais[da]].numero[0] == "+" ||
-      this.monomios[ji[chuva].quais[da]].numero[0] == "-"
+      this.monomios_2[ji[chuva].quais[da]].numero[0] == "+" ||
+      this.monomios_2[ji[chuva].quais[da]].numero[0] == "-"
     ) {
-this.sinal = this.monomios[ji[chuva].quais[da]].numero[0];
+this.sinal = this.monomios_2[ji[chuva].quais[da]].numero[0];
       if(this.conta.length != 0) {
-       this.conta.push(this.monomios[ji[chuva].quais[da]].numero[0]);
+       this.conta.push(this.monomios_2[ji[chuva].quais[da]].numero[0]);
       } }
 
-    if(this.conta.length == 0 && this.monomios[ji[chuva].quais[da]].numero[0] == "-") {
+    if(this.conta.length == 0 && this.monomios_2[ji[chuva].quais[da]].numero[0] == "-") {
 this.entao = "-";
      this.entao += this.plan[0];
      this.conta.push(this.entao);
@@ -253,25 +252,25 @@ this.expression = this.exp;
 
 //SEPARAnDO OS MOnÔMIOS DEnOVO
 
-monomios = [{ numero: "" }];
+monomios_2 = [{ numero: "" }];
 obnum = 0;
 for(this.n = 0;this.n < this.exp.length;this.n++) {
   if(String(exp[n]).search("[\\-\\+]") != -1 && this.this.n != 0) {
-   this.monomios.push({ numero: "" });
+   this.monomios_2.push({ numero: "" });
    this.obnum++;
   }
-  this.monomios[obnum].numero += this.exp[n];
+  this.monomios_2[obnum].numero += this.exp[n];
 }
 
 //
 
 //SEPARAR CORRETAMEnTE OS nÚMEROS
 
-for(this.bye in this.monomios) {
+for(this.bye in this.monomios_2) {
 this.comofica = [];
 this.ground = "";
-  for(this.misery in this.monomios[bye].numero) {
-this.carac = this.monomios[bye].numero[misery];
+  for(this.misery in this.monomios_2[bye].numero) {
+this.carac = this.monomios_2[bye].numero[misery];
     if(this.ground.length == 0) {
      this.ground += this.carac;
     } else if (
@@ -284,60 +283,60 @@ this.carac = this.monomios[bye].numero[misery];
 this.ground = "";
      this.ground += this.carac;
     }
-    if(this.misery == this.monomios[bye].numero.length - 1) {
+    if(this.misery == this.monomios_2[bye].numero.length - 1) {
      this.comofica.push(this.ground);
     }}
-  this.monomios[bye].numero = this.comofica;
-}}
+  this.monomios_2[bye].numero = this.comofica;
+}
 // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
 this.reps = []
 this.segs = []
 this.let  = []
  
- for(this.m = 0;this.m < monomios.length;this.m++) { // CADA MOnÔMIO
+ for(this.m = 0;this.m < monomios_2.length;this.m++) { // CADA MOnÔMIO
 this.repetido = []
 this.col = false
 this.repetido = []
 this.numerosrep = []
-     for(toc = 0;oc < monomios[m].numero.length;oc++) { // CADA LETRA DE CADA MOnÔMIO
-         if(this.monomios[m].numero[oc].search('[\\*\\+\\/]') == -1) {
-         if(this.numerosrep.indexOf(this.monomios[m].numero[oc]) == -1) {
-        this.numerosrep.push(this.monomios[m].numero[oc])
-         for(this.u = 0;this.u < this.monomios.length;this.u++) { // OUTROS MOnÔMIOS
+     for(toc = 0;oc < monomios_2[m].numero.length;oc++) { // CADA LETRA DE CADA MOnÔMIO
+         if(this.monomios_2[m].numero[oc].search('[\\*\\+\\/]') == -1) {
+         if(this.numerosrep.indexOf(this.monomios_2[m].numero[oc]) == -1) {
+        this.numerosrep.push(this.monomios_2[m].numero[oc])
+         for(this.u = 0;this.u < this.monomios_2.length;this.u++) { // OUTROS MOnÔMIOS
 this.ocs2 = []
              if(this.u != this.m) {
            // OCAS
            if(this.ocs2.find(function(ocs2) {
-             return ocs2.ed == this.monomios[m].numero[oc]
+             return ocs2.ed == this.monomios_2[m].numero[oc]
              }) == this.undefined) {
-                this.ocs2.push({ed: this.monomios[m].numero[oc], el: 0})
+                this.ocs2.push({ed: this.monomios_2[m].numero[oc], el: 0})
 this.ocs = 0
-           for(this.ao = 0;this.ao < this.monomios[m].numero.length;this.ao++) {
-             if(this.monomios[m].numero[ao] == this.monomios[m].numero[oc]) {
+           for(this.ao = 0;this.ao < this.monomios_2[m].numero.length;this.ao++) {
+             if(this.monomios_2[m].numero[ao] == this.monomios_2[m].numero[oc]) {
                 this.ocs++
              }}}
-           for(this.e = 0;this.e < this.monomios[u].numero.length;this.e++) { // CADA LETRA DE CADA MOnÔMIO
-             if(this.monomios[u].numero[e] == this.monomios[m].numero[oc]) {
+           for(this.e = 0;this.e < this.monomios_2[u].numero.length;this.e++) { // CADA LETRA DE CADA MOnÔMIO
+             if(this.monomios_2[u].numero[e] == this.monomios_2[m].numero[oc]) {
                  if(this.repetido.find(function(repetido) {
                      return repetido.monum == this.u
                      }) === this.undefined) {
                          ocs2.find(function(ocs2) {
-                             return ocs2.ed == this.monomios[m].numero[oc]
+                             return ocs2.ed == this.monomios_2[m].numero[oc]
                              }).el++
                              if(this.ocs2.find(function(ocs2) {
-                                 return ocs2.ed == this.monomios[m].numero[oc]
+                                 return ocs2.ed == this.monomios_2[m].numero[oc]
                                  }).el <= this.ocs) {
-                this.repetido.push({monum: u, wc: [m], letr: this.monomios[u].numero[e]})
+                this.repetido.push({monum: u, wc: [m], letr: this.monomios_2[u].numero[e]})
                     } }else{
                                  ocs2.find(function(ocs2) {
-                                     return ocs2.ed == this.monomios[m].numero[oc]
+                                     return ocs2.ed == this.monomios_2[m].numero[oc]
                                      }).el++
                                          if(this.ocs2.find(function(ocs2) {
-                                             return ocs2.ed == this.monomios[m].numero[oc]
+                                             return ocs2.ed == this.monomios_2[m].numero[oc]
                                              }).el <= this.ocs) {
                                  repetido.find(function(repetido) {
                                      return repetido.monum == this.u
-                                     }).letr += `.${this.monomios[u].numero[e]}`
+                                     }).letr += `.${this.monomios_2[u].numero[e]}`
                                  }}}}}}}}}
     this.reps.push(this.repetido)
  
@@ -465,7 +464,7 @@ this.its = this.grtols
 this.segs = [...segsordered]
 
  //DIVS
-this.ml = this.monomios.length
+this.ml = this.monomios_2.length
  
 this.divs = this.ehprimo2(ml)
  
@@ -514,14 +513,14 @@ this.bell = [...army]
 this.army = [...bell]
    
 this.lightson = [...army]
-this.pain = this.DIVIDIR(army,this.monomios[this.segs[anchor].mons[high]].numero)
+this.pain = this.DIVIDIR(army,this.monomios_2[this.segs[anchor].mons[high]].numero)
 
                  if(this.pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-                if(this.lightson.indexOf('-') != -1 && this.monomios[this.segs[anchor].mons[high]].numero.indexOf('-') == -1) {
+                if(this.lightson.indexOf('-') != -1 && this.monomios_2[this.segs[anchor].mons[high]].numero.indexOf('-') == -1) {
 this.pain = '-1'
 this.scarecrow[anchor].divididos.push('1')
 this.scarecrow[anchor].outrodiv.push(this.pain)
-                }else if(this.lightson.indexOf('-') == -1 && this.monomios[this.segs[anchor].mons[high]].numero.indexOf('-') != -1) {
+                }else if(this.lightson.indexOf('-') == -1 && this.monomios_2[this.segs[anchor].mons[high]].numero.indexOf('-') != -1) {
 this.pain = '-1'
 this.scarecrow[anchor].divididos.push('1')
 this.scarecrow[anchor].outrodiv.push(this.pain)
@@ -569,8 +568,8 @@ this.miss = []
 this.miss.find(function(miss){return this.miss.dividido== this.this.scarecrow[ah].divididos[é]}).aparicoes.push(this.Number(ah))
             }}  }
         
-this.quantosfatores = Number(this.monomios.length)/Number(divs[okentao])
-        quantasposições = Number(this.monomios.length)/Number(quantosfatores)
+this.quantosfatores = Number(this.monomios_2.length)/Number(divs[okentao])
+        quantasposições = Number(this.monomios_2.length)/Number(quantosfatores)
 
 this.grtols = []
  for(this.hi in this.miss) {
@@ -638,29 +637,29 @@ this.pi = 1
                   rept: repwri,
                   opl: [...repeated],
                   position: [eep, quad],
-                  monomios: [...compar]
+                  monomios_2: [...compar]
                 });
               }else{
 this.func = this.roller.find(function (roller) { return this.roller.rept == this.repwri;})
 this.perm = true
                 for(this.sept in this.mons1) {
-                    if(this.func.monomios.indexOf(mons1[sept]) != -1) {
+                    if(this.func.monomios_2.indexOf(mons1[sept]) != -1) {
 this.perm = false 
                     }}
                 if(this.perm == true) {
 this.func.position.push(this.pos1)
                     for(this.wake in this.mons1) {
-this.func.monomios.push(this.mons1[wake])
+this.func.monomios_2.push(this.mons1[wake])
                     } }
 this.perm = true
                 for(this.sept in this.mons2) {
-                    if(this.func.monomios.indexOf(mons2[sept]) != -1) {
+                    if(this.func.monomios_2.indexOf(mons2[sept]) != -1) {
 this.perm = false 
                     }}
                 if(this.perm == true) {
 this.func.position.push(this.pos2)
                     for(this.wake in this.mons2) {
-this.func.monomios.push(this.mons2[wake])
+this.func.monomios_2.push(this.mons2[wake])
                     }}}
             }else{
                     compar.splice(this.compar.length - 1,1)
@@ -892,7 +891,7 @@ this.pi = 0
                   //console.log('mons1',mons1)
 
 this.pos2 = this.quad
-                  //console.log('this.monomios:')
+                  //console.log('this.monomios_2:')
 
 this.mons2 = []
 this.pi = 1
@@ -908,36 +907,36 @@ this.pi = 1
                       rept: repwri,
                       opl: [...repeated],
                       position: [eep, quad],
-                      monomios: [...compar]
+                      monomios_2: [...compar]
                     });
                   }else{
 this.func = this.roller.find(function (roller) { return this.roller.rept == this.repwri;})
-                    //console.log(func.rept, func.position, func.monomios)
+                    //console.log(func.rept, func.position, func.monomios_2)
                     //console.log(pos1,'=',mons1)
                     //console.log(pos2,'=',mons2)
 
 this.perm = true
                     for(this.sept in this.mons1) {
-                        if(this.func.monomios.indexOf(mons1[sept]) != -1) {
+                        if(this.func.monomios_2.indexOf(mons1[sept]) != -1) {
 this.perm = false 
                         }}
                     //console.log(perm)
                     if(this.perm == true) {
 this.func.position.push(this.pos1)
                         for(this.wake in this.mons1) {
-this.func.monomios.push(this.mons1[wake])
+this.func.monomios_2.push(this.mons1[wake])
                         } }
 
 this.perm = true
                     for(this.sept in this.mons2) {
-                        if(this.func.monomios.indexOf(mons2[sept]) != -1) {
+                        if(this.func.monomios_2.indexOf(mons2[sept]) != -1) {
 this.perm = false 
                         }}
                     //console.log(perm)
                     if(this.perm == true) {
 this.func.position.push(this.pos2)
                         for(this.wake in this.mons2) {
-this.func.monomios.push(this.mons2[wake])
+this.func.monomios_2.push(this.mons2[wake])
                         }}
                     
                   }
@@ -950,29 +949,29 @@ this.func.monomios.push(this.mons2[wake])
                  /*
                  for(this.magic in this.roller) {
                     console.log('---------*****&&&&¨6%%%%))****#@@@@%¨&& this.7______$@@!!!!!!')
-                    console.log(this.roller[magic].rept, this.roller[magic].position, this.roller[magic].monomios)
+                    console.log(this.roller[magic].rept, this.roller[magic].position, this.roller[magic].monomios_2)
 this.pos1 = this.roller[magic].position[0]
                     console.log('position', pos1,'(',this.miss[this.roller[magic].position[0]].dividido,')')
-                    console.log('this.monomios:')
+                    console.log('this.monomios_2:')
 
 this.mons1 = []
 this.pi = 0
                     for(this.photo = 0;this.photo < Number(this.roller[magic].rept.length)/2;photo+=1) {
                         console.log(pi)
-                       this.mons1.push(this.roller[magic].monomios[pi])
+                       this.mons1.push(this.roller[magic].monomios_2[pi])
                        this.pi+= 2
                     } 
                     console.log(mons1)
 
 this.pos2 = this.roller[magic].position[1]
                     console.log('position',pos2,'(',this.miss[this.roller[magic].position[1]].dividido,')')
-                    console.log('this.monomios:')
+                    console.log('this.monomios_2:')
 
 this.mons2 = []
 this.pi = 1
                     for(this.photo = 0;this.photo < Number(this.roller[magic].rept.length)/2;photo+=1) {
                         console.log(pi)
-                       this.mons2.push(this.roller[magic].monomios[pi])
+                       this.mons2.push(this.roller[magic].monomios_2[pi])
                        this.pi+= 2
                     } 
                     console.log(mons2)
@@ -983,7 +982,7 @@ this.pi = 1
                         if(this.keep != this.magic) {
                         if(this.roller[keep].rept == this.roller[magic].rept) {
                             console.log('EPA! SÃO this.IGUAIS!!!!!!!!')
-this.complist = this.roller[keep].monomios
+this.complist = this.roller[keep].monomios_2
                             console.log(keep, this.roller[keep].rept, this.roller[keep].position,complist)
 
 this.perm = true
@@ -1019,7 +1018,7 @@ this.roller[keep].position.push(this.pos2)
                             */
 
 for(this.r in this.roller) {
- this.roll.push({repetidos: this.roller[r].opl, posições: this.roller[r].position, way: this.roller[r].rept, monomios: this.roller[r].monomios})
+ this.roll.push({repetidos: this.roller[r].opl, posições: this.roller[r].position, way: this.roller[r].rept, monomios_2: this.roller[r].monomios_2})
 }
 
        while (this.java < this.miss.length && this.deucerto == false) {
@@ -1541,8 +1540,8 @@ this.naonao = this.rok
      
 
  // FAZENDO A CONTA
-this.primeirocaso = this.SOMANDOMONOMIOS(amount)
-this.segundocaso = this.SOMANDOMONOMIOS(amontoado)
+this.primeirocaso = this.SOMANDOmonomios_2(amount)
+this.segundocaso = this.SOMANDOmonomios_2(amontoado)
 this.mudou = false
     if(this.primeirocaso[1] == this.primeirocaso[2]) {
     }else{
@@ -1611,7 +1610,7 @@ this.miya = ''
  
   //console.log(pans)
 this.todososnumeros = []
-  for(this.acaba in this.monomios) {
+  for(this.acaba in this.monomios_2) {
      this.todososnumeros.push(this.acaba)
   }
 
@@ -1622,15 +1621,15 @@ this.todososnumeros = []
 
   for(this.eh in this.todososnumeros) {
 this.join = ''
-      for(this.sempresei in this.monomios[this.todososnumeros[eh]].numero) {
-          if(this.monomios[this.todososnumeros[eh]].numero[sempresei] != '+' && this.monomios[this.todososnumeros[eh]].numero[sempresei] != '-') {
-this.ter = this.monomios[this.todososnumeros[eh]].numero[sempresei]
+      for(this.sempresei in this.monomios_2[this.todososnumeros[eh]].numero) {
+          if(this.monomios_2[this.todososnumeros[eh]].numero[sempresei] != '+' && this.monomios_2[this.todososnumeros[eh]].numero[sempresei] != '-') {
+this.ter = this.monomios_2[this.todososnumeros[eh]].numero[sempresei]
          this.join+= this.ter
           } }
-      if(this.monomios[this.todososnumeros[eh]].numero[0] == '+') {
+      if(this.monomios_2[this.todososnumeros[eh]].numero[0] == '+') {
          this.newexpress.push('+')
          this.newexpress.push(this.join)
-      }else if(this.monomios[this.todososnumeros[eh]].numero[0] == '-') {
+      }else if(this.monomios_2[this.todososnumeros[eh]].numero[0] == '-') {
          this.newexpress.push('-')
          this.newexpress.push(this.join)
       }else{
@@ -1640,7 +1639,7 @@ this.ter = this.monomios[this.todososnumeros[eh]].numero[sempresei]
      FATORAR2(newexpress)
  }else{
 this.todososnumeros = []
- for(this.acaba in this.monomios) {
+ for(this.acaba in this.monomios_2) {
     this.todososnumeros.push(this.acaba)
  }
 this.cancelar = []
@@ -1650,7 +1649,7 @@ this.cancelar = []
  }}
 
  for(this.bye in this.todososnumeros) {
-this.quase = [...monomios[this.todososnumeros[bye]].numero]
+this.quase = [...monomios_2[this.todososnumeros[bye]].numero]
 this.aconta = ''
 this.elevar = 1
 this.aster = false
@@ -1753,7 +1752,7 @@ this.segs2 = []
   }
  
 this.relation = []
-this.quanto = Number(this.monomios.length)/Number(divs[okentao])
+this.quanto = Number(this.monomios_2.length)/Number(divs[okentao])
 this.numapars = []
  
 this.util = []
@@ -1762,7 +1761,7 @@ this.util = []
          this.util.push(this.segs2[t])
       }}
 
-  for(this.m in this.monomios) {
+  for(this.m in this.monomios_2) {
 this.aparic = 0
       for(this.t in this.util) {
           if(this.util[t].mons.indexOf(Number(m)) != -1) {
@@ -1971,7 +1970,7 @@ this.util = []
          this.util.push(this.segs2[t])
       }}
  
-  for(this.m in this.monomios) {
+  for(this.m in this.monomios_2) {
 this.aparic = 0
       for(this.t in this.util) {
           if(this.util[t].mons.indexOf(Number(m)) != -1) {
@@ -2103,7 +2102,7 @@ this.segs2 = []
   }
  
 this.relation = []
-this.quanto = Number(this.monomios.length)/Number(divs[okentao])
+this.quanto = Number(this.monomios_2.length)/Number(divs[okentao])
 this.numapars = []
  
 this.util = []
@@ -2112,7 +2111,7 @@ this.util = []
          this.util.push(this.segs2[t])
       }}
   
-  for(this.m in this.monomios) {
+  for(this.m in this.monomios_2) {
 this.aparic = 0
       for(this.t in this.util) {
           if(this.util[t].mons.indexOf(Number(m)) != -1) {
@@ -2258,7 +2257,7 @@ this.util = []
       }}
  
   
-  for(this.m in this.monomios) {
+  for(this.m in this.monomios_2) {
 this.aparic = 0
       for(this.t in this.util) {
           if(this.util[t].mons.indexOf(Number(m)) != -1) {
@@ -2361,7 +2360,7 @@ this.ob.fix.push(this.segs2[sorrow].mons[imor])
  return [relation, segs2]
  }
  
-function SOMANDOMONOMIOS(list) {
+function SOMANDOmonomios_2(list) {
       
 particles = [{numero: ''}]
 obnum = 0
@@ -2660,7 +2659,7 @@ this.scarecrow,
 this.miss,
 this.roll,
 this.youdumb,
-this.monomios,
+this.monomios_2,
 pans
 ];
   
@@ -3139,29 +3138,29 @@ for (huh in monomios_2) {
                   rept: repwri,
                   opl: [...repeated],
                   position: [eep, quad],
-                  monomios: [...compar]
+                  monomios_2: [...compar]
                 });
               }else{
                 func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
                 perm = true
                 for (sept in mons1) {
-                    if (func.monomios.indexOf(mons1[sept]) != -1) {
+                    if (func.monomios_2.indexOf(mons1[sept]) != -1) {
                        perm = false 
                     }}
                 if (perm == true) {
                     func.position.push(pos1)
                     for (wake in mons1) {
-                    func.monomios.push(mons1[wake])
+                    func.monomios_2.push(mons1[wake])
                     } }
                 perm = true
                 for (sept in mons2) {
-                    if (func.monomios.indexOf(mons2[sept]) != -1) {
+                    if (func.monomios_2.indexOf(mons2[sept]) != -1) {
                        perm = false 
                     }}
                 if (perm == true) {
                     func.position.push(pos2)
                     for (wake in mons2) {
-                    func.monomios.push(mons2[wake])
+                    func.monomios_2.push(mons2[wake])
                     }}}
             }else{
                     compar.splice(compar.length - 1,1)
@@ -3394,7 +3393,7 @@ miss_2 = [...grtols_2];
                   //console.log('mons1',mons1)
 
                   pos2 = quad
-                  //console.log('monomios:')
+                  //console.log('monomios_2:')
 
                   mons2 = []
                   pi = 1
@@ -3410,36 +3409,36 @@ miss_2 = [...grtols_2];
                       rept: repwri,
                       opl: [...repeated],
                       position: [eep, quad],
-                      monomios: [...compar]
+                      monomios_2: [...compar]
                     });
                   }else{
                     func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
-                    //console.log(func.rept, func.position, func.monomios)
+                    //console.log(func.rept, func.position, func.monomios_2)
                     //console.log(pos1,'=',mons1)
                     //console.log(pos2,'=',mons2)
 
                     perm = true
                     for (sept in mons1) {
-                        if (func.monomios.indexOf(mons1[sept]) != -1) {
+                        if (func.monomios_2.indexOf(mons1[sept]) != -1) {
                            perm = false 
                         }}
                     //console.log(perm)
                     if (perm == true) {
                         func.position.push(pos1)
                         for (wake in mons1) {
-                        func.monomios.push(mons1[wake])
+                        func.monomios_2.push(mons1[wake])
                         } }
 
                     perm = true
                     for (sept in mons2) {
-                        if (func.monomios.indexOf(mons2[sept]) != -1) {
+                        if (func.monomios_2.indexOf(mons2[sept]) != -1) {
                            perm = false 
                         }}
                     //console.log(perm)
                     if (perm == true) {
                         func.position.push(pos2)
                         for (wake in mons2) {
-                        func.monomios.push(mons2[wake])
+                        func.monomios_2.push(mons2[wake])
                         }}
                     
                   }
@@ -3452,29 +3451,29 @@ miss_2 = [...grtols_2];
                  /*
                  for (magic in roller_2) {
                     console.log('---------*****&&&&¨6%%%%))****#@@@@%¨&&7______$@@!!!!!!')
-                    console.log(roller_2[magic].rept, roller_2[magic].position, roller_2[magic].monomios)
+                    console.log(roller_2[magic].rept, roller_2[magic].position, roller_2[magic].monomios_2)
                     pos1 = roller_2[magic].position[0]
                     console.log('position', pos1,'(',miss_2[roller_2[magic].position[0]].dividido,')')
-                    console.log('monomios:')
+                    console.log('monomios_2:')
 
                     mons1 = []
                     pi = 0
                     for (photo = 0; photo < Number(roller_2[magic].rept.length)/2;photo+=1) {
                         console.log(pi)
-                        mons1.push(roller_2[magic].monomios[pi])
+                        mons1.push(roller_2[magic].monomios_2[pi])
                         pi+= 2
                     } 
                     console.log(mons1)
 
                     pos2 = roller_2[magic].position[1]
                     console.log('position',pos2,'(',miss_2[roller_2[magic].position[1]].dividido,')')
-                    console.log('monomios:')
+                    console.log('monomios_2:')
 
                     mons2 = []
                     pi = 1
                     for (photo = 0; photo < Number(roller_2[magic].rept.length)/2;photo+=1) {
                         console.log(pi)
-                        mons2.push(roller_2[magic].monomios[pi])
+                        mons2.push(roller_2[magic].monomios_2[pi])
                         pi+= 2
                     } 
                     console.log(mons2)
@@ -3485,7 +3484,7 @@ miss_2 = [...grtols_2];
                         if (keep != magic) {
                         if (roller_2[keep].rept == roller_2[magic].rept) {
                             console.log('EPA! SÃO IGUAIS!!!!!!!!')
-                            complist = roller_2[keep].monomios
+                            complist = roller_2[keep].monomios_2
                             console.log(keep, roller_2[keep].rept, roller_2[keep].position,complist)
 
                             perm = true
@@ -3521,7 +3520,7 @@ miss_2 = [...grtols_2];
                             */
 
 for (r in roller_2) {
-  roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
+  roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios_2: roller_2[r].monomios_2})
 }
 
        while(java < miss_2.length && deucerto == false) {
@@ -5526,10 +5525,10 @@ return comofica
 function CreateEngine2(expression_2) {
   this.FATORAR = 
   function (expression_2) {
-    expression_2 = FATORE(expression_2)
+    this.expression_2 = FATORE(expression_2)
     startexp_2 = [...expression_2];
   
-  if (expression_2[0] !== "-" && expression_2[0] !== "+") {
+  if (this.expression_2[0] !== "-" && expression_2[0] !== "+") {
     expo_2 = ["+"];
     for (ent in expression_2) {
       expo_2.push(expression_2[ent]);
@@ -5646,7 +5645,6 @@ function CreateEngine2(expression_2) {
   
   //SEPARAnDO/JUnTAnDO OS nÚMEROS
   // ==> SOMANDO OS MONÔMIOS...
-  if (somarmons == true) {
     exp = [];
     
     for (bye in ji) {
@@ -5654,8 +5652,8 @@ function CreateEngine2(expression_2) {
         ground = "";
     
         comofica = [];
-        for (b in monomios[ji[bye].quais[misery]].numero) {
-          carac = monomios[ji[bye].quais[misery]].numero[b];
+        for (b in monomios_2[ji[bye].quais[misery]].numero) {
+          carac = monomios_2[ji[bye].quais[misery]].numero[b];
           if (ground.length == 0) {
             ground += carac;
           } else if (
@@ -5667,11 +5665,11 @@ function CreateEngine2(expression_2) {
             comofica.push(ground);
             ground = "";
             ground += carac;
-            if (b == monomios[ji[bye].quais[misery]].numero.length - 1) {
+            if (b == monomios_2[ji[bye].quais[misery]].numero.length - 1) {
               comofica.push(ground);
             }} }
     
-        monomios[ji[bye].quais[misery]].numero = comofica;
+        monomios_2[ji[bye].quais[misery]].numero = comofica;
       }}
     
     for (chuva in ji) {
@@ -5685,7 +5683,7 @@ function CreateEngine2(expression_2) {
         tu = [...divisor];
         resultadoDaDivisão = DIVIDIR(
           divisor,
-          monomios[ji[chuva].quais[da]].numero
+          monomios_2[ji[chuva].quais[da]].numero
         );
     
         plan = [];
@@ -5725,15 +5723,15 @@ function CreateEngine2(expression_2) {
         }
     
         if (
-          monomios[ji[chuva].quais[da]].numero[0] == "+" ||
-          monomios[ji[chuva].quais[da]].numero[0] == "-"
+          monomios_2[ji[chuva].quais[da]].numero[0] == "+" ||
+          monomios_2[ji[chuva].quais[da]].numero[0] == "-"
         ) {
-          sinal = monomios[ji[chuva].quais[da]].numero[0];
+          sinal = monomios_2[ji[chuva].quais[da]].numero[0];
           if (conta.length != 0) {
-            conta.push(monomios[ji[chuva].quais[da]].numero[0]);
+            conta.push(monomios_2[ji[chuva].quais[da]].numero[0]);
           } }
     
-        if (conta.length == 0 && monomios[ji[chuva].quais[da]].numero[0] == "-") {
+        if (conta.length == 0 && monomios_2[ji[chuva].quais[da]].numero[0] == "-") {
           entao = "-";
           entao += plan[0];
           conta.push(entao);
@@ -5780,25 +5778,25 @@ function CreateEngine2(expression_2) {
     
     //SEPARAnDO OS MOnÔMIOS DEnOVO
     
-    monomios = [{ numero: "" }];
+    monomios_2 = [{ numero: "" }];
     obnum = 0;
     for (n = 0; n < exp.length; n++) {
       if (String(exp[n]).search("[\\-\\+]") != -1 && n != 0) {
-        monomios.push({ numero: "" });
+        monomios_2.push({ numero: "" });
         obnum++;
       }
-      monomios[obnum].numero += exp[n];
+      monomios_2[obnum].numero += exp[n];
     }
     
     //
     
     //SEPARAR CORRETAMEnTE OS nÚMEROS
     
-    for (bye in monomios) {
+    for (bye in monomios_2) {
       comofica = [];
       ground = "";
-      for (misery in monomios[bye].numero) {
-        carac = monomios[bye].numero[misery];
+      for (misery in monomios_2[bye].numero) {
+        carac = monomios_2[bye].numero[misery];
         if (ground.length == 0) {
           ground += carac;
         } else if (
@@ -5811,11 +5809,11 @@ function CreateEngine2(expression_2) {
           ground = "";
           ground += carac;
         }
-        if (misery == monomios[bye].numero.length - 1) {
+        if (misery == monomios_2[bye].numero.length - 1) {
           comofica.push(ground);
         }}
-      monomios[bye].numero = comofica;
-    }}
+      monomios_2[bye].numero = comofica;
+    }
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
    reps = []
    segs_2 = []
@@ -6166,29 +6164,29 @@ function CreateEngine2(expression_2) {
                     rept: repwri,
                     opl: [...repeated],
                     position: [eep, quad],
-                    monomios: [...compar]
+                    monomios_2: [...compar]
                   });
                 }else{
                   func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
                   perm = true
                   for (sept in mons1) {
-                      if (func.monomios.indexOf(mons1[sept]) != -1) {
+                      if (func.monomios_2.indexOf(mons1[sept]) != -1) {
                          perm = false 
                       }}
                   if (perm == true) {
                       func.position.push(pos1)
                       for (wake in mons1) {
-                      func.monomios.push(mons1[wake])
+                      func.monomios_2.push(mons1[wake])
                       } }
                   perm = true
                   for (sept in mons2) {
-                      if (func.monomios.indexOf(mons2[sept]) != -1) {
+                      if (func.monomios_2.indexOf(mons2[sept]) != -1) {
                          perm = false 
                       }}
                   if (perm == true) {
                       func.position.push(pos2)
                       for (wake in mons2) {
-                      func.monomios.push(mons2[wake])
+                      func.monomios_2.push(mons2[wake])
                       }}}
               }else{
                       compar.splice(compar.length - 1,1)
@@ -6421,7 +6419,7 @@ function CreateEngine2(expression_2) {
                     //console.log('mons1',mons1)
   
                     pos2 = quad
-                    //console.log('monomios:')
+                    //console.log('monomios_2:')
   
                     mons2 = []
                     pi = 1
@@ -6437,36 +6435,36 @@ function CreateEngine2(expression_2) {
                         rept: repwri,
                         opl: [...repeated],
                         position: [eep, quad],
-                        monomios: [...compar]
+                        monomios_2: [...compar]
                       });
                     }else{
                       func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
-                      //console.log(func.rept, func.position, func.monomios)
+                      //console.log(func.rept, func.position, func.monomios_2)
                       //console.log(pos1,'=',mons1)
                       //console.log(pos2,'=',mons2)
   
                       perm = true
                       for (sept in mons1) {
-                          if (func.monomios.indexOf(mons1[sept]) != -1) {
+                          if (func.monomios_2.indexOf(mons1[sept]) != -1) {
                              perm = false 
                           }}
                       //console.log(perm)
                       if (perm == true) {
                           func.position.push(pos1)
                           for (wake in mons1) {
-                          func.monomios.push(mons1[wake])
+                          func.monomios_2.push(mons1[wake])
                           } }
   
                       perm = true
                       for (sept in mons2) {
-                          if (func.monomios.indexOf(mons2[sept]) != -1) {
+                          if (func.monomios_2.indexOf(mons2[sept]) != -1) {
                              perm = false 
                           }}
                       //console.log(perm)
                       if (perm == true) {
                           func.position.push(pos2)
                           for (wake in mons2) {
-                          func.monomios.push(mons2[wake])
+                          func.monomios_2.push(mons2[wake])
                           }}
                       
                     }
@@ -6479,29 +6477,29 @@ function CreateEngine2(expression_2) {
                    /*
                    for (magic in roller_2) {
                       console.log('---------*****&&&&¨6%%%%))****#@@@@%¨&&7______$@@!!!!!!')
-                      console.log(roller_2[magic].rept, roller_2[magic].position, roller_2[magic].monomios)
+                      console.log(roller_2[magic].rept, roller_2[magic].position, roller_2[magic].monomios_2)
                       pos1 = roller_2[magic].position[0]
                       console.log('position', pos1,'(',miss_2[roller_2[magic].position[0]].dividido,')')
-                      console.log('monomios:')
+                      console.log('monomios_2:')
   
                       mons1 = []
                       pi = 0
                       for (photo = 0; photo < Number(roller_2[magic].rept.length)/2;photo+=1) {
                           console.log(pi)
-                          mons1.push(roller_2[magic].monomios[pi])
+                          mons1.push(roller_2[magic].monomios_2[pi])
                           pi+= 2
                       } 
                       console.log(mons1)
   
                       pos2 = roller_2[magic].position[1]
                       console.log('position',pos2,'(',miss_2[roller_2[magic].position[1]].dividido,')')
-                      console.log('monomios:')
+                      console.log('monomios_2:')
   
                       mons2 = []
                       pi = 1
                       for (photo = 0; photo < Number(roller_2[magic].rept.length)/2;photo+=1) {
                           console.log(pi)
-                          mons2.push(roller_2[magic].monomios[pi])
+                          mons2.push(roller_2[magic].monomios_2[pi])
                           pi+= 2
                       } 
                       console.log(mons2)
@@ -6512,7 +6510,7 @@ function CreateEngine2(expression_2) {
                           if (keep != magic) {
                           if (roller_2[keep].rept == roller_2[magic].rept) {
                               console.log('EPA! SÃO IGUAIS!!!!!!!!')
-                              complist = roller_2[keep].monomios
+                              complist = roller_2[keep].monomios_2
                               console.log(keep, roller_2[keep].rept, roller_2[keep].position,complist)
   
                               perm = true
@@ -6548,7 +6546,7 @@ function CreateEngine2(expression_2) {
                               */
   
   for (r in roller_2) {
-    roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
+    roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios_2: roller_2[r].monomios_2})
   }
   
          while(java < miss_2.length && deucerto == false) {
@@ -8196,7 +8194,6 @@ function CreateEngine2(expression_2) {
   }
 }
 
-console.log(FATORAR2('15x + 10x')[0])
 ep = FATORE('a^2 + a - 5a - 5')
 console.log(ep)
 engine = new CreateEngine2()
