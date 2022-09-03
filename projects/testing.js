@@ -2713,15 +2713,16 @@ fat2 = engine.FATORAR(ep,false)
 
           plo = false
     
-          console.log(SPLITEXPS('(9 + 9l)(3 + b)'))
-          /*
+          console.log(SPLITEXPS(okexp))
+          
           while (plo == false) {
               seps = SPLITEXPS(okexp)
               console.log(okexp)
               rexp =  ''
               chain = []
-          for (varnot in seps) {
-              start = seps[varnot].open
+          for (varnot in seps) {        
+            console.log('var1',seps[varnot], 'fatorado:',engine.FATORAR(seps[varnot].exp, false)[0])      
+            start = seps[varnot].open
               end = seps[varnot].close
               expin = seps[varnot].exp
           
@@ -2729,6 +2730,7 @@ fat2 = engine.FATORAR(ep,false)
           
             daprafator1 = false 
             if (fator1[1] == 1 && fator1[2] == 0) { 
+                console.log('fatores',fator1[1],fator1[2])
             daprafator1 = true
             }
            chain.push(daprafator1)
@@ -2753,10 +2755,10 @@ fat2 = engine.FATORAR(ep,false)
                           rexp+= okexp[c]
                       }}}}
            okexp = rexp
+           console.log(chain)
            if (chain.indexOf(true) == -1) {
               plo = true
               }}
-              */
 
 function FATORE(q) {
   qualexp1 = q;
