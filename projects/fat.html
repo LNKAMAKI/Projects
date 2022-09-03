@@ -34,11 +34,63 @@
             background-color: black;
             background-color: rgb(249, 249, 249);
         }
+        #sp {
+            font-size: 18px;
+            display: block;
+        }
+        @media screen and (max-width: 570px) {
+            #h1 {
+                font-size: 3.5em;
+            }
+            #sp {
+                font-size: 13px;
+            }
+        }
+        
+        @media screen and (max-width: 495px) {
+            #h1 {
+                font-size: 2.9em;
+                padding: 30px;
+            }
+            #sp {
+                font-size: 13px;
+            }
+        }
+        @media screen and (max-width: 400px) {
+            #h1 {
+                font-size: 2.5em;
+                padding: 30px;
+            }
+            #sp {
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            #h1 {
+                font-size: 2.3em;
+                padding: 30px;
+            }
+            #sp {
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (max-width: 332px) {
+            #h1 {
+                font-size: 2.1em;
+                padding: 30px;
+            }
+            #sp {
+                font-size: 13px;
+            }
+        }
+
         #calc {
             position: relative;
             margin: 20px auto;
             height: fit-content;
-            width: 35vw;
+            width: 550px;
             border-radius: 30px;
             background-color: var(--lightgray);
             /*background-color: rgb(206, 206, 206);*/
@@ -50,17 +102,38 @@
             position: relative;
             height: 30px;
             padding: 0;
-            font-size: 1em;
+            font-size: 1.2em;
             padding: 0px 10px;
             display: block;
             margin: auto;
-            width: calc(100% - 100px);
+            width: calc(100% - 20px);
+            max-width: 550px;
+            border-radius: 10px;
             background-color: black;
             font-weight: 500;
             font-family: 'Inconsolata';
             margin-top: 15px;
             color: var(--lightblue);
             text-align: center;
+        }
+        @media screen and (max-width: 700px) {
+            #calc {
+                width: 450px;
+            }
+        }
+        @media screen and (max-width: 470px) {
+            #calc {
+                width: 350px;
+            }
+            #write, #fatoracao {
+                font-size: 1.1em;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            #calc {
+                font-size: 1em;
+                width: 300px;
+            }
         }
         #res {
             margin: 0px;
@@ -112,21 +185,28 @@
         input::placeholder {
             color: var(--lightblue);
         }
+        img.copy {
+            display: inline;
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 <body onload="load()">
     <script src="fat.js"></script>
 
  <img src="" alt=""> <h1 id="h1">FATORADOR
-        <span style="font-size: 18px;display: block;">(por agrupamento)</span>
+        <span id="sp">(por agrupamento)</span>
     </h1>
     <div id="calc">
-            <p style="margin-top: 0px;">/* Digite a expressão: */</p>
-        <input id="write" spellcheck="false" placeholder="Ex: 4x + 8"></input>
+            <p style="margin-top: 0px;">/* Expressão: */</p> 
+        <span>a</span><input id="write" spellcheck="false"></input>
+        <img src="/projects/imagens/copy.png" class="copy" alt="">
        <!-- <p><input type="button" value="FATORAR(expressão)" onclick="ir()"></p>-->
         
             <p id="res">/* Resultado: */</p>
-            <p id="fatoracao">Ex: 4(x + 2)</p>
+            <input type="button" value="aaaa"><p id="fatoracao"></p>
+
         
     </div>
 </body>
