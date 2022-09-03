@@ -1521,28 +1521,39 @@ function CreateEngine2() {
                      naonao_2+= ` + ${aconta_2}`  
                  }}}
      
-         if (concatenar_2.length > 0) {
-            if (naonao_2[0] != '-') {
-                concatenar_2+= ' + '
-               }else{
-                if (edge.length == 1) {
-                   concatenar_2+= ' - '
-                }}}
+                 console.log(edge_2)
          //console.log('(',naonao_2,')','(',tobreak_2,')')
          
+         console.log(edge_2)
           if (edge_2.length > 1) {
+            if (concatenar_2.length > 0) {
+            concatenar_2+= ' + '
+            }else{
+              console.log('EPA')
+            }
         concatenar_2 += `(${naonao_2})(${tobreak_2})`;
       } else {
-        if (naonao_2[0] == '-' && concatenar_2.length > 0) {
-            rok = ''
-            for (ho in naonao_2) {
-                if (ho != 0) {
-                    rok+= naonao_2[ho]
-                }}
-            naonao_2 = rok
+        if (naonao_2[0] == '-') {
+          if (concatenar_2.length > 0) {
+          rok = ''
+          for (j in naonao_2) {
+            if (j != 0) {
+              rok+= naonao_2[j]
+            }
+          }
+          concatenar_2+= ' - '
+          concatenar_2 += `${rok}(${tobreak_2})`;
+        }else{
+          concatenar_2 += `${naonao_2}(${tobreak_2})`
         }
-        concatenar_2 += `${naonao_2}(${tobreak_2})`;
+        }else{
+          if(concatenar_2.length > 0) {
+          concatenar_2 += ` + ${naonao_2}(${tobreak_2})`
+        }else{
+          concatenar_2 += `${naonao_2}(${tobreak_2})`
+        }
       }
+    }
          
   
      // FAZENDO A CONTA
@@ -2672,14 +2683,32 @@ function CreateEngine2() {
   }
 }
 
-ep = FATORE('a^2 + a - 5a - 5')
+ep = FATORE('10y - 338xy + 20y^2 - 169x - ab + bb')
 console.log(ep)
 engine = new CreateEngine2()
 console.log(engine.FATORAR(ep,true)[0])
+console.log(engine.FATORAR(ep,false)[0])
+fat1 = engine.FATORAR(ep,true)
+fat2 = engine.FATORAR(ep,false)
 
-
-
-
+        se = fat2[5]
+        sc = fat2[6]
+        ms = fat2[7]
+        rol = fat2[8]
+        yd = fat2[9]
+        mns = fat2[10]
+        pn = fat2[11]
+        if (fat2[1] == 1 && fat2[2] == 0) {
+          alt = 2
+         okexp = fat2[0]
+        } else {
+          if (fat1[1] == 1 && fat1[2]== 0) {
+              okexp = fat1[0]
+          }else{
+              alt = 2
+              okexp = fat2[0]
+          } }
+          console.log(okexp)
 
 
 
