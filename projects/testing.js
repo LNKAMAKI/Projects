@@ -1520,16 +1520,10 @@ function CreateEngine2() {
                  }else{
                      naonao_2+= ` + ${aconta_2}`  
                  }}}
-     
-                 console.log(edge_2)
-         //console.log('(',naonao_2,')','(',tobreak_2,')')
          
-         console.log(edge_2)
           if (edge_2.length > 1) {
             if (concatenar_2.length > 0) {
             concatenar_2+= ' + '
-            }else{
-              console.log('EPA')
             }
         concatenar_2 += `(${naonao_2})(${tobreak_2})`;
       } else {
@@ -2721,12 +2715,12 @@ fat2 = engine.FATORAR(ep,false)
               rexp =  ''
               chain = []
           for (varnot in seps) {        
-            console.log('var1',seps[varnot], 'fatorado:',engine.FATORAR(seps[varnot].exp, false)[0])      
+            console.log('var1',seps[varnot], 'fatorado:',engine.FATORAR(FATORE(seps[varnot].exp), false)[0])      
             start = seps[varnot].open
               end = seps[varnot].close
               expin = seps[varnot].exp
           
-            fator1 = engine.FATORAR(seps[varnot].exp,false)
+            fator1 = engine.FATORAR(FATORE(seps[varnot].exp), false)
           
             daprafator1 = false 
             if (fator1[1] == 1 && fator1[2] == 0) { 
@@ -2759,6 +2753,7 @@ fat2 = engine.FATORAR(ep,false)
            if (chain.indexOf(true) == -1) {
               plo = true
               }}
+              console.log('OKEXP', okexp)
 
 function FATORE(q) {
   qualexp1 = q;
