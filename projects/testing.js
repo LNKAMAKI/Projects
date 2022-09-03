@@ -2686,7 +2686,7 @@ function CreateEngine2() {
 ep = FATORE('10x + 14x + 20y + 5xy + 7xy + 10y^2 + 27 + 9b + 27l + 9bl + ak + az')
 console.log(ep)
 engine = new CreateEngine2()
-console.log(engine.FATORAR(ep,true)[0])
+//console.log(engine.FATORAR(ep,true)[0])
 console.log(engine.FATORAR(ep,false)[0])
 fat1 = engine.FATORAR(ep,true)
 fat2 = engine.FATORAR(ep,false)
@@ -2713,6 +2713,8 @@ fat2 = engine.FATORAR(ep,false)
 
           plo = false
     
+          console.log(SPLITEXPS('(9 + 9l)(3 + b)'))
+          /*
           while (plo == false) {
               seps = SPLITEXPS(okexp)
               console.log(okexp)
@@ -2754,6 +2756,7 @@ fat2 = engine.FATORAR(ep,false)
            if (chain.indexOf(true) == -1) {
               plo = true
               }}
+              */
 
 function FATORE(q) {
   qualexp1 = q;
@@ -2894,20 +2897,21 @@ return anterior
 }
 
 function SPLITEXPS(expression) {
+    console.log('exp',expression)
     splitedExps = []
     str = ''
     c1 = -1
     c2 = -1
-    for (c in this.expression) {
-      if (this.expression[c] == '(') {
+    for (c in expression) {
+      if (expression[c] == '(') {
         c1 = c
         str = ''
-      }else if(this.expression[c] == ')') {
+      }else if(expression[c] == ')') {
         c2 = c
         splitedExps.push({exp: str,open:c1,close:c2})
         str = ''
       }else{
-        str+= this.expression[c]
+        str+= expression[c]
       }}
     return splitedExps
     }
