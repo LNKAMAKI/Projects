@@ -2692,69 +2692,7 @@ function ir() {
   }
   return [concatenar, segs.length]
   }
-  
-  function VAI(str) {
-      comofica = []
-      ground = ''
-  for (bye in str) {
-          carac = str[bye]
-              if (ground.length == 0) {
-                  ground+= carac
-              }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
-                  ground+= carac
-              }else{
-                  comofica.push(ground)
-                  ground = ''
-                  ground += carac
-              }
-              if (bye == str.length - 1) {
-                  comofica.push(ground)
-              }
-      str[bye].numero = comofica
-   }
-   return comofica
-  }
-  
-  function FATORE(q) {
-      qualexp1 = q;
-      qualexp = "";
-      parar = false;
-      for (copy in qualexp1) {
-        if (qualexp1[copy] != " ") {
-          if (
-            qualexp1[copy].search("[0-9]") != -1 ||
-            qualexp1[copy].search("[a-z]") != -1 ||
-            qualexp1[copy].search("[\\+\\-\\^]") != -1
-          ) {
-            qualexp += qualexp1[copy];
-          } else {
-            parar = true;
-          }}}
-      if (qualexp != "" && parar == false) {
-        ground = "";
-        expression = [];
-        for (phy in qualexp) {
-          if (qualexp[phy].search("[0-9]") != -1) {
-            if (ground.search("[0-9]") != -1) {
-              ground += qualexp[phy];
-            } else if (ground.length > 0) {
-              expression.push(ground);
-              ground = qualexp[phy];
-            } else {
-              ground = qualexp[phy];
-            }
-          } else {
-            if (ground.length > 0) {
-              expression.push(ground);
-            }
-            ground = qualexp[phy];
-          }
-          if (phy == qualexp.length - 1) {
-            expression.push(ground);
-          }}
-        return expression
-      }}
-  
+
     function FATORAR2(expression_2,refat) {
       startexp_2 = [...expression_2];
 
@@ -5419,6 +5357,70 @@ function devtools(close) {
     tab.style.padding = '0'
     but.setAttribute('class','devin')
   }}
+
+  
+  function VAI(str) {
+    comofica = []
+    ground = ''
+for (bye in str) {
+        carac = str[bye]
+            if (ground.length == 0) {
+                ground+= carac
+            }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1) {
+                ground+= carac
+            }else{
+                comofica.push(ground)
+                ground = ''
+                ground += carac
+            }
+            if (bye == str.length - 1) {
+                comofica.push(ground)
+            }
+    str[bye].numero = comofica
+ }
+ return comofica
+}
+
+function FATORE(q) {
+    qualexp1 = q;
+    qualexp = "";
+    parar = false;
+    for (copy in qualexp1) {
+      if (qualexp1[copy] != " ") {
+        if (
+          qualexp1[copy].search("[0-9]") != -1 ||
+          qualexp1[copy].search("[a-z]") != -1 ||
+          qualexp1[copy].search("[\\+\\-\\^]") != -1
+        ) {
+          qualexp += qualexp1[copy];
+        } else {
+          parar = true;
+        }}}
+    if (qualexp != "" && parar == false) {
+      ground = "";
+      expression = [];
+      for (phy in qualexp) {
+        if (qualexp[phy].search("[0-9]") != -1) {
+          if (ground.search("[0-9]") != -1) {
+            ground += qualexp[phy];
+          } else if (ground.length > 0) {
+            expression.push(ground);
+            ground = qualexp[phy];
+          } else {
+            ground = qualexp[phy];
+          }
+        } else {
+          if (ground.length > 0) {
+            expression.push(ground);
+          }
+          ground = qualexp[phy];
+        }
+        if (phy == qualexp.length - 1) {
+          expression.push(ground);
+        }}
+      return expression
+    }}
+
      // FAZER COnTA COM nÚMEROS
      function fazerConta(anterior) {
       if(0 == 0) {

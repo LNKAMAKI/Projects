@@ -2677,7 +2677,7 @@ function CreateEngine2() {
   }
 }
 
-ep = FATORE('4y + y + 16y + 5y + 20y')
+ep = FATORE('4y')
 console.log(ep)
 engine = new CreateEngine2()
 //console.log(engine.FATORAR(ep,true)[0])
