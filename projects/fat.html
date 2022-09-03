@@ -7,7 +7,10 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Lilita+One&family=Rubik+Marker+Hatch&family=Signika:wght@600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=PT+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Audiowide&family=Black+Ops+One&family=Russo+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Audiowide&family=Black+Ops+One&family=Days+One&family=Russo+One&display=swap');
 
         body {
             margin: 0;
@@ -21,47 +24,67 @@
             --shadowgray: #bdbdbd;
         }
         #h1 {
-            font-family: 'Fugaz One';
+            font-family: 'Audiowide';
             text-align: center;
-            font-size: 4em;
+            font-size: 4.2em;
             background-color: var(--lightgray);
             color: rgb(87, 164, 195);
-            padding: 25px;
-            margin: 0px;
+            margin-top: -20px;
+            padding: 40px;
+            background-color: black;
+            background-color: rgb(249, 249, 249);
         }
         #calc {
             position: relative;
             margin: 20px auto;
-            min-height: 400px;
+            height: fit-content;
             width: 35vw;
-            border-radius: 10px;
+            border-radius: 30px;
             background-color: var(--lightgray);
-            background-color: rgb(206, 206, 206);
+            /*background-color: rgb(206, 206, 206);*/
+            padding: 15px 0px;
         }
-        #writespace {
+        #write,#fatoracao{
+            outline: none;
+            border: none;
             position: relative;
             height: 30px;
             padding: 0;
-            font-size: 1.1em;
+            font-size: 1em;
             padding: 0px 10px;
-            display: inline-block;
+            display: block;
+            margin: auto;
             width: calc(100% - 100px);
             background-color: black;
-            border-width: 0px;
             font-weight: 500;
             font-family: 'Inconsolata';
-            margin-top: 10px;
+            margin-top: 15px;
             color: var(--lightblue);
             text-align: center;
         }
-        #writespace:focus-visible{
+        #res {
+            margin: 0px;
+            margin-top: 40px;
+        }
+        #fatoracao {
+            display: grid;
+            align-content: center;
+            font-size: 1.em;
+            margin-top: 5px;
+        }
+        #write:focus-visible{
+            outline-width: 0;
+            font-weight: 700;
+            box-shadow: 0px 0px 5px rgb(116, 103, 103);
+        }
+        #fatoracao:hover{
             outline-width: 0;
             font-weight: 700;
             box-shadow: 0px 0px 5px rgb(116, 103, 103);
         }
         p {
+            margin: 10px;
             position: relative;
-           top: 30px;
            text-align: center;
            font-family: 'Inconsolata';
            font-size: 1.2em;
@@ -79,22 +102,32 @@
         input[type="button"]:hover {
            color: black;
            background-color:var(--lightblue);
+           background-color:rgb(101 184 217);
+           border-radius: 20px;
            border: 2px solid black;
         }
         input[type="button"]:active {
            background-color: var(--darkblue);
         }
+        input::placeholder {
+            color: var(--lightblue);
+        }
     </style>
 </head>
-<body>
+<body onload="load()">
     <script src="fat.js"></script>
-    <h1 id="h1">FATORADOR</h1>
+
+ <img src="" alt=""> <h1 id="h1">FATORADOR
+        <span style="font-size: 18px;display: block;">(por agrupamento)</span>
+    </h1>
     <div id="calc">
-        <p>
-            /* Coloque a expressão abaixo: */<br>
-           "<input id="writespace" spellcheck="false"></input>"
-        </p>
-        <p><input type="button" value="FATORAR(expressão)"></p>
+            <p style="margin-top: 0px;">/* Digite a expressão: */</p>
+        <input id="write" spellcheck="false" placeholder="Ex: 4x + 8"></input>
+       <!-- <p><input type="button" value="FATORAR(expressão)" onclick="ir()"></p>-->
+        
+            <p id="res">/* Resultado: */</p>
+            <p id="fatoracao">Ex: 4(x + 2)</p>
+        
     </div>
 </body>
 </html>

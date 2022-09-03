@@ -1,51 +1,19 @@
-function ir() {
-    qualexp1 = document.getElementById("typearea").value;
-    qualexp = "";
-    parar = false;
-    for (copy in qualexp1) {
-      if (qualexp1[copy] != " ") {
-        if (
-          qualexp1[copy].search("[0-9]") != -1 ||
-          qualexp1[copy].search("[a-z]") != -1 ||
-          qualexp1[copy].search("[\\+\\-\\^]") != -1
-        ) {
-          qualexp += qualexp1[copy];
-        } else {
-          parar = true;
-        }}}
-    if (qualexp != "" && parar == false) {
-      ground = "";
-      expression = [];
-      for (phy in qualexp) {
-        if (qualexp[phy].search("[0-9]") != -1) {
-          if (ground.search("[0-9]") != -1) {
-            ground += qualexp[phy];
-          } else if (ground.length > 0) {
-            expression.push(ground);
-            ground = qualexp[phy];
-          } else {
-            ground = qualexp[phy];
-          }
-        } else {
-          if (ground.length > 0) {
-            expression.push(ground);
-          }
-          ground = qualexp[phy];
-        }
-        if (phy == qualexp.length - 1) {
-          expression.push(ground);
-        } }
-  
-      resultadogeral = doTheFactoring(expression);
-      resultado = resultadogeral[0];
-      devtools(false)
-      document.getElementById("result").innerHTML = "Resultado:";
-      document.getElementById('result').style.display = 'block';
-      document.getElementById("fatoracao").innerText = resultado;
-      document.getElementById("tab").style.height = "0px";
-      document.getElementById("exemplos").value = "Exemplos";
-      abriu = false;
-    }}
+
+loaded = false
+
+    function load() {
+        loaded = true
+        get('write').addEventListener('keyup',(event) => {
+            if (event.key == 'Enter') {
+            type = get('write').value
+            console.log('type',type)
+            console.log(type)
+            res = doTheFactoring(type)
+            get('fatoracao').innerText = res[0]
+            }
+        })
+    }
+
   abriu = false;
   vez = 0;
   function showegs() {
@@ -435,10 +403,10 @@ function REFORMATAR(q) {
   }
   
 function doTheFactoring(exal) {
+    console.log(exal)
     function CreateEngine2() {
       this.FATORAR = 
       function (expression_2,somarmons) {
-          startexp_2 = [...expression_2];
     
         if (expression_2[0] !== "-" && expression_2[0] !== "+") {
           expo_2 = ["+"];
@@ -3120,12 +3088,14 @@ function doTheFactoring(exal) {
     fat1 = engine.FATORAR(ep,true)
     fat2 = engine.FATORAR(ep,false)
     
+    console.log('FAT',fat2[0])
             alt = 1
             if (fat2[1] == 1 && fat2[2] == 0) {
               alt = 2
              okexp = fat2[0]
             } else {
               if (fat1[1] == 1 && fat1[2]== 0) {
+                alt = 1
                   okexp = fat1[0]
               }else{
                   alt = 2
@@ -3179,7 +3149,7 @@ function doTheFactoring(exal) {
                   }}
               }
                   console.log('OKEXP', okexp)
-                  if (alt = 1) {
+                  if (alt == 1) {
                     vari = fat1
                   }else{
                     vari = fat2
@@ -3198,4 +3168,8 @@ function doTheFactoring(exal) {
                     vari[10],
                     vari[11],
                   ]
+            }
+
+            function get(thist) {
+                return document.getElementById(thist)
             }
