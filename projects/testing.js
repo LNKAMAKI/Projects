@@ -2677,7 +2677,7 @@ function CreateEngine2() {
   }
 }
 
-ep = FATORE('4y')
+ep = FATORE('10x + 14x + 20y + 5xy + 7xy + 10y^2 + 27 + 9b + 27l + 9bl - ak - az')
 console.log(ep)
 engine = new CreateEngine2()
 //console.log(engine.FATORAR(ep,true)[0])
@@ -2711,6 +2711,7 @@ fat2 = engine.FATORAR(ep,false)
     
           console.log(SPLITEXPS(okexp))
           
+          if (monomios_2.length > 1 && segs_2.length > 1) {
           while (plo == false) {
               seps = SPLITEXPS(okexp)
               console.log(okexp)
@@ -2755,6 +2756,7 @@ fat2 = engine.FATORAR(ep,false)
            if (chain.indexOf(true) == -1) {
               plo = true
               }}
+          }
               console.log('OKEXP', okexp)
 
 function FATORE(q) {
