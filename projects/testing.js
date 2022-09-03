@@ -2677,7 +2677,7 @@ function CreateEngine2() {
   }
 }
 
-ep = FATORE('-8x + 3xy + 4xy - 6x + 2xy - 4x')
+ep = FATORE('4y + y + 16y + 5y + 20y')
 console.log(ep)
 engine = new CreateEngine2()
 //console.log(engine.FATORAR(ep,true)[0])
@@ -2685,6 +2685,7 @@ console.log(engine.FATORAR(ep,false)[0])
 fat1 = engine.FATORAR(ep,true)
 fat2 = engine.FATORAR(ep,false)
 
+        alt = 1
         se = fat2[5]
         sc = fat2[6]
         ms = fat2[7]
@@ -2704,6 +2705,7 @@ fat2 = engine.FATORAR(ep,false)
           } }
           console.log(okexp)
 
+          console.log('ALT',alt)
 
           plo = false
     
