@@ -1653,7 +1653,7 @@ function CreateEngine2() {
               newexpress.push('+')
               newexpress.push(join)
           }}
-         FATORAR2(newexpress)
+         this.FATORAR(newexpress)
      }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
@@ -2683,7 +2683,7 @@ function CreateEngine2() {
   }
 }
 
-ep = FATORE('10y - 338xy + 20y^2 - 169x - ab + bb')
+ep = FATORE('10x + 14x + 20y + 5xy + 7xy + 10y^2 + 27 + 9b + 27l + 9bl + ak + az')
 console.log(ep)
 engine = new CreateEngine2()
 console.log(engine.FATORAR(ep,true)[0])
