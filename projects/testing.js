@@ -2677,7 +2677,7 @@ function CreateEngine2() {
   }
 }
 
-ep = FATORE('10x + 14x + 20y + 5xy + 7xy + 10y^2 + 27 + 9b + 27l + 9bl + ak + az')
+ep = FATORE('-8x + 3xy + 4xy - 6x + 2xy - 4x')
 console.log(ep)
 engine = new CreateEngine2()
 //console.log(engine.FATORAR(ep,true)[0])
