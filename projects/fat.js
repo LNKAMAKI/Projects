@@ -3057,6 +3057,7 @@ function doTheFactoring(exal) {
               plo = false
               
               if (monomios_2.length > 1 && segs_2.length > 1) {
+                console.log('isso')
               while (plo == false) {
                   seps = SPLITEXPS(okexp)
                   rexp =  ''
@@ -3098,6 +3099,7 @@ function doTheFactoring(exal) {
                   plo = true
                   }}
               }
+              
                   console.log('OKEXP', okexp)
                   if (alt == 1) {
                     vari = fat1
@@ -3105,7 +3107,7 @@ function doTheFactoring(exal) {
                     vari = fat2
                   }
                   return [
-                    vari[0],
+                    okexp,
                     vari[1],
                     vari[2],
                     vari[3],
