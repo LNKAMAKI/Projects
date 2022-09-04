@@ -3099,7 +3099,7 @@ function doTheFactoring(exal) {
     
               plo = false
               
-              /*
+              
               if (monomios_2.length > 1 && segs_2.length > 1) {
                 console.log('isso')
               while (plo == false) {
@@ -3143,7 +3143,7 @@ function doTheFactoring(exal) {
                   plo = true
                   }}
               }
-              */
+              
                   console.log('OKEXP', okexp)
                   if (alt == 1) {
                     vari = fat1
