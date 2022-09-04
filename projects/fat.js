@@ -34,8 +34,6 @@ loaded = false
         copyGfGText.select();
 
         document.execCommand("copy");
-
-        alert("Copied the text: " + copyGfGText.value);
     }
 
   abriu = false;

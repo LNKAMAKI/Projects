@@ -34,41 +34,121 @@
             background-color: black;
             background-color: rgb(249, 249, 249);
         }
+        #logo {
+            width: calc(86.29/100*20px);
+            height: 20px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*20px)/2);
+        }
+        #logo-s {
+            position: relative;
+            display: inline-flex;
+            background-color: white;
+            padding: 8px;
+            top: -30px;
+            align-items: center;
+            width: calc(86.29/100*20px);
+            height: 20px;
+            border-radius: 50%;
+        }
         #sp {
             font-size: 18px;
             display: block;
         }
-        @media screen and (max-width: 570px) {
+
+        @media screen and (max-width: 610px) {
             #h1 {
-                font-size: 3.5em;
+                font-size:  4em;
+            }
+            #sp {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 588px) {
+            #h1 {
+                font-size: 3.2em;
             }
             #sp {
                 font-size: 13px;
             }
+            #logo {
+            width: calc(86.29/100*15px);
+            height: 15px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*15px)/2);
+        }
+        #logo-s {
+            position: relative;
+            display: inline-flex;
+            background-color: white;
+            padding: 7px;
+            top: -20px;
+            align-items: center;
+            width: calc(86.29/100*15px);
+            height: 15px;
+            border-radius: 50%;
+        }
         }
         
         @media screen and (max-width: 495px) {
             #h1 {
-                font-size: 2.9em;
+                font-size: 2.8em;
                 padding: 30px;
             }
             #sp {
                 font-size: 13px;
             }
+            #logo {
+            width: calc(86.29/100*10px);
+            height: 10px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*10px)/2);
         }
-        @media screen and (max-width: 400px) {
+        #logo-s {
+            position: relative;
+            display: inline-flex;
+            background-color: white;
+            padding: 6px;
+            top: -20px;
+            align-items: center;
+            width: calc(86.29/100*10px);
+            height: 10px;
+            border-radius: 50%;
+        }
+        }
+        @media screen and (max-width: 426px) {
             #h1 {
-                font-size: 2.5em;
+                font-size: 2.6em;
                 padding: 30px;
             }
             #sp {
                 font-size: 13px;
             }
+            #logo-s {
+            top: -18px;
+        }
+        }
+
+        @media screen and (max-width: 392px) {
+            #h1 {
+                font-size: 2.3em;
+                padding: 30px;
+            }
+            #sp {
+                font-size: 13px;
+            }
+            #logo-s {
+            top: -15px;
+        }
         }
 
         @media screen and (max-width: 360px) {
             #h1 {
-                font-size: 2.3em;
+                font-size: 2.1em;
                 padding: 30px;
             }
             #sp {
@@ -78,11 +158,14 @@
 
         @media screen and (max-width: 332px) {
             #h1 {
-                font-size: 2.1em;
+                font-size: 1.9em;
                 padding: 30px;
             }
             #sp {
                 font-size: 13px;
+            }
+            #logo-s {
+                padding: 4px;
             }
         }
 
@@ -196,7 +279,8 @@
 <body onload="load()">
     <script src="fat.js"></script>
 
- <img src="" alt=""> <h1 id="h1">FATORADOR
+ <img src="" alt=""> 
+ <h1 id="h1">FATORADOR<span id="logo-s"><img src="/projects/imagens/eln-logo-g.png" id="logo"></span>
         <span id="sp">(por agrupamento)</span>
     </h1>
     <div id="calc">
@@ -212,7 +296,6 @@
                     <input id="fatoracao" class="type" readonly="readonly"></input>
                     <img src="/projects/imagens/copy.png" class="copy" alt="copy text" onclick="copy2()">
                 </div>
-
         
     </div>
 </body>
