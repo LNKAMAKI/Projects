@@ -286,6 +286,7 @@
             cursor: pointer;
         }
         #resol {
+            position: relative;
             background-color: var(--darkblue);
             width: calc(100% - 60px);
             margin: 15px auto 0px auto;
@@ -294,25 +295,27 @@
             align-content: center;
             font-family: 'Inconsolata';
             font-size: 1.1em;
+            height: 23px;
+            overflow-y: hidden;
         }
         #center {
-            display: inline-flex;
+            position: relative;
+            display: flex;
             align-items: center;
+            align-content: center;
+            height: 100%;
+            justify-content: center;
         }
         #center > img {
             width: 20px;
             height: 20px;
             transform: rotate(0deg);
-            background-color: var(--darkblue);
             cursor: pointer;
+            position: relative;
         }
         span {
             height: fit-content;
             display: inline;
-        }
-        #resol > p {
-            background-color: pink;
-            display: block;
         }
     </style>
 </head>
@@ -339,8 +342,7 @@
                 </div>
                 <div id="resol">
                     <div id="center"><img src="/projects/imagens/rar.png" alt="" id="ar"><span>Resolução</span></div>
-                   
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo iusto explicabo odio eius molestiae eveniet veniam tempore veritatis. Voluptates natus nisi atque magnam et minima eaque deserunt maiores, labore dolores.</p>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet vitae minima ab fugit magnam dicta, ad quod sapiente, provident quaerat sed corrupti nesciunt neque ullam fugiat at porro suscipit incidunt!</p>
                 </div>
             </div>
 </body>

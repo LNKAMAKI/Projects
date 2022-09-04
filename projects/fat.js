@@ -18,9 +18,11 @@ clicked = false
             if (clicked == false) {
                 ar.style.transform = 'rotate(90deg)'
                 clicked = true
+                get('resol').style.height = 'fit-content'
             }else{
                 ar.style.transform = 'rotate(0deg)'
                 clicked = false
+                get('resol').style.height = '23px'
             }
         })
     }
@@ -1614,7 +1616,7 @@ function doTheFactoring(exal) {
              initial = youdumb_2[wrecked].w.what
          }
       
-        
+        /*
           grtols = [];
           for (hi in youdumb_2) {
             youdumb_2[hi].length = youdumb_2[hi].w.what.length;
@@ -1628,7 +1630,8 @@ function doTheFactoring(exal) {
             grtols.push(youdumb_2[organizado[ah]]);
           }
           youdumb_2 = [...grtols];
-    
+     */
+
          heya_2 = [...youdumb_2]
          for (imback in youdumb_2) {
              sticky = []
