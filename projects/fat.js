@@ -440,6 +440,9 @@ function REFORMATAR(q) {
 function doTheFactoring(exal) {
     console.log(exal)
     function CreateEngine2() {
+        console.log('')
+        console.log('')
+        console.log('creating engine........')
       this.FATORAR = 
       function (expression_2,somarmons) {
     
@@ -987,7 +990,10 @@ function doTheFactoring(exal) {
                              }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
                              }else{
                                  uy+= right[xarope]
+                                 console.log('WHEN WDWDIWJDIWDI',uy)
                              }}
+
+                             console.log('UYYYYYYYYYYYYYYYYYY', uy)
                             scarecrow_2[anchor].outrodiv.push(uy)
          
                             if (uy[0] == '-') {
@@ -1529,23 +1535,81 @@ function doTheFactoring(exal) {
          for (wrecked in youdumb_2) {
              initial = youdumb_2[wrecked].w.what
          }
-      
-        /*
-          grtols = [];
-          for (hi in youdumb_2) {
-            youdumb_2[hi].length = youdumb_2[hi].w.what.length;
-        
-            grtols.push(youdumb_2[hi]);
-          }
-          organizado = sortob(grtols, "length")[1];
-        
-          grtols = [];
-          for (ah in organizado) {
-            grtols.push(youdumb_2[organizado[ah]]);
-          }
-          youdumb_2 = [...grtols];
-     */
 
+          console.log('you', youdumb_2)
+
+          //
+            grtols = []
+            
+                for (hi in youdumb_2) {
+                    youdumb_2[hi].length = youdumb_2[hi].mons.length
+                
+                    grtols.push(youdumb_2[hi])
+                }
+                
+                organizado = sortob(grtols, 'length')[1]
+                
+                grtols = []
+                for (ah in organizado) {
+                    grtols.push(youdumb_2[organizado[ah]])
+                    
+                }
+            
+                youdumb_2 = grtols
+                console.log(youdumb_2)
+            
+            lengs = []
+            for (i in youdumb_2) {
+                if (lengs.find(function(lengs){
+                return lengs.leng == youdumb_2[i].mons.length
+                }) == undefined){
+                lengs.push({leng:youdumb_2[i].mons.length, num: [i]})
+                }else{
+                lengs.find(function(lengs){
+                return lengs.leng == youdumb_2[i].mons.length
+                }).num.push(i)
+                }
+            }
+            console.log(lengs)
+            
+            youdumb_2ordered = []
+            for (f in lengs) {
+                its = []
+                for (i in lengs[f].num) {
+                its.push(youdumb_2[lengs[f].num[i]])
+                }
+            
+                grtols = []
+                
+                for (hi in its) {
+                console.log(its[i].w.what.length)
+                    its[hi].length = its[hi].w.what.length
+                
+                    grtols.push(its[hi])
+                }
+                
+                organizado = sortob(grtols, 'length')[1]
+                
+                grtols = []
+                for (ah in organizado) {
+                    grtols.push(its[organizado[ah]])
+                    
+                }
+            
+                its = grtols
+                console.log(its)
+                for (c in its) {
+                youdumb_2ordered.push(its[c])
+                }
+            }
+
+            console.log('youdumb_2ordered', youdumb_2ordered)
+            youdumb_2 = youdumb_2ordered
+            
+            for (yes in youdumb_2) {
+                console.log('==========>',yes, youdumb_2[yes].mons, youdumb_2[yes].w.what.length)
+            }
+         //
          heya_2 = [...youdumb_2]
          for (imback in youdumb_2) {
              sticky = []
@@ -1597,25 +1661,7 @@ function doTheFactoring(exal) {
              youdumb_2[força].t = entao
           }
        
-         grtols_2 = []
-             
-         for (hi in youdumb_2) {
-             youdumb_2[hi].length = youdumb_2[hi].t.length
-             grtols_2.push(youdumb_2[hi])
-         }
-         
-         
-         organizado = sortob(grtols_2, 'length')[1]
-         
-         grtols_2 = []
-         for (ah in organizado) {
-             grtols_2.push(youdumb_2[organizado[ah]])
-         }
-         
-         youdumb_2 = []
-         for (erro in grtols_2) {
-             youdumb_2.push(grtols_2[erro])
-         }} }
+        } }
       
          concatenar_2 = ''
          numsdesfat = []
@@ -3032,11 +3078,8 @@ function doTheFactoring(exal) {
     
     ep = FATORE(exal)
     console.log(ep)
-    engine = new CreateEngine2()
-    //console.log(engine.FATORAR(ep,true)[0])
-    console.log(engine.FATORAR(ep,false)[0])
-    fat1 = engine.FATORAR(ep,true)
-    fat2 = engine.FATORAR(ep,false)
+    fat1 = new CreateEngine2().FATORAR(ep,true)
+    fat2 = new CreateEngine2().FATORAR(ep,false)
     
     console.log('FAT',fat2[0])
             alt = 1
@@ -3056,6 +3099,7 @@ function doTheFactoring(exal) {
     
               plo = false
               
+              /*
               if (monomios_2.length > 1 && segs_2.length > 1) {
                 console.log('isso')
               while (plo == false) {
@@ -3067,7 +3111,7 @@ function doTheFactoring(exal) {
                   end = seps[varnot].close
                   expin = seps[varnot].exp
               
-                fator1 = engine.FATORAR(FATORE(seps[varnot].exp), false)
+                fator1 = new CreateEngine2().FATORAR(FATORE(seps[varnot].exp), false)
               
                 daprafator1 = false 
                 if (fator1[1] == 1 && fator1[2] == 0) { 
@@ -3099,7 +3143,7 @@ function doTheFactoring(exal) {
                   plo = true
                   }}
               }
-              
+              */
                   console.log('OKEXP', okexp)
                   if (alt == 1) {
                     vari = fat1
