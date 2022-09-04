@@ -9,9 +9,33 @@ loaded = false
             console.log('type',type)
             console.log(type)
             res = doTheFactoring(type)
-            get('fatoracao').innerText = res[0]
+            get('fatoracao').value = res[0]
             }
         })
+    }
+
+    function copy() {
+        nums = document.getElementsByClassName('type')
+        copyText = nums[0]
+
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); 
+
+        navigator.clipboard.writeText(copyText.value);
+
+        console.log(navigator.clipboard)
+
+    }
+
+    function copy2() {
+        nums = document.getElementsByClassName('type')
+        copyText = nums[1]
+        var copyGfGText = copyText;
+        copyGfGText.select();
+
+        document.execCommand("copy");
+
+        alert("Copied the text: " + copyGfGText.value);
     }
 
   abriu = false;
