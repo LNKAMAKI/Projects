@@ -1334,7 +1334,6 @@ function doTheFactoring(exal) {
                               mons2.push(compar[pi])
                               pi+= 2
                           } 
-                          //console.log('mons2',mons2)
     
                           if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
                                roller_2.push({
@@ -1345,16 +1344,12 @@ function doTheFactoring(exal) {
                             });
                           }else{
                             func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
-                            //console.log(func.rept, func.position, func.monomios)
-                            //console.log(pos1,'=',mons1)
-                            //console.log(pos2,'=',mons2)
-    
                             perm = true
                             for (sept in mons1) {
                                 if (func.monomios.indexOf(mons1[sept]) != -1) {
                                    perm = false 
                                 }}
-                            //console.log(perm)
+
                             if (perm == true) {
                                 func.position.push(pos1)
                                 for (wake in mons1) {
@@ -1366,7 +1361,7 @@ function doTheFactoring(exal) {
                                 if (func.monomios.indexOf(mons2[sept]) != -1) {
                                    perm = false 
                                 }}
-                            //console.log(perm)
+                                
                             if (perm == true) {
                                 func.position.push(pos2)
                                 for (wake in mons2) {
