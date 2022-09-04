@@ -1287,19 +1287,14 @@ function doTheFactoring(exal) {
                deucerto = false
                roller_2 = [];
                for (eep in miss_2) {
-                //console.log('__________',eep,'_________')
-                //console.log(`miss_2[${eep}]:`,miss_2[eep].aparicoes,miss_2[eep].dividido)
                 varib = []
                 for (kel in miss_2[eep].aparicoes) {
                     pos = miss_2[eep].aparicoes[kel]
                     varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
                 }
-               //console.log('--------------')
                   for (quad in miss_2) {
                     if (quad != eep) {
-                        //console.log('((((((((())))))))')
                         compar = []
-                      //console.log(`miss_2[${quad}]:`, miss_2[quad].aparicoes, miss_2[quad].dividido)
                       varib2 = []
                       for (kel in miss_2[quad].aparicoes) {
                         pos = miss_2[quad].aparicoes[kel]
@@ -1308,15 +1303,10 @@ function doTheFactoring(exal) {
                       repeated = [];
                       repwri = "";
                       for (vespa in miss_2[eep].aparicoes) {
-                        //console.log(`miss_2[${eep}].aparicoes[${vespa}]:${miss_2[eep].aparicoes[vespa]}`,varib[vespa])
                         if (compar.indexOf(varib[vespa]) == -1) {
                         compar.push(varib[vespa])
-                        //console.log('COMPARAR:',compar)
     
                         if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) {
-                            //console.log(miss_2[quad].aparicoes,'.indexOf(',miss_2[eep].aparicoes[vespa],') = ',miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]))
-                            //console.log(miss_2[quad].aparicoes[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])],'=',varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])], `${compar}.indexOf(${varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]}) = ${compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])}`)
-    
                           compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])
                             
                             repeated.push(miss_2[eep].aparicoes[vespa]);
