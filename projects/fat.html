@@ -18,7 +18,7 @@
             background-color: var(--lightgray);
         }
         :root{
-            --lightblue: rgb(82, 221, 246);
+            --lightblue: rgb(132, 206, 238);
             --darkblue: rgb(87, 164, 195);
             --lightgray: #e7e7e7;
             --shadowgray: #bdbdbd;
@@ -57,45 +57,63 @@
             display: block;
         }
 
-        @media screen and (max-width: 610px) {
+        @media screen and (max-width: 630px) {
             #h1 {
                 font-size:  4em;
             }
             #sp {
                 font-size: 15px;
             }
-        }
-
-        @media screen and (max-width: 588px) {
-            #h1 {
-                font-size: 3.2em;
-            }
-            #sp {
-                font-size: 13px;
-            }
             #logo {
-            width: calc(86.29/100*15px);
-            height: 15px;
+            width: calc(86.29/100*19px);
+            height: 19px;
             margin-right: 10px;
             position: absolute;
-            left: calc((100% - 86.29/100*15px)/2);
+            left: calc((100% - 86.29/100*19px)/2);
         }
         #logo-s {
             position: relative;
             display: inline-flex;
             background-color: white;
             padding: 7px;
-            top: -20px;
+            top: -30px;
             align-items: center;
-            width: calc(86.29/100*15px);
-            height: 15px;
+            width: calc(86.29/100*19px);
+            height: 19px;
+            border-radius: 50%;
+        }
+        }
+
+        @media screen and (max-width: 600px) {
+            #h1 {
+                font-size: 3.5em;
+            }
+            #sp {
+                font-size: 13px;
+            }
+            #logo {
+            width: calc(86.29/100*17px);
+            height: 17px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*17px)/2);
+        }
+        #logo-s {
+            position: relative;
+            display: inline-flex;
+            background-color: white;
+            padding: 7px;
+            top: -25px;
+            align-items: center;
+            width: calc(86.29/100*17px);
+            height: 17px;
             border-radius: 50%;
         }
         }
         
-        @media screen and (max-width: 495px) {
+        @media screen and (max-width: 540px) {
             #h1 {
-                font-size: 2.8em;
+                font-size: 3.2em;
                 padding: 30px;
             }
             #sp {
@@ -109,8 +127,8 @@
             left: calc((100% - 86.29/100*10px)/2);
         }
         #logo-s {
+            display: none;
             position: relative;
-            display: inline-flex;
             background-color: white;
             padding: 6px;
             top: -20px;
@@ -120,52 +138,44 @@
             border-radius: 50%;
         }
         }
-        @media screen and (max-width: 426px) {
+        @media screen and (max-width: 450px) {
+            #h1 {
+                font-size: 3em;
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            #h1 {
+                font-size: 2.9em;
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 415px) {
+            #h1 {
+                font-size: 2.7em;
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 395px) {
             #h1 {
                 font-size: 2.6em;
                 padding: 30px;
             }
-            #sp {
-                font-size: 13px;
-            }
-            #logo-s {
-            top: -18px;
         }
-        }
-
-        @media screen and (max-width: 392px) {
+        @media screen and (max-width: 372px) {
             #h1 {
                 font-size: 2.3em;
                 padding: 30px;
             }
-            #sp {
-                font-size: 13px;
-            }
-            #logo-s {
-            top: -15px;
-        }
         }
 
-        @media screen and (max-width: 360px) {
+        @media screen and (max-width: 352px) {
             #h1 {
                 font-size: 2.1em;
                 padding: 30px;
-            }
-            #sp {
-                font-size: 13px;
-            }
-        }
-
-        @media screen and (max-width: 332px) {
-            #h1 {
-                font-size: 1.9em;
-                padding: 30px;
-            }
-            #sp {
-                font-size: 13px;
-            }
-            #logo-s {
-                padding: 4px;
             }
         }
 
@@ -275,6 +285,35 @@
             margin:5px;
             cursor: pointer;
         }
+        #resol {
+            background-color: var(--darkblue);
+            width: calc(100% - 60px);
+            margin: 15px auto 0px auto;
+            padding: 5px 10px;
+            border-radius: 10px;
+            align-content: center;
+            font-family: 'Inconsolata';
+            font-size: 1.1em;
+        }
+        #center {
+            display: inline-flex;
+            align-items: center;
+        }
+        #center > img {
+            width: 20px;
+            height: 20px;
+            transform: rotate(0deg);
+            background-color: var(--darkblue);
+            cursor: pointer;
+        }
+        span {
+            height: fit-content;
+            display: inline;
+        }
+        #resol > p {
+            background-color: pink;
+            display: block;
+        }
     </style>
 </head>
 <body onload="load()">
@@ -296,6 +335,13 @@
                 <div style="text-align: center;">
                     <input id="fatoracao" class="type" readonly="readonly"></input>
                     <img src="/projects/imagens/copy.png" class="copy" alt="copy text" onclick="copy2()">
-                </div></div>
+
+                </div>
+                <div id="resol">
+                    <div id="center"><img src="/projects/imagens/rar.png" alt="" id="ar"><span>Resolução</span></div>
+                   
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo iusto explicabo odio eius molestiae eveniet veniam tempore veritatis. Voluptates natus nisi atque magnam et minima eaque deserunt maiores, labore dolores.</p>
+                </div>
+            </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 
 loaded = false
+clicked = false
 
     function load() {
         loaded = true
@@ -10,6 +11,16 @@ loaded = false
             console.log(type)
             res = doTheFactoring(type)
             get('fatoracao').value = res[0]
+            }
+        })
+        get('ar').addEventListener('click', function () {
+            ar = get('ar')
+            if (clicked == false) {
+                ar.style.transform = 'rotate(90deg)'
+                clicked = true
+            }else{
+                ar.style.transform = 'rotate(0deg)'
+                clicked = false
             }
         })
     }
