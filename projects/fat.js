@@ -36,8 +36,6 @@ clicked = false
 
         navigator.clipboard.writeText(copyText.value);
 
-        console.log(navigator.clipboard)
-
     }
 
     function copy2() {
@@ -990,10 +988,10 @@ function doTheFactoring(exal) {
                              }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
                              }else{
                                  uy+= right[xarope]
-                                 console.log('WHEN WDWDIWJDIWDI',uy)
+                                 //console.log('WHEN WDWDIWJDIWDI',uy)
                              }}
 
-                             console.log('UYYYYYYYYYYYYYYYYYY', uy)
+                             //console.log('UYYYYYYYYYYYYYYYYYY', uy)
                             scarecrow_2[anchor].outrodiv.push(uy)
          
                             if (uy[0] == '-') {
