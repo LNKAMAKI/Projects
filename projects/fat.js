@@ -2015,6 +2015,7 @@ function doTheFactoring(exal) {
              }}}
          
          if (numsdesfat.length > 0) {
+            console.log(concatenar_2)
           console.warn('VAI TER QUE FATORAR DE NOVO')
           //console.log('youdumb')
          
