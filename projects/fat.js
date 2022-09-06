@@ -991,8 +991,10 @@ function doTheFactoring(exal) {
                                  //console.log('WHEN WDWDIWJDIWDI',uy)
                              }}
 
+
                              //console.log('UYYYYYYYYYYYYYYYYYY', uy)
-                            scarecrow_2[anchor].outrodiv.push(uy)
+                             //console.log('consertado:', redo(desfat(uy)))
+                            scarecrow_2[anchor].outrodiv.push(redo(desfat(uy)))
          
                             if (uy[0] == '-') {
                              holdon = ''
@@ -2085,7 +2087,7 @@ function doTheFactoring(exal) {
                           aconta_2+= quase[patience]
                           elevar = 1
                       }} }
-              
+
               if (aster == false) {
                    direitando = ''
                    for (h in quase) {
@@ -3167,3 +3169,29 @@ function doTheFactoring(exal) {
             function get(thist) {
                 return document.getElementById(thist)
             }
+
+            function redo(point) {
+                point = FATORE(point)
+                for (y in point) {
+                  if (point[y] == "^") {
+                    ad = point[Number(y) - 1];
+                    for (h = 0; h < Number(point[Number(y) + 1]) - 1; h++) {
+                      point[Number(y) - 1] += ad;
+                    }
+                    point.splice(Number(y) + 1, 1);
+                    point.splice(y, 1);
+                  } }
+
+                  for (was in point) {
+                    if (point[was].search('[0-9]') != -1) {
+                        if (ehprimo(point[was]) == false) {
+                        point[was] = FATORARSInGULAR(point[was])
+                        }
+                    }
+                  }
+                  fires = ''
+                  for (was in point) {
+                    fires+= point[was]
+                  }
+                  return fires
+                }
