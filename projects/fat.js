@@ -23,6 +23,11 @@ loaded = false
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
+            console.log(Number(ars.length) - 1, i)
+            if (i != Number(ars.length) - 1) {
+                console.log('ok')
+                conts[i].style.marginBottom = '10px'
+            }
     }
     
     
@@ -45,15 +50,15 @@ loaded = false
                 if (this.clicked == false || this.clicked == undefined) {
                     console.log('ABRIR',this.clicked)
                 par2.style.height = 'fit-content'
+                par1.style.transform = 'rotate(90deg)'
                 this.clicked = true
                 }else{
                     console.log('FECHAR',this.clicked)
                     heightInPx = String(par3.offsetHeight) + 'px'
                     par2.style.height = heightInPx
+                    par1.style.transform = 'rotate(0deg)'
                     this.clicked = false
-                }
-            })
-        }
+                }}) }
     }
 
     function copy() {
