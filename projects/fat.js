@@ -4,25 +4,25 @@ clicked = false
 
     function load() {
         loaded = true
-        get('write').addEventListener('keyup',(event) => {
+        get1('write').addEventListener('keyup',(event) => {
             if (event.key == 'Enter') {
-            type = get('write').value
+            type = get1('write').value
             console.log('type',type)
             console.log(type)
             res = doTheFactoring(type)
-            get('fatoracao').value = res[0]
+            get1('fatoracao').value = res[0]
             }
         })
-        get('ar').addEventListener('click', function () {
-            ar = get('ar')
+        get1('ar').addEventListener('click', function () {
+            ar = get1('ar')
             if (clicked == false) {
                 ar.style.transform = 'rotate(90deg)'
                 clicked = true
-                get('resol').style.height = 'fit-content'
+                get1('resol').style.height = 'fit-content'
             }else{
                 ar.style.transform = 'rotate(0deg)'
                 clicked = false
-                get('resol').style.height = '23px'
+                get1('resol').style.height = '23px'
             }
         })
     }
