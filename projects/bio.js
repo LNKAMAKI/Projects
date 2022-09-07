@@ -19,6 +19,8 @@ function next() {
    if (mark == false || respondidas.find(function(respondidas) {
       return respondidas.numslide == qual
    }) != undefined && qual != 1) {
+
+      console.log(qual)
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
 
@@ -70,9 +72,6 @@ sw(qual)
 outra.style.transform = 'translate(-200%)'
 outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
    }
-
-
-
 }
 
 mark = false
@@ -102,7 +101,6 @@ function sw(what){
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div>'
      cont.innerText =  ' Javascript is the most commonly-used programming language in the world. It\'s also one of the easiest, since it doesn\'t require any previous coding knowledge. Google, Youtube, Facebook, Amazon, Twitter and Netflix are examples of popular platforms that have javascript in their composition.'
       break
-     
    }
    ops = document.getElementsByClassName('option')
    for (number in ops) {
