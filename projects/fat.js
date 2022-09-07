@@ -13,18 +13,40 @@ clicked = false
             get1('fatoracao').value = res[0]
             }
         })
-        get1('ar').addEventListener('click', function () {
-            ar = get1('ar')
-            if (clicked == false) {
-                ar.style.transform = 'rotate(90deg)'
+
+        conts = get2('cont')
+        cents = get2('center')
+        ars = get2('ar')
+        for (i = 0; i < ars.length; i++) {
+            console.log(i, ars[i], conts[i], cents[i])
+            c = new CreateFunc(ars[i],conts[i],cents[i])
+            c.SetDefault()
+            c.AddEvent()
+    }
+    }
+
+    function CreateFunc(par1,par2,par3){
+        this.par1 = par1
+        this.par2 = par2
+        this.par3 = par3
+        this.clicked = false
+        this.SetDefault= function () {
+            //par2.style.height = par3.offsetHeight
+            heightInPx = String(par3.offsetHeight) + 'px'
+            par2.style.height = heightInPx
+        }
+        this.AddEvent = function() {
+            par1.addEventListener('click', function() {
+                if (clicked == false) {
+                par2.style.height = 'fit-content'
                 clicked = true
-                get1('resol').style.height = 'fit-content'
-            }else{
-                ar.style.transform = 'rotate(0deg)'
-                clicked = false
-                get1('resol').style.height = '23px'
-            }
-        })
+                }else{
+                    heightInPx = String(par3.offsetHeight) + 'px'
+                    par2.style.height = heightInPx
+                    clicked = false
+                }
+            })
+        }
     }
 
     function copy() {
