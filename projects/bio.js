@@ -140,8 +140,8 @@ function sw(what){
    break
    case 8:
          tit.innerText = 'Seres vivos se reproduzem'
-         outra.innerHTML = '<div class="pic"><img src="imagens/dna.jpg" alt=""></div>'
-         cont.innerText = 'Outra característica dos seres vivos é que eles apresentam material genético, que garante a estabilidade da espécie ao ser transmitido de geração para geração e é responsável pela hereditariedade. Quando ocorre alteração casual ou acidental do material genético, chamamos isso de mutação, que permite a variabilidade genética dentro da espécie.'
+         outra.innerHTML = '<div class="pic"><img src="imagens/divisao-celular.jpg" alt=""></div>'
+         cont.innerText = 'Os seres vivos também têm a capacidade de se reproduzir, ou seja, '
    break
    }
    ops = document.getElementsByClassName('option')
