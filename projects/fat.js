@@ -10,8 +10,7 @@ loaded = false
             console.log(type)
             res = doTheFactoring(type)
             get1('fatoracao').value = res[0]
-            }
-        })
+            }})
 
         conts = get2('cont')
         cents = get2('center')
@@ -27,11 +26,7 @@ loaded = false
             if (i != Number(ars.length) - 1) {
                 console.log('ok')
                 conts[i].style.marginBottom = '10px'
-            }
-    }
-    
-    
-    }
+            } }}
 
     function CreateFunc(par1,par2,par3){
         this.par1 = par1
@@ -58,18 +53,14 @@ loaded = false
                     par2.style.height = heightInPx
                     par1.style.transform = 'rotate(0deg)'
                     this.clicked = false
-                }}) }
-    }
+                }}) }}
 
     function copy() {
         nums = document.getElementsByClassName('type')
         copyText = nums[0]
-
         copyText.select();
         copyText.setSelectionRange(0, 99999); 
-
         navigator.clipboard.writeText(copyText.value);
-
     }
 
     function copy2() {
@@ -77,7 +68,6 @@ loaded = false
         copyText = nums[1]
         var copyGfGText = copyText;
         copyGfGText.select();
-
         document.execCommand("copy");
     }
 
