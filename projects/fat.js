@@ -1,6 +1,5 @@
 
 loaded = false
-clicked = false
 
     function load() {
         loaded = true
@@ -17,12 +16,16 @@ clicked = false
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
+        cs = []
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
             c.SetDefault()
             c.AddEvent()
+            cs.push(c)
     }
+    
+    
     }
 
     function CreateFunc(par1,par2,par3){
@@ -36,14 +39,18 @@ clicked = false
             par2.style.height = heightInPx
         }
         this.AddEvent = function() {
-            par1.addEventListener('click', function() {
-                if (clicked == false) {
+            console.log('this.clicked',this.clicked)
+            par1.addEventListener('click', function(clicked) {
+                console.log(this.clicked)
+                if (this.clicked == false || this.clicked == undefined) {
+                    console.log('ABRIR',this.clicked)
                 par2.style.height = 'fit-content'
-                clicked = true
+                this.clicked = true
                 }else{
+                    console.log('FECHAR',this.clicked)
                     heightInPx = String(par3.offsetHeight) + 'px'
                     par2.style.height = heightInPx
-                    clicked = false
+                    this.clicked = false
                 }
             })
         }
