@@ -100,7 +100,7 @@ function sw(what){
    switch (what) {
       case 0: 
       outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div>'
-     cont.innerText =  ' '
+     cont.innerText =  ''
       break
    }
    ops = document.getElementsByClassName('option')
