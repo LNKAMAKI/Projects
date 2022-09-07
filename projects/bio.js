@@ -18,11 +18,9 @@ function next() {
    direction = 'next'
    if (mark == false || respondidas.find(function(respondidas) {
       return respondidas.numslide == qual
-   }) != undefined && qual != 24) {
+   }) != undefined && qual != 1) {
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
-
-
 
 console.log(hat[ident])
 hat[ident].style.animation = 'slide 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
@@ -37,17 +35,11 @@ wisright(qual)
 outra = hat[ident]
 outra.style.visibility = 'visible'
 
-
 sw(qual)
 
 outra.style.transform = 'translate(200%)'
 outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
-
-
-
    }
-
-
 }
 
 // go to previous slide
