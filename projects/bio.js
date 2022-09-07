@@ -85,7 +85,7 @@ function sw(what){
    cont.style.opacity = '0'
    cont.style.transform = 'translateY(100%)'
    cont.style.animation = 'showup 0.5s 0.1s forwards'
-
+   title = document.getElementById('tit')
 
    document.getElementById('alter').parentNode.removeChild(document.getElementById('alter'))
    at = document.createElement('div')
@@ -99,8 +99,8 @@ function sw(what){
    marcada = -1
    switch (what) {
       case 0: 
-      outra.innerHTML = '<div class="pic"><img src="imagens/js-logo.webp" alt=""></div>'
-     cont.innerText =  ''
+      outra.innerHTML = '<div class="pic"><img src="imagens/pantanal.jpg" alt=""></div>'
+     cont.innerText =  ' Ecologia é a ciência que estuda as relações dos seres vivos entre si e com o meio no qual vivem.'
       break
    }
    ops = document.getElementsByClassName('option')
