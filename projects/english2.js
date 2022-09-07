@@ -15,7 +15,8 @@ function next() {
    direction = 'next'
    if (mark == false || respondidas.find(function(respondidas) {
       return respondidas.numslide == qual
-   }) != undefined && qual != 24) {
+   }) != undefined){
+      if (qual != 24) {
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
 
@@ -36,6 +37,7 @@ sw(qual)
 
 outra.style.transform = 'translate(200%)'
 outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
+   }
    }
 }
 

@@ -15,12 +15,14 @@ direction = 'next'
 // go to the next slide
 function next() {
 
+   console.log('qual')
    direction = 'next'
    if (mark == false || respondidas.find(function(respondidas) {
       return respondidas.numslide == qual
-   }) != undefined && qual != 1) {
+   }) != undefined) {
 
-      console.log(qual)
+      if (qual != 0) {
+      console.log(qual, qual != 0)
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
 
@@ -42,6 +44,7 @@ sw(qual)
 outra.style.transform = 'translate(200%)'
 outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
    }
+}
 }
 
 // go to previous slide
