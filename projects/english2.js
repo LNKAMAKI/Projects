@@ -37,17 +37,11 @@ wisright(qual)
 outra = hat[ident]
 outra.style.visibility = 'visible'
 
-
 sw(qual)
 
 outra.style.transform = 'translate(200%)'
 outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
-
-
-
    }
-
-
 }
 
 // go to previous slide
