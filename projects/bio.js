@@ -52,9 +52,7 @@ function prev() {
 
 console.log(hat)
 
-
 hat[ident].style.animation = 'slide3 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
-
 
 if (ident == 0) {
 ident = 1
