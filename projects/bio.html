@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biologia</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Fjalla+One&family=Ubuntu+Condensed&display=swap');
+     
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div#quests {
+            position: relative;
+            background-color: white;
+            max-width: 760px;
+           text-align: center;
+           height: fit-content;
+            border-radius:25px;
+            margin: auto;
+            margin-top: 50px;
+            border: 10px solid rgb(233, 233, 233);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.351);
+            padding: 20px;
+           overflow: hidden;
+        }
+        .phold {
+            position: absolute;
+            width:100%;
+            margin-top: 40px;
+            height: fit-content;
+            background-color: blue;
+        }
+       
+        p#p {
+      
+           font-family: 'Aclonica';
+           max-width: 80%;
+          
+          margin: auto;
+          padding: 20px 10px 15px 10px;
+           margin-top: 20px;
+          margin-bottom: 20px;
+           top: 0px;
+           border-radius: 20px;
+           text-indent: 15px;
+           line-height: 25px;
+           font-size: 16px;
+           font-weight: bolder;
+           color: rgb(89, 230, 255);
+           box-shadow: -10px 15px 10px rgba(0, 0, 0, 0.048);
+        }
+        div.scroll {
+        
+            position: absolute;
+            width: 51%;
+            padding-bottom: 50%;
+          
+           left: 24.5%;
+        }
+       
+        div.pic > img {
+            position: absolute;
+            left:0%;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        
+        }
+        @keyframes slide {
+            0% {
+                transform: translatex(0%)
+            }
+            100% {
+                transform: translate(calc(-200%))
+            }
+        }
+        @keyframes slide2 {
+        
+            100% {
+                transform: translate(calc(0%));
+                
+            }
+        }
+
+        @keyframes slide3 {
+            0% {
+                transform: translatex(0%)
+            }
+            100% {
+                transform: translate(calc(200%))
+            }
+        }
+
+
+        @keyframes showup {
+           
+            100% {
+                transform: translateY(0%);
+                opacity: 100;
+            }
+        }
+
+      
+        div#seila {
+            margin-top: 5px;
+            width: 51%;
+        padding-bottom: 50%;
+          
+           margin-left: 24.5%;
+           margin-bottom: 20px;
+        }
+
+        input[class="rnbut"] {
+            margin-left: 10px;
+            border-image: none;
+            outline: none;
+            border:none;
+            background-color:rgb(87, 210, 241);
+            border-radius: 100px;
+            display: inline-flex;
+            font-size: 1.6em;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: white;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+        }
+       
+        #scroll2 {
+            transform: translateX(200%)
+        }
+        div.conter {
+            background-color: transparent;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        p.option {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            background-color: rgb(149, 229, 253);
+            display: inline-block;
+            border-radius: 15px;
+            width: 42%;
+            max-width: 300px;
+            padding: 15px;
+            margin-bottom: 5px;
+            display: grid;
+            align-items: center;
+            box-shadow: -5px 5px 10px rgba(40, 106, 136, 0.413);
+        }
+        p.option:hover {
+        
+            cursor: pointer;
+            box-shadow: -10px 10px 10px rgba(40, 106, 136, 0.413);
+        }
+        p[name="space"] {
+            margin-right: 10px;
+         
+        }
+        div#alter {
+            margin-bottom: 25px;
+          
+        }
+        input.sub {
+            background-color: rgb(82, 250, 82);
+            padding: 14px;
+            color: white;
+            margin-top: 10px;
+            border-radius: 10px;
+            border-width: 0px;
+        }
+       input.sub:hover {
+        
+        cursor: pointer;
+        box-shadow: -3px 5px 10px rgba(40, 136, 43, 0.413);
+    }
+    </style>
+</head>
+<body>
+    <script src="bio.js"></script>
+    
+    <div id="quests">
+      
+          <div id="hold">
+              
+                  <div id="seila">
+              
+                          <div class="scroll">
+                              <div class="pic">
+                                  <img src="imagens/js-logo.webp" alt="">
+                              </div>
+              
+                            </div>
+              
+                          <div class="scroll" id="scroll2">
+                            <div class="pic">
+                                <img src="" alt="">
+                            </div></div>
+              
+                   
+                        </div>
+              
+                    
+                                <p id="p">
+                                   Javascript is the most commonly-used programming language in the world. It's also one of the easiest, since it doesn't require any previous coding knowledge. Google, Youtube, Facebook, Amazon, Twitter and Netflix are examples of popular platforms that have javascript in their composition.  
+                                </p>
+                      
+            
+              
+          </div>
+          <div id="partim">
+              <div id="alter">
+                
+              
+              </div>
+                     
+          </div>
+
+<input type="button" class="rnbut" value="<" onclick="prev()">
+                    <input type="button" class="rnbut" value=">" onclick="next()">
+                  
+                    
+            
+
+
+               
+    </div>
+
+
+   
+
+</body>
+</html>
