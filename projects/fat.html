@@ -298,15 +298,16 @@
             height: 23px;
             overflow-y: hidden;
         }
-        #center {
+        .center {
             position: relative;
             display: flex;
             align-items: center;
             align-content: center;
             height: 100%;
             justify-content: center;
+            margin-bottom: 5px;
         }
-        #center > img {
+        .center > img {
             width: 20px;
             height: 20px;
             transform: rotate(0deg);
@@ -342,8 +343,11 @@
 
                 </div>
                 <div id="resol">
-                    <div id="center"><img src="/projects/imagens/rar.png" alt="" id="ar"><span>Resolução</span></div>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet vitae minima ab fugit magnam dicta, ad quod sapiente, provident quaerat sed corrupti nesciunt neque ullam fugiat at porro suscipit incidunt!</p>
+                    <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span></div>
+                  <div id="passo" class="center">
+                    <img src="/projects/imagens/rar.png" alt="" class="ar">
+                    <span>Passos</span>
+                  </div>
                 </div>
             </div>
 </body>

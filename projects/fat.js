@@ -3167,8 +3167,12 @@ function doTheFactoring(exal) {
                   ]
             }
 
-            function get(thist) {
+            function get1(thist) {
                 return document.getElementById(thist)
+            }
+
+            function get2(thist) {
+                return document.getElementsByClassName(thist)
             }
 
             function redo(point) {
