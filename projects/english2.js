@@ -12,15 +12,12 @@ qual = 0
 direction = 'next'
 // go to the next slide
 function next() {
-
    direction = 'next'
    if (mark == false || respondidas.find(function(respondidas) {
       return respondidas.numslide == qual
    }) != undefined && qual != 24) {
    hat = document.getElementsByClassName('scroll')
 console.log(hat)
-
-
 
 console.log(hat[ident])
 hat[ident].style.animation = 'slide 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
