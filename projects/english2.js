@@ -4,9 +4,7 @@ window.addEventListener('keydown', (event) => {
    next()
   }else if(event.key == 'ArrowLeft'){
      prev()
-  }
- 
- })
+  }})
 
 ident = 0
 qual = 0
@@ -70,9 +68,6 @@ sw(qual)
 outra.style.transform = 'translate(-200%)'
 outra.style.animation = 'slide2 0.6s cubic-bezier(0.4, 0, 0, 0.39) forwards'
    }
-
-
-
 }
 
 mark = false
