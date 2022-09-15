@@ -1396,9 +1396,7 @@ function doTheFactoring(exal) {
                                 func.position.push(pos2)
                                 for (wake in mons2) {
                                 func.monomios.push(mons2[wake])
-                                }}
-                            
-                          }
+                                }}}
                         }else{
                                 compar.splice(compar.length - 1,1)
                                //console.log(compar)
