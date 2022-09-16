@@ -1560,21 +1560,16 @@ function doTheFactoring(exal) {
 
           console.log('you', youdumb_2)
 
-          //
             grtols = []
-            
                 for (hi in youdumb_2) {
                     youdumb_2[hi].length = youdumb_2[hi].mons.length
-                
                     grtols.push(youdumb_2[hi])
                 }
                 
                 organizado = sortob(grtols, 'length')[1]
-                
                 grtols = []
                 for (ah in organizado) {
-                    grtols.push(youdumb_2[organizado[ah]])
-                    
+                    grtols.push(youdumb_2[organizado[ah]])  
                 }
             
                 youdumb_2 = grtols
@@ -1590,8 +1585,7 @@ function doTheFactoring(exal) {
                 lengs.find(function(lengs){
                 return lengs.leng == youdumb_2[i].mons.length
                 }).num.push(i)
-                }
-            }
+                }}
             console.log(lengs)
             
             youdumb_2ordered = []
@@ -1606,7 +1600,6 @@ function doTheFactoring(exal) {
                 for (hi in its) {
                 console.log(its[i].w.what.length)
                     its[hi].length = its[hi].w.what.length
-                
                     grtols.push(its[hi])
                 }
                 
@@ -1615,15 +1608,13 @@ function doTheFactoring(exal) {
                 grtols = []
                 for (ah in organizado) {
                     grtols.push(its[organizado[ah]])
-                    
                 }
             
                 its = grtols
                 console.log(its)
                 for (c in its) {
                 youdumb_2ordered.push(its[c])
-                }
-            }
+                } }
 
             console.log('youdumb_2ordered', youdumb_2ordered)
             youdumb_2 = youdumb_2ordered
@@ -1681,9 +1672,7 @@ function doTheFactoring(exal) {
                      entao.push(Number(youdumb_2[força].w.what[areo].ar[paris]))
                  }}
              youdumb_2[força].t = entao
-          }
-       
-        } }
+          } } }
       
          concatenar_2 = ''
          numsdesfat = []
