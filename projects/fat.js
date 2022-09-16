@@ -3203,8 +3203,7 @@ function doTheFactoring(exal) {
                         if (ehprimo(point[was]) == false) {
                         point[was] = FATORARSInGULAR(point[was])
                         }
-                    }
-                  }
+                    } }
                   fires = ''
                   for (was in point) {
                     fires+= point[was]
