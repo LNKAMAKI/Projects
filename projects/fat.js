@@ -51,7 +51,7 @@ loaded = false
 
             spn = ''
             for(k in res[5][h].mons) {
-                if (k != res[5].h.mons.length - 1) {
+                if (k != res[5][h].mons.length - 1) {
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span>,</span>`
                 }else{
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span></span>`
