@@ -1663,7 +1663,6 @@ function doTheFactoring(exal) {
                      if (numerospresentes_2.indexOf(youdumb_2[h].w.what[tempo].ar[and]) != -1) {
                          dulu = true
                      }}}}}
-             
          
          for (força in youdumb_2) {
              entao = []
