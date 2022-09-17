@@ -19,7 +19,7 @@ loaded = false
             console.log(Number(ars.length) - 1, i)
             if (i != Number(ars.length) - 1) {
                 console.log('ok')
-                conts[i].style.marginBottom = '3px'
+               // conts[i].style.marginBottom = '5px'
             } }
 
         loaded = true
