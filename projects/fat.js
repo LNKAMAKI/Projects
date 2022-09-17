@@ -2,6 +2,30 @@
 loaded = false
 
     function load() {
+        get1('resol').innerHTML = ''
+
+        get1('resol').innerHTML+= ' <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
+        conts = get2('cont')
+        cents = get2('center')
+        ars = get2('ar')
+        cs = []
+        cn = conts[1]
+
+        for (h in res[5].length) {
+        cn.innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div> <p></p> </div>`
+        }
+        for (i = 0; i < ars.length; i++) {
+            console.log(i, ars[i], conts[i], cents[i])
+            c = new CreateFunc(ars[i],conts[i],cents[i])
+            c.SetDefault()
+            c.AddEvent()
+            cs.push(c)
+            console.log(Number(ars.length) - 1, i)
+            if (i != Number(ars.length) - 1) {
+                console.log('ok')
+                conts[i].style.marginBottom = '3px'
+            } }
+
         loaded = true
         get1('write').addEventListener('keyup',(event) => {
             if (event.key == 'Enter') {
@@ -13,11 +37,16 @@ loaded = false
 
             console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
          }
-         
+        
+        get1('resol').innerHTML = ''
+
+        get1('resol').innerHTML+= ' <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
         cs = []
+        cn = conts[1].innerHTML
+        cn+= ' <div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div> <p></p> </div>'
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
@@ -30,7 +59,6 @@ loaded = false
                 conts[i].style.marginBottom = '3px'
             } }
         })
-
         }
            
 
