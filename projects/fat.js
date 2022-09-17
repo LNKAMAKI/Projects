@@ -4,7 +4,7 @@ loaded = false
     function load() {
         get1('resol').innerHTML = ''
 
-        get1('resol').innerHTML+= ' <div class="center" id="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
+        get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
@@ -36,7 +36,7 @@ loaded = false
         
         get1('resol').innerHTML = ''
 
-        get1('resol').innerHTML+= ' <div class="center" id="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Segs</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Scarecrow</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Miss</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Roll</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Youdumb</span></div></div></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
+get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><div class="cont"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Segs</span></div></div><div class="cont"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Scarecrow</span></div></div><div class="cont"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Miss</span></div></div><div class="cont"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Roll</span></div></div><div class="cont"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Youdumb</span></div></div></div><div class="cont"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
