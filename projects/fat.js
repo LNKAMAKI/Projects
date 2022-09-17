@@ -47,8 +47,9 @@ loaded = false
         for (h in res[5]) {
             console.log(h)
             carfixed = res[5][h].car.replace('-.','-').replace(new RegExp('\\.','g'),'*').replace(new RegExp('\\*(?=[a-z])'),'')
+            carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
         cn.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>
-        {car: <span style="color:rgb(200 0 82)">'${carfixed}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <p class="pdev">car: <span style="color:rgb(200 0 82)">'${res[5][h].car.replace('-.','-')}'</span></p><p class="pdev">mons: [${res[5][h].mons}] </div>`
+        {car: <span style="color:rgb(200 0 82)">'${desfat(REFORMATAR(carfixed))}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <p class="pdev">car: <span style="color:rgb(200 0 82)">'${carfixed2}'</span></p><p class="pdev">mons: [${res[5][h].mons}] </div>`
         }
 
         for (i = 0; i < ars.length; i++) {
