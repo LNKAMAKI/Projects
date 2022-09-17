@@ -45,7 +45,8 @@ loaded = false
 
         for (h in res[5]) {
             console.log(h)
-        cn.innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div> <p class="pdev">car: '${res[5][0].car}', mons: Array(${res[5][0].mons.length})</p> </div>`
+        cn.innerHTML+= `<div class="cont" name="spn"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>
+        {car: <span style="color:rgb(200 0 82)">'${res[5][h].car}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <p class="pdev">o</p> </div>`
         }
 
         for (i = 0; i < ars.length; i++) {
