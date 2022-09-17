@@ -4,7 +4,7 @@ loaded = false
     function load() {
         get1('resol').innerHTML = ''
 
-        get1('resol').innerHTML+= ' <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
+        get1('resol').innerHTML+= ' <div class="center" id="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
@@ -19,7 +19,7 @@ loaded = false
             console.log(Number(ars.length) - 1, i)
             if (i != Number(ars.length) - 1) {
                 console.log('ok')
-               // conts[i].style.marginBottom = '5px'
+               //conts[i].style.marginBottom = '40px'
             } }
 
         loaded = true
@@ -36,7 +36,7 @@ loaded = false
         
         get1('resol').innerHTML = ''
 
-        get1('resol').innerHTML+= ' <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Segs</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Scarecrow</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Miss</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Roll</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Youdumb</span></div></div></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
+        get1('resol').innerHTML+= ' <div class="center" id="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Segs</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Scarecrow</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Miss</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Roll</span></div></div><div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Youdumb</span></div></div></div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
@@ -58,8 +58,9 @@ loaded = false
                 }
             }
             console.log('SPANNNNN',spn)
+            dg = desfat(REFORMATAR(carfixed))
         cn.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class='sp'>
-        {car: <span style="color:var(--string)">'${desfat(REFORMATAR(carfixed))}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><p class="pdev">mons: [${spn}] </div>`
+        {car: <span style="color:var(--string)">${dg}</span>, mons: Array(${res[5][h].mons.length})}</span></div> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><p class="pdev">mons: [${spn}] </div>`
         }
 
         for (i = 0; i < ars.length; i++) {
@@ -71,7 +72,7 @@ loaded = false
             console.log(Number(ars.length) - 1, i)
             if (i != Number(ars.length) - 1) {
                 console.log('ok')
-                conts[i].style.marginBottom = '3px'
+                //conts[i].style.marginBottom = '3px'
             } }
         })
         }
