@@ -16,6 +16,8 @@ loaded = false
         cents = get2('center')
         ars = get2('ar')
         cs = []
+        conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`
+
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
