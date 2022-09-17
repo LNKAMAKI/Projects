@@ -59,8 +59,31 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
             }
             console.log('SPANNNNN',spn)
             dg = desfat(REFORMATAR(carfixed))
-        cn.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class='sp'>
-        {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><p class="pdev">mons: [${spn}] </div> </div>`
+        cn.getElementsByClassName('dev')[0].innerHTML+= `
+        <div class="cont"> 
+
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <span class='sp'>
+        {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}
+        </span>
+        </div> 
+
+        <div class="tocent"> 
+        <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p>
+        <p class="pdev">mons: [${spn}]</p> 
+
+        <div class="cont"> 
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <p>ASDSDSDSDS</p>
+        </div> 
+        </div>
+
+        </div>
+
+
+         </div>`
         }
 
         for (i = 0; i < ars.length; i++) {
