@@ -12,17 +12,12 @@ loaded = false
             get1('fatoracao').value = res[0]
 
             console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
-            }})
-
+         }
+         
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
         cs = []
-
-        for (n = 0; n < 5;n++) {
-        conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`
-        }
-
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
@@ -34,6 +29,7 @@ loaded = false
                 console.log('ok')
                 conts[i].style.marginBottom = '3px'
             } }
+        })
 
         }
            
