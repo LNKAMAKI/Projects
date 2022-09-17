@@ -2188,8 +2188,7 @@ function doTheFactoring(exal) {
               for (t in util) {
                   if (util[t].mons.indexOf(Number(m)) != -1) {
                       aparic++
-                  }
-              }
+                  }}
               numapars.push({num: Number(m), vezes: aparic})
               }
          
@@ -2262,29 +2261,25 @@ function doTheFactoring(exal) {
           conts.push(relation_2[yougo].fix[pals])
          }
          groups++
-         }
-         }
+         }}
         
          if (divs_2[okentao] != groups) {
          tirados_2 = []
          for (wish in relation_2) {
           for (edge_2 in relation_2[wish].fix) {
              tirados_2.push(relation_2[wish].fix[edge_2])
-          }
-         }
+          }}
          
          for (die in segs_22) {
              tirar = []
          for (h in segs_22[die].mons) {
          if (tirados_2.indexOf(segs_22[die].mons[h]) != -1) {
          tirar.push(Number(h))
-         }
-         }
+         }}
       
          for (far = tirar.length - 1; far >= 0; far--) {
          segs_22[die].mons.splice(tirar[far], 1)
-         }
-         }
+         } }
          
          for (sorrow in segs_22) {
          grupos = Math.floor(Number(segs_22[sorrow].mons.length)/quanto)
@@ -2381,7 +2376,6 @@ function doTheFactoring(exal) {
              mia.push(mcr)
              }}}}}}
          
-            
           numapars = []
           
          relation_2 = []
@@ -2460,16 +2454,14 @@ function doTheFactoring(exal) {
           conts.push(relation_2[yougo].fix[pals])
          }
          groups++
-         }
-         }
+         }}
         
          if (divs_2[okentao] != groups) {
          tirados_2 = []
          for (wish in relation_2) {
           for (edge_2 in relation_2[wish].fix) {
              tirados_2.push(relation_2[wish].fix[edge_2])
-          }
-         }
+          }  }
          
          for (die in segs_22) {
              tirar = []
@@ -2591,7 +2583,6 @@ function doTheFactoring(exal) {
                               outrorel.falt[ou] = -10
                               y++
                           }}}} }} }
-         
          groups = 0
          conts = []
          for (yougo in relation_2) {
@@ -2602,7 +2593,6 @@ function doTheFactoring(exal) {
          groups++
          }}
          
-        
          if (groups < divs_2[okentao]) {
          groups = 0
          conts = []
@@ -2619,9 +2609,7 @@ function doTheFactoring(exal) {
          for (wish in relation_2) {
           for (edge_2 in relation_2[wish].fix) {
              tirados_2.push(relation_2[wish].fix[edge_2])
-          }
-         }
-         
+          } }
          
          for (die in segs_22) {
              tirar = []
@@ -2677,15 +2665,13 @@ function doTheFactoring(exal) {
               if (segs_22[t].mons.length >= quanto) {
                   util.push(segs_22[t])
               }}
-         
           
           for (m in monomios_2) {
               aparic = 0
               for (t in util) {
                   if (util[t].mons.indexOf(Number(m)) != -1) {
                       aparic++
-                  }
-              }
+                  }  }
               numapars.push({num: Number(m), vezes: aparic})
               }
          
@@ -2735,7 +2721,6 @@ function doTheFactoring(exal) {
                               outrorel.falt[ou] = -10
                               y++
                           }}}}}}}
-        
          groups = 0
          conts = []
          for (yougo in relation_2) {
@@ -2811,7 +2796,6 @@ function doTheFactoring(exal) {
           ground = ''
           for (misery in particles[bye].numero) { 
               carac = particles[bye].numero[misery]
-            
                   if (ground.length == 0) {
                       ground+= carac
                   }else if(String(ground.search('[0-9]')) != -1 && String(carac).search('[0-9]') != -1){
@@ -2827,7 +2811,6 @@ function doTheFactoring(exal) {
           particles[bye].numero = comofica
       }
       
-      
       agruparsoma = []
       // JUNTANDO OS MONÔMIOS QUE DÁ PARA SOMAR
       for (huh in particles) {
@@ -2840,7 +2823,6 @@ function doTheFactoring(exal) {
                   return agruparsoma.que == particles[huh].partletral
                  }).quais.push(Number(huh))
              }}
-      
       
       for (chuva in agruparsoma) {
       
@@ -3110,7 +3092,6 @@ function doTheFactoring(exal) {
               console.log('ALT',alt)
     
               plo = false
-              
               
               if (monomios_2.length > 1 && segs_2.length > 1) {
                 console.log('isso')
