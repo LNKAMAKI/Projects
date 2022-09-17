@@ -8,12 +8,7 @@ loaded = false
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
-        cs = []
-        cn = conts[1]
-
-        for (h in res[5].length) {
-        cn.innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div> <p></p> </div>`
-        }
+       
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
@@ -45,8 +40,12 @@ loaded = false
         cents = get2('center')
         ars = get2('ar')
         cs = []
-        cn = conts[1].innerHTML
-        cn+= ' <div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div> <p></p> </div>'
+        cn = conts[1]
+
+        for (h in res[5].length) {
+        cn.innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div> <p>${res[5][h]}</p> </div>`
+        }
+
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
