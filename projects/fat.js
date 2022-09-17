@@ -10,13 +10,14 @@ loaded = false
             console.log(type)
             res = doTheFactoring(type)
             get1('fatoracao').value = res[0]
+
+            console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
             }})
 
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
         cs = []
-        conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`
 
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
@@ -28,7 +29,10 @@ loaded = false
             if (i != Number(ars.length) - 1) {
                 console.log('ok')
                 conts[i].style.marginBottom = '10px'
-            } }}
+            } }
+            conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`
+        }
+           
 
     function CreateFunc(par1,par2,par3){
         this.par1 = par1
