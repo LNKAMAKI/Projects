@@ -30,7 +30,8 @@ loaded = false
                 console.log('ok')
                 conts[i].style.marginBottom = '10px'
             } }
-            conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`
+
+           /* conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`*/
         }
            
 
