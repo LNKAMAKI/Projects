@@ -19,6 +19,10 @@ loaded = false
         ars = get2('ar')
         cs = []
 
+        for (n = 0; n < 5;n++) {
+        conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`
+        }
+
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
@@ -28,10 +32,9 @@ loaded = false
             console.log(Number(ars.length) - 1, i)
             if (i != Number(ars.length) - 1) {
                 console.log('ok')
-                conts[i].style.marginBottom = '10px'
+                conts[i].style.marginBottom = '3px'
             } }
 
-           /* conts[1].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>SPANNED</span> </div><p>----------------</p></div>`*/
         }
            
 
