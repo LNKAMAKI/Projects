@@ -58,7 +58,7 @@ loaded = false
                 }
             }
             console.log('SPANNNNN',spn)
-        cn.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>
+        cn.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class='sp'>
         {car: <span style="color:var(--string)">'${desfat(REFORMATAR(carfixed))}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><p class="pdev">mons: [${spn}] </div>`
         }
 
