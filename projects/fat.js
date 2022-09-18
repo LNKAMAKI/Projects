@@ -81,7 +81,7 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        mons: [<span class="sp" style="max-width:150px;">${spn}</span>]&nbsp;&nbsp;mons: [<span class="sp" style="max-width:200px;">${spn2}</span>]
+        <span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>&nbsp;&nbsp;<span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:200px;">${spn2}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -123,7 +123,7 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        aparicoes: [<span class="sp" style="max-width:150px;">${spn}</span>]
+        <span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -173,7 +173,7 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        repetidos: [<span class="sp" style="max-width:150px;">${spn}</span>]
+        <span style="font-size:0.9em">repetidos: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -181,7 +181,7 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        posições: [<span class="sp" style="max-width:150px;">${spn2}</span>]
+        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;">${spn2}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn2}
         </div>
