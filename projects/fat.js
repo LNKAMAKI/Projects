@@ -212,6 +212,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 console.log('ok')
                 //conts[i].style.marginBottom = '3px'
             } }
+
+           ts[1].style.position = 'relative'
+           ts[1].style.display = 'inline-block'
+           ts[1].style.width ='100px'
+           ts[1].style.backgroundColor = 'pink'
         }) 
      }
            
