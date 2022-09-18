@@ -215,7 +215,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
             console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
             for (ta = 1; ta < 5; ta++) {
-                console.log(ts[ta])
+                console.log(ts[ta], Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) + 28)
             }
            nt = ts[1]
            nt.style.position = 'relative'
