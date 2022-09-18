@@ -91,9 +91,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p>
 
         <div class="cont"> 
-        <div class="center">
+        <div class="center" style="overflow-x: hidden;">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <p style="display:inline-flex;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>&nbsp;&nbsp;<span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:200px;">${spn2}</span><span style="font-size:0.9em">]</span></p>
+        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>&nbsp;&nbsp;<span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:200px;">${spn2}</span><span style="font-size:0.9em">]</span></div>
         </div> 
        ${splitspn}
         </div>
