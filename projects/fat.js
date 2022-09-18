@@ -11,14 +11,14 @@ loaded = false
         cs = []
 
         for (i = 0; i < ars.length; i++) {
-            console.log(i, ars[i], conts[i], cents[i])
+            //console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
-            console.log(Number(ars.length) - 1, i)
+            //console.log(Number(ars.length) - 1, i)
             if (i != Number(ars.length) - 1) {
-                console.log('ok')
+                //console.log('ok')
                //conts[i].style.marginBottom = '40px'
             } }
 
@@ -26,11 +26,11 @@ loaded = false
         get1('write').addEventListener('keyup',(event) => {
             if (event.key == 'Enter') {
             type = get1('write').value
-            console.log('type',type)
-            console.log(type)
+            //console.log('type',type)
+            //console.log(type)
             res = doTheFactoring(type)
             get1('fatoracao').value = res[0]
-            console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
+            //console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
          }
         
         get1('resol').innerHTML = ''
@@ -55,7 +55,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         cn.innerHTML+= '<div class="dev"></div>'
         for (h in res[5]) {
-            console.log(h)
+            //console.log(h)
             carfixed = res[5][h].car.replace('-.','-').replace(new RegExp('\\.','g'),'*').replace(new RegExp('\\*(?=[a-z])'),'')
             carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
 
@@ -74,7 +74,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
                 splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span> </p>`
             }
-            console.log('SPANNNNN',spn)
+            //console.log('SPANNNNN',spn)
             dg = desfat(REFORMATAR(carfixed))
         cn.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont"> 
@@ -202,21 +202,32 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
 
         for (i = 0; i < ars.length; i++) {
-            console.log(i, ars[i], conts[i], cents[i])
+            //console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
-            console.log(Number(ars.length) - 1, i)
+           // console.log(Number(ars.length) - 1, i)
             if (i != Number(ars.length) - 1) {
-                console.log('ok')
+                //console.log('ok')
                 //conts[i].style.marginBottom = '3px'
             } }
 
-           ts[1].style.position = 'relative'
-           ts[1].style.display = 'inline-block'
-           ts[1].style.width ='100px'
-           ts[1].style.backgroundColor = 'pink'
+            console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
+            for (ta = 1; ta < 5; ta++) {
+                console.log(ts[ta])
+            }
+           nt = ts[1]
+           nt.style.position = 'relative'
+           nt.style.display = 'inline-block'
+           nt.style.width ='50%'
+           nt.style.backgroundColor = 'pink'
+
+           nt = ts[2]
+           nt.style.position = 'relative'
+           nt.style.display = 'inline-block'
+           nt.style.width ='calc(50% - 10px)'
+           nt.style.backgroundColor = 'pink'
         }) 
      }
            
@@ -232,16 +243,16 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             par2.style.height = heightInPx
         }
         this.AddEvent = function() {
-            console.log('this.clicked',this.clicked)
+            //console.log('this.clicked',this.clicked)
             par1.addEventListener('click', function(clicked) {
-                console.log(this.clicked)
+                //console.log(this.clicked)
                 if (this.clicked == false || this.clicked == undefined) {
-                    console.log('ABRIR',this.clicked)
+                    //console.log('ABRIR',this.clicked)
                 par2.style.height = 'fit-content'
                 par1.style.transform = 'rotate(90deg)'
                 this.clicked = true
                 }else{
-                    console.log('FECHAR',this.clicked)
+                    //console.log('FECHAR',this.clicked)
                     heightInPx = String(par3.offsetHeight) + 'px'
                     par2.style.height = heightInPx
                     par1.style.transform = 'rotate(0deg)'
