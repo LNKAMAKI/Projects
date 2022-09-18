@@ -57,7 +57,7 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
                 }else{
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span></span>`
                 }
-                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>`
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span></span> </p>`
             }
             console.log('SPANNNNN',spn)
             dg = desfat(REFORMATAR(carfixed))
@@ -66,17 +66,17 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        <span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         </span>
         </div> 
 
         <div class="tocent"> 
-        <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span></p>
+        <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p>
 
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span class="sp">mons: [${spn}]aaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa</span>
+        <span class="sp">mons: [${spn}]</span>
         </div> 
        ${splitspn}
         </div>
