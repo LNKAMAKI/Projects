@@ -50,14 +50,19 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
             carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
 
             spn = ''
+            spn2 = ''
             splitspn = ''
+            splitspn2 = ''
             for(k in res[5][h].mons) {
                 if (k != res[5][h].mons.length - 1) {
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span>,</span>`
+                    spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}</span>',</span>`
                 }else{
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span></span>`
+                    spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
                 }
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span></span> </p>`
+                splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span> </p>`
             }
             console.log('SPANNNNN',spn)
             dg = desfat(REFORMATAR(carfixed))
@@ -84,11 +89,11 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span class="sp">mons: [${spn}]</span>
+        <span class="sp">mons: [${spn2}]</span>
         </div> 
-       ${splitspn}
+       ${splitspn2}
         </div>
-        
+
         </div>
 
 
