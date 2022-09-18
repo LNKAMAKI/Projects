@@ -82,17 +82,9 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span class="sp">mons: [${spn}]</span>
+        mons: [<span class="sp" style="max-width:150px;">${spn}</span>]&nbsp;&nbsp;mons: [<span class="sp" style="max-width:200px;">${spn2}</span>]
         </div> 
        ${splitspn}
-        </div>
-
-        <div class="cont"> 
-        <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span class="sp">mons: [${spn2}]</span>
-        </div> 
-       ${splitspn2}
         </div>
 
         </div>
