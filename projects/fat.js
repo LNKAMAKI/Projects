@@ -70,14 +70,14 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
         </div> 
 
         <div class="tocent"> 
-        <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p>
-        <p class="pdev">mons: [${spn}]</p> 
+        <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span></p>
 
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <p>ASDSDSDSDS</p>
+        <span class="sp">mons: [${spn}]</span>
         </div> 
+        <p class="psem">Hello</p>
         </div>
 
         </div>
