@@ -77,7 +77,12 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
         <img src="/projects/imagens/rar.png" alt="" class="ar">
         <span class="sp">mons: [${spn}]</span>
         </div> 
-        <p class="psem">car</p>
+        <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
+
+        <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
+
+        <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
+        
         </div>
 
         </div>
