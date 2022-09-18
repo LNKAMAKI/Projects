@@ -86,10 +86,7 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         </div> 
        ${splitspn}
         </div>
-
         </div>
-
-
          </div>`
         }
 
