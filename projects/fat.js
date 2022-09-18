@@ -90,6 +90,18 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
          </div>`
         }
 
+        cn2 = ts[2]
+
+        cn2.innerHTML+= '<div class="dev"></div>'
+
+        for (h in res[7]) {
+        cn2.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont">
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span>
+        </div>
+        </div>`
+        }
+
         for (i = 0; i < ars.length; i++) {
             console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i])
