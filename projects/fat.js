@@ -81,6 +81,14 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
        ${splitspn}
         </div>
 
+        <div class="cont"> 
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <span class="sp">mons: [${spn}]</span>
+        </div> 
+       ${splitspn}
+        </div>
+        
         </div>
 
 
