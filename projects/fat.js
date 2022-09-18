@@ -118,7 +118,7 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         </div>
 
         <div class="tocent"> 
-        <p class="pdev">dividido: <span style="color:var(--string)">'${res[7][h].dividido}'</span></p>
+        <p class="pdev">dividido: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p>
 
         <div class="cont"> 
         <div class="center">
