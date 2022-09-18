@@ -93,7 +93,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>&nbsp;&nbsp;<span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:200px;">${spn2}</span><span style="font-size:0.9em">]</span>
+        <p style="display:inline-flex;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>&nbsp;&nbsp;<span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:200px;">${spn2}</span><span style="font-size:0.9em">]</span></p>
         </div> 
        ${splitspn}
         </div>
@@ -242,13 +242,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            nt.style.position = 'relative'
            nt.style.display = 'inline-block'
            nt.style.width ='50%'
-           nt.style.backgroundColor = 'pink'
 
            nt = ts[2]
            nt.style.position = 'relative'
            nt.style.display = 'inline-block'
            nt.style.width ='50%'
-           nt.style.backgroundColor = 'pink'
 
         }) 
      }

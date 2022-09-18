@@ -191,7 +191,7 @@
             position: relative;
             margin: 20px auto;
             height: fit-content;
-            width: 550px;
+            width: 600px;
             border-radius: 30px;
             background-color: var(--lightgray);
             /*background-color: rgb(206, 206, 206);*/
@@ -366,6 +366,9 @@
             border-radius: 5px;
             overflow-y: auto;
         }
+        .dev::-webkit-scrollbar {
+            width: 10px;
+        }
         [classname="top"]::-webkit-scrollbar {
            display: none;
         }
@@ -392,8 +395,6 @@
         }
         #cram {
             position: relative;
-            background-color: purple;
-            padding: 5px;
         }
         </style>
 <body onload="load()">
