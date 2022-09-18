@@ -214,9 +214,16 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             } }
 
             console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
-            for (ta = 1; ta < 5; ta++) {
-                console.log(ts[ta], Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) + 28)
+            maior = 0
+            for (ta = 1; ta < 4; ta++) {
+                height = Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) + 28
+                console.log(ta,ts[ta],height)
+                if (height > maior) {
+                    maior = height
+                }
             }
+            console.log('MAIOR', maior)
+            
            nt = ts[1]
            nt.style.position = 'relative'
            nt.style.display = 'inline-block'
