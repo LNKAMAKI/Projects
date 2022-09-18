@@ -64,7 +64,7 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span class='sp'>
+        <span class='sp'> <span style="color:var(--number)"> </span>
         {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}
         </span>
         </div> 
@@ -82,7 +82,7 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
         <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
 
         <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
-        
+
         </div>
 
         </div>
