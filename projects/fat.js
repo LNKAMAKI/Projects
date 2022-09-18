@@ -30,7 +30,6 @@ loaded = false
             console.log(type)
             res = doTheFactoring(type)
             get1('fatoracao').value = res[0]
-
             console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
          }
         
@@ -95,10 +94,81 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         cn2.innerHTML+= '<div class="dev"></div>'
 
         for (h in res[7]) {
-        cn2.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont">
+
+            
+            spn = ''
+            splitspn = ''
+            for(k in res[7][h].aparicoes) {
+                if (k != res[7][h].aparicoes.length - 1) {
+                    spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+                }else{
+                    spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
+                }
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
+            }
+
+
+        cn2.getElementsByClassName('dev')[0].innerHTML+= `
+        <div class="cont">
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar"><span class="sp">Engineaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <span class="sp">
+        <span style="color:var(--number)">${h}</span>: {dividido: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}
+        </span>
         </div>
+
+        <div class="tocent"> 
+        <p class="pdev">dividido: <span style="color:var(--string)">'${res[7][h].dividido}'</span></p>
+
+        <div class="cont"> 
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        aparicoes: [<span class="sp" style="max-width:150px;">${spn}</span>]
+        </div> 
+       ${splitspn}
+        </div>
+        </div>
+
+        </div>`
+        }
+
+        cn3 = ts[3]
+
+        cn3.innerHTML+= '<div class="dev"></div>'
+
+        for (h in res[8]) {
+            spn = ''
+            splitspn = ''
+            for(k in res[7][h].aparicoes) {
+                if (k != res[7][h].aparicoes.length - 1) {
+                    spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+                }else{
+                    spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
+                }
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
+            }
+
+        cn3.getElementsByClassName('dev')[0].innerHTML+= `
+        <div class="cont">
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <span class="sp">
+        <span style="color:var(--number)">${h}</span>: {repetidos: Array(${res[8][h].repetidos.length}), posições: Array(${res[8][h].posições.length}), monomios: Array(${res[8][h].monomios.length})
+        </span>
+        </div>
+
+        <div class="tocent"> 
+        <p class="pdev">dividido: <span style="color:var(--string)">'${res[7][h].dividido}'</span></p>
+
+        <div class="cont"> 
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        aparicoes: [<span class="sp" style="max-width:150px;">${spn}</span>]
+        </div> 
+       ${splitspn}
+        </div>
+        </div>
+
         </div>`
         }
 
