@@ -139,13 +139,24 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         for (h in res[8]) {
             spn = ''
             splitspn = ''
-            for(k in res[7][h].aparicoes) {
-                if (k != res[7][h].aparicoes.length - 1) {
-                    spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+            for(k in res[8][h].repetidos) {
+                if (k != res[8][h].repetidos.length - 1) {
+                    spn+= `<span><span style="color:var(--number)">${res[8][h].repetidos[k]}</span>,</span>`
                 }else{
-                    spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
+                    spn+= `<span><span style="color:var(--number)">${res[8][h].repetidos[k]}</span></span>`
                 }
-                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[8][h].repetidos[k]}</span></p>`
+            }
+
+            spn2 = ''
+            splitspn2 = ''
+            for(k in res[8][h].posições) {
+                if (k != res[8][h].posições.length - 1) {
+                    spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span>,</span>`
+                }else{
+                    spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></span>`
+                }
+                splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></p>`
             }
 
         cn3.getElementsByClassName('dev')[0].innerHTML+= `
@@ -158,15 +169,23 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         </div>
 
         <div class="tocent"> 
-        <p class="pdev">dividido: <span style="color:var(--string)">'${res[7][h].dividido}'</span></p>
 
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        aparicoes: [<span class="sp" style="max-width:150px;">${spn}</span>]
+        repetidos: [<span class="sp" style="max-width:150px;">${spn}</span>]
         </div> 
        ${splitspn}
         </div>
+
+        <div class="cont"> 
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        posições: [<span class="sp" style="max-width:150px;">${spn2}</span>]
+        </div> 
+       ${splitspn2}
+        </div>
+
         </div>
 
         </div>`
