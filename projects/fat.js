@@ -12,7 +12,7 @@ loaded = false
 
         for (i = 0; i < ars.length; i++) {
             //console.log(i, ars[i], conts[i], cents[i])
-            c = new CreateFunc(ars[i],conts[i],cents[i])
+            c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -41,10 +41,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 <div id="cram">
 <div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Segs</span></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Miss</span></div></div>
+</div>
+
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Roll</span></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Youdumb</span></div></div>
 </div>
-</div>
+
 <div class="cont" name="ti"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>`
         conts = get2('cont')
         cents = get2('center')
@@ -201,9 +203,29 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </div>`
         }
 
+        /*
+        for (i = 0; i < conts.length; i++) {
+            console.log(conts[i])
+            conts[i].style.height = 'fit-content'
+        }*/
+
+        console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
+            maior = 0
+            for (ta = 1; ta < 4; ta++) {
+                height = Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) + 28
+                console.log(ta,ts[ta],height)
+                if (height > maior) {
+                    maior = height
+                }
+            }
+
+            
         for (i = 0; i < ars.length; i++) {
             //console.log(i, ars[i], conts[i], cents[i])
-            c = new CreateFunc(ars[i],conts[i],cents[i])
+            console.log(cents[i].innerText)
+
+            c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
+            
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -213,16 +235,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 //conts[i].style.marginBottom = '3px'
             } }
 
-            console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
-            maior = 0
-            for (ta = 1; ta < 4; ta++) {
-                height = Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) + 28
-                console.log(ta,ts[ta],height)
-                if (height > maior) {
-                    maior = height
-                }
-            }
             console.log('MAIOR', maior)
+            document.getElementById('cram').style.display = 'flex'
             
            nt = ts[1]
            nt.style.position = 'relative'
@@ -233,13 +247,14 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            nt = ts[2]
            nt.style.position = 'relative'
            nt.style.display = 'inline-block'
-           nt.style.width ='calc(50% - 10px)'
+           nt.style.width ='50%'
            nt.style.backgroundColor = 'pink'
+
         }) 
      }
            
 
-    function CreateFunc(par1,par2,par3){
+    function CreateFunc(par1,par2,par3,height){
         this.par1 = par1
         this.par2 = par2
         this.par3 = par3
@@ -255,7 +270,14 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 //console.log(this.clicked)
                 if (this.clicked == false || this.clicked == undefined) {
                     //console.log('ABRIR',this.clicked)
-                par2.style.height = 'fit-content'
+                    if (par3.innerText != 'Segs' && par3.innerText != 'Miss') {
+                par2.style.height = height
+                    }else{              
+                        par2.style.height = height         
+                        console.log(par2.getElementsByClassName('dev')[0])
+                        par2.getElementsByClassName('dev')[0].style.height = '400px'
+                    }
+
                 par1.style.transform = 'rotate(90deg)'
                 this.clicked = true
                 }else{
