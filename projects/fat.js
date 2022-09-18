@@ -97,7 +97,7 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
         for (h in res[7]) {
         cn2.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont">
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span>
+        <img src="/projects/imagens/rar.png" alt="" class="ar"><span class="sp">Engineaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
         </div>
         </div>`
         }
@@ -113,8 +113,8 @@ get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/
                 console.log('ok')
                 //conts[i].style.marginBottom = '3px'
             } }
-        })
-        }
+        }) 
+     }
            
 
     function CreateFunc(par1,par2,par3){
