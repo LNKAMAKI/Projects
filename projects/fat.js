@@ -77,7 +77,7 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
         <img src="/projects/imagens/rar.png" alt="" class="ar">
         <span class="sp">mons: [${spn}]</span>
         </div> 
-        <p class="psem">Hello</p>
+        <p class="psem">car</p>
         </div>
 
         </div>
