@@ -57,7 +57,7 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
                 }else{
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span></span>`
                 }
-                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span></span> </p>`
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>`
             }
             console.log('SPANNNNN',spn)
             dg = desfat(REFORMATAR(carfixed))
@@ -76,7 +76,7 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span class="sp">mons: [${spn}]</span>
+        <span class="sp">mons: [${spn}]aaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa</span>
         </div> 
        ${splitspn}
         </div>
