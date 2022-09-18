@@ -50,12 +50,14 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
             carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
 
             spn = ''
+            splitspn = ''
             for(k in res[5][h].mons) {
                 if (k != res[5][h].mons.length - 1) {
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span>,</span>`
                 }else{
                     spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span></span>`
                 }
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span></span> </p>`
             }
             console.log('SPANNNNN',spn)
             dg = desfat(REFORMATAR(carfixed))
@@ -76,12 +78,7 @@ get1('resol').innerHTML+= ' <div class="center" classname="top"> <img src="/proj
         <img src="/projects/imagens/rar.png" alt="" class="ar">
         <span class="sp">mons: [${spn}]</span>
         </div> 
-        <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
-
-        <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
-
-        <p class="psem"> <span style="overflow-x:scroll;max-width:150px;display:inline-block;">'${carfixed2}'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span> </p>
-
+       ${splitspn}
         </div>
 
         </div>
