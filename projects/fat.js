@@ -37,23 +37,25 @@ loaded = false
 
 get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div>
 
-<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div>
-<div id="cram">
+<div class="cont"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div>
+<div class="cram">
 <div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Segs</span></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Miss</span></div></div>
 </div>
 
+<div class="cram">
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Roll</span></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Youdumb</span></div></div>
 </div>
+</div>
 
-<div class="cont" name="ti"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>`
+<div class="cont"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>`
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
         cs = []
         ts = document.getElementsByName('ti')
-        cn = ts[1]
+        cn = ts[0]
 
         cn.innerHTML+= '<div class="dev"></div>'
         for (h in res[5]) {
@@ -93,9 +95,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center" style="overflow-x: hidden;">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;min-width:24px;display:inline-flex;">${spn}</span>
+        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
         <span style="font-size:0.9em">]</span>&nbsp;&nbsp;<span style="font-size:0.9em">
-        [</span><span class="sp" style="max-width:200px;min-width:55px;display:inline-flex;">${spn2}</span><span style="font-size:0.9em;">]</span>
+        [</span><span class="sp" style="max-width:200px;min-width:55px;display:inline-flex;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em;">]</span>
         </div>
         </div> 
        ${splitspn}
@@ -104,7 +106,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
          </div>`
         }
 
-        cn2 = ts[2]
+        cn2 = ts[1]
 
         cn2.innerHTML+= '<div class="dev"></div>'
 
@@ -138,7 +140,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="max-width:150px;min-width:24px;">${spn}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="max-width:150px;min-width:24px;overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -147,7 +149,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </div>`
         }
 
-        cn3 = ts[3]
+        cn3 = ts[2]
 
         cn3.innerHTML+= '<div class="dev"></div>'
 
@@ -188,7 +190,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">repetidos: [</span><span class="sp" style="max-width:150px;">${spn}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">repetidos: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -196,7 +198,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;">${spn2}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn2}
         </div>
@@ -208,7 +210,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
 
         
-        cn4 = ts[4]
+        cn4 = ts[3]
 
         cn4.innerHTML+= '<div class="dev"></div>'
 
@@ -247,7 +249,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">repetidos: </span><span class="sp" style="max-width:150px;">${spn}</span>
+        <span style="font-size:0.9em">repetidos: </span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span>
         </div> 
        ${splitspn}
         </div>
@@ -255,7 +257,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;">${spn2}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn2}
         </div>
@@ -273,7 +275,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
             maior = 0
-            for (ta = 1; ta < 4; ta++) {
+            for (ta = 0; ta < 3; ta++) {
                 height = Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) + 28
                 console.log(ta,ts[ta],height)
                 if (height > maior) {
@@ -298,8 +300,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             } }
 
             console.log('MAIOR', maior)
-            document.getElementById('cram').style.display = 'flex'
             
+            /*
+           nt = ts[0]
+           nt.style.position = 'relative'
+           nt.style.display = 'inline-block'
+           nt.style.width ='50%'
+
            nt = ts[1]
            nt.style.position = 'relative'
            nt.style.display = 'inline-block'
@@ -309,6 +316,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            nt.style.position = 'relative'
            nt.style.display = 'inline-block'
            nt.style.width ='50%'
+
+           nt = ts[3]
+           nt.style.position = 'relative'
+           nt.style.display = 'inline-block'
+           nt.style.width ='50%'
+           */
+           
 
         }) 
      }
@@ -322,7 +336,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.SetDefault= function () {
             //par2.style.height = par3.offsetHeight
             heightInPx = String(par3.offsetHeight) + 'px'
+            if (par3.innerText != 'Segs' && par3.innerText != 'Miss' && par3.innerText != 'Roll' && par3.innerText != 'Youdumb' ) {
             par2.style.height = heightInPx
+            }else{
+                par2.style.height = '28px'
+            }
         }
         this.AddEvent = function() {
             //console.log('this.clicked',this.clicked)
@@ -330,7 +348,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 //console.log(this.clicked)
                 if (this.clicked == false || this.clicked == undefined) {
                     //console.log('ABRIR',this.clicked)
-                    if (par3.innerText != 'Segs' && par3.innerText != 'Miss') {
+                    if (par3.innerText != 'Segs' && par3.innerText != 'Miss' && par3.innerText != 'Roll' && par3.innerText != 'Youdumb' ) {
                 par2.style.height = height
                     }else{              
                         par2.style.height = height         
