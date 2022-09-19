@@ -276,7 +276,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                     }else{              
                         par2.style.height = height         
                         console.log(par2.getElementsByClassName('dev')[0])
-                        par2.getElementsByClassName('dev')[0].style.height = '400px'
+                        par2.getElementsByClassName('dev')[0].style.height = '300px'
                     }
 
                 par1.style.transform = 'rotate(90deg)'
