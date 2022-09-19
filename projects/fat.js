@@ -206,6 +206,65 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </div>`
         }
 
+
+        
+        cn4 = ts[4]
+
+        cn4.innerHTML+= '<div class="dev"></div>'
+
+        for (h in res[9]) {
+            splitspn = ''
+            spn = ''
+            for(k in res[9][h].w.what) {
+                   spn+= '['
+                   spi = ''
+                    for (lik in res[9][h].w.what[k].ar) {
+                        console.log(lik,'adwadaadasdasads')
+                        if (lik != res[9][h].w.what[k].ar.length - 1) {
+                        spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
+                        spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
+                        }else{
+                            spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>` 
+                            spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>`
+                        }
+                    }
+                    spn+= ']'
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
+            }
+
+
+        cn4.getElementsByClassName('dev')[0].innerHTML+= `
+        <div class="cont">
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <span class="sp">
+        <span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), what: Array(${res[9][h].w.what.length})
+        </span>
+        </div>
+
+        <div class="tocent"> 
+
+        <div class="cont"> 
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <span style="font-size:0.9em">repetidos: </span><span class="sp" style="max-width:150px;">${spn}</span>
+        </div> 
+       ${splitspn}
+        </div>
+
+        <div class="cont"> 
+        <div class="center">
+        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;">${spn2}</span><span style="font-size:0.9em">]</span>
+        </div> 
+       ${splitspn2}
+        </div>
+
+        </div>
+
+        </div>`
+        }
+
         /*
         for (i = 0; i < conts.length; i++) {
             console.log(conts[i])
