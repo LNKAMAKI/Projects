@@ -39,13 +39,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
 <div class="cont"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div>
 <div class="cram">
-<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Segs</span></div></div>
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Miss</span></div></div>
+<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Relações</span></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span></div></div>
 </div>
 
 <div class="cram">
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Roll</span></div></div>
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Youdumb</span></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Combinações</span></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Agrupamentos</span></div></div>
 </div>
 </div>
 
@@ -130,12 +130,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
         <span class="sp">
-        <span style="color:var(--number)">${h}</span>: {dividido: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}
+        <span style="color:var(--number)">${h}</span>: {fator: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}
         </span>
         </div>
 
         <div class="tocent"> 
-        <p class="pdev">dividido: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p>
+        <p class="pdev">fator: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p>
 
         <div class="cont"> 
         <div class="center">
@@ -181,7 +181,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
         <span class="sp">
-        <span style="color:var(--number)">${h}</span>: {repetidos: Array(${res[8][h].repetidos.length}), posições: Array(${res[8][h].posições.length}), monomios: Array(${res[8][h].monomios.length})
+        <span style="color:var(--number)">${h}</span>: {posições: Array(${res[8][h].repetidos.length}), fatores: Array(${res[8][h].posições.length}), monomios: Array(${res[8][h].monomios.length})
         </span>
         </div>
 
@@ -190,7 +190,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">repetidos: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -198,7 +198,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">fatores: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn2}
         </div>
@@ -240,7 +240,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
         <span class="sp">
-        <span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), what: Array(${res[9][h].w.what.length})
+        <span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), grupos: Array(${res[9][h].w.what.length})
         </span>
         </div>
 
@@ -336,7 +336,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.SetDefault= function () {
             //par2.style.height = par3.offsetHeight
             heightInPx = String(par3.offsetHeight) + 'px'
-            if (par3.innerText != 'Segs' && par3.innerText != 'Miss' && par3.innerText != 'Roll' && par3.innerText != 'Youdumb' ) {
+            if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
             par2.style.height = heightInPx
             }else{
                 par2.style.height = '28px'
@@ -348,7 +348,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 //console.log(this.clicked)
                 if (this.clicked == false || this.clicked == undefined) {
                     //console.log('ABRIR',this.clicked)
-                    if (par3.innerText != 'Segs' && par3.innerText != 'Miss' && par3.innerText != 'Roll' && par3.innerText != 'Youdumb' ) {
+                    if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
                 par2.style.height = height
                     }else{              
                         par2.style.height = height         
