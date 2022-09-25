@@ -96,7 +96,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="center" style="overflow-x: hidden;">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
         <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
-        <span style="font-size:0.9em">]</span>&nbsp;&nbsp;<span style="font-size:0.9em">
+        <span style="font-size:0.9em">]</span>&nbsp;
+        <span style="font-size:0.9em">
         [</span><span class="sp" style="max-width:200px;min-width:55px;display:inline-flex;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em;">]</span>
         </div>
         </div> 
@@ -140,7 +141,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="max-width:150px;min-width:24px;overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -249,17 +250,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">repetidos: </span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span>
+        <span style="font-size:0.9em">agrupamento:&nbsp;</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span>
         </div> 
        ${splitspn}
-        </div>
-
-        <div class="cont"> 
-        <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
-        </div> 
-       ${splitspn2}
         </div>
 
         </div>

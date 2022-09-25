@@ -26,6 +26,7 @@
             --number: rgb(26 26 168);
             --string: rgb(200 0 82);
             --pretty-pink: #ffc4c4;
+            --max-height: 300px;
         }
         body::-webkit-scrollbar {
             border-radius: 0px;
@@ -363,7 +364,6 @@
         .dev {
             background-color: white;
             padding: 0px 0px 0px 0px;
-            border-radius: 5px;
             overflow: scroll;
         }
         .dev::-webkit-scrollbar {
@@ -402,20 +402,12 @@
             width: 50%;
         }
 
-        @media screen and (min-width:700px) {
-            :root {
-                max-height: 300px;
-            }
-        }
         @media screen and (max-width:700px) {
         div[name="ti"] {
            width: 100%;
         }
         .cram {
             display: block;
-        }
-        :root {
-            --max-heigth: 300px;
         }
     }
         </style>
