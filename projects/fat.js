@@ -356,7 +356,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         console.lo(wone, heights[wone])
+                         console.log(wone, heights[wone])
                             par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                     }
 
