@@ -297,13 +297,24 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 heights.push(height)
             }
 
-            
-        for (i = 0; i < ars.length; i++) {
-            c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
-            c.SetDefault()
-            c.AddEvent()
-            cs.push(c)
-         } }) }
+            for (i = 0; i < ars.length; i++) {
+                c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
+                c.SetDefault()
+                cs.push(c)
+             } 
+
+             console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
+             heights = []
+             for (ta = 0; ta < 4; ta++) {
+                 height = Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) - 7
+                 console.log(ta, ts[ta],height)
+                 heights.push(height)
+             }
+
+        for (i = 0; i < cs.length; i++) {
+            cs[i].AddEvent()
+         } 
+        }) }
            
 
     function CreateFunc(par1,par2,par3,height){
