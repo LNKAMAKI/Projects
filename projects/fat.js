@@ -342,6 +342,20 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                     }else{              
                         par2.style.height = height         
                         //console.log(par2.getElementsByClassName('dev')[0])
+                        switch (par3.innerText) {
+                            case 'Relações':
+                                wone = 0
+                            break 
+                            case 'Repetições':
+                                wone = 1
+                            break
+                            case 'Combinações':
+                                wone = 2
+                            break 
+                            case 'Agrupamentos':
+                                wone = 3
+                            break
+                         }
                             par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                     }
 
