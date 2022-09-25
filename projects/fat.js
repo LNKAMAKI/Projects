@@ -35,6 +35,19 @@ loaded = false
         
         get1('resol').innerHTML = ''
 
+        smons = ''
+        for (yo in res[10]) {
+            //console.log(res[10][yo].numero)
+            if (yo == 0) {
+            smons += `${desfat(res[10][yo].numero)}`
+            }else if(res[10][yo].numero[0] == '-'){
+                smons += ' - ' + desfat(res[10][yo].numero).replace('-','')
+            }else{
+                smons += ' + ' + desfat(res[10][yo].numero)
+            }
+
+        }
+
 get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div>
 
 <div style="padding: 3px;background-color: white;border-radius: 7px;overflow: hidden;">
@@ -43,7 +56,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 <span>Engine</span>
 </div>
 
-<p id="mons"> 12x + 5x + 8y </p>
+<p id="mons">${smons}</p>
 
 <div class="cram">
 <div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Relações</span></div></div>
@@ -231,7 +244,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                    spn+= '['
                    spi = ''
                     for (lik in res[9][h].w.what[k].ar) {
-                        console.log(lik,'adwadaadasdasads')
+                        //console.log(lik,'adwadaadasdasads')
                         if (lik != res[9][h].w.what[k].ar.length - 1) {
                         spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
                         spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
@@ -276,58 +289,21 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }*/
 
         console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
-            maior = 0
+
+            heights = []
             for (ta = 0; ta < 3; ta++) {
-                height = Number(ts[ta].getElementsByClassName('dev')[0].offsetHeight) + 28
-                console.log(ta,ts[ta],height)
-                if (height > maior) {
-                    maior = height
-                }
+                height = ts[ta].getElementsByClassName('dev')[0].offsetHeight
+                console.log(height)
+                heights.push(height)
             }
 
             
         for (i = 0; i < ars.length; i++) {
-            //console.log(i, ars[i], conts[i], cents[i])
-            console.log(cents[i].innerText)
-
             c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
-            
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
-           // console.log(Number(ars.length) - 1, i)
-            if (i != Number(ars.length) - 1) {
-                //console.log('ok')
-                //conts[i].style.marginBottom = '3px'
-            } }
-
-            console.log('MAIOR', maior)
-            
-            /*
-           nt = ts[0]
-           nt.style.position = 'relative'
-           nt.style.display = 'inline-block'
-           nt.style.width ='50%'
-
-           nt = ts[1]
-           nt.style.position = 'relative'
-           nt.style.display = 'inline-block'
-           nt.style.width ='50%'
-
-           nt = ts[2]
-           nt.style.position = 'relative'
-           nt.style.display = 'inline-block'
-           nt.style.width ='50%'
-
-           nt = ts[3]
-           nt.style.position = 'relative'
-           nt.style.display = 'inline-block'
-           nt.style.width ='50%'
-           */
-           
-
-        }) 
-     }
+         } }) }
            
 
     function CreateFunc(par1,par2,par3,height){
@@ -354,8 +330,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 par2.style.height = height
                     }else{              
                         par2.style.height = height         
-                        console.log(par2.getElementsByClassName('dev')[0])
-                            par2.getElementsByClassName('dev')[0].style.height = 'var(--max-height)'
+                        //console.log(par2.getElementsByClassName('dev')[0])
+                            par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -1871,7 +1847,7 @@ function doTheFactoring(exal) {
              initial = youdumb_2[wrecked].w.what
          }
 
-          console.log('you', youdumb_2)
+         //console.log('you', youdumb_2)
 
             grtols = []
                 for (hi in youdumb_2) {
@@ -1886,7 +1862,7 @@ function doTheFactoring(exal) {
                 }
             
                 youdumb_2 = grtols
-                console.log(youdumb_2)
+               //console.log(youdumb_2)
             
             lengs = []
             for (i in youdumb_2) {
@@ -1899,7 +1875,7 @@ function doTheFactoring(exal) {
                 return lengs.leng == youdumb_2[i].mons.length
                 }).num.push(i)
                 }}
-            console.log(lengs)
+            //console.log(lengs)
             
             youdumb_2ordered = []
             for (f in lengs) {
@@ -1911,7 +1887,7 @@ function doTheFactoring(exal) {
                 grtols = []
                 
                 for (hi in its) {
-                console.log(its[i].w.what.length)
+                //console.log(its[i].w.what.length)
                     its[hi].length = its[hi].w.what.length
                     grtols.push(its[hi])
                 }
@@ -1924,16 +1900,16 @@ function doTheFactoring(exal) {
                 }
             
                 its = grtols
-                console.log(its)
+                //console.log(its)
                 for (c in its) {
                 youdumb_2ordered.push(its[c])
                 } }
 
-            console.log('youdumb_2ordered', youdumb_2ordered)
+            //console.log('youdumb_2ordered', youdumb_2ordered)
             youdumb_2 = youdumb_2ordered
             
             for (yes in youdumb_2) {
-                console.log('==========>',yes, youdumb_2[yes].mons, youdumb_2[yes].w.what.length)
+                //console.log('==========>',yes, youdumb_2[yes].mons, youdumb_2[yes].w.what.length)
             }
          //
          heya_2 = [...youdumb_2]
@@ -2338,7 +2314,7 @@ function doTheFactoring(exal) {
              }}}
          
          if (numsdesfat.length > 0) {
-            console.log(concatenar_2)
+            //console.log(concatenar_2)
           console.warn('VAI TER QUE FATORAR DE NOVO')
           //console.log('youdumb')
          
@@ -3383,11 +3359,11 @@ function doTheFactoring(exal) {
     }
     
     ep = FATORE(exal)
-    console.log(ep)
+    //console.log(ep)
     fat1 = new CreateEngine2().FATORAR(ep,true)
     fat2 = new CreateEngine2().FATORAR(ep,false)
     
-    console.log('FAT',fat2[0])
+    //console.log('FAT',fat2[0])
             alt = 1
             if (fat2[1] == 1 && fat2[2] == 0) {
               alt = 2
@@ -3401,12 +3377,12 @@ function doTheFactoring(exal) {
                   okexp = fat2[0]
               } }
     
-              console.log('ALT',alt)
+              //console.log('ALT',alt)
     
               plo = false
               
               if (monomios_2.length > 1 && segs_2.length > 1) {
-                console.log('isso')
+                //console.log('isso')
               while (plo == false) {
                   seps = SPLITEXPS(okexp)
                   rexp =  ''
@@ -3449,7 +3425,7 @@ function doTheFactoring(exal) {
                   }}
               }
               
-                  console.log('OKEXP', okexp)
+                  //console.log('OKEXP', okexp)
                   if (alt == 1) {
                     vari = fat1
                   }else{
