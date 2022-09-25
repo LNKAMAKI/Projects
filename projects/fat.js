@@ -37,7 +37,14 @@ loaded = false
 
 get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div>
 
-<div class="cont"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div>
+<div style="padding: 3px;background-color: white;border-radius: 7px;overflow: hidden;">
+<div class="cont">
+<div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar">
+<span>Engine</span>
+</div>
+
+<p id="mons"> 12x + 5x + 8y </p>
+
 <div class="cram">
 <div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Relações</span></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span></div></div>
@@ -49,7 +56,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 </div>
 </div>
 
-<div class="cont"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>`
+<div class="cont"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>
+
+</div>`
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
