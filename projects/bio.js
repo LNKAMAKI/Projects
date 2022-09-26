@@ -141,7 +141,7 @@ function sw(what){
    case 8:
          tit.innerText = 'Seres vivos se reproduzem'
          outra.innerHTML = '<div class="pic"><img src="imagens/divisao-celular.jpg" alt=""></div>'
-         cont.innerText = 'Os seres vivos também têm a capacidade de se reproduzir, ou seja, '
+         cont.innerText = 'Os seres vivos também têm a capacidade de se reproduzir, ou seja, de gerar descendentes férteis. Há 2 tipos de reprodução: a assexuada e a sexuada. Na assexuada, um único organismo dá origem a outro por meio da mitose e esse novo indivíduo possui as mesmas características do progenitor, diferente da sexuada, na qual dois organismos produzem gametas e a junção dos dois origina o zigoto, a primeira céula de um indíviduo, que possui características derivadas de ambos os parceiros. '
    break
    }
    ops = document.getElementsByClassName('option')
