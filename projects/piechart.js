@@ -143,3 +143,7 @@ function addtograph(x,y,radius,start,end,color) {
         }
         add(false)
     }
+
+    function select() {
+      console.log('selected')
+    }
