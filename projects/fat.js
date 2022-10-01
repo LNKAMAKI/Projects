@@ -119,7 +119,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center" style="overflow-x: hidden;">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">monsA: [</span><span class="sp" style="max-width:300px;min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
+        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">monsA: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
         <span style="font-size:0.9em">]</span>&nbsp;
         <span style="font-size:0.9em">
 
@@ -216,7 +216,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">posições: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">posições: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
         </div>
@@ -224,7 +224,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">fatores: [</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
+        <span style="font-size:0.9em">fatores: [</span><span class="sp" style="overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn2}
         </div>
@@ -257,7 +257,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                         }
                     }
                     spn+= ']'
-                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
             }
 
 
@@ -275,7 +275,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">agrupamento:&nbsp;</span><span class="sp" style="max-width:150px;overflow-x:scroll;">${spn}</span>
+        <span style="font-size:0.9em">agrupamento:&nbsp;</span><span class="sp" style="overflow-x:scroll;">${spn}</span>
         </div> 
        ${splitspn}
         </div>
