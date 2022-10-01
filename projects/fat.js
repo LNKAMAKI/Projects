@@ -91,14 +91,16 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             splitspn2 = ''
             for(k in res[5][h].mons) {
                 if (k != res[5][h].mons.length - 1) {
-                    spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span>,</span>`
-                    spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}</span>',</span>`
+                    spn+= `<span class="af">
+                    <span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string)" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span>,</span>`
+                    //spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}</span>',</span>`
                 }else{
-                    spn+= `<span><span style="color:var(--number)">${res[5][h].mons[k]}</span></span>`
-                    spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
+                    spn+= `<span class="af"><span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string)" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
+                    //spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
                 }
-                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
-                splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span> </p>`
+                splitspn+= ` <p class="psem">
+                <span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
+                //splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;max-width:150px;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span> </p>`
             }
             //console.log('SPANNNNN',spn)
             dg = desfat(REFORMATAR(carfixed))
@@ -117,10 +119,10 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center" style="overflow-x: hidden;">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="max-width:150px;min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
+        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">monsA: [</span><span class="sp" style="max-width:300px;min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
         <span style="font-size:0.9em">]</span>&nbsp;
         <span style="font-size:0.9em">
-        [</span><span class="sp" style="max-width:200px;min-width:55px;display:inline-flex;overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em;">]</span>
+
         </div>
         </div> 
        ${splitspn}
@@ -140,7 +142,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             splitspn = ''
             for(k in res[7][h].aparicoes) {
                 if (k != res[7][h].aparicoes.length - 1) {
-                    spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+                    spn+= `<span>
+                    <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
                 }else{
                     spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
                 }
