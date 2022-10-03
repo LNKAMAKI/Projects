@@ -39,11 +39,11 @@ loaded = false
         for (yo in res[10]) {
             //console.log(res[10][yo].numero)
             if (yo == 0) {
-            smons += `${desfat(res[10][yo].numero)}`
+            smons += `<span><span>${desfat(res[10][yo].numero)}</span></span>`
             }else if(res[10][yo].numero[0] == '-'){
-                smons += ' - ' + desfat(res[10][yo].numero).replace('-','')
+                smons += ` - <span>${desfat(res[10][yo].numero).replace('-','')}</span>`
             }else{
-                smons += ' + ' + desfat(res[10][yo].numero)
+                smons += ` +  <span>${desfat(res[10][yo].numero)}</span>`
             }
 
         }
@@ -100,6 +100,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 splitspn+= ` <p class="psem">
                 <span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
+
                 //splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span> </p>`
             }
             //console.log('SPANNNNN',spn)
@@ -119,7 +120,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center" style="overflow-x: hidden;">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">monsA: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
+        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
         <span style="font-size:0.9em">]</span>&nbsp;
         <span style="font-size:0.9em">
 
@@ -243,21 +244,23 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         for (h in res[9]) {
             splitspn = ''
             spn = ''
+            outr = []
             for(k in res[9][h].w.what) {
-                   spn+= '['
+                   //spn+= '['
                    spi = ''
                     for (lik in res[9][h].w.what[k].ar) {
                         //console.log(lik,'adwadaadasdasads')
                         if (lik != res[9][h].w.what[k].ar.length - 1) {
-                        spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
+                        //spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
                         spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
                         }else{
-                            spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>` 
+                            //spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>` 
                             spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>`
                         }
                     }
-                    spn+= ']'
+                    //spn+= ']'
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
+                spn+= `[<span class="sp">${spi}</span>]`
             }
 
 
@@ -275,7 +278,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">agrupamento:&nbsp;</span><span class="sp" style="overflow-x:scroll;">${spn}</span>
+        <span style="font-size:0.9em">agrupamento:&nbsp;</span>
+        ${spn}
         </div> 
        ${splitspn}
         </div>
