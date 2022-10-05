@@ -37,15 +37,7 @@ loaded = false
 
         smons = ''
         for (yo in res[10]) {
-            //console.log(res[10][yo].numero)
-            if (yo == 0) {
-            smons += `<span><span>${desfat(res[10][yo].numero)}</span></span>`
-            }else if(res[10][yo].numero[0] == '-'){
-                smons += ` - <span>${desfat(res[10][yo].numero).replace('-','')}</span>`
-            }else{
-                smons += ` +  <span>${desfat(res[10][yo].numero)}</span>`
-            }
-
+            smons += `<span class="jo"><span class="str">'${desfat(res[10][yo].numero)}'</span><span class="num">${yo}</span></span>`
         }
 
 get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div>
@@ -260,7 +252,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                     }
                     //spn+= ']'
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
-                spn+= `[<span class="sp">${spi}</span>]`
+                spn+= `[<span class="sp" style="min-width:15px;">${spi}</span>]`
             }
 
 
@@ -273,13 +265,15 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </span>
         </div>
 
-        <div class="tocent"> 
+        <div class="tocent" style="margin-bottom:0px;"> 
 
         <div class="cont"> 
         <div class="center">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <span style="font-size:0.9em">agrupamento:&nbsp;</span>
+        <span style="font-size:0.9em">agrup:&nbsp;</span>
+        <span style="display: flex;overflow-x: scroll;">
         ${spn}
+        <span>
         </div> 
        ${splitspn}
         </div>
