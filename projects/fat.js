@@ -125,12 +125,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
 
         cn2 = ts[1]
-
         cn2.innerHTML+= '<div class="dev"></div>'
 
         for (h in res[7]) {
-
-            
             spn = ''
             splitspn = ''
             for(k in res[7][h].aparicoes) {
@@ -142,7 +139,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
             }
-
 
         cn2.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont">
@@ -169,7 +165,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
 
         cn3 = ts[2]
-
         cn3.innerHTML+= '<div class="dev"></div>'
 
         for (h in res[8]) {
@@ -226,11 +221,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         </div>`
         }
-
-
         
         cn4 = ts[3]
-
         cn4.innerHTML+= '<div class="dev"></div>'
 
         for (h in res[9]) {
@@ -254,7 +246,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
                 spn+= `[<span class="sp" style="min-width:15px;">${spi}</span>]`
             }
-
 
         cn4.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont">
@@ -282,12 +273,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         </div>`
         }
-
-        /*
-        for (i = 0; i < conts.length; i++) {
-            console.log(conts[i])
-            conts[i].style.height = 'fit-content'
-        }*/
 
         console.log('VENDO QUAL É O MAIOR ENTRE TODOS')
 
