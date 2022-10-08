@@ -1232,6 +1232,11 @@ function doTheFactoring(exal) {
          
          segs_2 = [...segs_2ordered]
       
+
+         console.log('------------------------INDIREITANDO AS COISA----------------------')
+         for (loi in segs_2) {
+            console.log(segs_2[loi])
+         }
          //DIVS_2
          ml = monomios_2.length
          
