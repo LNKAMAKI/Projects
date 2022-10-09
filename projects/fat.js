@@ -10,6 +10,7 @@ loaded = false
         ars = get2('ar')
         cs = []
 
+        
         for (i = 0; i < ars.length; i++) {
             //console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
@@ -274,15 +275,24 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </div>`
         }
 
-            for (i = 0; i < ars.length; i++) {
-                c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
+        for (kep in cents) {
+            console.log(cents[kep].innerText)
+            don = cent[kep]
+            if (don.innerText == 'Relações' || don.innerText == 'Repetições' || don.innerText == 'Combinações' || don.innerText == 'Agrupamentos'){
+                
+            }
+        }
+        me = document.getElementsByClassName('ar')
+        c = new CreateFunc(me[0],conts[0],cents[0],'fit-content')
                 c.SetDefault()
+                c.AddEvent()
                 cs.push(c)
-             } 
 
-        for (i = 0; i < cs.length; i++) {
-            cs[i].AddEvent()
-         } 
+        c = new CreateFunc(me[1],conts[1],cents[1],'fit-content')
+            c.SetDefault()
+            c.AddEvent()
+            cs.push(c)
+
         }) }
            
 
