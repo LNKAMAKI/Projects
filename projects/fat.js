@@ -347,6 +347,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par2 = par2
         this.par3 = par3
         this.clicked = false
+        this.Sayit = function() {
+            this.clicked = true
+        }
         this.SetDefault= function () {
             //par2.style.height = par3.offsetHeight
             heightInPx = String(par3.offsetHeight) + 'px'
@@ -360,12 +363,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
         this.AddEvent = function() {
             //console.log('this.clicked',this.clicked)
-            par1.addEventListener('click', function(clicked) {
+            this.par1.addEventListener('click', function() {
                 //console.log(this.clicked)
                 if (this.clicked == false || this.clicked == undefined) {
                     //console.log('ABRIR',this.clicked)
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
-                par2.style.height = height
+                        par2.style.height = height
                     }else{              
                         par2.style.height = height         
                         //console.log(par2.getElementsByClassName('dev')[0])
@@ -383,11 +386,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                            par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                     }
 
                 par1.style.transform = 'rotate(90deg)'
                 this.clicked = true
+                console.log('CLICKED!!',this.clicked)
                 }else{
                     //console.log('FECHAR',this.clicked)
                     heightInPx = String(par3.offsetHeight) + 'px'
