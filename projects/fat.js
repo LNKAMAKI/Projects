@@ -329,6 +329,16 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 cs.push(c)
             }
 
+            plar = []
+            for(pare in pl1) {
+                is = pl1[pare]
+                console.log(is)
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c.SetDefault()
+                c.AddEvent()
+                plar.push(c)
+            }
+
         }) }
            
 
