@@ -52,7 +52,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 <p id="mons">${smons}</p>
 
 <div class="cram">
-<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;"><img src="/projects/imagens/rar.png" class="pers"></div></div>
+<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="open(0)"><img src="/projects/imagens/rar.png" class="pers" onclick="close(0)"></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span></div></div>
 </div>
 
@@ -341,7 +341,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         }) }
            
-
+    function close() {
+        console.log('aaa')
+    }
     function CreateFunc(par1,par2,par3,height){
         this.par1 = par1
         this.par2 = par2
