@@ -296,8 +296,10 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             heightInPx = String(par3.offsetHeight) + 'px'
             if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
             par2.style.height = heightInPx
+            this.clicked = false
             }else{
                 par2.style.height = '28px'
+                this.clicked = false
             }
         }
         this.AddEvent = function() {
