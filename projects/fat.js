@@ -1221,9 +1221,13 @@ function doTheFactoring(exal) {
          for (loi in segs_2) {
             ame = segs_2[loi].mons
             console.log(ame)
-            for (she in ame) {
-                console.log(ame[she])
+            ord = sort(ame)[0]
+            ag = []
+            for (dir = ord.length - 1; dir >= 0; dir--) {
+                console.log(ord[dir])
+                ag.push(ord[dir])
             }
+            segs_2[loi].mons = ag
          }
          //DIVS_2
          ml = monomios_2.length
