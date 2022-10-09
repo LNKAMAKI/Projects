@@ -73,11 +73,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         cn = ts[0]
 
         cn.innerHTML+= '<div class="dev"></div>'
+
+        pl1 = []
+        hyu = 2
         for (h in res[5]) {
             //console.log(h)
             carfixed = res[5][h].car.replace('-.','-').replace(new RegExp('\\.','g'),'*').replace(new RegExp('\\*(?=[a-z])'),'')
             carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
-
             spn = ''
             spn2 = ''
             splitspn = ''
@@ -96,7 +98,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
                 //splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span> </p>`
             }
-    
+
+            for (ju = 0; ju <2;ju++) {
+                hyu++
+                pl1.push(hyu)
+                }
+
             dg = desfat(REFORMATAR(carfixed))
         cn.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont"> 
@@ -123,11 +130,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </div>
         </div>
          </div>`
+
         }
 
         cn2 = ts[1]
         cn2.innerHTML+= '<div class="dev"></div>'
-
+        hyu++
+        pl2 = []
         for (h in res[7]) {
             spn = ''
             splitspn = ''
@@ -140,6 +149,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
             }
+
+            for (ju = 0; ju <2;ju++) {
+                hyu++
+                pl2.push(hyu)
+                }
 
         cn2.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont">
@@ -167,7 +181,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         cn3 = ts[2]
         cn3.innerHTML+= '<div class="dev"></div>'
-
+        hyu++
+        pl3 = []
         for (h in res[8]) {
             spn = ''
             splitspn = ''
@@ -189,6 +204,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                     spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></span>`
                 }
                 splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></p>`
+            }
+
+            for (ju = 0; ju <3;ju++) {
+            hyu++
+            pl3.push(hyu)
             }
 
         cn3.getElementsByClassName('dev')[0].innerHTML+= `
@@ -225,7 +245,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         
         cn4 = ts[3]
         cn4.innerHTML+= '<div class="dev"></div>'
-
+        hyu++
+        pl4 = []
         for (h in res[9]) {
             splitspn = ''
             spn = ''
@@ -247,6 +268,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
                 spn+= `[<span class="sp" style="min-width:15px;">${spi}</span>]`
             }
+
+            for (ju = 0; ju <2;ju++) {
+                hyu++
+                pl4.push(hyu)
+                }
 
         cn4.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont">
@@ -275,11 +301,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </div>`
         }
 
+        feb = []
         for (kep in cents) {
-            console.log(cents[kep].innerText)
-            don = cent[kep]
+            don = cents[kep]
             if (don.innerText == 'Relações' || don.innerText == 'Repetições' || don.innerText == 'Combinações' || don.innerText == 'Agrupamentos'){
-                
+               console.log(don.innerText, kep)
+               feb.push(Number(kep))
             }
         }
         me = document.getElementsByClassName('ar')
@@ -292,6 +319,15 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
+
+            for (tp in feb) {
+                is = feb[tp]
+                console.log(is)
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c.SetDefault()
+                c.AddEvent()
+                cs.push(c)
+            }
 
         }) }
            
