@@ -52,7 +52,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 <p id="mons">${smons}</p>
 
 <div class="cram">
-<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Relações</span></div></div>
+<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relaçõesaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><img src="/projects/imagens/rar.png" class="pers"></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span></div></div>
 </div>
 
