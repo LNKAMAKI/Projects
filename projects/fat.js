@@ -362,16 +362,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
         }
         this.AddEvent = function() {
-            //console.log('this.clicked',this.clicked)
             this.par1.addEventListener('click', function() {
-                //console.log(this.clicked)
                 if (this.clicked == false || this.clicked == undefined) {
-                    //console.log('ABRIR',this.clicked)
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
                         par2.style.height = height
                     }else{              
-                        par2.style.height = height         
-                        //console.log(par2.getElementsByClassName('dev')[0])
+                        par2.style.height = height    
                         switch (par3.innerText) {
                             case 'Relações':
                                 wone = 0
@@ -393,7 +389,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 this.clicked = true
                 console.log('CLICKED!!',this.clicked)
                 }else{
-                    //console.log('FECHAR',this.clicked)
                     heightInPx = String(par3.offsetHeight) + 'px'
                     par2.style.height = heightInPx
                     par1.style.transform = 'rotate(0deg)'
