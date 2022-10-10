@@ -52,7 +52,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 <p id="mons">${smons}</p>
 
 <div class="cram">
-<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="op(0)"><img src="/projects/imagens/rar.png" class="pers" onclick="cl(0)"></div></div>
+<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(0,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(0,'close')"></div></div>
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span></div></div>
 </div>
 
@@ -341,11 +341,24 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         }) }
            
-    function cl(a) {
-        console.log('aaa',a)
-    }
-    function op(b) {
-        console.log('bbb',b)
+    function fn(a,act) {
+        console.log('aaa',a,act)
+        sur = 0
+        switch(a) {
+            case 0:
+             sur = pl1
+            break
+            case 1:
+                sur = pl2
+            break
+            case 2:
+             sur = pl3
+            break
+            case 3:
+             sur = pl4
+            break
+        }
+        console.log(sur)
     }
 
     function CreateFunc(par1,par2,par3,height){
