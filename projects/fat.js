@@ -342,12 +342,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }) }
            
     function cl(a) {
-        console.log('aaa')
+        console.log('aaa',a)
     }
-    function op() {
+    function op(b) {
+        console.log('bbb',b)
+    }
 
-    }
-    
     function CreateFunc(par1,par2,par3,height){
         this.par1 = par1
         this.par2 = par2
