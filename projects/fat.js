@@ -363,6 +363,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log(conts[sur[go]])
             conts[sur[go]].parentNode.removeChild(conts[sur[go]])
         }
+        
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
@@ -370,12 +371,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         ts = document.getElementsByName('ti')
         cn = ts[0]
 
-        cn.innerHTML+= '<div class="dev"></div>'
-
         pl1 = []
         hyu = 2
         for (h in res[5]) {
-            //console.log(h)
             carfixed = res[5][h].car.replace('-.','-').replace(new RegExp('\\.','g'),'*').replace(new RegExp('\\*(?=[a-z])'),'')
             carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
             spn = ''
@@ -389,20 +387,28 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }else{
                     spn+= `<span class="af"><span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string)" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
                 }
-                splitspn+= ` <p class="psem">
-                <span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
+                splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
             }
-
             for (ju = 0; ju <2;ju++) {
                 hyu++
                 pl1.push(hyu)
                 }
-
             dg = desfat(REFORMATAR(carfixed))
         cn.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><div class="cont"> <div class="center" style="overflow-x: hidden;"><img src="/projects/imagens/rar.png" alt="" class="ar"><div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span> <span style="font-size:0.9em">]</span>&nbsp;<span style="font-size:0.9em"></div></div> ${splitspn}</div></div></div>`
-
         }
+        plar = []
+            for(pare in pl1) {
+                is = pl1[pare]
+                console.log(is)
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                if (act == 'close') {
+                c.SetDefault()
+                }
+                c.AddEvent()
+                plar.push(c)
+            }
+    
     }
 
     function CreateFunc(par1,par2,par3,height){
