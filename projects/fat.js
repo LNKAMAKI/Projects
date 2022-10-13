@@ -368,18 +368,23 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
     function fn(a,act) {
         console.log('aaa',a,act)
         sur = 0
+        cas = 0
         switch(a) {
             case 0:
              sur = pl1
+             cas = 0
             break
             case 1:
                 sur = pl2
+                cas = 1
             break
             case 2:
              sur = pl3
+             cas = 2
             break
             case 3:
              sur = pl4
+             cas = 3
             break
         }
         console.log(sur)
@@ -387,13 +392,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log(conts[sur[go]])
             conts[sur[go]].parentNode.removeChild(conts[sur[go]])
         }
-
+        if (cas == 0) {
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
         cs = []
         ts = document.getElementsByName('ti')
-        cn = ts[a]
+        cn = ts[0]
 
         hyu = 2
         for (h in res[5]) {
@@ -416,7 +421,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         cn.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><div class="cont"> <div class="center" style="overflow-x: hidden;"><img src="/projects/imagens/rar.png" alt="" class="ar"><div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span> <span style="font-size:0.9em">]</span>&nbsp;<span style="font-size:0.9em"></div></div> ${splitspn}</div></div></div>`
         }
-        
+    
             for(pare in sur) {
                 is = sur[pare]
                 console.log(is)
@@ -426,8 +431,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 c.AddEvent()
             }
-    
     }
+}
 
     function CreateFunc(par1,par2,par3,height){
         this.par1 = par1
