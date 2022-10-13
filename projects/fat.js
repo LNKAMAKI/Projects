@@ -53,12 +53,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
 <div class="cram">
 <div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(0,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(0,'close')"></div></div>
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(1,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(1,'close')"></div></div>
 </div>
 
 <div class="cram">
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Combinações</span></div></div>
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Agrupamentos</span></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Combinações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(2,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(2,'close')"></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Agrupamentos</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(3,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(3,'close')"></div></div>
 </div>
 </div>
 
@@ -371,7 +371,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         ts = document.getElementsByName('ti')
         cn = ts[0]
 
-        pl1 = []
         hyu = 2
         for (h in res[5]) {
             carfixed = res[5][h].car.replace('-.','-').replace(new RegExp('\\.','g'),'*').replace(new RegExp('\\*(?=[a-z])'),'')
@@ -389,24 +388,19 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
             }
-            for (ju = 0; ju <2;ju++) {
-                hyu++
-                pl1.push(hyu)
-                }
             dg = desfat(REFORMATAR(carfixed))
         cn.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><div class="cont"> <div class="center" style="overflow-x: hidden;"><img src="/projects/imagens/rar.png" alt="" class="ar"><div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span> <span style="font-size:0.9em">]</span>&nbsp;<span style="font-size:0.9em"></div></div> ${splitspn}</div></div></div>`
         }
-        plar = []
-            for(pare in pl1) {
-                is = pl1[pare]
+        
+            for(pare in sur) {
+                is = sur[pare]
                 console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
                 if (act == 'close') {
                 c.SetDefault()
                 }
                 c.AddEvent()
-                plar.push(c)
             }
     
     }
