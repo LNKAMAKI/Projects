@@ -338,6 +338,30 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 c.AddEvent()
                 plar.push(c)
             }
+            for(pare in pl2) {
+                is = pl2[pare]
+                console.log(is)
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c.SetDefault()
+                c.AddEvent()
+                plar.push(c)
+            }
+            for(pare in pl3) {
+                is = pl3[pare]
+                console.log(is)
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c.SetDefault()
+                c.AddEvent()
+                plar.push(c)
+            }
+            for(pare in pl4) {
+                is = pl4[pare]
+                console.log(is)
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c.SetDefault()
+                c.AddEvent()
+                plar.push(c)
+            }
 
         }) }
            
@@ -363,13 +387,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log(conts[sur[go]])
             conts[sur[go]].parentNode.removeChild(conts[sur[go]])
         }
-        
+
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
         cs = []
         ts = document.getElementsByName('ti')
-        cn = ts[0]
+        cn = ts[a]
 
         hyu = 2
         for (h in res[5]) {
