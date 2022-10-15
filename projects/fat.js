@@ -3652,7 +3652,6 @@ function doTheFactoring(exal) {
                   }}
               }
               
-                  //console.log('OKEXP', okexp)
                   if (alt == 1) {
                     vari = fat1
                   }else{
