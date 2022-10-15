@@ -356,6 +356,7 @@
         .pdev {
             font-size: 0.9em;
             text-align: left;
+            overflow-y: hidden;
             overflow-x: scroll;
             white-space: nowrap;
             margin-top: 0px;
@@ -442,6 +443,17 @@
         height: 20px;
         background-color: white;
         cursor: pointer;
+    }
+    .som {
+        position: absolute;
+        background-color: transparent;
+        color: transparent;
+        left: 100%;
+        z-index: 2;
+    }
+    span:hover > .som {
+        background-color: red;
+        color: black;
     }
         </style>
 <body onload="load()">
