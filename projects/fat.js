@@ -117,7 +117,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         <div class="tocent"> 
         <p class="pdev">car: 
-        <span style="color:var(--string);position:relative;background-color:red;padding:10px;">
+        <span style="color:var(--string);position:relative;padding:10px;">
         '${carfixed2}'
         <span class="som">i</span>
         </span>
@@ -126,7 +126,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
         <div class="center" style="overflow-x: hidden;">
         <img src="/projects/imagens/rar.png" alt="" class="ar">
-        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span>
+        <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-y:visible;">${spn}</span>
         <span style="font-size:0.9em">]</span>&nbsp;
         <span style="font-size:0.9em">
 

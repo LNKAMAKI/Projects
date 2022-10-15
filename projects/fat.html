@@ -13,6 +13,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Audiowide&family=Black+Ops+One&family=Russo+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Audiowide&family=Black+Ops+One&family=Days+One&family=Russo+One&display=swap');
 
+        * {
+            overflow-y: visible;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -446,13 +449,13 @@
     }
     .som {
         position: absolute;
-        background-color: transparent;
+        background-color: palevioletred;
         color: transparent;
-        left: 100%;
+        left: 0%;
+        top: -100%;
         z-index: 2;
     }
     span:hover > .som {
-        background-color: red;
         color: black;
     }
         </style>
