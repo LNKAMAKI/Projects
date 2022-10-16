@@ -1,16 +1,17 @@
 {
-    "cSpell.words": [
-        "Escala",
-        "fstspec",
-        "Inválida",
-        "mudar",
-        "opvale",
-        "opvalue",
-        "secid",
-        "secspec",
-        "sele",
-        "titfor",
-        "vari"
-    ],
-    "cSpell.language": "en,pt,pt-PT"
+  "cSpell.words": [
+    "Escala",
+    "fstspec",
+    "Inválida",
+    "mudar",
+    "opvale",
+    "opvalue",
+    "secid",
+    "secspec",
+    "sele",
+    "titfor",
+    "vari"
+  ],
+  "cSpell.language": "en,pt,pt-PT",
+  "liveServer.settings.port": 5501
 }

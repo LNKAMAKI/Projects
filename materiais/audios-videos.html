@@ -28,7 +28,9 @@
         top: 0;
         left: 0;
         bottom: 0;
+        width: 100%;
     }
+    
 </style>
 </head>
 <body>
@@ -44,7 +46,34 @@
 <p>O exemplo abaixo utiliza a tag <span class="tag">audio</span> e já vem com os controles para rodá-lo.</p>
 <audio src="/projects/level2.mp3" controls></audio>
 
-<video src="/projects/Document.webm" controls></video>
+<p>O código usado foi o abaixo e já é o suficiente para você inserir um áudio em seu site:</p>
+
+<code>
+    <span class="tag2">audio <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.mp3"</span> <span class="prop">controls</span></span>
+    <span class="tag3">audio</span>
+</code>
+<p>Viu que fácil? Mas não é só isso. Também é possível fazer com que o áudio se repita infinitamente, usando o <span class="prop">loop</span>, que ele seja rodado ssim que a página for carregada, com o <span class="prop">autoplay</span>, e que seja carregado previamente (<span class="prop">preload</span>=<span class="str">"metadata"</span>).</p>
+
+<code>
+    <span class="tag2">audio <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.mp3"</span> <span class="prop">loop</span> <span class="prop">autoplay</span> <span class="prop">preload</span><span class="n">=</span><span class="str">"metadata"</span></span>
+    <span class="tag3">audio</span>
+</code>
+<p>Por último, é importante saber que nem todos os navegadores são compatíveis a determinado formato de áudio. Assim, o recomendado é ter o maior número de formatos para o seu áudio, para que não haja esse problema. </p>
+<p>Podemos fazer isso colocando as tags <span class="tag">sources</span> dentro da tag <span class="tag">audio</span>:</p>
+<code>
+    <span class="tag2">audio</span><br>
+    <span class="tag2">source <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.mp3"</span> <span class="prop">type</span><span class="n">=</span><span class="str">"audio/mpeg"</span></span><br>
+
+    <span class="tag2">source <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.ogg"</span> <span class="prop">type</span><span class="n">=</span><span class="str">"audio/ogg"</span></span><br>
+
+    <span class="tag2">source <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.wav"</span> <span class="prop">type</span><span class="n">=</span><span class="str">"audio/wav"</span></span><br>
+    <span class="tag2">p</span>Não foi possível carregar o áudio :(<span class="tag3">p</span><br>
+    <span class="tag3">audio</span>
+</code>
+<p>Como você pode ver no código, também é possível colocar um parágrafo para quando nenhum dos áudios for compatível e, ainda, colocar dentro dele um link para baixar o áudio.</p>
+<video src="/projects/Document.webm" controls>
+</video>
+
 </div>
 
     <div id="efect2"></div>
