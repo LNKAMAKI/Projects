@@ -31,7 +31,36 @@
 
 <div id="fontypes" style="text-align: center;">
 
-<!--AQUI FICA O CONTEÚDO-->
+<span class="title">PARA QUE SERVE O IFRAME</span>
+<p>Antes de falarmos sobre como colocar e usar o iframe, primeiro precisamos saber o que ele é. Bom, o <span class="tag">i</span> de iframe vem de <span class="tag">inline</span> e frame significa quadro, moldura. Então, ele é basicamente um "quadro em linha", que serve para colocar um site dentro de um site. Como assim? Veja o exemplo abaixo: </p>
+<iframe src="iframe.html" frameborder="0"></iframe>
+<p>Parece familiar? Pois bem, é literalmente um site dentro de um site, que, aliás, está dentro de um site, pois, se você clicar em inspecionar vai perceber que todos esses materiais são iframes, o que facilita muito a minha vida e vai provavelmente facilitar a sua também. </p>
+<span class="title">COLOCANDO UM IFRAME</span>
+<p>E como colocar um iframe? Dê uma olhada no código abaixo para descobrir:</p>
+<code>
+    <span class="tag2">iframe <span class="prop">scr</span><span class="n">=</span><span class="str">"site.html"</span>  <span class="prop">frameborder</span><span class="n">=</span><span class="str">"0"</span></span><span class="tag3">iframe</span>
+</code>
+<p>Aí agora você deve estar se perguntando: o que é esse <span class="prop">frameborder</span>? E aí eu te respondo: um parâmetro bem inútil se quiser saber a verdade. Brincadeirinha (se bem que é isso mesmo). O <span class="prop">frameborder</span> é basicamente a borda do iframe, mas ele só admite os valores 0 e 1, o que o torna não muito eficiente (ou seja, inútil).</p>
+<p>Assim como para áudio ou vídeo, é possível colocar um parágrafo ou link (ou outro elemento) dentro do iframe, para caso ele não seja compatível com o navegador:</p>
+<code>
+    <span class="tag2">iframe <span class="prop">scr</span><span class="n">=</span><span class="str">"site.html"</span>  <span class="prop">frameborder</span><span class="n">=</span><span class="str">"0"</span></span><br>
+    <span class="tag2">a <span class="prop">href</span><span class="n">=</span><span class="str">"site.html"</span></span>Acesse aqui o site<span class="tag3">a</span><br>
+    <span class="tag3">iframe</span>
+</code>
+<p>Ainda tem outros parâmetros, não muito úteis em minha opinião, mas que é bom saber: o <span class="prop">width</span>, o <span class="prop">height</span> e o <span class="prop">scolling</span>.</p>
+<p>Assim como no CSS, é possível configurar a largura e o comprimento do iframe no próprio HTML, com o <span class="prop">width</span> e o <span class="prop">height</span>:</p>
+<code>
+    <span class="tag2">iframe <span class="prop">scr</span><span class="n">=</span><span class="str">"site.html"</span>  <span class="prop">width</span><span class="n">=</span><span class="str">"100"</span> <span class="prop">height</span><span class="n">=</span><span class="str">"200"</span></span><span class="tag3">iframe</span>
+</code>
+<p>O <span class="prop">scolling</span> é também um tanto inútil. Ele se refere a rolagem do iframe e pode receber 3 valores: <span class="str">yes</span> (que cria a rolagem mesmo que o conteúdo caiba no iframe), <span class="str">no</span> (que não cria a rolagem) e <span class="str">auto</span> (que cria a rolagem quando o conteúdo excede o iframe).</p>
+<span class="title">LINKS E IFRAME</span>
+<p>Uma coisa bem legal que dá para fazer é usar links com iframe, ou seja, fazer com que o iframe gere um site quando o seu link correspondente for clicado. Quer ver como isso funciona? Dê uma olhada então: </p>
+<ul>
+    <li><a href="../../html-css/exercicios/ex024/paginas-extras/pag001.html" target="f">Pag1</a></li>
+    <li><a href="../../html-css/exercicios/ex024/paginas-extras/pag002.html" target="f">Pag2</a></li>
+</ul>
+
+<iframe src="" frameborder="1" id="g" name="f"></iframe>
 
 </div>
 
