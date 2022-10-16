@@ -272,7 +272,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                     }
                     //spn+= ']'
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
-                spn+= `[<span class="sp" style="min-width:15px;">${spi}</span>]`
+                spn+= `[<span class="sp" style="min-width:30px;">${spi}</span>]`
             }
 
             for (ju = 0; ju <2;ju++) {
@@ -485,7 +485,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                             spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>`
                         } }
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
-              spn+= `[<span class="sp" style="min-width:15px;">${spi}</span>]`
+              spn+= `[<span class="sp" style="min-width:30px;">${spi}</span>]`
             }
         cn4.getElementsByClassName('dev')[0].innerHTML+= ` <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), grupos: Array(${res[9][h].w.what.length})
         </span> </div><div class="tocent" style="margin-bottom:0px;"> <div class="cont">  <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">agrup:&nbsp;</span><span style="display: flex;overflow-x: scroll;">${spn}<span></div> ${splitspn}</div></div></div>`
