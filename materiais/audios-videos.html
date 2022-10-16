@@ -49,14 +49,12 @@
 <p>O código usado foi o abaixo e já é o suficiente para você inserir um áudio em seu site:</p>
 
 <code>
-    <span class="tag2">audio <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.mp3"</span> <span class="prop">controls</span></span>
-    <span class="tag3">audio</span>
+    <span class="tag2">audio <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.mp3"</span> <span class="prop">controls</span></span><span class="tag3">audio</span>
 </code>
 <p>Viu que fácil? Mas não é só isso. Também é possível fazer com que o áudio se repita infinitamente, usando o <span class="prop">loop</span>, que ele seja rodado ssim que a página for carregada, com o <span class="prop">autoplay</span>, e que seja carregado previamente (<span class="prop">preload</span>=<span class="str">"metadata"</span>).</p>
 
 <code>
-    <span class="tag2">audio <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.mp3"</span> <span class="prop">loop</span> <span class="prop">autoplay</span> <span class="prop">preload</span><span class="n">=</span><span class="str">"metadata"</span></span>
-    <span class="tag3">audio</span>
+    <span class="tag2">audio <span class="prop">scr</span><span class="n">=</span><span class="str">"audio.mp3"</span> <span class="prop">loop</span> <span class="prop">autoplay</span> <span class="prop">preload</span><span class="n">=</span><span class="str">"metadata"</span></span><span class="tag3">audio</span>
 </code>
 <p>Por último, é importante saber que nem todos os navegadores são compatíveis a determinado formato de áudio. Assim, o recomendado é ter o maior número de formatos para o seu áudio, para que não haja esse problema. </p>
 <p>Podemos fazer isso colocando as tags <span class="tag">sources</span> dentro da tag <span class="tag">audio</span>:</p>
@@ -71,7 +69,27 @@
     <span class="tag3">audio</span>
 </code>
 <p>Como você pode ver no código, também é possível colocar um parágrafo para quando nenhum dos áudios for compatível e, ainda, colocar dentro dele um link para baixar o áudio.</p>
+<span class="title">Vídeos</span>
+<p>Agora vamos falar sobre vídeos. A forma de inserir vídeos em um site é semelhante à de audios. Veja abaixo um exemplo:</p>
+<code>
+    <span class="tag2">video <span class="prop">scr</span><span class="n">=</span><span class="str">"video.mp4"</span> <span class="prop">controls</span> <span class="prop">autoplay</span></span><span class="tag3">video</span>
+</code>
+<p>O problema da falta de compatibilidade também se aplica aos vídeos, podendo ser resolvido pela maneira:</p>
+<code>
+    <span class="tag2">video</span><br>
+    <span class="tag2">source <span class="prop">scr</span><span class="n">=</span><span class="str">"video.mp4"</span> <span class="prop">type</span><span class="n">=</span><span class="str">"video/mp4"</span></span><br>
+
+    <span class="tag2">source <span class="prop">scr</span><span class="n">=</span><span class="str">"video.m4v"</span> <span class="prop">type</span><span class="n">=</span><span class="str">"video/mp4"</span></span><br>
+
+    <span class="tag2">source <span class="prop">scr</span><span class="n">=</span><span class="str">"video.webm"</span> <span class="prop">type</span><span class="n">=</span><span class="str">"video/webm"</span></span><br>
+    <span class="tag2">source <span class="prop">scr</span><span class="n">=</span><span class="str">"video.ogv"</span> <span class="prop">type</span><span class="n">=</span><span class="str">"video/ogg"</span></span><br>
+    <span class="tag2">p</span>Não foi possível carregar o vídeo :(<span class="tag3">p</span><br>
+    <span class="tag3">video</span>
+</code>
+<p>Abaixo está um exemplo de como o vídeo aparece no site:</p>
 <video src="/projects/Document.webm" controls>
+</video>
+
 </video>
 
 </div>
