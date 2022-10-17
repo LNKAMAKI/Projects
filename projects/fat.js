@@ -328,7 +328,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
             for (tp in feb) {
                 is = feb[tp]
-                console.log(is)
+                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
                 c.SetDefault()
                 c.AddEvent()
@@ -338,7 +338,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             plar = []
             for(pare in pl1) {
                 is = pl1[pare]
-                console.log(is)
+                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
                 c.SetDefault()
                 c.AddEvent()
@@ -346,7 +346,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl2) {
                 is = pl2[pare]
-                console.log(is)
+                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
                 c.SetDefault()
                 c.AddEvent()
@@ -354,7 +354,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl3) {
                 is = pl3[pare]
-                console.log(is)
+                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
                 c.SetDefault()
                 c.AddEvent()
@@ -362,7 +362,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl4) {
                 is = pl4[pare]
-                console.log(is)
+                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
                 c.SetDefault()
                 c.AddEvent()
@@ -494,8 +494,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
     
     for(pare in sur) {
         is = sur[pare]
-        console.log(is)
-        c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+        //console.log(is)
+        if (act == 'close') {
+            c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+        }else{
+            c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','open')
+        }
         if (act == 'close') {
         c.SetDefault()
         }
@@ -503,11 +507,18 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
     }
 }
 
-    function CreateFunc(par1,par2,par3,height){
+    function CreateFunc(par1,par2,par3,height,action){
         this.par1 = par1
         this.par2 = par2
         this.par3 = par3
+        if (action != "open") {
         this.clicked = false
+        console.log('false', this.clicked)
+        }else{
+        this.clicked = true
+        console.log('true', this.clicked)
+        par1.style.transform = 'rotate(90deg)'
+        }
         this.Sayit = function() {
             this.clicked = true
         }
@@ -524,7 +535,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
         this.AddEvent = function() {
             this.par1.addEventListener('click', function() {
-                if (this.clicked == false || this.clicked == undefined) {
+                if (this.clicked == false) {
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
                         par2.style.height = height
                     }else{              
@@ -548,13 +559,39 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
                 par1.style.transform = 'rotate(90deg)'
                 this.clicked = true
-                console.log('CLICKED!!',this.clicked)
+                console.log('CLICKED!!',this.clicked,':P')
+                }else if(this.clicked == undefined && action != "open"){
+                    if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
+                        par2.style.height = height
+                    }else{              
+                        par2.style.height = height    
+                        switch (par3.innerText) {
+                            case 'Relações':
+                                wone = 0
+                            break 
+                            case 'Repetições':
+                                wone = 1
+                            break
+                            case 'Combinações':
+                                wone = 2
+                            break 
+                            case 'Agrupamentos':
+                                wone = 3
+                            break
+                         }
+                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                    }
+                    par1.style.transform = 'rotate(90deg)'
+                    this.clicked = true
+                    console.log('CLICKED!!',this.clicked,':P')
                 }else{
                     heightInPx = String(par3.offsetHeight) + 'px'
                     par2.style.height = heightInPx
                     par1.style.transform = 'rotate(0deg)'
                     this.clicked = false
-                }}) }}
+                    console.log('CLICKED!!',this.clicked,':p')
+                }
+            }) }}
 
     function copy() {
         nums = document.getElementsByClassName('type')
