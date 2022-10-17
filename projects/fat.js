@@ -326,10 +326,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             c.AddEvent()
             cs.push(c)
 
+            hgts = []
             for (tp in feb) {
                 is = feb[tp]
                 //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                console.log('QAAAAAAAT')
+                console.log(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -340,7 +343,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 is = pl1[pare]
                 //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
-                c.SetDefault()
+                console.log('aaaaaaaaaaaaaa',conts[is].offsetHeight)
+                /*c.SetDefault()*/
                 c.AddEvent()
                 plar.push(c)
             }
@@ -507,6 +511,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
     }
 }
 
+    late = 1
     function CreateFunc(par1,par2,par3,height,action){
         this.par1 = par1
         this.par2 = par2
@@ -519,6 +524,26 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         console.log('true', this.clicked)
         par1.style.transform = 'rotate(90deg)'
         }
+
+        late++
+        a = `j${late}`
+        h1 = 0
+        h2 = 100
+        heightInPx = String(par3.offsetHeight) + 'px'
+        css = `@keyframes ${a} {
+            0% {
+                height: ${heightInPx};
+            }
+            100% {
+                height: fit-content;
+            }
+        }`
+        par2.style.animation = `${a} 4s`
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
+
+
         this.Sayit = function() {
             this.clicked = true
         }
