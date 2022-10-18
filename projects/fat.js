@@ -334,7 +334,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 console.log('asasqsq45454544757657-=-=-8089',conts[i].offsetHeight,'--0-0-000')
                 console.log('QAAAAAAAT')
                 console.log(conts[is].offsetHeight)
-                //c.SetHeight(conts[is].offsetHeight)
+                c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -524,10 +524,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par3 = par3
         if (action != "open") {
         this.clicked = false
-        console.log('false', this.clicked)
         }else{
         this.clicked = true
-        console.log('true', this.clicked)
         par1.style.transform = 'rotate(90deg)'
         }
 
