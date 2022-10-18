@@ -586,7 +586,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                          console.log('JUST UDHEUDHEIDHDIUWH DIUW HDWIDH', par2.offsetHeight)
                          par2.getElementsByClassName('dev')[0].style.height = '0px'
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
-                         par1.style.backgroundColor = 'pink'
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -616,7 +615,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                          console.log('JUST UDHEUDHEIDHDIUWH DIUW HDWIDH', par2.offsetHeight)
                          par2.getElementsByClassName('dev')[0].style.height = '0px'
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
-                         par2.style.backgroundColor = 'green'
+                         par2.getElementsByClassName('dev')[0].style.backgroundColor = 'yellow'
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
