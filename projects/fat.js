@@ -330,8 +330,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for (tp in feb) {
                 is = feb[tp]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
-                console.log(conts[is].offsetHeight)
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -526,6 +524,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         h1 = 0
         h2 = 100
         heightInPx = String(par3.offsetHeight) + 'px'
+        /*
         css = `@keyframes ${a} {
             0% {
                 height: ${heightInPx};
@@ -534,10 +533,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: 100px;
             }
         }`
+        
         par2.style.animation = `${a} 0.3s`
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
+           */
 
 
         this.SetHeight = function(hgt) {
@@ -578,7 +579,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
+                         par2.getElementsByClassName('dev')[0].style.height = `fit-content`
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -603,7 +604,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
+                         par2.getElementsByClassName('dev')[0].style.height = `fit-content`
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
