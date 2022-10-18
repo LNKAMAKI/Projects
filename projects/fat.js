@@ -520,8 +520,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
 
         late++
-        a = `j${late}`
-        this.a = a
+        this.a = `j${late}`
         h1 = 0
         h2 = 100
         heightInPx = String(par3.offsetHeight) + 'px'
@@ -617,6 +616,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                          par2.getElementsByClassName('dev')[0].style.height = '0px'
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                          par2.getElementsByClassName('dev')[0].style.backgroundColor = 'yellow'
+                         console.log('eeeeeeeeeeeeei',a)
                          console.log('FORWARDS',aff,par3.offsetHeight)
                          css = `@keyframes ${a} {
                             0% {
