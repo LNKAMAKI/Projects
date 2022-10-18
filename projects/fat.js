@@ -561,6 +561,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.AddEvent = function() {
             this.par1.addEventListener('click', function() {
                 console.log('FULL OF ------',par2,hgt)
+                console.log('----------------YOU GOT ITTTTTTTTTTTTTTT-------------',par2.offsetHeight)
                 if (this.clicked == false) {
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
                         par2.style.height = height
@@ -581,6 +582,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                             break
                          }
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         par2.getElementsByClassName('dev')[0].style.height = '0px'
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -606,6 +608,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                             break
                          }
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         par2.getElementsByClassName('dev')[0].style.height = '0px'
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
