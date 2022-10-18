@@ -13,7 +13,7 @@ loaded = false
         
         for (i = 0; i < ars.length; i++) {
             //console.log(i, ars[i], conts[i], cents[i])
-            c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content')
+            c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content','close')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -316,12 +316,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
         }
         me = document.getElementsByClassName('ar')
-        c = new CreateFunc(me[0],conts[0],cents[0],'fit-content')
+        c = new CreateFunc(me[0],conts[0],cents[0],'fit-content','close')
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
 
-        c = new CreateFunc(me[1],conts[1],cents[1],'fit-content')
+        c = new CreateFunc(me[1],conts[1],cents[1],'fit-content','close')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -329,10 +329,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             hgts = []
             for (tp in feb) {
                 is = feb[tp]
-                //console.log(is)
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                console.log('asasqsq45454544757657-=-=-8089',conts[i].offsetHeight,'--0-0-000')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                console.log('asasqsq45454544757657-=-=-8089',conts[i].offsetHeight,'--0-0-000')
                 console.log('QAAAAAAAT')
                 console.log(conts[is].offsetHeight)
+                //c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -342,16 +344,18 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl1) {
                 is = pl1[pare]
                 //console.log(is)
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
-                console.log('aaaaaaaaaaaaaa',conts[is].offsetHeight)
-                /*c.SetDefault()*/
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                //console.log('aaaaaaaaaaaaaa',conts[is].offsetHeight)
+               // c.SetHeight(conts[is].offsetHeight)
+                c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
             }
             for(pare in pl2) {
                 is = pl2[pare]
                 //console.log(is)
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                //c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -359,7 +363,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl3) {
                 is = pl3[pare]
                 //console.log(is)
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+               // c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -367,7 +372,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl4) {
                 is = pl4[pare]
                 //console.log(is)
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                //c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -535,18 +541,20 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${heightInPx};
             }
             100% {
-                height: fit-content;
+                height: 100px;
             }
         }`
-        par2.style.animation = `${a} 4s`
+        par2.style.animation = `${a} 0.3s`
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
 
-        this.Sayit = function() {
-            this.clicked = true
+        this.SetHeight = function(hgt) {
+            console.log('YAY',hgt)
+            this.hgt = hgt
         }
+       
         this.SetDefault= function () {
             //par2.style.height = par3.offsetHeight
             heightInPx = String(par3.offsetHeight) + 'px'
@@ -559,6 +567,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
         }
         this.AddEvent = function() {
+            //console.log('EEEEEEEEEEEEEEEEEEEEE',this.hgt)
             this.par1.addEventListener('click', function() {
                 if (this.clicked == false) {
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
