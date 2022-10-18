@@ -330,6 +330,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for (tp in feb) {
                 is = feb[tp]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -339,6 +340,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl1) {
                 is = pl1[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -346,6 +348,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl2) {
                 is = pl2[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -353,6 +356,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl3) {
                 is = pl3[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -360,6 +364,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl4) {
                 is = pl4[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
