@@ -332,7 +332,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
                 console.log(conts[is].offsetHeight)
                 //c.SetHeight(conts[is].offsetHeight)
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -507,7 +507,10 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
     late = 1
     function CreateFunc(par1,par2,par3,height,action,hgt){
-        //this.hgt = hgt
+        this.hgt = hgt
+        if (this.hgt!= undefined) {
+        console.log('******',this.hgt)
+        }
         this.par1 = par1
         this.par2 = par2
         this.par3 = par3
@@ -556,7 +559,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
         this.AddEvent = function() {
             this.par1.addEventListener('click', function() {
-                console.log('FULL OF ------',par2)
+                console.log('FULL OF ------',par2,hgt)
                 if (this.clicked == false) {
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
                         par2.style.height = height
@@ -576,7 +579,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -601,7 +604,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
