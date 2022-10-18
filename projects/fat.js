@@ -526,16 +526,17 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         late++
         a = `j${late}`
+        this.a = a
         h1 = 0
         h2 = 100
         heightInPx = String(par3.offsetHeight) + 'px'
-        /*
+        
         css = `@keyframes ${a} {
             0% {
                 height: ${heightInPx};
             }
             100% {
-                height: 100px;
+                height: ${this.hgt}px;
             }
         }`
         
@@ -543,7 +544,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
-           */
+           
 
 
         this.SetHeight = function(hgt) {
@@ -584,7 +585,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
+                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         //par2.style.animation = `${a} 0.3s`
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -609,7 +611,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
+                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
