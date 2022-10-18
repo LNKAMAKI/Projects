@@ -612,10 +612,25 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                          }
                          
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         aff = par2.offsetHeight
                          console.log('JUST UDHEUDHEIDHDIUWH DIUW HDWIDH', par2.offsetHeight)
                          par2.getElementsByClassName('dev')[0].style.height = '0px'
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                          par2.getElementsByClassName('dev')[0].style.backgroundColor = 'yellow'
+                         console.log('FORWARDS',aff,par3.offsetHeight)
+                         css = `@keyframes ${a} {
+                            0% {
+                                height: 0px;
+                            }
+                            100% {
+                                height: ${Number(aff) - Number(par3.offsetHeight)}px;
+                            }
+                        }`
+                        
+                           style = document.createElement('style')
+                           document.head.appendChild(style)
+                           style.appendChild(document.createTextNode(css))
+                           par2.getElementsByClassName('dev')[0].style.animation = `${a} 3s forwards`
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
