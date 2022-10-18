@@ -586,7 +586,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                             break
                          }
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
-                         //par2.style.animation = `${a} 0.3s`
                     }
 
                 par1.style.transform = 'rotate(90deg)'
