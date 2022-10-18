@@ -552,7 +552,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
         }
         this.AddEvent = function() {
-            //console.log('EEEEEEEEEEEEEEEEEEEEE',this.hgt)
             this.par1.addEventListener('click', function() {
                 if (this.clicked == false) {
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
