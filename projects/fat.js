@@ -511,6 +511,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par1 = par1
         this.par2 = par2
         this.par3 = par3
+        this.l = late
         if (action != "open") {
         this.clicked = false
         }else{
@@ -555,7 +556,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
         this.AddEvent = function() {
             this.par1.addEventListener('click', function() {
-                console.log('FULL OF ------',this.par2)
+                console.log('FULL OF ------',par2)
                 if (this.clicked == false) {
                     if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
                         par2.style.height = height
