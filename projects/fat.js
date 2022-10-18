@@ -584,7 +584,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = `fit-content`
+                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -609,7 +609,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
-                         par2.getElementsByClassName('dev')[0].style.height = `fit-content`
+                         par2.getElementsByClassName('dev')[0].style.height = `${hgt}px`
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
