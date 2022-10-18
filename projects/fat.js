@@ -526,6 +526,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         h2 = 100
         heightInPx = String(par3.offsetHeight) + 'px'
         
+        /*
         css = `@keyframes ${a} {
             0% {
                 height: ${heightInPx};
@@ -539,7 +540,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
-           
+        */
 
 
         this.SetHeight = function(hgt) {
@@ -585,6 +586,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                          console.log('JUST UDHEUDHEIDHDIUWH DIUW HDWIDH', par2.offsetHeight)
                          par2.getElementsByClassName('dev')[0].style.height = '0px'
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         par1.style.backgroundColor = 'pink'
                     }
 
                 par1.style.transform = 'rotate(90deg)'
@@ -609,10 +611,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                                 wone = 3
                             break
                          }
+                         
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
                          console.log('JUST UDHEUDHEIDHDIUWH DIUW HDWIDH', par2.offsetHeight)
                          par2.getElementsByClassName('dev')[0].style.height = '0px'
                          par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
+                         par2.style.backgroundColor = 'green'
                     }
                     par1.style.transform = 'rotate(90deg)'
                     this.clicked = true
