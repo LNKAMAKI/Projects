@@ -329,10 +329,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             hgts = []
             for (tp in feb) {
                 is = feb[tp]
-                console.log('asasqsq45454544757657-=-=-8089',conts[i].offsetHeight,'--0-0-000')
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
-                console.log('asasqsq45454544757657-=-=-8089',conts[i].offsetHeight,'--0-0-000')
-                console.log('QAAAAAAAT')
                 console.log(conts[is].offsetHeight)
                 c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
@@ -343,42 +340,32 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             plar = []
             for(pare in pl1) {
                 is = pl1[pare]
-                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
-                //console.log('aaaaaaaaaaaaaa',conts[is].offsetHeight)
-               // c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
             }
             for(pare in pl2) {
                 is = pl2[pare]
-                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
-                //c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
             }
             for(pare in pl3) {
                 is = pl3[pare]
-                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
-               // c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
             }
             for(pare in pl4) {
                 is = pl4[pare]
-                //console.log(is)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
-                //c.SetHeight(conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
             }
-
         }) }
            
     function fn(a,act) {
