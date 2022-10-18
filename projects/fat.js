@@ -331,7 +331,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 is = feb[tp]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
                 console.log(conts[is].offsetHeight)
-                //c.SetHeight(conts[is].offsetHeight)
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close',conts[is].offsetHeight)
                 c.SetDefault()
                 c.AddEvent()
