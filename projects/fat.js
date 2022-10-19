@@ -558,6 +558,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 this.clicked = false
             }
         }
+        
         this.AddEvent = function() {
             this.par1.addEventListener('click', function() {
                 console.log('FULL OF ------',par2,hgt)
@@ -642,7 +643,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                     this.clicked = false
                     console.log('CLICKED!!',this.clicked,':p')
                 }
-            }) }}
+            }) }
+        }
 
     function copy() {
         nums = document.getElementsByClassName('type')
