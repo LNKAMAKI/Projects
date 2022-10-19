@@ -578,13 +578,15 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         css = `@keyframes ${jin} {
             0% {
-                height: 0px;
+                height: 30px;
             }
             100% {
-                height: 30px;
+                height: 107px;
             }
         }`
         
+        this.par3.style.height = '20px'
+        this.par2.style.height = '20px'
         this.par2.style.animation = `${jin} 3s`
            style = document.createElement('style')
            document.head.appendChild(style)
