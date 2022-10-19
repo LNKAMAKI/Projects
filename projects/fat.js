@@ -574,22 +574,34 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         console.log(this.par2.offsetHeight)
         this.par2.style.height = 'fit-content'
         console.log(this.par2.offsetHeight)
+        sul = this.par2.offsetHeight
         console.log('jin',jin)
 
         css = `@keyframes ${jin} {
             0% {
-                height: 30px;
+                height: 0px;
             }
             100% {
-                height: 107px;
+                height: ${sul}px;
             }
         }`
         
+        if (this.style == undefined) {
+            console.log('UNDEFINED')
+        }else{
+        console.log('THIS STYLE',this.style,jin,this.style.innerText.search(jin))
+        if (this.style.innerText.search(jin) != -1) {
+            console.log('Tem')
+            document.head
+        }
+        }
+
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
-        this.par2.style.animation = `${jin} 3s`
-           style = document.createElement('style')
-           document.head.appendChild(style)
+        this.par2.style.animation = `${jin} 3s forwards`
+        this.par2.style.height = 'fit-content'
+           this.style = document.createElement('style')
+           document.head.appendChild(this.style)
            style.appendChild(document.createTextNode(css))
     }
     function copy() {
