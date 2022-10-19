@@ -559,92 +559,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
         }
         
+        this.par1.setAttribute
         this.AddEvent = function() {
-            this.par1.addEventListener('click', function() {
-                console.log('FULL OF ------',par2,hgt)
-                console.log('----------------YOU GOT ITTTTTTTTTTTTTTT-------------',par2.offsetHeight)
-                if (this.clicked == false) {
-                    if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
-                        par2.style.height = height
-                    }else{              
-                        par2.style.height = height    
-                        switch (par3.innerText) {
-                            case 'Relações':
-                                wone = 0
-                            break 
-                            case 'Repetições':
-                                wone = 1
-                            break
-                            case 'Combinações':
-                                wone = 2
-                            break 
-                            case 'Agrupamentos':
-                                wone = 3
-                            break
-                         }
-                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
-                         console.log('JUST UDHEUDHEIDHDIUWH DIUW HDWIDH', par2.offsetHeight)
-                         par2.getElementsByClassName('dev')[0].style.height = '0px'
-                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
-                    }
-
-                par1.style.transform = 'rotate(90deg)'
-                this.clicked = true
-                console.log('CLICKED!!',this.clicked,':P')
-                }else if(this.clicked == undefined && action != "open"){
-                    if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
-                        par2.style.height = height
-                    }else{              
-                        par2.style.height = height    
-                        switch (par3.innerText) {
-                            case 'Relações':
-                                wone = 0
-                            break 
-                            case 'Repetições':
-                                wone = 1
-                            break
-                            case 'Combinações':
-                                wone = 2
-                            break 
-                            case 'Agrupamentos':
-                                wone = 3
-                            break
-                         }
-                         
-                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
-                         aff = par2.offsetHeight
-                         console.log('JUST UDHEUDHEIDHDIUWH DIUW HDWIDH', par2.offsetHeight)
-                         par2.getElementsByClassName('dev')[0].style.height = '0px'
-                         par2.getElementsByClassName('dev')[0].style.height = 'fit-content'
-                         par2.getElementsByClassName('dev')[0].style.backgroundColor = 'yellow'
-                         console.log('eeeeeeeeeeeeei',a)
-                         console.log('FORWARDS',aff,par3.offsetHeight)
-                         css = `@keyframes ${a} {
-                            0% {
-                                height: 0px;
-                            }
-                            100% {
-                                height: ${Number(aff) - Number(par3.offsetHeight)}px;
-                            }
-                        }`
-                        
-                           style = document.createElement('style')
-                           document.head.appendChild(style)
-                           style.appendChild(document.createTextNode(css))
-                           par2.getElementsByClassName('dev')[0].style.animation = `${a} 3s forwards`
-                    }
-                    par1.style.transform = 'rotate(90deg)'
-                    this.clicked = true
-                    console.log('CLICKED!!',this.clicked,':P')
-                }else{
-                    heightInPx = String(par3.offsetHeight) + 'px'
-                    par2.style.height = heightInPx
-                    par1.style.transform = 'rotate(0deg)'
-                    this.clicked = false
-                    console.log('CLICKED!!',this.clicked,':p')
-                }
-            }) }
+           this.par1.setAttribute('onclick',Click())
         } //a
+    }
 
     function copy() {
         nums = document.getElementsByClassName('type')
