@@ -13,7 +13,7 @@ loaded = false
         
         for (i = 0; i < ars.length; i++) {
             //console.log(i, ars[i], conts[i], cents[i])
-            c = new CreateFunc(ars[i],conts[i],cents[i],'fit-content','close')
+            c = new CreateFunc(i,'fit-content','close')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -316,12 +316,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
         }
         me = document.getElementsByClassName('ar')
-        c = new CreateFunc(me[0],conts[0],cents[0],'fit-content','close')
+        c = new CreateFunc(0,'fit-content','close')
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
 
-        c = new CreateFunc(me[1],conts[1],cents[1],'fit-content','close')
+        c = new CreateFunc(1,'fit-content','close')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -329,7 +329,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             hgts = []
             for (tp in feb) {
                 is = feb[tp]
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                console.log(is)
+                c = new CreateFunc(is,'fit-content','close')
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -338,7 +339,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             plar = []
             for(pare in pl1) {
                 is = pl1[pare]
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(is,'fit-content','close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -346,7 +347,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl2) {
                 is = pl2[pare]
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(is,'fit-content','close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -354,7 +355,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl3) {
                 is = pl3[pare]
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(is,'fit-content','close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -362,7 +363,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl4) {
                 is = pl4[pare]
-                c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                c = new CreateFunc(is,'fit-content','close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -507,15 +508,18 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 }
 
     late = 1
-    function CreateFunc(par1,par2,par3,height,action,hgt,me){
-        console.log('ttttttttttttttttttttttttttttt',me)
+    function CreateFunc(ind,action,hgt){
+
+        this.ind = ind
+        console.log('THISSSSSSSSS',ind)
+        this.par1 = document.getElementsByClassName('ar')[this.ind]
+        this.par2 = get2('cont')[this.ind]
+        this.par3 = get2('center')[this.ind]
+
         this.hgt = hgt
         if (this.hgt!= undefined) {
         console.log('******',this.hgt)
         }
-        this.par1 = par1
-        this.par2 = par2
-        this.par3 = par3
         this.l = late
         if (action != "open") {
         this.clicked = false
@@ -528,7 +532,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.a = `j${late}`
         h1 = 0
         h2 = 100
-        heightInPx = String(par3.offsetHeight) + 'px'
+        heightInPx = String(this.par3.offsetHeight) + 'px'
         
         /*
         css = `@keyframes ${a} {
@@ -545,33 +549,27 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
         */
-
-
-        this.SetHeight = function(hgt) {
-            console.log('YAY',hgt)
-            this.hgt = hgt
-        }
        
         this.SetDefault= function () {
             //par2.style.height = par3.offsetHeight
-            heightInPx = String(par3.offsetHeight) + 'px'
-            if (par3.innerText != 'Relações' && par3.innerText != 'Repetições' && par3.innerText != 'Combinações' && par3.innerText != 'Agrupamentos' ) {
-            par2.style.height = heightInPx
+            heightInPx = String(this.par3.offsetHeight) + 'px'
+            if (this.par3.innerText != 'Relações' && this.par3.innerText != 'Repetições' && this.par3.innerText != 'Combinações' && this.par3.innerText != 'Agrupamentos' ) {
+            this.par2.style.height = heightInPx
             this.clicked = false
             }else{
-                par2.style.height = '28px'
+                this.par2.style.height = '28px'
                 this.clicked = false
             }
         }
         
         this.par1.setAttribute
         this.AddEvent = function() {
-           this.par1.setAttribute('onclick',`cli(${this.par1,this.par2,this.par3})`)
+           this.par1.setAttribute('onclick',`cli(${this.ind})`)
         } //a
     }
 
-    function cli(par1,par2,par3) {
-        console.log(par1,par2,par3)
+    function cli(index) {
+        console.log(index,me[index],conts[index],cents[index])
     }
     function copy() {
         nums = document.getElementsByClassName('type')
