@@ -496,9 +496,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         is = sur[pare]
         //console.log(is)
         if (act == 'close') {
-            c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+            c = new CreateFunc(is,'fit-content','close')
         }else{
-            c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','open')
+            c = new CreateFunc(is,'fit-content','open')
         }
         if (act == 'close') {
         c.SetDefault()
@@ -508,7 +508,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 }
 
     late = 1
-    function CreateFunc(ind,action,hgt){
+    function CreateFunc(ind,action){
 
         this.ind = ind
         console.log('THISSSSSSSSS',ind)
@@ -516,10 +516,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par2 = get2('cont')[this.ind]
         this.par3 = get2('center')[this.ind]
 
-        this.hgt = hgt
-        if (this.hgt!= undefined) {
-        console.log('******',this.hgt)
-        }
         this.l = late
         if (action != "open") {
         this.clicked = false
@@ -564,12 +560,17 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         
         this.par1.setAttribute
         this.AddEvent = function() {
-           this.par1.setAttribute('onclick',`cli(${this.ind})`)
+           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind})`)
         } //a
     }
 
-    function cli(index) {
-        console.log(index,me[index],conts[index],cents[index])
+    function cli(state,index) {
+        this.par1 = me[index]
+        this.par2 = conts[index]
+        this.par3 = cents[index]
+        console.log(this.par1,this.par2,this.par3)
+        console.log(state)
+
     }
     function copy() {
         nums = document.getElementsByClassName('type')
