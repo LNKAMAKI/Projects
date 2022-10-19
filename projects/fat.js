@@ -592,7 +592,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         console.log('THIS STYLE',this.style,jin,this.style.innerText.search(jin))
         if (this.style.innerText.search(jin) != -1) {
             console.log('Tem')
-            document.head
+            document.head.removeChild(this.style)
         }
         }
 
