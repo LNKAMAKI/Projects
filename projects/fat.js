@@ -507,7 +507,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 }
 
     late = 1
-    function CreateFunc(par1,par2,par3,height,action,hgt){
+    function CreateFunc(par1,par2,par3,height,action,hgt,me){
+        console.log('ttttttttttttttttttttttttttttt',me)
         this.hgt = hgt
         if (this.hgt!= undefined) {
         console.log('******',this.hgt)
