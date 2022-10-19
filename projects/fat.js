@@ -560,17 +560,35 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         
         this.par1.setAttribute
         this.AddEvent = function() {
-           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind})`)
+            console.log(this.a)
+           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}')`)
         } //a
     }
 
-    function cli(state,index) {
+    function cli(state,index,jin) {
         this.par1 = me[index]
         this.par2 = conts[index]
         this.par3 = cents[index]
         console.log(this.par1,this.par2,this.par3)
         console.log(state)
+        console.log(this.par2.offsetHeight)
+        this.par2.style.height = 'fit-content'
+        console.log(this.par2.offsetHeight)
+        console.log('jin',jin)
 
+        css = `@keyframes ${jin} {
+            0% {
+                height: 0px;
+            }
+            100% {
+                height: 30px;
+            }
+        }`
+        
+        this.par2.style.animation = `${jin} 3s`
+           style = document.createElement('style')
+           document.head.appendChild(style)
+           style.appendChild(document.createTextNode(css))
     }
     function copy() {
         nums = document.getElementsByClassName('type')
