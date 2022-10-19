@@ -598,7 +598,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
-        //this.par2.style.animation = `${jin} 3s`
+        this.par2.style.animation = `${jin} 3s`
         this.par2.style.height = 'fit-content'
            this.style = document.createElement('style')
            document.head.appendChild(this.style)
