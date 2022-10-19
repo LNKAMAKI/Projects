@@ -339,6 +339,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl1) {
                 is = pl1[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -346,6 +347,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl2) {
                 is = pl2[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -353,6 +355,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl3) {
                 is = pl3[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -360,6 +363,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for(pare in pl4) {
                 is = pl4[pare]
                 c = new CreateFunc(me[is],conts[is],cents[is],'fit-content','close')
+                console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -561,10 +565,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         
         this.par1.setAttribute
         this.AddEvent = function() {
-           this.par1.setAttribute('onclick',Click())
+           this.par1.setAttribute('onclick',`cli(${this.par1,this.par2,this.par3})`)
         } //a
     }
 
+    function cli(par1,par2,par3) {
+        console.log(par1,par2,par3)
+    }
     function copy() {
         nums = document.getElementsByClassName('type')
         copyText = nums[0]
