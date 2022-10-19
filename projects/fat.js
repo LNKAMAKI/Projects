@@ -644,7 +644,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                     console.log('CLICKED!!',this.clicked,':p')
                 }
             }) }
-        }
+        } //a
 
     function copy() {
         nums = document.getElementsByClassName('type')
