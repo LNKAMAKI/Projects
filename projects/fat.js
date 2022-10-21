@@ -369,6 +369,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 c.AddEvent()
                 plar.push(c)
             }
+
+            c = new CreateFunc(pl4[pl4.length - 1] + 1,'fit-content','close')
+            c.SetDefault()
+            c.AddEvent()
+            cs.push(c)
         }) }
            
     function fn(a,act) {
