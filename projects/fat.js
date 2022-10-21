@@ -317,6 +317,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }
 
         mecams = []
+        late = 1
         me = document.getElementsByClassName('ar')
         c = new CreateFunc(0,'fit-content','close')
                 c.SetDefault()
@@ -574,6 +575,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
     function cli(state,index,jin) {
         me = document.getElementsByClassName('ar')
+        this.jin = jin
         this.par1 = me[index]
         this.par2 = conts[index]
         this.par3 = cents[index]
@@ -601,14 +603,14 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
-           
+
            if (mecams.find(function(mecams){
-            return mecams.created = jin
+            return mecams.created == this.jin
            }) != undefined) {
-            console.log('JÁ TEM ' + jin)
+            console.log('JÁ TEM ' + this.jin)
            }else{
-            console.log('NÃO TEM' + jin)
-            mecams.push({created:jin})
+            console.log('NÃO TEM ' + this.jin)
+            mecams.push({created:this.jin})
            }
     }
 
