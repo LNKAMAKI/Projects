@@ -582,6 +582,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         console.log(this.par1,this.par2,this.par3)
         console.log('fechar?',state)
         console.log('initial height:',this.par2.offsetHeight)
+        beg = this.par2.offsetHeight
         this.par2.style.height = 'fit-content'
         console.log('final height:',this.par2.offsetHeight)
         sul = this.par2.offsetHeight
@@ -607,7 +608,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         css = `@keyframes ${jin}${search.comp} {
             0% {
-                height: 0px;
+                height: ${beg}px;
             }
             100% {
                 height: ${sul}px;
