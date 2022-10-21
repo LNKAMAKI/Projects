@@ -587,7 +587,25 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         sul = this.par2.offsetHeight
         console.log('jin: ',jin)
 
-        css = `@keyframes ${jin} {
+        search = mecams.find(function(mecams){
+            return mecams.created == this.jin
+           })
+
+        if (search != undefined) {
+            console.log('JÁ TEM ' + this.jin)
+            search.comp++
+            console.log(search,search.comp)
+           }else{
+            console.log('NÃO TEM ' + this.jin)
+            mecams.push({created:this.jin,comp:1})
+           }
+
+           search = mecams.find(function(mecams){
+            return mecams.created == this.jin
+           })
+           console.log(search.comp)
+
+        css = `@keyframes ${jin}${search.comp} {
             0% {
                 height: 0px;
             }
@@ -598,20 +616,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
-        this.par2.style.animation = `${jin} 1s`
+        this.par2.style.animation = `${jin}${search.comp} 1s`
         this.par2.style.height = 'fit-content'
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
 
-           if (mecams.find(function(mecams){
-            return mecams.created == this.jin
-           }) != undefined) {
-            console.log('JÁ TEM ' + this.jin)
-           }else{
-            console.log('NÃO TEM ' + this.jin)
-            mecams.push({created:this.jin})
-           }
     }
 
     function copy() {
