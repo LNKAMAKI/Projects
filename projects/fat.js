@@ -315,6 +315,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                feb.push(Number(kep))
             }
         }
+
+        mecams = []
         me = document.getElementsByClassName('ar')
         c = new CreateFunc(0,'fit-content','close')
                 c.SetDefault()
@@ -571,6 +573,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
     }
 
     function cli(state,index,jin) {
+        me = document.getElementsByClassName('ar')
         this.par1 = me[index]
         this.par2 = conts[index]
         this.par3 = cents[index]
@@ -592,7 +595,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }`
         
         if (this.style == undefined) {
-            console.log('UNDEFINED')
+            console.log('UNDEFINED (Não há estilo)')
         }else{
         console.log('THIS STYLE',this.style,jin,this.style.innerText.search(jin))
         if (this.style.innerText.search(jin) != -1) {
