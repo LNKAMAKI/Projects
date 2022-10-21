@@ -578,12 +578,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par2 = conts[index]
         this.par3 = cents[index]
         console.log(this.par1,this.par2,this.par3)
-        console.log(state)
-        console.log(this.par2.offsetHeight)
+        console.log('fechar?',state)
+        console.log('initial height:',this.par2.offsetHeight)
         this.par2.style.height = 'fit-content'
-        console.log(this.par2.offsetHeight)
+        console.log('final height:',this.par2.offsetHeight)
         sul = this.par2.offsetHeight
-        console.log('jin',jin)
+        console.log('jin: ',jin)
 
         css = `@keyframes ${jin} {
             0% {
@@ -593,26 +593,25 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${sul}px;
             }
         }`
-        
-        if (this.style == undefined) {
-            console.log('UNDEFINED (Não há estilo)')
-        }else{
-        console.log('THIS STYLE',this.style,jin,this.style.innerText.search(jin))
-        if (this.style.innerText.search(jin) != -1) {
-            console.log('Tem')
-            document.head.removeChild(this.style)
-        }
-        }
 
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
         this.par2.style.animation = `${jin} 1s`
         this.par2.style.height = 'fit-content'
-           this.style = document.createElement('style')
-           document.head.appendChild(this.style)
+           style = document.createElement('style')
+           document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
+           
+           if (mecams.find(function(mecams){
+            return mecams.created = jin
+           }) != undefined) {
+            console.log('JÁ TEM ' + jin)
+           }else{
+            console.log('NÃO TEM' + jin)
+            mecams.push({created:jin})
+           }
     }
-    
+
     function copy() {
         nums = document.getElementsByClassName('type')
         copyText = nums[0]
