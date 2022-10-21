@@ -612,6 +612,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            document.head.appendChild(this.style)
            style.appendChild(document.createTextNode(css))
     }
+    
     function copy() {
         nums = document.getElementsByClassName('type')
         copyText = nums[0]
