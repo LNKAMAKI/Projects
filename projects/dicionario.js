@@ -596,7 +596,7 @@ examples: 'steep competition drove wages up*what\'s driving up oil prices?'},
 meaning: 'to make a business deal more attractive', 
 examples: 'the company began offering one thousand signing bonuses to sweeten the deal'},
 
-{word: 'be, go to the roof',type: 'phrase', 
+{word: 'go to the roof',type: 'phrase', 
 meaning: 'to rise to a high lever, to reach unexpected heights', 
 examples: 'gasoline prices have gone through the roof recently*sales of those cars went through the roof'},
 
@@ -608,8 +608,8 @@ examples: 'the storm is finally starting to die down*the party didn\'t die down 
 meaning: 'completely, totally', 
 examples: 'I\'ve stopped eating sugar altogether'},
 
-{word: '',type: '', 
-meaning: '', 
+{word: 'the tables have turned',type: 'phrase', 
+meaning: 'the situation has reversed completely', 
 examples: ''},
 ]
 
