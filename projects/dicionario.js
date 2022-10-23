@@ -604,9 +604,9 @@ examples: 'gasoline prices have gone through the roof recently*sales of those ca
 meaning: 'tp gradually become less strong, quieter, less intense, less powerful, less noisy', 
 examples: 'the storm is finally starting to die down*the party didn\'t die down until 2 o\'clock in the morning'},
 
-{word: '',type: '', 
-meaning: '', 
-examples: ''},
+{word: 'altogether',type: 'adverb', 
+meaning: 'completely, totally', 
+examples: 'I\'ve stopped eating sugar altogether'},
 
 {word: '',type: '', 
 meaning: '', 
