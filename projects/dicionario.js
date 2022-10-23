@@ -611,6 +611,31 @@ examples: 'I\'ve stopped eating sugar altogether'},
 {word: 'the tables have turned',type: 'phrase', 
 meaning: 'the situation has reversed completely', 
 examples: ''},
+
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+
 ]
 
 songs = sortWords(songs,'word')
