@@ -612,9 +612,9 @@ examples: 'I\'ve stopped eating sugar altogether'},
 meaning: 'the situation has reversed completely', 
 examples: ''},
 
-{word: '',type: '', 
-meaning: '', 
-examples: ''},
+{word: 'throw a curveball',type: 'phrase', 
+meaning: 'to present (someone) with a difficult and unexpected problem, situation, question, etc', 
+examples: 'life throws us curveballs all the time*She threw me a curveball when she asked about that subject'},
 
 {word: '',type: '', 
 meaning: '', 
