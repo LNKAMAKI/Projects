@@ -1,6 +1,7 @@
 //  {word: '',type: '', meaning: '', examples: ''},
 var songs = [
-    {word: 'hunk', type: 'noun countable', meaning: 'a large piece of a solid substance/a strong and attractive man',examples:'a hunk of meat,bread,plastic,concrete'},
+    {word: 'hunk', type: 'noun countable', meaning: 'a large piece of a solid substance/a strong and attractive man',
+    examples:'a hunk of meat, bread, plastic, concrete'},
 
     {word: 'hourglass',type: 'noun countable', meaning: 'ampulheta', examples: 'Life is an hourglass(Mindy Gledhill)'},
 
