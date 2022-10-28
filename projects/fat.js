@@ -607,17 +607,20 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
            console.log('initial:',search.st)
            console.log('final:',sul)
-           console.log('search.beg:',search.st)
-           console.log(search.comp)
+           //console.log('search.beg:',search.st)
+          // console.log(search.comp)
 
            if (this.par3.innerText == 'Resolução') {
-
+            console.log('WAIT')
+            beg = beg - 10
+            console.log(beg)
+            sul = sul + 10
            }
-           
+
            if (search.cl == false) {
         css = `@keyframes ${jin}${search.comp} {
              0% {
-                height: ${search.st}px;
+                height: ${beg}px;
             }
             100% {
                 height: ${sul}px;
@@ -637,7 +640,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                height: ${sul}px;
            }
            100% {
-               height: ${search}px;
+               height: ${beg}px;
            }
        }`
        this.par3.style.height = '20px'
