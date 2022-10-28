@@ -594,7 +594,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             return mecams.created == this.jin
            })
 
-           if (this.n == 8 and this.par3.innerText != )
+          
            console.log('THIS.N -----------------',this.n)
         if (search != undefined) {
             console.log('JÁ TEM ' + this.jin)
@@ -608,6 +608,14 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 sul = sul - 10
                 console.log(beg)
                 //sul = sul + 10
+               }
+               txt = String(this.par3.innerText)
+               busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
+               console.log('busca',txt,busca)
+               if (this.n == 8 && busca == -1) {
+                console.log('YES')
+                sul = sul - 8
+                console.log('FIXED',sul)
                }
             mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
            }
