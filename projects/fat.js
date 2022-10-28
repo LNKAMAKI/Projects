@@ -581,10 +581,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par3 = cents[index]
         console.log(this.par1,this.par2,this.par3)
         console.log('fechar?',state)
-        console.log('initial height:',this.par2.offsetHeight)
         beg = this.par2.offsetHeight
         this.par2.style.height = 'fit-content'
-        console.log('final height:',this.par2.offsetHeight)
         sul = this.par2.offsetHeight
         console.log('jin: ',jin)
 
@@ -605,6 +603,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             return mecams.created == this.jin
            })
 
+           console.log('initial:',search.st)
+           console.log('final:',sul)
            console.log('search.beg:',search.st)
            console.log(search.comp)
 
@@ -619,7 +619,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
-        this.par2.style.animation = `${jin}${search.comp} 3s`
+        this.par2.style.animation = `${jin}${search.comp} 0.6s`
         this.par2.style.height = 'fit-content'
            style = document.createElement('style')
            document.head.appendChild(style)
