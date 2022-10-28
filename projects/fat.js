@@ -333,7 +333,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for (tp in feb) {
                 is = feb[tp]
                 console.log(is)
-                c = new CreateFunc(is,'close')
+                c = new CreateFunc(is,'close',8)
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -342,7 +342,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             plar = []
             for(pare in pl1) {
                 is = pl1[pare]
-                c = new CreateFunc(is,'close')
+                c = new CreateFunc(is,'close',8)
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -350,7 +350,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl2) {
                 is = pl2[pare]
-                c = new CreateFunc(is,'close')
+                c = new CreateFunc(is,'close',8)
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -358,7 +358,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl3) {
                 is = pl3[pare]
-                c = new CreateFunc(is,'close')
+                c = new CreateFunc(is,'close',8)
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -366,7 +366,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl4) {
                 is = pl4[pare]
-                c = new CreateFunc(is,'close')
+                c = new CreateFunc(is,'close',8)
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -516,7 +516,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 }
 
     late = 1
-    function CreateFunc(ind,action){
+    function CreateFunc(ind,action,number){
 
         this.ind = ind
         console.log('THISSSSSSSSS',ind)
@@ -536,6 +536,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         late++
         this.a = `j${late}`
+        this.number = number
         h1 = 0
         h2 = 100
         heightInPx = String(this.par3.offsetHeight) + 'px'
@@ -571,16 +572,17 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par1.setAttribute
         this.AddEvent = function() {
             console.log(this.a)
-           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}')`)
+           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number})`)
         } //a
     }
 
-    function cli(state,index,jin) {
+    function cli(state,index,jin,n) {
         me = document.getElementsByClassName('ar')
         this.jin = jin
         this.par1 = me[index]
         this.par2 = conts[index]
         this.par3 = cents[index]
+        this.n = n
         console.log(this.par1,this.par2,this.par3)
         console.log('fechar?',state)
         beg = this.par2.offsetHeight
@@ -592,6 +594,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             return mecams.created == this.jin
            })
 
+           if (this.n == 8 and this.par3.innerText != )
+           console.log('THIS.N -----------------',this.n)
         if (search != undefined) {
             console.log('JÁ TEM ' + this.jin)
             search.comp++
