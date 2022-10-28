@@ -598,7 +598,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log(search,search.comp)
            }else{
             console.log('NÃO TEM ' + this.jin)
-            mecams.push({created:this.jin,comp:1,st:beg})
+            mecams.push({created:this.jin,comp:1,st:beg,cl:state})
            }
 
            search = mecams.find(function(mecams){
@@ -610,15 +610,15 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            console.log('search.beg:',search.st)
            console.log(search.comp)
 
+           if (search.cl == false) {
         css = `@keyframes ${jin}${search.comp} {
-            0% {
+             0% {
                 height: ${search.st}px;
             }
             100% {
                 height: ${sul}px;
             }
         }`
-
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
         this.par2.style.animation = `${jin}${search.comp} 0.6s`
@@ -626,7 +626,24 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
-
+    }else{
+        console.log('gooooo')
+        css = `@keyframes ${jin}${search.comp} {
+            0% {
+               height: ${sul}px;
+           }
+           100% {
+               height: ${search}px;
+           }
+       }`
+       this.par3.style.height = '20px'
+        this.par2.style.height = '20px'
+        this.par2.style.animation = `${jin}${search.comp} 2s`
+       style = document.createElement('style')
+       document.head.appendChild(style)
+       style.appendChild(document.createTextNode(css))
+       this.par1.style.transform = 'rotate(0deg)'
+    }
     }
 
     function copy() {
