@@ -598,17 +598,19 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log(search,search.comp)
            }else{
             console.log('NÃO TEM ' + this.jin)
-            mecams.push({created:this.jin,comp:1})
+            mecams.push({created:this.jin,comp:1,st:beg})
            }
 
            search = mecams.find(function(mecams){
             return mecams.created == this.jin
            })
+
+           console.log('search.beg:',search.st)
            console.log(search.comp)
 
         css = `@keyframes ${jin}${search.comp} {
             0% {
-                height: ${beg}px;
+                height: ${search.st}px;
             }
             100% {
                 height: ${sul}px;
@@ -617,7 +619,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
-        this.par2.style.animation = `${jin}${search.comp} 0.4s`
+        this.par2.style.animation = `${jin}${search.comp} 3s`
         this.par2.style.height = 'fit-content'
            style = document.createElement('style')
            document.head.appendChild(style)
