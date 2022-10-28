@@ -598,7 +598,14 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log(search,search.comp)
            }else{
             console.log('NÃO TEM ' + this.jin)
-            mecams.push({created:this.jin,comp:1,st:beg,cl:state})
+            if (this.par3.innerText == 'Resolução') {
+                console.log('WAIT')
+                beg = beg - 10
+                sul = sul - 10
+                console.log(beg)
+                //sul = sul + 10
+               }
+            mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
            }
 
            search = mecams.find(function(mecams){
@@ -606,16 +613,10 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            })
 
            console.log('initial:',search.st)
-           console.log('final:',sul)
+           console.log('final:',search.end)
            //console.log('search.beg:',search.st)
           // console.log(search.comp)
 
-           if (this.par3.innerText == 'Resolução') {
-            console.log('WAIT')
-            beg = beg - 10
-            console.log(beg)
-            //sul = sul + 10
-           }
 
            if (search.cl == false) {
         css = `@keyframes ${jin}${search.comp} {
@@ -623,7 +624,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${search.st}px;
             }
             100% {
-                height: ${sul}px;
+                height: ${search.end}px;
             }
         }`
         this.par3.style.height = '20px'
@@ -637,7 +638,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         console.log('gooooo')
         css = `@keyframes ${jin}${search.comp} {
             0% {
-               height: ${sul}px;
+               height: ${search.end}px;
            }
            100% {
                height: ${search.st}px;
