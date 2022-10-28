@@ -614,13 +614,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log('WAIT')
             beg = beg - 10
             console.log(beg)
-            sul = sul + 10
+            //sul = sul + 10
            }
 
            if (search.cl == false) {
         css = `@keyframes ${jin}${search.comp} {
              0% {
-                height: ${beg}px;
+                height: ${search.st}px;
             }
             100% {
                 height: ${sul}px;
@@ -640,7 +640,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                height: ${sul}px;
            }
            100% {
-               height: ${beg}px;
+               height: ${search.st}px;
            }
        }`
        this.par3.style.height = '20px'
