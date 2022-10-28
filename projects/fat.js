@@ -13,7 +13,7 @@ loaded = false
         
         for (i = 0; i < ars.length; i++) {
             //console.log(i, ars[i], conts[i], cents[i])
-            c = new CreateFunc(i,'fit-content','close')
+            c = new CreateFunc(i,'close')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -319,12 +319,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         mecams = []
         late = 1
         me = document.getElementsByClassName('ar')
-        c = new CreateFunc(0,'fit-content','close')
+        c = new CreateFunc(0,'close')
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
 
-        c = new CreateFunc(1,'fit-content','close')
+        c = new CreateFunc(1,'close')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -333,7 +333,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             for (tp in feb) {
                 is = feb[tp]
                 console.log(is)
-                c = new CreateFunc(is,'fit-content','close')
+                c = new CreateFunc(is,'close')
                 c.SetDefault()
                 c.AddEvent()
                 cs.push(c)
@@ -342,7 +342,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             plar = []
             for(pare in pl1) {
                 is = pl1[pare]
-                c = new CreateFunc(is,'fit-content','close')
+                c = new CreateFunc(is,'close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -350,7 +350,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl2) {
                 is = pl2[pare]
-                c = new CreateFunc(is,'fit-content','close')
+                c = new CreateFunc(is,'close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -358,7 +358,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl3) {
                 is = pl3[pare]
-                c = new CreateFunc(is,'fit-content','close')
+                c = new CreateFunc(is,'close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
@@ -366,14 +366,14 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             for(pare in pl4) {
                 is = pl4[pare]
-                c = new CreateFunc(is,'fit-content','close')
+                c = new CreateFunc(is,'close')
                 console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
             }
 
-            c = new CreateFunc(pl4[pl4.length - 1] + 1,'fit-content','close')
+            c = new CreateFunc(pl4[pl4.length - 1] + 1,'close')
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
@@ -504,9 +504,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         is = sur[pare]
         //console.log(is)
         if (act == 'close') {
-            c = new CreateFunc(is,'fit-content','close')
+            c = new CreateFunc(is,'close')
         }else{
-            c = new CreateFunc(is,'fit-content','open')
+            c = new CreateFunc(is,'open')
         }
         if (act == 'close') {
         c.SetDefault()
@@ -525,9 +525,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par3 = get2('center')[this.ind]
 
         this.l = late
+        console.log('ACTION', action)
         if (action != "open") {
         this.clicked = false
         }else{
+            console.log('TRUEEEEEEEEEE')
         this.clicked = true
         par1.style.transform = 'rotate(90deg)'
         }
