@@ -610,6 +610,10 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            console.log('search.beg:',search.st)
            console.log(search.comp)
 
+           if (this.par3.innerText == 'Resolução') {
+
+           }
+           
            if (search.cl == false) {
         css = `@keyframes ${jin}${search.comp} {
              0% {
@@ -621,7 +625,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }`
         this.par3.style.height = '20px'
         this.par2.style.height = '20px'
-        this.par2.style.animation = `${jin}${search.comp} 0.6s`
+        this.par2.style.animation = `${jin}${search.comp} 2s`
         this.par2.style.height = 'fit-content'
            style = document.createElement('style')
            document.head.appendChild(style)
