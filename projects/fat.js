@@ -531,7 +531,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }else{
             console.log('TRUEEEEEEEEEE')
         this.clicked = true
-        par1.style.transform = 'rotate(90deg)'
+        this.par1.style.transform = 'rotate(90deg)'
         }
 
         late++
