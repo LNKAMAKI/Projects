@@ -605,10 +605,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log('NÃO TEM ' + this.jin)
             if (this.par3.innerText == 'Resolução') {
                 console.log('WAIT')
-                beg = beg - 10
-                sul = sul - 10
-                //console.log(beg)
-                //sul = sul + 10
+                //beg = beg - 10
+               // sul = sul - 10
                }
                txt = String(this.par3.innerText)
                busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
@@ -638,17 +636,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${sul}px;
             }
         }`
-        
-        if (this.n != 8 || busca != -1) {
-            this.par2.style.animation = `${jin}${search.comp} 0.4s`
-            //this.par3.style.height = '20px'
-            //this.par2.style.height = '20px'
+            this.par2.style.animation = `${jin}${search.comp} 2s`
             this.par2.style.height = 'fit-content'
-        }else{
-            console.log('É O PEQUNEO')
-            this.par2.style.animation = `${jin}${search.comp} 0.4s`
-            this.par2.style.height = 'fit-content'
-        }
 
            style = document.createElement('style')
            document.head.appendChild(style)
