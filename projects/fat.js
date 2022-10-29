@@ -381,7 +381,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            
     late = 1
     function fn(a,act) {
-        mecams = []
         console.log('aaa',a,act)
         sur = 0
         cas = 0
