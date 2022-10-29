@@ -573,11 +573,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par1.setAttribute
         this.AddEvent = function() {
             console.log(this.a)
-           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number})`)
+           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
         } //a
     }
 
-    function cli(state,index,jin,n) {
+    function cli(state,index,jin,n,jor) {
         me = document.getElementsByClassName('ar')
         this.jin = jin
         this.par1 = me[index]
@@ -590,9 +590,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par2.style.height = 'fit-content'
         sul = this.par2.offsetHeight
         console.log('jin: ',jin)
-        he = this.par3.offsetHeight
-        console.log('THIS IS CENTER HEIGHT:',Number(he))
-        this.par3.style.height = he + 'px'
+        console.log('JORRRRRRRRRRRRR',jor)
+        console.log('THIS IS CENTER HEIGHT:',jor)
+        this.par3.style.height = jor + 'px'
 
         search = mecams.find(function(mecams){
             return mecams.created == this.jin
@@ -612,7 +612,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                txt = String(this.par3.innerText)
                busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
                //console.log('busca',txt,busca)
-            mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
+               if (state == true) {
+                mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state})
+               }else{
+                mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
+               }
            }
 
            search = mecams.find(function(mecams){
