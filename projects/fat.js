@@ -550,13 +550,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.SetDefault= function () {
             //par2.style.height = par3.offsetHeight
             heightInPx = String(this.par3.offsetHeight) + 'px'
-            if (this.par3.innerText != 'Relações' && this.par3.innerText != 'Repetições' && this.par3.innerText != 'Combinações' && this.par3.innerText != 'Agrupamentos' ) {
+           if (this.par3.innerText != 'Relações' && this.par3.innerText != 'Repetições' && this.par3.innerText != 'Combinações' && this.par3.innerText != 'Agrupamentos' ) {
             this.par2.style.height = heightInPx
             this.clicked = false
-            }else{
-                this.par2.style.height = '20px'
+           }else{
+                this.par2.style.height = '28px'
                 this.clicked = false
-            }
+           }
         }
         
         this.par1.setAttribute
@@ -580,6 +580,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         sul = this.par2.offsetHeight
         console.log('jin: ',jin)
         console.log('JORRRRRRRRRRRRR',jor)
+        txt = String(this.par3.innerText)
+               busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições)|(Engine))','g'))
+               console.log('busca',txt,busca)
+               if (busca != -1) {
+               }
+
         console.log('THIS IS CENTER HEIGHT:',jor)
         this.par3.style.height = jor + 'px'
 
@@ -596,9 +602,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             if (this.par3.innerText == 'Resolução') {
                 console.log('WAIT')
                }
-               txt = String(this.par3.innerText)
-               busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
-               //console.log('busca',txt,busca)
                if (state == true) {
                 mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state})
                }else{
@@ -636,7 +639,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${eh}px;
             }
         }`
-            this.par2.style.animation = `${jin}${search.comp} 0.4s`
+            this.par2.style.animation = `${jin}${search.comp} 2s`
             this.par2.style.height = 'fit-content'
 
            style = document.createElement('style')
@@ -663,7 +666,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                height: ${ih}px;
            }
        }`
-        this.par2.style.animation = `${jin}${search.comp} 0.4s`
+        this.par2.style.animation = `${jin}${search.comp} 2s`
         this.par2.style.height = `${ih}px`
        style = document.createElement('style')
        document.head.appendChild(style)
