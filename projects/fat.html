@@ -324,7 +324,6 @@
         .center {
             position: relative;
             display: flex;
-            align-items: center;
             height: 100%;
             justify-content: start;
             white-space: nowrap;
@@ -353,7 +352,7 @@
             border-radius: 10px;
         }
         .center > .ar {
-            transition-duration: 0.25s;
+            transition-duration: 0.2s;
             width: 20px;
             height: 20px;
             transform: rotate(0deg);
@@ -386,6 +385,9 @@
         }
         [classname="top"]::-webkit-scrollbar {
            display: none;
+        }
+        [classname="top"] {
+            align-items: center;
         }
         .sp {
            overflow-x: scroll;

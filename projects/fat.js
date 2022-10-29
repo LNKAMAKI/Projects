@@ -639,7 +639,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${eh}px;
             }
         }`
-            this.par2.style.animation = `${jin}${search.comp} 2s`
+            this.par2.style.animation = `${jin}${search.comp} 0.2s`
             this.par2.style.height = 'fit-content'
 
            style = document.createElement('style')
@@ -666,7 +666,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                height: ${ih}px;
            }
        }`
-        this.par2.style.animation = `${jin}${search.comp} 2s`
+        this.par2.style.animation = `${jin}${search.comp} 0.2s`
         this.par2.style.height = `${ih}px`
        style = document.createElement('style')
        document.head.appendChild(style)
