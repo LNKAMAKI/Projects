@@ -96,8 +96,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 splitspn+= ` <p class="psem">
                 <span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
-
-                //splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span> </p>`
             }
 
             for (ju = 0; ju <2;ju++) {
@@ -258,19 +256,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             spn = ''
             outr = []
             for(k in res[9][h].w.what) {
-                   //spn+= '['
                    spi = ''
                     for (lik in res[9][h].w.what[k].ar) {
-                        //console.log(lik,'adwadaadasdasads')
                         if (lik != res[9][h].w.what[k].ar.length - 1) {
-                        //spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
                         spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span>,</span>`
                         }else{
-                            //spn+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>` 
                             spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>`
-                        }
-                    }
-                    //spn+= ']'
+                        } }
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
                 spn+= `[<span class="sp" style="min-width:30px;">${spi}</span>]`
             }
@@ -313,8 +305,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             if (don.innerText == 'Relações' || don.innerText == 'Repetições' || don.innerText == 'Combinações' || don.innerText == 'Agrupamentos'){
                console.log(don.innerText, kep)
                feb.push(Number(kep))
-            }
-        }
+            } }
 
         mecams = []
         late = 1
@@ -402,9 +393,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
              cas = 3
             break
         }
-        //console.log(sur)
+
         for (go = sur.length - 1; go >= 0; go--) {
-            //console.log(conts[sur[go]])
             conts[sur[go]].parentNode.removeChild(conts[sur[go]])
         }
 
@@ -605,8 +595,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log('NÃO TEM ' + this.jin)
             if (this.par3.innerText == 'Resolução') {
                 console.log('WAIT')
-                //beg = beg - 10
-               // sul = sul - 10
                }
                txt = String(this.par3.innerText)
                busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
@@ -631,7 +619,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
             console.log('initial:',search.st,'px')
             console.log('final:',sul,'px')
-
 
             if (this.par3.innerText == 'Resolução') {
                 console.log('WAIT')
