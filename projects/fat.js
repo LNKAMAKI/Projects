@@ -612,11 +612,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                txt = String(this.par3.innerText)
                busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
                console.log('busca',txt,busca)
-               if (this.n == 8 && busca == -1) {
-                console.log('YES')
-                sul = sul - 8
-                console.log('FIXED',sul)
-               }
             mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
            }
 
@@ -629,7 +624,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            //console.log('search.beg:',search.st)
           // console.log(search.comp)
 
-
            if (search.cl == false) {
         css = `@keyframes ${jin}${search.comp} {
              0% {
@@ -639,10 +633,20 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${sul}px;
             }
         }`
-        this.par3.style.height = '20px'
-        this.par2.style.height = '20px'
-        this.par2.style.animation = `${jin}${search.comp} 2s`
-        this.par2.style.height = 'fit-content'
+        
+        
+        if (this.n != 8 || busca != -1) {
+            this.par2.style.animation = `${jin}${search.comp} 2s`
+            this.par3.style.height = '20px'
+            this.par2.style.height = '20px'
+            this.par2.style.height = 'fit-content'
+        }else{
+            this.par3.style.height = '36px'
+            this.par2.style.animation = `${jin}${search.comp} 2s`
+            this.par2.style.height = 'fit-content'
+            console.log('A HANDSHAKE')
+        }
+
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
@@ -656,8 +660,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                height: ${search.st}px;
            }
        }`
-       this.par3.style.height = '20px'
-        this.par2.style.height = '20px'
+      // this.par3.style.height = '20px'
+       // this.par2.style.height = '20px'
         this.par2.style.animation = `${jin}${search.comp} 2s`
        style = document.createElement('style')
        document.head.appendChild(style)
