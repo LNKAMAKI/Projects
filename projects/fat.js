@@ -628,12 +628,21 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             console.log('initial:',search.st,'px')
             console.log('final:',sul,'px')
 
+
+            if (this.par3.innerText == 'Resolução') {
+                console.log('WAIT')
+                ih = search.st - 10
+                eh = sul - 10
+               }else{
+                ih = search.st
+                eh = sul
+               }
         css = `@keyframes ${jin}${search.comp} {
              0% {
-                height: ${search.st}px;
+                height: ${ih}px;
             }
             100% {
-                height: ${sul}px;
+                height: ${eh}px;
             }
         }`
             this.par2.style.animation = `${jin}${search.comp} 2s`
@@ -646,7 +655,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         console.log('gooooo')
         css = `@keyframes ${jin}${search.comp} {
             0% {
-               height: ${search.end}px;
+               height: ${sul}px;
            }
            100% {
                height: ${search.st}px;
