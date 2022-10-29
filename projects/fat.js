@@ -584,7 +584,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par3 = cents[index]
         this.n = n
         console.log(this.par1,this.par2,this.par3)
-        console.log('fechar?',state)
+        //console.log('fechar?',state)
         beg = this.par2.offsetHeight
         this.par2.style.height = 'fit-content'
         sul = this.par2.offsetHeight
@@ -594,8 +594,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             return mecams.created == this.jin
            })
 
-          
-           console.log('THIS.N -----------------',this.n)
         if (search != undefined) {
             console.log('JÁ TEM ' + this.jin)
             search.comp++
@@ -611,7 +609,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                }
                txt = String(this.par3.innerText)
                busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
-               console.log('busca',txt,busca)
+               //console.log('busca',txt,busca)
             mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
            }
 
@@ -619,12 +617,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             return mecams.created == this.jin
            })
 
-           console.log('initial:',search.st)
-           console.log('final:',search.end)
-           //console.log('search.beg:',search.st)
-          // console.log(search.comp)
-
            if (search.cl == false) {
+            console.log('CLICK:',search.cl)
+
+            console.log('initial:',search.st,'px')
+            console.log('final:',sul,'px')
+
         css = `@keyframes ${jin}${search.comp} {
              0% {
                 height: ${search.st}px;
@@ -634,17 +632,16 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
         }`
         
-        
         if (this.n != 8 || busca != -1) {
             this.par2.style.animation = `${jin}${search.comp} 2s`
             this.par3.style.height = '20px'
             this.par2.style.height = '20px'
             this.par2.style.height = 'fit-content'
         }else{
+            console.log('É O PEQUNEO')
             this.par3.style.height = '36px'
             this.par2.style.animation = `${jin}${search.comp} 2s`
             this.par2.style.height = 'fit-content'
-            console.log('A HANDSHAKE')
         }
 
            style = document.createElement('style')
