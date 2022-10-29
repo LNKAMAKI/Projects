@@ -589,6 +589,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par2.style.height = 'fit-content'
         sul = this.par2.offsetHeight
         console.log('jin: ',jin)
+        he = this.par3.offsetHeight
+        console.log('THIS IS CENTER HEIGHT:',Number(he))
+        this.par3.style.height = he + 'px'
 
         search = mecams.find(function(mecams){
             return mecams.created == this.jin
@@ -604,7 +607,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 console.log('WAIT')
                 beg = beg - 10
                 sul = sul - 10
-                console.log(beg)
+                //console.log(beg)
                 //sul = sul + 10
                }
                txt = String(this.par3.innerText)
@@ -618,7 +621,11 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            })
 
            if (search.cl == false) {
-            console.log('CLICK:',search.cl)
+            if (search.cl == false) {
+                console.log('ABRIR')
+            }else{
+                console.log('FECHAR')
+            }
 
             console.log('initial:',search.st,'px')
             console.log('final:',sul,'px')
@@ -633,14 +640,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         }`
         
         if (this.n != 8 || busca != -1) {
-            this.par2.style.animation = `${jin}${search.comp} 2s`
-            this.par3.style.height = '20px'
-            this.par2.style.height = '20px'
+            this.par2.style.animation = `${jin}${search.comp} 0.4s`
+            //this.par3.style.height = '20px'
+            //this.par2.style.height = '20px'
             this.par2.style.height = 'fit-content'
         }else{
             console.log('É O PEQUNEO')
-            this.par3.style.height = '36px'
-            this.par2.style.animation = `${jin}${search.comp} 2s`
+            this.par2.style.animation = `${jin}${search.comp} 0.4s`
             this.par2.style.height = 'fit-content'
         }
 
