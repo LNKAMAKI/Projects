@@ -636,7 +636,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${search.st}px;
             }
             100% {
-                height: ${search.end}px;
+                height: ${sul}px;
             }
         }`
         this.par3.style.height = '20px'
