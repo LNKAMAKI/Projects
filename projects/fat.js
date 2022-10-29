@@ -379,7 +379,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             cs.push(c)
         }) }
            
+    late = 1
     function fn(a,act) {
+        mecams = []
         console.log('aaa',a,act)
         sur = 0
         cas = 0
@@ -515,7 +517,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
     }
 }
 
-    late = 1
     function CreateFunc(ind,action,number){
 
         this.ind = ind
@@ -564,7 +565,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             this.par2.style.height = heightInPx
             this.clicked = false
             }else{
-                this.par2.style.height = '28px'
+                this.par2.style.height = '20px'
                 this.clicked = false
             }
         }
@@ -600,7 +601,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         if (search != undefined) {
             console.log('JÁ TEM ' + this.jin)
             search.comp++
-            console.log(search,search.comp)
+            console.log(search,'COMP:',search.comp)
            }else{
             console.log('NÃO TEM ' + this.jin)
             if (this.par3.innerText == 'Resolução') {
@@ -645,29 +646,40 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 height: ${eh}px;
             }
         }`
-            this.par2.style.animation = `${jin}${search.comp} 2s`
+            this.par2.style.animation = `${jin}${search.comp} 0.4s`
             this.par2.style.height = 'fit-content'
 
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
+           this.par1.style.transform = 'rotate(90deg)'
+           search.cl = true
     }else{
         console.log('gooooo')
+        if (this.par3.innerText == 'Resolução') {
+            console.log('WAIT')
+            ih = search.st - 10
+            eh = sul - 10
+           }else{
+            ih = search.st
+            eh = sul
+           }
+
         css = `@keyframes ${jin}${search.comp} {
             0% {
-               height: ${sul}px;
+               height: ${eh}px;
            }
            100% {
-               height: ${search.st}px;
+               height: ${ih}px;
            }
        }`
-      // this.par3.style.height = '20px'
-       // this.par2.style.height = '20px'
-        this.par2.style.animation = `${jin}${search.comp} 2s`
+        this.par2.style.animation = `${jin}${search.comp} 0.4s`
+        this.par2.style.height = `${ih}px`
        style = document.createElement('style')
        document.head.appendChild(style)
        style.appendChild(document.createTextNode(css))
        this.par1.style.transform = 'rotate(0deg)'
+       search.cl = false
     }
     }
 
