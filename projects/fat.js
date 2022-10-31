@@ -518,6 +518,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         console.log('ACTION', action)
         if (action != "open") {
         this.clicked = false
+        this.par1.style.transform = 'rotate(0deg)'
         }else{
             console.log('TRUEEEEEEEEEE')
         this.clicked = true
