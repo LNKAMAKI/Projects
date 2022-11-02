@@ -1675,7 +1675,7 @@ function doTheFactoring(exal) {
             varib = []
             for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
                 pos = miss_2[eep].aparicoes[kel] // *1
-                varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
+                varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
             }
               for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
                 if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
@@ -1683,7 +1683,7 @@ function doTheFactoring(exal) {
                   varib2 = []
                   for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
                     pos = miss_2[quad].aparicoes[kel] //*1
-                    varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
+                    varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
                 }
                   repeated = [];
                   repwri = "";
@@ -1693,7 +1693,7 @@ function doTheFactoring(exal) {
                     if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) && compar.indexOf(varib_2[0]/2) == -1
                       compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0]/2)
                         
-                        repeated.push(miss_2[eep].aparicoes[vespa]); // *repeated.push(miss_2[eep],aparticoes[0]) (1)
+                        repeated.push(miss_2[eep].aparicoes[vespa]); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
                       repwri += "," + miss_2[eep].aparicoes[vespa]; // *,1
     
                       mons1 = []
