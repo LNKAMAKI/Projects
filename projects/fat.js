@@ -1640,9 +1640,9 @@ function doTheFactoring(exal) {
                 miss_2 = []
          
                 for (ah in scarecrow_2) { // scarecrow_2[ah] = *{divididos: ['2y','yy'], outrodiv: ['2y','yy'], poss: [1,3], divisor: ['2','.','5'], positions: [1,3]}
-                    for (é in scarecrow_2[ah].divididos) {
-                    if (miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}) == undefined) {
-                     miss_2.push({dividido: scarecrow_2[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow_2[ah].divisor})
+                    for (é in scarecrow_2[ah].divididos) { // *Eg.: '2y' (scarecrow_[ah].divididos[é])
+                    if (miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}) == undefined) { // Se o miss não tiver *'2y'
+                     miss_2.push({dividido: scarecrow_2[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow_2[ah].divisor}) // Adicionar *'2y' ao miss
                     }else{
                      miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
                     }}  }
