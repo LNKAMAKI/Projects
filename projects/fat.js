@@ -1726,26 +1726,26 @@ function doTheFactoring(exal) {
                       }else{ // Se já tiver no roller_2
                         func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
                         perm = true
-                        for (sept in mons1) { // *mons1 = [1,3]
-                            if (func.monomios.indexOf(mons1[sept]) != -1) {
+                        for (sept in mons1) { // *mons1 = [1,3], *mons1[0] = 1
+                            if (func.monomios.indexOf(mons1[sept]) != -1) { //*[0,1,2].indexOf(1) != -1
                                perm = false 
                             }}
                         if (perm == true) {
-                            func.position.push(pos1)
-                            for (wake in mons1) {
+                            func.position.push(pos1) // pos1 = eep
+                            for (wake in mons1) { // *mons1[0] = 1
                             func.monomios.push(mons1[wake])
                             } }
                         perm = true
-                        for (sept in mons2) {
-                            if (func.monomios.indexOf(mons2[sept]) != -1) {
+                        for (sept in mons2) { // *mons2 = [2,4], *mons1[0] = 2
+                            if (func.monomios.indexOf(mons2[sept]) != -1) { //*[0,1,2].indexOf(2) != -1
                                perm = false 
                             }}
                         if (perm == true) {
-                            func.position.push(pos2)
-                            for (wake in mons2) {
+                            func.position.push(pos2) // pos2 = quad
+                            for (wake in mons2) { // *mons1[0] = 1
                             func.monomios.push(mons2[wake])
                             }}}
-                    }else{
+                    }else{ // 
                             compar.splice(compar.length - 1,1)
                         } }}}}}
           
