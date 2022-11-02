@@ -1745,7 +1745,7 @@ function doTheFactoring(exal) {
                             for (wake in mons2) { // *mons1[0] = 1
                             func.monomios.push(mons2[wake])
                             }}}
-                    }else{ // 
+                    }else{ // miss_2[quad].aparicoes.indexOf(1) == -1 || compar.indexOf(varib2[0]) != -1
                             compar.splice(compar.length - 1,1)
                         } }}}}}
           
