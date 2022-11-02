@@ -1649,8 +1649,6 @@ function doTheFactoring(exal) {
                 
                 quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao]) // *Eg.: 10/2 = 5 (5 fatores em cada grupo)
                 quantasposições = Number(monomios_2.length)/Number(quantosfatores) // *Eg.: 10/5 = 2 (div_2[okentão] == quantasposições)
-
-                console.log('mons',monomios_2,'fats',quantosfatores,'pos',quantasposições,'div',divs_2[okentao])
        
                 grtols_2 = []
          for (hi in miss_2) {
