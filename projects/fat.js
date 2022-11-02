@@ -1749,7 +1749,7 @@ function doTheFactoring(exal) {
                             compar.splice(compar.length - 1,1)
                         } }}}}}
           
-         for (r in roller_2) { // Transferindo 
+         for (r in roller_2) { // Transferindo o roller_2 para o roll_2
              roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
          }
          while(java < miss_2.length && deucerto == false) {
