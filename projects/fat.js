@@ -10,7 +10,6 @@ can = false
         cents = get2('center')
         ars = get2('ar')
         cs = []
-
         
         for (i = 0; i < ars.length; i++) {
             //console.log(i, ars[i], conts[i], cents[i])
@@ -18,11 +17,7 @@ can = false
             c.SetDefault()
             c.AddEvent()
             cs.push(c)
-            //console.log(Number(ars.length) - 1, i)
-            if (i != Number(ars.length) - 1) {
-                //console.log('ok')
-               //conts[i].style.marginBottom = '40px'
-            } }
+        }
 
         loaded = true
         get1('write').addEventListener('keyup',(event) => {
