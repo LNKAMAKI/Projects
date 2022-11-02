@@ -67,7 +67,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         cs = []
         ts = document.getElementsByName('ti')
         cn = ts[0]
-
         cn.innerHTML+= '<div class="dev"></div>'
 
         pl1 = []
@@ -130,7 +129,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         </div>
         </div>
          </div>`
-
         }
 
         cn2 = ts[1]
@@ -527,22 +525,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         h1 = 0
         h2 = 100
         heightInPx = String(this.par3.offsetHeight) + 'px'
-        
-        /*
-        css = `@keyframes ${a} {
-            0% {
-                height: ${heightInPx};
-            }
-            100% {
-                height: ${this.hgt}px;
-            }
-        }`
-        
-        par2.style.animation = `${a} 0.3s`
-           style = document.createElement('style')
-           document.head.appendChild(style)
-           style.appendChild(document.createTextNode(css))
-        */
        
         this.SetDefault= function () {
             //par2.style.height = par3.offsetHeight
@@ -553,14 +535,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
            }else{
                 this.par2.style.height = '28px'
                 this.clicked = false
-           }
-        }
+           } }
         
         this.par1.setAttribute
         this.AddEvent = function() {
             console.log(this.a)
            this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
-        } //a
+        }
     }
 
     function cli(state,index,jin,n,jor) {
