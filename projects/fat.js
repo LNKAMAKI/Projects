@@ -1576,7 +1576,7 @@ function doTheFactoring(exal) {
                              army.push(lpisthebest) // Adicionar o último caractere ao army
                          } }
                      bell = [...army] // *Eg.: bell = [...'13','*','2','x']
-                 
+
                      for (pahh in army) { // army[pahh] '*Eg.: 13'
                          if (army[pahh] == '*') { // Se army[pahh] == '*', mudar para '.'
                              army[pahh] = '.'
@@ -1605,8 +1605,8 @@ function doTheFactoring(exal) {
                              scarecrow_2[anchor].outrodiv.push(pain)
                         }
                          }else{ // Se a divisão não foi 1 ou -1
-                             right = ''
-                             for (feet in pain) { 
+                             right = '' 
+                             for (feet in pain) { // Tira o sinal de + 
                                  if (pain[feet] != '+') {
                                      right+= pain[feet]
                                  } }
@@ -1624,6 +1624,7 @@ function doTheFactoring(exal) {
 
 
                              //console.log('UYYYYYYYYYYYYYYYYYY', uy)
+                             // uy = *Eg.: 2*2
                              //console.log('consertado:', redo(desfat(uy)))
                             scarecrow_2[anchor].outrodiv.push(redo(desfat(uy)))
          
