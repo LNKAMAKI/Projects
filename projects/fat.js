@@ -12,7 +12,6 @@ can = false
         cs = []
         
         for (i = 0; i < ars.length; i++) {
-            //console.log(i, ars[i], conts[i], cents[i])
             c = new CreateFunc(i,'close')
             c.SetDefault()
             c.AddEvent()
