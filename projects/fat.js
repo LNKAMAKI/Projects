@@ -1688,7 +1688,7 @@ function doTheFactoring(exal) {
                   repeated = [];
                   repwri = "";
                   for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
-                    if (compar.indexOf(varib[vespa]) == -1) { 
+                    if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(1) == -1
                     compar.push(varib[vespa]) // *varib[0] = 1
                     if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) && compar.indexOf(varib_2[0]) == -1
                       compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0])
@@ -1718,10 +1718,10 @@ function doTheFactoring(exal) {
     
                       if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
                            roller_2.push({
-                          rept: repwri,
-                          opl: [...repeated],
-                          position: [eep, quad],
-                          monomios: [...compar]
+                          rept: repwri, // *,1,2
+                          opl: [...repeated], // *[1,2]
+                          position: [eep, quad], // 0,1
+                          monomios: [...compar] // [1,2,3,4]
                         });
                       }else{
                         func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
