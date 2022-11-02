@@ -1678,10 +1678,10 @@ function doTheFactoring(exal) {
                 varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
             }
               for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
-                if (quad != eep) {
+                if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
                     compar = []
                   varib2 = []
-                  for (kel in miss_2[quad].aparicoes) {
+                  for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
                     pos = miss_2[quad].aparicoes[kel]
                     varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)])
                 }
