@@ -1458,12 +1458,14 @@ function doTheFactoring(exal) {
                             segs_2[nl].mons.push(segs_2[n].mons[u])  // será adicionado o monômio do maior ao menor, pois todos os monômios pertencentes ao *car: 2xy devem estar inclusos no *car: 2
                          }}}}}}
          
-        // Código para ordenar o segs de acordo com a quantidade de monômios e o tamanho do car
-        // Eg.: 
-        // 0: {car: 2x, mons: [0,1,2]}
-        // 0: {car: 2, mons: [0,1,2]}
-        // 0: {car: 3y, mons: [0,1]}
-        // 0: {car: 3, mons: [0,1]}
+         /* Código para ordenar o segs de acordo com a quantidade de monômios e o tamanho do car
+         Eg.: 
+         0: {car: 2x, mons: [0,1,2]}
+         0: {car: 2, mons: [0,1,2]}
+         0: {car: 3y, mons: [0,1]}
+         0: {car: 3, mons: [0,1]}
+         */
+
          grtols_2 = []
          
          for (hi in segs_2) {
