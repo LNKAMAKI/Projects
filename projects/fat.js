@@ -1716,7 +1716,7 @@ function doTheFactoring(exal) {
                       } 
                       // *mons2 = [2,4]
     
-                      if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
+                      if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { // Se não tiver no roller_2
                            roller_2.push({
                           rept: repwri, // *,1,2
                           opl: [...repeated], // *[1,2]
