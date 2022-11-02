@@ -503,18 +503,18 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
     function CreateFunc(ind,action,number){
 
         this.ind = ind
-        console.log('THISSSSSSSSS',ind)
+        //console.log('THISSSSSSSSS',ind)
         this.par1 = document.getElementsByClassName('ar')[this.ind]
         this.par2 = get2('cont')[this.ind]
         this.par3 = get2('center')[this.ind]
 
         this.l = late
-        console.log('ACTION', action)
+        //console.log('ACTION', action)
         if (action != "open") {
         this.clicked = false
         this.par1.style.transform = 'rotate(0deg)'
         }else{
-            console.log('TRUEEEEEEEEEE')
+            //console.log('TRUEEEEEEEEEE')
         this.clicked = true
         this.par1.style.transform = 'rotate(90deg)'
         }
@@ -539,7 +539,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         
         this.par1.setAttribute
         this.AddEvent = function() {
-            console.log(this.a)
+            //console.log(this.a)
            this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
         }
     }
