@@ -1647,8 +1647,10 @@ function doTheFactoring(exal) {
                      miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah)) // Adicionar ah a aparições de miss_2.dividido == *'2y'
                     }}  }
                 
-                quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao])
-                quantasposições = Number(monomios_2.length)/Number(quantosfatores)
+                quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao]) // *Eg.: 10/2 = 5 (5 fatores em cada grupo)
+                quantasposições = Number(monomios_2.length)/Number(quantosfatores) // *Eg.: 10/5 = 2 (div_2[okentão] == quantasposições)
+
+                console.log('mons',monomios_2,'fats',quantosfatores,'pos',quantasposições,'div',divs_2[okentao])
        
                 grtols_2 = []
          for (hi in miss_2) {
