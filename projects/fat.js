@@ -1587,6 +1587,7 @@ function doTheFactoring(exal) {
            
                       lightson = [...army] // *['13','.','2','x']
                          pain = DIVIDIR(army,monomios_2[segs_2[anchor].mons[high]].numero)
+                         console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
                          // DIVIDIR(['13','.','2','x'], monomios_2[n].numero => *Eg.: ['13','*','2','*','2','x'])
                          // *pain = 2
       
@@ -1621,16 +1622,17 @@ function doTheFactoring(exal) {
                                  uy+= right[xarope]
                              }}
 
+                             console.log(uy)
                              // uy = *Eg.: 2*2
                             scarecrow_2[anchor].outrodiv.push(redo(desfat(uy))) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
                            
                             if (uy[0] == '-') { // Se o uy começar com -, ou seja, se o resultado da divisão for negativa
                              holdon = ''
-                             for (qual in uy) { 
-                                 if (uy[qual] != '-')
+                             for (qual in uy) { // uy[cal] = 'n'
+                                 if (uy[qual] != '-') { // Se 'n' não for igual a -
                                  holdon+= uy[qual]
-                             }
-                             uy = holdon
+                             } 
+                             uy = holdon // uy assume somente valor positivo
                             }
                             scarecrow_2[anchor].divididos.push(uy)
                          }}}
