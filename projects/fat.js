@@ -1577,12 +1577,12 @@ function doTheFactoring(exal) {
                          } }
                      bell = [...army] // *Eg.: bell = [...'13','*','2','x']
                  
-                     for (pahh in army) {
-                         if (army[pahh] == '*') {
+                     for (pahh in army) { // army[pahh] '*Eg.: 13'
+                         if (army[pahh] == '*') { // Se army[pahh] == '*', mudar para '.'
                              army[pahh] = '.'
                          }}
-                     scarecrow_2.push({divididos: [], outrodiv: [], poss: [...segs_2[anchor].mons], divisor: [...army], positions: [...segs_2[anchor].mons]})
-                     for (high in segs_2[anchor].mons) {
+                     scarecrow_2.push({divididos: [], outrodiv: [], poss: [...segs_2[anchor].mons], divisor: [...army], positions: [...segs_2[anchor].mons]}) // poss: [...segs_2[anchor].mons ([0,1,2])], divisor: [...army ('13','*','2','x')] 
+                     for (high in segs_2[anchor].mons) { 
                          army = [...bell]
            
                       lightson = [...army]
