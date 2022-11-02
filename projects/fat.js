@@ -1574,15 +1574,13 @@ function doTheFactoring(exal) {
                                  } } }
                          if (fall == segs_2[anchor].car.length - 1) { // Se for o último caractere
                              army.push(lpisthebest) // Adicionar o último caractere ao army
-                         }
-                     }
+                         } }
                      bell = [...army] // *Eg.: bell = [...'13','*','2','x']
                  
                      for (pahh in army) {
                          if (army[pahh] == '*') {
                              army[pahh] = '.'
-                         }
-                     }
+                         }}
                      scarecrow_2.push({divididos: [], outrodiv: [], poss: [...segs_2[anchor].mons], divisor: [...army], positions: [...segs_2[anchor].mons]})
                      for (high in segs_2[anchor].mons) {
                          army = [...bell]
