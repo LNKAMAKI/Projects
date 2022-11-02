@@ -1688,10 +1688,10 @@ function doTheFactoring(exal) {
                   repeated = [];
                   repwri = "";
                   for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
-                    if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(1) == -1
+                    if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(varib[0]/1)
                     compar.push(varib[vespa]) // *varib[0] = 1
-                    if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) && compar.indexOf(varib_2[0]) == -1
-                      compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0])
+                    if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) && compar.indexOf(varib_2[0]/2) == -1
+                      compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0]/2)
                         
                         repeated.push(miss_2[eep].aparicoes[vespa]); // *repeated.push(miss_2[eep],aparticoes[0]) (1)
                       repwri += "," + miss_2[eep].aparicoes[vespa]; // *,1
@@ -1723,10 +1723,10 @@ function doTheFactoring(exal) {
                           position: [eep, quad], // 0,1
                           monomios: [...compar] // [1,2,3,4]
                         });
-                      }else{
+                      }else{ // Se já tiver no roller_2
                         func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
                         perm = true
-                        for (sept in mons1) {
+                        for (sept in mons1) { // *mons1 = [1,3]
                             if (func.monomios.indexOf(mons1[sept]) != -1) {
                                perm = false 
                             }}
