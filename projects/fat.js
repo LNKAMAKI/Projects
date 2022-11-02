@@ -1644,7 +1644,7 @@ function doTheFactoring(exal) {
                     if (miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}) == undefined) { // Se o miss não tiver *'2y'
                      miss_2.push({dividido: scarecrow_2[ah].divididos[é], aparicoes: [Number(ah)], divisor: scarecrow_2[ah].divisor}) // Adicionar *'2y' ao miss
                     }else{
-                     miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
+                     miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah)) // Adicionar ah a aparições de miss_2.dividido == *'2y'
                     }}  }
                 
                 quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao])
