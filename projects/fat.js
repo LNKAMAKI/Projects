@@ -1453,10 +1453,9 @@ function doTheFactoring(exal) {
              for (n = 0; n < segs_2.length; n++) { // segs_2[n]
                  if (n != nl) {
                  if (String(segs_2[n].car).search(String(segs_2[nl].car)) != -1) { // Se segs_2[n].car possuir segs_2[nl].car *Eg.: 2xy possui 2
-                     for (u in segs_2[n].mons) {
-                         if (segs_2[nl].mons.indexOf(segs_2[n].mons[u]) != -1) {
-                         }else{
-                             segs_2[nl].mons.push(segs_2[n].mons[u])
+                     for (u in segs_2[n].mons) { // Cada monomio do array maior (segs_2[n].mons *car: 2xy)
+                         if (segs_2[nl].mons.indexOf(segs_2[n].mons[u]) == -1) { // Se o array menor *car: 2 não possuir o monomio do maior, 
+                            segs_2[nl].mons.push(segs_2[n].mons[u])  // será adicionado o monômio do maior ao menor, pois todos os monômios pertencentes ao *car: 2xy devem estar inclusos no *car: 2
                          }}}}}}
          
          grtols_2 = []
