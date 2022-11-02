@@ -1693,26 +1693,28 @@ function doTheFactoring(exal) {
                     if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) && compar.indexOf(varib_2[0]) == -1
                       compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0])
                         
-                        repeated.push(miss_2[eep].aparicoes[vespa]);
-                      repwri += "," + miss_2[eep].aparicoes[vespa];
+                        repeated.push(miss_2[eep].aparicoes[vespa]); // *repeated.push(miss_2[eep],aparticoes[0]) (1)
+                      repwri += "," + miss_2[eep].aparicoes[vespa]; // *,1
     
                       mons1 = []
     
                       pos1 = eep
                       pi = 0
-                      for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
+                      for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
                           mons1.push(compar[pi])
                           pi+= 2
                       } 
+                      // *mons1 = [1,3]
     
                       pos2 = quad
     
                       mons2 = []
                       pi = 1
-                      for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
+                      for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
                           mons2.push(compar[pi])
                           pi+= 2
                       } 
+                      // *mons2 = [2,4]
     
                       if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
                            roller_2.push({
