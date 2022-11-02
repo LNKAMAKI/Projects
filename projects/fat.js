@@ -1629,7 +1629,7 @@ function doTheFactoring(exal) {
                             if (uy[0] == '-') { // Se o uy começar com -, ou seja, se o resultado da divisão for negativa
                              holdon = ''
                              for (qual in uy) { // uy[cal] = 'n'
-                                 if (uy[qual] != '-') { // Se 'n' não for igual a -
+                                 if (uy[qual] != '-')  // Se 'n' não for igual a -
                                  holdon+= uy[qual]
                              } 
                              uy = holdon // uy assume somente valor positivo
