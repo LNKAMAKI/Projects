@@ -1671,13 +1671,13 @@ function doTheFactoring(exal) {
          
          roller_2 = [];
       
-         for (eep in miss_2) {
+         for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
             varib = []
-            for (kel in miss_2[eep].aparicoes) {
-                pos = miss_2[eep].aparicoes[kel]
-                varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
+            for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
+                pos = miss_2[eep].aparicoes[kel] // *1
+                varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
             }
-              for (quad in miss_2) {
+              for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
                 if (quad != eep) {
                     compar = []
                   varib2 = []
