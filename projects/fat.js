@@ -1581,30 +1581,32 @@ function doTheFactoring(exal) {
                          if (army[pahh] == '*') { // Se army[pahh] == '*', mudar para '.'
                              army[pahh] = '.'
                          }}
-                     scarecrow_2.push({divididos: [], outrodiv: [], poss: [...segs_2[anchor].mons], divisor: [...army], positions: [...segs_2[anchor].mons]}) // poss: [...segs_2[anchor].mons ([0,1,2])], divisor: [...army ('13','*','2','x')] 
-                     for (high in segs_2[anchor].mons) { 
+                     scarecrow_2.push({divididos: [], outrodiv: [], poss: [...segs_2[anchor].mons], divisor: [...army], positions: [...segs_2[anchor].mons]}) // poss: [...segs_2[anchor].mons ([0,1,2])], divisor: [...army ('13','.','2','x')], positions: [...segs_2[anchor].mons ([0,1,2])]
+                     for (high in segs_2[anchor].mons) {  // segs_2[anchor].mons = [n,n,...] segs_2[anchor].mons[high] = n
                          army = [...bell]
            
-                      lightson = [...army]
+                      lightson = [...army] // *['13','.','2','x']
                          pain = DIVIDIR(army,monomios_2[segs_2[anchor].mons[high]].numero)
+                         // DIVIDIR(['13','.','2','x'], monomios_2[n].numero => *Eg.: ['13','*','2','*','2','x'])
+                         // *pain = 2
       
-                         if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) {
-                        if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) {
+                         if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) { // Se pain for '' ou '-', ou seja, se a divisão der 1 ou -1
+                        if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) { // - com + = -
                             pain = '-1'
                             scarecrow_2[anchor].divididos.push('1')
                              scarecrow_2[anchor].outrodiv.push(pain)
-                        }else if(lightson.indexOf('-') == -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') != -1) {
+                        }else if(lightson.indexOf('-') == -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') != -1) { // + com - = -
                              pain = '-1'
                              scarecrow_2[anchor].divididos.push('1')
                              scarecrow_2[anchor].outrodiv.push(pain)
-                        }else{
+                        }else{ // + com + = +
                          pain = '1'
                          scarecrow_2[anchor].divididos.push(pain)
                              scarecrow_2[anchor].outrodiv.push(pain)
                         }
-                         }else{
+                         }else{ // Se a divisão não foi 1 ou -1
                              right = ''
-                             for (feet in pain) {
+                             for (feet in pain) { 
                                  if (pain[feet] != '+') {
                                      right+= pain[feet]
                                  } }
