@@ -1527,16 +1527,16 @@ function doTheFactoring(exal) {
          if (segs_2.length > 0) {
          console.log('------------------------INDIREITANDO AS COISA----------------------')
          }
-         for (loi in segs_2) {
-            ame = segs_2[loi].mons
+         for (loi in segs_2) { // Cada segs_2
+            ame = segs_2[loi].mons // Cada segs_2.mons
             console.log(ame)
-            ord = sort(ame)[0]
+            ord = sort(ame)[0] // Ordena o segs_2[loi].mons *Eg.: [0,2,1] => [2,1,0]
             ag = []
-            for (dir = ord.length - 1; dir >= 0; dir--) {
+            for (dir = ord.length - 1; dir >= 0; dir--) { // Cada monômio do array ordenado, de trás para frente
                 console.log(ord[dir])
-                ag.push(ord[dir])
+                ag.push(ord[dir]) // ag.push(0)/(1)/(2)
             }
-            segs_2[loi].mons = ag
+            segs_2[loi].mons = ag // Muda o segs_2[loi] para o array em ordem crescente *[0,1,2]
          }
          //DIVS_2
          ml = monomios_2.length
