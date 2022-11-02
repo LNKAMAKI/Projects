@@ -4,7 +4,7 @@ loaded = false
     function load() {
         get1('resol').innerHTML = ''
 
-        /*get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"  classname="top"> <img src="./imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'*/
+        get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"  classname="top"> <img src="./imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
