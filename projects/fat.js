@@ -1650,6 +1650,7 @@ function doTheFactoring(exal) {
                 quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao]) // *Eg.: 10/2 = 5 (5 fatores em cada grupo)
                 quantasposições = Number(monomios_2.length)/Number(quantosfatores) // *Eg.: 10/5 = 2 (div_2[okentão] == quantasposições)
        
+                // Ordenando o miss_2 pelo número de aparições (aparicoes.length)
                 grtols_2 = []
          for (hi in miss_2) {
              miss_2[hi].length = miss_2[hi].aparicoes.length
@@ -1663,6 +1664,8 @@ function doTheFactoring(exal) {
              grtols_2.push(miss_2[organizado[ah]])
          }
          miss_2 = [...grtols_2]
+         //
+
          deucerto = false
          java = 0
          
