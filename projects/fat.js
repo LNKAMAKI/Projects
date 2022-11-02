@@ -1619,13 +1619,10 @@ function doTheFactoring(exal) {
                              }else if(right[xarope] == '*' && String(right[Number(xarope) - 1]).search('[0-9]') == -1){ // x*2
                              }else{
                                  uy+= right[xarope]
-                                 //console.log('WHEN WDWDIWJDIWDI',uy)
                              }}
 
 
-                             //console.log('UYYYYYYYYYYYYYYYYYY', uy)
                              // uy = *Eg.: 2*2
-                             //console.log('consertado:', redo(desfat(uy)))
                             scarecrow_2[anchor].outrodiv.push(redo(desfat(uy)))
          
                             if (uy[0] == '-') {
