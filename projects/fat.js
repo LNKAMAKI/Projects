@@ -1621,11 +1621,10 @@ function doTheFactoring(exal) {
                                  uy+= right[xarope]
                              }}
 
-
                              // uy = *Eg.: 2*2
-                            scarecrow_2[anchor].outrodiv.push(redo(desfat(uy)))
-         
-                            if (uy[0] == '-') {
+                            scarecrow_2[anchor].outrodiv.push(redo(desfat(uy))) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
+                           
+                            if (uy[0] == '-') { // Se o uy começar com -, ou seja, se o resultado da divisão for negativa
                              holdon = ''
                              for (qual in uy) { 
                                  if (uy[qual] != '-')
