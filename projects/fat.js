@@ -1554,29 +1554,29 @@ function doTheFactoring(exal) {
                 okentao = 0
                  roll_2 = [] 
                  scarecrow_2 = []
-                 for(anchor in segs_2) {
+                 for(anchor in segs_2) { // segs_2[anchor]: {car:'',mons:(Array)}
                      army = []
                      lpisthebest = ''
-                         for (fall in segs_2[anchor].car) {
-                         if (lpisthebest.length == 0) {
-                             lpisthebest = segs_2[anchor].car[fall]
-                         }else if(lpisthebest.search('[0-9]') != -1 && segs_2[anchor].car[fall].search('[0-9]') != -1) {
-                             lpisthebest += segs_2[anchor].car[fall]
-                         }else{
-                             army.push(lpisthebest)
-                             if(segs_2[anchor].car[fall] != '.') {
-                             lpisthebest = segs_2[anchor].car[fall]
-                             }else{
-                                 if (segs_2[anchor].car[Number(fall) + 1].search('[0-9]') != -1) {
-                                 lpisthebest = '*'
-                                 }else{
-                                     lpisthebest = ''
+                         for (fall in segs_2[anchor].car) { // segs_2[anchor].car = 'n...', segs_2[anchor].car[fall] = 'n'
+                         if (lpisthebest.length == 0) { // Se lpisthebest estiver vazio
+                             lpisthebest = segs_2[anchor].car[fall] // lpisthebest é igual a 'n'
+                         }else if(lpisthebest.search('[0-9]') != -1 && segs_2[anchor].car[fall].search('[0-9]') != -1) { // Se lpisthebest não estiver vazio e lpisthebest e 'n' forem Numbers, ou seja, se o caractere anterior for um Number e o 'n' também *Eg.: lpisthebest = '1' e 'n' = '3'
+                             lpisthebest += segs_2[anchor].car[fall] // *1 += 3 => 13
+                         }else{ // Se lpisthebest estiver vazio, mas ele ou 'n' não forem Numbers
+                             army.push(lpisthebest) // army.push(lpisthebest) *13
+                             if(segs_2[anchor].car[fall] != '.') { // Se 'n' não for um ponto
+                             lpisthebest = segs_2[anchor].car[fall] // lpisthebest = 'n' *Eg.: x
+                             }else{ // Se for um ponto
+                                 if (segs_2[anchor].car[Number(fall) + 1].search('[0-9]') != -1) { // Se o próximo caractere for um Number
+                                 lpisthebest = '*' // 13*2
+                                 }else{ // Se o próximo caractere não for um Number
+                                     lpisthebest = '' // 2x
                                  } } }
-                         if (fall == segs_2[anchor].car.length - 1) {
-                             army.push(lpisthebest)
+                         if (fall == segs_2[anchor].car.length - 1) { // Se for o último caractere
+                             army.push(lpisthebest) // Adicionar o último caractere ao army
                          }
                      }
-                     bell = [...army]
+                     bell = [...army] // *Eg.: bell = [...'13','*','2','x']
                  
                      for (pahh in army) {
                          if (army[pahh] == '*') {
