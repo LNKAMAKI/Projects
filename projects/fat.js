@@ -1688,9 +1688,9 @@ function doTheFactoring(exal) {
                   repeated = [];
                   repwri = "";
                   for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
-                    if (compar.indexOf(varib[vespa]) == -1) {
-                    compar.push(varib[vespa])
-                    if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) {
+                    if (compar.indexOf(varib[vespa]) == -1) { 
+                    compar.push(varib[vespa]) // *varib[0] = 1
+                    if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) && compar.indexOf()
                       compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])
                         
                         repeated.push(miss_2[eep].aparicoes[vespa]);
