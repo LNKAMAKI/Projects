@@ -5,7 +5,7 @@ can = false
     function load() {
         get1('resol').innerHTML = ''
 
-        get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="Projects/projects/imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
+        get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"  classname="top"> <img src="./imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
         conts = get2('cont')
         cents = get2('center')
         ars = get2('ar')
@@ -37,28 +37,28 @@ can = false
             smons += `<span class="jo"><span class="str">'${desfat(res[10][yo].numero)}'</span><span class="num">${yo}</span></span>`
         }
 
-get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div>
+get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div>
 
 <div style="padding: 3px;background-color: white;border-radius: 7px;overflow: hidden;">
 <div class="cont">
-<div class="center" classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar">
+<div class="center" classname="top"><img src="./imagens/rar.png" alt="" class="ar">
 <span>Engine</span>
 </div>
 
 <p id="mons">${smons}</p>
 
 <div class="cram">
-<div class="cont" name="ti"><div class="center" classname="top"><img src="/projects/imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(0,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(0,'close')"></div></div>
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Repetições</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(1,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(1,'close')"></div></div>
+<div class="cont" name="ti"><div class="center" classname="top"><img src="./imagens/rar.png" class="ar"><span style="max-width:calc(100% - 50px);overflow-x:auto;">Relações</span><img src="./imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(0,'open')"><img src="./imagens/rar.png" class="pers" onclick="fn(0,'close')"></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Repetições</span><img src="./imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(1,'open')"><img src="./imagens/rar.png" class="pers" onclick="fn(1,'close')"></div></div>
 </div>
 
 <div class="cram">
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Combinações</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(2,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(2,'close')"></div></div>
-<div class="cont" name="ti"><div class="center"  classname="top"><img src="/projects/imagens/rar.png" alt="" class="ar"><span>Agrupamentos</span><img src="/projects/imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(3,'open')"><img src="/projects/imagens/rar.png" class="pers" onclick="fn(3,'close')"></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Combinações</span><img src="./imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(2,'open')"><img src="./imagens/rar.png" class="pers" onclick="fn(2,'close')"></div></div>
+<div class="cont" name="ti"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Agrupamentos</span><img src="./imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(3,'open')"><img src="./imagens/rar.png" class="pers" onclick="fn(3,'close')"></div></div>
 </div>
 </div>
 
-<div class="cont"> <div class="center"  classname="top"> <img src="/projects/imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>
+<div class="cont"> <div class="center"  classname="top"> <img src="./imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>
 
 </div>`
         conts = get2('cont')
@@ -103,7 +103,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         <div class="cont"> 
 
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}
         </span>
         </div> 
@@ -118,7 +118,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         <div class="cont"> 
         <div class="center" style="overflow-x: hidden;">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-y:visible;">${spn}</span>
         <span style="font-size:0.9em">]</span>&nbsp;
         <span style="font-size:0.9em">
@@ -156,7 +156,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         cn2.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont">
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span class="sp">
         <span style="color:var(--number)">${h}</span>: {fator: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}
         </span>
@@ -167,7 +167,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         <div class="cont"> 
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
@@ -212,7 +212,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         cn3.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont">
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span class="sp">
         <span style="color:var(--number)">${h}</span>: {posições: Array(${res[8][h].repetidos.length}), fatores: Array(${res[8][h].posições.length}), monomios: Array(${res[8][h].monomios.length})
         </span>
@@ -222,7 +222,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         <div class="cont"> 
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span style="font-size:0.9em">posições: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn}
@@ -230,7 +230,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         <div class="cont"> 
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span style="font-size:0.9em">fatores: [</span><span class="sp" style="overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
         </div> 
        ${splitspn2}
@@ -269,7 +269,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         cn4.getElementsByClassName('dev')[0].innerHTML+= `
         <div class="cont">
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span class="sp">
         <span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), grupos: Array(${res[9][h].w.what.length})
         </span>
@@ -279,7 +279,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
 
         <div class="cont"> 
         <div class="center">
-        <img src="/projects/imagens/rar.png" alt="" class="ar">
+        <img src="./imagens/rar.png" alt="" class="ar">
         <span style="font-size:0.9em">agrup:&nbsp;</span>
         <span style="display: flex;overflow-x: scroll;">
         ${spn}
@@ -417,7 +417,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
             }
             dg = desfat(REFORMATAR(carfixed))
         cn.getElementsByClassName('dev')[0].innerHTML+= `
-        <div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><div class="cont"> <div class="center" style="overflow-x: hidden;"><img src="/projects/imagens/rar.png" alt="" class="ar"><div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span> <span style="font-size:0.9em">]</span>&nbsp;<span style="font-size:0.9em"></div></div> ${splitspn}</div></div></div>`
+        <div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><div class="cont"> <div class="center" style="overflow-x: hidden;"><img src="./imagens/rar.png" alt="" class="ar"><div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span> <span style="font-size:0.9em">]</span>&nbsp;<span style="font-size:0.9em"></div></div> ${splitspn}</div></div></div>`
         }
     }else if(cas == 1) {
         cn2 = ts[1]
@@ -433,7 +433,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
             }
-        cn2.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {fator: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}</span></div><div class="tocent">  <p class="pdev">fator: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p><div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span></div> ${splitspn} </div> </div></div>`
+        cn2.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {fator: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}</span></div><div class="tocent">  <p class="pdev">fator: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p><div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span></div> ${splitspn} </div> </div></div>`
         }
     }else if(cas == 2) {
         cn3 = ts[2]
@@ -459,7 +459,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 }
                 splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></p>`
             }
-        cn3.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span class="sp"><span style="color:var(--number)">${h}</span>: {posições: Array(${res[8][h].repetidos.length}), fatores: Array(${res[8][h].posições.length}), monomios: Array(${res[8][h].monomios.length})</span></div><div class="tocent"> <div class="cont"> <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">posições: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span></div> ${splitspn} </div><div class="cont"> <div class="center"> <img src="/projects/imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">fatores: [</span><span class="sp" style="overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span></div> ${splitspn2}  </div> </div></div>`
+        cn3.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span class="sp"><span style="color:var(--number)">${h}</span>: {posições: Array(${res[8][h].repetidos.length}), fatores: Array(${res[8][h].posições.length}), monomios: Array(${res[8][h].monomios.length})</span></div><div class="tocent"> <div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">posições: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span></div> ${splitspn} </div><div class="cont"> <div class="center"> <img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">fatores: [</span><span class="sp" style="overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span></div> ${splitspn2}  </div> </div></div>`
         }
     }else{
         cn4 = ts[3]
@@ -480,8 +480,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
               spn+= `[<span class="sp" style="min-width:30px;">${spi}</span>]`
             }
-        cn4.getElementsByClassName('dev')[0].innerHTML+= ` <div class="cont"><div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), grupos: Array(${res[9][h].w.what.length})
-        </span> </div><div class="tocent" style="margin-bottom:0px;"> <div class="cont">  <div class="center"><img src="/projects/imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">agrup:&nbsp;</span><span style="display: flex;overflow-x: scroll;">${spn}<span></div> ${splitspn}</div></div></div>`
+        cn4.getElementsByClassName('dev')[0].innerHTML+= ` <div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), grupos: Array(${res[9][h].w.what.length})
+        </span> </div><div class="tocent" style="margin-bottom:0px;"> <div class="cont">  <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">agrup:&nbsp;</span><span style="display: flex;overflow-x: scroll;">${spn}<span></div> ${splitspn}</div></div></div>`
         }
     }
     
