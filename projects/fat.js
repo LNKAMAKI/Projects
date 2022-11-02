@@ -111,7 +111,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         <div class="tocent"> 
         <p class="pdev">car: 
         <span style="color:var(--string);position:relative;padding:10px;">
-        '${carfixed2}'
+        '${dg}'
         <span class="som">i</span>
         </span>
         </p>
@@ -417,7 +417,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             }
             dg = desfat(REFORMATAR(carfixed))
         cn.getElementsByClassName('dev')[0].innerHTML+= `
-        <div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${carfixed2}'</span></p><div class="cont"> <div class="center" style="overflow-x: hidden;"><img src="./imagens/rar.png" alt="" class="ar"><div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span> <span style="font-size:0.9em">]</span>&nbsp;<span style="font-size:0.9em"></div></div> ${splitspn}</div></div></div>`
+        <div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span class='sp'> <span style="color:var(--number)">${h}</span>: {car: <span style="color:var(--string)">'${dg}'</span>, mons: Array(${res[5][h].mons.length})}</span></div> <div class="tocent"> <p class="pdev">car: <span style="color:var(--string)">'${dg}'</span></p><div class="cont"> <div class="center" style="overflow-x: hidden;"><img src="./imagens/rar.png" alt="" class="ar"><div style="overflow-x:scroll;display:flex;height:fit-content;"><span style="font-size:0.9em">mons: [</span><span class="sp" style="min-width:24px;display:inline-flex;overflow-x:scroll;">${spn}</span> <span style="font-size:0.9em">]</span>&nbsp;<span style="font-size:0.9em"></div></div> ${splitspn}</div></div></div>` // dg pode ser carfixed
         }
     }else if(cas == 1) {
         cn2 = ts[1]
