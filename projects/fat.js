@@ -1682,8 +1682,8 @@ function doTheFactoring(exal) {
                     compar = []
                   varib2 = []
                   for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
-                    pos = miss_2[quad].aparicoes[kel]
-                    varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)])
+                    pos = miss_2[quad].aparicoes[kel] //*1
+                    varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
                 }
                   repeated = [];
                   repwri = "";
