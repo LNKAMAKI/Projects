@@ -297,7 +297,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         for (kep in cents) {
             don = cents[kep]
             if (don.innerText == 'Relações' || don.innerText == 'Repetições' || don.innerText == 'Combinações' || don.innerText == 'Agrupamentos'){
-               console.log(don.innerText, kep)
+               //console.log(don.innerText, kep)
                feb.push(Number(kep))
             } }
 
@@ -328,7 +328,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             for(pare in pl1) {
                 is = pl1[pare]
                 c = new CreateFunc(is,'close',8)
-                console.log('----++++----+++----+++----',is)
+                //console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -336,7 +336,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             for(pare in pl2) {
                 is = pl2[pare]
                 c = new CreateFunc(is,'close',8)
-                console.log('----++++----+++----+++----',is)
+                //console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -344,7 +344,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             for(pare in pl3) {
                 is = pl3[pare]
                 c = new CreateFunc(is,'close',8)
-                console.log('----++++----+++----+++----',is)
+                //console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -352,7 +352,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             for(pare in pl4) {
                 is = pl4[pare]
                 c = new CreateFunc(is,'close',8)
-                console.log('----++++----+++----+++----',is)
+                //console.log('----++++----+++----+++----',is)
                 c.SetDefault()
                 c.AddEvent()
                 plar.push(c)
@@ -552,19 +552,19 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         this.par2 = conts[index]
         this.par3 = cents[index]
         this.n = n
-        console.log(this.par1,this.par2,this.par3)
+        //console.log(this.par1,this.par2,this.par3)
         beg = this.par2.offsetHeight
         this.par2.style.height = 'fit-content'
         sul = this.par2.offsetHeight
-        console.log('jin: ',jin)
-        console.log('JORRRRRRRRRRRRR',jor)
+        //console.log('jin: ',jin)
+        //console.log('JORRRRRRRRRRRRR',jor)
         txt = String(this.par3.innerText)
                busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições)|(Engine))','g'))
                console.log('busca',txt,busca)
                if (busca != -1) {
                }
 
-        console.log('THIS IS CENTER HEIGHT:',jor)
+        //console.log('THIS IS CENTER HEIGHT:',jor)
         this.par3.style.height = jor + 'px'
 
         search = mecams.find(function(mecams){
@@ -572,13 +572,13 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
            })
 
         if (search != undefined) {
-            console.log('JÁ TEM ' + this.jin)
+           //console.log('JÁ TEM ' + this.jin)
             search.comp++
-            console.log(search,'COMP:',search.comp)
+            //console.log(search,'COMP:',search.comp)
            }else{
-            console.log('NÃO TEM ' + this.jin)
+            //console.log('NÃO TEM ' + this.jin)
             if (this.par3.innerText == 'Resolução') {
-                console.log('WAIT')
+                //console.log('WAIT')
                }
                if (state == true) {
                 mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state})
@@ -592,16 +592,16 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
 
            if (search.cl == false) {
             if (search.cl == false) {
-                console.log('ABRIR')
+                //console.log('ABRIR')
             }else{
-                console.log('FECHAR')
+                //console.log('FECHAR')
             }
 
-            console.log('initial:',search.st,'px')
-            console.log('final:',sul,'px')
+            //console.log('initial:',search.st,'px')
+            //console.log('final:',sul,'px')
 
             if (this.par3.innerText == 'Resolução') {
-                console.log('WAIT')
+                //console.log('WAIT')
                 ih = search.st - 10
                 eh = sul - 10
                }else{
@@ -625,9 +625,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
            this.par1.style.transform = 'rotate(90deg)'
            search.cl = true
     }else{
-        console.log('gooooo')
+        //console.log('gooooo')
         if (this.par3.innerText == 'Resolução') {
-            console.log('WAIT')
+            //console.log('WAIT')
             ih = search.st - 10
             eh = sul - 10
            }else{
