@@ -553,7 +553,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
         this.par3 = cents[index]
         this.n = n
         console.log(this.par1,this.par2,this.par3)
-        //console.log('fechar?',state)
         beg = this.par2.offsetHeight
         this.par2.style.height = 'fit-content'
         sul = this.par2.offsetHeight
@@ -585,8 +584,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
                 mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state})
                }else{
                 mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
-               }
-           }
+               } }
 
            search = mecams.find(function(mecams){
             return mecams.created == this.jin
@@ -652,9 +650,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
        style.appendChild(document.createTextNode(css))
        this.par1.style.transform = 'rotate(0deg)'
        search.cl = false
-    }
-    }
-}
+    }}}
 
     function copy() {
         nums = document.getElementsByClassName('type')
