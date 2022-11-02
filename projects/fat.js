@@ -1,5 +1,6 @@
 
 loaded = false
+can = false
 
     function load() {
         get1('resol').innerHTML = ''
@@ -25,6 +26,7 @@ loaded = false
 
         loaded = true
         get1('write').addEventListener('keyup',(event) => {
+            can = true
             if (event.key == 'Enter') {
             type = get1('write').value
             //console.log('type',type)
@@ -568,6 +570,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
     }
 
     function cli(state,index,jin,n,jor) {
+        if (can == true) {
         me = document.getElementsByClassName('ar')
         this.jin = jin
         this.par1 = me[index]
@@ -676,6 +679,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="/projects/
        search.cl = false
     }
     }
+}
 
     function copy() {
         nums = document.getElementsByClassName('type')
