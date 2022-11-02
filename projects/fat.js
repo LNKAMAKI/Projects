@@ -10,13 +10,6 @@ can = false
         cents = get2('center')
         ars = get2('ar')
         cs = []
-        
-        for (i = 0; i < ars.length; i++) {
-            c = new CreateFunc(i,'close')
-            c.SetDefault()
-            c.AddEvent()
-            cs.push(c)
-        }
 
         loaded = true
         get1('write').addEventListener('keyup',(event) => {
