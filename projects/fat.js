@@ -1755,7 +1755,7 @@ function doTheFactoring(exal) {
          }
          while(java < miss_2.length && deucerto == false) {
                  podeser_2 = []
-                 for (outro in miss_2) {
+                 for (outro in miss_2) { // miss_2[outro] = *Eg.: {dividido: '2', aparicoes: [0,1], divisor: ['y']}
                      if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
                          presentes = []
                          for (quecoisa in miss_2[outro].aparicoes) {
