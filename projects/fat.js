@@ -1760,8 +1760,8 @@ function doTheFactoring(exal) {
                          presentes = []
                          for (quecoisa in miss_2[outro].aparicoes) { // *miss_2[outro].aparicoes = [0,1]
                              fatorzinho = miss_2[outro].aparicoes[quecoisa] // *miss_2[outro].aparicoes[0] = 0
-                             if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
-                                 presentes.push(fatorzinho)
+                             if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) { // *Se 0 estiver em [0,1,2]
+                                 presentes.push(fatorzinho) // *presentes.push(1)
                              }}
       
                          adicionou = false
