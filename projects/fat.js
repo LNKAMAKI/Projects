@@ -1758,8 +1758,8 @@ function doTheFactoring(exal) {
                  for (outro in miss_2) { // miss_2[outro] = *Eg.: {dividido: '2', aparicoes: [0,1], divisor: ['y']}
                      if (outro != java /*&& miss_2[outro].aparicoes.length >= quantasposições*/) {
                          presentes = []
-                         for (quecoisa in miss_2[outro].aparicoes) {
-                             fatorzinho = miss_2[outro].aparicoes[quecoisa]
+                         for (quecoisa in miss_2[outro].aparicoes) { // *miss_2[outro].aparicoes = [0,1]
+                             fatorzinho = miss_2[outro].aparicoes[quecoisa] // *miss_2[outro].aparicoes[0] = 0
                              if (miss_2[java].aparicoes.indexOf(fatorzinho) != -1) {
                                  presentes.push(fatorzinho)
                              }}
