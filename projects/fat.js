@@ -1783,7 +1783,7 @@ function CreateEngine2() {
          perfectwave = []
          for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']}
              if (jafoi.indexOf(tosse) == -1) { // se tosse(index) não estiver em jafoi, ou seja, se o arranjar[tosse] não estiver em um grupo(objeto)
-                 organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa} // *agrupar: index no arranjar, referencia: ['2','y']
+                 organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa} // *agrupar: index no arranjar, referencia: ['-b','-a']
              for (calor in arranjar) { // *arranjar[tosse] = {origin: 2, ocupa: ['b','a']}
                  if (calor != tosse) { // se tosse e calor forem diferentes (para não analisar o mesmo arranjar)
                      equals = true // equals recebe true como default value
