@@ -1785,7 +1785,7 @@ function CreateEngine2() {
              if (jafoi.indexOf(tosse) == -1) { // se tosse(index) não estiver em jafoi
                  organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa} // *agrupar: index no arranjar, referencia: ['2','y']
              for (calor in arranjar) {
-                 if (calor != tosse) {
+                 if (calor != tosse) { // se tosse e calor forem diferentes (para não analisar o mesmo arranjar)
                      equals = true
                      igualar =[]
                      for (boring in arranjar[calor].ocupa) {
