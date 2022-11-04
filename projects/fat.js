@@ -1808,7 +1808,7 @@ function CreateEngine2() {
          
         
          for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
-             ficarassim =  perfectwave[youchoose].referencia // *['-b','-a']
+             ficarassim =  perfectwave[youchoose].referencia // *['-b','-a'] => referência, ou seja, como todos irão ficar
              for (catraca in perfectwave[youchoose].agrupar) {
                  presa = perfectwave[youchoose].agrupar[catraca]
                  diferente = false
