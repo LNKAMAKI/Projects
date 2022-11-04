@@ -1781,9 +1781,9 @@ function CreateEngine2() {
             console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
          }
          perfectwave = []
-         for (tosse in arranjar) {
-             if (jafoi.indexOf(tosse) == -1) {
-                 organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa}
+         for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['2','y']}
+             if (jafoi.indexOf(tosse) == -1) { // se tosse(index) não estiver em jafoi
+                 organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa} // *agrupar: index no arranjar, referencia: ['2','y']
              for (calor in arranjar) {
                  if (calor != tosse) {
                      equals = true
