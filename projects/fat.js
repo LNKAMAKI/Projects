@@ -1788,15 +1788,15 @@ function CreateEngine2() {
                  if (calor != tosse) { // se tosse e calor forem diferentes (para não analisar o mesmo arranjar)
                      equals = true // equals recebe true como default value
                      igualar =[]
-                     for (boring in arranjar[calor].ocupa) {
-                         sendocomparado = arranjar[calor].ocupa[boring]
-                         comparador= arranjar[tosse].ocupa[boring]
-                         if (sendocomparado[0] != comparador[0]) {
+                     for (boring in arranjar[calor].ocupa) { // *arranjar[calor].ocupa = ['b','a']
+                         sendocomparado = arranjar[calor].ocupa[boring] // *arranjar[calor].ocupa[0] = 'b'
+                         comparador= arranjar[tosse].ocupa[boring] // arranjar[tosse].ocupa = ['-b','-a'], arranjar[tosse].ocupa[0] = '-b'
+                         if (sendocomparado[0] != comparador[0]) { // se os sinais forem diferentes
                              igualar.push(true)
                          }else{
-                             igualar.push(false)
+                             igualar.push(false) // se os sinais não forem diferentes
                          }}
-                     if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) {               
+                     if (igualar.indexOf(false) == -1 || igualar.indexOf(true) == -1) { // Se só tiver true ou só tiver false, ou seja, se for tudo invertido ou tudo igual *Eg.: b = -b, -a = a / b = b, a = a           
                          jafoi.push(calor)
                          organizer.agrupar.push(calor)
                      }}}
