@@ -1800,14 +1800,15 @@ function CreateEngine2() {
                          jafoi.push(calor)
                          organizer.agrupar.push(calor)
                      }}}
-             perfectwave.push(organizer) // organizer: grupos que possuem monômios iguais, quando igualados os sinais *Eg.: {agrupar: 0,1, referencia: ['-b','-a']}
+             perfectwave.push(organizer) // organizer: grupos que possuem monômios iguais, quando igualados os sinais *Eg.: {agrupar: [0,1], referencia: ['-b','-a']}
              // 0: ['-b','-a']
              // 1: ['b','a'] x -1 = ['-b','-a']
+             console.log('organizer', organizer)
          }}
          
         
-         for (youchoose in perfectwave) {
-             ficarassim =  perfectwave[youchoose].referencia
+         for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
+             ficarassim =  perfectwave[youchoose].referencia // *['-b','-a']
              for (catraca in perfectwave[youchoose].agrupar) {
                  presa = perfectwave[youchoose].agrupar[catraca]
                  diferente = false
