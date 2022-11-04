@@ -1763,6 +1763,7 @@ function CreateEngine2() {
              for (pq in roll_2[ne].repetidos) { // *roll_2[ne].repetidos = [0,2], roll_2[ne].repetidos[0] = 0 (posição no scarecrow_2)
                 //  *Eg.: scarecrow_2[0] = {'a','b'}
                  gosto = roll_2[ne].repetidos[pq], scarecrow_2[roll_2[ne].repetidos[pq]].divididos 
+                 console.log('GOOOOOOOOOOOOOOOOOOOOOOOSTO',gosto)
                  arranjar.push({pos: pq, ocupa: [], origin: gosto})
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
