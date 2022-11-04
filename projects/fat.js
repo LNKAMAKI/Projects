@@ -1756,14 +1756,15 @@ function CreateEngine2() {
     
             okentao++
      
-            
-           for (ne in roll_2) {
-             arranjar = []
-             for (pq in roll_2[ne].repetidos) {
-                 gosto = roll_2[ne].repetidos[pq], scarecrow_2[roll_2[ne].repetidos[pq]].divididos
+            // *OBS: repetidos = posições no scarecrow_2, posições = posições no miss_2 (equivalente às letras)
+
+           for (ne in roll_2) { // *roll_2[ne] = {posições: ['0','2'], repetidos: [0,1], way: ",0,1"}
+             arranjar = [] 
+             for (pq in roll_2[ne].repetidos) { // *roll_2[ne].repetidos = [0,1], roll_2[ne].repetidos[0] = 0
+                 gosto = roll_2[ne].repetidos[pq], scarecrow_2[roll_2[ne].repetidos[pq]].divididos 
                  arranjar.push({pos: pq, ocupa: [], origin: gosto})
      
-             for (moon in roll_2[ne].posições) {
+             for (moon in roll_2[ne].posições) { // *['0','2'] (letras)
                  vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
                 arranjar[pq].ocupa.push(vaiir)
              }}
