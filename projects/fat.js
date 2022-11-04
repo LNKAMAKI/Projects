@@ -1800,7 +1800,9 @@ function CreateEngine2() {
                          jafoi.push(calor)
                          organizer.agrupar.push(calor)
                      }}}
-             perfectwave.push(organizer)
+             perfectwave.push(organizer) // organizer: grupos que possuem monômios iguais, quando igualados os sinais *Eg.: {agrupar: 0,1, referencia: ['-b','-a']}
+             // 0: ['-b','-a']
+             // 1: ['b','a'] x -1 = ['-b','-a']
          }}
          
         
