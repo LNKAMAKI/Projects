@@ -1759,16 +1759,20 @@ function CreateEngine2() {
             // *OBS: repetidos = posições no scarecrow_2, posições = posições no miss_2 (equivalente às letras)
 
            for (ne in roll_2) { // *roll_2[ne] = {posições: ['0','1'], repetidos: [0,2], way: ",0,1"}
+            console.log('-------------------------------------------')
+            console.log(`roll_2[${ne}]`,roll_2[ne].repetidos)
              arranjar = [] 
              for (pq in roll_2[ne].repetidos) { // *roll_2[ne].repetidos = [0,2], roll_2[ne].repetidos[0] = 0 (posição no scarecrow_2)
                 //  *Eg.: scarecrow_2[0] = {'a','b'}
-                 gosto = roll_2[ne].repetidos[pq], scarecrow_2[roll_2[ne].repetidos[pq]].divididos 
-                 console.log('GOOOOOOOOOOOOOOOOOOOOOOOSTO',gosto)
+                 gosto = roll_2[ne].repetidos[pq]
+                 console.log('')
+                 console.log(roll_2[ne].repetidos[pq],scarecrow_2[roll_2[ne].repetidos[pq]].divididos,scarecrow_2[roll_2[ne].repetidos[pq]].outrodiv)
                  arranjar.push({pos: pq, ocupa: [], origin: gosto})
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
                  vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
                 arranjar[pq].ocupa.push(vaiir)
+                console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
         
          
