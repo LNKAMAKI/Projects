@@ -1770,7 +1770,7 @@ function CreateEngine2() {
                  arranjar.push({pos: pq, ocupa: [], origin: gosto})
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
-                 vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
+                 vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 arranjar[pq].ocupa.push(vaiir)
                 console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
