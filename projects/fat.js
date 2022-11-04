@@ -1767,7 +1767,7 @@ function CreateEngine2() {
                  gosto = roll_2[ne].repetidos[pq]
                  console.log('')
                  console.log(roll_2[ne].repetidos[pq],scarecrow_2[roll_2[ne].repetidos[pq]].divididos,scarecrow_2[roll_2[ne].repetidos[pq]].outrodiv)
-                 arranjar.push({pos: pq, ocupa: [], origin: gosto})
+                 arranjar.push({pos: pq, ocupa: [], origin: gosto}) // pos é inútil :)
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
                  vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
@@ -1777,6 +1777,9 @@ function CreateEngine2() {
          
          jafoi = []
          
+         for (hate in arranjar) {
+
+         }
          perfectwave = []
          for (tosse in arranjar) {
              if (jafoi.indexOf(tosse) == -1) {
