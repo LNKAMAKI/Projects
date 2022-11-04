@@ -1774,7 +1774,6 @@ function CreateEngine2() {
                 arranjar[pq].ocupa.push(vaiir)
                 console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
-        
          
          jafoi = []
          
