@@ -1778,7 +1778,7 @@ function CreateEngine2() {
          jafoi = []
          
          for (hate in arranjar) {
-
+            console.log(`arranjar[${hate}]`,arranjar[hate])
          }
          perfectwave = []
          for (tosse in arranjar) {
