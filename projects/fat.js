@@ -1781,12 +1781,12 @@ function CreateEngine2() {
             console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
          }
          perfectwave = []
-         for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['2','y']}
+         for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']}
              if (jafoi.indexOf(tosse) == -1) { // se tosse(index) não estiver em jafoi
                  organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa} // *agrupar: index no arranjar, referencia: ['2','y']
-             for (calor in arranjar) {
+             for (calor in arranjar) { // *arranjar[tosse] = {origin: 2, ocupa: ['b','a']}
                  if (calor != tosse) { // se tosse e calor forem diferentes (para não analisar o mesmo arranjar)
-                     equals = true
+                     equals = true // equals recebe true como default value
                      igualar =[]
                      for (boring in arranjar[calor].ocupa) {
                          sendocomparado = arranjar[calor].ocupa[boring]
