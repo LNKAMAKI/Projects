@@ -14,7 +14,7 @@ function load() {
     get1('write').addEventListener('keyup',(event) => {
         styles = document.head.getElementsByTagName('style')
         console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',document.head.getElementsByTagName('style'))
-        for (sen in styles) {
+        for (sen = styles.length - 1; sen >= 0; sen--) {
             if (sen != 0) {
                 document.head.removeChild(styles[sen])
             }
