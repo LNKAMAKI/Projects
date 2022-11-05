@@ -2457,33 +2457,6 @@ function CreateEngine2() {
              concatenar_2+= ` + ${aconta_2}`
          }}}}
      
-     function sortob(n, pam) {
-         var maiorparamenor = []
-         var posiçõesnumeros = []
-         var yposition = n
-         for (n in yposition) {
-             maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
-             posiçõesnumeros.push(-1)
-         }
-         for (item in yposition) {
-             var volume = 0
-             var dn = 0
-             for (volume in yposition) {
-                 if (dn == 0) {
-                     if (yposition[item][pam] > maiorparamenor[volume]) {
-                         var itens = yposition.length - (Number(volume) + 1)
-                         var leng = yposition.length
-                         for (c = 0; c < itens; c++) {
-                             maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
-                             posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
-                             leng--
-                         }
-                         maiorparamenor[volume] = yposition[item][pam]
-                         posiçõesnumeros[volume] = Number(item)
-                         dn = 10
-                     } } }}
-         return [maiorparamenor, posiçõesnumeros]
-      }
      function doit(par) {
          segs_22 = []
      
@@ -3559,8 +3532,53 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
                  roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
                  // repetidos - opl, posições - position, way: rept
-             }}
+             }
+
              
+             grtols_2 = [];
+             for (hi in roll_2) {
+               roll_2[hi].length = Number(roll_2[hi].monomios.length);
+           
+               grtols_2.push(roll_2[hi]);
+             }
+             organizado = sortob(grtols_2, "length")[1];
+           
+             grtols_2 = [];
+             for (ah in organizado) {
+               grtols_2.push(roll_2[organizado[ah]]);
+             }
+             roll_2 = [...grtols_2];
+             
+            }
+
+            function sortob(n, pam) {
+                var maiorparamenor = []
+                var posiçõesnumeros = []
+                var yposition = n
+                for (n in yposition) {
+                    maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
+                    posiçõesnumeros.push(-1)
+                }
+                for (item in yposition) {
+                    var volume = 0
+                    var dn = 0
+                    for (volume in yposition) {
+                        if (dn == 0) {
+                            if (yposition[item][pam] > maiorparamenor[volume]) {
+                                var itens = yposition.length - (Number(volume) + 1)
+                                var leng = yposition.length
+                                for (c = 0; c < itens; c++) {
+                                    maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+                                    posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+                                    leng--
+                                }
+                                maiorparamenor[volume] = yposition[item][pam]
+                                posiçõesnumeros[volume] = Number(item)
+                                dn = 10
+                            } } }}
+                return [maiorparamenor, posiçõesnumeros]
+             }
+
         function get1(thist) {
             return document.getElementById(thist)
         }
