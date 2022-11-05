@@ -622,7 +622,7 @@ function cli(state,index,jin,n,jor) {
             height: ${eh}px;
         }
     }`
-        this.par2.style.animation = `${jin}${search.comp} 0.4s`
+        this.par2.style.animation = `${jin}${search.comp} 0.2s`
         this.par2.style.height = 'fit-content'
 
        style = document.createElement('style')
@@ -649,7 +649,7 @@ function cli(state,index,jin,n,jor) {
            height: ${ih}px;
        }
    }`
-    this.par2.style.animation = `${jin}${search.comp} 0.4s`
+    this.par2.style.animation = `${jin}${search.comp} 0.2s`
     this.par2.style.height = `${ih}px`
    style = document.createElement('style')
    document.head.appendChild(style)
