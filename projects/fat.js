@@ -1187,7 +1187,17 @@ function CreateEngine2() {
       }}
   
       for (h in monomios_2) {
-        console.log('mon',monomios_2[h].partletral)
+        mo = monomios_2[h]
+        listo = []
+        for (ge in mo.partletral) {
+            listo.push(mo.partletral[ge])
+        }
+        sl = sortWords(listo)
+        stri = ''
+        for (nai in sl) {
+           stri+= sl[nai] 
+        }
+        mo.partletral = stri
       }
     //SEPARAnDO/JUnTAnDO OS nÚMEROS
   // ==> SOMANDO OS MONÔMIOS...
