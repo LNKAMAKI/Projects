@@ -1826,14 +1826,14 @@ function CreateEngine2() {
                         scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
                      } }
                  if (diferente == true) {
-                     lista = scarecrow_2[arranjar[presa].origin].divisor
-                     if (lista != '-') {
+                     lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
+                     if (lista[0] != '-') { // Colocar sinal de menos
                          modificar = ['-','.']
                          for (saved in lista) {
                              modificar.push(lista[saved])
                          }
                          scarecrow_2[arranjar[presa].origin].divisor = modificar
-                     }else{
+                     }else{ // Tirar o sinal de menos
                          lista.splice(0,2)
                      }}}} }
      
