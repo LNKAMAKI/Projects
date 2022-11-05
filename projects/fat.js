@@ -1839,7 +1839,7 @@ function CreateEngine2() {
      
            for (sei in scarecrow_2) {
              for (ai in scarecrow_2[sei].divididos) {
-                 scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai]
+                 scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai] // Mudar o divididos para o outrodiv (Adicionar sinal aos monômios divididos)
              } }
      
            miss_2 = []
