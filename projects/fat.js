@@ -1687,88 +1687,7 @@ function CreateEngine2() {
      
      roller_2 = [];
   
-     for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
-        varib = []
-        for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
-            pos = miss_2[eep].aparicoes[kel] // *1
-            varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
-        }
-          for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
-            if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
-                compar = []
-              varib2 = []
-              for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
-                pos = miss_2[quad].aparicoes[kel] //*1
-                varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
-            }
-              repeated = [];
-              repwri = "";
-              for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
-                if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(varib[0]/1)
-                compar.push(varib[vespa]) // *varib[0] = 1
-                if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
-                  compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0]/2)
-                    
-                    repeated.push(miss_2[eep].aparicoes[vespa]); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
-                  repwri += "," + miss_2[eep].aparicoes[vespa]; // *,1
-
-                  mons1 = []
-
-                  pos1 = eep
-                  pi = 0
-                  for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
-                      mons1.push(compar[pi])
-                      pi+= 2
-                  } 
-                  // *mons1 = [1,3]
-
-                  pos2 = quad
-
-                  mons2 = []
-                  pi = 1
-                  for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
-                      mons2.push(compar[pi])
-                      pi+= 2
-                  } 
-                  // *mons2 = [2,4]
-
-                  if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { // Se não tiver no roller_2
-                       roller_2.push({
-                      rept: repwri, // *,1,2
-                      opl: [...repeated], // *[1,2]
-                      position: [eep, quad], // 0,1
-                      monomios: [...compar] // [1,2,3,4]
-                    });
-                  }else{ // Se já tiver no roller_2
-                    func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
-                    perm = true
-                    for (sept in mons1) { // *mons1 = [1,3], *mons1[0] = 1
-                        if (func.monomios.indexOf(mons1[sept]) != -1) { //*[0,1,2].indexOf(1) != -1
-                           perm = false 
-                        }}
-                    if (perm == true) {
-                        func.position.push(pos1) // pos1 = eep
-                        for (wake in mons1) { // *mons1[0] = 1
-                        func.monomios.push(mons1[wake])
-                        } }
-                    perm = true
-                    for (sept in mons2) { // *mons2 = [2,4], *mons1[0] = 2
-                        if (func.monomios.indexOf(mons2[sept]) != -1) { //*[0,1,2].indexOf(2) != -1
-                           perm = false 
-                        }}
-                    if (perm == true) {
-                        func.position.push(pos2) // pos2 = quad
-                        for (wake in mons2) { // *mons1[0] = 1
-                        func.monomios.push(mons2[wake])
-                        }}}
-                }else{ // miss_2[quad].aparicoes.indexOf(1) == -1 || compar.indexOf(varib2[0]) != -1
-                        compar.splice(compar.length - 1,1)
-                    } }}}}}
-      
-     for (r in roller_2) { // Transferindo o roller_2 para o roll_2
-         roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
-         // repetidos - opl, posições - position, way: rept
-     }
+     doRoll_2()
     
             okentao++
      
@@ -1888,96 +1807,8 @@ function CreateEngine2() {
            roll_2 = []
            deucerto = false
            roller_2 = [];
-           for (eep in miss_2) {
-            varib = []
-            for (kel in miss_2[eep].aparicoes) {
-                pos = miss_2[eep].aparicoes[kel]
-                varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
-            }
-              for (quad in miss_2) {
-                if (quad != eep) {
-                    compar = []
-                  varib2 = []
-                  for (kel in miss_2[quad].aparicoes) {
-                    pos = miss_2[quad].aparicoes[kel]
-                    varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)])
-                }
-                  repeated = [];
-                  repwri = "";
-                  for (vespa in miss_2[eep].aparicoes) {
-                    if (compar.indexOf(varib[vespa]) == -1) {
-                    compar.push(varib[vespa])
-
-                    if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) {
-                      compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])
-                        
-                        repeated.push(miss_2[eep].aparicoes[vespa]);
-                      repwri += "," + miss_2[eep].aparicoes[vespa];
-                      //console.log('COMPARAR:',compar,repwri)
-
-                      mons1 = []
-
-                      pos1 = eep
-                      pi = 0
-                      for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
-                          //console.log(pi)
-                          mons1.push(compar[pi])
-                          pi+= 2
-                      } 
-                      //console.log('mons1',mons1)
-
-                      pos2 = quad
-                      //console.log('monomios:')
-
-                      mons2 = []
-                      pi = 1
-                      for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
-                          //console.log(pi)
-                          mons2.push(compar[pi])
-                          pi+= 2
-                      } 
-
-                      if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
-                           roller_2.push({
-                          rept: repwri,
-                          opl: [...repeated],
-                          position: [eep, quad],
-                          monomios: [...compar]
-                        });
-                      }else{
-                        func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
-                        perm = true
-                        for (sept in mons1) {
-                            if (func.monomios.indexOf(mons1[sept]) != -1) {
-                               perm = false 
-                            }}
-
-                        if (perm == true) {
-                            func.position.push(pos1)
-                            for (wake in mons1) {
-                            func.monomios.push(mons1[wake])
-                            } }
-
-                        perm = true
-                        for (sept in mons2) {
-                            if (func.monomios.indexOf(mons2[sept]) != -1) {
-                               perm = false 
-                            }}
-                            
-                        if (perm == true) {
-                            func.position.push(pos2)
-                            for (wake in mons2) {
-                            func.monomios.push(mons2[wake])
-                            }}}
-                    }else{
-                            compar.splice(compar.length - 1,1)
-                           //console.log(compar)
-                        }
-                     }}}}}
-
-    for (r in roller_2) {
-      roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
-  }
+          
+           doRoll_2()
      
             youdumb_2 = []
              aswillbe2 = []
@@ -3647,6 +3478,89 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               ]
         }
 
+        function doRoll_2() {
+            for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
+                varib = []
+                for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
+                    pos = miss_2[eep].aparicoes[kel] // *1
+                    varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
+                }
+                  for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
+                    if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
+                        compar = []
+                      varib2 = []
+                      for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
+                        pos = miss_2[quad].aparicoes[kel] //*1
+                        varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
+                    }
+                      repeated = [];
+                      repwri = "";
+                      for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
+                        if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(varib[0]/1)
+                        compar.push(varib[vespa]) // *varib[0] = 1
+                        if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
+                          compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0]/2)
+                            
+                            repeated.push(miss_2[eep].aparicoes[vespa]); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
+                          repwri += "," + miss_2[eep].aparicoes[vespa]; // *,1
+        
+                          mons1 = []
+        
+                          pos1 = eep
+                          pi = 0
+                          for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
+                              mons1.push(compar[pi])
+                              pi+= 2
+                          } 
+                          // *mons1 = [1,3]
+        
+                          pos2 = quad
+                          mons2 = []
+                          pi = 1
+                          for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
+                              mons2.push(compar[pi])
+                              pi+= 2
+                          } 
+                          // *mons2 = [2,4]
+        
+                          if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { // Se não tiver no roller_2
+                               roller_2.push({
+                              rept: repwri, // *,1,2
+                              opl: [...repeated], // *[1,2]
+                              position: [eep, quad], // 0,1
+                              monomios: [...compar] // [1,2,3,4]
+                            });
+                          }else{ // Se já tiver no roller_2
+                            func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
+                            perm = true
+                            for (sept in mons1) { // *mons1 = [1,3], *mons1[0] = 1
+                                if (func.monomios.indexOf(mons1[sept]) != -1) { //*[0,1,2].indexOf(1) != -1
+                                   perm = false 
+                                }}
+                            if (perm == true) {
+                                func.position.push(pos1) // pos1 = eep
+                                for (wake in mons1) { // *mons1[0] = 1
+                                func.monomios.push(mons1[wake])
+                                } }
+                            perm = true
+                            for (sept in mons2) { // *mons2 = [2,4], *mons1[0] = 2
+                                if (func.monomios.indexOf(mons2[sept]) != -1) { //*[0,1,2].indexOf(2) != -1
+                                   perm = false 
+                                }}
+                            if (perm == true) {
+                                func.position.push(pos2) // pos2 = quad
+                                for (wake in mons2) { // *mons1[0] = 1
+                                func.monomios.push(mons2[wake])
+                                }}}
+                        }else{ // miss_2[quad].aparicoes.indexOf(1) == -1 || compar.indexOf(varib2[0]) != -1
+                                compar.splice(compar.length - 1,1)
+                            } }}}}}
+              
+             for (r in roller_2) { // Transferindo o roller_2 para o roll_2
+                 roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
+                 // repetidos - opl, posições - position, way: rept
+             }}
+             
         function get1(thist) {
             return document.getElementById(thist)
         }
