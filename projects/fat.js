@@ -3532,24 +3532,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
                  roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
                  // repetidos - opl, posições - position, way: rept
-             }
-
-             
-             grtols_2 = [];
-             for (hi in roll_2) {
-               roll_2[hi].length = Number(roll_2[hi].monomios.length);
-           
-               grtols_2.push(roll_2[hi]);
-             }
-             organizado = sortob(grtols_2, "length")[1];
-           
-             grtols_2 = [];
-             for (ah in organizado) {
-               grtols_2.push(roll_2[organizado[ah]]);
-             }
-             roll_2 = [...grtols_2];
-             
-            }
+             } }
 
             function sortob(n, pam) {
                 var maiorparamenor = []
