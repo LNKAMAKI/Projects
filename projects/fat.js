@@ -1186,6 +1186,9 @@ function CreateEngine2() {
         }).quais.push(Number(huh));
       }}
   
+      for (h in monomios_2) {
+        console.log('mon',monomios_2[h].partletral)
+      }
     //SEPARAnDO/JUnTAnDO OS nÚMEROS
   // ==> SOMANDO OS MONÔMIOS...
   if (somarmons == true) {
