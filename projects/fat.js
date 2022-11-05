@@ -1852,6 +1852,7 @@ function CreateEngine2() {
                 miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
                }} }
      
+    // Ordenar o miss_2 pelo tamanho das aparicoes
            grtols_2 = [];
     for (hi in miss_2) {
       miss_2[hi].length = miss_2[hi].aparicoes.length;
@@ -1865,7 +1866,8 @@ function CreateEngine2() {
       grtols_2.push(miss_2[organizado[ah]]);
     }
     miss_2 = [...grtols_2];
-  
+   //
+
            java = 0
            roll_2 = []
            deucerto = false
