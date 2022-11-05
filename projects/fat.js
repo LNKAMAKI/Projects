@@ -1770,7 +1770,8 @@ function CreateEngine2() {
                  arranjar.push({pos: pq, ocupa: [], origin: gosto}) // pos é inútil :)
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
-                 vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
+                 vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] 
+                 // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 arranjar[pq].ocupa.push(vaiir)
                 console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
@@ -1781,7 +1782,7 @@ function CreateEngine2() {
             console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
          }
          perfectwave = []
-         for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']}
+         for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']} *OBS: origin => posição no scarecrow_2
              if (jafoi.indexOf(tosse) == -1) { // se tosse(index) não estiver em jafoi, ou seja, se o arranjar[tosse] não estiver em um grupo(objeto)
                  organizer = {agrupar: [tosse], referencia: arranjar[tosse].ocupa} // *agrupar: index no arranjar, referencia: ['-b','-a']
              for (calor in arranjar) { // *arranjar[tosse] = {origin: 2, ocupa: ['b','a']}
@@ -1800,20 +1801,26 @@ function CreateEngine2() {
                          jafoi.push(calor)
                          organizer.agrupar.push(calor)
                      }}}
-             perfectwave.push(organizer) // organizer: grupos que possuem monômios iguais, quando igualados os sinais *Eg.: {agrupar: [0,1], referencia: ['-b','-a']}
+             perfectwave.push(organizer) // organizer: grupos que possuem monômios iguais, quando igualados os sinais:
+             // *Eg.: {agrupar: [0,1], referencia: ['-b','-a']}
              // 0: ['-b','-a']
              // 1: ['b','a'] x -1 = ['-b','-a']
              console.log('organizer', organizer)
          }}
          
         
+          // *perfectwave = [
+         //{agrupar: [0,1], referencia: ['-b','-a']}, 
+        // {agrupar: [2], referencia: ['-b','a']}
+       //]
          for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
              ficarassim =  perfectwave[youchoose].referencia // *['-b','-a'] => referência, ou seja, como todos irão ficar
-             for (catraca in perfectwave[youchoose].agrupar) {
-                 presa = perfectwave[youchoose].agrupar[catraca]
+             for (catraca in perfectwave[youchoose].agrupar) { // *perfectwave[youchoose].agrupar = [0,1]
+                 presa = perfectwave[youchoose].agrupar[catraca] // *perfectwave[youchoose].agrupar[0] = 0
                  diferente = false
-                 for (moon in roll_2[ne].posições) {
+                 for (moon in roll_2[ne].posições) { // *roll_2[ne].posições = ['0','1'] ('b','a')
                      vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
+                     // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                      if (vaiir != ficarassim[moon]) {
                          diferente = true
                         scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon]
