@@ -570,6 +570,11 @@ function cli(state,index,jin,n,jor) {
        console.log('JÁ TEM ' + this.jin)
         search.comp++
         //console.log(search,'COMP:',search.comp)
+        /*
+        styles = document.head.getElementsByTagName('style')
+        document.head.removeChild(styles[search.loc])
+        */
+
        }else{
         //console.log('NÃO TEM ' + this.jin)
         if (this.par3.innerText == 'Resolução') {
