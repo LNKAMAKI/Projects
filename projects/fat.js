@@ -536,28 +536,32 @@ function CreateFunc(ind,action,number){
 }
 
 function cli(state,index,jin,n,jor) {
+    console.log('')
+    console.log('-----------')
     me = document.getElementsByClassName('ar')
     this.jin = jin
     this.par1 = me[index]
     this.par2 = conts[index]
     this.par3 = cents[index]
     this.n = n
-    //console.log(this.par1,this.par2,this.par3)
+
     beg = this.par2.offsetHeight
+    
+    console.log('JORRRRRRRRRRRRR',jor)
+    this.par3.style.height = jor + 'px'
+    console.log('PART333333333:',this.par3.style.height)
+
     this.par2.style.height = 'fit-content'
     sul = this.par2.offsetHeight
-    //console.log('jin: ',jin)
-    //console.log('JORRRRRRRRRRRRR',jor)
-
-    //console.log('THIS IS CENTER HEIGHT:',jor)
-    this.par3.style.height = jor + 'px'
+    console.log('SULLLLLLLLLLL', this.par2.offsetHeight)
 
     search = mecams.find(function(mecams){
         return mecams.created == this.jin
        })
 
+       console.log(search)
     if (search != undefined) {
-       //console.log('JÁ TEM ' + this.jin)
+       console.log('JÁ TEM ' + this.jin)
         search.comp++
         //console.log(search,'COMP:',search.comp)
        }else{
@@ -575,6 +579,7 @@ function cli(state,index,jin,n,jor) {
         return mecams.created == this.jin
        })
 
+       console.log(search)
        if (search.cl == false) {
         if (search.cl == false) {
             console.log('ABRIR')
@@ -594,14 +599,8 @@ function cli(state,index,jin,n,jor) {
             ih = search.st - 10
             eh = sul - 10
            }else{
-            if (busca != -1) {
-                console.log('EPAAA')
-                eh = sul + 8
-                console.log(eh)
-               }else{
             ih = search.st
             eh = sul
-               }
            }
     css = `@keyframes ${jin}${search.comp} {
          0% {
@@ -611,7 +610,7 @@ function cli(state,index,jin,n,jor) {
             height: ${eh}px;
         }
     }`
-        this.par2.style.animation = `${jin}${search.comp} 2s`
+        this.par2.style.animation = `${jin}${search.comp} 1s`
         this.par2.style.height = 'fit-content'
 
        style = document.createElement('style')
@@ -638,7 +637,7 @@ function cli(state,index,jin,n,jor) {
            height: ${ih}px;
        }
    }`
-    this.par2.style.animation = `${jin}${search.comp} 2s`
+    this.par2.style.animation = `${jin}${search.comp} 1s`
     this.par2.style.height = `${ih}px`
    style = document.createElement('style')
    document.head.appendChild(style)
