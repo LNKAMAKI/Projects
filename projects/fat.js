@@ -548,11 +548,6 @@ function cli(state,index,jin,n,jor) {
     sul = this.par2.offsetHeight
     //console.log('jin: ',jin)
     //console.log('JORRRRRRRRRRRRR',jor)
-    txt = String(this.par3.innerText)
-           busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições)|(Engine))','g'))
-           console.log('busca',txt,busca)
-           if (busca != -1) {
-           }
 
     //console.log('THIS IS CENTER HEIGHT:',jor)
     this.par3.style.height = jor + 'px'
@@ -582,21 +577,31 @@ function cli(state,index,jin,n,jor) {
 
        if (search.cl == false) {
         if (search.cl == false) {
-            //console.log('ABRIR')
+            console.log('ABRIR')
         }else{
-            //console.log('FECHAR')
+            console.log('FECHAR')
         }
 
-        //console.log('initial:',search.st,'px')
-        //console.log('final:',sul,'px')
+        console.log('initial:',search.st,'px')
+        console.log('final:',sul,'px')
+
+        txt = String(this.par3.innerText)
+           busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
+           console.log('busca',txt,busca)
 
         if (this.par3.innerText == 'Resolução') {
             //console.log('WAIT')
             ih = search.st - 10
             eh = sul - 10
            }else{
+            if (busca != -1) {
+                console.log('EPAAA')
+                eh = sul + 8
+                console.log(eh)
+               }else{
             ih = search.st
             eh = sul
+               }
            }
     css = `@keyframes ${jin}${search.comp} {
          0% {
@@ -606,7 +611,7 @@ function cli(state,index,jin,n,jor) {
             height: ${eh}px;
         }
     }`
-        this.par2.style.animation = `${jin}${search.comp} 0.2s`
+        this.par2.style.animation = `${jin}${search.comp} 2s`
         this.par2.style.height = 'fit-content'
 
        style = document.createElement('style')
@@ -633,7 +638,7 @@ function cli(state,index,jin,n,jor) {
            height: ${ih}px;
        }
    }`
-    this.par2.style.animation = `${jin}${search.comp} 0.2s`
+    this.par2.style.animation = `${jin}${search.comp} 2s`
     this.par2.style.height = `${ih}px`
    style = document.createElement('style')
    document.head.appendChild(style)
