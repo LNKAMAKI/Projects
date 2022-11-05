@@ -1821,9 +1821,9 @@ function CreateEngine2() {
                  for (moon in roll_2[ne].posições) { // *roll_2[ne].posições = ['0','1'] ('b','a')
                      vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
                      // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
-                     if (vaiir != ficarassim[moon]) {
+                     if (vaiir != ficarassim[moon]) { // *ficarassim[0] = '-b'
                          diferente = true
-                        scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon]
+                        scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
                      } }
                  if (diferente == true) {
                      lista = scarecrow_2[arranjar[presa].origin].divisor
