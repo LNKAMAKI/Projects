@@ -1766,7 +1766,7 @@ function CreateEngine2() {
                     } }}}}}
       
      for (r in roller_2) { // Transferindo o roller_2 para o roll_2
-         roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept})
+         roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
          // repetidos - opl, posições - position, way: rept
      }
     
