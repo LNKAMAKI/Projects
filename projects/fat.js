@@ -1836,7 +1836,12 @@ function CreateEngine2() {
                 obe.what.push({ar: asitwas2, indice: still})
                 aswillbe2.push({oque:aswillbe, onde:raging})
              }
-             youdumb_2.push({mons: asitwas, rag: raging, w: obe, polen: raging})
+
+             join = ''
+             for (rob in asitwas) {
+                join += `,${asitwas[rob]}`
+             }
+             youdumb_2.push({mons: asitwas, rag: raging, w: obe, polen: raging, rept: join})
             }
             
              dontworry = []
@@ -1944,6 +1949,32 @@ function CreateEngine2() {
             //console.log('==========>',yes, youdumb_2[yes].mons, youdumb_2[yes].w.what.length)
         }
      //
+     console.log('*¨¨¨¨¨¨%%%%%%%%%%%####@@@@@@@@((((((((*****&&&&&&&&&&&&%%%%%%########@@@@@@@@&&&&&&&%%%%%%%%######')
+     
+     indexsout = []
+     fixyou = []
+     for (no in youdumb_2) {
+        if (indexsout.indexOf(no) == -1) {
+        fixyou.push(youdumb_2[no])
+        re1 = youdumb_2[no].rept
+        w1 = youdumb_2[no].w.what.length
+        console.log(re1, w1)
+        console.log('---------------------------')
+        for (na in youdumb_2) {
+            if (na != no) {
+                re2 = youdumb_2[na].rept
+                w2 = youdumb_2[na].w.what.length
+                console.log(re2, w2)
+                if (re1 == re2 && w1 == w2) {
+                    console.log('opa')
+                    indexsout.push(na)
+                }}}
+        console.log('---------------------------')
+            }
+     }
+     console.log(fixyou)
+     youdumb_2 = [...fixyou]
+
      heya_2 = [...youdumb_2]
      for (imback in youdumb_2) {
          sticky = []
