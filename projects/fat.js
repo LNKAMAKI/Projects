@@ -12,6 +12,13 @@ function load() {
 
     loaded = true
     get1('write').addEventListener('keyup',(event) => {
+        styles = document.head.getElementsByTagName('style')
+        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',document.head.getElementsByTagName('style'))
+        for (sen in styles) {
+            if (sen != 0) {
+                document.head.removeChild(styles[sen])
+            }
+        }
         if (event.key == 'Enter') {
         type = get1('write').value
         //console.log('type',type)
@@ -19,7 +26,6 @@ function load() {
         res = doTheFactoring(type)
         get1('fatoracao').value = res[0]
         //console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
-     }
     
     get1('resol').innerHTML = ''
 
@@ -353,7 +359,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         c.SetDefault()
         c.AddEvent()
         cs.push(c)
-    }) }
+}}) }
        
 late = 1
 function fn(a,act) {
@@ -546,7 +552,7 @@ function cli(state,index,jin,n,jor) {
     this.n = n
 
     beg = this.par2.offsetHeight
-    
+
     console.log('JORRRRRRRRRRRRR',jor)
     this.par3.style.height = jor + 'px'
     console.log('PART333333333:',this.par3.style.height)
@@ -587,9 +593,6 @@ function cli(state,index,jin,n,jor) {
             console.log('FECHAR')
         }
 
-        console.log('initial:',search.st,'px')
-        console.log('final:',sul,'px')
-
         txt = String(this.par3.innerText)
            busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
            console.log('busca',txt,busca)
@@ -602,6 +605,10 @@ function cli(state,index,jin,n,jor) {
             ih = search.st
             eh = sul
            }
+
+           console.log('initial:',ih,'px')
+           console.log('final:',eh,'px')
+
     css = `@keyframes ${jin}${search.comp} {
          0% {
             height: ${ih}px;
@@ -610,7 +617,7 @@ function cli(state,index,jin,n,jor) {
             height: ${eh}px;
         }
     }`
-        this.par2.style.animation = `${jin}${search.comp} 1s`
+        this.par2.style.animation = `${jin}${search.comp} 0.4s`
         this.par2.style.height = 'fit-content'
 
        style = document.createElement('style')
@@ -619,7 +626,7 @@ function cli(state,index,jin,n,jor) {
        this.par1.style.transform = 'rotate(90deg)'
        search.cl = true
 }else{
-    //console.log('gooooo')
+    console.log('gooooo')
     if (this.par3.innerText == 'Resolução') {
         //console.log('WAIT')
         ih = search.st - 10
@@ -637,7 +644,7 @@ function cli(state,index,jin,n,jor) {
            height: ${ih}px;
        }
    }`
-    this.par2.style.animation = `${jin}${search.comp} 1s`
+    this.par2.style.animation = `${jin}${search.comp} 0.4s`
     this.par2.style.height = `${ih}px`
    style = document.createElement('style')
    document.head.appendChild(style)
