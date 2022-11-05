@@ -79,3 +79,90 @@ while(java < miss_2.length && deucerto == false) {
       }}}}
        java++
    }
+
+   for (eep in miss_2) {
+    varib = []
+    for (kel in miss_2[eep].aparicoes) {
+        pos = miss_2[eep].aparicoes[kel]
+        varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
+    }
+      for (quad in miss_2) {
+        if (quad != eep) {
+            compar = []
+          varib2 = []
+          for (kel in miss_2[quad].aparicoes) {
+            pos = miss_2[quad].aparicoes[kel]
+            varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)])
+        }
+          repeated = [];
+          repwri = "";
+          for (vespa in miss_2[eep].aparicoes) {
+            if (compar.indexOf(varib[vespa]) == -1) {
+            compar.push(varib[vespa])
+
+            if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) {
+              compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])])
+                
+                repeated.push(miss_2[eep].aparicoes[vespa]);
+              repwri += "," + miss_2[eep].aparicoes[vespa];
+              //console.log('COMPARAR:',compar,repwri)
+
+              mons1 = []
+
+              pos1 = eep
+              pi = 0
+              for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
+                  //console.log(pi)
+                  mons1.push(compar[pi])
+                  pi+= 2
+              } 
+              //console.log('mons1',mons1)
+
+              pos2 = quad
+              //console.log('monomios:')
+
+              mons2 = []
+              pi = 1
+              for (photo = 0; photo < Number(repwri.length)/2;photo+=1) {
+                  //console.log(pi)
+                  mons2.push(compar[pi])
+                  pi+= 2
+              } 
+
+              if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) {
+                   roller_2.push({
+                  rept: repwri,
+                  opl: [...repeated],
+                  position: [eep, quad],
+                  monomios: [...compar]
+                });
+              }else{
+                func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
+                perm = true
+                for (sept in mons1) {
+                    if (func.monomios.indexOf(mons1[sept]) != -1) {
+                       perm = false 
+                    }}
+
+                if (perm == true) {
+                    func.position.push(pos1)
+                    for (wake in mons1) {
+                    func.monomios.push(mons1[wake])
+                    } }
+
+                perm = true
+                for (sept in mons2) {
+                    if (func.monomios.indexOf(mons2[sept]) != -1) {
+                       perm = false 
+                    }}
+                    
+                if (perm == true) {
+                    func.position.push(pos2)
+                    for (wake in mons2) {
+                    func.monomios.push(mons2[wake])
+                    }}}
+            }else{
+                    compar.splice(compar.length - 1,1)
+                   //console.log(compar)
+                }
+             }}}}}
