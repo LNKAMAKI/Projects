@@ -1775,7 +1775,7 @@ function CreateEngine2() {
                      } }
                  if (diferente == true) {
                      lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
-                     if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING!
+                     if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
                          modificar = ['-','.']
                          for (saved in lista) {
                              modificar.push(lista[saved])
