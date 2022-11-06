@@ -70,8 +70,8 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
     hyu = 2
     for (h in res[5]) {
         //console.log(h)
-        carfixed = res[5][h].car.replace('-.','-').replace(new RegExp('\\.','g'),'*').replace(new RegExp('\\*(?=[a-z])'),'')
-        carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
+        carfixed = res[6][h].divisor
+        carfixed2 = res[6][h].divisor
         spn = ''
         spn2 = ''
         splitspn = ''
@@ -95,7 +95,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             pl1.push(hyu)
             }
 
-        dg = desfat(REFORMATAR(carfixed))
+        dg = desfat(carfixed)
     cn.getElementsByClassName('dev')[0].innerHTML+= `
     <div class="cont"> 
 
@@ -891,7 +891,7 @@ function SPLITEXPS(expression) {
   elevar = 1
   aster = false
   for (patience in quase) {
-      if (quase[patience] == '*' && quase[Number(patience) - 1].search('[0-9]') != -1 && quase[Number(patience) + 1].search('[0-9]') != -1 ) {
+      if (quase[patience].search('(\\*|\\.)') != -1 && quase[Number(patience) - 1].search('[0-9]') != -1 && quase[Number(patience) + 1].search('[0-9]') != -1 ) {
           aster = true
           gates.push(quase[Number(patience) - 1])
           gates.push('x')
@@ -914,7 +914,7 @@ function SPLITEXPS(expression) {
               aconta+= quase[patience]      
               elevar = 1
           }
-        }else if(quase[patience].search('[0-9]') != -1 && quase.indexOf('*') == -1) {
+        }else if(quase[patience].search('[0-9]') != -1 && quase.indexOf('*') == -1 && quase.indexOf('.') == -1) {
             aconta+= quase[patience]
           }else if(quase[patience] == '^'){
             aconta+= quase[patience]
