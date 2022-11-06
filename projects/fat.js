@@ -1774,7 +1774,7 @@ function CreateEngine2() {
                         scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
                      } }
                  if (diferente == true) {
-                    console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&7777')
+                    console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
                      lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
                      if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
                          modificar = ['-','.']
@@ -1972,21 +1972,21 @@ function CreateEngine2() {
         fixyou.push(youdumb_2[no])
         re1 = youdumb_2[no].rept
         w1 = youdumb_2[no].w.what.length
-        console.log(re1, w1)
-        console.log('---------------------------')
+        //console.log(re1, w1)
+        //console.log('---------------------------')
         for (na in youdumb_2) {
             if (na != no) {
                 re2 = youdumb_2[na].rept
                 w2 = youdumb_2[na].w.what.length
-                console.log(re2, w2)
+                //console.log(re2, w2)
                 if (re1 == re2 && w1 == w2) {
-                    console.log('opa')
+                    //console.log('opa')
                     indexsout.push(na)
                 }}}
-        console.log('---------------------------')
+        //console.log('---------------------------')
             }
      }
-     console.log(fixyou)
+     //console.log(fixyou)
      youdumb_2 = [...fixyou]
 
      heya_2 = [...youdumb_2]
