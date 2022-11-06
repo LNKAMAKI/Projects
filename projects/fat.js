@@ -1779,18 +1779,19 @@ function CreateEngine2() {
                     for (ho in perfectwave[youchoose].referencia) {
                         refer.push(perfectwave[youchoose].referencia[ho].replace('-',''))
                     }
-                    
+
                     console.log('REFER',refer)
-                    console.log(scarecrow_2[arranjar[presa].origin].divididos)
-                    sa = scarecrow_2[arranjar[presa].origin].divididos
+                    console.log(scarecrow_2[arranjar[presa].origin].outrodiv)
+                    sa = scarecrow_2[arranjar[presa].origin].outrodiv
                     for (con in sa) {
-                        if (refer.indexOf(sa[con]) == -1) {
+                        if (refer.indexOf(scarecrow_2[arranjar[presa].origin].divididos[con]) == -1) {
                         console.log(sa[con])
                         if (sa[con][0] == '-') {
                             console.log('tirar o sinal de menos')
+                            sa[con] = sa[con].replace('-','')
                         }else{
                             console.log('adicionar sinal de menos')
-                            scarecrow_2[arranjar[presa].origin].outrodiv[con] = '-' + sa[con]
+                            sa[con] = '-' + sa[con]
                             console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
                         } }}
 
