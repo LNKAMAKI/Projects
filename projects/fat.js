@@ -1774,6 +1774,7 @@ function CreateEngine2() {
                         scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
                      } }
                  if (diferente == true) {
+                    console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&7777')
                      lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
                      if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
                          modificar = ['-','.']
@@ -1962,8 +1963,8 @@ function CreateEngine2() {
             //console.log('==========>',yes, youdumb_2[yes].mons, youdumb_2[yes].w.what.length)
         }
      //
-     console.log('*¨¨¨¨¨¨%%%%%%%%%%%####@@@@@@@@((((((((*****&&&&&&&&&&&&%%%%%%########@@@@@@@@&&&&&&&%%%%%%%%######')
-     
+
+     // Código para deletar agrupamentos/grupos iguais
      indexsout = []
      fixyou = []
      for (no in youdumb_2) {
