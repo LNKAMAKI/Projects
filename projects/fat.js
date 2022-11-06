@@ -1775,6 +1775,25 @@ function CreateEngine2() {
                      } }
                  if (diferente == true) {
                     console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
+                    refer = [] 
+                    for (ho in perfectwave[youchoose].referencia) {
+                        refer.push(perfectwave[youchoose].referencia[ho].replace('-',''))
+                    }
+                    
+                    console.log('REFER',refer)
+                    console.log(scarecrow_2[arranjar[presa].origin].divididos)
+                    sa = scarecrow_2[arranjar[presa].origin].divididos
+                    for (con in sa) {
+                        if (refer.indexOf(sa[con]) == -1) {
+                        console.log(sa[con])
+                        if (sa[con][0] == '-') {
+                            console.log('tirar o sinal de menos')
+                        }else{
+                            console.log('adicionar sinal de menos')
+                            scarecrow_2[arranjar[presa].origin].outrodiv[con] = '-' + sa[con]
+                            console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
+                        } }}
+
                      lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
                      if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
                          modificar = ['-','.']
