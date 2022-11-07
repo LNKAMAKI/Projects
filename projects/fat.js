@@ -1,6 +1,10 @@
 
 loaded = false
 
+function erase() {
+    console.log('ERASE')
+    get1('write').value = ''
+}
 function load() {
     get1('resol').innerHTML = ''
 

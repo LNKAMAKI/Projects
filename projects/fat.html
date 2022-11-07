@@ -245,7 +245,7 @@
         }
         #res {
             margin: 0px;
-            margin-top: 40px;
+            margin-top: 20px;
             margin-bottom: 10px;
         }
         #write:focus-visible{
@@ -299,6 +299,14 @@
             height: 30px;
             border-radius: 50%;
             margin:5px;
+            cursor: pointer;
+        }
+        img.copy2 {
+            display: inline-block;
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            margin:8px;
             cursor: pointer;
         }
         #resol {
@@ -482,8 +490,9 @@
     </h1>
     <div id="calc">
             <p style="margin-top: 0px;">/* Expressão: */</p> 
-        <div style="text-align: center;">
+        <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
             <input id="write" spellcheck="false" class="type" value="-ax + cx + ay - cy + cxl + cxh - cyl - cyh"></input>
+            <img src="./imagens/delete-bin.png" class="copy2" alt="delete text" onclick="erase()">
             <!--<img src="/projects/imagens/copy.png" class="copy" alt="copy text" onclick="copy()">-->
         </div>
        <!-- <p><input type="button" value="FATORAR(expressão)" onclick="ir()"></p>-->
