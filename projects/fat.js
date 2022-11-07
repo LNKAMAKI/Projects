@@ -137,8 +137,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         splitspn = ''
         for(k in res[7][h].aparicoes) {
             if (k != res[7][h].aparicoes.length - 1) {
-                spn+= `<span>
-                <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+                spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
             }else{
                 spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
             }
@@ -2011,20 +2010,27 @@ function CreateEngine2() {
 
      heya_2 = [...youdumb_2]
      for (imback in youdumb_2) {
+        console.log('---------YOUDUMB-------',youdumb_2[imback])
          sticky = []
          initial = youdumb_2[imback].w.what
+         console.log('initial',initial)
          if (initial.length > 0) {
          inside = {which: [], numberyoudumb: youdumb_2[imback].polen}
          
          for (agg in initial) {
              taai = false
+             console.log(agg,initial[agg].ar)
               for (eng in initial[agg].ar) {
+                console.log(eng,initial[agg].ar[eng])
                  if (numerospresentes_2.indexOf(initial[agg].ar[eng]) == -1) {
+                    console.log('Não tá aí')
                  }else{
+                    console.log('Tá aí')
                      taai = true
                  } }
               if (taai == false) {
                  inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
+                 console.log(`inform: {mons: ${initial[agg].ar},indice: ${initial[agg].indice}}`)
                  inside.which.push(inform)
   
                  for (darkening in inform.monos) {
