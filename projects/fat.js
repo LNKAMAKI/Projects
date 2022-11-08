@@ -104,6 +104,10 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             }
 
         dg = desfat(carfixed)
+        
+       if (h == 0) {
+        cn.getElementsByClassName('dev')[0].innerHTML+= '<div class="space"></div>'
+       }
     cn.getElementsByClassName('dev')[0].innerHTML+= `
     <div class="cont"> 
 
@@ -157,6 +161,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             pl2.push(hyu)
             }
 
+            if (h == 0) {
+                cn2.getElementsByClassName('dev')[0].innerHTML+= '<div class="space"></div>'
+               }
     cn2.getElementsByClassName('dev')[0].innerHTML+= `
     <div class="cont">
     <div class="center">
@@ -213,6 +220,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         pl3.push(hyu)
         }
 
+        if (h == 0) {
+            cn3.getElementsByClassName('dev')[0].innerHTML+= '<div class="space"></div>'
+           }
     cn3.getElementsByClassName('dev')[0].innerHTML+= `
     <div class="cont">
     <div class="center">
@@ -270,6 +280,9 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             pl4.push(hyu)
             }
 
+            if (h == 0) {
+                cn4.getElementsByClassName('dev')[0].innerHTML+= '<div class="space"></div>'
+               }
     cn4.getElementsByClassName('dev')[0].innerHTML+= `
     <div class="cont">
     <div class="center">
