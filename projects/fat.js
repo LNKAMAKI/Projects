@@ -3470,7 +3470,19 @@ function CreateEngine2() {
       ]
     }else{
         console.log('IR: FALSEE')
-        return ['?']
+        return [
+        '?',
+        pans_2.length,
+        todososnumeros_2.length,
+        segs_2.length,
+        roll_2.length,
+        segs_2,
+        scarecrow_2,
+        miss_2,
+        roll_2,
+        youdumb_2,
+        monomios_2,
+        pans_2]
     }
 }
 }
