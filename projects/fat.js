@@ -2536,10 +2536,6 @@ function CreateEngine2() {
              concatenar_2+= ` + ${aconta_2}`
          }}}}
      
-         console.log('UEPAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-         console.log(numerospresentes_2)
-         console.log(todososnumeros_2)
-         console.log(numsdesfat)
      function doit(par) {
          segs_22 = []
      
