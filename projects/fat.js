@@ -28,8 +28,12 @@ function load() {
         //console.log('type',type)
         //console.log(type)
         res = doTheFactoring(type)
+       
+        if (res[0] != '?') {
         get1('fatoracao').value = res[0]
-        //console.log(res[5],res[6],res[7],res[8],res[9],res[10],res[11])
+        }else{
+            get1('fatoracao').value = 'Não é possível agrupar todos os monômios'
+        }
     
     get1('resol').innerHTML = ''
 
@@ -2532,6 +2536,10 @@ function CreateEngine2() {
              concatenar_2+= ` + ${aconta_2}`
          }}}}
      
+         console.log('UEPAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+         console.log(numerospresentes_2)
+         console.log(todososnumeros_2)
+         console.log(numsdesfat)
      function doit(par) {
          segs_22 = []
      
@@ -3421,21 +3429,41 @@ function CreateEngine2() {
                   }}}}
       return [maiorparamenor, posiçõesnumeros]
   }
-  return [
-    concatenar_2,
-    pans_2.length,
-    todososnumeros_2.length,
-    segs_2.length,
-    roll_2.length,
-    segs_2,
-    scarecrow_2,
-    miss_2,
-    roll_2,
-    youdumb_2,
-    monomios_2,
-    pans_2
-  ];
+
+  ir = false
+  if (todososnumeros_2.length == 0 && pans_2.length <= 1) {
+    console.log('DEU CERTOOOOOOOOOOOOOOO')
+    ir = true
+  }else if (monomios_2.length == 1) {
+    console.log('DEU CERTOOOOOOOOOOOOOOO')
+    ir = true
   }
+
+  console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
+  console.log(todososnumeros_2)
+  console.log(pans_2)
+  console.log(monomios_2)
+  if (ir == true) {
+    console.log('IR: TRUEE')
+    return [
+        concatenar_2,
+        pans_2.length,
+        todososnumeros_2.length,
+        segs_2.length,
+        roll_2.length,
+        segs_2,
+        scarecrow_2,
+        miss_2,
+        roll_2,
+        youdumb_2,
+        monomios_2,
+        pans_2
+      ]
+    }else{
+        console.log('IR: FALSEE')
+        return ['?']
+    }
+}
 }
 
 ep = FATORE(exal)
