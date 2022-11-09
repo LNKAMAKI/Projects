@@ -44,7 +44,7 @@ function load() {
 
 get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div>
 
-<div style="padding: 3px;background-color: white;border-radius: 7px;overflow: hidden;">
+<div style="padding: 3px 0px;background-color: white;border-radius: 7px;overflow: hidden;">
 <div class="cont">
 <div class="center" classname="top"><img src="./imagens/rar.png" alt="" class="ar">
 <span>Engine</span>
