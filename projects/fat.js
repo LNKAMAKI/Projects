@@ -8,7 +8,8 @@ function erase() {
 function load() {
     get1('resol').innerHTML = ''
 
-    get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div><div class="cont"> <div class="center"  classname="top"> <img src="./imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>'
+    get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div>'
+    //<div class="cont"> <div class="center"  classname="top"> <img src="./imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>
     conts = get2('cont')
     cents = get2('center')
     ars = get2('ar')
@@ -62,8 +63,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
 <div class="cont" name="ti"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Agrupamentos</span><img src="./imagens/rar.png" class="pers" style="transform:rotate(90deg);right:30px;" onclick="fn(3,'open')"><img src="./imagens/rar.png" class="pers" onclick="fn(3,'close')"></div></div>
 </div>
 </div>
-
-<div class="cont"> <div class="center"  classname="top"> <img src="./imagens/rar.png" alt="" class="ar"> <span> Passo a passo</span></div><p></p></div>
 
 </div>`
     conts = get2('cont')
@@ -375,10 +374,12 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
             plar.push(c)
         }
 
+        /*
         c = new CreateFunc(pl4[pl4.length - 1] + 1,'close')
         c.SetDefault()
         c.AddEvent()
         cs.push(c)
+        */
 }}) }
        
 late = 1
