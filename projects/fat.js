@@ -86,11 +86,15 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         for(k in res[5][h].mons) {
             if (k != res[5][h].mons.length - 1) {
                 spn+= `<span class="af">
-                <span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string);position:relative;" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span>,</span>`
+                <span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string);position:relative;" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span>,
+                <p class="out">oláaaaa</p>
+                </span>`
                 //spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}</span>',</span>`
             }else{
                 spn+= `<span class="af">
-                <span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string)" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
+                <span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string)" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span>
+                <p class="out">olá</p>
+                </span>`
                 //spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
             }
             splitspn+= ` <p class="psem">

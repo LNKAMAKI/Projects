@@ -484,6 +484,27 @@
     span:hover > .som {
         color: black;
     }
+    .abs {
+        position: relative;
+        z-index: 2;
+    }
+    .out {
+        display: none;
+        background-color: pink;
+        position: relative;
+        width: 100%;
+        margin: 0px;
+        left: 0px;
+        z-index: 1;
+    }
+    .abs:hover ~ .out {
+        display: block;
+        background-color: peru;
+    }
+    .af {
+        display: inline-flex;
+        align-items: center;
+    }
         </style>
 <body onload="load()">
     <script src="fat.js"></script>
