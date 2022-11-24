@@ -177,7 +177,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
     </div>
 
     <div class="tocent"> 
-    <p class="pdev">fator: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p>
+    <p class="pdev">fator: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span></p>
 
     <div class="cont"> 
     <div class="center">
@@ -190,6 +190,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
 
     </div>`
     }
+    // ${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')} => FATOR FATORADO
 
     cn3 = ts[2]
     cn3.innerHTML+= '<div class="dev"></div>'
