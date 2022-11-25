@@ -2,7 +2,7 @@
 loaded = false
 
 function erase() {
-    console.log('ERASE')
+    //console.log('ERASE')
     get1('write').value = ''
 }
 function load() {
@@ -18,7 +18,7 @@ function load() {
     loaded = true
     get1('write').addEventListener('keyup',(event) => {
         styles = document.head.getElementsByTagName('style')
-        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',document.head.getElementsByTagName('style'))
+        //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',document.head.getElementsByTagName('style'))
         for (sen = styles.length - 1; sen >= 0; sen--) {
             if (sen != 0) {
                 document.head.removeChild(styles[sen])
@@ -338,7 +338,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
         hgts = []
         for (tp in feb) {
             is = feb[tp]
-            console.log(is)
+            //console.log(is)
             c = new CreateFunc(is,'close',8)
             c.SetDefault()
             c.AddEvent()
@@ -389,7 +389,7 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
        
 late = 1
 function fn(a,act) {
-    console.log('aaa',a,act)
+    //console.log('aaa',a,act)
     sur = 0
     cas = 0
     switch(a) {
@@ -568,8 +568,8 @@ function CreateFunc(ind,action,number){
 }
 
 function cli(state,index,jin,n,jor) {
-    console.log('')
-    console.log('-----------')
+    //console.log('')
+    //console.log('-----------')
     me = document.getElementsByClassName('ar')
     this.jin = jin
     this.par1 = me[index]
@@ -579,21 +579,21 @@ function cli(state,index,jin,n,jor) {
 
     beg = this.par2.offsetHeight
 
-    console.log('JORRRRRRRRRRRRR',jor)
+    //console.log('JORRRRRRRRRRRRR',jor)
     this.par3.style.height = jor + 'px'
-    console.log('PART333333333:',this.par3.style.height)
+    //console.log('PART333333333:',this.par3.style.height)
 
     this.par2.style.height = 'fit-content'
     sul = this.par2.offsetHeight
-    console.log('SULLLLLLLLLLL', this.par2.offsetHeight)
+    //console.log('SULLLLLLLLLLL', this.par2.offsetHeight)
 
     search = mecams.find(function(mecams){
         return mecams.created == this.jin
        })
 
-       console.log(search)
+       //console.log(search)
     if (search != undefined) {
-       console.log('JÁ TEM ' + this.jin)
+       //console.log('JÁ TEM ' + this.jin)
         search.comp++
         //console.log(search,'COMP:',search.comp)
         /*
@@ -616,17 +616,17 @@ function cli(state,index,jin,n,jor) {
         return mecams.created == this.jin
        })
 
-       console.log(search)
+       //console.log(search)
        if (search.cl == false) {
         if (search.cl == false) {
-            console.log('ABRIR')
+            //console.log('ABRIR')
         }else{
-            console.log('FECHAR')
+            //console.log('FECHAR')
         }
 
         txt = String(this.par3.innerText)
            busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
-           console.log('busca',txt,busca)
+           //console.log('busca',txt,busca)
 
         if (this.par3.innerText == 'Resolução') {
             //console.log('WAIT')
@@ -637,8 +637,8 @@ function cli(state,index,jin,n,jor) {
             eh = sul
            }
 
-           console.log('initial:',ih,'px')
-           console.log('final:',eh,'px')
+           //console.log('initial:',ih,'px')
+           //console.log('final:',eh,'px')
 
     css = `@keyframes ${jin}${search.comp} {
          0% {
@@ -657,7 +657,7 @@ function cli(state,index,jin,n,jor) {
        this.par1.style.transform = 'rotate(90deg)'
        search.cl = true
 }else{
-    console.log('gooooo')
+    //console.log('gooooo')
     if (this.par3.innerText == 'Resolução') {
         //console.log('WAIT')
         ih = search.st - 10
@@ -1089,11 +1089,11 @@ return podeir;
 }
 
 function doTheFactoring(exal) {
-console.log(exal)
+//console.log(exal)
 function CreateEngine2() {
-    console.log('')
-    console.log('')
-    console.log('creating engine........')
+    //console.log('')
+    //console.log('')
+    //console.log('creating engine........')
   this.FATORAR = 
   function (expression_2,somarmons) {
 
@@ -1185,7 +1185,7 @@ function CreateEngine2() {
           comofica.push(ground);
         } }
       monomios_2[bye].numero = comofica;
-     // console.log('como fica',comofica)
+     // //console.log('como fica',comofica)
     }
   
     for (huh in monomios_2) {
@@ -1580,15 +1580,15 @@ function CreateEngine2() {
 //
 
      if (segs_2.length > 0) {
-     console.log('------------------------INDIREITANDO AS COISA----------------------')
+     //console.log('------------------------INDIREITANDO AS COISA----------------------')
      }
      for (loi in segs_2) { // Cada segs_2
         ame = segs_2[loi].mons // Cada segs_2.mons
-        console.log(ame)
+        //console.log(ame)
         ord = sort(ame)[0] // Ordena o segs_2[loi].mons *Eg.: [0,2,1] => [2,1,0]
         ag = []
         for (dir = ord.length - 1; dir >= 0; dir--) { // Cada monômio do array ordenado, de trás para frente
-            console.log(ord[dir])
+            //console.log(ord[dir])
             ag.push(ord[dir]) // ag.push(0)/(1)/(2)
         }
         segs_2[loi].mons = ag // Muda o segs_2[loi] para o array em ordem crescente *[0,1,2]
@@ -1642,7 +1642,7 @@ function CreateEngine2() {
        
                   lightson = [...army] // *['13','.','2','x']
                      pain = DIVIDIR(army,monomios_2[segs_2[anchor].mons[high]].numero)
-                     console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
+                     //console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
                      // DIVIDIR(['13','.','2','x'], monomios_2[n].numero => *Eg.: ['13','*','2','*','2','x'])
                      // *pain = 2
   
@@ -1677,7 +1677,7 @@ function CreateEngine2() {
                              uy+= right[xarope]
                          }}
 
-                         console.log(uy)
+                         //console.log(uy)
                          // uy = *Eg.: 2*2
                         scarecrow_2[anchor].outrodiv.push(redo(desfat(uy))) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
                        
@@ -1733,27 +1733,27 @@ function CreateEngine2() {
             // *OBS: repetidos = posições no scarecrow_2, posições = posições no miss_2 (equivalente às letras)
 
            for (ne in roll_2) { // *roll_2[ne] = {posições: ['0','1'], repetidos: [0,2], way: ",0,1"}
-            console.log('-------------------------------------------')
-            console.log(`roll_2[${ne}]`,roll_2[ne].repetidos)
+            //console.log('-------------------------------------------')
+            //console.log(`roll_2[${ne}]`,roll_2[ne].repetidos)
              arranjar = [] 
              for (pq in roll_2[ne].repetidos) { // *roll_2[ne].repetidos = [0,2], roll_2[ne].repetidos[0] = 0 (posição no scarecrow_2)
                 //  *Eg.: scarecrow_2[0] = {'a','b'}
                  gosto = roll_2[ne].repetidos[pq]
-                 console.log('')
-                 console.log(roll_2[ne].repetidos[pq],scarecrow_2[roll_2[ne].repetidos[pq]].divididos,scarecrow_2[roll_2[ne].repetidos[pq]].outrodiv)
+                 //console.log('')
+                 //console.log(roll_2[ne].repetidos[pq],scarecrow_2[roll_2[ne].repetidos[pq]].divididos,scarecrow_2[roll_2[ne].repetidos[pq]].outrodiv)
                  arranjar.push({pos: pq, ocupa: [], origin: gosto}) // pos é inútil :)
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
                  vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] 
                  // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 arranjar[pq].ocupa.push(vaiir)
-                console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
+                //console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
          
          jafoi = []
          
          for (hate in arranjar) {
-            console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
+            //console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
          }
          perfectwave = []
          for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']} *OBS: origin => posição no scarecrow_2
@@ -1779,7 +1779,7 @@ function CreateEngine2() {
              // *Eg.: {agrupar: [0,1], referencia: ['-b','-a']}
              // 0: ['-b','-a']
              // 1: ['b','a'] x -1 = ['-b','-a']
-             console.log('organizer', organizer)
+             //console.log('organizer', organizer)
          }}
          
         
@@ -1800,25 +1800,25 @@ function CreateEngine2() {
                         scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
                      } }
                  if (diferente == true) {
-                    console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
+                    //console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
                     refer = [] 
                     for (ho in perfectwave[youchoose].referencia) {
                         refer.push(perfectwave[youchoose].referencia[ho].replace('-',''))
                     }
 
-                    console.log('REFER',refer)
-                    console.log(scarecrow_2[arranjar[presa].origin].outrodiv)
+                    //console.log('REFER',refer)
+                    //console.log(scarecrow_2[arranjar[presa].origin].outrodiv)
                     sa = scarecrow_2[arranjar[presa].origin].outrodiv
                     for (con in sa) {
                         if (refer.indexOf(scarecrow_2[arranjar[presa].origin].divididos[con]) == -1) {
-                        console.log(sa[con])
+                        //console.log(sa[con])
                         if (sa[con][0] == '-') {
-                            console.log('tirar o sinal de menos')
+                            //console.log('tirar o sinal de menos')
                             sa[con] = sa[con].replace('-','')
                         }else{
-                            console.log('adicionar sinal de menos')
+                            //console.log('adicionar sinal de menos')
                             sa[con] = '-' + sa[con]
-                            console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
+                            //console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
                         } }}
 
                      lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
@@ -2037,27 +2037,27 @@ function CreateEngine2() {
 
      heya_2 = [...youdumb_2]
      for (imback in youdumb_2) {
-        console.log('---------YOUDUMB-------',youdumb_2[imback])
+        //console.log('---------YOUDUMB-------',youdumb_2[imback])
          sticky = []
          initial = youdumb_2[imback].w.what
-         console.log('initial',initial)
+         //console.log('initial',initial)
          if (initial.length > 0) {
          inside = {which: [], numberyoudumb: youdumb_2[imback].polen}
          
          for (agg in initial) {
              taai = false
-             console.log(agg,initial[agg].ar)
+             //console.log(agg,initial[agg].ar)
               for (eng in initial[agg].ar) {
-                console.log(eng,initial[agg].ar[eng])
+                //console.log(eng,initial[agg].ar[eng])
                  if (numerospresentes_2.indexOf(initial[agg].ar[eng]) == -1) {
-                    console.log('Não tá aí')
+                    //console.log('Não tá aí')
                  }else{
-                    console.log('Tá aí')
+                    //console.log('Tá aí')
                      taai = true
                  } }
               if (taai == false) {
                  inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
-                 console.log(`inform: {mons: ${initial[agg].ar},indice: ${initial[agg].indice}}`)
+                 //console.log(`inform: {mons: ${initial[agg].ar},indice: ${initial[agg].indice}}`)
                  inside.which.push(inform)
   
                  for (darkening in inform.monos) {
@@ -3447,19 +3447,19 @@ function CreateEngine2() {
 
   ir = false
   if (todososnumeros_2.length == 0 && pans_2.length <= 1) {
-    console.log('DEU CERTOOOOOOOOOOOOOOO')
+    //console.log('DEU CERTOOOOOOOOOOOOOOO')
     ir = true
   }else if (monomios_2.length == 1) {
-    console.log('DEU CERTOOOOOOOOOOOOOOO')
+    //console.log('DEU CERTOOOOOOOOOOOOOOO')
     ir = true
   }
 
-  console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
-  console.log(todososnumeros_2)
-  console.log(pans_2)
-  console.log(monomios_2)
+  //console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
+  //console.log(todososnumeros_2)
+  //console.log(pans_2)
+  //console.log(monomios_2)
   if (ir == true) {
-    console.log('IR: TRUEE')
+    //console.log('IR: TRUEE')
     return [
         concatenar_2,
         pans_2.length,
@@ -3475,7 +3475,7 @@ function CreateEngine2() {
         pans_2
       ]
     }else{
-        console.log('IR: FALSEE')
+        //console.log('IR: FALSEE')
         return [
         '?',
         pans_2.length,
@@ -3630,6 +3630,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                roller_2.push({
                               rept: repwri, // *,1,2
                               opl: [...repeated], // *[1,2]
+                              factor: [miss_2[eep].dividido,miss_2[quad].dividido],
                               position: [eep, quad], // 0,1
                               monomios: [...compar] // [1,2,3,4]
                             });
@@ -3642,6 +3643,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 }}
                             if (perm == true) {
                                 func.position.push(pos1) // pos1 = eep
+                                func.factor.push(miss_2[Number(pos1)].dividido)
                                 for (wake in mons1) { // *mons1[0] = 1
                                 func.monomios.push(mons1[wake])
                                 } }
@@ -3652,6 +3654,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 }}
                             if (perm == true) {
                                 func.position.push(pos2) // pos2 = quad
+                                func.factor.push(miss_2[Number(pos2)].dividido)
                                 for (wake in mons2) { // *mons1[0] = 1
                                 func.monomios.push(mons2[wake])
                                 }}}
@@ -3660,7 +3663,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             } }}}}}
               
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
-                 roll_2.push({repetidos: roller_2[r].opl, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
+                 roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
                  // repetidos - opl, posições - position, way: rept
              } }
 
