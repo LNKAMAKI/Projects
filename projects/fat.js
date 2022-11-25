@@ -2377,7 +2377,6 @@ function CreateEngine2() {
       }
     }
          
-  
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount)
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
