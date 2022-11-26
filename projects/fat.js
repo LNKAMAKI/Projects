@@ -2188,6 +2188,7 @@ function CreateEngine2() {
              }
   
          if (aster == false) {
+            // Indireitando o aconta_2 caso quase não contenha '*'
              antes = ''
              for (eyes in quase) {
                  if (quase[eyes].search('[0-9]') != -1) {
@@ -2384,28 +2385,26 @@ function CreateEngine2() {
           concatenar_2 += ` + ${naonao_2}(${tobreak_2})`
         }else{
           concatenar_2 += `${naonao_2}(${tobreak_2})`
-        }
-      }
-    }
+        }}}
          
      // FAZENDO A CONTA
-        primeirocaso = SOMANDOMONOMIOS_2(amount)
-        segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
+        primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','5')
+        segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('+','1','+','4x')
         mudou = false
 
         console.log(primeirocaso)
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
-            mudou = true
+            mudou = true // DEU PRA SOMAR
         }
      
         console.log(segundocaso)
         if (segundocaso[1] == segundocaso[2]) {
         }else{
-            mudou = true
+            mudou = true // DEU PRA SOMAR
         }
   
-        if (mudou == true) {
+        if (mudou == true) { // Se deu pra somar pelo menos um dos dois (amount ou amontoado_2)
           naonao_2 = primeirocaso[0]
           tobreak_2 = segundocaso[0] 
         reason = []
