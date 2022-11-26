@@ -2190,7 +2190,7 @@ function CreateEngine2() {
             // Indireitando o aconta_2 caso quase não contenha '*'
              antes = ''
              for (eyes in quase) {
-                 if (quase[eyes].search('[0-9]') != -1) {
+                 if (quase[eyes].search('([0-9]|-)') != -1) {
                      antes+= quase[eyes]
                  } }
              antes+= aconta_2
@@ -2329,7 +2329,7 @@ function CreateEngine2() {
                 // Indireitando o aconta_2 caso quase não contenha '*'
                  antes = ''
              for (eyes in quase) {
-                 if (quase[eyes].search('[0-9]') != -1) {
+                 if (quase[eyes].search('([0-9]|-)') != -1) {
                      antes+= quase[eyes]
                  } }
              antes+= aconta_2
@@ -2554,7 +2554,7 @@ function CreateEngine2() {
       if (aster == false) {
           antes = ''
           for (eyes in quase) {
-              if (quase[eyes].search('[0-9]') != -1) {
+              if (quase[eyes].search('([0-9]|-)') != -1) {
                   antes+= quase[eyes]
               }}
           antes+= aconta_2
