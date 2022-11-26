@@ -2467,8 +2467,6 @@ function CreateEngine2() {
           numsdesfat.push(pans_2[bababa].todos[e])
          }}}
      
-         console.log(newexpress)
-
      if (numsdesfat.length > 0) {
         //console.log(concatenar_2)
       console.warn('VAI TER QUE FATORAR DE NOVO')
@@ -2502,6 +2500,7 @@ function CreateEngine2() {
               newexpress.push('+')
               newexpress.push(join)
           }}
+          console.log('newexpress',newexpress)
          this.FATORAR(newexpress)
      }else{
      todososnumeros_2 = []
