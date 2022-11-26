@@ -1543,6 +1543,8 @@ function CreateEngine2() {
                 contidos+= 1
                 } }
             console.log(quantos,'tem',contidos,'fatores em',quantos2)
+            if (contidos == quantos.length) 
+                console.log('=====================',quantos, 'está em', quantos2,'=====================')
             }}
         console.log('--------')
     }
