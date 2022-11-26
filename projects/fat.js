@@ -1504,6 +1504,32 @@ function CreateEngine2() {
                       segs_2[qual].mons.push(m)      
                  }}}
      
+    for (nl in segs_2) {
+        console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
+        pres = segs_2[nl].car
+        pcar = ''
+        quantos = []
+        for (part in pres) {
+            console.log(pres[part])
+            if (pres[part] != '.') {
+            pcar+= pres[part]
+            }
+            console.log(pres[Number(part) + 1])
+            if (pres[Number(part) + 1] == '.' || part == pres.length - 1) {
+                quantos.push(pcar)
+                pcar = ''
+            }
+        }
+        console.log(quantos)
+        for (out in segs_2) {
+            if (nl != out) {
+                console.log(segs_2[out].car)
+            }
+        }
+        console.log('--------')
+    }
+      
+    /*
      for (nl = 0; nl < segs_2.length; nl++) { // segs_2[nl]
          for (n = 0; n < segs_2.length; n++) { // segs_2[n]
              if (n != nl) {
@@ -1511,7 +1537,7 @@ function CreateEngine2() {
                  for (u in segs_2[n].mons) { // Cada monomio do array maior (segs_2[n].mons *car: 2xy)
                      if (segs_2[nl].mons.indexOf(segs_2[n].mons[u]) == -1) { // Se o array menor *car: 2 não possuir o monomio do maior, 
                         segs_2[nl].mons.push(segs_2[n].mons[u])  // será adicionado o monômio do maior ao menor, pois todos os monômios pertencentes ao *car: 2xy devem estar inclusos no *car: 2
-                     }}}}}}
+                     }}}}}}*/
      
      /* Código para ordenar o segs de acordo com a quantidade de monômios e o tamanho do car
      Eg.: 
