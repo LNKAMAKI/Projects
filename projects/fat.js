@@ -2243,9 +2243,10 @@ function CreateEngine2() {
                  amontoado_2.push('+')
                  amontoado_2.push(friend)
              }
-             console.log('amontoado',amontoado_2)
             }
-     
+            console.log('amontoado',amontoado_2)
+            console.log('')
+
          for (repr in pans_2[bababa].which) {
               triste = scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor
               quase = []
@@ -2350,7 +2351,6 @@ function CreateEngine2() {
               amount.push('+')
               amount.push(friend)
           }
-          console.log('amount',amount)
   
              if (naonao_2.length == 0) {
                  if (quase[0] == '-') {
@@ -2364,6 +2364,8 @@ function CreateEngine2() {
                  }else{
                      naonao_2+= ` + ${aconta_2}`  
                  }}}
+                 console.log('amount',amount)
+                 console.log('')
          
           if (edge_2.length > 1) {
             if (concatenar_2.length > 0) {
@@ -2409,8 +2411,10 @@ function CreateEngine2() {
         }
   
         if (mudou == true) { // Se deu pra somar pelo menos um dos dois (amount ou amontoado_2)
-          naonao_2 = primeirocaso[0]
-          tobreak_2 = segundocaso[0] 
+          naonao_2 = primeirocaso[0] // *9x
+          tobreak_2 = segundocaso[0] // *-2 + y
+
+          console.log()
         reason = []
         for (k in naonao_2) {
             console.log('naonao_2[k]',naonao_2[k])
