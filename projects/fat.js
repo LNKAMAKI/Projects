@@ -1511,20 +1511,38 @@ function CreateEngine2() {
         pcar = ''
         quantos = []
         for (part in pres) {
-            console.log(pres[part])
             if (pres[part] != '.') {
             pcar+= pres[part]
             }
-            console.log(pres[Number(part) + 1])
             if (pres[Number(part) + 1] == '.' || part == pres.length - 1) {
                 quantos.push(pcar)
                 pcar = ''
-            }
-        }
+            }}
         console.log(quantos)
         for (out in segs_2) {
             if (nl != out) {
                 console.log(segs_2[out].car)
+
+        pres = segs_2[out].car
+        pcar = ''
+        quantos2 = []
+        for (part in pres) {
+            if (pres[part] != '.') {
+            pcar+= pres[part]
+            }
+            if (pres[Number(part) + 1] == '.' || part == pres.length - 1) {
+                quantos2.push(pcar)
+                pcar = ''
+            }}
+            console.log(quantos2)
+
+            contidos = 0
+            for (pr in quantos) {
+                if (quantos2.indexOf(quantos[pr]) != -1) {
+                console.log(quantos[pr], 'está no index', quantos2.indexOf(quantos[pr]))
+                contidos+= 1
+                } }
+            console.log(quantos,'tem',contidos,'fatores em',quantos2)
             }}
         console.log('--------')
     }
