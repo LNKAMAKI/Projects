@@ -2392,11 +2392,14 @@ function CreateEngine2() {
         primeirocaso = SOMANDOMONOMIOS_2(amount)
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2)
         mudou = false
+
+        console.log(primeirocaso)
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
             mudou = true
         }
      
+        console.log(segundocaso)
         if (segundocaso[1] == segundocaso[2]) {
         }else{
             mudou = true
@@ -2407,12 +2410,14 @@ function CreateEngine2() {
           tobreak_2 = segundocaso[0] 
         reason = []
         for (k in naonao_2) {
+            console.log('naonao_2[k]',naonao_2[k])
           if (k != 0 && naonao_2[k] != '-' && naonao_2[k] != '+') {
               deserve = naonao_2[k - 1]
               reason.push(k - 1)
               deserve+= naonao_2[k]
               naonao_2[k] = deserve
           }}
+          console.log('reason',reason)
   
      for (time = naonao_2.length - 1; time >= 0; time--) {
       if (reason.indexOf(time) != -1) {
