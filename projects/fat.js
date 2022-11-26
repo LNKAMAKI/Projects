@@ -2104,6 +2104,8 @@ function CreateEngine2() {
            tobreak_2 = ''
            realife = []
            amontoado_2 = []
+
+           console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
            for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyoudumb].posições = ['0','1']
              el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido // *miss_2[0].dividido = 'a'
              gates = []
@@ -2136,6 +2138,7 @@ function CreateEngine2() {
                          if (estudar == el.length - 1) {
                              quase.push(juntar)
                          }}} }
+                         console.log('quase',quase)
      
               if (teri == false) {
                  quase = []
@@ -2179,6 +2182,9 @@ function CreateEngine2() {
                       direitando+= quase[h]
               }
               friend = direitando
+              console.log('=>',friend)
+             }else{
+             console.log('=>',aconta_2)
              }
   
          if (aster == false) {
@@ -2189,6 +2195,7 @@ function CreateEngine2() {
                  } }
              antes+= aconta_2
              aconta_2 = antes
+             console.log('antes',antes)
          }
      
          realife.push(aconta_2)
@@ -2235,7 +2242,9 @@ function CreateEngine2() {
              }else{
                  amontoado_2.push('+')
                  amontoado_2.push(friend)
-             }}
+             }
+             console.log('amontoado',amontoado_2)
+            }
      
          for (repr in pans_2[bababa].which) {
               triste = scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor
@@ -2336,6 +2345,7 @@ function CreateEngine2() {
               amount.push('+')
               amount.push(friend)
           }
+          console.log('amount',amount)
   
              if (naonao_2.length == 0) {
                  if (quase[0] == '-') {
@@ -3170,7 +3180,6 @@ function CreateEngine2() {
   particles[obnum].numero += list[n]
   }
   
-  
   for (huh in particles) {
       partlet = ''
       for (y in particles[huh].numero) {
@@ -3179,7 +3188,6 @@ function CreateEngine2() {
        }}
       particles[huh].partletral = partlet
   }
-  
   
   exp_2 = []
   for (bye in particles) {
@@ -3216,19 +3224,15 @@ function CreateEngine2() {
          }}
   
   for (chuva in agruparsoma) {
-  
       conta = []
   for (da in agruparsoma[chuva].quais) {
-  
   divisor = []
   for (flowers in agruparsoma[chuva].que) {
-  
   divisor.push(agruparsoma[chuva].que[flowers])
   }
   
   tu = [...divisor]
   resultadoDaDivisão = DIVIDIR( divisor, particles[agruparsoma[chuva].quais[da]].numero)
-  
   plan = []
   add = ''
   
@@ -3263,8 +3267,7 @@ function CreateEngine2() {
       sinal = particles[agruparsoma[chuva].quais[da]].numero[0]
       if (conta.length != 0) {
       conta.push(particles[agruparsoma[chuva].quais[da]].numero[0])
-      }
-      }
+      }}
       if (conta.length == 0 && particles[agruparsoma[chuva].quais[da]].numero[0] == '-') {
    entao = '-'
    entao+= plan[0]
@@ -3280,8 +3283,7 @@ function CreateEngine2() {
      for (b in comehome[0]) {
      if (comehome[0][b] != '-') {
        t+= comehome[0][b]
-     }
-     }
+     }}
    
      at = t
      if (ehprimo(t) == false) {
