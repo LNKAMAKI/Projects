@@ -1720,7 +1720,6 @@ function CreateEngine2() {
                          } 
                          uy = holdon // uy assume somente valor positivo
                         }
-                        console.log('UYYYY',uy)
                         scarecrow_2[anchor].divididos.push(uy) // Adiciona ao divididos os valores ignorando os sinais *Eg.: [a,b,c,d]
                      }}}
         
