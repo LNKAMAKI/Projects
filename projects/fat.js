@@ -1535,16 +1535,19 @@ function CreateEngine2() {
                 pcar = ''
             }}
             console.log(quantos2)
+            life = [...quantos2]
 
             contidos = 0
             for (pr in quantos) {
                 if (quantos2.indexOf(quantos[pr]) != -1) {
                 console.log(quantos[pr], 'está no index', quantos2.indexOf(quantos[pr]))
+                quantos2.splice(quantos2.indexOf(quantos[pr]),1)
+                console.log(quantos2)
                 contidos+= 1
                 } }
-            console.log(quantos,'tem',contidos,'fatores em',quantos2)
+            console.log(quantos,'tem',contidos,'fatores em',life)
             if (contidos == quantos.length) {
-                console.log('=====================',quantos, 'está em', quantos2,'=====================')
+                console.log('=====================',quantos, 'está em', life,'=====================')
             console.log(quantos2, '=>',segs_2[out].mons)
             console.log(quantos, '=>',segs_2[nl].mons)
             for (hard in segs_2[out].mons) {
