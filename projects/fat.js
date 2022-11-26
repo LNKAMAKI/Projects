@@ -2182,7 +2182,6 @@ function CreateEngine2() {
                       direitando+= quase[h]
               }
               friend = direitando
-              console.log('=>',friend)
              }else{
              console.log('=>',aconta_2)
              }
@@ -2278,6 +2277,7 @@ function CreateEngine2() {
                          if (estudar == triste.length - 1) {
                              quase.push(juntar)
                          }} } }
+                         console.log('quase',quase)
      
               if (teri == false) {
                  quase = []
@@ -2320,7 +2320,9 @@ function CreateEngine2() {
                        direitando+= quase[h]
                }
                friend = direitando
-              }
+              }else{
+                console.log('=>',aconta_2)
+                }
   
              if (aster == false) {
                  antes = ''
@@ -2330,6 +2332,7 @@ function CreateEngine2() {
                  } }
              antes+= aconta_2
                aconta_2 = antes
+               console.log('antes',antes)
              }
      
             edge_2.push(aconta_2)
@@ -2388,8 +2391,8 @@ function CreateEngine2() {
         }}}
          
      // FAZENDO A CONTA
-        primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','5')
-        segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('+','1','+','4x')
+        primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
+        segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
         mudou = false
 
         console.log(primeirocaso)
