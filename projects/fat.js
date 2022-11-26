@@ -1521,7 +1521,7 @@ function CreateEngine2() {
         console.log(quantos)
         for (out in segs_2) {
             if (nl != out) {
-                console.log(segs_2[out].car)
+                console.log('*',segs_2[out].car)
 
         pres = segs_2[out].car
         pcar = ''
@@ -1543,10 +1543,19 @@ function CreateEngine2() {
                 contidos+= 1
                 } }
             console.log(quantos,'tem',contidos,'fatores em',quantos2)
-            if (contidos == quantos.length) 
+            if (contidos == quantos.length) {
                 console.log('=====================',quantos, 'está em', quantos2,'=====================')
-            }}
-        console.log('--------')
+            console.log(quantos2, '=>',segs_2[out].mons)
+            console.log(quantos, '=>',segs_2[nl].mons)
+            for (hard in segs_2[out].mons) {
+                console.log('-', segs_2[out].mons[hard])
+                if (segs_2[nl].mons.indexOf(segs_2[out].mons[hard]) == -1) {
+                    console.log('OPA!')
+                    segs_2[nl].mons.push(segs_2[out].mons[hard])
+                }
+            }
+        }}}
+        console.log('')
     }
     
       
