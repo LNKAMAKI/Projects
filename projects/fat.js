@@ -2393,18 +2393,17 @@ function CreateEngine2() {
           concatenar_2 += `${naonao_2}(${tobreak_2})`
         }}}
          
+        console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
         mudou = false
 
-        console.log(primeirocaso)
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
             mudou = true // DEU PRA SOMAR
         }
      
-        console.log(segundocaso)
         if (segundocaso[1] == segundocaso[2]) {
         }else{
             mudou = true // DEU PRA SOMAR
@@ -2414,7 +2413,7 @@ function CreateEngine2() {
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
-          console.log()
+          console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
             console.log('naonao_2[k]',naonao_2[k])
@@ -2423,8 +2422,9 @@ function CreateEngine2() {
               reason.push(k - 1)
               deserve+= naonao_2[k]
               naonao_2[k] = deserve
-          }}
-          console.log('reason',reason)
+          }
+          console.log(naonao_2[k])
+        }
   
      for (time = naonao_2.length - 1; time >= 0; time--) {
       if (reason.indexOf(time) != -1) {
@@ -2438,7 +2438,9 @@ function CreateEngine2() {
               deserve+= tobreak_2[k]
               reason.push(k - 1)
              tobreak_2[k] = deserve
-          }}
+             console.log(tobreak_2[k])
+          }
+        }
   
         for (time = tobreak_2.length - 1; time >= 0; time--) {
           if (reason.indexOf(time) != -1) {
@@ -2465,6 +2467,8 @@ function CreateEngine2() {
           numsdesfat.push(pans_2[bababa].todos[e])
          }}}
      
+         console.log(newexpress)
+
      if (numsdesfat.length > 0) {
         //console.log(concatenar_2)
       console.warn('VAI TER QUE FATORAR DE NOVO')
