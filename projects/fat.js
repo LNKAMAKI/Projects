@@ -1617,7 +1617,7 @@ function CreateEngine2() {
                          lpisthebest = segs_2[anchor].car[fall] // lpisthebest é igual a 'n'
                      }else if(lpisthebest.search('[0-9]') != -1 && segs_2[anchor].car[fall].search('[0-9]') != -1) { // Se lpisthebest não estiver vazio e lpisthebest e 'n' forem Numbers, ou seja, se o caractere anterior for um Number e o 'n' também *Eg.: lpisthebest = '1' e 'n' = '3'
                          lpisthebest += segs_2[anchor].car[fall] // *1 += 3 => 13
-                     }else{ // Se lpisthebest estiver vazio, mas ele ou 'n' não forem Numbers
+                     }else{ // Se lpisthebest não estiver vazio, mas ele ou 'n' não forem Numbers
                          army.push(lpisthebest) // army.push(lpisthebest) *13
                          if(segs_2[anchor].car[fall] != '.') { // Se 'n' não for um ponto
                          lpisthebest = segs_2[anchor].car[fall] // lpisthebest = 'n' *Eg.: x
@@ -1730,14 +1730,14 @@ function CreateEngine2() {
     
             okentao++
      
-            // *OBS: repetidos = posições no scarecrow_2, posições = posições no miss_2 (equivalente às letras)
+            // *OBS: repetidos = posições no scarecrow_2, posições = posições no miss_2 (equivalente às letras/fatores)
 
-           for (ne in roll_2) { // *roll_2[ne] = {posições: ['0','1'], repetidos: [0,2], way: ",0,1"}
+           for (ne in roll_2) { // *roll_2[ne] = {posições: ['0','1'], factor: ['b','a'], repetidos: [0,2], way: ",0,1"}
             //console.log('-------------------------------------------')
             //console.log(`roll_2[${ne}]`,roll_2[ne].repetidos)
              arranjar = [] 
              for (pq in roll_2[ne].repetidos) { // *roll_2[ne].repetidos = [0,2], roll_2[ne].repetidos[0] = 0 (posição no scarecrow_2)
-                //  *Eg.: scarecrow_2[0] = {'a','b'}
+                //  *Eg.: scarecrow_2[0].divididos = ['a','b']
                  gosto = roll_2[ne].repetidos[pq]
                  //console.log('')
                  //console.log(roll_2[ne].repetidos[pq],scarecrow_2[roll_2[ne].repetidos[pq]].divididos,scarecrow_2[roll_2[ne].repetidos[pq]].outrodiv)
@@ -1753,7 +1753,7 @@ function CreateEngine2() {
          jafoi = []
          
          for (hate in arranjar) {
-            //console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
+            console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
          }
          perfectwave = []
          for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']} *OBS: origin => posição no scarecrow_2
@@ -2097,14 +2097,15 @@ function CreateEngine2() {
      newexpress = []
      
      for (bababa in pans_2) {
+        console.log('pans_2[bababa]',pans_2[bababa])
          edge_2 = []
          naonao_2 = ''
          amount = []
            tobreak_2 = ''
            realife = []
            amontoado_2 = []
-           for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) {
-             el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido
+           for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyiudumb].posições = ['0','1']
+             el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido // *miss_2[0].dividido = 'a'
              gates = []
              quase = []
              teri = false
