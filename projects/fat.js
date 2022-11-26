@@ -1504,7 +1504,7 @@ function CreateEngine2() {
                       segs_2[qual].mons.push(m)      
                  }}}
      
-                 /*
+                 
     for (nl in segs_2) {
         console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
         pres = segs_2[nl].car
@@ -1525,11 +1525,10 @@ function CreateEngine2() {
         for (out in segs_2) {
             if (nl != out) {
                 console.log(segs_2[out].car)
-            }
-        }
+            }}
         console.log('--------')
     }
-    */
+    
       
     /*
      for (nl = 0; nl < segs_2.length; nl++) { // segs_2[nl]
@@ -1710,7 +1709,7 @@ function CreateEngine2() {
                          //console.log(uy)
                          // uy = *Eg.: 2*2
                          console.log('OUTRODIV LIXOO!!!!!!!!', redo(desfat(REFORMATAR(uy))))
-                        scarecrow_2[anchor].outrodiv.push(uy) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
+                        scarecrow_2[anchor].outrodiv.push(redo(desfat(REFORMATAR(uy)))) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
                        
                         if (uy[0] == '-') { // Se o uy começar com -, ou seja, se o resultado da divisão for negativa
                          holdon = ''
@@ -1720,7 +1719,7 @@ function CreateEngine2() {
                          } 
                          uy = holdon // uy assume somente valor positivo
                         }
-                        scarecrow_2[anchor].divididos.push(uy) // Adiciona ao divididos os valores ignorando os sinais *Eg.: [a,b,c,d]
+                        scarecrow_2[anchor].divididos.push(redo(desfat(REFORMATAR(uy)))) // Adiciona ao divididos os valores ignorando os sinais *Eg.: [a,b,c,d]
                      }}}
         
 
