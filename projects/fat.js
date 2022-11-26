@@ -1504,6 +1504,7 @@ function CreateEngine2() {
                       segs_2[qual].mons.push(m)      
                  }}}
      
+                 /*
     for (nl in segs_2) {
         console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
         pres = segs_2[nl].car
@@ -1528,6 +1529,7 @@ function CreateEngine2() {
         }
         console.log('--------')
     }
+    */
       
     /*
      for (nl = 0; nl < segs_2.length; nl++) { // segs_2[nl]
@@ -1671,6 +1673,8 @@ function CreateEngine2() {
                      //console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
                      // DIVIDIR(['13','.','2','x'], monomios_2[n].numero => *Eg.: ['13','*','2','*','2','x'])
                      // *pain = 2
+                     console.log('DIVIDIR!!!!!!!!!!!!!!!', monomios_2[segs_2[anchor].mons[high]].numero, '/', lightson)
+                     console.log('RESULTADO',pain)
   
                      if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) { // Se pain for '' ou '-', ou seja, se a divisão der 1 ou -1
                     if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) { // - com + = -
@@ -1705,7 +1709,8 @@ function CreateEngine2() {
 
                          //console.log(uy)
                          // uy = *Eg.: 2*2
-                        scarecrow_2[anchor].outrodiv.push(redo(desfat(uy))) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
+                         console.log('OUTRODIV LIXOO!!!!!!!!', redo(desfat(REFORMATAR(uy))))
+                        scarecrow_2[anchor].outrodiv.push(uy) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
                        
                         if (uy[0] == '-') { // Se o uy começar com -, ou seja, se o resultado da divisão for negativa
                          holdon = ''
@@ -1715,9 +1720,15 @@ function CreateEngine2() {
                          } 
                          uy = holdon // uy assume somente valor positivo
                         }
+                        console.log('UYYYY',uy)
                         scarecrow_2[anchor].divididos.push(uy) // Adiciona ao divididos os valores ignorando os sinais *Eg.: [a,b,c,d]
                      }}}
         
+
+                     for (h in scarecrow_2) {
+                        console.log(scarecrow_2[h].divididos)
+                        console.log(scarecrow_2[h].outrodiv)
+                     }
             miss_2 = []
      
             for (ah in scarecrow_2) { // scarecrow_2[ah] = *{divididos: ['2y','yy'], outrodiv: ['2y','yy'], poss: [1,3], divisor: ['2','.','5'], positions: [1,3]}
@@ -2216,7 +2227,7 @@ function CreateEngine2() {
             // Indireitando o aconta_2 caso quase não contenha '*'
              antes = ''
              for (eyes in quase) {
-                 if (quase[eyes].search('([0-9]|-)') != -1) {
+                 if (quase[eyes].search('[0-9]') != -1) {
                      antes+= quase[eyes]
                  } }
              antes+= aconta_2
@@ -2355,7 +2366,7 @@ function CreateEngine2() {
                 // Indireitando o aconta_2 caso quase não contenha '*'
                  antes = ''
              for (eyes in quase) {
-                 if (quase[eyes].search('([0-9]|-)') != -1) {
+                 if (quase[eyes].search('[0-9]') != -1) {
                      antes+= quase[eyes]
                  } }
              antes+= aconta_2
@@ -2579,7 +2590,7 @@ function CreateEngine2() {
       if (aster == false) {
           antes = ''
           for (eyes in quase) {
-              if (quase[eyes].search('([0-9]|-)') != -1) {
+              if (quase[eyes].search('[0-9]') != -1) {
                   antes+= quase[eyes]
               }}
           antes+= aconta_2
