@@ -2325,6 +2325,7 @@ function CreateEngine2() {
                 }
   
              if (aster == false) {
+                // Indireitando o aconta_2 caso quase não contenha '*'
                  antes = ''
              for (eyes in quase) {
                  if (quase[eyes].search('[0-9]') != -1) {
