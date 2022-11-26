@@ -1753,7 +1753,7 @@ function CreateEngine2() {
          jafoi = []
          
          for (hate in arranjar) {
-            console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
+            //console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
          }
          perfectwave = []
          for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']} *OBS: origin => posição no scarecrow_2
@@ -2104,7 +2104,7 @@ function CreateEngine2() {
            tobreak_2 = ''
            realife = []
            amontoado_2 = []
-           for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyiudumb].posições = ['0','1']
+           for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyoudumb].posições = ['0','1']
              el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido // *miss_2[0].dividido = 'a'
              gates = []
              quase = []
