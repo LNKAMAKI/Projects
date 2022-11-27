@@ -21,6 +21,7 @@ function load() {
 }) }
        
 function showresult() {
+    if (loaded == true) {
     styles = document.head.getElementsByTagName('style')
     //console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',document.head.getElementsByTagName('style'))
     for (sen = styles.length - 1; sen >= 0; sen--) {
@@ -391,7 +392,7 @@ c = new CreateFunc(1,'close')
     */
 
 
-}
+}}
 
 late = 1
 function fn(a,act) {
