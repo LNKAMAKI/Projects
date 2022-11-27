@@ -31,7 +31,7 @@ function load() {
         res = doTheFactoring(type)
        
         console.log('RESSSSSSSSSSSSSSSSS',res)
-        if (res[0] != '?' && res[0] != '') {
+        if (res[0] != '?') {
         get1('fatoracao').value = res[0]
         }else{
             get1('fatoracao').value = 'Não é possível agrupar todos os monômios'
@@ -1098,6 +1098,7 @@ function CreateEngine2() {
   this.FATORAR = 
   function (expression_2,somarmons) {
 
+    console.log(state)
     if (expression_2[0] !== "-" && expression_2[0] !== "+") {
       expo_2 = ["+"];
       for (ent in expression_2) {
@@ -1507,6 +1508,7 @@ function CreateEngine2() {
      
                  
     for (nl in segs_2) {
+        if (somarmons == true)
         console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
         pres = segs_2[nl].car
         pcar = ''
@@ -1519,9 +1521,12 @@ function CreateEngine2() {
                 quantos.push(pcar)
                 pcar = ''
             }}
+            if (somarmons == true)
         console.log(quantos)
+
         for (out in segs_2) {
             if (nl != out) {
+                if (somarmons == true)
                 console.log('*',segs_2[out].car)
 
         pres = segs_2[out].car
@@ -1535,28 +1540,37 @@ function CreateEngine2() {
                 quantos2.push(pcar)
                 pcar = ''
             }}
+            if (somarmons == true)
             console.log(quantos2)
             life = [...quantos2]
 
             contidos = 0
             for (pr in quantos) {
                 if (quantos2.indexOf(quantos[pr]) != -1) {
+                    if (somarmons == true)
                 console.log(quantos[pr], 'está no index', quantos2.indexOf(quantos[pr]))
                 quantos2.splice(quantos2.indexOf(quantos[pr]),1)
+                if (somarmons == true)
                 console.log(quantos2)
                 contidos+= 1
                 } }
+                if (somarmons == true)
             console.log(quantos,'tem',contidos,'fatores em',life)
             if (contidos == quantos.length) {
+                if (somarmons == true) {
                 console.log('=====================',quantos, 'está em', life,'=====================')
             console.log(quantos2, '=>',segs_2[out].mons)
             console.log(quantos, '=>',segs_2[nl].mons)
+                }
             for (hard in segs_2[out].mons) {
+                if (somarmons == true)
                 console.log('-', segs_2[out].mons[hard])
                 if (segs_2[nl].mons.indexOf(segs_2[out].mons[hard]) == -1) {
+                    if (somarmons == true)
                     console.log('OPA!')
                     segs_2[nl].mons.push(segs_2[out].mons[hard])
                 } } }}}
+                if (somarmons == true)
         console.log('')
     }
     
@@ -2458,6 +2472,7 @@ function CreateEngine2() {
           concatenar_2 += `${naonao_2}(${tobreak_2})`
         }}}
          
+        if (somarmons == true)
         console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
@@ -2478,6 +2493,7 @@ function CreateEngine2() {
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
+          if (somarmons == true)
           console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
@@ -2564,6 +2580,7 @@ function CreateEngine2() {
               newexpress.push('+')
               newexpress.push(join)
           }}
+          if (somarmons == true)
           console.log('newexpress',newexpress)
          this.FATORAR(newexpress)
      }else{
@@ -3536,12 +3553,15 @@ function CreateEngine2() {
   }
 
   //console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
+  if (somarmons == true) {
   console.log(todososnumeros_2)
   console.log(pans_2)
   console.log(monomios_2)
   console.log('CONCATENAR-------------------------------------------', concatenar_2)
+  }
   
   if (ir == true) {
+    if (somarmons == true)
     console.log('IR: TRUEE')
     return [
         concatenar_2,
@@ -3558,6 +3578,7 @@ function CreateEngine2() {
         pans_2
       ]
     }else{
+        if (somarmons == true)
         console.log('IR: FALSEE')
         return [
         '?',
@@ -3572,9 +3593,7 @@ function CreateEngine2() {
         youdumb_2,
         monomios_2,
         pans_2]
-    }
-}
-}
+    }}}
 
 ep = FATORE(exal)
 //console.log(ep)
