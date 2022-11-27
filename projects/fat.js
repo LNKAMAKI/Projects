@@ -3640,8 +3640,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
-              }}
-          }
+              }}}
           
               if (alt == 1) {
                 vari = fat1
