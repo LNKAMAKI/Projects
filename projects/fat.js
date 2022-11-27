@@ -17,7 +17,7 @@ function load() {
 
     loaded = true
     get1('write').addEventListener('keyup',(event) => {
-        
+        showresult()
 }) }
        
 function showresult() {
