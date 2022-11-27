@@ -3616,7 +3616,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
 
           plo = false
           
-          if (monomios_2.length > 1 && segs_2.length > 1) {
+          if (monomios_2.length > 1 && segs_2.length > 1 && okexp != '?') {
             //console.log('isso')
           while (plo == false) {
               seps = SPLITEXPS(okexp)
