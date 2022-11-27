@@ -30,7 +30,8 @@ function load() {
         //console.log(type)
         res = doTheFactoring(type)
        
-        if (res[0] != '?') {
+        console.log('RESSSSSSSSSSSSSSSSS',res)
+        if (res[0] != '?' && res[0] != '') {
         get1('fatoracao').value = res[0]
         }else{
             get1('fatoracao').value = 'Não é possível agrupar todos os monômios'
@@ -1555,9 +1556,7 @@ function CreateEngine2() {
                 if (segs_2[nl].mons.indexOf(segs_2[out].mons[hard]) == -1) {
                     console.log('OPA!')
                     segs_2[nl].mons.push(segs_2[out].mons[hard])
-                }
-            }
-        }}}
+                } } }}}
         console.log('')
     }
     
@@ -3539,11 +3538,13 @@ function CreateEngine2() {
   }
 
   //console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
-  //console.log(todososnumeros_2)
-  //console.log(pans_2)
-  //console.log(monomios_2)
+  console.log(todososnumeros_2)
+  console.log(pans_2)
+  console.log(monomios_2)
+  console.log('CONCATENAR-------------------------------------------', concatenar_2)
+  
   if (ir == true) {
-    //console.log('IR: TRUEE')
+    console.log('IR: TRUEE')
     return [
         concatenar_2,
         pans_2.length,
@@ -3559,7 +3560,7 @@ function CreateEngine2() {
         pans_2
       ]
     }else{
-        //console.log('IR: FALSEE')
+        console.log('IR: FALSEE')
         return [
         '?',
         pans_2.length,
