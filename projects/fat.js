@@ -521,8 +521,7 @@ for(pare in sur) {
     c.SetDefault()
     }
     c.AddEvent()
-}
-}
+}}
 
 function CreateFunc(ind,action,number){
 
@@ -565,8 +564,7 @@ function CreateFunc(ind,action,number){
     this.AddEvent = function() {
         //console.log(this.a)
        this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
-    }
-}
+    }}
 
 function cli(state,index,jin,n,jor) {
     //console.log('')
@@ -647,8 +645,7 @@ function cli(state,index,jin,n,jor) {
         }
         100% {
             height: ${eh}px;
-        }
-    }`
+        }}`
         this.par2.style.animation = `${jin}${search.comp} 0.2s`
         this.par2.style.height = 'fit-content'
 
@@ -674,8 +671,7 @@ function cli(state,index,jin,n,jor) {
        }
        100% {
            height: ${ih}px;
-       }
-   }`
+       }}`
     this.par2.style.animation = `${jin}${search.comp} 0.2s`
     this.par2.style.height = `${ih}px`
    style = document.createElement('style')
@@ -695,11 +691,12 @@ function copy() {
 
 function copy2() {
     nums = document.getElementsByClassName('type')
+    if (nums[1].value != 'Não é possível agrupar todos os monômios') {
     copyText = nums[1]
     var copyGfGText = copyText;
     copyGfGText.select();
     document.execCommand("copy");
-}
+    }}
 
 abriu = false;
 vez = 0;
@@ -2456,8 +2453,7 @@ function CreateEngine2() {
           for (j in naonao_2) {
             if (j != 0) {
               rok+= naonao_2[j]
-            }
-          }
+            }}
           concatenar_2+= ' - '
           concatenar_2 += `${rok}(${tobreak_2})`;
         }else{
