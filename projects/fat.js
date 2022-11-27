@@ -3801,8 +3801,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                 if (point[was].search('[0-9]') != -1) {
                     if (ehprimo(point[was]) == false) {
                     point[was] = FATORARSInGULAR(point[was])
-                    }
-                } }
+                    }}}
               fires = ''
               for (was in point) {
                 fires+= point[was]
