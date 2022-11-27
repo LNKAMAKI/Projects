@@ -22,8 +22,7 @@ function load() {
         for (sen = styles.length - 1; sen >= 0; sen--) {
             if (sen != 0) {
                 document.head.removeChild(styles[sen])
-            }
-        }
+            }}
         if (event.key == 'Enter') {
         type = get1('write').value
         //console.log('type',type)

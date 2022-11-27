@@ -271,24 +271,21 @@
            font-size: 1.2em;
         }
         input[type="button"] {
-            cursor: pointer;
-            background-color: transparent;
-            border: 2px solid transparent;
-            font-family: 'Inconsolata',Arial;
-            border-radius: 5px;
-            padding: 7px 12px;
-            font-weight: 700;
-            font-size: 1em;
+           height: fit-content;
+           font-family: 'Inconsolata';
+           font-size: 1em;
+           padding: 4px 10px;
+           border-radius: 20px;
+           border-width: 0px;
+           cursor: pointer;
+           border: 1px solid black;
+           background-color: var(--darkblue);
         }
         input[type="button"]:hover {
-           color: black;
-           background-color:var(--lightblue);
-           background-color:rgb(101 184 217);
-           border-radius: 20px;
-           border: 2px solid black;
+         
         }
         input[type="button"]:active {
-           background-color: var(--darkblue);
+           background-color:var(--lightgray);
         }
         input::placeholder {
             color: var(--lightblue);
@@ -518,7 +515,10 @@
             <p style="margin-top: 0px;">/* Expressão: */</p> 
         <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
             <input id="write" spellcheck="false" class="type" value="5l + 20lx + 2 + 8x + cl"></input>
+            <div style="display: inline-flex;align-items: center;">
             <img src="./imagens/delete-bin.png" class="copy2" alt="delete text" onclick="erase()">
+            <input type="button" value="&fnof;atorar()">
+            </div>
             <!--<img src="/projects/imagens/copy.png" class="copy" alt="copy text" onclick="copy()">-->
         </div>
        <!-- <p><input type="button" value="FATORAR(expressão)" onclick="ir()"></p>-->
