@@ -2458,7 +2458,7 @@ function CreateEngine2() {
           concatenar_2 += `${naonao_2}(${tobreak_2})`
         }}}
          
-        //console.log(amount, '*', amontoado_2)
+        console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
@@ -2478,7 +2478,7 @@ function CreateEngine2() {
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
-          //console.log(primeirocaso[0], segundocaso[0])
+          console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
             //console.log('naonao_2[k]',naonao_2[k])
