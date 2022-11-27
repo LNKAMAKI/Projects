@@ -1703,8 +1703,8 @@ function CreateEngine2() {
                      //console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
                      // DIVIDIR(['13','.','2','x'], monomios_2[n].numero => *Eg.: ['13','*','2','*','2','x'])
                      // *pain = 2
-                     console.log('DIVIDIR!!!!!!!!!!!!!!!', monomios_2[segs_2[anchor].mons[high]].numero, '/', lightson)
-                     console.log('RESULTADO',pain)
+                     //console.log('DIVIDIR!!!!!!!!!!!!!!!', monomios_2[segs_2[anchor].mons[high]].numero, '/', lightson)
+                     //console.log('RESULTADO',pain)
   
                      if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) { // Se pain for '' ou '-', ou seja, se a divisão der 1 ou -1
                     if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) { // - com + = -
@@ -1739,7 +1739,7 @@ function CreateEngine2() {
 
                          //console.log(uy)
                          // uy = *Eg.: 2*2
-                         console.log('OUTRODIV LIXOO!!!!!!!!', redo(desfat(REFORMATAR(uy))))
+                         //console.log('OUTRODIV LIXOO!!!!!!!!', redo(desfat(REFORMATAR(uy))))
                         scarecrow_2[anchor].outrodiv.push(redo(desfat(REFORMATAR(uy)))) // redo(desfat(uy)) = uy em ordem crescente *Eg.: 5*2 => 2*5
                        
                         if (uy[0] == '-') { // Se o uy começar com -, ou seja, se o resultado da divisão for negativa
@@ -1755,8 +1755,8 @@ function CreateEngine2() {
         
 
                      for (h in scarecrow_2) {
-                        console.log(scarecrow_2[h].divididos)
-                        console.log(scarecrow_2[h].outrodiv)
+                        //console.log(scarecrow_2[h].divididos)
+                        //console.log(scarecrow_2[h].outrodiv)
                      }
             miss_2 = []
      
@@ -2163,7 +2163,7 @@ function CreateEngine2() {
      newexpress = []
      
      for (bababa in pans_2) {
-        console.log('pans_2[bababa]',pans_2[bababa])
+        //console.log('pans_2[bababa]',pans_2[bababa])
          edge_2 = []
          naonao_2 = ''
          amount = []
@@ -2171,7 +2171,7 @@ function CreateEngine2() {
            realife = []
            amontoado_2 = []
 
-           console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
+           //console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
            for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyoudumb].posições = ['0','1']
              el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido // *miss_2[0].dividido = 'a'
              gates = []
@@ -2204,7 +2204,7 @@ function CreateEngine2() {
                          if (estudar == el.length - 1) {
                              quase.push(juntar)
                          }}} }
-                         console.log('quase',quase)
+                         //console.log('quase',quase)
      
               if (teri == false) {
                  quase = []
@@ -2249,7 +2249,7 @@ function CreateEngine2() {
               }
               friend = direitando
              }else{
-             console.log('=>',aconta_2)
+             //console.log('=>',aconta_2)
              }
   
          if (aster == false) {
@@ -2261,7 +2261,7 @@ function CreateEngine2() {
                  } }
              antes+= aconta_2
              aconta_2 = antes
-             console.log('antes',antes)
+             //console.log('antes',antes)
          }
      
          realife.push(aconta_2)
@@ -2308,10 +2308,9 @@ function CreateEngine2() {
              }else{
                  amontoado_2.push('+')
                  amontoado_2.push(friend)
-             }
-            }
-            console.log('amontoado',amontoado_2)
-            console.log('')
+             } }
+            //console.log('amontoado',amontoado_2)
+            //console.log('')
 
          for (repr in pans_2[bababa].which) {
               triste = scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor
@@ -2344,7 +2343,7 @@ function CreateEngine2() {
                          if (estudar == triste.length - 1) {
                              quase.push(juntar)
                          }} } }
-                         console.log('quase',quase)
+                         //console.log('quase',quase)
      
               if (teri == false) {
                  quase = []
@@ -2388,7 +2387,7 @@ function CreateEngine2() {
                }
                friend = direitando
               }else{
-                console.log('=>',aconta_2)
+                //console.log('=>',aconta_2)
                 }
   
              if (aster == false) {
@@ -2400,7 +2399,7 @@ function CreateEngine2() {
                  } }
              antes+= aconta_2
                aconta_2 = antes
-               console.log('antes',antes)
+               //console.log('antes',antes)
              }
      
             edge_2.push(aconta_2)
@@ -2430,8 +2429,8 @@ function CreateEngine2() {
                  }else{
                      naonao_2+= ` + ${aconta_2}`  
                  }}}
-                 console.log('amount',amount)
-                 console.log('')
+                 //console.log('amount',amount)
+                 //console.log('')
          
           if (edge_2.length > 1) {
             if (concatenar_2.length > 0) {
@@ -2459,7 +2458,7 @@ function CreateEngine2() {
           concatenar_2 += `${naonao_2}(${tobreak_2})`
         }}}
          
-        console.log(amount, '*', amontoado_2)
+        //console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
@@ -2479,17 +2478,17 @@ function CreateEngine2() {
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
-          console.log(primeirocaso[0], segundocaso[0])
+          //console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
-            console.log('naonao_2[k]',naonao_2[k])
+            //console.log('naonao_2[k]',naonao_2[k])
           if (k != 0 && naonao_2[k] != '-' && naonao_2[k] != '+') {
               deserve = naonao_2[k - 1]
               reason.push(k - 1)
               deserve+= naonao_2[k]
               naonao_2[k] = deserve
           }
-          console.log(naonao_2[k])
+          //console.log(naonao_2[k])
         }
   
      for (time = naonao_2.length - 1; time >= 0; time--) {
@@ -2504,9 +2503,8 @@ function CreateEngine2() {
               deserve+= tobreak_2[k]
               reason.push(k - 1)
              tobreak_2[k] = deserve
-             console.log(tobreak_2[k])
-          }
-        }
+             //console.log(tobreak_2[k])
+          }}
   
         for (time = tobreak_2.length - 1; time >= 0; time--) {
           if (reason.indexOf(time) != -1) {
