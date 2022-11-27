@@ -1097,8 +1097,6 @@ function CreateEngine2() {
     //console.log('creating engine........')
   this.FATORAR = 
   function (expression_2,somarmons) {
-
-    console.log(state)
     if (expression_2[0] !== "-" && expression_2[0] !== "+") {
       expo_2 = ["+"];
       for (ent in expression_2) {
