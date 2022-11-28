@@ -1425,23 +1425,23 @@ function CreateEngine2() {
     console.log('ASSIM É COMO FICARAM OS MONÔMIOS:')
 
     for (aj in monomios_2) {
-        console.log(monomios_2[aj].numero, monomios_2[aj].partletral)
+        //console.log(monomios_2[aj].numero, monomios_2[aj].partletral)
         hop = 0
         whole = monomios_2[aj].numero
         justlet = []
         while (String(whole[hop]).search('[a-z]') == -1) {
-            console.log(hop)
-            console.log(whole[hop])
+            //console.log(hop)
+            //console.log(whole[hop])
             justlet.push(whole[hop])
             hop++
         }
-        console.log(justlet)
+        //console.log(justlet)
         varibs = monomios_2[aj].partletral
         for (ken in varibs) {
-            console.log(varibs[ken])
+            //console.log(varibs[ken])
             justlet.push(varibs[ken])
         }
-        console.log(justlet)
+        //console.log(justlet)
         monomios_2[aj].numero = justlet
     }
     //
@@ -3667,7 +3667,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
           if (monomios_2.length > 1 && segs_2.length > 1 && okexp != '?') {
             //console.log('isso')
           while (plo == false) {
-              seps = SPLITEXPS(okexp)
+            seps = SPLITEXPS(okexp)
               rexp =  ''
               chain = []
           for (varnot in seps) {          
@@ -3681,55 +3681,69 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             previous = okexp[Number(seps[varnot].open) - 1]
             console.log(okexp, previous)
             console.log('FATORAÇÃO:', fator1[0])
-            
+            console.log('rexp',rexp)
             alr = true
             if (previous == ')' && fator1[0] != '(' && fator1[0] != '?') {
-                console.log('Looks like we have an issue')
+                //console.log('Looks like we have an issue')
                 alr = false
             }
-            //console.log(rexp)
+
             daprafator1 = false 
             if (fator1[1] == 1 && fator1[2] == 0) { 
             daprafator1 = true
             }
            chain.push(daprafator1)
           
+           lastfat = ''
             if (varnot == 0) {
               if (start != 0) {
                   for (c = 0; c < start;c++) {
-                      rexp+= okexp[c]
+                      //rexp+= okexp[c]
+                      lastfat+= okexp[c]
                   }}}else{
               for (kl = Number(seps[Number(varnot)- 1].close) + 1; kl < start; kl++) {
-                  rexp+= okexp[kl]
+                 // rexp+= okexp[kl]
+                  lastfat+= okexp[kl]
               }}
-          
+           
+              console.log('lastfat',lastfat)
               if (daprafator1 == true) {
-                if (alr == true) {
-                  rexp+= fator1[0]
-                }else{
-                    ik = 0
-                    that = ''
-                    console.log(fator1[0])
-                    while (fator1[0][ik] != '(') {
-                        that+= fator1[0][ik]
-                        ik++
-                    }
-                    thisa = ''
-                    while (ik != fator1[0].length) {
-                        thisa+= fator1[0][ik]
-                        ik++
-                    }
-                    console.log('that:',that,'thisa',thisa)
-                    rexp = that + rexp + thisa
-                }
+                  muf = lastfat.replace(new RegExp('[\\+\\- ]','g'),'')
+                  if (muf != '' && fator1[0][0] != '(') {
+                    console.log('lastat válido',muf)
+                        console.log('TEMOS UM PROBLEMA')
+                        strd = ''
+                        for (ni = 0; fator1[0][ni] != '('; ni++) {
+                            strd+= fator1[0][ni]
+                        }
+                        console.log('primeiro',strd)
+                        strm = ''
+                        while (ni != fator1[0].length) {
+                            strm+= fator1[0][ni]
+                            ni++
+                        }
+                        console.log('segundo',strm)
+                        v1 = REFORMATAR(redo(muf))
+                        v2 = REFORMATAR(redo(strd))
+                        mult = desfat(REFORMATAR(MULTIPLICARDIREITO(v1,v2)))
+                        console.log(v1,v2, mult)
+                        rexp+= mult
+                        rexp+= strm
+                  }else{
+                    rexp+= lastfat
+                    rexp+= fator1[0]
+                  }
               }else{
+                  rexp+= lastfat
                   rexp+= '(' + expin + ')'
               }
+              console.log('rexp',rexp)
               if (varnot == seps.length - 1) {
                   if (end != okexp.length - 1) {
                       for (c = Number(end) + 1; c < okexp.length;c++) {
                           rexp+= okexp[c]
                       }}}}
+
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
@@ -3836,7 +3850,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         }else{ // miss_2[quad].aparicoes.indexOf(1) == -1 || compar.indexOf(varib2[0]) != -1
                                 compar.splice(compar.length - 1,1)
                             } }}}}}
-              
+                
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
                  roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
                  // repetidos - opl, posições - position, way: rept
@@ -3990,3 +4004,53 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                 }
                 return newlista
                 }
+
+                function MULTIPLICARDIREITO(num1, num2) {
+                    if (num1 == '1' || num2 == '1') {
+                        if (num1 == '1') {
+                            resultmult = num2
+                        }else{
+                            resultmult = num1
+                        }
+                    }else{
+                        sónumero = ''
+                        sóletra = ''
+                        for (car in num1) {
+                            if (num1[car].search('[0-9]') != -1 || num1[car] == '*') {
+                                sónumero += num1[car]
+                            }else if(num1[car].search('[a-z]') != -1) {
+                                sóletra += num1[car]
+                            }
+                          }
+                        sónumero2 = ''
+                        sóletra2 = ''
+                        for (car in num2) {
+                            if (num2[car].search('[0-9]') != -1 || num2[car] == '*') {
+                                sónumero2 += num2[car]
+                            }else if(num2[car].search('[a-z]') != -1){
+                                sóletra2 += num2[car]
+                            }
+                        }
+                        if (sónumero.length > 0 && sónumero2.length > 0) {
+                            sónumero+= '*'
+                        }
+                        if (num1[0] == '-') {
+                            sinal1 = 'neg'
+                        }else{
+                            sinal1 = 'pos'
+                        }
+                        if (num2[0] == '-') {
+                            sinal2 = 'neg'
+                        }else{
+                            sinal2 = 'pos'
+                        }
+                        sónumero+= sónumero2
+                            sóletra+= sóletra2
+                            if (sinal1 == sinal2) {
+                                resultmult = sónumero+= sóletra
+                            }else{
+                                resultmult = '-'
+                                resultmult += sónumero+= sóletra
+                            }}
+                    return resultmult
+                    }
