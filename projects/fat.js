@@ -1400,6 +1400,52 @@ function CreateEngine2() {
         }}
       monomios_2[bye].numero = comofica;
     }}
+// NEWW!
+    for (huh in monomios_2) {
+        partlet = "";
+        for (y in monomios_2[huh].numero) {
+          if (String(monomios_2[huh].numero[y]).search("[a-z]") != -1) {
+            partlet += String(monomios_2[huh].numero[y]);
+          }}
+        monomios_2[huh].partletral = partlet;
+      }
+      for (h in monomios_2) {
+        mo = monomios_2[h]
+        listo = []
+        for (ge in mo.partletral) {
+            listo.push(mo.partletral[ge])
+        }
+        sl = sortWords(listo)
+        stri = ''
+        for (nai in sl) {
+           stri+= sl[nai] 
+        }
+        mo.partletral = stri
+      }
+    console.log('ASSIM É COMO FICARAM OS MONÔMIOS:')
+
+    for (aj in monomios_2) {
+        console.log(monomios_2[aj].numero, monomios_2[aj].partletral)
+        hop = 0
+        whole = monomios_2[aj].numero
+        justlet = []
+        while (String(whole[hop]).search('[a-z]') == -1) {
+            console.log(hop)
+            console.log(whole[hop])
+            justlet.push(whole[hop])
+            hop++
+        }
+        console.log(justlet)
+        varibs = monomios_2[aj].partletral
+        for (ken in varibs) {
+            console.log(varibs[ken])
+            justlet.push(varibs[ken])
+        }
+        console.log(justlet)
+        monomios_2[aj].numero = justlet
+    }
+    //
+    
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
      reps = []
      segs_2 = []
@@ -3624,13 +3670,24 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               seps = SPLITEXPS(okexp)
               rexp =  ''
               chain = []
-          for (varnot in seps) {             
+          for (varnot in seps) {          
             start = seps[varnot].open
               end = seps[varnot].close
               expin = seps[varnot].exp
           
             fator1 = new CreateEngine2().FATORAR(FATORE(seps[varnot].exp), false)
           
+            console.log('HEY ============>', seps[varnot].exp)
+            previous = okexp[Number(seps[varnot].open) - 1]
+            console.log(okexp, previous)
+            console.log('FATORAÇÃO:', fator1[0])
+            
+            alr = true
+            if (previous == ')' && fator1[0] != '(' && fator1[0] != '?') {
+                console.log('Looks like we have an issue')
+                alr = false
+            }
+            //console.log(rexp)
             daprafator1 = false 
             if (fator1[1] == 1 && fator1[2] == 0) { 
             daprafator1 = true
@@ -3647,7 +3704,24 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               }}
           
               if (daprafator1 == true) {
+                if (alr == true) {
                   rexp+= fator1[0]
+                }else{
+                    ik = 0
+                    that = ''
+                    console.log(fator1[0])
+                    while (fator1[0][ik] != '(') {
+                        that+= fator1[0][ik]
+                        ik++
+                    }
+                    thisa = ''
+                    while (ik != fator1[0].length) {
+                        thisa+= fator1[0][ik]
+                        ik++
+                    }
+                    console.log('that:',that,'thisa',thisa)
+                    rexp = that + rexp + thisa
+                }
               }else{
                   rexp+= '(' + expin + ')'
               }
