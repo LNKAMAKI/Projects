@@ -33,6 +33,7 @@ div#fontypes {
     height: fit-content;
     font: italic bold 0.4cm Arial;
     margin-bottom: 0px;
+    word-break: break-word;
    /* box-shadow:0px 0px 10px #b7b7b7; */
 }
 
@@ -158,7 +159,8 @@ p {
     color: black;
 }
 code {
-    overflow: auto;
+   /* overflow: auto;*/
+   word-break: break-word;
 }
 img {
     width: 100%;
@@ -177,4 +179,7 @@ img {
 }
 h3 {
     margin: 5px 0px;
+}
+table {
+    word-break: normal;
 }
