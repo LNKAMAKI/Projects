@@ -381,15 +381,12 @@ c = new CreateFunc(1,'close')
         c.AddEvent()
         plar.push(c)
     }
-
     /*
     c = new CreateFunc(pl4[pl4.length - 1] + 1,'close')
     c.SetDefault()
     c.AddEvent()
     cs.push(c)
     */
-
-
 }}
 
 late = 1
@@ -510,8 +507,7 @@ function fn(a,act) {
         }
     cn4.getElementsByClassName('dev')[0].innerHTML+= ` <div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), grupos: Array(${res[9][h].w.what.length})
     </span> </div><div class="tocent" style="margin-bottom:0px;"> <div class="cont">  <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">agrup:&nbsp;</span><span style="display: flex;overflow-x: scroll;">${spn}<span></div> ${splitspn}</div></div></div>`
-    }
-}
+    }}
 
 for(pare in sur) {
     is = sur[pare]
@@ -528,7 +524,6 @@ for(pare in sur) {
 }}
 
 function CreateFunc(ind,action,number){
-
     this.ind = ind
     //console.log('THISSSSSSSSS',ind)
     this.par1 = document.getElementsByClassName('ar')[this.ind]
@@ -563,7 +558,6 @@ function CreateFunc(ind,action,number){
             this.par2.style.height = '28px'
             this.clicked = false
        } }
-    
     this.par1.setAttribute
     this.AddEvent = function() {
         //console.log(this.a)
@@ -614,7 +608,6 @@ function cli(state,index,jin,n,jor) {
            }else{
             mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
            } }
-
        search = mecams.find(function(mecams){
         return mecams.created == this.jin
        })
