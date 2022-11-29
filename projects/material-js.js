@@ -10,17 +10,13 @@ contents = [
 var subjects = []
 
 for (i in contents) {
-
     for (e in contents[i].subs) {
         console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
         subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
-    }
-}
-
+    }}
 
 // Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
-
     alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 palavrasNumericas = []
 posicaoPalavras = []
@@ -33,8 +29,7 @@ for (palavra in palavrasPrimitivas) {
             wordToNumber += `${alfabeto.indexOf(word[letra])}.`
         } else {
             wordToNumber += `${alfabeto.indexOf(word[letra])}`
-        }
-    }
+        }  }
     palavrasNumericas.push(wordToNumber)
     posicaoPalavras.push(palavra)
 }
@@ -42,10 +37,8 @@ for (palavra in palavrasPrimitivas) {
 for (pNumber in palavrasNumericas) {
     stop = false
     for (n = 0; stop == false && n < pNumber; n++) {
-
         if (n != pNumber) {
             palavraAnalisar = []
-        
             numint = ''
             for (num = 0; num < palavrasNumericas[n].length; num++) {
                    if (palavrasNumericas[n][num] == '.') {
@@ -56,10 +49,8 @@ for (pNumber in palavrasNumericas) {
                         palavraAnalisar.push(numint)
                    }else{
                     numint += `${palavrasNumericas[n][num]}`
-                   }
-            }
+                   }}
             palavraOrigin = []
-            
             numint = ''
             for (num = 0; num < palavrasNumericas[pNumber].length; num++) {
                    if (palavrasNumericas[pNumber][num] == '.') {
@@ -70,8 +61,7 @@ for (pNumber in palavrasNumericas) {
                         palavraOrigin.push(numint)
                    }else{
                     numint += `${palavrasNumericas[pNumber][num]}`
-                   }
-            }
+                   }}
            if (palavraOrigin.length > palavraAnalisar.length) {
              pare = false
              for (numb = 0; numb < palavraAnalisar.length && pare == false; numb++) {
@@ -90,8 +80,7 @@ for (pNumber in palavrasNumericas) {
                 posicaoPalavras[n] = wordposition
               }else{
                   pare = false
-              }
-             }
+              }}
            }else{
             pare = false
             for (numb = 0; numb < palavraOrigin.length && pare == false; numb++) {
@@ -133,17 +122,12 @@ window.addEventListener('keyup', function(event) {
 
         if (pselected == -1) {
         quantasopções = document.getElementById('main').getElementsByClassName('psearcher').length
-       
         if (quantasopções == 1) {
            dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
-
-        }
-        }
-
+        }}
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
         console.log('UEPA!')
         dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[pselected].id.replace('a','')))
-     
     }
     
     // Selecionando a sugestão com as setas
@@ -153,31 +137,24 @@ window.addEventListener('keyup', function(event) {
         if (pselected < ps.length - 1 && podeir == true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
-
             pselected++
             //this.document.getElementById('searcher').value = pselected
-        
             ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
         if (pselected >= 1 && podeir == true) {
             if (pselected != -1)
             ps[pselected].style.backgroundColor = 'white'
-
             pselected--
             //this.document.getElementById('searcher').value = pselected
-           
            ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
-        }
-    }
-})
+        } }})
 
 // Quando uma tecla é pressionada
 document.getElementById('searcher').addEventListener('keyup',function(event) {
     if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
         search2()
-    }
-})
+    }})
 
 // Cada vez que o usuário digite um caractere na barra de pesquisa
 function search2() { 
@@ -226,8 +203,7 @@ function search2() {
              }
              opnumbers++
              document.getElementById('main').style.display = 'block'
-         }
-    }
+         } }
     if (pesquise.length != 0 && opnumbers == 0) {
         for (n in subjects) {
             // window.alert(subjects[n])
@@ -256,10 +232,7 @@ function search2() {
                     }
                  opnumbers++
                  document.getElementById('main').style.display = 'block'
-             }
-        }
-     
-    }
+             }}}
  if (pesquise.length != 0 && opnumbers == 0){
     for (n in subjects) {
         // window.alert(subjects[n])
@@ -288,13 +261,10 @@ function search2() {
                 }
              opnumbers++
              document.getElementById('main').style.display = 'block'
-         }
-    }
- }
+         }}}
  if (opnumbers == 0) {
      document.getElementById('main').style.display = 'none'
- }
-}
+ }}
 
 // Quando a pesquisa é realizada
 function dothesearch(whichid) {
@@ -314,19 +284,15 @@ function dothesearch(whichid) {
     console.log('HERE', document.getElementById('main').style.display)
     document.getElementById('main').style.display = 'none'
     console.log('HERE', document.getElementById('main').style.display)
-
     pselected = -1
 }
 
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path) {
     pesquisa = document.getElementById('searcher').value
-
     songsSearched.length = 0
     songsSearched.unshift(pesquisa.toLowerCase())
-
        //document.getElementsByTagName('iframe')[0].src = path
-       
     console.log('VEJA:',subjects[path].title1,subjects[path])
 
     if (layer == 0) {
@@ -341,26 +307,19 @@ function search(path) {
     }
         wordSearched = subjects.find(function(subjects){
         return subjects.title2 == pesquisa.toLowerCase()
-       })
-      
-       //⬜
-    
-
-}
+       })}
 
 
 function fclic() {
     pesquisa = document.getElementById('searcher').value
     if (pesquisa.length == 0) {
      document.getElementById('main').style.display = 'none'
-    }
-}
+    }}
 
 ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 // Quando o mouse entra em uma opção(psearcher)
 function entrou(thing) {
-
     if (document.getElementById('searcher') == document.activeElement) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
 
@@ -374,21 +333,17 @@ function entrou(thing) {
     //document.getElementById('searcher').value += 'thing' + thing
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
-    
-}
-}
+}}
 
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing) {
     if (document.getElementById('searcher') == document.activeElement) {
     podeir = true
     //document.getElementById('searcher').value = 'saiu' + thing + podeir
-
     pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
-    }
-}
+    }}
 
 
 /*MATERIAL*/
@@ -409,7 +364,6 @@ d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div
 
 qualicon = -1
 function mostrarlista(which1) {
-
 qualicon = which1
 layer = 1
 bigicons = document.getElementsByName('select-content')[0]
@@ -441,12 +395,9 @@ bigicons.style.display = 'none'
     ps.innerText = contents[qualicon].subs[f].title
     ps.setAttribute('class', 'ps')
     
-   
     ps.setAttribute('onclick',`criariframe(${qualicon},${f})`)
     list.appendChild(ps)
-    }
-   
-}
+    }}
 
 layer = 0
 function voltar() {
