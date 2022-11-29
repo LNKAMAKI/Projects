@@ -139,7 +139,11 @@ ol > li {
     margin: 0px;
 }
 
-ul > li::marker {
+li::marker {
+    margin: 0px;
+}
+
+ul.seta > li::marker {
     content: '➡ ';
 }
 code {

@@ -82,8 +82,8 @@
 <p>Cada item dessas listas está contido em uma tag <span class="tag">li</span>, de list item, que pode ou não possuir fechamento (opcional).</p>
 <p>Veja o código para criar uma lista ordenada simples:</p>
 <code>
-    <span class="tag2">ol</span><br>
-    <span class="tag2">li</span>
+    <span class="tag2">ol <span class="prop">type</span><span class="n">=</span><span class="str">"i"</span></span><br>
+    <span class="tag2">li</span> 
     ITEM 1
     <span class="tag3">li</span><br>
     <span class="tag2">li</span>
@@ -94,6 +94,29 @@
     <span class="tag3">li</span><br>
     <span class="tag3">ol</span><br>
 </code>
+<span class="title">LISTAS UL</span>
+<p>Já as listas não ordenadas saão aquelas em que não há contagem, somente marcação, como no exemplo abaixo:</p>
+<ul type="square">
+    <li mar>Melancia</li>
+    <li mar>Maça</li>
+    <li mar>Banana</li>
+    <li mar>Manga</li>
+    <li mar>Laranja</li>
+    <li mar>Morango</li>
+</ul>
+<p>Assim como as listas ordenadas, também é possível definir o tipo de lista não ordenada, que possui 3 tipos:</p>
+<div style="max-width: 500px;display: flex;margin: auto;">
+    <ul type="square">
+        <li>square</li>
+    </ul>
+    <ul type="disc">
+        <li>disc</li>
+    </ul>
+    <ul type="circle">
+        <li>circle</li>
+    </ul>
+</div>
+<span class="title">LISTAS MISTAS</span>
 </div>
 
     <div id="efect2"></div>

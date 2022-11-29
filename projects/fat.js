@@ -280,7 +280,7 @@ for (h in res[9]) {
                 }else{
                     spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>`
                 } }
-        splitspn+= `<span style="display: flex;font-size:0.9em;margin-bottom: 7px;"><span style="color:var(--number)">${k}</span>: <span>[</span> <span style="overflow-x: scroll;">${spi}</span>]</span>`
+        splitspn+= `<span style="display: flex;font-size:0.9em;margin-bottom: 7px;"><span style="color:var(--number)">${k}</span>:&nbsp;<span>[</span> <span style="overflow-x: scroll;">${spi}</span>]</span>`
         spn+= `[<span class="sp" style="min-width:30px;">${spi}</span>]`
     }
 
