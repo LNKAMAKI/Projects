@@ -157,10 +157,8 @@ document.getElementById('searcher').addEventListener('keyup',function(event) {
     }})
 
 // Cada vez que o usuário digite um caractere na barra de pesquisa
-function search2() { 
-    
+function search2() {    
     pselected = -1
-
     pnumber = -1
     pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
@@ -202,6 +200,7 @@ function search2() {
              document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
              }
              opnumbers++
+             console.log('opnumbers', opnumbers)
              document.getElementById('main').style.display = 'block'
          } }
     if (pesquise.length != 0 && opnumbers == 0) {
@@ -231,6 +230,7 @@ function search2() {
                     document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
                     }
                  opnumbers++
+                 console.log('opnumbers', opnumbers)
                  document.getElementById('main').style.display = 'block'
              }}}
  if (pesquise.length != 0 && opnumbers == 0){
@@ -260,6 +260,7 @@ function search2() {
                 document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
                 }
              opnumbers++
+             console.log('opnumbers', opnumbers)
              document.getElementById('main').style.display = 'block'
          }}}
  if (opnumbers == 0) {
