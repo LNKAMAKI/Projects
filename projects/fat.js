@@ -103,7 +103,7 @@ for (h in res[5]) {
             //spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
         }
         splitspn+= ` <p class="psem">
-        <span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
+        <span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
     }
 
     for (ju = 0; ju <2;ju++) {
@@ -161,7 +161,7 @@ for (h in res[7]) {
         }else{
             spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
         }
-        splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
+        splitspn+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
     }
 
     for (ju = 0; ju <2;ju++) {
@@ -210,7 +210,7 @@ for (h in res[8]) {
         }else{
             spn+= `<span><span style="color:var(--number)">${res[8][h].repetidos[k]}</span></span>`
         }
-        splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[8][h].repetidos[k]}</span></p>`
+        splitspn+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[8][h].repetidos[k]}</span></p>`
     }
 
     spn2 = ''
@@ -221,7 +221,7 @@ for (h in res[8]) {
         }else{
             spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></span>`
         }
-        splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></p>`
+        splitspn2+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></p>`
     }
 
     for (ju = 0; ju <3;ju++) {
@@ -441,7 +441,7 @@ function fn(a,act) {
             }else{
                 spn+= `<span class="af"><span style="color:var(--number)">${res[5][h].mons[k]}</span>:<span style="color:var(--string)" class="abs">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span></span>`
             }
-            splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
+            splitspn+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[5][h].mons[k]}</span>  <span style="color:var(--string)">'${desfat(REFORMATAR(res[6][h].divididos[k]))}'</span> </span> </p>`
         }
         dg = desfat(REFORMATAR(carfixed))
     cn.getElementsByClassName('dev')[0].innerHTML+= `
@@ -459,7 +459,7 @@ function fn(a,act) {
             }else{
                 spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
             }
-            splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
+            splitspn+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
         }
     cn2.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {fator: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}</span></div><div class="tocent">  <p class="pdev">fator: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p><div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span></div> ${splitspn} </div> </div></div>`
     }
@@ -474,7 +474,7 @@ function fn(a,act) {
             }else{
                 spn+= `<span><span style="color:var(--number)">${res[8][h].repetidos[k]}</span></span>`
             }
-            splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[8][h].repetidos[k]}</span></p>`
+            splitspn+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[8][h].repetidos[k]}</span></p>`
         }
 
         spn2 = ''
@@ -485,7 +485,7 @@ function fn(a,act) {
             }else{
                 spn2+= `<span><span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></span>`
             }
-            splitspn2+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></p>`
+            splitspn2+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][res[8][h].posições[k]].dividido))}'</span></p>`
         }
     cn3.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span class="sp"><span style="color:var(--number)">${h}</span>: {posições: Array(${res[8][h].repetidos.length}), fatores: Array(${res[8][h].posições.length}), monomios: Array(${res[8][h].monomios.length})</span></div><div class="tocent"> <div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">posições: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span></div> ${splitspn} </div><div class="cont"> <div class="center"> <img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">fatores: [</span><span class="sp" style="overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span></div> ${splitspn2}  </div> </div></div>`
     }
