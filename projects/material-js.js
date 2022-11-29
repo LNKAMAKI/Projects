@@ -200,7 +200,6 @@ function search2() {
              document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
              }
              opnumbers++
-             console.log('opnumbers', opnumbers)
              document.getElementById('main').style.display = 'block'
          } }
     if (pesquise.length != 0 && opnumbers == 0) {
@@ -230,7 +229,6 @@ function search2() {
                     document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
                     }
                  opnumbers++
-                 console.log('opnumbers', opnumbers)
                  document.getElementById('main').style.display = 'block'
              }}}
  if (pesquise.length != 0 && opnumbers == 0){
@@ -260,7 +258,6 @@ function search2() {
                 document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
                 }
              opnumbers++
-             console.log('opnumbers', opnumbers)
              document.getElementById('main').style.display = 'block'
          }}}
  if (opnumbers == 0) {
