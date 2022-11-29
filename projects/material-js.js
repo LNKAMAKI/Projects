@@ -297,11 +297,17 @@ function search(path) {
         //window.alert('ok')
         //window.alert(subjects[path].title1,subjects[path].index)
         mostrarlista(subjects[path].title1)
-        criariframe(subjects[path].title1,subjects[path].index)
+        criariframe(subjects[path].title1,subjects[path].index,true)
     }else if(layer == 1){
-        criariframe(subjects[path].title1,subjects[path].index)
+        criariframe(subjects[path].title1,subjects[path].index,true)
         document.getElementsByClassName('cont')[0].getElementsByClassName('ps2')[0].innerText = contents[subjects[path].title1].title
         qualicon = subjects[path].title1
+    }else{
+        dv.removeChild(dv.getElementsByClassName('pt')[0])
+        whichi = document.getElementById('index').getElementsByTagName('iframe')[0]
+        console.log(whichi)
+        document.getElementById('index').removeChild(whichi)
+        criariframe(subjects[path].title1,subjects[path].index)
     }
         wordSearched = subjects.find(function(subjects){
         return subjects.title2 == pesquisa.toLowerCase()
@@ -393,14 +399,13 @@ bigicons.style.display = 'none'
     ps.innerText = contents[qualicon].subs[f].title
     ps.setAttribute('class', 'ps')
     
-    ps.setAttribute('onclick',`criariframe(${qualicon},${f})`)
+    ps.setAttribute('onclick',`criariframe(${qualicon},${f},true)`)
     list.appendChild(ps)
     }}
 
 layer = 0
 function voltar() {
     if (layer == 2) {
-      
         dv.removeChild(dv.getElementsByClassName('pt')[0])
         dv.removeChild(dv.getElementsByTagName('iframe')[0])
         
@@ -413,8 +418,7 @@ function voltar() {
         ps.innerText = contents[qualicon].subs[f].title
         ps.setAttribute('class', 'ps')
         
-       
-        ps.setAttribute('onclick',`criariframe(${qualicon},${f})`)
+        ps.setAttribute('onclick',`criariframe(${qualicon},${f},true)`)
         list.appendChild(ps)
         }
 
@@ -426,15 +430,13 @@ function voltar() {
 }
 
 // Cria o iframe
-function criariframe(a,b) {
-    
+function criariframe(a,b,c) {
     layer = 2
-   
     cont = document.getElementsByClassName('cont')[0]
+    if (c == true) {
     listsubs = document.getElementsByClassName('names')[0]
-
     listsubs.parentNode.removeChild(listsubs)
-    
+    }
     
    //cont.getElementsByClassName('ps2')[0].innerText = contents[a].subs[b].title
    //cont.getElementsByClassName('ps2')[0].style.fontWeight = 'bold'
