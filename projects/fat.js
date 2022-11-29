@@ -280,7 +280,7 @@ for (h in res[9]) {
                 }else{
                     spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>`
                 } }
-        splitspn+= `<span style="display: flex;font-size:0.9em;margin-bottom: 7px;"><span style="color:var(--number)">${k}</span>:&nbsp;<span>[</span> <span style="overflow-x: scroll;">${spi}</span>]</span>`
+        splitspn+= `<span style="display: flex;font-size:0.9em;margin-bottom: 7px;margin-left:10px;"><span style="color:var(--number)">${k}</span>:&nbsp;<span>[</span> <span style="overflow-x: scroll;">${spi}</span>]</span>`
         spn+= `[<span class="sp" style="min-width:30px;">${spi}</span>]`
     }
 
@@ -505,7 +505,7 @@ function fn(a,act) {
                     }else{ 
                         spi+= `<span><span style="color:var(--string)">'${desfat(res[10][res[9][h].w.what[k].ar[lik]].numero)}'</span></span>`
                     } }
-            splitspn+= ` <p class="psem"><span style="overflow-x:scroll;display:inline-block;"><span style="color:var(--number)">${k}</span>: [${spi}]</p>`
+         splitspn+= `<span style="display: flex;font-size:0.9em;margin-bottom: 7px;margin-left:10px;"><span style="color:var(--number)">${k}</span>:&nbsp;<span>[</span> <span style="overflow-x: scroll;">${spi}</span>]</span>`
           spn+= `[<span class="sp" style="min-width:30px;">${spi}</span>]`
         }
     cn4.getElementsByClassName('dev')[0].innerHTML+= ` <div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {mons: Array(${res[9][h].mons.length}), grupos: Array(${res[9][h].w.what.length})
