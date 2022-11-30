@@ -1413,7 +1413,9 @@ function CreateEngine2() {
         }
         mo.partletral = stri
       }
+      if (somarmons == false) {
     console.log('ASSIM É COMO FICARAM OS MONÔMIOS:')
+      }
 
     for (aj in monomios_2) {
         //console.log(monomios_2[aj].numero, monomios_2[aj].partletral)
@@ -1547,7 +1549,7 @@ function CreateEngine2() {
                  
     for (nl in segs_2) {
         if (somarmons == true)
-        console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
+        //console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
         pres = segs_2[nl].car
         pcar = ''
         quantos = []
@@ -1560,12 +1562,12 @@ function CreateEngine2() {
                 pcar = ''
             }}
             if (somarmons == true)
-        console.log(quantos)
+        //console.log(quantos)
 
         for (out in segs_2) {
             if (nl != out) {
                 if (somarmons == true)
-                console.log('*',segs_2[out].car)
+                //console.log('*',segs_2[out].car)
 
         pres = segs_2[out].car
         pcar = ''
@@ -1579,7 +1581,7 @@ function CreateEngine2() {
                 pcar = ''
             }}
             if (somarmons == true)
-            console.log(quantos2)
+            //console.log(quantos2)
             life = [...quantos2]
 
             contidos = 0
@@ -1599,7 +1601,7 @@ function CreateEngine2() {
                 }
             if (contidos == quantos.length) {
                 if (somarmons == true) {
-                console.log('=====================',quantos, 'está em', life,'=====================')
+                //console.log('=====================',quantos, 'está em', life,'=====================')
             //console.log(quantos2, '=>',segs_2[out].mons)
             //console.log(quantos, '=>',segs_2[nl].mons)
                 }
@@ -2515,7 +2517,7 @@ function CreateEngine2() {
         }}}
          
         if (somarmons == true)
-        console.log(amount, '*', amontoado_2)
+        //console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
@@ -2536,7 +2538,7 @@ function CreateEngine2() {
           tobreak_2 = segundocaso[0] // *-2 + y
 
           if (somarmons == true)
-          console.log(primeirocaso[0], segundocaso[0])
+          //console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
             //console.log('naonao_2[k]',naonao_2[k])
@@ -2622,7 +2624,7 @@ function CreateEngine2() {
               newexpress.push('+')
               newexpress.push(join)
           }}
-          if (somarmons == true)
+          if (somarmons == false)
           console.log('newexpress',newexpress)
          this.FATORAR(newexpress)
      }else{
@@ -3546,10 +3548,10 @@ function CreateEngine2() {
 
   //console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
   if (somarmons == true) {
-  console.log(todososnumeros_2)
-  console.log(pans_2)
-  console.log(monomios_2)
-  console.log('CONCATENAR-------------------------------------------', concatenar_2)
+  console.log('todososnumeros (monômios que sobraram):', todososnumeros_2)
+  console.log('agrupamentos:',pans_2)
+  console.log('monômios:',monomios_2)
+  console.log('CONCATENAR (resultado final):', concatenar_2)
   }
   
   if (ir == true) {
@@ -3623,11 +3625,11 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
           
             fator1 = new CreateEngine2().FATORAR(FATORE(seps[varnot].exp), false)
           
-            console.log('HEY ============>', seps[varnot].exp)
+            //console.log('HEY ============>', seps[varnot].exp)
             previous = okexp[Number(seps[varnot].open) - 1]
-            console.log(okexp, previous)
-            console.log('FATORAÇÃO:', fator1[0])
-            console.log('rexp',rexp)
+            //console.log(okexp, previous)
+            //console.log('FATORAÇÃO:', fator1[0])
+            //console.log('rexp',rexp)
             alr = true
             if (previous == ')' && fator1[0] != '(' && fator1[0] != '?') {
                 //console.log('Looks like we have an issue')
@@ -3652,27 +3654,27 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                   lastfat+= okexp[kl]
               }}
            
-              console.log('lastfat',lastfat)
+              //console.log('lastfat',lastfat)
               if (daprafator1 == true) {
                   muf = lastfat.replace(new RegExp('[\\+\\- ]','g'),'')
                   if (muf != '' && fator1[0][0] != '(') {
-                    console.log('lastat válido',muf)
-                        console.log('TEMOS UM PROBLEMA')
+                   //console.log('lastat válido',muf)
+                        //console.log('TEMOS UM PROBLEMA')
                         strd = ''
                         for (ni = 0; fator1[0][ni] != '('; ni++) {
                             strd+= fator1[0][ni]
                         }
-                        console.log('primeiro',strd)
+                        //console.log('primeiro',strd)
                         strm = ''
                         while (ni != fator1[0].length) {
                             strm+= fator1[0][ni]
                             ni++
                         }
-                        console.log('segundo',strm)
+                        //console.log('segundo',strm)
                         v1 = REFORMATAR(redo(muf))
                         v2 = REFORMATAR(redo(strd))
                         mult = desfat(REFORMATAR(MULTIPLICARDIREITO(v1,v2)))
-                        console.log(v1,v2, mult)
+                        //console.log(v1,v2, mult)
                         rexp+= mult
                         rexp+= strm
                   }else{
@@ -3683,7 +3685,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                   rexp+= lastfat
                   rexp+= '(' + expin + ')'
               }
-              console.log('rexp',rexp)
+              //console.log('rexp',rexp)
               if (varnot == seps.length - 1) {
                   if (end != okexp.length - 1) {
                       for (c = Number(end) + 1; c < okexp.length;c++) {
