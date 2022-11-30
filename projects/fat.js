@@ -3556,7 +3556,7 @@ function CreateEngine2() {
   }
 
   //console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
-  if (somarmons == true) {
+  if (somarmons == false) {
   console.log('todososnumeros (monômios que sobraram):', todososnumeros_2)
   console.log('agrupamentos:',pans_2)
   console.log('monômios:',monomios_2)
@@ -3564,7 +3564,7 @@ function CreateEngine2() {
   }
   
   if (ir == true) {
-    if (somarmons == true)
+    if (somarmons == false)
     console.log('IR: TRUEE')
     return [
         concatenar_2,
@@ -3581,7 +3581,7 @@ function CreateEngine2() {
         pans_2
       ]
     }else{
-        if (somarmons == true)
+        if (somarmons == false)
         console.log('IR: FALSEE')
         return [
         '?',
