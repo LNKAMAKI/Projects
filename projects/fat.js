@@ -3987,8 +3987,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                     resultmult = '-' + String(n2).replace(new RegExp('\\+'),'')
                                 }else{
                                     resultmult = String(n2).replace(new RegExp('-'),'')
-                                }
-                        }
+                                }}
                     }else{
                         sónumero = ''
                         sóletra = ''
@@ -3997,8 +3996,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 sónumero += num1[car]
                             }else if(num1[car].search('[a-z]') != -1) {
                                 sóletra += num1[car]
-                            }
-                          }
+                            } }
                         sónumero2 = ''
                         sóletra2 = ''
                         for (car in num2) {
@@ -4006,8 +4004,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 sónumero2 += num2[car]
                             }else if(num2[car].search('[a-z]') != -1){
                                 sóletra2 += num2[car]
-                            }
-                        }
+                            } }
                         if (sónumero.length > 0 && sónumero2.length > 0) {
                             sónumero+= '*'
                         }
