@@ -17,7 +17,9 @@ function load() {
 
     loaded = true
     get1('write').addEventListener('keyup',(event) => {
+        if (event.key == 'Enter') {
         showresult()
+        }
 }) }
        
 function showresult() {
@@ -1557,10 +1559,10 @@ function CreateEngine2() {
                       segs_2[qual].mons.push(m)      
                  }}}
      
-                 
     for (nl in segs_2) {
-        if (somarmons == false)
+        if (somarmons == false) {
         console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
+        }
         pres = segs_2[nl].car
         pcar = ''
         quantos = []
