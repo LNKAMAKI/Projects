@@ -1415,26 +1415,37 @@ function CreateEngine2() {
       }
       if (somarmons == false) {
     console.log('ASSIM É COMO FICARAM OS MONÔMIOS:')
-      }
+      } 
 
     for (aj in monomios_2) {
-        //console.log(monomios_2[aj].numero, monomios_2[aj].partletral)
+        if (somarmons == false) {
+            console.log('---------------')
+        console.log('monômio:',monomios_2[aj].numero, 'parte literal:',monomios_2[aj].partletral)
+        }
         hop = 0
         whole = monomios_2[aj].numero
         justlet = []
         while (String(whole[hop]).search('[a-z]') == -1) {
+            if (somarmons == false) {
             //console.log(hop)
             //console.log(whole[hop])
+            }
             justlet.push(whole[hop])
             hop++
         }
-        //console.log(justlet)
+        if (somarmons == false) {
+        console.log(justlet)
+        }
         varibs = monomios_2[aj].partletral
         for (ken in varibs) {
-            //console.log(varibs[ken])
+            if (somarmons == false) {
+           //console.log(varibs[ken])
+            }
             justlet.push(varibs[ken])
         }
-        //console.log(justlet)
+        if (somarmons == false) {
+        console.log(justlet)
+        }
         monomios_2[aj].numero = justlet
     }
     //
@@ -1548,8 +1559,8 @@ function CreateEngine2() {
      
                  
     for (nl in segs_2) {
-        if (somarmons == true)
-        //console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
+        if (somarmons == false)
+        console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
         pres = segs_2[nl].car
         pcar = ''
         quantos = []
@@ -1561,12 +1572,10 @@ function CreateEngine2() {
                 quantos.push(pcar)
                 pcar = ''
             }}
-            if (somarmons == true)
         //console.log(quantos)
 
         for (out in segs_2) {
             if (nl != out) {
-                if (somarmons == true)
                 //console.log('*',segs_2[out].car)
 
         pres = segs_2[out].car
@@ -1580,7 +1589,6 @@ function CreateEngine2() {
                 quantos2.push(pcar)
                 pcar = ''
             }}
-            if (somarmons == true)
             //console.log(quantos2)
             life = [...quantos2]
 
@@ -2516,7 +2524,7 @@ function CreateEngine2() {
           concatenar_2 += `${naonao_2}(${tobreak_2})`
         }}}
          
-        if (somarmons == true)
+        
         //console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
@@ -2537,7 +2545,6 @@ function CreateEngine2() {
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
-          if (somarmons == true)
           //console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
