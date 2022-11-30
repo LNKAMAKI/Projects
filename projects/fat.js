@@ -1436,7 +1436,7 @@ function CreateEngine2() {
             hop++
         }
         if (somarmons == false) {
-        console.log(justlet)
+        console.log('parte numérica: ',justlet)
         }
         varibs = monomios_2[aj].partletral
         for (ken in varibs) {
@@ -1446,7 +1446,7 @@ function CreateEngine2() {
             justlet.push(varibs[ken])
         }
         if (somarmons == false) {
-        console.log(justlet)
+        console.log('monômio com parte literal ordenada:',justlet)
         }
         monomios_2[aj].numero = justlet
     }
@@ -2527,7 +2527,7 @@ function CreateEngine2() {
         }}}
          
         
-        //console.log(amount, '*', amontoado_2)
+        console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
@@ -2547,7 +2547,7 @@ function CreateEngine2() {
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
-          //console.log(primeirocaso[0], segundocaso[0])
+          console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
             //console.log('naonao_2[k]',naonao_2[k])
@@ -2572,7 +2572,7 @@ function CreateEngine2() {
               deserve+= tobreak_2[k]
               reason.push(k - 1)
              tobreak_2[k] = deserve
-             //console.log(tobreak_2[k])
+             console.log(tobreak_2[k])
           }}
   
         for (time = tobreak_2.length - 1; time >= 0; time--) {
@@ -2582,6 +2582,7 @@ function CreateEngine2() {
   
         for (roberto in naonao_2) {
           for (vaidarcerto in tobreak_2) {
+            console.log(naonao_2[roberto],'*',tobreak_2[vaidarcerto])
               novomon = MULTIPLICARDIREITO(naonao_2[roberto], tobreak_2[vaidarcerto])
               if (novomon[0] == '-') {
                   miya = ''
@@ -2594,7 +2595,10 @@ function CreateEngine2() {
               }else{
                   newexpress.push('+')
                   newexpress.push(novomon)
-              }}}
+              }
+            }
+            console.log('newexpress',newexpress)
+            }
       
          for (e in pans_2[bababa].todos) {
           numsdesfat.push(pans_2[bababa].todos[e])
@@ -2632,7 +2636,9 @@ function CreateEngine2() {
           }else{
               newexpress.push('+')
               newexpress.push(join)
-          }}
+          }
+          console.log('newexpress',newexpress)
+        }
           if (somarmons == false)
           console.log('newexpress',newexpress)
          this.FATORAR(newexpress)
@@ -3963,11 +3969,25 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                 }
 
                 function MULTIPLICARDIREITO(num1, num2) {
-                    if (num1 == '1' || num2 == '1') {
-                        if (num1 == '1') {
-                            resultmult = num2
+                    if (String(num1).replace(new RegExp('(-|\\+)'),'') == '1' || String(num2).replace(new RegExp('(-|\\+)'),'') == '1') {
+                        console.log('yes')
+                        n1 = ''
+                        n2 = ''
+                        if (String(num1).replace(new RegExp('(-|\\+)'),'') == '1') {
+                            n1 = num1
+                            n2 = num2
                         }else{
-                            resultmult = num1
+                            n1 = num2
+                            n2 = num1
+                        }
+                            if (n1[0] != '-') {
+                            resultmult = String(n2).replace(new RegExp('\\+'),'')
+                            }else{
+                                if (n2[0] != '-') {
+                                    resultmult = '-' + String(n2).replace(new RegExp('\\+'),'')
+                                }else{
+                                    resultmult = String(n2).replace(new RegExp('-'),'')
+                                }
                         }
                     }else{
                         sónumero = ''
