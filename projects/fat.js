@@ -1585,32 +1585,37 @@ function CreateEngine2() {
             contidos = 0
             for (pr in quantos) {
                 if (quantos2.indexOf(quantos[pr]) != -1) {
-                    if (somarmons == true)
-                console.log(quantos[pr], 'está no index', quantos2.indexOf(quantos[pr]))
+                    if (somarmons == true) {
+                //console.log(quantos[pr], 'está no index', quantos2.indexOf(quantos[pr]))
+                    }
                 quantos2.splice(quantos2.indexOf(quantos[pr]),1)
-                if (somarmons == true)
-                console.log(quantos2)
+                if (somarmons == true) {
+                //console.log(quantos2)
+                }
                 contidos+= 1
                 } }
-                if (somarmons == true)
-            console.log(quantos,'tem',contidos,'fatores em',life)
+                if (somarmons == true) {
+            //console.log(quantos,'tem',contidos,'fatores em',life)
+                }
             if (contidos == quantos.length) {
                 if (somarmons == true) {
                 console.log('=====================',quantos, 'está em', life,'=====================')
-            console.log(quantos2, '=>',segs_2[out].mons)
-            console.log(quantos, '=>',segs_2[nl].mons)
+            //console.log(quantos2, '=>',segs_2[out].mons)
+            //console.log(quantos, '=>',segs_2[nl].mons)
                 }
             for (hard in segs_2[out].mons) {
-                if (somarmons == true)
-                console.log('-', segs_2[out].mons[hard])
+                if (somarmons == true) {
+                //console.log('-', segs_2[out].mons[hard])
+            }
                 if (segs_2[nl].mons.indexOf(segs_2[out].mons[hard]) == -1) {
-                    if (somarmons == true)
-                    console.log('OPA!')
+                    if (somarmons == true) {
+                    //console.log('OPA!')
+                }
                     segs_2[nl].mons.push(segs_2[out].mons[hard])
                 } } }}}
-                if (somarmons == true)
-        console.log('')
-    }
+                if (somarmons == true) {
+        //console.log('')
+                }}
     
       
     /*
