@@ -1457,6 +1457,15 @@ function CreateEngine2() {
      segs_2 = []
      let  = []
      
+
+     mv = []
+     for (smile in monomios_2) {
+        mv.push(Number(smile))
+     }
+     if (somarmons == false) {
+     console.log('MV',mv)
+     }
+     //segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -1558,6 +1567,17 @@ function CreateEngine2() {
                  }else if(segs_2[qual].mons.indexOf(m) == -1){
                       segs_2[qual].mons.push(m)      
                  }}}
+                 
+                 /*
+                 mv = []
+                 for (smile in monomios_2) {
+                    mv.push(Number(smile))
+                 }
+                 if (somarmons == false) {
+                 console.log('MV',mv)
+                 }
+                 */
+                 //segs_2.push({car: '1', mons: [...mv]})
      
     for (nl in segs_2) {
         if (somarmons == false) {
@@ -1574,7 +1594,7 @@ function CreateEngine2() {
                 quantos.push(pcar)
                 pcar = ''
             }}
-        //console.log(quantos)
+        console.log(quantos)
 
         for (out in segs_2) {
             if (nl != out) {
@@ -1772,8 +1792,8 @@ function CreateEngine2() {
                      //console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
                      // DIVIDIR(['13','.','2','x'], monomios_2[n].numero => *Eg.: ['13','*','2','*','2','x'])
                      // *pain = 2
-                     //console.log('DIVIDIR!!!!!!!!!!!!!!!', monomios_2[segs_2[anchor].mons[high]].numero, '/', lightson)
-                     //console.log('RESULTADO',pain)
+                     console.log('DIVIDIR!!!!!!!!!!!!!!!', monomios_2[segs_2[anchor].mons[high]].numero, '/', lightson)
+                     console.log('RESULTADO',pain)
   
                      if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) { // Se pain for '' ou '-', ou seja, se a divisão der 1 ou -1
                     if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) { // - com + = -
@@ -2641,7 +2661,7 @@ function CreateEngine2() {
         }
           if (somarmons == false)
           console.log('newexpress',newexpress)
-         this.FATORAR(newexpress)
+         this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
      }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
