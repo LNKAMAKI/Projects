@@ -212,7 +212,7 @@
             height: 30px;
             padding: 0;
             font-size: 1.2em;
-            padding: 0px 30px 0px 10px;
+            padding: 0px 10px 0px 10px;
             display:inline-block;
             width: calc(100% - 60px);
             max-width: 550px;
@@ -268,11 +268,12 @@
             position: relative;
            text-align: center;
            font-family: 'Inconsolata',Arial;
-           font-size: 1.2em;
+           font-size: 1.1em;
+           width: 100%;
         }
         input[type="button"] {
            height: fit-content;
-           font-family: 'Inconsolata';
+           font-family: 'Inconsolata',Arial;
            font-size: 1em;
            padding: 4px 10px;
            border-radius: 20px;
@@ -311,7 +312,6 @@
             font-family: 'Inconsolata',Arial;
             font-size: 1.1em;
             overflow-y: hidden;
-            height: 20px;
         }
         .space {
             background-color: white;
@@ -499,6 +499,13 @@
         display: inline-flex;
         align-items: center;
     }
+    #ex {
+        width: calc(100% - 60px); 
+        background-color: purple;
+        padding: 0px 10px;
+        font-family: 'Inconsolata',Arial;
+        font-size: 1.1em;
+    }
         </style>
 <body onload="load()">
     <script src="fat.js"></script>
@@ -511,7 +518,19 @@
     <div id="calc">
             <p style="margin-top: 0px;">/* Expressão: */</p> 
         <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
-            <input id="write" spellcheck="false" class="type" value="a + b"></input>
+                <input id="write" spellcheck="false" class="type" value="10a + ab">
+                <div id="ex">
+
+                    <div class="cont" style="height: 20px;">
+                        <div class="center" style="text-align: center;">
+                            <img src="./imagens/rar.png" alt="" class="ar">
+                            <p style="margin: 0px;">Exemplos</p>
+                        </div>
+                        <p>YOU KNOW</p>
+                    </div>
+
+                </div>
+            </input>
             <!--ah^2 + hh + 4ah + 4h, 4ah^2 + 4h^2 + 16h + 16ah, a + b + ab + bb - 3b - 3 + 4 + 4b-->
             <div style="display: inline-flex;align-items: center;">
             <img src="./imagens/delete-bin.png" class="copy2" alt="delete text" onclick="erase()">
@@ -527,7 +546,7 @@
                     <img src="./imagens/copy.png" class="copy" alt="copy text" onclick="copy2()">
 
                 </div>
-                <div id="resol" class="cont">
+                <div id="resol" class="cont" style="height: 20px;">
                     <div class="center">
                         <img src="./imagens/rar.png" alt="" class="ar">
                         <span>Resolução</span>

@@ -81,7 +81,13 @@ cn = ts[0]
 cn.innerHTML+= '<div class="dev"></div>'
 
 pl1 = []
-hyu = 2
+
+sick = 0
+while  (cents[sick].innerText != 'Relações') {
+        console.log('É', cents[sick])
+        sick++
+}
+hyu = sick  // CORRESPONDE AO INDEX DE RELAÇÕES!
 for (h in res[5]) {
     //console.log(h)
     carfixed = res[6][h].divisor
@@ -336,6 +342,11 @@ c = new CreateFunc(0,'close')
         cs.push(c)
 
 c = new CreateFunc(1,'close')
+        c.SetDefault()
+        c.AddEvent()
+        cs.push(c)
+
+c = new CreateFunc(2,'close')
     c.SetDefault()
     c.AddEvent()
     cs.push(c)
