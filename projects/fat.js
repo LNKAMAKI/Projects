@@ -1427,13 +1427,13 @@ function CreateEngine2() {
         mo.partletral = stri
       }
       if (somarmons == false) {
-    console.log('ASSIM É COMO FICARAM OS MONÔMIOS:')
+    //console.log('ASSIM É COMO FICARAM OS MONÔMIOS:')
       } 
 
     for (aj in monomios_2) {
         if (somarmons == false) {
             console.log('---------------')
-        console.log('monômio:',monomios_2[aj].numero, 'parte literal:',monomios_2[aj].partletral)
+        //console.log('monômio:',monomios_2[aj].numero, 'parte literal:',monomios_2[aj].partletral)
         }
         hop = 0
         whole = monomios_2[aj].numero
@@ -1447,7 +1447,7 @@ function CreateEngine2() {
             hop++
         }
         if (somarmons == false) {
-        console.log('parte numérica: ',justlet)
+        //console.log('parte numérica: ',justlet)
         }
         varibs = monomios_2[aj].partletral
         for (ken in varibs) {
@@ -1457,7 +1457,7 @@ function CreateEngine2() {
             justlet.push(varibs[ken])
         }
         if (somarmons == false) {
-        console.log('monômio com parte literal ordenada:',justlet)
+        //console.log('monômio com parte literal ordenada:',justlet)
         }
         monomios_2[aj].numero = justlet
     }
@@ -1474,7 +1474,7 @@ function CreateEngine2() {
         mv.push(Number(smile))
      }
      if (somarmons == false) {
-     console.log('MV',mv)
+     //console.log('MV',mv)
      }
      //segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
@@ -1592,7 +1592,7 @@ function CreateEngine2() {
      
     for (nl in segs_2) {
         if (somarmons == false) {
-        console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
+        //console.log('segs_2[nl]',segs_2[nl].car,'=>',segs_2[nl].mons)
         }
         pres = segs_2[nl].car
         pcar = ''
@@ -1803,8 +1803,8 @@ function CreateEngine2() {
                      //console.log(lightson,monomios_2[segs_2[anchor].mons[high]].numero)
                      // DIVIDIR(['13','.','2','x'], monomios_2[n].numero => *Eg.: ['13','*','2','*','2','x'])
                      // *pain = 2
-                     console.log('DIVIDIR!!!!!!!!!!!!!!!', monomios_2[segs_2[anchor].mons[high]].numero, '/', lightson)
-                     console.log('RESULTADO',pain)
+                     //console.log('DIVIDIR!!!!!!!!!!!!!!!', monomios_2[segs_2[anchor].mons[high]].numero, '/', lightson)
+                     //console.log('RESULTADO',pain)
   
                      if (pain.length == 0 || pain.search('([0-9]|[a-z)])') == -1) { // Se pain for '' ou '-', ou seja, se a divisão der 1 ou -1
                     if (lightson.indexOf('-') != -1 && monomios_2[segs_2[anchor].mons[high]].numero.indexOf('-') == -1) { // - com + = -
@@ -2557,7 +2557,7 @@ function CreateEngine2() {
           concatenar_2 += `${naonao_2}(${tobreak_2})`
         }}}
          
-        
+        console.log(concatenar_2)
         console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
@@ -2581,14 +2581,14 @@ function CreateEngine2() {
           console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
-            //console.log('naonao_2[k]',naonao_2[k])
+            console.log('naonao_2[k]',naonao_2[k])
           if (k != 0 && naonao_2[k] != '-' && naonao_2[k] != '+') {
               deserve = naonao_2[k - 1]
               reason.push(k - 1)
               deserve+= naonao_2[k]
               naonao_2[k] = deserve
           }
-          //console.log(naonao_2[k])
+          console.log(naonao_2[k])
         }
   
      for (time = naonao_2.length - 1; time >= 0; time--) {
@@ -2626,8 +2626,7 @@ function CreateEngine2() {
               }else{
                   newexpress.push('+')
                   newexpress.push(novomon)
-              }
-            }
+              }}
             console.log('newexpress',newexpress)
             }
       
@@ -2635,7 +2634,7 @@ function CreateEngine2() {
           numsdesfat.push(pans_2[bababa].todos[e])
          }}}
      
-     if (numsdesfat.length > 0) {
+     /*if (numsdesfat.length > 0) {
         //console.log(concatenar_2)
       console.warn('VAI TER QUE FATORAR DE NOVO')
       //console.log('youdumb')
@@ -2673,7 +2672,7 @@ function CreateEngine2() {
           if (somarmons == false)
           console.log('newexpress',newexpress)
          this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
-     }else{
+     }else{*/
      todososnumeros_2 = []
      for (acaba in monomios_2) {
          todososnumeros_2.push(acaba)
@@ -2749,7 +2748,7 @@ function CreateEngine2() {
              concatenar_2+= ` - ${aconta_2}`
          }else{
              concatenar_2+= ` + ${aconta_2}`
-         }}}}
+         }}}//}
      
      function doit(par) {
          segs_22 = []
@@ -3658,7 +3657,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
 
           plo = false
           
-          if (monomios_2.length > 1 && segs_2.length > 1 && okexp != '?') {
+          if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
             //console.log('isso')
           while (plo == false) {
             seps = SPLITEXPS(okexp)
@@ -3671,14 +3670,14 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
           
             fator1 = new CreateEngine2().FATORAR(FATORE(seps[varnot].exp), false)
           
-            //console.log('HEY ============>', seps[varnot].exp)
+            console.log('HEY ============>', seps[varnot].exp)
             previous = okexp[Number(seps[varnot].open) - 1]
-            //console.log(okexp, previous)
-            //console.log('FATORAÇÃO:', fator1[0])
-            //console.log('rexp',rexp)
+            console.log(okexp, previous)
+            console.log('FATORAÇÃO:', fator1[0])
+            console.log('rexp',rexp)
             alr = true
             if (previous == ')' && fator1[0] != '(' && fator1[0] != '?') {
-                //console.log('Looks like we have an issue')
+                console.log('Looks like we have an issue')
                 alr = false
             }
 
@@ -3692,7 +3691,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             if (varnot == 0) {
               if (start != 0) {
                   for (c = 0; c < start;c++) {
-                      //rexp+= okexp[c]
+                    //  rexp+= okexp[c]
                       lastfat+= okexp[c]
                   }}}else{
               for (kl = Number(seps[Number(varnot)- 1].close) + 1; kl < start; kl++) {
@@ -3731,7 +3730,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                   rexp+= lastfat
                   rexp+= '(' + expin + ')'
               }
-              //console.log('rexp',rexp)
+              console.log('rexp',rexp)
               if (varnot == seps.length - 1) {
                   if (end != okexp.length - 1) {
                       for (c = Number(end) + 1; c < okexp.length;c++) {
