@@ -3691,7 +3691,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             if (varnot == 0) {
               if (start != 0) {
                   for (c = 0; c < start;c++) {
-                    //  rexp+= okexp[c]
+                      //rexp+= okexp[c]
                       lastfat+= okexp[c]
                   }}}else{
               for (kl = Number(seps[Number(varnot)- 1].close) + 1; kl < start; kl++) {
