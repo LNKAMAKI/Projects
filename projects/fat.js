@@ -2565,6 +2565,7 @@ function CreateEngine2() {
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
         mudou = false
 // !----------- NEW ----------! (SOMAR MONÔMIOS DEPOIS DE FATORAR)
+/*
 if (somarmons == false) {
            console.log(primeirocaso[0], segundocaso[0])
 
@@ -2638,6 +2639,7 @@ if (somarmons == false) {
         console.log('wholecon!!!!!!!',wholecon)
         concatenar_2 = wholecon
     }
+*/
     //
 
         if (primeirocaso[1] == primeirocaso[2]) {
@@ -2709,7 +2711,7 @@ if (somarmons == false) {
           numsdesfat.push(pans_2[bababa].todos[e])
          }}}
      
-     /*if (numsdesfat.length > 0) {
+     if (numsdesfat.length > 0) {
         //console.log(concatenar_2)
       console.warn('VAI TER QUE FATORAR DE NOVO')
       //console.log('youdumb')
@@ -2747,7 +2749,7 @@ if (somarmons == false) {
           if (somarmons == false)
           console.log('newexpress',newexpress)
          this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
-     }else{*/
+     }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
          todososnumeros_2.push(acaba)
@@ -2823,7 +2825,7 @@ if (somarmons == false) {
              concatenar_2+= ` - ${aconta_2}`
          }else{
              concatenar_2+= ` + ${aconta_2}`
-         }}}//}
+         }}}}
      
      function doit(par) {
          segs_22 = []
