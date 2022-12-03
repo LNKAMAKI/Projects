@@ -2639,6 +2639,7 @@ if (somarmons == false) {
 */
     //
 
+    console.log(primeirocaso[0], segundocaso[0])
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
             mudou = true // DEU PRA SOMAR
