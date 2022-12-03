@@ -354,6 +354,11 @@ c = new CreateFunc(2,'close')
     c.AddEvent()
     cs.push(c)
 
+    c = new CreateFunc(3,'close')
+    c.SetDefault()
+    c.AddEvent()
+    cs.push(c)
+
     hgts = []
     for (tp in feb) {
         is = feb[tp]
