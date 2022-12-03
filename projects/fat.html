@@ -19,6 +19,8 @@
             padding: 0;
             background-color: var(--lightgray);
             overflow-y: visible;
+            font-family: 'Inconsolata',Arial;
+            font-size: 1em;
         }
         * {
             margin: 0px;
@@ -217,12 +219,12 @@
             width: calc(100% - 60px);
             max-width: 550px;
             margin: 0px;
-            border-radius: 10px;
             background-color: black;
             font-weight: 500;
             font-family: 'Inconsolata',Arial;
             color: var(--lightblue);
             text-align: center;
+            border-radius: 10px;
         }
         @media screen and (max-width: 700px) {
             #calc {
@@ -247,6 +249,7 @@
             margin: 0px;
             margin-top: 20px;
             margin-bottom: 10px;
+            font-size: 1.1em;
         }
         #write:focus-visible{
             outline-width: 0;
@@ -266,10 +269,8 @@
         p {
             margin: 10px;
             position: relative;
-           text-align: center;
-           font-family: 'Inconsolata',Arial;
-           font-size: 1.1em;
-           width: 100%;
+            text-align: center;
+            width: 100%;
         }
         input[type="button"] {
            height: fit-content;
@@ -502,9 +503,11 @@
     #ex {
         width: calc(100% - 60px);
         background-color: var(--darkblue);
-        padding: 0px 10px;
+        padding: 2px 10px;
         font-family: 'Inconsolata',Arial;
         font-size: 1.1em;
+        height: fit-content;
+        display: grid;
     }
         </style>
 <body onload="load()">
@@ -516,15 +519,15 @@
         <span id="sp">(por agrupamento)</span>
     </h1>
     <div id="calc">
-            <p style="margin-top: 0px;">/* Expressão: */</p> 
+            <p style="margin-top: 0px;font-size: 1.1em;">/* Expressão: */</p> 
         <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
                 <input id="write" spellcheck="false" class="type" value="-40a - 4a - 8ax - 2">
                 <div id="ex">
 
-                    <div class="cont" style="height: 20px;">
+                    <div class="cont" style="height: 20px;background-color: var(--darkblue);">
                         <div class="center" style="text-align: center;">
                             <img src="./imagens/rar.png" alt="" class="ar">
-                            <p style="margin: 0px;">Exemplos</p>
+                            <p style="margin: 0px;"></p>
                         </div>
                         <p>YOU KNOW</p>
                     </div>
