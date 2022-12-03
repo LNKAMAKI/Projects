@@ -2537,7 +2537,7 @@ function CreateEngine2() {
             if (concatenar_2.length > 0) {
             concatenar_2+= ' + '
             }
-        concatenar_2 += `(${naonao_2})(${tobreak_2})`;
+        concatenar_2+= `(${naonao_2})(${tobreak_2})`;
       } else {
         if (naonao_2[0] == '-') {
           if (concatenar_2.length > 0) {
@@ -2547,15 +2547,15 @@ function CreateEngine2() {
               rok+= naonao_2[j]
             }}
           concatenar_2+= ' - '
-          concatenar_2 += `${rok}(${tobreak_2})`;
+          concatenar_2+= `${rok}(${tobreak_2})`;
         }else{
-          concatenar_2 += `${naonao_2}(${tobreak_2})`
+        concatenar_2+= `${naonao_2}(${tobreak_2})`
         }
         }else{
           if(concatenar_2.length > 0) {
-          concatenar_2 += ` + ${naonao_2}(${tobreak_2})`
+          concatenar_2+= ` + ${naonao_2}(${tobreak_2})`
         }else{
-          concatenar_2 += `${naonao_2}(${tobreak_2})`
+          concatenar_2+= `${naonao_2}(${tobreak_2})`
         }}}
          
         console.log(concatenar_2)
