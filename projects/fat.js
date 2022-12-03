@@ -90,8 +90,11 @@ while  (cents[sick].innerText != 'Relações') {
 hyu = sick  // CORRESPONDE AO INDEX DE RELAÇÕES!
 for (h in res[5]) {
     //console.log(h)
-    carfixed = res[6][h].divisor
-    carfixed2 = res[6][h].divisor
+    carfixed = ''
+    for (sky in res[6][h].divisor) {
+        carfixed+= res[6][h].divisor[sky]
+    }
+    carfixed = carfixed.replace('-.','-').replace(new RegExp('\\.','g'),'*')
     spn = ''
     spn2 = ''
     splitspn = ''
@@ -119,7 +122,7 @@ for (h in res[5]) {
         pl1.push(hyu)
         }
 
-    dg = desfat(carfixed)
+    dg = desfat(REFORMATAR(carfixed))
     
    if (h == 0) {
     cn.getElementsByClassName('dev')[0].innerHTML+= '<div class="space"></div>'
@@ -438,8 +441,11 @@ function fn(a,act) {
     if (cas == 0) {
     cn = ts[0]
     for (h in res[5]) {
-        carfixed = res[5][h].car.replace('-.','-').replace(new RegExp('\\.','g'),'*').replace(new RegExp('\\*(?=[a-z])'),'')
-        carfixed2 = res[5][h].car.replace('-.','-').replace(new RegExp('\\.(?=[a-z])'),'')
+        carfixed = ''
+    for (sky in res[6][h].divisor) {
+        carfixed+= res[6][h].divisor[sky]
+    }
+    carfixed = carfixed.replace('-.','-').replace(new RegExp('\\.','g'),'*')
         spn = ''
         spn2 = ''
         splitspn = ''
