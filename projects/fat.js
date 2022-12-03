@@ -2567,8 +2567,6 @@ function CreateEngine2() {
 // !----------- NEW ----------! (SOMAR MONÔMIOS DEPOIS DE FATORAR)
 /*
 if (somarmons == false) {
-           console.log(primeirocaso[0], segundocaso[0])
-
            wholecon = ''
            outrocon = ''
         for (am in primeirocaso[0]) {
@@ -2617,8 +2615,7 @@ if (somarmons == false) {
             if (am == 0 && segundocaso[0][0] == '-') {
             }else{
             outrocon+= ` ${segundocaso[0][am]} `
-            }
-        } }
+            } } }
 
         console.log('tobreak_2',`( ${tobreak_2} )`, 'outrocon', `( ${outrocon} )`)
         if (segundocaso[0].length == 1) {
