@@ -470,8 +470,7 @@ function fn(a,act) {
         splitspn = ''
         for(k in res[7][h].aparicoes) {
             if (k != res[7][h].aparicoes.length - 1) {
-                spn+= `<span>
-                <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+                spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
             }else{
                 spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
             }
