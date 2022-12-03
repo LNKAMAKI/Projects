@@ -1104,6 +1104,7 @@ function CreateEngine2() {
     //console.log('creating engine........')
   this.FATORAR = 
   function (expression_2,somarmons) {
+    console.log('HEY!')
     if (expression_2[0] !== "-" && expression_2[0] !== "+") {
       expo_2 = ["+"];
       for (ent in expression_2) {
@@ -2563,6 +2564,81 @@ function CreateEngine2() {
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
         mudou = false
+// !----------- NEW ----------! (SOMAR MONÔMIOS DEPOIS DE FATORAR)
+if (somarmons == false) {
+           console.log(primeirocaso[0], segundocaso[0])
+
+           wholecon = ''
+           outrocon = ''
+        for (am in primeirocaso[0]) {
+            console.log('am',am, ':',primeirocaso[0][am])
+           if (primeirocaso[0][am].search('[0-9]') != -1 || primeirocaso[0][am].search('[a-z]') != -1) {
+            if (primeirocaso[0][0] == '-' && am == 1) {
+                console.log('-',desfat(REFORMATAR(primeirocaso[0][am])))
+                outrocon+= '-' + desfat(REFORMATAR(primeirocaso[0][am]))
+            }else{
+                console.log(desfat(REFORMATAR(primeirocaso[0][am])))
+                outrocon+= desfat(REFORMATAR(primeirocaso[0][am]))
+            }
+        }else{
+            //console.log(primeirocaso[0][am])
+            if (am == 0 && primeirocaso[0][0] == '-') {
+            }else{
+            outrocon+= ` ${primeirocaso[0][am]} `
+            }
+        } }
+
+        console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${outrocon} )`)
+        size1 = 0
+        if (primeirocaso[0].length == 1) {
+        wholecon+= outrocon
+        size1 = 1
+        }else if (primeirocaso[0].length == 2 && primeirocaso[0][0] == '-') {
+            size1 = 1
+            wholecon+= outrocon
+        }else{
+            wholecon+= `(${outrocon})`
+        }
+
+        outrocon = ''
+        for (am in segundocaso[0]) {
+            console.log('am',am, ':',segundocaso[0][am])
+           if (segundocaso[0][am].search('[0-9]') != -1 || segundocaso[0][am].search('[a-z]') != -1) {
+            if (segundocaso[0][0] == '-' && am == 1) {
+                console.log('-',desfat(REFORMATAR(segundocaso[0][am])))
+                outrocon+= '-' + desfat(REFORMATAR(segundocaso[0][am]))
+            }else{
+                console.log(desfat(REFORMATAR(segundocaso[0][am])))
+                outrocon+= desfat(REFORMATAR(segundocaso[0][am]))
+            }
+        }else{
+            //console.log(segundocaso[0][am])
+            if (am == 0 && segundocaso[0][0] == '-') {
+            }else{
+            outrocon+= ` ${segundocaso[0][am]} `
+            }
+        } }
+
+        console.log('tobreak_2',`( ${tobreak_2} )`, 'outrocon', `( ${outrocon} )`)
+        if (segundocaso[0].length == 1) {
+            if (size1 == 0) {
+                console.log('EPaaaaaaaaaaaaaaaaaaaaaaaA!')
+        wholecon = outrocon + wholecon
+            }else{
+                wholecon = desfat(REFORMATAR(MULTIPLICARDIREITO(REFORMATAR(redo(wholecon)), REFORMATAR(redo(outrocon)))))
+            }
+        }else if (segundocaso[0].length == 2 && segundocaso[0][0] == '-') {
+            if (size1 == 0) {
+                console.log('EPaaaaaaaaaaaaaaaaaaaaaaaA!')
+        wholecon = outrocon + wholecon
+            }
+        }else{
+            wholecon+= `(${outrocon})`
+        }
+        console.log('wholecon!!!!!!!',wholecon)
+        concatenar_2 = wholecon
+    }
+    //
 
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
@@ -2578,7 +2654,6 @@ function CreateEngine2() {
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
-          console.log(primeirocaso[0], segundocaso[0])
         reason = []
         for (k in naonao_2) {
             console.log('naonao_2[k]',naonao_2[k])
