@@ -1193,7 +1193,7 @@ function CreateEngine2() {
           comofica.push(ground);
         } }
       monomios_2[bye].numero = comofica;
-     // //console.log('como fica',comofica)
+     //console.log('como fica',comofica)
     }
   
     for (huh in monomios_2) {
