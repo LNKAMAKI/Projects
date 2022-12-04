@@ -339,25 +339,13 @@ for (kep in cents) {
 mecams = []
 late = 1
 me = document.getElementsByClassName('ar')
-c = new CreateFunc(0,'close')
+
+for (ocean = 0; ocean < sick; ocean++) {
+c = new CreateFunc(ocean,'close')
         c.SetDefault()
         c.AddEvent()
         cs.push(c)
-
-c = new CreateFunc(1,'close')
-        c.SetDefault()
-        c.AddEvent()
-        cs.push(c)
-
-c = new CreateFunc(2,'close')
-    c.SetDefault()
-    c.AddEvent()
-    cs.push(c)
-
-    c = new CreateFunc(3,'close')
-    c.SetDefault()
-    c.AddEvent()
-    cs.push(c)
+}
 
     hgts = []
     for (tp in feb) {

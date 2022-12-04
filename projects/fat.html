@@ -522,6 +522,17 @@
         margin: 0px;
         justify-content: center;
         border-radius: 5px;
+        padding: 1px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+    .pexp {
+        background-color: var(--pretty-pink);
+        margin: 0px 5px 4px 5px;
+        border-radius: 20px;
+        width: calc(100% - 10px);
+        cursor: pointer;
     }
     </style>
 <body onload="load()">
@@ -536,20 +547,29 @@
             <p style="margin-top: 0px;font-size: 1.1em;">/* Expressão: */</p> 
         <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
                 <input id="write" spellcheck="false" class="type" value="-40a - 4a - 8ax - 2">
-                <div id="ex">
 
+                <div id="ex">
                     <div class="cont" style="height: 20px;background-color: rgb(213,213,213);">
                         <div class="center" style="text-align: center;border-radius: 5px;">
                             <img src="./imagens/rar.png" alt="" class="ar">
                             <p style="margin: 0px;"></p>
                         </div>
-                            <div class="cont">
-                                <div class="center">
-                                    <p class="exptype"><img src="./imagens/rar.png" alt="" class="ar">a(a + b)</p>
+                           
+                                    <div style="border-radius: 7px;overflow-x: hidden;margin-bottom: 2px;">
+                                        <div class="cont">
+                                            <div class="center">
+                                                <p class="exptype"><img src="./imagens/rar.png" alt="" class="ar">a(a + b)</p>
+                                            </div>
+                                         <div id="contexs">
+                                            <p></p>
+                                                                   <p class="pexp">:)</p>
+                                                                   <p class="pexp">:)</p>
+                                                                   <p class="pexp">:)</p>
+                                                                   <p class="pexp">:)</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
+                </div>
                 </div>
             </input>
             <!--ah^2 + hh + 4ah + 4h, 4ah^2 + 4h^2 + 16h + 16ah, a + b + ab + bb - 3b - 3 + 4 + 4b-->
