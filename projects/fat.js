@@ -6,6 +6,13 @@ function erase() {
     get1('write').value = ''
 }
 function load() {
+   
+    pexps = document.getElementsByClassName('pexp')
+for (sure = 0; sure < pexps.length; sure++) {
+    console.log(pexps[sure])
+    pexps[sure].setAttribute('onclick',`changeexp(${sure})`)
+}
+
     get1('resol').innerHTML = ''
 
     get1('resol').innerHTML+= ' <div class="center" id="nopad"> <img src="./imagens/rar.png" alt="" class="ar"><span>Resolução</span> </div> <div class="cont"><div class="center"  classname="top"><img src="./imagens/rar.png" alt="" class="ar"><span>Engine</span></div><p></p></div>'
@@ -21,7 +28,7 @@ function load() {
         showresult()
         }
 }) }
-       
+
 function showresult() {
     if (loaded == true) {
     styles = document.head.getElementsByTagName('style')
@@ -340,7 +347,7 @@ mecams = []
 late = 1
 me = document.getElementsByClassName('ar')
 
-for (ocean = 0; ocean < sick; ocean++) {
+for (ocean = 3; ocean < sick; ocean++) {
 c = new CreateFunc(ocean,'close')
         c.SetDefault()
         c.AddEvent()
@@ -533,6 +540,13 @@ for(pare in sur) {
     }
     c.AddEvent()
 }}
+
+
+ function changeexp (pexpind) {
+    pexps = document.getElementsByClassName('pexp')
+ console.log('HEY',pexps[pexpind].innerText)
+ get1('write').value = pexps[pexpind].innerText
+}
 
 function CreateFunc(ind,action,number){
     this.ind = ind
