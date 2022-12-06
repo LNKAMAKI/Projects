@@ -20,7 +20,19 @@ for (sure = 0; sure < pexps.length; sure++) {
     conts = get2('cont')
     cents = get2('center')
     ars = get2('ar')
-    cs = []
+    mecams = [] 
+    late = -1   
+    sai = 0
+    while  (cents[sai].innerText != 'Resolução') {
+            console.log('É', cents[sai])
+            sai++
+    } 
+    for (bob = 0; bob < sai; bob++) {
+    c = new CreateFunc(bob,'close')
+        c.SetDefault()
+        c.AddEvent()
+    }
+    console.log('RESOLUÇÃO:',sai)
 
     loaded = true
     get1('write').addEventListener('keyup',(event) => {
@@ -82,7 +94,6 @@ get1('resol').innerHTML+= ` <div class="center" id="nopad"> <img src="./imagens/
 conts = get2('cont')
 cents = get2('center')
 ars = get2('ar')
-cs = []
 ts = document.getElementsByName('ti')
 cn = ts[0]
 cn.innerHTML+= '<div class="dev"></div>'
@@ -343,15 +354,23 @@ for (kep in cents) {
        feb.push(Number(kep))
     } }
 
-mecams = []
-late = 1
+//mecams = []
+console.log(mecams.length)
+for (ha = mecams.length - 1; ha >= 0; ha--) {
+    console.log(ha,mecams[ha].created)
+    if (Number(String(mecams[ha].created).replace('j','')) >= sai) {
+       console.log('pode tirar')
+       mecams.splice(ha,1)
+    }
+}
+
+late = sai
 me = document.getElementsByClassName('ar')
 
-for (ocean = 3; ocean < sick; ocean++) {
+for (ocean = sai; ocean < sick; ocean++) {
 c = new CreateFunc(ocean,'close')
         c.SetDefault()
         c.AddEvent()
-        cs.push(c)
 }
 
     hgts = []
@@ -361,7 +380,6 @@ c = new CreateFunc(ocean,'close')
         c = new CreateFunc(is,'close',8)
         c.SetDefault()
         c.AddEvent()
-        cs.push(c)
     }
 
     plar = []
@@ -401,11 +419,10 @@ c = new CreateFunc(ocean,'close')
     c = new CreateFunc(pl4[pl4.length - 1] + 1,'close')
     c.SetDefault()
     c.AddEvent()
-    cs.push(c)
+    //cs.push(c)
     */
 }}
 
-late = 1
 function fn(a,act) {
     //console.log('aaa',a,act)
     sur = 0
