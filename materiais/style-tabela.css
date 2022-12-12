@@ -70,6 +70,16 @@ div#efect2 {
     border-bottom-right-radius: 10px;
     /*box-shadow:0px 0px 10px #b7b7b7;*/
     }
+    dl {
+        width: fit-content;
+        margin: auto;
+    }
+    dt {
+        text-align: start;
+    }
+    dd {
+        text-align: start;
+    }
 .prop {
     color: cadetblue;
 }
