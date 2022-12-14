@@ -1506,7 +1506,7 @@ function CreateEngine2() {
      if (somarmons == false) {
      //console.log('MV',mv)
      }
-     //segs_2.push({car: '1', mons: mv})
+     segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -3724,7 +3724,7 @@ if (somarmons == false) {
         if (somarmons == false)
         console.log('IR: FALSEE')
         return [
-        concatenar_2,
+        '?',
         pans_2.length,
         todososnumeros_2.length,
         segs_2.length,
@@ -3761,8 +3761,8 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
 
           plo = false
           
-          if (monomios_2.length > 1 && segs_2.length > 0 /*&& okexp != '?'*/) {
-            console.log('isso')
+          if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
+            //console.log('isso')
           while (plo == false) {
             seps = SPLITEXPS(okexp)
               rexp =  ''
