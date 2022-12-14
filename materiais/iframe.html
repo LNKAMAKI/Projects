@@ -33,8 +33,8 @@
 
 <span class="title">PARA QUE SERVE O IFRAME</span>
 <p>Antes de falarmos sobre como colocar e usar o iframe, primeiro precisamos saber o que ele é. Bom, o <span class="tag">i</span> de iframe vem de <span class="tag">inline</span> e frame significa quadro, moldura. Então, ele é basicamente um "quadro em linha", que serve para colocar um site dentro de um site. Como assim? Veja o exemplo abaixo: </p>
-<iframe src="iframe.html" frameborder="0" scolling="no"></iframe>
-<p>Parece familiar? Pois bem, é literalmente um site dentro de um site, que, aliás, está dentro de um site, pois, se você clicar em inspecionar vai perceber que todos esses materiais são iframes, o que facilita muito a minha vida e vai provavelmente facilitar a sua também. </p>
+<iframe src="listas.html" frameborder="0" name="frame1" scolling="no"></iframe>
+<p>Viu só? O <span class="tag">iframe</span> acima é do site correspondente ao material sobre listas, ou seja, cada material nesse site é, na verdade, outro site, que está dentro de um <span class="tag">iframe</span>. Isso mostra como essa tag pode ser útil.</p>
 <span class="title">COLOCANDO UM IFRAME</span>
 <p>E como colocar um iframe? Dê uma olhada no código abaixo para descobrir:</p>
 <code>
@@ -56,12 +56,10 @@
 <span class="title">LINKS E IFRAME</span>
 <p>Uma coisa bem legal que dá para fazer é usar links com iframe, ou seja, fazer com que o iframe gere um site quando o seu link correspondente for clicado. Quer ver como isso funciona? Dê uma olhada então: </p>
 <ul>
-    <li><a href="iframe.html" target="frame">Pag1</a></li>
+    <li><a href="../../html-css/exercicios/ex024/paginas-extras/pag001.html" target="f">Pag1</a></li>
     <li><a href="../../html-css/exercicios/ex024/paginas-extras/pag002.html" target="f">Pag2</a></li>
 </ul>
-
-<iframe src="" frameborder="1" id="g" name="frame"></iframe>
-
+<iframe src="" frameborder="1" name="f"></iframe>
 </div>
 
     <div id="efect2"></div>
