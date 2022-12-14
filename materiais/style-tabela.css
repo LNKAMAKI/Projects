@@ -132,6 +132,16 @@ div#d {
     margin-bottom: 5px;
     display: block;
 }
+@media  screen and (max-width:350px) {
+    iframe {
+        width: 240px;
+    }
+}
+@media  screen and (max-width:320px) {
+    iframe {
+        width: 205px;
+    }
+}
 ul,ol {
     list-style-position: inside;
     padding: 0px;
