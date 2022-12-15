@@ -1898,7 +1898,6 @@ function CreateEngine2() {
                  miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah)) // Adicionar ah a aparições de miss_2.dividido == *'2y'
                 }}  }
             
-                miss_2 = [{aparicoes:[0,1],dividido:"1"}]
             quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao]) // *Eg.: 10/2 = 5 (5 fatores em cada grupo)
             quantasposições = Number(monomios_2.length)/Number(quantosfatores) // *Eg.: 10/5 = 2 (div_2[okentão] == quantasposições)
    
@@ -2043,7 +2042,7 @@ function CreateEngine2() {
                }else{
                 miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
                }} }
-               miss_2 = [{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"b"}]
+               //miss_2 = [{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"b"}]
 
      
     // Ordenar o miss_2 pelo tamanho das aparicoes
@@ -2074,8 +2073,11 @@ function CreateEngine2() {
              for (raging = 0; raging < roll_2.length; raging++) {
                  asitwas = [] 
                  obe = {what:[]}
-             
+                 console.log(roll_2[raging])
+                 console.log('roll repetidos',roll_2[raging].repetidos)
+
                 for (still in roll_2[raging].repetidos) {
+                    console.log('roll still',roll_2[raging].repetidos[still])
                  asitwas2 = []
                  aswillbe = []
   
@@ -2088,9 +2090,9 @@ function CreateEngine2() {
                      }
                      older = 
                      scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
-                    //asitwas.push(older)
-                    //asitwas2.push(older)
-                    //aswillbe.push(older)
+                    asitwas.push(older)
+                    asitwas2.push(older)
+                    aswillbe.push(older)
                 }
                 obe.what.push({ar: asitwas2, indice: still})
                 aswillbe2.push({oque:aswillbe, onde:raging})
@@ -3878,12 +3880,33 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                 console.log('-------------------------------------')
                 console.log(`miss_2[${eep}]`,miss_2[eep].dividido,miss_2[eep].aparicoes)
                 varib = []
+                aparics = []
+
                 for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
                     pos = miss_2[eep].aparicoes[kel] // *1
-                    varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
+                    console.log('=>',pos)
+                    // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
+                    //console.log(scarecrow_2[pos].divididos,miss_2[eep].dividido)
+                    //console.log(scarecrow_2[pos].positions)
+                    //console.log(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
+                    if (aparics.find(function(aparics) {return aparics.posac == miss_2[eep].aparicoes[kel]}) == undefined) {
+                    aparics.push({mono: [scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]],posac:pos})
+                    varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) 
+                    }else{
+                        mio = aparics.find(function(aparics) {return aparics.posac == miss_2[eep].aparicoes[kel]}).mono
+                        console.log('oOOOOOOOOOOOOPSSSSSSSS',mio)
+                        on = false
+                        for (kno = 0; kno < scarecrow_2[pos].divididos.length && on == false; kno++) {
+                            console.log(scarecrow_2[pos].divididos[kno],scarecrow_2[pos].positions[kno],mio.indexOf(scarecrow_2[pos].positions[kno]))
+                            console.log(miss_2[eep].dividido == scarecrow_2[pos].divididos[kno])
+                            if (mio.indexOf(scarecrow_2[pos].positions[kno]) == -1 && miss_2[eep].dividido == scarecrow_2[pos].divididos[kno]) {
+                                console.log('pode pushar')
+                                on = true
+                                mio.push(scarecrow_2[pos].positions[kno])
+                                varib.push(scarecrow_2[pos].positions[kno])
+                            } }}
                 }
-                console.log('monomios:',varib)
-                console.log('')
+                console.log('monomios:',varib,aparics)
                 console.log('')
                   for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
                     if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
@@ -3891,9 +3914,23 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         console.log(`c miss_2[${quad}]`,miss_2[quad].dividido,miss_2[quad].aparicoes)
                         compar = []
                       varib2 = []
+                      aparics = []
+
                       for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
                         pos = miss_2[quad].aparicoes[kel] //*1
-                        varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
+                        //varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
+                        if (aparics.find(function(aparics) {return aparics.posac == miss_2[quad].aparicoes[kel]}) == undefined) {
+                            aparics.push({mono: [scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]],posac:pos})
+                            varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) 
+                            }else{
+                                mio = aparics.find(function(aparics) {return aparics.posac == miss_2[quad].aparicoes[kel]}).mono
+                                on = false
+                                for (kno = 0; kno < scarecrow_2[pos].divididos.length && on == false; kno++) {
+                                    if (mio.indexOf(scarecrow_2[pos].positions[kno]) == -1 && miss_2[quad].dividido == scarecrow_2[pos].divididos[kno]) {
+                                        on = true
+                                        mio.push(scarecrow_2[pos].positions[kno])
+                                        varib2.push(scarecrow_2[pos].positions[kno])
+                                    }}}
                     }
                     console.log('monomios:',varib2)
                       repeated = [];
