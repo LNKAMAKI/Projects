@@ -1506,7 +1506,7 @@ function CreateEngine2() {
      if (somarmons == false) {
      //console.log('MV',mv)
      }
-     segs_2.push({car: '1', mons: mv})
+     //segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -1898,6 +1898,7 @@ function CreateEngine2() {
                  miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah)) // Adicionar ah a aparições de miss_2.dividido == *'2y'
                 }}  }
             
+                miss_2 = [{aparicoes:[0,1],dividido:"1"}]
             quantosfatores = Number(monomios_2.length)/Number(divs_2[okentao]) // *Eg.: 10/2 = 5 (5 fatores em cada grupo)
             quantasposições = Number(monomios_2.length)/Number(quantosfatores) // *Eg.: 10/5 = 2 (div_2[okentão] == quantasposições)
    
@@ -2042,6 +2043,8 @@ function CreateEngine2() {
                }else{
                 miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
                }} }
+               miss_2 = [{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"b"}]
+
      
     // Ordenar o miss_2 pelo tamanho das aparicoes
            grtols_2 = [];
@@ -2085,9 +2088,9 @@ function CreateEngine2() {
                      }
                      older = 
                      scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
-                    asitwas.push(older)
-                    asitwas2.push(older)
-                    aswillbe.push(older)
+                    //asitwas.push(older)
+                    //asitwas2.push(older)
+                    //aswillbe.push(older)
                 }
                 obe.what.push({ar: asitwas2, indice: still})
                 aswillbe2.push({oque:aswillbe, onde:raging})
@@ -3724,7 +3727,7 @@ if (somarmons == false) {
         if (somarmons == false)
         console.log('IR: FALSEE')
         return [
-        '?',
+        concatenar_2,
         pans_2.length,
         todososnumeros_2.length,
         segs_2.length,
@@ -3756,12 +3759,14 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               alt = 2
               okexp = fat2[0]
           } }
+          alt = 2
+          okexp = fat2[0]
 
           //console.log('ALT',alt)
 
           plo = false
           
-          if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
+          /*if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
             //console.log('isso')
           while (plo == false) {
             seps = SPLITEXPS(okexp)
@@ -3844,7 +3849,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
-              }}}
+              }}}*/
           
               if (alt == 1) {
                 vari = fat1
@@ -3868,20 +3873,29 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
         }
 
         function doRoll_2() {
+            console.log(miss_2)
             for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
+                console.log('-------------------------------------')
+                console.log(`miss_2[${eep}]`,miss_2[eep].dividido,miss_2[eep].aparicoes)
                 varib = []
                 for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
                     pos = miss_2[eep].aparicoes[kel] // *1
                     varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
                 }
+                console.log('monomios:',varib)
+                console.log('')
+                console.log('')
                   for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
                     if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
+                        console.log('')
+                        console.log(`c miss_2[${quad}]`,miss_2[quad].dividido,miss_2[quad].aparicoes)
                         compar = []
                       varib2 = []
                       for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
                         pos = miss_2[quad].aparicoes[kel] //*1
                         varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
                     }
+                    console.log('monomios:',varib2)
                       repeated = [];
                       repwri = "";
                       for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
