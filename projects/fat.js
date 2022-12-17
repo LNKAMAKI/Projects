@@ -1506,7 +1506,7 @@ function CreateEngine2() {
      if (somarmons == false) {
      //console.log('MV',mv)
      }
-     //segs_2.push({car: '1', mons: mv})
+     segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -2083,36 +2083,15 @@ function CreateEngine2() {
                  asitwas2 = []
                  aswillbe = []
   
-                 mylife = '('
-                 for (still2 in roll_2[raging].posições) {
-                     if (still != 0) {
-                     mylife+= ' + ' + miss_2[roll_2[raging].posições[still2]].dividido
-                     }else{
-                         mylife+= miss_2[roll_2[raging].posições[still2]].dividido
-                     }
-                    
-                     older = scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
-                     
-                     fao = miss_2[roll_2[raging].posições[still2]].dividido
-                    //console.log('asitwas',aswillbe)
-                    //console.log(`'${fao}'`,'=',older,aswillbe.indexOf(older))
-                    if (aswillbe.indexOf(older) == -1) {
-                    asitwas.push(older)
-                    asitwas2.push(older)
-                    aswillbe.push(older)
-                }else{
-                    qual = scarecrow_2[roll_2[raging].repetidos[still]]
-                    //console.log(qual.divididos)
-                    continua = true
-                    for (ape = 0; ape < qual.divididos.length && continua == true; ape++) {
-                        //console.log(qual.divididos[ape],'(',qual.positions[ape],')')
-                        if (qual.divididos[ape] == fao && aswillbe.indexOf(qual.positions[ape]) == -1) {
-                            //console.log('pode pushar')
-                            continua = false
-                            asitwas.push(qual.positions[ape])
-                            asitwas2.push(qual.positions[ape])
-                            aswillbe.push(qual.positions[ape])
-                        } } } }
+                 console.log('ROLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL')
+                 for (still2 in roll_2[raging].monosplit) {
+                    console.log(still2, roll_2[raging].monosplit[still2], roll_2[raging].monosplit[still2].mons[still])
+                    //older = scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
+                    older = roll_2[raging].monosplit[still2].mons[still]
+                   asitwas.push(older)
+                   asitwas2.push(older)
+                   aswillbe.push(older) 
+                }
              obe.what.push({ar: asitwas2, indice: still})
              aswillbe2.push({oque:aswillbe, onde:raging})
             }
@@ -2799,7 +2778,7 @@ if (somarmons == false) {
         }
           if (somarmons == false)
           console.log('newexpress',newexpress)
-         this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
+         //this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
      }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
@@ -3787,6 +3766,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
 
           plo = false
           
+          /*
           if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
             //console.log('isso')
           while (plo == false) {
@@ -3870,7 +3850,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
-              }}}
+              }}}*/
           
               if (alt == 1) {
                 vari = fat1
