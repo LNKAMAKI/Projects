@@ -1922,6 +1922,7 @@ function CreateEngine2() {
      
      roller_2 = [];
   
+     doMiss_2()
      doRoll_2()
     
             okentao++
@@ -2066,6 +2067,7 @@ function CreateEngine2() {
            deucerto = false
            roller_2 = [];
           
+           doMiss_2()
            doRoll_2()
      
             youdumb_2 = []
@@ -2073,11 +2075,11 @@ function CreateEngine2() {
              for (raging = 0; raging < roll_2.length; raging++) {
                  asitwas = [] 
                  obe = {what:[]}
-                 console.log(roll_2[raging])
-                 console.log('roll repetidos',roll_2[raging].repetidos)
+                 //console.log(roll_2[raging])
+                 //console.log('roll repetidos',roll_2[raging].repetidos)
 
                 for (still in roll_2[raging].repetidos) {
-                    console.log('roll still',roll_2[raging].repetidos[still])
+                    //console.log('roll still',roll_2[raging].repetidos[still])
                  asitwas2 = []
                  aswillbe = []
   
@@ -2088,15 +2090,32 @@ function CreateEngine2() {
                      }else{
                          mylife+= miss_2[roll_2[raging].posições[still2]].dividido
                      }
-                     older = 
-                     scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
+                    
+                     older = scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
+                     
+                     fao = miss_2[roll_2[raging].posições[still2]].dividido
+                    //console.log('asitwas',aswillbe)
+                    //console.log(`'${fao}'`,'=',older,aswillbe.indexOf(older))
+                    if (aswillbe.indexOf(older) == -1) {
                     asitwas.push(older)
                     asitwas2.push(older)
                     aswillbe.push(older)
-                }
-                obe.what.push({ar: asitwas2, indice: still})
-                aswillbe2.push({oque:aswillbe, onde:raging})
-             }
+                }else{
+                    qual = scarecrow_2[roll_2[raging].repetidos[still]]
+                    //console.log(qual.divididos)
+                    continua = true
+                    for (ape = 0; ape < qual.divididos.length && continua == true; ape++) {
+                        //console.log(qual.divididos[ape],'(',qual.positions[ape],')')
+                        if (qual.divididos[ape] == fao && aswillbe.indexOf(qual.positions[ape]) == -1) {
+                            //console.log('pode pushar')
+                            continua = false
+                            asitwas.push(qual.positions[ape])
+                            asitwas2.push(qual.positions[ape])
+                            aswillbe.push(qual.positions[ape])
+                        } } } }
+             obe.what.push({ar: asitwas2, indice: still})
+             aswillbe2.push({oque:aswillbe, onde:raging})
+            }
 
              join = ''
              for (rob in asitwas) {
@@ -3768,7 +3787,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
 
           plo = false
           
-          /*if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
+          if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
             //console.log('isso')
           while (plo == false) {
             seps = SPLITEXPS(okexp)
@@ -3851,7 +3870,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
-              }}}*/
+              }}}
           
               if (alt == 1) {
                 vari = fat1
@@ -3874,14 +3893,79 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               ]
         }
 
+        function doMiss_2() {
+            to = []
+        for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
+            //console.log('-------------------------------------')
+            //console.log(`miss_2[${eep}]`,miss_2[eep].dividido,miss_2[eep].aparicoes)
+            varib = []
+            aparics = []
+            moremiss = []
+            pino = false
+            
+            for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
+                pos = miss_2[eep].aparicoes[kel] // *1
+
+                //console.log('=>',pos)
+                //console.log(scarecrow_2[pos].divididos,miss_2[eep].dividido)
+                //console.log(scarecrow_2[pos].positions)
+                if (aparics.find(function(aparics) {return aparics.posac == miss_2[eep].aparicoes[kel]}) == undefined) {
+                aparics.push({mono: [scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]],posac:pos})
+                varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) 
+                iten = scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]
+                }else{
+                    mio = aparics.find(function(aparics) {return aparics.posac == miss_2[eep].aparicoes[kel]}).mono
+                    //console.log('oOOOOOOOOOOOOPSSSSSSSS',mio)
+                    on = false
+                    for (kno = 0; kno < scarecrow_2[pos].divididos.length && on == false; kno++) {
+                        //console.log(scarecrow_2[pos].divididos[kno],scarecrow_2[pos].positions[kno],mio.indexOf(scarecrow_2[pos].positions[kno]))
+                        //console.log(miss_2[eep].dividido == scarecrow_2[pos].divididos[kno])
+                        if (mio.indexOf(scarecrow_2[pos].positions[kno]) == -1 && miss_2[eep].dividido == scarecrow_2[pos].divididos[kno]) {
+                            //console.log('pode pushar')
+                            on = true
+                            mio.push(scarecrow_2[pos].positions[kno])
+                            varib.push(scarecrow_2[pos].positions[kno])
+                            iten = scarecrow_2[pos].positions[kno]
+                        } }}
+
+                        if (moremiss.length == 0) {
+                            moremiss.push({dividido: miss_2[eep].dividido, aparicoes: [pos], mons: [iten]})
+                        }else{
+                            deu = false
+                            for (mind = 0; mind < moremiss.length && deu == false; mind++) {
+                                //console.log(moremiss[mind],moremiss[mind].aparicoes)
+                                if (moremiss[mind].aparicoes.indexOf(pos) == -1) {
+                                    moremiss[mind].aparicoes.push(pos)
+                                    moremiss[mind].mons.push(iten)
+                                    deu = true
+                                }
+                            }
+                            if (deu == false) {
+                                //console.log('WE GOT A PROBLEM HERE')
+                                moremiss.push({dividido: miss_2[eep].dividido, aparicoes: [pos], mons: [iten]})
+                                pino = true
+                            } }}
+            if (pino == true) {
+           moremiss.push({dividido: miss_2[eep].dividido, aparicoes: miss_2[eep].aparicoes, mons:varib})
+            }
+            //console.log('monomios:',varib,aparics,moremiss)
+            miss_2[eep].mons = varib
+            for (keyi in moremiss) {
+                to.push(moremiss[keyi])
+            }
+        }
+        //console.log('MOREMISSSSSSSSSSSSSS',to)
+        miss_2 = to
+    }
         function doRoll_2() {
-            console.log(miss_2)
+            //console.log(miss_2)
             for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
                 console.log('-------------------------------------')
                 console.log(`miss_2[${eep}]`,miss_2[eep].dividido,miss_2[eep].aparicoes)
-                varib = []
-                aparics = []
+                console.log('MISSSSSSSSSSSSSSSSSS',miss_2[eep].mons)
+                varib = miss_2[eep].mons
 
+                /*
                 for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
                     pos = miss_2[eep].aparicoes[kel] // *1
                     console.log('=>',pos)
@@ -3905,33 +3989,16 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 mio.push(scarecrow_2[pos].positions[kno])
                                 varib.push(scarecrow_2[pos].positions[kno])
                             } }}
-                }
+                }*/
                 console.log('monomios:',varib,aparics)
-                console.log('')
+                //console.log('')
                   for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
                     if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
                         console.log('')
                         console.log(`c miss_2[${quad}]`,miss_2[quad].dividido,miss_2[quad].aparicoes)
                         compar = []
-                      varib2 = []
-                      aparics = []
+                      varib2 = miss_2[quad].mons
 
-                      for (kel in miss_2[quad].aparicoes) { // *miss_2[quad].aparicoes = [1,2], *miss_2[quad].aparicoes[0] = 1
-                        pos = miss_2[quad].aparicoes[kel] //*1
-                        //varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('5y')]
-                        if (aparics.find(function(aparics) {return aparics.posac == miss_2[quad].aparicoes[kel]}) == undefined) {
-                            aparics.push({mono: [scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]],posac:pos})
-                            varib2.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[quad].dividido)]) 
-                            }else{
-                                mio = aparics.find(function(aparics) {return aparics.posac == miss_2[quad].aparicoes[kel]}).mono
-                                on = false
-                                for (kno = 0; kno < scarecrow_2[pos].divididos.length && on == false; kno++) {
-                                    if (mio.indexOf(scarecrow_2[pos].positions[kno]) == -1 && miss_2[quad].dividido == scarecrow_2[pos].divididos[kno]) {
-                                        on = true
-                                        mio.push(scarecrow_2[pos].positions[kno])
-                                        varib2.push(scarecrow_2[pos].positions[kno])
-                                    }}}
-                    }
                     console.log('monomios:',varib2)
                       repeated = [];
                       repwri = "";
@@ -3969,7 +4036,8 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                               opl: [...repeated], // *[1,2]
                               factor: [miss_2[eep].dividido,miss_2[quad].dividido],
                               position: [eep, quad], // 0,1
-                              monomios: [...compar] // [1,2,3,4]
+                              monomios: [...compar], // [1,2,3,4]
+                              monosplit: [{misspos: eep,mons: mons1},{misspos: quad, mons: mons2}]
                             });
                           }else{ // Se já tiver no roller_2
                             func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
@@ -3981,6 +4049,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             if (perm == true) {
                                 func.position.push(pos1) // pos1 = eep
                                 func.factor.push(miss_2[Number(pos1)].dividido)
+                                func.monosplit.push({misspos: eep,mons: mons1})
                                 for (wake in mons1) { // *mons1[0] = 1
                                 func.monomios.push(mons1[wake])
                                 } }
@@ -3992,15 +4061,19 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             if (perm == true) {
                                 func.position.push(pos2) // pos2 = quad
                                 func.factor.push(miss_2[Number(pos2)].dividido)
+                                func.monosplit.push({misspos: quad,mons: mons2})
                                 for (wake in mons2) { // *mons1[0] = 1
                                 func.monomios.push(mons2[wake])
                                 }}}
                         }else{ // miss_2[quad].aparicoes.indexOf(1) == -1 || compar.indexOf(varib2[0]) != -1
                                 compar.splice(compar.length - 1,1)
-                            } }}}}}
+                            } }}
+                            console.log('MONS1 =========>',mons1)
+                            console.log('MONS2 =========>',mons2)
+                        }}}
                 
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
-                 roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios})
+                 roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
                  // repetidos - opl, posições - position, way: rept
              } }
 
