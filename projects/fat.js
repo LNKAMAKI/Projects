@@ -1506,7 +1506,7 @@ function CreateEngine2() {
      if (somarmons == false) {
      //console.log('MV',mv)
      }
-     segs_2.push({car: '1', mons: mv})
+     //segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -2778,7 +2778,7 @@ if (somarmons == false) {
         }
           if (somarmons == false)
           console.log('newexpress',newexpress)
-         //this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
+         this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
      }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
