@@ -1923,7 +1923,7 @@ function CreateEngine2() {
      roller_2 = [];
   
      doMiss_2()
-     doRoll_2()
+     doRoll_2(somarmons)
     
             okentao++
      
@@ -2068,7 +2068,7 @@ function CreateEngine2() {
            roller_2 = [];
           
            doMiss_2()
-           doRoll_2()
+           doRoll_2(somarmons)
      
             youdumb_2 = []
              aswillbe2 = []
@@ -2083,9 +2083,9 @@ function CreateEngine2() {
                  asitwas2 = []
                  aswillbe = []
   
-                 console.log('ROLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL')
+                 //console.log('ROLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL')
                  for (still2 in roll_2[raging].monosplit) {
-                    console.log(still2, roll_2[raging].monosplit[still2], roll_2[raging].monosplit[still2].mons[still])
+                    //console.log(still2, roll_2[raging].monosplit[still2], roll_2[raging].monosplit[still2].mons[still])
                     //older = scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
                     older = roll_2[raging].monosplit[still2].mons[still]
                    asitwas.push(older)
@@ -2778,7 +2778,7 @@ if (somarmons == false) {
         }
           if (somarmons == false)
           console.log('newexpress',newexpress)
-         this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
+         //this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
      }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
@@ -3937,14 +3937,11 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
         //console.log('MOREMISSSSSSSSSSSSSS',to)
         miss_2 = to
     }
-        function doRoll_2() {
+        function doRoll_2(somarmons) {
             //console.log(miss_2)
             for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
                 console.log('-------------------------------------')
-                console.log(`miss_2[${eep}]`,miss_2[eep].dividido,miss_2[eep].aparicoes)
-                console.log('MISSSSSSSSSSSSSSSSSS',miss_2[eep].mons)
                 varib = miss_2[eep].mons
-
                 /*
                 for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
                     pos = miss_2[eep].aparicoes[kel] // *1
@@ -3970,34 +3967,48 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 varib.push(scarecrow_2[pos].positions[kno])
                             } }}
                 }*/
-                console.log('monomios:',varib,aparics)
+                if (somarmons == false)
+                //console.log('monomios:',varib,aparics)
                 //console.log('')
                   for (quad in miss_2) { // miss_2[quad] = *Eg.: {dividido: '5y', aparicoes: [1,2], divisor: ['3','.','x']}
                     if (quad != eep) { // Se o miss[quad] for diferente do miss[eep]
-                        console.log('')
+                        if (somarmons == false) {
+                        console.log('') 
+                            console.log(`miss_2[${eep}]`,miss_2[eep].dividido,miss_2[eep].aparicoes)
+                            console.log('MISSSSSSSSSSSSSSSSSS',miss_2[eep].mons)
                         console.log(`c miss_2[${quad}]`,miss_2[quad].dividido,miss_2[quad].aparicoes)
+                        }
                         compar = []
                       varib2 = miss_2[quad].mons
 
+                    if (somarmons == false)
                     console.log('monomios:',varib2)
                       repeated = [];
                       repwri = "";
                       for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
+                        console.log(vespa, miss_2[eep].aparicoes[vespa])
                         if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(varib[0]/1)
                         compar.push(varib[vespa]) // *varib[0] = 1
-                        if (miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa]) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) == -1) { // *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
+                        console.log('compar',compar)
+
+                        ton = miss_2[eep].aparicoes[vespa]
+                        if (miss_2[quad].aparicoes.indexOf(ton) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(ton)]) == -1) {// *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
+                            console.log('ok, pode pushar')
                           compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0]/2)
+                          console.log('compar',compar)
                             
-                            repeated.push(miss_2[eep].aparicoes[vespa]); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
-                          repwri += "," + miss_2[eep].aparicoes[vespa]; // *,1
+                            repeated.push(ton); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
+                          repwri += "," + ton; // *,1
         
                           mons1 = []
         
                           pos1 = eep
                           pi = 0
                           for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
+                            if (compar[pi] != undefined) {
                               mons1.push(compar[pi])
                               pi+= 2
+                            }
                           } 
                           // *mons1 = [1,3]
         
@@ -4005,12 +4016,22 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                           mons2 = []
                           pi = 1
                           for (photo = 0; photo < Number(repwri.length)/2;photo+=1) { // *,1,2,3,4
+                            if (compar[pi] != undefined) {
                               mons2.push(compar[pi])
                               pi+= 2
+                            }
                           } 
                           // *mons2 = [2,4]
         
                           if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { // Se não tiver no roller_2
+                            console.log('pushar novo:',{
+                                rept: repwri, // *,1,2
+                                opl: [...repeated], // *[1,2]
+                                factor: [miss_2[eep].dividido,miss_2[quad].dividido],
+                                position: [eep, quad], // 0,1
+                                monomios: [...compar], // [1,2,3,4]
+                                monosplit: [{misspos: eep,mons: mons1},{misspos: quad, mons: mons2}]
+                              })
                                roller_2.push({
                               rept: repwri, // *,1,2
                               opl: [...repeated], // *[1,2]
@@ -4021,6 +4042,8 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             });
                           }else{ // Se já tiver no roller_2
                             func = roller_2.find(function (roller_2) { return roller_2.rept == repwri;})
+                            console.log('já tem:',func)
+                            console.log(mons1,mons2)
                             perm = true
                             for (sept in mons1) { // *mons1 = [1,3], *mons1[0] = 1
                                 if (func.monomios.indexOf(mons1[sept]) != -1) { //*[0,1,2].indexOf(1) != -1
@@ -4047,9 +4070,10 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 }}}
                         }else{ // miss_2[quad].aparicoes.indexOf(1) == -1 || compar.indexOf(varib2[0]) != -1
                                 compar.splice(compar.length - 1,1)
+                                console.log('compar',compar)
                             } }}
-                            console.log('MONS1 =========>',mons1)
-                            console.log('MONS2 =========>',mons2)
+                            //console.log('MONS1 =========>',mons1)
+                            //console.log('MONS2 =========>',mons2)
                         }}}
                 
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
