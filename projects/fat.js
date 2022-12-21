@@ -3979,7 +3979,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         console.log(`c miss_2[${quad}]`,miss_2[quad].dividido,miss_2[quad].aparicoes)
                         }
                         compar = []
-                      varib2 = miss_2[quad].mons
+                      varib2 = [...miss_2[quad].mons]
 
                     if (somarmons == false)
                     console.log('monomios:',varib2)
@@ -3999,7 +3999,8 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             
                             repeated.push(ton); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
                           repwri += "," + ton; // *,1
-        
+                          console.log(varib2,ton,vespa)
+                          //varib2.splice(miss_2[quad].aparicoes.indexOf(ton),1)
                           mons1 = []
         
                           pos1 = eep
