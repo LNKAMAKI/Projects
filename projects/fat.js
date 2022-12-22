@@ -3941,7 +3941,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             //console.log(miss_2)
             for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
                 console.log('-------------------------------------')
-                varib = miss_2[eep].mons
+                varib = [...miss_2[eep].mons]
                 /*
                 for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
                     pos = miss_2[eep].aparicoes[kel] // *1
@@ -3975,7 +3975,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         if (somarmons == false) {
                         console.log('') 
                             console.log(`miss_2[${eep}]`,miss_2[eep].dividido,miss_2[eep].aparicoes)
-                            console.log('MISSSSSSSSSSSSSSSSSS',miss_2[eep].mons)
+                            console.log('monomios',varib)
                         console.log(`c miss_2[${quad}]`,miss_2[quad].dividido,miss_2[quad].aparicoes)
                         }
                         compar = []
@@ -3986,7 +3986,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                       repeated = [];
                       repwri = "";
                       for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
-                        console.log(vespa, miss_2[eep].aparicoes[vespa])
+                        console.log(vespa, ton)
                         if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(varib[0]/1)
                         compar.push(varib[vespa]) // *varib[0] = 1
                         console.log('compar',compar)
@@ -3994,13 +3994,13 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         ton = miss_2[eep].aparicoes[vespa]
                         if (miss_2[quad].aparicoes.indexOf(ton) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(ton)]) == -1) {// *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
                             console.log('ok, pode pushar')
-                          compar.push(varib2[miss_2[quad].aparicoes.indexOf(miss_2[eep].aparicoes[vespa])]) // compar.push(varib2[0]/2)
+                          compar.push(varib2[miss_2[quad].aparicoes.indexOf(ton)]) // compar.push(varib2[0]/2)
                           console.log('compar',compar)
                             
                             repeated.push(ton); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
                           repwri += "," + ton; // *,1
-                          console.log(varib2,ton,vespa)
-                          //varib2.splice(miss_2[quad].aparicoes.indexOf(ton),1)
+                          console.log(varib2,'monomio sendo comparado')
+                          varib2[miss_2[quad].aparicoes.indexOf(ton)] = -1
                           mons1 = []
         
                           pos1 = eep
