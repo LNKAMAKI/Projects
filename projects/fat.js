@@ -3980,6 +3980,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         }
                         compar = []
                       varib2 = [...miss_2[quad].mons]
+                      mispar = [...miss_2[quad].aparicoes]
 
                     if (somarmons == false)
                     console.log('monomios:',varib2)
@@ -3992,15 +3993,17 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         console.log('compar',compar)
 
                         ton = miss_2[eep].aparicoes[vespa]
-                        if (miss_2[quad].aparicoes.indexOf(ton) != -1 && compar.indexOf(varib2[miss_2[quad].aparicoes.indexOf(ton)]) == -1) {// *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
+                        tonpos = mispar.indexOf(ton)
+                        if (tonpos != -1 && compar.indexOf(varib2[tonpos]) == -1) {// *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
                             console.log('ok, pode pushar')
-                          compar.push(varib2[miss_2[quad].aparicoes.indexOf(ton)]) // compar.push(varib2[0]/2)
+                          compar.push(varib2[tonpos]) // compar.push(varib2[0]/2)
                           console.log('compar',compar)
                             
                             repeated.push(ton); // *repeated.push(miss_2[eep].aparicoes[0]) (1)
                           repwri += "," + ton; // *,1
                           console.log(varib2,'monomio sendo comparado')
-                          varib2[miss_2[quad].aparicoes.indexOf(ton)] = -1
+                          mispar[tonpos] = -1
+                          varib2[tonpos] = -1
                           mons1 = []
         
                           pos1 = eep
