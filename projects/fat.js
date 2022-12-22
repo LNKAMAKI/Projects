@@ -3986,7 +3986,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                       repeated = [];
                       repwri = "";
                       for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
-                        console.log(vespa, ton)
+                        console.log(vespa, miss_2[eep].aparicoes[vespa])
                         if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(varib[0]/1)
                         compar.push(varib[vespa]) // *varib[0] = 1
                         console.log('compar',compar)
