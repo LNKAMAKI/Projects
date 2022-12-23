@@ -3931,31 +3931,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
                 console.log('-------------------------------------')
                 varib = [...miss_2[eep].mons]
-                /*
-                for (kel in miss_2[eep].aparicoes) { // miss_2[eep].aparicoes = *[1,2], miss_2[eep].aparicoes[kel] = *1
-                    pos = miss_2[eep].aparicoes[kel] // *1
-                    console.log('=>',pos)
-                    // *scarecrow_2[1].positions[scarecrow_2[1].divididos.indexOf('2*3x')]
-                    //console.log(scarecrow_2[pos].divididos,miss_2[eep].dividido)
-                    //console.log(scarecrow_2[pos].positions)
-                    //console.log(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)])
-                    if (aparics.find(function(aparics) {return aparics.posac == miss_2[eep].aparicoes[kel]}) == undefined) {
-                    aparics.push({mono: [scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]],posac:pos})
-                    varib.push(scarecrow_2[pos].positions[scarecrow_2[pos].divididos.indexOf(miss_2[eep].dividido)]) 
-                    }else{
-                        mio = aparics.find(function(aparics) {return aparics.posac == miss_2[eep].aparicoes[kel]}).mono
-                        console.log('oOOOOOOOOOOOOPSSSSSSSS',mio)
-                        on = false
-                        for (kno = 0; kno < scarecrow_2[pos].divididos.length && on == false; kno++) {
-                            console.log(scarecrow_2[pos].divididos[kno],scarecrow_2[pos].positions[kno],mio.indexOf(scarecrow_2[pos].positions[kno]))
-                            console.log(miss_2[eep].dividido == scarecrow_2[pos].divididos[kno])
-                            if (mio.indexOf(scarecrow_2[pos].positions[kno]) == -1 && miss_2[eep].dividido == scarecrow_2[pos].divididos[kno]) {
-                                console.log('pode pushar')
-                                on = true
-                                mio.push(scarecrow_2[pos].positions[kno])
-                                varib.push(scarecrow_2[pos].positions[kno])
-                            } }}
-                }*/
+                
                 if (somarmons == false)
                 //console.log('monomios:',varib,aparics)
                 //console.log('')
