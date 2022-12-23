@@ -4021,8 +4021,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             if (compar[pi] != undefined) {
                               mons1.push(compar[pi])
                               pi+= 2
-                            }
-                          } 
+                            }} 
                           // *mons1 = [1,3]
         
                           pos2 = quad
@@ -4032,8 +4031,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             if (compar[pi] != undefined) {
                               mons2.push(compar[pi])
                               pi+= 2
-                            }
-                          } 
+                            }} 
                           // *mons2 = [2,4]
         
                           if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { // Se não tiver no roller_2
