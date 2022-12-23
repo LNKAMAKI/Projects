@@ -3993,8 +3993,17 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         console.log('compar',compar)
 
                         ton = miss_2[eep].aparicoes[vespa]
-                        tonpos = mispar.indexOf(ton)
-                        if (tonpos != -1 && compar.indexOf(varib2[tonpos]) == -1) {// *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
+                        //tonpos = mispar.indexOf(ton)
+                        proceed = true
+                        for (jk = 0; jk < mispar.length && proceed == true; jk++) {
+                            if (mispar[jk] == ton && compar.indexOf(varib2[jk]) == -1) {
+                                tonpos = jk
+                                proceed = false
+                            } }
+                        if (proceed == true) {
+                            tonpos = -1
+                        }
+                        if (tonpos != -1) {// *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
                             console.log('ok, pode pushar')
                           compar.push(varib2[tonpos]) // compar.push(varib2[0]/2)
                           console.log('compar',compar)
