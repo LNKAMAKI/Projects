@@ -3928,10 +3928,12 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
     }
         function doRoll_2(somarmons) {
             //console.log(miss_2)
+            allrels = []
             for (eep in miss_2) { // miss_2[eep] = *Eg.: {dividido: '2*3x', aparicoes: [1,2], divisor: ['2','.','2']}
                 console.log('-------------------------------------')
                 varib = [...miss_2[eep].mons]
                 
+                rel = []
                 if (somarmons == false)
                 //console.log('monomios:',varib,aparics)
                 //console.log('')
@@ -3951,6 +3953,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                     console.log('monomios:',varib2)
                       repeated = [];
                       repwri = "";
+                      semels = 0
                       for (vespa in miss_2[eep].aparicoes) { // *miss_2[eep].aparicoes = [1,2], *miss_2[eep].aparicoes[0] = 1
                         console.log(vespa, miss_2[eep].aparicoes[vespa])
                         if (compar.indexOf(varib[vespa]) == -1) { // *compar.indexOf(varib[0]/1)
@@ -3970,6 +3973,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         }
                         if (tonpos != -1) {// *[1,2].indexOf(1) != -1 && compar.indexOf(varib_2[0]/2) == -1
                             console.log('ok, pode pushar')
+                            semels++
                           compar.push(varib2[tonpos]) // compar.push(varib2[0]/2)
                           console.log('compar',compar)
                             
@@ -4048,9 +4052,13 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 compar.splice(compar.length - 1,1)
                                 console.log('compar',compar)
                             } }}
+                            console.log(rel)
+                            rel.push({m: quad, sems:semels, apars: [...miss_2[quad].aparicoes], mons: [...miss_2[quad].mons]})
                             //console.log('MONS1 =========>',mons1)
                             //console.log('MONS2 =========>',mons2)
-                        }}}
+                        }}
+                        allrels.push(rel)
+                    }
                 
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
                  roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
