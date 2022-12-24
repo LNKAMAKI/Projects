@@ -4053,6 +4053,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 console.log('compar',compar)
                             } }}
                             console.log(rel)
+                            if (semels > 0)
                             rel.push({m: quad, sems:semels, apars: [...miss_2[quad].aparicoes], mons: [...miss_2[quad].mons]})
                             //console.log('MONS1 =========>',mons1)
                             //console.log('MONS2 =========>',mons2)
