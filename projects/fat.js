@@ -2255,8 +2255,7 @@ function CreateEngine2() {
                  for (eng in initial[agg].ar) {
                      numerospresentes_2.push(initial[agg].ar[eng])
                   } }}
-     
-         
+                  
          if (inside.which.length > 0) {
              inside.todos = sticky
       pans_2.push(inside)
