@@ -2255,7 +2255,7 @@ function CreateEngine2() {
                  for (eng in initial[agg].ar) {
                      numerospresentes_2.push(initial[agg].ar[eng])
                   } }}
-                  
+
          if (inside.which.length > 0) {
              inside.todos = sticky
       pans_2.push(inside)
@@ -4060,6 +4060,73 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                         allrels.push(rel)
                     }
                 
+                    for (ceia in allrels) {  // allrels = [Array(n1),Array(n2)...]
+                        console.log(allrels[ceia])
+                        grtols_2 = []
+                        for (hi in allrels[ceia]) {
+                            allrels[ceia][hi].length = allrels[ceia][hi].sems
+                            grtols_2.push(allrels[ceia][hi])
+                        }
+                        organizado = sortob(grtols_2, 'length')[1]
+                        
+                        grtols_2 = []
+                        for (ah in organizado) {
+                            grtols_2.push(allrels[ceia][organizado[ah]])
+                        }
+                        allrels[ceia] = [...grtols_2]
+                        nok = allrels[ceia] // nok = [{...},{...},{...}...]
+
+                        compar = []
+                      
+                        for (mel = nok.length; mel > 1; mel--) {
+                            console.log(mel)
+                            console.log('----')
+                            compar = []
+                            quaispar = []
+                            eachmons = []
+                            for (ko in miss_2[ceia].aparicoes) {
+                                quepar = miss_2[ceia].aparicoes[ko]
+                                console.log('quepar',quepar)
+                                cancom = true
+                                fcompar = [miss_2[ceia].mons[ko]]
+        
+                            for (dex = 0; dex < mel; dex++) {
+                                console.log(nok[dex], nok[dex].m, nok[dex].apars) 
+                                // nok[dex] = *{m: '1', sems: 2, apars: [0,2], mons: [1,5]}
+                                // m = index no miss_2/ sems = aparicões em comum/ apars = todas as aparições no scarecrow_2/ mons = monômios correspondentes no scarecrow_2
+                                proceed = true
+                                //
+                                console.log('+++')
+                                for (jk = 0; jk < nok[dex].apars.length && proceed == true; jk++) {
+                                    console.log('apar:',nok[dex].apars[jk],'mons:', nok[dex].mons[jk])
+                                    if (nok[dex].apars[jk] == quepar && compar.indexOf(nok[dex].mons[jk]) == -1) {
+                                        console.log('--igual--')
+                                        tonpos = jk
+                                        proceed = false
+                                    } 
+                                }
+                                console.log('+++')
+                                if (proceed == true) {
+                                  cancom = false
+                                }else{
+                                    fcompar.push(nok[dex].mons[tonpos])
+                                }
+                                console.log('can add to compar?',cancom)
+                                console.log('fcompar',fcompar)
+                                //
+                            }
+                            if (cancom == true) {
+                                console.log('ok, pode pushar')
+                                for (nel in fcompar) {
+                                    compar.push(fcompar[nel])
+                                }
+                                quaispar.push(quepar)
+                            }
+                          console.log('>> QUAISPAR <<',quaispar, '>> COMPAR <<',compar)
+                        } 
+                            console.log('----')
+                     } 
+                    }
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
                  roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
                  // repetidos - opl, posições - position, way: rept
