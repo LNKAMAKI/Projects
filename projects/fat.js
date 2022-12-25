@@ -4102,7 +4102,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             console.log('----')
                             compar = []
                             quaispar = []
-                            eachmons = []
+                            eachmons = [{m: ceia, mons: []}]
                             for (ko in miss_2[ceia].aparicoes) {
                                 quepar = miss_2[ceia].aparicoes[ko]
                                 console.log('quepar',quepar)
@@ -4135,10 +4135,17 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 //
                             }
                             if (cancom == true) {
-                                console.log('ok, pode pushar')
+                                console.log('OK!!!! PODE PUSHAR!!')
                                 for (nel in fcompar) {
                                     compar.push(fcompar[nel])
+                                    if (nel == 0) {
+                                        console.log(`mon do miss_2[${ceia}]`,miss_2[ceia].mons[ko])
+                                        eachmons[0].mons.push(miss_[ceia].mons[ko])
+                                    }else{
+                                        console.log(`nok[${nel - 1}].m`,nok[nel - 1].m,fcompar[nel])
+                                    }
                                 }
+                                
                                 quaispar.push(quepar)
                             }
                           console.log('>> QUAISPAR <<',quaispar, '>> COMPAR <<',compar)
