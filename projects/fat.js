@@ -183,17 +183,22 @@ hyu++
 pl2 = []
 for (h in res[7]) {
     spn = ''
+    spn2 = ''
     splitspn = ''
+    splitspn2 = ''
     for(k in res[7][h].aparicoes) {
         if (k != res[7][h].aparicoes.length - 1) {
             spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+            spn2+= `<span><span style="color:var(--number)">${res[7][h].mons[k]}</span>,</span>`
         }else{
             spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
+            spn2+= `<span><span style="color:var(--number)">${res[7][h].mons[k]}</span></span>`
         }
         splitspn+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
+        splitspn2+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].mons[k]}</span></p>`
     }
 
-    for (ju = 0; ju <2;ju++) {
+    for (ju = 0; ju <3;ju++) { // 3 = 2 spns(spn, spn2) ====> COMO ADICIONAR SPN <====
         hyu++
         pl2.push(hyu)
         }
@@ -216,10 +221,19 @@ cn2.getElementsByClassName('dev')[0].innerHTML+= `
 <div class="cont"> 
 <div class="center">
 <img src="./imagens/rar.png" alt="" class="ar">
-<span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
+<span style="font-size:0.9em">aparics: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span>
 </div> 
 ${splitspn}
 </div>
+
+<div class="cont"> 
+<div class="center">
+<img src="./imagens/rar.png" alt="" class="ar">
+<span style="font-size:0.9em">aparics: [</span><span class="sp" style="overflow-x:scroll;">${spn2}</span><span style="font-size:0.9em">]</span>
+</div> 
+${splitspn2}
+</div>
+
 </div>
 
 </div>`
@@ -485,13 +499,18 @@ function fn(a,act) {
     for (h in res[7]) {
         spn = ''
         splitspn = ''
+        spn2 = ''
+        splitspn2 = ''
         for(k in res[7][h].aparicoes) {
             if (k != res[7][h].aparicoes.length - 1) {
                 spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span>,</span>`
+                spn2+= `<span><span style="color:var(--number)">${res[7][h].mons[k]}</span>,</span>`
             }else{
                 spn+= `<span><span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></span>`
+                spn2+= `<span><span style="color:var(--number)">${res[7][h].mons[k]}</span></span>`
             }
             splitspn+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].aparicoes[k]}</span></p>`
+            splitspn2+= ` <p class="psem"><span style="display:inline-block;"><span style="color:var(--number)">${k}</span>: <span style="color:var(--number)">${res[7][h].mons[k]}</span></p>`
         }
     cn2.getElementsByClassName('dev')[0].innerHTML+= `<div class="cont"><div class="center"><img src="./imagens/rar.png" alt="" class="ar"> <span class="sp"><span style="color:var(--number)">${h}</span>: {fator: <span style="color:var(--string)">'${desfat(REFORMATAR(res[7][h].dividido))}'</span>, aparições: Array(${res[7][h].aparicoes.length})}</span></div><div class="tocent">  <p class="pdev">fator: <span style="color:var(--string)">'${res[7][h].dividido.replace(new RegExp('\\*','g'),'.')}'</span></p><div class="cont"> <div class="center"><img src="./imagens/rar.png" alt="" class="ar"><span style="font-size:0.9em">aparicoes: [</span><span class="sp" style="overflow-x:scroll;">${spn}</span><span style="font-size:0.9em">]</span></div> ${splitspn} </div> </div></div>`
     }
