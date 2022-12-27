@@ -4102,7 +4102,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                             console.log('----')
                             compar = []
                             quaispar = []
-                            eachmons = [{m: ceia, mons: []}]
+                            eachmons = [{misspos: ceia, mons: []}]
                             for (ko in miss_2[ceia].aparicoes) {
                                 quepar = miss_2[ceia].aparicoes[ko]
                                 console.log('quepar',quepar)
@@ -4140,15 +4140,25 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                     compar.push(fcompar[nel])
                                     if (nel == 0) {
                                         console.log(`mon do miss_2[${ceia}]`,miss_2[ceia].mons[ko])
-                                        eachmons[0].mons.push(miss_[ceia].mons[ko])
+                                        eachmons[0].mons.push(miss_2[ceia].mons[ko])
                                     }else{
                                         console.log(`nok[${nel - 1}].m`,nok[nel - 1].m,fcompar[nel])
+                                        if (eachmons.find(function(eachmons){
+                                            return eachmons.misspos == nok[nel - 1].m
+                                        }) == undefined) {
+                                            eachmons.push({misspos: nok[nel - 1].m, mons: [fcompar[nel]]})
+                                        }else{
+                                            eachmons.find(function(eachmons){
+                                                return eachmons.misspos == nok[nel - 1].m
+                                            }).mons.push(fcompar[nel])
+                                        }
                                     }
                                 }
                                 
                                 quaispar.push(quepar)
                             }
-                          console.log('>> QUAISPAR <<',quaispar, '>> COMPAR <<',compar)
+                          console.log('>> QUAISPAR <<',quaispar, '>> COMPAR <<',compar, '>> EACHMONS <<', eachmons)
+                        /* roller_2.push({factor: [], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [], rept: ''}) */
                         } 
                             console.log('----')
                      } 
