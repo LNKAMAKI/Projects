@@ -4158,7 +4158,20 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                                 quaispar.push(quepar)
                             }
                           console.log('>> QUAISPAR <<',quaispar, '>> COMPAR <<',compar, '>> EACHMONS <<', eachmons)
-                        /* roller_2.push({factor: [], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [], rept: ''}) */
+                          reptpar = ''
+                          for (cobli in quaispar) {
+                            reptpar += `,${quaispar[cobli]}`
+                          }
+                          console.log(reptpar)
+                          noks = [ceia]
+                          fats = [miss_2[ceia].dividido]
+                          for (ruim in nok) {
+                            console.log('nok[ruim].m',nok[ruim].m,'fats',miss_2[nok[ruim].m].dividido)
+                            noks.push(Number(nok[ruim].m))
+                            fats.push(miss_2[nok[ruim].m].dividido)
+                          }
+                          console.log('noks',noks,'fats',fats)
+                         roller_2.push({factor: [...fats], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [...noks], rept: reptpar})
                         } 
                             console.log('----')
                      } 
