@@ -1525,7 +1525,7 @@ function CreateEngine2() {
      if (somarmons == false) {
      //console.log('MV',mv)
      }
-     //segs_2.push({car: '1', mons: mv})
+     segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -1954,7 +1954,7 @@ function CreateEngine2() {
                 arranjar[pq].ocupa.push(vaiir)
                 //console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
-         
+             console.log('ARRANJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRR',arranjar)
          jafoi = []
          
          for (hate in arranjar) {
@@ -1971,6 +1971,7 @@ function CreateEngine2() {
                      for (boring in arranjar[calor].ocupa) { // *arranjar[calor].ocupa = ['b','a']
                          sendocomparado = arranjar[calor].ocupa[boring] // *arranjar[calor].ocupa[0] = 'b'
                          comparador= arranjar[tosse].ocupa[boring] // arranjar[tosse].ocupa = ['-b','-a'], arranjar[tosse].ocupa[0] = '-b'
+                         console.log('SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSsendcomp',sendocomparado[0],'comp',comparador[0])
                          if (sendocomparado[0] != comparador[0]) { // se os sinais forem diferentes
                              igualar.push(true)
                          }else{
@@ -4167,11 +4168,13 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                           fats = [miss_2[ceia].dividido]
                           for (ruim in nok) {
                             console.log('nok[ruim].m',nok[ruim].m,'fats',miss_2[nok[ruim].m].dividido)
-                            noks.push(Number(nok[ruim].m))
+                            noks.push(nok[ruim].m)
                             fats.push(miss_2[nok[ruim].m].dividido)
                           }
                           console.log('noks',noks,'fats',fats)
+                         if (cancom == true) {
                          roller_2.push({factor: [...fats], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [...noks], rept: reptpar})
+                          }
                         } 
                             console.log('----')
                      } 
