@@ -1,0 +1,64 @@
+repetidos: (3) [0, 1, 2]
+factor: (2) ['b', '1']
+posições: (2) ['0', '5']
+monomios: (6) [2, 3, 4, 5, 1, 0]
+monosplit: Array(2)
+0: 
+misspos: "0"
+mons: (3) [2, 4, 1]
+1: 
+misspos: "5"
+mons: (3) [3, 5, 0]
+
+  for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
+             ficarassim =  perfectwave[youchoose].referencia // ['-b','-a'] => referência, ou seja, como todos irão ficar
+             for (catraca in perfectwave[youchoose].agrupar) { // perfectwave[youchoose].agrupar = [0,1]
+                 presa = perfectwave[youchoose].agrupar[catraca] // perfectwave[youchoose].agrupar[0] = 0
+                 diferente = false
+                 for (moon in roll_2[ne].posições) { // roll_2[ne].posições = ['0','1'] ('b','a')
+                     //vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
+                     qualmon = roll_2[ne].monosplit[moon].mons[catraca]
+                     vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].positions.indexOf(qualmon)]
+                     // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
+                     if (vaiir != ficarassim[moon]) { // ficarassim[0] = '-b'
+                         diferente = true
+                        scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
+                     } }
+                 if (diferente == true) {
+                    ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
+                    refer = [] 
+                    for (ho in perfectwave[youchoose].referencia) {
+                        refer.push(perfectwave[youchoose].referencia[ho].replace('-',''))
+                    }
+
+                    ////console.log('REFER',refer)
+                    ////console.log(scarecrow_2[arranjar[presa].origin].outrodiv)
+                    sa = scarecrow_2[arranjar[presa].origin].outrodiv
+                    for (con in sa) {
+                        if (refer.indexOf(scarecrow_2[arranjar[presa].origin].divididos[con]) == -1) {
+                        ////console.log(sa[con])
+                        if (sa[con][0] == '-') {
+                            ////console.log('tirar o sinal de menos')
+                            sa[con] = sa[con].replace('-','')
+                        }else{
+                            ////console.log('adicionar sinal de menos')
+                            sa[con] = '-' + sa[con]
+                            ////console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
+                        } }}
+
+                     lista = scarecrow_2[arranjar[presa].origin].divisor // scarecrow_2[0].divisor
+                     if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
+                         modificar = ['-','.']
+                         for (saved in lista) {
+                             modificar.push(lista[saved])
+                         }
+                         scarecrow_2[arranjar[presa].origin].divisor = modificar
+                     }else{ // Tirar o sinal de menos
+                         lista.splice(0,2)
+                     }}}} }
+         
+                    
+           for (sei in scarecrow_2) {
+             for (ai in scarecrow_2[sei].divididos) {
+                 scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai] // Mudar o divididos para o outrodiv (Adicionar sinal aos monômios divididos)
+             } }

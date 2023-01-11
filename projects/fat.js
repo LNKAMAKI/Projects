@@ -808,6 +808,7 @@ return comofica
 }
 
 function FATORE(q) {
+arj = []
 qualexp1 = q;
 qualexp = "";
 parar = false;
@@ -1891,11 +1892,10 @@ function CreateEngine2() {
                         scarecrow_2[anchor].divididos.push(redo(desfat(REFORMATAR(uy)))) // Adiciona ao divididos os valores ignorando os sinais *Eg.: [a,b,c,d]
                      }}}
         
-
                      for (h in scarecrow_2) {
                         //console.log(scarecrow_2[h].divididos)
                         //console.log(scarecrow_2[h].outrodiv)
-                     }
+                     }     
             miss_2 = []
      
             for (ah in scarecrow_2) { // scarecrow_2[ah] = *{divididos: ['2y','yy'], outrodiv: ['2y','yy'], poss: [1,3], divisor: ['2','.','5'], positions: [1,3]}
@@ -1936,7 +1936,7 @@ function CreateEngine2() {
             okentao++
      
             // *OBS: repetidos = posições no scarecrow_2, posições = posições no miss_2 (equivalente às letras/fatores)
-
+            
            for (ne in roll_2) { // *roll_2[ne] = {posições: ['0','1'], factor: ['b','a'], repetidos: [0,2], way: ",0,1"}
             //console.log('-------------------------------------------')
             //console.log(`roll_2[${ne}]`,roll_2[ne].repetidos)
@@ -1949,7 +1949,11 @@ function CreateEngine2() {
                  arranjar.push({pos: pq, ocupa: [], origin: gosto}) // pos é inútil :)
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
-                 vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] 
+                qualmon = roll_2[ne].monosplit[moon].mons[pq]
+                console.log('monosplit',moon,roll_2[ne].monosplit[moon],qualmon)
+                console.log(scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].positions.indexOf(qualmon)])
+                 //vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] 
+                vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].positions.indexOf(qualmon)]
                  console.log('VAIIIR'.vaiir)
                  // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 arranjar[pq].ocupa.push(vaiir) // CHECK THIS ONE
@@ -1958,9 +1962,8 @@ function CreateEngine2() {
              console.log('ARRANJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRR',arranjar)
          jafoi = []
          
-         for (hate in arranjar) {
-            //console.log('arranjar[hate]',arranjar[hate].origin,arranjar[hate].ocupa)
-         }
+         arj = [...arranjar]
+       
          perfectwave = []
          for (tosse in arranjar) { // *arranjar[tosse] = {origin: 0, ocupa: ['-b','-a']} *OBS: origin => posição no scarecrow_2
              if (jafoi.indexOf(tosse) == -1) { // se tosse(index) não estiver em jafoi, ou seja, se o arranjar[tosse] não estiver em um grupo(objeto)
@@ -1989,61 +1992,62 @@ function CreateEngine2() {
              //console.log('organizer', organizer)
          }}
          
-        
           // *perfectwave = [
          //{agrupar: [0,1], referencia: ['-b','-a']}, 
         // {agrupar: [2], referencia: ['-b','a']}
        //]
-         for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
-             ficarassim =  perfectwave[youchoose].referencia // *['-b','-a'] => referência, ou seja, como todos irão ficar
-             for (catraca in perfectwave[youchoose].agrupar) { // *perfectwave[youchoose].agrupar = [0,1]
-                 presa = perfectwave[youchoose].agrupar[catraca] // *perfectwave[youchoose].agrupar[0] = 0
-                 diferente = false
-                 for (moon in roll_2[ne].posições) { // *roll_2[ne].posições = ['0','1'] ('b','a')
-                     vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
-                     // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
-                     if (vaiir != ficarassim[moon]) { // *ficarassim[0] = '-b'
-                         diferente = true
-                        scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
-                     } }
-                 if (diferente == true) {
-                    //console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
-                    refer = [] 
-                    for (ho in perfectwave[youchoose].referencia) {
-                        refer.push(perfectwave[youchoose].referencia[ho].replace('-',''))
+       for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
+        ficarassim =  perfectwave[youchoose].referencia // *['-b','-a'] => referência, ou seja, como todos irão ficar
+        for (catraca in perfectwave[youchoose].agrupar) { // *perfectwave[youchoose].agrupar = [0,1]
+            presa = perfectwave[youchoose].agrupar[catraca] // *perfectwave[youchoose].agrupar[0] = 0
+            diferente = false
+            for (moon in roll_2[ne].posições) { // *roll_2[ne].posições = ['0','1'] ('b','a')
+                //vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
+                qualmon = roll_2[ne].monosplit[moon].mons[catraca]
+                vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].positions.indexOf(qualmon)]
+                // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
+                if (vaiir != ficarassim[moon]) { // *ficarassim[0] = '-b'
+                    diferente = true
+                   scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
+                } }
+            if (diferente == true) {
+               //console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
+               refer = [] 
+               for (ho in perfectwave[youchoose].referencia) {
+                   refer.push(perfectwave[youchoose].referencia[ho].replace('-',''))
+               }
+
+               //console.log('REFER',refer)
+               //console.log(scarecrow_2[arranjar[presa].origin].outrodiv)
+               sa = scarecrow_2[arranjar[presa].origin].outrodiv
+               for (con in sa) {
+                   if (refer.indexOf(scarecrow_2[arranjar[presa].origin].divididos[con]) == -1) {
+                   //console.log(sa[con])
+                   if (sa[con][0] == '-') {
+                       //console.log('tirar o sinal de menos')
+                       sa[con] = sa[con].replace('-','')
+                   }else{
+                       //console.log('adicionar sinal de menos')
+                       sa[con] = '-' + sa[con]
+                       //console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
+                   } }}
+
+                lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
+                if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
+                    modificar = ['-','.']
+                    for (saved in lista) {
+                        modificar.push(lista[saved])
                     }
-
-                    //console.log('REFER',refer)
-                    //console.log(scarecrow_2[arranjar[presa].origin].outrodiv)
-                    sa = scarecrow_2[arranjar[presa].origin].outrodiv
-                    for (con in sa) {
-                        if (refer.indexOf(scarecrow_2[arranjar[presa].origin].divididos[con]) == -1) {
-                        //console.log(sa[con])
-                        if (sa[con][0] == '-') {
-                            //console.log('tirar o sinal de menos')
-                            sa[con] = sa[con].replace('-','')
-                        }else{
-                            //console.log('adicionar sinal de menos')
-                            sa[con] = '-' + sa[con]
-                            //console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
-                        } }}
-
-                     lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
-                     if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
-                         modificar = ['-','.']
-                         for (saved in lista) {
-                             modificar.push(lista[saved])
-                         }
-                         scarecrow_2[arranjar[presa].origin].divisor = modificar
-                     }else{ // Tirar o sinal de menos
-                         lista.splice(0,2)
-                     }}}} }
-     
-           for (sei in scarecrow_2) {
-             for (ai in scarecrow_2[sei].divididos) {
-                 scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai] // Mudar o divididos para o outrodiv (Adicionar sinal aos monômios divididos)
-             } }
-     
+                    scarecrow_2[arranjar[presa].origin].divisor = modificar
+                }else{ // Tirar o sinal de menos
+                    lista.splice(0,2)
+                }}}} }
+         
+      for (sei in scarecrow_2) {
+        for (ai in scarecrow_2[sei].divididos) {
+            scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai] // Mudar o divididos para o outrodiv (Adicionar sinal aos monômios divididos)
+        } }
+             
            miss_2 = []
      
            for (ah in scarecrow_2) {
@@ -2053,8 +2057,7 @@ function CreateEngine2() {
                }else{
                 miss_2.find(function(miss_2){return miss_2.dividido == scarecrow_2[ah].divididos[é]}).aparicoes.push(Number(ah))
                }} }
-               //miss_2 = [{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"b"}]
-
+               //miss_2 = [{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"1"},{aparicoes:[0,1],dividido:"b"}] 
      
     // Ordenar o miss_2 pelo tamanho das aparicoes
            grtols_2 = [];
@@ -2071,14 +2074,13 @@ function CreateEngine2() {
     }
     miss_2 = [...grtols_2];
    //
-
            java = 0
            roll_2 = []
            deucerto = false
            roller_2 = [];
           
            doMiss_2()
-           doRoll_2(somarmons)
+           doRoll_2(somarmons) 
      
             youdumb_2 = []
              aswillbe2 = []
@@ -3715,6 +3717,7 @@ if (somarmons == false) {
   console.log('CONCATENAR (resultado final):', concatenar_2)
   }
   
+  console.log('ARANJARR',arj)
   if (ir == true) {
     if (somarmons == false)
     console.log('IR: TRUEE')
@@ -3748,7 +3751,7 @@ if (somarmons == false) {
         youdumb_2,
         monomios_2,
         pans_2]
-    }}}
+}}}
 
 ep = FATORE(exal)
 //console.log(ep)
@@ -3880,7 +3883,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                 vari[10],
                 vari[11],
               ]
-        }
+            }
 
         function doMiss_2() {
             to = []
@@ -4174,7 +4177,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                           }
                           console.log('noks',noks,'fats',fats)
                          if (cancom == true) {
-                         roller_2.push({factor: [...fats], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [...noks], rept: reptpar})
+                        // roller_2.push({factor: [...fats], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [...noks], rept: reptpar})
                           }
                         } 
                             console.log('----')
