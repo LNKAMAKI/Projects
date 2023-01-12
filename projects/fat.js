@@ -1950,15 +1950,16 @@ function CreateEngine2() {
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
                 qualmon = roll_2[ne].monosplit[moon].mons[pq]
-                //console.log('monosplit',moon,roll_2[ne].monosplit[moon],qualmon)
-                //console.log(scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].positions.indexOf(qualmon)])
+                console.log('monosplit',moon,roll_2[ne].monosplit[moon],qualmon)
                  //vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] 
                 vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].positions.indexOf(qualmon)]
-                 //console.log('VAIIIR',vaiir)
+                 console.log('VAIIIR',vaiir)
                  // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 arranjar[pq].ocupa.push(vaiir) // CHECK THIS ONE
                 ////console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
+             console.log('arranjar:')
+             console.log(arranjar)
              //console.log('ARRANJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRR',arranjar)
          jafoi = []
          
@@ -1997,6 +1998,10 @@ function CreateEngine2() {
         // {agrupar: [2], referencia: ['-b','a']}
        //]
        
+       console.log('perfectwave:')
+       for (pe in perfectwave) {
+        console.log(pe,perfectwave[pe])
+       }
        for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
         ficarassim =  perfectwave[youchoose].referencia // *['-b','-a'] => referência, ou seja, como todos irão ficar
         for (catraca in perfectwave[youchoose].agrupar) { // *perfectwave[youchoose].agrupar = [0,1]
@@ -2005,13 +2010,17 @@ function CreateEngine2() {
             for (moon in roll_2[ne].posições) { // *roll_2[ne].posições = ['0','1'] ('b','a')
                 //vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
                 qualmon = roll_2[ne].monosplit[moon].mons[catraca]
+                console.log('qualmon',qualmon)
                 vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].positions.indexOf(qualmon)]
+                console.log('vaiir',vaiir)
                 // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 if (vaiir != ficarassim[moon]) { // *ficarassim[0] = '-b'
                     diferente = true
-                   scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] // *Eg.: vaiir('b') e ficarassim('-b')
+                   //scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] = ficarassim[moon] 
+                  // vaiir = ficarassim[moon]// *Eg.: vaiir('b') e ficarassim('-b')
                 } }
             if (diferente == true) {
+                console.log('EPA!')
                ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
                refer = [] 
                for (ho in perfectwave[youchoose].referencia) {
@@ -2021,17 +2030,20 @@ function CreateEngine2() {
                ////console.log('REFER',refer)
                ////console.log(scarecrow_2[arranjar[presa].origin].outrodiv)
                sa = scarecrow_2[arranjar[presa].origin].outrodiv
+               console.log('refer',refer)
+               console.log('sa',sa)
                for (con in sa) {
-                   if (refer.indexOf(scarecrow_2[arranjar[presa].origin].divididos[con]) == -1) {
+                
+                   //if (refer.indexOf(scarecrow_2[arranjar[presa].origin].divididos[con]) == -1) {
                    ////console.log(sa[con])
                    if (sa[con][0] == '-') {
-                       ////console.log('tirar o sinal de menos')
+                       console.log('tirar o sinal de menos')
                        sa[con] = sa[con].replace('-','')
                    }else{
-                       ////console.log('adicionar sinal de menos')
+                       console.log('adicionar sinal de menos')
                        sa[con] = '-' + sa[con]
-                       ////console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
-                   } }}
+                       console.log(sa,scarecrow_2[arranjar[presa].origin].outrodiv)
+                   } /*}*/}
 
                 lista = scarecrow_2[arranjar[presa].origin].divisor // *scarecrow_2[0].divisor
                 if (lista[0] != '-') { // Colocar sinal de menos MUDADO! MUDANÇA! CHANGE! WARNING! MUDAR SINAL DO DIVISOR SCARECROW_2
@@ -2043,7 +2055,7 @@ function CreateEngine2() {
                 }else{ // Tirar o sinal de menos
                     lista.splice(0,2)
                 }}}}}
-         /*
+
       for (sei in scarecrow_2) {
         for (ai in scarecrow_2[sei].divididos) {
             scarecrow_2[sei].divididos[ai] = scarecrow_2[sei].outrodiv[ai] // Mudar o divididos para o outrodiv (Adicionar sinal aos monômios divididos)
@@ -2081,7 +2093,7 @@ function CreateEngine2() {
            roller_2 = [];
           
            doMiss_2()
-           doRoll_2(somarmons) */
+           doRoll_2(somarmons) 
      
             youdumb_2 = []
              aswillbe2 = []
@@ -2788,7 +2800,7 @@ if (somarmons == false) {
           }
           //console.log('newexpress',newexpress)
         }
-          if (somarmons == false)
+          //if (somarmons == false) 
           //console.log('newexpress',newexpress)
          //this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
      }else{
@@ -4028,7 +4040,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                           // *mons2 = [2,4]
         
                           if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { // Se não tiver no roller_2
-                            //console.log('pushar novo:',{
+                            console.log('pushar novo:',{
                                 rept: repwri, // *,1,2
                                 opl: [...repeated], // *[1,2]
                                 factor: [miss_2[eep].dividido,miss_2[quad].dividido],
@@ -4178,7 +4190,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                           }
                           //console.log('noks',noks,'fats',fats)
                          if (cancom == true) {
-                        // roller_2.push({factor: [...fats], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [...noks], rept: reptpar})
+                        //roller_2.push({factor: [...fats], monomios: [...compar], monosplit: [...eachmons], opl: [...quaispar], position: [...noks], rept: reptpar})
                           }
                         } 
                             //console.log('----')
