@@ -4,6 +4,7 @@
 <u type= "circle">
  
 <li><a href= "https://lnkamaki.github.io/Projects/projects/fat.html"><span style=" font-weight: normal; font-size: 1.3em;">FATORADOR 2.0</span></a></li> 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/leitura.html"><span style=" font-weight: normal; font-size: 1.3em;">leitura</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/funcao.html"><span style=" font-weight: normal; font-size: 1.3em;">Função</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/equacao2grau.html"><span style=" font-weight: normal; font-size: 1.3em;">Equação do 2º grau</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/fatorador.html"><span style=" font-weight: normal; font-size: 1.3em;">Fatorador</span></a></li> 
