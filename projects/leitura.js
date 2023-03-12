@@ -2,6 +2,22 @@ console.log('aaa')
 square = 0
 slid = 1
 animation = 0
+window.addEventListener('resize', function() {
+    width = this.window.innerWidth
+    height = this.window.innerHeight
+    console.log(width, height)
+    console.log('width',height*418/313.3,'heigth',width*313.3/418)
+    if (width < height*418/313.3) {
+        console.log('OPA')
+        document.getElementsByClassName('ima')[0].style.width = '100vw'
+        console.log(width)
+        document.getElementsByClassName('ima')[0].style.height = `${width*313.3/418}px`
+    }else{
+    document.getElementsByClassName('ima')[0].style.height = '100vh'
+    document.getElementsByClassName('ima')[0].style.width = `${height*418/313.3}px`
+    }
+  });
+  
 function load() {
     document.getElementsByClassName('square')[0].addEventListener('animationend', () => {
         console.log('ENDED')
