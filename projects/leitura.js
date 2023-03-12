@@ -10,11 +10,11 @@ window.addEventListener('resize', function() {
 function load() {
     adjustSize(0)
     adjustSize(1)
-    document.getElementsByClassName('square')[0].addEventListener('animationend', () => {
+    document.getElementsByClassName('conter')[0].addEventListener('animationend', () => {
         console.log('ENDED')
         animation = 0
     })
-    document.getElementsByClassName('square')[1].addEventListener('animationend', () => {
+    document.getElementsByClassName('conter')[1].addEventListener('animationend', () => {
         console.log('ENDED')
         animation = 0
     })
@@ -32,8 +32,9 @@ function slide() {
     if (animation == 0) {
         animation = 1
     console.log('slide!')
-        seg = 0.2*window.innerWidth/1536
-    document.getElementsByClassName('square')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+        seg = 0.4*window.innerWidth/1536
+    //document.getElementsByClassName('square')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    document.getElementsByClassName('conter')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid--
     if (square == 0) {
         square = 1
@@ -49,9 +50,10 @@ function slide() {
     }
     iframe = document.createElement('iframe')
     iframe.setAttribute('class','content')
-    setIframe(iframe,slid)
+    setIframe(iframe,slid,square)
     s2.appendChild(iframe)
-    s2.style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    //s2.style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    document.getElementsByClassName('conter')[square].style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
 }
    }
 }
@@ -59,8 +61,9 @@ function slide2() {
     if (animation == 0) {
         animation = 1
     console.log('slide2!')
-    seg = 0.2*window.innerWidth/1536
-    document.getElementsByClassName('square')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    seg = 0.4*window.innerWidth/1536
+    //document.getElementsByClassName('square')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    document.getElementsByClassName('conter')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid++
     if (square == 0) {
         square = 1
@@ -75,27 +78,29 @@ function slide2() {
     }
     iframe = document.createElement('iframe')
     iframe.setAttribute('class','content')
-    setIframe(iframe,slid)
+    setIframe(iframe,slid,square)
     s1.appendChild(iframe)
-    s1.style.animation = `slide-backward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    //s1.style.animation = `slide-backward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    document.getElementsByClassName('conter')[square].style.animation = `slide-backward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
 }
 }
 
-function setIframe (element,source) {
+function setIframe (element,source,cont) {
     url = ''
     switch(source) {
         case 1:
-            url = 'fat.html'
+            url = 'animal-farm'
             break;
         case 2: 
-           url = 'leitura.html'
+           url = 'ovelhas!'
            break;
-           case 3:
-            url = 'leitura.html'
-            break;
-
     }
-    //element.setAttribute('src',url)
+  // if (source != 1) {
+   document.getElementsByClassName('conter')[cont].style.backgroundImage = `url('imagens/sheep.png')`
+   document.getElementsByClassName('conter')[cont].style.backgroundPosition = `center`
+   document.getElementsByClassName('conter')[cont].style.backgroundSize = `contain`
+   document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',`imagens/${url}.png`)
+  // }
 }
 
 function adjustSize(ind) {
@@ -111,5 +116,5 @@ function adjustSize(ind) {
     document.getElementsByClassName('square')[ind].style.width = `${height*418/313.3}px`
     realwidth = `${height*418/313.3}`
     }
-    document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2 }px`
+    document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2}px`
 }
