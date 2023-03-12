@@ -111,5 +111,5 @@ function adjustSize(ind) {
     document.getElementsByClassName('square')[ind].style.width = `${height*418/313.3}px`
     realwidth = `${height*418/313.3}`
     }
-    document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2}px`
+    document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2 }px`
 }
