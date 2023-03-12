@@ -3,22 +3,13 @@ square = 0
 slid = 1
 animation = 0
 window.addEventListener('resize', function() {
-    width = this.window.innerWidth
-    height = this.window.innerHeight
-    console.log(width, height)
-    console.log('width',height*418/313.3,'heigth',width*313.3/418)
-    if (width < height*418/313.3) {
-        console.log('OPA')
-        document.getElementsByClassName('ima')[0].style.width = '100vw'
-        console.log(width)
-        document.getElementsByClassName('ima')[0].style.height = `${width*313.3/418}px`
-    }else{
-    document.getElementsByClassName('ima')[0].style.height = '100vh'
-    document.getElementsByClassName('ima')[0].style.width = `${height*418/313.3}px`
-    }
+    adjustSize(0)
+    adjustSize(1)
   });
   
 function load() {
+    adjustSize(0)
+    adjustSize(1)
     document.getElementsByClassName('square')[0].addEventListener('animationend', () => {
         console.log('ENDED')
         animation = 0
@@ -105,4 +96,20 @@ function setIframe (element,source) {
 
     }
     //element.setAttribute('src',url)
+}
+
+function adjustSize(ind) {
+    width = this.window.innerWidth
+    height = this.window.innerHeight
+    realwidth = ''
+    if (width < height*418/313.3) {
+        document.getElementsByClassName('square')[ind].style.width = '100vw'
+        realwidth = `${width}`
+        document.getElementsByClassName('square')[ind].style.height = `${width*313.3/418}px`
+    }else{
+    document.getElementsByClassName('square')[ind].style.height = '100vh'
+    document.getElementsByClassName('square')[ind].style.width = `${height*418/313.3}px`
+    realwidth = `${height*418/313.3}`
+    }
+    document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2}px`
 }
