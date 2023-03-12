@@ -41,7 +41,7 @@ function slide() {
     if (animation == 0) {
         animation = 1
     console.log('slide!')
-        seg = 0.3
+        seg = 0.2*window.innerWidth/1536
     document.getElementsByClassName('square')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid--
     if (square == 0) {
@@ -68,7 +68,7 @@ function slide2() {
     if (animation == 0) {
         animation = 1
     console.log('slide2!')
-    seg = 0.3
+    seg = 0.2*window.innerWidth/1536
     document.getElementsByClassName('square')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid++
     if (square == 0) {
