@@ -10,11 +10,20 @@
             margin: 0px;
             overflow: hidden;
         }
+        #back {
+          z-index: -1;
+        background-image: url(imagens/sheep.png);
+        background-position: center;
+        background-size: contain;
+        width: 100vw;
+        height: 100vh;
+        
+      }
         .conter {
         position: absolute;
         width: 100vw;
         height: 100vh;
-        z-index: -1;
+        z-index: 0;
       }
       .square {
         display: inline-block;
@@ -111,11 +120,6 @@
         position: relative;
         width: 100%;
         height: 100%;
-      }
-      #back {
-        background-image: url(imagens/sheep.png);
-        background-position: center;
-        background-size: contain;
       }
       </style>
 </head>
