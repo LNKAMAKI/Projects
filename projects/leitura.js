@@ -1,4 +1,4 @@
-console.log('aaa')
+console.log('aaaa')
 square = 0
 slid = 1
 animation = 0
