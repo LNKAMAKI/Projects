@@ -1,5 +1,5 @@
 palavras = ['SCRIPT','SEARCH','COMMIT','ACTION','WINDOW', '-',]
-palavras = ['-','GOTHIC']
+palavras = ['-','AMOUNT']
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
 //palavra = 'MANGUE'
