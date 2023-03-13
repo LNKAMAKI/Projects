@@ -94,6 +94,9 @@ function setIframe (element,source,cont) {
         case 2: 
            url = 'ovelhas!'
            break;
+        case 3:
+            url = 'napoleão'
+        break;
     }
   // if (source != 1) {
    //document.getElementsByClassName('conter')[cont].style.backgroundImage = `url('imagens/sheep.png')`
