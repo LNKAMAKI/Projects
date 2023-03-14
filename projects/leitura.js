@@ -89,20 +89,22 @@ function setIframe (element,source,cont) {
     url = ''
     switch(source) {
         case 1:
-            url = 'animal-farm'
+            url = 'animal-farm.png'
             break;
         case 2: 
-           url = 'ovelhas!'
+           url = 'ovelhas!.png'
            break;
         case 3:
-            url = 'napoleão'
+            url = 'nap2.png'
         break;
+        case 4:
+            url = 'trabalho-portugues.jpg'
     }
   // if (source != 1) {
    //document.getElementsByClassName('conter')[cont].style.backgroundImage = `url('imagens/sheep.png')`
    //document.getElementsByClassName('conter')[cont].style.backgroundPosition = `center`
    //document.getElementsByClassName('conter')[cont].style.backgroundSize = `contain`
-   document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',`imagens/${url}.png`)
+   document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',`imagens/${url}`)
   // }
 }
 
