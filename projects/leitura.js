@@ -94,11 +94,15 @@ function setIframe (element,source,cont) {
         case 2: 
            url = 'ovelhas!.png'
            break;
-        case 3:
-            url = 'nap2.png'
+           case 3:
+            url = 'muro.png'
         break;
         case 4:
+            url = 'nap2.png'
+        break;
+        case 5:
             url = 'trabalho-portugues.jpg'
+            break;
     }
   // if (source != 1) {
    //document.getElementsByClassName('conter')[cont].style.backgroundImage = `url('imagens/sheep.png')`
