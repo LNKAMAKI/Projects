@@ -21,7 +21,7 @@ function load() {
 }
 window.addEventListener('keydown',(event) => {
  console.log(event.key)
- if (event.key == 'ArrowRight') {
+ if (event.key == 'ArrowRight' && slid < 7) {
     slide2()
  }else if(event.key == 'ArrowLeft' && slid > 1) {
     slide()
@@ -58,6 +58,7 @@ function slide() {
    }
 }
 function slide2() {
+    if (slid < 7) {
     if (animation == 0) {
         animation = 1
     console.log('slide2!')
@@ -84,6 +85,7 @@ function slide2() {
     document.getElementsByClassName('conter')[square].style.animation = `slide-backward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
 }
 }
+}
 
 function setIframe (element,source,cont) {
     url = ''
@@ -102,6 +104,12 @@ function setIframe (element,source,cont) {
         break;
         case 5:
             url = 'trabalho-portugues.jpg'
+            break;
+        case 6:
+            url = '7-mandamentos.jpg'
+            break;
+        case 7:
+            url = 'end.png'
             break;
     }
   // if (source != 1) {
