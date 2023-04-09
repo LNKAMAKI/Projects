@@ -19,51 +19,76 @@
             margin: 0px;
             padding: 0px;
         }
-        img {
+        #img-logo {
             background-color: transparent;
-            width: 30px;
+            width: 25px;
             margin-right: 10px;
         }
         #menu {
-            height: 100px;
+            height: 80px;
             position: relative;
             background-color: var(--verylightgray);
-            height: fit-content;
             display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 0px;
-            background-color: black;
         }
         #logo {
-            margin-left: 20px;
+            margin-left: 5px;
             width: fit-content;
             display: inline-flex;
             align-items: center;
-            padding:20px;
+            /*padding:20px 0px;*/
+        }
+        #searcharea {
+            position: relative;
+            height: 100%;
+            margin-right: 10px;
+            margin-left: 10px;
+            border-left: 1px solid var(--darkblue);
+            border-right: 1px solid var(--darkblue);
+            display: flex;
+            align-items: center;
         }
         #searchbar {
             position: relative;
             display: inline-block;
-            height: 20px;
+            height: 25px;
             border-width: 0px;
             outline: none;
-            padding: 0px;
-            background-color: #FF3E68;
+            background-color: white;
             width: 250px;
-            top: calc(100% - 41px);
-            border-image: none;
+            border-radius: 15px;
+            border: 2px solid var(--darkblue);
+            padding: 0px 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+       
+        .divisor {
+            display: inline-block;
+            position: relative;
+            background-color: var(--darkblue);
+            height: 89.125px;
+            width: 1.5px;
+            border: none;
+            margin: 0px;
+        }
+        p.click {
+            
         }
      </style>
 </head>
 <body>
     <div id="menu">
     <div id="logo">
-        <img src="libr-img.svg" alt="">
-        <p style="font-family: 'Merriweather Sans'; color: #FF3E68;font-weight: 800;font-size: 2.3em; margin: 0px;">LiBrius </p>
+        <img src="libr-img.svg" alt="" id="img-logo">
+        <p style="font-family: 'Merriweather Sans'; color: #FF3E68;font-weight: 800;font-size: 1.6em; margin: 0px;">LiBrius </p>
     </div>
-    <div id="searcharea"> 
-        <input type="text" name="" id="searchbar">
-    </div>
-
+        <div id="searcharea">
+          <input type="text" name="" id="searchbar" placeholder="Search...">
+        </div>
+        <img src="marca-pagina.svg" alt="" style="width: 18px;"><p style="font-family: 'Merriweather Sans'; color: #FF3E68;font-weight: 800;font-size: 1.6em;margin: 5px;">Grammar</p>
 </div>
     </div>
 </body>
