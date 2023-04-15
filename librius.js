@@ -2,7 +2,7 @@ function vocab() {
     section = document.getElementsByTagName('section')[0]
     section.innerHTML = ''
     frame = document.createElement('iframe')
-    frame.setAttribute('src', '/librius-materials/test.html')
+    frame.setAttribute('src', '/librius-materials/vocab.html')
     section.appendChild(frame)
     frame.setAttribute('scrolling','no')
     

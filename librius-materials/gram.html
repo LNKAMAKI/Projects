@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
         :root{
             --lightblue: rgb(132, 206, 238);
@@ -34,20 +35,21 @@
             font-size: 1em;
         }
         h1 {
-            display: flex;
-            align-items: center;
             color: var(--mainpink);
             font-weight: 800;
             font-size: 2.3em;
             font-family: var(--defont);
+            width:fit-content;
         }
         .cont {
             position: relative;
-            background-color: white;
+            background-color:var(--verylightgray);
+            background-color: rgb(252, 252, 252);
             overflow-y: hidden;
             overflow-x: hidden;
             height: 30px;
             width: 100%;
+            color: rgb(65, 123, 145);
         }
         .center {
             position: relative;
@@ -69,9 +71,8 @@
         padding: 1px;
         display: flex;
         align-items: center;
-        background-color: white;
         font-family: var(--defont);
-        font-weight: 400;
+        font-weight: 600;
         font-size: 1.1em;
     }
     .secexptype {
@@ -82,9 +83,8 @@
         padding: 1px;
         display: flex;
         align-items: center;
-        background-color: white;
         font-family: var(--defont);
-        font-weight: 400;
+        font-weight: 600;
         font-size: 1.05em;
     }
     .ar {
@@ -97,19 +97,26 @@
         }
         .pexp {
         background-color: white;
-        margin: 0px 5px 4px 20px;
+        margin: 0px 10px 6px 20px;
         border-radius: 5px;
-        width: calc(100% - 35px);
+        width: calc(100% - 40px);
         padding: 3px 5px;
         cursor: pointer;
         font-family: var(--defont);
         font-size: 1em;
-        font-weight: 400;
+        font-weight: 500;
         border: 2px solid var(--pretty-pink);
         border-bottom: 4px solid var(--pretty-pink);
-    }
+        color: #d6123c ;
+        color: rgb(59, 59, 59);
+        }
+      .pexp:hover {
+        color: var(--mainpink);
+      }
         .table {
-            max-width: 800px;
+            width: 100vw;
+            max-width: 810px;
+            margin: auto;
         }
         .secp {
             font-size: 1em;
@@ -117,7 +124,11 @@
         .bord {
             padding:0px;
             background-color: rgb(220, 220, 220);
+            background-color: var(--darkblue);
+            background-color: lightblue;
+            background-color: var(--darkblue);
             border: 2px solid rgb(220, 220, 220);
+            border: 2px solid var(--darkblue);
             border-radius: 5px;
             overflow-x: hidden;
             margin-bottom: 5px;
@@ -127,52 +138,41 @@
 <body onload="load()">
     <script src="/librius.js"></script>
 
-    <h1>Vocabulary <img src="vc2.svg" style="width:50px;margin-left: 5px;"></h1>
+<div style="display: flex;align-items: center;flex-direction: column;">
 
     <div class="table">
-            <div class="bord">
-                <div style="overflow-x: hidden;margin-bottom: 2px;">
-                    <div class="cont">
-                        <div class="center">
-                            <p class="exptype"><img src="rar.png" alt="" class="ar">Trainings</p>
-                        </div>
-                        <p style="margin:0px;height:0px;"></p>
-                        <div style="border-radius: 7px;overflow-x: hidden;margin-bottom: 0px;">
-                            <div class="cont">
-                                <div class="center">
-                                    <p class="secexptype"><img src="rar.png" alt="" class="ar">Training 1</p>
-                                </div>
-                                <p style="margin:0px;height:5px;"></p>
-                                                       <p class="pexp">Text 1: Turkey earthquake death toll suggests lessons of 1999 were not learned</p>
-                                                       <p class="pexp">Text 2: New 'unidentified object' shot down over Canada, says Trudeau</p>
-                            </div>
-                    </div>
-                
-                </div>
-                        </div>
-            </div>
-     
+        <h1>Grammar <img src="images/book-grammar.svg" style="width:60px;"></h1> 
+
         <div class="bord">
-            <div style="overflow-x: hidden;margin-bottom: 2px;">
+            <div style="overflow-x: hidden;margin-bottom: 1px;">
                 <div class="cont">
                     <div class="center">
-                        <p class="exptype"><img src="rar.png" alt="" class="ar">Stories</p>
+                        <p class="exptype"><img src="images/rar.png" alt="" class="ar">Parts of Speech </p>
+                        <img src="images/marcador2.svg" alt="" style="width:17px;margin-left: calc(100% - 23px);position: absolute;">
                     </div>
                     <p style="margin:0px;height:5px;"></p>
-                                           <p class="pexp">The Story of an Hour</p>
-                                           <p class="pexp">Appointment with Love</p>
-                                           <p class="pexp">The Story of an Hour</p>
-                                           <p class="pexp">Appointment with Love</p>
-                                           <p class="pexp">The Story of an Hour</p>
-                                           <p class="pexp">Appointment with Love</p>
-                                           <p class="pexp">The Story of an Hour</p>
-                                           <p class="pexp">Appointment with Love</p>
-                                           <p class="pexp">The Story of an Hour</p>
-                                           <p class="pexp">Appointment with Love</p>
+                                           <p class="pexp">Pronouns</p>
+                                           <p class="pexp">Articles</p>
+                                           <p class="pexp">Nouns</p>
+                                           <p class="pexp">Adjectives</p>
+                                           <p class="pexp">Adverbs</p>
                 </div>
             </div>
         </div>
-        <p>aaaa</p>
+
+        <div class="bord">
+            <div style="overflow-x: hidden;margin-bottom: 1px;">
+                <div class="cont">
+                    <div class="center">
+                        <p class="exptype"><img src="images/rar.png" alt="" class="ar">Verb Tenses </p>
+                        <img src="images/marcador2.svg" alt="" style="width:17px;margin-left: calc(100% - 23px);position: absolute;">
+                    </div>
+                    <p style="margin:0px;height:5px;"></p>
+                </div>
+            </div>
+        </div>
+
+</div>
 </div>
 
 </body>

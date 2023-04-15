@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
         :root {
             --defont: 'Merriweather Sans';
@@ -21,6 +22,7 @@
             margin: 0px;
             padding: 0px;
             background-color: var(--lightgray);
+            overflow-x: hidden;
         }
         #img-logo {
             background-color: transparent;
@@ -84,12 +86,10 @@
 
         section {
             position: relative;
-            display: grid;
-            padding: 20px;
+            padding: 10px;
             background-color: white;
             margin: auto;
             /*max-width: 1000px;*/
-            justify-content: center;
         }
         .contain {
             position: relative;
@@ -107,10 +107,10 @@
         }
         iframe {
             position: relative;
-            width: 100vw;
             border: none;
-            overflow: hidden;
-            box-sizing: border-box;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
         }
         #log {
            display: inline-block;
@@ -129,21 +129,21 @@
         <div id="searcharea">
           <input type="text" name="" id="searchbar" placeholder="Search...">
         </div>
-        <img src="marca-pagina.svg" alt="" style="width: 18px;">
+        <img src="/librius-materials/marcador2.svg" alt="" style="width: 18px;">
         <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;">Grammar</p>
 
-        <img src="marca-pagina.svg" alt="" style="width: 18px;margin-left: 10px;">
+        <img src="/librius-materials/marcador2.svg" alt="" style="width: 18px;margin-left: 10px;">
         <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;" onclick="vocab()">Vocabulary</p>
 </div>
     </nav>
     <section>
-        <iframe src="librius-materials/lading-page.html" frameborder="0"></iframe>
+        <iframe src="librius-materials/grammar.html" frameborder="0"></iframe>
         <div class="contain">
             <!--<img src="alitus-logo.png" alt="" id="log">-->
             <p class="p-contain">
                 <!--Alitus is a developing company which was created by LNKAMAKI in 2023 and has leleshine as one of its partners. It is commited with sharing knowledge about web developing and coding with young developers or people interested in this subject. Librius, on the other hand, is focused on English as a second language and offers materials to support the study of this language.-->
         </div>
-        <iframe src="/librius-materials/test.html" frameborder="0" id="if" scrolling="no"></iframe>
+       
     </section>
 </body>
 </html>
