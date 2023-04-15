@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
+        :root{
+            --lightblue: rgb(132, 206, 238);
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+            --shadowgray: #bdbdbd;
+            --number: rgb(26 26 168);
+            --string: rgb(200 0 82);
+            --pretty-pink: #ffc4c4;
+            --lilac: #d7cee7;
+            --max-height: 300px;
+        }
+        :root {
+            --defont: 'Merriweather Sans';
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+            --verylightgray: rgb(249, 249, 249);
+            --lightpink: #ffc4c4;
+            --mainpink: #FF3E68;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-y: visible;
+            font-family: 'Inconsolata',Arial;
+            font-size: 1em;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            color: var(--mainpink);
+            font-weight: 800;
+            font-size: 2.3em;
+            font-family: var(--defont);
+        }
+        .cont {
+            position: relative;
+            background-color: white;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            height: 30px;
+            width: 100%;
+        }
+        .center {
+            position: relative;
+            display: flex;
+            height: 100%;
+            justify-content: start;
+            white-space: nowrap;
+            font-size: 1em;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            padding: 0px;
+            /*background-color: lightsalmon;*/
+        }
+        .exptype {
+        display: flex;
+        margin: 0px;
+        justify-content: start;
+        border-radius: 0px;
+        padding: 1px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        font-family: var(--defont);
+        font-weight: 400;
+        font-size: 1.1em;
+    }
+    .secexptype {
+        display: flex;
+        margin: 0px;
+        justify-content: start;
+        border-radius: 5px;
+        padding: 1px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        font-family: var(--defont);
+        font-weight: 400;
+        font-size: 1.05em;
+    }
+    .ar {
+            transition-duration: 0.2s;
+            width: 20px;
+            height: 20px;
+            transform: rotate(0deg);
+            cursor: pointer;
+            position: relative;
+        }
+        .pexp {
+        background-color: white;
+        margin: 0px 5px 4px 20px;
+        border-radius: 5px;
+        width: calc(100% - 35px);
+        padding: 3px 5px;
+        cursor: pointer;
+        font-family: var(--defont);
+        font-size: 1em;
+        font-weight: 400;
+        border: 2px solid var(--pretty-pink);
+        border-bottom: 4px solid var(--pretty-pink);
+    }
+        .table {
+            max-width: 800px;
+        }
+        .secp {
+            font-size: 1em;
+        }
+        .bord {
+            padding:0px;
+            background-color: rgb(220, 220, 220);
+            border: 2px solid rgb(220, 220, 220);
+            border-radius: 5px;
+            overflow-x: hidden;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body onload="load()">
+    <script src="/librius.js"></script>
+
+    <h1>Vocabulary <img src="vc2.svg" style="width:50px;margin-left: 5px;"></h1>
+
+    <div class="table">
+            <div class="bord">
+                <div style="overflow-x: hidden;margin-bottom: 2px;">
+                    <div class="cont">
+                        <div class="center">
+                            <p class="exptype"><img src="rar.png" alt="" class="ar">Trainings</p>
+                        </div>
+                        <p style="margin:0px;height:0px;"></p>
+                        <div style="border-radius: 7px;overflow-x: hidden;margin-bottom: 0px;">
+                            <div class="cont">
+                                <div class="center">
+                                    <p class="secexptype"><img src="rar.png" alt="" class="ar">Training 1</p>
+                                </div>
+                                <p style="margin:0px;height:5px;"></p>
+                                                       <p class="pexp">Text 1: Turkey earthquake death toll suggests lessons of 1999 were not learned</p>
+                                                       <p class="pexp">Text 2: New 'unidentified object' shot down over Canada, says Trudeau</p>
+                            </div>
+                    </div>
+                
+                </div>
+                        </div>
+            </div>
+     
+        <div class="bord">
+            <div style="overflow-x: hidden;margin-bottom: 2px;">
+                <div class="cont">
+                    <div class="center">
+                        <p class="exptype"><img src="rar.png" alt="" class="ar">Stories</p>
+                    </div>
+                    <p style="margin:0px;height:5px;"></p>
+                                           <p class="pexp">The Story of an Hour</p>
+                                           <p class="pexp">Appointment with Love</p>
+                </div>
+            </div>
+        </div>
+
+        <p>aaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaaaa</p>
+
+</div>
+
+</body>
+</html>

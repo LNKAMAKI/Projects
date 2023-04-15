@@ -5,8 +5,8 @@ function erase() {
     ////console.log('ERASE')
     get1('write').value = ''
 }
-function load() {
-   
+
+   function load() {
     pexps = document.getElementsByClassName('pexp')
 for (sure = 0; sure < pexps.length; sure++) {
     //console.log(pexps[sure])
@@ -739,22 +739,6 @@ function cli(state,index,jin,n,jor) {
    search.cl = false
 }}
 
-function copy() {
-    nums = document.getElementsByClassName('type')
-    copyText = nums[0]
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); 
-    navigator.clipboard.writeText(copyText.value);
-}
-
-function copy2() {
-    nums = document.getElementsByClassName('type')
-    if (nums[1].value != 'Não é possível agrupar todos os monômios') {
-    copyText = nums[1]
-    var copyGfGText = copyText;
-    copyGfGText.select();
-    document.execCommand("copy");
-    }}
 
 abriu = false;
 vez = 0;
