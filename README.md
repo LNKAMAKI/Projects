@@ -3,6 +3,7 @@
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico"> 
 <u type= "circle">
  
+ <li><a href= "https://lnkamaki.github.io/Projects/librius.html"><span style=" font-weight: normal; font-size: 1.3em;">FATORADOR 2.0</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/fat.html"><span style=" font-weight: normal; font-size: 1.3em;">FATORADOR 2.0</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/leitura.html"><span style=" font-weight: normal; font-size: 1.3em;">leitura</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/funcao.html"><span style=" font-weight: normal; font-size: 1.3em;">Função</span></a></li> 
