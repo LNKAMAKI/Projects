@@ -6,25 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
         :root {
+            --defont: 'Merriweather Sans';
             --darkblue: rgb(87, 164, 195);
             --lightgray: #e7e7e7;
             --verylightgray: rgb(249, 249, 249);
             --lightpink: #ffc4c4;
+            --mainpink: #FF3E68;
         }
       </style>
      <style>
         body {
             margin: 0px;
             padding: 0px;
+            background-color: var(--lightgray);
         }
         #img-logo {
             background-color: transparent;
             width: 25px;
             margin-right: 10px;
         }
-        #menu {
+        nav {
             height: 80px;
             position: relative;
             background-color: var(--verylightgray);
@@ -34,6 +37,8 @@
             margin: 0px;
         }
         #logo {
+            position: relative;
+            height: 100%;
             margin-left: 5px;
             width: fit-content;
             display: inline-flex;
@@ -64,32 +69,88 @@
             margin-left: 5px;
             margin-right: 5px;
         }
-       
-        .divisor {
-            display: inline-block;
+    
+        .pclick {
             position: relative;
-            background-color: var(--darkblue);
-            height: 89.125px;
-            width: 1.5px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-family: var(--defont);
+            color: var(--mainpink);
+            font-weight: 800;
+            font-size: 1.4em;
+            cursor: pointer;
+        }
+
+        section {
+            position: relative;
+            display: grid;
+            padding: 20px;
+            background-color: white;
+            margin: auto;
+            max-width: 1000px;
+            justify-content: center;
+        }
+        .contain {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .p-contain {
+            text-indent: 15px;
+            display: inline-block;
+            margin: 0px 0px 0px 10px;
+            font-size: 1em;
+            font-family: var(--defont);
+            font-weight: 500;
+        }
+        iframe {
+            position: relative;
+            width: 100%;
+            min-width: 700px;
             border: none;
-            margin: 0px;
         }
-        p.click {
-            
+        #log {
+           display: inline-block;
+           width: 700px;
+           margin: auto;
         }
-     </style>
+        </style>
 </head>
 <body>
-    <div id="menu">
+    <script src="librius.js"></script>
+    <nav>
     <div id="logo">
         <img src="libr-img.svg" alt="" id="img-logo">
-        <p style="font-family: 'Merriweather Sans'; color: #FF3E68;font-weight: 800;font-size: 1.6em; margin: 0px;">LiBrius </p>
+        <p class="pclick" style="margin-right: 0px;"></p>
     </div>
         <div id="searcharea">
           <input type="text" name="" id="searchbar" placeholder="Search...">
         </div>
-        <img src="marca-pagina.svg" alt="" style="width: 18px;"><p style="font-family: 'Merriweather Sans'; color: #FF3E68;font-weight: 800;font-size: 1.6em;margin: 5px;">Grammar</p>
+        <img src="marca-pagina.svg" alt="" style="width: 18px;">
+        <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;">Grammar</p>
+
+        <img src="marca-pagina.svg" alt="" style="width: 18px;margin-left: 10px;">
+        <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;" onclick="vocab()">Vocabulary</p>
 </div>
-    </div>
+    </nav>
+    <section>
+        <iframe src="librius-materials/lading-page.html" frameborder="0"></iframe>
+        <div class="contain">
+            <!--<img src="alitus-logo.png" alt="" id="log">-->
+            <p class="p-contain">
+                <!--Alitus is a developing company which was created by LNKAMAKI in 2023 and has leleshine as one of its partners. It is commited with sharing knowledge about web developing and coding with young developers or people interested in this subject. Librius, on the other hand, is focused on English as a second language and offers materials to support the study of this language.-->
+        </div>
+    </section>
+    <div style="border-radius: 7px;overflow-x: hidden;margin-bottom: 5px;">
+        <div class="cont">
+            <div class="center">
+                <p class="exptype"><img src="./imagens/rar.png" alt="" class="ar">alt</p>
+            </div>
+            <p style="margin:0px;height:5px;"></p>
+                                   <p class="pexp">-121y + xz + 11yz - 11x</p>
+        </div>
+</div>
 </body>
 </html>
