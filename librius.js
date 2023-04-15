@@ -1,9 +1,28 @@
 function vocab() {
     section = document.getElementsByTagName('section')[0]
     section.innerHTML = ''
-    //frame = document.createElement('iframe')
-    //frame.setAttribute('src', '/librius-materials/test.html')
-   // section.appendChild(frame)
+    frame = document.createElement('iframe')
+    frame.setAttribute('src', '/librius-materials/test.html')
+    section.appendChild(frame)
+    frame.setAttribute('scrolling','no')
+    
+    iframe = frame
+console.log(iframe)
+
+if (iframe != null) {
+function resizeIframe() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  }
+
+  setInterval(function() {
+    var currentHeight = iframe.style.height;
+
+    // check if the iframe content has changed
+    if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
+      resizeIframe();
+    }
+  }, 20)
+}
 }
 
 function load() {
@@ -18,7 +37,7 @@ c = new CreateFunc(bob,'close')
     c.SetDefault()
     c.AddEvent()
 }
-console.log('ANGELOOOOO')
+
 iframe = document.getElementById('if')
 console.log(iframe)
 
@@ -27,12 +46,17 @@ function resizeIframe() {
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
   }
 
-  observer = new IntersectionObserver(resizeIframe, {
-    root: iframe.contentWindow.document.body
-  });
+  setInterval(function() {
+    var currentHeight = iframe.style.height;
 
-  observer.observe(iframe.contentWindow.document.body);
+    // check if the iframe content has changed
+    if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
+      resizeIframe();
+    }
+  }, 20)
+
 }
+
 }
 
 function get1(thist) {
