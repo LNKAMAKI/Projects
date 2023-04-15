@@ -84,28 +84,6 @@ function CreateFunc(ind,action,number){
     }}
 
     function cli(state,index,jin,n,jor) {
-        console.log('clicked')
-         iframe = document.getElementById('if')
-         console.log(iframe)
-
-         console.log('uu')
-         iframe = document.getElementById('if')
-         console.log(iframe)
-         
-         if (iframe != null) {
-         function resizeIframe() {
-             iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-           }
-         
-           observer = new IntersectionObserver(resizeIframe, {
-             root: iframe.contentWindow.document.body
-           });
-           
-           observer.observe(iframe.contentWindow.document.body);
-         }
-
-        ////console.log('')
-        ////console.log('-----------')
         me = document.getElementsByClassName('ar')
         this.jin = jin
         this.par1 = me[index]
@@ -115,33 +93,18 @@ function CreateFunc(ind,action,number){
     
         beg = this.par2.offsetHeight
     
-        ////console.log('JORRRRRRRRRRRRR',jor)
         this.par3.style.height = jor + 'px'
-        ////console.log('PART333333333:',this.par3.style.height)
     
         this.par2.style.height = 'fit-content'
         sul = this.par2.offsetHeight
-        ////console.log('SULLLLLLLLLLL', this.par2.offsetHeight)
     
         search = mecams.find(function(mecams){
             return mecams.created == this.jin
            })
     
-           ////console.log(search)
         if (search != undefined) {
-           ////console.log('JÁ TEM ' + this.jin)
             search.comp++
-            ////console.log(search,'COMP:',search.comp)
-            /*
-            styles = document.head.getElementsByTagName('style')
-            document.head.removeChild(styles[search.loc])
-            */
-    
            }else{
-            ////console.log('NÃO TEM ' + this.jin)
-            if (this.par3.innerText == 'Resolução') {
-                ////console.log('WAIT')
-               }
                if (state == true) {
                 mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state})
                }else{
@@ -151,29 +114,18 @@ function CreateFunc(ind,action,number){
             return mecams.created == this.jin
            })
     
-           ////console.log(search)
            if (search.cl == false) {
-            if (search.cl == false) {
-                ////console.log('ABRIR')
-            }else{
-                ////console.log('FECHAR')
-            }
     
             txt = String(this.par3.innerText)
                busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
-               ////console.log('busca',txt,busca)
     
             if (this.par3.innerText == 'Resolução') {
-                ////console.log('WAIT')
                 ih = search.st - 10
                 eh = sul - 10
                }else{
                 ih = search.st
                 eh = sul
                }
-    
-               ////console.log('initial:',ih,'px')
-               ////console.log('final:',eh,'px')
     
         css = `@keyframes ${jin}${search.comp} {
              0% {
@@ -191,9 +143,7 @@ function CreateFunc(ind,action,number){
            this.par1.style.transform = 'rotate(90deg)'
            search.cl = true
     }else{
-        ////console.log('gooooo')
         if (this.par3.innerText == 'Resolução') {
-            ////console.log('WAIT')
             ih = search.st - 10
             eh = sul - 10
            }else{
