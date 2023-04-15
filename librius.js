@@ -1,9 +1,9 @@
 function vocab() {
     section = document.getElementsByTagName('section')[0]
     section.innerHTML = ''
-    frame = document.createElement('iframe')
-    frame.setAttribute('src', '/librius-materials/test.html')
-    section.appendChild(frame)
+    //frame = document.createElement('iframe')
+    //frame.setAttribute('src', '/librius-materials/test.html')
+   // section.appendChild(frame)
 }
 
 function load() {
