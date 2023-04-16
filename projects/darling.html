@@ -9,16 +9,16 @@
     <title>Materiais</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
    <style>
-  a {
-    padding: 0px;
-    margin: 0px;
-    outline-width: 0px;
-    border-width: 0px;
-  }
-  iframe {
-    width: 100vw;
-    height: 71vh;
-  }
+     @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
+  :root {
+            --defont: 'Merriweather Sans';
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+            --verylightgray: rgb(249, 249, 249);
+            --lightpink: #ffc4c4;
+            --mainpink: #FF3E68;
+        }
   body {
           margin: 0px 0px 15px 0px;
           padding: 0;
@@ -29,163 +29,29 @@
            color: rgb(158, 158, 158);
            font-size: 1.4em;
        }
-       .video-holder > h1 {
-           display: inline-block;
-           margin: 0%;
-           font-family: 'DM Serif Display', serif;
-           font-weight: 400;
-           font-size: 4em;
-           position: relative;
-       }
-       .video-holder p {
-           font-family: 'DM Serif Display', serif;
-           font-size: 1.3em;
-       }
-       ul {
-           list-style-position: inside;
-           display: flex;
-           padding: 0;
-           margin: 0;
-           margin-left: 20vw;
-           margin-top: 20px;
-           flex-direction: column;
-           flex-wrap: wrap;
-       }
-       li {
-           text-align: justify;
-           font-size: 1.3em;
-           font-family: 'DM Serif Display', serif ;
-           font-style: italic;
-           margin-right: 105px;
-       }
-       li::marker {
-        content: '⚫  ';
-        font-size: 0.5em ;
-       }
-       li.numb-ex {
-          color: blue;
-       }
-       li.numb-ex::marker {
-           content: '';
-           font-size: 1.5em ;
-       }
-       div#contain {
-        
-        background-color: rgb(255, 216, 222);
-        display: grid;
-        justify-items: center;
-       }
-       #ali { 
-        margin:0px;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        padding: 3px 0px 3px 0px;
-        background-color: rgb(221, 242, 243);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      
-       }
-       @media screen and (max-width: 530px) {
-        #ali {
-            width: 100%;
-        }
-        #searcher {
-            width:110px;
-        }
-        #searcher:focus {
-            width:240px;
-        }
-        #circle {
-            width: 30px;
-          height: 30px;
-        }
-       
-    }
-
-    @media screen and (min-width: 530px) and (max-width: 900px){
-        #ali {
-            width: 450px;
-        }
-        #searcher {
-            width:110px;
-        }
-        #searcher:focus {
-            width:270px;
-        }
-        #circle {
-            width: 40px;
-          height: 40px;
-        }
-    }
-    @media screen and (min-width: 900px) and (max-width: 1050px){
-        #ali {
-            width: 600px;
-        }
-        #searcher {
-            width:140px;
-        }
-        #searcher:focus {
-            width:300px;
-        }
-        #circle {
-            width: 50px;
-          height: 50px;
-        }
-    }
-    @media screen and (min-width: 1050px) and (max-width: 1250px){
-        #ali {
-            width: 650px;
-        }
-        #searcher {
-            width:150px;
-        }
-        #searcher:focus {
-            width:310px;
-        }
-        #circle {
-            width: 50px;
-          height: 50px;
-        }
-    }
-    @media screen and (min-width: 1250px){
-        #ali {
-            width: 700px;
-        }
-        #searcher {
-            width:160px;
-        }
-        #searcher:focus {
-            width:320px;
-        }
-        #circle {
-            width: 50px;
-          height: 50px;
-        }
-    }
        #rev {
            width: fit-content;
+           width: 100%;
+           max-width: 600px;
            display: inline-block;
           top: 0px;
           position: relative;
        }
-       
        input:focus ~ #main {
            opacity: 100;
            display: none;
         z-index: 10;
            top: 100%;
-           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
          position: absolute;
-         width: 100%;
          border-bottom-left-radius: 5px;
          border-bottom-right-radius: 5px;
          background-color: white;
          padding-bottom: 0.3vw;
          overflow: hidden;
        }
+       /*
        #searcher {
+        width: 100%;
            margin: 0px;
            padding-left: 12px;
            padding-right: 12px;
@@ -195,12 +61,27 @@
            box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.19);
            border: 2px solid white;
           color: rgba(36, 84, 146, 0.623);
-           position: relative; /*relative*/;
+           position: relative; /*relative;
            background-color: rgb(238, 238, 238);
            transition-property: width,background-color;
         transition-duration: 0.4s;
-     
-       }
+       }*/
+       #searcher {
+        position: relative;
+            display: inline-block;
+            height: 30px;
+            border-width: 0px;
+            outline: none;
+            background-color: white;
+            width: calc(100% - 1.6px - 1.6px - 10px - 10px );
+            border-radius: 5px;
+            border: 2px solid rgb(87, 164, 195);
+            padding: 0px 10px;
+            width: 100%;
+            font-family: var(--defont);
+            font-size: 0.8em;
+        }
+        /*
        #searcher:focus {
         outline-width: 0px ;
         transition-property: width, background-color;
@@ -209,34 +90,32 @@
         background-color: white ;
         border: 2px solid rgba(0, 0, 0, 0.041);
           color: black;
-        
-       }
+       }*/
+
      #main {
         opacity: 0;
-    z-index: 10;
-    width: 100%;
+        z-index: 10;
+    width: calc(100%);
     top: 100%;
-    box-shadow: 2px 2px 5px rgb(0 0 0 / 34%);
     position: absolute;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
          overflow: hidden;
+         background-color: #FF3E68;
+         border: 2px solid rgb(87, 164, 195);
        }
        
-       #ps {
-           position: relative;
-           margin-bottom: 0;
-         text-align: center;
-       }
        #main > .psearcher{
+        font-family: var(--defont);
+        font-size: 0.85em;
         transition-property: width, background-color;
         transition-duration: 0.4s;
            z-index: 20;
            width: 100%;
            position: absolute;
            text-align: center;
-           padding-top: 1.5px;
-           padding-bottom: 1.5px;
+           padding-top: 2px;
+           padding-bottom: 2px;
           margin: 0 0 0 0 ;
            text-align: center;
            background-color: white;
@@ -254,158 +133,18 @@
         height: 100%;
         background-color: transparent;
        }
-       
-       .video-holder {
-           position: relative;
-        background-color: rgb(158, 158, 251);
-       }
-       .video-holder > input {
-           position: absolute;
-           left: 91%;
-           top: 95.5%;
-       }
        #searcher::placeholder {
            color: rgb(173, 173, 173) ;
-       }
-       #circle {
-        margin: 0px 20px 0px 0px;
-        background-color: white;
-        border-radius: 50%;
-        padding: 3px;
-           display: inline-flex;
-           justify-content: center;
-           align-items: center;
-           top: 0px;
-           bottom: 0px;
-          position: relative;
-          cursor: pointer;
-       }
-       #circle:hover {
-        box-shadow: 0px 0px 20px rgb(143, 209, 213);
-       }
-       img#fav {
-           position: absolute;
-          width: calc(86.29/100*60%);
-          height: 60%;
-       }
-      
-       div[name="icone"] {
-        max-width: 400px;
-       }
-    
-       div[name="icon-img"] {
-        position: relative;
-        cursor: pointer;
-        border-radius: 10px;
-        padding-bottom: calc(90%);
-        box-shadow: 2px 2px 10px rgb(189, 189, 189);
-        border: 8px solid rgb(164, 247, 249);
-       }
-       div[name="icon-img"]:hover {
-        box-shadow: 2px 2px 25px rgb(189, 189, 189);
-       }
-
-       div[name="icon-img"] > img {
-        position: absolute;
-        width: calc(75%);
-        left: 12.5%;
-        right: 12.5%;
-        height: calc(75%);
-        top: 12.5%;
-        bottom: 12.5%;
-       }
-
-       div[name="icon-img"] > p {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        font-weight: bold;
-        top: calc(100% - 24px);
-       }
-
-       div#index {
-        position: relative;
-        background-color: white;
-        max-width: 800px;
-        margin: 40px auto 10px auto;
-        padding: 15px;
-        border-radius: 10px;
-       }
-       .ps {
-        padding: 10px;
-        background-color: white;
-        border: 2px solid pink;
-        border-radius: 4px;
-        margin: 0;
-        margin-bottom: 1px;
-        cursor: pointer;
-       }
-       .ps:hover {
-        background-color: rgb(243, 243, 243);
-       }
-       .button {
-        background-color: transparent;
-        position: relative;
-        top: 0;
-        left: calc(100% - 61px);
-        border-radius: 5px;
-        border-width: 0px;
-        padding: 5px 10px 5px 10px;
-       }
-       .button:hover {
-        background-color: rgb(243, 243, 243);
-       }
-       .ps2 {
-        position: absolute;
-        display: inline-block;
-        margin: 0;
-        max-width: calc(100% - 62px);
-       }
-       .pt {
-        font-weight: bold;
-       }
-       
-       .cont {
-        background-color: transparent;
-        position: relative;
-        height: fit-content;
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
        }
     </style>
 </head>
 <body>
-    <div id="contain">
-        <div id="ali">
-                    <div id="circle"><img id="fav" src="imagens/eln-l.png" alt=""></div>
             <div id="rev">
                 <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
                 <div id="main">
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!--
-    <div class="container-lg my-5">
-        <div class="row justify-content-center" name='select-content'>
-            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
-                <div class="p-4 bg-light" name='icon-img'>  p = padding
-                    <img src=".\imagens\html-logo.jpg">
-                  </div>
-            </div>
-          
-            
-            
-        </div>
-    </div>
--->
  
-    <p id="se"></p>
-  
-        <script src="material-js.js"></script>
-    
-    
+        <script src="search-librius.js"></script>
 </body>
 </html>
