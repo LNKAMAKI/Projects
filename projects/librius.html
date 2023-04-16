@@ -17,6 +17,7 @@
             --mainpink: #FF3E68;
         }
       </style>
+
      <style>
         body {
             margin: 0px;
@@ -121,6 +122,93 @@
            margin: auto;
         }
         </style>
+
+        <style>
+       span.tipo {
+           color: rgb(158, 158, 158);
+           font-size: 1.4em;
+       }
+       #rev {
+           width: fit-content;
+           width: 100%;
+           max-width: 600px;
+           display: inline-block;
+          top: 0px;
+          position: relative;
+       }
+       input:focus ~ #main {
+           opacity: 100;
+           display: none;
+        z-index: 10;
+           top: 100%;
+         position: absolute;
+         border-bottom-left-radius: 5px;
+         border-bottom-right-radius: 5px;
+         background-color: white;
+         /*padding-bottom: 0.3vw;*/
+         overflow: hidden;
+       }
+       #searcher {
+        position: relative;
+            display: inline-block;
+            height: 30px;
+            border-width: 0px;
+            outline: none;
+            background-color: white;
+            width: calc(100% - 3.2px - 20px);
+            border-radius: 5px;
+            border: 2px solid rgb(87, 164, 195);
+            padding: 0px 10px;
+            font-family: var(--defont);
+            font-size: 0.8em;
+        }
+
+     #main {
+        opacity: 0;
+        z-index: 10;
+    width: calc(100% - 3.2px);
+    top: 100%;
+    position: absolute;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+         overflow: hidden;
+         background-color: #FF3E68;
+         border: 2px solid rgb(87, 164, 195);
+       }
+       
+       #main > .psearcher{
+        font-family: var(--defont);
+        font-size: 0.85em;
+        transition-property: width, background-color;
+        transition-duration: 0.4s;
+           z-index: 20;
+           width: 100%;
+           position: absolute;
+           text-align: center;
+           padding-top: 4px;
+           padding-bottom: 4px;
+          margin: 0 0 0 0 ;
+           text-align: center;
+           background-color: var(--verylightgray);
+           /*border: 1px solid var(--darkblue);*/
+       }
+       #main > .psearcher:hover{
+           background-color: rgb(235, 235, 235);
+           cursor: pointer;
+       }
+       .phelp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+       }
+       #searcher::placeholder {
+           color: rgb(173, 173, 173) ;
+       }
+        </style>
 </head>
 <body onload="load()">
     <script src="librius.js"></script>
@@ -129,10 +217,17 @@
         <img src="libr-img.svg" alt="" id="img-logo">
         <p class="pclick" style="margin-right: 0px;"></p>
     </div>
+
+    <div id="rev">
+        <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+        <div id="main">
+        </div>
+    </div>
+    <!--
         <div id="searcharea">
                 <input type="text" name="" id="searchbar" placeholder="Pesquisar...">
         </div>
-        <!--
+
         <img src="librius-materials/images/marcador2.svg" alt="" style="width: 18px;">
         <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;">Grammar</p>
 
