@@ -60,31 +60,99 @@
             align-items: center;
         }
         #searcher {
-            position: relative;
+        position: relative;
             display: inline-block;
             height: 25px;
             border-width: 0px;
             outline: none;
             background-color: white;
-            width: 100%;
+            width: calc(100% - 1.6px - 1.6px - 10px - 10px );
             border-radius: 5px;
             border: 2px solid var(--darkblue);
             padding: 0px 10px;
-            margin-left: 5px;
-            margin-right: 5px;
         }
+        #rev {
+           display: inline-block;
+           width: 100%;
+           max-width: 600px;
+          top: 0px;
+          position: relative;
+          background-color: rgb(124, 26, 26);
+       }
+       #main {
+        opacity: 0;
+    z-index: 10;
+    width: calc(100% - 3.2px);
+    top: 100%;
+    position: absolute;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+         overflow: hidden;
+         background-color: #FF3E68;
+         border: 2px solid var(--darkblue);
+       }
+       input:focus ~ #main {
+           opacity: 100;
+           display: none;
+        z-index: 10;
+           top: 100%;
+         position: absolute;
+         border-bottom-left-radius: 5px;
+         border-bottom-right-radius: 5px;
+         background-color: white;
+         padding-bottom: 0.3vw;
+         overflow: hidden;
+       }
+       #main > .psearcher{
+        transition-property: width, background-color;
+        transition-duration: 0.4s;
+           z-index: 20;
+           width: calc(100%);
+           position: absolute;
+           text-align: center;
+           padding-top: 1.5px;
+           padding-bottom: 1.5px;
+          margin: 0 0 0 0 ;
+           text-align: center;
+           border: 2px solid black;
+       }
+       #main > .psearcher:hover{
+           background-color: rgb(235, 235, 235);
+           cursor: pointer;
+       }
+       .phelp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+       }
+       .phelp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+       }
         </style>
 </head>
 <body onload="load()">
+    <script src="test.js"></script>
     <nav>
     <div id="logo">
         <img src="libr-img.svg" alt="" id="img-logo">
         <p class="pclick" style="margin-right: 0px;"></p>
     </div>
 
-    <div id="searcharea">
-        <input type="text" name="" id="searcher" placeholder="Search...">
-      </div>
+        <div id="rev">
+            <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+            <div id="main">
+            </div>
+        </div>
 
 </div>
         <!--
