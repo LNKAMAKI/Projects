@@ -8,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
-        :root {
+  :root {
             --defont: 'Merriweather Sans';
             --darkblue: rgb(87, 164, 195);
             --lightgray: #e7e7e7;
@@ -16,14 +16,14 @@
             --lightpink: #ffc4c4;
             --mainpink: #FF3E68;
         }
-      </style>
-     <style>
+ 
         body {
             margin: 0px;
             padding: 0px;
             background-color: var(--lightgray);
             overflow-x: hidden;
         }
+
         #img-logo {
             background-color: transparent;
             width: 25px;
@@ -59,7 +59,7 @@
             max-width: 400px;
             align-items: center;
         }
-        #searchbar {
+        #searcher {
             position: relative;
             display: inline-block;
             height: 25px;
@@ -73,69 +73,20 @@
             margin-left: 5px;
             margin-right: 5px;
         }
-    
-        .pclick {
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            font-family: var(--defont);
-            color: var(--mainpink);
-            font-weight: 800;
-            font-size: 1.4em;
-            cursor: pointer;
-        }
-
-        section {
-            position: relative;
-            padding: 10px;
-            background-color: white;
-            margin: auto;
-            /*max-width: 1000px;*/
-        }
-        .contain {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-        .p-contain {
-            text-indent: 15px;
-            display: inline-block;
-            margin: 0px 0px 0px 10px;
-            font-size: 1em;
-            font-family: var(--defont);
-            font-weight: 500;
-        }
-        
-        iframe {
-            position: relative;
-            border: none;
-            width: 100%;
-            margin: 0 auto;
-            display: block;
-        }
-        #log {
-           display: inline-block;
-           width: 700px;
-           margin: auto;
-        }
         </style>
 </head>
 <body onload="load()">
-    <script src="librius.js"></script>
     <nav>
     <div id="logo">
         <img src="libr-img.svg" alt="" id="img-logo">
         <p class="pclick" style="margin-right: 0px;"></p>
     </div>
-        <div id="searcharea">
-            <div id="rev">
-                <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
-                <div id="main">
-                </div>
-            </div>
-        </div>
+
+    <div id="searcharea">
+        <input type="text" name="" id="searcher" placeholder="Search...">
+      </div>
+
+</div>
         <!--
         <img src="librius-materials/images/marcador2.svg" alt="" style="width: 18px;">
         <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;">Grammar</p>
@@ -145,14 +96,5 @@
         -->
 </div>
     </nav>
-    <section>
-        <iframe src="librius-materials/vocab.html" frameborder="0" scrolling="no" id="if"></iframe>
-        <div class="contain">
-            <!--<img src="alitus-logo.png" alt="" id="log">-->
-            <p class="p-contain">
-                <!--Alitus is a developing company which was created by LNKAMAKI in 2023 and has leleshine as one of its partners. It is commited with sharing knowledge about web developing and coding with young developers or people interested in this subject. Librius, on the other hand, is focused on English as a second language and offers materials to support the study of this language.-->
-        </div>
-       
-    </section>
 </body>
 </html>
