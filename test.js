@@ -110,6 +110,7 @@ return newlista
 }
 
 pselected = -1
+
 podeir = true
 subjects = sortWords(subjects,'title2')
 
@@ -163,6 +164,11 @@ document.getElementById('searcher').addEventListener('keyup',function(event) {
 // Cada vez que o usuário digite um caractere na barra de pesquisa
 function search2() {    
     pselected = -1
+    ps = document.getElementById('main').getElementsByClassName('psearcher')
+for (pi in ps) {
+    ps[pi].backgroundColor = 'white'
+}
+
     pnumber = -1
     pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
@@ -287,6 +293,10 @@ function dothesearch(whichid) {
     document.getElementById('main').style.display = 'none'
     console.log('HERE', document.getElementById('main').style.display)
     pselected = -1
+    ps = document.getElementById('main').getElementsByClassName('psearcher')
+for (pi in ps) {
+    ps[pi].backgroundColor = 'white'
+}
 }
 
 // Cria o conteúdo(quando é feita a pesquisa)
@@ -332,10 +342,14 @@ function entrou(thing) {
     podeir = false 
     //document.getElementById('searcher').value = 'entrou' + thing + podeir
     
-    if (pselected != -1 && pselected != thing) {
-        ps[pselected].style.backgroundColor = 'white'
+    /*if (pselected != -1 && pselected != thing) {*/
+        /*ps[pselected].style.backgroundColor = 'white'*/
         pselected = -1
-    }
+        ps = document.getElementById('main').getElementsByClassName('psearcher')
+for (pi in ps) {
+    ps[pi].backgroundColor = 'white'
+}
+    //}
     //document.getElementById('searcher').value += 'thing' + thing
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
@@ -343,10 +357,15 @@ function entrou(thing) {
 
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing) {
+    console.log('hello',thing)
     if (document.getElementById('searcher') == document.activeElement) {
     podeir = true
     //document.getElementById('searcher').value = 'saiu' + thing + podeir
     pselected = -1
+    ps = document.getElementById('main').getElementsByClassName('psearcher')
+for (pi in ps) {
+    ps[pi].backgroundColor = 'white'
+}
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
     }}

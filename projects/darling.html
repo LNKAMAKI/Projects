@@ -1,145 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
-  :root {
-            --defont: 'Merriweather Sans';
-            --darkblue: rgb(87, 164, 195);
-            --lightgray: #e7e7e7;
-            --verylightgray: rgb(249, 249, 249);
-            --lightpink: #ffc4c4;
-            --mainpink: #FF3E68;
-        }
- 
-        body {
-            margin: 0px;
-            padding: 0px;
-            background-color: var(--lightgray);
-            overflow-x: hidden;
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        #img-logo {
-            background-color: transparent;
-            width: 25px;
-            margin-right: 10px;
-        }
-        nav {
-            height: 80px;
-            position: relative;
-            background-color: var(--verylightgray);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0px;
-        }
-        #logo {
-            position: relative;
-            height: 100%;
-            margin-left: 5px;
-            width: fit-content;
-            display: inline-flex;
-            align-items: center;
-            /*padding:20px 0px;*/
-        }
-        #searcharea {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            margin-right: 10px;
-            margin-left: 0px;
-            /*border-left: 1px solid var(--darkblue);
-            border-right: 1px solid var(--darkblue);*/
-            display: flex;
-            max-width: 400px;
-            align-items: center;
-        }
-        #searcher {
-        position: relative;
-            display: inline-block;
-            height: 25px;
-            border-width: 0px;
-            outline: none;
-            background-color: white;
-            width: calc(100% - 1.6px - 1.6px - 10px - 10px );
-            border-radius: 5px;
-            border: 2px solid var(--darkblue);
-            padding: 0px 10px;
-        }
-        #rev {
-           display: inline-block;
-           width: 100%;
-           max-width: 600px;
-          top: 0px;
-          position: relative;
-          background-color: rgb(124, 26, 26);
-       }
-       #main {
-        /*opacity: 0;*/
-    z-index: 10;
-    width: calc(100% - 3.2px);
-    top: 100%;
-    position: absolute;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-         overflow: hidden;
-         background-color: #FF3E68;
-         border: 2px solid var(--darkblue);
-       }
-       input:focus ~ #main {
-           /*opacity: 100;
-           display: none;*/
-        z-index: 10;
-           top: 100%;
-         position: absolute;
-         border-bottom-left-radius: 5px;
-         border-bottom-right-radius: 5px;
-         background-color: white;
-         padding-bottom: 0.3vw;
-         overflow: hidden;
-       }
-       #main > .psearcher{
-        transition-property: width, background-color;
-        transition-duration: 0.4s;
-           z-index: 20;
-           width: calc(100%);
-           position: absolute;
-           text-align: center;
-           padding-top: 1.5px;
-           padding-bottom: 1.5px;
-          margin: 0 0 0 0 ;
-           text-align: center;
-           border: 2px solid black;
-       }
-       #main > .psearcher:hover{
-           background-color: rgb(235, 235, 235);
-           cursor: pointer;
-       }
-       .phelp {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-       }
-       .phelp {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-       }
-
-       
+    <title>Materiais</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <style>
   a {
     padding: 0px;
     margin: 0px;
@@ -303,8 +172,8 @@
        }
        
        input:focus ~ #main {
-           /*opacity: 100;
-           display: none;*/
+           opacity: 100;
+           display: none;
         z-index: 10;
            top: 100%;
            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
@@ -343,7 +212,7 @@
         
        }
      #main {
-        /*opacity: 0;*/
+        opacity: 0;
     z-index: 10;
     width: 100%;
     top: 100%;
@@ -504,31 +373,39 @@
         align-items: center;
         margin-bottom: 10px;
        }
-        </style>
+    </style>
 </head>
-<body onload="load()">
-    <script src="test.js"></script>
-    <nav>
-    <div id="logo">
-        <img src="libr-img.svg" alt="" id="img-logo">
-        <p class="pclick" style="margin-right: 0px;"></p>
-    </div>
-
-        <div id="rev">
-            <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
-            <div id="main">
+<body>
+    <div id="contain">
+        <div id="ali">
+                    <div id="circle"><img id="fav" src="imagens/eln-l.png" alt=""></div>
+            <div id="rev">
+                <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+                <div id="main">
+                </div>
             </div>
         </div>
+    </div>
 
-</div>
-        <!--
-        <img src="librius-materials/images/marcador2.svg" alt="" style="width: 18px;">
-        <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;">Grammar</p>
-
-        <img src="librius-materials/images/marcador2.svg" alt="" style="width: 18px;margin-left: 10px;">
-        <p class="pclick" style="margin-left:5px;border-right: 1px solid var(--darkblue);padding-right: 10px;" onclick="vocab()">Vocabulary</p>
-        -->
-</div>
-    </nav>
+    <!--
+    <div class="container-lg my-5">
+        <div class="row justify-content-center" name='select-content'>
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
+                <div class="p-4 bg-light" name='icon-img'>  p = padding
+                    <img src=".\imagens\html-logo.jpg">
+                  </div>
+            </div>
+          
+            
+            
+        </div>
+    </div>
+-->
+ 
+    <p id="se"></p>
+  
+        <script src="material-js.js"></script>
+    
+    
 </body>
 </html>
