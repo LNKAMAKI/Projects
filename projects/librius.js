@@ -190,18 +190,18 @@ window.addEventListener('keyup', function(event) {
         console.log('VAI',ps.length, pselected)
         if (pselected < ps.length - 1 && podeir == true) {
             if (pselected != -1)
-            ps[pselected].style.backgroundColor = 'white'
+            ps[pselected].style.backgroundColor = 'var(--verylightgray)'
             pselected++
             //this.document.getElementById('searcher').value = pselected
-            ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
+            ps[pselected].style.backgroundColor = 'var(--lightgray)'
         }
     }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
         if (pselected >= 1 && podeir == true) {
             if (pselected != -1)
-            ps[pselected].style.backgroundColor = 'white'
+            ps[pselected].style.backgroundColor = 'var(--verylightgray)'
             pselected--
             //this.document.getElementById('searcher').value = pselected
-           ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
+           ps[pselected].style.backgroundColor = 'var(--lightgray)'
         } }})
 
 // Quando uma tecla é pressionada
@@ -386,12 +386,12 @@ function dothesearch(whichid) {
     //document.getElementById('searcher').value = 'entrou' + thing + podeir
     
     if (pselected != -1 && pselected != thing) {
-        ps[pselected].style.backgroundColor = 'white'
+        ps[pselected].style.backgroundColor = 'var(--verylightgray)'
         pselected = -1
     }
     //document.getElementById('searcher').value += 'thing' + thing
 
-    ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
+    ps[thing].style.backgroundColor = 'var(--lightgray)'
 }}
 
 // Quando o mouse sai de uma opção(psearcher)
@@ -401,5 +401,5 @@ function saiu(thing) {
     //document.getElementById('searcher').value = 'saiu' + thing + podeir
     pselected = -1
     ps = document.getElementById('main').getElementsByClassName('psearcher')
-    ps[thing].style.backgroundColor = 'white'
+    ps[thing].style.backgroundColor = 'var(--verylightgray)'
     }}

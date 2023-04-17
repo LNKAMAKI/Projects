@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
+        :root{
+            --lightblue: rgb(132, 206, 238);
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+            --shadowgray: #bdbdbd;
+            --number: rgb(26 26 168);
+            --string: rgb(200 0 82);
+            --pretty-pink: #ffc4c4;
+            --lilac: #d7cee7;
+            --max-height: 300px;
+        }
+        :root {
+            --defont: 'Merriweather Sans';
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+            --verylightgray: rgb(249, 249, 249);
+            --lightpink: #ffc4c4;
+            --mainpink: #FF3E68;
+        }
+        table {
+            border-collapse: collapse;
+            border-radius: 50px;
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+        }     
+        thead > tr > th {
+            background-color: var(--pretty-pink);
+            color: #e3254f;
+            font-weight: 800;
+            font-size: 1.1em;
+        }  
+        td, th {
+            background-color: var(--verylightgray);
+            border: 1px solid var(--darkblue);
+            font-family: var(--defont);
+            padding: 5px;
+            color: rgb(65, 123, 145);
+            text-align: center;
+            font-weight: 600;
+        }
+        tbody > tr > th {
+            font-weight: 700;
+        }
+        td::first-letter {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <table>
+      <thead>
+        <tr>
+            <th scope="col" colspan="2">Personal</th>
+            <th scope="col" colspan="2">Possessive</th>
+            <th scope="col">Reflexive</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Subject</th>
+            <th>Object</th>
+            <th>Adjective</th>
+            <th>Pronoun</th>
+            <th></th>
+        </tr>
+            <tr>
+                <td>I</td>
+                <td>Me</td>
+                <td>my</td>
+                <td>mine</td>
+                <td>myself</td>
+            </tr>
+            <tr>
+                <td>You</td>
+                <td>You</td>
+                <td>your</td>
+                <td>yours</td>
+                <td>yourself</td>
+            </tr>
+            <tr>
+                <td>he</td>
+                <td>him</td>
+                <td>his</td>
+                <td>his</td>
+                <td>himself</td>
+            </tr>
+            <tr>
+                <td>She</td>
+                <td>her</td>
+                <td>her</td>
+                <td>hers</td>
+                <td>herself</td>
+            </tr>
+            <tr>
+                <td>It</td>
+                <td>it</td>
+                <td>its</td>
+                <td>its</td>
+                <td>itself</td>
+            </tr>
+            <tr>
+                <td>We</td>
+                <td>us</td>
+                <td>our</td>
+                <td>ours</td>
+                <td>ourselves</td>
+            </tr>
+            <tr>
+                <td>You</td>
+                <td>you</td>
+                <td>your</td>
+                <td>yours</td>
+                <td>yourselves</td>
+            </tr>
+            <tr>
+                <td>They</td>
+                <td>them</td>
+                <td>their</td>
+                <td>theirs</td>
+                <td>themselves</td>
+            </tr>
+    </tbody>
+    </table>
+</body>
+</html>
