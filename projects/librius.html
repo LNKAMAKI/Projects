@@ -317,9 +317,10 @@ color: rgb(59, 59, 59);
 color: var(--mainpink);
 }
 .table {
-    width: 100vw;
+    width: calc(100vw - 20px);
     max-width: 810px;
     margin: auto;
+    background-color: #ffc4c4;
 }
 .secp {
     font-size: 1em;
@@ -361,7 +362,7 @@ color: var(--mainpink);
             <img src="img-logo2.svg" alt="" id="img-logo">
             <p class="pclick" style="margin-right: 0px;"></p>
         <div id="rev">
-            <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+            <input type="text" name="" id="searcher" placeholder="Search..." onclick="fclic()" spellcheck="false">
             <div id="main">
             </div>
         </div>
