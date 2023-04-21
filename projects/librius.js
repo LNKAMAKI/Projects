@@ -405,6 +405,7 @@ function saiu(thing) {
     }}
 
 function openMaterial(materialUrl,name) {
+    //aqui é onde vai o código para criar a seta quando o iframe(material) foi acessado
     console.log('YEEEEEEEEEEE')
     section = document.getElementsByTagName('section')[0]
     section.innerHTML = ''
