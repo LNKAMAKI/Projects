@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
+            body {
+                margin: 0px;
+            }
+            h1 {
+            color: var(--mainpink);
+            font-weight: 800;
+            font-size: 1.9em;
+            font-family: var(--defont);
+            text-align: center;
+            margin: 0px;
+            }
+
         :root{
-            --lightblue: rgb(132, 206, 238);
+            --verydarkblue: rgb(65, 123, 145);
+            --lightblue: rgb(173 197 206);
             --darkblue: rgb(87, 164, 195);
             --lightgray: #e7e7e7;
             --shadowgray: #bdbdbd;
@@ -35,10 +48,11 @@
             margin: auto;
         }     
         thead > tr > th {
-            background-color: var(--pretty-pink);
-            color: #e3254f;
+            background-color: #ffe4e4;
+            color: var(--mainpink);
             font-weight: 800;
             font-size: 1.1em;
+            border: 2px solid var(--mainpink);
         }  
         td, th {
             background-color: var(--verylightgray);
@@ -55,82 +69,95 @@
         td::first-letter {
             text-transform: uppercase;
         }
+        p {
+            color: black;
+            font-family: var(--defont);
+            font-weight: 600;
+            margin: 5px;
+            text-align: center;
+            color: black;
+            margin: 5px auto;
+        }
     </style>
 </head>
 <body>
-    <table>
-      <thead>
-        <tr>
-            <th scope="col" colspan="2">Personal</th>
-            <th scope="col" colspan="2">Possessive</th>
-            <th scope="col">Reflexive</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>Subject</th>
-            <th>Object</th>
-            <th>Adjective</th>
-            <th>Pronoun</th>
-            <th></th>
-        </tr>
+    <div style="overflow: auto;">
+        <table>
+          <thead>
             <tr>
-                <td>I</td>
-                <td>Me</td>
-                <td>my</td>
-                <td>mine</td>
-                <td>myself</td>
+                <th scope="col" colspan="2">Personal</th>
+                <th scope="col" colspan="2">Possessive</th>
+                <th scope="col">Reflexive</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
-                <td>You</td>
-                <td>You</td>
-                <td>your</td>
-                <td>yours</td>
-                <td>yourself</td>
+                <th>Subject</th>
+                <th>Object</th>
+                <th>Adjective</th>
+                <th>Pronoun</th>
+                <th></th>
             </tr>
-            <tr>
-                <td>he</td>
-                <td>him</td>
-                <td>his</td>
-                <td>his</td>
-                <td>himself</td>
-            </tr>
-            <tr>
-                <td>She</td>
-                <td>her</td>
-                <td>her</td>
-                <td>hers</td>
-                <td>herself</td>
-            </tr>
-            <tr>
-                <td>It</td>
-                <td>it</td>
-                <td>its</td>
-                <td>its</td>
-                <td>itself</td>
-            </tr>
-            <tr>
-                <td>We</td>
-                <td>us</td>
-                <td>our</td>
-                <td>ours</td>
-                <td>ourselves</td>
-            </tr>
-            <tr>
-                <td>You</td>
-                <td>you</td>
-                <td>your</td>
-                <td>yours</td>
-                <td>yourselves</td>
-            </tr>
-            <tr>
-                <td>They</td>
-                <td>them</td>
-                <td>their</td>
-                <td>theirs</td>
-                <td>themselves</td>
-            </tr>
-    </tbody>
-    </table>
+                <tr>
+                    <td>I</td>
+                    <td>Me</td>
+                    <td>my</td>
+                    <td>mine</td>
+                    <td>myself</td>
+                </tr>
+                <tr>
+                    <td>You</td>
+                    <td>You</td>
+                    <td>your</td>
+                    <td>yours</td>
+                    <td>yourself</td>
+                </tr>
+                <tr>
+                    <td>he</td>
+                    <td>him</td>
+                    <td>his</td>
+                    <td>his</td>
+                    <td>himself</td>
+                </tr>
+                <tr>
+                    <td>She</td>
+                    <td>her</td>
+                    <td>her</td>
+                    <td>hers</td>
+                    <td>herself</td>
+                </tr>
+                <tr>
+                    <td>It</td>
+                    <td>it</td>
+                    <td>its</td>
+                    <td>its</td>
+                    <td>itself</td>
+                </tr>
+                <tr>
+                    <td>We</td>
+                    <td>us</td>
+                    <td>our</td>
+                    <td>ours</td>
+                    <td>ourselves</td>
+                </tr>
+                <tr>
+                    <td>You</td>
+                    <td>you</td>
+                    <td>your</td>
+                    <td>yours</td>
+                    <td>yourselves</td>
+                </tr>
+                <tr>
+                    <td>They</td>
+                    <td>them</td>
+                    <td>their</td>
+                    <td>theirs</td>
+                    <td>themselves</td>
+                </tr>
+        </tbody>
+        </table>
+    </div>
+    <p>The personal pronouns can be divided into two groups: subject and object</p>
+    <p>The subject is the performer of the action, like in the phrase "Ana bought a car", where Ana is the subject</p>
 </body>
 </html>

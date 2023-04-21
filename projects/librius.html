@@ -16,6 +16,7 @@
             --lightpink: #ffc4c4;
             --mainpink: #FF3E68;
             --lightblue: rgb(173 197 206);
+            --verydarkblue: rgb(65, 123, 145);
         }
       </style>
 
@@ -94,7 +95,7 @@
         section {
             position: relative;
             padding: 10px;
-            background-color: white;
+            background-color: #fffdfd;
             margin: auto;
             /*max-width: 1000px;*/
         }
@@ -117,7 +118,7 @@
             position: relative;
             border: none;
             width: 100%;
-            margin: 0 auto;
+            margin: 20px auto;
             display: block;
         }
         #log {
@@ -231,10 +232,130 @@
            color: rgb(173, 173, 173) ;
        }
         </style>
+
+
+<style>
+h1 {
+    display: flex;
+    align-items: center;
+    color: var(--mainpink);
+    font-weight: 800;
+    font-size: 2.3em;
+    font-family: var(--defont);
+    width:fit-content;
+}
+.cont {
+    position: relative;
+    background-color:var(--verylightgray);
+    background-color: rgb(252, 252, 252);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 30px;
+    width: 100%;
+    color: rgb(65, 123, 145);
+}
+.center {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: start;
+    white-space: nowrap;
+    font-size: 1em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0px;
+    /*background-color: lightsalmon;*/
+}
+.exptype {
+display: flex;
+margin: 0px;
+justify-content: start;
+border-radius: 0px;
+padding: 1px;
+display: flex;
+align-items: center;
+font-family: var(--defont);
+font-weight: 600;
+font-size: 1.1em;
+}
+.secexptype {
+display: flex;
+margin: 0px;
+justify-content: start;
+border-radius: 5px;
+padding: 1px;
+display: flex;
+align-items: center;
+font-family: var(--defont);
+font-weight: 600;
+font-size: 1.05em;
+}
+.ar {
+    transition-duration: 0.2s;
+    width: 20px;
+    height: 20px;
+    transform: rotate(0deg);
+    cursor: pointer;
+    position: relative;
+}
+.pexp {
+background-color: white;
+margin: 0px 10px 6px 20px;
+border-radius: 5px;
+width: calc(100% - 40px);
+padding: 3px 5px;
+cursor: pointer;
+font-family: var(--defont);
+font-size: 1em;
+font-weight: 500;
+border: 2px solid var(--lightpink);
+border-bottom: 4px solid var(--lightpink);
+color: #d6123c ;
+color: rgb(59, 59, 59);
+}
+.pexp:hover {
+color: var(--mainpink);
+}
+.table {
+    width: 100vw;
+    max-width: 810px;
+    margin: auto;
+}
+.secp {
+    font-size: 1em;
+}
+.bord {
+    padding:0px;
+    background-color: rgb(220, 220, 220);
+    background-color: var(--darkblue);
+    background-color: lightblue;
+    background-color: var(--darkblue);
+    border: 2px solid rgb(220, 220, 220);
+    border: 2px solid var(--darkblue);
+    border-radius: 5px;
+    overflow-x: hidden;
+    margin-bottom: 5px;
+}
+.pexp > a {
+    text-decoration: none;
+    color: black;
+}
+.pexp > a:hover {
+    color: var(--mainpink);
+}
+.title {
+    position: relative;
+    font-size: 1.3em;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+</style>
 </head>
 <body onload="load()">
     <script src="librius.js"></script>
-    <script src="material-js.js"></script>
+    <script src="librius-materials/materials.js"></script>
     <nav>
     <div id="central">
             <img src="img-logo2.svg" alt="" id="img-logo">
@@ -259,12 +380,92 @@
 </div>
     </nav>
     <section>
+        <!--
         <iframe src="librius-materials/vocab.html" frameborder="0" scrolling="no" id="if"></iframe>
         <div class="contain">
-            <!--<img src="alitus-logo.png" alt="" id="log">-->
+         <img src="alitus-logo.png" alt="" id="log">
             <p class="p-contain">
-                <!--Alitus is a developing company which was created by LNKAMAKI in 2023 and has leleshine as one of its partners. It is commited with sharing knowledge about web developing and coding with young developers or people interested in this subject. Librius, on the other hand, is focused on English as a second language and offers materials to support the study of this language.-->
+                Alitus is a developing company which was created by LNKAMAKI in 2023 and has leleshine as one of its partners. It is commited with sharing knowledge about web developing and coding with young developers or people interested in this subject. Librius, on the other hand, is focused on English as a second language and offers materials to support the study of this language.
+                -->
         </div>
+
+        <div style="display: flex;align-items: center;flex-direction: column;">
+    
+            <div class="table">
+        
+                <h1>Vocabulary <img src="librius-materials/images/list-vocab.svg" style="width:50px;margin-left: 5px;"></h1> 
+                <div class="bord">
+                    <div style="overflow-x: hidden;margin-bottom: 1px;">
+                        <div class="cont">
+                            <div class="center">
+                                <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar"> Trainings </p>
+                                <img src="librius-materials/images/marcador2.svg" alt="" style="width:17px;margin-left: calc(100% - 23px);position: absolute;">
+                            </div>
+                            <p style="margin:0px;height:0px;"></p>
+                            <div style="border-radius: 7px;overflow-x: hidden;margin-bottom: 0px;">
+                                <div class="cont">
+                                    <div class="center">
+                                        <p class="secexptype"><img src="librius-materials/images/rar.png" alt="" class="ar">Training 1</p>
+                                    </div>
+                                    <p style="margin:0px;height:5px;"></p>
+                                                           <p class="pexp">Text 1: Turkey earthquake death toll suggests lessons of 1999 were not learned</p>
+                                                           <p class="pexp">Text 2: New "unidentified object" shot down over Canada, says Trudeau</p>
+                                                           <p class="pexp">Text 3: HBO'S "The Last Of Us" is a startling success</p>
+                                                           <p class="pexp">Text 4: Chat GPT - What can the extraordinary artificial intelligence chatbot do?</p>
+                                </div>
+                        </div>
+        
+                    </div>
+                            </div>
+                </div>
+        
+            <div class="bord">
+                <div style="overflow-x: hidden;margin-bottom: 1px;">
+                    <div class="cont">
+                        <div class="center">
+                            <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar"> Stories </p>
+                            <img src="librius-materials/images/marcador2.svg" alt="" style="width:17px;margin-left: calc(100% - 23px);position: absolute;">
+                        </div>
+                        <p style="margin:0px;height:5px;"></p>
+                                               <p class="pexp">The Story of an Hour</p>
+                                               <p class="pexp">Appointment with Love</p>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <h1 style="display: block;">Grammar <img src="librius-materials/images/book-grammar.svg" style="width:58px;margin-left: -3px;"></h1> 
+        
+            <div class="bord">
+                <div style="overflow-x: hidden;margin-bottom: 1px;">
+                    <div class="cont">
+                        <div class="center">
+                            <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">Parts of Speech </p>
+                            <img src="librius-materials/images/marcador2.svg" alt="" style="width:17px;margin-left: calc(100% - 23px);position: absolute;">
+                        </div>
+                        <p style="margin:0px;height:5px;"></p>
+                                               <p class="pexp" onclick="openMaterial('librius-materials/possessive,personal,reflexive.html','Personal, Possessive and Reflexive Table')">Personal, Possessive, Reflexive</p>
+                                               <p class="pexp">Articles</p>
+                                               <p class="pexp">Nouns</p>
+                                               <p class="pexp">Adjectives</p>
+                                               <p class="pexp">Adverbs</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bord">
+                <div style="overflow-x: hidden;margin-bottom: 1px;">
+                    <div class="cont">
+                        <div class="center">
+                            <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">Verb Tenses </p>
+                            <img src="librius-materials/images/marcador2.svg" alt="" style="width:17px;margin-left: calc(100% - 23px);position: absolute;">
+                        </div>
+                        <p style="margin:0px;height:5px;"></p>
+                    </div>
+                </div>
+            </div>
+        
+            </div></div>
     </section>
 </body>
 </html>

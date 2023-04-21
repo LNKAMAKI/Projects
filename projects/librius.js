@@ -403,3 +403,35 @@ function saiu(thing) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'var(--verylightgray)'
     }}
+
+function openMaterial(materialUrl,name) {
+    console.log('YEEEEEEEEEEE')
+    section = document.getElementsByTagName('section')[0]
+    section.innerHTML = ''
+    header = document.createElement('h1')
+    header.setAttribute('class','title')
+    header.innerText = name
+    frame = document.createElement('iframe')
+    frame.setAttribute('src', materialUrl)
+    section.appendChild(header)
+    section.appendChild(frame)
+    frame.setAttribute('scrolling','no')
+    
+    iframe = frame
+console.log(iframe)
+
+if (iframe != null) {
+function resizeIframe() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  }
+
+  setInterval(function() {
+    var currentHeight = iframe.style.height;
+
+    // check if the iframe content has changed
+    if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
+      resizeIframe();
+    }
+  }, 20)
+}
+}
