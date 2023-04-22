@@ -1,4 +1,4 @@
-function load() {
+function load() { //quando a página é carregada
    
     iframe = document.getElementById('if')
     console.log(iframe)
@@ -404,18 +404,37 @@ function saiu(thing) {
     ps[thing].style.backgroundColor = 'var(--verylightgray)'
     }}
 
+// cria o iframe para o material
 function openMaterial(materialUrl,name) {
-    //aqui é onde vai o código para criar a seta quando o iframe(material) foi acessado
     console.log('YEEEEEEEEEEE')
     section = document.getElementsByTagName('section')[0]
     section.innerHTML = ''
+    sep = document.createElement('div')
+    sep.setAttribute('class','sep')
+    sep.style.maxWidth = '750px'
+    sep.style.margin = 'auto'
+    ph = document.createElement('p')
+    ph.setAttribute('class','ph')
+    button = document.createElement('div')
+    button.setAttribute('class','gobackbut')
+    button.setAttribute('onclick','backtoStart')
+    backarrow = document.createElement('img')
+    backarrow.setAttribute('src','librius-materials/images/go-back-arrow.svg')
+    backarrow.setAttribute('class','backar')
+    span = document.createElement('span')
+    span.innerText = 'Return'
     header = document.createElement('h1')
     header.setAttribute('class','title')
     header.innerText = name
     frame = document.createElement('iframe')
     frame.setAttribute('src', materialUrl)
-    section.appendChild(header)
-    section.appendChild(frame)
+    sep.appendChild(ph)
+    button.appendChild(backarrow)
+    button.appendChild(span)
+    ph.appendChild(button)
+    sep.appendChild(header)
+    sep.appendChild(frame)
+    section.appendChild(sep)
     frame.setAttribute('scrolling','no')
     
     iframe = frame

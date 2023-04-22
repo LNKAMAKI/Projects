@@ -17,6 +17,7 @@
             --mainpink: #FF3E68;
             --lightblue: rgb(173 197 206);
             --verydarkblue: rgb(65, 123, 145);
+            --darkpink: #ff2152;
         }
       </style>
 
@@ -119,6 +120,7 @@
             border: none;
             width: 100%;
             margin: 20px auto;
+            margin-top: 0px;
             display: block;
         }
         #log {
@@ -232,6 +234,27 @@
        #searcher::placeholder {
            color: rgb(173, 173, 173) ;
        }
+       .backar {
+        width: 12px;
+        margin-right: 8px;
+       }
+       .ph {
+        text-align: start;
+        font-family: var(--defont);
+        font-size: 1.1em;
+        color: var(--mainpink);
+        font-weight: 700;
+        background-color: white;
+        margin-bottom: 5px;
+        margin: 0px;
+        width: calc(100% - 20px);
+       }
+       .gobackbut {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+       }
         </style>
 
 
@@ -318,7 +341,7 @@ color: rgb(59, 59, 59);
 color: var(--mainpink);
 }
 .table {
-    width: calc(100vw - 20px);
+    width: 100%;
     max-width: 810px;
     margin: auto;
 }
@@ -336,6 +359,7 @@ color: var(--mainpink);
     border-radius: 5px;
     overflow-x: hidden;
     margin-bottom: 5px;
+    width: calc(100% - 3.2px);
 }
 .pexp > a {
     text-decoration: none;
@@ -347,9 +371,19 @@ color: var(--mainpink);
 .title {
     position: relative;
     font-size: 1.3em;
+    width: calc(100% - 20px);
     text-align: center;
-    width: 100%;
     display: block;
+    margin: 0px;
+    padding: 10px 0px 15px 0px;
+}
+.sep {
+    padding-bottom: 5px;
+    background-color: rgb(252, 240, 240);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 </style>
@@ -390,7 +424,7 @@ color: var(--mainpink);
                 -->
         </div>
 
-        <div style="display: flex;align-items: center;flex-direction: column;">
+        <div style="display: flex;align-items: center;flex-direction: column;width: 100%;">
     
             <div class="table">
         
