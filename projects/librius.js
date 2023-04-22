@@ -1,22 +1,4 @@
-function load() { //quando a página é carregada
-   
-    iframe = document.getElementById('if')
-    console.log(iframe)
-    
-    if (iframe != null) {
-    function resizeIframe() {
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-      }
-    
-      setInterval(function() {
-        var currentHeight = iframe.style.height;
-    
-        // check if the iframe content has changed
-        if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
-          resizeIframe();
-    }}, 20)}
-    }
-
+/*
 function vocab() {
     section = document.getElementsByTagName('section')[0]
     section.innerHTML = ''
@@ -42,7 +24,7 @@ function resizeIframe() {
     }
   }, 20)
 }
-}
+    }*/
 
 function get1(thist) {
     return document.getElementById(thist)
@@ -454,4 +436,8 @@ function resizeIframe() {
     }
   }, 20)
 }
+}
+
+function backtoStart () {
+
 }
