@@ -26,6 +26,7 @@ function resizeIframe() {
 }
     }*/
 
+initialcontent = ''
 function get1(thist) {
     return document.getElementById(thist)
 }
@@ -390,6 +391,9 @@ function saiu(thing) {
 function openMaterial(materialUrl,name) {
     console.log('YEEEEEEEEEEE')
     section = document.getElementsByTagName('section')[0]
+    if (initialcontent == '') {
+        initialcontent = section.innerHTML
+    }
     section.innerHTML = ''
     sep = document.createElement('div')
     sep.setAttribute('class','sep')
@@ -399,7 +403,7 @@ function openMaterial(materialUrl,name) {
     ph.setAttribute('class','ph')
     button = document.createElement('div')
     button.setAttribute('class','gobackbut')
-    button.setAttribute('onclick','backtoStart')
+    button.setAttribute('onclick','backtoStart()')
     backarrow = document.createElement('img')
     backarrow.setAttribute('src','librius-materials/images/go-back-arrow.svg')
     backarrow.setAttribute('class','backar')
@@ -422,22 +426,31 @@ function openMaterial(materialUrl,name) {
     iframe = frame
 console.log(iframe)
 
+
+var loopRunning = true
 if (iframe != null) {
 function resizeIframe() {
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
   }
 
   setInterval(function() {
+    console.log('loopRunning:', loopRunning)
     var currentHeight = iframe.style.height;
 
     // check if the iframe content has changed
+    if (loopRunning) {
     if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
       resizeIframe();
     }
+}
   }, 20)
 }
 }
 
-function backtoStart () {
-
+function backtoStart() {
+    window.alert('hello you')
+    loopRunning = false
+    console.log('NOW THE LOOPRUNNING VALUE IS EQUAL TO:', loopRunning)
+    section = document.getElementsByTagName('section')[0]
+    section.innerHTML = 'a'
 }
