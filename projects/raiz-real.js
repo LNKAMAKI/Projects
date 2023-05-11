@@ -14,11 +14,11 @@ function showresult() {
     tem = false
     for (char in expression) {
         sim = expression[char]
-        console.log(sim)
+        //console.log(sim)
         if (sim == '(' && expression[char - 1] != '^') {
-            console.log('add a, b or c')
+            //console.log('add a, b or c')
             //if (letsi.length == 0) {
-                console.log('a')
+                //console.log('a')
                 if (letsi.length == 0) {
                 add = 'a'
             }else if(letsi.length == 1) {
@@ -31,18 +31,45 @@ function showresult() {
         }else if(sim == '^') {
             //console.log('elevar')
             if (letsi.length == 0) {
-                console.log('aaaa')
+                //console.log('aaaa')
+                n = char
+                console.log(n)
+                exfor = ''
+                do {
+                    n = Number(n) - 1
+                    if (expression[n].search('[a-z]|[0-9]') != -1) {
+                        exfor+= expression[n]
+                    }
+                }while (expression[n].search('[a-z]|[0-9]') != -1 && n >= 1);
                 add = 'ai'
+                correctOrder = ''
+                for (cl = exfor.length - 1; cl >= 0; cl--) {
+                    correctOrder+= exfor[cl]
+                }
+                ay = correctOrder
             }else{
                 //console.log('bbbbbb')
+                n = char
+                exfor = ''
+                do {
+                    n = Number(n) - 1
+                    if (expression[n].search('[a-z]|[0-9]') != -1) {
+                        exfor+= expression[n]
+                    }
+                }while (expression[n].search('[a-z]|[0-9]') != -1 && n >= 1);
                 add = 'bi'
+                correctOrder = ''
+                for (cl = exfor.length - 1; cl >= 0; cl--) {
+                    correctOrder+= exfor[cl]
+                }
+                by = correctOrder
             }
             letsi.push(1)
         }else if(sim == ')') {
-            console.log('stop')
+            //console.log('stop')
             add = ''
             tem = false
-            console.log('TEM',tem)
+            //console.log('TEM',tem)
         }else{
             if (add != '') {
             switch(add) {
@@ -54,15 +81,16 @@ function showresult() {
                 break
                 case 'c':
                     c+= sim
+                    console.log('C SIM', sim)
                 break
                 case 'ai':
                     if (sim == '(') {
-                        console.log('esse tem!!!!')
+                        //console.log('esse tem!!!!')
                         tem = true
                     }else if (sim.search('[a-z]|[0-9]') != -1){
                     ai+= sim
                     }else{
-                        console.log('TEM',tem)
+                        //console.log('TEM',tem)
                         if (tem == true) {
                         ai+= sim
                         }else{
@@ -73,12 +101,12 @@ function showresult() {
                 break
                 case 'bi':
                     if (sim == '(') {
-                        console.log('esse tem!!!!')
+                        //console.log('esse tem!!!!')
                         tem = true
                     }else if(sim.search('[a-z]|[0-9]') != -1){
                     bi+= sim
                     }else {
-                        console.log('TEM',tem)
+                        //console.log('TEM',tem)
                     if (tem == true) {
                     bi+= sim
                     }else{
@@ -89,21 +117,12 @@ function showresult() {
                 break
             }
         }else{
-            console.log('sad life')
-            console.log('SAD SIMMMMMMM', sim)
-            if (sim.search('[a-z]|[0-9]') != -1) {
-                console.log('hmmmmm')
-                if (letsi.length == 0) {
-                    console.log('this is ay')
-                    ay+= sim
-                }else{
-                    console.log('this is by')
-                    by += sim
-                    }
-            }
         }
     }
     }
+    console.log('a:',a,'ay:',ay,'ai:',ai)
+    console.log('b:',b,'by:',by,'bi:',bi)
+    console.log('c:',c)
 }
 
 function changeexp (pexpind) {
