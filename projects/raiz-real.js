@@ -1,28 +1,120 @@
 function showresult() {
     console.log('yaya')
     expression = document.getElementById('write').value
+    letsi = []
     a = ''
     b = ''
     c = ''
     ai = ''
     bi = ''
     ci = ''
+    add = ''
+    ay = ''
+    by = ''
+    tem = false
     for (char in expression) {
         sim = expression[char]
         console.log(sim)
+        if (sim == '(' && expression[char - 1] != '^') {
+            console.log('add a, b or c')
+            //if (letsi.length == 0) {
+                console.log('a')
+                if (letsi.length == 0) {
+                add = 'a'
+            }else if(letsi.length == 1) {
+                //console.log('b')
+                add = 'b'
+            }else{
+                //console.log('c')
+                add = 'c'
+            }
+        }else if(sim == '^') {
+            //console.log('elevar')
+            if (letsi.length == 0) {
+                console.log('aaaa')
+                add = 'ai'
+            }else{
+                //console.log('bbbbbb')
+                add = 'bi'
+            }
+            letsi.push(1)
+        }else if(sim == ')') {
+            console.log('stop')
+            add = ''
+            tem = false
+            console.log('TEM',tem)
+        }else{
+            if (add != '') {
+            switch(add) {
+                case 'a':
+                    a+= sim
+                    break
+                case 'b':
+                    b+= sim
+                break
+                case 'c':
+                    c+= sim
+                break
+                case 'ai':
+                    if (sim == '(') {
+                        console.log('esse tem!!!!')
+                        tem = true
+                    }else if (sim.search('[a-z]|[0-9]') != -1){
+                    ai+= sim
+                    }else{
+                        console.log('TEM',tem)
+                        if (tem == true) {
+                        ai+= sim
+                        }else{
+                        add = ''
+                        tem = false
+                        }
+                    }
+                break
+                case 'bi':
+                    if (sim == '(') {
+                        console.log('esse tem!!!!')
+                        tem = true
+                    }else if(sim.search('[a-z]|[0-9]') != -1){
+                    bi+= sim
+                    }else {
+                        console.log('TEM',tem)
+                    if (tem == true) {
+                    bi+= sim
+                    }else{
+                    add = '' 
+                    tem = false
+                    }
+                    }
+                break
+            }
+        }else{
+            console.log('sad life')
+            console.log('SAD SIMMMMMMM', sim)
+            if (sim.search('[a-z]|[0-9]') != -1) {
+                console.log('hmmmmm')
+                if (letsi.length == 0) {
+                    console.log('this is ay')
+                    ay+= sim
+                }else{
+                    console.log('this is by')
+                    by += sim
+                    }
+            }
+        }
+    }
     }
 }
 
 function changeexp (pexpind) {
     pexps = document.getElementsByClassName('pexp')
- //console.log('HEY',pexps[pexpind].innerText)
  get1('write').value = pexps[pexpind].innerText
 }
 
 function load() {
+    // initialize examples function
     pexps = document.getElementsByClassName('pexp')
 for (sure = 0; sure < pexps.length; sure++) {
-    //console.log(pexps[sure])
     pexps[sure].setAttribute('onclick',`changeexp(${sure})`)
 }
 
