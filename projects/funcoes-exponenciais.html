@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Lilita+One&family=Rubik+Marker+Hatch&family=Signika:wght@600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=PT+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Audiowide&family=Black+Ops+One&family=Russo+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Audiowide&family=Black+Ops+One&family=Days+One&family=Russo+One&display=swap');
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--lightgray);
+            overflow-y: visible;
+            font-family: 'Inconsolata',Arial;
+            font-size: 1em;
+        }
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        :root{
+            --lightblue: rgb(132, 206, 238);
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+            --shadowgray: #bdbdbd;
+            --number: rgb(26 26 168);
+            --string: rgb(200 0 82);
+            --pretty-pink: #ffc4c4;
+            --lilac: #d7cee7;
+            --max-height: 300px;
+        }
+        body::-webkit-scrollbar {
+            border-radius: 0px;
+        }
+        #h1 {
+            font-family: 'Audiowide',Arial;
+            text-align: center;
+            font-weight: 600;
+            font-size: 4.2em;
+            background-color: var(--lightgray);
+            color: rgb(87, 164, 195);
+            margin-top: -20px;
+            padding: 40px;
+            background-color: black;
+            background-color: rgb(249, 249, 249);
+        }
+        #logo {
+            width: calc(86.29/100*20px);
+            height: 20px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*20px)/2);
+        }
+        #logo-s {
+            position: relative;
+            display: inline-flex;
+            background-color: white;
+            padding: 8px;
+            top: -30px;
+            align-items: center;
+            width: calc(86.29/100*20px);
+            height: 20px;
+            border-radius: 50%;
+        }
+        #sp {
+            font-size: 18px;
+            display: block;
+        }
+
+        @media screen and (max-width: 630px) {
+            #h1 {
+                font-size:  4em;
+            }
+            #sp {
+                font-size: 15px;
+            }
+            #logo {
+            width: calc(86.29/100*19px);
+            height: 19px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*19px)/2);
+        }
+        #logo-s {
+            position: relative;
+            display: inline-flex;
+            background-color: white;
+            padding: 7px;
+            top: -30px;
+            align-items: center;
+            width: calc(86.29/100*19px);
+            height: 19px;
+            border-radius: 50%;
+        }
+        }
+
+        @media screen and (max-width: 600px) {
+            #h1 {
+                font-size: 3.5em;
+            }
+            #sp {
+                font-size: 13px;
+            }
+            #logo {
+            width: calc(86.29/100*17px);
+            height: 17px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*17px)/2);
+        }
+        #logo-s {
+            position: relative;
+            display: inline-flex;
+            background-color: white;
+            padding: 7px;
+            top: -25px;
+            align-items: center;
+            width: calc(86.29/100*17px);
+            height: 17px;
+            border-radius: 50%;
+        }
+        }
+        
+        @media screen and (max-width: 540px) {
+            #h1 {
+                font-size: 3.2em;
+                padding: 30px;
+            }
+            #sp {
+                font-size: 13px;
+            }
+            #logo {
+            width: calc(86.29/100*10px);
+            height: 10px;
+            margin-right: 10px;
+            position: absolute;
+            left: calc((100% - 86.29/100*10px)/2);
+        }
+        #logo-s {
+            display: none;
+            position: relative;
+            background-color: white;
+            padding: 6px;
+            top: -20px;
+            align-items: center;
+            width: calc(86.29/100*10px);
+            height: 10px;
+            border-radius: 50%;
+        }
+        }
+        @media screen and (max-width: 450px) {
+            #h1 {
+                font-size: 3em;
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            #h1 {
+                font-size: 2.9em;
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 415px) {
+            #h1 {
+                font-size: 2.7em;
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 395px) {
+            #h1 {
+                font-size: 2.6em;
+                padding: 30px;
+            }
+        }
+        @media screen and (max-width: 372px) {
+            #h1 {
+                font-size: 2.3em;
+                padding: 30px;
+            }
+        }
+
+        @media screen and (max-width: 352px) {
+            #h1 {
+                font-size: 2.1em;
+                padding: 30px;
+            }
+        }
+
+        #calc {
+            position: relative;
+            margin: 20px auto;
+            height: fit-content;
+            width: 600px;
+            border-radius: 30px;
+            background-color: var(--lightgray);
+            /*background-color: rgb(206, 206, 206);*/
+            padding: 15px 0px;
+        }
+        #write,#fatoracao{
+            outline: none;
+            border: none;
+            position: relative;
+            height: 30px;
+            padding: 0;
+            font-size: 1.2em;
+            padding: 0px 10px 0px 10px;
+            display:inline-block;
+            width: calc(100% - 60px);
+            max-width: 550px;
+            margin: 0px;
+            background-color: black;
+            font-weight: 500;
+            font-family: 'Inconsolata',Arial;
+            color: var(--lightblue);
+            text-align: center;
+            border-radius: 10px;
+        }
+        @media screen and (max-width: 700px) {
+            #calc {
+                width: 450px;
+            }
+        }
+        @media screen and (max-width: 470px) {
+            #calc {
+                width: 350px;
+            }
+            #write, #fatoracao {
+                font-size: 1.1em;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            #calc {
+                font-size: 1em;
+                width: 300px;
+            }
+        }
+        #res {
+            margin: 0px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        #write:focus-visible{
+            outline-width: 0;
+            font-weight: 700;
+            box-shadow: 0px 0px 5px rgb(116, 103, 103);
+        }
+        #fatoracao {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #fatoracao:hover{
+            outline-width: 0;
+            font-weight: 700;
+            box-shadow: 0px 0px 5px rgb(116, 103, 103);
+        }
+        p {
+            margin: 10px;
+            position: relative;
+            text-align: center;
+            width: 100%;
+        }
+        input[type="button"] {
+           height: fit-content;
+           font-family: 'Inconsolata',Arial;
+           font-size: 1em;
+           padding: 4px 10px;
+           border-radius: 20px;
+           border-width: 0px;
+           cursor: pointer;
+           border: 1px solid black;
+           background-color: var(--darkblue);
+        }
+        input::placeholder {
+            color: var(--lightblue);
+        }
+        img.copy {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin:5px;
+            cursor: pointer;
+        }
+        img.copy2 {
+            display: inline-block;
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            margin:8px;
+            cursor: pointer;
+        }
+        #resol {
+            position: relative;
+            background-color: var(--darkblue);
+            width: calc(100% - 60px);
+            margin: 15px auto 0px auto;
+            padding: 5px 10px;
+            border-radius: 10px;
+            align-content: center;
+            font-family: 'Inconsolata',Arial;
+            font-size: 1.1em;
+            overflow-y: hidden;
+        }
+        .space {
+            background-color: white;
+            height: 6px;
+        }
+        .cont {
+            position: relative;
+            background-color: white;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            /*transition-duration: 2s;*/
+        /*animation: j2 4s;*/
+        }
+        .center {
+            position: relative;
+            display: flex;
+            height: 100%;
+            justify-content: start;
+            white-space: nowrap;
+            font-size: 1em;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            padding: 0px;
+            /*background-color: lightsalmon;*/
+        }
+        #nopad {
+            padding: 0px;
+            margin-bottom: 5px;
+            height: 20px;
+        }
+        ::-webkit-scrollbar {
+            height: 7px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color:var(--lightgray);
+            height: 40px;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: white;
+            border-radius: 10px;
+        }
+        .ar {
+            transition-duration: 0.2s;
+            width: 20px;
+            height: 20px;
+            transform: rotate(0deg);
+            cursor: pointer;
+            position: relative;
+        }
+        span {
+            height: fit-content;
+            display: inline;
+        }
+        .pdev {
+            font-size: 0.9em;
+            text-align: left;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            white-space: nowrap;
+            margin-top: 0px;
+            max-width: 150px;
+            margin-bottom: 4px;
+        }
+        .dev {
+            background-color: white;
+            padding: 0px;
+            overflow: scroll;
+            max-height: 300px;
+            transition-duration: 0.4s;
+        }
+        .dev::-webkit-scrollbar {
+            width: 10px;
+        }
+        [classname="top"]::-webkit-scrollbar {
+           display: none;
+        }
+        [classname="top"] {
+            align-items: center;
+        }
+        .sp {
+           overflow-x: scroll;
+            display: inline-block;
+            margin-bottom: 4px;
+            font-size: 0.9em;
+        }
+        .tocent {
+            margin-bottom: 10px;
+            margin: 0px;
+        }
+        .psem {
+            margin: 2px 2px 2px 10px;
+            text-align: left;
+            font-size: 0.9em;
+            white-space: nowrap;
+            overflow-x: scroll;
+            margin-bottom: 5px;
+        }
+        .op {
+            position: relative;
+            background-color: purple;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .cram {
+            position: relative;
+            display: flex;
+        }
+        div[name="ti"] {
+            background-color: var(--pretty-pink);
+            width: 50%;
+        }
+
+        @media screen and (max-width:700px) {
+        div[name="ti"] {
+           width: 100%;
+        }
+        .cram {
+            display: block;
+        }
+        .dev {
+            max-height: 200px;
+        }
+    }
+    #mons {
+        font-size: 1.5em;
+        margin: 0px;
+        margin-bottom: 5px;
+        border: 1px solid var(--lightgray);
+        white-space: nowrap;
+        overflow-x: scroll;
+        margin-top: 8px;
+    }
+    .jo {
+        display: inline-flex;
+        flex-direction: column;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .num {
+        color: var(--number);
+    }
+    .str {
+        color: var(--string);
+    }
+    .pers {
+        position: absolute;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        cursor: pointer;
+    }
+    .som {
+        position: absolute;
+        background-color: palevioletred;
+        color: transparent;
+        left: 0%;
+        top: -100%;
+        z-index: 2;
+    }
+    span:hover > .som {
+        color: black;
+    }
+    .abs {
+        position: relative;
+        z-index: 2;
+    }
+    .out {
+        display: none;
+        background-color: pink;
+        position: relative;
+        width: 100%;
+        margin: 0px;
+        left: 0px;
+        z-index: 1;
+    }
+    .abs:hover ~ .out {
+        display: none;
+        background-color: peru;
+    }
+    .af {
+        display: inline-flex;
+        align-items: center;
+    }
+    #ex {
+        width: calc(100% - 60px);
+        background-color: rgb(213,213,213);
+        border: 1px solid #b3b3b3;
+        padding: 1px 10px;
+        font-family: 'Inconsolata',Arial;
+        font-size: 1.1em;
+        height: fit-content;
+        display: grid;
+    }
+    .exexp {
+        background-color: white;
+        margin: 0px;
+        border-radius: 5px;
+        font-size: 1em;
+        margin-bottom: 2px;
+    }        
+    .exptype {
+        display: flex;
+        margin: 0px;
+        justify-content: center;
+        border-radius: 5px;
+        padding: 1px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+    .pexp {
+        background-color: var(--pretty-pink);
+        margin: 0px 5px 4px 5px;
+        border-radius: 20px;
+        width: calc(100% - 10px);
+        padding: 3px 0px;
+        cursor: pointer;
+    }
+    </style>
+<body onload="load()">
+    <script src="raiz-real.js"></script>
+
+ <img src="" alt=""> 
+ <h1 id="h1">FUNÇÕES<span id="logo-s"><img src="./imagens/eln-l.png" id="logo">
+</span>
+        <span id="sp">(exponenciais)</span>
+    </h1>
+    <div id="calc">
+            <p style="margin-top: 0px;font-size: 1.1em;">/* Expressão: */</p> 
+        <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
+                <input id="write" spellcheck="false" class="type" value="3^2x - (2m + 3)3^x + (m + 3)">
+
+                <div id="ex">
+                    <div class="cont" style="height: 20px;background-color: rgb(213,213,213);">
+                        <div class="center" style="text-align: center;border-radius: 5px;">
+                            <img src="./imagens/rar.png" alt="" class="ar">
+                            <p style="margin: 0px;">Exemplos</p>
+                        </div>
+                           <div style="height: 5px;"></div>
+                                    <div style="border-radius: 7px;overflow-x: hidden;margin-bottom: 5px;">
+                                        <div class="cont">
+                                            <div class="center">
+                                                <p class="exptype"><img src="./imagens/rar.png" alt="" class="ar">a(a + b)</p>
+                                            </div>
+                                            <p style="margin:0px;height:5px;"></p>
+                                            <p class="pexp">3^2x - (2m + 3)3^x + (m + 3)</p>
+                                            <p class="pexp">2^(2x + 1) - (2m - 3)2^(x + 1)+ (7 - 2m)</p>
+                                            <p class="pexp">m.9^x - (2m + 1)3^x + (m - 1)</p>
+                                                                   
+                                        </div>
+                                </div>
+                </div>
+                </div>
+            </input>
+            <!--ah^2 + hh + 4ah + 4h, 4ah^2 + 4h^2 + 16h + 16ah, a + b + ab + bb - 3b - 3 + 4 + 4b-->
+            <div style="display: inline-flex;align-items: center;">
+            <img src="./imagens/delete-bin.png" class="copy2" alt="delete text" onclick="erase()">
+            <input type="button" value="resolver()" onclick="showresult()">
+            </div>
+            <!--<img src="/projects/imagens/copy.png" class="copy" alt="copy text" onclick="copy()">-->
+        </div>
+       <!-- <p><input type="button" value="FATORAR(expressão)" onclick="ir()"></p>-->
+        
+                <p id="res">/* Resultado: */</p>
+                <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
+                    <input id="fatoracao" class="type" readonly="readonly"></input>
+                    <img src="./imagens/copy.png" class="copy" alt="copy text" onclick="copy2()">
+
+                </div>
+            </div>
+</body>
+</html>
