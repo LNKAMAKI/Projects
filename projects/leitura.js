@@ -116,6 +116,7 @@ function setIframe (element,source,cont) {
    //document.getElementsByClassName('conter')[cont].style.backgroundImage = `url('imagens/sheep.png')`
    //document.getElementsByClassName('conter')[cont].style.backgroundPosition = `center`
    //document.getElementsByClassName('conter')[cont].style.backgroundSize = `contain`
+   document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',``)
    document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',`imagens/${url}`)
   // }
 }
