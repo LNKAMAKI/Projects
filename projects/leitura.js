@@ -1,4 +1,5 @@
 console.log('aaaa')
+cardson = false
 square = 0
 slid = 1
 animation = 0
@@ -162,4 +163,15 @@ function adjustSize(ind) {
     realwidth = `${height*418/313.3}`
     }
     document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2}px`
+}
+
+function showcard () {
+    window.alert('LIXOOOOOOOOOOOO')
+    if (cardson == false) {
+    document.getElementById('cards').style.display = 'grid'
+    cardson = true
+    }else{
+    document.getElementById('cards').style.display = 'none'
+    cardson = false
+    }
 }

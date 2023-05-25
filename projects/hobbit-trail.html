@@ -626,26 +626,99 @@
         height: calc(100% - 4px);
         display: none;
       }
+      #play {
+       position: absolute;
+       width: 150px;
+       top: 55%;
+       font-size: 30px;
+       height: 60px;
+       border-radius: 40px;
+       left: calc((100% - 150px)/2);
+       border: 2px solid white;
+       background-color: #DEC600;
+       cursor: pointer;
+      }
+      #bag {
+        position: absolute;
+        width: 50px;
+        left: calc(100% - 55px);
+        cursor: pointer;
+      }
+      #cards {
+        position: absolute;
+        width: 80%;
+        height: 90%;
+        left: 10%;
+        background-color: #b66142;
+        top: calc(5% - 20px);
+        border-radius: 20px;
+        display: none;
+        padding: 20px 0px;
+      }
+      .card {
+        position: relative;
+        width: 20%;
+        height:calc(100% - 4px);
+        background-color: white;
+        border: 1px solid black;
+        display: inline-block;
+        margin: 2px;
+      }
+      .card > img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .card-collumn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .fixed {
+        background-color: #8590a2;
+        display: inline-block;
+        margin: auto;
+        position: absolute;
+        z-index: 0;
+         width: calc(100vw);
+        height: calc(100vh);
+      }
       </style>
 </head>
 <body onload="load()">
     <script src="leitura.js"></script>
-    <div id="back">
-      <div class="conter">
-        <div class="square" style="left: 0px;">
-
-
-          </div>
-    </div>
-
-    
-    <div class="conter">
-      <div class="square" style="left: 0px;">
-       
-
-        <img src="opening.jpg" alt="" style="width: 100%;height:100%;">
+        <div class="conter">
+         
+          <div class="square" style="left: 0px;">
+            </div>
+            </div>
+            
+            <div class="conter">
+        <div class="square">
+          <img src="opening.jpg" alt="" style="width: 100%;height:100%;">
+          <img src="bag.png" id="bag" onclick="showcard()">
+          <div id="cards">
+            <div class="card-collumn">
+             <div class="card"><img src="bilbo-card.jpg" alt=""></div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+            </div>
+            <div class="card-collumn">
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+            </div>
+            <div class="card-collumn">
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+             <div class="card">qqqqqqqqqqqqqq</div>
+            </div>
         </div>
-  </div>
+      </div> 
+
 </body>
 </html>
 </html>
