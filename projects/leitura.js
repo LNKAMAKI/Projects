@@ -91,7 +91,7 @@ function setIframe (element,source,cont) {
     url = ''
     switch(source) {
         case 1:
-            url = '<img src="opening.jpg" alt="" style="width: 100%;">'
+            url = '<img src="opening.jpg" alt="" style="width: 100%;height:100%;">'
             break;
         case 2: 
         url = ` <div id="fases"> 
