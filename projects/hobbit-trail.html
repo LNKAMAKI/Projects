@@ -655,6 +655,7 @@
         border-radius: 20px;
         display: none;
         padding: 20px 0px;
+        z-index: 6;
       }
       .card {
         position: relative;
@@ -683,6 +684,22 @@
         z-index: 0;
          width: calc(100vw);
         height: calc(100vh);
+      }
+      .alt {
+        background-color: white;
+        cursor: pointer;
+      }
+      #quests {
+        background-color: white;
+        position: absolute;
+        left: x;
+        z-index: 5;
+        left: calc((100% - 500px)/2);
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 10px;
+        padding: 10px;
+        top: 70%;
+        width: 500px;
       }
       </style>
 </head>
@@ -714,12 +731,20 @@
             </div>
             <div class="card-collumn">
               <div class="card"><img src="gandalf-card.jpg" alt=""></div>
-              <div class="card"><img src="thorin-card.jpg" alt=""></div>
-              <div class="card"><img src="elrond-card.jpg" alt=""></div>
-              <div class="card"><img src="thorin-card.jpg" alt=""></div>
+              <div class="card"><img src="globin-card.jpg" alt=""></div>
+              <div class="card"><img src="bombur-card.jpg" alt=""></div>
+              <div class="card"><img src="smaug-card.jpg" alt=""></div>
             </div>
         </div>
-      
+        <div id="quests">
+          Qual foi a reação dos anões quando Gandalf mostrou que Bilbo seria o décimo-quarto homem da expedição?
+          <div class="alt">A) Reclamaram como a escolha de Gandalf, porém aceitaram após Gandalf mostrar os pontos fortes de Bilbo</div>
+          <div class="alt">B) Aceitaram imediatamente a escolha de Ganfalf, e para isso, realizaram uma festa de comemoração</div>
+          <div class="alt">C) Reclamaram como a escolha de Gandalf, porém aceitaram após Gandalf mostrar que Bilbo era a única escolha para eles</div>
+
+        </div>
+
+        
       </div> 
 
 </body>
