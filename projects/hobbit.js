@@ -21,7 +21,7 @@ function load() {
 }
 window.addEventListener('keydown',(event) => {
  console.log(event.key)
- if (event.key == 'ArrowRight' && slid < 9) {
+ if (event.key == 'ArrowRight' && slid < 7) {
     slide2()
  }else if(event.key == 'ArrowLeft' && slid > 1) {
     slide()
@@ -32,7 +32,7 @@ function slide() {
     if (animation == 0) {
         animation = 1
     console.log('slide!')
-        seg = 0.07*window.innerWidth/1536
+        seg = 0.1*window.innerWidth/1536
     //document.getElementsByClassName('square')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     document.getElementsByClassName('conter')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid--
@@ -58,11 +58,11 @@ function slide() {
    }
 }
 function slide2() {
-    if (slid < 9) {
+    if (slid < 7) {
     if (animation == 0) {
         animation = 1
     console.log('slide2!')
-    seg = 0.07*window.innerWidth/1536
+    seg = 0.1*window.innerWidth/1536
     //document.getElementsByClassName('square')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     document.getElementsByClassName('conter')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid++
@@ -91,51 +91,34 @@ function setIframe (element,source,cont) {
     url = ''
     switch(source) {
         case 1:
-            url = ''
+            url = 'animal-farm.png'
             break;
         case 2: 
-           url = '<div id="fases"> <div class="fase"><img src="condado.jpg" alt=""></div> <div class="fase"><div class="blocked"></div><img src="terras-solitárias.jpg" alt=""></div> <div class="fase"><img src="valfenda.jpg" alt=""></div> <div class="fase"><img src="montanhas-sombrias.jpg" alt=""></div><div class="fase"><img src="florestas-trevas.jpg" alt=""></div>     <div class="fase"><img src="cidade-lago.jpg" alt=""></div> <div class="fase"><img  alt=""></div><div class="fase"><img src="montanha-solitária.jpg" alt=""></div></div>'
+           url = 'ovelhas!.png'
            break;
            case 3:
-            url = '<img src="bilbo-house.svg" alt="" id="o"><img src="lake.svg" alt="" id="l"><img src="casas-hobbit.svg" id="c"><img src="casas-hobbit.svg" id="c1"><img src="casas-hobbit2.svg" id="c2"><img src="tree.svg" id="tree"><img src="tree.svg" id="tree2"><img src="tree2.svg" id="tree3"><img src="tree2.svg" id="tree5"><img src="tree.svg" id="tree6"><img src="tree2.svg" id="tree7"><img src="tree.svg" id="tree8"><img src="tree2.svg" id="tree9"></img>'
-            document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(166 239 137)'
+            url = 'muro.png'
         break;
         case 4:
-            url = ' <img src="lonely-tree.svg" id="lt"><img src="lonely-tree.svg" id="lt2"><img src="lonely-tree.svg" id="lt3"><img src="bonfire.svg" id="f"><img src="lonely-tree.svg" id="lt4"><img src="lonely-tree.svg" id="lt5"><img src="lonely-tree.svg" id="lt6"><img src="lonely-tree.svg" id="lt7"><img src="lonely-tree.svg" id="lt8"><img src="lonely-tree.svg" id="lt9"><img src="lonely-tree.svg" id="lt10"><img src="lonely-tree.svg" id="lt11">'
-            document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(166 239 137)'
+            url = 'nap2.png'
         break;
         case 5:
-            url = '  <img src="tree2.svg" id="tr1"><img src="tree.svg" id="tr2"><img src="tree.svg" id="tr3"><img src="tree2.svg" id="tr4"><img src="tree.svg" id="tr5"><img src="tree.svg" id="tr6"><img src="tree2.svg" id="tr7"><img src="tree.svg" id="tr8"><img src="rocks.svg" alt="" id="r"> <img src="rocks.svg" alt="" id="r2"><img src="rock2.svg" alt="" id="r3"><img src="rock3.svg" alt="" id="r4"><img src="cachoeira.svg" id="ca"><img src="elrond-house.svg" id="el">'
-            document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(166 239 137)'
+            url = 'trabalho-portugues.jpg'
             break;
         case 6:
-            url = '<img src="mountains.svg" id="mo"><img src="mountain.svg" id="mo1"><img src="mountain.svg" id="mo2"><img src="mountain.svg" id="mo3"><img src="mountain.svg" id="mo4"><img src="mountain.svg" id="mo5"> <img src="mountain.svg" id="mo6"><img src="globin-cave.svg" id="gc">'
-            document.getElementsByClassName('square')[square].style.backgroundColor = '#8590a2'
+            url = '7-mandamentos.jpg'
             break;
         case 7:
-            url = '<img src="spider-web.svg" alt="" id="spi"><img src="spider-web2.svg" alt="" id="dt1"><img src="spider-web3.svg" alt="" id="dt3"><img src="dark-tree.svg" alt="" id="dt5"><img src="dark-tree.svg" alt="" id="dt6">'
-            document.getElementsByClassName('square')[square].style.backgroundColor = '#a2b28e'
+            url = 'end.png'
             break;
-        case 8:
-            url = ' <img src="barrel2.svg" id="bar"><img src="barrel.svg" id="bar2"><img src="barrel.svg" id="bar3"><img src="barrel.svg" id="bar4"><img src="barrel2.svg" id="bar5"><img src="lake-hut.svg" alt="" id="lh"><img src="lake-hut.svg" alt="" id="lh2"><img src="lake-hut.svg" alt="" id="lh3"><img src="lake-hut.svg" alt="" id="lh4"><img src="lake-huts.svg" alt="" id="lhs">'
-            document.getElementsByClassName('square')[square].style.backgroundColor = '#70D8FA'
-            break;
-            case 9:
-                url = '<img src="erebor.svg" id="er"></img>'
-                document.getElementsByClassName('square')[square].style.backgroundColor = '#8590a2'
-                break;
-
-            
-    
     }
-  // if (source != 1) {
+    console.log(cont, '!!!!!!!!!!!!!!!!!')
+   if (source != 1) {
    //document.getElementsByClassName('conter')[cont].style.backgroundImage = `url('imagens/sheep.png')`
    //document.getElementsByClassName('conter')[cont].style.backgroundPosition = `center`
    //document.getElementsByClassName('conter')[cont].style.backgroundSize = `contain`
-   console.log('cont','!!!!!!!!!!')
-   document.getElementsByClassName('square')[square].innerHTML = url
   // document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',`imagens/${url}`)
-  // }
+   }
 }
 
 function adjustSize(ind) {
