@@ -92,7 +92,7 @@ function setIframe (element,source,cont) {
     url = ''
     switch(source) {
         case 1:
-            url = '<img src="opening.jpg" alt="" style="width: 100%;height:100%;">'
+            url = '<img src="opening.jpg" alt="" style="width: 100%;height:100%;"> <input type="button" id="play" value="Jogar">'
             break;
         case 2: 
         url = ` <div id="fases"> 
@@ -108,7 +108,8 @@ function setIframe (element,source,cont) {
                document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(171 175 177)'
            break;
            case 3:
-            url = '<img src="bilbo-house.svg" alt="" id="o"><img src="lake.svg" alt="" id="l"><img src="casas-hobbit.svg" id="c"><img src="casas-hobbit.svg" id="c1"><img src="casas-hobbit2.svg" id="c2"><img src="tree.svg" id="tree"><img src="tree.svg" id="tree2"><img src="tree2.svg" id="tree3"><img src="tree2.svg" id="tree5"><img src="tree.svg" id="tree6"><img src="tree2.svg" id="tree7"><img src="tree.svg" id="tree8"><img src="tree2.svg" id="tree9"></img>'
+            url = `
+            <img src="bilbo-house.svg" alt="" id="o"><img src="lake.svg" alt="" id="l"><img src="casas-hobbit.svg" id="c"><img src="casas-hobbit.svg" id="c1"><img src="casas-hobbit2.svg" id="c2"><img src="tree.svg" id="tree"><img src="tree.svg" id="tree2"><img src="tree2.svg" id="tree3"><img src="tree2.svg" id="tree5"><img src="tree.svg" id="tree6"><img src="tree2.svg" id="tree7"><img src="tree.svg" id="tree8"><img src="tree2.svg" id="tree9"></img>`
             document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(166 239 137)'
         break;
         case 4:
@@ -144,7 +145,35 @@ function setIframe (element,source,cont) {
    //document.getElementsByClassName('conter')[cont].style.backgroundPosition = `center`
    //document.getElementsByClassName('conter')[cont].style.backgroundSize = `contain`
    console.log('cont','!!!!!!!!!!')
-   document.getElementsByClassName('square')[square].innerHTML = url
+   if (square == 1) {
+    document.getElementsByClassName('square')[0].innerHTML = ''
+   }else{
+    document.getElementsByClassName('square')[1].innerHTML = ''
+   }
+   
+   document.getElementsByClassName('square')[square].innerHTML = url + `<img src="bag.png" id="bag" onclick="showcard()">
+   <div id="cards">
+     <div class="card-collumn">
+      <div class="card"><img src="bilbo-card.jpg" alt=""></div>
+      <div class="card"><img src="thorin-card.jpg" alt=""></div>
+      <div class="card"><img src="elrond-card.jpg" alt=""></div>
+      <div class="card"><img src="kili-card.jpg" alt=""></div>
+     </div>
+     <div class="card-collumn">
+       <div class="card"><img src="gollum-card.jpg" alt=""></div>
+       <div class="card"><img src="troll.jpg" alt=""></div>
+       <div class="card"><img src="azog-card.jpg" alt=""></div>
+       <div class="card"><img src="spider-card.jpg" alt=""></div>
+     </div>
+     <div class="card-collumn">
+       <div class="card"><img src="gandalf-card.jpg" alt=""></div>
+       <div class="card"><img src="thorin-card.jpg" alt=""></div>
+       <div class="card"><img src="elrond-card.jpg" alt=""></div>
+       <div class="card"><img src="thorin-card.jpg" alt=""></div>
+     </div>
+ </div>`
+ console.log(document.getElementsByClassName('square')[square])
+ 
   // document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',`imagens/${url}`)
   // }
 }
@@ -166,7 +195,6 @@ function adjustSize(ind) {
 }
 
 function showcard () {
-    window.alert('LIXOOOOOOOOOOOO')
     if (cardson == false) {
     document.getElementById('cards').style.display = 'grid'
     cardson = true
@@ -174,4 +202,7 @@ function showcard () {
     document.getElementById('cards').style.display = 'none'
     cardson = false
     }
+}
+function questions() {
+    
 }
