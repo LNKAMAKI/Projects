@@ -165,24 +165,24 @@ function setIframe (element,source,cont) {
    
    document.getElementsByClassName('square')[square].innerHTML = url + `<img src="bag.png" id="bag" onclick="showcard()">
    <div id="cards">
-     <div class="card-collumn">
-      <div class="card"><img src="bilbo-card.jpg" alt=""></div>
-      <div class="card"><img src="thorin-card.jpg" alt=""></div>
-      <div class="card"><img src="elrond-card.jpg" alt=""></div>
-      <div class="card"><img src="kili-card.jpg" alt=""></div>
-     </div>
-     <div class="card-collumn">
-       <div class="card"><img src="gollum-card.jpg" alt=""></div>
-       <div class="card"><img src="troll.jpg" alt=""></div>
-       <div class="card"><img src="azog-card.jpg" alt=""></div>
-       <div class="card"><img src="spider-card.jpg" alt=""></div>
-     </div>
-     <div class="card-collumn">
-       <div class="card"><img src="gandalf-card.jpg" alt=""></div>
-       <div class="card"><img src="thorin-card.jpg" alt=""></div>
-       <div class="card"><img src="elrond-card.jpg" alt=""></div>
-       <div class="card"><img src="thorin-card.jpg" alt=""></div>
-     </div>
+   <div class="card-collumn">
+   <div class="card"><img src="bilbo-card.jpg" alt="" onclick="questions()"></div>
+   <div class="card"><img src="thorin-card.jpg" alt=""></div>
+   <div class="card"><img src="elrond-card.jpg" alt=""></div>
+   <div class="card"><img src="kili-card.jpg" alt=""></div>
+  </div>
+  <div class="card-collumn">
+    <div class="card"><img src="gollum-card.jpg" alt=""></div>
+    <div class="card"><img src="troll.jpg" alt=""></div>
+    <div class="card"><img src="azog-card.jpg" alt=""></div>
+    <div class="card"><img src="spider-card.jpg" alt=""></div>
+  </div>
+  <div class="card-collumn">
+    <div class="card"><img src="gandalf-card.jpg" alt=""></div>
+    <div class="card"><img src="globin-card.jpg" alt=""></div>
+    <div class="card"><img src="bombur-card.jpg" alt=""></div>
+    <div class="card"><img src="smaug-card.jpg" alt=""></div>
+  </div>
  </div>`
  console.log(document.getElementsByClassName('square')[square])
  
