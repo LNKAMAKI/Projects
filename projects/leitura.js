@@ -91,10 +91,20 @@ function setIframe (element,source,cont) {
     url = ''
     switch(source) {
         case 1:
-            url = ''
+            url = '<img src="opening.jpg" alt="" style="width: 100%;">'
             break;
         case 2: 
-           url = '<div id="fases"> <div class="fase"><img src="condado.jpg" alt=""></div> <div class="fase"><div class="blocked"></div><img src="terras-solitárias.jpg" alt=""></div> <div class="fase"><img src="valfenda.jpg" alt=""></div> <div class="fase"><img src="montanhas-sombrias.jpg" alt=""></div><div class="fase"><img src="florestas-trevas.jpg" alt=""></div>     <div class="fase"><img src="cidade-lago.jpg" alt=""></div> <div class="fase"><img  alt=""></div><div class="fase"><img src="montanha-solitária.jpg" alt=""></div></div>'
+        url = ` <div id="fases"> 
+           <div class="fase"><img src="condado.jpg" alt=""></div
+             > <div class="fase"><div class="blocked"></div>
+             <img src="terras-solitárias.jpg" alt=""></div> <div class="fase">
+               <img src="valfenda.jpg" alt=""></div> 
+               <div class="fase"><img src="montanhas-sombrias.jpg" alt=""></div>
+               <div class="fase"><img src="florestas-trevas.jpg" alt=""></div>     
+               <div class="fase"><img src="cidade-lago.jpg" alt=""></div> 
+               <div class="fase"><img  alt=""></div>
+               <div class="fase"><img src="montanha-solitária.jpg" alt=""></div></div>`
+               document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(171 175 177)'
            break;
            case 3:
             url = '<img src="bilbo-house.svg" alt="" id="o"><img src="lake.svg" alt="" id="l"><img src="casas-hobbit.svg" id="c"><img src="casas-hobbit.svg" id="c1"><img src="casas-hobbit2.svg" id="c2"><img src="tree.svg" id="tree"><img src="tree.svg" id="tree2"><img src="tree2.svg" id="tree3"><img src="tree2.svg" id="tree5"><img src="tree.svg" id="tree6"><img src="tree2.svg" id="tree7"><img src="tree.svg" id="tree8"><img src="tree2.svg" id="tree9"></img>'
