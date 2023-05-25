@@ -108,8 +108,15 @@ function setIframe (element,source,cont) {
                document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(171 175 177)'
            break;
            case 3:
-            url = `
-            <img src="bilbo-house.svg" alt="" id="o"><img src="lake.svg" alt="" id="l"><img src="casas-hobbit.svg" id="c"><img src="casas-hobbit.svg" id="c1"><img src="casas-hobbit2.svg" id="c2"><img src="tree.svg" id="tree"><img src="tree.svg" id="tree2"><img src="tree2.svg" id="tree3"><img src="tree2.svg" id="tree5"><img src="tree.svg" id="tree6"><img src="tree2.svg" id="tree7"><img src="tree.svg" id="tree8"><img src="tree2.svg" id="tree9"></img>`
+            url = `<div id="quests">
+            Qual foi a reação dos anões quando Gandalf mostrou que Bilbo seria o décimo-quarto homem da expedição?
+            <div class="alt">A) Reclamaram como a escolha de Gandalf, porém aceitaram após Gandalf mostrar os pontos fortes de Bilbo</div>
+            <div class="alt">B) Aceitaram imediatamente a escolha de Ganfalf, e para isso, realizaram uma festa de comemoração</div>
+            <div class="alt">C) Reclamaram como a escolha de Gandalf, porém aceitaram após Gandalf mostrar que Bilbo era a única escolha para eles</div>
+        
+          </div>
+
+            <img src="bilbo-house.svg" alt="" id="o" onclick="questions()"><img src="lake.svg" alt="" id="l"><img src="casas-hobbit.svg" id="c"><img src="casas-hobbit.svg" id="c1"><img src="casas-hobbit2.svg" id="c2"><img src="tree.svg" id="tree"><img src="tree.svg" id="tree2"><img src="tree2.svg" id="tree3"><img src="tree2.svg" id="tree5"><img src="tree.svg" id="tree6"><img src="tree2.svg" id="tree7"><img src="tree.svg" id="tree8"><img src="tree2.svg" id="tree9"></img>`
             document.getElementsByClassName('square')[square].style.backgroundColor = 'rgb(166 239 137)'
         break;
         case 4:
@@ -133,7 +140,12 @@ function setIframe (element,source,cont) {
             document.getElementsByClassName('square')[square].style.backgroundColor = '#70D8FA'
             break;
             case 9:
-                url = '<img src="erebor.svg" id="er"></img>'
+                url =  ` <div id="quests">
+                Bilbo se arrependeu de ter entrado na jornada?
+                  <div class="alt">A) Sim, Bilbo se arrepende de não ter permanecido na vida tranquila de Hobbit</div>
+                  <div class="alt">B)  Não, Bilbo não se arrepende da aventura que viveu</div></div>
+                </div>
+                <img src="erebor.svg" id="er"></img>`
                 document.getElementsByClassName('square')[square].style.backgroundColor = '#8590a2'
                 break;
 
@@ -204,5 +216,15 @@ function showcard () {
     }
 }
 function questions() {
-    
+    console.log()
+    document.getElementsByClassName('conter')[square].innerHTM = `<div id="quests">
+    Qual foi a reação dos anões quando Gandalf mostrou que Bilbo seria o décimo-quarto homem da expedição?
+    <div class="alt">A) Reclamaram como a escolha de Gandalf, porém aceitaram após Gandalf mostrar os pontos fortes de Bilbo</div>
+    <div class="alt">B) Aceitaram imediatamente a escolha de Ganfalf, e para isso, realizaram uma festa de comemoração</div>
+    <div class="alt">C) Reclamaram como a escolha de Gandalf, porém aceitaram após Gandalf mostrar que Bilbo era a única escolha para eles</div>
+
+  </div>
+
+    <img src="bilbo-house.svg" alt="" id="o" onclick="questions()"><img src="lake.svg" alt="" id="l"><img src="casas-hobbit.svg" id="c"><img src="casas-hobbit.svg" id="c1"><img src="casas-hobbit2.svg" id="c2"><img src="tree.svg" id="tree"><img src="tree.svg" id="tree2"><img src="tree2.svg" id="tree3"><img src="tree2.svg" id="tree5"><img src="tree.svg" id="tree6"><img src="tree2.svg" id="tree7"><img src="tree.svg" id="tree8"><img src="tree2.svg" id="tree9"></img>`
+
 }
