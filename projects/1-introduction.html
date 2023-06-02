@@ -7,18 +7,102 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Braah+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        :root {
+       --hardpink: #E32D92;
+       --box-like-blue: #2BC8D7;
+       --box-blue: rgb(132,230,223);
+       --light-yellow: rgb(255, 255, 128);
+       --wpink: #F1B2BB;
+       --wblue: #D9EEE1;
+       --font: 'Righteous'
+      }
         body {
             text-align: center;
-            background-color: white;
+            padding: 0px;
+            margin: 10px;
+            height: calc(100vh - 20px);
         }
         h1 {
-            font-family: 'Braah One';
-            font-size: 3em;
-            color: rgb(90, 113, 178);
+            font-family: 'Righteous';
+            font-size: 3.5em;
+            color: black;
+            padding: 10px 20px 0px 20px;
+            width: fit-content;
+            margin: 10px auto;
+            border-bottom: 10px solid rgb(98, 170, 165);
+            background-color: var(--box-blue);
         }
+        p {
+            font-family: monospace;
+            font-weight: bolder;
+            font-size: 3em;
+            display: block;
+            padding: 0px 10px;
+        }
+        .block {
+            display: inline-block;
+            font-family: 'Righteous';
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 2em;
+            width: calc(100% - 60px);
+            margin: auto;
+            max-width: 400px;
+            margin-bottom: 40px;
+        }
+        section {
+            margin-top: 80px;
+        }
+        span {
+            font-family: var(--font);
+            font-size: 2.2em;
+        }
+        /*#e369b2*/
     </style>
 </head>
-<body>
-    <h1>The Art of Making Sites</h1>
+<body onload="load2()">
+    <div id="tocenter">
+        <h1>The Art Of Making Sites</h1>
+        <div style="font-family: Righteous;">WEB DEVELOPING PROCESS</div>
+        <section>
+            <div>
+                <span>1.</span>
+                <div class="block" style="background-color: var(--box-like-blue);">HTML</div>
+            </div>
+            <div>
+                <span>2.</span>
+                <div class="block" style="background-color: #e369b2;">CSS</div>
+            </div>
+            <div>
+                <span>3.</span>
+                <div class="block" style="background-color: var(--light-yellow);">JS</div>
+            </div>
+            <div>
+                
+    </div>
+    </section>
+    <script>
+        
+        window.addEventListener('resize', function() {
+       load2()
+  });
+        function load2() {
+            heigth = window.innerHeight - 20
+            console.log('load')
+        body = document.getElementById('tocenter')
+        bodyHeight = body.offsetHeight
+        console.log(bodyHeight)
+        console.log(heigth)
+        if (heigth > bodyHeight) {
+            console.log('pode centralizar')
+            document.body.style.display = 'flex'
+            document.body.style.justifyContent = 'center'
+            document.body.style.alignItems = 'center'
+        }else{
+            document.body.style.display = 'block'
+        }
+        }
+    </script>
 </body>
 </html>

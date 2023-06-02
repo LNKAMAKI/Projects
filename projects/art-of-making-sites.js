@@ -6,7 +6,7 @@ window.addEventListener('resize', function() {
     adjustSize(0)
     adjustSize(1)
   });
-  
+
 function load() {
     adjustSize(0)
     adjustSize(1)
@@ -18,15 +18,18 @@ function load() {
         console.log('ENDED')
         animation = 0
     })
+    
+    window.addEventListener('keydown',(event) => {
+        console.log(event.key)
+        if (event.key == 'ArrowRight' && slid < 7) {
+           window.alert('HELLO')
+           slide2()
+        }else if(event.key == 'ArrowLeft' && slid > 1) {
+           slide()
+        }
+       })
 }
-window.addEventListener('keydown',(event) => {
- console.log(event.key)
- if (event.key == 'ArrowRight' && slid < 7) {
-    slide2()
- }else if(event.key == 'ArrowLeft' && slid > 1) {
-    slide()
- }
-})
+
 function slide() {
    if (slid > 1) {
     if (animation == 0) {
@@ -123,6 +126,7 @@ function setIframe (element,source,cont) {
 }
 
 function adjustSize(ind) {
+    /*
     width = this.window.innerWidth
     height = this.window.innerHeight
     realwidth = ''
@@ -136,4 +140,5 @@ function adjustSize(ind) {
     realwidth = `${height*418/313.3}`
     }
     document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2}px`
+    */
 }
