@@ -1,4 +1,5 @@
 console.log('aaaa')
+cardson = false
 square = 0
 slid = 1
 animation = 0
@@ -6,8 +7,9 @@ window.addEventListener('resize', function() {
     adjustSize(0)
     adjustSize(1)
   });
-
+  
 function load() {
+    console.log('LOADED')
     adjustSize(0)
     adjustSize(1)
     document.getElementsByClassName('conter')[0].addEventListener('animationend', () => {
@@ -18,11 +20,11 @@ function load() {
         console.log('ENDED')
         animation = 0
     })
-    
+
     window.addEventListener('keydown',(event) => {
         console.log(event.key)
-        if (event.key == 'ArrowRight' && slid < 7) {
-           window.alert('HELLO')
+        if (event.key == 'ArrowRight' && slid < 9) {
+           window.alert('SLIDE!')
            slide2()
         }else if(event.key == 'ArrowLeft' && slid > 1) {
            slide()
@@ -61,7 +63,7 @@ function slide() {
    }
 }
 function slide2() {
-    if (slid < 7) {
+    if (slid < 9) {
     if (animation == 0) {
         animation = 1
     console.log('slide2!')
@@ -93,35 +95,16 @@ function slide2() {
 function setIframe (element,source,cont) {
     url = ''
     switch(source) {
-        case 1:
-            url = 'fat.html'
-            break;
-        case 2: 
-           url = 'fat.html'
-           break;
-           case 3:
-            url = 'muro.png'
-        break;
-        case 4:
-            url = 'nap2.png'
-        break;
-        case 5:
-            url = 'trabalho-portugues.jpg'
-            break;
-        case 6:
-            url = '7-mandamentos.jpg'
-            break;
-        case 7:
-            url = 'end.png'
-            break;
+      case 2: 
+      url = 'fat'
+      break;
     }
-  // if (source != 1) {
-   //document.getElementsByClassName('conter')[cont].style.backgroundImage = `url('imagens/sheep.png')`
-   //document.getElementsByClassName('conter')[cont].style.backgroundPosition = `center`
-   //document.getElementsByClassName('conter')[cont].style.backgroundSize = `contain`
-   /*document.getElementsByClassName('conter')[square].getElementsByTagName('img')[0].setAttribute('src',`imagens/${url}`)*/
-   iframe.setAttribute('src','')
-   iframe.setAttribute('src','fat.html')
+ 
+    s = document.getElementsByClassName('conter')[square].getElementsByClassName('square')[0]
+    frameo = document.createElement('iframe')
+    s.appendChild(frameo)
+    frameo.setAttribute('class','content')
+    frameo.setAttribute('src',`${url}.html`)
   // }
 }
 
@@ -133,7 +116,7 @@ function adjustSize(ind) {
     if (width < height*418/313.3) {
         document.getElementsByClassName('square')[ind].style.width = '100vw'
         realwidth = `${width}`
-        document.getElementsByClassName('square')[ind].style.height = `${width*313.3/418}px`
+        document.getElementsByClassName('square')[ind].style.height = `100vh`
     }else{
     document.getElementsByClassName('square')[ind].style.height = '100vh'
     document.getElementsByClassName('square')[ind].style.width = `${height*418/313.3}px`
@@ -141,4 +124,17 @@ function adjustSize(ind) {
     }
     document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2}px`
     */
+}
+
+function showcard () {
+    if (cardson == false) {
+    document.getElementById('cards').style.display = 'grid'
+    cardson = true
+    }else{
+    document.getElementById('cards').style.display = 'none'
+    cardson = false
+    }
+}
+function questions() {
+
 }
