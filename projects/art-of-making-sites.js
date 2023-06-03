@@ -16,8 +16,8 @@ function load() {
         animation = 0
     })
     document.getElementsByClassName('conter')[1].addEventListener('animationend', () => {
-        console.log('ENDED')
-        animation = 0
+            console.log('ENDED')
+            animation = 0
     })
 }
 window.addEventListener('keydown',(event) => {
@@ -54,11 +54,11 @@ function slide() {
     setIframe(iframe,slid,square)
     s2.appendChild(iframe)
     //s2.style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
-    function delayedExecution() {
+    function delayedExecution2() {
         document.getElementsByClassName('conter')[square].style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
       }
       
-      setTimeout(delayedExecution, seg);
+      setTimeout(delayedExecution2, seg + 400);
 }
    }
 }
@@ -96,16 +96,24 @@ function slide2() {
 function setIframe (element,source,cont) {
     url = ''
     switch(source) {
+      case 1: 
+      url = '1-introduction'
+      break;
       case 2: 
+      url = 'fat'
+      break;
+      case 3: 
       url = 'fat'
       break;
     }
  
+    element.setAttribute('src', `${url}.html`)
+    /*
     s = document.getElementsByClassName('conter')[square].getElementsByClassName('square')[0]
     frameo = document.createElement('iframe')
     s.appendChild(frameo)
     frameo.setAttribute('class','content')
-    frameo.setAttribute('src',`${url}.html`)
+    frameo.setAttribute('src',`${url}.html`)*/
 }
 
 function adjustSize(ind) {
