@@ -9,7 +9,6 @@ window.addEventListener('resize', function() {
   });
   
 function load() {
-    console.log('LOADED')
     adjustSize(0)
     adjustSize(1)
     document.getElementsByClassName('conter')[0].addEventListener('animationend', () => {
@@ -20,24 +19,21 @@ function load() {
         console.log('ENDED')
         animation = 0
     })
-
-    window.addEventListener('keydown',(event) => {
-        console.log(event.key)
-        if (event.key == 'ArrowRight' && slid < 9) {
-           window.alert('SLIDE!')
-           slide2()
-        }else if(event.key == 'ArrowLeft' && slid > 1) {
-           slide()
-        }
-       })
 }
-
+window.addEventListener('keydown',(event) => {
+ console.log(event.key)
+ if (event.key == 'ArrowRight' && slid < 9) {
+    slide2()
+ }else if(event.key == 'ArrowLeft' && slid > 1) {
+    slide()
+ }
+})
 function slide() {
    if (slid > 1) {
     if (animation == 0) {
         animation = 1
     console.log('slide!')
-        seg = 0.07*window.innerWidth/1536
+        seg = 0.5*window.innerWidth/1536
     //document.getElementsByClassName('square')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     document.getElementsByClassName('conter')[square].style.animation = `slide-forward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid--
@@ -58,7 +54,11 @@ function slide() {
     setIframe(iframe,slid,square)
     s2.appendChild(iframe)
     //s2.style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
-    document.getElementsByClassName('conter')[square].style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+    function delayedExecution() {
+        document.getElementsByClassName('conter')[square].style.animation = `slide-forward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+      }
+      
+      setTimeout(delayedExecution, seg);
 }
    }
 }
@@ -67,7 +67,7 @@ function slide2() {
     if (animation == 0) {
         animation = 1
     console.log('slide2!')
-    seg = 0.07*window.innerWidth/1536
+    seg = 0.5*window.innerWidth/1536
     //document.getElementsByClassName('square')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     document.getElementsByClassName('conter')[square].style.animation = `slide-backward ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
     slid++
@@ -87,10 +87,11 @@ function slide2() {
     setIframe(iframe,slid,square)
     s1.appendChild(iframe)
     //s1.style.animation = `slide-backward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
-    document.getElementsByClassName('conter')[square].style.animation = `slide-backward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
-}
-}
-}
+    function delayedExecution() {
+        document.getElementsByClassName('conter')[square].style.animation = `slide-backward2 ${seg}s cubic-bezier(1, 1.01, 1, 1.01) forwards`
+      }
+      setTimeout(delayedExecution, seg + 400);
+}}}
 
 function setIframe (element,source,cont) {
     url = ''
@@ -105,11 +106,9 @@ function setIframe (element,source,cont) {
     s.appendChild(frameo)
     frameo.setAttribute('class','content')
     frameo.setAttribute('src',`${url}.html`)
-  // }
 }
 
 function adjustSize(ind) {
-    /*
     width = this.window.innerWidth
     height = this.window.innerHeight
     realwidth = ''
@@ -123,7 +122,6 @@ function adjustSize(ind) {
     realwidth = `${height*418/313.3}`
     }
     document.getElementsByClassName('square')[ind].style.marginLeft = `${(width - realwidth)/2}px`
-    */
 }
 
 function showcard () {

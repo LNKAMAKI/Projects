@@ -15,7 +15,7 @@
        --wblue: #D9EEE1;
       }
         body {
-            margin: 0px 0px 10px 0px;
+            margin: 0px;
             overflow: hidden;
             background-color: #000000;
         }
@@ -41,7 +41,7 @@
         z-index: 0;
         /*left: calc(100%);*/
         width: calc(100vw);
-        height: calc(100vh);
+        height: 100vh;
         margin: auto;
         /*border: 5px solid black;*/
         /*animation: slide-forward 0s;*/
@@ -76,37 +76,41 @@
       
       @keyframes slide-forward {
         0% {
-            left: 0px;
+            top: 0px;
         }
         100% {
-            left: calc(100vw);
+            top: calc(100vh);
+            opacity: 0;
         }
       }
 
       @keyframes slide-forward2 {
         0% {
-            left: -100vw;
+            top: -100vh;
         }
         100% {
-            left: 0px;
+            top: 0px;
         }
       }
 
       @keyframes slide-backward {
         0% {
-            left: 0px;
+            top: 0px;
         }
         100% {
-            left: calc(-100vw);
+            top: -100vh;
+            opacity: 0;
         }
       }
 
       @keyframes slide-backward2 {
         0% {
-            left: 100vw;
+          opacity: 0;
+            top: 100vh;
         }
         100% {
-            left: 0px;
+          opacity: 1;
+            top: 0px;
         }
       }
 
@@ -138,11 +142,11 @@
     <div class="click" id="cli2"><div class="but" onclick="slide2()"><img src="imagens/arrow-right.png" style="margin-right: 15px;"></div></div>
     <div id="back">
       <div class="conter">
-          <div class="square" style="left: 0px;">
+          <div class="square" style="top: 0px;">
             <iframe class="content" src="1-introduction.html" frameborder="0"></iframe>
           </div>
         </div>
-          <div class="conter" style="left: -100vw;">
+          <div class="conter" style="top: 100vh">
             <div class="square" style="background-color: cornflowerblue;">
             </div>
           </div>
