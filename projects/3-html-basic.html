@@ -22,6 +22,7 @@
             padding: 0px;
             margin: 0px;
             height: calc(100vh);
+            background-color: rgba(255, 255, 255, 0.93);
         }
         h1 {
             font-family: 'Righteous';
@@ -29,17 +30,25 @@
             color: black;
             padding: 10px 20px 0px 20px;
             width: fit-content;
+            width: 626px;
             margin: 10px auto;
-            border-bottom: 10px solid rgb(98, 170, 165);
-            background-color: var(--box-blue);
+            border-bottom: 10px solid #1c9ba7;
+            background-color: var(--box-like-blue);
             margin-top: 0px;
         }
         p {
             font-family: monospace;
             font-weight: bolder;
-            font-size: 3em;
+            font-size: 1.8em;
             display: block;
-            padding: 0px 10px;
+            margin: 0px;
+            padding: 10px;
+            width: 600px;
+            text-align: left;
+            border: 5px solid #F1B2BB;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.863);
         }
         .block {
             display: inline-block;
@@ -55,34 +64,28 @@
             margin-bottom: 40px;
         }
         section {
-            margin-top: 80px;
+            margin-top: 30px;
         }
         span {
             font-family: var(--font);
             font-size: 2.2em;
         }
         #tocenter {
+            display: grid;
+            align-items: center;
+            display: flex;
+    flex-direction: column;
+    align-items: center;
         }
         /*#e369b2*/
     </style>
 </head>
 <body onload="load2()">
     <div id="tocenter">
-        <h1>The Art Of Making Sites</h1>
-        <div style="font-family: Righteous;">WEB DEVELOPING PROCESS</div>
+        <h1>How Does It Work?</h1>
         <section>
-            <div>
-                <span>1.</span>
-                <div class="block" style="background-color: var(--box-like-blue);">HTML</div>
-            </div>
-            <div>
-                <span>2.</span>
-                <div class="block" style="background-color: #e369b2;">CSS</div>
-            </div>
-            <div>
-                <span>3.</span>
-                <div class="block" style="background-color: var(--light-yellow);margin-bottom: 0px;">JS</div>
-            </div>
+            <img src="tags.svg" alt="">
+            <p>HTML's structure is very simple and is basically formed by tags, which usually refer to the elements in the site</p>
     </section>
     <script>
         
@@ -90,7 +93,6 @@
        load2()
   });
         function load2() {
-            
             heigth = window.innerHeight
             console.log('load')
         body = document.getElementById('tocenter')

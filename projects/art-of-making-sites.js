@@ -12,12 +12,18 @@ function load() {
     adjustSize(0)
     adjustSize(1)
     document.getElementsByClassName('conter')[0].addEventListener('animationend', () => {
+        function end() {
         console.log('ENDED')
         animation = 0
+        }
+        setTimeout(end, 400)
     })
     document.getElementsByClassName('conter')[1].addEventListener('animationend', () => {
+        function end2() {
             console.log('ENDED')
             animation = 0
+            }
+            setTimeout(end2, 400)
     })
 }
 window.addEventListener('keydown',(event) => {
@@ -100,10 +106,13 @@ function setIframe (element,source,cont) {
       url = '1-introduction'
       break;
       case 2: 
-      url = 'fat'
+      url = '2-html-intro'
       break;
       case 3: 
-      url = 'fat'
+      url = '3-html-basic'
+      break;
+      case 4: 
+      url = '4-html-show'
       break;
     }
  
