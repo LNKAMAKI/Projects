@@ -43,12 +43,12 @@
             display: block;
             margin: 0px;
             padding: 10px;
-            width: 600px;
-            text-align: left;
+            width:530px;
+            text-align: center;
             border: 5px solid #F1B2BB;
             border-radius: 20px;
-            margin-bottom: 10px;
             background-color: rgba(255, 255, 255, 0.863);
+            margin: 5px auto 10px auto;
         }
         .block {
             display: inline-block;
@@ -64,11 +64,7 @@
             margin-bottom: 40px;
         }
         section {
-            margin-top: 30px;
-        }
-        span {
-            font-family: var(--font);
-            font-size: 2.2em;
+            margin-top: 0px;
         }
         #tocenter {
             display: grid;
@@ -77,15 +73,24 @@
     flex-direction: column;
     align-items: center;
         }
+        .tag {
+            color: blue;
+        }
+        .par {
+           color: cadetblue;
+        }
+        .str {
+           color: indianred;
+        }
         /*#e369b2*/
     </style>
 </head>
 <body onload="load2()">
     <div id="tocenter">
-        <h1>How Does It Look?</h1>
+        <h1 style="background-color: transparent;margin-bottom:20px;width: fit-content;margin-top: -20px;">1. Example</h1>
         <section>
-            <img src="site-content.png" alt="" style="width: 30%">
-            <p>HTML's structure is very simple and is basically formed by tags, which usually refer to the elements in the site</p>
+            <video controls autoplay poster="imagens/summer-landscape.png" width="90%"></video>
+            <p style="margin-bottom: 0px;">&lt;<span class="tag">video</span> <span class="par">controls  poster</span>=<span class="str">"img.png"</span>&gt;&lt;/<span class="tag">video</span>&gt;</p>
     </section>
     <script>
         

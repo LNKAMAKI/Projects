@@ -43,12 +43,12 @@
             display: block;
             margin: 0px;
             padding: 10px;
-            max-width: 600px;
-            text-align: left;
+            width:650px;
+            text-align: center;
             border: 5px solid #F1B2BB;
             border-radius: 20px;
-            margin-bottom: 10px;
             background-color: rgba(255, 255, 255, 0.863);
+            margin: 5px auto 10px auto;
         }
         .block {
             display: inline-block;
@@ -64,11 +64,7 @@
             margin-bottom: 40px;
         }
         section {
-            margin-top: 60px;
-        }
-        span {
-            font-family: var(--font);
-            font-size: 2.2em;
+            margin-top: 40px;
         }
         #tocenter {
             display: grid;
@@ -77,17 +73,26 @@
     flex-direction: column;
     align-items: center;
         }
+        .tag {
+            color: blue;
+        }
+        .par {
+           color: cadetblue;
+        }
+        .str {
+           color: indianred;
+        }
         /*#e369b2*/
     </style>
 </head>
 <body onload="load2()">
     <div id="tocenter">
-        <h1 style="background-color: transparent;margin-bottom:45px;width: fit-content;margin-top: -25px;">1. HTML</h1>
-        <h1>What Is It?</h1>
+        <h1>What About Tags?</h1>
         <section>
-            <p>HTML means Hypertext Markup Language and it's one of the three most used languages to build websites in the world</p>
-            <p>It's used to make the content in the websites</p>
-            <p style="margin-bottom: 0px;">It's important to emphasize that HTML isn't a programming language, but a markup language </p>
+            <img src="imagens/tag-structure.jpeg" alt="" style="width: 70%;margin-bottom: 30px;">
+            <p>The tag in HTML refers to the name of an element </p>
+            <p>The tag <span class="tag">p</span>, for example, stands for paragraph, while <span class="tag">div</span> is the abbreviation of divider</p>
+            <p style="margin-bottom: 0px;">Note: some tags have only the opening tag, like<span class="tag"> img</span></p>
     </section>
     <script>
         

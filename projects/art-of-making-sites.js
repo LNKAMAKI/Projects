@@ -28,7 +28,7 @@ function load() {
 }
 window.addEventListener('keydown',(event) => {
  console.log(event.key)
- if (event.key == 'ArrowRight' && slid < 9) {
+ if (event.key == 'ArrowRight' && slid < 30) {
     slide2()
  }else if(event.key == 'ArrowLeft' && slid > 1) {
     slide()
@@ -69,7 +69,7 @@ function slide() {
    }
 }
 function slide2() {
-    if (slid < 9) {
+    if (slid < 30) {
     if (animation == 0) {
         animation = 1
     console.log('slide2!')
@@ -109,10 +109,43 @@ function setIframe (element,source,cont) {
       url = '2-html-intro'
       break;
       case 3: 
-      url = '3-html-basic'
+      url = '3-html-show'
       break;
       case 4: 
-      url = '4-html-show'
+      url = '4-html-basic'
+      break;
+      case 5: 
+      url = '5-tags'
+      break;
+      case 6: 
+      url = '6-html-examples'
+      break;
+      case 7: 
+      url = '7-css-intro'
+      break;
+      case 8: 
+      url = '8-css-show'
+      break;
+      case 9: 
+      url = '9-css-basic'
+      break;
+      case 10: 
+      url = '10-css-examples'
+      break;
+      case 11: 
+      url = '11-css-in-html'
+      break;
+      case 12: 
+      url = '12-js-intro'
+      break;
+      case 13: 
+      url = '13-js-show'
+      break;
+      case 14: 
+      url = '14-js-examples'
+      break;
+      case 10: 
+      url = '10-css-examples'
       break;
     }
  
