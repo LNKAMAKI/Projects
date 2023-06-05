@@ -37,7 +37,6 @@ if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
 }
 palof = palavra
 
-
 function digitar(letra) {
     if (String(letra).length == 1 && String(letra).search(new RegExp('[A-Z]')) != -1 && letnum <= 5) {
    document.getElementById(rownum).getElementsByClassName('quadradinho')[letnum].innerText = letra
@@ -72,9 +71,7 @@ function digitar(letra) {
 
                 letrig++
                 console.log('PALAVRA:' + palavra)
-            }
-
-        }
+            }}
 
         for (n = 0; n < palform.length; n++) {
             console.log(palform[n])
@@ -96,9 +93,7 @@ function digitar(letra) {
             document.getElementById(palform[n]).style.transitionDuration = '1s'
             document.getElementById(palform[n]).style.backgroundColor = 'black'
             document.getElementById(palform[n]).style.color = 'white'
-           }
-
- }
+           }}
 
     rownum++
         if (letrig == 6) {
@@ -125,7 +120,6 @@ function digitar(letra) {
                     star.setAttribute('class', 'star2')
                     c = 3.5
                 }
-
 
                 //star.setAttribute('src', 'star.png')
                 star.style.left = `calc(${lft}%)`
@@ -175,14 +169,8 @@ function digitar(letra) {
                  tabtrs[n].getElementsByTagName('td')[na].innerText = posrit[na - 1]
               }
               ala+= 0.5
-           }
-        }
-           }
-       
-        }else{
+           }}}}else{
             palavra = palof
             letnum = 0
             palform = []
-        }
-    }
-}
+        }}}
