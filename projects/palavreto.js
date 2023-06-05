@@ -1,5 +1,5 @@
 palavras = ['SCRIPT','SEARCH','COMMIT','ACTION','WINDOW', '-',]
-palavras = ['-','AMOUNT']
+palavras = ['-','LESSON']
 
 palavra = palavras[Math.floor(Math.random()*(palavras.length))]
 //palavra = 'MANGUE'
@@ -30,10 +30,10 @@ if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
   if (palavras.indexOf(palavra) < palavras.indexOf('-')) {
     window.alert('A PALAVRA É EM PORTUGUÊS')
   }else{
-    window.alert('A PALAVRA É EM INGLÊS')
+   // window.alert('A PALAVRA É EM INGLÊS')
   }
 }else{
-    window.alert('A PALAVRA É EM INGLÊS')
+    //window.alert('A PALAVRA É EM INGLÊS')
 }
 palof = palavra
 

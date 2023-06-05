@@ -147,6 +147,9 @@ function setIframe (element,source,cont) {
       case 15: 
       url = '15-js-examples'
       break;
+      case 16:
+      url = '16-examples'
+      break;
     }
  
     element.setAttribute('src', `${url}.html`)
