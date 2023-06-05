@@ -142,10 +142,10 @@ function setIframe (element,source,cont) {
       url = '13-js-show'
       break;
       case 14: 
-      url = '14-js-examples'
+      url = '14-js-show'
       break;
       case 15: 
-      url = '15-js-show'
+      url = '15-js-examples'
       break;
     }
  
