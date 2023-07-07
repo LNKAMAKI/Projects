@@ -287,6 +287,7 @@ function dothesearch(whichid) {
 
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path) {
+    //window.alert('search')
     pesquisa = document.getElementById('searcher').value
     songsSearched.length = 0
     songsSearched.unshift(pesquisa.toLowerCase())
@@ -297,6 +298,7 @@ function search(path) {
         //window.alert('ok')
         //window.alert(subjects[path].title1,subjects[path].index)
         mostrarlista(subjects[path].title1)
+        window.alert('mostrarlista')
         criariframe(subjects[path].title1,subjects[path].index,true)
     }else if(layer == 1){
         criariframe(subjects[path].title1,subjects[path].index,true)
@@ -307,6 +309,9 @@ function search(path) {
         whichi = document.getElementById('index').getElementsByTagName('iframe')[0]
         console.log(whichi)
         document.getElementById('index').removeChild(whichi)
+        qualicon = subjects[path].title1
+        document.getElementsByClassName('cont')[0].getElementsByClassName('ps2')[0].innerText = 
+        contents[subjects[path].title1].title
         criariframe(subjects[path].title1,subjects[path].index)
     }
         wordSearched = subjects.find(function(subjects){
@@ -405,6 +410,8 @@ bigicons.style.display = 'none'
 
 layer = 0
 function voltar() {
+    //window.alert(qualicon)
+    //window.alert(`${contents[qualicon].subs[f].title}`)
     if (layer == 2) {
         dv.removeChild(dv.getElementsByClassName('pt')[0])
         dv.removeChild(dv.getElementsByTagName('iframe')[0])

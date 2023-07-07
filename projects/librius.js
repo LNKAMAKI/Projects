@@ -448,7 +448,6 @@ function resizeIframe() {
 }
 
 function backtoStart() {
-    window.alert('hello you')
     loopRunning = false
     console.log('NOW THE LOOPRUNNING VALUE IS EQUAL TO:', loopRunning)
     section = document.getElementsByTagName('section')[0]
