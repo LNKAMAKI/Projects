@@ -18,9 +18,9 @@ contents = [
 var subjects = []
 
 for (i in contents) {
+    console.log(contents[i])
     for (e in contents[i].subs) {
-        console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
-        subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
+        subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(),index:e})
     }}
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -433,7 +433,8 @@ function resizeIframe() {
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
   }
 
-  setInterval(function() {
+  setInterval(
+    function() {
     console.log('loopRunning:', loopRunning)
     var currentHeight = iframe.style.height;
 
