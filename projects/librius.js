@@ -425,8 +425,13 @@ function openMaterial(materialUrl,name) {
     
     iframe = frame
 console.log(iframe)
+fixthis()
 
-var loopRunning = true
+}
+
+loopRunning = null
+function fixthis() {
+    loopRunning = true
 if (iframe != null) {
 function resizeIframe() {
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
@@ -436,7 +441,6 @@ function resizeIframe() {
     function() {
     console.log('loopRunning:', loopRunning)
     var currentHeight = iframe.style.height;
-
     // check if the iframe content has changed
     if (loopRunning) {
     if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
@@ -448,8 +452,9 @@ function resizeIframe() {
 }
 
 function backtoStart() {
-    loopRunning = false
     console.log('NOW THE LOOPRUNNING VALUE IS EQUAL TO:', loopRunning)
     section = document.getElementsByTagName('section')[0]
     section.innerHTML = 'a'
+    console.log(loopRunning)
+    loopRunning = false
 }
