@@ -40,7 +40,6 @@ for (palavra in palavrasPrimitivas) {
         }
     }
     word = neword
-    console.log('YOURE A SOUL SURVIVOR',word)
     wordToNumber = ''
     for (letra = 0; letra < word.length; letra++) {
         if (letra != word.length - 1) {

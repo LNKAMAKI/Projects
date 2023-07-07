@@ -23,6 +23,13 @@ posicaoPalavras = []
 
 for (palavra in palavrasPrimitivas) {
     word = palavrasPrimitivas[palavra][s].toLowerCase()
+    neword = ''
+    for (car in word) {
+        if (word[car] != ' ') {
+            neword+= word[car]
+        }
+        }
+    word = neword
     wordToNumber = ''
     for (letra = 0; letra < word.length; letra++) {
         if (letra != word.length - 1) {
