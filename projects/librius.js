@@ -432,29 +432,25 @@ fixthis()
 loopRunning = null
 function fixthis() {
     loopRunning = true
-if (iframe != null) {
-function resizeIframe() {
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-  }
+
+    inter = setInterval(resizeIframe,20)
   
-  setInterval(
-    function() {
-    console.log('loopRunning:', loopRunning)
+    function resizeIframe() {
     var currentHeight = iframe.style.height;
     // check if the iframe content has changed
     if (loopRunning) {
     if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
-      resizeIframe();
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+       }
+    }else{
+        clearInterval(inter);
     }
-}
-  }, 20)
-}
+  }
 }
 
 function backtoStart() {
-    console.log('NOW THE LOOPRUNNING VALUE IS EQUAL TO:', loopRunning)
     section = document.getElementsByTagName('section')[0]
-    section.innerHTML = 'a'
+    section.innerHTML = initialcontent
     console.log(loopRunning)
     loopRunning = false
 }
