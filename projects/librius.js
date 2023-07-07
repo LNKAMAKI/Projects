@@ -426,13 +426,12 @@ function openMaterial(materialUrl,name) {
     iframe = frame
 console.log(iframe)
 
-
 var loopRunning = true
 if (iframe != null) {
 function resizeIframe() {
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
   }
-
+  
   setInterval(
     function() {
     console.log('loopRunning:', loopRunning)
