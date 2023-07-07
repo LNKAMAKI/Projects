@@ -433,7 +433,7 @@ loopRunning = null
 function fixthis() {
     loopRunning = true
 
-    inter = setInterval(resizeIframe,20)
+    inter = setInterval(resizeIframe,10)
   
     function resizeIframe() {
     var currentHeight = iframe.style.height;
