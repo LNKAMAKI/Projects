@@ -97,8 +97,6 @@
             position: relative;
             padding: 10px;
             background-color: #fffdfd;
-            margin: auto;
-            /*max-width: 1000px;*/
         }
         .contain {
             position: relative;
@@ -267,6 +265,7 @@ h1 {
     font-size: 2.3em;
     font-family: var(--defont);
     width:fit-content;
+    margin-top: 0px;
 }
 .cont {
     position: relative;
@@ -449,7 +448,6 @@ color: var(--mainpink);
                                                            <p class="pexp">Text 4: Chat GPT - What can the extraordinary artificial intelligence chatbot do?</p>
                                 </div>
                         </div>
-        
                     </div>
                             </div>
                 </div>
@@ -487,7 +485,6 @@ color: var(--mainpink);
                     </div>
                 </div>
             </div>
-        
             <div class="bord">
                 <div style="overflow-x: hidden;margin-bottom: 1px;">
                     <div class="cont">
@@ -499,8 +496,33 @@ color: var(--mainpink);
                     </div>
                 </div>
             </div>
-        
-            </div></div>
+                            </div></div>
     </section>
 </body>
+<script>
+        
+    window.addEventListener('resize', function() {
+   load2()
+});
+
+    function load2() {
+        
+        height = Number(window.innerHeight) - 80
+        console.log('load')
+    body = document.getElementsByTagName('section')[0]
+    bodyHeight = body.offsetHeight
+    console.log(bodyHeight)
+    console.log(height)
+    if (height > bodyHeight) {
+        console.log('pode centralizar')
+        marginTop = (height - bodyHeight)/2
+        body.style.marginTop = `${marginTop}px`
+    }else{
+        body.style.display = 'block'
+        body.style.height = 'fit-content'
+        body.style.marginTop = '0px'
+    }
+    }
+    
+</script>
 </html>

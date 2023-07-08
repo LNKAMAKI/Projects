@@ -391,9 +391,7 @@ function saiu(thing) {
 function openMaterial(materialUrl,name) {
     console.log('YEEEEEEEEEEE')
     section = document.getElementsByTagName('section')[0]
-    if (initialcontent == '') {
         initialcontent = section.innerHTML
-    }
     section.innerHTML = ''
     sep = document.createElement('div')
     sep.setAttribute('class','sep')
@@ -436,6 +434,7 @@ function fixthis() {
     inter = setInterval(resizeIframe,10)
   
     function resizeIframe() {
+        console.log('LOOP RUNNING', loopRunning)
     var currentHeight = iframe.style.height;
     // check if the iframe content has changed
     if (loopRunning) {

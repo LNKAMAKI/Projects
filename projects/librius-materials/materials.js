@@ -1,5 +1,6 @@
 
 function load() {
+    console.log('ONLOAD')
     conts = get2('cont')
     cents = get2('center')
     ars = get2('ar')
