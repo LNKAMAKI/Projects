@@ -116,6 +116,10 @@ function load() {
                 }}`
                 this.par2.style.animation = `${jin}${search.comp} 0.2s`
                 this.par2.style.height = 'fit-content'
+                function delayedFunction () {
+                    this.par2.style.animation = ''
+                }
+                setTimeout(delayedFunction, 200)
         
                style = document.createElement('style')
                document.head.appendChild(style)
@@ -123,13 +127,8 @@ function load() {
                this.par1.style.transform = 'rotate(90deg)'
                search.cl = true
         }else{
-            if (this.par3.innerText == 'Resolução') {
-                ih = search.st - 10
-                eh = sul - 10
-               }else{
                 ih = search.st
                 eh = sul
-               }
         
             css = `@keyframes ${jin}${search.comp} {
                 0% {
@@ -140,6 +139,11 @@ function load() {
                }}`
             this.par2.style.animation = `${jin}${search.comp} 0.2s`
             this.par2.style.height = `${ih}px`
+               function delayedFunction () {
+                   this.par2.style.animation = ''
+               }
+               setTimeout(delayedFunction, 200)
+
            style = document.createElement('style')
            document.head.appendChild(style)
            style.appendChild(document.createTextNode(css))
