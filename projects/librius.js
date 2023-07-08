@@ -37,7 +37,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'abcdefghijklmnopqrstuv',url:'../materiais/introducao-html.html'},{title:'abcd',url:'../materiais/introducao-html.html'}]}
+    {subs:[{title:'Personal, Possessive and Reflexive Table',url:'librius-materials/possessive,personal,reflexive.html'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -47,11 +47,12 @@ var subjects = []
 for (i in contents) {
     for (e in contents[i].subs) {
         console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
-        subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
+        subjects.push({title1:i, title2: contents[i].subs[e].title, url:contents[i].subs[e].url,index:e})
     }}
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    load2()
 // Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
     alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -231,6 +232,7 @@ function search2() {
              d.setAttribute('onmouseenter', `entrou(${pnumber})`)
              d.setAttribute('class','phelp')
 
+             console.log()
              psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
              if (pnumber < 7) {
              document.getElementById('main').appendChild(psearcher)
@@ -305,41 +307,14 @@ ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 });
 
-// Cria o conteúdo(quando é feita a pesquisa)
-function search(path) {
-  pesquisa = document.getElementById('searcher').value
-  songsSearched.length = 0
-  songsSearched.unshift(pesquisa.toLowerCase())
-     //document.getElementsByTagName('iframe')[0].src = path
-  console.log('VEJA:',subjects[path].title1,subjects[path])
-
-  if (layer == 0) {
-      //window.alert('ok')
-      //window.alert(subjects[path].title1,subjects[path].index)
-      mostrarlista(subjects[path].title1)
-      criariframe(subjects[path].title1,subjects[path].index,true)
-  }else if(layer == 1){
-      criariframe(subjects[path].title1,subjects[path].index,true)
-      document.getElementsByClassName('cont')[0].getElementsByClassName('ps2')[0].innerText = contents[subjects[path].title1].title
-      qualicon = subjects[path].title1
-  }else{
-      dv.removeChild(dv.getElementsByClassName('pt')[0])
-      whichi = document.getElementById('index').getElementsByTagName('iframe')[0]
-      console.log(whichi)
-      document.getElementById('index').removeChild(whichi)
-      criariframe(subjects[path].title1,subjects[path].index)
-  }
-      wordSearched = subjects.find(function(subjects){
-      return subjects.title2 == pesquisa.toLowerCase()
-     })}
-
   // Materiais Array
   function fclic() {
     pesquisa = document.getElementById('searcher').value
     if (pesquisa.length == 0) {
      document.getElementById('main').style.display = 'none'
     }}
-  // Quando a pesquisa é realizada
+
+  // Quando a pesquisa é realizada (uma opção é clicada)
 function dothesearch(whichid) {
 
   document.getElementById('searcher').value = subjects[whichid].title2
@@ -358,7 +333,21 @@ function dothesearch(whichid) {
   document.getElementById('main').style.display = 'none'
   console.log('HERE', document.getElementById('main').style.display)
   pselected = -1
+
+  // Cria o conteúdo(quando é feita a pesquisa)
+function search(path) {
+    pesquisa = document.getElementById('searcher').value
+       //document.getElementsByTagName('iframe')[0].src = path
+    console.log('VEJA:',subjects[path].title1,subjects[path])
+  
+        wordSearched = subjects.find(function(subjects){
+        return subjects.title2 == pesquisa
+       })
+       console.log('WORD SEARCHED: ', wordSearched)
+       openMaterial(wordSearched.url,wordSearched.title2)
+      }
 }
+
 
     // Quando o mouse entra em uma opção(psearcher)
   function entrou(thing) {
@@ -386,6 +375,8 @@ function saiu(thing) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'var(--verylightgray)'
     }}
+
+
 
 // cria o iframe para o material
 function openMaterial(materialUrl,name) {
@@ -423,12 +414,11 @@ function openMaterial(materialUrl,name) {
     
     iframe = frame
 console.log(iframe)
-fixthis()
-
+adjustIframe()
 }
 
 loopRunning = null
-function fixthis() {
+function adjustIframe() {
     loopRunning = true
 
     inter = setInterval(resizeIframe,10)
@@ -440,6 +430,8 @@ function fixthis() {
     if (loopRunning) {
     if (currentHeight !== iframe.contentWindow.document.body.scrollHeight + 'px') {
         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        console.log('right, go')
+        load2()
        }
     }else{
         clearInterval(inter);
@@ -452,4 +444,5 @@ function backtoStart() {
     section.innerHTML = initialcontent
     console.log(loopRunning)
     loopRunning = false
+    load2()
 }

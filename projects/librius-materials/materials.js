@@ -116,8 +116,13 @@ function load() {
                 }}`
                 this.par2.style.animation = `${jin}${search.comp} 0.2s`
                 this.par2.style.height = 'fit-content'
+                loopfunc = setInterval(resize,2)
+                    function  resize() {
+                        load2()
+                    }
                 function delayedFunction () {
                     this.par2.style.animation = ''
+                    clearInterval(loopfunc)
                 }
                 setTimeout(delayedFunction, 200)
         
@@ -139,8 +144,13 @@ function load() {
                }}`
             this.par2.style.animation = `${jin}${search.comp} 0.2s`
             this.par2.style.height = `${ih}px`
+            loopfunc = setInterval(resize,2)
+                    function  resize() {
+                        load2()
+                    }
                function delayedFunction () {
                    this.par2.style.animation = ''
+                   //load2()
                }
                setTimeout(delayedFunction, 200)
 
