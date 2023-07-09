@@ -146,11 +146,11 @@ function load() {
             this.par2.style.height = `${ih}px`
             loopfunc = setInterval(resize,2)
                     function  resize() {
-                        load2()
+                       load2()
                     }
                function delayedFunction () {
                    this.par2.style.animation = ''
-                   //load2()
+                   load2()
                }
                setTimeout(delayedFunction, 200)
 
