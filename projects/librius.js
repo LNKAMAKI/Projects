@@ -37,7 +37,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {subs:[{title:'Personal, Possessive and Reflexive Table',url:'librius-materials/possessive,personal,reflexive.html'}]}
+    {subs:[{title:'Personal, Possessive and Reflexivep Table',url:'librius-materials/possessive,personal,reflexive.html'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -232,8 +232,46 @@ function search2() {
              d.setAttribute('onmouseenter', `entrou(${pnumber})`)
              d.setAttribute('class','phelp')
 
-             console.log()
-             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             console.log('14664246827424824643842427494979475-366850674-6486945674')
+             console.log('HOLA')
+             text = psearcher.innerHTML
+             newText = ''
+             currentFound = ''
+             currentIndex = 0
+             for (th in text) {
+                console.log(text[th], currentIndex)
+                if (currentFound.length == 0 && text[th].toLowerCase() == pesquise[0]) {
+                    console.log('MATCH!', th)
+                    currentFound+= text[th]
+                }else if(text[th].toLowerCase() == pesquise[currentIndex]){
+                    console.log('MATCH!', th)
+                    currentFound+= text[th]
+                }
+                   if (Number(pesquisa.length) - 1 == currentIndex || text[th].toLowerCase() != pesquise[currentIndex]) {
+                    console.log('OK, STOP!',Number(pesquisa.length) - 1, currentIndex, currentFound)
+                    if (currentFound.length != pesquise.length) {
+                        console.log('ESSE N!', newText)
+                        newText += currentFound
+                        if (text[th].toLowerCase() != pesquise[currentIndex]) {
+                            newText+= text[th]
+                        }
+                        console.log('ESSE N DEPOIS:', newText)
+                        }else if (Number(th - currentFound.length) < 0){
+                            newText+= `<span style="font-weight:normal">${currentFound}</span>`
+                        }else if(text[th - currentFound.length].search('[a-z]') == -1){
+                            newText+= `<span style="font-weight:normal">${currentFound}</span>`
+                        }else{
+                            newText+= text[th]
+                        }
+                    currentFound = ''
+                    currentIndex = 0
+                   }else{
+                    currentIndex++
+                   }
+             }
+             psearcher.innerHTML = newText
+
+             //psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
              if (pnumber < 7) {
              document.getElementById('main').appendChild(psearcher)
              document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
@@ -262,7 +300,46 @@ function search2() {
                  //d.innerText = 'o'
                  d.setAttribute('class','phelp')
 
-                 psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+                 console.log('14664246827424824643842427494979475-366850674-6486945674')
+                 console.log('HOLA')
+                 text = psearcher.innerHTML
+                 newText = ''
+                 currentFound = ''
+                 currentIndex = 0
+                 for (th in text) {
+                    console.log(text[th], currentIndex)
+                    if (currentFound.length == 0 && text[th].toLowerCase() == pesquise[0]) {
+                        console.log('MATCH!', th)
+                        currentFound+= text[th]
+                    }else if(text[th].toLowerCase() == pesquise[currentIndex]){
+                        console.log('MATCH!', th)
+                        currentFound+= text[th]
+                    }
+                       if (Number(pesquisa.length) - 1 == currentIndex || text[th].toLowerCase() != pesquise[currentIndex]) {
+                        console.log('OK, STOP!',Number(pesquisa.length) - 1, currentIndex, currentFound)
+                        if (currentFound.length != pesquise.length) {
+                            console.log('ESSE N!', newText)
+                            newText += currentFound
+                            if (text[th].toLowerCase() != pesquise[currentIndex]) {
+                                newText+= text[th]
+                            }
+                            console.log('ESSE N DEPOIS:', newText)
+                            }else if (Number(th - currentFound.length) < 0){
+                                newText+= `<span style="font-weight:normal">${currentFound}</span>`
+                            }else if(text[th - currentFound.length].search('[a-z]') == -1){
+                                newText+= `<span style="font-weight:normal">${currentFound}</span>`
+                            }else{
+                                newText+= text[th]
+                            }
+                        currentFound = ''
+                        currentIndex = 0
+                       }else{
+                        currentIndex++
+                       }
+                 }
+                 psearcher.innerHTML = newText
+
+                //psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
                  if (pnumber < 7) {
                     document.getElementById('main').appendChild(psearcher)
                     document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
@@ -291,7 +368,42 @@ function search2() {
              //d.innerText = 'o'
              d.setAttribute('class','phelp')
 
-             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             console.log('14664246827424824643842427494979475-366850674-6486945674')
+                 console.log('HOLA')
+                 text = psearcher.innerHTML
+                 newText = ''
+                 currentFound = ''
+                 currentIndex = 0
+                 for (th in text) {
+                    console.log(text[th], currentIndex)
+                    if (currentFound.length == 0 && text[th].toLowerCase() == pesquise[0]) {
+                        console.log('MATCH!', th)
+                        currentFound+= text[th]
+                    }else if(text[th].toLowerCase() == pesquise[currentIndex]){
+                        console.log('MATCH!', th)
+                        currentFound+= text[th]
+                    }
+                       if (Number(pesquisa.length) - 1 == currentIndex || text[th].toLowerCase() != pesquise[currentIndex]) {
+                        console.log('OK, STOP!',Number(pesquisa.length) - 1, currentIndex, currentFound)
+                        if (currentFound.length != pesquise.length) {
+                            console.log('ESSE N!', newText)
+                            newText += currentFound
+                            if (text[th].toLowerCase() != pesquise[currentIndex]) {
+                                newText+= text[th]
+                            }
+                            console.log('ESSE N DEPOIS:', newText)
+                            }else{
+                                newText+= `<span style="font-weight:normal">${currentFound}</span>`
+                            }
+                        currentFound = ''
+                        currentIndex = 0
+                       }else{
+                        currentIndex++
+                       }
+                 }
+                 psearcher.innerHTML = newText
+
+             //psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
              if (pnumber < 7) {
                 document.getElementById('main').appendChild(psearcher)
                 document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
