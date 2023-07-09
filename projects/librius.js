@@ -10,7 +10,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {subs:[{title:'Personal, Possessive and Reflexivep Table',url:'librius-materials/possessive,personal,reflexive.html'}]}
+    {subs:[{title:'Personal, Possessive and Reflexive Table',url:'librius-materials/possessive,personal,reflexive.html'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -467,7 +467,10 @@ function saiu(thing) {
 function openMaterial(materialUrl,name) {
     console.log('YEEEEEEEEEEE')
     section = document.getElementsByTagName('section')[0]
-        initialcontent = section.innerHTML
+    if (page == 0) {
+    initialcontent = section.innerHTML
+    }
+    page++
     section.innerHTML = ''
     sep = document.createElement('div')
     sep.setAttribute('class','sep')
