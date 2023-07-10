@@ -26,7 +26,6 @@
             margin: 0px;
             padding: 0px;
            /* overflow-x: hidden;*/
-           min-height: 230px;
         }
         #img-logo {
         background-color: transparent;
@@ -39,6 +38,8 @@
             position: relative;
             background-color: var(--lightgray);
             background-color: rgb(237 239 240);
+            /*background-color: bisque; ==> nice color */
+            background-color: transparent;
             display: flex;
             align-items: center;
             margin: 0px;
@@ -117,13 +118,13 @@
         }
         nav > #central {
             position: relative;
-            background-color: white;
+            /*background-color: bisque;*/
             display: flex;
             align-items: center;
             width: 100%;
             height: fit-content;
             height: 32px;
-            max-width: calc(400px);
+            max-width: calc(330px);
             border: 2px solid rgb(87, 164, 195);
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -372,22 +373,32 @@ color: var(--mainpink);
     flex-direction: column;
     align-items: center;
 }
+#page {
+    background-color: white;
+ position: relative;
+ min-height: 420px;
+ border-radius: 10px;
+ border-top: 5px solid var(--mainpink);
+ border-bottom: 5px solid var(--mainpink);
+ overflow: hidden;
+}
 
 </style>
 </head>
 <body >
     <script src="test-dic.js"></script>
-    <nav>
-    <div id="central">
-            <img src="img-logo2.svg" alt="" id="img-logo">
-            <p class="pclick" style="margin-right: 0px;"></p>
-        <div id="rev">
-            <input type="text" name="" id="searcher" placeholder="Search..." onclick="fclic()" spellcheck="false">
-            <div id="main">
+    <div id="page">
+        <nav>
+        <div id="central">
+                <p class="pclick" style="margin-right: 0px;"></p>
+            <div id="rev">
+                <input type="text" name="" id="searcher" placeholder="Search..." onclick="fclic()" spellcheck="false">
+                <div id="main">
+                </div>
             </div>
         </div>
+        <!--</div>-->
+        </nav>
     </div>
-</div>
-    </nav>
 </body>
 </html>
