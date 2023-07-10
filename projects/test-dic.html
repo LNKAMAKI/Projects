@@ -7,9 +7,10 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
         :root {
-            --defont: 'Merriweather Sans';
+            --defont: 'DM Serif Display';
             --darkblue: rgb(87, 164, 195);
             --lightgray: #e7e7e7;
             --verylightgray: rgb(249, 249, 249);
@@ -363,7 +364,7 @@ h1 {
     color: var(--mainpink);
     font-weight: 800;
     font-size: 2.875em;
-    font-family: var(--defont);
+    font-family: '';
     width:fit-content;
     margin-top: 0px;
 }
@@ -395,15 +396,17 @@ h1 {
     <div id="page">
         <nav>
         <div id="central">
-                <p class="pclick" style="margin-right: 0px;"></p>
+            <img src="img-logo2.svg" alt="" id="img-logo">
+            <p class="pclick" style="margin-right: 0px;"></p>
             <div id="rev">
-                <input type="text" autocomplete="off" id="searcher" placeholder="type word..." onclick="fclic()" spellcheck="false">
+                <input type="text" autocomplete="off" id="searcher" placeholder="Type word..." onclick="fclic()" spellcheck="false">
                 <div id="main">
                 </div>
             </div>
         </div>
         <!--</div>-->
         </nav>
+        <div id="vocabmng"></div>
     </div>
 </body>
 </html>

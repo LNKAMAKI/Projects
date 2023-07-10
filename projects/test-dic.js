@@ -10,7 +10,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', meaning: '',examples: ''}]}
+    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', meaning: '',examples: ''}, {title: 'ieeded'}, {title: 'be'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -343,4 +343,10 @@ function saiu(thing) {
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path) {
 pesquisa = document.getElementById('searcher').value
+bodycontent = document.getElementById('vocabmng')
+hd = document.createElement('h1')
+console.log('PATH!!!!',contents[0], contents[0].subs, contents[0].subs[path])
+wordInfo = contents[0].subs[subjects[path].index]
+hd.innerText = wordInfo.title
+bodycontent.appendChild(hd)
 }
