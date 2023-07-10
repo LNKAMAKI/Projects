@@ -474,7 +474,7 @@ function openMaterial(materialUrl,name) {
     section.innerHTML = ''
     sep = document.createElement('div')
     sep.setAttribute('class','sep')
-    sep.style.maxWidth = '750px'
+    sep.style.maxWidth = '937.5px'
     sep.style.margin = 'auto'
     ph = document.createElement('p')
     ph.setAttribute('class','ph')
