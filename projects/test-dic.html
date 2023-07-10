@@ -34,7 +34,7 @@
         margin-left: 10px;
        } 
         nav {
-            height: 80px;
+            height: 50px;
             position: relative;
             background-color: var(--lightgray);
             background-color: rgb(237 239 240);
@@ -42,6 +42,7 @@
             background-color: transparent;
             display: flex;
             align-items: center;
+            justify-content: center;
             margin: 0px;
         }
         #logo {
@@ -125,7 +126,7 @@
             height: fit-content;
             height: 32px;
             max-width: calc(330px);
-            border: 2px solid rgb(87, 164, 195);
+            /*border: 2px solid rgb(87, 164, 195);*/
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
             padding: 3px;
@@ -167,12 +168,12 @@
             border-width: 0px;
             outline: none;
             background-color: white;
-            border-left: 2px solid rgb(87, 164, 195);
-            border-right: 2px solid rgb(87, 164, 195);
+           /* border-left: 2px solid rgb(87, 164, 195);
+            border-right: 2px solid rgb(87, 164, 195);*/
             width: calc(100% - 3.2px - 20px);
             padding: 0px 10px;
             font-family: var(--defont);
-            font-size: 0.9em;
+            font-size: 1.2em;
             height: 100%;
         }
 
@@ -187,12 +188,12 @@
     border-bottom-right-radius: 5px;
          overflow: hidden;
          background-color: #FF3E68;
-         border: 2px solid rgb(87, 164, 195);
+        /* border: 2px solid rgb(87, 164, 195);*/
        }
        
        #main > .psearcher{
         font-family: var(--defont);
-        font-size: 0.85em;
+        font-size: 1.2em;
         transition-property: width, background-color;
         transition-duration: 0.4s;
            z-index: 20;
@@ -247,15 +248,6 @@
 
 
 <style>
-h1 {
-    display: flex;
-    align-items: center;
-    color: var(--mainpink);
-    font-weight: 800;
-    font-size: 2.3em;
-    font-family: var(--defont);
-    width:fit-content;
-}
 .cont {
     position: relative;
     background-color:var(--verylightgray);
@@ -358,12 +350,22 @@ color: var(--mainpink);
 }
 .title {
     position: relative;
-    font-size: 1.3em;
-    width: calc(100% - 20px);
+    font-size: 1.625em;
+    width: calc(100% - 25px);
     text-align: center;
     display: block;
     margin: 0px;
-    padding: 10px 0px 15px 0px;
+    padding: 12.5px 0px 18.75px 0px;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    color: var(--mainpink);
+    font-weight: 800;
+    font-size: 2.875em;
+    font-family: var(--defont);
+    width:fit-content;
+    margin-top: 0px;
 }
 .sep {
     padding-bottom: 5px;
@@ -377,9 +379,12 @@ color: var(--mainpink);
     background-color: white;
  position: relative;
  min-height: 420px;
- border-radius: 10px;
- border-top: 5px solid var(--mainpink);
- border-bottom: 5px solid var(--mainpink);
+ max-width: 400px;
+ margin: auto;
+ padding: 10px;
+ border-radius: 8px;
+ border-top: 2px solid var(--mainpink);
+ border-bottom: 2px solid var(--mainpink);
  overflow: hidden;
 }
 
@@ -392,7 +397,7 @@ color: var(--mainpink);
         <div id="central">
                 <p class="pclick" style="margin-right: 0px;"></p>
             <div id="rev">
-                <input type="text" name="" id="searcher" placeholder="Search..." onclick="fclic()" spellcheck="false">
+                <input type="text" autocomplete="off" id="searcher" placeholder="type word..." onclick="fclic()" spellcheck="false">
                 <div id="main">
                 </div>
             </div>

@@ -10,7 +10,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi'},{title: 'abacate'},{title: 'begônia'},{title: 'banana'},{title: 'feijão'},{title: 'farelo'},{title: 'be yourself'},{title: 'betrayal'},{title: 'boom!'}]}
+    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', meaning: '',examples: ''}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
