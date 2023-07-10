@@ -533,4 +533,5 @@ function backtoStart() {
     console.log(loopRunning)
     loopRunning = false
     load2()
+    page = 0
 }
