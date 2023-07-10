@@ -53,7 +53,7 @@
             background-color: #ffe4e4;
             color: var(--mainpink);
             font-weight: 800;
-            font-size: 1.3em;
+            font-size: 1.35em;
             border: 2px solid var(--mainpink);
         }  
         td, th {
@@ -65,6 +65,18 @@
             color: rgb(65, 123, 145);
             text-align: center;
             font-weight: 600;
+        }
+        @media screen and (max-width: 490px) {
+            td, th {
+                font-size: 1em;
+            }
+            thead > tr > th {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 1em;
+                background-color: #ff2152;
+            }
         }
         tbody > tr > th {
             font-weight: 700;
