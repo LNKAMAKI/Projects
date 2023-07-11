@@ -355,7 +355,7 @@ hd.appendChild(span)
 bodycontent.appendChild(hd)
 exindex = 0
 text1 = ''
-textindex = 0
+textindex1 = 0
 for (char in wordInfo.meaning) {
     mngc = wordInfo.meaning[char]
  console.log(mngc)
@@ -365,7 +365,7 @@ for (char in wordInfo.meaning) {
 
  if (mngc == '_' || char == wordInfo.meaning.length - 1) {
     console.log('STOP!', text1)
-    textindex++
+    textindex1++
     pEl = document.createElement('p')
     newtext1 = ''
     for (vai in text1) {
@@ -375,27 +375,40 @@ for (char in wordInfo.meaning) {
     text1 = text1[0].toUpperCase() + newtext1
     console.log('DIAL TONES', newtext1)
     /*pEl.innerHTML = `<img src="images/pencil.svg" alt=""> <span class="inline">${text1}</span>`*/
-    pEl.innerHTML = `<span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex}. </span>${text1}</span>`
+    pEl.innerHTML = `<span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex1}. </span>${text1}</span>`
     pEl.setAttribute('class','pel1')
     bodycontent.appendChild(pEl)
     text1 = ''
 
     keepgoing = true
     text2 = ''
+    textindex2 = 0
    for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
     exc = wordInfo.examples[beg]
     if (exc != '_' && exc != '@') {
         text2+= exc
     }
     console.log(exc) 
-    if (exc == '_' || beg == wordInfo.examples.length - 1) {
+    if (exc == '_' || beg == wordInfo.examples.length - 1 || exc == '@') {
+        textindex2++
+        if (exc != '@') 
         keepgoing = false
         console.log('STOP 2!!', text2)
+        newtext2 = ''
+        for (vai in text2) {
+            if (vai != 0) 
+            newtext2+= text2[vai]
+        }
+        text2 = text2[0].toUpperCase() + newtext2
         pEl = document.createElement('p')
-        pEl.innerText = text2
+        pEl.innerText = `Ex ${textindex2}: ` + text2
         pEl.setAttribute('class','pel2')
         bodycontent.appendChild(pEl)
+
+        if (exc == '@') 
+        text2 = ''
     }
+    /*
     if (exc == '@') {
         console.log('STOP2!',text2)
         pEl = document.createElement('p')
@@ -404,6 +417,7 @@ for (char in wordInfo.meaning) {
         bodycontent.appendChild(pEl)
         text2 = ''
     }
+    */
     exindex++
    }
  }
