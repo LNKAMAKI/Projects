@@ -10,7 +10,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"",meaning: 'fruta_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}
+    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -348,6 +348,10 @@ hd = document.createElement('h1')
 console.log('PATH!!!!',contents[0], contents[0].subs, contents[0].subs[path])
 wordInfo = contents[0].subs[subjects[path].index]
 hd.innerText = wordInfo.title
+span = document.createElement('span')
+span.setAttribute('class','tipo')
+span.innerText = '(' + wordInfo.type + ')'
+hd.appendChild(span)
 bodycontent.appendChild(hd)
 exindex = 0
 text1 = ''
@@ -361,7 +365,15 @@ for (char in wordInfo.meaning) {
  if (mngc == '_' || char == wordInfo.meaning.length - 1) {
     console.log('STOP!', text1)
     pEl = document.createElement('p')
-    pEl.innerText = text1
+    newtext1 = ''
+    for (vai in text1) {
+        if (vai != 0) 
+        newtext1+= text1[vai]
+    }
+    text1 = text1[0].toUpperCase() + newtext1
+    console.log('DIAL TONES', newtext1)
+    /*pEl.innerHTML = `<img src="images/pencil.svg" alt=""> <span class="inline">${text1}</span>`*/
+    pEl.innerHTML = '<span class="inline">${text1}</span>'
     pEl.setAttribute('class','pel1')
     bodycontent.appendChild(pEl)
     text1 = ''

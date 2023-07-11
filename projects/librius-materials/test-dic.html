@@ -39,8 +39,8 @@
             position: relative;
             background-color: var(--lightgray);
             background-color: rgb(237 239 240);
-            /*background-color: bisque; ==> nice color */
             background-color: transparent;
+            /*background-color: bisque; ==> nice color */
             display: flex;
             align-items: center;
             margin: 0px;
@@ -119,31 +119,27 @@
         }
         nav > #central {
             position: relative;
-            /*background-color: bisque;*/
             display: flex;
             align-items: center;
             width: 100%;
             height: fit-content;
             height: 32px;
-            max-width: calc(330px);
+            max-width: calc(600px);
             border: 2px solid rgb(87, 164, 195);
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
             padding: 3px;
             border-radius: 5px;
             margin: 5px;
+            background-color: rgb(252, 252, 252);
         }
         </style>
 
         <style>
-       span.tipo {
-           color: rgb(158, 158, 158);
-           font-size: 1.4em;
-       }
        #rev {
            width: fit-content;
            width: 100%;
-           max-width: 600px;
+           max-width: 400px;
            display: inline-block;
           top: 0px;
           position: relative;
@@ -359,7 +355,7 @@ color: var(--mainpink);
 }
 h1 {
     display: flex;
-    align-items: center;
+    align-items:baseline;
     color: black;
     font-weight: 800;
     font-size: 3em;
@@ -379,23 +375,34 @@ h1 {
     background-color: white;
  position: relative;
  min-height: 420px;
- max-width: 600px;
+ max-width: 650px;
  margin: auto;
  padding: 10px;
- border-radius: 8px;
- border-top: 2px solid var(--mainpink);
- border-bottom: 2px solid var(--mainpink);
+ border-top: 2px dashed var(--lightblue);
+ border-bottom: 2px dashed var(--lightblue);
  overflow: hidden;
+ border-left: 10px double var(--darkblue);
 }
 p {
     font-family: var(--defont);
-    color: var(--verydarkblue);
 }
 .pel1 {
     font-size: 1.8em;
+    color: black;
 }
 .pel2 {
   font-size: 1.2em;
+  color: #0076a6;
+}
+span.tipo {
+    font-size: 0.5em;
+    color: rgb(158, 158, 158);
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 5px;
+}
+.inline {
+    border-bottom: 4px solid var(--mainpink); 
 }
 
 </style>
@@ -405,7 +412,7 @@ p {
     <div id="page">
         <nav>
         <div id="central">
-            <img src="img-logo2.svg" alt="" id="img-logo">
+            <!--<img src="img-logo2.svg" alt="" id="img-logo">-->
             <p class="pclick" style="margin-right: 0px;"></p>
             <div id="rev">
                 <input type="text" autocomplete="off" id="searcher" placeholder="Type word..." onclick="fclic()" spellcheck="false">
