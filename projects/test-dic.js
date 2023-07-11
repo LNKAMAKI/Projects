@@ -10,7 +10,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', meaning: '',examples: ''}, {title: 'ieeded'}, {title: 'be'}]}
+    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"",meaning: 'fruta_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -349,4 +349,28 @@ console.log('PATH!!!!',contents[0], contents[0].subs, contents[0].subs[path])
 wordInfo = contents[0].subs[subjects[path].index]
 hd.innerText = wordInfo.title
 bodycontent.appendChild(hd)
+pEl = document.createElement('p')
+exindex = 0
+text1 = ''
+texxt2 = ''
+for (char in wordInfo.meaning) {
+    mngc = wordInfo.meaning[char]
+ console.log(mngc)
+ if (mngc == '_' || char == wordInfo.meaning.length - 1) {
+    console.log('STOP!')
+    keepgoing = true
+   for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
+    exc = wordInfo.examples[beg]
+    console.log(exc) 
+    if (exc == '_') {
+        keepgoing = false
+        console.log('STOP 2!!')
+    }
+    if (exc == '@') {
+        console.log('STOP2!')
+    }
+    exindex++
+   }
+ }
+}
 }
