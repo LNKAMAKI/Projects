@@ -10,7 +10,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}
+    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -355,6 +355,7 @@ hd.appendChild(span)
 bodycontent.appendChild(hd)
 exindex = 0
 text1 = ''
+textindex = 0
 for (char in wordInfo.meaning) {
     mngc = wordInfo.meaning[char]
  console.log(mngc)
@@ -364,6 +365,7 @@ for (char in wordInfo.meaning) {
 
  if (mngc == '_' || char == wordInfo.meaning.length - 1) {
     console.log('STOP!', text1)
+    textindex++
     pEl = document.createElement('p')
     newtext1 = ''
     for (vai in text1) {
@@ -373,7 +375,7 @@ for (char in wordInfo.meaning) {
     text1 = text1[0].toUpperCase() + newtext1
     console.log('DIAL TONES', newtext1)
     /*pEl.innerHTML = `<img src="images/pencil.svg" alt=""> <span class="inline">${text1}</span>`*/
-    pEl.innerHTML = '<span class="inline">${text1}</span>'
+    pEl.innerHTML = `<span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex}. </span>${text1}</span>`
     pEl.setAttribute('class','pel1')
     bodycontent.appendChild(pEl)
     text1 = ''
