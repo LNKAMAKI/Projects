@@ -349,25 +349,47 @@ console.log('PATH!!!!',contents[0], contents[0].subs, contents[0].subs[path])
 wordInfo = contents[0].subs[subjects[path].index]
 hd.innerText = wordInfo.title
 bodycontent.appendChild(hd)
-pEl = document.createElement('p')
 exindex = 0
 text1 = ''
-texxt2 = ''
 for (char in wordInfo.meaning) {
     mngc = wordInfo.meaning[char]
  console.log(mngc)
+ if (mngc != '_') {
+ text1+= mngc
+ }
+
  if (mngc == '_' || char == wordInfo.meaning.length - 1) {
-    console.log('STOP!')
+    console.log('STOP!', text1)
+    pEl = document.createElement('p')
+    pEl.innerText = text1
+    pEl.setAttribute('class','pel1')
+    bodycontent.appendChild(pEl)
+    text1 = ''
+
     keepgoing = true
+    text2 = ''
    for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
     exc = wordInfo.examples[beg]
+    if (exc != '_' && exc != '@') {
+        text2+= exc
+    }
     console.log(exc) 
-    if (exc == '_') {
+    if (exc == '_' || beg == wordInfo.examples.length - 1) {
         keepgoing = false
-        console.log('STOP 2!!')
+        console.log('STOP 2!!', text2)
+        console.log('STOP!', text1)
+        pEl = document.createElement('p')
+        pEl.innerText = text2
+        pEl.setAttribute('class','pel2')
+        bodycontent.appendChild(pEl)
     }
     if (exc == '@') {
-        console.log('STOP2!')
+        console.log('STOP2!',text2)
+        pEl = document.createElement('p')
+        pEl.innerText = text2
+        pEl.setAttribute('class','pel2')
+        bodycontent.appendChild(pEl)
+        text2 = ''
     }
     exindex++
    }
