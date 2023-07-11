@@ -10,7 +10,7 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"",meaning: 'fruta_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'}]}
+    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"",meaning: 'fruta_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -377,7 +377,6 @@ for (char in wordInfo.meaning) {
     if (exc == '_' || beg == wordInfo.examples.length - 1) {
         keepgoing = false
         console.log('STOP 2!!', text2)
-        console.log('STOP!', text1)
         pEl = document.createElement('p')
         pEl.innerText = text2
         pEl.setAttribute('class','pel2')
