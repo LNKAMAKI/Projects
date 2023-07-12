@@ -10,21 +10,44 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'test-dic', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}, 
+    {title:'test-dic', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"noun",meaning: 'fruta_comida',examples: 'melhor fruta do mundo!@doce e saborosíssima! yummy!_comida deliciosa para se comer como sombremesa (bem geladinha)!@picolé de melancia, suca de melancia'}, {title: 'abacate', type:"",meaning: 'fruta_comida',examples: 'sdadsadadadssd'}]}, 
     {title:'possessive', url:'html-logo.svg',subs:[{title: 'maça', type:"noun",meaning: 'fruta doce e deliciosa',examples: 'torta de maça, suco de maça'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
 
 var subjects = []
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Código para saber qual material está sendo acessado
+    specfunc = String(document.getElementById('searcher').onclick)
+    cango = true
+    material = ''
+    for (x = 33; cango == true && x < specfunc.length; x++) {
+        if (specfunc[x] == '\'')
+            cango = false
+        else
+           material+= specfunc[x]
+        }
+
+    // Código para que somente o vocabulário do material acessado seja utilizado
+    newContent = []
+    if (material != '') {
+        for (trust in contents) {
+            console.log(contents[trust])
+            if (contents[trust].title == material) {
+                console.log('this one!')
+                newContent.push(contents[trust])
+            }
+        }
+    }
+    contents = [...newContent]
 
 for (i in contents) {
     console.log(contents[i])
     for (e in contents[i].subs) {
         subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(),index:e})
     }}
-
-document.addEventListener("DOMContentLoaded", function() {
 
 // Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
@@ -192,17 +215,19 @@ function search2() {
    document.getElementById('main').removeChild(allps[n])
     }
    opnumbers = 0
+   opspath = []
     for (n in subjects) {
         // window.alert(subjects[n])
         // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (subjects[n].title2.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+            opspath.push(subjects[n])
              pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
              psearcher.innerText = subjects[n].title2
              psearcher.setAttribute('class', 'psearcher')
-             psearcher.id = 'a' + n
+             psearcher.id = 'a' + opnumbers
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
              //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
@@ -226,12 +251,13 @@ function search2() {
             // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
              pesquise = pesquisa.toLowerCase()
              if (subjects[n].title2.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+                opspath.push(subjects[n])
                 pnumber++
                 psearcher = document.createElement('p')
                  psearcher.style.position = 'sticky'
                  psearcher.innerText = subjects[n].title2
                  psearcher.setAttribute('class', 'psearcher')
-                 psearcher.id = 'a' + n
+                 psearcher.id = 'a' + opnumbers
                  psearcher.style.fontWeight = 'bold'
                  psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
                  //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
@@ -255,12 +281,13 @@ function search2() {
         // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (subjects[n].title2.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+            opspath.push(subjects[n])
             pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
              psearcher.innerText = subjects[n].title2
              psearcher.setAttribute('class', 'psearcher')
-             psearcher.id = 'a' + n 
+             psearcher.id = 'a' + opnumbers 
              psearcher.style.fontWeight = 'bold'
              psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
              //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
@@ -289,7 +316,7 @@ ps = document.getElementById('main').getElementsByClassName('psearcher')
   // Quando a pesquisa é realizada (uma opção é clicada)
 function dothesearch(whichid) {
 
-  document.getElementById('searcher').value = subjects[whichid].title2
+  document.getElementById('searcher').value = opspath[whichid].title2
   allps = document.getElementsByClassName('psearcher')
   podeir = true
 
@@ -343,22 +370,13 @@ function saiu(thing) {
 
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path) {
-    specfunc = String(document.getElementById('searcher').onclick)
-    console.log(specfunc)
-    cango = true
-    for (x = 33; cango == true && x < specfunc.length; x++) {
-
-        if (specfunc[x] == '\'')
-            cango = false
-        else
-        console.log(specfunc[x])
-        }
     
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
 hd = document.createElement('h1')
-console.log('PATH!!!!',contents[0], contents[0].subs, contents[0].subs[path])
-wordInfo = contents[0].subs[subjects[path].index]
+console.log('PATH!!!!',path)
+console.log(opspath[path])
+wordInfo = contents[opspath[path].title1].subs[opspath[path].index]
 hd.innerText = wordInfo.title
 span = document.createElement('span')
 span.setAttribute('class','tipo')
@@ -397,6 +415,7 @@ for (char in wordInfo.meaning) {
     textindex2 = 0
    for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
     exc = wordInfo.examples[beg]
+    console.log('EX',exc)
     if (exc != '_' && exc != '@') {
         text2+= exc
     }
@@ -411,11 +430,13 @@ for (char in wordInfo.meaning) {
             if (vai != 0) 
             newtext2+= text2[vai]
         }
+        if (text2 != '') {
         text2 = text2[0].toUpperCase() + newtext2
         pEl = document.createElement('p')
         pEl.innerHTML = `<span style="font-weight: 500;">Ex ${textindex2}</span>:&nbsp ` + text2
         pEl.setAttribute('class','pel2')
         bodycontent.appendChild(pEl)
+        }
 
         if (exc == '@') 
         text2 = ''
