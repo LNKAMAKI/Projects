@@ -10,7 +10,8 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}
+    {title:'test-dic', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"",meaning: 'fruta_comida',examples: '_melhor fruta do mundo!'}]}, 
+    {title:'possessive', url:'html-logo.svg',subs:[{title: 'maça', type:"noun",meaning: 'fruta doce e deliciosa',examples: 'torta de maça, suco de maça'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
@@ -342,6 +343,17 @@ function saiu(thing) {
 
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path) {
+    specfunc = String(document.getElementById('searcher').onclick)
+    console.log(specfunc)
+    cango = true
+    for (x = 33; cango == true && x < specfunc.length; x++) {
+
+        if (specfunc[x] == '\'')
+            cango = false
+        else
+        console.log(specfunc[x])
+        }
+    
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
 hd = document.createElement('h1')
