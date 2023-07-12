@@ -401,7 +401,7 @@ for (char in wordInfo.meaning) {
         }
         text2 = text2[0].toUpperCase() + newtext2
         pEl = document.createElement('p')
-        pEl.innerText = `Ex ${textindex2}: ` + text2
+        pEl.innerHTML = `<span style="font-weight: 500;">Ex ${textindex2}</span>:&nbsp ` + text2
         pEl.setAttribute('class','pel2')
         bodycontent.appendChild(pEl)
 

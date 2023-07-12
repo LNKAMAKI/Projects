@@ -10,6 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
         :root {
+            --defont2: 'Merriweather Sans';
             --defont: 'DM Serif Display';
             --darkblue: rgb(87, 164, 195);
             --lightgray: #e7e7e7;
@@ -384,17 +385,17 @@ h1 {
  overflow: hidden;
  border-left: 10px double var(--darkblue);
 }
-p {
-    font-family: var(--defont);
-}
 .pel1 {
     font-size: 1.3em;
     color: black;
     padding: 5px;
+    font-family: var(--defont);
 }
 .pel2 {
-  font-size: 1.3em;
+  font-family: var(--defont2);
+  font-size: 1.1em;
   color: #0076a6;
+  padding: 5px;
   background-color: var(--verylightgray);
   border-bottom: 2px solid var(--darkblue);
   border-radius: 3px;
