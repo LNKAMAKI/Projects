@@ -10,7 +10,8 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'test-dic', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"noun",meaning: 'fruta_comida',examples: 'melhor fruta do mundo!@doce e saborosíssima! yummy!_comida deliciosa para se comer como sombremesa (bem geladinha)!@picolé de melancia, suca de melancia'}, {title: 'abacate', type:"",meaning: 'fruta_comida',examples: 'sdadsadadadssd'}]}, 
+    {title:'The Story of An Hour', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"noun",meaning: 'fruta_comida',examples: 'melhor fruta do mundo!@doce e saborosíssima! yummy!_comida deliciosa para se comer como sombremesa (bem geladinha)!@picolé de melancia, suca de melancia'}, {title: 'abacate', type:"",meaning: 'fruta_comida',examples: 'sdadsadadadssd'}]}, 
+
     {title:'possessive', url:'html-logo.svg',subs:[{title: 'maça', type:"noun",meaning: 'fruta doce e deliciosa',examples: 'torta de maça, suco de maça'}]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
@@ -40,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 newContent.push(contents[trust])
             }
         }
+        contents = [...newContent]
     }
-    contents = [...newContent]
 
 for (i in contents) {
     console.log(contents[i])
