@@ -109,6 +109,34 @@
        #searcher::placeholder {
            color: rgb(173, 173, 173) ;
        }
+       .cont {
+            position: relative;
+            background-color: white;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            /*transition-duration: 2s;*/
+        /*animation: j2 4s;*/
+        }
+        .center {
+            position: relative;
+            display: flex;
+            height: 100%;
+            justify-content: start;
+            white-space: nowrap;
+            font-size: 1em;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            padding: 0px;
+            /*background-color: lightsalmon;*/
+        }
+        .ar {
+            transition-duration: 0.2s;
+            width: 20px;
+            height: 20px;
+            transform: rotate(0deg);
+            cursor: pointer;
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +144,14 @@
                 <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
                 <div id="main">
                 </div>
+            </div>
+
+            <div class="cont">
+                <div class="center">
+                    <img src="./imagens/rar.png" alt="" class="ar">
+                    <span>Engine</span>
+                </div>
+                <p></p>
             </div>
  
         <script src="chess.js"></script>
