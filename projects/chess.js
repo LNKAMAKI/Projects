@@ -1,7 +1,7 @@
 console.log('EYES ON THE HIGHWAY')
 elements = [
     {title: 'a', content: '<p>hi</p>', objects: [
-        {title: 'a', content: '<p>hi</p>', objects: []}
+        {title: 'a', content: '<p>hi</p><p>hi</p><p>hi</p><p>hi</p><p>hi</p>', objects: []}
     ]},
     {title: 'a', content: '<p>hi</p>', objects: [
         {title: 'a', content: '<p>hi</p>', objects: [
@@ -125,6 +125,27 @@ function load() {
         }}
     
         function cli(state,index,jin,n,jor) {
+            trueindex = Number(jin.replace('j',''))
+            console.log('was clicked!', trueindex)
+            console.log(document.getElementsByClassName('cont')[trueindex].id)
+            elid = document.getElementsByClassName('cont')[trueindex].id
+            elidtxt = ''
+            for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
+                elidtxt+= elid[trees]
+            }
+            console.log(trees, elidtxt)
+            elidtxt = ''
+            for (omo = 0; omo < trees; omo++) {
+                elidtxt+= elid[omo]
+            }
+            console.log('oficial text:', elidtxt)
+            if (elidtxt != '') {
+            console.log(document.getElementById(elidtxt))
+            //document.getElementById(elidtxt).style.animationPlayState = 'paused'
+            //document.getElementById(elidtxt).style.animation = 'fit-content'
+            //document.getElementById(elidtxt).style.height = 'fit-content'
+            }
+
             me = document.getElementsByClassName('ar')
             this.jin = jin
             this.par1 = me[index]
@@ -175,7 +196,7 @@ function load() {
                 100% {
                     height: ${eh}px;
                 }}`
-                this.par2.style.animation = `${jin}${search.comp} 3s`
+                this.par2.style.animation = `${jin}${search.comp} 5s`
                 this.par2.style.height = 'fit-content'
         
                style = document.createElement('style')
@@ -194,7 +215,7 @@ function load() {
                100% {
                    height: ${ih}px;
                }}`
-            this.par2.style.animation = `${jin}${search.comp} 3s`
+            this.par2.style.animation = `${jin}${search.comp} 5s`
             this.par2.style.height = `${ih}px`
 
            style = document.createElement('style')
