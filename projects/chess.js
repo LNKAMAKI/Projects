@@ -1,16 +1,16 @@
 console.log('EYES ON THE HIGHWAY')
 elements = [
     {title: 'a', content: '<p>hi</p>', objects: [
-        {title: 'a', content: '<p>hi</p><p>hi</p><p>hi</p><p>hi</p><p>hi</p>', objects: []}
+        {title: 'b', content: '<p>hi</p><p>hi</p><p>hi</p><p>hi</p><p>hi</p>', objects: []}
     ]},
-    {title: 'a', content: '<p>hi</p>', objects: [
-        {title: 'a', content: '<p>hi</p>', objects: [
-            {title: 'a', content: '<p>hi</p>', objects: []},
-            {title: 'a', content: '<p>hi</p>', objects: []}
+    {title: 'c', content: '<p>hi</p>', objects: [
+        {title: 'd', content: '<p>hi</p>', objects: [
+            {title: 'e', content: '<p>hi</p>', objects: []},
+            {title: 'f', content: '<p>hi</p>', objects: []}
         ]}
     ]},
-    {title: 'a', content: '<p>hi</p>', objects: [
-        {title: 'a', content: '<p>hi</p>', objects: []}
+    {title: 'g', content: '<p>hi</p>', objects: [
+        {title: 'h', content: '<p>hi</p>', objects: []}
     ]}
 ]
 console.log('el',elements)
@@ -125,26 +125,6 @@ function load() {
         }}
     
         function cli(state,index,jin,n,jor) {
-            trueindex = Number(jin.replace('j',''))
-            console.log('was clicked!', trueindex)
-            console.log(document.getElementsByClassName('cont')[trueindex].id)
-            elid = document.getElementsByClassName('cont')[trueindex].id
-            elidtxt = ''
-            for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
-                elidtxt+= elid[trees]
-            }
-            console.log(trees, elidtxt)
-            elidtxt = ''
-            for (omo = 0; omo < trees; omo++) {
-                elidtxt+= elid[omo]
-            }
-            console.log('oficial text:', elidtxt)
-            if (elidtxt != '') {
-            console.log(document.getElementById(elidtxt))
-            //document.getElementById(elidtxt).style.animationPlayState = 'paused'
-            //document.getElementById(elidtxt).style.animation = 'fit-content'
-            //document.getElementById(elidtxt).style.height = 'fit-content'
-            }
 
             me = document.getElementsByClassName('ar')
             this.jin = jin
@@ -163,7 +143,39 @@ function load() {
             search = mecams.find(function(mecams){
                 return mecams.created == this.jin
                })
-        
+               ///
+               modify = false
+               if (search != undefined) {
+               console.log('aaaaaaaaa',search.cl)
+               if (search.cl == false) {
+                   modify = true
+               }
+               }else{
+                modify = true
+               }
+               if (modify == true) {
+               trueindex = Number(jin.replace('j',''))
+               console.log('was clicked!', trueindex)
+               console.log(document.getElementsByClassName('cont')[trueindex].id)
+               elid = document.getElementsByClassName('cont')[trueindex].id
+               elidtxt = ''
+               for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
+                   elidtxt+= elid[trees]
+               }
+               console.log(trees, elidtxt)
+               elidtxt = ''
+               for (omo = 0; omo < trees; omo++) {
+                   elidtxt+= elid[omo]
+               }
+               console.log('oficial text:', elidtxt)
+               if (elidtxt != '') {
+               console.log(document.getElementById(elidtxt))
+               //document.getElementById(elidtxt).style.animationPlayState = 'paused'
+               document.getElementById(elidtxt).style.animation = ''
+               //document.getElementById(elidtxt).style.height = 'fit-content'
+               }
+            }
+             ///
             if (search != undefined) {
                 search.comp++
                }else{
