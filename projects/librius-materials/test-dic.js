@@ -457,3 +457,26 @@ for (char in wordInfo.meaning) {
  }
 }
 }
+
+//stack button
+stack = true
+animationOn = false
+function move() {
+    console.log('COME ON, LET US MOVE IT')
+    stackelement = document.getElementsByClassName('yes-no')[0]
+    if (animationOn == false) {
+    animationOn = true
+    if (stack == true) {
+        stackelement.style.animation = 'swap-forward 0.5s forwards'
+        stack = false
+    }else{
+        stackelement.style.animation = 'swap-backward 0.5s forwards'
+        stack = true
+    }
+    stackelement.addEventListener("animationend", animationEnded)
+    function animationEnded() {
+        console.log('it ended')
+        animationOn = false
+    }
+}
+}

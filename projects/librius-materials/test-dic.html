@@ -411,8 +411,50 @@ span.tipo {
     border-bottom: 2.2px solid var(--mainpink); 
     background-color: var(--verylightpink);
 }
+.stack-div {
+    width: calc(100% - 5px);
+    margin-left: 5px;
+    display: flex;
+    margin-top: 6px;
+}
 .stack {
     display: inline-block;
+    background: white;
+    border: 1px solid var(--verydarkblue);
+    border-radius: 30px;
+    width: 45px;
+    height: 20px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+.yes-no {
+    background-color: var(--lightpink);
+    width: 15px;
+    height: 15px;
+    margin-left: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+@keyframes swap-forward {
+    0% {
+        opacity: 1;
+        margin-left: 2px;
+    }
+    100% {
+        opacity: 0.3;
+        margin-left: calc(100% - 17px);
+    }
+}
+@keyframes swap-backward {
+    0% {
+        opacity: 0.3;
+        margin-left: calc(100% - 17px);
+    }
+    100% {
+        opacity: 1;
+        margin-left: 2px;
+    }
 }
 
 </style>
@@ -433,8 +475,10 @@ span.tipo {
         <!--</div>-->
         </nav>
            <div class="stack-div">
-               <span style="font-family: var(--defont2);margin-left: 5px;">Stack</span>
-               <div class="stack">hi</div>
+               <span style="font-family: var(--defont2);">Stack:</span>
+               <div class="stack">
+                <div class="yes-no" onclick="move()"></div>
+               </div>
            </div>
         <div id="vocabmng"></div>
     </div>
