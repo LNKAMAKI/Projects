@@ -246,5 +246,16 @@ function load() {
            function animationEnded(event) {
                 console.log('ANIMATION ENDED')
                 console.log(event.animationName)
+                king = event.animationName
+                proceed = true
+                trig = ''
+                for (set = 0; set < king.length && proceed == true; set++) {
+                    if (king[set] == '-') {
+                        proceed = false
+                    }else{
+                        trig+= king[set]
+                    }
+                }
+                console.log(trig)
             }
     }
