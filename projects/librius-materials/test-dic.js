@@ -371,9 +371,12 @@ function saiu(thing) {
 
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path) {
-    
+
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
+if (stack == false) {
+bodycontent.innerHTML = ''
+}
 hd = document.createElement('h1')
 console.log('PATH!!!!',path)
 console.log(opspath[path])
