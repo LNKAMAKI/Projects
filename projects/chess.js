@@ -160,26 +160,26 @@ function load() {
                }
                if (modify == true) {
                trueindex = Number(jin.replace('j',''))
-               console.log('was clicked!', trueindex)
-               console.log(document.getElementsByClassName('cont')[trueindex].id)
+               //console.log('was clicked!', trueindex)
+               //console.log(document.getElementsByClassName('cont')[trueindex].id)
                elid = document.getElementsByClassName('cont')[trueindex].id
                elidtxt = ''
                for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
                    elidtxt+= elid[trees]
                }
-               console.log(trees, elidtxt)
+               //console.log(trees, elidtxt)
                elidtxt = ''
                for (omo = 0; omo < trees; omo++) {
                    elidtxt+= elid[omo]
                }
-               console.log('oficial text:', elidtxt)
+               //console.log('oficial text:', elidtxt)
                if (elidtxt != '') {
                 //currentTime = performance.now() % durationInMs
                 //console.log('currentime',currentTime)
                 element = document.getElementById(elidtxt)
-                console.log(element.offsetHeight)
+                //console.log(element.offsetHeight)
                 element.style.overflow = 'visible'
-                console.log(element.offsetHeight)
+                //console.log(element.offsetHeight)
                 /*
                console.log(document.getElementById(elidtxt))
                //document.getElementById(elidtxt).style.animationPlayState = 'paused'
