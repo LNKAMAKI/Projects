@@ -174,22 +174,7 @@ function load() {
                }
                //console.log('oficial text:', elidtxt)
                if (elidtxt != '') {
-                //currentTime = performance.now() % durationInMs
-                //console.log('currentime',currentTime)
                 element = document.getElementById(elidtxt)
-                //console.log(element.offsetHeight)
-                //console.log(element.offsetHeight)
-                /*
-               console.log(document.getElementById(elidtxt))
-               //document.getElementById(elidtxt).style.animationPlayState = 'paused'
-               document.getElementById(elidtxt).style.animationPlayState = 'paused'
-               //console.log('HELLO OMORI',element.offsetHeight)
-               setTimeout(function() {
-                console.log('I WARNED YOU')
-                element.style.overflow = 'visible'
-                //document.getElementById(elidtxt).style.animationPlayState = 'running'
-              }, 1000)
-              */
                }
             }
              ///
