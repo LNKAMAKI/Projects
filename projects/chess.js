@@ -98,7 +98,6 @@ function load() {
         ////console.log('ACTION', action)
         if (action != "open") {
         this.clicked = false
-        this.animon = false
         this.par1.style.transform = 'rotate(0deg)'
         }else{
             ////console.log('TRUEEEEEEEEEE')
@@ -126,7 +125,7 @@ function load() {
         this.par1.setAttribute
         this.AddEvent = function() {
             ////console.log(this.a)
-           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight}, ${this.animon})`)
+           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
         }}
     
         function cli(state,index,jin,n,jor) {
@@ -199,16 +198,18 @@ function load() {
                 search.comp++
                }else{
                    if (state == true) {
-                    mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state})
+                    mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state, anistate: false})
                    }else{
-                    mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state})
+                    mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state, anistate: false})
                    } }
                search = mecams.find(function(mecams){
                 return mecams.created == this.jin
                })
-        
+               
+               console.log(search)
                if (search.cl == false) {
         
+                search.anistate = true
                 txt = String(this.par3.innerText)
                    busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
         
@@ -238,6 +239,7 @@ function load() {
                this.par1.style.transform = 'rotate(90deg)'
                search.cl = true
         }else{
+            search.anistate = false
                 ih = search.st
                 eh = sul
         
