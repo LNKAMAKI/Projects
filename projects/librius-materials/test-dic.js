@@ -442,16 +442,6 @@ for (char in wordInfo.meaning) {
         if (exc == '@') 
         text2 = ''
     }
-    /*
-    if (exc == '@') {
-        console.log('STOP2!',text2)
-        pEl = document.createElement('p')
-        pEl.innerText = text2
-        pEl.setAttribute('class','pel2')
-        bodycontent.appendChild(pEl)
-        text2 = ''
-    }
-    */
     exindex++
    }
  }
