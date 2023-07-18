@@ -215,8 +215,6 @@ function load() {
                 this.par2.style.animation = `${jin}${search.comp} 5s`
                 this.par2.style.height = 'fit-content'
                
-                animationDuration = 5
-                durationInMs = parseFloat(animationDuration)
                style = document.createElement('style')
                document.head.appendChild(style)
                style.appendChild(document.createTextNode(css))
