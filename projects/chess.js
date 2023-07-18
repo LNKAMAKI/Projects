@@ -194,6 +194,7 @@ function load() {
                if (search.cl == false) {
         
                 search.anistate = true
+                this.par2.addEventListener("animationend", animationEnded)
                 txt = String(this.par3.innerText)
                    busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
         
@@ -240,4 +241,10 @@ function load() {
            style.appendChild(document.createTextNode(css))
            this.par1.style.transform = 'rotate(0deg)'
            search.cl = false
-        }}
+            }
+
+            function animationEnded() {
+                console.log('ANIMATION ENDED')
+                search.anim = false
+            }
+    }
