@@ -178,7 +178,6 @@ function load() {
                 //console.log('currentime',currentTime)
                 element = document.getElementById(elidtxt)
                 //console.log(element.offsetHeight)
-                element.style.overflow = 'visible'
                 //console.log(element.offsetHeight)
                 /*
                console.log(document.getElementById(elidtxt))
@@ -205,7 +204,7 @@ function load() {
                search = mecams.find(function(mecams){
                 return mecams.created == this.jin
                })
-               
+
                console.log(search)
                if (search.cl == false) {
         
