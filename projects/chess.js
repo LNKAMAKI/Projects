@@ -194,7 +194,6 @@ function load() {
                if (search.cl == false) {
         
                 search.anistate = true
-                this.par2.addEventListener("animationend", animationEnded)
                 txt = String(this.par3.innerText)
                    busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
         
@@ -206,14 +205,15 @@ function load() {
                     eh = sul
                    }
         
-            css = `@keyframes ${jin}${search.comp} {
+            css = `@keyframes ${jin}-${search.comp} {
                  0% {
                     height: ${ih}px;
                 }
                 100% {
                     height: ${eh}px;
                 }}`
-                this.par2.style.animation = `${jin}${search.comp} 5s`
+                this.par2.addEventListener("animationend", animationEnded)
+                this.par2.style.animation = `${jin}-${search.comp} 5s`
                 this.par2.style.height = 'fit-content'
                
                style = document.createElement('style')
@@ -226,14 +226,14 @@ function load() {
                 ih = search.st
                 eh = sul
         
-            css = `@keyframes ${jin}${search.comp} {
+            css = `@keyframes ${jin}-${search.comp} {
                 0% {
                    height: ${eh}px;
                }
                100% {
                    height: ${ih}px;
                }}`
-            this.par2.style.animation = `${jin}${search.comp} 5s`
+            this.par2.style.animation = `${jin}-${search.comp} 5s`
             this.par2.style.height = `${ih}px`
 
            style = document.createElement('style')
@@ -243,8 +243,8 @@ function load() {
            search.cl = false
             }
 
-            function animationEnded() {
+           function animationEnded(event) {
                 console.log('ANIMATION ENDED')
-                search.anim = false
+                console.log(event.animationName)
             }
     }
