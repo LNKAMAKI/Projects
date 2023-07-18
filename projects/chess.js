@@ -98,6 +98,7 @@ function load() {
         ////console.log('ACTION', action)
         if (action != "open") {
         this.clicked = false
+        this.animon = false
         this.par1.style.transform = 'rotate(0deg)'
         }else{
             ////console.log('TRUEEEEEEEEEE')
@@ -125,7 +126,7 @@ function load() {
         this.par1.setAttribute
         this.AddEvent = function() {
             ////console.log(this.a)
-           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
+           this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight}, ${this.animon})`)
         }}
     
         function cli(state,index,jin,n,jor) {
