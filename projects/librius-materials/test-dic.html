@@ -431,32 +431,31 @@ span.tipo {
     margin-left: 5px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .yes-no {
     background-color: var(--lightpink);
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     margin-left: 2px;
     border-radius: 50%;
     cursor: pointer;
 }
 @keyframes swap-forward {
     0% {
-        opacity: 1;
         margin-left: 2px;
+        margin-right: 0px;
     }
     100% {
-        opacity: 0.3;
         margin-left: calc(100% - 17px);
+        margin-right: 2px;
     }
 }
 @keyframes swap-backward {
     0% {
-        opacity: 0.3;
         margin-left: calc(100% - 17px);
     }
     100% {
-        opacity: 1;
         margin-left: 2px;
     }
 }
@@ -480,8 +479,8 @@ span.tipo {
         </nav>
            <div class="stack-div">
                <span style="font-family: var(--defont2);">Stack:</span>
-               <div class="stack">
-                <div class="yes-no" onclick="move()"></div>
+               <div class="stack" onclick="move()">
+                <div class="yes-no"></div>
                </div>
            </div>
         <div id="vocabmng"></div>

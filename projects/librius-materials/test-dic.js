@@ -452,19 +452,24 @@ for (char in wordInfo.meaning) {
 }
 
 //stack button
-stack = true
+stack = false
 animationOn = false
 function move() {
     console.log('COME ON, LET US MOVE IT')
+    clickelement = document.getElementsByClassName('stack')[0]
     stackelement = document.getElementsByClassName('yes-no')[0]
     if (animationOn == false) {
     animationOn = true
-    if (stack == true) {
-        stackelement.style.animation = 'swap-forward 0.5s forwards'
-        stack = false
-    }else{
-        stackelement.style.animation = 'swap-backward 0.5s forwards'
+    if (stack == false) {
+        clickelement.style.backgroundColor = 'var(--lightpink)'
+        stackelement.style.backgroundColor = 'white'
+        stackelement.style.animation = 'swap-forward 0.2s forwards'
         stack = true
+    }else{
+        stackelement.style.backgroundColor = 'var(--lightpink)'
+        clickelement.style.backgroundColor = 'white'
+        stackelement.style.animation = 'swap-backward 0.2s forwards'
+        stack = false
     }
     stackelement.addEventListener("animationend", animationEnded)
     function animationEnded() {
