@@ -1,8 +1,10 @@
 console.log('EYES ON THE HIGHWAY')
 elements = [
     {title: 'a', content: '<p>hi</p>', objects: [
-        {title: 'b', content: '<p>hi</p><p>hi</p><p>hi</p><p>hi</p><p>hi</p>', objects: []}
+        {title: 'b', content: '<p>hi</p><p>hi</p><p>hi</p><p>hi</p><p>hi</p>', objects: []},
+        {title: 'sunny', content: '<p>HI<p>', objects: []}
     ]},
+    /*
     {title: 'c', content: '<p>hi</p>', objects: [
         {title: 'd', content: '<p>hi</p>', objects: [
             {title: 'e', content: '<p>hi</p>', objects: []},
@@ -12,6 +14,7 @@ elements = [
     {title: 'g', content: '<p>hi</p>', objects: [
         {title: 'h', content: '<p>hi</p>', objects: []}
     ]}
+    */
 ]
 console.log('el',elements)
 
@@ -169,10 +172,18 @@ function load() {
                }
                console.log('oficial text:', elidtxt)
                if (elidtxt != '') {
+                /*
                console.log(document.getElementById(elidtxt))
                //document.getElementById(elidtxt).style.animationPlayState = 'paused'
-               document.getElementById(elidtxt).style.animation = ''
-               //document.getElementById(elidtxt).style.height = 'fit-content'
+               element = document.getElementById(elidtxt)
+               document.getElementById(elidtxt).style.animationPlayState = 'paused'
+               //console.log('HELLO OMORI',element.offsetHeight)
+               setTimeout(function() {
+                console.log('I WARNED YOU')
+                element.style.overflow = 'visible'
+                //document.getElementById(elidtxt).style.animationPlayState = 'running'
+              }, 1000)
+              */
                }
             }
              ///
