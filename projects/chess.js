@@ -222,7 +222,7 @@ function load() {
                this.par1.style.transform = 'rotate(90deg)'
                search.cl = true
         }else{
-            search.anistate = false
+            search.anistate = true
                 ih = search.st
                 eh = sul
         
@@ -262,6 +262,7 @@ function load() {
                     return mecams.created == trig
                 })
                 console.log(love)
+                love.anistate = false
             }
 
     }
