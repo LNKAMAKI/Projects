@@ -4,7 +4,7 @@ elements = [
         {title: 'b', content: '<p>hi</p><p>hi</p><p>hi</p><p>hi</p><p>hi</p>', objects: []},
         {title: 'sunny', content: '<p>HI<p>', objects: []}
     ]},
-    /*
+    
     {title: 'c', content: '<p>hi</p>', objects: [
         {title: 'd', content: '<p>hi</p>', objects: [
             {title: 'e', content: '<p>hi</p>', objects: []},
@@ -14,10 +14,8 @@ elements = [
     {title: 'g', content: '<p>hi</p>', objects: [
         {title: 'h', content: '<p>hi</p>', objects: []}
     ]}
-    */
 ]
 console.log('el',elements)
-
 for (ciyu in elements) {
  elements[ciyu].id = `${ciyu}`
  console.log(elements[ciyu])
@@ -30,7 +28,6 @@ for (ciyu in elements) {
 document.body.appendChild(cont)
 }
 loop(elements)
-lists = []
 function loop(arraylist, d) {
     repeat = false
     newlist = []
@@ -62,7 +59,6 @@ function loop(arraylist, d) {
         loop(newlist)
 }
 
-
 function load() {
     console.log('ONLOAD')
     conts = get2('cont')
@@ -77,6 +73,11 @@ function load() {
         c.AddEvent()
     }
     
+    idlist = []
+    for (bob = 0; bob < conts.length; bob++) {
+        console.log('cont',conts[bob],bob,conts[bob].id)
+        idlist.push({id: conts[bob].id, pos: bob})
+        }
     }
     
     function get1(thist) {
