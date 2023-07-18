@@ -172,10 +172,15 @@ function load() {
                }
                console.log('oficial text:', elidtxt)
                if (elidtxt != '') {
+                //currentTime = performance.now() % durationInMs
+                //console.log('currentime',currentTime)
+                element = document.getElementById(elidtxt)
+                console.log(element.offsetHeight)
+                element.style.overflow = 'visible'
+                console.log(element.offsetHeight)
                 /*
                console.log(document.getElementById(elidtxt))
                //document.getElementById(elidtxt).style.animationPlayState = 'paused'
-               element = document.getElementById(elidtxt)
                document.getElementById(elidtxt).style.animationPlayState = 'paused'
                //console.log('HELLO OMORI',element.offsetHeight)
                setTimeout(function() {
@@ -221,7 +226,9 @@ function load() {
                 }}`
                 this.par2.style.animation = `${jin}${search.comp} 5s`
                 this.par2.style.height = 'fit-content'
-        
+               
+                animationDuration = 5
+                durationInMs = parseFloat(animationDuration)
                style = document.createElement('style')
                document.head.appendChild(style)
                style.appendChild(document.createTextNode(css))
