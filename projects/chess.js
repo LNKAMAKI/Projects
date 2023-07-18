@@ -257,5 +257,11 @@ function load() {
                     }
                 }
                 console.log(trig)
+
+                love = mecams.find(function (mecams) {
+                    return mecams.created == trig
+                })
+                console.log(love)
             }
+
     }
