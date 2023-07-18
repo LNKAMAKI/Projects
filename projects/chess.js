@@ -15,10 +15,10 @@ elements = [
         {title: 'h', content: '<p>hi</p>', objects: []}
     ]}
 ]
-console.log('el',elements)
+//console.log('el',elements)
 for (ciyu in elements) {
  elements[ciyu].id = `${ciyu}`
- console.log(elements[ciyu])
+ //console.log(elements[ciyu])
  cont = document.createElement('div')
  cont.setAttribute('class','cont')
  cont.id = `${ciyu}`
@@ -37,9 +37,9 @@ function loop(arraylist, d) {
         //console.log(arraylist[dial])
         //console.log('--------')
         for (tones in arraylist[dial].objects) {
-            console.log(arraylist[dial].id + `.${tones}`)
+            //console.log(arraylist[dial].id + `.${tones}`)
             arraylist[dial].objects[tones].id = arraylist[dial].id + `.${tones}`
-            console.log(arraylist[dial].objects[tones])
+            //console.log(arraylist[dial].objects[tones])
             newlist.push(arraylist[dial].objects[tones])
 
             cont = document.createElement('div')
@@ -75,7 +75,7 @@ function load() {
     
     idlist = []
     for (bob = 0; bob < conts.length; bob++) {
-        console.log('cont',conts[bob],bob,conts[bob].id)
+        //console.log('cont',conts[bob],bob,conts[bob].id)
         idlist.push({id: conts[bob].id, pos: bob})
         }
     }
@@ -144,6 +144,7 @@ function load() {
             this.par2.style.height = 'fit-content'
             sul = this.par2.offsetHeight
         
+            console.log(this.jin)
             search = mecams.find(function(mecams){
                 return mecams.created == this.jin
                })
