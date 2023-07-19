@@ -4,7 +4,7 @@ elements = [
         {title: 'b', content: '<p>hi</p><p>hi</p><p>hi</p><p>hi</p><p>hi</p>', objects: []},
         {title: 'sunny', content: '<p>HI<p>', objects: []}
     ]},
-    
+    /*
     {title: 'c', content: '<p>hi</p>', objects: [
         {title: 'd', content: '<p>hi</p>', objects: [
             {title: 'e', content: '<p>hi</p>', objects: []},
@@ -14,6 +14,7 @@ elements = [
     {title: 'g', content: '<p>hi</p>', objects: [
         {title: 'h', content: '<p>hi</p>', objects: []}
     ]}
+    */
 ]
 //console.log('el',elements)
 for (ciyu in elements) {
