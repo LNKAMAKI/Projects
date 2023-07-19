@@ -147,7 +147,6 @@ newlista = []
 for (p in palavrasNumericas) {
 newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
 }
-
 return newlista
 }
 
@@ -218,8 +217,6 @@ function search2() {
    opnumbers = 0
    opspath = []
     for (n in subjects) {
-        // window.alert(subjects[n])
-        // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (subjects[n].title2.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
             opspath.push(subjects[n])
@@ -248,8 +245,6 @@ function search2() {
          } }
     if (pesquise.length != 0 && opnumbers == 0) {
         for (n in subjects) {
-            // window.alert(subjects[n])
-            // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
              pesquise = pesquisa.toLowerCase()
              if (subjects[n].title2.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
                 opspath.push(subjects[n])
@@ -278,8 +273,6 @@ function search2() {
              }}}
  if (pesquise.length != 0 && opnumbers == 0){
     for (n in subjects) {
-        // window.alert(subjects[n])
-        // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (subjects[n].title2.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
             opspath.push(subjects[n])
