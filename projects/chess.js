@@ -136,14 +136,6 @@ function load() {
             this.par2 = conts[index]
             this.par3 = cents[index]
             this.n = n
-        
-            console.log(this.jin)
-            beg = this.par2.offsetHeight
-        
-            this.par3.style.height = jor + 'px'
-        
-            this.par2.style.height = 'fit-content'
-            sul = this.par2.offsetHeight
 
             search = mecams.find(function(mecams){
                 return mecams.created == this.jin
@@ -151,11 +143,18 @@ function load() {
 
                //console.log(search)
                if (search != undefined) {
-                console.log('SEARCH',search.anistate)
+                console.log(this.jin,search.anistate)
                }
                
                ///
                if (search == undefined || search.anistate == false) {
+
+                beg = this.par2.offsetHeight
+        
+                this.par3.style.height = jor + 'px'
+        
+                this.par2.style.height = 'fit-content'
+                sul = this.par2.offsetHeight
 
                modify = false
                if (search != undefined) {
