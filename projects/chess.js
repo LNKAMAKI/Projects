@@ -146,16 +146,7 @@ function load() {
                 console.log(this.jin,search.anistate)
                }
                
-               ///
-               if (search == undefined || search.anistate == false) {
-
-                beg = this.par2.offsetHeight
-        
-                this.par3.style.height = jor + 'px'
-        
-                this.par2.style.height = 'fit-content'
-                sul = this.par2.offsetHeight
-
+               
                 /*
                modify = false
                if (search != undefined) {
@@ -167,25 +158,45 @@ function load() {
                }
                */
                //if (modify == true) {
-               trueindex = Number(jin.replace('j',''))
-               //console.log('was clicked!', trueindex)
-               //console.log(document.getElementsByClassName('cont')[trueindex].id)
-               elid = document.getElementsByClassName('cont')[trueindex].id
-               elidtxt = ''
-               for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
-                   elidtxt+= elid[trees]
-               }
-               //console.log(trees, elidtxt)
-               elidtxt = ''
-               for (omo = 0; omo < trees; omo++) {
-                   elidtxt+= elid[omo]
-               }
-               //console.log('oficial text:', elidtxt)
-               if (elidtxt != '') {
-                element = document.getElementById(elidtxt)
-               }
-            //}
-             ///
+                trueindex = Number(jin.replace('j',''))
+                //console.log('was clicked!', trueindex)
+                //console.log(document.getElementsByClassName('cont')[trueindex].id)
+                elid = document.getElementsByClassName('cont')[trueindex].id
+                elidtxt = ''
+                for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
+                    elidtxt+= elid[trees]
+                }
+                //console.log(trees, elidtxt)
+                elidtxt = ''
+                for (omo = 0; omo < trees; omo++) {
+                    elidtxt+= elid[omo]
+                }
+                //console.log('oficial text:', elidtxt)
+                if (elidtxt != '') {
+                 element = document.getElementById(elidtxt)
+                 console.log(element.id)
+                 console.log(idlist)
+                 omori = idlist.find(function(idlist){
+                     return idlist.id == element.id
+                    })
+                    posid =  mecams.find(function(mecams){
+                     return mecams.created == 'j' + String(omori.pos)
+                    })
+                    console.log(omori.pos, posid)
+                    console.log(posid.anistate)
+                }
+             //}
+
+               if (search == undefined || search.anistate == false) {
+                if (elidtxt == '' || posid.anistate == false) {
+
+                beg = this.par2.offsetHeight
+        
+                this.par3.style.height = jor + 'px'
+        
+                this.par2.style.height = 'fit-content'
+                sul = this.par2.offsetHeight
+
             if (search != undefined) {
                 search.comp++
                }else{
@@ -270,5 +281,6 @@ function load() {
                 //onsole.log(love)
                 love.anistate = false
             }
+        }
         }
     }
