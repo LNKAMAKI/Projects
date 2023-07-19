@@ -148,10 +148,15 @@ function load() {
             search = mecams.find(function(mecams){
                 return mecams.created == this.jin
                })
+
+               console.log(search)
+               if (search != undefined) {
+                console.log('SEARCH',search.anistate)
+               }
+               
                ///
                modify = false
                if (search != undefined) {
-               console.log('aaaaaaaaa',search.cl)
                if (search.cl == false) {
                    modify = true
                }
@@ -190,7 +195,6 @@ function load() {
                 return mecams.created == this.jin
                })
 
-               console.log(search)
                if (search.cl == false) {
         
                 search.anistate = true
@@ -213,7 +217,7 @@ function load() {
                     height: ${eh}px;
                 }}`
                 this.par2.addEventListener("animationend", animationEnded)
-                this.par2.style.animation = `${jin}-${search.comp} 5s`
+                this.par2.style.animation = `${jin}-${search.comp} 3s`
                 this.par2.style.height = 'fit-content'
                
                style = document.createElement('style')
@@ -233,7 +237,7 @@ function load() {
                100% {
                    height: ${ih}px;
                }}`
-            this.par2.style.animation = `${jin}-${search.comp} 5s`
+            this.par2.style.animation = `${jin}-${search.comp} 3s`
             this.par2.style.height = `${ih}px`
 
            style = document.createElement('style')
