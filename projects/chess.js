@@ -231,7 +231,7 @@ function load() {
                     height: ${eh}px;
                 }}`
                 this.par2.addEventListener("animationend", animationEnded)
-                this.par2.style.animation = `${jin}-${search.comp} 3s`
+                this.par2.style.animation = `${jin}-${search.comp} 1s`
                 this.par2.style.height = 'fit-content'
                
                style = document.createElement('style')
@@ -251,7 +251,7 @@ function load() {
                100% {
                    height: ${ih}px;
                }}`
-            this.par2.style.animation = `${jin}-${search.comp} 3s`
+            this.par2.style.animation = `${jin}-${search.comp} 1s`
             this.par2.style.height = `${ih}px`
 
            style = document.createElement('style')
