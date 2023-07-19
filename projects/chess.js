@@ -129,7 +129,7 @@ function load() {
         }}
     
         function cli(state,index,jin,n,jor) {
-
+            
             me = document.getElementsByClassName('ar')
             this.jin = jin
             this.par1 = me[index]
@@ -137,24 +137,26 @@ function load() {
             this.par3 = cents[index]
             this.n = n
         
+            console.log(this.jin)
             beg = this.par2.offsetHeight
         
             this.par3.style.height = jor + 'px'
         
             this.par2.style.height = 'fit-content'
             sul = this.par2.offsetHeight
-        
-            console.log(this.jin)
+
             search = mecams.find(function(mecams){
                 return mecams.created == this.jin
                })
 
-               console.log(search)
+               //console.log(search)
                if (search != undefined) {
                 console.log('SEARCH',search.anistate)
                }
                
                ///
+               if (search == undefined || search.anistate == false) {
+
                modify = false
                if (search != undefined) {
                if (search.cl == false) {
@@ -260,12 +262,13 @@ function load() {
                         trig+= king[set]
                     }
                 }
-                console.log(trig)
+                //console.log(trig)
 
                 love = mecams.find(function (mecams) {
                     return mecams.created == trig
                 })
-                console.log(love)
+                //onsole.log(love)
                 love.anistate = false
             }
+        }
     }
