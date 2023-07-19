@@ -199,7 +199,6 @@ function load() {
                })
 
                if (search.cl == false) {
-        
                 search.anistate = true
                 txt = String(this.par3.innerText)
                    busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
