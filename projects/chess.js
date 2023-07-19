@@ -248,8 +248,8 @@ function load() {
             }
 
            function animationEnded(event) {
-                console.log('ANIMATION ENDED')
-                console.log(event.animationName)
+                //console.log('ANIMATION ENDED')
+                //console.log(event.animationName)
                 king = event.animationName
                 proceed = true
                 trig = ''
@@ -268,5 +268,4 @@ function load() {
                 console.log(love)
                 love.anistate = false
             }
-
     }
