@@ -156,6 +156,7 @@ function load() {
                 this.par2.style.height = 'fit-content'
                 sul = this.par2.offsetHeight
 
+                /*
                modify = false
                if (search != undefined) {
                if (search.cl == false) {
@@ -164,7 +165,8 @@ function load() {
                }else{
                 modify = true
                }
-               if (modify == true) {
+               */
+               //if (modify == true) {
                trueindex = Number(jin.replace('j',''))
                //console.log('was clicked!', trueindex)
                //console.log(document.getElementsByClassName('cont')[trueindex].id)
@@ -182,7 +184,7 @@ function load() {
                if (elidtxt != '') {
                 element = document.getElementById(elidtxt)
                }
-            }
+            //}
              ///
             if (search != undefined) {
                 search.comp++
