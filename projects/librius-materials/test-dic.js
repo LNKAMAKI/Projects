@@ -385,6 +385,7 @@ function saiu(thing) {
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path, done) {
 
+console.log('TAMTAMTAMTAM')
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
 if (stack == false) {
