@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     bodycontent.appendChild(divlist)
     vocabh = document.createElement('h1')
     vocabh.setAttribute('class','vocabh')
-    vocabh.innerText = 'Vocabulary'
+    vocabh.innerText = 'Vocabulary List'
     divlist.appendChild(vocabh)
     // Código para saber qual material está sendo acessado
     specfunc = String(document.getElementById('searcher').onclick)
