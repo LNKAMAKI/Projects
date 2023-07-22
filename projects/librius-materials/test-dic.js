@@ -396,6 +396,14 @@ function search(path, done) {
 console.log('TAMTAMTAMTAM')
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
+console.log('VOCABOPENNNNN', vocabopen)
+if (vocabopen == '' || vocabopen == true) {
+    console.log('MUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR')
+    innerbody = get1('vocabmng').innerHTML
+    vocabopen = false
+    get1('vocab').style.backgroundColor = 'var(--verylightpink)'
+    get1('words').style.backgroundColor = 'var(--lightpink)'
+}
 if (stack == false) {
 bodycontent.innerHTML = ''
 }
@@ -419,13 +427,13 @@ text1 = ''
 textindex1 = 0
 for (char in wordInfo.meaning) {
     mngc = wordInfo.meaning[char]
- console.log(mngc)
+ //console.log(mngc)
  if (mngc != '_') {
  text1+= mngc
  }
 
  if (mngc == '_' || char == wordInfo.meaning.length - 1) {
-    console.log('STOP!', text1)
+    //Console.log('STOP!', text1)
     textindex1++
     pEl = document.createElement('p')
     newtext1 = ''
@@ -446,11 +454,11 @@ for (char in wordInfo.meaning) {
     textindex2 = 0
    for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
     exc = wordInfo.examples[beg]
-    console.log('EX',exc)
+    //console.log('EX',exc)
     if (exc != '_' && exc != '@') {
         text2+= exc
     }
-    console.log(exc) 
+    //console.log(exc) 
     if (exc == '_' || beg == wordInfo.examples.length - 1 || exc == '@') {
         textindex2++
         if (exc != '@') 
@@ -511,7 +519,5 @@ function gotovocab() {
 }
 
 function gotowords() {
-    if (vocabopen != '') { 
-        get1('vocabmng').innerHTML = innerbody
-    }
+
 }
