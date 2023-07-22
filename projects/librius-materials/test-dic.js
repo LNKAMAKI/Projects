@@ -502,10 +502,14 @@ function move() {
 }
 }
 
+vocabopen = ''
+innerbody = ''
 function gotovocab() {
-    
+    if (vocabopen == '') {
+        innerbody = get1('vocabmng').innerHTML
+    }
 }
 
 function gotowords() {
-    
+    get1('vocabmng').innerHTML = innerbody
 }
