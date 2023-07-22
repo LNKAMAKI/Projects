@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
             pchoice = document.createElement('p')
             pchoice.setAttribute('class', 'choice')
             pchoice.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;margin-right: 5px"></img>${contents[dead].subs[fate].title}`
+            pchoice.setAttribute('onclick',`search('none',${contents[dead].subs[fate]})`)
             divlist.appendChild(pchoice)
         }
     }
