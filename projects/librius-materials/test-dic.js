@@ -387,6 +387,9 @@ function saiu(thing) {
     ps[thing].style.backgroundColor = 'var(--verylightgray)'
     }}
 
+    vocabopen = ''
+innerbody = ''
+
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path, done) {
 
@@ -503,8 +506,6 @@ function move() {
 }
 }
 
-vocabopen = ''
-innerbody = ''
 function gotovocab() {
     
 }
