@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
         contents = [...newContent]
     }
 
+    posind = 0
+    wordlist = []
     for (dead in contents) {
         console.log('DEAD',contents[dead].subs)
         for (fate in contents[dead].subs) {
@@ -59,8 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
             pchoice = document.createElement('p')
             pchoice.setAttribute('class', 'choice')
             pchoice.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;margin-right: 5px"></img>${contents[dead].subs[fate].title}`
-            pchoice.setAttribute('onclick',`search('none',${dead}.${fate})`)
+            pchoice.setAttribute('onclick',`search('none',${posind})`)
             divlist.appendChild(pchoice)
+            wordlist.push(contents[dead].subs[fate])
+            posind++
         }
     }
 
@@ -397,7 +401,8 @@ console.log('PATH!!!!',path)
 console.log(opspath[path])
 wordInfo = contents[opspath[path].title1].subs[opspath[path].index]
 }else{
-wordInfo = done
+    console.log(done)
+    wordInfo = wordlist[done]
 }
 hd.innerText = wordInfo.title
 span = document.createElement('span')
