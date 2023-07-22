@@ -19,7 +19,7 @@ contents = [
         {title: 'bear', type:"verb",meaning: 'to show something; to carry something so that it can be seen_to be able to accept and deal with something unpleasant; stand, to support the weight of somebody or something_to take responsibility for something_turn',examples: 'and had hastened to forestall any less careful, less tender friend in bearing the sad message@He was badly wounded in the war and still bears the scars@She bears little resemblance to (= is not much like) her mother_She couldn\'t bear the thought of losing him@The ice is too thin to bear your weight_In the end it\'s consumers who bear the burden of higher prices_When you get to the fork in the road, bear right'},
         {title: 'weep', type:"verb",meaning: 'to cry, usually because you are sad',examples: 'she wept at onece, with sudden, wild abandonment, in her sister\'s arms_She wept bitter tears of disappointment'},
         {title: 'grief', type:"noun",meaning: 'a very sad feeling, especially when somebody dies_[Uncountable] (Informal) problems and worry',examples: 'when the storm of grief had spent itself she went away to her room alone@They were able to share their common joys and griefs_He caused his parents a lot of grief'},
-        {title: 'aquiver', type:"noun",meaning: '',examples: ''},
+        {title: 'aquiver', type:"adjective",meaning: 'trembling, shaking',examples: 'trees that were all aquiver with the new spring life'},
         {title: 'peddler', type:"noun",meaning: '',examples: ''},
         {title: 'sparrow', type:"noun",meaning: '',examples: ''},
         {title: 'twitter', type:"noun",meaning: '',examples: ''},
