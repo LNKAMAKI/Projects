@@ -20,8 +20,8 @@ contents = [
         {title: 'weep', type:"verb",meaning: 'to cry, usually because you are sad',examples: 'she wept at onece, with sudden, wild abandonment, in her sister\'s arms_She wept bitter tears of disappointment'},
         {title: 'grief', type:"noun",meaning: 'a very sad feeling, especially when somebody dies_[Uncountable] (Informal) problems and worry',examples: 'when the storm of grief had spent itself she went away to her room alone@They were able to share their common joys and griefs_He caused his parents a lot of grief'},
         {title: 'aquiver', type:"adjective",meaning: 'trembling, shaking',examples: 'trees that were all aquiver with the new spring life'},
-        {title: 'peddler', type:"noun",meaning: '',examples: ''},
-        {title: 'sparrow', type:"noun",meaning: '',examples: ''},
+        {title: 'peddler', type:"noun",meaning: 'a person who goes from place to place selling small items',examples: 'in the street below a peddler was crying his wares'},
+        {title: 'sparrow', type:"noun",meaning: 'pardal',examples: 'countless sparrows were twittering in the eaves'},
         {title: 'twitter', type:"noun",meaning: '',examples: ''},
         {title: 'eave', type:"noun",meaning: '',examples: ''},
 
