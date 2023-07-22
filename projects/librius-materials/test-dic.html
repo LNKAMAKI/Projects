@@ -458,7 +458,7 @@ span.tipo {
     border-top-right-radius: 8px;
     background-color: var(--verylightpink);
     border: 1.8px solid var(--darkblue);
-    border-bottom: 5px solid pink;
+    border-bottom: 5px solid var(--lightpink);
     cursor: pointer;
     color: black;
 }
@@ -468,6 +468,7 @@ span.tipo {
 .change:active {
     color: white;
 }
+
 #list {
     --verydarkblue: rgb(65, 123, 145);
     --darkblue: rgb(87, 164, 195);
@@ -490,6 +491,7 @@ span.tipo {
 }
 .choice:hover {
     background-color: var(--verylightpink);
+    color: black;
     cursor: pointer;
 }
 /*
@@ -551,8 +553,8 @@ span.tipo {
                 <div class="yes-no"></div>
                </div>
            </div>
-           <div class="change" style="margin-left: 5px;" onclick="gotovocab()">Vocabulary</div>
-           <div class="change" onclick="gotowords()">Words</div>
+           <div class="change" style="margin-left: 5px;" onclick="gotovocab()" id="vocab">Vocabulary</div>
+           <div class="change" onclick="gotowords()" id="words">Words</div>
         <div id="vocabmng">
         </div>
     </div>

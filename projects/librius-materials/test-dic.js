@@ -20,6 +20,7 @@ contents = [
 var subjects = []
 document.addEventListener("DOMContentLoaded", function() {
 
+    get1('vocab').style.backgroundColor = 'var(--lightpink)'
     bodycontent = document.getElementById('vocabmng')
     divlist = document.createElement('div')
     divlist.id = 'list'
@@ -505,11 +506,11 @@ function move() {
 vocabopen = ''
 innerbody = ''
 function gotovocab() {
-    if (vocabopen == '') {
-        innerbody = get1('vocabmng').innerHTML
-    }
+    
 }
 
 function gotowords() {
-    get1('vocabmng').innerHTML = innerbody
+    if (vocabopen != '') { 
+        get1('vocabmng').innerHTML = innerbody
+    }
 }
