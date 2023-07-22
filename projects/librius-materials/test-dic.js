@@ -387,7 +387,7 @@ function saiu(thing) {
     ps[thing].style.backgroundColor = 'var(--verylightgray)'
     }}
 
-    vocabopen = ''
+    vocabopen = 'none'
     innerbody = ''
  
 // Cria o conteúdo(quando é feita a pesquisa)
@@ -396,8 +396,8 @@ function search(path, done) {
 console.log('TAMTAMTAMTAM')
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
-console.log('VOCABOPENNNNN', vocabopen)
-if (vocabopen == '' || vocabopen == true) {
+console.log('VOCABOPENNNNN', vocabopen, vocabopen == 'none', vocabopen == true)
+if (vocabopen == 'none' || vocabopen == true) {
     console.log('MUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR')
     innerbody = get1('vocabmng').innerHTML
     vocabopen = false
@@ -515,9 +515,23 @@ function move() {
 }
 
 function gotovocab() {
-    
+    if (vocabopen == false) {
+        get1('vocab').style.backgroundColor = 'var(--lightpink)'
+        get1('words').style.backgroundColor = 'var(--verylightpink)'
+        repl = get1('vocabmng').innerHTML
+        get1('vocabmng').innerHTML = innerbody
+        innerbody = repl
+        vocabopen = true
+    }
 }
 
 function gotowords() {
-
+    if (vocabopen == true) {
+        get1('vocab').style.backgroundColor = 'var(--verylightpink)'
+        get1('words').style.backgroundColor = 'var(--lightpink)'
+        repl = get1('vocabmng').innerHTML
+        get1('vocabmng').innerHTML = innerbody
+        innerbody = repl
+        vocabopen = false
+    }
 }
