@@ -38,7 +38,7 @@
             margin-left: 12.5px;
         }
         nav {
-            height: 80px;
+            height: 100px;
             position: relative;
             background-color: var(--lightgray);
             background-color: var(--lightblue);
@@ -46,7 +46,7 @@
             justify-content: center;
             align-items: center;
             margin: 0px;
-            padding: 10px 0px;
+            /*padding: 10px 0px;*/
         }
         #logo {
             position: relative;
@@ -102,6 +102,7 @@
             padding: 0px 10px;
             background-color: #fffdfd;
             padding: 40px 10px 0px 10px;
+            box-sizing: border-box;
             /*height: calc(100vh - 160px);*/
             /*display: flex;*/
         }
@@ -464,7 +465,7 @@ color: var(--mainpink);
                             <img src="librius-materials/images/marcador2.svg" alt="" style="width:21.25px;margin-left: calc(100% - 28.75px);position: absolute;">
                         </div>
                         <p style="margin:0px;height:5px;"></p>
-                                               <p class="pexp" onclick="openMaterial('librius-materials/test-dic.html','The Story of An Hour')">The Story Of An Hour</p>
+                                               <p class="pexp" onclick="openMaterial('librius-materials/test-dic.html','The Story Of An Hour')">The Story Of An Hour</p>
                                                <p class="pexp">Appointment With Love</p>
                     </div>
                 </div>
@@ -519,7 +520,7 @@ color: var(--mainpink);
     console.log(height)
     if (height > bodyHeight) {
         console.log('pode centralizar')
-        marginTop = (height - bodyHeight - 40)/2
+        marginTop = (height - bodyHeight)/2
         body.style.marginTop = `${marginTop}px`
     }else{
         body.style.display = 'block'
