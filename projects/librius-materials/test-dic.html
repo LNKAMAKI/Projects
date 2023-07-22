@@ -463,8 +463,10 @@ span.tipo {
     color: black;
 }
 .change:hover {
-    color: white;
     background-color: var(--lightpink);
+}
+.change:active {
+    color: white;
 }
 #list {
     --mainpink: #FF3E68;
@@ -546,8 +548,8 @@ span.tipo {
                 <div class="yes-no"></div>
                </div>
            </div>
-           <div class="change" style="margin-left: 5px;">Vocabulary</div>
-           <div class="change">Words</div>
+           <div class="change" style="margin-left: 5px;" onclick="gotovocab()">Vocabulary</div>
+           <div class="change" onclick="gotowords()">Words</div>
         <div id="vocabmng">
         </div>
     </div>

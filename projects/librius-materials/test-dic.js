@@ -501,3 +501,11 @@ function move() {
     }
 }
 }
+
+function gotovocab() {
+    
+}
+
+function gotowords() {
+    
+}
