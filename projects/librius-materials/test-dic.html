@@ -382,6 +382,7 @@ h1 {
  padding: 10px;
  border-top: 2px dashed var(--lightblue);
  border-bottom: 2px dashed var(--lightblue);
+ border-right: 2px solid var(--lightblue);
  overflow: hidden;
  border-left: 10px double var(--darkblue);
 }
@@ -435,11 +436,47 @@ span.tipo {
 }
 .yes-no {
     background-color: var(--lightpink);
+    background-color: var(--darkpink);
     width: 14px;
     height: 14px;
     margin-left: 2px;
     border-radius: 50%;
     cursor: pointer;
+}
+#list {
+    margin-top: 20px;
+    --mainpink: #FF3E68;
+    --darkpink: #ff2152;
+    border: 2px solid var(--mainpink);
+    border-left: 4px solid var(--mainpink);
+    border-bottom: 4px solid var(--mainpink);
+    border-radius: 5px;
+}
+.choice {
+    --mainpink: #FF3E68;
+    font-family: var(--defont);
+    font-size: 1.2em;
+    margin: 14px 0px 14px 8px;
+    border-bottom: 1px solid var(--mainpink);
+}
+.choice:hover {
+    background-color: var(--verylightpink);
+    cursor: pointer;
+}
+.choice::before {
+    background-image: url(images/pencil.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: ',,,,';
+    color: transparent;
+    margin-right: 4px;
+    margin-bottom: 5px;
+}
+.vocabh {
+    font-size: 2em;
+    font-family: var(--defont2);
+    font-weight: 700;
+    margin-left: 7px;
 }
 @keyframes swap-forward {
     0% {
@@ -483,7 +520,18 @@ span.tipo {
                 <div class="yes-no"></div>
                </div>
            </div>
-        <div id="vocabmng"></div>
+        <div id="vocabmng">
+            <!--
+            <div id="list">
+               <h1 class="vocabh">Vocabulary</h1>
+               <p class="choice">hello</p>
+               <p class="choice">hello</p>
+               <p class="choice">hello</p>
+               <p class="choice">hello</p>
+               <p class="choice">hello</p>
+            </div>
+        -->
+        </div>
     </div>
 </body>
 </html>

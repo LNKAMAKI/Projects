@@ -20,6 +20,8 @@ contents = [
 var subjects = []
 document.addEventListener("DOMContentLoaded", function() {
 
+    bodycontent = document.getElementById('vocabmng')
+    
     // Código para saber qual material está sendo acessado
     specfunc = String(document.getElementById('searcher').onclick)
     cango = true
@@ -42,6 +44,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
         contents = [...newContent]
+    }
+
+    for (dead in contents) {
+        console.log('DEAD',contents[dead].subs)
+        for (fate in contents[dead].subs) {
+            console.log(contents[dead].subs[fate])
+        }
     }
 
 for (i in contents) {
@@ -363,7 +372,7 @@ function saiu(thing) {
     }}
 
 // Cria o conteúdo(quando é feita a pesquisa)
-function search(path) {
+function search(path, done) {
 
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
@@ -371,9 +380,13 @@ if (stack == false) {
 bodycontent.innerHTML = ''
 }
 hd = document.createElement('h1')
+if (path != 'none') {
 console.log('PATH!!!!',path)
 console.log(opspath[path])
 wordInfo = contents[opspath[path].title1].subs[opspath[path].index]
+}else{
+wordInfo = done
+}
 hd.innerText = wordInfo.title
 span = document.createElement('span')
 span.setAttribute('class','tipo')
