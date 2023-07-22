@@ -10,9 +10,27 @@ function get2(thist) {
 
 // Materiais Array
 contents = [
-    {title:'The Story Of An Hour', url:'html-logo.svg',subs:[{title: 'abacaxi', type:"noun",meaning: 'fruta que você pode comer como sobremesa ou lanche; nunca comer melão na pizza ou na salada(crime gravíssimo)_comida',examples: 'fruta abacaxi@abacaxi = rei das frutas_comida(que se come) azeda'},{title: 'melancia', type:"noun",meaning: 'fruta_comida',examples: 'melhor fruta do mundo!@doce e saborosíssima! yummy!_comida deliciosa para se comer como sombremesa (bem geladinha)!@picolé de melancia, suca de melancia'}, {title: 'abacatotoide osteoporose', type:"noun",meaning: 'fruta_comida',examples: 'sdadsadadadssd'}]}, 
+    {title:'The Story Of An Hour', url:'html-logo.svg',subs:[
+        {title: 'conceal', type:"verb",meaning: 'conceal means to hide, cover, or keep something out of sight or from the knowledge of others intentionally. It involves keeping something secret or not making it visible or apparent',examples: 'veiled hints that revealed in half concealing@She concealed the gift behind her back, hoping to surprise her friend later@He couldn\'t conceal his excitement when he heard the news of his promotion'},
+        {title: 'intelligence', type:"noun",meaning: 'information, news',examples: 'he had been in the newspaper office when intelligence of the railroad disaster was received@the government had intelligence from several different sources'},
+        {title: 'hasten', type:"verb",meaning: '[Intransitive] To say or do something without delay; hurry_[Transitive] To make something happen sooner or more quickly',examples: 'and had hastened to forestall any less careful, less tender friend in bearing the sad message_The treatment she received may, in fact, have hastened her death'},
+        {title: 'forestall', type:"transitive verb",meaning: 'to prevent something from happening or somebody from doing something by doing something first',examples: 'and had hastened to forestall any less careful, less tender friend in bearing the sad message@Try to anticipate what your child will do and forestall problems'},
+        {title: 'tender', type:"adjective",meaning: 'kind, gentle and loving_easy to bite through and cut (food)_painful when you touch it (part of the body)_easily hurt or damaged; delicate',examples: 'and had hastened to forestall any less careful, less tender friend in bearing the sad message_This meat is extremely tender_My leg is still very tender where I banged it'},
+        {title: 'bear', type:"verb",meaning: 'to be able to accept and deal with something unpleasant; stand, to support the weight of somebody or something_to take responsibility for something',examples: 'She couldn\'t bear the thought of losing him@The ice is too thin to bear your weight_In the end it\'s consumers who bear the burden of higher prices'},
+        {title: 'grief', type:"noun",meaning: '',examples: ''},
+        {title: 'aquiver', type:"noun",meaning: '',examples: ''},
+        {title: 'peddler', type:"noun",meaning: '',examples: ''},
+        {title: 'sparrow', type:"noun",meaning: '',examples: ''},
+        {title: 'twitter', type:"noun",meaning: '',examples: ''},
+        {title: 'eave', type:"noun",meaning: '',examples: ''},
 
-    {title:'possessive', url:'html-logo.svg',subs:[{title: 'maça', type:"noun",meaning: 'fruta doce e deliciosa',examples: 'torta de maça, suco de maça'}]}
+    ]}, 
+ 
+    {title:'The Story Of An Hour', url:'html-logo.svg',subs:[
+        {title: 'abacaxi', type:"noun",meaning: '',examples: ''},
+
+    ]}, 
+    
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
