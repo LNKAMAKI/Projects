@@ -11,6 +11,7 @@ function get2(thist) {
 // Materiais Array
 contents = [
     {title:'The Story Of An Hour', url:'html-logo.svg',subs:[
+        {title: 'break to', type:"phrasal verb",meaning: 'tell',examples: 'great care was taken to break to her as gently as possible'},
         {title: 'conceal', type:"verb",meaning: 'conceal means to hide, cover, or keep something out of sight or from the knowledge of others intentionally. It involves keeping something secret or not making it visible or apparent',examples: 'veiled hints that revealed in half concealing@She concealed the gift behind her back, hoping to surprise her friend later@He couldn\'t conceal his excitement when he heard the news of his promotion'},
         {title: 'intelligence', type:"noun",meaning: 'information, news',examples: 'he had been in the newspaper office when intelligence of the railroad disaster was received@the government had intelligence from several different sources'},
         {title: 'hasten', type:"verb",meaning: '[Intransitive] To say or do something without delay; hurry_[Transitive] To make something happen sooner or more quickly',examples: 'and had hastened to forestall any less careful, less tender friend in bearing the sad message_The treatment she received may, in fact, have hastened her death'},
@@ -24,7 +25,11 @@ contents = [
         {title: 'sparrow', type:"noun",meaning: 'pardal',examples: 'countless sparrows were twittering in the eaves'},
         {title: 'twitter', type:"verb",meaning: 'sound produced by birds',examples: 'countless sparrows were twittering in the eaves'},
         {title: 'eave', type:"noun",meaning: 'the part of a roof that meets or overhangs the walls of a building',examples: 'countless sparrows were twittering in the eaves'},
-
+        {title: '', type:"",meaning: '',examples: ''},
+        {title: '', type:"",meaning: '',examples: ''},
+        {title: '', type:"",meaning: '',examples: ''},
+        {title: '', type:"",meaning: '',examples: ''},
+        {title: '', type:"",meaning: '',examples: ''},
     ]}, 
  
     {title:'The Story Of An Hour', url:'html-logo.svg',subs:[
