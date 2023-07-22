@@ -21,7 +21,13 @@ var subjects = []
 document.addEventListener("DOMContentLoaded", function() {
 
     bodycontent = document.getElementById('vocabmng')
-    
+    divlist = document.createElement('div')
+    divlist.id = 'list'
+    bodycontent.appendChild(divlist)
+    vocabh = document.createElement('h1')
+    vocabh.setAttribute('class','vocabh')
+    vocabh.innerText = 'Vocabulary'
+    divlist.appendChild(vocabh)
     // Código para saber qual material está sendo acessado
     specfunc = String(document.getElementById('searcher').onclick)
     cango = true
@@ -50,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('DEAD',contents[dead].subs)
         for (fate in contents[dead].subs) {
             console.log(contents[dead].subs[fate])
+            pchoice = document.createElement('p')
+            pchoice.setAttribute('class', 'choice')
+            pchoice.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;"></img>${contents[dead].subs[fate].title}`
+            divlist.appendChild(pchoice)
         }
     }
 
