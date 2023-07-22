@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(contents[dead].subs[fate])
             pchoice = document.createElement('p')
             pchoice.setAttribute('class', 'choice')
-            pchoice.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;"></img>${contents[dead].subs[fate].title}`
+            pchoice.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;margin-right: 5px"></img>${contents[dead].subs[fate].title}`
             divlist.appendChild(pchoice)
         }
     }
