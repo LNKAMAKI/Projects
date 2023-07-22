@@ -397,18 +397,23 @@ console.log('TAMTAMTAMTAM')
 pesquisa = document.getElementById('searcher').value
 bodycontent = document.getElementById('vocabmng')
 console.log('VOCABOPENNNNN', vocabopen, vocabopen == 'none', vocabopen == true)
+
 if (vocabopen == 'none' || vocabopen == true) {
     console.log('MUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR')
-    innerbody = get1('vocabmng').innerHTML
+    repl = get1('vocabmng').innerHTML
+    if (stack == true && vocabopen == true) {
+        bodycontent.innerHTML = innerbody
+    }
+    innerbody = repl
     vocabopen = false
     get1('vocab').style.backgroundColor = 'var(--verylightpink)'
     get1('words').style.backgroundColor = 'var(--lightpink)'
 }
+
 if (stack == false) {
-bodycontent.innerHTML = ''
-}else if(vocabopen == true) {
-bodycontent.innerHTML = innerbody
-}
+    bodycontent.innerHTML = ''
+    }
+
 hd = document.createElement('h1')
 if (path != 'none') {
 console.log('PATH!!!!',path)
