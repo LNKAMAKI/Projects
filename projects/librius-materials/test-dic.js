@@ -406,6 +406,8 @@ if (vocabopen == 'none' || vocabopen == true) {
 }
 if (stack == false) {
 bodycontent.innerHTML = ''
+}else if(vocabopen == true) {
+bodycontent.innerHTML = innerbody
 }
 hd = document.createElement('h1')
 if (path != 'none') {
