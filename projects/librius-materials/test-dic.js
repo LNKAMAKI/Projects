@@ -388,8 +388,8 @@ function saiu(thing) {
     }}
 
     vocabopen = ''
-innerbody = ''
-
+    innerbody = ''
+ 
 // Cria o conteúdo(quando é feita a pesquisa)
 function search(path, done) {
 
