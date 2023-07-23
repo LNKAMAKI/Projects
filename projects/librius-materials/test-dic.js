@@ -25,7 +25,7 @@ contents = [
         {title: 'sparrow', type:"noun",meaning: 'pardal',examples: 'countless sparrows were twittering in the eaves'},
         {title: 'twitter', type:"verb",meaning: 'sound produced by birds',examples: 'countless sparrows were twittering in the eaves'},
         {title: 'eave', type:"noun",meaning: 'the part of a roof that meets or overhangs the walls of a building',examples: 'countless sparrows were twittering in the eaves'},
-        {title: '', type:"",meaning: '',examples: ''},
+        {title: 'patch', type:"noun",meaning: 'a small area of something, especially one which is different from the area around it',examples: 'there were patches of blue sky showing here and there'},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
