@@ -30,7 +30,7 @@ contents = [
         {title: 'sob', type:"verb",meaning: '[Intransitive] To cry noisily, taking sudden, sharp breaths_to say something while crying',examples: 'as a child who has cried itself to sleep continues to sob in its dreams_He sobbed out his troubles'},
         {title: 'fair', type:"adjective",meaning: 'pale',examples: 'with a fair, calm face'},
         {title: 'bespeak', type:"transitive verb",meaning: 'to show or suggest something',examples: 'whose lines bespoke repression and even a certain strength'},
-        {title: 'dull', type:"adjective",meaning: 'not interesting or exciting; dreary',examples: 'there was a dull stare in her eyes'},
+        {title: 'dull', type:"adjective",meaning: 'not interesting or exciting; dreary_not bright or shiny; not clear or loud_not very severe, but continuous',examples: 'there was a dull stare in her eyes_dull knives@The fire died down to a dull glow@The gates shut behind him with a dull thud_dull ache/pain'},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
