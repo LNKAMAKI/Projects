@@ -11,7 +11,7 @@ function get2(thist) {
 // Materiais Array
 contents = [
     {title:'The Story Of An Hour', url:'html-logo.svg',subs:[
-        {title: 'break to', type:"phrasal verb",meaning: 'tell',examples: 'great care was taken to break to her as gently as possible'},
+        {title: 'break to', type:"transitive phrasal verb",meaning: 'tell',examples: 'great care was taken to break to her as gently as possible'},
         {title: 'conceal', type:"verb",meaning: 'conceal means to hide, cover, or keep something out of sight or from the knowledge of others intentionally. It involves keeping something secret or not making it visible or apparent',examples: 'veiled hints that revealed in half concealing@She concealed the gift behind her back, hoping to surprise her friend later@He couldn\'t conceal his excitement when he heard the news of his promotion'},
         {title: 'intelligence', type:"noun",meaning: 'information, news',examples: 'he had been in the newspaper office when intelligence of the railroad disaster was received@the government had intelligence from several different sources'},
         {title: 'hasten', type:"verb",meaning: '[Intransitive] To say or do something without delay; hurry_[Transitive] To make something happen sooner or more quickly',examples: 'and had hastened to forestall any less careful, less tender friend in bearing the sad message_The treatment she received may, in fact, have hastened her death'},
@@ -20,6 +20,7 @@ contents = [
         {title: 'bear', type:"verb",meaning: '[Transitive] To show something; to carry something so that it can be seen_[Transitive] To be able to accept and deal with something unpleasant; stand, to support the weight of somebody or something_[Transitive] To take responsibility for something_[Intransitive] turn',examples: 'and had hastened to forestall any less careful, less tender friend in bearing the sad message@He was badly wounded in the war and still bears the scars@She bears little resemblance to (= is not much like) her mother_She couldn\'t bear the thought of losing him@The ice is too thin to bear your weight_In the end it\'s consumers who bear the burden of higher prices_When you get to the fork in the road, bear right'},
         {title: 'weep', type:"verb",meaning: 'to cry, usually because you are sad',examples: 'she wept at once, with sudden, wild abandonment, in her sister\'s arms_She wept bitter tears of disappointment'},
         {title: 'grief', type:"noun",meaning: 'a very sad feeling, especially when somebody dies_[Uncountable] (Informal) problems and worry',examples: 'when the storm of grief had spent itself she went away to her room alone@They were able to share their common joys and griefs_He caused his parents a lot of grief'},
+        {title: 'haunt', type:"verb",meaning: 'assombrar; pursue, follow, or appear repeatedly and persistently',examples: 'pressed down by a physical exhaustion that haunted her body and seemed to reach into her soul'},
         {title: 'aquiver', type:"adjective",meaning: 'trembling, shaking',examples: 'trees that were all aquiver with the new spring life'},
         {title: 'peddler', type:"noun",meaning: 'a person who goes from place to place selling small items',examples: 'in the street below a peddler was crying his wares'},
         {title: 'cry', type:"verb",meaning: 'to say something loudly',examples: 'in the street below a peddler was crying his wares'},
@@ -71,9 +72,10 @@ contents = [
         {title: 'ship out', type:"phrasal verb",meaning: 'to leave or depart from a place, often referring to military personnel or individuals on a voyage_to send or transport goods or products from one place to another, especially from a seller to a customer',examples: 'next day he had been shipped out_The company will ship out the orders to customers by the end of the week'},
         {title: 'faithfully', type:"adverb",meaning: 'fielmente; in a way that shows true commitment; in a way that you can rely on',examples: 'she had faithfully replied'},
         {title: 'plea', type:"noun",meaning: 'beg; a serious emotional request, especially for something needing action now',examples: 'but she had refused all his pleas to send him her phothograph'},
-        {title: 'haunt', type:"verb",meaning: 'assombrar',examples: 'I\'d be always haunted by the feeling that you had been taking chance on just that'},
+        {title: 'haunt', type:"verb",meaning: 'assombrar; pursue, follow, or appear repeatedly and persistently',examples: 'I\'d be always haunted by the feeling that you had been taking chance on just that'},
+        {title: 'take chance', type:"expression",meaning: 'to take a risk or engage in something that has an uncertain outcome; refers to the willingness to try something despite the possibility of failure or negative consequences',examples: 'I\'d be always haunted by the feeling that you had been taking chance on just that@"He decided to take a chance and invest his savings in the new startup'},
         {title: 'plain', type:"adjective",meaning: 'lacking beauty or ugliness',examples: 'suppose I\'m plain (and you must admit that this is more likely)'},
-        {title: 'go on', type:'phrasal verb',meaning: 'to continue_to take place(happen)',examples: 'both of us are free to stop or go on after that_what is going on here?'},
+        {title: 'go on', type:'intransitive phrasal verb',meaning: 'to continue_to take place(happen)',examples: 'both of us are free to stop or go on after that_what is going on here?'},
         {title: 'pale', type:"adjective",meaning: 'pálido',examples: 'in her pale green suit she was like springtime come alive'},
         {title: 'entirely', type:"adverb",meaning: 'completely',examples: 'entire forgetting to notice that she was wearing no rose'},
         {title: 'tuck', type:"verb",meaning: 'enfiar, acomodar; to push or fit something tightly or snugly into a space',examples: 'her graying hair tucked under a worn hat@tuck in your shirt'},
