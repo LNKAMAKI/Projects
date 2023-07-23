@@ -487,11 +487,15 @@ span.tipo {
 }
 #list::-webkit-scrollbar {
     width: 8px;
+    border-radius: 5px;
 }
 #list::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: var(--lightgray);
     border-radius: 5px;
-    padding: 20px;
+}
+#list::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 5px;
 }
 .choice {
     --mainpink: #FF3E68;

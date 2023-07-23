@@ -12,7 +12,7 @@ function get2(thist) {
 contents = [
     {subs:[
         {title:'Personal, Possessive and Reflexive Table',url:'librius-materials/possessive,personal,reflexive.html'},
-        {title:'The Story Of An Hour',url:'librius-materials/test-dic.html'}
+        {title:'The Story Of An Hour',url:'librius-materials/the-story-of-an-hour.html'}
          
 ]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
