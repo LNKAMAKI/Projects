@@ -38,7 +38,7 @@ contents = [
         {title: 'slender', type:"adjective",meaning: 'thin, slim',examples: 'two white slender hands'},
         {title: 'keen', type:"adjective",meaning: 'enthusiastic about an activity or idea, etc',examples: 'they(her eyes) stayed keen and bright@His father was keen for him to go to university@ I wasn\'t too keen on going to the party'},
         {title: 'save', type:"adjective",meaning: 'exceto',examples: 'the face that had never looked save with love upon her'},
-        {title: '', type:"",meaning: '',examples: ''},
+        {title: 'bend', type:"verb",meaning: 'dobrar',examples: 'there would be no powerful will bending hers in that blind persistance'},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
