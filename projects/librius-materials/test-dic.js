@@ -37,7 +37,7 @@ contents = [
         {title: 'strive', type:"intransitive verb",meaning: 'to try very hard to achieve something;struggle',examples: 'she was striving to beat it back with her will@We encourage all members to strive for the highest standards@They were always striving towards perfection@striving against corruption'},
         {title: 'slender', type:"adjective",meaning: 'thin, slim',examples: 'two white slender hands'},
         {title: 'keen', type:"adjective",meaning: 'enthusiastic about an activity or idea, etc',examples: 'they(her eyes) stayed keen and bright@His father was keen for him to go to university@ I wasn\'t too keen on going to the party'},
-        {title: '', type:"",meaning: '',examples: ''},
+        {title: 'save', type:"adjective",meaning: 'exceto',examples: 'the face that had never looked save with love upon her'},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
         {title: '', type:"",meaning: '',examples: ''},
