@@ -42,6 +42,8 @@ contents = [
         {title: 'save', type:"adjective",meaning: 'exceto',examples: 'the face that had never looked save with love upon her'},
         {title: 'bend', type:"verb",meaning: 'dobrar, inclinar',examples: 'there would be no powerful will bending hers in that blind persistance@He bent his head and kissed her'},
         {title: 'private will', type:"noun",meaning: 'vontade pessoal',examples: 'which men and women believe they have a right to impose a private will upon a fellow-creature'},
+        {title: 'fellow-creature', type:"noun",meaning: 'parceiro',examples: 'which men and women believe they have a right to impose a private will upon a fellow-creature'},
+        {title: 'self-assertion', type:"noun",meaning: 'the quality of being very confident(self-assured) and not afraid to express your opinions',examples: 'what could love, the unsolved mistery, count for in the face of this possession of self-assertion'},
         {title: 'fancy', type:"adjective/noun",meaning: 'imagine; imagine_describes something that is decorative, stylish, or appealing, often implying a sense of elegance or sophistication',examples: 'her fancy was running riot along those days ahead of her_very fancy clothes'},
         {title: 'shudder', type:"noun/verb",meaning: 'to shake because you are cold or frightened, or because of a strong feeling',examples: 'iti was only yesterday she had thought with a shudder that life might be long@Alone in the car, she shuddered with fear'},
         {title: 'at length', type:"expression",meaning: 'after a long time;finally',examples: 'she arose at length and opened the door to her sister\'s importunities'},
