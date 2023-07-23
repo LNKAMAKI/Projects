@@ -47,7 +47,7 @@ contents = [
         {title: 'fancy', type:"adjective/noun",meaning: 'imagine; imagine_describes something that is decorative, stylish, or appealing, often implying a sense of elegance or sophistication',examples: 'her fancy was running riot along those days ahead of her_very fancy clothes'},
         {title: 'shudder', type:"noun/verb",meaning: 'to shake because you are cold or frightened, or because of a strong feeling',examples: 'iti was only yesterday she had thought with a shudder that life might be long@Alone in the car, she shuddered with fear'},
         {title: 'at length', type:"expression",meaning: 'after a long time;finally',examples: 'she arose at length and opened the door to her sister\'s importunities'},
-        {title: 'grip-sack', type:"noun",meaning: 'grip sack; ​a bag made out of cloth that is like a tube in shape and is closed by a string around the top. It is usually carried over the shoulder',examples: 'carrying his grip-sack and umbrella'},
+        {title: 'grip-sack', type:"noun",meaning: 'duffel bag; ​a bag made out of cloth that is like a tube in shape and is closed by a string around the top. It is usually carried over the shoulder',examples: 'carrying his grip-sack and umbrella'},
         {title: 'screen', type:"verb",meaning: 'hide',examples: 'screen him from the view of his wife'},
         {title: 'piercing', type:"adjective",meaning: 'high-pitched, agudo',examples: 'he stood amazed at Josephine piercing cry'},
         {title: '', type:"",meaning: '',examples: ''},
