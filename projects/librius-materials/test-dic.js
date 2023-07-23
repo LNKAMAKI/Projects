@@ -113,8 +113,13 @@ contents = [
         {title: 'due to', type:"preposition",meaning: 'owing to, because of',examples: 'due to an influx of millions of refugees from neighbouring Syria fleeing civil war'},
         {title: 'budget', type:"noun",meaning: 'orçamento',examples: 'It is unclear from government budgets how the earthquake tax has been spent'},
         {title: 'cash-strapped', type:"adjective",meaning: 'that has a shortage of money or is experiencing financial difficulties',examples: 'the cash-strapped Turkish parliament'},
-        {title: '', type:"noun",meaning: '',examples: ''},
-        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: 'withstand', type:"transitive verb",meaning: 'to be proof against; resist the effect of'
+        ,examples: 'buildings that are designed to withstand earthquakes are less likely to collapse'},
+        {title: 'slipshod', type:"adjective",meaning: 'describes something that is done in a careless, hasty(hurried), or sloppy manner',examples: 'people across the country suspected of slipshod or negligent construction'},
+        {title: 'upmarket', type:"adjective",meaning: 'very high quality and intended to be bought by people who are quite rich',examples: 'The developer of an upmarket 12-storey apartment complex'},
+        {title: 'prosecutor', type:"noun",meaning: 'a legal official who accuses someone of committing a crime, especially in a law court',examples: 'He told prosecutors that his company had followed all the relevant procedures and legislation@prosecutors have begun gathering samples of buildings for evidence on materials used in construction'},
+        {title: 'assuage', type:"transitive verb",meaning: 'alleviate; to lessen the intensity of something',examples: 'but blaming building contractors is unlikely to assuage a rising tide of public anger at government policy'},
+        {title: 'unforeseen', type:"adjective",meaning: 'unexpected, unpredicted',examples: ' It is true that we were not expecting an earthquake of this scale, in this area, so it was unforeseen in that respect'},
         {title: '', type:"noun",meaning: '',examples: ''},
     ]},
     
