@@ -23,12 +23,20 @@ for (ciyu in elements) {
  cont = document.createElement('div')
  cont.setAttribute('class','cont')
  cont.id = `${ciyu}`
- cont.innerHTML = ` <div class="center">
- <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">${elements[ciyu].title}</p>
+ cont.innerHTML = `
+ <div class="center">
+    <div class="exptype">
+        <p class="choice">
+            <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${elements[ciyu].title}
+        </p>
+    </div>
 </div>` + elements[ciyu].content
+
 document.body.appendChild(cont)
 }
 loop(elements)
+
+
 function loop(arraylist, d) {
     repeat = false
     newlist = []
@@ -46,8 +54,15 @@ function loop(arraylist, d) {
             cont = document.createElement('div')
             cont.setAttribute('class','cont')
             cont.id = arraylist[dial].id + `.${tones}`
-            cont.innerHTML = ` <div class="center">
-             <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">${arraylist[dial].objects[tones].title}</p></div>` + arraylist[dial].objects[tones].content
+            /*cont.innerHTML = ` <div class="center">
+             <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">${arraylist[dial].objects[tones].title}</p></div>` + arraylist[dial].objects[tones].content*/
+             cont.innerHTML = `<div class="center">
+             <div class="exptype">
+                 <p class="choice">
+                     <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${arraylist[dial].objects[tones].title}
+                 </p>
+             </div>
+         </div>` + arraylist[dial].objects[tones].content
              document.getElementById(`${arraylist[dial].id}`).appendChild(cont)
         }
         if (arraylist[dial].objects.length > 0) {
@@ -59,6 +74,7 @@ function loop(arraylist, d) {
     if (repeat == true)
         loop(newlist)
 }
+
 
 function load() {
     console.log('ONLOAD')

@@ -9,10 +9,12 @@
     <title>Materiais</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
    <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
      @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
+  
   :root {
-            --defont: 'Merriweather Sans';
+            --defont: 'DM Serif Display';
             --darkblue: rgb(87, 164, 195);
             --lightgray: #e7e7e7;
             --verylightgray: rgb(249, 249, 249);
@@ -112,26 +114,44 @@
        }
        .cont {
             position: relative;
-            background-color: paleturquoise;
             overflow-y: hidden;
             overflow-x: hidden;
-            height: 100px;
-            /*transition-duration: 2s;*/
-        /*animation: j2 4s;*/
-        }
-        .center {
+            height: 30px;
+            width: 100%;
+            margin: 14px 0px 14px 0px;
+            background-color: bisque;
+           }
+           .center {
             position: relative;
             display: flex;
             height: 100%;
             justify-content: start;
             white-space: nowrap;
-            font-size: 1em;
             overflow-x: hidden;
             overflow-y: hidden;
             padding: 0px;
-            background-color: bisque;
-            /*background-color: lightsalmon;*/
-        }
+            background-color: #ffc4c4;
+          }
+          .exptype {
+            display: flex;
+            width: 100%;
+            margin: 0px;
+            justify-content: start;
+            border-radius: 0px;
+            padding: 1px;
+            align-items: center;
+            }
+            .choice {
+            --mainpink: #FF3E68;
+            --darkblue: rgb(87, 164, 195);
+            font-family: var(--defont);
+            font-size: 1.3em;
+            margin: 14px 0px 14px 0px;
+            border-bottom: 2px solid var(--darkblue);
+            font-weight: 500;
+            width: 100%;
+            background-color: white;
+           }
         .ar {
             transition-duration: 0.2s;
             width: 20px;

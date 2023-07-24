@@ -258,11 +258,20 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('DEAD',contents[dead].subs)
         for (fate in contents[dead].subs) {
             console.log(contents[dead].subs[fate])
-            pchoice = document.createElement('p')
-            pchoice.setAttribute('class', 'choice')
-            pchoice.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;margin-right: 5px"></img>${contents[dead].subs[fate].title}`
-            pchoice.setAttribute('onclick',`search('none',${posind})`)
-            divlist.appendChild(pchoice)
+            divcont = document.createElement('div')
+            divcont.setAttribute('class', 'cont')
+            //divcont.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;margin-right: 5px">${contents[dead].subs[fate].title}`
+            divcont.innerHTML = `
+            <div class="center">
+            <div class="exptype">
+                    <p class="choice">
+                    <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${contents[dead].subs[fate].title}
+                    </p>
+                        </div>
+                   </div>`
+
+            //divcont.setAttribute('onclick',`search('none',${posind})`)
+            divlist.appendChild(divcont)
             wordlist.push(contents[dead].subs[fate])
             posind++
         }
