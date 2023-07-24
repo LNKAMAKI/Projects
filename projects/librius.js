@@ -15,8 +15,8 @@ contents = [
         {title:'The Story Of An Hour',url:'librius-materials/the-story-of-an-hour.html'},
         {title:'Appointment With Love',url:'librius-materials/appointment-with-love.html'},
         {title:'Turkey earthquake death toll suggests lessons of 1999 were not learned',url:'librius-materials/text-1-train-1.html'},
-        {title:'New "unidentified object" shot down over Canada, says Trudeau',url:'librius-materials/.text-2-train-1.html'},
-        {title:'',url:'librius-materials/.html'},
+        {title:'New "unidentified object" shot down over Canada, says Trudeau',url:'librius-materials/text-2-train-1.html'},
+        {title:'HBO\'S \"The Last Of Us\" is a startling success',url:'librius-materials/text-3-train-1.html'},
         
          
 ]}

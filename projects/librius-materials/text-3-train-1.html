@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;800&display=swap');
+        :root {
+            --defont2: 'Merriweather Sans';
+            --defont: 'DM Serif Display';
+            --darkblue: rgb(87, 164, 195);
+            --lightgray: #e7e7e7;
+            --verylightpink: rgb(255 243 243);
+            --verylightgray: rgb(249, 249, 249);
+            --lightpink: #ffc4c4;
+            --mainpink: #FF3E68;
+            --lightblue: rgb(173 197 206);
+            --verydarkblue: rgb(65, 123, 145);
+            --darkpink: #ff2152;
+        }
+      </style>
+
+     <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+           /* overflow-x: hidden;*/
+        }
+        #img-logo {
+        background-color: transparent;
+        width: 22px;
+        margin-right: 10px;
+        margin-left: 10px;
+       } 
+        nav {
+            height: 50px;
+            position: relative;
+            background-color: var(--lightgray);
+            background-color: rgb(237 239 240);
+            background-color: transparent;
+            /*background-color: bisque; ==> nice color */
+            display: flex;
+            align-items: center;
+            margin: 0px;
+        }
+        #logo {
+            position: relative;
+            height: 100%;
+            margin-left: 5px;
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            height: 32px;
+            /*padding:20px 0px;*/
+        }
+        #searchbar {
+            position: relative;
+            display: inline-block;
+            height: 25px;
+            border-width: 0px;
+            outline: none;
+            background-color: white;
+            width: 100%;
+            border-radius: 5px;
+            border: 2px solid var(--darkblue);
+            padding: 0px 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    
+        .pclick {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-family: var(--defont);
+            color: var(--mainpink);
+            font-weight: 800;
+            font-size: 1.4em;
+            cursor: pointer;
+        }
+
+        section {
+            position: relative;
+            padding: 10px;
+            background-color: #fffdfd;
+            margin: auto;
+            /*max-width: 1000px;*/
+        }
+        .contain {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .p-contain {
+            text-indent: 15px;
+            display: inline-block;
+            margin: 0px 0px 0px 10px;
+            font-size: 1em;
+            font-family: var(--defont);
+            font-weight: 500;
+        }
+        
+        iframe {
+            position: relative;
+            border: none;
+            width: 100%;
+            margin: 20px auto;
+            margin-top: 0px;
+            display: block;
+        }
+        #log {
+           display: inline-block;
+           width: 700px;
+           margin: auto;
+        }
+        nav > #central {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: fit-content;
+            height: 32px;
+            max-width: calc(600px);
+            border: 2px solid rgb(87, 164, 195);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 3px 3px 3px 0px;
+            border-radius: 5px;
+            margin: 5px;
+            background-color: rgb(252, 252, 252);
+        }
+        </style>
+
+        <style>
+       #rev {
+           width: fit-content;
+           width: 100%;
+           max-width: 400px;
+           display: inline-block;
+          top: 0px;
+          position: relative;
+          height: 100%;
+          padding: 0px;
+       }
+       input:focus ~ #main {
+           opacity: 100;
+           display: none;
+        z-index: 10;
+           top: 100%;
+         position: absolute;
+         border-bottom-left-radius: 5px;
+         border-bottom-right-radius: 5px;
+         background-color: var(--verylightgray);
+         /*padding-bottom: 0.3vw;*/
+         overflow: hidden;
+       }
+       #searcher {
+        position: relative;
+            display: inline-block;
+            border-width: 0px;
+            outline: none;
+            background-color: white;
+            border-left: 2px solid rgb(87, 164, 195);
+            border-right: 2px solid rgb(87, 164, 195);
+            width: calc(100% - 3.2px - 20px);
+            padding: 0px 10px;
+            font-family: var(--defont);
+            font-size: 1.2em;
+            height: 100%;
+        }
+
+     #main {
+        padding-top: 5px;
+        opacity: 0;
+        z-index: 10;
+    width: calc(100% - 3.2px);
+    top: 100%;
+    position: absolute;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+         overflow: hidden;
+         background-color: #FF3E68;
+         border: 2px solid rgb(87, 164, 195);
+       }
+       
+       #main > .psearcher{
+        font-family: var(--defont);
+        font-size: 1.2em;
+        transition-property: width, background-color;
+        transition-duration: 0.4s;
+           z-index: 20;
+           width: 100%;
+           position: absolute;
+           text-align: center;
+           padding-top: 4px;
+           padding-bottom: 4px;
+          margin: 0 0 0 0 ;
+           text-align: center;
+           background-color: var(--verylightgray);
+           /*border: 1px solid var(--darkblue);*/
+       }
+       #main > .psearcher:hover{
+           background-color: rgb(235, 235, 235);
+           cursor: pointer;
+       }
+       .phelp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+       }
+       #searcher::placeholder {
+           color: rgb(173, 173, 173) ;
+       }
+       .backar {
+        width: 12px;
+        margin-right: 8px;
+       }
+       .ph {
+        text-align: start;
+        font-family: var(--defont);
+        font-size: 1.1em;
+        color: var(--mainpink);
+        font-weight: 700;
+        background-color: white;
+        margin-bottom: 5px;
+        margin: 0px;
+        width: calc(100% - 20px);
+       }
+       .gobackbut {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+       }
+        </style>
+
+
+<style>
+.cont {
+    position: relative;
+    background-color:var(--verylightgray);
+    background-color: rgb(252, 252, 252);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 30px;
+    width: 100%;
+    color: rgb(65, 123, 145);
+}
+.center {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: start;
+    white-space: nowrap;
+    font-size: 1em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0px;
+    /*background-color: lightsalmon;*/
+}
+.exptype {
+display: flex;
+margin: 0px;
+justify-content: start;
+border-radius: 0px;
+padding: 1px;
+display: flex;
+align-items: center;
+font-family: var(--defont);
+font-weight: 600;
+font-size: 1.1em;
+}
+.secexptype {
+display: flex;
+margin: 0px;
+justify-content: start;
+border-radius: 5px;
+padding: 1px;
+display: flex;
+align-items: center;
+font-family: var(--defont);
+font-weight: 600;
+font-size: 1.05em;
+}
+.ar {
+    transition-duration: 0.2s;
+    width: 20px;
+    height: 20px;
+    transform: rotate(0deg);
+    cursor: pointer;
+    position: relative;
+}
+.pexp {
+background-color: white;
+margin: 0px 10px 6px 20px;
+border-radius: 5px;
+width: calc(100% - 40px);
+padding: 3px 5px;
+cursor: pointer;
+font-family: var(--defont);
+font-size: 1em;
+font-weight: 500;
+border: 2px solid var(--lightpink);
+border-bottom: 4px solid var(--lightpink);
+color: #d6123c ;
+color: rgb(59, 59, 59);
+}
+.pexp:hover {
+color: var(--mainpink);
+}
+.table {
+    width: 100%;
+    max-width: 810px;
+    margin: auto;
+}
+.secp {
+    font-size: 1em;
+}
+.bord {
+    padding:0px;
+    background-color: rgb(220, 220, 220);
+    background-color: var(--darkblue);
+    background-color: lightblue;
+    background-color: var(--darkblue);
+    border: 2px solid rgb(220, 220, 220);
+    border: 2px solid var(--darkblue);
+    border-radius: 5px;
+    overflow-x: hidden;
+    margin-bottom: 5px;
+    width: calc(100% - 3.2px);
+}
+.pexp > a {
+    text-decoration: none;
+    color: black;
+}
+.pexp > a:hover {
+    color: var(--mainpink);
+}
+.title {
+    position: relative;
+    font-size: 1.625em;
+    width: calc(100% - 25px);
+    text-align: center;
+    display: block;
+    margin: 0px;
+    padding: 12.5px 0px 18.75px 0px;
+}
+h1 {
+    display: flex;
+    align-items:baseline;
+    color: black;
+    font-weight: 800;
+    font-size: 3em;
+    font-family: '';
+    width:fit-content;
+    margin-top: 20px;
+}
+.sep {
+    padding-bottom: 5px;
+    background-color: rgb(252, 240, 240);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#page {
+    background-color: white;
+ position: relative;
+ min-height: 420px;
+ max-width: 650px;
+ margin: auto;
+ padding: 10px;
+ border-top: 2px dashed var(--lightblue);
+ border-bottom: 2px dashed var(--lightblue);
+ border-right: 2px solid var(--lightblue);
+ overflow: hidden;
+ border-left: 10px double var(--darkblue);
+}
+.pel1 {
+    font-size: 1.3em;
+    color: black;
+    padding: 5px;
+    font-family: var(--defont);
+}
+.pel2 {
+  font-family: var(--defont2);
+  font-size: 1.1em;
+  color: #0076a6;
+  padding: 5px;
+  background-color: var(--verylightgray);
+  border-bottom: 2px solid var(--darkblue);
+  border-radius: 3px;
+}
+span.tipo {
+    font-size: 0.5em;
+    color: rgb(158, 158, 158);
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 5px;
+}
+.inline {
+    border-bottom: 2.2px solid var(--mainpink); 
+    background-color: var(--verylightpink);
+}
+.stack-div {
+    /*width: calc(100% - 5px);*/
+    width: fit-content;
+    background: var(--verylightgray);
+    padding: 8px;
+    border-radius: 6px;
+    margin-left: 5px;
+    display: flex;
+    margin-top: 6px;
+}
+.stack {
+    display: inline-block;
+    background: white;
+    border: 1px solid var(--verydarkblue);
+    border-radius: 30px;
+    width: 40px;
+    height: 20px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.yes-no {
+    background-color: var(--lightpink);
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#vocabmng {
+  position: relative;
+  border-top: 2px solid var(--darkblue);
+  margin-left: 5px;
+}
+.change {
+    position: relative;
+    display: inline-block;
+    padding: 7px;
+    height: 20px;
+    margin-top: 10px;
+    font-family: var(--defont2);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--verylightpink);
+    border: 1.8px solid var(--darkblue);
+    border-bottom: 5px solid var(--lightpink);
+    cursor: pointer;
+    color: black;
+}
+.change:hover {
+    background-color: var(--lightpink);
+}
+.change:active {
+    color: white;
+}
+
+#list {
+    --verydarkblue: rgb(65, 123, 145);
+    --darkblue: rgb(87, 164, 195);
+    --mainpink: #FF3E68;
+    --darkpink: #ff2152;
+    border: 2px solid var(--mainpink);
+    border-left: 4px solid var(--mainpink);
+    border-bottom: 4px solid var(--mainpink);
+    border-width: 0px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow: auto;
+    /*box-shadow: -2.5px 1.5px 3px var(--lightgray) inset;*/
+}
+#list::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 5px;
+}
+#list::-webkit-scrollbar-thumb {
+    background-color: var(--lightgray);
+    border-radius: 5px;
+}
+#list::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 5px;
+}
+.choice {
+    --mainpink: #FF3E68;
+    --darkblue: rgb(87, 164, 195);
+    font-family: var(--defont);
+    font-size: 1.3em;
+    margin: 14px 0px 14px 8px;
+    border-bottom: 2px solid var(--darkblue);
+    font-weight: 500;
+}
+.choice:hover {
+    background-color: var(--verylightpink);
+    color: black;
+    cursor: pointer;
+}
+/*
+.choice::before {
+    background-image: url(images/pencil.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: ',,,,';
+    color: transparent;
+    margin-right: 4px;
+    margin-bottom: 5px;
+}*/
+.vocabh {
+    font-size: 2.3em;
+    font-family: var(--defont);
+    font-weight: 700;
+    margin-left: 7px;
+    margin-bottom: 30px;
+    border-bottom: 5px solid #ffc4c4;
+}
+@keyframes swap-forward {
+    0% {
+        margin-left: 2px;
+        margin-right: 0px;
+    }
+    100% {
+        margin-left: calc(100% - 17px);
+        margin-right: 2px;
+    }
+}
+@keyframes swap-backward {
+    0% {
+        margin-left: calc(100% - 17px);
+    }
+    100% {
+        margin-left: 2px;
+    }
+}
+
+</style>
+</head>
+<body >
+    <script src="test-dic.js"></script>
+    <div id="page">
+        <nav>
+        <div id="central">
+            <img src="images/book-cover.svg" alt="" id="img-logo">
+            <p class="pclick" style="margin-right: 0px;"></p>
+            <div id="rev">
+                <input type="text" autocomplete="off" id="searcher" placeholder="Type word..." onclick="fclic('text-3-train-1')" spellcheck="false">
+                <div id="main">
+                </div>
+            </div>
+        </div>
+        <!--</div>-->
+        </nav>
+           <div class="stack-div">
+               <span style="font-family: var(--defont2);">Stack:</span>
+               <div class="stack" onclick="move()">
+                <div class="yes-no"></div>
+               </div>
+           </div>
+           <div class="change" style="margin-left: 5px;" onclick="gotovocab()" id="vocab">Vocab List</div>
+           <div class="change" onclick="gotowords()" id="words">Words</div>
+        <div id="vocabmng">
+        </div>
+    </div>
+</body>
+</html>
