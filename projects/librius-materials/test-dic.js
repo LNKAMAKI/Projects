@@ -145,12 +145,12 @@ contents = [
     ]},
 
     {title:'text-3-train-1', url:'html-logo.svg',subs:[
-        {title: 'namely', type:"noun",meaning: '',examples: ''},
-        {title: 'concede', type:"noun",meaning: '',examples: ''},
-        {title: 'kitschy', type:"noun",meaning: '',examples: ''},
-        {title: 'prior', type:"noun",meaning: '',examples: ''},
-        {title: 'appeal', type:"noun",meaning: '',examples: ''},
-        {title: 'seamless', type:"noun",meaning: '',examples: ''},
+        {title: 'namely', type:"adverb",meaning: 'Specifically, that is to say, in particular, explicitly; used to introduce specific examples or to provide more precise information about something that has been mentioned',examples: 'There are a few shows that succeeded in this task, namely Netflix’s “Arcane” and “Castlevania”'},
+        {title: 'concede', type:"verb",meaning: 'confess, admit, accept, recognize; to admit, often unwillingly, that something is true_[Transitive] To give something to someone, or allow them to have it, especially when you are unwilling to do so',examples: 'I’ll also concede that the “Resident Evil” and “Silent Hill” movies are kitschy fun in retrospect_ Local government has been forced to concede some of its authority to larger, regionally based, units'},
+        {title: 'kitschy', type:"adjective",meaning: 'tacky; describes something that appeals to popular or lowbrow  (unsophisticated, simple) taste and is often of poor quality',examples: '(I’ll also concede that the “Resident Evil” and “Silent Hill” movies are kitschy fun in retrospect'},
+        {title: 'prior', type:"adjective",meaning: 'earlier in time or order_more important',examples: 'Still, many prior video game adaptations to the screen have suffered from uninteresting characters and stories_Mothers with young children have a prior claim on funds'},
+        {title: 'appeal', type:"noun/intransitive verb",meaning: 'To be attractive or interesting_apelar, apelo; to make a request or plea',examples: 'instant mass appeal to how seamlessly it translates the language of video games to film@The novel\'s unique storyline appeals to a wide range of readers_He appealed to the public for assistance in finding his missing dog'},
+        {title: 'seamless', type:"adjective",meaning: 'to be a unified whole, with no clear distinctions or separations between its parts; smooth, continuous, and without any visible or noticeable interruptions',examples: 'instant mass appeal to how seamlessly it translates the language of video games to film@The transition between scenes in the movie was seamless, creating a cohesive and immersive viewing experience'},
         {title: 'trope', type:"noun",meaning: '',examples: ''},
         {title: 'iteration', type:"noun",meaning: '',examples: ''},
         {title: 'outbreak', type:"noun",meaning: '',examples: ''},
