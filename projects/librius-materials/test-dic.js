@@ -671,6 +671,11 @@ function search(path, done) {
         if (stack == true && vocabopen == true) {
             bodycontent.innerHTML = innerbody
         }
+
+        if (vocabopen == 'none') {
+            bodycontent.innerHTML = ''
+        }
+        
         innerbody = repl
         vocabopen = false
         get1('vocab').style.backgroundColor = 'var(--verylightpink)'
