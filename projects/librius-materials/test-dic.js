@@ -216,6 +216,8 @@ contents = [
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
 
+elements = []
+
 var subjects = []
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -255,29 +257,123 @@ document.addEventListener("DOMContentLoaded", function() {
     posind = 0
     wordlist = []
     for (dead in contents) {
-        console.log('DEAD',contents[dead].subs)
+        //console.log('DEAD',contents[dead].subs)
         for (fate in contents[dead].subs) {
+            
+            /*
             console.log(contents[dead].subs[fate])
-            divcont = document.createElement('div')
-            divcont.setAttribute('class', 'cont')
-            //divcont.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;margin-right: 5px">${contents[dead].subs[fate].title}`
-            divcont.innerHTML = `
-            <div class="center">
-            <div class="exptype">
-                    <p class="choice">
-                    <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${contents[dead].subs[fate].title}
-                    </p>
-                        </div>
-                   </div>`
-
-            //divcont.setAttribute('onclick',`search('none',${posind})`)
-            divlist.appendChild(divcont)
+            pchoice = document.createElement('p')
+            pchoice.setAttribute('class', 'choice')
+            pchoice.innerHTML = `<img src="images/pencil.svg" alt="" style="width: 20px;margin-right: 5px">${contents[dead].subs[fate].title}`
+            pchoice.setAttribute('onclick',`search('none',${posind})`)
+            divlist.appendChild(pchoice)
+            */
+    
+            wordInfo = contents[dead].subs[fate]
+            htmltext = `<h1>${wordInfo.title}<span class="tipo">(${wordInfo.type})</span></h1>`
+            exindex = 0
+            text1 = ''
+            textindex1 = 0
+            for (char in wordInfo.meaning) {
+                mngc = wordInfo.meaning[char]
+             if (mngc != '_') {
+             text1+= mngc
+             }
+            
+             if (mngc == '_' || char == wordInfo.meaning.length - 1) {
+                textindex1++
+                pEl = document.createElement('p')
+                newtext1 = ''
+                for (vai in text1) {
+                    if (vai != 0) 
+                    newtext1+= text1[vai]
+                }
+                text1 = text1[0].toUpperCase() + newtext1
+                console.log('DIAL TONES', newtext1)
+                /*pEl.innerHTML = `<img src="images/pencil.svg" alt=""> <span class="inline">${text1}</span>`*/
+                htmltext+= `<p class="pel1"><span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex1}. </span>${text1}</span></p>`
+            
+                text1 = ''
+            
+                keepgoing = true
+                text2 = ''
+                textindex2 = 0
+               for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
+                exc = wordInfo.examples[beg]
+                if (exc != '_' && exc != '@') {
+                    text2+= exc
+                }
+                if (exc == '_' || beg == wordInfo.examples.length - 1 || exc == '@') {
+                    textindex2++
+                    if (exc != '@') 
+                    keepgoing = false
+                    console.log('STOP 2!!', text2)
+                    newtext2 = ''
+                    for (vai in text2) {
+                        if (vai != 0) 
+                        newtext2+= text2[vai]
+                    }
+                    if (text2 != '') {
+                    text2 = text2[0].toUpperCase() + newtext2
+                    htmltext+= `<p class="pel2"><span style="font-weight: 500;">Ex ${textindex2}</span>:&nbsp; ${text2}</p>`
+                    }
+                    if (exc == '@') 
+                    text2 = ''
+                }
+                exindex++
+               }
+             }
+            }
+            
             wordlist.push(contents[dead].subs[fate])
             posind++
+
+            elements.push({title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: []})
         }
     }
 
-for (i in contents) {
+    //---------------
+    for (ciyu in elements) {
+        elements[ciyu].id = `${ciyu}`
+        //console.log(elements[ciyu])
+        cont = document.createElement('div')
+        cont.setAttribute('class','cont')
+        cont.id = `${ciyu}`
+        cont.innerHTML = `
+        <div class="center">
+           <div class="exptype">
+               <p class="choice">
+                   <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${elements[ciyu].title}
+               </p>
+           </div>
+       </div>` + elements[ciyu].content
+       
+       divlist.appendChild(cont)
+       }
+       loop(elements)
+       
+
+       console.log('ONLOAD')
+    conts = get2('cont')
+    cents = get2('center')
+    ars = get2('ar')
+    mecams = [] 
+    late = -1   
+    sai = 0
+    for (bob = 0; bob < cents.length; bob++) {
+    c = new CreateFunc(bob,'close')
+        c.SetDefault()
+        c.AddEvent()
+    }
+    
+    idlist = []
+    for (bob = 0; bob < conts.length; bob++) {
+        //console.log('cont',conts[bob],bob,conts[bob].id)
+        idlist.push({id: conts[bob].id, pos: bob})
+        }
+
+//---------------------------
+        for (i in contents) {
     console.log(contents[i])
     for (e in contents[i].subs) {
         subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(),index:e})
@@ -543,6 +639,7 @@ ps = document.getElementById('main').getElementsByClassName('psearcher')
   // Quando a pesquisa é realizada (uma opção é clicada)
 function dothesearch(whichid) {
 
+    console.log('YOU WERE JUST LIKE ME.......')
   document.getElementById('searcher').value = opspath[whichid].title2
   allps = document.getElementsByClassName('psearcher')
   podeir = true
@@ -559,6 +656,114 @@ function dothesearch(whichid) {
   document.getElementById('main').style.display = 'none'
   console.log('HERE', document.getElementById('main').style.display)
   pselected = -1
+
+  // Cria o conteúdo(quando é feita a pesquisa)
+function search(path, done) {
+
+    console.log('TAMTAMTAMTAM')
+    pesquisa = document.getElementById('searcher').value
+    bodycontent = document.getElementById('vocabmng')
+    console.log('VOCABOPENNNNN', vocabopen, vocabopen == 'none', vocabopen == true)
+    
+    if (vocabopen == 'none' || vocabopen == true) {
+        console.log('MUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR')
+        repl = get1('vocabmng').innerHTML
+        if (stack == true && vocabopen == true) {
+            bodycontent.innerHTML = innerbody
+        }
+        innerbody = repl
+        vocabopen = false
+        get1('vocab').style.backgroundColor = 'var(--verylightpink)'
+        get1('words').style.backgroundColor = 'var(--lightpink)'
+    }
+    
+    if (stack == false) {
+        bodycontent.innerHTML = ''
+        }
+    
+    hd = document.createElement('h1')
+    if (path != 'none') {
+    console.log('PATH!!!!',path)
+    console.log(opspath[path])
+    wordInfo = contents[opspath[path].title1].subs[opspath[path].index]
+    }else{
+        console.log(done)
+        wordInfo = wordlist[done]
+    }
+    hd.innerText = wordInfo.title
+    span = document.createElement('span')
+    span.setAttribute('class','tipo')
+    span.innerText = '(' + wordInfo.type + ')'
+    hd.appendChild(span)
+    bodycontent.appendChild(hd)
+    
+    htmltext = `<h1>${wordInfo.title}<span class="tipo">(${wordInfo.type})</span></h1>`
+    exindex = 0
+    text1 = ''
+    textindex1 = 0
+    for (char in wordInfo.meaning) {
+        mngc = wordInfo.meaning[char]
+     //console.log(mngc)
+     if (mngc != '_') {
+     text1+= mngc
+     }
+    
+     if (mngc == '_' || char == wordInfo.meaning.length - 1) {
+        //Console.log('STOP!', text1)
+        textindex1++
+        pEl = document.createElement('p')
+        newtext1 = ''
+        for (vai in text1) {
+            if (vai != 0) 
+            newtext1+= text1[vai]
+        }
+        text1 = text1[0].toUpperCase() + newtext1
+        console.log('DIAL TONES', newtext1)
+        /*pEl.innerHTML = `<img src="images/pencil.svg" alt=""> <span class="inline">${text1}</span>`*/
+        htmltext+= `<p class="pel1"><span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex1}. </span>${text1}</span></p>`
+    
+        pEl.innerHTML = `<span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex1}. </span>${text1}</span>`
+        pEl.setAttribute('class','pel1')
+        bodycontent.appendChild(pEl)
+        text1 = ''
+    
+        keepgoing = true
+        text2 = ''
+        textindex2 = 0
+       for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
+        exc = wordInfo.examples[beg]
+        //console.log('EX',exc)
+        if (exc != '_' && exc != '@') {
+            text2+= exc
+        }
+        //console.log(exc) 
+        if (exc == '_' || beg == wordInfo.examples.length - 1 || exc == '@') {
+            textindex2++
+            if (exc != '@') 
+            keepgoing = false
+            console.log('STOP 2!!', text2)
+            newtext2 = ''
+            for (vai in text2) {
+                if (vai != 0) 
+                newtext2+= text2[vai]
+            }
+            if (text2 != '') {
+            text2 = text2[0].toUpperCase() + newtext2
+            pEl = document.createElement('p')
+            htmltext+= `<p class="pel2"><span style="font-weight: 500;">Ex ${textindex2}</span>:&nbsp; ${text2}</p>`
+            pEl.innerHTML = `<span style="font-weight: 500;">Ex ${textindex2}</span>:&nbsp ` + text2
+            pEl.setAttribute('class','pel2')
+            bodycontent.appendChild(pEl)
+            }
+    
+            if (exc == '@') 
+            text2 = ''
+        }
+        exindex++
+       }
+     }
+    }
+    }
 }
 
  // Quando a barra de pesquisa é clicada quando vazia
@@ -598,108 +803,7 @@ function saiu(thing) {
     vocabopen = 'none'
     innerbody = ''
  
-// Cria o conteúdo(quando é feita a pesquisa)
-function search(path, done) {
 
-console.log('TAMTAMTAMTAM')
-pesquisa = document.getElementById('searcher').value
-bodycontent = document.getElementById('vocabmng')
-console.log('VOCABOPENNNNN', vocabopen, vocabopen == 'none', vocabopen == true)
-
-if (vocabopen == 'none' || vocabopen == true) {
-    console.log('MUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR')
-    repl = get1('vocabmng').innerHTML
-    if (stack == true && vocabopen == true) {
-        bodycontent.innerHTML = innerbody
-    }
-    innerbody = repl
-    vocabopen = false
-    get1('vocab').style.backgroundColor = 'var(--verylightpink)'
-    get1('words').style.backgroundColor = 'var(--lightpink)'
-}
-
-if (stack == false) {
-    bodycontent.innerHTML = ''
-    }
-
-hd = document.createElement('h1')
-if (path != 'none') {
-console.log('PATH!!!!',path)
-console.log(opspath[path])
-wordInfo = contents[opspath[path].title1].subs[opspath[path].index]
-}else{
-    console.log(done)
-    wordInfo = wordlist[done]
-}
-hd.innerText = wordInfo.title
-span = document.createElement('span')
-span.setAttribute('class','tipo')
-span.innerText = '(' + wordInfo.type + ')'
-hd.appendChild(span)
-bodycontent.appendChild(hd)
-exindex = 0
-text1 = ''
-textindex1 = 0
-for (char in wordInfo.meaning) {
-    mngc = wordInfo.meaning[char]
- //console.log(mngc)
- if (mngc != '_') {
- text1+= mngc
- }
-
- if (mngc == '_' || char == wordInfo.meaning.length - 1) {
-    //Console.log('STOP!', text1)
-    textindex1++
-    pEl = document.createElement('p')
-    newtext1 = ''
-    for (vai in text1) {
-        if (vai != 0) 
-        newtext1+= text1[vai]
-    }
-    text1 = text1[0].toUpperCase() + newtext1
-    console.log('DIAL TONES', newtext1)
-    /*pEl.innerHTML = `<img src="images/pencil.svg" alt=""> <span class="inline">${text1}</span>`*/
-    pEl.innerHTML = `<span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex1}. </span>${text1}</span>`
-    pEl.setAttribute('class','pel1')
-    bodycontent.appendChild(pEl)
-    text1 = ''
-
-    keepgoing = true
-    text2 = ''
-    textindex2 = 0
-   for (beg = exindex; keepgoing == true && beg < wordInfo.examples.length; beg++) {
-    exc = wordInfo.examples[beg]
-    //console.log('EX',exc)
-    if (exc != '_' && exc != '@') {
-        text2+= exc
-    }
-    //console.log(exc) 
-    if (exc == '_' || beg == wordInfo.examples.length - 1 || exc == '@') {
-        textindex2++
-        if (exc != '@') 
-        keepgoing = false
-        console.log('STOP 2!!', text2)
-        newtext2 = ''
-        for (vai in text2) {
-            if (vai != 0) 
-            newtext2+= text2[vai]
-        }
-        if (text2 != '') {
-        text2 = text2[0].toUpperCase() + newtext2
-        pEl = document.createElement('p')
-        pEl.innerHTML = `<span style="font-weight: 500;">Ex ${textindex2}</span>:&nbsp ` + text2
-        pEl.setAttribute('class','pel2')
-        bodycontent.appendChild(pEl)
-        }
-
-        if (exc == '@') 
-        text2 = ''
-    }
-    exindex++
-   }
- }
-}
-}
 
 //stack button
 stack = false
@@ -749,4 +853,249 @@ function gotowords() {
         innerbody = repl
         vocabopen = false
     }
+}
+
+function loop(arraylist, d) {
+    repeat = false
+    newlist = []
+    //console.log(arraylist)
+    for (dial in arraylist) {
+        //console.log('')
+        //console.log(arraylist[dial])
+        //console.log('--------')
+        for (tones in arraylist[dial].objects) {
+            //console.log(arraylist[dial].id + `.${tones}`)
+            arraylist[dial].objects[tones].id = arraylist[dial].id + `.${tones}`
+            //console.log(arraylist[dial].objects[tones])
+            newlist.push(arraylist[dial].objects[tones])
+
+            cont = document.createElement('div')
+            cont.setAttribute('class','cont')
+            cont.id = arraylist[dial].id + `.${tones}`
+            /*cont.innerHTML = ` <div class="center">
+             <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">${arraylist[dial].objects[tones].title}</p></div>` + arraylist[dial].objects[tones].content*/
+             cont.innerHTML = `<div class="center">
+             <div class="exptype">
+                 <p class="choice">
+                     <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${arraylist[dial].objects[tones].title}
+                 </p>
+             </div>
+         </div>` + arraylist[dial].objects[tones].content
+             document.getElementById(`${arraylist[dial].id}`).appendChild(cont)
+        }
+        if (arraylist[dial].objects.length > 0) {
+            repeat = true
+        }
+        //console.log('--------')
+    }
+   // console.log('repeat', newlist)
+    if (repeat == true)
+        loop(newlist)
+}
+
+function CreateFunc(ind,action,number){
+    this.ind = ind
+    ////console.log('THISSSSSSSSS',ind)
+    this.par1 = document.getElementsByClassName('ar')[this.ind]
+    this.par2 = get2('cont')[this.ind]
+    this.par3 = get2('center')[this.ind]
+
+    this.l = late
+    ////console.log('ACTION', action)
+    if (action != "open") {
+    this.clicked = false
+    this.par1.style.transform = 'rotate(0deg)'
+    }else{
+        ////console.log('TRUEEEEEEEEEE')
+    this.clicked = true
+    this.par1.style.transform = 'rotate(49deg)'
+    }
+
+    late++
+    this.a = `j${late}`
+    this.number = number
+    h1 = 0
+    h2 = 100
+    heightInPx = String(this.par3.offsetHeight) + 'px'
+   
+    this.SetDefault= function () {
+        //par2.style.height = par3.offsetHeight
+        heightInPx = String(this.par3.offsetHeight) + 'px'
+       if (this.par3.innerText != 'Relações' && this.par3.innerText != 'Repetições' && this.par3.innerText != 'Combinações' && this.par3.innerText != 'Agrupamentos' ) {
+        this.par2.style.height = heightInPx
+        this.clicked = false
+       }else{
+            this.par2.style.height = '28px'
+            this.clicked = false
+       } }
+    this.par1.setAttribute
+    this.AddEvent = function() {
+        ////console.log(this.a)
+       this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
+    }}
+
+function cli(state,index,jin,n,jor) {            
+    me = document.getElementsByClassName('ar')
+    this.jin = jin
+    this.par1 = me[index]
+    this.par2 = conts[index]
+    this.par3 = cents[index]
+    this.n = n
+
+    search = mecams.find(function(mecams){
+        return mecams.created == this.jin
+       })
+
+       //console.log(search)
+       if (search != undefined) {
+        console.log(this.jin,search.anistate)
+       }
+       
+       
+        /*
+       modify = false
+       if (search != undefined) {
+       if (search.cl == false) {
+           modify = true
+       }
+       }else{
+        modify = true
+       }
+       */
+       //if (modify == true) {
+        trueindex = Number(jin.replace('j',''))
+        //console.log('was clicked!', trueindex)
+        //console.log(document.getElementsByClassName('cont')[trueindex].id)
+        elid = document.getElementsByClassName('cont')[trueindex].id
+        elidtxt = ''
+        for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
+            elidtxt+= elid[trees]
+        }
+        //console.log(trees, elidtxt)
+        elidtxt = ''
+        for (omo = 0; omo < trees; omo++) {
+            elidtxt+= elid[omo]
+        }
+        //console.log('oficial text:', elidtxt)
+        if (elidtxt != '') {
+         element = document.getElementById(elidtxt)
+         console.log(element.id)
+         console.log(idlist)
+         omori = idlist.find(function(idlist){
+             return idlist.id == element.id
+            })
+            posid =  mecams.find(function(mecams){
+             return mecams.created == 'j' + String(omori.pos)
+            })
+            console.log(omori.pos, posid)
+            console.log(posid.anistate)
+        }
+     //}
+
+       if (search == undefined || search.anistate == false) {
+        if (elidtxt == '' || posid.anistate == false) {
+
+        beg = this.par2.offsetHeight
+
+        this.par3.style.height = jor + 'px'
+
+        this.par2.style.height = 'fit-content'
+        sul = this.par2.offsetHeight
+
+    if (search != undefined) {
+        search.comp++
+       }else{
+           if (state == true) {
+            mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state, anistate: false})
+           }else{
+            mecams.push({created:this.jin,comp:1,st:beg,end:sul,cl:state, anistate: false})
+           } }
+       search = mecams.find(function(mecams){
+        return mecams.created == this.jin
+       })
+
+       if (search.cl == false) {
+        search.anistate = true
+        txt = String(this.par3.innerText)
+           busca = txt.search(new RegExp('((Agrupamentos)|(Relações)|(Combinações)|(Repetições))','g'))
+
+        if (this.par3.innerText == 'Resolução') {
+            ih = search.st - 10
+            eh = sul - 10
+           }else{
+            ih = search.st
+            eh = sul
+           }
+
+    css = `@keyframes ${jin}-${search.comp} {
+         0% {
+            height: ${ih}px;
+        }
+        100% {
+            height: ${eh}px;
+        }}`
+        this.par2.addEventListener("animationend", animationEnded)
+        this.par2.style.animation = `${jin}-${search.comp} 1s`
+        this.par2.style.height = 'fit-content'
+
+        function delayedFunction () {
+            this.par2.style.animation = ''
+        }
+        setTimeout(delayedFunction, 1000)
+       
+       style = document.createElement('style')
+       document.head.appendChild(style)
+       style.appendChild(document.createTextNode(css))
+       this.par1.style.transform = 'rotate(41.2deg)'
+       search.cl = true
+}else{
+    search.anistate = true
+        ih = search.st
+        eh = sul
+
+    css = `@keyframes ${jin}-${search.comp} {
+        0% {
+           height: ${eh}px;
+       }
+       100% {
+           height: ${ih}px;
+       }}`
+    this.par2.style.animation = `${jin}-${search.comp} 1s`
+    this.par2.style.height = `${ih}px`
+
+    function delayedFunction () {
+        this.par2.style.animation = ''
+    }
+    setTimeout(delayedFunction, 1000)
+
+   style = document.createElement('style')
+   document.head.appendChild(style)
+   style.appendChild(document.createTextNode(css))
+   this.par1.style.transform = 'rotate(0deg)'
+   search.cl = false
+    }
+
+   function animationEnded(event) {
+        //console.log('ANIMATION ENDED')
+        //console.log(event.animationName)
+        king = event.animationName
+        proceed = true
+        trig = ''
+        for (set = 0; set < king.length && proceed == true; set++) {
+            if (king[set] == '-') {
+                proceed = false
+            }else{
+                trig+= king[set]
+            }
+        }
+        //console.log(trig)
+
+        love = mecams.find(function (mecams) {
+            return mecams.created == trig
+        })
+        //onsole.log(love)
+        love.anistate = false
+    }
+}
+}
 }

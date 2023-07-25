@@ -16,7 +16,7 @@ elements = [
     ]}
     */
 ]
-//console.log('el',elements)
+//console.log('el',elements) arf
 for (ciyu in elements) {
  elements[ciyu].id = `${ciyu}`
  //console.log(elements[ciyu])
@@ -27,7 +27,7 @@ for (ciyu in elements) {
  <div class="center">
     <div class="exptype">
         <p class="choice">
-            <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${elements[ciyu].title}
+            <img src="images/pencil.svg" style="margin-right: 4px;" class="ar">${elements[ciyu].title}
         </p>
     </div>
 </div>` + elements[ciyu].content
