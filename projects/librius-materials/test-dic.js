@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     newtext1+= text1[vai]
                 }
                 text1 = text1[0].toUpperCase() + newtext1
-                console.log('DIAL TONES', newtext1)
+                //console.log('DIAL TONES', newtext1)
                 /*pEl.innerHTML = `<img src="images/pencil.svg" alt=""> <span class="inline">${text1}</span>`*/
                 htmltext+= `<p class="pel1"><span class="inline"><span style="color: var(--mainpink);font-weight: 800;">${textindex1}. </span>${text1}</span></p>`
             
@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     textindex2++
                     if (exc != '@') 
                     keepgoing = false
-                    console.log('STOP 2!!', text2)
+                    //console.log('STOP 2!!', text2)
                     newtext2 = ''
                     for (vai in text2) {
                         if (vai != 0) 
@@ -667,7 +667,7 @@ function search(path, done) {
     
     if (vocabopen == 'none' || vocabopen == true) {
         console.log('MUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR')
-        repl = get1('vocabmng').innerHTML
+        repl = fixit()
         if (stack == true && vocabopen == true) {
             bodycontent.innerHTML = innerbody
         }
@@ -675,7 +675,7 @@ function search(path, done) {
         if (vocabopen == 'none') {
             bodycontent.innerHTML = ''
         }
-        
+
         innerbody = repl
         vocabopen = false
         get1('vocab').style.backgroundColor = 'var(--verylightpink)'
@@ -851,9 +851,10 @@ function gotovocab() {
 
 function gotowords() {
     if (vocabopen == true) {
+        console.log('THIS ISNT WHAT I WANTED TO BE, THIS ISNT WHAT WANTED TO BE')
         get1('vocab').style.backgroundColor = 'var(--verylightpink)'
         get1('words').style.backgroundColor = 'var(--lightpink)'
-        repl = get1('vocabmng').innerHTML
+        repl = fixit()
         get1('vocabmng').innerHTML = innerbody
         innerbody = repl
         vocabopen = false
@@ -939,7 +940,8 @@ function CreateFunc(ind,action,number){
        this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
     }}
 
-function cli(state,index,jin,n,jor) {            
+function cli(state,index,jin,n,jor) {      
+    console.log('CAN YOU SEE IT DUMMY?')      
     me = document.getElementsByClassName('ar')
     this.jin = jin
     this.par1 = me[index]
@@ -953,7 +955,7 @@ function cli(state,index,jin,n,jor) {
 
        //console.log(search)
        if (search != undefined) {
-        console.log(this.jin,search.anistate)
+        //console.log(this.jin,search.anistate)
        }
        
        
@@ -1009,6 +1011,8 @@ function cli(state,index,jin,n,jor) {
 
     if (search != undefined) {
         search.comp++
+        search.st = jor
+        search.end = sul
        }else{
            if (state == true) {
             mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state, anistate: false})
@@ -1044,9 +1048,9 @@ function cli(state,index,jin,n,jor) {
         this.par2.style.height = 'fit-content'
 
         function delayedFunction () {
-            this.par2.style.animation = ''
+            this.par2.style.removeProperty("animation")
         }
-        setTimeout(delayedFunction, 1000)
+        //setTimeout(delayedFunction, 1000)
        
        style = document.createElement('style')
        document.head.appendChild(style)
@@ -1069,9 +1073,9 @@ function cli(state,index,jin,n,jor) {
     this.par2.style.height = `${ih}px`
 
     function delayedFunction () {
-        this.par2.style.animation = ''
+        this.par2.style.removeProperty("animation")
     }
-    setTimeout(delayedFunction, 1000)
+    //setTimeout(delayedFunction, 1000)
 
    style = document.createElement('style')
    document.head.appendChild(style)
@@ -1083,6 +1087,7 @@ function cli(state,index,jin,n,jor) {
    function animationEnded(event) {
         //console.log('ANIMATION ENDED')
         //console.log(event.animationName)
+        console.log('ANIMATION ENDED')
         king = event.animationName
         proceed = true
         trig = ''
@@ -1103,4 +1108,27 @@ function cli(state,index,jin,n,jor) {
     }
 }
 }
+}
+
+function fixit() {
+    htext = '<h1 class="vocabh">Vocabulary List</h1>'
+    innerhtml = '<h1 class="vocabh">Vocabulary List</h1>'
+    for (meteora in elements) {
+        console.log(elements[meteora])
+        search2 = mecams.find(function(mecams){
+            return mecams.created == 'j' + meteora
+           })
+           console.log(search2)
+           if (search2 == undefined) {
+            innerhtml+= `<div class="cont">
+            <div class="center">
+            <div class="exptype">
+                <p class="choice">
+                    <img src="images/pencil.svg" class="ar" style="margin-right: 4px;">${elements[meteora].title}
+                </p>
+            </div>
+          </div>` + elements[meteora].content + '</div>'
+           }
+    }
+    return innerhtml
 }

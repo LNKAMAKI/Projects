@@ -216,6 +216,8 @@ function load() {
 
             if (search != undefined) {
                 search.comp++
+                search.st = jor
+                search.end = sul
                }else{
                    if (state == true) {
                     mecams.push({created:this.jin,comp:1,st:jor,end:sul,cl:state, anistate: false})
