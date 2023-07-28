@@ -217,6 +217,7 @@ contents = [
 ]
 
 elements = []
+bigarray = []
 
 var subjects = []
 document.addEventListener("DOMContentLoaded", function() {
@@ -328,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function() {
             wordlist.push(contents[dead].subs[fate])
             posind++
 
-            elements.push({title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: []})
+            elements.push({title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: [{title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: []}]})
         }
     }
 
@@ -347,6 +348,7 @@ document.addEventListener("DOMContentLoaded", function() {
                </p>
            </div>
        </div>` + elements[ciyu].content
+       bigarray.push({title: `${elements[ciyu].title}`, content: `${elements[ciyu].content}`, objects: [], id: `${ciyu}`})
        
        divlist.appendChild(cont)
        }
@@ -362,6 +364,10 @@ document.addEventListener("DOMContentLoaded", function() {
     sai = 0
     for (bob = 0; bob < cents.length; bob++) {
     c = new CreateFunc(bob,'close')
+    //console.log(bob, conts[bob], conts[bob].id)
+    bigarray.find(function (bigarray) {
+        return bigarray.id == conts[bob].id
+    }).pos = bob
         c.SetDefault()
         c.AddEvent()
     }
@@ -843,9 +849,60 @@ function gotovocab() {
         get1('vocab').style.backgroundColor = 'var(--lightpink)'
         get1('words').style.backgroundColor = 'var(--verylightpink)'
         repl = get1('vocabmng').innerHTML
-        get1('vocabmng').innerHTML = innerbody
+        //get1('vocabmng').innerHTML = innerbody
+        get1('vocabmng').innerHTML = '<div id="list"><h1 class="vocabh">Vocabulary List</h1></div>'
         innerbody = repl
         vocabopen = true
+
+        for (mcr in bigarray) {
+            console.log(bigarray[mcr])
+            console.log(defsets.find(function(defsets) {
+                return defsets.jin == `j${bigarray[mcr].pos}`
+             }))
+             mind = defsets.find(function(defsets) {
+                return defsets.jin == `j${bigarray[mcr].pos}`
+             })
+            elid = bigarray[mcr].id
+                elidtxt = ''
+                for (trees = elid.length - 1; elid[trees] != '.' && trees > 0; trees--) {
+                    elidtxt+= elid[trees]
+                }
+                //console.log(trees, elidtxt)
+                elidtxt = ''
+                for (omo = 0; omo < trees; omo++) {
+                    elidtxt+= elid[omo]
+                }
+            console.log('NEED',elidtxt)
+                contel = document.createElement('div')
+                contel.setAttribute('class','cont')
+                if (elidtxt == '') {
+                get1('list').appendChild(contel)
+                }else{
+                   get1(`${elidtxt}`).appendChild(contel)
+                }
+                contel.id = elid
+                contel.innerHTML = `<div class="center" style="height: 30px">
+             <div class="exptype">
+                 <p class="choice">
+                <img src="images/pencil.svg" class="ar" style="margin-right: 4px;" 
+                onclick="cli(${mind.state}, ${mind.index}, '${mind.jin}', ${mind.n}, ${mind.jor})">${bigarray[mcr].title}
+                 </p>
+             </div>
+         </div>` + bigarray[mcr].content
+
+         climec = mecams.find(function (mecams) {
+            return mecams.created == `j${bigarray[mcr].pos}`
+         })
+         console.log('VE SE TEM TÁ',climec)
+         if (climec != undefined) {
+            console.log('OK, Pode ajeitar isso aqui e pra já!', climec.cl)
+            if (climec.cl == true) {
+                console.log('PODE IR')
+                contel.style.height = 'fit-content'
+            }
+            climec.anistate = false
+         }
+        }
     }
 }
 
@@ -878,6 +935,7 @@ function loop(arraylist, d) {
             cont = document.createElement('div')
             cont.setAttribute('class','cont')
             cont.id = arraylist[dial].id + `.${tones}`
+            bigarray.push({title: `${arraylist[dial].objects[tones].title}`, content: `${arraylist[dial].objects[tones].content}}`, objects: [], id: `${cont.id}`})
             /*cont.innerHTML = ` <div class="center">
              <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">${arraylist[dial].objects[tones].title}</p></div>` + arraylist[dial].objects[tones].content*/
              cont.innerHTML = `<div class="center">
@@ -899,6 +957,7 @@ function loop(arraylist, d) {
         loop(newlist)
 }
 
+defsets = []
 function CreateFunc(ind,action,number){
     this.ind = ind
     ////console.log('THISSSSSSSSS',ind)
@@ -938,6 +997,7 @@ function CreateFunc(ind,action,number){
     this.AddEvent = function() {
         ////console.log(this.a)
        this.par1.setAttribute('onclick',`cli(${this.clicked},${this.ind},'${this.a}',${this.number},${this.par3.offsetHeight})`)
+       defsets.push({state: this.clicked, index: this.ind, jin: this.a, n: this.number, jor: this.par3.offsetHeight})
     }}
 
 function cli(state,index,jin,n,jor) {      
@@ -957,8 +1017,6 @@ function cli(state,index,jin,n,jor) {
        if (search != undefined) {
         //console.log(this.jin,search.anistate)
        }
-       
-       
         /*
        modify = false
        if (search != undefined) {
@@ -1069,6 +1127,7 @@ function cli(state,index,jin,n,jor) {
        100% {
            height: ${ih}px;
        }}`
+    this.par2.addEventListener("animationend", animationEnded)
     this.par2.style.animation = `${jin}-${search.comp} 1s`
     this.par2.style.height = `${ih}px`
 
@@ -1111,7 +1170,11 @@ function cli(state,index,jin,n,jor) {
 }
 
 function fixit() {
-    htext = '<h1 class="vocabh">Vocabulary List</h1>'
+    
+}
+
+/*
+htext = '<h1 class="vocabh">Vocabulary List</h1>'
     innerhtml = '<h1 class="vocabh">Vocabulary List</h1>'
     for (meteora in elements) {
         console.log(elements[meteora])
@@ -1131,4 +1194,4 @@ function fixit() {
            }
     }
     return innerhtml
-}
+    */
