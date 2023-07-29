@@ -50,8 +50,7 @@ contents = [
         {title: 'at length', type:"idiom",meaning: 'after a long time;finally',examples: 'she arose at length and opened the door to her sister\'s importunities'},
         {title: 'grip-sack', type:"noun",meaning: 'duffel bag; ​a bag made out of cloth that is like a tube in shape and is closed by a string around the top. It is usually carried over the shoulder',examples: 'carrying his grip-sack and umbrella'},
         {title: 'screen', type:"transitive verb",meaning: 'hide',examples: 'screen him from the view of his wife'},
-        {title: 'piercing', type:"adjective",meaning: 'high-pitched, agudo',examples: 'he stood amazed at Josephine piercing cry'},
-        {title: '', type:"",meaning: '',examples: ''},
+        {title: 'piercing', type:"adjective",meaning: 'high-pitched, agudo',examples: 'he stood amazed at Josephine piercing cry'}
     ]}, 
  
     {title:'Appointment With Love', url:'html-logo.svg',subs:[
@@ -88,8 +87,7 @@ contents = [
         {title: 'uphold', type:"transitive verb",meaning: 'to give support to; to lift up',examples: 'whose spirit had truly upheld his own'},
         {title: 'sensible', type:"adjective",meaning: 'rational, reasonable',examples: 'her pale, plump face was gentle and sensible'},
         {title: 'twinkle', type:"noun",meaning: 'cintilar, brilho',examples: 'her gray eyes had a warm, kindly twinkle'},
-        {title: 'broad', type:"adjective",meaning: 'wide, large',examples: 'he squared his broad shoulders'},
-        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: 'broad', type:"adjective",meaning: 'wide, large',examples: 'he squared his broad shoulders'}
     ]}, 
 
     {title:'text-1-train-1', url:'html-logo.svg',subs:[
@@ -141,7 +139,6 @@ contents = [
         {title: 'postpone', type:"transitive verb",meaning: 'delay, put off, defer',examples: 'The US secretary of state, Antony Blinken, postponed an trip to Beijing'},
         {title: 'sovereignty', type:"noun",meaning: 'supreme and independent authority and power of a state or a governing body to govern itself',examples: 'an irresponsible act and a clear violation of US sovereignty and international law that undermined the purpose of this trip'},
         {title: 'undermine', type:"transitive verb",meaning: 'weaken, subvert; used to describe actions or influences that have a harmful or negative impact on something, potentially leading to its destabilization or weakening',examples: 'an irresponsible act and a clear violation of US sovereignty and international law that undermined the purpose of this trip'},
-        {title: '', type:"noun",meaning: '',examples: ''},
     ]},
 
     {title:'text-3-train-1', url:'html-logo.svg',subs:[
