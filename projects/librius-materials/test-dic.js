@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function() {
             wordlist.push(contents[dead].subs[fate])
             posind++
 
-            elements.push({title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: [{title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: []}]})
+            elements.push({title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: [/*{title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: []}*/]})
         }
     }
 
@@ -844,6 +844,7 @@ function move() {
 }
 }
 
+// go to vocabulary list
 function gotovocab() {
     if (vocabopen == false) {
         get1('vocab').style.backgroundColor = 'var(--lightpink)'
@@ -906,6 +907,7 @@ function gotovocab() {
     }
 }
 
+// go to dictionary
 function gotowords() {
     if (vocabopen == true) {
         console.log('THIS ISNT WHAT I WANTED TO BE, THIS ISNT WHAT WANTED TO BE')
