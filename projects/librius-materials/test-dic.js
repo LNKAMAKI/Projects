@@ -216,7 +216,7 @@ contents = [
 elements = []
 bigarray = []
 
-var subjects = []
+var subjects = [] //variávlel para quando a pesquisa é global(de todos os materiais)
 document.addEventListener("DOMContentLoaded", function() {
 
     get1('vocab').style.backgroundColor = 'var(--lightpink)'
@@ -269,6 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
             wordInfo = contents[dead].subs[fate]
             htmltext = `<h1>${wordInfo.title}<span class="tipo">(${wordInfo.type})</span></h1>`
+            // htmltext = conteúdo(singificados + exemplos palavras) gerado automaticamente
             exindex = 0
             text1 = ''
             textindex1 = 0
@@ -327,10 +328,12 @@ document.addEventListener("DOMContentLoaded", function() {
             posind++
 
             elements.push({title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: [/*{title: `${contents[dead].subs[fate].title}`, content: `${htmltext}`, objects: []}*/]})
+            //adicionar objeto do elemento (cont) à elements
         }
     }
 
     //---------------
+    // cria os conts(div class= "cont", que contém palavra - center title + conteúdo)
     for (ciyu in elements) {
         elements[ciyu].id = `${ciyu}`
         //console.log(elements[ciyu])
@@ -349,9 +352,10 @@ document.addEventListener("DOMContentLoaded", function() {
        
        divlist.appendChild(cont)
        }
-       loop(elements)
+       //loop(elements) repetir o mesmo processo caso heja conts dentro de conts
        
 
+       //criar função para cada cont
        console.log('ONLOAD')
     conts = get2('cont')
     cents = get2('center')
@@ -369,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function() {
         c.AddEvent()
     }
     
-    idlist = []
+    idlist = [] //usado para identificar a posição de um elmento pelo seu id
     for (bob = 0; bob < conts.length; bob++) {
         //console.log('cont',conts[bob],bob,conts[bob].id)
         idlist.push({id: conts[bob].id, pos: bob})
@@ -706,6 +710,7 @@ function search(path, done) {
     bodycontent.appendChild(hd)
     
     htmltext = `<h1>${wordInfo.title}<span class="tipo">(${wordInfo.type})</span></h1>`
+    // htmltext = conteúdo(singificados + exemplos palavras) gerado automaticamente
     exindex = 0
     text1 = ''
     textindex1 = 0
@@ -917,6 +922,7 @@ function gotowords() {
     }
 }
 
+/*
 function loop(arraylist, d) {
     repeat = false
     newlist = []
@@ -935,8 +941,8 @@ function loop(arraylist, d) {
             cont.setAttribute('class','cont')
             cont.id = arraylist[dial].id + `.${tones}`
             bigarray.push({title: `${arraylist[dial].objects[tones].title}`, content: `${arraylist[dial].objects[tones].content}}`, objects: [], id: `${cont.id}`})
-            /*cont.innerHTML = ` <div class="center">
-             <p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">${arraylist[dial].objects[tones].title}</p></div>` + arraylist[dial].objects[tones].content*/
+            //cont.innerHTML = ` <div class="center">
+             //<p class="exptype"><img src="librius-materials/images/rar.png" alt="" class="ar">${arraylist[dial].objects[tones].title}</p></div>` + arraylist[dial].objects[tones].content
              cont.innerHTML = `<div class="center">
              <div class="exptype">
                  <p class="choice">
@@ -955,6 +961,8 @@ function loop(arraylist, d) {
     if (repeat == true)
         loop(newlist)
 }
+*/
+
 
 defsets = []
 function CreateFunc(ind,action,number){
