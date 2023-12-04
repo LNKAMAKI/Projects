@@ -11,17 +11,21 @@ function load() {
 mousex = ''
 mousey = ''
 function animate() {
-    for (t = 0; t < 80;t++) {
+   // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 5; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Math.random()*1 - 0.5
 vely = Math.random()*1 - 0.5
-velx = 0.01
-vely = 0.01
+//velx = 0.01
+//vely = 0.01
 x = Math.random()*(300-width*2) + width
 y = Math.random()*(150-width*2) + width
+
+//x = Math.random()*(100-width*2) + width
+//y = Math.random()*(50-width*2) + width
+
 r = Math.random()*255
 g = Math.random()*255
 b = Math.random()*255
@@ -75,7 +79,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             }
         }
     }
-}
+//}
     /*
     if (mousex != '' && mousey != '') {
         for (p in pokebolas) {
@@ -94,7 +98,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             }
         }
     }*/
-//requestAnimationFrame(animate)
+requestAnimationFrame(animate)
 }
 animate()
 }
@@ -102,11 +106,46 @@ animate()
 
 function collision() {
     for (a in pokebolas) {
+        //console.log('a',a)
         minx = pokebolas[a].rangex[0]
         maxx = pokebolas[a].rangex[1]
         miny = pokebolas[a].rangey[0]
         maxy = pokebolas[a].rangey[1]
-        console.log(minx,maxx,miny,maxy)
+        cx = pokebolas[a].x
+        cy = pokebolas[a].y
+        //console.log(minx,maxx,miny,maxy)
+       // console.log(cx,cy)
+        
+        for (b in pokebolas) {
+            if (b != a) {
+                //console.log('b',b)
+                minx2 = pokebolas[b].rangex[0]
+        maxx2 = pokebolas[b].rangex[1]
+        miny2 = pokebolas[b].rangey[0]
+        maxy2 = pokebolas[b].rangey[1]
+        cx2 = pokebolas[b].x
+        cy2 = pokebolas[b].y
+        //console.log(minx2,maxx2,miny2,maxy2)
+        //console.log(cx2,cy2)
+        diffx = cx - cx2
+        diffy = cy - cy2
+        if (diffx < 0) {
+            diffx = -diffx
+        }
+        if (diffy < 0) {
+            diffy = -diffy
+        }
+        //console.log('forget it',diffx,diffy)
+        //console.log(diffx**2 + diffy**2)
+        if (diffx**2 + diffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2) {
+            console.log('touching')
+            pokebolas[a].velx = 0
+            pokebolas[a].vely = 0
+            pokebolas[b].velx = 0
+            pokebolas[b].vely = 0
+        }
+            }
+        }
     }
 }
 
