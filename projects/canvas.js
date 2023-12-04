@@ -11,6 +11,7 @@ function load() {
 mousex = ''
 mousey = ''
 function animate() {
+    for (t = 0; t < 80;t++) {
     if (pokebolas.length == 0) {
 for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
@@ -74,6 +75,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             }
         }
     }
+}
     /*
     if (mousex != '' && mousey != '') {
         for (p in pokebolas) {
@@ -92,11 +94,21 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             }
         }
     }*/
-requestAnimationFrame(animate)
+//requestAnimationFrame(animate)
 }
 animate()
 }
 
+
+function collision() {
+    for (a in pokebolas) {
+        minx = pokebolas[a].rangex[0]
+        maxx = pokebolas[a].rangex[1]
+        miny = pokebolas[a].rangey[0]
+        maxy = pokebolas[a].rangey[1]
+        console.log(minx,maxx,miny,maxy)
+    }
+}
 
 
 //criar a pokebola
@@ -139,7 +151,6 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.stroke()
     
 }
-
 
 //saber quando o mouse encosta em uma pokebola
 window.addEventListener('mousemove',function(event) {
