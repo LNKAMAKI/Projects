@@ -7,21 +7,6 @@ function load() {
     canv = document.querySelector('canvas')
     c = canv.getContext('2d')
     console.log(c)
-    /*
-    c.fillStyle = "rgb(255,0,0,0.4)"
-    c.fillRect(250,100,50,50)
-    c.beginPath()
-    c.strokeStyle = 'black'
-    c.moveTo(0,0)
-    c.lineTo(300,150)
-    c.stroke()
- */
-   //function animate() {
-
-
-    //requestAnimationFrame(animate)
-//}
-//animate()
 
 mousex = ''
 mousey = ''
@@ -67,6 +52,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
 }
     }else{
         c.clearRect(0,0,300,150)
+        collision()
         for (number in pokebolas) {
             if (pokebolas[number].x > 300 - pokebolas[number].width || pokebolas[number].x < pokebolas[number].width) {
                 pokebolas[number].velx = -pokebolas[number].velx
@@ -111,6 +97,9 @@ requestAnimationFrame(animate)
 animate()
 }
 
+
+
+//criar a pokebola
 function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     if (addornot == true) {
     pokebolas.push({x:x,y:y,width:width,color:color,velx:velx,vely:vely,rangex:rangex,rangey:rangey})
@@ -151,6 +140,8 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
 }
 
+
+//saber quando o mouse encosta em uma pokebola
 window.addEventListener('mousemove',function(event) {
     
     canv = document.querySelector('canvas')
