@@ -190,7 +190,73 @@ function collision() {
             vpery1ver = vpery1*cosx
             vpary1hor = vpary1*cosx
             vpary1ver = vpary1*senx
-            
+
+            if (vx1 > 0) {
+                if (leftball == a && downball == a || rightball == a && upball == a) {
+                 // decomposição de velperx1 = pra cima e pra direita
+                 if (vperx1ver < 0) {
+                    vperx1ver = -vperx1ver
+                 }
+                 if (vperx1hor < 0) {
+                    vperx1hor = -vperx1hor
+                 }
+                 // decomposição de velparx1 = pra baixo e pra direita
+                 if (vparx1ver > 0) {
+                    vparx1ver = -vparx1ver
+                 }
+                 if (vparx1hor < 0) {
+                    vparx1hor = -vparx1hor
+                 }
+                }else{
+                // decomposição de velperx1 = pra baixo e pra direita
+                if (vperx1ver > 0) {
+                    vperx1ver = -vperx1ver
+                 }
+                 if (vperx1hor < 0) {
+                    vperx1hor = -vperx1hor
+                 }
+                 // decomposição de velparx1 = pra cima e pra direita
+                 if (vparx1ver < 0) {
+                    vparx1ver = -vparx1ver
+                 }
+                 if (vparx1hor < 0) {
+                    vparx1hor = -vparx1hor
+                 }
+                }
+            }else{
+                if (leftball == a && downball == a || rightball == a && upball == a) {
+                    // decomposição de velperx1 = pra baixo e pra esquerda
+                    if (vperx1ver > 0) {
+                        vperx1ver = -vperx1ver
+                     }
+                     if (vperx1hor > 0) {
+                        vperx1hor = -vperx1hor
+                     }
+                      // decomposição de velparx1 = pra cima e pra esquerda
+                      if (vparx1ver < 0) {
+                        vparx1ver = -vparx1ver
+                     }
+                     if (vparx1hor > 0) {
+                        vparx1hor = -vparx1hor
+                     }
+                }else{
+                   // decomposição de velperx1 = pra cima e pra esquerda
+                   if (vperx1ver < 0) {
+                    vperx1ver = -vperx1ver
+                 }
+                 if (vperx1hor > 0) {
+                    vperx1hor = -vperx1hor
+                 }
+                 // decomposição de velparx1 = pra baixo e pra esquerda
+                 if (vparx1ver > 0) {
+                    vparx1ver = -vparx1ver
+                 }
+                 if (vparx1hor > 0) {
+                    vparx1hor = -vparx1hor
+                 }
+                }
+            }
+
             if (downball == a) {
                 if (vy1 > 0) {
                     if (leftball == a) { // bola de baixo para a esquerda com velx positiva
@@ -389,6 +455,9 @@ function collision() {
             
             console.log('vpery1hor:',vpery1hor,'vpery1ver:',vpery1ver)
             console.log('vpary1hor:',vpary1hor,'vpary1ver:',vpary1ver)
+            console.log('vperx1hor:',vperx1hor,'vperx1ver:',vperx1ver)
+            console.log('vparx1hor:',vparx1hor,'vparx1ver:',vparx1ver)
+            console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor)
 
              //pokebola 2
          vperx2 = vx2*senx // decomposição de vx1 na direção perpendicular(vel relativa)
