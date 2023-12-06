@@ -208,6 +208,13 @@ function collision() {
                         if (vpery1hor < 0) {
                             vpery1hor = -vpery1hor
                         }
+                        //decomposição de velpary1 = pra cima e pra esquerda
+                        if (vpary1ver < 0) {
+                            vpary1ver = -vpary1ver
+                        }
+                        if (vpary1hor > 0) {
+                            vpary1hor = -vpary1hor
+                        }
                     }else{ // bola de baixo para a direita com velx positiva
                         // vely perpendicular negativa
                         if (vpery1 > 0) {
@@ -222,6 +229,13 @@ function collision() {
                         }
                         if (vpery1hor > 0) {
                             vpery1hor = -vpery1hor
+                        }
+                         //decomposição de velpary1 = pra cima e pra direita
+                         if (vpary1ver < 0) {
+                            vpary1ver = -vpary1ver
+                        }
+                        if (vpary1hor < 0) {
+                            vpary1hor = -vpary1hor
                         }
                     }
                 }else{
@@ -240,6 +254,13 @@ function collision() {
                         if (vpery1hor > 0) {
                             vpery1hor = -vpery1hor
                         }
+                         //decomposição de velpary1 = pra baixo e pra direita
+                         if (vpary1ver > 0) {
+                            vpary1ver = -vpary1ver
+                        }
+                        if (vpary1hor < 0) {
+                            vpary1hor = -vpary1hor
+                        }
                     }else{ // bola de baixo para a direita com velx negativa
                         // vely perpendicular positiva
                         if (vpery1 < 0) {
@@ -254,6 +275,13 @@ function collision() {
                         }
                         if (vpery1hor < 0) {
                             vpery1hor = -vpery1hor
+                        }
+                         //decomposição de velpary1 = pra baixo e pra esquerda
+                         if (vpary1ver > 0) {
+                            vpary1ver = -vpary1ver
+                        }
+                        if (vpary1hor > 0) {
+                            vpary1hor = -vpary1hor
                         }
                     }
                 }
@@ -274,6 +302,13 @@ function collision() {
                         if (vpery1hor < 0) {
                             vpery1hor = -vpery1hor
                         }
+                        //decomposição de velpary1 = pra cima e pra esquerda
+                        if (vpary1ver < 0) {
+                            vpary1ver = -vpary1ver
+                        }
+                        if (vpary1hor > 0) {
+                            vpary1hor = -vpary1hor
+                        }
                     }else{ // bola de cima para a esquerda com velx positiva
                         // vely perpendicular negativa
                         if (vpery1 > 0) {
@@ -289,6 +324,13 @@ function collision() {
                     }
                     if (vpery1hor > 0) {
                         vpery1hor = -vpery1hor
+                    }
+                    //decomposição de velpary1 = pra cima e pra direita
+                    if (vpary1ver < 0) {
+                        vpary1ver = -vpary1ver
+                    }
+                    if (vpary1hor < 0) {
+                        vpary1hor = -vpary1hor
                     }
                 }else{
                     if (rightball == a) { // bola de cima para a direita com velx negativa
@@ -306,6 +348,13 @@ function collision() {
                         if (vpery1hor > 0) {
                             vpery1hor = -vpery1hor
                         }
+                        //decomposição de velpary1 = pra baixo e pra direita
+                        if (vpary1ver > 0) {
+                            vpary1ver = -vpary1ver
+                        }
+                        if (vpary1hor < 0) {
+                            vpary1hor = -vpary1hor
+                        }
                     }else{ // bola de cima para a esquerda com velx negativa
                         // vely perpendicular positiva
                         if (vpery1 < 0) {
@@ -321,6 +370,13 @@ function collision() {
                         if (vpery1hor < 0) {
                             vpery1hor = -vpery1hor
                         }
+                         //decomposição de velpary1 = pra baixo e pra esquerda
+                         if (vpary1ver > 0) {
+                            vpary1ver = -vpary1ver
+                        }
+                        if (vpary1hor > 0) {
+                            vpary1hor = -vpary1hor
+                        }
                     }
                 }
             }
@@ -330,6 +386,9 @@ function collision() {
             console.log(`soma dos vetores na paralela: ${sumpar1}`)
 
             console.log(`vperx1:${vperx1.toFixed(2)},vparx1:${vparx1.toFixed(2)},vpery1:${vpery1.toFixed(2)},vpary1:${vpary1.toFixed(2)}`)
+            
+            console.log('vpery1hor:',vpery1hor,'vpery1ver:',vpery1ver)
+            console.log('vpary1hor:',vpary1hor,'vpary1ver:',vpary1ver)
 
              //pokebola 2
          vperx2 = vx2*senx // decomposição de vx1 na direção perpendicular(vel relativa)
