@@ -169,8 +169,7 @@ function collision() {
                 leftball = a
             }
 
-            console.log(`bola ${a}: vx:${vx1}, vy:${vy1}`)
-            console.log(`bola ${b}: vx:${vx2}, vy:${vy2}`)
+            
             senx = diffx/(diffx**2 + diffy**2)**(1/2)
             cosx = diffy/(diffx**2 + diffy**2)**(1/2)
             senx = 3**(1/2)/2
@@ -178,6 +177,8 @@ function collision() {
             console.log(`senx:${senx.toFixed(2)}, cosx:${cosx.toFixed(2)}, ${(senx**2 + cosx**2).toFixed(0)}`)
 
             //pokebola 1
+            console.log('pokebola 1')
+            console.log(`bola ${a}: vx:${vx1}, vy:${vy1}`)
             vperx1 = vx1*senx // decomposição de vx1 na direção perpendicular(vel relativa)
             vparx1 = vx1*cosx // decomposição de vx1 na direção paralela(vel conservativa)
             vpery1 = vy1*cosx // decomposição de vy1 na direção perpendicular(vel relativa)
@@ -454,104 +455,375 @@ function collision() {
             console.log(`vperx1:${vperx1.toFixed(2)},vparx1:${vparx1.toFixed(2)},vpery1:${vpery1.toFixed(2)},vpary1:${vpary1.toFixed(2)}`)
             
             console.log('vpery1hor:',vpery1hor,'vpery1ver:',vpery1ver)
-            console.log('vpary1hor:',vpary1hor,'vpary1ver:',vpary1ver)
             console.log('vperx1hor:',vperx1hor,'vperx1ver:',vperx1ver)
+            console.log('')
+            console.log('vpary1hor:',vpary1hor,'vpary1ver:',vpary1ver)
             console.log('vparx1hor:',vparx1hor,'vparx1ver:',vparx1ver)
-            console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor)
-
-             //pokebola 2
-         vperx2 = vx2*senx // decomposição de vx1 na direção perpendicular(vel relativa)
-         vparx2 = vx2*cosx // decomposição de vx1 na direção paralela(vel conservativa)
-         vpery2 = vy2*cosx // decomposição de vy1 na direção perpendicular(vel relativa)
-         vpary2 = vy2*senx // ecomposição de vy1 na direção paralela(vel conservativa)
-
-
-         if (downball == b) {
-             if (vy2 > 0) {
-                 if (leftball == b) { // bola de baixo para a esquerda com velx positiva
-                     // vely perpendicular positiva
-                     if (vpery2 < 0) {
-                         vpery2 = -vpery2
-                     }
-                     if (vpary2 > 0) {
-                         vpary2 = -vpary2
-                     }
-                 }else{ // bola de baixo para a direita com velx positiva
-                     // vely perpendicular negativa
-                     if (vpery2 > 0) {
-                         vpery2 = -vpery2
-                     }
-                     if (vpary2 < 0) {
-                         vpary2 = -vpary2
-                     }
-                 }
-             }else{
-                 if (leftball == b) { // bola de baixo para a esquerda com velx negativa
-                     // vely perpendicular negativa
-                     if (vpery2 > 0) {
-                         vpery2 = -vpery2
-                     }
-                     if (vpary2 < 0) {
-                         vpary2 = -vpary2
-                     }
-                 }else{ // bola de baixo para a direita com velx negativa
-                     // vely perpendicular positiva
-                     if (vpery2 < 0) {
-                         vpery2 = -vpery2
-                     }
-                     if (vpary2 > 0) {
-                         vpary2 = -vpary2
-                     }
-                 }
-             }
-         }else{
-             if (vy1 > 0) {
-                 if (rightball == a) { // bola de cima para a direita com velx positiva
-                     // vely perpendicular positiva
-                     if (vpery1 < 0) {
-                         vpery1 = -vpery1
-                     }
-                     if (vpary1 > 0) {
-                         vpary1 = -vpary1
-                     }
-                 }else{ // bola de cima para a esquerda com velx positiva
-                     // vely perpendicular negativa
-                     if (vpery1 > 0) {
-                         vpery1 = -vpery1
-                     }
-                     if (vpary1 < 0) {
-                         vpary1 = -vpary1
-                     }
-                 }
-             }else{
-                 if (rightball == a) { // bola de cima para a direita com velx negativa
-                       // vely perpendicular negativa
-                       if (vpery1 > 0) {
-                         vpery1 = -vpery1
-                     }
-                     if (vpary1 < 0) {
-                         vpary1 = -vpary1
-                     }
-                 }else{ // bola de cima para a esquerda com velx negativa
-                     // vely perpendicular positiva
-                     if (vpery1 < 0) {
-                         vpery1 = -vpery1
-                     }
-                     if (vpary1 > 0) {
-                         vpary1 = -vpary1
-                     }
-                 }
-             }
-         }
-         sumper2 = vperx2 + vpery2
-         sumpar2 = vparx2 + vpary2
-         console.log(`soma dos vetores na perpendicular: ${sumper2}`)
-         console.log(`soma dos vetores na paralela: ${sumpar2}`)
-
-         console.log(`vperx2:${vperx2.toFixed(2)},vparx2:${vparx2.toFixed(2)},vpery2:${vpery2.toFixed(2)},vpary2:${vpary2.toFixed(2)}`)
-        }
-     
+            if (vperx1hor + vpery1hor > 0) {
+                console.log('a resultante perpendicular está pra direita')
+                dira = 'right'
+            }else{
+                console.log('a resultante perpendicular está pra esquerda')
+                dira = 'left'
             }
+            if (vperx1ver + vpery1ver > 0) {
+                console.log('a resultante perpendicular está pra cima')
+            }else{
+                console.log('a resultante perpendicular está pra baixo')
+            }
+            console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor)
+            console.log('soma(verificação)',vperx1ver + vparx1ver + vpery1ver + vpary1ver)
+     
+
+            console.log('')
+        //pokebola 2
+        console.log('pokebola 2')
+        console.log(`bola ${b}: vx:${vx2}, vy:${vy2}`)
+        vperx2 = vx2*senx // decomposição de vx2 na direção perpendicular(vel relativa)
+        vparx2 = vx2*cosx // decomposição de vx2 na direção paralela(vel conservativa)
+        vpery2 = vy2*cosx // decomposição de vy2 na direção perpendicular(vel relativa)
+        vpary2 = vy2*senx // decomposição de vy2 na direção paralela(vel conservativa)
+        vperx2hor = vperx2*senx
+        vperx2ver = vperx2*cosx
+        vparx2hor = vparx2*cosx
+        vparx2ver = vparx2*senx
+        vpery2hor = vpery2*senx
+        vpery2ver = vpery2*cosx
+        vpary2hor = vpary2*cosx
+        vpary2ver = vpary2*senx
+
+        if (vx2 > 0) {
+            if (leftball == b && downball == b || rightball == b && upball == b) {
+            // decomposição de velperx2 = pra cima e pra direita
+            if (vperx2ver < 0) {
+                vperx2ver = -vperx2ver
+            }
+            if (vperx2hor < 0) {
+                vperx2hor = -vperx2hor
+            }
+            // decomposição de velparx2 = pra baixo e pra direita
+            if (vparx2ver > 0) {
+                vparx2ver = -vparx2ver
+            }
+            if (vparx2hor < 0) {
+                vparx2hor = -vparx2hor
+            }
+            }else{
+            // decomposição de velperx2 = pra baixo e pra direita
+            if (vperx2ver > 0) {
+                vperx2ver = -vperx2ver
+            }
+            if (vperx2hor < 0) {
+                vperx2hor = -vperx2hor
+            }
+            // decomposição de velparx2 = pra cima e pra direita
+            if (vparx2ver < 0) {
+                vparx2ver = -vparx2ver
+            }
+            if (vparx2hor < 0) {
+                vparx2hor = -vparx2hor
+            }
+            }
+        }else{
+            if (leftball == b && downball == b || rightball == b && upball == b) {
+                // decomposição de velperx2 = pra baixo e pra esquerda
+                if (vperx2ver > 0) {
+                    vperx2ver = -vperx2ver
+                }
+                if (vperx2hor > 0) {
+                    vperx2hor = -vperx2hor
+                }
+                // decomposição de velparx2 = pra cima e pra esquerda
+                if (vparx2ver < 0) {
+                    vparx2ver = -vparx2ver
+                }
+                if (vparx2hor > 0) {
+                    vparx2hor = -vparx2hor
+                }
+            }else{
+            // decomposição de velperx2 = pra cima e pra esquerda
+            if (vperx2ver < 0) {
+                vperx2ver = -vperx2ver
+            }
+            if (vperx2hor > 0) {
+                vperx2hor = -vperx2hor
+            }
+            // decomposição de velparx2 = pra baixo e pra esquerda
+            if (vparx2ver > 0) {
+                vparx2ver = -vparx2ver
+            }
+            if (vparx2hor > 0) {
+                vparx2hor = -vparx2hor
+            }
+            }
+        }
+
+        if (downball == b) {
+            if (vy2 > 0) {
+                if (leftball == b) { // bola de baixo para a esquerda com velx positiva
+                    // vely perpendicular positiva
+                    if (vpery2 < 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 > 0) {
+                        vpary2 = -vpary2
+                    }
+                    // decomposição de velpery2 = pra cima e pra direita
+                    if (vpery2ver < 0) {
+                        vpery2ver = -vpery2ver
+                    }
+                    if (vpery2hor < 0) {
+                        vpery2hor = -vpery2hor
+                    }
+                    //decomposição de velpary2 = pra cima e pra esquerda
+                    if (vpary2ver < 0) {
+                        vpary2ver = -vpary2ver
+                    }
+                    if (vpary2hor > 0) {
+                        vpary2hor = -vpary2hor
+                    }
+                }else{ // bola de baixo para a direita com velx positiva
+                    // vely perpendicular negativa
+                    if (vpery2 > 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 < 0) {
+                        vpary2 = -vpary2
+                    }
+                    // decomposição de velpery2 = pra cima e pra esquerda
+                    if (vpery2ver < 0) {
+                        vpery2ver = -vpery2ver
+                    }
+                    if (vpery2hor > 0) {
+                        vpery2hor = -vpery2hor
+                    }
+                    //decomposição de velpary2 = pra cima e pra direita
+                    if (vpary2ver < 0) {
+                        vpary2ver = -vpary2ver
+                    }
+                    if (vpary2hor < 0) {
+                        vpary2hor = -vpary2hor
+                    }
+                }
+            }else{
+                if (leftball == b) { // bola de baixo para a esquerda com velx negativa
+                    // vely perpendicular negativa
+                    if (vpery2 > 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 < 0) {
+                        vpary2 = -vpary2
+                    }
+                    // decomposição de velpery2 = pra baixo e pra esquerda
+                    if (vpery2ver > 0) {
+                        vpery2ver = -vpery2ver
+                    }
+                    if (vpery2hor > 0) {
+                        vpery2hor = -vpery2hor
+                    }
+                    //decomposição de velpary2 = pra baixo e pra direita
+                    if (vpary2ver > 0) {
+                        vpary2ver = -vpary2ver
+                    }
+                    if (vpary2hor < 0) {
+                        vpary2hor = -vpary2hor
+                    }
+                }else{ // bola de baixo para a direita com velx negativa
+                    // vely perpendicular positiva
+                    if (vpery2 < 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 > 0) {
+                        vpary2 = -vpary2
+                    }
+                    // decomposição de velpery2 = pra baixo e pra direita
+                    if (vpery2ver > 0) {
+                        vpery2ver = -vpery2ver
+                    }
+                    if (vpery2hor < 0) {
+                        vpery2hor = -vpery2hor
+                    }
+                    //decomposição de velpary2 = pra baixo e pra esquerda
+                    if (vpary2ver > 0) {
+                        vpary2ver = -vpary2ver
+                    }
+                    if (vpary2hor > 0) {
+                        vpary2hor = -vpary2hor
+                    }
+                }
+            }
+        }else{
+            if (vy2 > 0) {
+                if (rightball == b) { // bola de cima para a direita com velx positiva
+                    // vely perpendicular positiva
+                    if (vpery2 < 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 > 0) {
+                        vpary2 = -vpary2
+                    }
+                    // decomposição de velpery2 = pra cima e pra direita
+                    if (vpery2ver < 0) {
+                        vpery2ver = -vpery2ver
+                    }
+                    if (vpery2hor < 0) {
+                        vpery2hor = -vpery2hor
+                    }
+                    //decomposição de velpary2 = pra cima e pra esquerda
+                    if (vpary2ver < 0) {
+                        vpary2ver = -vpary2ver
+                    }
+                    if (vpary2hor > 0) {
+                        vpary2hor = -vpary2hor
+                    }
+                }else{ // bola de cima para a esquerda com velx positiva
+                    // vely perpendicular negativa
+                    if (vpery2 > 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 < 0) {
+                        vpary2 = -vpary2
+                    }
+                }
+                // decomposição de velpery2 = pra cima e pra esquerda
+                if (vpery2ver < 0) {
+                    vpery2ver = -vpery2ver
+                }
+                if (vpery2hor > 0) {
+                    vpery2hor = -vpery2hor
+                }
+                //decomposição de velpary2 = pra cima e pra direita
+                if (vpary2ver < 0) {
+                    vpary2ver = -vpary2ver
+                }
+                if (vpary2hor < 0) {
+                    vpary2hor = -vpary2hor
+                }
+            }else{
+                if (rightball == b) { // bola de cima para a direita com velx negativa
+                    // vely perpendicular negativa
+                    if (vpery2 > 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 < 0) {
+                        vpary2 = -vpary2
+                    }
+                    // decomposição de velpery2 = pra baixo e pra esquerda
+                    if (vpery2ver > 0) {
+                        vpery2ver = -vpery2ver
+                    }
+                    if (vpery2hor > 0) {
+                        vpery2hor = -vpery2hor
+                    }
+                    //decomposição de velpary2 = pra baixo e pra direita
+                    if (vpary2ver > 0) {
+                        vpary2ver = -vpary2ver
+                    }
+                    if (vpary2hor < 0) {
+                        vpary2hor = -vpary2hor
+                    }
+                }else{ // bola de cima para a esquerda com velx negativa
+                    // vely perpendicular positiva
+                    if (vpery2 < 0) {
+                        vpery2 = -vpery2
+                    }
+                    if (vpary2 > 0) {
+                        vpary2 = -vpary2
+                    }
+                    // decomposição de velpery2 = pra baixo e para direita
+                    if (vpery2ver > 0) {
+                        vpery2ver = -vpery2ver
+                    }
+                    if (vpery2hor < 0) {
+                        vpery2hor = -vpery2hor
+                    }
+                    //decomposição de velpary2 = pra baixo e pra esquerda
+                    if (vpary2ver > 0) {
+                        vpary2ver = -vpary2ver
+                    }
+                    if (vpary2hor > 0) {
+                        vpary2hor = -vpary2hor
+                    }
+                }
+            }
+        }
+        sumper2 = vperx2 + vpery2
+        sumpar2 = vparx2 + vpary2
+        console.log(`soma dos vetores na perpendicular: ${sumper2}`)
+        console.log(`soma dos vetores na paralela: ${sumpar2}`)
+
+        console.log(`vperx2:${vperx2.toFixed(2)},vparx2:${vparx2.toFixed(2)},vpery2:${vpery2.toFixed(2)},vpary2:${vpary2.toFixed(2)}`)
+
+        console.log('vpery2hor:',vpery2hor,'vpery2ver:',vpery2ver)
+        console.log('vperx2hor:',vperx2hor,'vperx2ver:',vperx2ver)
+        console.log('')
+        console.log('vpary2hor:',vpary2hor,'vpary2ver:',vpary2ver)
+        console.log('vparx2hor:',vparx2hor,'vparx2ver:',vparx2ver)
+        if (vperx2hor + vpery2hor > 0) {
+            console.log('a resultante perpendicular está pra direita')
+            dirb = 'right'
+        }else{
+            console.log('a resultante perpendicular está pra esquerda')
+            dirb = 'left'
+        }
+        if (vperx2ver + vpery2ver > 0) {
+            console.log('a resultante perpendicular está pra cima')
+        }else{
+            console.log('a resultante perpendicular está pra baixo')
+        }
+        console.log('soma(verificação)',vperx2hor + vparx2hor + vpery2hor + vpary2hor)
+        console.log('soma(verificação)',vperx2ver + vparx2ver + vpery2ver + vpary2ver)
+
+        // checar se efetivamente está ocorrendo uma colisão e definir o caso correspondente
+        collidea = 0
+        collideb = 0
+        if (leftball == a && dira == 'right' || rightball == a && dira == 'left') {
+            console.log('a bola a está para colidir')
+            collidea++
+        }
+        if (leftball == b && dirb == 'right' || rightball == b && dirb == 'left') {
+            console.log('a bola b está para colidir')
+            collideb++
+        }
+        if (collidea == 1 && collideb == 1) {
+            console.log('as pokebolas vão bater de frente')
+        }else if (collidea == 1 || collideb == 1) {
+            console.log('uma pokebola vai se chocar na outra')
+            if (collidea == 1) {
+                console.log('a bola a irá se chocar com a b')
+            }else{
+                console.log('a bola b irá se chocar com a a')
+            }
+                modsum1 = sumper1
+                if (sumper1 < 0) {
+                    modsum1 = -sumper1
+                }
+                
+                modsum2 = sumper2
+                if (sumper2 < 0) {
+                    modsum2 = -sumper2
+                }
+                if (collidea == 1) {
+                if (modsum1 > modsum2) {
+                    console.log('ok, realmente irá ocorrer a colisão')
+                    console.log('a bola a terá sua velocidade reduzida')
+                }else{
+                    console.log('não ocorrerá a colisão')
+                }
+            }else{
+                if (modsum2 > modsum1) {
+                    console.log('ok, realmente irá ocorrer a colisão')
+                    console.log('a bola b terá sua velocidade reduzida')
+                }else{
+                    console.log('não ocorrerá a colisão')
+                }
+            }
+            }else{
+            console.log('ixi, aí acontece nada')
+        }
+
+        }
+    }
         }
     }
 }
@@ -629,7 +901,7 @@ window.addEventListener('mousemove',function(event) {
         py = pokebolas[p].y
         //console.log(px - pw, px + pw, py - pw, py + pw)
         if (mousex > px - pw && mousex < px + pw && mousey > py - pw && mousey < py + pw) {
-            console.log('OWO')
+            //console.log('OWO')
             r = Math.random()*255
             g = Math.random()*255
             b = Math.random()*255
