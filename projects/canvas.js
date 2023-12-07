@@ -461,15 +461,17 @@ function collision() {
             console.log('vparx1hor:',vparx1hor,'vparx1ver:',vparx1ver)
             if (vperx1hor + vpery1hor > 0) {
                 console.log('a resultante perpendicular está pra direita')
-                dira = 'right'
+                dirahor = 'right'
             }else{
                 console.log('a resultante perpendicular está pra esquerda')
-                dira = 'left'
+                dirahor = 'left'
             }
             if (vperx1ver + vpery1ver > 0) {
                 console.log('a resultante perpendicular está pra cima')
+                diraver = 'up'
             }else{
                 console.log('a resultante perpendicular está pra baixo')
+                diraver = 'down'
             }
             console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor)
             console.log('soma(verificação)',vperx1ver + vparx1ver + vpery1ver + vpary1ver)
@@ -761,15 +763,17 @@ function collision() {
         console.log('vparx2hor:',vparx2hor,'vparx2ver:',vparx2ver)
         if (vperx2hor + vpery2hor > 0) {
             console.log('a resultante perpendicular está pra direita')
-            dirb = 'right'
+            dirbhor = 'right'
         }else{
             console.log('a resultante perpendicular está pra esquerda')
-            dirb = 'left'
+            dirbhor = 'left'
         }
         if (vperx2ver + vpery2ver > 0) {
             console.log('a resultante perpendicular está pra cima')
+            dirbver = 'up'
         }else{
             console.log('a resultante perpendicular está pra baixo')
+            dirbver = 'down'
         }
         console.log('soma(verificação)',vperx2hor + vparx2hor + vpery2hor + vpary2hor)
         console.log('soma(verificação)',vperx2ver + vparx2ver + vpery2ver + vpary2ver)
@@ -777,11 +781,11 @@ function collision() {
         // checar se efetivamente está ocorrendo uma colisão e definir o caso correspondente
         collidea = 0
         collideb = 0
-        if (leftball == a && dira == 'right' || rightball == a && dira == 'left') {
+        if (leftball == a && dirahor == 'right' || rightball == a && dirahor == 'left') {
             console.log('a bola a está para colidir')
             collidea++
         }
-        if (leftball == b && dirb == 'right' || rightball == b && dirb == 'left') {
+        if (leftball == b && dirbhor == 'right' || rightball == b && dirbhor == 'left') {
             console.log('a bola b está para colidir')
             collideb++
         }
@@ -806,18 +810,20 @@ function collision() {
                 if (collidea == 1) {
                 if (modsum1 > modsum2) {
                     console.log('ok, realmente irá ocorrer a colisão')
-                    console.log('a bola a terá sua velocidade reduzida')
+                    console.log('a bola a terá sua velocidade reduzida, mantendo a direção')
                 }else{
                     console.log('não ocorrerá a colisão')
                 }
             }else{
                 if (modsum2 > modsum1) {
                     console.log('ok, realmente irá ocorrer a colisão')
-                    console.log('a bola b terá sua velocidade reduzida')
+                    console.log('a bola b terá sua velocidade reduzida, mantendo a direção')
                 }else{
                     console.log('não ocorrerá a colisão')
                 }
             }
+            console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
+            console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
             }else{
             console.log('ixi, aí acontece nada')
         }
@@ -827,7 +833,6 @@ function collision() {
         }
     }
 }
-
 
 //criar a pokebola
 function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
