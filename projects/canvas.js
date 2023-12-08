@@ -19,8 +19,8 @@ width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
 vely = Number((Math.random()*1).toFixed(0)) + 1
-//velx = 0.01
-//vely = 0.01
+velx = 1
+vely = 1
 x = Math.random()*(300-width*2) + width
 y = Math.random()*(150-width*2) + width
 console.log(velx)
@@ -147,7 +147,7 @@ function collision() {
             let vy1 = -pokebolas[a].vely // sinal de menos para definir + pra cima e - pra baixo
             let vx2 = pokebolas[b].velx
             let vy2 = -pokebolas[b].vely // sinal de menos para definir + pra cima e - pra baixo
-            loop = false
+            //loop = false
 
             if (cy < cy2) {
                 console.log(`bola ${a} é a de cima`)
@@ -820,7 +820,8 @@ function collision() {
             }
             console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
             console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
-
+            pokebolas[a].velx = sumparhor1 + sumper2hor
+            pokebolas[a].vely = (sumparver1 + sumper2ver)*-1
             console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirahor,diraver)
             sumparhor2 = vpary2hor + vparx2hor
             sumparver2 = vpary2ver + vparx2ver
@@ -848,6 +849,8 @@ function collision() {
             }
             console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
             console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
+            pokebolas[b].velx = sumparhor2 + sumper1hor
+            pokebolas[b].vely = (sumparver2 + sumper1ver)*-1
         }else if (collidea == 1 || collideb == 1) {
             console.log('uma pokebola vai se chocar na outra')
             if (collidea == 1) {
@@ -906,6 +909,8 @@ function collision() {
             }
             console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
             console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
+            pokebolas[a].velx = sumparhor1 + sumper2hor
+            pokebolas[a].vely = (sumparver1 + sumper2ver)*-1
 
             console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
             sumparhor2 = vpary2hor + vparx2hor
@@ -934,6 +939,8 @@ function collision() {
             }
             console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
             console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
+            pokebolas[b].velx = sumparhor2 + sumper1hor
+            pokebolas[b].vely = (sumparver2 + sumper1ver)*-1
             }else{
             console.log('ixi, aí acontece nada')
         }
