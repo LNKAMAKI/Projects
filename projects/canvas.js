@@ -793,6 +793,61 @@ function collision() {
         }
         if (collidea == 1 && collideb == 1) {
             console.log('as pokebolas vão bater de frente')
+            console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirbhor, dirbver)
+            sumparhor1 = vpary1hor + vparx1hor
+            sumparver1 = vpary1ver + vparx1ver
+            console.log(sumparhor1, sumparver1)
+            sumper2hor = sumper2*senx
+            sumper2ver = sumper2*cosx
+            if (dirbhor == 'left') {
+                if (sumper2hor > 0) {
+                    sumper2hor = -sumper2hor
+                }
+            }else{
+                if (sumper2hor < 0) {
+                    sumper2hor = -sumper2hor
+                }
+            }
+
+            if (dirbver == 'down') {
+                if (sumper2ver > 0) {
+                    sumper2ver = -sumper2ver
+                }
+            }else{
+                if (sumper2ver < 0) {
+                    sumper2ver = -sumper2ver
+                }
+            }
+            console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
+            console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
+
+            console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirahor,diraver)
+            sumparhor2 = vpary2hor + vparx2hor
+            sumparver2 = vpary2ver + vparx2ver
+            console.log(sumparhor2, sumparver2)
+            sumper1hor = sumper1*senx
+            sumper1ver = sumper1*cosx
+            if (dirahor == 'left') {
+                if (sumper1hor > 0) {
+                    sumper1hor = -sumper1hor
+                }
+            }else{
+                if (sumper1hor < 0) {
+                    sumper1hor = -sumper1hor
+                }
+            }
+
+            if (diraver == 'down') {
+                if (sumper1ver > 0) {
+                    sumper1ver = -sumper1ver
+                }
+            }else{
+                if (sumper1ver < 0) {
+                    sumper1ver = -sumper1ver
+                }
+            }
+            console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
+            console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
         }else if (collidea == 1 || collideb == 1) {
             console.log('uma pokebola vai se chocar na outra')
             if (collidea == 1) {
