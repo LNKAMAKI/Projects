@@ -777,6 +777,8 @@ function collision() {
         }
         console.log('soma(verificação)',vperx2hor + vparx2hor + vpery2hor + vpary2hor)
         console.log('soma(verificação)',vperx2ver + vparx2ver + vpery2ver + vpary2ver)
+        console.log('verificar velocidade perpendicular',((vpery2hor + vperx2hor)**2 + (vpery2ver + vperx2ver)**2)**(1/2))
+        console.log('verificar velocidade paralela',((vpary2hor + vparx2hor)**2 + (vpary2ver + vparx2ver)**2)**(1/2))
 
         // checar se efetivamente está ocorrendo uma colisão e definir o caso correspondente
         collidea = 0
@@ -823,7 +825,60 @@ function collision() {
                 }
             }
             console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
+            sumparhor1 = vpary1hor + vparx1hor
+            sumparver1 = vpary1ver + vparx1ver
+            console.log(sumparhor1, sumparver1)
+            sumper2hor = sumper2*senx
+            sumper2ver = sumper2*cosx
+            if (dirahor == 'left') {
+                if (sumper2hor > 0) {
+                    sumper2hor = -sumper2hor
+                }
+            }else{
+                if (sumper2hor < 0) {
+                    sumper2hor = -sumper2hor
+                }
+            }
+
+            if (diraver == 'down') {
+                if (sumper2ver > 0) {
+                    sumper2ver = -sumper2ver
+                }
+            }else{
+                if (sumper2ver < 0) {
+                    sumper2ver = -sumper2ver
+                }
+            }
+            console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
+            console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
+
             console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
+            sumparhor2 = vpary2hor + vparx2hor
+            sumparver2 = vpary2ver + vparx2ver
+            console.log(sumparhor2, sumparver2)
+            sumper1hor = sumper1*senx
+            sumper1ver = sumper1*cosx
+            if (dirbhor == 'left') {
+                if (sumper1hor > 0) {
+                    sumper1hor = -sumper1hor
+                }
+            }else{
+                if (sumper1hor < 0) {
+                    sumper1hor = -sumper1hor
+                }
+            }
+
+            if (dirbver == 'down') {
+                if (sumper1ver > 0) {
+                    sumper1ver = -sumper1ver
+                }
+            }else{
+                if (sumper1ver < 0) {
+                    sumper1ver = -sumper1ver
+                }
+            }
+            console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
+            console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
             }else{
             console.log('ixi, aí acontece nada')
         }
