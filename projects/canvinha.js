@@ -93,18 +93,8 @@
     raiz1 = -1
     raiz2 = -1
     }
-    if (delta > 0) {
-    if (raiz2 < raiz1 && raiz2 > 0) {
-     xres = raiz2
-     
-    }else if(raiz1 < raiz2 && raiz1 > 0) {
-    
-    }else {
-       xres = 0
-       console.log('IXI, MERMÃO')
-    }
-}
    
+    console.log(raiz1,raiz2)
      // vx1 = rvx1vx1*xres
      pokebolas[a1].velx = rvx1vx1*xres
      // vy1 = rvy1vx1*xres
