@@ -5,6 +5,10 @@
             //loop = false
         }
 
+        cx = pokebolas[a].x
+        cy = pokebolas[a].y
+        velx1 = pokebolas[a].velx
+        vely1 = pokebolas[a].vely
         newcx = cx + velx1
         newcx2 = cx2 + velx2
         newcy = cy + vely1

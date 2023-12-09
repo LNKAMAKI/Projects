@@ -128,10 +128,6 @@ function collision() {
     ////console.log(coll)
    for (a = 0; a < 2;a++) {//for (a in pokebolas) {
         ////console.log('a',a)
-        minx = pokebolas[a].rangex[0]
-        maxx = pokebolas[a].rangex[1]
-        miny = pokebolas[a].rangey[0]
-        maxy = pokebolas[a].rangey[1]
         cx = pokebolas[a].x
         cy = pokebolas[a].y
         velx1 = pokebolas[a].velx
@@ -142,10 +138,6 @@ function collision() {
         for (b in pokebolas) {
             if (b != a) {
                 ////console.log('b',b)
-                minx2 = pokebolas[b].rangex[0]
-        maxx2 = pokebolas[b].rangex[1]
-        miny2 = pokebolas[b].rangey[0]
-        maxy2 = pokebolas[b].rangey[1]
         cx2 = pokebolas[b].x
         cy2 = pokebolas[b].y
         velx2 = pokebolas[b].velx
