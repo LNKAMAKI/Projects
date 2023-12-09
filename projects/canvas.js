@@ -59,14 +59,7 @@ color = "rgb(255, 167, 66)"
 if (v == 0) {
     color = 'pink'
 }
-/*
-if(v == 0) {
-    color = "red"
-}else{
-color = "blue"
-}*/
-//color = `rgb(${r},${g},${b})`
-//console.log('create')
+
 rangex = [x - width,x + width]
 rangey = [y - width,y + width]
 createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
@@ -133,8 +126,6 @@ function collision() {
         cy = pokebolas[a].y
         velx1 = pokebolas[a].velx
         vely1 = pokebolas[a].vely
-        ////console.log(minx,maxx,miny,maxy)
-       // //console.log(cx,cy)
         
         for (b in pokebolas) {
             if (b != a) {
@@ -143,8 +134,7 @@ function collision() {
         cy2 = pokebolas[b].y
         velx2 = pokebolas[b].velx
         vely2 = pokebolas[b].vely
-        ////console.log(minx2,maxx2,miny2,maxy2)
-        ////console.log(cx2,cy2)
+        
         diffx = cx - cx2
         diffy = cy - cy2
         if (diffx < 0) {
