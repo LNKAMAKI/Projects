@@ -17,8 +17,8 @@ function animate() {
 for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*1).toFixed(0)) + 1
-vely = Number((Math.random()*1).toFixed(0)) + 1
+velx = Number((Math.random()*3).toFixed(0)) + 1
+vely = Number((Math.random()*3).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -124,9 +124,10 @@ requestAnimationFrame(animate)
 animate()
 }
 
+coll = 0
 function collision() {
-    ////console.log(coll)
-   for (a = 0; a < 2;a++) {//for (a in pokebolas) {
+    console.log(coll)
+   for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         ////console.log('a',a)
         cx = pokebolas[a].x
         cy = pokebolas[a].y
@@ -153,6 +154,19 @@ function collision() {
             diffy = -diffy
         }
         
+        
+        if (pokebolas[a].x > 300 - pokebolas[a].width || pokebolas[a].x < pokebolas[a].width) {
+            velx1 = -pokebolas[a].velx
+        }
+        if (pokebolas[a].y > 150 - pokebolas[a].width || pokebolas[a].y < pokebolas[a].width) {
+            vely1 = -pokebolas[a].vely
+        }
+        if (pokebolas[b].x > 300 - pokebolas[b].width || pokebolas[b].x < pokebolas[b].width) {
+            velx2 = -pokebolas[b].velx
+        }
+        if (pokebolas[b].y > 150 - pokebolas[b].width || pokebolas[b].y < pokebolas[b].width) {
+            vely2 = -pokebolas[b].vely
+        }
         newcx = cx + velx1
         newcx2 = cx2 + velx2
         newcy = cy + vely1
@@ -165,7 +179,15 @@ function collision() {
             window.alert('PAROU')
             //loop = false
         }
-        if (diffx**2 + diffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2 || newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2
+        if (newdiffx**2 + newdiffy**2 <= 1000) {
+            console.log('DIFFERENECE',diffx**2 + diffy**2)
+            console.log('NEXT',newdiffx**2 + newdiffy**2)
+        }
+        if (newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2) {
+            console.log('AH, n vai n')
+            loop = false
+        }
+        if (diffx**2 + diffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2
         ) {
             //console.log('touching')
             //loop = false
@@ -975,6 +997,7 @@ function collision() {
     }
         }
     }
+    coll++
 }
 
 //criar a pokebola
