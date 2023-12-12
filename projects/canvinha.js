@@ -106,4 +106,13 @@
      
     console.log(rvx1vx1*xres,rvy1vx1*xres,rvx2vx1*xres,rvy2vx1*xres)
     
-   
+    if (velx2 > 0) {
+        pokebolas[b].velx = 0.1
+        }else{
+        pokebolas[b].velx = -0.1
+        }
+        if (vely2 > 0) {
+            pokebolas[b].vely = 0.1
+            }else{
+            pokebolas[b].vely = -0.1
+            }

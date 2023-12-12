@@ -14,11 +14,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 3; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*1).toFixed(0)) + 1
-vely = Number((Math.random()*1).toFixed(0)) + 1
+velx = Number((Math.random()*7).toFixed(0)) + 1
+vely = Number((Math.random()*7).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -86,13 +86,13 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             fp = document.getElementById('firstp')
             sp = document.getElementById('secp')
             if (number == 0) {
-            fp.innerHTML = `<span style="color:red;">x</span>: ${Math.trunc(pokebolas[number].rangex[0])} - ${Math.trunc(pokebolas[number].rangex[1])}, <span style="color:red;">y</span>: ${Math.trunc(pokebolas[number].rangey[0])} - ${Math.trunc(pokebolas[number].rangey[1])} `
+            fp.innerHTML = `<span style="color:red;">x</span>:${pokebolas[number].velx},<span style="color:red;">y</span>: ${pokebolas[number].vely} `
             }else{
-                sp.innerHTML = `<span style="color:blue;">x</span>: ${Math.trunc(pokebolas[number].rangex[0])} - ${Math.trunc(pokebolas[number].rangex[1])}, <span style="color:blue;">y</span>: ${Math.trunc(pokebolas[number].rangey[0])} - ${Math.trunc(pokebolas[number].rangey[1])} `  
+                sp.innerHTML = `<span style="color:blue;">x</span>: ${pokebolas[number].velx}, <span style="color:blue;">y</span>: ${pokebolas[number].vely}`  
             }
     }
     collision()
-    document.getElementById('diff').innerText = 'iii' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
+    document.getElementById('diff').innerText = '---------------DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
     }
 //}
     /*
@@ -121,9 +121,10 @@ animate()
 }
 
 coll = 0
+t = false
 function collision() {
-    console.log(coll)
-   for (a = 0; a < 3;a++) {//for (a in pokebolas) {
+    //console.log(coll)
+   for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         ////console.log('a',a)
         cx = pokebolas[a].x
         cy = pokebolas[a].y
@@ -160,6 +161,7 @@ function collision() {
         if (pokebolas[b].y > 150 - pokebolas[b].width || pokebolas[b].y < pokebolas[b].width) {
             vely2 = -pokebolas[b].vely
         }
+        
         newcx = cx + velx1
         newcx2 = cx2 + velx2
         newcy = cy + vely1
@@ -167,75 +169,60 @@ function collision() {
         newdiffx = newcx - newcx2
         newdiffy = newcy - newcy2
         
-        if (diffx**2 + diffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2) {
-            console.log('PAROU!')
-            window.alert('PAROU')
+        if (diffx**2 + diffy**2 < (pokebolas[a].width + pokebolas[b].width)**2) {
+            //console.log('PAROU!')
+            //window.alert('PAROU')
             //loop = false
         }
-        /*
-        if (newdiffx**2 + newdiffy**2 <= 1000) {
-            console.log('DIFFERENECE',diffx**2 + diffy**2)
-            console.log('NEXT',newdiffx**2 + newdiffy**2)
+        
+        if (Math.round(diffx**2 + diffy**2) <= 676) {
+            loop = false
+            console.log(cx,cx2)
+            console.log(cy,cy2)
         }
-        if (newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2) {
-            console.log('AH, n vai n')
+        
+        
+        if (newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2 && diffx**2 + diffy**2 > 676 && t == false) {
+            t = true
+            console.log('no, you wont')
             //loop = false
-            console.log('bola 0:')
-            console.log('velx:',velx1)
-            console.log('vely',vely1)
-            console.log('bola 1:')
-            console.log('velx:',velx2)
-            console.log('vely',vely2)
-            rvx1vx1 = 1
-            rvx2vx1 = velx2/velx1 //cx2
-            if (velx1 < 0) {
-                rvx1vx1 = -1
-            }
-            if (velx2 < 0 && rvx2vx1 > 0 || velx2 > 0 && rvx2vx1 < 0) {
-                rvx2vx1 = -rvx2vx1
-            }
-            rvy1vx1 = vely1/velx1 //cy
-            rvy2vx1 = vely2/velx1 //cy2
-            if (vely1 < 0 && rvy1vx1> 0 || vely1 > 0 && rvy1vx1 < 0) {
-                rvy1vx1 = -rvy1vx1
-            }
-            if (vely2 < 0 && rvy2vx1> 0 || vely2 > 0 && rvy2vx1< 0) {
-                rvy2vx1 = -rvy2vx1
-            }
-            console.log('x:',rvx1vx1,rvx2vx1)
-            console.log('y:',rvy1vx1,rvy2vx1)
-            addx = rvx1vx1 - rvx2vx1
-            addy = rvy1vx1 - rvy2vx1
-            console.log(addx,addy)
-           
-            diffx = -40
-            diffy = 20
-            console.log('diffx:',diffx,'diffy:',diffy)
-            res = (pokebolas[a].width + pokebolas[b].width)**2
-            cex = diffx**2 + diffy**2 - res
-            bex = 2*(diffx*addx + diffy*addy)
-            aex = addx**2 + addy**2
+            dx = cx - cx2
+            dy = cy,cy2
+            console.log('cx:',cx,'cx2:',cx2)
+            console.log('cy:',cy,'cy2;',cy2)
+
+            //[(cx + vx) - (cx2 + vx2)]**2 + [(cy + vy) - (cy2 + vy2)]**2
+            //[cx - cx2 + vx - vx2]**2 + [cy - cy2 + vy - vy2]**2
+            //[life + difvex]**2 + [time + difvey]**2
+            //life**2 + 2*life*difvex + difvex**2 + time**2 + 2*time*difvey + difvey**2
+            //life**2 + time**2 - 676 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
+            //           (c)                        (b)                       (a)
+            life = cx - cx2
+            time = cy - cy2
+            difvex = velx1 - velx2
+            difvey = vely1 - vely2
+            aex = difvex**2 + difvey**2
+            bex = 2*(life*difvex + time*difvey)
+            cex = life**2 + time**2 - 676
+            console.log('a',aex)
+            console.log('b',bex)
+            console.log('c',cex)
             delta = bex**2 - 4*aex*cex
-            console.log('a:',aex)
-            console.log('b:',bex)
-            console.log('c:',cex)
-            if (delta > 0) {
             raiz1 = (-bex + delta**(1/2))/(2*aex)
             raiz2 = (-bex - delta**(1/2))/(2*aex)
-            console.log('raiz1:',raiz1)
-            console.log('raiz2:',raiz2)
-            }else{
-                console.log('SEM SOLUÇÃO')
-            xres = 0
-            raiz1 = -1
-            raiz2 = -1
-            }
-           
-            console.log(raiz1,raiz2)
+            console.log('delta',delta)
+            console.log('raiz1',raiz1)
+            console.log('raiz2',raiz2)
+
+            pokebolas[a].velx = velx1*0.001
+            pokebolas[a].vely =vely1*0.001
+            pokebolas[b].velx = velx2*0.001
+            pokebolas[b].vely = vely2*0.001
         }
-        */
-        if (diffx**2 + diffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2 || newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2
-        ) {
+       
+       /* 
+        if (diffx**2 + diffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2 || newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2) {
+          
             //console.log('touching')
             //loop = false
             let vx1 = pokebolas[a].velx
@@ -1040,7 +1027,7 @@ function collision() {
             console.log('ixi, aí acontece nada')
         }
 
-        }
+        }*/
     }
         }
     }
