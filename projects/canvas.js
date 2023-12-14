@@ -17,8 +17,8 @@ function animate() {
 for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*7).toFixed(0)) + 1
-vely = Number((Math.random()*7).toFixed(0)) + 1
+velx = Number((Math.random()*2).toFixed(0)) + 1
+vely = Number((Math.random()*2).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -70,14 +70,15 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
     }else{
         document.getElementById('diff').innerText = 'iii' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
         c.clearRect(0,0,300,150)
-        
+
         for (number in pokebolas) {
+            /*
             if (pokebolas[number].x > 300 - pokebolas[number].width || pokebolas[number].x < pokebolas[number].width) {
                 pokebolas[number].velx = -pokebolas[number].velx
             }
             if (pokebolas[number].y > 150 - pokebolas[number].width || pokebolas[number].y < pokebolas[number].width) {
                 pokebolas[number].vely = -pokebolas[number].vely
-            }
+            }*/
             pokebolas[number].x+=pokebolas[number].velx
             pokebolas[number].y+=pokebolas[number].vely
             pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
@@ -86,9 +87,9 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             fp = document.getElementById('firstp')
             sp = document.getElementById('secp')
             if (number == 0) {
-            fp.innerHTML = `<span style="color:red;">x</span>:${pokebolas[number].velx},<span style="color:red;">y</span>: ${pokebolas[number].vely} `
+            fp.innerHTML = `<span style="color:red;">x</span>:${Math.round(pokebolas[number].velx)},<span style="color:red;">y</span>: ${Math.round(pokebolas[number].vely)} `
             }else{
-                sp.innerHTML = `<span style="color:blue;">x</span>: ${pokebolas[number].velx}, <span style="color:blue;">y</span>: ${pokebolas[number].vely}`  
+                sp.innerHTML = `<span style="color:blue;">x</span>: ${Math.round(pokebolas[number].velx)}, <span style="color:blue;">y</span>: ${Math.round(pokebolas[number].vely)}`  
             }
     }
     collision()
@@ -123,7 +124,7 @@ animate()
 coll = 0
 t = false
 function collision() {
-    //console.log(coll)
+    console.log(coll)
    for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         ////console.log('a',a)
         cx = pokebolas[a].x
@@ -149,17 +150,21 @@ function collision() {
         }
         
         
-        if (pokebolas[a].x > 300 - pokebolas[a].width || pokebolas[a].x < pokebolas[a].width) {
+        if (pokebolas[a].x > 300 - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width && pokebolas[a].velx < 0) {
             velx1 = -pokebolas[a].velx
+            pokebolas[a].velx = -pokebolas[a].velx
         }
-        if (pokebolas[a].y > 150 - pokebolas[a].width || pokebolas[a].y < pokebolas[a].width) {
+        if (pokebolas[a].y > 150 - pokebolas[a].width && pokebolas[a].vely > 0|| pokebolas[a].y < pokebolas[a].width && pokebolas[a].vely < 0) {
             vely1 = -pokebolas[a].vely
+            pokebolas[a].vely = -pokebolas[a].vely
         }
-        if (pokebolas[b].x > 300 - pokebolas[b].width || pokebolas[b].x < pokebolas[b].width) {
+        if (pokebolas[b].x > 300 - pokebolas[b].width && pokebolas[b].velx > 0 || pokebolas[b].x < pokebolas[b].width && pokebolas[b].velx < 0 ) {
             velx2 = -pokebolas[b].velx
+            pokebolas[b].velx = -pokebolas[b].velx
         }
-        if (pokebolas[b].y > 150 - pokebolas[b].width || pokebolas[b].y < pokebolas[b].width) {
+        if (pokebolas[b].y > 150 - pokebolas[b].width && pokebolas[b].vely > 0|| pokebolas[b].y < pokebolas[b].width && pokebolas[b].vely < 0) {
             vely2 = -pokebolas[b].vely
+            pokebolas[b].vely = -pokebolas[b].vely
         }
         
         newcx = cx + velx1
@@ -169,20 +174,24 @@ function collision() {
         newdiffx = newcx - newcx2
         newdiffy = newcy - newcy2
         
-        if (diffx**2 + diffy**2 < (pokebolas[a].width + pokebolas[b].width)**2) {
+        if (diffx**2 + diffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2) {
             //console.log('PAROU!')
             //window.alert('PAROU')
-            //loop = false
-        }
-        
-        if (Math.round(diffx**2 + diffy**2) <= 676) {
             loop = false
-            console.log(cx,cx2)
-            console.log(cy,cy2)
         }
         
+        if (Math.round(diffx**2 + diffy**2) <= 676){//|| newdiffx**2 + newdiffy**2 < 676) {
+            loop = false
+            //window.alert('')
+            //console.log(cx,cx2)
+           // console.log(cy,cy2)
+        }
         
-        if (newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2 && diffx**2 + diffy**2 > 676 && t == false) {
+        if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
+        console.log('NOW',diffx**2 + diffy**2)
+        console.log('NEXT',newdiffx**2 + newdiffy**2)
+        }
+        if (newdiffx**2 + newdiffy**2 <= (pokebolas[a].width + pokebolas[b].width)**2 && t == false) {
             t = true
             console.log('no, you wont')
             //loop = false
@@ -204,6 +213,12 @@ function collision() {
             aex = difvex**2 + difvey**2
             bex = 2*(life*difvex + time*difvey)
             cex = life**2 + time**2 - 676
+            console.log('difx:',life)
+            console.log('dify',time)
+            console.log('vx1',velx1)
+            console.log('vy1',vely1)
+            console.log('vx2',velx2)
+            console.log('vy2',vely2)
             console.log('a',aex)
             console.log('b',bex)
             console.log('c',cex)
@@ -213,11 +228,18 @@ function collision() {
             console.log('delta',delta)
             console.log('raiz1',raiz1)
             console.log('raiz2',raiz2)
+            res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
+            console.log('conferir:',res)
 
-            pokebolas[a].velx = velx1*0.001
-            pokebolas[a].vely =vely1*0.001
-            pokebolas[b].velx = velx2*0.001
-            pokebolas[b].vely = vely2*0.001
+            
+            //raiz2 = 0.001
+            
+            pokebolas[a].velx = velx1*raiz2
+            pokebolas[a].vely = vely1*raiz2
+            pokebolas[b].velx = velx2*raiz2
+            pokebolas[b].vely = vely2*raiz2
+            
+            
         }
        
        /* 
