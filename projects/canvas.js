@@ -180,7 +180,13 @@ function collision() {
             //console.log(cx,cx2)
            // console.log(cy,cy2)
             console.log('touching')
+            console.log(pokebolas[a].velx)
+            console.log(pokebolas[a].r)
             //loop = false
+            if (pokebolas[a].r == '') {
+                pokebolas[a].r = 1
+                pokebolas[b].r = 1
+            }
             vx1 = pokebolas[a].velx/pokebolas[a].r
             vy1 = -pokebolas[a].vely/pokebolas[a].r // sinal de menos para definir + pra cima e - pra baixo
             vx2 = pokebolas[b].velx/pokebolas[b].r
@@ -833,7 +839,7 @@ function collision() {
             collideb++
         }
         if (collidea == 1 && collideb == 1) {
-            //console.log('as pokebolas vão bater de frente')
+            console.log('as pokebolas vão bater de frente')
             //console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirbhor, dirbver)
             sumparhor1 = vpary1hor + vparx1hor
             sumparver1 = vpary1ver + vparx1ver
@@ -895,9 +901,9 @@ function collision() {
         }else if (collidea == 1 || collideb == 1) {
             //console.log('uma pokebola vai se chocar na outra')
             if (collidea == 1) {
-                //console.log('a bola a irá se chocar com a b')
+                console.log('a bola a irá se chocar com a b')
             }else{
-                //console.log('a bola b irá se chocar com a a')
+                console.log('a bola b irá se chocar com a a')
             }
                 modsum1 = sumper1
                 if (sumper1 < 0) {
@@ -1950,3 +1956,10 @@ window.addEventListener('mousemove',function(event) {
         }
     }
 })
+
+window.addEventListener('keyup',function(event) {
+ console.log(event.key)
+ if (event.key == 'p') {
+    loop = false
+ }
+}) 
