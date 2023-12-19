@@ -17,8 +17,8 @@ function animate() {
 for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*4).toFixed(0)) + 1
-vely = Number((Math.random()*4).toFixed(0)) + 1
+velx = Number((Math.random()*8).toFixed(0)) + 1
+vely = Number((Math.random()*8).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -42,7 +42,7 @@ if (v == 0) {
 
 r = Math.random()*255
 g = Math.random()*255
-b = Math.random()*255
+//b = Math.random()*255
 color = Math.trunc(Math.random()*7)
 if (color == 0) {
  color = "red"
@@ -133,7 +133,7 @@ function collision() {
         velx1 = pokebolas[a].velx
         vely1 = pokebolas[a].vely
         
-        for (b in pokebolas) {
+        for (b = 0; b < pokebolas.length; b++) {
             if (b != a) {
                 //console.log('b',b)
         cx2 = pokebolas[b].x
@@ -201,22 +201,22 @@ function collision() {
 
             if (cy < cy2) {
                 console.log(`bola ${a} é a de cima`)
-                upball = a
-                downball = b
+                upball = Number(a)
+                downball = Number(b)
             }else{
                 console.log(`bola ${b} é a de cima`)
-                upball = b
-                downball = a
+                upball = Number(b)
+                downball = Number(a)
             }
 
             if (cx > cx2) {
                 console.log(`bola ${a} está na direita`)
-                rightball = a
-                leftball = b
+                rightball = Number(a)
+                leftball = Number(b)
             }else{
                 console.log(`bola ${b} está na direita`)
-                rightball = b
-                leftball = a
+                rightball = Number(b)
+                leftball = Number(a)
             }
 
             console.log('triangulo:',diffx,diffy,(diffx**2 + diffy**2)**(1/2))
@@ -436,8 +436,7 @@ function collision() {
                         if (vpary1 < 0) {
                             vpary1 = -vpary1
                         }
-                    }
-                    // decomposição de velpery1 = pra cima e pra esquerda
+                        // decomposição de velpery1 = pra cima e pra esquerda
                     if (vpery1ver < 0) {
                         vpery1ver = -vpery1ver
                     }
@@ -450,6 +449,7 @@ function collision() {
                     }
                     if (vpary1hor < 0) {
                         vpary1hor = -vpary1hor
+                    }
                     }
                 }else{
                     if (rightball == a) { // bola de cima para a direita com velx negativa
@@ -618,9 +618,18 @@ function collision() {
             }
         }
 
+        console.log('downball',downball)
+        console.log('upball',upball)
+        console.log('leftball',leftball)
+        console.log('rightball',rightball)
+        console.log(b)
+        console.log(rightball == b)
         if (downball == b) { 
+            console.log('b é de baixo')
             if (vy2 > 0) {
+                console.log('velocidade positiva')
                 if (leftball == b) { // bola de baixo para a esquerda com velx positiva
+                    console.log('bola esquerda')
                     // vely perpendicular positiva
                     if (vpery2 < 0) {
                         vpery2 = -vpery2
@@ -644,6 +653,7 @@ function collision() {
                     }
                 }else{ // bola de baixo para a direita com velx positiva
                     // vely perpendicular negativa
+                    console.log('bola direita')
                     if (vpery2 > 0) {
                         vpery2 = -vpery2
                     }
@@ -666,8 +676,10 @@ function collision() {
                     }
                 }
             }else{
+                console.log('velocidade negativa')
                 if (leftball == b) { // bola de baixo para a esquerda com velx negativa
                     // vely perpendicular negativa
+                    console.log('bola esquerda')
                     if (vpery2 > 0) {
                         vpery2 = -vpery2
                     }
@@ -690,6 +702,7 @@ function collision() {
                     }
                 }else{ // bola de baixo para a direita com velx negativa
                     // vely perpendicular positiva
+                    console.log('bola direita')
                     if (vpery2 < 0) {
                         vpery2 = -vpery2
                     }
@@ -713,9 +726,12 @@ function collision() {
                 }
             }
         }else{
+            console.log('b é de cima')
             if (vy2 > 0) {
+                console.log('velocidade positiva')
                 if (rightball == b) { // bola de cima para a direita com velx positiva
                     // vely perpendicular positiva
+                    console.log('bola direita')
                     if (vpery2 < 0) {
                         vpery2 = -vpery2
                     }
@@ -726,9 +742,11 @@ function collision() {
                     if (vpery2ver < 0) {
                         vpery2ver = -vpery2ver
                     }
+                    console.log(vpery2hor)
                     if (vpery2hor < 0) {
                         vpery2hor = -vpery2hor
                     }
+                    console.log(vpery2hor < 0)
                     //decomposição de velpary2 = pra cima e pra esquerda
                     if (vpary2ver < 0) {
                         vpary2ver = -vpary2ver
@@ -738,14 +756,14 @@ function collision() {
                     }
                 }else{ // bola de cima para a esquerda com velx positiva
                     // vely perpendicular negativa
+                    console.log('bola esquerda')
                     if (vpery2 > 0) {
                         vpery2 = -vpery2
                     }
                     if (vpary2 < 0) {
                         vpary2 = -vpary2
                     }
-                }
-                // decomposição de velpery2 = pra cima e pra esquerda
+                    // decomposição de velpery2 = pra cima e pra esquerda
                 if (vpery2ver < 0) {
                     vpery2ver = -vpery2ver
                 }
@@ -759,9 +777,12 @@ function collision() {
                 if (vpary2hor < 0) {
                     vpary2hor = -vpary2hor
                 }
+                }
             }else{
+                console.log('velocidade negativa')
                 if (rightball == b) { // bola de cima para a direita com velx negativa
                     // vely perpendicular negativa
+                    console.log('bola direita')
                     if (vpery2 > 0) {
                         vpery2 = -vpery2
                     }
@@ -784,6 +805,7 @@ function collision() {
                     }
                 }else{ // bola de cima para a esquerda com velx negativa
                     // vely perpendicular positiva
+                    console.log('bola esquerda')
                     if (vpery2 < 0) {
                         vpery2 = -vpery2
                     }
@@ -840,6 +862,7 @@ function collision() {
         console.log('verificar velocidade perpendicular',((vpery2hor + vperx2hor)**2 + (vpery2ver + vperx2ver)**2)**(1/2))
         console.log('verificar velocidade paralela',((vpary2hor + vparx2hor)**2 + (vpary2ver + vparx2ver)**2)**(1/2))
 
+        console.log('')
         // checar se efetivamente está ocorrendo uma colisão e definir o caso correspondente
         collidea = 0
         collideb = 0
@@ -948,7 +971,7 @@ function collision() {
             console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
             sumparhor1 = vpary1hor + vparx1hor
             sumparver1 = vpary1ver + vparx1ver
-            console.log(sumparhor1, sumparver1)
+            //console.log(sumparhor1, sumparver1)
             sumper2hor = sumper2*senx
             sumper2ver = sumper2*cosx
             if (dirahor == 'left') {
@@ -979,7 +1002,7 @@ function collision() {
             console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
             sumparhor2 = vpary2hor + vparx2hor
             sumparver2 = vpary2ver + vparx2ver
-            console.log(sumparhor2, sumparver2)
+            //console.log(sumparhor2, sumparver2)
             sumper1hor = sumper1*senx
             sumper1ver = sumper1*cosx
             if (dirbhor == 'left') {
@@ -1161,6 +1184,7 @@ window.addEventListener('mousemove',function(event) {
         //this.document.getElementById('x').innerText += 'within'
     }
     
+    /*
     for (p in pokebolas) {
         px = pokebolas[p].x
         pw = pokebolas[p].width
@@ -1173,7 +1197,7 @@ window.addEventListener('mousemove',function(event) {
             b = Math.random()*255
             //pokebolas[p].color = `rgb(${r},${g},${b})`
         }
-    }
+    }*/
 })
 
 window.addEventListener('keyup',function(event) {
