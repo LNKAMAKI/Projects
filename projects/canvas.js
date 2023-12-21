@@ -14,7 +14,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 3; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*2).toFixed(0)) + 1
@@ -87,7 +87,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             fp = document.getElementById('firstp')
             en = document.getElementById('energy')
             sp = document.getElementById('secp')
-            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2)
+            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2 + pokebolas[2].velx**2 + pokebolas[2].vely**2)
             if (number == 0) {
             fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
             }else{
@@ -126,7 +126,7 @@ animate()
 coll = 0
 function collision() {
     //console.log(coll)
-   for (a = 0; a < 1;a++) {//for (a in pokebolas) {
+    for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         //console.log('a',a)
         cx = pokebolas[a].x
         cy = pokebolas[a].y
@@ -169,14 +169,14 @@ function collision() {
         }
         
         
-        if (Math.round(diffx**2 + diffy**2) <= (pokebolas[a].width + pokebolas[b].width)**2) {
+        if (Math.round(diffx**2 + diffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
             console.log('PAROU!')
             console.log(`a distância entre as pokebolas é de ${diffx**2 + diffy**2}`)
-            //window.alert('PAROU')
+            window.alert('PAROU')
            //loop = false
         }
         
-        if (Math.round(diffx**2 + diffy**2) <= 676){//|| newdiffx**2 + newdiffy**2 < 676) {
+        if (Math.round(diffx**2 + diffy**2) == 676){//|| newdiffx**2 + newdiffy**2 < 676) {
             //loop = false
             //window.alert('')
             //console.log(cx,cx2)
@@ -1067,7 +1067,7 @@ function collision() {
             //console.log('NEXT',newdiffx**2 + newdiffy**2)
             }
 
-        if (newdiffx**2 + newdiffy**2 < (pokebolas[a].width + pokebolas[b].width)**2) {
+        if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
             console.log('no, you wont')
             //loop = false
             dx = cx - cx2
