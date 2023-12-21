@@ -17,8 +17,8 @@ function animate() {
 for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*8).toFixed(0)) + 1
-vely = Number((Math.random()*8).toFixed(0)) + 1
+velx = Number((Math.random()*2).toFixed(0)) + 1
+vely = Number((Math.random()*2).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -953,8 +953,11 @@ function collision() {
                 if (sumper2 < 0) {
                     modsum2 = -sumper2
                 }
+
+                cango = false
                 if (collidea == 1) {
                 if (modsum1 > modsum2) {
+                    cango = true
                     console.log('ok, realmente irá ocorrer a colisão')
                     console.log('a bola a terá sua velocidade reduzida, mantendo a direção')
                 }else{
@@ -962,12 +965,14 @@ function collision() {
                 }
             }else{
                 if (modsum2 > modsum1) {
+                    cango = true
                     console.log('ok, realmente irá ocorrer a colisão')
                     console.log('a bola b terá sua velocidade reduzida, mantendo a direção')
                 }else{
                     console.log('não ocorrerá a colisão')
                 }
             }
+            if (cango == true) {
             console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
             sumparhor1 = vpary1hor + vparx1hor
             sumparver1 = vpary1ver + vparx1ver
@@ -1029,6 +1034,7 @@ function collision() {
             console.log('verificar',sumpar2**2 + sumper1**2, (sumparhor2 + sumper1hor)**2 + (sumparver2 + sumper1ver)**2)
             pokebolas[b].velx = sumparhor2 + sumper1hor
             pokebolas[b].vely = (sumparver2 + sumper1ver)*-1
+        }
             }else{
             console.log('ixi, aí acontece nada')
         }
