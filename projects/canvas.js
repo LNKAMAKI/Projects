@@ -14,7 +14,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 3; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -87,7 +87,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             fp = document.getElementById('firstp')
             en = document.getElementById('energy')
             sp = document.getElementById('secp')
-            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2 + pokebolas[2].velx**2 + pokebolas[2].vely**2)
+            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2) //+ pokebolas[2].velx**2 + pokebolas[2].vely**2)
             if (number == 0) {
             fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
             }else{
@@ -97,7 +97,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
     collision()
     document.getElementById('diff').innerText = '---------------DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
     }
-    
+
     if (loop == true) {
 requestAnimationFrame(animate)
     }
