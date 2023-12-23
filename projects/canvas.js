@@ -17,8 +17,8 @@ function animate() {
 for (v = 0; v < 3; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*2).toFixed(0)) + 1
-vely = Number((Math.random()*2).toFixed(0)) + 1
+velx = Number((Math.random()*1).toFixed(0)) + 1
+vely = Number((Math.random()*1).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -97,25 +97,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
     collision()
     document.getElementById('diff').innerText = '---------------DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
     }
-//}
-    /*
-    if (mousex != '' && mousey != '') {
-        for (p in pokebolas) {
-            px = pokebolas[p].x
-            pw = pokebolas[p].width
-            py = pokebolas[p].y
-            //console.log(px - pw, px + pw, py - pw, py + pw)
-            document.getElementById('px').innerText = `${px + pw}`
-            document.getElementById('py').innerText = py - pw + '-' + py + pw
-            if (mousex > px - pw && mousex < px + pw && mousey > py - pw && mousey < py + pw) {
-                console.log('OWO')
-                r = Math.random()*255
-                g = Math.random()*255
-                b = Math.random()*255
-                pokebolas[p].color = `rgb(${r},${g},${b})`
-            }
-        }
-    }*/
+    
     if (loop == true) {
 requestAnimationFrame(animate)
     }
