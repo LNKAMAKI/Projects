@@ -5,8 +5,10 @@ let pokebolas = []
 loop = true
 function load() {
     //console.log(document.querySelector('canvas'))
-    canv = document.querySelector('canvas')
+    canv = document.getElementById("canv")
     c = canv.getContext('2d')
+    c.font = "20px Arial";
+    c.strokeText("Hello World", 10, 50)
     //console.log(c)
 
 mousex = ''
@@ -14,11 +16,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 3; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*1).toFixed(0)) + 1
-vely = Number((Math.random()*1).toFixed(0)) + 1
+velx = Number((Math.random()*0.1).toFixed(0)) + 1
+vely = Number((Math.random()*0.1).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -28,12 +30,15 @@ y = Math.random()*(150-width*3) + width
 if (v == 0) {
     x = 150
     y = 75
+    color = 'pink'
 }else  if (v == 1){
     x = 250
     y = 120
+    color = 'red'
 }else{
     x = 50
     y = 40
+    color = 'yellow'
 }
 
 
@@ -43,7 +48,8 @@ if (v == 0) {
 r = Math.random()*255
 g = Math.random()*255
 //b = Math.random()*255
-color = Math.trunc(Math.random()*7)
+//color = Math.trunc(Math.random()*7)
+/*
 if (color == 0) {
  color = "red"
 }else if(color == 1){
@@ -61,7 +67,7 @@ color = "rgb(255, 167, 66)"
 }
 if (v == 0) {
     color = 'pink'
-}
+}*/
 
 rangex = [x - width,x + width]
 rangey = [y - width,y + width]
@@ -79,7 +85,8 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             if (pokebolas[number].y > 150 - pokebolas[number].width || pokebolas[number].y < pokebolas[number].width) {
                 pokebolas[number].vely = -pokebolas[number].vely
             }*/
-            if (pokebolas[number].r == '' || pokebolas[number].r == undefined) {
+            console.log('r',pokebolas[number].r,pokebolas[number].r === '')
+            if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
             pokebolas[number].x+=pokebolas[number].velx
             pokebolas[number].y+=pokebolas[number].vely
             }else{
@@ -92,7 +99,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             fp = document.getElementById('firstp')
             en = document.getElementById('energy')
             sp = document.getElementById('secp')
-            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2) //+ pokebolas[2].velx**2 + pokebolas[2].vely**2)
+            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2 + pokebolas[2].velx**2 + pokebolas[2].vely**2)
             if (number == 0) {
             fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
             }else{
@@ -112,7 +119,7 @@ animate()
 
 coll = 0
 function collision() {
-    //console.log(coll)
+    console.log('------------------------------------',coll)
     for (a in pokebolas) {
         cx = pokebolas[a].x
                 cy = pokebolas[a].y
@@ -159,12 +166,12 @@ function collision() {
                 if (Math.round(diffx**2 + diffy**2) == 676){//|| newdiffx**2 + newdiffy**2 < 676) {
                     //loop = false
                     //window.alert('')
-                    //console.log(cx,cx2)
+                    console.log(cx,cx2)
                    // console.log(cy,cy2)
                     console.log('calcular a colisão')
                     //loop = false
-                    //console.log(pokebolas[a].velx)
-                    //console.log(pokebolas[a].r)
+                    console.log(pokebolas[a].velx)
+                    console.log(pokebolas[a].r)
                     //loop = false
                     if (pokebolas[a].r == '' || pokebolas[a].r == undefined) {
                         pokebolas[a].r = 1
@@ -174,17 +181,17 @@ function collision() {
                     //vy1 = -pokebolas[a].vely/pokebolas[a].r // sinal de menos para definir + pra cima e - pra baixo
                     vx1 = pokebolas[a].velx
                     vy1 = -pokebolas[a].vely
-
+                
                     //vx2 = pokebolas[b].velx/pokebolas[b].r
                     //vy2 = -pokebolas[b].vely/pokebolas[b].r // sinal de menos para definir + pra cima e - pra baixo
                     vx2 = pokebolas[b].velx
                     vy2 = -pokebolas[b].vely
-
+                
                     console.log('vx1: ',vx1)
                     console.log('vy1: ',vy1)
                     console.log('vx2: ',vx2)
                     console.log('vy2: ',vy2)
-        
+                
                     if (cy < cy2) {
                         console.log(`bola ${a} é a de cima`)
                         upball = Number(a)
@@ -194,7 +201,7 @@ function collision() {
                         upball = Number(b)
                         downball = Number(a)
                     }
-        
+                
                     if (cx > cx2) {
                         console.log(`bola ${a} está na direita`)
                         rightball = Number(a)
@@ -204,7 +211,7 @@ function collision() {
                         rightball = Number(b)
                         leftball = Number(a)
                     }
-        
+                
                     console.log('triangulo:',diffx,diffy,(diffx**2 + diffy**2)**(1/2))
                     senx = diffx/(diffx**2 + diffy**2)**(1/2)
                     senx = diffx/26
@@ -213,7 +220,7 @@ function collision() {
                     //senx = 3**(1/2)/2
                     //cosx = 1/2
                     console.log(`senx:${senx.toFixed(2)}, cosx:${cosx.toFixed(2)}, ${(senx**2 + cosx**2).toFixed(0)}`)
-        
+                
                     //pokebola 1
                     console.log('pokebola 0')
                     console.log(`bola ${a}: vx:${vx1}, vy:${vy1}`)
@@ -229,7 +236,7 @@ function collision() {
                     vpery1ver = vpery1*cosx
                     vpary1hor = vpary1*cosx
                     vpary1ver = vpary1*senx
-        
+                
                     if (vx1 > 0) {
                         if (leftball == a && downball == a || rightball == a && upball == a) {
                          // decomposição de velperx1 = pra cima e pra direita
@@ -295,7 +302,7 @@ function collision() {
                          }
                         }
                     }
-        
+                
                     if (downball == a) {
                         if (vy1 > 0) {
                             if (leftball == a) { // bola de baixo para a esquerda com velx positiva
@@ -487,10 +494,10 @@ function collision() {
                     }
                     sumper1 = vperx1 + vpery1
                     sumpar1 = vparx1 + vpary1
-        
+                
                     console.log(`vperx1(vx1*senx):${vperx1.toFixed(2)},vparx1(vx1*cosx):${vparx1.toFixed(2)}`)
                     console.log(`vpery1(vy1*cosx):${vpery1.toFixed(2)},vpary1(vx1*senx):${vpary1.toFixed(2)}`)
-        
+                
                     console.log(`soma dos vetores na perpendicular: ${sumper1}`)
                     console.log(`soma dos vetores na paralela: ${sumpar1}`)
                     console.log('verificar:',sumper1**2 + sumpar1**2,vx1**2 + vy1**2)
@@ -519,8 +526,8 @@ function collision() {
                     console.log('soma(verificação)',vperx1ver + vparx1ver + vpery1ver + vpary1ver,vy1)
                     console.log('verificar velocidade perpendicular',((vpery1hor + vperx1hor)**2 + (vpery1ver + vperx1ver)**2)**(1/2))
                 console.log('verificar velocidade paralela',((vpary1hor + vparx1hor)**2 + (vpary1ver + vparx1ver)**2)**(1/2))
-             
-        
+                
+                
                     console.log('')
                 //pokebola 2
                 console.log('pokebola 1')
@@ -537,7 +544,7 @@ function collision() {
                 vpery2ver = vpery2*cosx
                 vpary2hor = vpary2*cosx
                 vpary2ver = vpary2*senx
-        
+                
                 if (vx2 > 0) {
                     if (leftball == b && downball == b || rightball == b && upball == b) {
                     // decomposição de velperx2 = pra cima e pra direita
@@ -603,7 +610,7 @@ function collision() {
                     }
                     }
                 }
-        
+                
                 console.log('downball',downball)
                 console.log('upball',upball)
                 console.log('leftball',leftball)
@@ -817,14 +824,14 @@ function collision() {
                 }
                 sumper2 = vperx2 + vpery2
                 sumpar2 = vparx2 + vpary2
-        
+                
                 console.log(`vperx2:${vperx2.toFixed(2)},vparx2:${vparx2.toFixed(2)}`)
                 console.log(`vpery2:${vpery2.toFixed(2)},vpary2:${vpary2.toFixed(2)}`)
-        
+                
                 console.log(`soma dos vetores na perpendicular: ${sumper2}`)
                 console.log(`soma dos vetores na paralela: ${sumpar2}`)
                 console.log('verificar:',sumper2**2 + sumpar2**2,vx2**2 + vy2**2)
-        
+                
                 console.log('vperx2hor(vperx2*senx):',vperx2hor,'vperx2ver(vperx2*cosx):',vperx2ver)
                     console.log('vparx2hor(vparx2*cosx):',vparx2hor,'vparx2ver(vperx2*senx):',vparx2ver)
                     console.log('vpery2hor(vpery2*senx):',vpery2hor,'vpery2ver(vpery2*cosx):',vpery2ver)
@@ -847,7 +854,7 @@ function collision() {
                 console.log('soma(verificação)',vperx2ver + vparx2ver + vpery2ver + vpary2ver,vy2)
                 console.log('verificar velocidade perpendicular',((vpery2hor + vperx2hor)**2 + (vpery2ver + vperx2ver)**2)**(1/2))
                 console.log('verificar velocidade paralela',((vpary2hor + vparx2hor)**2 + (vpary2ver + vparx2ver)**2)**(1/2))
-        
+                
                 console.log('')
                 // checar se efetivamente está ocorrendo uma colisão e definir o caso correspondente
                 collidea = 0
@@ -878,7 +885,7 @@ function collision() {
                             sumper2hor = -sumper2hor
                         }
                     }
-        
+                
                     if (dirbver == 'down') {
                         if (sumper2ver > 0) {
                             sumper2ver = -sumper2ver
@@ -908,7 +915,7 @@ function collision() {
                             sumper1hor = -sumper1hor
                         }
                     }
-        
+                
                     if (diraver == 'down') {
                         if (sumper1ver > 0) {
                             sumper1ver = -sumper1ver
@@ -939,7 +946,7 @@ function collision() {
                         if (sumper2 < 0) {
                             modsum2 = -sumper2
                         }
-        
+                
                         cango = false
                         if (collidea == 1) {
                         if (modsum1 > modsum2) {
@@ -962,7 +969,7 @@ function collision() {
                     console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
                     sumparhor1 = vpary1hor + vparx1hor
                     sumparver1 = vpary1ver + vparx1ver
-                    //console.log(sumparhor1, sumparver1)
+                    console.log(sumparhor1, sumparver1)
                     sumper2hor = sumper2*senx
                     sumper2ver = sumper2*cosx
                     if (dirahor == 'left') {
@@ -974,7 +981,7 @@ function collision() {
                             sumper2hor = -sumper2hor
                         }
                     }
-        
+                
                     if (diraver == 'down') {
                         if (sumper2ver > 0) {
                             sumper2ver = -sumper2ver
@@ -989,11 +996,11 @@ function collision() {
                     console.log('verificar',sumpar1**2 + sumper2**2, (sumparhor1 + sumper2hor)**2 + (sumparver1 + sumper2ver)**2)
                     pokebolas[a].velx = sumparhor1 + sumper2hor
                     pokebolas[a].vely = (sumparver1 + sumper2ver)*-1
-        
+                
                     console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
                     sumparhor2 = vpary2hor + vparx2hor
                     sumparver2 = vpary2ver + vparx2ver
-                    //console.log(sumparhor2, sumparver2)
+                    console.log(sumparhor2, sumparver2)
                     sumper1hor = sumper1*senx
                     sumper1ver = sumper1*cosx
                     if (dirbhor == 'left') {
@@ -1005,7 +1012,7 @@ function collision() {
                             sumper1hor = -sumper1hor
                         }
                     }
-        
+                
                     if (dirbver == 'down') {
                         if (sumper1ver > 0) {
                             sumper1ver = -sumper1ver
@@ -1035,9 +1042,7 @@ function collision() {
                 console.log('resultante das velocidades // e ⟂:',(sumpar2**2 + sumper2**2)**(1/2))
                 pokebolas[a].r = ''
                 pokebolas[b].r = ''
-                for (o in pokebolas) {
-                    console.log(pokebolas[o],pokebolas[o].r)
-                }
+                
                 //window.alert('short stop')
                 }
             }
@@ -1111,6 +1116,7 @@ function collision() {
         // código para antecipar a colisão, impedindo que a pokebola passe por cima da outra
         if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
             console.log('no, you wont')
+            console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
             //loop = false
             dx = cx - cx2
             dy = cy,cy2
@@ -1157,18 +1163,66 @@ function collision() {
             pokebolas[b].vely = vely2*raiz2
             */
             
-           
-           pokebolas[a].x = cx + velx1*raiz2
-           pokebolas[a].y = cy + vely1*raiz2
-           pokebolas[b].x = cx2 + velx2*raiz2
+           if(pokebolas[a].r !== '' && pokebolas[a].r!= undefined) {
+            console.log(`AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApokebolas[${a}] já tem r`)
+            if (pokebolas[a].velx > 0) {
+                if (pokebolas[a].x > cx + velx1*raiz2) {
+                    pokebolas[a].x = cx + velx1*raiz2
+                }
+            }else{
+                if (pokebolas[a].x < cx + velx1*raiz2) {
+                    pokebolas[a].x = cx + velx1*raiz2
+                }
+            }
+            if (pokebolas[a].vely > 0) {
+                if (pokebolas[a].y > cy + vely1*raiz2) {
+                    pokebolas[a].y = cy + vely1*raiz2
+                }
+            }else{
+                if (pokebolas[a].y < cy + vely1*raiz2) {
+                    pokebolas[a].y = cy + vely1*raiz2
+                }
+            }
+           }else{
+             pokebolas[a].x = cx + velx1*raiz2
+             pokebolas[a].y = cy + vely1*raiz2
+           }
+           if(pokebolas[b].r !== '' && pokebolas[b].r!= undefined) {
+            console.log(`AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApokebolas[${b}] já tem r`)
+            if (pokebolas[b].velx > 0) {
+                if (pokebolas[b].x > cx2 + velx2*raiz2) {
+                    pokebolas[b].x = cx2 + velx2*raiz2
+                }
+            }else{
+                if (pokebolas[b].x < cx2 + velx2*raiz2) {
+                    pokebolas[b].x = cx2 + velx2*raiz2
+                }
+            }
+            if (pokebolas[b].vely > 0) {
+                if (pokebolas[b].y > cy2 + vely2*raiz2) {
+                    pokebolas[b].y = cy2 + vely2*raiz2
+                }
+            }else{
+                if (pokebolas[b].y < cy2 + vely2*raiz2) {
+                    pokebolas[b].y = cy2 + vely2*raiz2
+                }
+            }
+           }else{
+            pokebolas[b].x = cx2 + velx2*raiz2
            pokebolas[b].y = cy2 + vely2*raiz2
+           }
+           //pokebolas[a].x = cx + velx1*raiz2
+           //pokebolas[a].y = cy + vely1*raiz2
+           //pokebolas[b].x = cx2 + velx2*raiz2
+           //pokebolas[b].y = cy2 + vely2*raiz2
            
             
             pokebolas[a].r = raiz2
             pokebolas[b].r = raiz2
-            console.log('DE, YUE')
+            console.log('now',diffx**2 + diffy**2)
+            console.log('next',newdiffx**2 + newdiffy**2)
             for (o in pokebolas) {
-                console.log(pokebolas[o],pokebolas[o].r)
+                //console.log(pokebolas[o].r)
             }
         
         }
@@ -1217,6 +1271,17 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.fill()
     c.stroke()
     
+    c.fillStyle = 'black'
+    if (velx < 0) {
+    c.fillText('←', x - width - 13,y + 6)
+    }else{
+        c.fillText('→', x + width - 9,y + 6)
+    }
+    if (vely < 0) {
+    c.fillText('↑', x - 5,y - 8)
+    }else{
+        c.fillText('↓', x - 5,y + width + 3)
+    }
 }
 
 //saber quando o mouse encosta em uma pokebola
