@@ -136,7 +136,7 @@ animate()
 
 coll = 0
 function collision() {
-    //console.log('------------------------------------',coll)
+    console.log('------------------------------------',coll)
     for (a in pokebolas) {
         cx = pokebolas[a].x
                 cy = pokebolas[a].y
@@ -1120,15 +1120,26 @@ function collision() {
         vely1 = pokebolas[a].vely
         velx2 = pokebolas[b].velx
         vely2 = pokebolas[b].vely
-        newcx = cx + velx1
-        newcx2 = cx2 + velx2
-        newcy = cy + vely1
-        newcy2 = cy2 + vely2
+        if (pokebolas[a].r != '' && pokebolas[a].r != undefined) {
+            newcx = cx
+            newcy = cy
+        }else{
+            newcx = cx + velx1
+            newcy = cy + vely1
+        }
+        if (pokebolas[b].r != '' && pokebolas[b].r != undefined) {
+            newcx2 = cx2
+            newcy2 = cy2
+        }else{
+            newcx2 = cx2 + velx2
+            newcy2 = cy2 + vely2
+        }
+        
         newdiffx = newcx - newcx2
         newdiffy = newcy - newcy2
         if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
-            //console.log('NOW',diffx**2 + diffy**2)
-            //console.log('NEXT',newdiffx**2 + newdiffy**2)
+            console.log('NOW',diffx**2 + diffy**2)
+            console.log('NEXT',newdiffx**2 + newdiffy**2)
             }
 
         // código para antecipar a colisão, impedindo que a pokebola passe por cima da outra
@@ -1265,6 +1276,16 @@ function collision() {
             }else{
                 cex+= -2*vely1*vely2
             }
+            delta = bex**2 - 4*aex*cex
+            raiz1 = (-bex + delta**(1/2))/(2*aex)
+            raiz2 = (-bex - delta**(1/2))/(2*aex)
+            console.log(`aex: ${aex}`)
+            console.log(`bex: ${bex}`)
+            console.log(`cex: ${cex}`)
+            console.log('IN THE LIGHTS YOU MAKE',raiz2)
+            delta = bex**2 - 4*aex*cex
+            raiz1 = (-bex + delta**(1/2))/(2*aex)
+            raiz2 = (-bex - delta**(1/2))/(2*aex)
             //console.log('difx:',life)
             //console.log('dify',time)
             //console.log('vx1',velx1)
