@@ -3,8 +3,6 @@ canvas: 0 - 300
 */
 /*
 coisas para fazer:
-amarenar o valor inicial das coordenadas da pokebola, para colisão com v > 2:
-pokebolas[x].velxinicial = `${...}`
 criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 - coordenadas iniciais
 - velx/vely positivo/negativo
@@ -1284,6 +1282,15 @@ function collision() {
             console.log(`cex: ${cex}`)
             console.log('IN THE LIGHTS YOU MAKE',raiz2)
             */
+            console.log('x1:',pokebolas[a].x)
+            console.log('y1:',pokebolas[a].y)
+            console.log('x2:',pokebolas[b].x)
+            console.log('y2:',pokebolas[b].y)
+            pokebolas[a].fstx = `${pokebolas[a].x}`
+            pokebolas[a].fsty = `${pokebolas[a].y}`
+            pokebolas[b].fstx = `${pokebolas[b].x}`
+            pokebolas[b].fsty = `${pokebolas[b].y}`
+
             if (xvelx1 == 'x') {
                 pokebolas[a].x = cx + velx1*raiz2
             }else{
@@ -1304,6 +1311,15 @@ function collision() {
             }else{
                 pokebolas[b].y = cy2 + vely2
             }
+            console.log('x1:',pokebolas[a].x)
+            console.log('y1:',pokebolas[a].y)
+            console.log('x2:',pokebolas[b].x)
+            console.log('y2:',pokebolas[b].y)
+
+            console.log('x1:',pokebolas[a].fstx)
+            console.log('y1:',pokebolas[a].fsty)
+            console.log('x2:',pokebolas[b].fstx)
+            console.log('y2:',pokebolas[b].fsty)
             
             
             //console.log('difx:',life)
