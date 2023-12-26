@@ -28,8 +28,8 @@ function animate() {
 for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*10).toFixed(0)) + 1
-vely = Number((Math.random()*10).toFixed(0)) + 1
+velx = Number((Math.random()*0.1).toFixed(0)) + 1
+vely = Number((Math.random()*0.1).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -182,7 +182,6 @@ function collision() {
                     //console.log(cx,cx2)
                    // console.log(cy,cy2)
                     console.log(`calcular a colisão com ${pokebolas[a].color} e ${pokebolas[b].color}`)
-                    //window.alert('COLISÃO')
                     //console.log(pokebolas[a].velx)
                     //console.log(pokebolas[a].r)
                     //loop = false
@@ -1133,6 +1132,7 @@ function collision() {
         newdiffx = newcx - newcx2
         newdiffy = newcy - newcy2
         if (newdiffx**2 + newdiffy**2 <= 676 || diffx**2 + diffy**2 <= 676) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
+            console.log('')
             console.log('NOW',diffx**2 + diffy**2)
             console.log('NEXT',newdiffx**2 + newdiffy**2)
             }
@@ -1201,7 +1201,7 @@ function collision() {
             console.log('xvely1:',xvely1)
             console.log('xvelx2:',xvelx2)
             */
-            console.log('xvely2:',xvely2)
+            //console.log('xvely2:',xvely2)
             //console.log('cx:',cx,'cx2:',cx2)
             //console.log('cy:',cy,'cy2;',cy2)
 
@@ -1403,6 +1403,7 @@ function collision() {
             for (o in pokebolas) {
                 //console.log(pokebolas[o].r)
             }
+            window.alert('COLISÃO')
         
         }
     }
