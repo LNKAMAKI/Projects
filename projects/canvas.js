@@ -3,10 +3,6 @@ canvas: 0 - 300
 */
 /*
 coisas para fazer:
-ajeitar a parte quando as pokebolas se encostam(colisão não frontal):
-left/right ball
-down/up ball
-velx/vely positivo/negativo
 amarenar o valor inicial das coordenadas da pokebola, para colisão com v > 2:
 pokebolas[x].velxinicial = `${...}`
 criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
@@ -29,7 +25,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 3; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*10).toFixed(0)) + 1
