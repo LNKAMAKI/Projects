@@ -1214,20 +1214,66 @@ function collision() {
             //2*life*vx - 2*life*vx2 + vx**2 + vx2**2 - 2*vx*vx2 + life**2
            //  b ou c       b ou c    a ou c   a ou c  a, b ou c      c
            //2*time*vy - 2*time*vy2 + vy**2 + vy2**2 - 2*vy*vy2 + time**2
-           //  b ou c       b ou c    a ou c   a ou c  a, b ou c      c
+           //  b ou c      b ou c    a ou c   a ou c  a, b ou c      c
             life = cx - cx2
             time = cy - cy2
             difvex = velx1 - velx2
             difvey = vely1 - vely2
-            aex = difvex**2 + difvey**2
-            bex = 2*(life*difvex + time*difvey)
+            aex = 0
+            bex = 0
             cex = life**2 + time**2 - 676
+            if (xvelx1 == 'x') {
+                bex+= 2*life*velx1
+                aex+= velx1**2
+            }else{
+                cex+= 2*life*velx1
+                cex+= velx1**2
+            }
+            if (xvelx2 == 'x') {
+                bex+= -2*life*velx2
+                aex+= velx2**2
+            }else{
+                cex+= -2*life*velx2
+                cex+= velx2**2
+            }
+            if (xvelx1 == 'x' && xvelx2 == '' || xvelx2 == 'x' && xvelx1 == '') {
+                bex+= -2*velx1*velx2
+            }else if(xvelx1 == 'x' && xvelx2 == 'x') {
+                aex+= -2*velx1*velx2
+            }else{
+                cex+= -2*velx1*velx2
+            }
+
+            if (xvely1 == 'x') {
+                bex+= 2*time*vely1
+                aex+= vely1**2
+            }else{
+                cex+= 2*time*vely1
+                cex+= vely1**2
+            }
+            if (xvely2 == 'x') {
+                bex+= -2*time*vely2
+                aex+= vely2**2
+            }else{
+                cex+= -2*time*vely2
+                cex+= vely2**2
+            }
+            if (xvely1 == 'x' && xvely2 == '' || xvely2 == 'x' && xvely1 == '') {
+                bex+= -2*vely1*vely2
+            }else if(xvely1 == 'x' && xvely2 == 'x') {
+                aex+= -2*vely1*vely2
+            }else{
+                cex+= -2*vely1*vely2
+            }
             //console.log('difx:',life)
             //console.log('dify',time)
             //console.log('vx1',velx1)
             //console.log('vy1',vely1)
             //console.log('vx2',velx2)
             //console.log('vy2',vely2)
+            aex = difvex**2 + difvey**2
+            bex = 2*(life*difvex + time*difvey)
+            cex = life**2 + time**2 - 676
             console.log('a',aex)
             console.log('b',bex)
             console.log('c',cex)
