@@ -1163,19 +1163,35 @@ function collision() {
             console.log('leftball',leftball,'rightball',rightball,'upball',upball,'downball',downball)
             console.log('velx1',velx1,'vely1',vely1)
             console.log('velx2',velx2,'vely2',vely2)
+            xvelx1 = ''
+            xvely1 = ''
+            xvelx2 = ''
+            xvely2 = ''
             if (rightball == b && velx2 > 0 || leftball == b && velx2 < 0) {
                 console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
+            }else{
+                xvelx2 = 'x'
             }
             if (rightball == a && velx1 > 0 || leftball == a && velx1 < 0) {
                 console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
+            }else{
+                xvelx1 = 'x'
             }
             if (upball == b && vely2 < 0 || downball == b && vely2 > 0) {
                 console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
+            }else{
+                xvely2 = 'x'
             }
             if (upball == a && vely1 < 0 || downball == a && vely1 > 0) {
                 console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
+            }else{
+                xvely1 = 'x'
             }
-
+            
+            console.log('xvelx1:',xvelx1)
+            console.log('xvely1:',xvely1)
+            console.log('xvelx2:',xvelx2)
+            console.log('xvely2:',xvely2)
             //console.log('cx:',cx,'cx2:',cx2)
             //console.log('cy:',cy,'cy2;',cy2)
 
@@ -1195,8 +1211,10 @@ function collision() {
             // time**2 + time*vy - time*vy2 + vy*time + vy**2 - vy*vy2 -vy2*time - vy2*vy + vy2**2
             //x(life*vx - life*vx2 + vx*life - vx2*life) => 2*life(vx - vx2)
             //x^2(vx**2 - vx*vx2 - vx2*vx + vx2**2) => vx**2 + vx2**2 - 2*vx*vx2 => (vx - vx2)**2
-            //2*life*vx - 2*life*vx2 + vx**2 + vx2**2 - 2*vx*vx2
-
+            //2*life*vx - 2*life*vx2 + vx**2 + vx2**2 - 2*vx*vx2 + life**2
+           //  b ou c       b ou c    a ou c   a ou c  a, b ou c      c
+           //2*time*vy - 2*time*vy2 + vy**2 + vy2**2 - 2*vy*vy2 + time**2
+           //  b ou c       b ou c    a ou c   a ou c  a, b ou c      c
             life = cx - cx2
             time = cy - cy2
             difvex = velx1 - velx2
@@ -1210,9 +1228,9 @@ function collision() {
             //console.log('vy1',vely1)
             //console.log('vx2',velx2)
             //console.log('vy2',vely2)
-            //console.log('a',aex)
-            //console.log('b',bex)
-            //console.log('c',cex)
+            console.log('a',aex)
+            console.log('b',bex)
+            console.log('c',cex)
             delta = bex**2 - 4*aex*cex
             raiz1 = (-bex + delta**(1/2))/(2*aex)
             raiz2 = (-bex - delta**(1/2))/(2*aex)

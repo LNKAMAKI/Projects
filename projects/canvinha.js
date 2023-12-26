@@ -880,4 +880,3 @@ pokebolas[b].r = ''
 
 //window.alert('short stop')
 }
-time**2 + time*vy - time*vy2 + vy*time + vy**2 - vy*vy2 -vy2*time - vy2*vy + vy2**2
