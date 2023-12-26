@@ -29,7 +29,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 3; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -136,7 +136,7 @@ animate()
 
 coll = 0
 function collision() {
-    console.log('------------------------------------',coll)
+    //console.log('------------------------------------',coll)
     for (a in pokebolas) {
         cx = pokebolas[a].x
                 cy = pokebolas[a].y
@@ -183,13 +183,12 @@ function collision() {
                 if (Math.round(diffx**2 + diffy**2) == 676){//|| newdiffx**2 + newdiffy**2 < 676) {
                     //loop = false
                     //window.alert('')
-                    console.log(cx,cx2)
+                    //console.log(cx,cx2)
                    // console.log(cy,cy2)
                     console.log('calcular a colisão')
-                    window.alert('COLISÃO')
-                    //loop = false
-                    console.log(pokebolas[a].velx)
-                    console.log(pokebolas[a].r)
+                    //window.alert('COLISÃO')
+                    //console.log(pokebolas[a].velx)
+                    //console.log(pokebolas[a].r)
                     //loop = false
                     if (pokebolas[a].r == '' || pokebolas[a].r == undefined) {
                         pokebolas[a].r = 1
@@ -205,43 +204,43 @@ function collision() {
                     vx2 = pokebolas[b].velx
                     vy2 = -pokebolas[b].vely
                 
-                    console.log('vx1: ',vx1)
-                    console.log('vy1: ',vy1)
-                    console.log('vx2: ',vx2)
-                    console.log('vy2: ',vy2)
+                    //console.log('vx1: ',vx1)
+                    //console.log('vy1: ',vy1)
+                    //console.log('vx2: ',vx2)
+                    //console.log('vy2: ',vy2)
                 
                     if (cy < cy2) {
-                        console.log(`bola ${a} é a de cima`)
+                        //console.log(`bola ${a} é a de cima`)
                         upball = Number(a)
                         downball = Number(b)
                     }else{
-                        console.log(`bola ${b} é a de cima`)
+                        //console.log(`bola ${b} é a de cima`)
                         upball = Number(b)
                         downball = Number(a)
                     }
                 
                     if (cx > cx2) {
-                        console.log(`bola ${a} está na direita`)
+                        //console.log(`bola ${a} está na direita`)
                         rightball = Number(a)
                         leftball = Number(b)
                     }else{
-                        console.log(`bola ${b} está na direita`)
+                        //console.log(`bola ${b} está na direita`)
                         rightball = Number(b)
                         leftball = Number(a)
                     }
                 
-                    console.log('triangulo:',diffx,diffy,(diffx**2 + diffy**2)**(1/2))
+                    //console.log('triangulo:',diffx,diffy,(diffx**2 + diffy**2)**(1/2))
                     senx = diffx/(diffx**2 + diffy**2)**(1/2)
                     senx = diffx/26
                     cosx = diffy/(diffx**2 + diffy**2)**(1/2)
                     cosx = diffy/26
                     //senx = 3**(1/2)/2
                     //cosx = 1/2
-                    console.log(`senx:${senx.toFixed(2)}, cosx:${cosx.toFixed(2)}, ${(senx**2 + cosx**2).toFixed(0)}`)
+                    //console.log(`senx:${senx.toFixed(2)}, cosx:${cosx.toFixed(2)}, ${(senx**2 + cosx**2).toFixed(0)}`)
                 
                     //pokebola 1
-                    console.log('pokebola 0')
-                    console.log(`bola ${a}: vx:${vx1}, vy:${vy1}`)
+                    //console.log('pokebola 0')
+                    //console.log(`bola ${a}: vx:${vx1}, vy:${vy1}`)
                     vperx1 = vx1*senx // decomposição de vx1 na direção perpendicular(vel relativa)
                     vparx1 = vx1*cosx // decomposição de vx1 na direção paralela(vel conservativa)
                     vpery1 = vy1*cosx // decomposição de vy1 na direção perpendicular(vel relativa)
@@ -513,43 +512,43 @@ function collision() {
                     sumper1 = vperx1 + vpery1
                     sumpar1 = vparx1 + vpary1
                 
-                    console.log(`vperx1(vx1*senx):${vperx1.toFixed(2)},vparx1(vx1*cosx):${vparx1.toFixed(2)}`)
-                    console.log(`vpery1(vy1*cosx):${vpery1.toFixed(2)},vpary1(vx1*senx):${vpary1.toFixed(2)}`)
+                    //console.log(`vperx1(vx1*senx):${vperx1.toFixed(2)},vparx1(vx1*cosx):${vparx1.toFixed(2)}`)
+                    //console.log(`vpery1(vy1*cosx):${vpery1.toFixed(2)},vpary1(vx1*senx):${vpary1.toFixed(2)}`)
                 
-                    console.log(`soma dos vetores na perpendicular: ${sumper1}`)
-                    console.log(`soma dos vetores na paralela: ${sumpar1}`)
-                    console.log('verificar:',sumper1**2 + sumpar1**2,vx1**2 + vy1**2)
+                    //console.log(`soma dos vetores na perpendicular: ${sumper1}`)
+                    //console.log(`soma dos vetores na paralela: ${sumpar1}`)
+                    //console.log('verificar:',sumper1**2 + sumpar1**2,vx1**2 + vy1**2)
                     
-                    console.log('vperx1hor(vperx1*senx):',vperx1hor,'vperx1ver(vperx1*cosx):',vperx1ver)
-                    console.log('vparx1hor(vparx1*cosx):',vparx1hor,'vparx1ver(vperx1*senx):',vparx1ver)
-                    console.log('vpery1hor(vpery1*senx):',vpery1hor,'vpery1ver(vpery1*cosx):',vpery1ver)
-                    console.log('vpary1hor(vpary1*cosx):',vpary1hor,'vpary1ver(vpary1*senx):',vpary1ver)
-                    console.log('soma horizontal na perpendicular: ',vperx1hor + vpery1hor)
-                    console.log('soma vertical na perpendicular: ',vperx1ver + vpery1ver)
+                    //console.log('vperx1hor(vperx1*senx):',vperx1hor,'vperx1ver(vperx1*cosx):',vperx1ver)
+                    //console.log('vparx1hor(vparx1*cosx):',vparx1hor,'vparx1ver(vperx1*senx):',vparx1ver)
+                    //console.log('vpery1hor(vpery1*senx):',vpery1hor,'vpery1ver(vpery1*cosx):',vpery1ver)
+                    //console.log('vpary1hor(vpary1*cosx):',vpary1hor,'vpary1ver(vpary1*senx):',vpary1ver)
+                    //console.log('soma horizontal na perpendicular: ',vperx1hor + vpery1hor)
+                    //console.log('soma vertical na perpendicular: ',vperx1ver + vpery1ver)
                     if (vperx1hor + vpery1hor > 0) {
-                        console.log('a resultante perpendicular está pra direita')
+                        //console.log('a resultante perpendicular está pra direita')
                         dirahor = 'right'
                     }else{
-                        console.log('a resultante perpendicular está pra esquerda')
+                        //console.log('a resultante perpendicular está pra esquerda')
                         dirahor = 'left'
                     }
                     if (vperx1ver + vpery1ver > 0) {
-                        console.log('a resultante perpendicular está pra cima')
+                        //console.log('a resultante perpendicular está pra cima')
                         diraver = 'up'
                     }else{
-                        console.log('a resultante perpendicular está pra baixo')
+                        //console.log('a resultante perpendicular está pra baixo')
                         diraver = 'down'
                     }
-                    console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor,vx1)
-                    console.log('soma(verificação)',vperx1ver + vparx1ver + vpery1ver + vpary1ver,vy1)
-                    console.log('verificar velocidade perpendicular',((vpery1hor + vperx1hor)**2 + (vpery1ver + vperx1ver)**2)**(1/2))
-                console.log('verificar velocidade paralela',((vpary1hor + vparx1hor)**2 + (vpary1ver + vparx1ver)**2)**(1/2))
+                    //console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor,vx1)
+                    //console.log('soma(verificação)',vperx1ver + vparx1ver + vpery1ver + vpary1ver,vy1)
+                    //console.log('verificar velocidade perpendicular',((vpery1hor + vperx1hor)**2 + (vpery1ver + vperx1ver)**2)**(1/2))
+                //console.log('verificar velocidade paralela',((vpary1hor + vparx1hor)**2 + (vpary1ver + vparx1ver)**2)**(1/2))
                 
                 
-                    console.log('')
+                    //console.log('')
                 //pokebola 2
-                console.log('pokebola 1')
-                console.log(`bola ${b}: vx:${vx2}, vy:${vy2}`)
+                //console.log('pokebola 1')
+                //console.log(`bola ${b}: vx:${vx2}, vy:${vy2}`)
                 vperx2 = vx2*senx // decomposição de vx2 na direção perpendicular(vel relativa)
                 vparx2 = vx2*cosx // decomposição de vx2 na direção paralela(vel conservativa)
                 vpery2 = vy2*cosx // decomposição de vy2 na direção perpendicular(vel relativa)
@@ -629,18 +628,18 @@ function collision() {
                     }
                 }
                 
-                console.log('downball',downball)
-                console.log('upball',upball)
-                console.log('leftball',leftball)
-                console.log('rightball',rightball)
-                console.log(b)
-                console.log(rightball == b)
+                //console.log('downball',downball)
+                //console.log('upball',upball)
+                //console.log('leftball',leftball)
+                //console.log('rightball',rightball)
+                //console.log(b)
+                //console.log(rightball == b)
                 if (downball == b) { 
-                    console.log('b é de baixo')
+                    //console.log('b é de baixo')
                     if (vy2 > 0) {
-                        console.log('velocidade positiva')
+                        //console.log('velocidade positiva')
                         if (leftball == b) { // bola de baixo para a esquerda com velx positiva
-                            console.log('bola esquerda')
+                            //console.log('bola esquerda')
                             // vely perpendicular positiva
                             if (vpery2 < 0) {
                                 vpery2 = -vpery2
@@ -664,7 +663,7 @@ function collision() {
                             }
                         }else{ // bola de baixo para a direita com velx positiva
                             // vely perpendicular negativa
-                            console.log('bola direita')
+                            //console.log('bola direita')
                             if (vpery2 > 0) {
                                 vpery2 = -vpery2
                             }
@@ -687,10 +686,10 @@ function collision() {
                             }
                         }
                     }else{
-                        console.log('velocidade negativa')
+                        //console.log('velocidade negativa')
                         if (leftball == b) { // bola de baixo para a esquerda com velx negativa
                             // vely perpendicular negativa
-                            console.log('bola esquerda')
+                            //console.log('bola esquerda')
                             if (vpery2 > 0) {
                                 vpery2 = -vpery2
                             }
@@ -713,7 +712,7 @@ function collision() {
                             }
                         }else{ // bola de baixo para a direita com velx negativa
                             // vely perpendicular positiva
-                            console.log('bola direita')
+                            //console.log('bola direita')
                             if (vpery2 < 0) {
                                 vpery2 = -vpery2
                             }
@@ -737,12 +736,12 @@ function collision() {
                         }
                     }
                 }else{
-                    console.log('b é de cima')
+                    //console.log('b é de cima')
                     if (vy2 > 0) {
-                        console.log('velocidade positiva')
+                        //console.log('velocidade positiva')
                         if (rightball == b) { // bola de cima para a direita com velx positiva
                             // vely perpendicular positiva
-                            console.log('bola direita')
+                            //console.log('bola direita')
                             if (vpery2 < 0) {
                                 vpery2 = -vpery2
                             }
@@ -753,11 +752,11 @@ function collision() {
                             if (vpery2ver < 0) {
                                 vpery2ver = -vpery2ver
                             }
-                            console.log(vpery2hor)
+                            //console.log(vpery2hor)
                             if (vpery2hor < 0) {
                                 vpery2hor = -vpery2hor
                             }
-                            console.log(vpery2hor < 0)
+                            //console.log(vpery2hor < 0)
                             //decomposição de velpary2 = pra cima e pra esquerda
                             if (vpary2ver < 0) {
                                 vpary2ver = -vpary2ver
@@ -767,7 +766,7 @@ function collision() {
                             }
                         }else{ // bola de cima para a esquerda com velx positiva
                             // vely perpendicular negativa
-                            console.log('bola esquerda')
+                            //console.log('bola esquerda')
                             if (vpery2 > 0) {
                                 vpery2 = -vpery2
                             }
@@ -790,10 +789,10 @@ function collision() {
                         }
                         }
                     }else{
-                        console.log('velocidade negativa')
+                        //console.log('velocidade negativa')
                         if (rightball == b) { // bola de cima para a direita com velx negativa
                             // vely perpendicular negativa
-                            console.log('bola direita')
+                            //console.log('bola direita')
                             if (vpery2 > 0) {
                                 vpery2 = -vpery2
                             }
@@ -816,7 +815,7 @@ function collision() {
                             }
                         }else{ // bola de cima para a esquerda com velx negativa
                             // vely perpendicular positiva
-                            console.log('bola esquerda')
+                            //console.log('bola esquerda')
                             if (vpery2 < 0) {
                                 vpery2 = -vpery2
                             }
@@ -843,55 +842,55 @@ function collision() {
                 sumper2 = vperx2 + vpery2
                 sumpar2 = vparx2 + vpary2
                 
-                console.log(`vperx2:${vperx2.toFixed(2)},vparx2:${vparx2.toFixed(2)}`)
-                console.log(`vpery2:${vpery2.toFixed(2)},vpary2:${vpary2.toFixed(2)}`)
+                //console.log(`vperx2:${vperx2.toFixed(2)},vparx2:${vparx2.toFixed(2)}`)
+                //console.log(`vpery2:${vpery2.toFixed(2)},vpary2:${vpary2.toFixed(2)}`)
                 
-                console.log(`soma dos vetores na perpendicular: ${sumper2}`)
-                console.log(`soma dos vetores na paralela: ${sumpar2}`)
-                console.log('verificar:',sumper2**2 + sumpar2**2,vx2**2 + vy2**2)
+                //console.log(`soma dos vetores na perpendicular: ${sumper2}`)
+                //console.log(`soma dos vetores na paralela: ${sumpar2}`)
+                //console.log('verificar:',sumper2**2 + sumpar2**2,vx2**2 + vy2**2)
                 
-                console.log('vperx2hor(vperx2*senx):',vperx2hor,'vperx2ver(vperx2*cosx):',vperx2ver)
-                    console.log('vparx2hor(vparx2*cosx):',vparx2hor,'vparx2ver(vperx2*senx):',vparx2ver)
-                    console.log('vpery2hor(vpery2*senx):',vpery2hor,'vpery2ver(vpery2*cosx):',vpery2ver)
-                    console.log('vpary2hor(vpary2*cosx):',vpary2hor,'vpary2ver(vpary2*senx):',vpary2ver)
+                //console.log('vperx2hor(vperx2*senx):',vperx2hor,'vperx2ver(vperx2*cosx):',vperx2ver)
+                    //console.log('vparx2hor(vparx2*cosx):',vparx2hor,'vparx2ver(vperx2*senx):',vparx2ver)
+                    //console.log('vpery2hor(vpery2*senx):',vpery2hor,'vpery2ver(vpery2*cosx):',vpery2ver)
+                    //console.log('vpary2hor(vpary2*cosx):',vpary2hor,'vpary2ver(vpary2*senx):',vpary2ver)
                 if (vperx2hor + vpery2hor > 0) {
-                    console.log('a resultante perpendicular está pra direita')
+                    //console.log('a resultante perpendicular está pra direita')
                     dirbhor = 'right'
                 }else{
-                    console.log('a resultante perpendicular está pra esquerda')
+                    //console.log('a resultante perpendicular está pra esquerda')
                     dirbhor = 'left'
                 }
                 if (vperx2ver + vpery2ver > 0) {
-                    console.log('a resultante perpendicular está pra cima')
+                    //console.log('a resultante perpendicular está pra cima')
                     dirbver = 'up'
                 }else{
-                    console.log('a resultante perpendicular está pra baixo')
+                    //console.log('a resultante perpendicular está pra baixo')
                     dirbver = 'down'
                 }
-                console.log('soma(verificação)',vperx2hor + vparx2hor + vpery2hor + vpary2hor,vx2)
-                console.log('soma(verificação)',vperx2ver + vparx2ver + vpery2ver + vpary2ver,vy2)
-                console.log('verificar velocidade perpendicular',((vpery2hor + vperx2hor)**2 + (vpery2ver + vperx2ver)**2)**(1/2))
-                console.log('verificar velocidade paralela',((vpary2hor + vparx2hor)**2 + (vpary2ver + vparx2ver)**2)**(1/2))
+                //console.log('soma(verificação)',vperx2hor + vparx2hor + vpery2hor + vpary2hor,vx2)
+                //console.log('soma(verificação)',vperx2ver + vparx2ver + vpery2ver + vpary2ver,vy2)
+                //console.log('verificar velocidade perpendicular',((vpery2hor + vperx2hor)**2 + (vpery2ver + vperx2ver)**2)**(1/2))
+                //console.log('verificar velocidade paralela',((vpary2hor + vparx2hor)**2 + (vpary2ver + vparx2ver)**2)**(1/2))
                 
-                console.log('')
+                //console.log('')
                 // checar se efetivamente está ocorrendo uma colisão e definir o caso correspondente
                 collidea = 0
                 collideb = 0
                 if (leftball == a && dirahor == 'right' || rightball == a && dirahor == 'left') {
-                    console.log('a bola a está para colidir')
+                    //console.log('a bola a está para colidir')
                     collidea++
                 }
                 if (leftball == b && dirbhor == 'right' || rightball == b && dirbhor == 'left') {
-                    console.log('a bola b está para colidir')
+                    //console.log('a bola b está para colidir')
                     collideb++
                 }
                 if (collidea == 1 && collideb == 1) {
                     //window.alert('as pokebolas vão bater de frente')
-                    console.log('as pokebolas vão bater de frente')
-                    console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirbhor, dirbver)
+                    //console.log('as pokebolas vão bater de frente')
+                    //console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirbhor, dirbver)
                     sumparhor1 = vpary1hor + vparx1hor
                     sumparver1 = vpary1ver + vparx1ver
-                    console.log(sumparhor1, sumparver1)
+                    //console.log(sumparhor1, sumparver1)
                     sumper2hor = sumper2*senx
                     sumper2ver = sumper2*cosx
                     if (dirbhor == 'left') {
@@ -913,15 +912,15 @@ function collision() {
                             sumper2ver = -sumper2ver
                         }
                     }
-                    console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
-                    console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
-                    console.log('verificar',sumpar1**2 + sumper2**2, (sumparhor1 + sumper2hor)**2 + (sumparver1 + sumper2ver)**2)
+                    //console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
+                    //console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
+                    //console.log('verificar',sumpar1**2 + sumper2**2, (sumparhor1 + sumper2hor)**2 + (sumparver1 + sumper2ver)**2)
                     pokebolas[a].velx = sumparhor1 + sumper2hor
                     pokebolas[a].vely = (sumparver1 + sumper2ver)*-1
-                    console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirahor,diraver)
+                    //console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirahor,diraver)
                     sumparhor2 = vpary2hor + vparx2hor
                     sumparver2 = vpary2ver + vparx2ver
-                    console.log(sumparhor2, sumparver2)
+                    //console.log(sumparhor2, sumparver2)
                     sumper1hor = sumper1*senx
                     sumper1ver = sumper1*cosx
                     if (dirahor == 'left') {
@@ -943,17 +942,17 @@ function collision() {
                             sumper1ver = -sumper1ver
                         }
                     }
-                    console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
-                    console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
-                    console.log('verificar',sumpar2**2 + sumper1**2, (sumparhor2 + sumper1hor)**2 + (sumparver2 + sumper1ver)**2)
+                    //console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
+                    //console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
+                    //console.log('verificar',sumpar2**2 + sumper1**2, (sumparhor2 + sumper1hor)**2 + (sumparver2 + sumper1ver)**2)
                     pokebolas[b].velx = sumparhor2 + sumper1hor
                     pokebolas[b].vely = (sumparver2 + sumper1ver)*-1
                 }else if (collidea == 1 || collideb == 1) {
-                    console.log('uma pokebola vai se chocar na outra')
+                    //console.log('uma pokebola vai se chocar na outra')
                     if (collidea == 1) {
-                    console.log('a bola a irá se chocar com a b')
+                    //console.log('a bola a irá se chocar com a b')
                     }else{
-                        console.log('a bola b irá se chocar com a a')
+                        //console.log('a bola b irá se chocar com a a')
                     }
                         modsum1 = sumper1
                         if (sumper1 < 0) {
@@ -969,25 +968,25 @@ function collision() {
                         if (collidea == 1) {
                         if (modsum1 > modsum2) {
                             cango = true
-                            console.log('ok, realmente irá ocorrer a colisão')
-                            console.log('a bola a terá sua velocidade reduzida, mantendo a direção')
+                            //console.log('ok, realmente irá ocorrer a colisão')
+                            //console.log('a bola a terá sua velocidade reduzida, mantendo a direção')
                         }else{
-                            console.log('não ocorrerá a colisão')
+                            //console.log('não ocorrerá a colisão')
                         }
                     }else{
                         if (modsum2 > modsum1) {
                             cango = true
-                            console.log('ok, realmente irá ocorrer a colisão')
-                            console.log('a bola b terá sua velocidade reduzida, mantendo a direção')
+                            //console.log('ok, realmente irá ocorrer a colisão')
+                            //console.log('a bola b terá sua velocidade reduzida, mantendo a direção')
                         }else{
-                            console.log('não ocorrerá a colisão')
+                            //console.log('não ocorrerá a colisão')
                         }
                     }
                     if (cango == true) {
-                    console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
+                    //console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
                     sumparhor1 = vpary1hor + vparx1hor
                     sumparver1 = vpary1ver + vparx1ver
-                    console.log(sumparhor1, sumparver1)
+                    //console.log(sumparhor1, sumparver1)
                     sumper2hor = sumper2*senx
                     sumper2ver = sumper2*cosx
                     if (dirahor == 'left') {
@@ -1009,16 +1008,16 @@ function collision() {
                             sumper2ver = -sumper2ver
                         }
                     }
-                    console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
-                    console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
-                    console.log('verificar',sumpar1**2 + sumper2**2, (sumparhor1 + sumper2hor)**2 + (sumparver1 + sumper2ver)**2)
+                    //console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
+                    //console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
+                    //console.log('verificar',sumpar1**2 + sumper2**2, (sumparhor1 + sumper2hor)**2 + (sumparver1 + sumper2ver)**2)
                     pokebolas[a].velx = sumparhor1 + sumper2hor
                     pokebolas[a].vely = (sumparver1 + sumper2ver)*-1
                 
-                    console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
+                    //console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
                     sumparhor2 = vpary2hor + vparx2hor
                     sumparver2 = vpary2ver + vparx2ver
-                    console.log(sumparhor2, sumparver2)
+                    //console.log(sumparhor2, sumparver2)
                     sumper1hor = sumper1*senx
                     sumper1ver = sumper1*cosx
                     if (dirbhor == 'left') {
@@ -1040,24 +1039,24 @@ function collision() {
                             sumper1ver = -sumper1ver
                         }
                     }
-                    console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
-                    console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
-                    console.log('verificar',sumpar2**2 + sumper1**2, (sumparhor2 + sumper1hor)**2 + (sumparver2 + sumper1ver)**2)
+                    //console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
+                    //console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
+                    //console.log('verificar',sumpar2**2 + sumper1**2, (sumparhor2 + sumper1hor)**2 + (sumparver2 + sumper1ver)**2)
                     pokebolas[b].velx = sumparhor2 + sumper1hor
                     pokebolas[b].vely = (sumparver2 + sumper1ver)*-1
                 }
                     }else{
-                    console.log('ixi, aí acontece nada')
+                    //console.log('ixi, aí acontece nada')
                 }
-                console.log('velocidade 1: ',sumpar1**2 + sumper1**2,vx1**2 + vy1**2)
-                console.log('velocidade 2: ',sumpar2**2 + sumper2**2,vx2**2 + vy2**2)
-                console.log('vx1:',vx1,'vy1:',vy1)
-                console.log('resultante das velocidades vx1 e vy1:',(vx1**2 + vy1**2)**(1/2))
-                console.log('resultante das velocidades // e ⟂:',(sumpar1**2 + sumper1**2)**(1/2))
-                console.log('resultante sumpar1 e sumper2:',(sumpar1**2 + sumper2**2)**2)
-                console.log('vx2:',vx2,'vy2:',vy2)
-                console.log('resultante das velocidades vx2 e vy2:',(vx2**2 + vy2**2)**(1/2))
-                console.log('resultante das velocidades // e ⟂:',(sumpar2**2 + sumper2**2)**(1/2))
+                //console.log('velocidade 1: ',sumpar1**2 + sumper1**2,vx1**2 + vy1**2)
+                //console.log('velocidade 2: ',sumpar2**2 + sumper2**2,vx2**2 + vy2**2)
+                //console.log('vx1:',vx1,'vy1:',vy1)
+                //console.log('resultante das velocidades vx1 e vy1:',(vx1**2 + vy1**2)**(1/2))
+                //console.log('resultante das velocidades // e ⟂:',(sumpar1**2 + sumper1**2)**(1/2))
+                //console.log('resultante sumpar1 e sumper2:',(sumpar1**2 + sumper2**2)**2)
+                //console.log('vx2:',vx2,'vy2:',vy2)
+                //console.log('resultante das velocidades vx2 e vy2:',(vx2**2 + vy2**2)**(1/2))
+                //console.log('resultante das velocidades // e ⟂:',(sumpar2**2 + sumper2**2)**(1/2))
                 pokebolas[a].r = ''
                 pokebolas[b].r = ''
                 
@@ -1283,12 +1282,36 @@ function collision() {
             console.log(`bex: ${bex}`)
             console.log(`cex: ${cex}`)
             console.log('IN THE LIGHTS YOU MAKE',raiz2)
+            if (xvelx1 == 'x') {
+                pokebolas[a].x = cx + velx1*raiz2
+            }else{
+                pokebolas[a].x = cx + velx1
+            }
+            if (xvelx2 == 'x') {
+                pokebolas[b].x = cx2 + velx2*raiz2
+            }else{
+                pokebolas[b].x = cx2 + velx2
+            }
+            if (xvely1 == 'x') {
+                pokebolas[a].y = cy + vely1*raiz2
+            }else{
+                pokebolas[a].y = cy + vely1
+            }
+            if (xvely2 == 'x') {
+                pokebolas[b].y = cy2 + vely2*raiz2
+            }else{
+                pokebolas[b].y = cy2 + vely2
+            }
+            
+            
             //console.log('difx:',life)
             //console.log('dify',time)
             //console.log('vx1',velx1)
             //console.log('vy1',vely1)
             //console.log('vx2',velx2)
             //console.log('vy2',vely2)
+            
+            /*
             aex = difvex**2 + difvey**2
             bex = 2*(life*difvex + time*difvey)
             cex = life**2 + time**2 - 676
@@ -1298,6 +1321,9 @@ function collision() {
             delta = bex**2 - 4*aex*cex
             raiz1 = (-bex + delta**(1/2))/(2*aex)
             raiz2 = (-bex - delta**(1/2))/(2*aex)
+            */
+            
+            
             //console.log('delta',delta)
             //console.log('raiz1',raiz1)
             //console.log('raiz2',raiz2)
@@ -1306,13 +1332,14 @@ function collision() {
 
             
             //raiz2 = 0.001
+            
             /*
             pokebolas[a].velx = velx1*raiz2
             pokebolas[a].vely = vely1*raiz2
             pokebolas[b].velx = velx2*raiz2
             pokebolas[b].vely = vely2*raiz2
             */
-            
+            /*
            if(pokebolas[a].r !== '' && pokebolas[a].r!= undefined) {
             console.log(`AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApokebolas[${a}] já tem r`)
             if (pokebolas[a].velx > 0) {
@@ -1360,7 +1387,7 @@ function collision() {
            }else{
             pokebolas[b].x = cx2 + velx2*raiz2
            pokebolas[b].y = cy2 + vely2*raiz2
-           }
+           }*/
            //pokebolas[a].x = cx + velx1*raiz2
            //pokebolas[a].y = cy + vely1*raiz2
            //pokebolas[b].x = cx2 + velx2*raiz2
