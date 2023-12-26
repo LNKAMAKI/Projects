@@ -1283,9 +1283,6 @@ function collision() {
             console.log(`bex: ${bex}`)
             console.log(`cex: ${cex}`)
             console.log('IN THE LIGHTS YOU MAKE',raiz2)
-            delta = bex**2 - 4*aex*cex
-            raiz1 = (-bex + delta**(1/2))/(2*aex)
-            raiz2 = (-bex - delta**(1/2))/(2*aex)
             //console.log('difx:',life)
             //console.log('dify',time)
             //console.log('vx1',velx1)
