@@ -1322,7 +1322,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.stroke()
     
     c.fillStyle = 'black'
-    /*
+    
     if (velx < 0) {
     c.fillText('←', x - width - 13,y + 6)
     }else{
@@ -1333,7 +1333,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     }else{
         c.fillText('↓', x - 5,y + width + 3)
     }
-    */
+    
 }
 
 //saber quando o mouse encosta em uma pokebola
