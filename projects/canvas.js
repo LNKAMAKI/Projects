@@ -136,7 +136,7 @@ animate()
 
 coll = 0
 function collision() {
-    console.log('------------------------------------',coll)
+    //console.log('------------------------------------',coll)
     for (a in pokebolas) {
         cx = pokebolas[a].x
                 cy = pokebolas[a].y
@@ -186,6 +186,7 @@ function collision() {
                     console.log(cx,cx2)
                    // console.log(cy,cy2)
                     console.log('calcular a colisão')
+                    window.alert('COLISÃO')
                     //loop = false
                     console.log(pokebolas[a].velx)
                     console.log(pokebolas[a].r)
@@ -1158,6 +1159,23 @@ function collision() {
                 rightball = Number(b)
                 leftball = Number(a)
             }
+
+            console.log('leftball',leftball,'rightball',rightball,'upball',upball,'downball',downball)
+            console.log('velx1',velx1,'vely1',vely1)
+            console.log('velx2',velx2,'vely2',vely2)
+            if (rightball == b && velx2 > 0 || leftball == b && velx2 < 0) {
+                console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
+            }
+            if (rightball == a && velx1 > 0 || leftball == a && velx1 < 0) {
+                console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
+            }
+            if (upball == b && vely2 < 0 || downball == b && vely2 > 0) {
+                console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
+            }
+            if (upball == a && vely1 < 0 || downball == a && vely1 > 0) {
+                console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
+            }
+
             //console.log('cx:',cx,'cx2:',cx2)
             //console.log('cy:',cy,'cy2;',cy2)
 
