@@ -32,8 +32,8 @@ function animate() {
 for (v = 0; v < 3; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*1).toFixed(0)) + 1
-vely = Number((Math.random()*1).toFixed(0)) + 1
+velx = Number((Math.random()*10).toFixed(0)) + 1
+vely = Number((Math.random()*10).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -102,12 +102,12 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             if (pokebolas[number].y > 150 - pokebolas[number].width || pokebolas[number].y < pokebolas[number].width) {
                 pokebolas[number].vely = -pokebolas[number].vely
             }*/
-            console.log('r',pokebolas[number].r,pokebolas[number].r === '')
+            //console.log('r',pokebolas[number].r,pokebolas[number].r === '')
             if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
             pokebolas[number].x+=pokebolas[number].velx
             pokebolas[number].y+=pokebolas[number].vely
             }else{
-                console.log('no puedes andar')
+                console.log(`no puedes andar, ${pokebolas[number].color}`)
             }
     
             pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
@@ -185,7 +185,7 @@ function collision() {
                     //window.alert('')
                     //console.log(cx,cx2)
                    // console.log(cy,cy2)
-                    console.log('calcular a colisão')
+                    console.log(`calcular a colisão com ${pokebolas[a].color} e ${pokebolas[b].color}`)
                     //window.alert('COLISÃO')
                     //console.log(pokebolas[a].velx)
                     //console.log(pokebolas[a].r)
@@ -1136,13 +1136,14 @@ function collision() {
         
         newdiffx = newcx - newcx2
         newdiffy = newcy - newcy2
-        if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
+        if (newdiffx**2 + newdiffy**2 <= 676 || diffx**2 + diffy**2 <= 676) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
             console.log('NOW',diffx**2 + diffy**2)
             console.log('NEXT',newdiffx**2 + newdiffy**2)
             }
 
         // código para antecipar a colisão, impedindo que a pokebola passe por cima da outra
         if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
+            console.log('')
             console.log('no, you wont')
             console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
             //loop = false
@@ -1151,28 +1152,29 @@ function collision() {
 
             //determinar a posição da bola para saber tipo de colisão(frontal ou não frontal)
             if (cy < cy2) {
-                console.log(`bola ${a} é a de cima`)
+                //console.log(`bola ${a} é a de cima`)
                 upball = Number(a)
                 downball = Number(b)
             }else{
-                console.log(`bola ${b} é a de cima`)
+                //console.log(`bola ${b} é a de cima`)
                 upball = Number(b)
                 downball = Number(a)
             }
         
             if (cx > cx2) {
-                console.log(`bola ${a} está na direita`)
+                //console.log(`bola ${a} está na direita`)
                 rightball = Number(a)
                 leftball = Number(b)
             }else{
-                console.log(`bola ${b} está na direita`)
+                //console.log(`bola ${b} está na direita`)
                 rightball = Number(b)
                 leftball = Number(a)
             }
-
+            /*
             console.log('leftball',leftball,'rightball',rightball,'upball',upball,'downball',downball)
             console.log('velx1',velx1,'vely1',vely1)
             console.log('velx2',velx2,'vely2',vely2)
+            */
             xvelx1 = ''
             xvely1 = ''
             xvelx2 = ''
@@ -1198,9 +1200,11 @@ function collision() {
                 xvely1 = 'x'
             }
             
+            /*
             console.log('xvelx1:',xvelx1)
             console.log('xvely1:',xvely1)
             console.log('xvelx2:',xvelx2)
+            */
             console.log('xvely2:',xvely2)
             //console.log('cx:',cx,'cx2:',cx2)
             //console.log('cy:',cy,'cy2;',cy2)
@@ -1278,10 +1282,12 @@ function collision() {
             delta = bex**2 - 4*aex*cex
             raiz1 = (-bex + delta**(1/2))/(2*aex)
             raiz2 = (-bex - delta**(1/2))/(2*aex)
+            /*
             console.log(`aex: ${aex}`)
             console.log(`bex: ${bex}`)
             console.log(`cex: ${cex}`)
             console.log('IN THE LIGHTS YOU MAKE',raiz2)
+            */
             if (xvelx1 == 'x') {
                 pokebolas[a].x = cx + velx1*raiz2
             }else{
@@ -1426,6 +1432,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.fill()
     c.stroke()
 
+    
     y2 = y
     for ( i=0;i<width*0.1;i++) {
     c.beginPath()
