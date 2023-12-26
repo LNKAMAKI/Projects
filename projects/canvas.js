@@ -29,11 +29,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 4; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*8).toFixed(0)) + 1
-vely = Number((Math.random()*8).toFixed(0)) + 1
+velx = Number((Math.random()*1).toFixed(0)) + 1
+vely = Number((Math.random()*1).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -116,7 +116,7 @@ createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
             fp = document.getElementById('firstp')
             en = document.getElementById('energy')
             sp = document.getElementById('secp')
-            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2 + pokebolas[2].velx**2 + pokebolas[2].vely**2)
+            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2)// + pokebolas[2].velx**2 + pokebolas[2].vely**2)
             if (number == 0) {
             fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
             }else{
@@ -1137,6 +1137,27 @@ function collision() {
             //loop = false
             dx = cx - cx2
             dy = cy,cy2
+
+            //determinar a posição da bola para saber tipo de colisão(frontal ou não frontal)
+            if (cy < cy2) {
+                console.log(`bola ${a} é a de cima`)
+                upball = Number(a)
+                downball = Number(b)
+            }else{
+                console.log(`bola ${b} é a de cima`)
+                upball = Number(b)
+                downball = Number(a)
+            }
+        
+            if (cx > cx2) {
+                console.log(`bola ${a} está na direita`)
+                rightball = Number(a)
+                leftball = Number(b)
+            }else{
+                console.log(`bola ${b} está na direita`)
+                rightball = Number(b)
+                leftball = Number(a)
+            }
             //console.log('cx:',cx,'cx2:',cx2)
             //console.log('cy:',cy,'cy2;',cy2)
 
@@ -1155,9 +1176,8 @@ function collision() {
             // +
             // time**2 + time*vy - time*vy2 + vy*time + vy**2 - vy*vy2 -vy2*time - vy2*vy + vy2**2
             //x(life*vx - life*vx2 + vx*life - vx2*life) => 2*life(vx - vx2)
-            //x^2(vx**2 - vx*vx2 - vx2*vx + vx2**2) => vx**2 + vx2**2 - 2
-            
-            //life**2 + time**2 - 676 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
+            //x^2(vx**2 - vx*vx2 - vx2*vx + vx2**2) => vx**2 + vx2**2 - 2*vx*vx2 => (vx - vx2)**2
+            //2*life*vx - 2*life*vx2 + vx**2 + vx2**2 - 2*vx*vx2
 
             life = cx - cx2
             time = cy - cy2
