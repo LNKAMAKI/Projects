@@ -29,11 +29,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 3; v++) {
+for (v = 0; v < 4; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*9).toFixed(0)) + 1
-vely = Number((Math.random()*9).toFixed(0)) + 1
+velx = Number((Math.random()*8).toFixed(0)) + 1
+vely = Number((Math.random()*8).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -48,10 +48,14 @@ if (v == 0) {
     x = 250
     y = 120
     color = 'red'
-}else{
+}else if(v == 2){
     x = 50
     y = 40
     color = 'yellow'
+}else{
+    x = 270
+    y = 20
+    color = 'limegreen'
 }
 
 
@@ -1142,6 +1146,19 @@ function collision() {
             //life**2 + 2*life*difvex + difvex**2 + time**2 + 2*time*difvey + difvey**2
             //life**2 + time**2 - 676 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
             //           (c)                        (b)                       (a)
+
+             //[(cx + vx) - (cx2 + vx2)]**2 + [(cy + vy) - (cy2 + vy2)]**2
+            //[cx - cx2 + vx - vx2]**2 + [cy - cy2 + vy - vy2]**2
+            //(life + vx - vx2)**2 + (time + vy - vy2)**2
+            //(life + vx - vx2)*(life + vx - vx2)
+            //life**2 + life*vx(x) - life*vx2(x) + vx*life(x) + vx**2(x^2) - vx*vx2(x^2) -vx2*life(x) - vx2*vx(x^2) + vx2**2(x^2)
+            // +
+            // time**2 + time*vy - time*vy2 + vy*time + vy**2 - vy*vy2 -vy2*time - vy2*vy + vy2**2
+            //x(life*vx - life*vx2 + vx*life - vx2*life) => 2*life(vx - vx2)
+            //x^2(vx**2 - vx*vx2 - vx2*vx + vx2**2) => vx**2 + vx2**2 - 2
+            
+            //life**2 + time**2 - 676 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
+
             life = cx - cx2
             time = cy - cy2
             difvex = velx1 - velx2
@@ -1285,6 +1302,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.stroke()
     
     c.fillStyle = 'black'
+    /*
     if (velx < 0) {
     c.fillText('←', x - width - 13,y + 6)
     }else{
@@ -1295,6 +1313,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     }else{
         c.fillText('↓', x - 5,y + width + 3)
     }
+    */
 }
 
 //saber quando o mouse encosta em uma pokebola
