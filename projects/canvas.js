@@ -4,7 +4,7 @@ canvas: 0 - 300
 /*
 coisas para fazer:
 criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
-- coordenadas iniciais
+- coordenadas iniciais (check)
 - velx/vely positivo/negativo
 - comparação das coordenadas iniciais com as coordenadas após a colisão com cada pokebola
 */
@@ -23,11 +23,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 5; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*0.1).toFixed(0)) + 1
-vely = Number((Math.random()*0.1).toFixed(0)) + 1
+velx = Number((Math.random()*1).toFixed(0)) + 1
+vely = Number((Math.random()*1).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -46,10 +46,14 @@ if (v == 0) {
     x = 50
     y = 40
     color = 'yellow'
-}else{
+}else if (v == 3){
     x = 270
     y = 20
     color = 'limegreen'
+}else{
+    x = 20
+    y = 135
+    color = 'skyblue'
 }
 
 
@@ -1112,6 +1116,7 @@ function collision() {
         vely1 = pokebolas[a].vely
         velx2 = pokebolas[b].velx
         vely2 = pokebolas[b].vely
+        /*
         if (pokebolas[a].r != '' && pokebolas[a].r != undefined) {
             newcx = cx
             newcy = cy
@@ -1126,6 +1131,11 @@ function collision() {
             newcx2 = cx2 + velx2
             newcy2 = cy2 + vely2
         }
+        */
+        newcx = cx + velx1
+        newcy = cy + vely1
+        newcx2 = cx2 + velx2
+        newcy2 = cy2 + vely2
         
         newdiffx = newcx - newcx2
         newdiffy = newcy - newcy2
@@ -1223,6 +1233,11 @@ function collision() {
            //  b ou c       b ou c    a ou c   a ou c  a, b ou c      c
            //2*time*vy - 2*time*vy2 + vy**2 + vy2**2 - 2*vy*vy2 + time**2
            //  b ou c      b ou c    a ou c   a ou c  a, b ou c      c
+           /*
+           if(pokebolas[b].r !== '' && pokebolas[b].r!= undefined) { 
+            velx2 = 0
+            vely2 = 0
+        }*/
             life = cx - cx2
             time = cy - cy2
             difvex = velx1 - velx2
@@ -1419,7 +1434,7 @@ function collision() {
             for (o in pokebolas) {
                 //console.log(pokebolas[o].r)
             }
-            window.alert('COLISÃO')
+            //window.alert('COLISÃO')
         
         }
     }
@@ -1470,6 +1485,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
     c.fillStyle = 'black'
     
+    /*
     if (velx < 0) {
     c.fillText('←', x - width - 13,y + 6)
     }else{
@@ -1479,7 +1495,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.fillText('↑', x - 5,y - 8)
     }else{
         c.fillText('↓', x - 5,y + width + 3)
-    }
+    }*/
     
 }
 
