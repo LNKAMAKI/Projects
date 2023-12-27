@@ -26,8 +26,8 @@ function animate() {
 for (v = 0; v < 5; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*1).toFixed(0)) + 1
-vely = Number((Math.random()*1).toFixed(0)) + 1
+velx = Number((Math.random()*0.1).toFixed(0)) + 0.5
+vely = Number((Math.random()*0.1).toFixed(0)) + 0.5
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -1062,6 +1062,7 @@ function collision() {
             }
         }
         }
+        
     for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         //console.log('a',a)
         cx = pokebolas[a].x
@@ -1141,13 +1142,14 @@ function collision() {
         newdiffy = newcy - newcy2
         if (newdiffx**2 + newdiffy**2 <= 676 || diffx**2 + diffy**2 <= 676) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
             console.log('')
-            console.log('NOW',diffx**2 + diffy**2)
-            console.log('NEXT',newdiffx**2 + newdiffy**2)
+            //console.log('NOW',diffx**2 + diffy**2)
+            //console.log('NEXT',newdiffx**2 + newdiffy**2)
             }
 
         // código para antecipar a colisão, impedindo que a pokebola passe por cima da outra
         if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
             console.log('')
+            console.log('round',coll)
             console.log('no, you wont')
             console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
             //loop = false
@@ -1326,6 +1328,7 @@ function collision() {
             }else{
                 pokebolas[b].y = cy2 + vely2
             }
+            /*
             console.log('x1:',pokebolas[a].x)
             console.log('y1:',pokebolas[a].y)
             console.log('x2:',pokebolas[b].x)
@@ -1335,6 +1338,7 @@ function collision() {
             console.log('y1:',pokebolas[a].fsty)
             console.log('x2:',pokebolas[b].fstx)
             console.log('y2:',pokebolas[b].fsty)
+            */
             
             
             //console.log('difx:',life)
@@ -1434,12 +1438,13 @@ function collision() {
             for (o in pokebolas) {
                 //console.log(pokebolas[o].r)
             }
-            //window.alert('COLISÃO')
+            window.alert('COLISÃO')
         
         }
     }
         }
     }
+    
     coll++
 }
 
