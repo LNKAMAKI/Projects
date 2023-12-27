@@ -26,8 +26,8 @@ function animate() {
 for (v = 0; v < 5; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*0.1).toFixed(0)) + 0.5
-vely = Number((Math.random()*0.1).toFixed(0)) + 0.5
+velx = Number((Math.random()*0.1).toFixed(0)) + 2
+vely = Number((Math.random()*0.1).toFixed(0)) + 2
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -88,6 +88,21 @@ rangex = [x - width,x + width]
 rangey = [y - width,y + width]
 createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
 }
+
+posibs = []
+strposibs = []
+for (m in pokebolas) {
+    for (n in pokebolas) {
+        if (m != n) {
+        console.log(`${m}.${n}`)
+        if (strposibs.indexOf(`${n}.${m}`) == -1) {
+            posibs.push({a: `${m}`,b: `${n}`})
+            strposibs.push(`${m}.${n}`)
+        }
+        }
+    }
+}
+console.log(posibs)
     }else{
         document.getElementById('diff').innerText = 'iii' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
         c.clearRect(0,0,300,150)
@@ -134,7 +149,6 @@ animate()
 
 coll = 0
 function collision() {
-    //console.log('------------------------------------',coll)
     for (a in pokebolas) {
         cx = pokebolas[a].x
                 cy = pokebolas[a].y
@@ -1490,7 +1504,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
     c.fillStyle = 'black'
     
-    /*
+    
     if (velx < 0) {
     c.fillText('←', x - width - 13,y + 6)
     }else{
@@ -1500,7 +1514,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.fillText('↑', x - 5,y - 8)
     }else{
         c.fillText('↓', x - 5,y + width + 3)
-    }*/
+    }
     
 }
 
