@@ -1078,7 +1078,7 @@ function collision() {
         }
     
         for (p in posibs) {
-            detectCollision(posibs[p].a,posibs[p].b)
+            console.log(detectCollision(posibs[p].a,posibs[p].b))
         }
        if (0 == 1) {
      for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
@@ -1577,6 +1577,10 @@ window.addEventListener('keyup',function(event) {
 }) 
 
 function detectCollision(a,b) {
+    newvelx1 = ''
+    newvelx2 = ''
+    newvely1 = ''
+    newvely2 = ''
     cx = pokebolas[a].x
     cy = pokebolas[a].y
     velx1 = pokebolas[a].velx
@@ -1617,7 +1621,7 @@ function detectCollision(a,b) {
     
     if (Math.round(diffx**2 + diffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('PAROU!')
-        console.log(`a distância entre as pokebolas é de ${diffx**2 + diffy**2}`)
+        console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         window.alert('PAROU')
        //loop = false
     }
@@ -1763,23 +1767,31 @@ function detectCollision(a,b) {
 
         if (xvelx1 == 'x') {
             pokebolas[a].x = cx + velx1*raiz2
+            newvelx1 =  cx + velx1*raiz2
         }else{
             pokebolas[a].x = cx + velx1
+            newvelx1 =  cx
         }
         if (xvelx2 == 'x') {
             pokebolas[b].x = cx2 + velx2*raiz2
+            newvelx2 =  cx2 + velx2*raiz2
         }else{
             pokebolas[b].x = cx2 + velx2
+            newvelx2 =  cx2
         }
         if (xvely1 == 'x') {
             pokebolas[a].y = cy + vely1*raiz2
+            newvely1 =  cy + vely1*raiz2
         }else{
             pokebolas[a].y = cy + vely1
+            newvely1 =  cy
         }
         if (xvely2 == 'x') {
             pokebolas[b].y = cy2 + vely2*raiz2
+            newvely2 =  cy2 + vely2*raiz2
         }else{
             pokebolas[b].y = cy2 + vely2
+            newvely2 =  cy2
         }
     
         res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
@@ -1794,4 +1806,5 @@ function detectCollision(a,b) {
         //window.alert('COLISÃO')
     
     }
+    return {velx1: newvelx1,velx2: newvelx2, vely1: newvely1, vely2: newvely2}
 }
