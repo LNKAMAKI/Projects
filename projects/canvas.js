@@ -1577,10 +1577,10 @@ window.addEventListener('keyup',function(event) {
 }) 
 
 function detectCollision(a,b) {
-    newvelx1 = ''
-    newvelx2 = ''
-    newvely1 = ''
-    newvely2 = ''
+    newvelx1 = 'n'
+    newvelx2 = 'n'
+    newvely1 = 'n'
+    newvely2 = 'n'
     cx = pokebolas[a].x
     cy = pokebolas[a].y
     velx1 = pokebolas[a].velx
@@ -1793,7 +1793,7 @@ function detectCollision(a,b) {
             pokebolas[b].y = cy2 + vely2
             newvely2 =  cy2
         }
-    
+        return {velx1: newvelx1,velx2: newvelx2, vely1: newvely1, vely2: newvely2}
         res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
         
         pokebolas[a].r = raiz2
@@ -1803,8 +1803,7 @@ function detectCollision(a,b) {
         for (o in pokebolas) {
             //console.log(pokebolas[o].r)
         }
-        //window.alert('COLISÃO')
+        window.alert('COLISÃO')
     
     }
-    return {velx1: newvelx1,velx2: newvelx2, vely1: newvely1, vely2: newvely2}
 }
