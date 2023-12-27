@@ -1577,10 +1577,10 @@ window.addEventListener('keyup',function(event) {
 }) 
 
 function detectCollision(a,b) {
-    newvelx1 = 'n'
-    newvelx2 = 'n'
-    newvely1 = 'n'
-    newvely2 = 'n'
+    newx1 = 'n'
+    newx2 = 'n'
+    newy1 = 'n'
+    newy2 = 'n'
     cx = pokebolas[a].x
     cy = pokebolas[a].y
     velx1 = pokebolas[a].velx
@@ -1767,33 +1767,33 @@ function detectCollision(a,b) {
 
         if (xvelx1 == 'x') {
             pokebolas[a].x = cx + velx1*raiz2
-            newvelx1 =  cx + velx1*raiz2
+            newx1 =  cx + velx1*raiz2
         }else{
             pokebolas[a].x = cx + velx1
-            newvelx1 =  cx
+            newx1 =  cx
         }
         if (xvelx2 == 'x') {
             pokebolas[b].x = cx2 + velx2*raiz2
-            newvelx2 =  cx2 + velx2*raiz2
+            newx2 =  cx2 + velx2*raiz2
         }else{
             pokebolas[b].x = cx2 + velx2
-            newvelx2 =  cx2
+            newx2 =  cx2
         }
         if (xvely1 == 'x') {
             pokebolas[a].y = cy + vely1*raiz2
-            newvely1 =  cy + vely1*raiz2
+            newy1 =  cy + vely1*raiz2
         }else{
             pokebolas[a].y = cy + vely1
-            newvely1 =  cy
+            newy1 =  cy
         }
         if (xvely2 == 'x') {
             pokebolas[b].y = cy2 + vely2*raiz2
-            newvely2 =  cy2 + vely2*raiz2
+            newy2 =  cy2 + vely2*raiz2
         }else{
             pokebolas[b].y = cy2 + vely2
-            newvely2 =  cy2
+            newy2 =  cy2
         }
-        return {velx1: newvelx1,velx2: newvelx2, vely1: newvely1, vely2: newvely2}
+        
         res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
         
         pokebolas[a].r = raiz2
@@ -1804,6 +1804,8 @@ function detectCollision(a,b) {
             //console.log(pokebolas[o].r)
         }
         window.alert('COLISÃO')
+        return {x1: newx1,x2: newx2, y1: newy1, y2: newy2}
+        
     
     }
 }
