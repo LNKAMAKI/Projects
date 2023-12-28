@@ -1082,8 +1082,11 @@ function collision() {
         // primeiro passo: ver se irá ocorrer a colisão entre as pokebolas(result != undefined)
         // segundo passo: ver se, ocorrendo a colisão, alguma pokebola já tem r
         // terceiro passo: se nenhuma pokebola tiver r, mudar as suas coornedas para os valores no result/se alguma pokebola já tiver r, realizar o próximo passo
-        // quarto passo: para cada pokebola que tiver r, realizar o procedimento de comparação entre as coordenadas atuais(da colisão passada) com as coordenadas da colisão atual, baseadas nas coordenadas iniciais do sistema
-
+        // quarto passo: para cada pokebola que tiver r, realizar o procedimento de comparação entre as coordenadas atuais(da colisão passada) com as coordenadas da colisão atual, baseadas nas coordenadas iniciais do sistema:                                             range
+        // se pokebola[number].velx > 0: considerar a menor posição no eixo x      0 - 300 →
+        // se pokebola[number].velx < 0: considerar a maior posição no eixo x      0 - 300 →
+        // se pokebola[number].vely > 0: considerar a maior posição no eixo y      0 - 150 ↑
+        // se pokebola[number].vely < 0: considerar a menor posição no eixo y      0 - 150 ↑
             result = detectCollision(posibs[p].a,posibs[p].b)
         }
        if (0 == 1) {
