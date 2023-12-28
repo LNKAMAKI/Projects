@@ -1106,6 +1106,7 @@ function collision() {
             console.log(pokebolas[posibs[p].a].r, pokebolas[posibs[p].b].r)
             result = detectCollision(posibs[p].a,posibs[p].b)
             console.log(result)
+            /*
             if (result != undefined) {
                 console.log('OPA, colisão',prir,segr)
                 console.log(prir == 'undefined')
@@ -1116,7 +1117,7 @@ function collision() {
                   seg.x = result.x2
                   seg.y = result.y2
                 }
-            }
+            }*/
             }
        if (0 == 1) {
      for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
@@ -1736,6 +1737,28 @@ function detectCollision(a,b) {
             xvely1 = 'x'
         }
         
+    /*
+    //[(cx + vx) - (cx2 + vx2)]**2 + [(cy + vy) - (cy2 + vy2)]**2
+    //[cx - cx2 + vx - vx2]**2 + [cy - cy2 + vy - vy2]**2
+    //[life + difvex]**2 + [time + difvey]**2
+    //life**2 + 2*life*difvex + difvex**2 + time**2 + 2*time*difvey + difvey**2
+    //life**2 + time**2 - 676 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
+    //           (c)                        (b)                       (a)
+
+     //[(cx + vx) - (cx2 + vx2)]**2 + [(cy + vy) - (cy2 + vy2)]**2
+    //[cx - cx2 + vx - vx2]**2 + [cy - cy2 + vy - vy2]**2
+    //(life + vx - vx2)**2 + (time + vy - vy2)**2
+    //(life + vx - vx2)*(life + vx - vx2)
+    //life**2 + life*vx(x) - life*vx2(x) + vx*life(x) + vx**2(x^2) - vx*vx2(x^2) -vx2*life(x) - vx2*vx(x^2) + vx2**2(x^2)
+    // +
+    // time**2 + time*vy - time*vy2 + vy*time + vy**2 - vy*vy2 -vy2*time - vy2*vy + vy2**2
+    //x(life*vx - life*vx2 + vx*life - vx2*life) => 2*life(vx - vx2)
+    //x^2(vx**2 - vx*vx2 - vx2*vx + vx2**2) => vx**2 + vx2**2 - 2*vx*vx2 => (vx - vx2)**2
+    //2*life*vx - 2*life*vx2 + vx**2 + vx2**2 - 2*vx*vx2 + life**2
+   //  b ou c       b ou c    a ou c   a ou c  a, b ou c      c
+   //2*time*vy - 2*time*vy2 + vy**2 + vy2**2 - 2*vy*vy2 + time**2
+   //  b ou c      b ou c    a ou c   a ou c  a, b ou c      c
+   /*
         life = cx - cx2
         time = cy - cy2
         difvex = velx1 - velx2
@@ -1802,31 +1825,31 @@ function detectCollision(a,b) {
         pokebolas[b].fsty = `${pokebolas[b].y}`
 
         if (xvelx1 == 'x') {
-            //pokebolas[a].x = cx + velx1*raiz2
+            pokebolas[a].x = cx + velx1*raiz2
             newx1 =  cx + velx1*raiz2
         }else{
-            //pokebolas[a].x = cx + velx1
+            pokebolas[a].x = cx + velx1
             newx1 =  cx + velx1
         }
         if (xvelx2 == 'x') {
-            //pokebolas[b].x = cx2 + velx2*raiz2
+            pokebolas[b].x = cx2 + velx2*raiz2
             newx2 =  cx2 + velx2*raiz2
         }else{
-            //pokebolas[b].x = cx2 + velx2
+            pokebolas[b].x = cx2 + velx2
             newx2 =  cx2 + velx2
         }
         if (xvely1 == 'x') {
-            //pokebolas[a].y = cy + vely1*raiz2
+            pokebolas[a].y = cy + vely1*raiz2
             newy1 =  cy + vely1*raiz2
         }else{
-            //pokebolas[a].y = cy + vely1
+            pokebolas[a].y = cy + vely1
             newy1 =  cy + vely1
         }
         if (xvely2 == 'x') {
-            //pokebolas[b].y = cy2 + vely2*raiz2
+            pokebolas[b].y = cy2 + vely2*raiz2
             newy2 =  cy2 + vely2*raiz2
         }else{
-            //pokebolas[b].y = cy2 + vely2
+            pokebolas[b].y = cy2 + vely2
             newy2 =  cy2 + vely2
         }
         
