@@ -1078,7 +1078,13 @@ function collision() {
         }
     
         for (p in posibs) {
-            console.log(detectCollision(posibs[p].a,posibs[p].b))
+        // ! a verificação de colisão deve ser feita sempre com os valores iniciais das posições x e y, isso porque se os dados estiverem incorretos, haverá interferência nessa etapa
+        // primeiro passo: ver se irá ocorrer a colisão entre as pokebolas(result != undefined)
+        // segundo passo: ver se, ocorrendo a colisão, alguma pokebola já tem r
+        // terceiro passo: se nenhuma pokebola tiver r, mudar as suas coornedas para os valores no result/se alguma pokebola já tiver r, realizar o próximo passo
+        // quarto passo: para cada pokebola que tiver r, realizar o procedimento de comparação entre as coordenadas atuais(da colisão passada) com as coordenadas da colisão atual, baseadas nas coordenadas iniciais do sistema
+
+            result = detectCollision(posibs[p].a,posibs[p].b)
         }
        if (0 == 1) {
      for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
@@ -1464,8 +1470,6 @@ function collision() {
         }
     }
 }
-    
-    
     coll++
 }
 
@@ -1766,31 +1770,31 @@ function detectCollision(a,b) {
         pokebolas[b].fsty = `${pokebolas[b].y}`
 
         if (xvelx1 == 'x') {
-            pokebolas[a].x = cx + velx1*raiz2
+            //pokebolas[a].x = cx + velx1*raiz2
             newx1 =  cx + velx1*raiz2
         }else{
-            pokebolas[a].x = cx + velx1
+            //pokebolas[a].x = cx + velx1
             newx1 =  cx
         }
         if (xvelx2 == 'x') {
-            pokebolas[b].x = cx2 + velx2*raiz2
+            //pokebolas[b].x = cx2 + velx2*raiz2
             newx2 =  cx2 + velx2*raiz2
         }else{
-            pokebolas[b].x = cx2 + velx2
+            //pokebolas[b].x = cx2 + velx2
             newx2 =  cx2
         }
         if (xvely1 == 'x') {
-            pokebolas[a].y = cy + vely1*raiz2
+            //pokebolas[a].y = cy + vely1*raiz2
             newy1 =  cy + vely1*raiz2
         }else{
-            pokebolas[a].y = cy + vely1
+            //pokebolas[a].y = cy + vely1
             newy1 =  cy
         }
         if (xvely2 == 'x') {
-            pokebolas[b].y = cy2 + vely2*raiz2
+            //pokebolas[b].y = cy2 + vely2*raiz2
             newy2 =  cy2 + vely2*raiz2
         }else{
-            pokebolas[b].y = cy2 + vely2
+            //pokebolas[b].y = cy2 + vely2
             newy2 =  cy2
         }
         
@@ -1803,7 +1807,7 @@ function detectCollision(a,b) {
         for (o in pokebolas) {
             //console.log(pokebolas[o].r)
         }
-        window.alert('COLISÃO')
+        //window.alert('COLISÃO')
         return {x1: newx1,x2: newx2, y1: newy1, y2: newy2}
         
     
