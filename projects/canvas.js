@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 7; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -61,7 +61,7 @@ if (v == 0) {
 }else{
     x = 140
     y = 20
-    color = 'brown'
+    color = 'blueviolet'
 }
 
 
@@ -1086,6 +1086,8 @@ function collision() {
         }
     
         for (p in posibs) {
+            console.log(coll)
+            console.log('adadwdwdwwdwd')
         // ! a verificação de colisão deve ser feita sempre com os valores iniciais das posições x e y, isso porque se os dados posteriores estiverem incorretos, haverá interferência nessa etapa
         // primeiro passo: ver se irá ocorrer a colisão entre as pokebolas(result != undefined)
         // segundo passo: ver se, ocorrendo a colisão, alguma pokebola já tem r
@@ -1096,8 +1098,19 @@ function collision() {
         // se pokebola[number].vely > 0: considerar a maior posição no eixo y      0 - 150 ↑
         // se pokebola[number].vely < 0: considerar a menor posição no eixo y      0 - 150 ↑
 
+           
+            prir = `${pokebolas[posibs[p].a].r}`
+            segr = `${pokebolas[posibs[p].b].r}`
+            console.log(pokebolas[posibs[p].a].r, pokebolas[posibs[p].b].r)
             result = detectCollision(posibs[p].a,posibs[p].b)
-        }
+            if (result != undefined) {
+                console.log('OPA, colisão',prir,segr)
+                console.log(prir == undefined)
+                if (prir === '' || prir == undefined && segr === '' || segr == undefined) {
+                  console.log('pode adicionar')
+                }
+            }
+            }
        if (0 == 1) {
      for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         //console.log('a',a)
@@ -1370,7 +1383,7 @@ function collision() {
             console.log('y1:',pokebolas[a].y)
             console.log('x2:',pokebolas[b].x)
             console.log('y2:',pokebolas[b].y)
-
+ 
             console.log('x1:',pokebolas[a].fstx)
             console.log('y1:',pokebolas[a].fsty)
             console.log('x2:',pokebolas[b].fstx)
@@ -1666,7 +1679,7 @@ function detectCollision(a,b) {
         console.log('round',coll)
         console.log('no, you wont')
         console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
-        //loop = false
+        loop = false
         dx = cx - cx2
         dy = cy,cy2
 
