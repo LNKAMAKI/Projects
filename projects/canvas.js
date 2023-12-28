@@ -1099,15 +1099,22 @@ function collision() {
         // se pokebola[number].vely < 0: considerar a menor posição no eixo y      0 - 150 ↑
 
            
+            pri = pokebolas[posibs[p].a]
+            seg = pokebolas[posibs[p].a]
             prir = `${pokebolas[posibs[p].a].r}`
             segr = `${pokebolas[posibs[p].b].r}`
             console.log(pokebolas[posibs[p].a].r, pokebolas[posibs[p].b].r)
             result = detectCollision(posibs[p].a,posibs[p].b)
+            console.log(result)
             if (result != undefined) {
                 console.log('OPA, colisão',prir,segr)
-                console.log(prir == undefined)
-                if (prir === '' || prir == undefined && segr === '' || segr == undefined) {
+                console.log(prir == 'undefined')
+                if (prir === '' || prir == 'undefined' && segr === '' || segr == 'undefined') {
                   console.log('pode adicionar')
+                  pri.x = result.x1
+                  pri.y = result.y1
+                  seg.x = result.x2
+                  seg.y = result.y2
                 }
             }
             }
@@ -1652,7 +1659,7 @@ function detectCollision(a,b) {
         console.log('PAROU!')
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //window.alert('PAROU')
-       //loop = false
+       loop = false
     }
 
     velx1 = pokebolas[a].velx
@@ -1679,7 +1686,7 @@ function detectCollision(a,b) {
         console.log('round',coll)
         console.log('no, you wont')
         console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
-        loop = false
+        //loop = false
         dx = cx - cx2
         dy = cy,cy2
 
@@ -1799,31 +1806,32 @@ function detectCollision(a,b) {
             newx1 =  cx + velx1*raiz2
         }else{
             //pokebolas[a].x = cx + velx1
-            newx1 =  cx
+            newx1 =  cx + velx1
         }
         if (xvelx2 == 'x') {
             //pokebolas[b].x = cx2 + velx2*raiz2
             newx2 =  cx2 + velx2*raiz2
         }else{
             //pokebolas[b].x = cx2 + velx2
-            newx2 =  cx2
+            newx2 =  cx2 + velx2
         }
         if (xvely1 == 'x') {
             //pokebolas[a].y = cy + vely1*raiz2
             newy1 =  cy + vely1*raiz2
         }else{
             //pokebolas[a].y = cy + vely1
-            newy1 =  cy
+            newy1 =  cy + vely1
         }
         if (xvely2 == 'x') {
             //pokebolas[b].y = cy2 + vely2*raiz2
             newy2 =  cy2 + vely2*raiz2
         }else{
             //pokebolas[b].y = cy2 + vely2
-            newy2 =  cy2
+            newy2 =  cy2 + vely2
         }
         
-        res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
+        //res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
+        //console.log('conferir:',res)
         
         pokebolas[a].r = raiz2
         pokebolas[b].r = raiz2
