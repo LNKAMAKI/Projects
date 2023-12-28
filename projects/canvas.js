@@ -26,8 +26,8 @@ function animate() {
 for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*0.1).toFixed(0)) + 2
-vely = Number((Math.random()*0.1).toFixed(0)) + 2
+velx = Number((Math.random()*1).toFixed(0)) + 1
+vely = Number((Math.random()*1).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
