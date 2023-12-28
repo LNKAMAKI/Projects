@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 6; v++) {
+for (v = 0; v < 7; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -54,10 +54,14 @@ if (v == 0) {
     x = 20
     y = 135
     color = 'skyblue'
-}else{
+}else if (v == 5){
     x = 20
     y = 20
     color = 'orange'
+}else{
+    x = 140
+    y = 20
+    color = 'brown'
 }
 
 
@@ -1580,7 +1584,7 @@ window.addEventListener('mousemove',function(event) {
 
 window.addEventListener('keyup',function(event) {
  console.log(event.key)
- if (event.key == 'p') {
+ if (event.key == 'p' || event.ley == 'P') {
     loop = false
  }
  if (event.key == 'b') {
@@ -1634,7 +1638,7 @@ function detectCollision(a,b) {
     if (Math.round(diffx**2 + diffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('PAROU!')
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
-        window.alert('PAROU')
+        //window.alert('PAROU')
        //loop = false
     }
 
