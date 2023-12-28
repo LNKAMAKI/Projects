@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 5; v++) {
+for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*0.1).toFixed(0)) + 2
@@ -50,10 +50,14 @@ if (v == 0) {
     x = 270
     y = 20
     color = 'limegreen'
-}else{
+}else if(v == 4){
     x = 20
     y = 135
     color = 'skyblue'
+}else{
+    x = 20
+    y = 20
+    color = 'orange'
 }
 
 
@@ -1078,7 +1082,7 @@ function collision() {
         }
     
         for (p in posibs) {
-        // ! a verificação de colisão deve ser feita sempre com os valores iniciais das posições x e y, isso porque se os dados estiverem incorretos, haverá interferência nessa etapa
+        // ! a verificação de colisão deve ser feita sempre com os valores iniciais das posições x e y, isso porque se os dados posteriores estiverem incorretos, haverá interferência nessa etapa
         // primeiro passo: ver se irá ocorrer a colisão entre as pokebolas(result != undefined)
         // segundo passo: ver se, ocorrendo a colisão, alguma pokebola já tem r
         // terceiro passo: se nenhuma pokebola tiver r, mudar as suas coornedas para os valores no result/se alguma pokebola já tiver r, realizar o próximo passo
@@ -1087,6 +1091,7 @@ function collision() {
         // se pokebola[number].velx < 0: considerar a maior posição no eixo x      0 - 300 →
         // se pokebola[number].vely > 0: considerar a maior posição no eixo y      0 - 150 ↑
         // se pokebola[number].vely < 0: considerar a menor posição no eixo y      0 - 150 ↑
+
             result = detectCollision(posibs[p].a,posibs[p].b)
         }
        if (0 == 1) {
