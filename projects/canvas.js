@@ -23,11 +23,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 3; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*1).toFixed(0)) + 1
-vely = Number((Math.random()*1).toFixed(0)) + 1
+velx = Number((Math.random()*4).toFixed(0)) + 1
+vely = Number((Math.random()*4).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -1118,6 +1118,25 @@ function collision() {
                   pri.y = result.y1
                   seg.x = result.x2
                   seg.y = result.y2
+                }else{
+                    if (prir != 'undefined' && prir != '') {
+                        //comparar as coordenadas da colisão passada com as da colisão atual
+                        if (pri.velx > 0) {                    
+                            if (result.x1 < pri.x) {       // (-o-)=>  (-o-)    (-o-)
+                                // result.x1 vence            fstx   result.x1  pri.x
+                            }else{                         
+                               // pri.x vence             // (-o-)=>  (-o-)    (-o-)
+                               //                            fstx     pri.x  result.x1
+                            }
+                        }else{
+                            if (result.x1 > pri.x) {    // (-o-)    (-o-)   <=(-o-)
+                              // result.x1 vence           pri.x  result.x1   fstx
+                            }else{ 
+                             // pri.x vence               (-o-)    (-o-)   <=(-o-)
+                                //                      result.x1  pri.x     fstx
+                            }
+                        }
+                    }
                 }
             }
             }
@@ -1173,7 +1192,7 @@ function collision() {
             console.log('PAROU!')
             console.log(`a distância entre as pokebolas é de ${diffx**2 + diffy**2}`)
             window.alert('PAROU')
-           //loop = false
+            loop = false
         }
 
         velx1 = pokebolas[a].velx
@@ -1666,7 +1685,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         console.log('PAROU!')
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //window.alert('PAROU')
-       //loop = false
+       loop = false
     }
 
     velx1 = pokebolas[a].velx
@@ -1693,7 +1712,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         console.log('round',coll)
         console.log('no, you wont')
         console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
-        loop = false
+        //loop = false
         dx = cx - cx2
         dy = cy,cy2
 
