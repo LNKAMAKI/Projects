@@ -1139,7 +1139,7 @@ function collision() {
                             }
                         }
                         if (pri.vely < 0) {
-                            if (result.y1 > pri.y) {  //    
+                            if (result.y1 > pri.y) {  
                             //                                (-o-) pri.y
                             //                                
                             //                                (-o-) result.y1
@@ -1155,7 +1155,7 @@ function collision() {
                             //                                (-o-) fstx
                         }
                     }else{
-                        if (result.y1 < pri.y)
+                        if (result.y1 < pri.y) {
                            //                                 (-o-) fstx
                            //                                   ↓ 
                            // 
@@ -1172,6 +1172,7 @@ function collision() {
                     }
                 }
                 }
+            }
             }
             }
             
