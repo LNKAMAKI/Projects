@@ -201,7 +201,6 @@ function collision() {
                 
                 // código para a colisão
                 if (Math.round(diffx**2 + diffy**2) == 676){//|| newdiffx**2 + newdiffy**2 < 676) {
-                    //loop = false
                     //window.alert('')
                     //console.log(cx,cx2)
                    // console.log(cy,cy2)
@@ -1100,13 +1099,13 @@ function collision() {
 
            
             pri = pokebolas[posibs[p].a]
-            seg = pokebolas[posibs[p].a]
+            seg = pokebolas[posibs[p].b]
             prir = `${pokebolas[posibs[p].a].r}`
             segr = `${pokebolas[posibs[p].b].r}`
             console.log(pokebolas[posibs[p].a].r, pokebolas[posibs[p].b].r)
             result = detectCollision(posibs[p].a,posibs[p].b)
             console.log(result)
-            /*
+            
             if (result != undefined) {
                 console.log('OPA, colisão',prir,segr)
                 console.log(prir == 'undefined')
@@ -1117,8 +1116,9 @@ function collision() {
                   seg.x = result.x2
                   seg.y = result.y2
                 }
-            }*/
             }
+            }
+            
        if (0 == 1) {
      for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         //console.log('a',a)
@@ -1758,7 +1758,7 @@ function detectCollision(a,b) {
    //  b ou c       b ou c    a ou c   a ou c  a, b ou c      c
    //2*time*vy - 2*time*vy2 + vy**2 + vy2**2 - 2*vy*vy2 + time**2
    //  b ou c      b ou c    a ou c   a ou c  a, b ou c      c
-   /*
+   */
         life = cx - cx2
         time = cy - cy2
         difvex = velx1 - velx2
@@ -1825,31 +1825,31 @@ function detectCollision(a,b) {
         pokebolas[b].fsty = `${pokebolas[b].y}`
 
         if (xvelx1 == 'x') {
-            pokebolas[a].x = cx + velx1*raiz2
+            //pokebolas[a].x = cx + velx1*raiz2
             newx1 =  cx + velx1*raiz2
         }else{
-            pokebolas[a].x = cx + velx1
+            //pokebolas[a].x = cx + velx1
             newx1 =  cx + velx1
         }
         if (xvelx2 == 'x') {
-            pokebolas[b].x = cx2 + velx2*raiz2
+            //pokebolas[b].x = cx2 + velx2*raiz2
             newx2 =  cx2 + velx2*raiz2
         }else{
-            pokebolas[b].x = cx2 + velx2
+            //pokebolas[b].x = cx2 + velx2
             newx2 =  cx2 + velx2
         }
         if (xvely1 == 'x') {
-            pokebolas[a].y = cy + vely1*raiz2
+            //pokebolas[a].y = cy + vely1*raiz2
             newy1 =  cy + vely1*raiz2
         }else{
-            pokebolas[a].y = cy + vely1
+            //pokebolas[a].y = cy + vely1
             newy1 =  cy + vely1
         }
         if (xvely2 == 'x') {
-            pokebolas[b].y = cy2 + vely2*raiz2
+            //pokebolas[b].y = cy2 + vely2*raiz2
             newy2 =  cy2 + vely2*raiz2
         }else{
-            pokebolas[b].y = cy2 + vely2
+            //pokebolas[b].y = cy2 + vely2
             newy2 =  cy2 + vely2
         }
         
