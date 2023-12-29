@@ -1123,17 +1123,17 @@ function collision() {
                         //comparar as coordenadas da colisão passada com as da colisão atual
                         if (pri.velx > 0) {                    
                             if (result.x1 < pri.x) {       // (-o-)=>  (-o-)    (-o-)
-                                // result.x1 vence            fstx   result.x1  pri.x
+                                //                            fstx   result.x1  pri.x
                             }else{                         
-                               // pri.x vence             // (-o-)=>  (-o-)    (-o-)
+                               //                         // (-o-)=>  (-o-)    (-o-)
                                //                            fstx     pri.x  result.x1
                             }
                         }else{
                             if (result.x1 > pri.x) {    // (-o-)    (-o-)   <=(-o-)
-                              // result.x1 vence            pri.x  result.x1   fstx
+                              //                           pri.x  result.x1   fstx
                             }else{  
-                             // pri.x vence               (-o-)    (-o-)   <=(-o-)
-                                //                       result.x1  pri.x     fstx
+                             //                           (-o-)    (-o-)   <=(-o-)
+                             //                         result.x1  pri.x     fstx
                             }
                         }
                         if (pri.vely < 0) {
@@ -1142,8 +1142,8 @@ function collision() {
                             //                                
                             //                                (-o-) result.y1
                             //                                
-                            // ← →                              ↑
-                            // ↑ ↓                            (-o-) fstx
+                            //                                  ↑
+                            //                                (-o-) fstx
                         }else{
                             //                                (-o-) result.y1
                             //                                
