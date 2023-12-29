@@ -1100,7 +1100,6 @@ function collision() {
         // se pokebola[number].velx < 0: considerar a maior posição no eixo x      0 - 300 →
         // se pokebola[number].vely > 0: considerar a maior posição no eixo y      0 - 150 ↑
         // se pokebola[number].vely < 0: considerar a menor posição no eixo y      0 - 150 ↑
-
            
             pri = pokebolas[posibs[p].a]
             seg = pokebolas[posibs[p].b]
@@ -1692,9 +1691,9 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
     if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('')
         console.log('round',coll)
-        //console.log('no, you wont')
+        console.log('no, you wont')
         console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
-        //loop = false
+        loop = false
         dx = cx - cx2
         dy = cy,cy2
 
