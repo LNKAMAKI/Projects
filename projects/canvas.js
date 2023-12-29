@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 7; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -1088,9 +1088,9 @@ function collision() {
             console.log(coll)
             console.log('adadwdwdwwdwd')
         // ! a verificação de colisão deve ser feita sempre com os valores iniciais das posições x e y, isso porque se os dados posteriores estiverem incorretos, haverá interferência nessa etapa
-        // primeiro passo: ver se irá ocorrer a colisão entre as pokebolas(result != undefined)
+        // primeiro passo: ver se irá ocorrer a colisão entre as pokebolas(result != undefined) - check
         // segundo passo: ver se, ocorrendo a colisão, alguma pokebola já tem r
-        // terceiro passo: se nenhuma pokebola tiver r, mudar as suas coornedas para os valores no result/se alguma pokebola já tiver r, realizar o próximo passo
+        // terceiro passo: se nenhuma pokebola tiver r, mudar as suas coornedas para os valores no result/se alguma pokebola já tiver r, realizar o próximo passo - check
         // quarto passo: para cada pokebola que tiver r, realizar o procedimento de comparação entre as coordenadas atuais(da colisão passada) com as coordenadas da colisão atual, baseadas nas coordenadas iniciais do sistema:                                             range
         // se pokebola[number].velx > 0: considerar a menor posição no eixo x      0 - 300 →
         // se pokebola[number].velx < 0: considerar a maior posição no eixo x      0 - 300 →
@@ -1121,7 +1121,7 @@ function collision() {
             
 
 
-            
+
        if (0 == 1) {
      for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         //console.log('a',a)
