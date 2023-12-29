@@ -1106,7 +1106,7 @@ function collision() {
             prir = `${pokebolas[posibs[p].a].r}`
             segr = `${pokebolas[posibs[p].b].r}`
             console.log(pokebolas[posibs[p].a].r, pokebolas[posibs[p].b].r)
-            result = detectCollision(posibs[p].a,posibs[p].b,pri.x,pri.y,seg.x,seg.y)
+            result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty))
             console.log(result)
             
             if (result != undefined) {
@@ -1666,7 +1666,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         console.log('PAROU!')
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //window.alert('PAROU')
-       loop = false
+       //loop = false
     }
 
     velx1 = pokebolas[a].velx
