@@ -1098,8 +1098,8 @@ function collision() {
         // quarto passo: para cada pokebola que tiver r, realizar o procedimento de comparação entre as coordenadas atuais(da colisão passada) com as coordenadas da colisão atual, baseadas nas coordenadas iniciais do sistema:                                             range
         // se pokebola[number].velx > 0: considerar a menor posição no eixo x      0 - 300 →
         // se pokebola[number].velx < 0: considerar a maior posição no eixo x      0 - 300 →
-        // se pokebola[number].vely > 0: considerar a maior posição no eixo y      0 - 150 ↑
-        // se pokebola[number].vely < 0: considerar a menor posição no eixo y      0 - 150 ↑
+        // se pokebola[number].vely < 0: considerar a maior posição no eixo y      0 - 150 ↑
+        // se pokebola[number].vely > 0: considerar a menor posição no eixo y      0 - 150 ↑
            
             pri = pokebolas[posibs[p].a]
             seg = pokebolas[posibs[p].b]
@@ -1130,13 +1130,45 @@ function collision() {
                             }
                         }else{
                             if (result.x1 > pri.x) {    // (-o-)    (-o-)   <=(-o-)
-                              // result.x1 vence           pri.x  result.x1   fstx
-                            }else{ 
+                              // result.x1 vence            pri.x  result.x1   fstx
+                            }else{  
                              // pri.x vence               (-o-)    (-o-)   <=(-o-)
-                                //                      result.x1  pri.x     fstx
+                                //                       result.x1  pri.x     fstx
                             }
                         }
+                        if (pri.vely < 0) {
+                            if (result.y1 > pri.y) {  //    
+                            //                                (-o-) pri.y
+                            //                                
+                            //                                (-o-) result.y1
+                            //                                
+                            // ← →                              ↑
+                            // ↑ ↓                            (-o-) fstx
+                        }else{
+                            //                                (-o-) result.y1
+                            //                                
+                            //                                (-o-) pri.y
+                            //                                
+                            //                                  ↑
+                            //                                (-o-) fstx
+                        }
+                    }else{
+                        if (result.y1 < pri.y)
+                           //                                 (-o-) fstx
+                           //                                   ↓ 
+                           // 
+                           //                                 (-o-) result.y1
+                           //
+                           //                                 (-o-) pri.y
+                    }else{
+                           //                                 (-o-) fstx
+                           //                                   ↓ 
+                           // 
+                           //                                 (-o-) pri.y
+                           //
+                           //                                 (-o-) result.y1
                     }
+                }
                 }
             }
             }
