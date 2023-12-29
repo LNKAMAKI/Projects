@@ -1122,18 +1122,20 @@ function collision() {
                     if (prir != 'undefined' && prir != '') {
                         //comparar as coordenadas da colisão passada com as da colisão atual
                         if (pri.velx > 0) {                    
-                            if (result.x1 < pri.x) {       // (-o-)=>  (-o-)    (-o-)
-                                //                            fstx   result.x1  pri.x
-                            }else{                         
-                               //                         // (-o-)=>  (-o-)    (-o-)
-                               //                            fstx     pri.x  result.x1
+                            if (result.x1 < pri.x) {       
+                            // (-o-)=>  (-o-)    (-o-)
+                            // fstx   result.x1  pri.x
+                            }else{                                                
+                            // (-o-)=>  (-o-)    (-o-)
+                            // fstx     pri.x  result.x1
                             }
                         }else{
-                            if (result.x1 > pri.x) {    // (-o-)    (-o-)   <=(-o-)
-                              //                           pri.x  result.x1   fstx
+                            if (result.x1 > pri.x) {    
+                            // (-o-)    (-o-)   <=(-o-)
+                            // pri.x  result.x1   fstx
                             }else{  
-                             //                           (-o-)    (-o-)   <=(-o-)
-                             //                         result.x1  pri.x     fstx
+                           // (-o-)    (-o-)   <=(-o-)
+                         //result.x1   pri.x     fstx
                             }
                         }
                         if (pri.vely < 0) {
