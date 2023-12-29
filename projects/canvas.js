@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 7; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -1084,6 +1084,10 @@ function collision() {
         }
         }
     
+        for (t in pokebolas) {
+            pokebolas[t].fstx = `${pokebolas[t].x}`
+            pokebolas[t].fsty = `${pokebolas[t].y}`
+        }
         for (p in posibs) {
             console.log(coll)
             console.log('adadwdwdwwdwd')
@@ -1103,7 +1107,7 @@ function collision() {
             prir = `${pokebolas[posibs[p].a].r}`
             segr = `${pokebolas[posibs[p].b].r}`
             console.log(pokebolas[posibs[p].a].r, pokebolas[posibs[p].b].r)
-            result = detectCollision(posibs[p].a,posibs[p].b)
+            result = detectCollision(posibs[p].a,posibs[p].b,pri.x,pri.y,seg.x,seg.y)
             console.log(result)
             
             if (result != undefined) {
@@ -1616,18 +1620,18 @@ window.addEventListener('keyup',function(event) {
  }
 }) 
 
-function detectCollision(a,b) {
+function detectCollision(a,b,setx,sety,setx2,sety2) {
     newx1 = 'n'
     newx2 = 'n'
     newy1 = 'n'
     newy2 = 'n'
-    cx = pokebolas[a].x
-    cy = pokebolas[a].y
+    cx = setx
+    cy = sety
     velx1 = pokebolas[a].velx
     vely1 = pokebolas[a].vely
     
-    cx2 = pokebolas[b].x
-    cy2 = pokebolas[b].y
+    cx2 = setx2
+    cy2 = sety2
     velx2 = pokebolas[b].velx
     vely2 = pokebolas[b].vely
     
@@ -1688,7 +1692,7 @@ function detectCollision(a,b) {
     if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('')
         console.log('round',coll)
-        console.log('no, you wont')
+        //console.log('no, you wont')
         console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
         //loop = false
         dx = cx - cx2
@@ -1822,10 +1826,12 @@ function detectCollision(a,b) {
         console.log('x2:',pokebolas[b].x)
         console.log('y2:',pokebolas[b].y)
         */
+       /*
         pokebolas[a].fstx = `${pokebolas[a].x}`
         pokebolas[a].fsty = `${pokebolas[a].y}`
         pokebolas[b].fstx = `${pokebolas[b].x}`
         pokebolas[b].fsty = `${pokebolas[b].y}`
+    */
 
         if (xvelx1 == 'x') {
             //pokebolas[a].x = cx + velx1*raiz2
