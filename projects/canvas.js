@@ -1890,7 +1890,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         pokebolas[a].fsty = `${pokebolas[a].y}`
         pokebolas[b].fstx = `${pokebolas[b].x}`
         pokebolas[b].fsty = `${pokebolas[b].y}`
-    */
+      */
 
         if (xvelx1 == 'x') {
             //pokebolas[a].x = cx + velx1*raiz2
