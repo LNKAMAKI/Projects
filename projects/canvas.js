@@ -1104,7 +1104,7 @@ function collision() {
             }
         }
         console.log(realposibs)
-        console.log('epaopaipa',sortob(realposibs,'ax')[0])
+        console.log('epaopaipa',sortob(realposibs,'ax'))
 
         /*
         for (p in posibs) {
@@ -1740,7 +1740,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         console.log('PAROU!')
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //window.alert('PAROU')
-       loop = false
+       //loop = false
     }
 
     velx1 = pokebolas[a].velx
@@ -1977,7 +1977,7 @@ function sortob(n, pam, pim) {
                     var itens = yposition.length - (Number(volume) + 1)
                     var leng = yposition.length
 
-                    for (c = 0; c < itens; c++) {
+                    for (ci = 0; ci < itens; ci++) {
                         maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
                         posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
                         leng--
