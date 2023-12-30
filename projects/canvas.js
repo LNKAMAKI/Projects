@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 4; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*6).toFixed(0)) + 1
@@ -1100,7 +1100,7 @@ function collision() {
             seg = pokebolas[posibs[p].b]
             result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty))
             if (result != undefined) {
-                realposibs.push({a: posibs[p].a, b: posibs[p].b})
+                realposibs.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x})
             }
         }
         console.log(realposibs)
@@ -1945,8 +1945,8 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         }
         //window.alert('COLISÃO')
         if (raiz2 > 0 && raiz2 <= 1) {
-            pokebolas[a].r = raiz2
-            pokebolas[b].r = raiz2
+            //pokebolas[a].r = raiz2
+            //pokebolas[b].r = raiz2
             return {x1: newx1,x2: newx2, y1: newy1, y2: newy2}
         }
     }
