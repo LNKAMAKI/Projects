@@ -1982,11 +1982,9 @@ function sortob(n, pam, pim) {
     }
 
     for (item in yposition) {
-        console.log(item, yposition[item])
         var volume = 0
         var dn = 0
         for (volume in yposition) {
-            console.log(yposition[item][pam],maiorparamenor[volume][pam])
             if (dn == 0) {
                 if (yposition[item][pam] < maiorparamenor[volume][pam] || yposition[item][pam] == maiorparamenor[volume][pam] && yposition[item][pim] < maiorparamenor[volume][pim]) {
                     var itens = yposition.length - (Number(volume) + 1)
@@ -2009,6 +2007,5 @@ function sortob(n, pam, pim) {
     }
 
     //return [maiorparamenor,posiçõesnumeros]
-    console.log(maiorparamenor)
     return maiorparamenor
 }
