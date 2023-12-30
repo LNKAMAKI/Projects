@@ -1102,9 +1102,9 @@ function collision() {
             result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty),true,true)
             if (result != undefined) {
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
-                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x})
+                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:result.x1,y1:result.y1,x2:result.x2,y2:result.y2})
                 }else{
-                    realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x})
+                    realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:result.x1,y1:result.y1,x2:result.x2,y2:result.y2})
                 }
 
                 if (pokebolas[posibs[p].a].y < pokebolas[posibs[p].b].y) {
@@ -1117,7 +1117,7 @@ function collision() {
         console.log(realposibsx)
         console.log('realposibsx',sortob(realposibsx,'ax','bx'))
         console.log('realposibsy',sortob(realposibsy,'ax','bx'))
-
+        
         /*
         for (p in posibs) {
             console.log(coll)
