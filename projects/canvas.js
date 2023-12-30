@@ -23,11 +23,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 5; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*4).toFixed(0)) + 1
-vely = Number((Math.random()*4).toFixed(0)) + 1
+velx = Number((Math.random()*2).toFixed(0)) + 1
+vely = Number((Math.random()*2).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -1750,9 +1750,9 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
     // código para antecipar a colisão, impedindo que a pokebola passe por cima da outra
     //if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('')
-        console.log('round',coll)
-        console.log('no, you wont')
-        console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
+        //console.log('round',coll)
+        //console.log('no, you wont')
+        //console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
         //loop = false
         dx = cx - cx2
         dy = cy,cy2
@@ -1922,12 +1922,12 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
             newy2 =  cy2 + vely2
         }
         
-        console.log('raiz1',raiz1,'raiz2',raiz2)
+        //console.log('raiz1',raiz1,'raiz2',raiz2)
         //res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
         //console.log('conferir:',res)
         
-        console.log('now',diffx**2 + diffy**2)
-        console.log('next',newdiffx**2 + newdiffy**2)
+        //console.log('now',diffx**2 + diffy**2)
+        //console.log('next',newdiffx**2 + newdiffy**2)
         for (o in pokebolas) {
             //console.log(pokebolas[o].r)
         }
