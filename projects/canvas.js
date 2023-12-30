@@ -1955,23 +1955,25 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
     //}
 }
 
-function sortob(n, pam) {
+function sortob(n, pam, pim) {
     var maiorparamenor = []
     var posiçõesnumeros = []
     var yposition = n
 
     for (n in yposition) {
-        maiorparamenor.push(-100000000000000000000000000000000000000000000000000000000000000000000000000000000)
+        maiorparamenor[n] = {}
         posiçõesnumeros.push(-1)
-
+        maiorparamenor[n][pam] = 100000000000000000000000000000000000000000000000000000000000000000000000000000000
     }
 
     for (item in yposition) {
+        console.log(item, yposition[item])
         var volume = 0
         var dn = 0
         for (volume in yposition) {
+            console.log(yposition[item][pam],maiorparamenor[volume][pam])
             if (dn == 0) {
-                if (yposition[item][pam] > maiorparamenor[volume]) {
+                if (yposition[item][pam] < maiorparamenor[volume][pam] || yposition[item][pam] == maiorparamenor[volume][pam] && yposition[item][pim] < maiorparamenor[volume][pim]) {
                     var itens = yposition.length - (Number(volume) + 1)
                     var leng = yposition.length
 
@@ -1980,12 +1982,18 @@ function sortob(n, pam) {
                         posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
                         leng--
                     }
-                    maiorparamenor[volume] = yposition[item][pam]
+                    maiorparamenor[volume] = yposition[item]
                     posiçõesnumeros[volume] = Number(item)
                     dn = 10
                 }
             }
         }
+        for (l in maiorparamenor) {
+         console.log(maiorparamenor[l])
+        }
     }
-    return [maiorparamenor, posiçõesnumeros]
+
+    //return [maiorparamenor,posiçõesnumeros]
+    console.log(maiorparamenor)
+    return maiorparamenor
 }
