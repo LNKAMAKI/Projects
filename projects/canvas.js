@@ -23,11 +23,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 5; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*2).toFixed(0)) + 1
-vely = Number((Math.random()*2).toFixed(0)) + 1
+velx = Number((Math.random()*6).toFixed(0)) + 1
+vely = Number((Math.random()*6).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width

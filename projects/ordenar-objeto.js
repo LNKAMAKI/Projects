@@ -29,8 +29,6 @@ function sortob(n, pam) {
                     maiorparamenor[volume] = yposition[item][pam]
                     posiçõesnumeros[volume] = Number(item)
                     dn = 10
-
-
                 }
             }
         }
