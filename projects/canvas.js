@@ -1100,7 +1100,11 @@ function collision() {
             seg = pokebolas[posibs[p].b]
             result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty))
             if (result != undefined) {
+                if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
                 realposibs.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x})
+                }else{
+                    realposibs.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x})
+                }
             }
         }
         console.log(realposibs)
@@ -1740,7 +1744,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         console.log('PAROU!')
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //window.alert('PAROU')
-       //loop = false
+       loop = false
     }
 
     velx1 = pokebolas[a].velx
