@@ -37,14 +37,14 @@ y = Math.random()*(150-width*3) + width
 if (v == 0) {
     x = 150
     y = 75
-   // velx = 0
-   // vely = 0
+    //velx = 0
+    //vely = 0
     color = 'pink'
 }else  if (v == 1){
     x = 280
     y = 135
-   // velx = 0
-   // vely = 0
+    //velx = 20
+    //vely = 20
     color = 'red'
 }else if(v == 2){
     x = 50
@@ -1748,7 +1748,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         }
 
     // código para antecipar a colisão, impedindo que a pokebola passe por cima da outra
-    if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
+    //if (Math.round(newdiffx**2 + newdiffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('')
         console.log('round',coll)
         console.log('no, you wont')
@@ -1876,6 +1876,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
             cex+= -2*vely1*vely2
         }
         delta = bex**2 - 4*aex*cex
+        if (delta >= 0) {
         raiz1 = (-bex + delta**(1/2))/(2*aex)
         raiz2 = (-bex - delta**(1/2))/(2*aex)
     
@@ -1921,19 +1922,21 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
             newy2 =  cy2 + vely2
         }
         
+        console.log('raiz1',raiz1,'raiz2',raiz2)
         //res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
         //console.log('conferir:',res)
         
-        pokebolas[a].r = raiz2
-        pokebolas[b].r = raiz2
         console.log('now',diffx**2 + diffy**2)
         console.log('next',newdiffx**2 + newdiffy**2)
         for (o in pokebolas) {
             //console.log(pokebolas[o].r)
         }
         //window.alert('COLISÃO')
-        return {x1: newx1,x2: newx2, y1: newy1, y2: newy2}
-        
-    
+        if (raiz2 > 0 && raiz2 <= 1) {
+            pokebolas[a].r = raiz2
+            pokebolas[b].r = raiz2
+            return {x1: newx1,x2: newx2, y1: newy1, y2: newy2}
+        }
     }
+    //}
 }
