@@ -1742,6 +1742,10 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
     
     if (Math.round(diffx**2 + diffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('PAROU!')
+        pokebolas[a].velx = 0
+        pokebolas[a].vely = 0
+        pokebolas[b].velx = 0
+        pokebolas[b].vely = 0
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //window.alert('PAROU')
        loop = false
