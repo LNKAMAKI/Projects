@@ -1094,6 +1094,16 @@ function collision() {
             pokebolas[t].fstx = `${pokebolas[t].x}`
             pokebolas[t].fsty = `${pokebolas[t].y}`
         }
+        realposibs = []
+        for (p in posibs) {
+            pri = pokebolas[posibs[p].a]
+            seg = pokebolas[posibs[p].b]
+            result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty))
+            if (result != undefined) {
+                realposibs.push({a: posibs[p].a, b: posibs[p].b})
+            }
+        }
+        console.log(realposibs)
         /*
         for (p in posibs) {
             console.log(coll)
