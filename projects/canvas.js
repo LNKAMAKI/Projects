@@ -2001,9 +2001,6 @@ function sortob(n, pam, pim) {
                 }
             }
         }
-        for (l in maiorparamenor) {
-         console.log(maiorparamenor[l])
-        }
     }
 
     //return [maiorparamenor,posiçõesnumeros]
