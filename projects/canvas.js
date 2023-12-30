@@ -1334,22 +1334,22 @@ function collision() {
             xvelx2 = ''
             xvely2 = ''
             if (rightball == b && velx2 > 0 || leftball == b && velx2 < 0) {
-                //console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
+                console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
             }else{
                 xvelx2 = 'x'
             }
             if (rightball == a && velx1 > 0 || leftball == a && velx1 < 0) {
-                //console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
+                console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
             }else{
                 xvelx1 = 'x'
             }
             if (upball == b && vely2 < 0 || downball == b && vely2 > 0) {
-                //console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
+                console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
             }else{
                 xvely2 = 'x'
             }
             if (upball == a && vely1 < 0 || downball == a && vely1 > 0) {
-                //console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
+                console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
             }else{
                 xvely1 = 'x'
             }
@@ -1812,22 +1812,22 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
         xvelx2 = ''
         xvely2 = ''
         if (rightball == b && velx2 > 0 || leftball == b && velx2 < 0) {
-            console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
+            //console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
         }else{
             xvelx2 = 'x'
         }
         if (rightball == a && velx1 > 0 || leftball == a && velx1 < 0) {
-            console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
+            //console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
         }else{
             xvelx1 = 'x'
         }
         if (upball == b && vely2 < 0 || downball == b && vely2 > 0) {
-            console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
+            //console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
         }else{
             xvely2 = 'x'
         }
         if (upball == a && vely1 < 0 || downball == a && vely1 > 0) {
-            console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
+            //console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
         }else{
             xvely1 = 'x'
         }
