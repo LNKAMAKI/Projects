@@ -1117,6 +1117,9 @@ function collision() {
         console.log(realposibsx)
         console.log('realposibsx',sortob(realposibsx,'ax','bx'))
         console.log('realposibsy',sortob(realposibsy,'ax','bx'))
+        for (posibin in realposibsx) {
+            
+        }
         
         /*
         for (p in posibs) {
