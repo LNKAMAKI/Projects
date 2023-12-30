@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 4; v++) {
+for (v = 0; v < 7; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*6).toFixed(0)) + 1
@@ -1104,6 +1104,8 @@ function collision() {
             }
         }
         console.log(realposibs)
+        console.log('epaopaipa',sortob(realposibs,'ax')[0])
+
         /*
         for (p in posibs) {
             console.log(coll)
