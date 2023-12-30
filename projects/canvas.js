@@ -1094,21 +1094,28 @@ function collision() {
             pokebolas[t].fstx = `${pokebolas[t].x}`
             pokebolas[t].fsty = `${pokebolas[t].y}`
         }
-        realposibs = []
+        realposibsx = []
+        realposibsy = []
         for (p in posibs) {
             pri = pokebolas[posibs[p].a]
             seg = pokebolas[posibs[p].b]
             result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty))
             if (result != undefined) {
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
-                realposibs.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x})
+                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x})
                 }else{
-                    realposibs.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x})
+                    realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x})
                 }
+
+                if (pokebolas[posibs[p].a].y < pokebolas[posibs[p].b].y) {
+                    realposibsy.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].y, bx: pokebolas[posibs[p].b].y})
+                    }else{
+                        realposibsy.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].y, bx: pokebolas[posibs[p].a].y})
+                    }
             }
         }
-        console.log(realposibs)
-        console.log('epaopaipa',sortob(realposibs,'ax'))
+        console.log(realposibsx)
+        console.log('epaopaipa',sortob(realposibsx,'ax'))
 
         /*
         for (p in posibs) {
@@ -1327,22 +1334,22 @@ function collision() {
             xvelx2 = ''
             xvely2 = ''
             if (rightball == b && velx2 > 0 || leftball == b && velx2 < 0) {
-                console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
+                //console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente`)
             }else{
                 xvelx2 = 'x'
             }
             if (rightball == a && velx1 > 0 || leftball == a && velx1 < 0) {
-                console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
+                //console.log(`a bola ${pokebolas[a].color} n irá bater de frente horizontalmente`)
             }else{
                 xvelx1 = 'x'
             }
             if (upball == b && vely2 < 0 || downball == b && vely2 > 0) {
-                console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
+                //console.log(`a bola ${pokebolas[b].color} n irá bater de frente verticalmente`)
             }else{
                 xvely2 = 'x'
             }
             if (upball == a && vely1 < 0 || downball == a && vely1 > 0) {
-                console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
+                //console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
             }else{
                 xvely1 = 'x'
             }
