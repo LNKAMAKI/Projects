@@ -1099,7 +1099,7 @@ function collision() {
         for (p in posibs) {
             pri = pokebolas[posibs[p].a]
             seg = pokebolas[posibs[p].b]
-            result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty))
+            result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty),true,true)
             if (result != undefined) {
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
                 realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x})
@@ -1115,7 +1115,8 @@ function collision() {
             }
         }
         console.log(realposibsx)
-        console.log('epaopaipa',sortob(realposibsx,'ax'))
+        console.log('realposibsx',sortob(realposibsx,'ax','bx'))
+        console.log('realposibsy',sortob(realposibsy,'ax','bx'))
 
         /*
         for (p in posibs) {
@@ -1704,7 +1705,7 @@ window.addEventListener('keyup',function(event) {
  }
 }) 
 
-function detectCollision(a,b,setx,sety,setx2,sety2) {
+function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     newx1 = 'n'
     newx2 = 'n'
     newy1 = 'n'
@@ -1749,19 +1750,25 @@ function detectCollision(a,b,setx,sety,setx2,sety2) {
     
     if (Math.round(diffx**2 + diffy**2) < (pokebolas[a].width + pokebolas[b].width)**2) {
         console.log('PAROU!')
-        pokebolas[a].velx = 0
-        pokebolas[a].vely = 0
-        pokebolas[b].velx = 0
-        pokebolas[b].vely = 0
+        //pokebolas[a].velx = 0
+        //pokebolas[a].vely = 0
+        //pokebolas[b].velx = 0
+        //pokebolas[b].vely = 0
         console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //window.alert('PAROU')
        loop = false
     }
 
+    if (cor1 == true) {
     velx1 = pokebolas[a].velx
     vely1 = pokebolas[a].vely
+    }
+    if (cor2 == true) {
     velx2 = pokebolas[b].velx
     vely2 = pokebolas[b].vely
+    }
+
+
     
     newcx = cx + velx1
     newcy = cy + vely1
