@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 4; v++) {
+for (v = 0; v < 3; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*4).toFixed(0)) + 1
@@ -1134,12 +1134,16 @@ function collision() {
         //console.log('realposibsy',sortob(realposibsy,'ax','bx'))
         
         for (posibin in realposibsx) {
-           if (pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx) {
+           // loop = false
+            console.log(pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx)
+           //if (pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx) {
               pokebolas[realposibsx[posibin].a].x = realposibsx[posibin].x1
               pokebolas[realposibsx[posibin].a].y = realposibsx[posibin].y1
               pokebolas[realposibsx[posibin].b].x = realposibsx[posibin].x2
               pokebolas[realposibsx[posibin].b].y = realposibsx[posibin].y2 
-            }
+              pokebolas[realposibsx[posibin].a].r = 88
+              pokebolas[realposibsx[posibin].b].r = 88
+           // }
         }
         
         /*
