@@ -625,18 +625,44 @@ examples: 'after the disaster aftermath, the authorities decided to take action'
 meaning: 'to be dependent/to have confidence based on experience', 
 examples: 'the system which we rely for water/someone you can rely on'},
 
+{word: 'sly',type: 'adjective', 
+meaning: 'having or showing a cunning and deceitful nature/seeming to know secrets', 
+examples: 'Sly fox(Zootopia)/ "You\'ll find out eventually," said with a sly smile.'},
+
+{word: 'bummer',type: 'noun', 
+meaning: 'a rude word for something that is very annoying or not convenient', 
+examples: 'I\'ve left my wallet at home." "What a bummer!'},
+
+{word: 'slick',type: 'adjective', 
+meaning: 'skillful, clever, wily, crafty, someone who is slick has an attractive manner and is good at persuading people, but may not be sincere or moral/(of an action or thing) done or operating in an impressively smooth, efficient, and apparently effortless way/something that is slick is clever or attractive to look at, but may not have much real meaning or any important ideas/having a smooth(sliperry) or glossy surface', 
+examples: 'He\'s slick and funny, but human underneath/a slick piece of software/It\'s that sort of slick sales talk that I mistrust*a slick magazine, brochure'},
 {word: '',type: '', 
 meaning: '', 
 examples: ''},
-
 {word: '',type: '', 
 meaning: '', 
 examples: ''},
-
 {word: '',type: '', 
 meaning: '', 
 examples: ''},
-
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
+{word: '',type: '', 
+meaning: '', 
+examples: ''},
 ]
 
 songs = sortWords(songs,'word')
