@@ -1122,7 +1122,10 @@ function collision() {
                 }
                     console.log('realposibsx',sortob(realposibsx,'ax','bx'))
             }else{
-                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:pokebolas[posibs[p].a].fstx + velx,y1:result.y1,x2:result.x2,y2:result.y2,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color})
+                if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
+                    realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:pokebolas[posibs[p].a].fstx + pokebolas[posibs[p].a].velx,y1:pokebolas[posibs[p].a].fsty + pokebolas[posibs[p].a].vely,x2:pokebolas[posibs[p].b].fstx + pokebolas[posibs[p].b].velx,y2:pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color})
+                    }else{
+                    }
             }
         }
         realposibsx = sortob(realposibsx,'ax','bx')

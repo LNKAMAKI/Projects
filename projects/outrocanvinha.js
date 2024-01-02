@@ -1,0 +1,1 @@
+pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely
