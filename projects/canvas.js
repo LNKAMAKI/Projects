@@ -1116,9 +1116,9 @@ function collision() {
             if (result != undefined) {
                 //window.alert('vão colidir')
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
-                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:result.x1,y1:result.y1,x2:result.x2,y2:result.y2})
+                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:result.x1,y1:result.y1,x2:result.x2,y2:result.y2,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color})
                 }else{
-                    realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:result.x2,y1:result.y2,x2:result.x1,y2:result.y1})
+                    realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:result.x2,y1:result.y2,x2:result.x1,y2:result.y1, acolor: pokebolas[posibs[p].b].color,bcolor: pokebolas[posibs[p].a].color})
                 }
 
                 if (pokebolas[posibs[p].a].y < pokebolas[posibs[p].b].y) {
@@ -1135,14 +1135,28 @@ function collision() {
         
         for (posibin in realposibsx) {
            // loop = false
-            console.log(pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx)
-           if (pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx) {
-              pokebolas[realposibsx[posibin].a].x = realposibsx[posibin].x1
-              pokebolas[realposibsx[posibin].a].y = realposibsx[posibin].y1
-              pokebolas[realposibsx[posibin].b].x = realposibsx[posibin].x2
-              pokebolas[realposibsx[posibin].b].y = realposibsx[posibin].y2 
-              pokebolas[realposibsx[posibin].a].r = 88
-              pokebolas[realposibsx[posibin].b].r = 88
+            ra = realposibsx[posibin].a
+            rb = realposibsx[posibin].b
+            console.log(pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx)
+           if (pokebolas[ra].x == pokebolas[ra].fstx &&  pokebolas[rb].x == pokebolas[rb].fstx) {
+               // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
+              pokebolas[ra].x = realposibsx[posibin].x1
+              pokebolas[ra].y = realposibsx[posibin].y1
+              pokebolas[rb].x = realposibsx[posibin].x2
+              pokebolas[rb].y = realposibsx[posibin].y2 
+              pokebolas[ra].r = 88
+              pokebolas[rb].r = 88
+            }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
+              // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
+                if (pokebolas[ra].velx > 0 && pokebolas[ra].x > realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
+                    // COLISÃO ATUAL VENCE => realposibsx[posibin].x1
+                    // POKEBOLA[0] CONTINUA COM AS MESMA COORDENADAS
+                    // POKEBOLA[1] PRECISA READAPTAR SUAS COORDENADAS DE ACORDO COM A POKEBOLA[0]
+                    pokebolas[ra].x = realposibsx[posibin].x1
+                    pokebolas[ra].y = realposibsx[posibin].y1
+                    pokebolas[rb].x = realposibsx[posibin].x2
+                    pokebolas[rb].y = realposibsx[posibin].y2
+                }
             }
         }
         
@@ -1796,8 +1810,6 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     velx2 = pokebolas[b].velx
     vely2 = pokebolas[b].vely
     }
-
-
     
     newcx = cx + velx1
     newcy = cy + vely1
