@@ -1113,7 +1113,7 @@ function collision() {
             pri = pokebolas[posibs[p].a]
             seg = pokebolas[posibs[p].b]
             result = detectCollision(posibs[p].a,posibs[p].b,Number(pri.fstx),Number(pri.fsty),Number(seg.fstx),Number(seg.fsty),true,true)
-            if (result != undefined) {
+            if (result != undefined) { //as pokebolas certamente se colidem
                 //window.alert('vão colidir')
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
                 realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:result.x1,y1:result.y1,x2:result.x2,y2:result.y2,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color})
@@ -1127,6 +1127,8 @@ function collision() {
                         realposibsy.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].y, bx: pokebolas[posibs[p].a].y})
                     }
                     console.log('realposibsx',sortob(realposibsx,'ax','bx'))
+            }else{
+
             }
         }
         realposibsx = sortob(realposibsx,'ax','bx')
