@@ -1130,6 +1130,9 @@ function collision() {
             }
         }
         realposibsx = sortob(realposibsx,'ax','bx')
+        if (realposibsx.length >= 1) {
+            console.log(coll)
+        }
         if (realposibsx.length > 1) {
             console.log('É DOOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIS')
             loop = false
