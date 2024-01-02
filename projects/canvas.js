@@ -55,11 +55,11 @@ if (v == 0) {
 }else if (v == 3){
     x = 270
     y = 20
-    color = 'limegreen'
+    color = 'lime'
 }else if(v == 4){
     x = 20
     y = 135
-    color = 'skyblue'
+    color = 'cyan'
 }else if (v == 5){
     x = 20
     y = 20
@@ -1135,10 +1135,12 @@ function collision() {
         
         for (posibin in realposibsx) {
            // loop = false
+           console.log(realposibsx[posibin])
             ra = realposibsx[posibin].a
             rb = realposibsx[posibin].b
             console.log(pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx)
            if (pokebolas[ra].x == pokebolas[ra].fstx &&  pokebolas[rb].x == pokebolas[rb].fstx) {
+            console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
                // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
               pokebolas[ra].x = realposibsx[posibin].x1
               pokebolas[ra].y = realposibsx[posibin].y1
@@ -1169,6 +1171,8 @@ function collision() {
                         pokebolas[1].y = re.y2
                     }
                 }
+            }else if () {
+                
             }
         }
         
@@ -2072,4 +2076,19 @@ function sortob(n, pam, pim) {
 
     //return [maiorparamenor,posiçõesnumeros]
     return maiorparamenor
+}
+
+function caldis(color1,color2) {
+    for (ju in pokebolas){
+        console.log(pokebolas[ju].color,color1,pokebolas[ju].color == color1)
+        if (pokebolas[ju].color == color1) {
+            poke1 = pokebolas[ju]
+        }else if(pokebolas[ju].color == color2) {
+            poke2 = pokebolas[ju]
+        }
+    }
+    difx = poke1.x - poke2.x
+    dify = poke1.y - poke2.y
+    answer = difx**2 + dify**2
+    return answer
 }
