@@ -1,1 +1,1 @@
-pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely
+realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:pokebolas[posibs[p].b].fstx + pokebolas[posibs[p].b].velx,y1:pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely,x2:pokebolas[posibs[p].a].fstx + pokebolas[posibs[p].a].velx,y2:pokebolas[posibs[p].a].fsty + pokebolas[posibs[p].a].vely,acolor: pokebolas[posibs[p].b].color,bcolor: pokebolas[posibs[p].a].color})
