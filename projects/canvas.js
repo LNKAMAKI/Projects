@@ -1277,9 +1277,6 @@ function collision() {
                 }
             }
         }
-
-        
-      
         
         /*
         for (p in posibs) {
