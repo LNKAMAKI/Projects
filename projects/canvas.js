@@ -1164,6 +1164,10 @@ function collision() {
                     re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
                     // as coordenadas da pokebola[0] se mantêm
                     // pokebolas[rb].fstx = pokebolas[rb].x
+                    if (re != undefined) {
+                        pokebolas[1].x = re.x2
+                        pokebolas[1].y = re.y2
+                    }
                 }
             }
         }
@@ -1821,9 +1825,9 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     velx2 = pokebolas[b].velx
     vely2 = pokebolas[b].vely
     }else{
-        velx2 = 0
-        vely2 = 0
-        }
+    velx2 = 0
+    vely2 = 0
+    }
     
     newcx = cx + velx1
     newcy = cy + vely1
