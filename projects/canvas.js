@@ -1208,6 +1208,8 @@ function collision() {
             }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
                 console.log(`${pokebolas[ra].color} com r e ${pokebolas[rb].color} sem r`)
               // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
+                console.log(`fazendo a colisão: x= ${realposibsx[posibin].x1}, y= ${realposibsx[posibin].y1}`)
+                console.log(`coordenadas atuais: x= ${pokebolas[ra].x}, y= ${pokebolas[ra].y}`)
                 if (pokebolas[ra].velx > 0 && pokebolas[ra].x > realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
                     // COLISÃO ATUAL VENCE => realposibsx[posibin].x1
                     console.log('colisão atual vence',pokebolas[ra].color,pokebolas[rb].color)
@@ -1237,9 +1239,11 @@ function collision() {
                     re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
                     // as coordenadas da pokebola[0] se mantêm
                     // pokebolas[rb].fstx = pokebolas[rb].x
+                    console.log(`a pokebola ${pokebolas[rb].color} deve ficar com as seguintes coordenadas: x= ${re.x2}, y= ${re.y2}`)
+                    console.log(re)
                     if (re != undefined) {
-                        pokebolas[1].x = re.x2
-                        pokebolas[1].y = re.y2
+                        pokebolas[rb].x = re.x2
+                        pokebolas[rb].y = re.y2
                     }
                 }
             }else if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx) {
