@@ -1232,7 +1232,6 @@ function collision() {
                         
                         pokebolas[realposibsx[ba].a].x = re.x1
                         pokebolas[realposibsx[ba].a].y = re.y1
-                        
                     }
                 }else{
                     // COLISÃO ANTERIOR VENCE => pokebola[0].x
