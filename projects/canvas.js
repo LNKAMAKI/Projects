@@ -1250,6 +1250,10 @@ function collision() {
                 // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
                 loop = false
+            }else if (pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx){
+                console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} com r`)
+                if (pokebolas[ra].velx > 0 && pokebolas[ra].x >= realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
+                }
             }
         }
 
