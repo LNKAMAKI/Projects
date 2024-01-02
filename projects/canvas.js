@@ -1116,16 +1116,16 @@ function collision() {
             if (result != undefined) { //as pokebolas certamente se colidem
                 //window.alert('vão colidir')
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
-                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:result.x1,y1:result.y1,x2:result.x2,y2:result.y2,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color})
+                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:result.x1,y1:result.y1,x2:result.x2,y2:result.y2,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color,colide: true})
                 }else{
-                    realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:result.x2,y1:result.y2,x2:result.x1,y2:result.y1, acolor: pokebolas[posibs[p].b].color,bcolor: pokebolas[posibs[p].a].color})
+                    realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:result.x2,y1:result.y2,x2:result.x1,y2:result.y1, acolor: pokebolas[posibs[p].b].color,bcolor: pokebolas[posibs[p].a].color,colide: true})
                 }
                     console.log('realposibsx',sortob(realposibsx,'ax','bx'))
             }else{
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
-                    realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:pokebolas[posibs[p].a].fstx + pokebolas[posibs[p].a].velx,y1:pokebolas[posibs[p].a].fsty + pokebolas[posibs[p].a].vely,x2:pokebolas[posibs[p].b].fstx + pokebolas[posibs[p].b].velx,y2:pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color})
+                    realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:pokebolas[posibs[p].a].fstx + pokebolas[posibs[p].a].velx,y1:pokebolas[posibs[p].a].fsty + pokebolas[posibs[p].a].vely,x2:pokebolas[posibs[p].b].fstx + pokebolas[posibs[p].b].velx,y2:pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color,colide: false})
                     }else{
-                        realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:pokebolas[posibs[p].b].fstx + pokebolas[posibs[p].b].velx,y1:pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely,x2:pokebolas[posibs[p].a].fstx + pokebolas[posibs[p].a].velx,y2:pokebolas[posibs[p].a].fsty + pokebolas[posibs[p].a].vely,acolor: pokebolas[posibs[p].b].color,bcolor: pokebolas[posibs[p].a].color})
+                        realposibsx.push({a: posibs[p].b, b: posibs[p].a, ax: pokebolas[posibs[p].b].x, bx: pokebolas[posibs[p].a].x,x1:pokebolas[posibs[p].b].fstx + pokebolas[posibs[p].b].velx,y1:pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely,x2:pokebolas[posibs[p].a].fstx + pokebolas[posibs[p].a].velx,y2:pokebolas[posibs[p].a].fsty + pokebolas[posibs[p].a].vely,acolor: pokebolas[posibs[p].b].color,bcolor: pokebolas[posibs[p].a].color,colide: false})
                     }
             }
         }
