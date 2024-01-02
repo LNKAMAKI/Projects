@@ -1145,15 +1145,35 @@ function collision() {
             rb = realposibsx[posibin].b
             console.log(pokebolas[ra].color + ' com ' + pokebolas[rb].color)
             console.log('velocidades:')
-            console.log(`${pokebolas[ra].color}.velx: ${pokebolas[ra].velx}`)
-            console.log(`${pokebolas[ra].color}.vely: ${pokebolas[ra].vely}`)
-            console.log(`${pokebolas[rb].color}.velx: ${pokebolas[rb].velx}`)
-            console.log(`${pokebolas[rb].color}.vely: ${pokebolas[rb].vely}`)
+            if (pokebolas[ra].velx > 0) {
+                velx1s = 'positivo'
+            }else{
+                velx1s = 'negativo'
+            }
+            if (pokebolas[ra].vely > 0) {
+                vely1s = 'positivo'
+            }else{
+                vely1s = 'negativo'
+            }
+            if (pokebolas[rb].velx > 0) {
+                velx2s = 'positivo'
+            }else{
+                velx2s = 'negativo'
+            }
+            if (pokebolas[rb].vely > 0) {
+                vely2s = 'positivo'
+            }else{
+                vely2s = 'negativo'
+            }
+            console.log(`${pokebolas[ra].color}.velx: ${velx1s}`)
+            console.log(`${pokebolas[ra].color}.vely: ${vely1s}`)
+            console.log(`${pokebolas[rb].color}.velx: ${velx2s}`)
+            console.log(`${pokebolas[rb].color}.vely: ${vely2s}`)
             console.log(`as coordenadas iniciais das bolas são:`)
-            console.log(pokebolas[ra].x)
-            console.log(pokebolas[ra].y)
-            console.log(pokebolas[rb].x)
-            console.log(pokebolas[rb].y)
+            console.log(pokebolas[ra].fstx)
+            console.log(pokebolas[ra].fsty)
+            console.log(pokebolas[rb].fstx)
+            console.log(pokebolas[rb].fsty)
             console.log(`as coordenadas da colisão normal entre as bolas são:`)
             console.log(realposibsx[posibin].x1)
             console.log(realposibsx[posibin].y1)
@@ -1188,21 +1208,21 @@ function collision() {
                     console.log('colisão atual vence',pokebolas[ra].color,pokebolas[rb].color)
                     // POKEBOLA[0] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
                     // POKEBOLA[1] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
-                    /*
+                    
                     pokebolas[ra].x = realposibsx[posibin].x1
                     pokebolas[ra].y = realposibsx[posibin].y1
                     pokebolas[rb].x = realposibsx[posibin].x2
                     pokebolas[rb].y = realposibsx[posibin].y2
-                    */
+                    
                     // REFAZER AS ANTERIORES
                     for (ba = 0; ba < posibin; ba++) {
                         console.log('precisa refazer essa colisão aqui:')
                         console.log(realposibsx[ba])
                         re = detectCollision(realposibsx[ba].a,realposibsx[ba].b,pokebolas[realposibsx[ba].a].fstx,pokebolas[realposibsx[ba].a].fsty,pokebolas[realposibsx[ba].b].x,pokebolas[realposibsx[ba].b].y,true,false)
-                        /*
+                        
                         pokebolas[realposibsx[ba].a].x = re.x1
                         pokebolas[realposibsx[ba].a].y = re.y1
-                        */
+                        
                     }
                 }else{
                     // COLISÃO ANTERIOR VENCE => pokebola[0].x
@@ -1213,10 +1233,10 @@ function collision() {
                     // as coordenadas da pokebola[0] se mantêm
                     // pokebolas[rb].fstx = pokebolas[rb].x
                     if (re != undefined) {
-                        /*
+                        
                         pokebolas[1].x = re.x2
                         pokebolas[1].y = re.y2
-                        */
+                        
                     }
                 }
             }else if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx) {
@@ -1225,6 +1245,9 @@ function collision() {
                 loop = false
             }
         }
+
+        
+      
         
         /*
         for (p in posibs) {
@@ -2141,4 +2164,7 @@ function caldis(color1,color2) {
     dify = poke1.y - poke2.y
     answer = difx**2 + dify**2
     return answer
+}
+function POKEBOL() {
+    
 }
