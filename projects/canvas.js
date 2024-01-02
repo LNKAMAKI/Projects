@@ -1128,7 +1128,9 @@ function collision() {
                     }
                     console.log('realposibsx',sortob(realposibsx,'ax','bx'))
             }else{
-
+                /*
+                realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:pokebolas[posibs[p].a].fstx + velx,y1:result.y1,x2:result.x2,y2:result.y2,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color})
+                */
             }
         }
         realposibsx = sortob(realposibsx,'ax','bx')
