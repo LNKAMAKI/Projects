@@ -1253,6 +1253,24 @@ function collision() {
             }else if (pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx){
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} com r`)
                 if (pokebolas[ra].velx > 0 && pokebolas[ra].x >= realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
+                    atual1 = true
+                }else{
+                    atual1 = false
+                }
+                if (pokebolas[rb].velx > 0 && pokebolas[rb].x >= realposibsx[posibin].x2 || pokebolas[rb].velx < 0 && pokebolas[rb].x < realposibsx[posibin].x2) {
+                    atual2 = true
+                }else{
+                    atual2 = false
+                }
+                if (atual1 == true && atual2 == true) {
+                    console.log('pode mudar para colisão atual')
+                    pokebolas[ra].x = realposibsx[posibin].x1
+                    pokebolas[ra].y = realposibsx[posibin].y1
+                    pokebolas[rb].x = realposibsx[posibin].x2
+                    pokebolas[rb].y = realposibsx[posibin].y2
+                    console.log('precisa refazer as colisões anteriores')
+                }else{
+                    console.log('contiuar como estava')
                 }
             }
         }
