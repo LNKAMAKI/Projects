@@ -23,7 +23,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 4; v++) {
+for (v = 0; v < 7; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*4).toFixed(0)) + 1
@@ -37,14 +37,14 @@ y = Math.random()*(150-width*3) + width
 if (v == 0) {
     x = 150
     y = 75
-    //velx = 0
-    //vely = 0
+    //velx = 1
+    //vely = 1
     color = 'pink'
 }else  if (v == 1){
     x = 280
     y = 135
-    //velx = 20
-    //vely = 20
+    //velx = 10
+    //vely = 10
     color = 'red'
 }else if(v == 2){
     x = 50
@@ -143,7 +143,7 @@ console.log(posibs)
             fp = document.getElementById('firstp')
             en = document.getElementById('energy')
             sp = document.getElementById('secp')
-            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2 + pokebolas[2].velx**2 + pokebolas[2].vely**2)
+            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2 )//+ pokebolas[2].velx**2 + pokebolas[2].vely**2)
             if (number == 0) {
             fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
             }else{
@@ -1136,14 +1136,14 @@ function collision() {
         for (posibin in realposibsx) {
            // loop = false
             console.log(pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx)
-           //if (pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx) {
+           if (pokebolas[realposibsx[posibin].a].x == pokebolas[realposibsx[posibin].a].fstx &&  pokebolas[realposibsx[posibin].b].x == pokebolas[realposibsx[posibin].b].fstx) {
               pokebolas[realposibsx[posibin].a].x = realposibsx[posibin].x1
               pokebolas[realposibsx[posibin].a].y = realposibsx[posibin].y1
               pokebolas[realposibsx[posibin].b].x = realposibsx[posibin].x2
               pokebolas[realposibsx[posibin].b].y = realposibsx[posibin].y2 
               pokebolas[realposibsx[posibin].a].r = 88
               pokebolas[realposibsx[posibin].b].r = 88
-           // }
+            }
         }
         
         /*
