@@ -26,8 +26,8 @@ function animate() {
 for (v = 0; v < 7; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*4).toFixed(0)) + 1
-vely = Number((Math.random()*4).toFixed(0)) + 1
+velx = Number((Math.random()*10).toFixed(0)) + 1
+vely = Number((Math.random()*10).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -1130,6 +1130,9 @@ function collision() {
             }
         }
         realposibsx = sortob(realposibsx,'ax','bx')
+        if (realposibsx.length > 1) {
+            console.log('É DOOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIS')
+        }
         //console.log(realposibsx)
        
         //console.log('realposibsy',sortob(realposibsy,'ax','bx'))
@@ -1710,7 +1713,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
     c.fillStyle = 'black'
     
-    /*
+    
     if (velx < 0) {
     c.fillText('←', x - width - 13,y + 6)
     }else{
@@ -1721,7 +1724,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     }else{
         c.fillText('↓', x - 5,y + width + 3)
     }
-    */
+    
     
 }
 
