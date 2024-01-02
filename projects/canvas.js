@@ -1199,6 +1199,7 @@ function collision() {
             if (pokebolas[rb].vely > 0 && pokebolas[rb].fsty < realposibsx[posibin].y2 || pokebolas[rb].vely < 0 && pokebolas[rb].fsty > realposibsx[posibin].y2) {
             console.log('tá certo')
             }
+            if (realposibsx[posibin] == true) {
            if (pokebolas[ra].x == pokebolas[ra].fstx &&  pokebolas[rb].x == pokebolas[rb].fstx) {
             console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
                // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
@@ -1275,6 +1276,9 @@ function collision() {
                     console.log('contiuar como estava')
                 }
             }
+        }else{
+            console.log(`${pokebolas[ra].color} e ${pokebolas[rb].color} n se colidem`)
+        }
         }
         
         /*
