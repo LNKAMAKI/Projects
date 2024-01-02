@@ -37,20 +37,20 @@ y = Math.random()*(150-width*3) + width
 if (v == 0) {
     x = 150
     y = 75
-    velx = 10
-    vely = 10
+    velx = 5
+    vely = 5
     color = 'pink'
 }else  if (v == 1){
     x = 120
     y = 139
-    velx = 10
-    vely = 10
+    velx = 8
+    vely = 8
     color = 'red'
 }else if(v == 2){
     x = 120
     y = 14
-    velx = 10
-    vely = 10
+    velx = 5
+    vely = 5
     color = 'yellow'
 }else if (v == 3){
     x = 270
