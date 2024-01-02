@@ -42,7 +42,7 @@ if (v == 0) {
     color = 'pink'
 }else  if (v == 1){
     x = 120
-    y = 139
+    y = 120
     velx = 8
     vely = 8
     color = 'red'
@@ -1133,9 +1133,10 @@ function collision() {
         if (realposibsx.length >= 1) {
             console.log(coll)
         }
+        
         if (realposibsx.length > 1) {
             console.log('É DOOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIS')
-            loop = false
+            //loop = false
         }
         //console.log(realposibsx)
        
@@ -1199,7 +1200,7 @@ function collision() {
             if (pokebolas[rb].vely > 0 && pokebolas[rb].fsty < realposibsx[posibin].y2 || pokebolas[rb].vely < 0 && pokebolas[rb].fsty > realposibsx[posibin].y2) {
             console.log('tá certo')
             }
-            if (realposibsx[posibin] == true) {
+            if (realposibsx[posibin].colide == true) {
            if (pokebolas[ra].x == pokebolas[ra].fstx &&  pokebolas[rb].x == pokebolas[rb].fstx) {
             console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
                // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
