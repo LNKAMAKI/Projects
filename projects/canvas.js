@@ -1150,12 +1150,20 @@ function collision() {
               // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 if (pokebolas[ra].velx > 0 && pokebolas[ra].x > realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
                     // COLISÃO ATUAL VENCE => realposibsx[posibin].x1
-                    // POKEBOLA[0] CONTINUA COM AS MESMA COORDENADAS
-                    // POKEBOLA[1] PRECISA READAPTAR SUAS COORDENADAS DE ACORDO COM A POKEBOLA[0]
+                    // POKEBOLA[0] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
+                    // POKEBOLA[1] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
                     pokebolas[ra].x = realposibsx[posibin].x1
                     pokebolas[ra].y = realposibsx[posibin].y1
                     pokebolas[rb].x = realposibsx[posibin].x2
                     pokebolas[rb].y = realposibsx[posibin].y2
+                    // REFAZER AS ANTERIORES
+                }else{
+                    // COLISÃO ANTERIOR VENCE => pokebola[0].x
+                    // POKEBOLA[0] CONTINUA COM AS MESMA COORDENADAS
+                    // POKEBOLA[1] PRECISA READAPTAR SUAS COORDENADAS DE ACORDO COM A POKEBOLA[0]
+                    re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
+                    // as coordenadas da pokebola[0] se mantêm
+                    // pokebolas[rb].fstx = pokebolas[rb].x
                 }
             }
         }
@@ -1805,11 +1813,17 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     if (cor1 == true) {
     velx1 = pokebolas[a].velx
     vely1 = pokebolas[a].vely
+    }else{
+    velx1 = 0
+    vely1 = 0
     }
     if (cor2 == true) {
     velx2 = pokebolas[b].velx
     vely2 = pokebolas[b].vely
-    }
+    }else{
+        velx2 = 0
+        vely2 = 0
+        }
     
     newcx = cx + velx1
     newcy = cy + vely1
