@@ -1091,8 +1091,8 @@ function collision() {
         }
     
         for (t in pokebolas) {
-            pokebolas[t].fstx = `${pokebolas[t].x}`
-            pokebolas[t].fsty = `${pokebolas[t].y}`
+            pokebolas[t].fstx = Number(`${pokebolas[t].x}`)
+            pokebolas[t].fsty = Number(`${pokebolas[t].y}`)
         }
         realposibsx = []
         realposibsy = []
@@ -1179,6 +1179,11 @@ function collision() {
             console.log(realposibsx[posibin].y1)
             console.log(realposibsx[posibin].x2)
             console.log(realposibsx[posibin].y2)
+            console.log('se as pokebolas não colidissem suas posições seriam:')
+            console.log(Number(pokebolas[ra].fstx) + Number(pokebolas[ra].velx))
+            console.log(Number(pokebolas[ra].fsty) + Number(pokebolas[ra].vely))
+            console.log(Number(pokebolas[rb].fstx) + Number(pokebolas[rb].velx))
+            console.log(Number(pokebolas[rb].fsty) + Number(pokebolas[rb].vely))
             if (pokebolas[ra].velx > 0 && pokebolas[ra].fstx < realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].fstx > realposibsx[posibin].x1) {
                 console.log('tá certo')
             }
@@ -1233,10 +1238,8 @@ function collision() {
                     // as coordenadas da pokebola[0] se mantêm
                     // pokebolas[rb].fstx = pokebolas[rb].x
                     if (re != undefined) {
-                        
                         pokebolas[1].x = re.x2
                         pokebolas[1].y = re.y2
-                        
                     }
                 }
             }else if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx) {
@@ -1832,8 +1835,8 @@ window.addEventListener('keyup',function(event) {
  if (event.key == 'p' || event.ley == 'P') {
     loop = false
  }
- if (event.key == 'b') {
-    loop = true
+ if (event.key == 'c') {
+   POKEBOL()
  }
 }) 
 
@@ -2166,5 +2169,8 @@ function caldis(color1,color2) {
     return answer
 }
 function POKEBOL() {
-    
+    c.clearRect(0,0,300,150)
+    for (num in pokebolas) {
+    createPokebola(pokebolas[num].x,pokebolas[num].y,pokebolas[num].width,pokebolas[num].color,pokebolas[num].velx,pokebolas[num].vely,false,0,0)
+    }
 }
