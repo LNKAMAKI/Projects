@@ -43,8 +43,8 @@ if (v == 0) {
 }else  if (v == 1){
     x = 120
     y = 139
-    velx = 8
-    vely = 8
+    velx = 10
+    vely = 10
     color = 'red'
 }else if(v == 2){
     x = 120
@@ -2001,6 +2001,22 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         if (upball == a && vely1 < 0 || downball == a && vely1 > 0) {
             //console.log(`a bola ${pokebolas[a].color} n irá bater de frente verticalmente`)
         }else{
+            xvely1 = 'x'
+        }
+
+        if (xvelx2 == '' && xvely2 == '') {
+            xvelx2 = ''
+            xvely2 = ''
+        }else{
+            xvelx2 = 'x'
+            xvely2 = 'x'
+        }
+
+        if (xvelx1 == '' && xvely1 == '') {
+            xvelx1 = ''
+            xvely1 = ''
+        }else{
+            xvelx1 = 'x'
             xvely1 = 'x'
         }
         
