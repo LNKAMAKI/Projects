@@ -37,20 +37,20 @@ y = Math.random()*(150-width*3) + width
 if (v == 0) {
     x = 150
     y = 75
-    velx = 8
+    velx = 6
     vely = 8
     color = 'pink'
 }else  if (v == 1){
     x = 120
     y = 120
-    velx = 8
-    vely = 8
+    velx = 9
+    vely = 9
     color = 'red'
 }else if(v == 2){
     x = 120
     y = 14
-    velx = 5
-    vely = 5
+    velx = 7
+    vely = 7
     color = 'yellow'
 }else if (v == 3){
     x = 270
@@ -1218,8 +1218,10 @@ function collision() {
                 if (realposibsx[ba].colide == true) {
                 re = detectCollision(realposibsx[ba].a,realposibsx[ba].b,pokebolas[realposibsx[ba].a].fstx,pokebolas[realposibsx[ba].a].fsty,pokebolas[realposibsx[ba].b].x,pokebolas[realposibsx[ba].b].y,true,false)
                 
+                if (re != undefined) {
                 pokebolas[realposibsx[ba].a].x = re.x1
                 pokebolas[realposibsx[ba].a].y = re.y1
+                }
                 }else{
                     console.log('epa, n se colidem, porém pode ter coisa aí')
                     re = detectCollision(realposibsx[ba].a,realposibsx[ba].b,pokebolas[realposibsx[ba].a].fstx,pokebolas[realposibsx[ba].a].fsty,pokebolas[realposibsx[ba].b].x,pokebolas[realposibsx[ba].b].y,true,false)
