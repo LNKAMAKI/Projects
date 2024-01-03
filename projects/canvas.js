@@ -37,20 +37,20 @@ y = Math.random()*(150-width*3) + width
 if (v == 0) {
     x = 150
     y = 75
-    velx = 6
-    vely = 8
+    velx = 10
+    vely = 10
     color = 'pink'
 }else  if (v == 1){
     x = 120
     y = 120
-    velx = 9
-    vely = 9
+    velx = 10
+    vely = 8
     color = 'red'
 }else if(v == 2){
     x = 120
     y = 14
-    velx = 7
-    vely = 7
+    velx = 10
+    vely = 8
     color = 'yellow'
 }else if (v == 3){
     x = 270
@@ -1203,6 +1203,7 @@ function collision() {
             }
            if (realposibsx[posibin].colide == true) {
            if (pokebolas[ra].x == pokebolas[ra].fstx &&  pokebolas[rb].x == pokebolas[rb].fstx) {
+            loop = false
             console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
                // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
               pokebolas[ra].x = realposibsx[posibin].x1
@@ -1237,6 +1238,7 @@ function collision() {
                 }
             } 
             }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
+                loop = false
                 pokebolas[ra].r = 88
                 pokebolas[rb].r = 88
                 console.log(`${pokebolas[ra].color} com r e ${pokebolas[rb].color} sem r`)
@@ -1289,6 +1291,7 @@ function collision() {
                 loop = false
                 // FILL THIS OUT LATER ON
             }else if (pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx){
+                loop = false
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} com r`)
                 if (pokebolas[ra].velx > 0 && pokebolas[ra].x >= realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
                     atual1 = true
@@ -1314,6 +1317,17 @@ function collision() {
             }
         }else{
             console.log(`${pokebolas[ra].color} e ${pokebolas[rb].color} n se colidem`)
+            console.log('no entanto, deve-se checar a pokebola com menor x, nesse caso,',pokebolas[ra].color)
+            re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
+            console.log(re)
+            if (re != undefined) {
+                if (pokebolas[rb].velx > 0 && realposibsx[posibin].x2 > re.x2 || pokebolas[rb].velx < 0 && realposibsx[posibin].x2 < re.x2) {
+                    pokebolas[rb].x = re.x2
+                    pokebolas[rb].y = re.y2
+                    loop = false
+                }
+                // WORK MORE ON THIS
+            }
         }
         }
         
@@ -1458,7 +1472,7 @@ function collision() {
             console.log('PAROU!')
             console.log(`a distância entre as pokebolas é de ${diffx**2 + diffy**2}`)
             window.alert('PAROU')
-            loop = false
+            //loop = false
         }
 
         velx1 = pokebolas[a].velx
