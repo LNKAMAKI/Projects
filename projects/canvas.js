@@ -1122,6 +1122,7 @@ function collision() {
                 }
                     console.log('realposibsx',sortob(realposibsx,'ax','bx'))
             }else{
+                
                 if (pokebolas[posibs[p].a].x < pokebolas[posibs[p].b].x) {
                     realposibsx.push({a: posibs[p].a, b: posibs[p].b, ax: pokebolas[posibs[p].a].x, bx: pokebolas[posibs[p].b].x,x1:pokebolas[posibs[p].a].fstx + pokebolas[posibs[p].a].velx,y1:pokebolas[posibs[p].a].fsty + pokebolas[posibs[p].a].vely,x2:pokebolas[posibs[p].b].fstx + pokebolas[posibs[p].b].velx,y2:pokebolas[posibs[p].b].fsty + pokebolas[posibs[p].b].vely,acolor: pokebolas[posibs[p].a].color,bcolor: pokebolas[posibs[p].b].color,colide: false})
                     }else{
@@ -1200,7 +1201,7 @@ function collision() {
             if (pokebolas[rb].vely > 0 && pokebolas[rb].fsty < realposibsx[posibin].y2 || pokebolas[rb].vely < 0 && pokebolas[rb].fsty > realposibsx[posibin].y2) {
             console.log('tá certo')
             }
-            if (realposibsx[posibin].colide == true) {
+           if (realposibsx[posibin].colide == true) {
            if (pokebolas[ra].x == pokebolas[ra].fstx &&  pokebolas[rb].x == pokebolas[rb].fstx) {
             console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
                // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
@@ -1211,6 +1212,8 @@ function collision() {
               pokebolas[ra].r = 88
               pokebolas[rb].r = 88
             }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
+                pokebolas[ra].r = 88
+              pokebolas[rb].r = 88
                 console.log(`${pokebolas[ra].color} com r e ${pokebolas[rb].color} sem r`)
               // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 console.log(`fazendo a colisão: x= ${realposibsx[posibin].x1}, y= ${realposibsx[posibin].y1}`)
