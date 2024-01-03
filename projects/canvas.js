@@ -1951,6 +1951,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         //pokebolas[b].velx = 0
         //pokebolas[b].vely = 0
         //console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
+        console.log('POKEBOLAAAAS',pokebolas[a].color,pokebolas[b].color, diffx**2 + diffy**2)
         window.alert('PAROU')
        loop = false
     }
