@@ -1232,6 +1232,7 @@ function collision() {
                             pokebolas[realposibsx[ba].a].y = re.y1
                             loop = false
                         }
+                        // WORK MORE ON THIS
                     }
                 }
             } 
@@ -1265,6 +1266,7 @@ function collision() {
                         pokebolas[realposibsx[ba].a].y = re.y1
                         }
                         }
+                        // DON'T FORGET TO IMPLEMENT THE CODE HERE TOO
                     }
                 }else{
                     // COLISÃO ANTERIOR VENCE => pokebola[0].x
@@ -1285,6 +1287,7 @@ function collision() {
                 // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
                 loop = false
+                // FILL THIS OUT LATER ON
             }else if (pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx){
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} com r`)
                 if (pokebolas[ra].velx > 0 && pokebolas[ra].x >= realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
@@ -1304,6 +1307,7 @@ function collision() {
                     pokebolas[rb].x = realposibsx[posibin].x2
                     pokebolas[rb].y = realposibsx[posibin].y2
                     console.log('precisa refazer as colisões anteriores')
+                    // NOT FINISHED
                 }else{
                     console.log('contiuar como estava')
                 }
