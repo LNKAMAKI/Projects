@@ -43,14 +43,14 @@ if (v == 0) {
 }else  if (v == 1){
     x = 120
     y = 120
-    velx = 10
-    vely = 8
+    velx = 9
+    vely = 5
     color = 'red'
 }else if(v == 2){
     x = 120
     y = 14
-    velx = 10
-    vely = 8
+    velx = 5
+    vely = 10
     color = 'yellow'
 }else if (v == 3){
     x = 270
