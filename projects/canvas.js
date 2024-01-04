@@ -26,8 +26,8 @@ function animate() {
 for (v = 0; v < 7; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*12).toFixed(0)) + 1
-vely = Number((Math.random()*12).toFixed(0)) + 1
+velx = Number((Math.random()*4).toFixed(0)) + 1
+vely = Number((Math.random()*4).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -36,7 +36,8 @@ y = Math.random()*(150-width*3) + width
 
 if (v == 0) {
     x = 120
-    y = 80
+    y = 65
+    vely = -vely
     //velx = 10
     //vely = 10
     color = 'pink'
@@ -47,13 +48,14 @@ if (v == 0) {
     //vely = 5
     color = 'red'
 }else if(v == 2){
-    x = 120
+    x = 110
     y = 35
+    vely = -vely
     //velx = 5
     //vely = 10
     color = 'yellow'
 }else if (v == 3){
-    x = 200
+    x = 180
     y = 25
     velx = -velx
     color = 'lime'
@@ -63,11 +65,13 @@ if (v == 0) {
     color = 'cyan'
 }else if (v == 5){
     x = 80
-    y = 50
+    y = 30
+    vely = -vely
     color = 'orange'
 }else{
     x = 150
-    y = 20
+    y = 30
+    velx = -velx
     color = 'blueviolet'
 }
 
@@ -1987,7 +1991,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         //pokebolas[b].vely = 0
         //console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         console.log('POKEBOLAAAAS',pokebolas[a].color,pokebolas[b].color, diffx**2 + diffy**2)
-        window.alert('PAROU')
+        //window.alert('PAROU')
        loop = false
     }
 
