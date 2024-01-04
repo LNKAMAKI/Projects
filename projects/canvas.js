@@ -8,7 +8,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 - velx/vely positivo/negativo
 - comparação das coordenadas iniciais com as coordenadas após a colisão com cada pokebola
 */
-// THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other)
+// THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other => try the new code for b com r e a sem r)
 let pokebolas = []
 loop = true
 function load() {
