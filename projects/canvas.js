@@ -23,11 +23,11 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 3; v++) {
+for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*10).toFixed(0)) + 1
-vely = Number((Math.random()*10).toFixed(0)) + 1
+velx = Number((Math.random()*12).toFixed(0)) + 1
+vely = Number((Math.random()*12).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -35,34 +35,35 @@ y = Math.random()*(150-width*3) + width
 
 
 if (v == 0) {
-    x = 150
-    y = 75
-    velx = 10
-    vely = 10
+    x = 120
+    y = 80
+    //velx = 10
+    //vely = 10
     color = 'pink'
 }else  if (v == 1){
     x = 120
     y = 120
-    velx = 9
-    vely = 5
+    //velx = 9
+    //vely = 5
     color = 'red'
 }else if(v == 2){
     x = 120
-    y = 14
-    velx = 5
-    vely = 10
+    y = 35
+    //velx = 5
+    //vely = 10
     color = 'yellow'
 }else if (v == 3){
-    x = 270
-    y = 20
+    x = 200
+    y = 25
+    velx = -velx
     color = 'lime'
 }else if(v == 4){
-    x = 20
-    y = 135
+    x = 80
+    y = 90
     color = 'cyan'
 }else if (v == 5){
-    x = 20
-    y = 20
+    x = 80
+    y = 50
     color = 'orange'
 }else{
     x = 140
