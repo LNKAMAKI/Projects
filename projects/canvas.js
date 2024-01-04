@@ -1371,7 +1371,6 @@ function collision() {
                                     loop = false
                                 }
                             }
-                                // WORK MORE ON THIS
                             }
                         }
                     } 
