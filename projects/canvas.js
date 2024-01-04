@@ -1279,9 +1279,9 @@ function collision() {
                     re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
                     // as coordenadas da pokebola[0] se mantêm
                     // pokebolas[rb].fstx = pokebolas[rb].x
-                    console.log(`a pokebola ${pokebolas[rb].color} deve ficar com as seguintes coordenadas: x= ${re.x2}, y= ${re.y2}`)
                     console.log(re)
                     if (re != undefined) {
+                        console.log(`a pokebola ${pokebolas[rb].color} deve ficar com as seguintes coordenadas: x= ${re.x2}, y= ${re.y2}`)
                         pokebolas[rb].x = re.x2
                         pokebolas[rb].y = re.y2
                     }
@@ -1322,11 +1322,19 @@ function collision() {
             re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
             console.log(re)
             if (re != undefined) {
+                if (pokebolas[rb].x == pokebolas[rb].fstx) {
                 if (pokebolas[rb].velx > 0 && realposibsx[posibin].x2 > re.x2 || pokebolas[rb].velx < 0 && realposibsx[posibin].x2 < re.x2) {
                     pokebolas[rb].x = re.x2
                     pokebolas[rb].y = re.y2
                     loop = false
                 }
+            }else{
+                if (pokebolas[rb].velx > 0 && pokebolas[rb].x > re.x2 || pokebolas[rb].velx < 0 && pokebolas[rb].x < re.x2) {
+                    pokebolas[rb].x = re.x2
+                    pokebolas[rb].y = re.y2
+                    loop = false
+                }
+            }
                 // WORK MORE ON THIS
             }
         }
