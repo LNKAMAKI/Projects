@@ -38,7 +38,11 @@ y = Math.random()*(150-width*3) + width
 if (v == 0) {
     x = 120
     y = 65
+    //x = 126
+    //y = 63
     vely = -vely
+    velx = 3
+    vely = -1
     //velx = 10
     //vely = 10
     color = 'pink'
@@ -51,7 +55,11 @@ if (v == 0) {
 }else if(v == 2){
     x = 110
     y = 35
+    //x = 118
+    //y = 33
     vely = -vely
+    velx = 4
+    vely = -1
     //velx = 5
     //vely = 10
     color = 'yellow'
@@ -72,7 +80,11 @@ if (v == 0) {
 }else{
     x = 150
     y = 30
+    //x = 146
+    //y = 40
     velx = -velx
+    velx = -2
+    vely = 5
     color = 'blueviolet'
 }
 
@@ -1346,8 +1358,8 @@ function collision() {
                         re = detectCollision(realposibsx[ba].a,realposibsx[ba].b,pokebolas[realposibsx[ba].a].fstx,pokebolas[realposibsx[ba].a].fsty,pokebolas[realposibsx[ba].b].x,pokebolas[realposibsx[ba].b].y,true,false)
                         
                         if (re != undefined) {
-                        pokebolas[realposibsx[ba].a].x = re.x2
-                        pokebolas[realposibsx[ba].a].y = re.y2
+                        pokebolas[realposibsx[ba].a].x = re.x1
+                        pokebolas[realposibsx[ba].a].y = re.y1
                         }
                         }else{
                             console.log('epa, n se colidem, porém pode ter coisa aí')
@@ -1355,19 +1367,18 @@ function collision() {
                             console.log(re)
                             if (re != undefined) {
                                 if (pokebolas[realposibsx[ba].a].x == pokebolas[realposibsx[ba].a].fstx) {
-                                if (pokebolas[realposibsx[ba].a].velx > 0 && realposibsx[ba].x2 > re.x2 || pokebolas[realposibsx[ba].a].velx < 0 && realposibsx[ba].x2 < re.x2) {
-                                    pokebolas[realposibsx[ba].a].x = re.x2
-                                    pokebolas[realposibsx[ba].a].y = re.y2
+                                if (pokebolas[realposibsx[ba].a].velx > 0 && realposibsx[ba].x1 > re.x1 || pokebolas[realposibsx[ba].a].velx < 0 && realposibsx[ba].x1 < re.x1) {
+                                    pokebolas[realposibsx[ba].a].x = re.x1
+                                    pokebolas[realposibsx[ba].a].y = re.y1
                                     loop = false
                                 }
                             }else{
-                                if (pokebolas[realposibsx[ba].a].velx > 0 && pokebolas[realposibsx[ba].a].x > re.x2 || pokebolas[realposibsx[ba].a].velx < 0 && pokebolas[realposibsx[ba].a].x < re.x2) {
-                                    pokebolas[realposibsx[ba].a].x = re.x2
-                                    pokebolas[realposibsx[ba].a].y = re.y2
+                                if (pokebolas[realposibsx[ba].a].velx > 0 && pokebolas[realposibsx[ba].a].x > re.x1 || pokebolas[realposibsx[ba].a].velx < 0 && pokebolas[realposibsx[ba].a].x < re.x1) {
+                                    pokebolas[realposibsx[ba].a].x = re.x1
+                                    pokebolas[realposibsx[ba].a].y = re.y1
                                     loop = false
                                 }
                             }
-                                // WORK MORE ON THIS
                             }
                         }
                     } 
@@ -2403,5 +2414,38 @@ function POKEBOL() {
     c.clearRect(0,0,300,150)
     for (num in pokebolas) {
     createPokebola(pokebolas[num].x,pokebolas[num].y,pokebolas[num].width,pokebolas[num].color,pokebolas[num].velx,pokebolas[num].vely,false,0,0)
+    }
+}
+function redoCollisions() {
+    for (ba = 0; ba < posibin; ba++) {
+        console.log('precisa refazer essa colisão aqui:')
+        console.log(realposibsx[ba])
+        if (realposibsx[ba].colide == true) {
+        re = detectCollision(realposibsx[ba].a,realposibsx[ba].b,pokebolas[realposibsx[ba].a].fstx,pokebolas[realposibsx[ba].a].fsty,pokebolas[realposibsx[ba].b].x,pokebolas[realposibsx[ba].b].y,true,false)
+        
+        if (re != undefined) {
+        pokebolas[realposibsx[ba].a].x = re.x1
+        pokebolas[realposibsx[ba].a].y = re.y1
+        }
+        }else{
+            console.log('epa, n se colidem, porém pode ter coisa aí')
+            re = detectCollision(realposibsx[ba].a,realposibsx[ba].b,pokebolas[realposibsx[ba].a].fstx,pokebolas[realposibsx[ba].a].fsty,pokebolas[realposibsx[ba].b].x,pokebolas[realposibsx[ba].b].y,true,false)
+            console.log(re)
+            if (re != undefined) {
+                if (pokebolas[realposibsx[ba].a].x == pokebolas[realposibsx[ba].a].fstx) {
+                if (pokebolas[realposibsx[ba].a].velx > 0 && realposibsx[ba].x1 > re.x1 || pokebolas[realposibsx[ba].a].velx < 0 && realposibsx[ba].x1 < re.x1) {
+                    pokebolas[realposibsx[ba].a].x = re.x1
+                    pokebolas[realposibsx[ba].a].y = re.y1
+                    loop = false
+                }
+            }else{
+                if (pokebolas[realposibsx[ba].a].velx > 0 && pokebolas[realposibsx[ba].a].x > re.x1 || pokebolas[realposibsx[ba].a].velx < 0 && pokebolas[realposibsx[ba].a].x < re.x1) {
+                    pokebolas[realposibsx[ba].a].x = re.x1
+                    pokebolas[realposibsx[ba].a].y = re.y1
+                    loop = false
+                }
+            }
+            }
+        }
     }
 }
