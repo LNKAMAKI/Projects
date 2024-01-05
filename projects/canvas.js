@@ -27,8 +27,8 @@ function animate() {
 for (v = 0; v < 7; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*4).toFixed(0)) + 1
-vely = Number((Math.random()*4).toFixed(0)) + 1
+velx = Number((Math.random()*6).toFixed(0)) + 1
+vely = Number((Math.random()*6).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -1224,15 +1224,11 @@ function collision() {
               pokebolas[ra].x = realposibsx[posibin].x1
               pokebolas[ra].y = realposibsx[posibin].y1
               pokebolas[rb].x = realposibsx[posibin].x2
-              pokebolas[rb].y = realposibsx[posibin].y2 
-              pokebolas[ra].r = 88
-              pokebolas[rb].r = 88
+              pokebolas[rb].y = realposibsx[posibin].y2
 
               redoCollisions()
             }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
                 loop = false
-                pokebolas[ra].r = 88
-                pokebolas[rb].r = 88
                 console.log(`${pokebolas[ra].color} com r e ${pokebolas[rb].color} sem r`)
               // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 console.log(`fazendo a colisão: x= ${realposibsx[posibin].x1}, y= ${realposibsx[posibin].y1}`)
@@ -1270,8 +1266,6 @@ function collision() {
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
                 loop = false
                 
-                pokebolas[rb].r = 88
-                pokebolas[ra].r = 88
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
               // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 console.log(`fazendo a colisão: x= ${realposibsx[posibin].x2}, y= ${realposibsx[posibin].y2}`)
