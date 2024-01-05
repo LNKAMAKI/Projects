@@ -41,10 +41,8 @@ if (v == 0) {
     //x = 126
     //y = 63
     vely = -vely
-    velx = 4
-    vely = -4
-    //velx = 10
-    //vely = 10
+    //velx = 4
+    //vely = -4
     color = 'pink'
 }else  if (v == 1){
     x = 120
@@ -58,10 +56,8 @@ if (v == 0) {
     //x = 118
     //y = 33
     vely = -vely
-    velx = 3
-    vely = -2
-    //velx = 5
-    //vely = 10
+    // velx = 3
+    //vely = -2
     color = 'yellow'
 }else if (v == 3){
     x = 180
@@ -83,8 +79,8 @@ if (v == 0) {
     //x = 146
     //y = 40
     velx = -velx
-    velx = -5
-    vely = 3
+    //velx = -5
+    //vely = 3
     color = 'purple'
 }
 
