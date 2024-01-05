@@ -1432,17 +1432,9 @@ function collision() {
                            //                                 (-o-) pri.y
                            //
                            //                                 (-o-) result.y1
-                    }
-                }
-                }
-            }
-            }
-            }
+                   
             */
             
-
-
-
        if (0 == 1) {
      for (a in pokebolas) {//for (a = 0; a < 1;a++) {//for (a in pokebolas) {
         //console.log('a',a)
