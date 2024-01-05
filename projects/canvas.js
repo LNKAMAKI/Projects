@@ -41,8 +41,8 @@ if (v == 0) {
     //x = 126
     //y = 63
     vely = -vely
-    velx = 3
-    vely = -1
+    velx = 4
+    vely = -4
     //velx = 10
     //vely = 10
     color = 'pink'
@@ -58,8 +58,8 @@ if (v == 0) {
     //x = 118
     //y = 33
     vely = -vely
-    velx = 4
-    vely = -1
+    velx = 3
+    vely = -2
     //velx = 5
     //vely = 10
     color = 'yellow'
@@ -83,9 +83,9 @@ if (v == 0) {
     //x = 146
     //y = 40
     velx = -velx
-    velx = -2
-    vely = 5
-    color = 'blueviolet'
+    velx = -5
+    vely = 3
+    color = 'purple'
 }
 
 
@@ -1207,7 +1207,7 @@ function collision() {
             console.log(Number(pokebolas[ra].fsty) + Number(pokebolas[ra].vely))
             console.log(Number(pokebolas[rb].fstx) + Number(pokebolas[rb].velx))
             console.log(Number(pokebolas[rb].fsty) + Number(pokebolas[rb].vely))
-            
+
             if (pokebolas[ra].velx > 0 && pokebolas[ra].fstx < realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].fstx > realposibsx[posibin].x1) {
                 console.log('tá certo')
             }
@@ -1304,8 +1304,8 @@ function collision() {
                     console.log(re)
                     if (re != undefined) {
                         console.log(`a pokebola ${pokebolas[ra].color} deve ficar com as seguintes coordenadas: x= ${re.x1}, y= ${re.y1}`)
-                        pokebolas[ra].x = re.x1
-                        pokebolas[ra].y = re.y1
+                        pokebolas[ra].x = re.x2
+                        pokebolas[ra].y = re.y2
                     }
                 }
 
