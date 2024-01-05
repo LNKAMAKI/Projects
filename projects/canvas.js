@@ -1207,6 +1207,7 @@ function collision() {
             console.log(Number(pokebolas[ra].fsty) + Number(pokebolas[ra].vely))
             console.log(Number(pokebolas[rb].fstx) + Number(pokebolas[rb].velx))
             console.log(Number(pokebolas[rb].fsty) + Number(pokebolas[rb].vely))
+            
             if (pokebolas[ra].velx > 0 && pokebolas[ra].fstx < realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].fstx > realposibsx[posibin].x1) {
                 console.log('tá certo')
             }
