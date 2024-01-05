@@ -24,7 +24,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 7; v++) {
+for (v = 0; v < 5; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*6).toFixed(0)) + 1
@@ -135,6 +135,8 @@ console.log(posibs)
         document.getElementById('diff').innerText = 'iii' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
         c.clearRect(0,0,300,150)
 
+        console.log('CHECK TOOOUCH**************************************************************************************')
+        checkTouch()
         for (number in pokebolas) {
             /*
             if (pokebolas[number].x > 300 - pokebolas[number].width || pokebolas[number].x < pokebolas[number].width) {
@@ -220,7 +222,8 @@ function collision() {
                 }
                 
                 // código para a colisão
-                if (Math.round(diffx**2 + diffy**2) == 676){//|| newdiffx**2 + newdiffy**2 < 676) {
+                
+                if (Math.round(diffx**2 + diffy**2) == 676 && 0 == 1) {//|| newdiffx**2 + newdiffy**2 < 676) {
                     //window.alert('')
                     //console.log(cx,cx2)
                    // console.log(cy,cy2)
@@ -1106,6 +1109,7 @@ function collision() {
                 
                 //window.alert('short stop')
                 }
+                
             }
         }
         }
@@ -1981,7 +1985,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         //pokebolas[b].vely = 0
         //console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         console.log('POKEBOLAAAAS',pokebolas[a].color,pokebolas[b].color, diffx**2 + diffy**2)
-        window.alert('PAROU')
+        //window.alert('PAROU')
        loop = false
     }
 
@@ -2315,4 +2319,18 @@ function redoCollisions() {
             }
         }
     }
+}
+function checkTouch () {
+    for (ce in posibs) {
+     console.log(posibs[ce].a, posibs[ce].b)
+     dis = (pokebolas[posibs[ce].a].x - pokebolas[posibs[ce].b].x)**2 + (pokebolas[posibs[ce].a].y - pokebolas[posibs[ce].b].y)**2
+     console.log(dis)
+     if (Math.round(dis) == 676){
+        console.log(`as pokebolas ${pokebolas[posibs[ce].a].color} e ${pokebolas[posibs[ce].b].color} estão se tocando perfeitamente`)
+        pokebolas[posibs[ce].a].velx = 0
+        pokebolas[posibs[ce].a].vely = 0
+        pokebolas[posibs[ce].b].velx = 0
+        pokebolas[posibs[ce].b].vely = 0
+    }   
+}
 }
