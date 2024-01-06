@@ -2299,7 +2299,8 @@ function POKEBOL() {
 }
 
 function redoCollisions() {
-    for (ba = 0; ba < posibin; ba++) {
+    for (ba = posibin - 1; ba >= 0; ba--) {//for (ba = 0; ba < posibin; ba++) {
+        console.log(ba)
         console.log('precisa refazer essa colisão aqui:')
         console.log(realposibsx[ba])
         if (realposibsx[ba].colide == true) {
