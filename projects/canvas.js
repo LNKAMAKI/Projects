@@ -2341,6 +2341,7 @@ function redoCollisions() {
         }
     }
 }
+
 function checkTouch () {
     for (ce in posibs) {
      //console.log(posibs[ce].a, posibs[ce].b)
