@@ -1,188 +1,29 @@
-for (posibin in realposibsx) {
-    // loop = false
-    //console.log(realposibsx[posibin])
-     ra = realposibsx[posibin].a
-     rb = realposibsx[posibin].b
-     //console.log(pokebolas[ra].color + ' com ' + pokebolas[rb].color)
-     //console.log('velocidades:')
-     if (pokebolas[ra].velx > 0) {
-         velx1s = 'positivo'
-     }else{
-         velx1s = 'negativo'
-     }
-     if (pokebolas[ra].vely > 0) {
-         vely1s = 'positivo'
-     }else{
-         vely1s = 'negativo'
-     }
-     if (pokebolas[rb].velx > 0) {
-         velx2s = 'positivo'
-     }else{
-         velx2s = 'negativo'
-     }
-     if (pokebolas[rb].vely > 0) {
-         vely2s = 'positivo'
-     }else{
-         vely2s = 'negativo'
-     }
-     //console.log(`${pokebolas[ra].color}.velx: ${velx1s}`)
-     //console.log(`${pokebolas[ra].color}.vely: ${vely1s}`)
-     //console.log(`${pokebolas[rb].color}.velx: ${velx2s}`)
-     //console.log(`${pokebolas[rb].color}.vely: ${vely2s}`)
-     //console.log(`as coordenadas iniciais das bolas são:`)
-     //console.log(pokebolas[ra].fstx)
-     //console.log(pokebolas[ra].fsty)
-     //console.log(pokebolas[rb].fstx)
-     //console.log(pokebolas[rb].fsty)
-     //console.log(`as coordenadas da colisão normal entre as bolas são:`)
-     //console.log(realposibsx[posibin].x1)
-     //console.log(realposibsx[posibin].y1)
-     //console.log(realposibsx[posibin].x2)
-     //console.log(realposibsx[posibin].y2)
-     //console.log('se as pokebolas não colidissem suas posições seriam:')
-     //console.log(Number(pokebolas[ra].fstx) + Number(pokebolas[ra].velx))
-     //console.log(Number(pokebolas[ra].fsty) + Number(pokebolas[ra].vely))
-     //console.log(Number(pokebolas[rb].fstx) + Number(pokebolas[rb].velx))
-     //console.log(Number(pokebolas[rb].fsty) + Number(pokebolas[rb].vely))
-
-     if (pokebolas[ra].velx > 0 && pokebolas[ra].fstx < realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].fstx > realposibsx[posibin].x1) {
-         //console.log('tá certo')
-     }
-     if (pokebolas[ra].vely > 0 && pokebolas[ra].fsty < realposibsx[posibin].y1 || pokebolas[ra].vely < 0 && pokebolas[ra].fsty > realposibsx[posibin].y1) {
-         //console.log('tá certo')
-     }
-     if (pokebolas[rb].velx > 0 && pokebolas[rb].fstx < realposibsx[posibin].x2 || pokebolas[rb].velx < 0 && pokebolas[rb].fstx > realposibsx[posibin].x2) {
-         //console.log('tá certo')
-     }
-     if (pokebolas[rb].vely > 0 && pokebolas[rb].fsty < realposibsx[posibin].y2 || pokebolas[rb].vely < 0 && pokebolas[rb].fsty > realposibsx[posibin].y2) {
-     //console.log('tá certo')
-     }
-    if (realposibsx[posibin].colide == true) {
-    if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
-     
-     //console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
-        // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
-       pokebolas[ra].x = realposibsx[posibin].x1
-       pokebolas[ra].y = realposibsx[posibin].y1
-       pokebolas[rb].x = realposibsx[posibin].x2
-       pokebolas[rb].y = realposibsx[posibin].y2
-
-       redoCollisions()
-     }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
-         
-         //console.log(`${pokebolas[ra].color} com r e ${pokebolas[rb].color} sem r`)
-       // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
-         //console.log(`fazendo a colisão: x= ${realposibsx[posibin].x1}, y= ${realposibsx[posibin].y1}`)
-         //console.log(`coordenadas atuais: x= ${pokebolas[ra].x}, y= ${pokebolas[ra].y}`)
-         if (pokebolas[ra].velx > 0 && pokebolas[ra].x > realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
-             // COLISÃO ATUAL VENCE => realposibsx[posibin].x1
-             //console.log('colisão atual vence',pokebolas[ra].color,pokebolas[rb].color)
-             // POKEBOLA[0] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
-             // POKEBOLA[1] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
-             
-             pokebolas[ra].x = realposibsx[posibin].x1
-             pokebolas[ra].y = realposibsx[posibin].y1
-             pokebolas[rb].x = realposibsx[posibin].x2
-             pokebolas[rb].y = realposibsx[posibin].y2
-             
-             // REFAZER AS ANTERIORES
-             redoCollisions()
-         }else{
-             // COLISÃO ANTERIOR VENCE => pokebola[0].x
-             //console.log('colisão anterior vence')
-             // POKEBOLA[0] CONTINUA COM AS MESMA COORDENADAS
-             // POKEBOLA[1] PRECISA READAPTAR SUAS COORDENADAS DE ACORDO COM A POKEBOLA[0]
-             re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
-             // as coordenadas da pokebola[0] se mantêm
-             // pokebolas[rb].fstx = pokebolas[rb].x
-             //console.log(re)
-             if (re != undefined) {
-                 //console.log(`a pokebola ${pokebolas[rb].color} deve ficar com as seguintes coordenadas: x= ${re.x2}, y= ${re.y2}`)
-                 pokebolas[rb].x = re.x2
-                 pokebolas[rb].y = re.y2
-             }
-         }
-     }else if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx) {
-         // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
-         //console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
-         
-         //console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
-       // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
-         //console.log(`fazendo a colisão: x= ${realposibsx[posibin].x2}, y= ${realposibsx[posibin].y2}`)
-         //console.log(`coordenadas atuais: x= ${pokebolas[rb].x}, y= ${pokebolas[rb].y}`)
-         if (pokebolas[rb].velx > 0 && pokebolas[rb].x > realposibsx[posibin].x2 || pokebolas[rb].velx < 0 && pokebolas[rb].x < realposibsx[posibin].x2) {
-             // COLISÃO ATUAL VENCE => realposibsx[posibin].x2
-             //console.log('colisão atual vence',pokebolas[rb].color,pokebolas[ra].color)
-             // POKEBOLA[0] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
-             // POKEBOLA[1] MUDA DE COORDENADAS (PARA COLISÃO ATUAL)
-             
-             pokebolas[rb].x = realposibsx[posibin].x2
-             pokebolas[rb].y = realposibsx[posibin].y2
-             pokebolas[ra].x = realposibsx[posibin].x1
-             pokebolas[ra].y = realposibsx[posibin].y1
-             
-             // REFAZER AS ANTERIORES
-             redoCollisions() 
-         }else{
-             // COLISÃO ANTERIOR VENCE => pokebola[0].x
-             //console.log('colisão anterior vence')
-             // POKEBOLA[0] CONTINUA COM AS MESMA COORDENADAS
-             // POKEBOLA[1] PRECISA READAPTAR SUAS COORDENADAS DE ACORDO COM A POKEBOLA[0]
-             re = detectCollision(rb,ra,pokebolas[rb].x,pokebolas[rb].y,pokebolas[ra].fstx,pokebolas[ra].fsty,false,true)
-             // as coordenadas da pokebola[0] se mantêm
-             // pokebolas[ra].fstx = pokebolas[ra].x
-             //console.log(re)
-             if (re != undefined) {
-                 //console.log(`a pokebola ${pokebolas[ra].color} deve ficar com as seguintes coordenadas: x= ${re.x1}, y= ${re.y1}`)
-                 pokebolas[ra].x = re.x2
-                 pokebolas[ra].y = re.y2
-             }
-         }
-
-     }else if (pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx){
-         //console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} com r`)
-         if (pokebolas[ra].velx > 0 && pokebolas[ra].x >= realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
-             atual1 = true
-         }else{
-             atual1 = false
-         }
-         if (pokebolas[rb].velx > 0 && pokebolas[rb].x >= realposibsx[posibin].x2 || pokebolas[rb].velx < 0 && pokebolas[rb].x < realposibsx[posibin].x2) {
-             atual2 = true
-         }else{
-             atual2 = false
-         }
-         if (atual1 == true && atual2 == true) {
-             //console.log('pode mudar para colisão atual')
-             pokebolas[ra].x = realposibsx[posibin].x1
-             pokebolas[ra].y = realposibsx[posibin].y1
-             pokebolas[rb].x = realposibsx[posibin].x2
-             pokebolas[rb].y = realposibsx[posibin].y2
-             //console.log('precisa refazer as colisões anteriores')
-             
-            redoCollisions() 
-         }else{
-             //console.log('contiuar como estava')
-         }
-     }
- }else{
-     //console.log(`${pokebolas[ra].color} e ${pokebolas[rb].color} n se colidem`)
-     //console.log('no entanto, deve-se checar a pokebola com menor x, nesse caso,',pokebolas[ra].color)
-     re = detectCollision(ra,rb,pokebolas[ra].x,pokebolas[ra].y,pokebolas[rb].fstx,pokebolas[rb].fsty,false,true)
-     //console.log(re)
-     if (re != undefined) {
-         if (pokebolas[rb].x == pokebolas[rb].fstx) {
-         if (pokebolas[rb].velx > 0 && realposibsx[posibin].x2 > re.x2 || pokebolas[rb].velx < 0 && realposibsx[posibin].x2 < re.x2) {
-             pokebolas[rb].x = re.x2
-             pokebolas[rb].y = re.y2
-         }
-     }else{
-         if (pokebolas[rb].velx > 0 && pokebolas[rb].x > re.x2 || pokebolas[rb].velx < 0 && pokebolas[rb].x < re.x2) {
-             pokebolas[rb].x = re.x2
-             pokebolas[rb].y = re.y2
-         }
-     }
-     }
- }
- }
-
- 
+{word: 'death toll', type:"noun",meaning: 'taxa de mortes, refers to the number of people who have died as a result of a particular event or circumstance, such as a natural disaster, war, or disease outbreak',examples: 'Erdogan, then the prime minitster, blamed poor construction for the high death toll'},
+{word: 'aftermath', type:"noun",meaning: 'desdobramento, consequências(geralmente negativas); refers to the consequences or effects of a significant event or situation, especially a negative or disastrous one; outcome, fallout ',examples: 'In the aftermath, authorities promised stricter building regulations'},
+{word: 'strict', type:"adjective",meaning: 'severe, rigorous, rigid',examples: 'In the aftermath, authorities promised stricter building regulations'},
+{word: 'preparedness', type:"noun",meaning: 'preparação',examples: 'introduced an “earthquake tax” aimed at improving preparedness in a country that sits on two major geological faultlines'},
+{word: 'faultline', type:"noun",meaning: 'a break in the earth\'s surface',examples: 'a country that sits on two major geological faultlines'},
+{word: 'overwhelming', type:"adjective",meaning: 'extremely powerful, intense, or forceful; difficult to fight against',examples: 'the newly formed party won elections in 2002 by an overwhelming majority (= maioria esmagadora)'},
+{word: 'stock market', type:"noun",meaning: 'mercado de ações',examples: 'promising transparency and to rebuild the economy, ruined by a stock market crash'},
+{word: 'aftershock', type:"noun",meaning: 'a smaller earthquake that occurs after a larger earthquake, in the same general area and along the same fault zone',examples: ' after Monday’s even deadlier earthquake and aftershocks'},
+{word: 'amount', type:"intransitive verb/noun",meaning: ' used to describe the total or final result of something or to express the magnitude or significance of a situation_the total number or quantity',examples: 'constructors and supervisors should now see that their negligence amounts to murder*"His hard work and dedication amount to success in his career_Payments are limited to a certain amount.'},
+{word: 'lax', type:"adjective",meaning: 'without much care, attention, or control; lacking in rigor or strictness:',examples: 'endemic corruption and lax enforcement of building codes have exacerbated the crisis'},
+{word: 'building code', type:"noun",meaning: 'set of regulations and standards that specify the requirements for the design, construction, and maintenance of buildings and other structures',examples: 'lax enforcement of building codes*building codes had not been properly followed'},
+{word: 'reliance', type:"noun",meaning: 'dependence, confidence; the state of depending on something or someone for support, help, or protection',examples: 'reliance on cheap foreign credit funded new motorways'},
+{word: 'prone', type:"adjective",meaning: 'propenso, sujeito a; susceptible, predisposed, inclined, likely',examples: 'earthquake-prone regions*After a long day at work, he lay prone on the sofa, trying to relax'},
+{word: 'load-bearing', type:"adjective",meaning: 'used to describe a structural element or component of a structure that is designed to support and carry the weight of other parts of the construction',examples: 'load-bearing walls and pillars must be distributed in such a way to avoid “pancaking”'},
+{word: 'rubble', type:"noun",meaning: 'destroços; debris, wreckage, ruins, detritus',examples: ' many modern structures across the country constituted “rubble in waiting” because building codes had not been properly followed'},
+{word: 'cut corners', type:"expressing",meaning: 'to take shortcuts(atalhos) or to do something in a way that is quicker or cheaper, but that may result in lower quality or safety standards than what is expected or required',examples: 'to deter construction companies and investors from cutting corners'},
+{word: 'address', type:"verb", meaning: 'to give attention to or deal with a matter or problem_to speak or write to someone; dirigir a alguém',examples: 'because addressing it would be expensive and unpopular_He likes to be addressed as "Sir"*The president will address the nation by television'},
+{word: 'due to', type:"preposition",meaning: 'owing to, because of',examples: 'due to an influx of millions of refugees from neighbouring Syria fleeing civil war'},
+{word: 'budget', type:"noun",meaning: 'orçamento',examples: 'It is unclear from government budgets how the earthquake tax has been spent'},
+{word: 'cash-strapped', type:"adjective",meaning: 'that has a shortage of money or is experiencing financial difficulties',examples: 'the cash-strapped Turkish parliament'},
+{word: 'withstand', type:"transitive verb",meaning: 'to be proof against; resist the effect of'
+,examples: 'buildings that are designed to withstand earthquakes are less likely to collapse'},
+{word: 'slipshod', type:"adjective",meaning: 'describes something that is done in a careless, hasty(hurried), or sloppy manner',examples: 'people across the country suspected of slipshod or negligent construction'},
+{word: 'upmarket', type:"adjective",meaning: 'very high quality and intended to be bought by people who are quite rich',examples: 'The developer of an upmarket 12-storey apartment complex'},
+{word: 'prosecutor', type:"noun",meaning: 'a legal official who accuses someone of committing a crime, especially in a law court',examples: 'He told prosecutors that his company had followed all the relevant procedures and legislation*prosecutors have begun gathering samples of buildings for evidence on materials used in construction'},
+{word: 'assuage', type:"transitive verb",meaning: 'alleviate; to lessen the intensity of something',examples: 'but blaming building contractors is unlikely to assuage a rising tide of public anger at government policy'},
+{word: 'unforeseen', type:"adjective",meaning: 'unexpected, unpredicted',examples: ' It is true that we were not expecting an earthquake of this scale, in this area, so it was unforeseen in that respect'},
+{word: 'pledge', type:"verb",meaning: 'to make a solemn promise or commitment to do something or to follow through with a specific action_to dedicate oneself to a particular cause, belief, or mission_to make a formal or solemn statement of belief, allegiance, or intention; affirm, vow',examples: 'Erdogan has pledged that reconstruction will be completed in one year_She pledged her loyalty to the organization and its principles_As citizens, we pledge allegiance to our country\'s flag'},
+{word: 'poised', type:"adjective",meaning: 'ready, prepared, or positioned in a way that it is balanced and ready to move forward or take action',examples: 'national elections scheduled for May that were already poised to be a crucial test'},
