@@ -27,8 +27,8 @@ function animate() {
 for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*10).toFixed(0)) + 1
-vely = Number((Math.random()*10).toFixed(0)) + 1
+velx = Number((Math.random()*1).toFixed(0)) + 1
+vely = Number((Math.random()*1).toFixed(0)) + 1
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -37,14 +37,15 @@ y = Math.random()*(150-width*3) + width
 
 if (v == 0) {
     x = 95
-    y = 55
+    y = 65
     //x = 126
     //y = 63
     //velx = 4
     //vely = -4
+    vely = -vely
     color = 'pink'
-    velx = 11
-    vely = -7
+    //velx = 11
+    //vely = -7
 }else  if (v == 1){
     x = 120
     y = 120
@@ -52,26 +53,26 @@ if (v == 0) {
     //vely = 5
     color = 'red'
 }else if(v == 2){
-    x = 130
-    y = 50
+    x = 110
+    y = 40
     //x = 118
     //y = 33
-    vely = vely
+    vely = -vely
     // velx = 3
     //vely = -2
     color = 'yellow'
-    velx = 4
-    vely = 3
+    //velx = 4
+    //vely = 3
 }else if (v == 3){
     x = 180
     y = 40
     color = 'lime'
 }else if(v == 4){
-    x = 120
-    y = 13
+    x = 100
+    y = 10
     color = 'cyan'
-    velx = 10
-    vely = 10
+    //velx = 10
+    //vely = 10
 }else if (v == 5){
     x = 80
     y = 30
@@ -1230,7 +1231,7 @@ function collision() {
             }
            if (realposibsx[posibin].colide == true) {
            if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
-            loop = false
+            //loop = false
             console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
                // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
               pokebolas[ra].x = realposibsx[posibin].x1
@@ -1240,7 +1241,7 @@ function collision() {
 
               redoCollisions()
             }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
-                loop = false
+                //loop = false
                 console.log(`${pokebolas[ra].color} com r e ${pokebolas[rb].color} sem r`)
               // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 console.log(`fazendo a colisão: x= ${realposibsx[posibin].x1}, y= ${realposibsx[posibin].y1}`)
@@ -1275,7 +1276,7 @@ function collision() {
                     }
                 }
             }else if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx) {
-                loop = false
+                //loop = false
                 // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
                 
@@ -1313,7 +1314,7 @@ function collision() {
                 }
 
             }else if (pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx){
-                loop = false
+                //loop = false
                 console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} com r`)
                 if (pokebolas[ra].velx > 0 && pokebolas[ra].x >= realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
                     atual1 = true
@@ -1348,13 +1349,13 @@ function collision() {
                 if (pokebolas[rb].velx > 0 && realposibsx[posibin].x2 > re.x2 || pokebolas[rb].velx < 0 && realposibsx[posibin].x2 < re.x2) {
                     pokebolas[rb].x = re.x2
                     pokebolas[rb].y = re.y2
-                    loop = false
+                    //loop = false
                 }
             }else{
                 if (pokebolas[rb].velx > 0 && pokebolas[rb].x > re.x2 || pokebolas[rb].velx < 0 && pokebolas[rb].x < re.x2) {
                     pokebolas[rb].x = re.x2
                     pokebolas[rb].y = re.y2
-                    loop = false
+                    //loop = false
                 }
             }
             }
@@ -1892,7 +1893,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
 }
 
 //saber quando o mouse encosta em uma pokebola
-window.addEventListener('mousemove',function(event) {
+window.addEventListener('mousemove', function(event) {
     
     canv = document.querySelector('canvas')
     cWidth = canv.offsetWidth
