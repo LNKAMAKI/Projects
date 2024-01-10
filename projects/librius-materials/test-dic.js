@@ -216,12 +216,24 @@ contents = [
         {title: 'long-winded', type:"adjective",meaning: 'excessively wordy, verbose, or lengthy',examples: 'it can also give long-winded replies, a problem its developers put down to trainers preferring longe answers that loook more comprehensive'},
         {title: 'put down', type:"phrasal verb",meaning: 'attribute something as the cause of something else_disapprove or criticize_',examples: 'it can also give long-winded replies, a problem its developers put down to trainers preferring longe answers that loook more comprehensive_She felt hurt when her peers put her down for her ideas'},
         {title: 'nonetheless', type:"adverb",meaning: 'even so, nevertheless, however, still; used to introduce a contrasting or concessive statement',examples: 'it is very much a work in progress, but a transformative one, nonetheless'},
-        {title: '', type:"noun",meaning: '',examples: ''},
-        {title: '', type:"noun",meaning: '',examples: ''},
-        {title: '', type:"noun",meaning: '',examples: ''},
-        {title: '', type:"noun",meaning: '',examples: ''},
-        {title: '', type:"noun",meaning: '',examples: ''}
     ]},
+    {title:'text-5-train-1',url: 'html-logo.svg',subs: [
+        {title: 'eloquent', type:"noun",meaning: '',examples: ''},
+        {title: 'impassioned', type:"noun",meaning: '',examples: ''},
+        {title: 'swaggering', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+        {title: '', type:"noun",meaning: '',examples: ''},
+    ]}
     /*{title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},*/
 ]
