@@ -5,7 +5,14 @@ c = canvas.getContext('2d')
 c.fillStyle = 'black'
 //c.fillRect(20, 20, 150, 100)
 
-numbersplit = 7
+const date = new Date()
+hours = date.getHours()
+mins = date.getMinutes()
+if (hours > 12){
+ hours = hours - 12
+}
+console.log(hours, mins)
+numbersplit = 12
 pi = Math.PI
 st = 1.5
 end = 1.5 + 2/numbersplit
@@ -37,7 +44,9 @@ c.strokeStyle = `black`
 c.fill()
 c.stroke()
 
+num = 1
 for (a = 0; a < numbersplit; a++) {
+    console.log(a)
     c.beginPath()
     console.log(st,end)
 r = Math.random()*255
@@ -59,7 +68,8 @@ c.beginPath()
 c.moveTo(x1, y1)
 c.lineTo(x, y)
 c.fillStyle = 'black'
-//c.fillText('12',x - 7,y + 10)
+    c.fillText(num,x - 7,y + 10)
+num++
 console.log('x1',x1)
 console.log('y1',y1)
 console.log('x',x)
