@@ -3,6 +3,7 @@
 <img src="https://lnkamaki.github.io/Projects/projects/favicon.ico"> 
 <u type= "circle">
 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/clock.html"><span style=" font-weight: normal; font-size: 1.3em;">Standard Clock</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/hobbit-trail.html"><span style=" font-weight: normal; font-size: 1.3em;">Hobbit Trail</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/librius.html"><span style=" font-weight: normal; font-size: 1.3em;">-Librius-</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/piechart.html"><span style=" font-weight: normal; font-size: 1.3em;">Gráfico de Setores</span></a></li> 
