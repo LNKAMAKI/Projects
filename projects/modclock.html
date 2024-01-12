@@ -32,6 +32,8 @@
         #time {
             width: 100%;
             text-align: center;
+            font-family: var(--li);
+            font-size: 1em;
         }
         input[type=number]::-webkit-inner-spin-button, 
         input[type=number]::-webkit-outer-spin-button {  
@@ -41,13 +43,8 @@
             width: 80px;
             height: 50px;
             font-size: 3em;
-            font-family: var(--code);
+            font-family: var(--li);
             text-align: center;
-        }
-        #dot {
-            font-size: 2.9em;
-            font-family: var(--rub);
-            font-weight: 500;
         }
     </style>
 </head>
@@ -56,7 +53,9 @@
     <script src="modclock.js"></script>
     <canvas id="can"></canvas>
     <div id="time">
-        <input type="number" id="num" placeholder="0" min= "0" max="20">
+        <input type="number" id="num" placeholder="0" min= "0" max="20"><span style="font-size: 3em;">&nbsp; mod(</span>
+         <input type="number" id="num" placeholder="0" min= "0" max="20">
+         <span style="font-size: 3em;">)</span>
     </div>
 </body>
 </html>

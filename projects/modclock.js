@@ -6,7 +6,7 @@ c.clearRect(0,0,300,150)
 c.fillStyle = 'black'
 c.lineWidth = 1
 
-numbersplit = 21
+numbersplit = 10
 pi = Math.PI
 st = 1.5
 end = 1.5 + 2/numbersplit
