@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Monofett&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Braah+One&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Braah+One&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+        :root {
+            --li: 'Lilita One';
+            --rub: 'Rubik MOno One';
+            --fet: 'Monofett';
+            --code: "Source Code Pro";
+            --bf: "Bagel Fat One";
+        }
+        canvas {
+            width:100%;
+            max-width: 800px;
+            display: block;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            font-family: "Rubik Mono One";
+            font-size: 2.4em;
+            margin: 25px 0px 10px 0px;
+        }
+        #time {
+            width: 100%;
+            text-align: center;
+        }
+        span.num {
+            width: 70px;
+            height: 50px;
+            font-size: 3em;
+            font-family: var(--fet);
+        }
+        #dot {
+            font-size: 2.9em;
+            font-family: var(--bf);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body onload="load()">
+    <h1>MOD(N) CLOCK</h1>
+    <script src="modclock.js"></script>
+    <canvas id="can"></canvas>
+    <div id="time">
+    </div>
+</body>
+</html>
