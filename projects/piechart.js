@@ -60,6 +60,7 @@ c = canvas.getContext('2d')
     }
     console.log('soma:',sum)
     if (sum > 100) {
+        c.clearRect(0,0,300,150)
       porcs2 = []
       porcs = []
       for (n = 0; n < times;n++) {
