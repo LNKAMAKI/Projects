@@ -2,7 +2,7 @@ doit = false
 function load() {
 //console.log('hi')
 
-arrangeState(12)
+arrangeState(12,12,'pos')
 modnum = document.getElementsByClassName('modnum')[0]
 fnum = document.getElementsByClassName('fnum')[0]
 /*
@@ -14,14 +14,24 @@ modnum.addEventListener('blur', function() {
   modnum.addEventListener('input', function() {
     console.log('Input value changed') 
     if (modnum.value <= 20 && modnum.value > 0) {
-    arrangeState(modnum.value,fnum.value)
+        if (fnum < 0) {
+            signal = neg
+        }else{
+            signal ='pos'
+        }
+    arrangeState(modnum.value,fnum.value,signal)
     }
   })
 
   fnum.addEventListener('input', function() {
     console.log('Input value changed') 
     if (modnum.value <= 20 && modnum.value > 0) {
-    arrangeState(modnum.value,fnum.value)
+        if (fnum < 0) {
+            signal = neg
+        }else{
+            signal ='pos'
+        }
+    arrangeState(modnum.value,fnum.value,signal)
     }
   })
 }
@@ -131,13 +141,18 @@ function arrangeState(mod,steps,signal) {
     c.fill()
     c.stroke()
 
+    console.log('sig',signal)
+    if (signal == 'pos') {
+    add = 2/numbersplit*steps*pi
+    }
+    
     c.beginPath()
-    c.arc(150,75,65,1.5*pi,1.5*pi + 2/numbersplit*steps*pi,false)
+    c.arc(150,75,65,1.5*pi,1.5*pi + add,false)
     c.strokeStyle = 'transparent'
     c.stroke()
 
-   xh = 150 + Math.cos(1.5*pi + 2/numbersplit*steps*pi)*50
-   yh = 75 + Math.sin(1.5*pi + 2/numbersplit*steps*pi)*50
+   xh = 150 + Math.cos(1.5*pi + add)*50
+   yh = 75 + Math.sin(1.5*pi + add)*50
    c.beginPath()
    c.moveTo(xh, yh)
    c.lineTo(150,75)
