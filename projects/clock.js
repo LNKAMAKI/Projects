@@ -5,11 +5,11 @@ c = canvas.getContext('2d')
 c.clearRect(0,0,300,150)
 c.fillStyle = 'black'
 c.lineWidth = 1
-//c.fillRect(20, 20, 150, 100)
 
 const date = new Date()
 hours = date.getHours()
 mins = date.getMinutes()
+secs = date.getSeconds()
 if (hours > 12){
  hours = hours - 12
 }
@@ -19,17 +19,15 @@ pos = 1.5 + 2/numbersplit*(hours + 1/60*mins)
 mintohour = 1/60*mins
 console.log('position',pos)
 console.log(mintohour)
-pos2 = 1.5 + (2/numbersplit)*(mins/5)
+pos2 = 1.5 + (2/numbersplit)*((mins + 1/60*secs)/5)
+pos3 = 1.5 + (secs/60)*2
 pi = Math.PI
 st = 1.5
 end = 1.5 + 2/numbersplit
-//console.log(st,end)
 r = Math.random()*255
 g = Math.random()*255
 b = Math.random()*255
-//c.arc(150,75,65,pi*1,pi*1.5,false)
 c.strokeStyle = `rgb(${r},${g},${b})`
-//c.stroke()
 
 
 c.beginPath()
@@ -43,13 +41,6 @@ c.beginPath()
 c.arc(150,75,65,0,pi*2,false)
 c.fillStyle = `white`
 c.fill()
-
-c.beginPath()
-c.arc(150,75,1,0,pi*2,false)
-c.strokeStyle = `black`
-c.fill()
-c.stroke()
-
 
 num = 1
 
@@ -96,12 +87,12 @@ c.arc(150,75,65,1.5*pi,pos*pi,false)
 c.strokeStyle = 'transparent'
 c.stroke()
 
-xh = 150 + Math.cos(pos*pi)*35
-yh = 75 + Math.sin(pos*pi)*35
+xh = 150 + Math.cos(pos*pi)*40
+yh = 75 + Math.sin(pos*pi)*40
 c.beginPath()
 c.moveTo(xh, yh)
 c.lineTo(150,75)
-c.strokeStyle = 'grey'
+c.strokeStyle = 'black'
 c.stroke()
 
 c.beginPath()
@@ -114,7 +105,26 @@ yh = 75 + Math.sin(pos2*pi)*50
 c.beginPath()
 c.moveTo(xh, yh)
 c.lineTo(150,75)
-c.strokeStyle = 'grey'
+c.strokeStyle = 'gray'
+c.stroke()
+
+c.beginPath()
+c.arc(150,75,65,1.5*pi,pos3*pi,false)
+c.strokeStyle = 'transparent'
+c.stroke()
+
+xh = 150 + Math.cos(pos3*pi)*40
+yh = 75 + Math.sin(pos3*pi)*40
+c.beginPath()
+c.moveTo(xh, yh)
+c.lineTo(150,75)
+c.strokeStyle = 'red'
+c.stroke()
+
+c.beginPath()
+c.arc(150,75,1,0,pi*2,false)
+c.strokeStyle = `black`
+c.fill()
 c.stroke()
 
 const intervalId = setInterval(load, 1000)
