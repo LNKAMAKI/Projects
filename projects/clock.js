@@ -104,7 +104,20 @@ c.lineTo(150,75)
 c.strokeStyle = 'grey'
 c.stroke()
 
-const intervalId = setInterval(load, 60000)
+c.beginPath()
+c.arc(150,75,65,1.5*pi,pos2*pi,false)
+c.strokeStyle = 'transparent'
+c.stroke()
+
+xh = 150 + Math.cos(pos2*pi)*50
+yh = 75 + Math.sin(pos2*pi)*50
+c.beginPath()
+c.moveTo(xh, yh)
+c.lineTo(150,75)
+c.strokeStyle = 'grey'
+c.stroke()
+
+const intervalId = setInterval(load, 1000)
 }
 window.addEventListener('keyup', function(event) {
     console.log(event.key)
