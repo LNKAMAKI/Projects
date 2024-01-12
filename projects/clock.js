@@ -113,8 +113,8 @@ c.arc(150,75,65,1.5*pi,pos3*pi,false)
 c.strokeStyle = 'transparent'
 c.stroke()
 
-xh = 150 + Math.cos(pos3*pi)*40
-yh = 75 + Math.sin(pos3*pi)*40
+xh = 150 + Math.cos(pos3*pi)*58
+yh = 75 + Math.sin(pos3*pi)*58
 c.beginPath()
 c.moveTo(xh, yh)
 c.lineTo(150,75)
