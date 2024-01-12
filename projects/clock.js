@@ -15,7 +15,11 @@ secs = date.getSeconds()
 hourplace = document.getElementById('hours')
 minsplace = document.getElementById('mins')
 hourplace.innerText = hours
-minsplace.innerText = mins
+if (mins < 10) {
+    minsplace.innerText = '0' + mins
+}else{
+    minsplace.innerText = mins
+}
 
 if (hours > 12){
  hours = hours - 12
