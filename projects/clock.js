@@ -45,8 +45,11 @@ c.fill()
 num = 1
 
 for (a = 0; a < numbersplit; a++) {
-    console.log(a)
+    console.log('num',num)
     c.beginPath()
+    if (end >= 2) {
+        end = end - 2
+    }
     console.log(st,end)
 r = Math.random()*255
 g = Math.random()*255
@@ -67,12 +70,44 @@ c.beginPath()
 c.moveTo(x1, y1)
 c.lineTo(x, y)
 c.fillStyle = 'black'
-    c.fillText(num,x - 7,y + 10)
+console.log('add to x:', -5*Math.cos(end*pi))
+console.log('add to y:', -5*Math.sin(end*pi))
+//c.fillText(num, x, y)
+if (end >= 0 && end <= 0.2) {
+    console.log('DO IT')
+    cos = Math.cos(end*pi)
+    sin = Math.sin(end*pi)
+    c.fillText(num,x - 6*cos,y - 6*sin)
+}else if (end > 0.2 && end <= 0.3) {
+    cos = Math.cos(end*pi)
+    sin = Math.sin(end*pi)
+    c.fillText(num,x - 4*cos,y - 4*sin)
+}else if (end > 0.3 && end <= 0.4){
+    cos = Math.cos(end*pi)
+    sin = Math.sin(end*pi)
+    c.fillText(num,x - 2*cos,y - 2*sin)
+}else if (end > 0.4 && end <= 1.3){
+    cos = Math.cos(end*pi)
+    sin = Math.sin(end*pi)
+    c.fillText(num,x - 0.4*cos,y - 0.4*sin)
+}else if (end > 1.3 && end < 1.5){
+    cos = Math.cos(end*pi)
+    sin = Math.sin(end*pi)
+    c.fillText(num,x - 4*cos,y - 4*sin)
+}else if (end > 1.5 && end <= 1.7){
+    cos = Math.cos(end*pi)
+    sin = Math.sin(end*pi)
+    c.fillText(num,x - 9*cos,y - 9*sin)
+}else{
+    cos = Math.cos(end*pi)
+    sin = Math.sin(end*pi)
+    c.fillText(num,x - 8*cos,y - 8*sin)
+}
 num++
-console.log('x1',x1)
-console.log('y1',y1)
-console.log('x',x)
-console.log('y',y)
+//console.log('x1',x1)
+//console.log('y1',y1)
+//console.log('x',x)
+//console.log('y',y)
 c.strokeStyle = `rgb(0,0,0)`
 c.stroke()
 
@@ -92,7 +127,7 @@ yh = 75 + Math.sin(pos*pi)*40
 c.beginPath()
 c.moveTo(xh, yh)
 c.lineTo(150,75)
-c.strokeStyle = 'black'
+c.strokeStyle = 'gray'
 c.stroke()
 
 c.beginPath()
@@ -113,6 +148,7 @@ c.arc(150,75,65,1.5*pi,pos3*pi,false)
 c.strokeStyle = 'transparent'
 c.stroke()
 
+/*
 xh = 150 + Math.cos(pos3*pi)*58
 yh = 75 + Math.sin(pos3*pi)*58
 c.beginPath()
@@ -120,14 +156,15 @@ c.moveTo(xh, yh)
 c.lineTo(150,75)
 c.strokeStyle = 'red'
 c.stroke()
-
+*/
 c.beginPath()
 c.arc(150,75,1,0,pi*2,false)
 c.strokeStyle = `black`
 c.fill()
 c.stroke()
 
-const intervalId = setInterval(load, 1000)
+
+//const intervalId = setInterval(load, 10000)
 }
 window.addEventListener('keyup', function(event) {
     console.log(event.key)
