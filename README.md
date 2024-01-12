@@ -4,8 +4,8 @@
 <u type= "circle">
 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/librius.html"><span style=" font-weight: normal; font-size: 1.3em;">-Librius-</span></a></li> 
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/piechart.html"><span style=" font-weight: normal; font-size: 1.3em;">Pie Chart</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/fat.html"><span style=" font-weight: normal; font-size: 1.3em;">FATORADOR 2.0</span></a></li> 
-
 <li><a href= "https://lnkamaki.github.io/Projects/projects/funcao.html"><span style=" font-weight: normal; font-size: 1.3em;">Função</span></a></li> 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/equacao2grau.html"><span style=" font-weight: normal; font-size: 1.3em;">Equação do 2º grau</span></a></li> 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/material-js.html"><span style=" font-weight: normal; font-size: 1.3em;">Materiais(CSS, HTML e Javascript)</span></a></li> 
