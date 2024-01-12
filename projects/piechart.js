@@ -126,6 +126,8 @@ function addtograph(x,y,radius,start,end,color) {
         }
 
     function randomcolor() {
+        inputcolor = document.getElementById('color').value
+        console.log(inputcolor)
         r = Math.random()*255
         g = Math.random()*255
         b = Math.random()*255
