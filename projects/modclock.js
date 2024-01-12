@@ -26,7 +26,7 @@ modnum.addEventListener('blur', function() {
   })
 }
 
-function arrangeState(mod,steps) {
+function arrangeState(mod,steps,signal) {
     console.log('steps',steps)
     canvas = document.getElementById('can')
     c = canvas.getContext('2d')
