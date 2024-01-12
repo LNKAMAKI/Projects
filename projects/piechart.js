@@ -46,6 +46,8 @@ c = canvas.getContext('2d')
     times = Number(document.getElementById('times').value)
 
     ran = randomcolor()
+    inputcolor = document.getElementById('color').value
+    ran = inputcolor
     //console.log('porcentagem',porc, porc > 0)
     if (Number(porc) > 0 && add == true) {
      for (n = 0; n < times;n++) {
@@ -98,9 +100,7 @@ function addtograph(x,y,radius,start,end,color) {
     c.lineWidth = '0.05'
     c.arc(x,y,radius,Math.PI*2*start,Math.PI*2*end,false)
     
-    c.lineWidth = '0'
-    c.strokeStyle = 'black'
-    c.arc(150,75,0,0,Math.PI*2,false)
+    c.strokeStyle = color
     c.stroke()
     c.fillStyle = color
     c.fill()
@@ -116,7 +116,6 @@ function addtograph(x,y,radius,start,end,color) {
         }
 
     function randomcolor() {
-        inputcolor = document.getElementById('color').value
         //console.log(inputcolor)
         r = Math.random()*255
         g = Math.random()*255
@@ -128,12 +127,6 @@ function addtograph(x,y,radius,start,end,color) {
     function change(tip) {
         if (tip == 1) {
             c.clearRect(0,0,300,150)
-            c.beginPath()
-            c.arc(150,75,0,Math.PI*2,false)
-            c.strokeStyle = 'black'
-            c.fillStyle = 'black'
-            c.stroke()
-            c.fill()
             type = 1
             tp2.style.backgroundColor = 'white'
                 //addtograph(150,75,70,0,Math.PI*2,'pink')
