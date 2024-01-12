@@ -2,7 +2,9 @@ function load() {
 console.log('hi')
 canvas = document.getElementById('can')
 c = canvas.getContext('2d')
+c.clearRect(0,0,300,150)
 c.fillStyle = 'black'
+c.lineWidth = 1
 //c.fillRect(20, 20, 150, 100)
 
 const date = new Date()
@@ -13,6 +15,11 @@ if (hours > 12){
 }
 console.log(hours, mins)
 numbersplit = 12
+pos = 1.5 + 2/numbersplit*(hours + 1/60*mins)
+mintohour = 1/60*mins
+console.log('position',pos)
+console.log(mintohour)
+pos2 = 1.5 + (2/numbersplit)*(mins/5)
 pi = Math.PI
 st = 1.5
 end = 1.5 + 2/numbersplit
@@ -36,7 +43,6 @@ c.beginPath()
 c.arc(150,75,65,0,pi*2,false)
 c.fillStyle = `white`
 c.fill()
-c.stroke()
 
 c.beginPath()
 c.arc(150,75,1,0,pi*2,false)
@@ -44,7 +50,9 @@ c.strokeStyle = `black`
 c.fill()
 c.stroke()
 
+
 num = 1
+
 for (a = 0; a < numbersplit; a++) {
     console.log(a)
     c.beginPath()
@@ -74,7 +82,6 @@ console.log('x1',x1)
 console.log('y1',y1)
 console.log('x',x)
 console.log('y',y)
-c.lineWidth = 1
 c.strokeStyle = `rgb(0,0,0)`
 c.stroke()
 
@@ -84,6 +91,20 @@ st = end
 end = end + 2/numbersplit
 }
 
+c.beginPath()
+c.arc(150,75,65,1.5*pi,pos*pi,false)
+c.strokeStyle = 'transparent'
+c.stroke()
+
+xh = 150 + Math.cos(pos*pi)*35
+yh = 75 + Math.sin(pos*pi)*35
+c.beginPath()
+c.moveTo(xh, yh)
+c.lineTo(150,75)
+c.strokeStyle = 'grey'
+c.stroke()
+
+const intervalId = setInterval(load, 60000)
 }
 window.addEventListener('keyup', function(event) {
     console.log(event.key)
