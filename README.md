@@ -34,7 +34,7 @@ height: 516px;"></iframe>
 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/material-js.html"><span style=" font-weight: normal; font-size: 1.3em;">Materiais(CSS, HTML e Javascript)</span></a></li> 
 
-  <li><a href= "https://lnkamaki.github.io/Projects/projects/art-of-marking-sites.html"><span style=" font-weight: normal; font-size: 1.3em;">Art Of Making Sites</span></a></li> 
+  <li><a href= "https://lnkamaki.github.io/Projects/projects/art-of-making-sites.html"><span style=" font-weight: normal; font-size: 1.3em;">Art Of Making Sites</span></a></li> 
 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html"><span style=" font-weight: normal; font-size: 1.3em;">Palavreto</span></a></li> 
 <!--
