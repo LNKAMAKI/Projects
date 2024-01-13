@@ -5,13 +5,10 @@
 <iframe src="https://lnkamaki.github.io/Projects/projects/clock.html" frameborder="0" style="width: 654px;
 height: 516px;"></iframe>
 
+# Math
 <li><a href= "https://lnkamaki.github.io/Projects/projects/modclock.html"><span style=" font-weight: normal; font-size: 1.3em;">Mod(n) Clock</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/clock.html"><span style=" font-weight: normal; font-size: 1.3em;">Standard Clock</span></a></li> 
-
-<li><a href= "https://lnkamaki.github.io/Projects/projects/hobbit-trail.html"><span style=" font-weight: normal; font-size: 1.3em;">Hobbit Trail</span></a></li>
-
- <li><a href= "https://lnkamaki.github.io/Projects/projects/librius.html"><span style=" font-weight: normal; font-size: 1.3em;">-Librius-</span></a></li>
 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/piechart.html"><span style=" font-weight: normal; font-size: 1.3em;">Gráfico de Setores</span></a></li> 
 
@@ -21,20 +18,23 @@ height: 516px;"></iframe>
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/equacao2grau.html"><span style=" font-weight: normal; font-size: 1.3em;">Equação do 2º grau</span></a></li> 
 
- <li><a href= "https://lnkamaki.github.io/Projects/projects/material-js.html"><span style=" font-weight: normal; font-size: 1.3em;">Materiais(CSS, HTML e Javascript)</span></a></li> 
-
 <li><a href= "https://lnkamaki.github.io/Projects/projects/calculadora.html"><span style=" font-weight: normal; font-size: 1.3em;">Calculadora</span></a></li>
-
-<li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html"><span style=" font-weight: normal; font-size: 1.3em;">Palavreto</span></a></li> 
 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html"><span style=" font-weight: normal; font-size: 1.3em;">Medidas de Tendência Central e Frequências</span></a> </li>
 
+# Physics
  <li><a href= "https://lnkamaki.github.io/Projects/projects/conversor-temperatura.html"><span style=" font-weight: normal; font-size: 1.3em;">Conversor de Temperatura</span></a></li> 
 
+# Other
  <li><a href= "https://lnkamaki.github.io/Projects/projects/dicionario.html"><span style=" font-weight: normal; font-size: 1.3em;">Dicionário</span></a></li>   
 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/hobbit-trail.html"><span style=" font-weight: normal; font-size: 1.3em;">Hobbit Trail</span></a></li>
 
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/librius.html"><span style=" font-weight: normal; font-size: 1.3em;">-Librius-</span></a></li>
 
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/material-js.html"><span style=" font-weight: normal; font-size: 1.3em;">Materiais(CSS, HTML e Javascript)</span></a></li> 
+
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/palavreto.html"><span style=" font-weight: normal; font-size: 1.3em;">Palavreto</span></a></li> 
 <!--
 Don't play with a donut. Seriously.
 It's a good idea to destroy food off the floor.
