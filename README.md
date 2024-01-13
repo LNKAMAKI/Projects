@@ -3,7 +3,8 @@
 <!--<img src="https://lnkamaki.github.io/Projects/projects/cidade-lago.jpg">-->
 <u type= "circle">
 
-<iframe src="https://lnkamaki.github.io/Projects/projects/clock.html" frameborder="0" width='100px' height='50px'></iframe>
+<iframe src="https://lnkamaki.github.io/Projects/projects/clock.html" frameborder="0" style="width: 654px;
+height: 516px;"></iframe>
 <li><a href= "https://lnkamaki.github.io/Projects/projects/modclock.html"><span style=" font-weight: normal; font-size: 1.3em;">Mod(n) Clock</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/clock.html"><span style=" font-weight: normal; font-size: 1.3em;">Standard Clock</span></a></li> 
