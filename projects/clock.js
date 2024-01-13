@@ -180,7 +180,7 @@ c.fill()
 c.stroke()
 
 
-//const intervalId = setInterval(load, 10000)
+const intervalId = setInterval(load, 10000)
 }
 window.addEventListener('keyup', function(event) {
     //console.log(event.key)
