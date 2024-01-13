@@ -21,6 +21,8 @@ height: 516px;"></iframe>
 <li><a href= "https://lnkamaki.github.io/Projects/projects/calculadora.html"><span style=" font-weight: normal; font-size: 1.3em;">Calculadora</span></a></li>
 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/mamemo.html"><span style=" font-weight: normal; font-size: 1.3em;">Medidas de Tendência Central e Frequências</span></a> </li>
+
+  <li><a href= "https://lnkamaki.github.io/Projects/projects/calcular-imc.html"><span style=" font-weight: normal; font-size: 1.3em;">Calculador de IMC</span></a> </li>
 <br>
 # Physics
  <li><a href= "https://lnkamaki.github.io/Projects/projects/conversor-temperatura.html"><span style=" font-weight: normal; font-size: 1.3em;">Conversor de Temperatura</span></a></li> 
