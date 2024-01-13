@@ -20,6 +20,11 @@ if (mins < 10) {
 }else{
     minsplace.innerText = mins
 }
+if (hours < 10) {
+    hourplace.innerText = '0' + hours
+}else{
+    hourplace.innerText = hours
+}
 
 if (hours > 12){
  hours = hours - 12
