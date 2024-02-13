@@ -69,10 +69,10 @@ function load() {
     ctx.lineTo(150,75)
     ctx.stroke()
 
-    console.log('loop')
-    console.log(angle)
+   // console.log('loop')
+    //console.log(angle)
     angle+= 0.05*pi
-    console.log(Math.cos(angle)*70)
+    //console.log(Math.cos(angle)*70)
     ctx.beginPath()
     ctx.arc(150 + Math.cos(angle)*70,75,5,0,2*pi,false)
     ctx.fillStyle = 'red'
