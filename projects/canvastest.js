@@ -74,11 +74,29 @@ function load() {
 
    // console.log('loop')
     //console.log(angle)
-    console.log('diff',Math.cos(angle)*radius)
+    //console.log('diff',Math.cos(angle)*radius,Math.cos(angle))
     ctx.beginPath()
     ctx.arc(150 + Math.cos(angle)*radius,75,5,0,2*pi,false)
     ctx.fillStyle = 'red'
     ctx.fill()
+    ctx.stroke()
+
+    ctx.beginPath()
+    ctx.arc(150 + Math.cos(angle)*radius,75 + Math.sin(angle)*radius,5,0,2*pi,false)
+    ctx.fillStyle = 'red'
+    ctx.fill()
+    ctx.stroke()
+
+    ctx.beginPath()
+    console.log('diff',Math.cos(angle)*40)
+    ctx.moveTo(150 + Math.cos(angle)*radius,75 + Math.sin(angle)*radius)
+    /ctx.lineTo(150,75) 
+    if (Math.cos(angle)<=0) {
+        //ctx.lineTo(75 - Math.cos(angle)*40,75 - Math.sin(angle)*40) 
+    }else{
+      //  ctx.lineTo(225 - Math.cos(angle)*40,75 - Math.sin(angle)*40) 
+    }
+    ctx.strokeStyle = 'black'
     ctx.stroke()
 
     if (Math.cos(angle) < 0) {
@@ -96,18 +114,15 @@ function load() {
         ctx.strokeStyle = 'blue'
         ctx.stroke()
     }else if (Math.cos(angle) > 0) {
-        console.log('so sick')
         ctx.beginPath()
         diff = Math.cos(angle)*radius
         ctx.moveTo(150 + Math.cos(angle)*radius - 5,75)
 
             if (diff >= 40*Math.cos(angle) || diff <= -40*Math.cos(angle)) {
-                console.log('aaa')
                 if (diff> 5 || diff < -5) {
         ctx.lineTo(150 + diff - 40*Math.cos(angle),75)
                 }
         }else if (diff> 5 || diff < -5){
-            console.log('on you')
             ctx.lineTo(150,75)
         }
         ctx.strokeStyle = 'blue'
@@ -116,5 +131,5 @@ function load() {
     angle+= 0.05*pi
 
    }
-   const intervalId = setInterval(loop,200)
+   const intervalId = setInterval(loop,100)
 }
