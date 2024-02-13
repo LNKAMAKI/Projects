@@ -82,15 +82,9 @@ function load() {
     ctx.stroke()
 
     ctx.beginPath()
-    ctx.arc(150 + Math.cos(angle)*radius,75 + Math.sin(angle)*radius,5,0,2*pi,false)
-    ctx.fillStyle = 'red'
-    ctx.fill()
-    ctx.stroke()
-
-    ctx.beginPath()
     console.log('diff',Math.cos(angle)*40)
     ctx.moveTo(150 + Math.cos(angle)*radius,75 + Math.sin(angle)*radius)
-    /ctx.lineTo(150,75) 
+    ctx.lineTo(150,75) 
     if (Math.cos(angle)<=0) {
         //ctx.lineTo(75 - Math.cos(angle)*40,75 - Math.sin(angle)*40) 
     }else{
@@ -99,6 +93,12 @@ function load() {
     ctx.strokeStyle = 'black'
     ctx.stroke()
 
+    ctx.beginPath()
+    ctx.arc(150 + Math.cos(angle)*radius,75 + Math.sin(angle)*radius,5,0,2*pi,false)
+    ctx.fillStyle = 'red'
+    ctx.fill()
+    ctx.stroke()
+    
     if (Math.cos(angle) < 0) {
         ctx.beginPath()
         diff = Math.cos(angle)*radius
