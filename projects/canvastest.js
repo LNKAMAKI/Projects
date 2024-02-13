@@ -50,6 +50,7 @@ function load() {
    pi = Math.PI
    angle = 0.5*pi
    radius = 70
+   loop()
    function loop () {
     ctx.clearRect(0,0,300,150)
     ctx.strokeStyle = 'black'
@@ -85,30 +86,32 @@ function load() {
         diff = Math.cos(angle)*radius
         ctx.moveTo(150 + Math.cos(angle)*radius + 5,75)
 
-            if (diff >= 30*Math.cos(angle) || diff <= -30*Math.cos(angle)) {
-        ctx.lineTo(150 + diff - 30*Math.cos(angle),75)
+            if (diff >= 40*Math.cos(angle) || diff <= -40*Math.cos(angle)) {
+                if (diff> 5 || diff < -5) {
+                    ctx.lineTo(150 + diff - 40*Math.cos(angle),75)
+                            }
         }else if (diff>= 5 || diff <= -5){
             ctx.lineTo(150,75)
-        }else{
-            console.log(diff,'dont do anything')
         }
         ctx.strokeStyle = 'blue'
         ctx.stroke()
     }else if (Math.cos(angle) > 0) {
+        console.log('so sick')
         ctx.beginPath()
         diff = Math.cos(angle)*radius
         ctx.moveTo(150 + Math.cos(angle)*radius - 5,75)
 
-            if (diff >= 30*Math.cos(angle) || diff <= -30*Math.cos(angle)) {
-        ctx.lineTo(150 + diff - 30*Math.cos(angle),75)
+            if (diff >= 40*Math.cos(angle) || diff <= -40*Math.cos(angle)) {
+                console.log('aaa')
+                if (diff> 5 || diff < -5) {
+        ctx.lineTo(150 + diff - 40*Math.cos(angle),75)
+                }
         }else if (diff> 5 || diff < -5){
+            console.log('on you')
             ctx.lineTo(150,75)
-        }else{
-            console.log(diff,'dont do anything')
         }
         ctx.strokeStyle = 'blue'
         ctx.stroke()
-        
     }
     angle+= 0.05*pi
 
