@@ -138,7 +138,7 @@ function load() {
         ctx.strokeStyle = 'blue'
         ctx.stroke()
     }
-    angle+= 0.05*pi
+    angle+= 0.1*pi
 
    }
    const intervalId = setInterval(loop,100)
