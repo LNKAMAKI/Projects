@@ -5,7 +5,7 @@ function load() {
     pi = Math.PI
     r = 70
     vy = 0
-    h = 60
+    h = 90
     s0 = 70 + r - h // initial y position
     H = s0 - r // remaning y position 
     angle = Math.asin(H/r)  // starting angle
@@ -21,7 +21,7 @@ function load() {
 
     console.log(angle,anglef)
     add = 1
-    d = 1
+    d = 0.5
     ad = d
     posy = s0
     situation = ''
@@ -30,9 +30,9 @@ function load() {
         g = document.getElementById('g')
         vel = document.getElementById('vel')
         rad = document.getElementById('rad')
-        g.innerText = 'g: ' + ad
-        vel.innerText = 'vy: ' + vy
-        rad.innerText = 'rad: '+ angle
+         // g.innerText = 'g: ' + ad
+        //vel.innerText = 'vy: ' + vy
+        //rad.innerText = 'rad: '+ angle
            // console.log('posição inicial:',posy,'velocidade',vy + ad)
             v = vy + ad
             if (ad > 0) {
@@ -43,13 +43,14 @@ function load() {
               //  console.log('posy - vy: ',posy - v)
             }
             console.log('POSI',posi)
-     if (posi > 70 + r && ad > 0 && vy > 0) {
+     if (posi > 70 + r && ad > 0 && vy >= 0) {
+        console.log('HEY')
                 ad = -d
                 situation = 'pi+'
                 console.log(vy)
      }
 
-     if (posi > 70 + r && ad < 0 && vy < 0) {
+     if (posi > 70 + r && ad < 0 && vy <= 0) {
         console.log('EI, VC PODE PARAR')
         situation = ''
         ad = d
@@ -63,6 +64,7 @@ function load() {
         //dot(150 + cos(angle)*r,70 + sin(angle)*r)
         //dot(150 + cos(angle)*r,s0 + vy)
         
+        
         if (posy + vy > 70 + r) {
             console.log('pode parar')
         }
@@ -74,7 +76,7 @@ function load() {
         }
         H2 = posy - r
         console.log('H2',H2)
-        console.log(posy)
+        console.log('COME ON',posy)
         //console.log(ad,vy)
         if (posy > 70 + r && ad > 0 && vy > 0) {
           
@@ -96,8 +98,9 @@ function load() {
            // clearInterval(interval)
         }
 
-        if (posi > 70 + r && vy == 0) {
+        if (angle == pi/2 && vy == 0) {
             clearInterval(interval)
+            clear()
             dot(150,70 + r)
         }else{
         if (ad > 0) {
@@ -108,7 +111,7 @@ function load() {
     }
        
     }
-  const interval = setInterval(loop,80)
+  const interval = setInterval(loop,20)
 
   window.addEventListener('keyup',function(event) {
     console.log(event.key,event.key == 'p')
@@ -125,14 +128,14 @@ function dot(x,y) {
     */
 
     c.beginPath()
-    c.arc(x,y,5,0,2*pi,false)
-    c.fillStyle = 'red'
-    c.fill()
+    c.moveTo(150,0)
+    c.lineTo(x,y)
     c.stroke()
 
     c.beginPath()
-    c.moveTo(150,0)
-    c.lineTo(x,y)
+    c.arc(x,y,10,0,2*pi,false)
+    c.fillStyle = 'red'
+    c.fill()
     c.stroke()
 }
 function clear() {
