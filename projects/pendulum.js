@@ -7,7 +7,7 @@ function load() {
     c.arc(150,70,r,0,pi,false)
     c.stroke()
     vy = 0
-    h = 70
+    h = 60
     s0 = 70 + r - h // initial y position
     H = s0 - r // remaning y position 
     angle = Math.asin(H/r)  // starting angle
@@ -35,33 +35,6 @@ function load() {
         g.innerText = 'g: ' + ad
         vel.innerText = 'vy: ' + vy
         rad.innerText = 'rad: '+ angle
-        //console.log(vy)
-        //console.log('y',vy*0.05)
-       // console.log('position',s0 + vy)
-       /*
-        if (angle >= anglef || add < 0) {
-            add = -1
-            angle -= 0.1
-        }else{
-            angle+= 0.1
-        }
-        
-        if (angle >= pi/2 && ad > 0) {
-            console.log('CHANGE')
-           ad = -d
-        }
-        if (posy >= pi/2 && ad < 0) {
-            ad = d
-        }
-        
-     */
-    /*
-        if (ad > 0) {
-            rvy = vy + ad
-            }else{
-                rvy = -(vy + ad)
-            }
-            */
            // console.log('posição inicial:',posy,'velocidade',vy + ad)
             v = vy + ad
             if (ad > 0) {
@@ -87,8 +60,6 @@ function load() {
 }
          vy += ad 
            //console.log(posy + vy + ad)
-      
-    
         
         //console.log('diffy',70 + sin(angle)*r - r)
         //dot(150 + cos(angle)*r,70 + sin(angle)*r)
