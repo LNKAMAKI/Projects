@@ -7,7 +7,7 @@ function load() {
     c.arc(150,70,r,0,pi,false)
     c.stroke()
     vy = 0
-    h = 60
+    h = 70
     s0 = 70 + r - h // initial y position
     H = s0 - r // remaning y position 
     angle = Math.asin(H/r)  // starting angle
@@ -29,6 +29,12 @@ function load() {
     situation = ''
     function loop () {
         clear()
+        g = document.getElementById('g')
+        vel = document.getElementById('vel')
+        rad = document.getElementById('rad')
+        g.innerText = 'g: ' + ad
+        vel.innerText = 'vy: ' + vy
+        rad.innerText = 'rad: '+ angle
         //console.log(vy)
         //console.log('y',vy*0.05)
        // console.log('position',s0 + vy)
@@ -56,24 +62,27 @@ function load() {
                 rvy = -(vy + ad)
             }
             */
-            console.log('posição inicial:',posy,'velocidade',vy + ad)
+           // console.log('posição inicial:',posy,'velocidade',vy + ad)
             v = vy + ad
             if (ad > 0) {
                 posi = posy + v
-                console.log('posy + vy: ',posy + v)
+               // console.log('posy + vy: ',posy + v)
              }else{
                 posi = posy - v
-                console.log('posy - vy: ',posy - v)
+              //  console.log('posy - vy: ',posy - v)
             }
-            console.log('POSI',posi)
+            //console.log('POSI',posi)
      if (posi > 75 + r && ad > 0 && vy > 0) {
                 ad = -d
                 situation = 'pi+'
+                console.log(vy)
      }
 
      if (posi > 75 + r && ad < 0 && vy < 0) {
         console.log('EI, VC PODE PARAR')
+        situation = ''
         ad = d
+        console.log(vy)
         //vy = -vy
 }
          vy += ad 
@@ -95,8 +104,8 @@ function load() {
             posy -= vy
         }
         H2 = posy - r
-        console.log(posy)
-        console.log(ad,vy)
+       // console.log(posy)
+        //console.log(ad,vy)
         if (posy > 75 + r && ad > 0 && vy > 0) {
           
         }
@@ -106,7 +115,7 @@ function load() {
         }else{
             angle = pi - Math.asin(H2/r)
         }
-        //console.log('angle',angle, Math.asin(H2/r))
+        console.log('angle',angle, Math.asin(H2/r))
         //console.log('H2',H2)
         //console.log('/',H2,'/',r,'/',H2/r)
         //console.log('ANGULO',Math.asin(H2/r))
@@ -123,7 +132,7 @@ function load() {
         }
        
     }
-  const interval = setInterval(loop,100)
+  const interval = setInterval(loop,1000)
 
   window.addEventListener('keyup',function(event) {
     console.log(event.key,event.key == 'p')
