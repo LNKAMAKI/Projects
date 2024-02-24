@@ -15,11 +15,11 @@ function load() {
     console.log(angle,anglef)
     y0 = cos(pi/2 - Math.acos(H/r))
     sf = cos(pi - pi/2 + Math.acos(H/r)) // final x position
-    console.log('angle',pi - pi/2 + Math.acos(H/r))
-    console.log(cos(pi - pi/2 + Math.acos(H/r)))
+    //console.log('angle',pi - pi/2 + Math.acos(H/r))
+    //console.log(cos(pi - pi/2 + Math.acos(H/r)))
     dot(150 + cos(angle)*r,s0)
-    console.log(H)
-    console.log('sin0:',cos(pi/2 - Math.acos(H/r)),'sf',sf)
+    //console.log(H)
+   // console.log('sin0:',cos(pi/2 - Math.acos(H/r)),'sf',sf)
 
     console.log(angle,anglef)
     add = 1
@@ -45,12 +45,15 @@ function load() {
         }
         vy += ad
         
-        console.log('diffy',70 + sin(angle)*r - r)
+        //console.log('diffy',70 + sin(angle)*r - r)
         //dot(150 + cos(angle)*r,70 + sin(angle)*r)
         //dot(150 + cos(angle)*r,s0 + vy)
         posy += vy
         H2 = posy - r
-        console.log(Math.asin(H2/r))
+        //console.log('H2',H2)
+        console.log('/',H2,'/',r,'/',H2/r)
+        console.log('ANGULO',Math.asin(H2/r))
+       // console.log('cos',cos(Math.asin(H2/r)))
         dot(150 + cos(Math.asin(H2/r)),posy)
     }
   const interval = setInterval(loop,1000)
