@@ -49,23 +49,34 @@ function load() {
         }
         
      */
+    /*
         if (ad > 0) {
             rvy = vy + ad
             }else{
                 rvy = -(vy + ad)
             }
-     if (posy + rvy > 75 + r && ad > 0 && vy > 0) {
+            */
+        
+            v = vy + ad
+            if (ad > 0) {
+                posi = posy + v
+             }else{
+                posi = posy - v
+            }
+     if (posi > 75 + r && ad > 0 && vy > 0) {
                 ad = -d
                 situation = 'pi+'
      }
      console.log('waht',posy + vy + ad)
-     if (posy + rvy > 75 + r && ad < 0 && vy < 0) {
+     if (posy > 75 + r && ad < 0 && vy < 0) {
         console.log('EI, VC PODE PARAR')
         //ad = d
         //vy = -vy
 }
+         vy += ad 
            //console.log(posy + vy + ad)
-        vy += ad
+      
+    
         
         //console.log('diffy',70 + sin(angle)*r - r)
         //dot(150 + cos(angle)*r,70 + sin(angle)*r)
@@ -77,13 +88,15 @@ function load() {
 
         if (ad > 0) {
         posy += vy
-        console.log('antes',posy,ad,vy)
         }else{
             posy -= vy
-            console.log('antes',posy,ad,vy)
         }
         H2 = posy - r
         console.log(posy)
+        if (posy > 75 + r && ad > 0 && vy > 0) {
+          
+        }
+        
         if (situation !== 'pi+') {
         angle = Math.asin(H2/r)
         }else{
@@ -97,7 +110,7 @@ function load() {
        // console.log('cos',cos(Math.asin(H2/r)))
      
         if (posy > 75 + r) {
-            clearInterval(interval)
+           // clearInterval(interval)
         }
         if (ad > 0) {
         dot(150 + cos(Math.asin(H2/r))*r,posy)
