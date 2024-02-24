@@ -56,21 +56,24 @@ function load() {
                 rvy = -(vy + ad)
             }
             */
-        
+            console.log('posição inicial:',posy,'velocidade',vy + ad)
             v = vy + ad
             if (ad > 0) {
                 posi = posy + v
+                console.log('posy + vy: ',posy + v)
              }else{
                 posi = posy - v
+                console.log('posy - vy: ',posy - v)
             }
+            console.log('POSI',posi)
      if (posi > 75 + r && ad > 0 && vy > 0) {
                 ad = -d
                 situation = 'pi+'
      }
-     console.log('waht',posy + vy + ad)
-     if (posy > 75 + r && ad < 0 && vy < 0) {
+
+     if (posi > 75 + r && ad < 0 && vy < 0) {
         console.log('EI, VC PODE PARAR')
-        //ad = d
+        ad = d
         //vy = -vy
 }
          vy += ad 
@@ -93,6 +96,7 @@ function load() {
         }
         H2 = posy - r
         console.log(posy)
+        console.log(ad,vy)
         if (posy > 75 + r && ad > 0 && vy > 0) {
           
         }
@@ -119,7 +123,7 @@ function load() {
         }
        
     }
-  const interval = setInterval(loop,1000)
+  const interval = setInterval(loop,100)
 
   window.addEventListener('keyup',function(event) {
     console.log(event.key,event.key == 'p')
