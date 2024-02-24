@@ -5,7 +5,7 @@ function load() {
     pi = Math.PI
     r = 70
     vy = 0
-    h = 90
+    h = 30
     s0 = 70 + r - h // initial y position
     H = s0 - r // remaning y position 
     angle = Math.asin(H/r)  // starting angle
@@ -21,7 +21,7 @@ function load() {
 
     console.log(angle,anglef)
     add = 1
-    d = 0.5
+    d = 0.4
     ad = d
     posy = s0
     situation = ''
@@ -96,6 +96,13 @@ function load() {
      
         if (posy > 70 + r) {
            // clearInterval(interval)
+        }
+
+        if (isNaN(angle) == true) {
+            console.log('STOP')
+            clearInterval(interval)
+            clear()
+            dot(150,70 + r)
         }
 
         if (angle == pi/2 && vy == 0) {

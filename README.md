@@ -6,6 +6,8 @@
 height: 516px;"></iframe>
 
 # Math
+<li><a href= "https://lnkamaki.github.io/Projects/projects/pendulum.html"><span style=" font-weight: normal; font-size: 1.3em;">Pendulum</span></a></li> 
+
 <li><a href= "https://lnkamaki.github.io/Projects/projects/modclock.html"><span style=" font-weight: normal; font-size: 1.3em;">Mod(n) Clock</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/clock.html"><span style=" font-weight: normal; font-size: 1.3em;">Standard Clock</span></a></li> 
