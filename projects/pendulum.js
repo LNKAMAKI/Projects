@@ -5,7 +5,7 @@ function load() {
     pi = Math.PI
     r = 70
     vy = 0
-    h = 30
+    h = 60
     s0 = 70 + r - h // initial y position
     H = s0 - r // remaning y position 
     angle = Math.asin(H/r)  // starting angle
