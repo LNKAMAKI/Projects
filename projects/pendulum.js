@@ -4,8 +4,6 @@ function load() {
     c = can.getContext('2d')
     pi = Math.PI
     r = 70
-    c.arc(150,70,r,0,pi,false)
-    c.stroke()
     vy = 0
     h = 60
     s0 = 70 + r - h // initial y position
@@ -23,7 +21,7 @@ function load() {
 
     console.log(angle,anglef)
     add = 1
-    d = 0.5
+    d = 1
     ad = d
     posy = s0
     situation = ''
@@ -44,14 +42,14 @@ function load() {
                 posi = posy - v
               //  console.log('posy - vy: ',posy - v)
             }
-            //console.log('POSI',posi)
-     if (posi > 75 + r && ad > 0 && vy > 0) {
+            console.log('POSI',posi)
+     if (posi > 70 + r && ad > 0 && vy > 0) {
                 ad = -d
                 situation = 'pi+'
                 console.log(vy)
      }
 
-     if (posi > 75 + r && ad < 0 && vy < 0) {
+     if (posi > 70 + r && ad < 0 && vy < 0) {
         console.log('EI, VC PODE PARAR')
         situation = ''
         ad = d
@@ -65,7 +63,7 @@ function load() {
         //dot(150 + cos(angle)*r,70 + sin(angle)*r)
         //dot(150 + cos(angle)*r,s0 + vy)
         
-        if (posy + vy > 75 + r) {
+        if (posy + vy > 70 + r) {
             console.log('pode parar')
         }
 
@@ -75,9 +73,10 @@ function load() {
             posy -= vy
         }
         H2 = posy - r
-       // console.log(posy)
+        console.log('H2',H2)
+        console.log(posy)
         //console.log(ad,vy)
-        if (posy > 75 + r && ad > 0 && vy > 0) {
+        if (posy > 70 + r && ad > 0 && vy > 0) {
           
         }
         
@@ -93,17 +92,23 @@ function load() {
         //console.log(150 + cos(Math.asin(H2/r))*r)
        // console.log('cos',cos(Math.asin(H2/r)))
      
-        if (posy > 75 + r) {
+        if (posy > 70 + r) {
            // clearInterval(interval)
         }
+
+        if (posi > 70 + r && vy == 0) {
+            clearInterval(interval)
+            dot(150,70 + r)
+        }else{
         if (ad > 0) {
         dot(150 + cos(Math.asin(H2/r))*r,posy)
         }else{
             dot(150 - cos(Math.asin(H2/r))*r,posy)
         }
+    }
        
     }
-  const interval = setInterval(loop,1000)
+  const interval = setInterval(loop,80)
 
   window.addEventListener('keyup',function(event) {
     console.log(event.key,event.key == 'p')
@@ -113,9 +118,11 @@ function load() {
 })
 }
 function dot(x,y) {
+    /*
     c.beginPath()
     c.arc(150,70,r,0,pi,false)
     c.stroke()
+    */
 
     c.beginPath()
     c.arc(x,y,5,0,2*pi,false)
