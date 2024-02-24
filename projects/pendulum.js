@@ -23,40 +23,97 @@ function load() {
 
     console.log(angle,anglef)
     add = 1
-    d = 0.1
+    d = 0.5
     ad = d
     posy = s0
+    situation = ''
     function loop () {
         clear()
         //console.log(vy)
         //console.log('y',vy*0.05)
        // console.log('position',s0 + vy)
+       /*
         if (angle >= anglef || add < 0) {
             add = -1
             angle -= 0.1
         }else{
             angle+= 0.1
         }
-        if (posy >= 150) {
+        
+        if (angle >= pi/2 && ad > 0) {
+            console.log('CHANGE')
            ad = -d
         }
-        if (posy <= 0) {
+        if (posy >= pi/2 && ad < 0) {
             ad = d
         }
+        
+     */
+        if (ad > 0) {
+            rvy = vy + ad
+            }else{
+                rvy = -(vy + ad)
+            }
+     if (posy + rvy > 75 + r && ad > 0 && vy > 0) {
+                ad = -d
+                situation = 'pi+'
+     }
+     console.log('waht',posy + vy + ad)
+     if (posy + rvy > 75 + r && ad < 0 && vy < 0) {
+        console.log('EI, VC PODE PARAR')
+        //ad = d
+        //vy = -vy
+}
+           //console.log(posy + vy + ad)
         vy += ad
         
         //console.log('diffy',70 + sin(angle)*r - r)
         //dot(150 + cos(angle)*r,70 + sin(angle)*r)
         //dot(150 + cos(angle)*r,s0 + vy)
+        
+        if (posy + vy > 75 + r) {
+            console.log('pode parar')
+        }
+
+        if (ad > 0) {
         posy += vy
+        console.log('antes',posy,ad,vy)
+        }else{
+            posy -= vy
+            console.log('antes',posy,ad,vy)
+        }
         H2 = posy - r
+        console.log(posy)
+        if (situation !== 'pi+') {
+        angle = Math.asin(H2/r)
+        }else{
+            angle = pi - Math.asin(H2/r)
+        }
+        //console.log('angle',angle, Math.asin(H2/r))
         //console.log('H2',H2)
-        console.log('/',H2,'/',r,'/',H2/r)
-        console.log('ANGULO',Math.asin(H2/r))
+        //console.log('/',H2,'/',r,'/',H2/r)
+        //console.log('ANGULO',Math.asin(H2/r))
+        //console.log(150 + cos(Math.asin(H2/r))*r)
        // console.log('cos',cos(Math.asin(H2/r)))
-        dot(150 + cos(Math.asin(H2/r)),posy)
+     
+        if (posy > 75 + r) {
+            clearInterval(interval)
+        }
+        if (ad > 0) {
+        dot(150 + cos(Math.asin(H2/r))*r,posy)
+        }else{
+            dot(150 - cos(Math.asin(H2/r))*r,posy)
+        }
+       
     }
   const interval = setInterval(loop,1000)
+
+  window.addEventListener('keyup',function(event) {
+    console.log(event.key,event.key == 'p')
+    if (event.key == 'p') {
+    clearInterval(interval)
+    }
+})
 }
 function dot(x,y) {
     c.beginPath()
