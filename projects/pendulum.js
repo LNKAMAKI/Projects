@@ -21,7 +21,7 @@ function load() {
 
     console.log(angle,anglef)
     add = 1
-    d = 0.05
+    d = 0.1
     ad = d
     posy = s0
     situation = ''
