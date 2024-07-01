@@ -140,7 +140,7 @@ for (m in pokebolas) {
     }
 }
 console.log(posibs)
-    }else{
+    }else{ // pokeballs already on screen
         document.getElementById('diff').innerText = 'iii' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
         c.clearRect(0,0,300,150)
 
