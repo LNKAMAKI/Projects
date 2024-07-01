@@ -23,7 +23,7 @@ mousex = ''
 mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
-    if (pokebolas.length == 0) {
+    if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
 for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
@@ -35,6 +35,7 @@ y = Math.random()*(150-width*3) + width
 //console.log(velx)
 
 
+// JUST FOR TESTING
 if (v == 0) {
     x = 94
     y = 61
@@ -90,7 +91,7 @@ if (v == 0) {
     color = 'purple'
 }
 
-
+// RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
 //y = Math.random()*(50-width*2) + width
 
@@ -124,6 +125,7 @@ rangey = [y - width,y + width]
 createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
 }
 
+// pokeballs collision arrangment
 posibs = []
 strposibs = []
 for (m in pokebolas) {
