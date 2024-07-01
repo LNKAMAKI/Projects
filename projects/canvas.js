@@ -2190,14 +2190,6 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     //}
 }
 
-
-function POKEBOL() {
-    c.clearRect(0,0,300,150)
-    for (num in pokebolas) {
-    createPokebola(pokebolas[num].x,pokebolas[num].y,pokebolas[num].width,pokebolas[num].color,pokebolas[num].velx,pokebolas[num].vely,false,0,0)
-    }
-}
-
 function redoCollisions() {
     for (ba = posibin - 1; ba >= 0; ba--) {//for (ba = 0; ba < posibin; ba++) {
         console.log(ba)
@@ -2285,6 +2277,7 @@ if (pokesr >= 2) {
     //loop = false
 }
 }
+
 
 function poke() {
     for (a in pokebolas) {
@@ -3184,6 +3177,13 @@ function poke() {
 
 // SIDE FUNCTIONS
 //saber quando o mouse encosta em uma pokebola
+function POKEBOL() {
+    c.clearRect(0,0,300,150)
+    for (num in pokebolas) {
+    createPokebola(pokebolas[num].x,pokebolas[num].y,pokebolas[num].width,pokebolas[num].color,pokebolas[num].velx,pokebolas[num].vely,false,0,0)
+    }
+}
+
 window.addEventListener('mousemove', function(event) {
     
     canv = document.querySelector('canvas')
