@@ -24,7 +24,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) {
-for (v = 0; v < 6; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -98,6 +98,7 @@ r = Math.random()*255
 g = Math.random()*255
 //b = Math.random()*255
 //color = Math.trunc(Math.random()*7)
+// RANDOMNESS FOR POKEBALL COLOR (PUT BACL WHEN TEST IS OVER)
 /*
 if (color == 0) {
  color = "red"
@@ -1895,60 +1896,6 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
 }
 
-//saber quando o mouse encosta em uma pokebola
-window.addEventListener('mousemove', function(event) {
-    
-    canv = document.querySelector('canvas')
-    cWidth = canv.offsetWidth
-    wWidth = this.window.innerWidth
-    cHeight = canv.offsetHeight
-    wHeight = this.window.innerHeight
-    dif = wWidth - cWidth
-    //console.log('it moved')
-    //console.log(event.x - dif/2,event.y)
-    
-    //console.log(wWidth,cWidth,dif/2)
-    //console.log(((event.x - dif/2)/cWidth)*300)
-    mousex = ((event.x - dif/2)/cWidth)*300
-    mousey = ((event.y - 80.48)/cHeight)*150
-    //this.document.getElementById('x').innerText = mousex
-    //this.document.getElementById('y').innerText = mousey
-    //console.log(wHeight,cHeight)
-    //console.log(event.y - 80.48)
-    //console.log(((event.y - 80.48)/cHeight)*150)
-    if (mousex < 300 && mousex > 0 && mousey < 150 && mousey > 0) {
-        //this.document.getElementById('x').innerText += 'within'
-    }
-    
-    /*
-    for (p in pokebolas) {
-        px = pokebolas[p].x
-        pw = pokebolas[p].width
-        py = pokebolas[p].y
-        //console.log(px - pw, px + pw, py - pw, py + pw)
-        if (mousex > px - pw && mousex < px + pw && mousey > py - pw && mousey < py + pw) {
-            //console.log('OWO')
-            r = Math.random()*255
-            g = Math.random()*255
-            b = Math.random()*255
-            //pokebolas[p].color = `rgb(${r},${g},${b})`
-        }
-    }*/
-})
-
-window.addEventListener('keyup',function(event) {
- console.log(event.key)
- if (event.key == 'p' || event.ley == 'P') {
-    loop = false
- }
- if (event.key == 'c') {
-   POKEBOL()
- }
- if (event.key == 'd') {
-    poke()
-  }
-}) 
-
 function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     newx1 = 'n'
     newx2 = 'n'
@@ -2243,57 +2190,6 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     //}
 }
 
-function sortob(n, pam, pim) {
-    var maiorparamenor = []
-    var posiçõesnumeros = []
-    var yposition = n
-
-    for (n in yposition) {
-        maiorparamenor[n] = {}
-        posiçõesnumeros.push(-1)
-        maiorparamenor[n][pam] = 100000000000000000000000000000000000000000000000000000000000000000000000000000000
-    }
-
-    for (item in yposition) {
-        var volume = 0
-        var dn = 0
-        for (volume in yposition) {
-            if (dn == 0) {
-                if (yposition[item][pam] < maiorparamenor[volume][pam] || yposition[item][pam] == maiorparamenor[volume][pam] && yposition[item][pim] < maiorparamenor[volume][pim]) {
-                    var itens = yposition.length - (Number(volume) + 1)
-                    var leng = yposition.length
-
-                    for (ci = 0; ci < itens; ci++) {
-                        maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
-                        posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
-                        leng--
-                    }
-                    maiorparamenor[volume] = yposition[item]
-                    posiçõesnumeros[volume] = Number(item)
-                    dn = 10
-                }
-            }
-        }
-    }
-
-    //return [maiorparamenor,posiçõesnumeros]
-    return maiorparamenor
-}
-
-function caldis(color1,color2) {
-    for (ju in pokebolas){
-        console.log(pokebolas[ju].color,color1,pokebolas[ju].color == color1)
-        if (pokebolas[ju].color == color1) {
-            poke1 = pokebolas[ju]
-        }else if(pokebolas[ju].color == color2) {
-            poke2 = pokebolas[ju]
-        }
-    }
-    difx = poke1.x - poke2.x
-    dify = poke1.y - poke2.y
-    answer = difx**2 + dify**2
-    return answer
-}
 
 function POKEBOL() {
     c.clearRect(0,0,300,150)
@@ -2385,12 +2281,10 @@ function checkTouch () {
     }   
 }
 if (pokesr >= 2) {
-    window.alert('UEPA EPA',pokesr)
-    loop = false
+    //window.alert('UEPA EPA',pokesr)
+    //loop = false
 }
 }
-
-
 
 function poke() {
     for (a in pokebolas) {
@@ -3285,4 +3179,112 @@ function poke() {
 }
 }
 }
+}
+
+
+// SIDE FUNCTIONS
+//saber quando o mouse encosta em uma pokebola
+window.addEventListener('mousemove', function(event) {
+    
+    canv = document.querySelector('canvas')
+    cWidth = canv.offsetWidth
+    wWidth = this.window.innerWidth
+    cHeight = canv.offsetHeight
+    wHeight = this.window.innerHeight
+    dif = wWidth - cWidth
+    //console.log('it moved')
+    //console.log(event.x - dif/2,event.y)
+    
+    //console.log(wWidth,cWidth,dif/2)
+    //console.log(((event.x - dif/2)/cWidth)*300)
+    mousex = ((event.x - dif/2)/cWidth)*300
+    mousey = ((event.y - 80.48)/cHeight)*150
+    //this.document.getElementById('x').innerText = mousex
+    //this.document.getElementById('y').innerText = mousey
+    //console.log(wHeight,cHeight)
+    //console.log(event.y - 80.48)
+    //console.log(((event.y - 80.48)/cHeight)*150)
+    if (mousex < 300 && mousex > 0 && mousey < 150 && mousey > 0) {
+        //this.document.getElementById('x').innerText += 'within'
+    }
+    
+    /*
+    for (p in pokebolas) {
+        px = pokebolas[p].x
+        pw = pokebolas[p].width
+        py = pokebolas[p].y
+        //console.log(px - pw, px + pw, py - pw, py + pw)
+        if (mousex > px - pw && mousex < px + pw && mousey > py - pw && mousey < py + pw) {
+            //console.log('OWO')
+            r = Math.random()*255
+            g = Math.random()*255
+            b = Math.random()*255
+            //pokebolas[p].color = `rgb(${r},${g},${b})`
+        }
+    }*/
+})
+
+window.addEventListener('keyup',function(event) {
+    console.log(event.key)
+    if (event.key == 'p' || event.ley == 'P') {
+       loop = false
+    }
+    if (event.key == 'c') {
+      POKEBOL()
+    }
+    if (event.key == 'd') {
+       poke()
+     }
+   }) 
+
+   function sortob(n, pam, pim) {
+    var maiorparamenor = []
+    var posiçõesnumeros = []
+    var yposition = n
+
+    for (n in yposition) {
+        maiorparamenor[n] = {}
+        posiçõesnumeros.push(-1)
+        maiorparamenor[n][pam] = 100000000000000000000000000000000000000000000000000000000000000000000000000000000
+    }
+
+    for (item in yposition) {
+        var volume = 0
+        var dn = 0
+        for (volume in yposition) {
+            if (dn == 0) {
+                if (yposition[item][pam] < maiorparamenor[volume][pam] || yposition[item][pam] == maiorparamenor[volume][pam] && yposition[item][pim] < maiorparamenor[volume][pim]) {
+                    var itens = yposition.length - (Number(volume) + 1)
+                    var leng = yposition.length
+
+                    for (ci = 0; ci < itens; ci++) {
+                        maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+                        posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+                        leng--
+                    }
+                    maiorparamenor[volume] = yposition[item]
+                    posiçõesnumeros[volume] = Number(item)
+                    dn = 10
+                }
+            }
+        }
+    }
+
+    //return [maiorparamenor,posiçõesnumeros]
+    return maiorparamenor
+}
+
+function caldis(color1,color2) {
+    for (ju in pokebolas){
+        console.log(pokebolas[ju].color,color1,pokebolas[ju].color == color1)
+        if (pokebolas[ju].color == color1) {
+            poke1 = pokebolas[ju]
+        }else if(pokebolas[ju].color == color2) {
+            poke2 = pokebolas[ju]
+        }
+    }
+    difx = poke1.x - poke2.x
+    dify = poke1.y - poke2.y
+    answer = difx**2 + dify**2
+    return answer
 }

@@ -218,7 +218,7 @@ contents = [
         {title: 'nonetheless', type:"adverb",meaning: 'even so, nevertheless, however, still; used to introduce a contrasting or concessive statement',examples: 'it is very much a work in progress, but a transformative one, nonetheless'},
     ]},
     {title:'text-5-train-1',url: 'html-logo.svg',subs: [
-        {title: 'eloquent', type:"noun",meaning: '',examples: ''},
+        {title: 'eloquent', type:"noun",meaning: 'fluent or persuasive in speaking or writing, giving a clear, strong message',examples: 'it’s a powerful, eloquent, conscientiously impassioned film'},
         {title: 'impassioned', type:"noun",meaning: '',examples: ''},
         {title: 'swaggering', type:"noun",meaning: '',examples: ''},
         {title: '', type:"noun",meaning: '',examples: ''},
