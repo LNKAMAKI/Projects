@@ -3176,14 +3176,14 @@ function poke() {
 
 
 // SIDE FUNCTIONS
-//saber quando o mouse encosta em uma pokebola
+
 function POKEBOL() {
     c.clearRect(0,0,300,150)
     for (num in pokebolas) {
     createPokebola(pokebolas[num].x,pokebolas[num].y,pokebolas[num].width,pokebolas[num].color,pokebolas[num].velx,pokebolas[num].vely,false,0,0)
     }
 }
-
+//saber quando o mouse encosta em uma pokebola
 window.addEventListener('mousemove', function(event) {
     
     canv = document.querySelector('canvas')
