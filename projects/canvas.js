@@ -24,7 +24,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
-for (v = 0; v < 4; v++) {
+for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -1131,18 +1131,102 @@ function collision() {
         realposibsy = []
   
         col = 0
+        
+        /*
         for (p in posibs) {
             result = detectCollision(posibs[p].a,posibs[p].b,pokebolas[posibs[p].a].x,pokebolas[posibs[p].a].y,pokebolas[posibs[p].b].x,pokebolas[posibs[p].b].y,true,true)
             if (result != undefined) {
+                console.log(pokebolas[posibs[p].a].color, 'com', pokebolas[posibs[p].b].color)
+                console.log(result.dist)
                 col++
+                fstx = pokebolas[posibs[p].a].x
+                fsty = pokebolas[posibs[p].a].y
+                console.log('x',fstx,'y',fsty)
+                console.log('x\'',result.x1,'y\'',result.x2)
+                
                 pokebolas[posibs[p].a].x = result.x1
                 pokebolas[posibs[p].a].y = result.y1
                 pokebolas[posibs[p].b].x = result.x2
                 pokebolas[posibs[p].b].y = result.y2
+                
                 pokebolas[posibs[p].a].r = 88
                 pokebolas[posibs[p].b].r = 88
             }
+        }*/
+       sortcol = []
+       for (p in pokebolas) {
+        which = {dist:'',pokeb1:'',pokeb2:'',co1:'',co2:'',remove:''}
+        for (pi in pokebolas) {
+            result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
+            if (result != undefined) {
+                console.log('veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
+                console.log('distância entre pokebolas:',result.dist)
+                console.log(pokebolas[p].color,'x:',pokebolas[p].x,'y',pokebolas[p].y)
+                console.log(pokebolas[p].color,'x:',result.x1,'y',result.y1)
+                col++
+                if (pokebolas[p].x != result.x1) {
+                    console.log(pokebolas[p].x,'diferente de',result.x1)
+
+                if (which.dist == '' || result.dist < which.dist) {
+                    which.dist = result.dist
+                    which.pokeb1 = p
+                    which.pokeb2 = pi
+                    which.co1 = pokebolas[p].color
+                    which.co2 = pokebolas[pi].color
+            }
+            }
         }
+       }
+       if (which.dist != '') {
+        console.log('which',pokebolas[p].color,which)
+        sortcol.push(which)
+        }
+    }
+
+    for (lp in sortcol) {
+        console.log('if you wanna stray')
+        console.log(sortcol[lp].remove)
+         console.log(sortcol[lp].pokeb1,sortcol[lp].pokeb2)
+         console.log('-----------')
+         for (lp2 in sortcol) {
+            console.log(sortcol[lp2].pokeb1,sortcol[lp2].pokeb2)
+            if (sortcol[lp].pokeb1 == sortcol[lp2].pokeb2 && sortcol[lp].pokeb2 == sortcol[lp2].pokeb1 && sortcol[lp].remove == '') {
+                console.log('é igual')
+                sortcol[lp2].remove = true
+            }
+         }
+    }
+    sortcol_ = []
+    for (ment in sortcol) {
+        console.log(sortcol[ment])
+        if (sortcol[ment].remove == true) {
+            console.log('remove this thing')
+        }else{
+            sortcol_.push(sortcol[ment])
+        }
+    }
+
+    for (p in sortcol) {
+        //p = 0
+        result = detectCollision(sortcol[p].pokeb1,sortcol[p].pokeb2,pokebolas[sortcol[p].pokeb1].x,pokebolas[sortcol[p].pokeb1].y,pokebolas[sortcol[p].pokeb2].x,pokebolas[sortcol[p].pokeb2].y,false,false)
+        if (result != undefined) {
+            console.log(pokebolas[sortcol[p].pokeb1].color, 'com', pokebolas[sortcol[p].pokeb2].color)
+            console.log(result.dist)
+            col++
+            fstx = pokebolas[sortcol[p].pokeb1].x
+            fsty = pokebolas[sortcol[p].pokeb1].y
+            console.log('x',fstx,'y',fsty)
+            console.log('x\'',result.x1,'y\'',result.x2)
+            
+            pokebolas[sortcol[p].pokeb1].x = result.x1
+            pokebolas[sortcol[p].pokeb1].y = result.y1
+            pokebolas[sortcol[p].pokeb2].x = result.x2
+            pokebolas[sortcol[p].pokeb2].y = result.y2
+            
+            pokebolas[sortcol[p].pokeb1].r = 88
+            pokebolas[sortcol[p].pokeb2].r = 88
+        }
+    }
         if (col > 1) {
             loop = false
         }
@@ -1759,7 +1843,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         //pokebolas[b].velx = 0
         //pokebolas[b].vely = 0
         //console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
-        console.log('POKEBOLAAAAS',pokebolas[a].color,pokebolas[b].color, diffx**2 + diffy**2)
+        //console.log('POKEBOLAAAAS',pokebolas[a].color,pokebolas[b].color, diffx**2 + diffy**2)
         //window.alert('PAROU')
        //loop = false
     }
@@ -1994,10 +2078,10 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         }
         //window.alert('COLISÃO')
         if (raiz2 > 0 && raiz2 <= 1) {
-            console.log('raiz1',raiz1,'raiz2',raiz2)
+            //console.log('raiz1',raiz1,'raiz2',raiz2)
             //pokebolas[a].r = raiz2
             //pokebolas[b].r = raiz2
-            return {x1: newx1,x2: newx2, y1: newy1, y2: newy2}
+            return {x1: newx1,x2: newx2, y1: newy1, y2: newy2, dist: diffx**2 + diffy**2}
         }
     }
     //}
@@ -3037,6 +3121,7 @@ window.addEventListener('mousemove', function(event) {
     }*/
 })
 
+//teclas de teste 
 window.addEventListener('keyup',function(event) {
     console.log(event.key)
     if (event.key == 'p' || event.ley == 'P') {
@@ -3087,6 +3172,7 @@ window.addEventListener('keyup',function(event) {
     return maiorparamenor
 }
 
+//função para determinar distância entre duas pokebolas (input = cor)
 function caldis(color1,color2) {
     for (ju in pokebolas){
         console.log(pokebolas[ju].color,color1,pokebolas[ju].color == color1)
