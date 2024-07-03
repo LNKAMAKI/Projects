@@ -1222,7 +1222,24 @@ function collision() {
     for (p in sortcol) {
         //p = 0
         console.log('sortcol',sortcol[p])
-        result = detectCollision(sortcol[p].pokeb1,sortcol[p].pokeb2,pokebolas[sortcol[p].pokeb1].x,pokebolas[sortcol[p].pokeb1].y,pokebolas[sortcol[p].pokeb2].x,pokebolas[sortcol[p].pokeb2].y,true,true)
+        console.log('first',sortcol[p].pokeb1,'second',sortcol[p].pokeb2)
+
+        if (pokebolas[sortcol[p].pokeb1].stat == undefined){
+            console.log('its undefined')
+            pokebolas[sortcol[p].pokeb1].stat = true
+        }
+        if (pokebolas[sortcol[p].pokeb2].stat == undefined){
+            console.log('its undefined')
+            pokebolas[sortcol[p].pokeb2].stat = true
+        }
+
+        console.log(pokebolas[sortcol[p].pokeb1].stat,pokebolas[sortcol[p].pokeb2].stat)
+        result = detectCollision(sortcol[p].pokeb1,sortcol[p].pokeb2,pokebolas[sortcol[p].pokeb1].x,pokebolas[sortcol[p].pokeb1].y,pokebolas[sortcol[p].pokeb2].x,pokebolas[sortcol[p].pokeb2].y,pokebolas[sortcol[p].pokeb1].stat,pokebolas[sortcol[p].pokeb2].stat)
+
+       
+            pokebolas[sortcol[p].pokeb1].stat = false
+            pokebolas[sortcol[p].pokeb2].stat = false
+
         if (result != undefined) {
             console.log(pokebolas[sortcol[p].pokeb1].color, 'com', pokebolas[sortcol[p].pokeb2].color)
             console.log(result.dist)
