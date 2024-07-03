@@ -1198,7 +1198,7 @@ function collision() {
          }
     }
 
-    sortcol_1 = []
+    sortcol_1 = [] // priorizar
     sortcol_2 = [] // precisa ordenar
     for (ment in sortcol) {
         console.log(sortcol[ment])
@@ -1211,6 +1211,13 @@ function collision() {
         }
     }
     //sortcol = [...sortcol_]
+    sortcol = []
+    for (k in sortcol_1) {
+        sortcol.push(sortcol_1[k])
+    }
+    for (k in sortcol_2) {
+        sortcol.push(sortcol_2[k])
+    }
 
     for (p in sortcol) {
         //p = 0
