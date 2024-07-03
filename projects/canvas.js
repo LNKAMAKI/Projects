@@ -1193,22 +1193,29 @@ function collision() {
             if (sortcol[lp].pokeb1 == sortcol[lp2].pokeb2 && sortcol[lp].pokeb2 == sortcol[lp2].pokeb1 && sortcol[lp].remove == '') {
                 console.log('é igual')
                 sortcol[lp2].remove = true
+                sortcol[lp].pri = true
             }
          }
     }
-    sortcol_ = []
+
+    sortcol_1 = []
+    sortcol_2 = [] // precisa ordenar
     for (ment in sortcol) {
         console.log(sortcol[ment])
         if (sortcol[ment].remove == true) {
             console.log('remove this thing')
-        }else{
-            sortcol_.push(sortcol[ment])
+            //sortcol_.push(sortcol[ment])
+            sortcol_1.push(sortcol[ment])
+        }else if (sortcol[ment].pri == undefined){
+            sortcol_2.push(sortcol[ment])
         }
     }
+    //sortcol = [...sortcol_]
 
     for (p in sortcol) {
         //p = 0
-        result = detectCollision(sortcol[p].pokeb1,sortcol[p].pokeb2,pokebolas[sortcol[p].pokeb1].x,pokebolas[sortcol[p].pokeb1].y,pokebolas[sortcol[p].pokeb2].x,pokebolas[sortcol[p].pokeb2].y,false,false)
+        console.log('sortcol',sortcol[p])
+        result = detectCollision(sortcol[p].pokeb1,sortcol[p].pokeb2,pokebolas[sortcol[p].pokeb1].x,pokebolas[sortcol[p].pokeb1].y,pokebolas[sortcol[p].pokeb2].x,pokebolas[sortcol[p].pokeb2].y,true,true)
         if (result != undefined) {
             console.log(pokebolas[sortcol[p].pokeb1].color, 'com', pokebolas[sortcol[p].pokeb2].color)
             console.log(result.dist)
