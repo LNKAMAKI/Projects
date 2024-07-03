@@ -71,7 +71,7 @@ if (v == 0) {
     y = 40
     color = 'lime'
 }else if(v == 4){
-    x = 120
+    x = 115
     y = 9
     velx = -velx
     color = 'cyan'
@@ -1156,6 +1156,7 @@ function collision() {
        sortcol = []
        for (p in pokebolas) {
         which = {dist:'',pokeb1:'',pokeb2:'',co1:'',co2:'',remove:''}
+        console.log('>>>>>',p,pokebolas[p].color)
         foi = false
         for (pi in pokebolas) {
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
@@ -1182,6 +1183,16 @@ function collision() {
                     which.co1 = pokebolas[p].color
                     which.co2 = pokebolas[pi].color
             }
+        }else{
+            console.log(result.x1,'precisa ser menor que',which.dist)
+            if (which.dist == '' || result.x1 < which.dist) {
+                console.log(result.x1,'é menor que',which.dist)
+                which.dist = result.x1
+                which.pokeb1 = p
+                which.pokeb2 = pi
+                which.co1 = pokebolas[p].color
+                which.co2 = pokebolas[pi].color
+        }
         }
             }
         }
@@ -1207,7 +1218,7 @@ function collision() {
          }
     }
 
-    /*
+    
     sortcol_1 = [] // priorizar
     sortcol_2 = [] // precisa ordenar
     for (ment in sortcol) {
@@ -1267,10 +1278,17 @@ function collision() {
             pokebolas[sortcol[p].pokeb1].r = 88
             pokebolas[sortcol[p].pokeb2].r = 88
         }
-    }*/
+    }
         if (col > 1) {
             loop = false
         }
+        console.log('')
+    for (che in posibs) {
+        if (Math.round(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)) == 676 || caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < 676) {
+            console.log(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)
+            console.log(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
+        }
+    }
         
          /*
 for (p in posibs) {
@@ -3226,7 +3244,7 @@ window.addEventListener('keyup',function(event) {
 //função para determinar distância entre duas pokebolas (input = cor)
 function caldis(color1,color2) {
     for (ju in pokebolas){
-        console.log(pokebolas[ju].color,color1,pokebolas[ju].color == color1)
+        //console.log(pokebolas[ju].color,color1,pokebolas[ju].color == color1)
         if (pokebolas[ju].color == color1) {
             poke1 = pokebolas[ju]
         }else if(pokebolas[ju].color == color2) {
