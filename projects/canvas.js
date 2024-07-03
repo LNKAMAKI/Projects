@@ -1156,28 +1156,37 @@ function collision() {
        sortcol = []
        for (p in pokebolas) {
         which = {dist:'',pokeb1:'',pokeb2:'',co1:'',co2:'',remove:''}
+        foi = false
         for (pi in pokebolas) {
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
             if (result != undefined) {
+                foi = true 
                 console.log('veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
                 console.log('distância entre pokebolas:',result.dist)
                 console.log(pokebolas[p].color,'x:',pokebolas[p].x,'y',pokebolas[p].y)
-                console.log(pokebolas[p].color,'x:',result.x1,'y',result.y1)
+                console.log(pokebolas[p].color,'x1:',result.x1,'y1',result.y1)
+                //console.log(pokebolas[pi].color,'x:',pokebolas[pi].x,'y',pokebolas[pi].y)
+                //console.log(pokebolas[pi].color,'x:',result.x2,'y',result.y2)
                 col++
                 if (pokebolas[p].x != result.x1) {
                     console.log(pokebolas[p].x,'diferente de',result.x1)
 
-                if (which.dist == '' || result.dist < which.dist) {
-                    which.dist = result.dist
+                    console.log('which.dist',which.dist)
+                    if (result.dist == '>') {
+                        console.log(result.x1,'precisa ser maior que',which.dist)
+                if (which.dist == '' || result.x1 > which.dist) {
+                    console.log(result.x1,'é maior que',which.dist)
+                    which.dist = result.x1
                     which.pokeb1 = p
                     which.pokeb2 = pi
                     which.co1 = pokebolas[p].color
                     which.co2 = pokebolas[pi].color
             }
+        }
             }
         }
        }
-       if (which.dist != '') {
+       if (foi == true) {
         console.log('which',pokebolas[p].color,which)
         sortcol.push(which)
         }
@@ -1198,6 +1207,7 @@ function collision() {
          }
     }
 
+    /*
     sortcol_1 = [] // priorizar
     sortcol_2 = [] // precisa ordenar
     for (ment in sortcol) {
@@ -1257,7 +1267,7 @@ function collision() {
             pokebolas[sortcol[p].pokeb1].r = 88
             pokebolas[sortcol[p].pokeb2].r = 88
         }
-    }
+    }*/
         if (col > 1) {
             loop = false
         }
@@ -2112,7 +2122,17 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
             //console.log('raiz1',raiz1,'raiz2',raiz2)
             //pokebolas[a].r = raiz2
             //pokebolas[b].r = raiz2
-            return {x1: newx1,x2: newx2, y1: newy1, y2: newy2, dist: diffx**2 + diffy**2}
+            //   0 ----> 300
+            // velx1 < 0
+            //  15 20  <--       (pegar a maior)
+            // velx1 > 0
+            //  --> 15 20         (pegar a menor)
+            if (velx1 < 0) {
+                return {x1: newx1,x2: newx2, y1: newy1, y2: newy2, dist: '>'}
+            }else{
+                return {x1: newx1,x2: newx2, y1: newy1, y2: newy2, dist: '<'}
+            }
+    
         }
     }
     //}
