@@ -67,20 +67,26 @@ if (v == 0) {
     velx = -1
     vely = 2
 }else if (v == 3){
-    x = 180
+    x = 127
     y = 40
+    velx = -2
+    vely = -2
     color = 'lime'
 }else if(v == 4){
-    x = 115
-    y = 9
-    velx = -velx
+    x = 118
+    y = 8
+    velx = -3
+    vely = 3
     color = 'cyan'
+   // velx = -velx
     //velx = 10
     //vely = 10
 }else if (v == 5){
     x = 70
     y = 37
     color = 'orange'
+    velx = 2
+    vely = -2
 }else{
     x = 150
     y = 30
@@ -1162,7 +1168,7 @@ function collision() {
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
             if (result != undefined) {
                 foi = true 
-                console.log('veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
+                console.log('==> Veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
                 console.log('distância entre pokebolas:',result.dist)
                 console.log(pokebolas[p].color,'x:',pokebolas[p].x,'y',pokebolas[p].y)
                 console.log(pokebolas[p].color,'x1:',result.x1,'y1',result.y1)
@@ -1178,6 +1184,7 @@ function collision() {
                 if (which.dist == '' || result.x1 > which.dist) {
                     console.log(result.x1,'é maior que',which.dist)
                     which.dist = result.x1
+                    which.dist2 = result.x2
                     which.pokeb1 = p
                     which.pokeb2 = pi
                     which.co1 = pokebolas[p].color
@@ -1188,6 +1195,7 @@ function collision() {
             if (which.dist == '' || result.x1 < which.dist) {
                 console.log(result.x1,'é menor que',which.dist)
                 which.dist = result.x1
+                which.dist2 = result.x2
                 which.pokeb1 = p
                 which.pokeb2 = pi
                 which.co1 = pokebolas[p].color
@@ -1204,14 +1212,14 @@ function collision() {
     }
 
     for (lp in sortcol) {
-        console.log('if you wanna stray')
-        console.log(sortcol[lp].remove)
-         console.log(sortcol[lp].pokeb1,sortcol[lp].pokeb2)
-         console.log('-----------')
+        //console.log('if you wanna stray')
+       // console.log(sortcol[lp].remove)
+         //console.log(sortcol[lp].pokeb1,sortcol[lp].pokeb2)
+         //console.log('-----------')
          for (lp2 in sortcol) {
-            console.log(sortcol[lp2].pokeb1,sortcol[lp2].pokeb2)
+            //console.log(sortcol[lp2].pokeb1,sortcol[lp2].pokeb2)
             if (sortcol[lp].pokeb1 == sortcol[lp2].pokeb2 && sortcol[lp].pokeb2 == sortcol[lp2].pokeb1 && sortcol[lp].remove == '') {
-                console.log('é igual')
+                //console.log('é igual')
                 sortcol[lp2].remove = true
                 sortcol[lp].pri = true
             }
@@ -1221,6 +1229,7 @@ function collision() {
     
     sortcol_1 = [] // priorizar
     sortcol_2 = [] // precisa ordenar
+    console.log('----------------------------------REMOVER OS IGUAIS----------------------------')
     for (ment in sortcol) {
         console.log(sortcol[ment])
         if (sortcol[ment].remove == true) {
@@ -1230,6 +1239,49 @@ function collision() {
         }else if (sortcol[ment].pri == undefined){
             sortcol_2.push(sortcol[ment])
         }
+    }
+    console.log('PRECISA ORDENAR O SORTCOL_2')
+    for (lo in sortcol_2) {
+        console.log('--------------',lo,'--------------')
+        console.log(sortcol_2[lo].co1,sortcol_2[lo].dist)
+        console.log(sortcol_2[lo].co2,sortcol_2[lo].dist2)
+        console.log(sortcol_2[lo].co1,'é o fixado')
+        console.log('analisar',sortcol_2[lo].co2)
+        //console.log(pokebolas[sortcol_2[lo].pokeb2])
+        if (pokebolas[sortcol_2[lo].pokeb2].velx < 0) {
+           console.log('pegar o maior')
+           sig = '>'
+        }else{
+            sig = '<'
+            console.log('pegar o menor')
+        }
+        for (li in sortcol_2) {
+            if (li != lo) {
+            console.log(li, sortcol_2[li])
+            console.log(sortcol_2[li].co1,sortcol_2[li].co2)
+            if (sortcol_2[li].co1 == sortcol_2[lo].co2) {
+                console.log(sortcol_2[li].co1,'é igual a',sortcol_2[lo].co2)
+                anel = sortcol_2[li].dist
+            }else if(sortcol_2[li].co2 == sortcol_2[lo].co2) {
+                console.log(sortcol_2[li].co2,'é igual a',sortcol_2[lo].co2)
+                anel = sortcol_2[li].dist2
+            }
+            if (sortcol_2[li].co1 == sortcol_2[lo].co2 || sortcol_2[li].co2 == sortcol_2[lo].co2) {
+            console.log('fixado',sortcol_2[lo].dist2,'analisado',anel)
+            if (sig == '>') {
+                if (anel > sortcol_2[lo].dist2) {
+                    console.log('fixado:',lo,'analisado',li)
+                    if (lo < li) {
+                        console.log('trocar de posição')
+                        over = {...sortcol_2[li]}
+                    }
+                }
+            }else{
+
+            }
+            }
+        }
+    }
     }
     //sortcol = [...sortcol_]
     sortcol = []
@@ -1263,12 +1315,14 @@ function collision() {
 
         if (result != undefined) {
             console.log(pokebolas[sortcol[p].pokeb1].color, 'com', pokebolas[sortcol[p].pokeb2].color)
-            console.log(result.dist)
             col++
             fstx = pokebolas[sortcol[p].pokeb1].x
             fsty = pokebolas[sortcol[p].pokeb1].y
-            console.log('x',fstx,'y',fsty)
-            console.log('x\'',result.x1,'y\'',result.x2)
+            fstx2 = pokebolas[sortcol[p].pokeb2].x
+            fsty2 = pokebolas[sortcol[p].pokeb2].y
+            console.log(pokebolas[sortcol[p].pokeb1].color,sortcol[p].dist)
+            console.log(pokebolas[sortcol[p].pokeb2].color,sortcol[p].dist2)
+
             
             pokebolas[sortcol[p].pokeb1].x = result.x1
             pokebolas[sortcol[p].pokeb1].y = result.y1
