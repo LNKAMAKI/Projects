@@ -24,7 +24,7 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
-for (v = 0; v < 6; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*1).toFixed(0)) + 1
@@ -174,7 +174,7 @@ console.log(posibs)
             fp = document.getElementById('firstp')
             en = document.getElementById('energy')
             sp = document.getElementById('secp')
-            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2 + pokebolas[2].velx**2 + pokebolas[2].vely**2 )//+ pokebolas[2].velx**2 + pokebolas[2].vely**2)
+            en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2)//+ pokebolas[2].velx**2 + pokebolas[2].vely**2)
             if (number == 0) {
             fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
             }else{
@@ -1132,6 +1132,7 @@ function collision() {
         for (t in pokebolas) {
             pokebolas[t].fstx = Number(`${pokebolas[t].x}`)
             pokebolas[t].fsty = Number(`${pokebolas[t].y}`)
+            pokebolas[t].stat = undefined
         }
         realposibsx = []
         realposibsy = []
@@ -1167,6 +1168,7 @@ function collision() {
         for (pi in pokebolas) {
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
             if (result != undefined) {
+                //loop = false
                 foi = true 
                 console.log('==> Veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
                 console.log('distância entre pokebolas:',result.dist)
@@ -1365,7 +1367,7 @@ function collision() {
         sortcol.push(sortcol_2[k])
     }
 
-    
+    console.log(pokebolas)
     for (p in sortcol) {
         //p = 0
         console.log('sortcol',sortcol[p])
@@ -1408,13 +1410,17 @@ function collision() {
         }
     }
         if (col > 1) {
-            loop = false
+            //loop = false
         }
         console.log('')
     for (che in posibs) {
-        if (Math.round(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)) == 676 || caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < 676) {
+        if (Math.round(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)) == 676) {
             console.log(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)
             console.log(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
+        }
+        if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < 675) {
+         console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
+         loop = false
         }
     }
         
