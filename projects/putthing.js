@@ -1,10 +1,10 @@
 function load() {
-sort = []
+sortcol_2 = []
 letras = ['a','b','c']
 n = 8
 for (v = 0; v < n; v++) {
-    //sort.push({dist:Number((Math.random()*1 + 1).toFixed(2)),dist2:Math.random()*3 + 1})
-    sort.push({dist:Number((Math.random()*1 + 1).toFixed(2))})
+    //sortcol_2.push({dist:Number((Math.random()*1 + 1).toFixed(2)),dist2:Math.random()*3 + 1})
+    sortcol_2.push({dist:Number((Math.random()*1 + 1).toFixed(2))})
     fst = Math.round(Math.random()*(n - 1))
     snd = Math.round(Math.random()*(n - 1))
     //while (fst == snd) {
@@ -12,34 +12,41 @@ for (v = 0; v < n; v++) {
     //}
     console.log(fst)
 }
-//sort = [{dist:1.99},{dist:1.01},{dist:1.58},{dist:1.24}]
-console.log(sort)
+//sortcol_2 = [{dist:1.99},{dist:1.01},{dist:1.58},{dist:1.24}]
+console.log(sortcol_2)
 console.log('pegar o maior')
-for (p in sort) {
-    console.log('---------',p,'---------')
-    console.log(sort[p].dist)
+for (lo in sortcol_2) {
+    console.log('---------',lo,'---------')
+    console.log(sortcol_2[lo].dist2)
     console.log('ver os outros')
-    ob = sort[p]
+    ob = sortcol_2[lo]
     stop = false
-    for (pi = 0; pi < p && stop == false; pi++) {
-        if (pi != p) {
-        console.log(pi,':', sort[pi].dist)
-        if (sort[p].dist > sort[pi].dist) {
-            stop = true
-            console.log(sort[p].dist,'é maior que',sort[pi].dist)
-            console.log('refazer a parada')
-            //começar do p e ir até pi
-            for (k = p; k > pi; k--) {
-                console.log(k,':',sort[k].dist)
-                console.log('o próximo é:',sort[k - 1].dist,ob)
-                sort[k] = sort[k - 1]
+    for (li = 0; li < lo && stop == false; li++) {
+        if (li != lo) {
+            if (sortcol_2[li].co1 == sortcol_2[lo].co2) {
+                console.log(sortcol_2[li].co1,'é igual a',sortcol_2[lo].co2)
+                anel = sortcol_2[li].dist
+            }else if(sortcol_2[li].co2 == sortcol_2[lo].co2) {
+                console.log(sortcol_2[li].co2,'é igual a',sortcol_2[lo].co2)
+                anel = sortcol_2[li].dist2
             }
-            sort[pi] = ob
-            for (lor in sort) {
-                console.log(sort[lor])
+        console.log(li,':', anel)
+        if (sortcol_2[lo].dist2 > anel) {
+            stop = true
+            console.log(sortcol_2[lo].dist2,'é maior que',anel)
+            console.log('refazer a parada')
+            //começar do lo e ir até li
+            for (k = lo; k > li; k--) {
+                console.log(k,':',sortcol_2[k].dist)
+                console.log('o próximo é:',sortcol_2[k - 1].dist,ob)
+                sortcol_2[k] = sortcol_2[k - 1]
+            }
+            sortcol_2[li] = ob
+            for (lor in sortcol_2) {
+                console.log(sortcol_2[lor])
             }
         }else{
-            console.log(sort[p].dist,'não é maior que',sort[pi].dist)
+            console.log(sortcol_2[lo].dist2,'não é maior que',anel)
         }
         }
     }

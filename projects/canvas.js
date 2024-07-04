@@ -1292,6 +1292,7 @@ function collision() {
         sortcol.push(sortcol_2[k])
     }
 
+    /*
     for (p in sortcol) {
         //p = 0
         console.log('sortcol',sortcol[p])
@@ -1332,7 +1333,7 @@ function collision() {
             pokebolas[sortcol[p].pokeb1].r = 88
             pokebolas[sortcol[p].pokeb2].r = 88
         }
-    }
+    }*/
         if (col > 1) {
             loop = false
         }
