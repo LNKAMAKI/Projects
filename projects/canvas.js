@@ -1240,7 +1240,12 @@ function collision() {
             sortcol_2.push(sortcol[ment])
         }
     }
-    console.log('PRECISA ORDENAR O SORTCOL_2')
+    console.log('')
+    console.log('____________________________PRECISA ORDENAR O SORTCOL_2_______________________')
+    for (ki in sortcol_2) {
+        console.log(`${sortcol_2[ki].co1} com ${sortcol_2[ki].co2}: ${(sortcol_2[ki].dist).toFixed(2)}    ${(sortcol_2[ki].dist2).toFixed(2)}`)
+    }
+    /*
     for (lo in sortcol_2) {
         console.log('--------------',lo,'--------------')
         console.log(sortcol_2[lo].co1,sortcol_2[lo].dist)
@@ -1283,6 +1288,7 @@ function collision() {
         }
     }
     }
+    */
     //sortcol = [...sortcol_]
     sortcol = []
     for (k in sortcol_1) {

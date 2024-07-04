@@ -31,6 +31,8 @@ for (lo in sortcol_2) {
                 anel = sortcol_2[li].dist2
             }
         console.log(li,':', anel)
+        if (sortcol_2[li].co1 == sortcol_2[lo].co2 || sortcol_2[li].co2 == sortcol_2[lo].co2) {
+            if (sig == '>') {
         if (sortcol_2[lo].dist2 > anel) {
             stop = true
             console.log(sortcol_2[lo].dist2,'é maior que',anel)
@@ -48,7 +50,27 @@ for (lo in sortcol_2) {
         }else{
             console.log(sortcol_2[lo].dist2,'não é maior que',anel)
         }
+        }else{
+            if (sortcol_2[lo].dist2 < anel) {
+            stop = true
+            console.log(sortcol_2[lo].dist2,'é menor que',anel)
+            console.log('refazer a parada')
+            //começar do lo e ir até li
+            for (k = lo; k > li; k--) {
+                console.log(k,':',sortcol_2[k].dist)
+                console.log('o próximo é:',sortcol_2[k - 1].dist,ob)
+                sortcol_2[k] = sortcol_2[k - 1]
+            }
+            sortcol_2[li] = ob
+            for (lor in sortcol_2) {
+                console.log(sortcol_2[lor])
+            }
+        }else{
+            console.log(sortcol_2[lo].dist2,'não é menor que',anel)
         }
+        }
+    }
+    }
     }
  
 }
