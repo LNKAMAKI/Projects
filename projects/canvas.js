@@ -24,11 +24,12 @@ mousey = ''
 function animate() {
    // for (t = 0; t < 2;t++) {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = 13
-velx = Number((Math.random()*1).toFixed(0)) + 1
-vely = Number((Math.random()*1).toFixed(0)) + 1
+velx = Number((Math.random()*1).toFixed(0)) + 0.4
+vely = Number((Math.random()*1).toFixed(0)) + 0.4
+
 
 x = Math.random()*(300-width*3) + width
 y = Math.random()*(150-width*3) + width
@@ -36,6 +37,7 @@ y = Math.random()*(150-width*3) + width
 
 
 // JUST FOR TESTING
+/*
 if (v == 0) {
     x = 94
     y = 61
@@ -64,8 +66,8 @@ if (v == 0) {
     //vely = -2
     velx = -velx
     color = 'yellow'
-    velx = -1
-    vely = 2
+    //velx = -1
+    //vely = 2
 }else if (v == 3){
     x = 127
     y = 40
@@ -92,11 +94,39 @@ if (v == 0) {
     y = 30
     //x = 146
     //y = 40
-    velx = 2
-    vely = 2
+    //velx = 2
+    //vely = 2
     color = 'purple'
 }
-
+*/
+if (v == 0) {
+    color = 'pink'
+    x = 100
+    y = 80
+}else  if (v == 1){
+    color = 'red'
+    x = 100
+    y = 40
+}else if(v == 2){
+    color = 'yellow'
+    x = 140
+    y = 39
+}else if (v == 3){
+    color = 'lime'
+    x = 270
+    y = 20
+}else if(v == 4){
+    color = 'cyan'
+    x = 80
+    y = 60
+}else if (v == 5){
+    color = 'orange'
+    x = 20
+    y = 110
+}else{
+    color = 'purple'
+}
+//loop = false
 // RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
 //y = Math.random()*(50-width*2) + width
@@ -1115,6 +1145,9 @@ function collision() {
                 //console.log('resultante das velocidades // e ⟂:',(sumpar2**2 + sumper2**2)**(1/2))
                 pokebolas[a].r = ''
                 pokebolas[b].r = ''
+
+                console.log('COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
+                
                 /*
                 pokebolas[a].velx = 0
                 pokebolas[a].vely = 0
@@ -1168,7 +1201,6 @@ function collision() {
         for (pi in pokebolas) {
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
             if (result != undefined) {
-                //loop = false
                 foi = true 
                 console.log('==> Veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
                 console.log('distância entre pokebolas:',result.dist)
@@ -1207,7 +1239,7 @@ function collision() {
             }
         }
        }
-       if (foi == true) {
+       if (which.dist != '') {
         console.log('which',pokebolas[p].color,which)
         sortcol.push(which)
         }
@@ -1420,8 +1452,18 @@ function collision() {
         }
         if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < 675) {
          console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
-         loop = false
+         //loop = false
         }
+    }
+
+    cont = 0
+    for (zo in pokebolas) {
+        if (pokebolas[zo].velx == 0) {
+            cont++
+        }
+    }
+    if (cont == pokebolas.length) {
+        loop = false
     }
         
          /*
@@ -3327,7 +3369,7 @@ window.addEventListener('mousemove', function(event) {
 //teclas de teste 
 window.addEventListener('keyup',function(event) {
     console.log(event.key)
-    if (event.key == 'p' || event.ley == 'P') {
+    if (event.key == 'p' || event.key == 'P') {
        loop = false
     }
     if (event.key == 'c') {
