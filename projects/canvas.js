@@ -12,6 +12,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 - comparação das coordenadas iniciais com as coordenadas após a colisão com cada pokebola
 */
 // THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other => try the new code for b com r e a sem r)
+// IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
 loop = true
 function load() {
@@ -29,7 +30,7 @@ function animate() {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
         
 velj = []
-for (v = 0; v < 6; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -57,7 +58,7 @@ y = Math.random()*(150-width*3) + width
 
 
 // JUST FOR TESTING
-
+/*
 if (v == 0) {
     x = 94
     y = 61
@@ -118,10 +119,10 @@ if (v == 0) {
     //vely = 2
     color = 'purple'
 }
-
+*/
 velj.push(`velx${v}:${velx}`)
 velj.push(`vely${v}:${vely}`)
-/*
+
 if (v == 0) {
     color = 'pink'
     x = 100
@@ -157,7 +158,7 @@ if (v == 0) {
     x = 270
     y = 130
 }
-*/
+
 //loop = false
 // RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
@@ -1256,12 +1257,12 @@ function collision() {
                 console.log(9999,'eeee',7687,'***********&&&&&&&&&&&&&&$$$$$$______________(((((((((((())))))*723213163236135123123213213SEU LIXO COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
                 //loop = false
                 
-                
+                /*
                 pokebolas[a].velx = 0
                 pokebolas[a].vely = 0
                 pokebolas[b].velx = 0
                 pokebolas[b].vely = 0
-                
+                */
                 
                 //window.alert('short stop')
                 }
@@ -1559,8 +1560,8 @@ function collision() {
             pokebolas[sortcol[p].pokeb2].r = 88
         }
     }
-        if (col > 2) {
-            console.log('COL+')
+        if (sortcol.length > 1) {
+            console.log('COL+ ENCOS')
             //loop = false
         }
         //console.log('')
@@ -1582,7 +1583,7 @@ function collision() {
             cont++
         }
     }
-    if (cont > 2) {
+    if (cont == pokebolas.length) {
         console.log('WYU')
         loop = false
     }
@@ -2458,7 +2459,8 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
             newy2 =  cy2 + vely2
         }
         
-        //console.log('raiz1',raiz1,'raiz2',raiz2,'colisão')
+        console.log(pokebolas[a].color,'com',pokebolas[b].color)
+        console.log('raiz1',raiz1,'raiz2',raiz2,'colisão')
         //res = (life + velx1*raiz2 - velx2*raiz2)**2 + (time + vely1*raiz2 - vely2*raiz2)**2
         //console.log('conferir:',res)
         
@@ -2484,6 +2486,9 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
             }
     
         }
+    }else{
+        console.log('o delta é negativo')
+        console.log(pokebolas[a].color,'com',pokebolas[b].color)
     }
     //}
 }
