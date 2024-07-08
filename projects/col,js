@@ -123,7 +123,7 @@ function collision() {
                     vpary1hor = vpary1*cosx
                     vpary1ver = vpary1*senx
                 
-                    if (vx1 > 0) {
+                    if (vx1 > 0) { // a pokebola está se movendo para a direita
                         if (leftball == a && downball == a || rightball == a && upball == a) {
                          // decomposição de velperx1 = pra cima e pra direita
                          if (vperx1ver < 0) {
@@ -155,7 +155,7 @@ function collision() {
                             vparx1hor = -vparx1hor
                          }
                         }
-                    }else{
+                    }else{ // a pokebola está se movendo para a esquerda
                         if (leftball == a && downball == a || rightball == a && upball == a) {
                             // decomposição de velperx1 = pra baixo e pra esquerda
                             if (vperx1ver > 0) {
