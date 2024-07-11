@@ -30,7 +30,7 @@ function animate() {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
         
 velj = []
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -127,16 +127,16 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    //velx = 2
-    //vely = 1
+    velx = 2
+    vely = 1
     //const vx1 = [...velx]
     //const vy1 = [...vely]
 }else  if (v == 1){
     color = 'red'
     x = 100
     y = 40
-    //velx = 2
-    //vely = 2
+    velx = 2
+    vely = 2
 }else if(v == 2){
     color = 'yellow'
     x = 140
@@ -232,6 +232,7 @@ console.log(posibs)
          
             console.log(pokebolas[number].color)
             console.log(pokebolas[number].velx)
+            
             if (pokebolas[number].velx > 0) {
             if (pokebolas[number].velx > 0.01) {
             pokebolas[number].velx -= 0.01
@@ -248,6 +249,7 @@ console.log(posibs)
                     }
             }
         
+            
             if (pokebolas[number].vely > 0) {
                 if (pokebolas[number].vely > 0.01) {
                 pokebolas[number].vely -= 0.01
@@ -263,6 +265,7 @@ console.log(posibs)
                         pokebolas[number].vely = 0
                         }
                 }
+                        
            
             
             pokebolas[number].x+=pokebolas[number].velx
@@ -1318,7 +1321,7 @@ function collision() {
                 console.log(pokebolas[pi].color,'x:',pokebolas[pi].x,'y',pokebolas[pi].y)
                 console.log(pokebolas[pi].color,'x:',result.x2,'y',result.y2)
                 col++
-                if (pokebolas[p].x != result.x1) {
+                //if (pokebolas[p].x != result.x1) {
                     console.log(pokebolas[p].x,'diferente de',result.x1)
 
                     console.log('which.dist',which.dist)
@@ -1345,6 +1348,7 @@ function collision() {
                 which.co2 = pokebolas[pi].color
         }
         }
+        /*
             }else{
                 console.log('são iguais',pokebolas[p].y,result.dist2)
                 //if (pokebolas[p].y != result.y1) {
@@ -1374,8 +1378,9 @@ function collision() {
                 which.co2 = pokebolas[pi].color
                 }
                 }
+                
                 //}
-            }
+            }*/
         }
     }
        }
@@ -1613,7 +1618,7 @@ function collision() {
     }
     if (cont == pokebolas.length) {
         console.log('WYU')
-        //loop = false
+        loop = false
     }
         
          /*
