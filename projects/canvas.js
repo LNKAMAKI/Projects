@@ -20,7 +20,7 @@ function load() {
     canv = document.getElementById("canv")
     c = canv.getContext('2d')
     c.font = "20px Arial";
-    c.strokeText("Hello World", 10, 50)
+    //c.strokeText("Hello World", 10, 50)
     //console.log(c)
 
 mousex = ''
@@ -30,7 +30,7 @@ function animate() {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
         
 velj = []
-for (v = 0; v < 6; v++) {
+for (v = 0; v < 4; v++) {
 width = Math.random()*8 + 10
 width = 13
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -158,7 +158,8 @@ if (v == 0) {
     x = 270
     y = 130
 }
-
+velx = 0
+vely = 0
 //loop = false
 // RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
@@ -209,6 +210,8 @@ for (m in pokebolas) {
     }
 }
 console.log(posibs)
+} 
+/*
     }else{ // pokeballs already on screen
        // document.getElementById('diff').innerText = 'iii' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
         c.clearRect(0,0,300,150)
@@ -217,13 +220,7 @@ console.log(posibs)
         //checkTouch()
         //console.log('pokebola velx',pokebolas[0].velx)
         for (number in pokebolas) {
-            /*
-            if (pokebolas[number].x > 300 - pokebolas[number].width || pokebolas[number].x < pokebolas[number].width) {
-                pokebolas[number].velx = -pokebolas[number].velx
-            }
-            if (pokebolas[number].y > 150 - pokebolas[number].width || pokebolas[number].y < pokebolas[number].width) {
-                pokebolas[number].vely = -pokebolas[number].vely
-            }*/
+           
             //console.log('r',pokebolas[number].r,pokebolas[number].r === '')
             if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
             // colocando o atrito: f = 0.03
@@ -289,7 +286,8 @@ console.log(posibs)
     }
     collision()
     document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
-    }
+    }*/
+    
 
     if (loop == true) {
 requestAnimationFrame(animate)
@@ -1618,7 +1616,7 @@ function collision() {
     }
     if (cont == pokebolas.length) {
         console.log('WYU')
-        loop = false
+        //loop = false
     }
         
          /*
@@ -3535,8 +3533,12 @@ function POKEBOL() {
     createPokebola(pokebolas[num].x,pokebolas[num].y,pokebolas[num].width,pokebolas[num].color,pokebolas[num].velx,pokebolas[num].vely,false,0,0)
     }
 }
+
+onpoke = -1
+stopcue = false
 //saber quando o mouse encosta em uma pokebola
 window.addEventListener('mousemove', function(event) {
+    
     
     canv = document.querySelector('canvas')
     cWidth = canv.offsetWidth
@@ -3546,12 +3548,12 @@ window.addEventListener('mousemove', function(event) {
     dif = wWidth - cWidth
     //console.log('it moved')
     //console.log(event.x - dif/2,event.y)
-    
-    //console.log(wWidth,cWidth,dif/2)
+
+//console.log(wWidth,cWidth,dif/2)
     //console.log(((event.x - dif/2)/cWidth)*300)
     mousex = ((event.x - dif/2)/cWidth)*300
     mousey = ((event.y - 80.48)/cHeight)*150
-    //this.document.getElementById('x').innerText = mousex
+    this.document.getElementById('x').innerText = mousex
     //this.document.getElementById('y').innerText = mousey
     //console.log(wHeight,cHeight)
     //console.log(event.y - 80.48)
@@ -3560,7 +3562,7 @@ window.addEventListener('mousemove', function(event) {
         //this.document.getElementById('x').innerText += 'within'
     }
     
-    /*
+    onpress = false
     for (p in pokebolas) {
         px = pokebolas[p].x
         pw = pokebolas[p].width
@@ -3571,9 +3573,40 @@ window.addEventListener('mousemove', function(event) {
             r = Math.random()*255
             g = Math.random()*255
             b = Math.random()*255
+            onpoke = p
+            onpress = true
             //pokebolas[p].color = `rgb(${r},${g},${b})`
+}
+}
+if (onpress == false && stopcue == false) {
+    onpoke = -1
+}
+})
+window.addEventListener('mousedown',function () {
+   // this.window.alert('MOUSE PRESSED')
+    if (onpoke != -1) {
+        //this.window.alert('A POKEBOLA FOI PRESSIONADA')
+        console.log('A POKEBOLA FOI PRESSIONADA',pokebolas[onpoke].color)
+        angle = Math.PI
+        angle = 160*(Math.PI / 180)
+        console.log(pokebolas[onpoke].x,pokebolas[onpoke].y)
+        // primeiro ponto:
+       // agx = 18*Math.cos(angle) + pokebolas[onpoke].x
+        //agy = 18*Math.sin(angle) + pokebolas[onpoke].y
+        // segundo ponto:
+        //agx = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
+        //agy = 18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle) 
+        if (stopcue == false) {
+        wid = 180
+        c.beginPath()
+        c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
+        c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+        c.lineWidth = 1.5
+        c.strokeStyle = 'brown'
+        c.stroke()
+        stopcue = true
         }
-    }*/
+        }
 })
 
 //teclas de teste 
@@ -3583,7 +3616,11 @@ window.addEventListener('keyup',function(event) {
        loop = false
     }
     if (event.key == 'c') {
-      POKEBOL()
+      //POKEBOL()
+      c.beginPath()
+        c.moveTo(18*Math.cos(angle) + pokebolas[0].x,18*Math.sin(angle) + pokebolas[0].y)
+        c.lineTo(18*Math.cos(angle) + pokebolas[0].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[0].y + wid*Math.sin(angle))
+        c.stroke()
     }
     if (event.key == 'd') {
        poke()
