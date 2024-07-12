@@ -3605,6 +3605,12 @@ if (onpress == false) {
             angle = -Math.acos(cosxi)
         }
         funcao = ''
+        // primeiro caso:
+        // menor que o ponto alvo e maior que a origem
+        // segundo caso:
+        // manor que a origem e maior que o ponto alvo
+
+        caso = 0
         // primeiro quadrante 
         // menor que o ponto alvo e maior que a origem
         if (angle <= 0 && angle > -Math.PI/2) {
@@ -3612,6 +3618,7 @@ if (onpress == false) {
             // y = tgx.x
             tgx = Math.abs(Math.tan(angle))
             funcao = 'c'
+            caso = 1
         }
         // segundo quadrante
         // menor que a origem e maior que o ponto alvo
@@ -3619,6 +3626,7 @@ if (onpress == false) {
             //this.window.alert('PRECISA MUDAR')
             tgx = -Math.abs(Math.tan(angle))
             funcao = 'dc'
+            caso = 2
         }
         // terceiro quadrante
         // menor que a origem e maior que o ponto alvo
@@ -3626,14 +3634,16 @@ if (onpress == false) {
            //this.window.alert('PRECISA MUDAR')
            tgx = Math.abs(Math.tan(angle))
            funcao = 'c'
+           caso = 2
         }
         // quarto quadrante
         // menor que o ponto alvo e maior que a origem
         if (angle > 0 && angle <= Math.PI/2) {
             tgx = -Math.abs(Math.tan(angle))
             funcao = 'dc'
+            caso = 1
          }
-         origem = 18*Math.cos(angle) + pokebolas[onpoke].x
+         
          console.log('FUNÇÃO É',funcao)
          console.log('A TANGENTE É',tgx)
          // y = tgx.x => reta (cue)
@@ -3649,7 +3659,13 @@ if (onpress == false) {
          
         wid = 160
         c.clearRect(0,0,300,150)
+
+        origem = 18*Math.cos(angle) + pokebolas[onpoke].x
+        alvo = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
        
+        drawcue = true
+        c.strokeStyle = 'black'
+        c.lineWidth = 1
         for (v = 0; v < 4; v++) {
         if (v == 0) {
             color = 'pink'
@@ -3709,20 +3725,53 @@ if (onpress == false) {
         r2 = (-bc - delt**(1/2))/(2*ac)
         console.log('SOLUÇÕES',r1,r2)
         console.log('pokebola',color,'tá encostando no taco')
+        touch = false
+        if (caso == 1) {
+            console.log('menor que',alvo - pokebolas[onpoke].x,'maior que',origem - pokebolas[onpoke].x)
+            console.log('o x precisa ser menor que o ponto alvo e maior que a origem')
+            if (r1 <= alvo - pokebolas[onpoke].x && r1 >= origem - pokebolas[onpoke].x) {
+                console.log('certo r1')
+                touch = true
+            }
+            if (r2 <= alvo - pokebolas[onpoke].x && r2 >= origem - pokebolas[onpoke].x) {
+                console.log('certo r2')
+                touch = true
+            }
+        }else{
+            console.log('menor que',origem - pokebolas[onpoke].x,'maior que',alvo - pokebolas[onpoke].x)
+            console.log('o x precisa ser menor que a origem e maior que o ponto alvo')
+            if (r1 >= alvo - pokebolas[onpoke].x && r1 <= origem - pokebolas[onpoke].x) {
+                console.log('certo r1')
+                touch = true
+            }
+            if (r2 >= alvo - pokebolas[onpoke].x && r2 <= origem - pokebolas[onpoke].x) {
+                console.log('certo r2')
+                touch = true
+            }
+        }
+        if (touch == true) {
+            console.log('TUDO CERTO, A POKEBOLA ENCOSTA')
+            drawcue = false
+        }else{
+            console.log('A POKEBOLA NÃO ENCOSTA')
+        }
 
          }else{
             console.log('NÃO TEM SOLUÇÃO')
          }
         }
     }
+    if (drawcue == false) {
+        console.log('NÃO DESENHAR O TACO')
+    }
+    if (drawcue == true) {
     c.beginPath()
     c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
     c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
     c.lineWidth = 1.5
     c.strokeStyle = 'brown'
     c.stroke()
-    c.strokeStyle = 'black'
-    c.lineWidth = 1
+    }
     }
 })
 window.addEventListener('mousedown',function () {
