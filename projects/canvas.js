@@ -3604,9 +3604,49 @@ if (onpress == false) {
         }else{
             angle = -Math.acos(cosxi)
         }
-        if (angle < 0) {
+        funcao = ''
+        // primeiro quadrante 
+        // menor que o ponto alvo e maior que a origem
+        if (angle <= 0 && angle > -Math.PI/2) {
             //this.window.alert('PRECISA MUDAR')
-        }p
+            // y = tgx.x
+            tgx = Math.abs(Math.tan(angle))
+            funcao = 'c'
+        }
+        // segundo quadrante
+        // menor que a origem e maior que o ponto alvo
+        if (angle <= -Math.PI/2 && angle > -Math.PI) {
+            //this.window.alert('PRECISA MUDAR')
+            tgx = -Math.abs(Math.tan(angle))
+            funcao = 'dc'
+        }
+        // terceiro quadrante
+        // menor que a origem e maior que o ponto alvo
+        if (angle > Math.PI/2 && angle <= Math.PI) {
+           //this.window.alert('PRECISA MUDAR')
+           tgx = Math.abs(Math.tan(angle))
+           funcao = 'c'
+        }
+        // quarto quadrante
+        // menor que o ponto alvo e maior que a origem
+        if (angle > 0 && angle <= Math.PI/2) {
+            tgx = -Math.abs(Math.tan(angle))
+            funcao = 'dc'
+         }
+         origem = 18*Math.cos(angle) + pokebolas[onpoke].x
+         console.log('FUNÇÃO É',funcao)
+         console.log('A TANGENTE É',tgx)
+         // y = tgx.x => reta (cue)
+         // (x - px)² + (y - py)² = r²
+         // (y - py)² = r² - (x - px)²
+         // y - py = (169 - (x - px)²)**(1/2)
+         // y = (169 - (x - px)²)**(1/2) + py
+         // tgx.x = (169 - (x - px)²)**(1/2) + py
+         // (tgx.x - py)² = 169 - (x - px)²
+         // tgx².x² -2.tgx.x.py + py² = 169 - x² + 2.x.px - px²
+         // x²(tgx² + 1) + x(-2.tgx.py - 2.px) + py² + px² - 169 = 0
+         //       a                 b                  c  
+         
         wid = 160
         c.clearRect(0,0,300,150)
        
@@ -3650,6 +3690,30 @@ if (onpress == false) {
         rangex = [x - width,x + width]
         rangey = [y - width,y + width]
         createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
+
+        if (v != onpoke) {
+        console.log(color,x,y)
+        // indo para o referencial da pokebola fixada
+        console.log(pokebolas[onpoke].color,pokebolas[onpoke].x,pokebolas[onpoke].y)
+        relx = x - pokebolas[onpoke].x
+        rely = pokebolas[onpoke].y - y // lembre-se que o y cresce de cima para baixo 
+        console.log('x rel:',relx,'y rel:',rely)
+
+        ac = tgx**2 + 1
+         bc = -2*tgx*rely - 2*relx
+         cc = relx**2 + rely**2 - 13**2
+         delt = bc**2 - 4*ac*cc
+         console.log(ac,bc,cc)
+         if (delt > 0) {
+        r1 = (-bc + delt**(1/2))/(2*ac)
+        r2 = (-bc - delt**(1/2))/(2*ac)
+        console.log('SOLUÇÕES',r1,r2)
+        console.log('pokebola',color,'tá encostando no taco')
+
+         }else{
+            console.log('NÃO TEM SOLUÇÃO')
+         }
+        }
     }
     c.beginPath()
     c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
@@ -3667,7 +3731,7 @@ window.addEventListener('mousedown',function () {
         //this.window.alert('A POKEBOLA FOI PRESSIONADA')
         console.log('A POKEBOLA FOI PRESSIONADA',pokebolas[onpoke].color)
         angle = Math.PI
-        angle = 160*(Math.PI / 180)
+        angle = -160*(Math.PI / 180)
         console.log(pokebolas[onpoke].x,pokebolas[onpoke].y)
         // primeiro ponto:
        // agx = 18*Math.cos(angle) + pokebolas[onpoke].x
