@@ -2146,6 +2146,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.beginPath()
     c.moveTo(x + width,y2)
     c.lineTo(x - width,y2)
+    c.fillStyle = 'black'
     c.stroke()
     y2++
     }
@@ -3563,6 +3564,7 @@ window.addEventListener('mousemove', function(event) {
     }
     
     onpress = false
+    if (stopcue == false) {
     for (p in pokebolas) {
         px = pokebolas[p].x
         pw = pokebolas[p].width
@@ -3578,9 +3580,69 @@ window.addEventListener('mousemove', function(event) {
             //pokebolas[p].color = `rgb(${r},${g},${b})`
 }
 }
-if (onpress == false && stopcue == false) {
+if (onpress == false) {
     onpoke = -1
 }
+    }else{
+        console.log(pokebolas[onpoke].x - mousex,pokebolas[onpoke].y - mousey)
+        xi = pokebolas[onpoke].x - mousex
+        yi = pokebolas[onpoke].y - mousey
+        hi = (xi**2 + yi**2)**(1/2)
+        console.log('a hipotenusa é', hi)
+        senxi = yi/hi
+        cosxi = xi/hi
+        console.log(Math.asin(senxi),Math.acos(cosxi))
+        angle = -Math.acos(cosxi)
+        wid = 160
+        c.clearRect(0,0,300,150)
+        c.beginPath()
+        c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
+        c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+        c.lineWidth = 1.5
+        c.strokeStyle = 'brown'
+        c.stroke()
+        for (v = 0; v < 4; v++) {
+        if (v == 0) {
+            color = 'pink'
+            x = 100
+            y = 90
+            velx = 2
+            vely = 1
+        }else  if (v == 1){
+            color = 'red'
+            x = 100
+            y = 40
+            velx = 2
+            vely = 2
+        }else if(v == 2){
+            color = 'yellow'
+            x = 140
+            y = 30
+        }else if (v == 3){
+            color = 'lime'
+            x = 270
+            y = 20
+        }else if(v == 4){
+            color = 'cyan'
+            x = 80
+            y = 60
+        }else if (v == 5){
+            color = 'orange'
+            x = 20
+            y = 110
+        }else{
+            color = 'purple'
+            x = 270
+            y = 130
+        }
+        velx = 0
+        vely = 0
+        
+        rangex = [x - width,x + width]
+        rangey = [y - width,y + width]
+        createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
+    }
+    }
 })
 window.addEventListener('mousedown',function () {
    // this.window.alert('MOUSE PRESSED')
@@ -3597,7 +3659,7 @@ window.addEventListener('mousedown',function () {
         //agx = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
         //agy = 18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle) 
         if (stopcue == false) {
-        wid = 180
+        wid = 160
         c.beginPath()
         c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
         c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
