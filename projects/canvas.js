@@ -14,7 +14,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other => try the new code for b com r e a sem r)
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
-loop = true
+loop = false
 function load() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
@@ -158,8 +158,8 @@ if (v == 0) {
     x = 270
     y = 130
 }
-velx = 0
-vely = 0
+//velx = 0
+//vely = 0
 //loop = false
 // RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
@@ -210,8 +210,8 @@ for (m in pokebolas) {
     }
 }
 console.log(posibs)
-} 
-/*
+
+
     }else{ // pokeballs already on screen
        // document.getElementById('diff').innerText = 'iii' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
         c.clearRect(0,0,300,150)
@@ -286,7 +286,7 @@ console.log(posibs)
     }
     collision()
     document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
-    }*/
+    }
     
 
     if (loop == true) {
@@ -2177,10 +2177,6 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     }else{
         c.fillText('↓', x - 5,y + width + 3)
     }
-        
-    
-    
-    
 }
 
 function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
@@ -3646,6 +3642,7 @@ if (onpress == false) {
          
          console.log('FUNÇÃO É',funcao)
          console.log('A TANGENTE É',tgx)
+         console.log('POKE',onpoke)
          // y = tgx.x => reta (cue)
          // (x - px)² + (y - py)² = r²
          // (y - py)² = r² - (x - px)²
@@ -3666,101 +3663,104 @@ if (onpress == false) {
         drawcue = true
         c.strokeStyle = 'black'
         c.lineWidth = 1
+        let pokex = pokebolas[onpoke].x
+        let pokey = pokebolas[onpoke].y
+        pokebolas = []
         for (v = 0; v < 4; v++) {
-        if (v == 0) {
-            color = 'pink'
-            x = 100
-            y = 90
-            velx = 2
-            vely = 1
-        }else  if (v == 1){
-            color = 'red'
-            x = 100
-            y = 40
-            velx = 2
-            vely = 2
-        }else if(v == 2){
-            color = 'yellow'
-            x = 140
-            y = 30
-        }else if (v == 3){
-            color = 'lime'
-            x = 270
-            y = 20
-        }else if(v == 4){
-            color = 'cyan'
-            x = 80
-            y = 60
-        }else if (v == 5){
-            color = 'orange'
-            x = 20
-            y = 110
-        }else{
-            color = 'purple'
-            x = 270
-            y = 130
-        }
-        velx = 0
-        vely = 0
-        
-        rangex = [x - width,x + width]
-        rangey = [y - width,y + width]
-        createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
-
-        if (v != onpoke) {
-        console.log(color,x,y)
-        // indo para o referencial da pokebola fixada
-        console.log(pokebolas[onpoke].color,pokebolas[onpoke].x,pokebolas[onpoke].y)
-        relx = x - pokebolas[onpoke].x
-        rely = pokebolas[onpoke].y - y // lembre-se que o y cresce de cima para baixo 
-        console.log('x rel:',relx,'y rel:',rely)
-
-        ac = tgx**2 + 1
-         bc = -2*tgx*rely - 2*relx
-         cc = relx**2 + rely**2 - 13**2
-         delt = bc**2 - 4*ac*cc
-         console.log(ac,bc,cc)
-         if (delt > 0) {
-        r1 = (-bc + delt**(1/2))/(2*ac)
-        r2 = (-bc - delt**(1/2))/(2*ac)
-        console.log('SOLUÇÕES',r1,r2)
-        console.log('pokebola',color,'tá encostando no taco')
-        touch = false
-        if (caso == 1) {
-            console.log('menor que',alvo - pokebolas[onpoke].x,'maior que',origem - pokebolas[onpoke].x)
-            console.log('o x precisa ser menor que o ponto alvo e maior que a origem')
-            if (r1 <= alvo - pokebolas[onpoke].x && r1 >= origem - pokebolas[onpoke].x) {
-                console.log('certo r1')
-                touch = true
+            if (v == 0) {
+                color = 'pink'
+                x = 100
+                y = 90
+                velx = 2
+                vely = 1
+            }else  if (v == 1){
+                color = 'red'
+                x = 100
+                y = 40
+                velx = 2
+                vely = 2
+            }else if(v == 2){
+                color = 'yellow'
+                x = 140
+                y = 30
+            }else if (v == 3){
+                color = 'lime'
+                x = 270
+                y = 20
+            }else if(v == 4){
+                color = 'cyan'
+                x = 80
+                y = 60
+            }else if (v == 5){
+                color = 'orange'
+                x = 20
+                y = 110
+            }else{
+                color = 'purple'
+                x = 270
+                y = 130
             }
-            if (r2 <= alvo - pokebolas[onpoke].x && r2 >= origem - pokebolas[onpoke].x) {
-                console.log('certo r2')
-                touch = true
+            velx = 0
+            vely = 0
+            
+            rangex = [x - width,x + width]
+            rangey = [y - width,y + width]
+            createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
+    
+            if (v != onpoke) {
+            console.log(color,x,y)
+            // indo para o referencial da pokebola fixada
+            //console.log(pokebolas[onpoke].color,pokex,pokey)
+            relx = x - pokex
+            rely = pokey - y // lembre-se que o y cresce de cima para baixo 
+            console.log('x rel:',relx,'y rel:',rely)
+    
+            ac = tgx**2 + 1
+             bc = -2*tgx*rely - 2*relx
+             cc = relx**2 + rely**2 - 13**2
+             delt = bc**2 - 4*ac*cc
+             console.log(ac,bc,cc)
+             if (delt > 0) {
+            r1 = (-bc + delt**(1/2))/(2*ac)
+            r2 = (-bc - delt**(1/2))/(2*ac)
+            console.log('SOLUÇÕES',r1,r2)
+            console.log('pokebola',color,'tá encostando no taco')
+            touch = false
+            if (caso == 1) {
+                console.log('menor que',alvo - pokex,'maior que',origem - pokex)
+                console.log('o x precisa ser menor que o ponto alvo e maior que a origem')
+                if (r1 <= alvo - pokex && r1 >= origem - pokex) {
+                    console.log('certo r1')
+                    touch = true
+                }
+                if (r2 <= alvo - pokex && r2 >= origem - pokex) {
+                    console.log('certo r2')
+                    touch = true
+                }
+            }else{
+                console.log('menor que',origem - pokex,'maior que',alvo - pokex)
+                console.log('o x precisa ser menor que a origem e maior que o ponto alvo')
+                if (r1 >= alvo - pokex && r1 <= origem - pokex) {
+                    console.log('certo r1')
+                    touch = true
+                }
+                if (r2 >= alvo - pokex && r2 <= origem - pokex) {
+                    console.log('certo r2')
+                    touch = true
+                }
             }
-        }else{
-            console.log('menor que',origem - pokebolas[onpoke].x,'maior que',alvo - pokebolas[onpoke].x)
-            console.log('o x precisa ser menor que a origem e maior que o ponto alvo')
-            if (r1 >= alvo - pokebolas[onpoke].x && r1 <= origem - pokebolas[onpoke].x) {
-                console.log('certo r1')
-                touch = true
+            if (touch == true) {
+                console.log('TUDO CERTO, A POKEBOLA ENCOSTA')
+                drawcue = false
+            }else{
+                console.log('A POKEBOLA NÃO ENCOSTA')
             }
-            if (r2 >= alvo - pokebolas[onpoke].x && r2 <= origem - pokebolas[onpoke].x) {
-                console.log('certo r2')
-                touch = true
+    
+             }else{
+                console.log('NÃO TEM SOLUÇÃO')
+             }
             }
         }
-        if (touch == true) {
-            console.log('TUDO CERTO, A POKEBOLA ENCOSTA')
-            drawcue = false
-        }else{
-            console.log('A POKEBOLA NÃO ENCOSTA')
-        }
-
-         }else{
-            console.log('NÃO TEM SOLUÇÃO')
-         }
-        }
-    }
     if (drawcue == false) {
         console.log('NÃO DESENHAR O TACO')
     }
@@ -3799,6 +3799,184 @@ window.addEventListener('mousedown',function () {
         stopcue = true
         }
         }
+})
+
+spaceactive = false
+power = 0
+window.addEventListener('keydown',function(event) {
+    if (event.key == ' ') {
+        console.log('SPACE BAR ACTIVATED')
+        if (power < 30) {
+        power+=2
+        }
+        console.log(power)
+    }
+})
+
+window.addEventListener('keyup',function(event) {
+    if (event.key == ' ') {
+        console.log('SPACE BAR DISABLED')
+        this.window.alert('LANÇAR')
+        spaceactive = false
+        loop = true
+        function animate() {
+            // for (t = 0; t < 2;t++) {
+             if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
+                 
+         velj = []
+         for (v = 0; v < 4; v++) {
+         width = Math.random()*8 + 10
+         width = 13
+         velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
+         vely = Number((Math.random()*0.2).toFixed(5)) + 0.5
+         velx = Number((Math.random()*1).toFixed(0)) + 2
+         vely = Number((Math.random()*1).toFixed(0)) + 2
+         
+         
+         x = Math.random()*(300-width*3) + width
+         y = Math.random()*(150-width*3) + width
+         
+         velj.push(`velx${v}:${velx}`)
+         velj.push(`vely${v}:${vely}`)
+         
+         if (v == 0) {
+             color = 'pink'
+             x = 100
+             y = 90
+             velx = 2
+             vely = 1
+             //const vx1 = [...velx]
+             //const vy1 = [...vely]
+         }else  if (v == 1){
+             color = 'red'
+             x = 100
+             y = 40
+             velx = 2
+             vely = 2
+         }else if(v == 2){
+             color = 'yellow'
+             x = 140
+             y = 30
+         }else if (v == 3){
+             color = 'lime'
+             x = 270
+             y = 20
+         }else if(v == 4){
+             color = 'cyan'
+             x = 80
+             y = 60
+         }else if (v == 5){
+             color = 'orange'
+             x = 20
+             y = 110
+         }else{
+             color = 'purple'
+             x = 270
+             y = 130
+         }
+         velx = 0
+         vely = 0
+         
+         r = Math.random()*255
+         g = Math.random()*255
+         
+         rangex = [x - width,x + width]
+         rangey = [y - width,y + width]
+         createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
+         }
+         
+         // pokeballs collision arrangment
+         posibs = []
+         strposibs = []
+         for (m in pokebolas) {
+             for (n in pokebolas) {
+                 if (m != n) {
+                 console.log(`${m}.${n}`)
+                 if (strposibs.indexOf(`${n}.${m}`) == -1) {
+                     posibs.push({a: `${m}`,b: `${n}`})
+                     strposibs.push(`${m}.${n}`)
+                 }
+                 }
+             }
+         }
+         console.log(posibs)
+         
+         
+             }else{ 
+                 c.clearRect(0,0,300,150)
+         
+                
+                 for (number in pokebolas) {
+                    
+                     if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
+                     console.log(pokebolas[number].color)
+                     console.log(pokebolas[number].velx)
+                     
+                     if (pokebolas[number].velx > 0) {
+                     if (pokebolas[number].velx > 0.01) {
+                     pokebolas[number].velx -= 0.01
+                     }else{
+                         console.log('ZERO')
+                     pokebolas[number].velx = 0
+                     }
+                     }else if (pokebolas[number].velx != 0){
+                         if (pokebolas[number].velx < 0.01) {
+                             pokebolas[number].velx += 0.01
+                             }else{
+                                 console.log('ZERO')
+                             pokebolas[number].velx = 0
+                             }
+                     }
+                 
+                     
+                     if (pokebolas[number].vely > 0) {
+                         if (pokebolas[number].vely > 0.01) {
+                         pokebolas[number].vely -= 0.01
+                         }else{
+                             console.log('ZERO')
+                         pokebolas[number].vely = 0
+                         }
+                         }else if (pokebolas[number].vely != 0){
+                             if (pokebolas[number].vely < 0.01) {
+                                 pokebolas[number].vely += 0.01
+                                 }else{
+                                     console.log('ZERO')
+                                 pokebolas[number].vely = 0
+                                 }
+                         }
+                                 
+                    
+                     
+                     pokebolas[number].x+=pokebolas[number].velx
+                     pokebolas[number].y+=pokebolas[number].vely
+                     }else{
+                         console.log(`no puedes andar, ${pokebolas[number].color}`)
+                     }
+             
+                     //pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
+                     //pokebolas[number].rangey = [pokebolas[number].y - pokebolas[number].width,pokebolas[number].y + pokebolas[number].width]
+                     createPokebola(pokebolas[number].x,pokebolas[number].y,pokebolas[number].width,pokebolas[number].color,pokebolas[number].velx,pokebolas[number].vely,false,pokebolas[number].rangex,pokebolas[number].rangey)
+                     fp = document.getElementById('firstp')
+                     en = document.getElementById('energy')
+                     sp = document.getElementById('secp')
+                    // en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2)//+ pokebolas[2].velx**2 + pokebolas[2].vely**2)
+                     if (number == 0) {
+                 //fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
+                     }else{
+                         //sp.innerHTML = `<span style="color:blue;">x</span>: ${(pokebolas[number].velx).toFixed(2)}, <span style="color:blue;">y</span>: ${(pokebolas[number].vely).toFixed(2)}`  
+                     }
+             }
+             collision()
+             document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
+             }
+             
+         
+             if (loop == true) {
+         requestAnimationFrame(animate)
+             }
+         }
+         animate()
+    }
 })
 
 //teclas de teste 
