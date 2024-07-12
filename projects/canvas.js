@@ -3609,14 +3609,7 @@ if (onpress == false) {
         }p
         wid = 160
         c.clearRect(0,0,300,150)
-        c.beginPath()
-        c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
-        c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
-        c.lineWidth = 1.5
-        c.strokeStyle = 'brown'
-        c.stroke()
-        c.strokeStyle = 'black'
-        c.lineWidth = 1
+       
         for (v = 0; v < 4; v++) {
         if (v == 0) {
             color = 'pink'
@@ -3658,6 +3651,14 @@ if (onpress == false) {
         rangey = [y - width,y + width]
         createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
     }
+    c.beginPath()
+    c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
+    c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+    c.lineWidth = 1.5
+    c.strokeStyle = 'brown'
+    c.stroke()
+    c.strokeStyle = 'black'
+    c.lineWidth = 1
     }
 })
 window.addEventListener('mousedown',function () {
