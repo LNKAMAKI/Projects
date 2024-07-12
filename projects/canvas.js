@@ -3588,11 +3588,25 @@ if (onpress == false) {
         xi = pokebolas[onpoke].x - mousex
         yi = pokebolas[onpoke].y - mousey
         hi = (xi**2 + yi**2)**(1/2)
-        console.log('a hipotenusa é', hi)
+        console.log('XI/HI',xi,'/',hi)
         senxi = yi/hi
         cosxi = xi/hi
-        console.log(Math.asin(senxi),Math.acos(cosxi))
-        angle = -Math.acos(cosxi)
+        if (cosxi < 0) {
+            //cosxi =-cosxi
+        }
+        console.log('COS',cosxi)
+        console.log('DIFX',xi)
+        console.log('DIFY',yi)
+        
+        console.log('ANGLE',angle)
+        if (yi > 0) {
+            angle = Math.acos(cosxi)
+        }else{
+            angle = -Math.acos(cosxi)
+        }
+        if (angle < 0) {
+            //this.window.alert('PRECISA MUDAR')
+        }p
         wid = 160
         c.clearRect(0,0,300,150)
         c.beginPath()
@@ -3601,6 +3615,8 @@ if (onpress == false) {
         c.lineWidth = 1.5
         c.strokeStyle = 'brown'
         c.stroke()
+        c.strokeStyle = 'black'
+        c.lineWidth = 1
         for (v = 0; v < 4; v++) {
         if (v == 0) {
             color = 'pink'
