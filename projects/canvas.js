@@ -234,15 +234,15 @@ console.log(posibs)
             
             
             if (pokebolas[number].velx > 0) {
-            if (pokebolas[number].velx > 0.01) {
-            pokebolas[number].velx -= 0.01
+            if (pokebolas[number].velx > 0.005) {
+            pokebolas[number].velx -= 0.005
             }else{
                 console.log('ZERO')
             pokebolas[number].velx = 0
             }
             }else if (pokebolas[number].velx != 0){
-                if (pokebolas[number].velx < 0.01) {
-                    pokebolas[number].velx += 0.01
+                if (pokebolas[number].velx < 0.005) {
+                    pokebolas[number].velx += 0.005
                     }else{
                         console.log('ZERO')
                     pokebolas[number].velx = 0
@@ -251,15 +251,15 @@ console.log(posibs)
         
             
             if (pokebolas[number].vely > 0) {
-                if (pokebolas[number].vely > 0.01) {
-                pokebolas[number].vely -= 0.01
+                if (pokebolas[number].vely > 0.005) {
+                pokebolas[number].vely -= 0.005
                 }else{
                     console.log('ZERO')
                 pokebolas[number].vely = 0
                 }
                 }else if (pokebolas[number].vely != 0){
-                    if (pokebolas[number].vely < 0.01) {
-                        pokebolas[number].vely += 0.01
+                    if (pokebolas[number].vely < 0.005) {
+                        pokebolas[number].vely += 0.005
                         }else{
                             console.log('ZERO')
                         pokebolas[number].vely = 0
@@ -4139,15 +4139,15 @@ window.addEventListener('keyup',function(event) {
                      console.log(pokebolas[number].velx)
                      
                      if (pokebolas[number].velx > 0) {
-                     if (pokebolas[number].velx > 0.01) {
-                     pokebolas[number].velx -= 0.01
+                     if (pokebolas[number].velx > 0.005) {
+                     pokebolas[number].velx -= 0.005
                      }else{
                          console.log('ZERO')
                      pokebolas[number].velx = 0
                      }
                      }else if (pokebolas[number].velx != 0){
-                         if (pokebolas[number].velx < 0.01) {
-                             pokebolas[number].velx += 0.01
+                         if (pokebolas[number].velx < 0.005) {
+                             pokebolas[number].velx += 0.005
                              }else{
                                  console.log('ZERO')
                              pokebolas[number].velx = 0
@@ -4156,15 +4156,15 @@ window.addEventListener('keyup',function(event) {
                  
                      
                      if (pokebolas[number].vely > 0) {
-                         if (pokebolas[number].vely > 0.01) {
-                         pokebolas[number].vely -= 0.01
+                         if (pokebolas[number].vely > 0.005) {
+                         pokebolas[number].vely -= 0.005
                          }else{
                              console.log('ZERO')
                          pokebolas[number].vely = 0
                          }
                          }else if (pokebolas[number].vely != 0){
-                             if (pokebolas[number].vely < 0.01) {
-                                 pokebolas[number].vely += 0.01
+                             if (pokebolas[number].vely < 0.005) {
+                                 pokebolas[number].vely += 0.005
                                  }else{
                                      console.log('ZERO')
                                  pokebolas[number].vely = 0
