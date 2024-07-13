@@ -16,13 +16,18 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 let pokebolas = []
 // to go back to testing mode, change loop to true
 loop = false 
-radius = 7
+radius = 6
 function load() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
     c = canv.getContext('2d')
     c.font = "20px Arial";
     //c.strokeText("Hello World", 10, 50)
+    c.strokeStyle = 'black'
+    c.strokeRect(5,4,291,142)
+    //c.strokeStyle = 'black'
+    //c.stroke()
+    
     //console.log(c)
 
 mousex = ''
@@ -3678,6 +3683,8 @@ if (onpress == false) {
          
         wid = 160
         c.clearRect(0,0,300,150)
+        c.strokeStyle = 'black'
+        c.strokeRect(5,4,291,142)
 
         origem = 18*Math.cos(angle) + pokebolas[onpoke].x
         alvo = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3891,6 +3898,8 @@ window.addEventListener('mousedown',function (event) {
             let pokex = pokebolas[onpoke].x
             let pokey = pokebolas[onpoke].y
             pokebolas = []
+            c.strokeStyle = 'black'
+            c.strokeRect(5,4,291,142)
             drawcue = true
             for (v = 0; v < 6; v++) {
                 if (v == 0) {
@@ -4044,7 +4053,8 @@ window.addEventListener('keyup',function(event) {
         c.strokeStyle = 'blue'
         c.stroke()
         pokebolas = []
-        
+        c.strokeStyle = 'black'
+        c.strokeRect(5,4,291,142)
         function animate2() {
             // for (t = 0; t < 2;t++) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
@@ -4069,16 +4079,10 @@ window.addEventListener('keyup',function(event) {
              color = 'pink'
              x = 100
              y = 90
-             velx = 2
-             vely = 1
-             //const vx1 = [...velx]
-             //const vy1 = [...vely]
          }else  if (v == 1){
              color = 'red'
              x = 100
              y = 40
-             velx = 2
-             vely = 2
          }else if(v == 2){
              color = 'yellow'
              x = 140
@@ -4137,6 +4141,8 @@ window.addEventListener('keyup',function(event) {
          
              }else{ 
                  c.clearRect(0,0,300,150)
+                 c.strokeStyle = 'black'
+                 c.strokeRect(5,4,291,142)
          
                 
                  for (number in pokebolas) {
