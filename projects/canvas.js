@@ -16,7 +16,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 let pokebolas = []
 // to go back to testing mode, change loop to true
 loop = false 
-radius = 8
+radius = 7
 function load() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
@@ -32,7 +32,7 @@ function animate() {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
         
 velj = []
-for (v = 0; v < 4; v++) {
+for (v = 0; v < 6; v++) {
 width = Math.random()*8 + 10
 width = radius
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -3542,8 +3542,8 @@ function POKEBOL() {
 }
 
 onpoke = -1
-powerup = false
-stopcue = false
+powerup = false // check if the pokeball has been released
+stopcue = false // detect if the pokeball has been clicked
 drawcue = true
 xsig = ''
 ysig = ''
@@ -3688,7 +3688,7 @@ if (onpress == false) {
         let pokey = pokebolas[onpoke].y
         pokebolas = []
         drawcue = true
-        for (v = 0; v < 4; v++) {
+        for (v = 0; v < 6; v++) {
             if (v == 0) {
                 color = 'pink'
                 x = 100
@@ -3885,7 +3885,7 @@ window.addEventListener('mousedown',function (event) {
             let pokey = pokebolas[onpoke].y
             pokebolas = []
             drawcue = true
-            for (v = 0; v < 4; v++) {
+            for (v = 0; v < 6; v++) {
                 if (v == 0) {
                     color = 'pink'
                     x = 100
@@ -4043,7 +4043,7 @@ window.addEventListener('keyup',function(event) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
                  
          velj = []
-         for (v = 0; v < 4; v++) {
+         for (v = 0; v < 6; v++) {
          width = Math.random()*8 + 10
          width = radius
          velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
