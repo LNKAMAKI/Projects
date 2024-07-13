@@ -1611,7 +1611,7 @@ function collision() {
 
     cont = 0
     for (zo in pokebolas) {
-        if (pokebolas[zo].velx == 0) {
+        if (pokebolas[zo].velx == 0 && pokebolas[zo].vely == 0) { // pokebola totalmente parada
             cont++
         }
     }
@@ -3797,28 +3797,197 @@ window.addEventListener('mousedown',function (event) {
    // this.window.alert('MOUSE PRESSED')
     if (onpoke != -1) {
         //this.window.alert('A POKEBOLA FOI PRESSIONADA')
-        console.log('A POKEBOLA FOI PRESSIONADA',pokebolas[onpoke].color)
-        angle = Math.PI
-        angle = -160*(Math.PI / 180)
-        console.log(pokebolas[onpoke].x,pokebolas[onpoke].y)
-        // primeiro ponto:
-       // agx = 18*Math.cos(angle) + pokebolas[onpoke].x
-        //agy = 18*Math.sin(angle) + pokebolas[onpoke].y
-        // segundo ponto:
-        //agx = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
-        //agy = 18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle) 
+        canv = document.querySelector('canvas')
+        cWidth = canv.offsetWidth
+        wWidth = this.window.innerWidth
+        cHeight = canv.offsetHeight
+        wHeight = this.window.innerHeight
+        dif = wWidth - cWidth
+        mousex = ((event.x - dif/2)/cWidth)*300
+        mousey = ((event.y - 80.48)/cHeight)*150
+        this.document.getElementById('x').innerText = mousex
+        
+        onpress = false
         if (stopcue == false) {
-        wid = 160
+            stopcue = true
+            console.log(pokebolas[onpoke].x - mousex,pokebolas[onpoke].y - mousey)
+            xi = pokebolas[onpoke].x - mousex
+            yi = pokebolas[onpoke].y - mousey
+            hi = (xi**2 + yi**2)**(1/2)
+            console.log('XI/HI',xi,'/',hi)
+            senxi = yi/hi
+            cosxi = xi/hi
+            
+            console.log('COS',cosxi)
+            console.log('DIFX',xi)
+            console.log('DIFY',yi)
+            
+            if (yi > 0) {
+                angle = Math.acos(cosxi)
+            }else{
+                angle = -Math.acos(cosxi)
+            }
+            funcao = ''
+    
+            caso = 0
+          
+            if (angle <= 0 && angle > -Math.PI/2) {
+                tgx = Math.abs(Math.tan(angle))
+                funcao = 'c' // left down
+                xsig = '-'
+                ysig = '+'
+                caso = 1
+            }
+           
+            if (angle <= -Math.PI/2 && angle > -Math.PI) {
+                tgx = -Math.abs(Math.tan(angle))
+                funcao = 'dc' // right down
+                xsig = '+'
+                ysig = '+'
+                caso = 2
+            }
+          
+            if (angle > Math.PI/2 && angle <= Math.PI) {
+               tgx = Math.abs(Math.tan(angle))
+               funcao = 'c' // right up
+               xsig = '+'
+                ysig = '-'
+               caso = 2
+            }
+            if (angle > 0 && angle <= Math.PI/2) {
+                tgx = -Math.abs(Math.tan(angle))
+                funcao = 'dc' // left up
+                xsig = '-'
+                ysig = '-'
+                caso = 1
+             }
+             
+             console.log('FUNÇÃO É',funcao)
+             console.log('A TANGENTE É',tgx)
+             console.log('POKE',onpoke)
+            
+            wid = 160
+            c.clearRect(0,0,300,150)
+    
+            origem = 18*Math.cos(angle) + pokebolas[onpoke].x
+            alvo = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
+           
+            c.strokeStyle = 'black'
+            c.lineWidth = 1
+            let pokex = pokebolas[onpoke].x
+            let pokey = pokebolas[onpoke].y
+            pokebolas = []
+            drawcue = true
+            for (v = 0; v < 4; v++) {
+                if (v == 0) {
+                    color = 'pink'
+                    x = 100
+                    y = 90
+                    velx = 2
+                    vely = 1
+                }else  if (v == 1){
+                    color = 'red'
+                    x = 100
+                    y = 40
+                    velx = 2
+                    vely = 2
+                }else if(v == 2){
+                    color = 'yellow'
+                    x = 140
+                    y = 30
+                }else if (v == 3){
+                    color = 'lime'
+                    x = 270
+                    y = 20
+                }else if(v == 4){
+                    color = 'cyan'
+                    x = 80
+                    y = 60
+                }else if (v == 5){
+                    color = 'orange'
+                    x = 20
+                    y = 110
+                }else{
+                    color = 'purple'
+                    x = 270
+                    y = 130
+                }
+                //velx = 0
+                //vely = 0
+                
+                rangex = [x - width,x + width]
+                rangey = [y - width,y + width]
+                createPokebola(x,y,width,color,velx,vely,true,rangex,rangey)
+        
+                if (v != onpoke) {
+                console.log(color,x,y)
+                // indo para o referencial da pokebola fixada
+                //console.log(pokebolas[onpoke].color,pokex,pokey)
+                relx = x - pokex
+                rely = pokey - y // lembre-se que o y cresce de cima para baixo 
+                console.log('x rel:',relx,'y rel:',rely)
+        
+                ac = tgx**2 + 1
+                 bc = -2*tgx*rely - 2*relx
+                 cc = relx**2 + rely**2 - 13**2
+                 delt = bc**2 - 4*ac*cc
+                 console.log(ac,bc,cc)
+                 if (delt > 0) {
+                r1 = (-bc + delt**(1/2))/(2*ac)
+                r2 = (-bc - delt**(1/2))/(2*ac)
+                console.log('SOLUÇÕES',r1,r2)
+                console.log('pokebola',color,'tá encostando no taco')
+                touch = false
+                if (caso == 1) {
+                    console.log('menor que',alvo - pokex,'maior que',origem - pokex)
+                    console.log('o x precisa ser menor que o ponto alvo e maior que a origem')
+                    if (r1 <= alvo - pokex && r1 >= origem - pokex) {
+                        console.log('certo r1')
+                        touch = true
+                    }
+                    if (r2 <= alvo - pokex && r2 >= origem - pokex) {
+                        console.log('certo r2')
+                        touch = true
+                    }
+                }else{
+                    console.log('menor que',origem - pokex,'maior que',alvo - pokex)
+                    console.log('o x precisa ser menor que a origem e maior que o ponto alvo')
+                    if (r1 >= alvo - pokex && r1 <= origem - pokex) {
+                        console.log('certo r1')
+                        touch = true
+                    }
+                    if (r2 >= alvo - pokex && r2 <= origem - pokex) {
+                        console.log('certo r2')
+                        touch = true
+                    }
+                }
+                if (touch == true) {
+                    console.log('TUDO CERTO, A POKEBOLA ENCOSTA')
+                    drawcue = false
+                }else{
+                    console.log('A POKEBOLA NÃO ENCOSTA')
+                }
+        
+                 }else{
+                    console.log('NÃO TEM SOLUÇÃO')
+                 }
+                }
+            }
+        if (drawcue == false) {
+            console.log('NÃO DESENHAR O TACO')
+        }
+        if (drawcue == true) {
+    
+            // draw cue
         c.beginPath()
         c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
         c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
         c.lineWidth = 1.5
         c.strokeStyle = 'brown'
         c.stroke()
-        stopcue = true
         }
         }
-})
+}})
 
 
 power = 0
