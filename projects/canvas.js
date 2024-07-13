@@ -3989,7 +3989,6 @@ window.addEventListener('mousedown',function (event) {
         }
 }})
 
-
 power = 0
 window.addEventListener('keydown',function(event) {
     if (event.key == ' ' && drawcue == true) {
