@@ -3680,6 +3680,7 @@ if (onpress == false) {
         let pokex = pokebolas[onpoke].x
         let pokey = pokebolas[onpoke].y
         pokebolas = []
+        drawcue = true
         for (v = 0; v < 4; v++) {
             if (v == 0) {
                 color = 'pink'
@@ -3825,7 +3826,7 @@ window.addEventListener('keydown',function(event) {
     if (event.key == ' ' && drawcue == true) {
         console.log('SPACE BAR ACTIVATED')
         if (power < 5) {
-        power+= 0.5
+        power+= 0.6
         }
         console.log(power)
     }
