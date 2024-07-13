@@ -3537,6 +3537,7 @@ function POKEBOL() {
 onpoke = -1
 powerup = false
 stopcue = false
+drawcue = true
 xsig = ''
 ysig = ''
 //saber quando o mouse encosta em uma pokebola
@@ -3674,7 +3675,6 @@ if (onpress == false) {
         origem = 18*Math.cos(angle) + pokebolas[onpoke].x
         alvo = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
        
-        drawcue = true
         c.strokeStyle = 'black'
         c.lineWidth = 1
         let pokex = pokebolas[onpoke].x
@@ -3779,6 +3779,8 @@ if (onpress == false) {
         console.log('NÃO DESENHAR O TACO')
     }
     if (drawcue == true) {
+
+        // draw cue
     c.beginPath()
     c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
     c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
@@ -3820,7 +3822,7 @@ window.addEventListener('mousedown',function () {
 
 power = 0
 window.addEventListener('keydown',function(event) {
-    if (event.key == ' ') {
+    if (event.key == ' ' && drawcue == true) {
         console.log('SPACE BAR ACTIVATED')
         if (power < 5) {
         power+= 0.5
@@ -3830,9 +3832,9 @@ window.addEventListener('keydown',function(event) {
 })
 
 window.addEventListener('keyup',function(event) {
-    powerup = true
     console.log(angle)
-    if (event.key == ' ') {
+    if (event.key == ' ' && drawcue == true) {
+        powerup = true
         console.log('SPACE BAR DISABLED')
         //this.window.alert('LANÇAR')
         console.log('LETS GO POKEBALLL',xsig,ysig)
@@ -3852,6 +3854,12 @@ window.addEventListener('keyup',function(event) {
         loop = true
         
         c.clearRect(0,0,300,150)
+        c.beginPath()
+        c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
+        c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+        c.lineWidth = 1.5
+        c.strokeStyle = 'blue'
+        c.stroke()
         pokebolas = []
         
         function animate2() {
