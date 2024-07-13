@@ -16,7 +16,9 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 let pokebolas = []
 // to go back to testing mode, change loop to true
 loop = false 
-radius = 6
+radius = 4.5
+comp = 290
+alt = 142
 function load() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
@@ -24,7 +26,7 @@ function load() {
     c.font = "20px Arial";
     //c.strokeText("Hello World", 10, 50)
     c.strokeStyle = 'black'
-    c.strokeRect(5,4,291,142)
+    c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
     //c.strokeStyle = 'black'
     //c.stroke()
     
@@ -58,9 +60,6 @@ if (v == 0) {
 }*/
 
 
-
-x = Math.random()*(300-width*3) + width
-y = Math.random()*(150-width*3) + width
 //console.log(velx)
 
 
@@ -118,7 +117,7 @@ if (v == 0) {
     //velx = 2
     //vely = -2
 }else{
-    x = 150
+    x = 146
     y = 30
     //x = 146
     //y = 40
@@ -333,19 +332,19 @@ function collision() {
                 }
                 
                 // inverter o sinal caso a pokebola esteja na borda
-                if (pokebolas[a].x > 300 - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width && pokebolas[a].velx < 0) {
+                if (pokebolas[a].x > (300 - comp)/2 + comp - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width + (300 - comp)/2 && pokebolas[a].velx < 0) {
                     velx1 = -pokebolas[a].velx
                     pokebolas[a].velx = -pokebolas[a].velx
                 }
-                if (pokebolas[a].y > 150 - pokebolas[a].width && pokebolas[a].vely > 0|| pokebolas[a].y < pokebolas[a].width && pokebolas[a].vely < 0) {
+                if (pokebolas[a].y > (150 - alt)/2 + alt - pokebolas[a].width && pokebolas[a].vely > 0|| pokebolas[a].y < pokebolas[a].width + (150 - alt)/2 && pokebolas[a].vely < 0) {
                     vely1 = -pokebolas[a].vely
                     pokebolas[a].vely = -pokebolas[a].vely
                 }
-                if (pokebolas[b].x > 300 - pokebolas[b].width && pokebolas[b].velx > 0 || pokebolas[b].x < pokebolas[b].width && pokebolas[b].velx < 0 ) {
+                if (pokebolas[b].x > (300 - comp)/2 + comp - pokebolas[b].width && pokebolas[b].velx > 0 || pokebolas[b].x < pokebolas[b].width + (300 - comp)/2 && pokebolas[b].velx < 0 ) {
                     velx2 = -pokebolas[b].velx
                     pokebolas[b].velx = -pokebolas[b].velx
                 }
-                if (pokebolas[b].y > 150 - pokebolas[b].width && pokebolas[b].vely > 0|| pokebolas[b].y < pokebolas[b].width && pokebolas[b].vely < 0) {
+                if (pokebolas[b].y > (150 - alt)/2 + alt - pokebolas[b].width && pokebolas[b].vely > 0|| pokebolas[b].y < pokebolas[b].width + (150 - alt)/2 && pokebolas[b].vely < 0) {
                     vely2 = -pokebolas[b].vely
                     pokebolas[b].vely = -pokebolas[b].vely
                 }
@@ -2170,13 +2169,14 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.fillStyle = 'black'
     c.fill()
     //c.lineWidth = width*0.02
-    c.stroke()
+    //c.stroke()
     
 
     c.beginPath()
     c.arc(x,y,width*0.2,0,Math.PI*2,true)
     c.fillStyle = 'white'
     c.fill()
+    c.lineWidth = width*0.04
     c.stroke()
     
     c.fillStyle = 'black'
@@ -2221,19 +2221,19 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     }
     
     
-    if (pokebolas[a].x > 300 - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width && pokebolas[a].velx < 0) {
+    if (pokebolas[a].x >  (300 - comp)/2 + comp - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width + (300 - comp)/2 && pokebolas[a].velx < 0) {
         velx1 = -pokebolas[a].velx
         pokebolas[a].velx = -pokebolas[a].velx
     }
-    if (pokebolas[a].y > 150 - pokebolas[a].width && pokebolas[a].vely > 0|| pokebolas[a].y < pokebolas[a].width && pokebolas[a].vely < 0) {
+    if (pokebolas[a].y >  (150 - alt)/2 + alt - pokebolas[a].width && pokebolas[a].vely > 0|| pokebolas[a].y < pokebolas[a].width + (150 - alt)/2 && pokebolas[a].vely < 0) {
         vely1 = -pokebolas[a].vely
         pokebolas[a].vely = -pokebolas[a].vely
     }
-    if (pokebolas[b].x > 300 - pokebolas[b].width && pokebolas[b].velx > 0 || pokebolas[b].x < pokebolas[b].width && pokebolas[b].velx < 0 ) {
+    if (pokebolas[b].x >  (300 - comp)/2 + comp - pokebolas[b].width && pokebolas[b].velx > 0 || pokebolas[b].x < pokebolas[b].width + (300 - comp)/2 && pokebolas[b].velx < 0) {
         velx2 = -pokebolas[b].velx
-        pokebolas[b].velx = -pokebolas[b].velx
+        pokebolas[b].velx = -pokebolas[b].velx 
     }
-    if (pokebolas[b].y > 150 - pokebolas[b].width && pokebolas[b].vely > 0|| pokebolas[b].y < pokebolas[b].width && pokebolas[b].vely < 0) {
+    if (pokebolas[b].y > (150 - alt)/2 + alt - pokebolas[b].width && pokebolas[b].vely > 0|| pokebolas[b].y < pokebolas[b].width + (150 - alt)/2 && pokebolas[b].vely < 0) {
         vely2 = -pokebolas[b].vely
         pokebolas[b].vely = -pokebolas[b].vely
     }
@@ -3567,14 +3567,14 @@ window.addEventListener('mousemove', function(event) {
 
 //console.log(wWidth,cWidth,dif/2)
     //console.log(((event.x - dif/2)/cWidth)*300)
-    mousex = ((event.x - dif/2)/cWidth)*300
+    mousex = ((event.x - dif/2)/cWidth)*300 // VOLTAR
     mousey = ((event.y - 80.48)/cHeight)*150
     this.document.getElementById('x').innerText = mousex
     //this.document.getElementById('y').innerText = mousey
     //console.log(wHeight,cHeight)
     //console.log(event.y - 80.48)
-    //console.log(((event.y - 80.48)/cHeight)*150)
-    if (mousex < 300 && mousex > 0 && mousey < 150 && mousey > 0) {
+    //console.log(((event.y - 80.48)/cHeight)*146)
+    if (mousex < 300 && mousex > 0 && mousey < 146 && mousey > 0) {
         //this.document.getElementById('x').innerText += 'within'
     }
     
@@ -3684,7 +3684,7 @@ if (onpress == false) {
         wid = 160
         c.clearRect(0,0,300,150)
         c.strokeStyle = 'black'
-        c.strokeRect(5,4,291,142)
+        c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
 
         origem = 18*Math.cos(angle) + pokebolas[onpoke].x
         alvo = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3899,7 +3899,7 @@ window.addEventListener('mousedown',function (event) {
             let pokey = pokebolas[onpoke].y
             pokebolas = []
             c.strokeStyle = 'black'
-            c.strokeRect(5,4,291,142)
+            c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
             drawcue = true
             for (v = 0; v < 6; v++) {
                 if (v == 0) {
@@ -4054,7 +4054,7 @@ window.addEventListener('keyup',function(event) {
         c.stroke()
         pokebolas = []
         c.strokeStyle = 'black'
-        c.strokeRect(5,4,291,142)
+        c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
         function animate2() {
             // for (t = 0; t < 2;t++) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
@@ -4070,7 +4070,7 @@ window.addEventListener('keyup',function(event) {
          
          
          x = Math.random()*(300-width*3) + width
-         y = Math.random()*(150-width*3) + width
+         y = Math.random()*(146-width*3) + width
          
          velj.push(`velx${v}:${velx}`)
          velj.push(`vely${v}:${vely}`)
@@ -4142,7 +4142,7 @@ window.addEventListener('keyup',function(event) {
              }else{ 
                  c.clearRect(0,0,300,150)
                  c.strokeStyle = 'black'
-                 c.strokeRect(5,4,291,142)
+                 c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
          
                 
                  for (number in pokebolas) {
