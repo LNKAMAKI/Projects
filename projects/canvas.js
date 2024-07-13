@@ -14,7 +14,9 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other => try the new code for b com r e a sem r)
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
-loop = false
+// to go back to testing mode, change loop to true
+loop = false 
+radius = 8
 function load() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
@@ -32,7 +34,7 @@ function animate() {
 velj = []
 for (v = 0; v < 4; v++) {
 width = Math.random()*8 + 10
-width = 13
+width = radius
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
 vely = Number((Math.random()*0.2).toFixed(5)) + 0.5
 velx = Number((Math.random()*1).toFixed(0)) + 2
@@ -158,8 +160,8 @@ if (v == 0) {
     x = 270
     y = 130
 }
-velx = 0
-vely = 0
+//velx = 0
+//vely = 0
 //loop = false
 // RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
@@ -346,7 +348,7 @@ function collision() {
                 // código para a colisão
                 
                 console.log('distância',Math.round(diffx**2 + diffy**2),'colisão',pokebolas[a].r)
-                if (Math.round(diffx**2 + diffy**2) == 676 && pokebolas[a].r != '') {//|| newdiffx**2 + newdiffy**2 < 676) {
+                if (Math.round(diffx**2 + diffy**2) == (2*radius)**2 && pokebolas[a].r != '') {//|| newdiffx**2 + newdiffy**2 < (2*radius)**2) {
                     //window.alert('')
                     //console.log(cx,cx2)
                    // console.log(cy,cy2)
@@ -404,9 +406,9 @@ function collision() {
                 
                     //console.log('triangulo:',diffx,diffy,(diffx**2 + diffy**2)**(1/2))
                     senx = diffx/(diffx**2 + diffy**2)**(1/2)
-                    senx = diffx/26
+                    senx = diffx/(radius*2)
                     cosx = diffy/(diffx**2 + diffy**2)**(1/2)
-                    cosx = diffy/26
+                    cosx = diffy/(radius*2)
                     console.log('senx',senx)
                     console.log('cos',cosx)
                     //senx = 3**(1/2)/2
@@ -1251,7 +1253,7 @@ function collision() {
                 pokebolas[a].r = ''
                 pokebolas[b].r = ''
 
-                console.log(9999,'eeee',7687,'***********&&&&&&&&&&&&&&$$$$$$______________(((((((((((())))))*723213163236135123123213213SEU LIXO COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
+                console.log(9999,'eeee',7687,'***********&&&&&&&&&&&&&&$$$$$$______________(((((((((((())))))*723215163236155123123215215SEU LIXO COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
                 //loop = false
                 
                 /*
@@ -1599,11 +1601,11 @@ function collision() {
         //console.log('')
         
     for (che in posibs) {
-        if (Math.round(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)) == 676) {
+        if (Math.round(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)) == (2*radius)**2) {
             console.log(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color)
             console.log(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
         }
-        if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < 675) {
+        if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < (2*radius)**2 - 1) {
          console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
          loop = false
         }
@@ -1912,7 +1914,7 @@ for (p in posibs) {
     
     newdiffx = newcx - newcx2
     newdiffy = newcy - newcy2
-    if (newdiffx**2 + newdiffy**2 <= 676 || diffx**2 + diffy**2 <= 676) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
+    if (newdiffx**2 + newdiffy**2 <= (2*radius)**2 || diffx**2 + diffy**2 <= (2*radius)**2) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
         console.log('')
         //console.log('NOW',diffx**2 + diffy**2)
         //console.log('NEXT',newdiffx**2 + newdiffy**2)
@@ -1983,7 +1985,7 @@ for (p in posibs) {
         //[cx - cx2 + vx - vx2]**2 + [cy - cy2 + vy - vy2]**2
         //[life + difvex]**2 + [time + difvey]**2
         //life**2 + 2*life*difvex + difvex**2 + time**2 + 2*time*difvey + difvey**2
-        //life**2 + time**2 - 676 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
+        //life**2 + time**2 - (2*radius)**2 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
         //           (c)                        (b)                       (a)
 
          //[(cx + vx) - (cx2 + vx2)]**2 + [(cy + vy) - (cy2 + vy2)]**2
@@ -2006,7 +2008,7 @@ for (p in posibs) {
         difvey = vely1 - vely2
         aex = 0
         bex = 0
-        cex = life**2 + time**2 - 676
+        cex = life**2 + time**2 - (2*radius)**2
         if (xvelx1 == 'x') {
             bex+= 2*life*velx1
             aex+= velx1**2
@@ -2131,12 +2133,15 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     if (addornot == true) {
     pokebolas.push({x:x,y:y,width:width,color:color,velx:velx,vely:vely,rangex:rangex,rangey:rangey})
     }
+    // white half of the pokeball
     c.beginPath()
     c.fillStyle = 'rgb(255,255,255)'
     c.arc(x,y,width,0,Math.PI,false)
     c.fill()
+    //c.lineWidth = width*0.1
     c.stroke()
     
+    // colored half of the pokeball
     c.beginPath()
     c.fillStyle = color
     c.arc(x,y,width,0,Math.PI,true)
@@ -2159,7 +2164,9 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.arc(x,y,width*0.3,0,Math.PI*2,true)
     c.fillStyle = 'black'
     c.fill()
+    //c.lineWidth = width*0.02
     c.stroke()
+    
 
     c.beginPath()
     c.arc(x,y,width*0.2,0,Math.PI*2,true)
@@ -2169,9 +2176,9 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
     c.fillStyle = 'black'
     
-    
+    /*
     if (velx < 0) {
-    c.fillText('←', x - width - 13,y + 6)
+    c.fillText('←', x - width - radius,y + 6)
     }else{
         c.fillText('→', x + width - 9,y + 6)
     }
@@ -2179,7 +2186,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.fillText('↑', x - 5,y - 8)
     }else{
         c.fillText('↓', x - 5,y + width + 3)
-    }
+    }*/
 }
 
 function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
@@ -2262,7 +2269,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     
     newdiffx = newcx - newcx2
     newdiffy = newcy - newcy2
-    if (newdiffx**2 + newdiffy**2 <= 676 || diffx**2 + diffy**2 <= 676) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
+    if (newdiffx**2 + newdiffy**2 <= (2*radius)**2 || diffx**2 + diffy**2 <= (2*radius)**2) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
         //console.log('')
         //console.log('NOW',diffx**2 + diffy**2)
         //console.log('NEXT',newdiffx**2 + newdiffy**2)
@@ -2373,7 +2380,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
     //[cx - cx2 + vx - vx2]**2 + [cy - cy2 + vy - vy2]**2
     //[life + difvex]**2 + [time + difvey]**2
     //life**2 + 2*life*difvex + difvex**2 + time**2 + 2*time*difvey + difvey**2
-    //life**2 + time**2 - 676 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
+    //life**2 + time**2 - (2*radius)**2 + 2(life*difvex + time*difvey) + difvex**2 + difvey**2
     //           (c)                        (b)                       (a)
 
      //[(cx + vx) - (cx2 + vx2)]**2 + [(cy + vy) - (cy2 + vy2)]**2
@@ -2401,7 +2408,7 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         //console.log('difvey',difvey,'colisão')
         aex = 0
         bex = 0
-        cex = life**2 + time**2 - 676
+        cex = life**2 + time**2 - (2*radius)**2
         if (xvelx1 == 'x') {
             bex+= 2*life*velx1
             aex+= velx1**2
@@ -2548,7 +2555,7 @@ function checkTouch () {
      //console.log(dis)
      //console.log('HEYYY',(pokebolas[posibs[ce].a].x + pokebolas[posibs[ce].a].velx - pokebolas[posibs[ce].b].x - pokebolas[posibs[ce].b].velx)**2 + (pokebolas[posibs[ce].a].y + pokebolas[posibs[ce].a].vely - pokebolas[posibs[ce].b].y - pokebolas[posibs[ce].b].vely)**2)
 
-     if (Math.round(dis) == 676 && (pokebolas[posibs[ce].a].x + pokebolas[posibs[ce].a].velx - pokebolas[posibs[ce].b].x - pokebolas[posibs[ce].b].velx)**2 + (pokebolas[posibs[ce].a].y + pokebolas[posibs[ce].a].vely - pokebolas[posibs[ce].b].y - pokebolas[posibs[ce].b].vely)**2 < 676){
+     if (Math.round(dis) == (2*radius)**2 && (pokebolas[posibs[ce].a].x + pokebolas[posibs[ce].a].velx - pokebolas[posibs[ce].b].x - pokebolas[posibs[ce].b].velx)**2 + (pokebolas[posibs[ce].a].y + pokebolas[posibs[ce].a].vely - pokebolas[posibs[ce].b].y - pokebolas[posibs[ce].b].vely)**2 < (2*radius)**2){
         //console.log(`as pokebolas ${pokebolas[posibs[ce].a].color} e ${pokebolas[posibs[ce].b].color} estão se tocando perfeitamente`)
         pokebolas
         
@@ -2589,7 +2596,7 @@ function poke() {
     for (a in pokebolas) {
         for (b in pokebolas) {
             if (b != a) {
-    if (Math.round(diffx**2 + diffy**2) == 676) {//|| newdiffx**2 + newdiffy**2 < 676) {
+    if (Math.round(diffx**2 + diffy**2) == (2*radius)**2) {//|| newdiffx**2 + newdiffy**2 < (2*radius)**2) {
         //window.alert('')
         //console.log(cx,cx2)
        // console.log(cy,cy2)
@@ -2638,9 +2645,9 @@ function poke() {
     
         //console.log('triangulo:',diffx,diffy,(diffx**2 + diffy**2)**(1/2))
         senx = diffx/(diffx**2 + diffy**2)**(1/2)
-        senx = diffx/26
+        senx = diffx/(radius*2)
         cosx = diffy/(diffx**2 + diffy**2)**(1/2)
-        cosx = diffy/26
+        cosx = diffy/(radius*2)
         //senx = 3**(1/2)/2
         //cosx = 1/2
         //console.log(`senx:${senx.toFixed(2)}, cosx:${cosx.toFixed(2)}, ${(senx**2 + cosx**2).toFixed(0)}`)
@@ -3732,7 +3739,7 @@ if (onpress == false) {
     
             ac = tgx**2 + 1
              bc = -2*tgx*rely - 2*relx
-             cc = relx**2 + rely**2 - 13**2
+             cc = relx**2 + rely**2 - radius**2
              delt = bc**2 - 4*ac*cc
              console.log(ac,bc,cc)
              if (delt > 0) {
@@ -3929,7 +3936,7 @@ window.addEventListener('mousedown',function (event) {
         
                 ac = tgx**2 + 1
                  bc = -2*tgx*rely - 2*relx
-                 cc = relx**2 + rely**2 - 13**2
+                 cc = relx**2 + rely**2 - radius**2
                  delt = bc**2 - 4*ac*cc
                  console.log(ac,bc,cc)
                  if (delt > 0) {
@@ -4038,7 +4045,7 @@ window.addEventListener('keyup',function(event) {
          velj = []
          for (v = 0; v < 4; v++) {
          width = Math.random()*8 + 10
-         width = 13
+         width = radius
          velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
          vely = Number((Math.random()*0.2).toFixed(5)) + 0.5
          velx = Number((Math.random()*1).toFixed(0)) + 2
