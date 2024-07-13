@@ -3795,6 +3795,13 @@ if (onpress == false) {
     c.lineWidth = 1.5
     c.strokeStyle = 'brown'
     c.stroke()
+    }else{
+        c.beginPath()
+    c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
+    c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+    c.lineWidth = 1.5
+    c.strokeStyle = 'red'
+    c.stroke()
     }
     }
 }else{
