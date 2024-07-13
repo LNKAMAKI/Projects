@@ -158,8 +158,8 @@ if (v == 0) {
     x = 270
     y = 130
 }
-//velx = 0
-//vely = 0
+velx = 0
+vely = 0
 //loop = false
 // RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
@@ -229,6 +229,7 @@ console.log(posibs)
          
             console.log(pokebolas[number].color)
             console.log(pokebolas[number].velx)
+            
             
             if (pokebolas[number].velx > 0) {
             if (pokebolas[number].velx > 0.01) {
@@ -1304,9 +1305,9 @@ function collision() {
         which = {dist:'',pokeb1:'',pokeb2:'',co1:'',co2:'',remove:''}
         //console.log('>>>>>',p,pokebolas[p].color)
         foi = false
-        if (p == 0) {
-        console.log('VEI',pokebolas[0].velx)
-        }
+        //if (p == 0) {
+        console.log('VEI',pokebolas[p].velx)
+        //}
         for (pi in pokebolas) {
             if (pi != p) {
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
@@ -1614,9 +1615,9 @@ function collision() {
             cont++
         }
     }
-    if (cont == pokebolas.length) {
+    if (cont == pokebolas.length && powerup == true) {
         console.log('WYU')
-        //loop = false
+        loop = false
     }
         
          /*
@@ -2125,6 +2126,8 @@ coll++
 
 //criar a pokebola
 function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
+    c.strokeStyle = 'black'
+        c.lineWidth = 1
     if (addornot == true) {
     pokebolas.push({x:x,y:y,width:width,color:color,velx:velx,vely:vely,rangex:rangex,rangey:rangey})
     }
@@ -3532,11 +3535,14 @@ function POKEBOL() {
 }
 
 onpoke = -1
+powerup = false
 stopcue = false
+xsig = ''
+ysig = ''
 //saber quando o mouse encosta em uma pokebola
 window.addEventListener('mousemove', function(event) {
     
-    
+    if (powerup == false) {
     canv = document.querySelector('canvas')
     cWidth = canv.offsetWidth
     wWidth = this.window.innerWidth
@@ -3613,7 +3619,9 @@ if (onpress == false) {
             //this.window.alert('PRECISA MUDAR')
             // y = tgx.x
             tgx = Math.abs(Math.tan(angle))
-            funcao = 'c'
+            funcao = 'c' // left down
+            xsig = '-'
+            ysig = '+'
             caso = 1
         }
         // segundo quadrante
@@ -3621,7 +3629,9 @@ if (onpress == false) {
         if (angle <= -Math.PI/2 && angle > -Math.PI) {
             //this.window.alert('PRECISA MUDAR')
             tgx = -Math.abs(Math.tan(angle))
-            funcao = 'dc'
+            funcao = 'dc' // right down
+            xsig = '+'
+            ysig = '+'
             caso = 2
         }
         // terceiro quadrante
@@ -3629,14 +3639,18 @@ if (onpress == false) {
         if (angle > Math.PI/2 && angle <= Math.PI) {
            //this.window.alert('PRECISA MUDAR')
            tgx = Math.abs(Math.tan(angle))
-           funcao = 'c'
+           funcao = 'c' // right up
+           xsig = '+'
+            ysig = '-'
            caso = 2
         }
         // quarto quadrante
         // menor que o ponto alvo e maior que a origem
         if (angle > 0 && angle <= Math.PI/2) {
             tgx = -Math.abs(Math.tan(angle))
-            funcao = 'dc'
+            funcao = 'dc' // left up
+            xsig = '-'
+            ysig = '-'
             caso = 1
          }
          
@@ -3700,8 +3714,8 @@ if (onpress == false) {
                 x = 270
                 y = 130
             }
-            velx = 0
-            vely = 0
+            //velx = 0
+            //vely = 0
             
             rangex = [x - width,x + width]
             rangey = [y - width,y + width]
@@ -3773,7 +3787,9 @@ if (onpress == false) {
     c.stroke()
     }
     }
-})
+}else{
+    //this.window.alert('FAZER NADA')
+}})
 window.addEventListener('mousedown',function () {
    // this.window.alert('MOUSE PRESSED')
     if (onpoke != -1) {
@@ -3801,25 +3817,44 @@ window.addEventListener('mousedown',function () {
         }
 })
 
-spaceactive = false
+
 power = 0
 window.addEventListener('keydown',function(event) {
     if (event.key == ' ') {
         console.log('SPACE BAR ACTIVATED')
-        if (power < 30) {
-        power+=2
+        if (power < 5) {
+        power+= 0.5
         }
         console.log(power)
     }
 })
 
 window.addEventListener('keyup',function(event) {
+    powerup = true
+    console.log(angle)
     if (event.key == ' ') {
         console.log('SPACE BAR DISABLED')
-        this.window.alert('LANÇAR')
+        //this.window.alert('LANÇAR')
+        console.log('LETS GO POKEBALLL',xsig,ysig)
+        if (xsig == '+') {
+            vx = power*Math.abs(Math.cos(angle))
+        }else{
+            vx = -power*Math.abs(Math.cos(angle))
+        }
+        if (ysig == '+') {
+            vy = power*Math.abs(Math.sin(angle))
+        }else{
+            vy = -power*Math.abs(Math.sin(angle))
+        }
+        console.log(vx,vy)
+        console.log(Math.tan(angle),vy/vx)
         spaceactive = false
         loop = true
-        function animate() {
+        
+        c.clearRect(0,0,300,150)
+        pokebolas = []
+        
+        function animate2() {
             // for (t = 0; t < 2;t++) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
                  
@@ -3874,8 +3909,15 @@ window.addEventListener('keyup',function(event) {
              x = 270
              y = 130
          }
-         velx = 0
-         vely = 0
+         //velx = 0
+         //vely = 0
+         if (v != onpoke) {
+            velx = 0
+            vely = 0
+    }else{
+        velx = vx
+        vely = vy
+    }
          
          r = Math.random()*255
          g = Math.random()*255
@@ -3972,10 +4014,10 @@ window.addEventListener('keyup',function(event) {
              
          
              if (loop == true) {
-         requestAnimationFrame(animate)
+         requestAnimationFrame(animate2)
              }
          }
-         animate()
+         animate2()
     }
 })
 
