@@ -3792,7 +3792,7 @@ if (onpress == false) {
 }else{
     //this.window.alert('FAZER NADA')
 }})
-window.addEventListener('mousedown',function () {
+window.addEventListener('mousedown',function (event) {
    // this.window.alert('MOUSE PRESSED')
     if (onpoke != -1) {
         //this.window.alert('A POKEBOLA FOI PRESSIONADA')
