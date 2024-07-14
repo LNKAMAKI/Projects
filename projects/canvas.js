@@ -3176,12 +3176,12 @@ window.addEventListener('mousedown',function (event) {
 }})
 
 power = 0
-cuewidth = 11
+cuewidth = 8
 window.addEventListener('keydown',function(event) {
     if (event.key == ' ' && drawcue == true) {
         console.log('SPACE BAR ACTIVATED')
-        if (power < 5) {
-        power+= 0.6
+        if (power < 4) {
+        power+= 0.5
         }
         console.log(power)
     }
