@@ -15,7 +15,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
 // to go back to testing mode, change loop to true
-loop = false 
+loop = true
 radius = 13
 comp = 290
 alt = 142
@@ -40,7 +40,7 @@ function animate() {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
         
 velj = []
-for (v = 0; v < 4; v++) {
+for (v = 0; v < 2; v++) {
 width = Math.random()*8 + 10
 width = radius
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -134,7 +134,7 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    velx = 2
+    velx = 0
     vely = 1
     //const vx1 = [...velx]
     //const vy1 = [...vely]
@@ -142,7 +142,7 @@ if (v == 0) {
     color = 'red'
     x = 100
     y = 40
-    velx = 2
+    velx = 0
     vely = 2
 }else if(v == 2){
     color = 'yellow'
@@ -239,7 +239,7 @@ console.log(posibs)
             console.log(pokebolas[number].color)
             console.log(pokebolas[number].velx)
             
-            
+            /*
             if (pokebolas[number].velx > 0) {
             if (pokebolas[number].velx > 0.005) {
             pokebolas[number].velx -= 0.005
@@ -272,7 +272,7 @@ console.log(posibs)
                         pokebolas[number].vely = 0
                         }
                 }
-                        
+                     */   
            
             
             pokebolas[number].x+=pokebolas[number].velx
@@ -712,16 +712,22 @@ function collision() {
                     if (vperx1hor + vpery1hor > 0) {
                         console.log('a resultante perpendicular está pra direita')
                         dirahor = 'right'
-                    }else{
+                    }else if (vperx1hor + vpery1hor < 0){
                         console.log('a resultante perpendicular está pra esquerda')
                         dirahor = 'left'
+                    }else{
+                        console.log('não há horizontal resultante perpendicular')
+                        dirahor = ''
                     }
                     if (vperx1ver + vpery1ver > 0) {
                         console.log('a resultante perpendicular está pra cima')
                         diraver = 'up'
-                    }else{
+                    }else if (vperx1ver + vpery1ver < 0){
                         console.log('a resultante perpendicular está pra baixo')
                         diraver = 'down'
+                    }else{
+                        console.log('não há vertical na resultante perpendicular')
+                        diraver = ''
                     }
                     //console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor,vx1)
                     //console.log('soma(verificação)',vperx1ver + vparx1ver + vpery1ver + vpary1ver,vy1)
@@ -1040,16 +1046,22 @@ function collision() {
                 if (vperx2hor + vpery2hor > 0) {
                     console.log('a resultante perpendicular está pra direita')
                     dirbhor = 'right'
-                }else{
+                }else if (vperx2hor + vpery2hor < 0) {
                     console.log('a resultante perpendicular está pra esquerda')
                     dirbhor = 'left'
+                }else{
+                    console.log('não há vertical na resultante perpendicular')
+                    dirbhor = ''
                 }
                 if (vperx2ver + vpery2ver > 0) {
                     console.log('a resultante perpendicular está pra cima')
                     dirbver = 'up'
-                }else{
+                }else if (vperx2ver + vpery2ver < 0) {
                     console.log('a resultante perpendicular está pra baixo')
                     dirbver = 'down'
+                }else{
+                    console.log('não há vertical na resultante perpendicular')
+                    dirbver = ''
                 }
                 //console.log('soma(verificação)',vperx2hor + vparx2hor + vpery2hor + vpary2hor,vx2)
                 //console.log('soma(verificação)',vperx2ver + vparx2ver + vpery2ver + vpary2ver,vy2)
@@ -1183,6 +1195,10 @@ function collision() {
                         }
                     }
                     if (cango == true) {
+                        if (dirahor == '' && diraver == '') {
+                            dirahor = dirbhor
+                            diraver = dirbver
+                            }
                     console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
                     sumparhor1 = vpary1hor + vparx1hor
                     sumparver1 = vpary1ver + vparx1ver
@@ -1217,6 +1233,10 @@ function collision() {
                     pokebolas[a].vely = (sumparver1 + sumper2ver)*-1
                     console.log(`${pokebolas[a]}.vely: ${pokebolas[a].vely}`)
                 
+                    if (dirbhor == '' && dirbver == '') {
+                    dirbhor = dirahor
+                    dirbver = diraver
+                    }
                     console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
                     sumparhor2 = vpary2hor + vparx2hor
                     sumparver2 = vpary2ver + vparx2ver
@@ -1227,7 +1247,7 @@ function collision() {
                         if (sumper1hor > 0) {
                             sumper1hor = -sumper1hor
                         }
-                    }else{
+                    }else if (dirbhor == 'right'){
                         if (sumper1hor < 0) {
                             sumper1hor = -sumper1hor
                         }
@@ -1237,7 +1257,7 @@ function collision() {
                         if (sumper1ver > 0) {
                             sumper1ver = -sumper1ver
                         }
-                    }else{
+                    }else if (dirbver == 'up'){
                         if (sumper1ver < 0) {
                             sumper1ver = -sumper1ver
                         }
@@ -1265,7 +1285,7 @@ function collision() {
                 pokebolas[b].r = ''
 
                 console.log(9999,'eeee',7687,'***********&&&&&&&&&&&&&&$$$$$$______________(((((((((((())))))*723215163236155123123215215SEU LIXO COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
-                loop = false
+                //loop = false
                 
                 /*
                 pokebolas[a].velx = 0
@@ -3146,10 +3166,10 @@ window.addEventListener('keyup',function(event) {
     
     if (event.key == ' ' && drawcue == true) {
         powerup = true
-        power = 1.2
-        angle = 1.56609
-        xsig = '+'
-        ysig = '-'
+        //power = 1.2
+        //angle = 1.56609
+        //xsig = '+'
+        //ysig = '-'
         console.log(angle,power)
         console.log('SPACE BAR DISABLED')
         //this.window.alert('LANÇAR')
