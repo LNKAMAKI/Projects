@@ -14,12 +14,23 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other => try the new code for b com r e a sem r)
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
+pokepos = [{x:100,y:90},{x:100,y:40},{x:140,y:30},{x:270,y:20}]
 // to go back to testing mode, change loop to true
 loop = false
-radius = 4.5
-comp = 290
-alt = 142
+radius = 4
+comp = 280
+alt = 137
 contagem = 0
+function setTable() {
+    c.beginPath()
+    c.lineWidth = '1.3'
+    c.strokeStyle = 'black'
+    c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
+    c.arc((300 - comp)/2,(150 - alt)/2,6,0,2*Math.PI)
+    c.fillStyle = 'white'
+    c.fill()
+    c.stroke()
+}
 function load() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
@@ -27,7 +38,7 @@ function load() {
     c.font = "20px Arial";
     //c.strokeText("Hello World", 10, 50)
     c.strokeStyle = 'black'
-    c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
+    setTable()
     //c.strokeStyle = 'black'
     //c.stroke()
     
@@ -165,6 +176,8 @@ if (v == 0) {
     x = 270
     y = 130
 }
+x = pokepos[v].x
+y = pokepos[v].y
 //velx = 0
 //vely = 0
 //loop = false
@@ -2822,8 +2835,7 @@ if (onpress == false) {
          
         wid = 160
         c.clearRect(0,0,300,150)
-        c.strokeStyle = 'black'
-        c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
+        setTable()
 
         origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
         alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -2868,6 +2880,8 @@ if (onpress == false) {
                 x = 270
                 y = 130
             }
+            x = pokepos[v].x
+            y = pokepos[v].y
             //velx = 0
             //vely = 0
             
@@ -3037,8 +3051,7 @@ window.addEventListener('mousedown',function (event) {
             let pokex = pokebolas[onpoke].x
             let pokey = pokebolas[onpoke].y
             pokebolas = []
-            c.strokeStyle = 'black'
-            c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
+            setTable()
             drawcue = true
             for (v = 0; v < 4; v++) {
                 if (v == 0) {
@@ -3074,6 +3087,8 @@ window.addEventListener('mousedown',function (event) {
                     x = 270
                     y = 130
                 }
+                x = pokepos[v].x
+                y = pokepos[v].y
                 //velx = 0
                 //vely = 0
                 
@@ -3199,8 +3214,7 @@ window.addEventListener('keyup',function(event) {
         c.strokeStyle = 'blue'
         c.stroke()
         pokebolas = []
-        c.strokeStyle = 'black'
-        c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
+        setTable()
         function animate2() {
             // for (t = 0; t < 2;t++) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
@@ -3259,6 +3273,8 @@ window.addEventListener('keyup',function(event) {
         velx = vx
         vely = vy
     }
+        x = pokepos[v].x
+        y = pokepos[v].y
          
          r = Math.random()*255
          g = Math.random()*255
@@ -3289,9 +3305,7 @@ window.addEventListener('keyup',function(event) {
                 contagem++
        console.log('CONTAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM',contagem)
                  c.clearRect(0,0,300,150)
-                 c.strokeStyle = 'black'
-                 c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
-         
+                 setTable()
                 
                  for (number in pokebolas) {
                     
