@@ -15,8 +15,8 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
 // to go back to testing mode, change loop to true
-loop = true
-radius = 13
+loop = false
+radius = 4.5
 comp = 290
 alt = 142
 contagem = 0
@@ -40,7 +40,7 @@ function animate() {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
         
 velj = []
-for (v = 0; v < 2; v++) {
+for (v = 0; v < 4; v++) {
 width = Math.random()*8 + 10
 width = radius
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -2825,8 +2825,8 @@ if (onpress == false) {
         c.strokeStyle = 'black'
         c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
 
-        origem = 18*Math.cos(angle) + pokebolas[onpoke].x
-        alvo = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
+        origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
+        alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
        
         c.strokeStyle = 'black'
         c.lineWidth = 1
@@ -2936,15 +2936,15 @@ if (onpress == false) {
 
         // draw cue
     c.beginPath()
-    c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
-    c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+    c.moveTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x,cuewidth*Math.sin(angle) + pokebolas[onpoke].y)
+    c.lineTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),cuewidth*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
     c.lineWidth = 1.5
     c.strokeStyle = 'brown'
     c.stroke()
     }else{
         c.beginPath()
-    c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
-    c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+    c.moveTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x,cuewidth*Math.sin(angle) + pokebolas[onpoke].y)
+    c.lineTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),cuewidth*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
     c.lineWidth = 1.5
     c.strokeStyle = 'red'
     c.stroke()
@@ -3029,8 +3029,8 @@ window.addEventListener('mousedown',function (event) {
             wid = 160
             c.clearRect(0,0,300,150)
     
-            origem = 18*Math.cos(angle) + pokebolas[onpoke].x
-            alvo = 18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
+            origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
+            alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
            
             c.strokeStyle = 'black'
             c.lineWidth = 1
@@ -3142,8 +3142,8 @@ window.addEventListener('mousedown',function (event) {
     
             // draw cue
         c.beginPath()
-        c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
-        c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+        c.moveTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x,cuewidth*Math.sin(angle) + pokebolas[onpoke].y)
+        c.lineTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),cuewidth*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
         c.lineWidth = 1.5
         c.strokeStyle = 'brown'
         c.stroke()
@@ -3152,6 +3152,7 @@ window.addEventListener('mousedown',function (event) {
 }})
 
 power = 0
+cuewidth = 11
 window.addEventListener('keydown',function(event) {
     if (event.key == ' ' && drawcue == true) {
         console.log('SPACE BAR ACTIVATED')
@@ -3192,8 +3193,8 @@ window.addEventListener('keyup',function(event) {
         
         c.clearRect(0,0,300,150)
         c.beginPath()
-        c.moveTo(18*Math.cos(angle) + pokebolas[onpoke].x,18*Math.sin(angle) + pokebolas[onpoke].y)
-        c.lineTo(18*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
+        c.moveTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x,cuewidth*Math.sin(angle) + pokebolas[onpoke].y)
+        c.lineTo(cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle),cuewidth*Math.sin(angle) + pokebolas[onpoke].y + wid*Math.sin(angle))
         c.lineWidth = 1.5
         c.strokeStyle = 'blue'
         c.stroke()
@@ -3374,8 +3375,8 @@ window.addEventListener('keyup',function(event) {
     if (event.key == 'c') {
       //POKEBOL()
       c.beginPath()
-        c.moveTo(18*Math.cos(angle) + pokebolas[0].x,18*Math.sin(angle) + pokebolas[0].y)
-        c.lineTo(18*Math.cos(angle) + pokebolas[0].x + wid*Math.cos(angle),18*Math.sin(angle) + pokebolas[0].y + wid*Math.sin(angle))
+        c.moveTo(cuewidth*Math.cos(angle) + pokebolas[0].x,cuewidth*Math.sin(angle) + pokebolas[0].y)
+        c.lineTo(cuewidth*Math.cos(angle) + pokebolas[0].x + wid*Math.cos(angle),cuewidth*Math.sin(angle) + pokebolas[0].y + wid*Math.sin(angle))
         c.stroke()
     }
     if (event.key == 'd') {
