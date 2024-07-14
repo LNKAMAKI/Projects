@@ -1668,6 +1668,15 @@ function collision() {
     if (cont == pokebolas.length && powerup == true) {
         console.log('WYU')
         loop = false
+        powerup = false
+        stopcue = false
+        onpoke = -1
+        console.log('POKEPOS PRECISA SER ATUALIZADO')
+        pokepos = []
+        for (gi in pokebolas) {
+            pokepos.push({x:pokebolas[gi].x,y:pokebolas[gi].y})
+        }
+        console.log('new pokepos',pokepos)
     }
         
          /*
