@@ -308,7 +308,7 @@ for (m in pokebolas) {
             //console.log(pokebolas[number].color)
             //console.log(pokebolas[number].velx)
             
-            /*
+            
             if (pokebolas[number].velx > 0) {
             if (pokebolas[number].velx > 0.005) {
             pokebolas[number].velx -= 0.005
@@ -341,7 +341,7 @@ for (m in pokebolas) {
                         pokebolas[number].vely = 0
                         }
                 }
-                     */   
+                     
            
             
             pokebolas[number].x+=pokebolas[number].velx
@@ -3277,7 +3277,7 @@ window.addEventListener('keyup',function(event) {
     
     if (event.key == ' ' && drawcue == true) {
         powerup = true
-        power = 1
+        //power = 1
         //angle = 1.56609
         //xsig = '+'
         //ysig = '-'
@@ -3382,7 +3382,7 @@ window.addEventListener('keyup',function(event) {
                      //console.log(pokebolas[number].color)
                      //console.log(pokebolas[number].velx)
                      
-                     /*
+                     
                      if (pokebolas[number].velx > 0) {
                      if (pokebolas[number].velx > 0.005) {
                      pokebolas[number].velx -= 0.005
@@ -3415,7 +3415,7 @@ window.addEventListener('keyup',function(event) {
                                  pokebolas[number].vely = 0
                                  }
                          }
-                                 */
+                                 
                                  
                     
                      
