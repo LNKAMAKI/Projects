@@ -21,7 +21,7 @@ comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:20,y:130},{x:16,y:13},{x:210,y:30},{x:300 - (300 - comp)/2 - potwidth + radius,y:15}]
+pokepos = [{x:20,y:130},{x:16,y:13},{x:300 - (300 - comp)/2 - potwidth + radius,y:135},{x:300 - (300 - comp)/2 - potwidth + radius,y:15}]
 function setTable() {
     c.beginPath()
     c.lineWidth = '1.3'
@@ -398,13 +398,37 @@ function collision() {
                 
                 // inverter o sinal caso a pokebola esteja na borda
                 
+               
                 if (pokebolas[a].y >= (150 - alt)/2 + potwidth - radius && pokebolas[a].y <= 150 - (150 - alt)/2 - potwidth + radius) {
                 if (pokebolas[a].x > (300 - comp)/2 + comp - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width + (300 - comp)/2 && pokebolas[a].velx < 0) {
                     velx1 = -pokebolas[a].velx
                     pokebolas[a].velx = -pokebolas[a].velx
                 }
             }else{
-                console.log('NÃO FAZERRRRRRRRRRRRRRR')
+                 xrel = pokebolas[a].x - (300 - comp)/2
+                 yrel = pokebolas[a].y - (150 - alt)/2
+                 // (x + velx*C)² + (y + vely*C)² = r²
+                 // x² + 2*x*velx*C + velx²*C² + y² + 2*y*vely*C + vely²*C² = r²
+                 // x² + y² + C*(2*x*velx + 2*y*vely) + C²(velx²+ vely²) - r² = 0
+                 //    c                 b                     a
+                 pokevelx = pokebolas[a].velx
+                 pokevely = pokebolas[a].vely
+                 ak = pokevelx**2 + pokevely**2
+                 bk = 2*xrel*pokevelx + 2*yrel*pokevely
+                 ck = xrel**2 + yrel**2 - potwidth**2
+                 delta = bk**2 - 4*ak*ck
+                 if (delta >= 0) {
+                 raiz1 = (-bk + delta**(1/2))/(2*ak)
+                 raiz2 = (-bk - delta**(1/2))/(2*ak)
+                 console.log('raiz1',raiz1)
+                 console.log('raiz2',raiz2)
+                 }
+                 console.log(pokebolas[a].color,xrel,yrel)
+                 console.log('ak',ak)
+                 console.log('bk',bk)
+                 console.log('ck',ck)
+                 console.log(delta)
+                 console.log('NÃO FAZERRRRRRRRRRRRRRR')
             }
                 if (pokebolas[a].x >=  (300 - comp)/2 + potwidth - radius && pokebolas[a].x <= 300 - (300 - comp)/2 - potwidth + radius) {
                 if (pokebolas[a].y > (150 - alt)/2 + alt - pokebolas[a].width && pokebolas[a].vely > 0|| pokebolas[a].y < pokebolas[a].width + (150 - alt)/2 && pokebolas[a].vely < 0) {
@@ -3268,7 +3292,7 @@ window.addEventListener('keyup',function(event) {
     
     if (event.key == ' ' && drawcue == true) {
         powerup = true
-        power = 0.5
+        power = 0.2
         //angle = 1.56609
         //xsig = '+'
         //ysig = '-'
