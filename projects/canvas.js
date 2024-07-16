@@ -22,6 +22,7 @@ alt = 132
 contagem = 0
 potwidth = 10
 pokepos = [{x:20,y:130},{x:20,y:18},{x:300 - (300 - comp)/2 - potwidth + radius,y:135},{x:300 - (300 - comp)/2 - potwidth + radius,y:15}]
+pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
     c.lineWidth = '1.3'
@@ -105,7 +106,7 @@ function animate() {
     if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
         
 velj = []
-for (v = 0; v < 4; v++) {
+for (v = 0; v < pokepos.length; v++) {
 width = Math.random()*8 + 10
 width = radius
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -406,6 +407,7 @@ function collision() {
                 
                
                 if (pokebolas[a].velx != 0) {
+                    console.log('OLHAR A POKEBOLA',pokebolas[a])
                 xrel = pokebolas[a].x - (300 - comp)/2 + radius
                 yrel = pokebolas[a].y - (150 - alt)/2
                 // (x + velx*C)² + (y + vely*C)² = r²
@@ -1458,6 +1460,30 @@ function collision() {
         
        sortcol = []
        console.log('AQUI COMEÇA O SORTOB')
+       if (pokebolas.length == 1) {
+        console.log('É UM, MAN')
+        potball = 0
+        if (pokebolas[0].y >= (150 - alt)/2 + potwidth - radius && pokebolas[0].y <= 150 - (150 - alt)/2 - potwidth + radius) {
+        if (pokebolas[0].x > (300 - comp)/2 + comp - pokebolas[0].width && pokebolas[0].velx > 0 || pokebolas[0].x < pokebolas[0].width + (300 - comp)/2 && pokebolas[0].velx < 0) {
+            velx1 = -pokebolas[0].velx
+            pokebolas[0].velx = -pokebolas[0].velx
+        }
+    }else{
+        potball++
+    }
+        if (pokebolas[0].x >=  (300 - comp)/2 + potwidth - radius && pokebolas[0].x <= 300 - (300 - comp)/2 - potwidth + radius) {
+        if (pokebolas[0].y > (150 - alt)/2 + alt - pokebolas[0].width && pokebolas[0].vely > 0|| pokebolas[0].y < pokebolas[0].width + (150 - alt)/2 && pokebolas[0].vely < 0) {
+            vely1 = -pokebolas[0].vely
+            pokebolas[0].vely = -pokebolas[0].vely
+        }
+    }else{
+        potball++
+    }
+    if (potball == 2) {
+        //window.alert('ENTROU')
+        pokebolas[0].pot = true
+    }
+       }
        for (p in pokebolas) {
         which = {dist:'',pokeb1:'',pokeb2:'',co1:'',co2:'',remove:''}
         //console.log('>>>>>',p,pokebolas[p].color)
@@ -3315,7 +3341,9 @@ window.addEventListener('keyup',function(event) {
     if (event.key == ' ' && drawcue == true) {
         powerup = true
         power = 1
+        if (onpoke == '0') {
         angle = -1.630615878648321
+        }
         //angle = 1.56609
         //xsig = '+'
         //ysig = '-'
