@@ -21,7 +21,7 @@ comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:20,y:130},{x:20,y:18},{x:300 - (300 - comp)/2 - potwidth + radius,y:135},{x:300 - (300 - comp)/2 - potwidth + radius,y:15}]
+pokepos = [{x:20,y:130,color:'pink'},{x:20,y:18,color:'red'},{x:300 - (300 - comp)/2 - potwidth + radius,y:135,color:'yellow'},{x:300 - (300 - comp)/2 - potwidth + radius,y:15,color:'lime'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
@@ -231,6 +231,7 @@ if (v == 0) {
     x = 270
     y = 130
 }
+color = pokepos[v].color
 x = pokepos[v].x
 y = pokepos[v].y
 //velx = 0
@@ -1810,7 +1811,7 @@ function collision() {
         //console.log('POKEPOS PRECISA SER ATUALIZADO')
         pokepos = []
         for (gi in pokebolas) {
-            pokepos.push({x:pokebolas[gi].x,y:pokebolas[gi].y})
+            pokepos.push({x:pokebolas[gi].x,y:pokebolas[gi].y,color:pokebolas[gi].color})
         }
         //console.log('new pokepos',pokepos)
     }
@@ -3005,39 +3006,7 @@ if (onpress == false) {
         pokebolas = []
         drawcue = true
         for (v = 0; v < pokepos.length; v++) {
-            if (v == 0) {
-                color = 'pink'
-                x = 100
-                y = 90
-                velx = 2
-                vely = 1
-            }else  if (v == 1){
-                color = 'red'
-                x = 100
-                y = 40
-                velx = 2
-                vely = 2
-            }else if(v == 2){
-                color = 'yellow'
-                x = 140
-                y = 30
-            }else if (v == 3){
-                color = 'lime'
-                x = 270
-                y = 20
-            }else if(v == 4){
-                color = 'cyan'
-                x = 80
-                y = 60
-            }else if (v == 5){
-                color = 'orange'
-                x = 20
-                y = 110
-            }else{
-                color = 'purple'
-                x = 270
-                y = 130
-            }
+            color = pokepos[v].color
             x = pokepos[v].x
             y = pokepos[v].y
             //velx = 0
@@ -3212,39 +3181,7 @@ window.addEventListener('mousedown',function (event) {
             setTable()
             drawcue = true
             for (v = 0; v < pokepos.length; v++) {
-                if (v == 0) {
-                    color = 'pink'
-                    x = 100
-                    y = 90
-                    velx = 2
-                    vely = 1
-                }else  if (v == 1){
-                    color = 'red'
-                    x = 100
-                    y = 40
-                    velx = 2
-                    vely = 2
-                }else if(v == 2){
-                    color = 'yellow'
-                    x = 140
-                    y = 30
-                }else if (v == 3){
-                    color = 'lime'
-                    x = 270
-                    y = 20
-                }else if(v == 4){
-                    color = 'cyan'
-                    x = 80
-                    y = 60
-                }else if (v == 5){
-                    color = 'orange'
-                    x = 20
-                    y = 110
-                }else{
-                    color = 'purple'
-                    x = 270
-                    y = 130
-                }
+                color = pokepos[v].color
                 x = pokepos[v].x
                 y = pokepos[v].y
                 //velx = 0
@@ -3393,37 +3330,8 @@ window.addEventListener('keyup',function(event) {
          velj.push(`velx${v}:${velx}`)
          velj.push(`vely${v}:${vely}`)
          
-         if (v == 0) {
-             color = 'pink'
-             x = 100
-             y = 90
-         }else  if (v == 1){
-             color = 'red'
-             x = 100
-             y = 40
-         }else if(v == 2){
-             color = 'yellow'
-             x = 140
-             y = 30
-         }else if (v == 3){
-             color = 'lime'
-             x = 270
-             y = 20
-         }else if(v == 4){
-             color = 'cyan'
-             x = 80
-             y = 60
-         }else if (v == 5){
-             color = 'orange'
-             x = 20
-             y = 110
-         }else{
-             color = 'purple'
-             x = 270
-             y = 130
-         }
-         //velx = 0
-         //vely = 0
+         color = pokepos[v].color
+
          if (v != onpoke) {
             velx = 0
             vely = 0
