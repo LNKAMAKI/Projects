@@ -16,12 +16,12 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 let pokebolas = []
 // to go back to testing mode, change loop to true
 loop = false
-radius = 4
+radius = 3.5
 comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:20,y:130,color:'pink'},{x:20,y:18,color:'red'},{x:300 - (300 - comp)/2 - potwidth + radius,y:135,color:'yellow'},{x:300 - (300 - comp)/2 - potwidth + radius,y:15,color:'lime'}]
+pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:300 - (300 - comp)/2 - potwidth + radius,y:135,color:'yellow'},{x:300 - (300 - comp)/2 - potwidth + radius,y:15,color:'lime'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
