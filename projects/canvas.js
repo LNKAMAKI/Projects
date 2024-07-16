@@ -21,7 +21,7 @@ comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:20,y:130},{x:24,y:24},{x:300 - (300 - comp)/2 - potwidth + radius,y:135},{x:300 - (300 - comp)/2 - potwidth + radius,y:15}]
+pokepos = [{x:20,y:130},{x:20,y:18},{x:300 - (300 - comp)/2 - potwidth + radius,y:135},{x:300 - (300 - comp)/2 - potwidth + radius,y:15}]
 function setTable() {
     c.beginPath()
     c.lineWidth = '1.3'
@@ -34,8 +34,8 @@ function setTable() {
 
     c.arc((300 - comp)/2,(150 - alt)/2,potwidth,0,Math.PI/2)
     c.fillStyle = 'white'
-    c.fill()
-    c.stroke()
+    //c.fill()
+    //c.stroke()
 
     c.beginPath()
     c.arc((300 - comp)/2,150 - (150 - alt)/2,potwidth,0,3*Math.PI/2)
@@ -362,7 +362,7 @@ for (m in pokebolas) {
             }
     }
     collision()
-    document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
+    //document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
     }
     
 
@@ -406,7 +406,7 @@ function collision() {
                 
                
                 if (pokebolas[a].velx != 0) {
-                xrel = pokebolas[a].x - (300 - comp)/2
+                xrel = pokebolas[a].x - (300 - comp)/2 + radius
                 yrel = pokebolas[a].y - (150 - alt)/2
                 // (x + velx*C)² + (y + vely*C)² = r²
                 // x² + 2*x*velx*C + velx²*C² + y² + 2*y*vely*C + vely²*C² = r²
@@ -427,6 +427,10 @@ function collision() {
                 if (delta >= 0) {
                    raiz1 = (-bk + delta**(1/2))/(2*ak)
                    raiz2 = (-bk - delta**(1/2))/(2*ak)
+                   if (Math.floor(raiz2) == 0) {
+                    console.log('NA BORDA')
+                    //loop = false
+                   }
                    console.log('raiz1',raiz1)
                    console.log('raiz2',raiz2)
                    }
@@ -2961,7 +2965,7 @@ if (onpress == false) {
          // x²(tgx² + 1) + x(-2.tgx.py - 2.px) + py² + px² - 169 = 0
          //       a                 b                  c  
          
-        wid = 160
+        wid = 120 // comprimento do cue
         c.clearRect(0,0,300,150)
         setTable()
 
@@ -2974,7 +2978,7 @@ if (onpress == false) {
         let pokey = pokebolas[onpoke].y
         pokebolas = []
         drawcue = true
-        for (v = 0; v < 4; v++) {
+        for (v = 0; v < pokepos.length; v++) {
             if (v == 0) {
                 color = 'pink'
                 x = 100
@@ -3181,7 +3185,7 @@ window.addEventListener('mousedown',function (event) {
             pokebolas = []
             setTable()
             drawcue = true
-            for (v = 0; v < 4; v++) {
+            for (v = 0; v < pokepos.length; v++) {
                 if (v == 0) {
                     color = 'pink'
                     x = 100
@@ -3310,7 +3314,8 @@ window.addEventListener('keyup',function(event) {
     
     if (event.key == ' ' && drawcue == true) {
         powerup = true
-        power = 0.2
+        power = 1
+        angle = -1.630615878648321
         //angle = 1.56609
         //xsig = '+'
         //ysig = '-'
@@ -3348,7 +3353,7 @@ window.addEventListener('keyup',function(event) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
                  
          velj = []
-         for (v = 0; v < 4; v++) {
+         for (v = 0; v < pokepos.length; v++) {
          width = Math.random()*8 + 10
          width = radius
          velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
@@ -3437,7 +3442,7 @@ window.addEventListener('keyup',function(event) {
                 
                  pokestay = []
                  for (number in pokebolas) {
-                    if (pokebolas[number].pot == undefined) {
+                    if (pokebolas[number].pot == undefined){ //|| pokebolas[number].pot == true) {
                         pokestay.push(pokebolas[number])
                     
                      if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
@@ -3504,6 +3509,7 @@ window.addEventListener('keyup',function(event) {
                      }
              }
              
+             
              pokebolas = []
              for (n in pokestay) {
                 pokebolas.push(pokestay[n])
@@ -3523,7 +3529,7 @@ window.addEventListener('keyup',function(event) {
                  }
              }
              collision()
-             document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
+             //document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
              }
              
          
