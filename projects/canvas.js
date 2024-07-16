@@ -22,7 +22,7 @@ alt = 132
 contagem = 0
 potwidth = 10
 pokepos = [{x:20,y:130},{x:20,y:18},{x:300 - (300 - comp)/2 - potwidth + radius,y:135},{x:300 - (300 - comp)/2 - potwidth + radius,y:15}]
-pokepos = [{x:20,y:130}]
+//pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
     c.lineWidth = '1.3'
@@ -3341,9 +3341,6 @@ window.addEventListener('keyup',function(event) {
     if (event.key == ' ' && drawcue == true) {
         powerup = true
         power = 1
-        if (onpoke == '0') {
-        angle = -1.630615878648321
-        }
         //angle = 1.56609
         //xsig = '+'
         //ysig = '-'
