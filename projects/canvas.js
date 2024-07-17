@@ -89,11 +89,36 @@ function setTable() {
 
 }
 function load() {
+    canv = document.getElementById("canv")
+    c = canv.getContext('2d')
+    listfont = ['Bangers','Paytone One','Luckiest Guy','Bungee','Russo One','Passion One','Righteous','Patua One','Concert One','Acme','Alfa Slab One','Rowdies','Red Hat Display','Lobster','Ga Maamli','Archivo Black','Rubik Mono One','Lilita One']
+    c.font = "30px Bangers"
+    c.font = "30px Paytone One"
+    c.font = "30px Luckiest Guy"
+    c.font = "30px Bungee"
+    c.font = "30px Russo One"
+    c.font = "30px Passion One"
+    c.font = "30px Righteous"
+    c.font = "30px Patua One"
+    c.font = "30px Concert One"
+    c.font = "30px Acme"
+    c.font = `38px ${listfont[2]}`
+    c.textBaseline = 'middle'
+    c.fillStyle = 'red'
+    c.textAlign = 'center'
+    c.lineWidth = '3'
+    c.strokeStyle = 'black'
+    c.strokeText("POKESNOOKER", 150, 55)
+    c.fillText("POKESNOOKER", 150, 55)
+     c.font = `25px ${listfont[2]}`
+     c.fillStyle = '#2a98ff'
+    c.strokeText("PLAY", 150, 100)
+    c.fillText("PLAY", 150, 100)
+}
+function start() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
     c = canv.getContext('2d')
-    c.font = "20px Arial";
-    //c.strokeText("Hello World", 10, 50)
     c.strokeStyle = 'black'
     setTable()
     //c.strokeStyle = 'black'
@@ -2884,7 +2909,7 @@ window.addEventListener('mousemove', function(event) {
     //console.log(((event.x - dif/2)/cWidth)*300)
     mousex = ((event.x - dif/2)/cWidth)*300 // VOLTAR
     mousey = ((event.y - 80.48)/cHeight)*150
-    this.document.getElementById('x').innerText = mousex
+    //this.document.getElementById('x').innerText = mousex
     //this.document.getElementById('y').innerText = mousey
     //console.log(wHeight,cHeight)
     //console.log(event.y - 80.48)
