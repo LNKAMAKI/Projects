@@ -317,7 +317,7 @@ for (m in pokebolas) {
             }else{
                 //console.log('ZERO')
             pokebolas[number].velx = 0
-            }
+            }                           
             }else if (pokebolas[number].velx != 0){
                 if (pokebolas[number].velx < 0.02) {
                     pokebolas[number].velx += 0.02
@@ -3247,8 +3247,8 @@ cuewidth = 8
 window.addEventListener('keydown',function(event) {
     if (event.key == ' ' && drawcue == true) {
         //console.log('SPACE BAR ACTIVATED')
-        if (power < 3.5) {
-        power+= 0.1  
+        if (power < 3.8) {
+        power+= 0.15               
         }
         //console.log(power)
     }
