@@ -21,7 +21,7 @@ comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'},{x:60,y:75,color:'red'},{x:60,y:75 + radius*2,color:'red'},{x:60,y:75 + radius*4,color:'red'},{x:60,y:75 - radius*2,color:'red'},{x:60,y:75 - radius*4,color:'red'},{x:60 + radius*2,y:75,color:'red'}]
+pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
@@ -3372,6 +3372,7 @@ window.addEventListener('keyup',function(event) {
        //console.log('CONTAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM',contagem)
                  c.clearRect(0,0,300,150)
                  setTable()
+                 collision()
                 
                  pokestay = []
                  for (number in pokebolas) {

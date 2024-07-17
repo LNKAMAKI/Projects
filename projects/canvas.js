@@ -1793,7 +1793,7 @@ function collision() {
             //console.log(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
         }
         if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < (2*radius)**2 - 1) {
-         //console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
+         console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
          //loop = false
         }
     }
@@ -3347,6 +3347,7 @@ window.addEventListener('keyup',function(event) {
        //console.log('CONTAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM',contagem)
                  c.clearRect(0,0,300,150)
                  setTable()
+                 collision()
                 
                  pokestay = []
                  for (number in pokebolas) {
