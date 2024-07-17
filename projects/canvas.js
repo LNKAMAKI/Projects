@@ -371,7 +371,7 @@ for (m in pokebolas) {
            
             //console.log('r',pokebolas[number].r,pokebolas[number].r === '')
             if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
-            // colocando o atrito: f 0.013
+            // colocando o atrito: f 0.015
             
             
          
@@ -380,15 +380,15 @@ for (m in pokebolas) {
             
             
             if (pokebolas[number].velx > 0) {
-            if (pokebolas[number].velx > 0.013) {
-            pokebolas[number].velx -0.013
+            if (pokebolas[number].velx > 0.015) {
+            pokebolas[number].velx -0.015
             }else{
                 //console.log('ZERO')
             pokebolas[number].velx = 0
             }                           
             }else if (pokebolas[number].velx != 0){
-                if (pokebolas[number].velx < 0.013) {
-                    pokebolas[number].velx +0.013
+                if (pokebolas[number].velx < 0.015) {
+                    pokebolas[number].velx +0.015
                     }else{
                         //console.log('ZERO')
                     pokebolas[number].velx = 0
@@ -397,15 +397,15 @@ for (m in pokebolas) {
         
             
             if (pokebolas[number].vely > 0) {
-                if (pokebolas[number].vely > 0.013) {
-                pokebolas[number].vely -0.013
+                if (pokebolas[number].vely > 0.015) {
+                pokebolas[number].vely -0.015
                 }else{
                     //console.log('ZERO')
                 pokebolas[number].vely = 0
                 }
                 }else if (pokebolas[number].vely != 0){
-                    if (pokebolas[number].vely < 0.013) {
-                        pokebolas[number].vely +0.013
+                    if (pokebolas[number].vely < 0.015) {
+                        pokebolas[number].vely +0.015
                         }else{
                             //console.log('ZERO')
                         pokebolas[number].vely = 0
@@ -2431,7 +2431,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.arc(x,y,width*0.3,0,Math.PI*2,true)
     c.fillStyle = 'black'
     c.fill()
-    //c.lineWidth = width*0.013
+    //c.lineWidth = width*0.015
     //c.stroke()
     
 
@@ -3438,15 +3438,15 @@ window.addEventListener('keyup',function(event) {
                      cosa = Math.abs(pokebolas[number].velx/hipo)
 
                      if (pokebolas[number].velx > 0) {
-                     if (pokebolas[number].velx > 0.013*cosa) {
-                     pokebolas[number].velx -= 0.013*cosa
+                     if (pokebolas[number].velx > 0.015*cosa) {
+                     pokebolas[number].velx -= 0.015*cosa
                      }else{
                          //console.log('ZERO')
                      pokebolas[number].velx = 0
                      }
                      }else if (pokebolas[number].velx != 0){
-                         if (pokebolas[number].velx < 0.013*cosa) {
-                             pokebolas[number].velx += 0.013*cosa
+                         if (pokebolas[number].velx < 0.015*cosa) {
+                             pokebolas[number].velx += 0.015*cosa
                              }else{
                                  //console.log('ZERO')
                              pokebolas[number].velx = 0
@@ -3455,15 +3455,15 @@ window.addEventListener('keyup',function(event) {
                  
                      
                      if (pokebolas[number].vely > 0) {
-                         if (pokebolas[number].vely > 0.013*sena) {
-                         pokebolas[number].vely -= 0.013*sena
+                         if (pokebolas[number].vely > 0.015*sena) {
+                         pokebolas[number].vely -= 0.015*sena
                          }else{
                              //console.log('ZERO')
                          pokebolas[number].vely = 0
                          }
                          }else if (pokebolas[number].vely != 0){
-                             if (pokebolas[number].vely < 0.013*sena) {
-                                 pokebolas[number].vely += 0.013*sena
+                             if (pokebolas[number].vely < 0.015*sena) {
+                                 pokebolas[number].vely += 0.015*sena
                                  }else{
                                      //console.log('ZERO')
                                  pokebolas[number].vely = 0
