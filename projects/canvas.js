@@ -1813,6 +1813,9 @@ function collision() {
         pokepos = []
         for (gi in pokebolas) {
             pokepos.push({x:pokebolas[gi].x,y:pokebolas[gi].y,color:pokebolas[gi].color})
+            if (pokebolas[gi].color == 'white') {
+                onpoke = gi
+            }
         }
         //console.log('new pokepos',pokepos)
     }
@@ -3072,6 +3075,8 @@ window.addEventListener('mousemove', function(event) {
     }
     
 }})
+
+/*
 window.addEventListener('mousedown',function (event) {
    // this.window.alert('MOUSE PRESSED')
     if (onpoke != -1) {
@@ -3234,15 +3239,15 @@ window.addEventListener('mousedown',function (event) {
         c.stroke()
         }
         
-}})
+}})   */                                      
 
 power = 0
 cuewidth = 8
 window.addEventListener('keydown',function(event) {
     if (event.key == ' ' && drawcue == true) {
         //console.log('SPACE BAR ACTIVATED')
-        if (power < 4) {
-        power+= 0.4
+        if (power < 3.5) {
+        power+= 0.1  
         }
         //console.log(power)
     }
