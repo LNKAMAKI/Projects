@@ -120,10 +120,43 @@ function load() {
      c.fillStyle = '#2a98ff'
     c.strokeText("PLAY", 150, 105)
     c.fillText("PLAY", 150, 105)
+    c.lineWidth = '1'
+    //c.strokeRect(122,90,59,22)
+    // fstx = 122
+    // sndx = 181
+    // fsty = 90
+    // sndy = 112
 }
+clickplay = false
+window.addEventListener('mousemove',function(event) {
+    canv = document.querySelector('canvas')
+    cWidth = canv.offsetWidth
+    wWidth = this.window.innerWidth
+    cHeight = canv.offsetHeight
+    wHeight = this.window.innerHeight
+    dif = wWidth - cWidth
+    
+    mousex = ((event.x - dif/2)/cWidth)*300
+    mousey = ((event.y - 2)/cHeight)*150
+    if (mousex >= 122 && mousex <= 181 && mousey >= 90 && mousey <= 112) {
+        clickplay = true
+        this.document.getElementById('x').innerText = 'true'
+    }else{
+        clickplay = false
+        this.document.getElementById('x').innerText = 'false'
+    }
+   
+})
+window.addEventListener('mousedown',function() {
+if (clickplay == true) {
+    start()
+}
+})
+
 function start() {
     //console.log(document.querySelector('canvas'))
     canv = document.getElementById("canv")
+    c.clearRect(0,0,300,150)
     c = canv.getContext('2d')
     c.strokeStyle = 'black'
     setTable()
@@ -2914,7 +2947,8 @@ window.addEventListener('mousemove', function(event) {
 //console.log(wWidth,cWidth,dif/2)
     //console.log(((event.x - dif/2)/cWidth)*300)
     mousex = ((event.x - dif/2)/cWidth)*300 // VOLTAR
-    mousey = ((event.y - 80.48)/cHeight)*150
+    //mousey = ((event.y - 80.48)/cHeight)*150
+    mousey = ((event.y - 2)/cHeight)*150
     //this.document.getElementById('x').innerText = mousex
     //this.document.getElementById('y').innerText = mousey
     //console.log(wHeight,cHeight)
