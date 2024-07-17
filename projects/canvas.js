@@ -371,7 +371,7 @@ for (m in pokebolas) {
            
             //console.log('r',pokebolas[number].r,pokebolas[number].r === '')
             if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
-            // colocando o atrito: f 0.01
+            // colocando o atrito: f 0.02
             
             
          
@@ -381,14 +381,14 @@ for (m in pokebolas) {
             
             if (pokebolas[number].velx > 0) {
             if (pokebolas[number].velx > 0.02) {
-            pokebolas[number].velx -0.01
+            pokebolas[number].velx -0.02
             }else{
                 //console.log('ZERO')
             pokebolas[number].velx = 0
             }                           
             }else if (pokebolas[number].velx != 0){
                 if (pokebolas[number].velx < 0.02) {
-                    pokebolas[number].velx +0.01
+                    pokebolas[number].velx +0.02
                     }else{
                         //console.log('ZERO')
                     pokebolas[number].velx = 0
@@ -398,14 +398,14 @@ for (m in pokebolas) {
             
             if (pokebolas[number].vely > 0) {
                 if (pokebolas[number].vely > 0.02) {
-                pokebolas[number].vely -0.01
+                pokebolas[number].vely -0.02
                 }else{
                     //console.log('ZERO')
                 pokebolas[number].vely = 0
                 }
                 }else if (pokebolas[number].vely != 0){
                     if (pokebolas[number].vely < 0.02) {
-                        pokebolas[number].vely +0.01
+                        pokebolas[number].vely +0.02
                         }else{
                             //console.log('ZERO')
                         pokebolas[number].vely = 0
@@ -3439,14 +3439,14 @@ window.addEventListener('keyup',function(event) {
 
                      if (pokebolas[number].velx > 0) {
                      if (pokebolas[number].velx > 0.02*cosa) {
-                     pokebolas[number].velx -0.01*cosa
+                     pokebolas[number].velx -= 0.02*cosa
                      }else{
                          //console.log('ZERO')
                      pokebolas[number].velx = 0
                      }
                      }else if (pokebolas[number].velx != 0){
                          if (pokebolas[number].velx < 0.02*cosa) {
-                             pokebolas[number].velx +0.01*cosa
+                             pokebolas[number].velx += 0.02*cosa
                              }else{
                                  //console.log('ZERO')
                              pokebolas[number].velx = 0
@@ -3456,14 +3456,14 @@ window.addEventListener('keyup',function(event) {
                      
                      if (pokebolas[number].vely > 0) {
                          if (pokebolas[number].vely > 0.02*sena) {
-                         pokebolas[number].vely -0.01*sena
+                         pokebolas[number].vely -= 0.02*sena
                          }else{
                              //console.log('ZERO')
                          pokebolas[number].vely = 0
                          }
                          }else if (pokebolas[number].vely != 0){
                              if (pokebolas[number].vely < 0.02*sena) {
-                                 pokebolas[number].vely +0.01*sena
+                                 pokebolas[number].vely += 0.02*sena
                                  }else{
                                      //console.log('ZERO')
                                  pokebolas[number].vely = 0
