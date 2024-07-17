@@ -2858,9 +2858,8 @@ function POKEBOL() {
     }
 }
 
-onpoke = -1
+onpoke = 5
 powerup = false // check if the pokeball has been released
-stopcue = false // detect if the pokeball has been clicked
 drawcue = true
 xsig = ''
 ysig = ''
@@ -2891,26 +2890,6 @@ window.addEventListener('mousemove', function(event) {
     }
     
     onpress = false
-    if (stopcue == false) {
-    for (p in pokebolas) {
-        px = pokebolas[p].x
-        pw = pokebolas[p].width
-        py = pokebolas[p].y
-        //console.log(px - pw, px + pw, py - pw, py + pw)
-        if (mousex > px - pw && mousex < px + pw && mousey > py - pw && mousey < py + pw) {
-            //console.log('OWO')
-            r = Math.random()*255
-            g = Math.random()*255
-            b = Math.random()*255
-            onpoke = p
-            onpress = true
-            //pokebolas[p].color = `rgb(${r},${g},${b})`
-}
-}
-if (onpress == false) {
-    onpoke = -1
-}
-    }else{
         //console.log(pokebolas[onpoke].x - mousex,pokebolas[onpoke].y - mousey)
         xi = pokebolas[onpoke].x - mousex
         yi = pokebolas[onpoke].y - mousey
@@ -3091,9 +3070,7 @@ if (onpress == false) {
     c.strokeStyle = 'red'
     c.stroke()
     }
-    }
-}else{
-    //this.window.alert('FAZER NADA')
+    
 }})
 window.addEventListener('mousedown',function (event) {
    // this.window.alert('MOUSE PRESSED')
@@ -3109,9 +3086,6 @@ window.addEventListener('mousedown',function (event) {
         mousey = ((event.y - 80.48)/cHeight)*150
         this.document.getElementById('x').innerText = mousex
         
-        onpress = false
-        if (stopcue == false) {
-            stopcue = true
             //console.log(pokebolas[onpoke].x - mousex,pokebolas[onpoke].y - mousey)
             xi = pokebolas[onpoke].x - mousex
             yi = pokebolas[onpoke].y - mousey
@@ -3259,7 +3233,7 @@ window.addEventListener('mousedown',function (event) {
         c.strokeStyle = 'brown'
         c.stroke()
         }
-        }
+        
 }})
 
 power = 0
