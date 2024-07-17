@@ -21,9 +21,7 @@ comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color:'brown'},{x:230,y:45,color:'#FFDA01'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'},{x:60,y:75,color:'red'},{x:60,y:75 + radius*2 + 7,color:'red'},{x:60,y:75 - radius*2 - 7,color:'red'},{x:75,y:75,color:'#FF4E70'}]
-    //pokepos = [{x:20,y:130}]
-//{x:60,y:75,color:'red'},{x:60,y:75 + radius*2,color:'red'},{x:60,y:75 + radius*4,color:'red'},{x:60,y:75 - radius*2,color:'red'},{x:60,y:75 - radius*4,color:'red'},{x:60 + radius*2,y:75,color:'red'}
+pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'},{x:60,y:75,color:'red'},{x:60,y:75 + radius*2,color:'red'},{x:60,y:75 + radius*4,color:'red'},{x:60,y:75 - radius*2,color:'red'},{x:60,y:75 - radius*4,color:'red'},{x:60 + radius*2,y:75,color:'red'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
@@ -381,7 +379,7 @@ coll = 0
 function collision() {
     //console.log('DO THE COLLISION BROTHER','colisão')
     for (a in pokebolas) {
-        //console.log(a)
+        console.log(a)
         cx = pokebolas[a].x
                 cy = pokebolas[a].y
                 velx1 = pokebolas[a].velx
@@ -410,7 +408,7 @@ function collision() {
                 
                
                 if (pokebolas[a].velx != 0) {
-                    //console.log('OLHAR A POKEBOLA',pokebolas[a])
+                    console.log('OLHAR A POKEBOLA',pokebolas[a])
                 xrel = pokebolas[a].x - (300 - comp)/2 + radius
                 yrel = pokebolas[a].y - (150 - alt)/2
                 // (x + velx*C)² + (y + vely*C)² = r²
@@ -423,21 +421,21 @@ function collision() {
                 bk = 2*xrel*pokevelx + 2*yrel*pokevely
                 ck = xrel**2 + yrel**2 - potwidth**2
                 delta = bk**2 - 4*ak*ck
-                //console.log(pokebolas[a].color,xrel,yrel)
-                //console.log('ak',ak)
-                //console.log('bk',bk)
-                //console.log('ck',ck)
-                //console.log(delta)
-                //console.log('NÃO FAZERRRRRRRRRRRRRRR')
+                console.log(pokebolas[a].color,xrel,yrel)
+                console.log('ak',ak)
+                console.log('bk',bk)
+                console.log('ck',ck)
+                console.log(delta)
+                console.log('NÃO FAZERRRRRRRRRRRRRRR')
                 if (delta >= 0) {
                    raiz1 = (-bk + delta**(1/2))/(2*ak)
                    raiz2 = (-bk - delta**(1/2))/(2*ak)
                    if (Math.floor(raiz2) == 0) {
-                    //console.log('NA BORDA')
+                    console.log('NA BORDA')
                     //loop = false
                    }
-                   //console.log('raiz1',raiz1)
-                   //console.log('raiz2',raiz2)
+                   console.log('raiz1',raiz1)
+                   console.log('raiz2',raiz2)
                    }
                 }
 
@@ -488,7 +486,7 @@ function collision() {
                     //console.log(cx,cx2)
                    // console.log(cy,cy2)
                    //window.alert('colidir')
-                    //console.log(`calcular a colisão com ${pokebolas[a].color} e ${pokebolas[b].color}`)
+                    console.log(`calcular a colisão com ${pokebolas[a].color} e ${pokebolas[b].color}`)
                     //console.log(pokebolas[a].velx)
                     //console.log(pokebolas[a].r)
                     //loop = false
@@ -508,11 +506,11 @@ function collision() {
                     vx2 = pokebolas[b].velx
                     vy2 = -pokebolas[b].vely
 
-                    //console.log(pokebolas[a].color,'vx:',vx1,'vy:',vy1)
-                    //console.log(pokebolas[b].color,'vx:',vx2,'vy:',vy2)
+                    console.log(pokebolas[a].color,'vx:',vx1,'vy:',vy1)
+                    console.log(pokebolas[b].color,'vx:',vx2,'vy:',vy2)
 
-                    //console.log(pokebolas[a].color,'x:',cx,'y:',cy)
-                    //console.log(pokebolas[b].color,'x:',cx2,'y:',cy2)
+                    console.log(pokebolas[a].color,'x:',cx,'y:',cy)
+                    console.log(pokebolas[b].color,'x:',cx2,'y:',cy2)
                 
                     //console.log('vx1: ',vx1)
                     //console.log('vy1: ',vy1)
@@ -520,21 +518,21 @@ function collision() {
                     //console.log('vy2: ',vy2)
                 
                     if (cy < cy2) {
-                        //console.log(`bola ${pokebolas[a].color} é a de cima`)
+                        console.log(`bola ${pokebolas[a].color} é a de cima`)
                         upball = Number(a)
                         downball = Number(b)
                     }else{
-                        //console.log(`bola ${pokebolas[b].color} é a de cima`)
+                        console.log(`bola ${pokebolas[b].color} é a de cima`)
                         upball = Number(b)
                         downball = Number(a)
                     }
                 
                     if (cx > cx2) {
-                        //console.log(`bola ${pokebolas[a].color} está na direita`)
+                        console.log(`bola ${pokebolas[a].color} está na direita`)
                         rightball = Number(a)
                         leftball = Number(b)
                     }else{
-                        //console.log(`bola ${pokebolas[b].color} está na direita`)
+                        console.log(`bola ${pokebolas[b].color} está na direita`)
                         rightball = Number(b)
                         leftball = Number(a)
                     }
@@ -544,8 +542,8 @@ function collision() {
                     senx = diffx/(radius*2)
                     cosx = diffy/(diffx**2 + diffy**2)**(1/2)
                     cosx = diffy/(radius*2)
-                    //console.log('senx',senx)
-                    //console.log('cos',cosx)
+                    console.log('senx',senx)
+                    console.log('cos',cosx)
                     //senx = 3**(1/2)/2
                     //cosx = 1/2
                     //console.log(`senx:${senx.toFixed(2)}, cosx:${cosx.toFixed(2)}, ${(senx**2 + cosx**2).toFixed(0)}`)
@@ -824,12 +822,12 @@ function collision() {
                     sumper1 = vperx1 + vpery1
                     sumpar1 = vparx1 + vpary1
                 
-                    //console.log(`vperx1(vx1*senx):${vperx1.toFixed(6)},vparx1(vx1*cosx):${vparx1.toFixed(6)}`)
-                    //console.log(`vpery1(vy1*cosx):${vpery1.toFixed(6)},vpary1(vx1*senx):${vpary1.toFixed(6)}`)
+                    console.log(`vperx1(vx1*senx):${vperx1.toFixed(6)},vparx1(vx1*cosx):${vparx1.toFixed(6)}`)
+                    console.log(`vpery1(vy1*cosx):${vpery1.toFixed(6)},vpary1(vx1*senx):${vpary1.toFixed(6)}`)
                 
-                    //console.log(`soma dos vetores na perpendicular: ${sumper1}`)
-                    //console.log(`soma dos vetores na paralela: ${sumpar1}`)
-                    //console.log('verificar:',sumper1**2 + sumpar1**2,vx1**2 + vy1**2)
+                    console.log(`soma dos vetores na perpendicular: ${sumper1}`)
+                    console.log(`soma dos vetores na paralela: ${sumpar1}`)
+                    console.log('verificar:',sumper1**2 + sumpar1**2,vx1**2 + vy1**2)
                     
                     //console.log('vperx1hor(vperx1*senx):',vperx1hor,'vperx1ver(vperx1*cosx):',vperx1ver)
                     //console.log('vparx1hor(vparx1*cosx):',vparx1hor,'vparx1ver(vperx1*senx):',vparx1ver)
@@ -838,23 +836,23 @@ function collision() {
                     //console.log('soma horizontal na perpendicular: ',vperx1hor + vpery1hor)
                     //console.log('soma vertical na perpendicular: ',vperx1ver + vpery1ver)
                     if (vperx1hor + vpery1hor > 0) {
-                        //console.log('a resultante perpendicular está pra direita')
+                        console.log('a resultante perpendicular está pra direita')
                         dirahor = 'right'
                     }else if (vperx1hor + vpery1hor < 0){
-                        //console.log('a resultante perpendicular está pra esquerda')
+                        console.log('a resultante perpendicular está pra esquerda')
                         dirahor = 'left'
                     }else{
-                        //console.log('não há horizontal resultante perpendicular')
+                        console.log('não há horizontal resultante perpendicular')
                         dirahor = ''
                     }
                     if (vperx1ver + vpery1ver > 0) {
-                        //console.log('a resultante perpendicular está pra cima')
+                        console.log('a resultante perpendicular está pra cima')
                         diraver = 'up'
                     }else if (vperx1ver + vpery1ver < 0){
-                        //console.log('a resultante perpendicular está pra baixo')
+                        console.log('a resultante perpendicular está pra baixo')
                         diraver = 'down'
                     }else{
-                        //console.log('não há vertical na resultante perpendicular')
+                        console.log('não há vertical na resultante perpendicular')
                         diraver = ''
                     }
                     //console.log('soma(verificação)',vperx1hor + vparx1hor + vpery1hor + vpary1hor,vx1)
@@ -1160,35 +1158,35 @@ function collision() {
                 sumper2 = vperx2 + vpery2
                 sumpar2 = vparx2 + vpary2
                 
-                //console.log(`vperx2:${vperx2.toFixed(6)},vparx2:${vparx2.toFixed(6)}`)
-                //console.log(`vpery2:${vpery2.toFixed(6)},vpary2:${vpary2.toFixed(6)}`)
+                console.log(`vperx2:${vperx2.toFixed(6)},vparx2:${vparx2.toFixed(6)}`)
+                console.log(`vpery2:${vpery2.toFixed(6)},vpary2:${vpary2.toFixed(6)}`)
                 
-                //console.log(`soma dos vetores na perpendicular: ${sumper2}`)
-                //console.log(`soma dos vetores na paralela: ${sumpar2}`)
-                //console.log('verificar:',sumper2**2 + sumpar2**2,vx2**2 + vy2**2)
+                console.log(`soma dos vetores na perpendicular: ${sumper2}`)
+                console.log(`soma dos vetores na paralela: ${sumpar2}`)
+                console.log('verificar:',sumper2**2 + sumpar2**2,vx2**2 + vy2**2)
                 
                 //console.log('vperx2hor(vperx2*senx):',vperx2hor,'vperx2ver(vperx2*cosx):',vperx2ver)
                     //console.log('vparx2hor(vparx2*cosx):',vparx2hor,'vparx2ver(vperx2*senx):',vparx2ver)
                     //console.log('vpery2hor(vpery2*senx):',vpery2hor,'vpery2ver(vpery2*cosx):',vpery2ver)
                     //console.log('vpary2hor(vpary2*cosx):',vpary2hor,'vpary2ver(vpary2*senx):',vpary2ver)
                 if (vperx2hor + vpery2hor > 0) {
-                    //console.log('a resultante perpendicular está pra direita')
+                    console.log('a resultante perpendicular está pra direita')
                     dirbhor = 'right'
                 }else if (vperx2hor + vpery2hor < 0) {
-                    //console.log('a resultante perpendicular está pra esquerda')
+                    console.log('a resultante perpendicular está pra esquerda')
                     dirbhor = 'left'
                 }else{
-                    //console.log('não há vertical na resultante perpendicular')
+                    console.log('não há vertical na resultante perpendicular')
                     dirbhor = ''
                 }
                 if (vperx2ver + vpery2ver > 0) {
-                    //console.log('a resultante perpendicular está pra cima')
+                    console.log('a resultante perpendicular está pra cima')
                     dirbver = 'up'
                 }else if (vperx2ver + vpery2ver < 0) {
-                    //console.log('a resultante perpendicular está pra baixo')
+                    console.log('a resultante perpendicular está pra baixo')
                     dirbver = 'down'
                 }else{
-                    //console.log('não há vertical na resultante perpendicular')
+                    console.log('não há vertical na resultante perpendicular')
                     dirbver = ''
                 }
                 //console.log('soma(verificação)',vperx2hor + vparx2hor + vpery2hor + vpary2hor,vx2)
@@ -1200,32 +1198,32 @@ function collision() {
                 // checar se efetivamente está ocorrendo uma colisão e definir o caso correspondente
                 collidea = 0
                 collideb = 0
-                //console.log(leftball,dirahor)
+                console.log(leftball,dirahor)
                 if (senx != 0) { // quando o senx é zero, é porque eles estão alinhados verticalmente e, portanto, n é possível fazer a análise pelo eixo x(n irá ter left/right ball)
                 if (leftball == a && dirahor == 'right' || rightball == a && dirahor == 'left') {
-                    //console.log('a bola a está para colidir')
+                    console.log('a bola a está para colidir')
                     collidea++
                 }
                 if (leftball == b && dirbhor == 'right' || rightball == b && dirbhor == 'left') {
-                    //console.log('a bola b está para colidir')
+                    console.log('a bola b está para colidir')
                     collideb++
                 }
             }else{
-                //console.log('o seno é zero, cara')
-                //console.log(diraver,dirbver)
-                //console.log(downball == a,upball == b)
+                console.log('o seno é zero, cara')
+                console.log(diraver,dirbver)
+                console.log(downball == a,upball == b)
                 
                 if (upball == a && diraver == 'down' || downball == a && diraver == 'up') {
-                    //console.log('a bola a está para colidir')
+                    console.log('a bola a está para colidir')
                     collidea++
                 }
                 if (upball == b && dirbver == 'down' || downball == b && dirbver == 'up') {
-                    //console.log('a bola b está para colidir')
+                    console.log('a bola b está para colidir')
                     collideb++
                 }
             }
                 if (collidea == 1 && collideb == 1) {
-                    //console.log('as pokebolas vão bater de frente')
+                    console.log('as pokebolas vão bater de frente')
                     //console.log('as pokebolas vão bater de frente')
                     //console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirbhor, dirbver)
                     sumparhor1 = vpary1hor + vparx1hor
@@ -1290,9 +1288,9 @@ function collision() {
                 }else if (collidea == 1 || collideb == 1) {
                     //console.log('uma pokebola vai se chocar na outra')
                     if (collidea == 1) {
-                    //console.log('a bola a irá se chocar com a b')
+                    console.log('a bola a irá se chocar com a b')
                     }else{
-                    //console.log('a bola b irá se chocar com a a')
+                    console.log('a bola b irá se chocar com a a')
                     }
                         modsum1 = sumper1
                         if (sumper1 < 0) {
@@ -1308,18 +1306,18 @@ function collision() {
                         if (collidea == 1) {
                         if (modsum1 > modsum2) {
                             cango = true
-                            //console.log('ok, realmente irá ocorrer a colisão')
-                            //console.log('a bola a terá sua velocidade reduzida, mantendo a direção')
+                            console.log('ok, realmente irá ocorrer a colisão')
+                            console.log('a bola a terá sua velocidade reduzida, mantendo a direção')
                         }else{
-                            //console.log('não ocorrerá a colisão')
+                            console.log('não ocorrerá a colisão')
                         }
                     }else{
                         if (modsum2 > modsum1) {
                             cango = true
-                            //console.log('ok, realmente irá ocorrer a colisão')
-                            //console.log('a bola b terá sua velocidade reduzida, mantendo a direção')
+                            console.log('ok, realmente irá ocorrer a colisão')
+                            console.log('a bola b terá sua velocidade reduzida, mantendo a direção')
                         }else{
-                            //console.log('não ocorrerá a colisão')
+                            console.log('não ocorrerá a colisão')
                         }
                     }
                     if (cango == true) {
@@ -1327,7 +1325,7 @@ function collision() {
                             dirahor = dirbhor
                             diraver = dirbver
                             }
-                    //console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
+                    console.log('a bola a ficará com a velocidade na perpendicular de:',sumper2, dirahor, diraver)
                     sumparhor1 = vpary1hor + vparx1hor
                     sumparver1 = vpary1ver + vparx1ver
                     //console.log(sumparhor1, sumparver1)
@@ -1352,20 +1350,20 @@ function collision() {
                             sumper2ver = -sumper2ver
                         }
                     }
-                    //console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
-                    //console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
-                    //console.log('verificar',sumpar1**2 + sumper2**2, (sumparhor1 + sumper2hor)**2 + (sumparver1 + sumper2ver)**2)
-                    //console.log('É O CASO EM QUE TROCAM DE VELOCIDADE')
-                    //console.log('sumparhovpary1hor + vparx1hor')
+                    console.log('a velocidade horizontal da bola a é:', sumparhor1 + sumper2hor)
+                    console.log('a velocidade vertical da bola a é:', sumparver1 + sumper2ver)
+                    console.log('verificar',sumpar1**2 + sumper2**2, (sumparhor1 + sumper2hor)**2 + (sumparver1 + sumper2ver)**2)
+                    console.log('É O CASO EM QUE TROCAM DE VELOCIDADE')
+                    console.log('sumparhovpary1hor + vparx1hor')
                     pokebolas[a].velx = sumparhor1 + sumper2hor
                     pokebolas[a].vely = (sumparver1 + sumper2ver)*-1
-                    //console.log(`${pokebolas[a]}.vely: ${pokebolas[a].vely}`)
+                    console.log(`${pokebolas[a]}.vely: ${pokebolas[a].vely}`)
                 
                     if (dirbhor == '' && dirbver == '') {
                     dirbhor = dirahor
                     dirbver = diraver
                     }
-                    //console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
+                    console.log('a bola b ficará com a velocidade na perpendicular de:',sumper1,dirbhor,dirbver)
                     sumparhor2 = vpary2hor + vparx2hor
                     sumparver2 = vpary2ver + vparx2ver
                     //console.log(sumparhor2, sumparver2)
@@ -1390,12 +1388,12 @@ function collision() {
                             sumper1ver = -sumper1ver
                         }
                     }
-                    //console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
-                    //console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
-                    //console.log('verificar',sumpar2**2 + sumper1**2, (sumparhor2 + sumper1hor)**2 + (sumparver2 + sumper1ver)**2)
+                    console.log('a velocidade horizontal da bola b é:', sumparhor2 + sumper1hor)
+                    console.log('a velocidade vertical da bola b é:', sumparver2 + sumper1ver)
+                    console.log('verificar',sumpar2**2 + sumper1**2, (sumparhor2 + sumper1hor)**2 + (sumparver2 + sumper1ver)**2)
                     pokebolas[b].velx = sumparhor2 + sumper1hor
                     pokebolas[b].vely = (sumparver2 + sumper1ver)*-1
-                    //console.log(`${pokebolas[b]}.vely: ${pokebolas[b].vely}`)
+                    console.log(`${pokebolas[b]}.vely: ${pokebolas[b].vely}`)
                 }
                     }else{
                     //console.log('ixi, aí acontece nada')
@@ -1412,7 +1410,7 @@ function collision() {
                 pokebolas[a].r = ''
                 pokebolas[b].r = ''
 
-                //console.log(9999,'eeee',7687,'***********&&&&&&&&&&&&&&$$$$$$______________(((((((((((())))))*723215163236155123123215215SEU LIXO COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
+                console.log(9999,'eeee',7687,'***********&&&&&&&&&&&&&&$$$$$$______________(((((((((((())))))*723215163236155123123215215SEU LIXO COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
                 //loop = false
                 
                 /*
@@ -1443,13 +1441,13 @@ function collision() {
         for (p in posibs) {
             result = detectCollision(posibs[p].a,posibs[p].b,pokebolas[posibs[p].a].x,pokebolas[posibs[p].a].y,pokebolas[posibs[p].b].x,pokebolas[posibs[p].b].y,true,true)
             if (result != undefined) {
-                //console.log(pokebolas[posibs[p].a].color, 'com', pokebolas[posibs[p].b].color)
-                //console.log(result.dist)
+                console.log(pokebolas[posibs[p].a].color, 'com', pokebolas[posibs[p].b].color)
+                console.log(result.dist)
                 col++
                 fstx = pokebolas[posibs[p].a].x
                 fsty = pokebolas[posibs[p].a].y
-                //console.log('x',fstx,'y',fsty)
-                //console.log('x\'',result.x1,'y\'',result.x2)
+                console.log('x',fstx,'y',fsty)
+                console.log('x\'',result.x1,'y\'',result.x2)
                 
                 pokebolas[posibs[p].a].x = result.x1
                 pokebolas[posibs[p].a].y = result.y1
@@ -1462,9 +1460,9 @@ function collision() {
         }*/
         
        sortcol = []
-       //console.log('AQUI COMEÇA O SORTOB')
+       console.log('AQUI COMEÇA O SORTOB')
        if (pokebolas.length == 1) {
-        //console.log('É UM, MAN')
+        console.log('É UM, MAN')
         potball = 0
         if (pokebolas[0].y >= (150 - alt)/2 + potwidth - radius && pokebolas[0].y <= 150 - (150 - alt)/2 - potwidth + radius) {
         if (pokebolas[0].x > (300 - comp)/2 + comp - pokebolas[0].width && pokebolas[0].velx > 0 || pokebolas[0].x < pokebolas[0].width + (300 - comp)/2 && pokebolas[0].velx < 0) {
@@ -1502,21 +1500,21 @@ function collision() {
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
             if (result != undefined) {
                 foi = true 
-                //console.log('==> Veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
-                //console.log('distância entre pokebolas:',result.dist)
-                //console.log(pokebolas[p].color,'x:',pokebolas[p].x,'y',pokebolas[p].y)
-                //console.log(pokebolas[p].color,'x1:',result.x1,'y1',result.y1)
-                //console.log(pokebolas[pi].color,'x:',pokebolas[pi].x,'y',pokebolas[pi].y)
-                //console.log(pokebolas[pi].color,'x:',result.x2,'y',result.y2)
+                console.log('==> Veja colisão entre',pokebolas[p].color,'e',pokebolas[pi].color)
+                console.log('distância entre pokebolas:',result.dist)
+                console.log(pokebolas[p].color,'x:',pokebolas[p].x,'y',pokebolas[p].y)
+                console.log(pokebolas[p].color,'x1:',result.x1,'y1',result.y1)
+                console.log(pokebolas[pi].color,'x:',pokebolas[pi].x,'y',pokebolas[pi].y)
+                console.log(pokebolas[pi].color,'x:',result.x2,'y',result.y2)
                 col++
                 //if (pokebolas[p].x != result.x1) {
-                    //console.log(pokebolas[p].x,'diferente de',result.x1)
+                    console.log(pokebolas[p].x,'diferente de',result.x1)
 
-                    //console.log('which.dist',which.dist)
+                    console.log('which.dist',which.dist)
                     if (result.dist == '>') {
-                        //console.log(result.x1,'precisa ser maior que',which.dist)
+                        console.log(result.x1,'precisa ser maior que',which.dist)
                 if (which.dist == '' || result.x1 > which.dist) {
-                    //console.log(result.x1,'é maior que',which.dist)
+                    console.log(result.x1,'é maior que',which.dist)
                     which.dist = result.x1
                     which.dist2 = result.x2
                     which.pokeb1 = p
@@ -1525,9 +1523,9 @@ function collision() {
                     which.co2 = pokebolas[pi].color
             }
         }else{
-            //console.log(result.x1,'precisa ser menor que',which.dist)
+            console.log(result.x1,'precisa ser menor que',which.dist)
             if (which.dist == '' || result.x1 < which.dist) {
-                //console.log(result.x1,'é menor que',which.dist)
+                console.log(result.x1,'é menor que',which.dist)
                 which.dist = result.x1
                 which.dist2 = result.x2
                 which.pokeb1 = p
@@ -1538,15 +1536,15 @@ function collision() {
         }
         /*
             }else{
-                //console.log('são iguais',pokebolas[p].y,result.dist2)
+                console.log('são iguais',pokebolas[p].y,result.dist2)
                 //if (pokebolas[p].y != result.y1) {
-                    //console.log(pokebolas[p].y,'diferente de',result.y1)
+                    console.log(pokebolas[p].y,'diferente de',result.y1)
                 
-                    //console.log('which.dist',which.dist)
+                    console.log('which.dist',which.dist)
                     if (result.dist2 == '>') {
-                        //console.log(result.y1,'precisa ser maior que',which.dist)
+                        console.log(result.y1,'precisa ser maior que',which.dist)
                 if (which.dist == '' || result.y1 > which.dist) {
-                    //console.log(result.y1,'é maior que',which.dist)
+                    console.log(result.y1,'é maior que',which.dist)
                     which.dist = result.y1
                     which.dist2 = result.y2
                     which.pokeb1 = p
@@ -1555,9 +1553,9 @@ function collision() {
                     which.co2 = pokebolas[pi].color
                 }
                 }else{
-                //console.log(result.y1,'precisa ser menor que',which.dist)
+                console.log(result.y1,'precisa ser menor que',which.dist)
                 if (which.dist == '' || result.y1 < which.dist) {
-                //console.log(result.y1,'é menor que',which.dist)
+                console.log(result.y1,'é menor que',which.dist)
                 which.dist = result.y1
                 which.dist2 = result.y2
                 which.pokeb1 = p
@@ -1687,37 +1685,37 @@ function collision() {
     
     /*
     for (lo in sortcol_2) {
-        //console.log('--------------',lo,'--------------')
-        //console.log(sortcol_2[lo].co1,sortcol_2[lo].dist)
-        //console.log(sortcol_2[lo].co2,sortcol_2[lo].dist2)
-        //console.log(sortcol_2[lo].co1,'é o fixado')
-        //console.log('analisar',sortcol_2[lo].co2)
+        console.log('--------------',lo,'--------------')
+        console.log(sortcol_2[lo].co1,sortcol_2[lo].dist)
+        console.log(sortcol_2[lo].co2,sortcol_2[lo].dist2)
+        console.log(sortcol_2[lo].co1,'é o fixado')
+        console.log('analisar',sortcol_2[lo].co2)
         //console.log(pokebolas[sortcol_2[lo].pokeb2])
         if (pokebolas[sortcol_2[lo].pokeb2].velx < 0) {
-           //console.log('pegar o maior')
+           console.log('pegar o maior')
            sig = '>'
         }else{
             sig = '<'
-            //console.log('pegar o menor')
+            console.log('pegar o menor')
         }
         for (li in sortcol_2) {
             if (li != lo) {
-            //console.log(li, sortcol_2[li])
-            //console.log(sortcol_2[li].co1,sortcol_2[li].co2)
+            console.log(li, sortcol_2[li])
+            console.log(sortcol_2[li].co1,sortcol_2[li].co2)
             if (sortcol_2[li].co1 == sortcol_2[lo].co2) {
-                //console.log(sortcol_2[li].co1,'é igual a',sortcol_2[lo].co2)
+                console.log(sortcol_2[li].co1,'é igual a',sortcol_2[lo].co2)
                 anel = sortcol_2[li].dist
             }else if(sortcol_2[li].co2 == sortcol_2[lo].co2) {
-                //console.log(sortcol_2[li].co2,'é igual a',sortcol_2[lo].co2)
+                console.log(sortcol_2[li].co2,'é igual a',sortcol_2[lo].co2)
                 anel = sortcol_2[li].dist2
             }
             if (sortcol_2[li].co1 == sortcol_2[lo].co2 || sortcol_2[li].co2 == sortcol_2[lo].co2) {
-            //console.log('fixado',sortcol_2[lo].dist2,'analisado',anel)
+            console.log('fixado',sortcol_2[lo].dist2,'analisado',anel)
             if (sig == '>') {
                 if (anel > sortcol_2[lo].dist2) {
-                    //console.log('fixado:',lo,'analisado',li)
+                    console.log('fixado:',lo,'analisado',li)
                     if (lo < li) {
-                        //console.log('trocar de posição')
+                        console.log('trocar de posição')
                         over = {...sortcol_2[li]}
                     }
                 }
@@ -1794,7 +1792,7 @@ function collision() {
         }
         if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < (2*radius)**2 - 1) {
          //console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
-         //loop = false
+         loop = false
         }
     }
 
@@ -3440,7 +3438,7 @@ window.addEventListener('keyup',function(event) {
                          //sp.innerHTML = `<span style="color:blue;">x</span>: ${(pokebolas[number].velx).toFixed(2)}, <span style="color:blue;">y</span>: ${(pokebolas[number].vely).toFixed(2)}`  
                      }
                     }else{
-                        //console.log(`${pokebolas[number].color} is out!`)
+                        console.log(`${pokebolas[number].color} is out!`)
                      }
              }
              
