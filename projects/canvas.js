@@ -3529,6 +3529,7 @@ window.addEventListener('keyup',function(event) {
 })
 
 //teclas de teste 
+/*
 window.addEventListener('keyup',function(event) {
     //console.log(event.key)
     if (event.key == 'p' || event.key == 'P') {
@@ -3545,6 +3546,7 @@ window.addEventListener('keyup',function(event) {
        poke()
      }
    }) 
+   */
 
    function sortob(n, pam, pim) {
     var maiorparamenor = []
