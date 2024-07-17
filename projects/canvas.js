@@ -88,6 +88,7 @@ function setTable() {
 
 
 }
+playstate = false
 function load() {
     canv = document.getElementById("canv")
     c = canv.getContext('2d')
@@ -104,16 +105,21 @@ function load() {
     c.font = "30px Acme"
     c.font = `38px ${listfont[2]}`
     c.textBaseline = 'middle'
-    c.fillStyle = 'red'
     c.textAlign = 'center'
+    c.lineWidth = '4'
+    c.strokeStyle = '#20366B'
+     c.fillStyle = '#F7C505'
+    c.strokeText("POKE", 70, 55)
+    c.fillText("POKE", 70, 55)
+     c.strokeStyle = 'black'
     c.lineWidth = '3'
-    c.strokeStyle = 'black'
-    c.strokeText("POKESNOOKER", 150, 55)
-    c.fillText("POKESNOOKER", 150, 55)
+    c.fillStyle = 'red'
+    c.strokeText("SNOOKER", 195, 55)
+    c.fillText("SNOOKER", 195, 55)
      c.font = `25px ${listfont[2]}`
      c.fillStyle = '#2a98ff'
-    c.strokeText("PLAY", 150, 100)
-    c.fillText("PLAY", 150, 100)
+    c.strokeText("PLAY", 150, 105)
+    c.fillText("PLAY", 150, 105)
 }
 function start() {
     //console.log(document.querySelector('canvas'))
