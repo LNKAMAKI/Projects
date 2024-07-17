@@ -16,7 +16,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 let pokebolas = []
 // to go back to testing mode, change loop to true
 loop = false
-radius = 3.4
+radius = 3.5
 comp = 285
 alt = 135
 contagem = 0
@@ -1808,8 +1808,7 @@ function collision() {
         //console.log('WYU')
         loop = false
         powerup = false
-        stopcue = false
-        onpoke = -1
+        onpoke = 5
         //console.log('POKEPOS PRECISA SER ATUALIZADO')
         pokepos = []
         for (gi in pokebolas) {
