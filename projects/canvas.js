@@ -142,10 +142,10 @@ window.addEventListener('mousemove',function(event) {
     mousey = ((event.y - 2)/cHeight)*150
     if (mousex >= 122 && mousex <= 181 && mousey >= 90 && mousey <= 112) {
         clickplay = true
-        this.document.getElementById('x').innerText = 'true'
+        //this.document.getElementById('x').innerText = 'true'
     }else{
         clickplay = false
-        this.document.getElementById('x').innerText = 'false'
+        //this.document.getElementById('x').innerText = 'false'
     }
    
 })
