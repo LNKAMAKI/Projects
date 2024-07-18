@@ -509,6 +509,7 @@ function collision() {
                    }
                 }
 
+                if (pokebolas[a].color != 'white') {
                 potball = 0
                 if (pokebolas[a].y >= (150 - alt)/2 + potwidth - radius && pokebolas[a].y <= 150 - (150 - alt)/2 - potwidth + radius) {
                 if (pokebolas[a].x > (300 - comp)/2 + comp - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width + (300 - comp)/2 && pokebolas[a].velx < 0) {
@@ -530,7 +531,19 @@ function collision() {
                 //window.alert('ENTROU')
                 pokebolas[a].pot = true
             }
+        }else{
+                if (pokebolas[a].x > (300 - comp)/2 + comp - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width + (300 - comp)/2 && pokebolas[a].velx < 0) {
+                    velx1 = -pokebolas[a].velx
+                    pokebolas[a].velx = -pokebolas[a].velx
+                }
+                
+                if (pokebolas[a].y > (150 - alt)/2 + alt - pokebolas[a].width && pokebolas[a].vely > 0|| pokebolas[a].y < pokebolas[a].width + (150 - alt)/2 && pokebolas[a].vely < 0) {
+                    vely1 = -pokebolas[a].vely
+                    pokebolas[a].vely = -pokebolas[a].vely
+                }
+        }
 
+        if (pokebolas[a].color != 'white') {
             if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius && pokebolas[b].y <= 150 - (150 - alt)/2 - potwidth + radius) {
                 if (pokebolas[b].x > (300 - comp)/2 + comp - pokebolas[b].width && pokebolas[b].velx > 0 || pokebolas[b].x < pokebolas[b].width + (300 - comp)/2 && pokebolas[b].velx < 0 ) {
                     velx2 = -pokebolas[b].velx
@@ -546,6 +559,17 @@ function collision() {
                     pokebolas[b].vely = -pokebolas[b].vely
                 }
         }
+    }else{
+            if (pokebolas[b].x > (300 - comp)/2 + comp - pokebolas[b].width && pokebolas[b].velx > 0 || pokebolas[b].x < pokebolas[b].width + (300 - comp)/2 && pokebolas[b].velx < 0 ) {
+                velx2 = -pokebolas[b].velx
+                pokebolas[b].velx = -pokebolas[b].velx
+            }
+        
+            if (pokebolas[b].y > (150 - alt)/2 + alt - pokebolas[b].width && pokebolas[b].vely > 0|| pokebolas[b].y < pokebolas[b].width + (150 - alt)/2 && pokebolas[b].vely < 0) {
+                vely2 = -pokebolas[b].vely
+                pokebolas[b].vely = -pokebolas[b].vely
+            }
+    }
             
                 
                 // código para a colisão
