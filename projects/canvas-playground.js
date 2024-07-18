@@ -15,13 +15,14 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
 // to go back to testing mode, change loop to true
-loop = false
-radius = 3.5
+loop = true
+radius = 8
 comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'}]
+pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'}]
+//{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
@@ -200,15 +201,15 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    velx = 0
-    vely = 1
+    velx = 1
+    vely = 3
     //const vx1 = [...velx]
     //const vy1 = [...vely]
 }else  if (v == 1){
     color = 'red'
     x = 100
     y = 40
-    velx = 0
+    velx = 2
     vely = 2
 }else if(v == 2){
     color = 'yellow'
@@ -309,16 +310,21 @@ for (m in pokebolas) {
             //console.log(pokebolas[number].velx)
             
             
+           
+            hipo = (pokebolas[number].velx**2 + pokebolas[number].vely**2)**(1/2)
+            sena = Math.abs(pokebolas[number].vely/hipo)
+            cosa = Math.abs(pokebolas[number].velx/hipo)
+
             if (pokebolas[number].velx > 0) {
-            if (pokebolas[number].velx > 0.005) {
-            pokebolas[number].velx -= 0.005
+            if (pokebolas[number].velx > 0.015*cosa) {
+            pokebolas[number].velx -= 0.015*cosa
             }else{
                 //console.log('ZERO')
             pokebolas[number].velx = 0
             }
             }else if (pokebolas[number].velx != 0){
-                if (pokebolas[number].velx < 0.005) {
-                    pokebolas[number].velx += 0.005
+                if (pokebolas[number].velx < 0.015*cosa) {
+                    pokebolas[number].velx += 0.015*cosa
                     }else{
                         //console.log('ZERO')
                     pokebolas[number].velx = 0
@@ -327,27 +333,33 @@ for (m in pokebolas) {
         
             
             if (pokebolas[number].vely > 0) {
-                if (pokebolas[number].vely > 0.005) {
-                pokebolas[number].vely -= 0.005
+                if (pokebolas[number].vely > 0.015*sena) {
+                pokebolas[number].vely -= 0.015*sena
                 }else{
                     //console.log('ZERO')
                 pokebolas[number].vely = 0
                 }
                 }else if (pokebolas[number].vely != 0){
-                    if (pokebolas[number].vely < 0.005) {
-                        pokebolas[number].vely += 0.005
+                    if (pokebolas[number].vely < 0.015*sena) {
+                        pokebolas[number].vely += 0.015*sena
                         }else{
                             //console.log('ZERO')
                         pokebolas[number].vely = 0
                         }
                 }
-                     
-           
+
             
             pokebolas[number].x+=pokebolas[number].velx
+            
+            if (pokebolas[number].y + pokebolas[number].vely <= 150 - radius && pokebolas[number].y + pokebolas[number].vely >= radius) {
             pokebolas[number].y+=pokebolas[number].vely
-            }else{
+            }else if (pokebolas[number].y + pokebolas[number].vely > 150 - radius){
+            pokebolas[number].y = 150 - radius
+            pokebolas[number].vely = -pokebolas[number].vely
                 //console.log(`no puedes andar, ${pokebolas[number].color}`)
+            }else{
+                pokebolas[number].y = radius
+                pokebolas[number].vely = -pokebolas[number].vely
             }
     
             //pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
@@ -362,6 +374,7 @@ for (m in pokebolas) {
             }else{
                 //sp.innerHTML = `<span style="color:blue;">x</span>: ${(pokebolas[number].velx).toFixed(2)}, <span style="color:blue;">y</span>: ${(pokebolas[number].vely).toFixed(2)}`  
             }
+        }
     }
     collision()
     //document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
@@ -439,6 +452,7 @@ function collision() {
                    }
                 }
 
+                /*
                 potball = 0
                 if (pokebolas[a].y >= (150 - alt)/2 + potwidth - radius && pokebolas[a].y <= 150 - (150 - alt)/2 - potwidth + radius) {
                 if (pokebolas[a].x > (300 - comp)/2 + comp - pokebolas[a].width && pokebolas[a].velx > 0 || pokebolas[a].x < pokebolas[a].width + (300 - comp)/2 && pokebolas[a].velx < 0) {
@@ -476,6 +490,7 @@ function collision() {
                     pokebolas[b].vely = -pokebolas[b].vely
                 }
         }
+        */
             
                 
                 // código para a colisão
@@ -1802,7 +1817,7 @@ function collision() {
             cont++
         }
     }
-    if (cont == pokebolas.length && powerup == true) {
+    if (cont == pokebolas.length) {
         //console.log('WYU')
         loop = false
         powerup = false
@@ -2864,6 +2879,7 @@ drawcue = true
 xsig = ''
 ysig = ''
 //saber quando o mouse encosta em uma pokebola
+/*
 window.addEventListener('mousemove', function(event) {
     
     if (powerup == false) {
@@ -3475,7 +3491,7 @@ window.addEventListener('keyup',function(event) {
          animate2()
     }
 })
-
+*/
 //teclas de teste 
 window.addEventListener('keyup',function(event) {
     //console.log(event.key)
