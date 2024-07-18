@@ -2880,7 +2880,8 @@ window.addEventListener('mousemove', function(event) {
     //console.log(((event.x - dif/2)/cWidth)*300)
     mousex = ((event.x - dif/2)/cWidth)*300 // VOLTAR
     mousey = ((event.y - 80.48)/cHeight)*150
-    this.document.getElementById('x').innerText = mousex
+    mousey = ((event.y - 2)/cHeight)*150
+    //this.document.getElementById('x').innerText = mousex
     //this.document.getElementById('y').innerText = mousey
     //console.log(wHeight,cHeight)
     //console.log(event.y - 80.48)
@@ -3105,8 +3106,8 @@ window.addEventListener('mousedown',function (event) {
         wHeight = this.window.innerHeight
         dif = wWidth - cWidth
         mousex = ((event.x - dif/2)/cWidth)*300
-        mousey = ((event.y - 80.48)/cHeight)*150
-        this.document.getElementById('x').innerText = mousex
+        mousey = ((event.y - 2)/cHeight)*150
+        //this.document.getElementById('x').innerText = mousex
         
         onpress = false
         if (stopcue == false) {
