@@ -3097,7 +3097,7 @@ if (onpress == false) {
 }})
 window.addEventListener('mousedown',function (event) {
    // this.window.alert('MOUSE PRESSED')
-    if (onpoke != -1) {
+    if (onpoke != -1 && powerup == false) {
         //this.window.alert('A POKEBOLA FOI PRESSIONADA')
         canv = document.querySelector('canvas')
         cWidth = canv.offsetWidth
@@ -3276,7 +3276,7 @@ window.addEventListener('keydown',function(event) {
 
 window.addEventListener('keyup',function(event) {
     
-    if (event.key == ' ' && drawcue == true) {
+    if (event.key == ' ' && drawcue == true && powerup == false) {
         powerup = true
         //power = 1
         //angle = 1.56609
