@@ -16,7 +16,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 let pokebolas = []
 // to go back to testing mode, change loop to true
 loop = true
-radius = 8
+radius = 13
 comp = 280
 alt = 132
 contagem = 0
@@ -357,10 +357,12 @@ for (m in pokebolas) {
             }else if (pokebolas[number].y + pokebolas[number].vely > 150 - radius){
             pokebolas[number].y = 150 - radius
             pokebolas[number].vely = -pokebolas[number].vely
+            console.log(pokebolas[number].color,'change vely to 150 - radius')
                 //console.log(`no puedes andar, ${pokebolas[number].color}`)
             }else{
                 pokebolas[number].y = radius
                 pokebolas[number].vely = -pokebolas[number].vely
+                console.log(pokebolas[number].color,'change vely to radius')
             }
 
             if (pokebolas[number].x + pokebolas[number].velx <= 300 - radius && pokebolas[number].x + pokebolas[number].velx >= radius) {
@@ -368,10 +370,12 @@ for (m in pokebolas) {
                 }else if (pokebolas[number].x + pokebolas[number].velx > 300 - radius){
                 pokebolas[number].x = 300 - radius
                 pokebolas[number].velx = -pokebolas[number].velx
+                console.log(pokebolas[number].color,'change velx to 300 - radius')
                     //console.log(`no puedes andar, ${pokebolas[number].color}`)
                 }else{
                     pokebolas[number].x = radius
                     pokebolas[number].velx = -pokebolas[number].velx
+                    console.log(pokebolas[number].color,'change velx to radius')
                 }
     
             //pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
@@ -507,7 +511,7 @@ function collision() {
                 
                 // código para a colisão
                 
-                //console.log('distância',Math.round(diffx**2 + diffy**2),'colisão',pokebolas[a].color,'e',pokebolas[b].color,pokebolas[a].r)
+                console.log('distância',Math.round(diffx**2 + diffy**2),'colisão',pokebolas[a].color,'e',pokebolas[b].color,pokebolas[a].r)
                 if (Math.round(diffx**2 + diffy**2) == (2*radius)**2 && pokebolas[a].r != '') {//|| newdiffx**2 + newdiffy**2 < (2*radius)**2) {
                     //window.alert('')
                     //console.log(cx,cx2)
@@ -1487,6 +1491,7 @@ function collision() {
         }*/
         
        sortcol = []
+       console.log('--------------------------------------------------')
        console.log('AQUI COMEÇA O SORTOB')
        if (pokebolas.length == 1) {
         console.log('É UM, MAN')
@@ -2509,10 +2514,11 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
     
     newdiffx = newcx - newcx2
     newdiffy = newcy - newcy2
+
+    console.log('NOW',diffx**2 + diffy**2)
+    console.log('NEXT',newdiffx**2 + newdiffy**2)
     if (newdiffx**2 + newdiffy**2 <= (2*radius)**2 || diffx**2 + diffy**2 <= (2*radius)**2) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
         //console.log('')
-        //console.log('NOW',diffx**2 + diffy**2)
-        //console.log('NEXT',newdiffx**2 + newdiffy**2)
         }
 
     // código para antecipar a colisão, impedindo que a pokebola passe por cima da outra
