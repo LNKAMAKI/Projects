@@ -315,6 +315,7 @@ for (m in pokebolas) {
             sena = Math.abs(pokebolas[number].vely/hipo)
             cosa = Math.abs(pokebolas[number].velx/hipo)
 
+            /*
             if (pokebolas[number].velx > 0) {
             if (pokebolas[number].velx > 0.015*cosa) {
             pokebolas[number].velx -= 0.015*cosa
@@ -347,7 +348,7 @@ for (m in pokebolas) {
                         pokebolas[number].vely = 0
                         }
                 }
-
+                */
             
             pokebolas[number].x+=pokebolas[number].velx
             
@@ -361,6 +362,17 @@ for (m in pokebolas) {
                 pokebolas[number].y = radius
                 pokebolas[number].vely = -pokebolas[number].vely
             }
+
+            if (pokebolas[number].x + pokebolas[number].velx <= 300 - radius && pokebolas[number].x + pokebolas[number].velx >= radius) {
+                pokebolas[number].x+=pokebolas[number].velx
+                }else if (pokebolas[number].x + pokebolas[number].velx > 300 - radius){
+                pokebolas[number].x = 300 - radius
+                pokebolas[number].velx = -pokebolas[number].velx
+                    //console.log(`no puedes andar, ${pokebolas[number].color}`)
+                }else{
+                    pokebolas[number].x = radius
+                    pokebolas[number].velx = -pokebolas[number].velx
+                }
     
             //pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
             //pokebolas[number].rangey = [pokebolas[number].y - pokebolas[number].width,pokebolas[number].y + pokebolas[number].width]
@@ -1806,7 +1818,7 @@ function collision() {
             //console.log(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
         }
         if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < (2*radius)**2 - 1) {
-         //console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
+         console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
          loop = false
         }
     }
