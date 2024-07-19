@@ -350,8 +350,12 @@ for (m in pokebolas) {
                 }
                 */
             
-            pokebolas[number].x+=pokebolas[number].velx
-            
+            //pokebolas[number].x+=pokebolas[number].velx
+            console.log(pokebolas[number].color)
+            console.log('x:',pokebolas[number].x,'velx:',pokebolas[number].velx)
+            console.log('y:',pokebolas[number].y,'vely:',pokebolas[number].vely)
+            console.log('newx:',pokebolas[number].x + pokebolas[number].velx)
+            console.log('newy:',pokebolas[number].y + pokebolas[number].vely)
             if (pokebolas[number].y + pokebolas[number].vely <= 150 - radius && pokebolas[number].y + pokebolas[number].vely >= radius) {
             pokebolas[number].y+=pokebolas[number].vely
             }else if (pokebolas[number].y + pokebolas[number].vely > 150 - radius){
@@ -2403,7 +2407,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
     c.fillStyle = 'black'
     
-    /*
+    
     if (velx < 0) {
     c.fillText('←', x - width - radius,y + 6)
     }else{
@@ -2413,7 +2417,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     c.fillText('↑', x - 5,y - 8)
     }else{
         c.fillText('↓', x - 5,y + width + 3)
-    }*/
+    }
 }
 
 
@@ -2443,12 +2447,6 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         diffy = -diffy
     }
     
-    
-
-    console.log(pokebolas[a].color,'velx:',pokebolas[a].velx)
-    console.log(pokebolas[a].color,'vely:',pokebolas[a].vely)
-    console.log(pokebolas[b].color,'velx:',pokebolas[b].velx)
-    console.log(pokebolas[b].color,'vely:',pokebolas[b].vely)
     /*
     //console.log('DETECT',pokebolas[a].color,pokebolas[b].color)
     if (pokebolas[a].y >= (150 - alt)/2 + potwidth - radius) { 
@@ -2521,6 +2519,14 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
     newdiffx = newcx - newcx2
     newdiffy = newcy - newcy2
 
+    console.log('cx1',cx)
+    console.log('cy1',cy)
+    console.log('cx2',cx2)
+    console.log('cy2',cy2)
+    console.log('newcx1',newcx)
+    console.log('newcy1',newcy)
+    console.log('newcx2',newcx2)
+    console.log('newcy2',newcy2)
     console.log('NOW',diffx**2 + diffy**2)
     console.log('NEXT',newdiffx**2 + newdiffy**2)
     if (newdiffx**2 + newdiffy**2 <= (2*radius)**2 || diffx**2 + diffy**2 <= (2*radius)**2) {//if (diffx**2 + diffy**2 < 1000 || newdiffx**2 + newdiffy**2 < 1000) {
