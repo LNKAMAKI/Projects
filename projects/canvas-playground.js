@@ -433,7 +433,7 @@ function collision() {
                 
                
                 if (pokebolas[a].velx != 0) {
-                    console.log('OLHAR A POKEBOLA',pokebolas[a])
+                   // console.log('OLHAR A POKEBOLA',pokebolas[a])
                 xrel = pokebolas[a].x - (300 - comp)/2 + radius
                 yrel = pokebolas[a].y - (150 - alt)/2
                 // (x + velx*C)² + (y + vely*C)² = r²
@@ -446,12 +446,12 @@ function collision() {
                 bk = 2*xrel*pokevelx + 2*yrel*pokevely
                 ck = xrel**2 + yrel**2 - potwidth**2
                 delta = bk**2 - 4*ak*ck
-                console.log(pokebolas[a].color,xrel,yrel)
-                console.log('ak',ak)
-                console.log('bk',bk)
-                console.log('ck',ck)
-                console.log(delta)
-                console.log('NÃO FAZERRRRRRRRRRRRRRR')
+                //console.log(pokebolas[a].color,xrel,yrel)
+                //console.log('ak',ak)
+                //console.log('bk',bk)
+                //console.log('ck',ck)
+                //console.log(delta)
+                //console.log('NÃO FAZERRRRRRRRRRRRRRR')
                 if (delta >= 0) {
                    raiz1 = (-bk + delta**(1/2))/(2*ak)
                    raiz2 = (-bk - delta**(1/2))/(2*ak)
@@ -1517,13 +1517,13 @@ function collision() {
         //console.log('>>>>>',p,pokebolas[p].color)
         foi = false
         //if (p == 0) {
-        //console.log('VELX1',pokebolas[p].color,pokebolas[p].velx)
-        //console.log('VELY1',pokebolas[p].color,pokebolas[p].vely)
+        console.log('VELX1',pokebolas[p].color,pokebolas[p].velx)
+        console.log('VELY1',pokebolas[p].color,pokebolas[p].vely)
         //}
         for (pi in pokebolas) {
-            //console.log('VELX2',pokebolas[pi].color,pokebolas[pi].velx)
-            //console.log('VELY2',pokebolas[pi].color,pokebolas[pi].vely)
             if (pi != p) {
+                console.log('VELX2',pokebolas[pi].color,pokebolas[pi].velx)
+                console.log('VELY2',pokebolas[pi].color,pokebolas[pi].vely)
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
             if (result != undefined) {
                 foi = true 
