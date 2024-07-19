@@ -14,7 +14,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other => try the new code for b com r e a sem r)
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
-// to go back to testing mode, change loop to true
+// to go back to testing mode, change NO HEART IS TAKEN -----14932482943849248888(((((((()******* loop to true
 loop = true
 radius = 13
 comp = 280
@@ -201,7 +201,7 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    velx = 1
+    velx = 2
     vely = 3
     //const vx1 = [...velx]
     //const vy1 = [...vely]
@@ -357,12 +357,12 @@ for (m in pokebolas) {
             }else if (pokebolas[number].y + pokebolas[number].vely > 150 - radius){
             pokebolas[number].y = 150 - radius
             pokebolas[number].vely = -pokebolas[number].vely
-            console.log(pokebolas[number].color,'change vely to 150 - radius')
+            console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* vely to 150 - radius')
                 //console.log(`no puedes andar, ${pokebolas[number].color}`)
             }else{
                 pokebolas[number].y = radius
                 pokebolas[number].vely = -pokebolas[number].vely
-                console.log(pokebolas[number].color,'change vely to radius')
+                console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* vely to radius')
             }
 
             if (pokebolas[number].x + pokebolas[number].velx <= 300 - radius && pokebolas[number].x + pokebolas[number].velx >= radius) {
@@ -370,12 +370,12 @@ for (m in pokebolas) {
                 }else if (pokebolas[number].x + pokebolas[number].velx > 300 - radius){
                 pokebolas[number].x = 300 - radius
                 pokebolas[number].velx = -pokebolas[number].velx
-                console.log(pokebolas[number].color,'change velx to 300 - radius')
+                console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to 300 - radius')
                     //console.log(`no puedes andar, ${pokebolas[number].color}`)
                 }else{
                     pokebolas[number].x = radius
                     pokebolas[number].velx = -pokebolas[number].velx
-                    console.log(pokebolas[number].color,'change velx to radius')
+                    console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to radius')
                 }
     
             //pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
@@ -2443,6 +2443,8 @@ function detectCollision(a,b,setx,sety,setx2,sety2,cor1,cor2) {
         diffy = -diffy
     }
     
+    
+
     console.log(pokebolas[a].color,'velx:',pokebolas[a].velx)
     console.log(pokebolas[a].color,'vely:',pokebolas[a].vely)
     console.log(pokebolas[b].color,'velx:',pokebolas[b].velx)
