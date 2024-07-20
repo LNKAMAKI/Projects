@@ -14,14 +14,14 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // THERE'S SOME ERROR FOR YOU TO FIX(pokebola overlaying the other => try the new code for b com r e a sem r)
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
-// to go back to testing mode, change NO HEART IS TAKEN -----14932482943849248888(((((((()******* loop to true
+// to go back to testing mode
 loop = true
 radius = 13
 comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:100,y:90,color:'blue'},{x:100,y:40,color:'black'}]
+pokepos = [{x:40,y:50,color:'pink'},{x:100,y:50,color:'red'}]
 //{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
@@ -201,16 +201,20 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    velx = 0
-    vely = -2
+    //velx = 2
+    //vely = -2
+    velx = -10
+    vely = 0
     //const vx1 = [...velx]
     //const vy1 = [...vely]
 }else  if (v == 1){
     color = 'red'
     x = 100
     y = 40
-    velx = 0
-    vely = 2
+    //velx = 2
+    //vely = 1
+    velx = -30
+    vely = 0
 }else if(v == 2){
     color = 'yellow'
     x = 140
@@ -377,12 +381,15 @@ for (m in pokebolas) {
                 console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to 300 - radius')
                     //console.log(`no puedes andar, ${pokebolas[number].color}`)
                 }else{
-                    pokebolas[number].x = radius
-                    pokebolas[number].velx = -pokebolas[number].velx
+                    pokebolas[number].x+=pokebolas[number].velx
+                   // pokebolas[number].x = radius
+                    //pokebolas[number].velx = -pokebolas[number].velx
                     console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to radius')
+                    loop = false
                 }
 
         }else{
+            //loop = false
             if (pokebolas[number].x > 300 - radius || pokebolas[number].x < radius || pokebolas[number].y > 150 - radius || pokebolas[number].y < radius) {
                 pokebolas[number].velx = 0
                 pokebolas[number].vely = 0
@@ -2569,10 +2576,10 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
         xvely1 = ''
         xvelx2 = ''
         xvely2 = ''
-        //console.log(cx,cy,'colisão')
-       // console.log(cx2,cy2,'colisão')
-       // console.log(newcx,newcy,'colisão')
-       // console.log(newcx,newcx2,'colisão')
+        console.log(cx,cy,'colisão')
+        console.log(cx2,cy2,'colisão')
+        console.log(newcx,newcy,'colisão')
+        console.log(newcx,newcx2,'colisão')
         if (newcx2 != newcx) {
         if (rightball == b && velx2 > 0 || leftball == b && velx2 < 0) {
             console.log(`a bola ${pokebolas[b].color} n irá bater de frente horizontalmente  colisão`)
@@ -2662,9 +2669,9 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
         //console.log('time',time,'colisão')
         //console.log(life**2 + time**2)
         difvex = velx1 - velx2
-       //console.log('difvex',difvex,'colisão')
+        console.log('difvex',difvex,'colisão')
         difvey = vely1 - vely2
-        //console.log('difvey',difvey,'colisão')
+        console.log('difvey',difvey,'colisão')
         aex = 0
         bex = 0
         cex = life**2 + time**2 - (2*radius)**2
@@ -2717,12 +2724,12 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
         raiz1 = (-bex + delta**(1/2))/(2*aex)
         raiz2 = (-bex - delta**(1/2))/(2*aex)
     
-        /*
+        
         //console.log('x1:',pokebolas[a].x)
         //console.log('y1:',pokebolas[a].y)
         //console.log('x2:',pokebolas[b].x)
         //console.log('y2:',pokebolas[b].y)
-        */
+        
        /*
         pokebolas[a].fstx = `${pokebolas[a].x}`
         pokebolas[a].fsty = `${pokebolas[a].y}`
