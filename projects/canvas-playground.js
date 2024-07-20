@@ -21,7 +21,7 @@ comp = 280
 alt = 132
 contagem = 0
 potwidth = 10
-pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'}]
+pokepos = [{x:100,y:90,color:'blue'},{x:100,y:40,color:'black'}]
 //{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
@@ -201,15 +201,15 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    velx = 2
-    vely = 3
+    velx = 0
+    vely = -2
     //const vx1 = [...velx]
     //const vy1 = [...vely]
 }else  if (v == 1){
     color = 'red'
     x = 100
     y = 40
-    velx = 2
+    velx = 0
     vely = 2
 }else if(v == 2){
     color = 'yellow'
@@ -381,20 +381,21 @@ for (m in pokebolas) {
                     pokebolas[number].velx = -pokebolas[number].velx
                     console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to radius')
                 }
-    
-            //pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
+
+        }else{
+            if (pokebolas[number].x > 300 - radius || pokebolas[number].x < radius || pokebolas[number].y > 150 - radius || pokebolas[number].y < radius) {
+                pokebolas[number].velx = 0
+                pokebolas[number].vely = 0
+            }
+        }
+
+          //pokebolas[number].rangex = [pokebolas[number].x - pokebolas[number].width,pokebolas[number].x + pokebolas[number].width]
             //pokebolas[number].rangey = [pokebolas[number].y - pokebolas[number].width,pokebolas[number].y + pokebolas[number].width]
             createPokebola(pokebolas[number].x,pokebolas[number].y,pokebolas[number].width,pokebolas[number].color,pokebolas[number].velx,pokebolas[number].vely,false,pokebolas[number].rangex,pokebolas[number].rangey)
             fp = document.getElementById('firstp')
             en = document.getElementById('energy')
             sp = document.getElementById('secp')
            // en.innerText = 'energy' + Number(pokebolas[0].velx**2 + pokebolas[0].vely**2 + pokebolas[1].velx**2 + pokebolas[1].vely**2)//+ pokebolas[2].velx**2 + pokebolas[2].vely**2)
-            if (number == 0) {
-        //fp.innerHTML = `<span style="color:red;">x</span>:${(pokebolas[number].velx).toFixed(2)},<span style="color:red;">y</span>: ${(pokebolas[number].vely).toFixed(2)} `
-            }else{
-                //sp.innerHTML = `<span style="color:blue;">x</span>: ${(pokebolas[number].velx).toFixed(2)}, <span style="color:blue;">y</span>: ${(pokebolas[number].vely).toFixed(2)}`  
-            }
-        }
     }
     collision()
     //document.getElementById('diff').innerText = '________DISTANCE: ' + Number((pokebolas[0].x- pokebolas[1].x)**2 + (pokebolas[0].y- pokebolas[1].y)**2)
