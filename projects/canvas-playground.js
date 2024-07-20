@@ -1541,6 +1541,9 @@ function collision() {
             if (pi != p) {
                 console.log('VELX2',pokebolas[pi].color,pokebolas[pi].velx)
                 console.log('VELY2',pokebolas[pi].color,pokebolas[pi].vely)
+                if (pokebolas[p].x + pokebolas[p].velx < radius) {
+                    console.log('NÃO PODE CONTINUAR',pokebolas[p].color)
+                }
             result = detectCollision(p,pi,pokebolas[p].x,pokebolas[p].y,pokebolas[pi].x,pokebolas[pi].y,true,true)
             if (result != undefined) {
                 foi = true 
@@ -1726,52 +1729,6 @@ function collision() {
         }
         }
     }
-    
-    /*
-    for (lo in sortcol_2) {
-        console.log('--------------',lo,'--------------')
-        console.log(sortcol_2[lo].co1,sortcol_2[lo].dist)
-        console.log(sortcol_2[lo].co2,sortcol_2[lo].dist2)
-        console.log(sortcol_2[lo].co1,'é o fixado')
-        console.log('analisar',sortcol_2[lo].co2)
-        //console.log(pokebolas[sortcol_2[lo].pokeb2])
-        if (pokebolas[sortcol_2[lo].pokeb2].velx < 0) {
-           console.log('pegar o maior')
-           sig = '>'
-        }else{
-            sig = '<'
-            console.log('pegar o menor')
-        }
-        for (li in sortcol_2) {
-            if (li != lo) {
-            console.log(li, sortcol_2[li])
-            console.log(sortcol_2[li].co1,sortcol_2[li].co2)
-            if (sortcol_2[li].co1 == sortcol_2[lo].co2) {
-                console.log(sortcol_2[li].co1,'é igual a',sortcol_2[lo].co2)
-                anel = sortcol_2[li].dist
-            }else if(sortcol_2[li].co2 == sortcol_2[lo].co2) {
-                console.log(sortcol_2[li].co2,'é igual a',sortcol_2[lo].co2)
-                anel = sortcol_2[li].dist2
-            }
-            if (sortcol_2[li].co1 == sortcol_2[lo].co2 || sortcol_2[li].co2 == sortcol_2[lo].co2) {
-            console.log('fixado',sortcol_2[lo].dist2,'analisado',anel)
-            if (sig == '>') {
-                if (anel > sortcol_2[lo].dist2) {
-                    console.log('fixado:',lo,'analisado',li)
-                    if (lo < li) {
-                        console.log('trocar de posição')
-                        over = {...sortcol_2[li]}
-                    }
-                }
-            }else{
-
-            }
-            }
-        }
-    }
-    }
-    */
-    //sortcol = [...sortcol_]
     
     sortcol = []
     for (k in sortcol_1) {
