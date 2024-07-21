@@ -388,8 +388,8 @@ for (m in pokebolas) {
 
         }else{
             if (pokebolas[number].x > 300 - radius || pokebolas[number].x < radius || pokebolas[number].y > 150 - radius || pokebolas[number].y < radius) {
-                pokebolas[number].velx = 0
-                pokebolas[number].vely = 0
+                //pokebolas[number].velx = 0
+               //pokebolas[number].vely = 0
             }
         }
 
@@ -476,6 +476,11 @@ function collision() {
                    }
                 }
 
+                if (pokebolas[a].x == radius && pokebolas[a].velx < 0) {
+                    //loop = false
+                    console.log('TEM QUE MUDAR-------------------------------------35454579OOO-------------------------------------------6767575768999999999999999999999999999999999999999--------------5765757576')
+                    pokebolas[a].velx = -pokebolas[a].velx
+                }
                 /*
                 potball = 0
                 if (pokebolas[a].y >= (150 - alt)/2 + potwidth - radius && pokebolas[a].y <= 150 - (150 - alt)/2 - potwidth + radius) {
@@ -1542,7 +1547,11 @@ function collision() {
                     console.log('NÃO PODE CONTINUAR',pokebolas[p].color)
                     //loop = false
                     tcor1[0] = false
+                    if (pokebolas[p].x + pokebolas[p].velx < radius && pokebolas[p].x < pokebolas[pi].x) {
                     pokebolas[p].x = radius
+                    }else{
+                        pokebolas[p].x = 300 - radius 
+                    }
                 }else{
                     tcor1[0] = true
                 }
@@ -1836,14 +1845,14 @@ function collision() {
             pokebolas[sortcol[p].pokeb2].stat = false
 
         if (result != undefined) {
-            //console.log(pokebolas[sortcol[p].pokeb1].color, 'com', pokebolas[sortcol[p].pokeb2].color)
+            console.log(pokebolas[sortcol[p].pokeb1].color, 'com', pokebolas[sortcol[p].pokeb2].color)
             col++
             fstx = pokebolas[sortcol[p].pokeb1].x
             fsty = pokebolas[sortcol[p].pokeb1].y
             fstx2 = pokebolas[sortcol[p].pokeb2].x
             fsty2 = pokebolas[sortcol[p].pokeb2].y
-            //console.log(pokebolas[sortcol[p].pokeb1].color,sortcol[p].dist)
-            //console.log(pokebolas[sortcol[p].pokeb2].color,sortcol[p].dist2)
+            console.log(pokebolas[sortcol[p].pokeb1].color,sortcol[p].dist)
+            console.log(pokebolas[sortcol[p].pokeb2].color,sortcol[p].dist2)
 
             
             pokebolas[sortcol[p].pokeb1].x = result.x1
