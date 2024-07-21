@@ -241,7 +241,6 @@ x = pokepos[v].x
 y = pokepos[v].y
 //velx = 0
 //vely = 0
-//loop = false
 // RANDOMIZE COORDINATES
 //x = Math.random()*(100-width*2) + width
 //y = Math.random()*(50-width*2) + width
@@ -385,11 +384,9 @@ for (m in pokebolas) {
                     pokebolas[number].x = radius
                     pokebolas[number].velx = -pokebolas[number].velx
                     console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to radius')
-                    //loop = false
                 }
 
         }else{
-            //loop = false
             if (pokebolas[number].x > 300 - radius || pokebolas[number].x < radius || pokebolas[number].y > 150 - radius || pokebolas[number].y < radius) {
                 pokebolas[number].velx = 0
                 pokebolas[number].vely = 0
@@ -473,7 +470,6 @@ function collision() {
                    raiz2 = (-bk - delta**(1/2))/(2*ak)
                    if (Math.floor(raiz2) == 0) {
                     console.log('NA BORDA')
-                    //loop = false
                    }
                    console.log('raiz1',raiz1)
                    console.log('raiz2',raiz2)
@@ -532,7 +528,6 @@ function collision() {
                     console.log(`calcular a colisão com ${pokebolas[a].color} e ${pokebolas[b].color}`)
                     //console.log(pokebolas[a].velx)
                     //console.log(pokebolas[a].r)
-                    //loop = false
                     /*
                     if (pokebolas[a].r == '' || pokebolas[a].r == undefined) {
                         pokebolas[a].r = 1
@@ -1545,7 +1540,7 @@ function collision() {
                 tcor1 = [true,true]
                 if (pokebolas[p].x + pokebolas[p].velx < radius && pokebolas[p].x < pokebolas[pi].x || pokebolas[p].x + pokebolas[p].velx > 300 - radius && pokebolas[p].x > pokebolas[pi].x) {
                     console.log('NÃO PODE CONTINUAR',pokebolas[p].color)
-                    loop = false
+                    //loop = false
                     tcor1[0] = false
                     pokebolas[p].x = radius
                 }else{
@@ -1793,7 +1788,7 @@ function collision() {
         if (pokebolas[sortcol[p].pokeb1].stat == true) {
             if (pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx < radius && pokebolas[sortcol[p].pokeb1].x < pokebolas[sortcol[p].pokeb2].x || pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx > 300 - radius && pokebolas[sortcol[p].pokeb1].x > pokebolas[sortcol[p].pokeb2].x) {
                 console.log('NÃO PODE CONTINUAR 0',pokebolas[sortcol[p].pokeb1].color)
-                loop = false
+                //loop = false
                 tcor1[0] = false
             }else{
                 tcor1[0] = true
@@ -1862,7 +1857,6 @@ function collision() {
     }
         if (sortcol.length > 1) {
             //console.log('COL+ ENCOS')
-            //loop = false
         }
         //console.log('')
         
@@ -1885,7 +1879,6 @@ function collision() {
     }
     if (cont == pokebolas.length) {
         //console.log('WYU')
-        loop = false
         powerup = false
         stopcue = false
         onpoke = -1
@@ -1926,14 +1919,12 @@ for (p in posibs) {
         
         if (realposibsx.length > 1) {
             //console.log('É DOOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIS')
-            //loop = false
         }
         //console.log(realposibsx)
        
         //console.log('realposibsy',sortob(realposibsy,'ax','bx'))
         
       for (posibin in realposibsx) {
-        // loop = false
        //console.log(realposibsx[posibin])
         ra = realposibsx[posibin].a
         rb = realposibsx[posibin].b
@@ -1993,7 +1984,7 @@ for (p in posibs) {
         }
        if (realposibsx[posibin].colide == true) {
        if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
-        //loop = false
+        
         //console.log(`${pokebolas[ra].color} sem r e ${pokebolas[rb].color} sem r`)
            // POKEBOLA[0] SEM R E POKEBOLA[1] SEM R
           pokebolas[ra].x = realposibsx[posibin].x1
@@ -2003,7 +1994,7 @@ for (p in posibs) {
 
           redoCollisions()
         }else if(pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x == pokebolas[rb].fstx) {
-            //loop = false
+            
             //console.log(`${pokebolas[ra].color} com r e ${pokebolas[rb].color} sem r`)
           // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
             //console.log(`fazendo a colisão: x= ${realposibsx[posibin].x1}, y= ${realposibsx[posibin].y1}`)
@@ -2038,7 +2029,7 @@ for (p in posibs) {
                 }
             }
         }else if (pokebolas[ra].x == pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx) {
-            //loop = false
+            
             // POKEBOLA[0] COM R E POKEBOLA[1] SEM R
             //console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} sem r`)
             
@@ -2076,7 +2067,7 @@ for (p in posibs) {
             }
 
         }else if (pokebolas[ra].x != pokebolas[ra].fstx && pokebolas[rb].x != pokebolas[rb].fstx){
-            //loop = false
+            
             //console.log(`${pokebolas[rb].color} com r e ${pokebolas[ra].color} com r`)
             if (pokebolas[ra].velx > 0 && pokebolas[ra].x >= realposibsx[posibin].x1 || pokebolas[ra].velx < 0 && pokebolas[ra].x < realposibsx[posibin].x1) {
                 atual1 = true
@@ -2111,18 +2102,18 @@ for (p in posibs) {
             if (pokebolas[rb].velx > 0 && realposibsx[posibin].x2 > re.x2 || pokebolas[rb].velx < 0 && realposibsx[posibin].x2 < re.x2) {
                 pokebolas[rb].x = re.x2
                 pokebolas[rb].y = re.y2
-                //loop = false
+               
             }
         }else{
             if (pokebolas[rb].velx > 0 && pokebolas[rb].x > re.x2 || pokebolas[rb].velx < 0 && pokebolas[rb].x < re.x2) {
                 pokebolas[rb].x = re.x2
                 pokebolas[rb].y = re.y2
-                //loop = false
+               
             }
         }
         }
     if (col > 1) {
-        loop = false
+       
     }
     
         
@@ -2174,7 +2165,7 @@ for (p in posibs) {
         //console.log('PAROU!')
         //console.log(`a distância entre as pokebolas é de ${diffx**2 + diffy**2}`)
         window.alert('PAROU')
-        //loop = false
+        
     }
 
     velx1 = pokebolas[a].velx
@@ -2201,7 +2192,6 @@ for (p in posibs) {
         //console.log('round',coll)
         //console.log('no, you wont')
         //console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
-        //loop = false
         dx = cx - cx2
         dy = cy,cy2
 
@@ -2539,7 +2529,6 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
         //console.log(`a distância entre as pokebolas ${pokebolas[a].color} e ${pokebolas[b].color} é de ${diffx**2 + diffy**2}`)
         //console.log('POKEBOLAAAAS',pokebolas[a].color,pokebolas[b].color, diffx**2 + diffy**2)
         //window.alert('PAROU')
-       //loop = false
     }
 
     
@@ -2615,7 +2604,6 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
         //console.log('round',coll)
         //console.log('no, you wont')
         //console.log(`bola ${pokebolas[a].color} com bola ${pokebolas[b].color}`)
-        //loop = false
         dx = cx - cx2
         dy = cy,cy2
 
@@ -2910,7 +2898,6 @@ function checkTouch () {
             pokebolas[posibs[ce].b].ively = Number(`${pokebolas[posibs[ce].b].vely}`)
             }
 
-            //loop = false
             /*
         pokebolas[posibs[ce].a].velx = 0
         pokebolas[posibs[ce].a].vely = 0
@@ -2921,7 +2908,6 @@ function checkTouch () {
 }
 if (pokesr >= 2) {
     //window.alert('UEPA EPA',pokesr)
-    //loop = false
 }
 }
 
@@ -2957,13 +2943,11 @@ function redoCollisions() {
                 if (pokebolas[realposibsx[ba].a].velx > 0 && realposibsx[ba].x1 > re.x1 || pokebolas[realposibsx[ba].a].velx < 0 && realposibsx[ba].x1 < re.x1) {
                     pokebolas[realposibsx[ba].a].x = re.x1
                     pokebolas[realposibsx[ba].a].y = re.y1
-                    //loop = false
                 }
             }else{
                 if (pokebolas[realposibsx[ba].a].velx > 0 && pokebolas[realposibsx[ba].a].x > re.x1 || pokebolas[realposibsx[ba].a].velx < 0 && pokebolas[realposibsx[ba].a].x < re.x1) {
                     pokebolas[realposibsx[ba].a].x = re.x1
                     pokebolas[realposibsx[ba].a].y = re.y1
-                    //loop = false
                 }
             }
             }
