@@ -482,6 +482,22 @@ function collision() {
                     console.log('TEM QUE MUDAR-------------------------------------35454579OOO-------------------------------------------6767575768999999999999999999999999999999999999999--------------5765757576')
                     pokebolas[a].velx = -pokebolas[a].velx
                 }
+                if (pokebolas[a].x == 300 - radius && pokebolas[a].velx > 0) {
+                    //loop = false
+                    console.log('TEM QUE MUDAR-------------------------------------35454579OOO-------------------------------------------6767575768999999999999999999999999999999999999999--------------5765757576')
+                    pokebolas[a].velx = -pokebolas[a].velx
+                }
+                if (pokebolas[a].y == radius && pokebolas[a].vely < 0) {
+                    //loop = false
+                    console.log('TEM QUE MUDAR-------------------------------------35454579OOO-------------------------------------------6767575768999999999999999999999999999999999999999--------------5765757576')
+                    pokebolas[a].vely = -pokebolas[a].vely
+                }
+                if (pokebolas[a].y == 150 - radius && pokebolas[a].vely > 0) {
+                    //loop = false
+                    console.log('TEM QUE MUDAR-------------------------------------35454579OOO-------------------------------------------6767575768999999999999999999999999999999999999999--------------5765757576')
+                    pokebolas[a].vely = -pokebolas[a].vely
+                }
+                
                 /*
                 potball = 0
                 if (pokebolas[a].y >= (150 - alt)/2 + potwidth - radius && pokebolas[a].y <= 150 - (150 - alt)/2 - potwidth + radius) {
@@ -1819,7 +1835,7 @@ function collision() {
         fix1y = pokebolas[sortcol[p].pokeb1].y
         fix2x = pokebolas[sortcol[p].pokeb2].x
         fix2y = pokebolas[sortcol[p].pokeb2].y
-        
+
         tcor1 = [true,true]
         if (pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx < radius && pokebolas[sortcol[p].pokeb1].x < pokebolas[sortcol[p].pokeb2].x || pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx > 300 - radius && pokebolas[sortcol[p].pokeb1].x > pokebolas[sortcol[p].pokeb2].x) {
             console.log('NÃO PODE CONTINUAR',pokebolas[sortcol[p].pokeb1].color)
