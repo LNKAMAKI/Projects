@@ -16,7 +16,7 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 let pokebolas = []
 // to go back to testing mode
 loop = false
-//loop = true
+loop = true
 radius = 10
 comp = 280
 alt = 130
@@ -113,8 +113,8 @@ width = Math.random()*8 + 10
 width = radius
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
 vely = Number((Math.random()*0.2).toFixed(5)) + 0.5
-velx = Number((Math.random()*1).toFixed(0)) + 6
-vely = Number((Math.random()*1).toFixed(0)) + 6
+velx = Number((Math.random()*1).toFixed(0)) + 10
+vely = Number((Math.random()*1).toFixed(0)) + 10
 //velx = 1.008
 //vely = 7
 
