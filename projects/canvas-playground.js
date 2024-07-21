@@ -203,8 +203,8 @@ if (v == 0) {
     y = 90
     //velx = 2
     //vely = -2
-    velx = -10
-    vely = 0
+   // velx = -10
+    //vely = 0
     //const vx1 = [...velx]
     //const vy1 = [...vely]
 }else  if (v == 1){
@@ -213,8 +213,8 @@ if (v == 0) {
     y = 40
     //velx = 2
     //vely = 1
-    velx = -30
-    vely = 0
+    //velx = -30
+    //vely = 0
 }else if(v == 2){
     color = 'yellow'
     x = 140
@@ -297,6 +297,7 @@ for (m in pokebolas) {
        contagem++
        //console.log('CONTAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM',contagem)
         c.clearRect(0,0,300,150)
+        setTable()
 
         //console.log('CHECK TOOOUCH**************************************************************************************')
         //checkTouch()
@@ -388,8 +389,10 @@ for (m in pokebolas) {
 
         }else{
             if (pokebolas[number].x > 300 - radius || pokebolas[number].x < radius || pokebolas[number].y > 150 - radius || pokebolas[number].y < radius) {
-                //pokebolas[number].velx = 0
-               //pokebolas[number].vely = 0
+                loop = false
+                window.alert('ULTRAPASSOU')
+                pokebolas[number].velx = 0
+               pokebolas[number].vely = 0
             }
         }
 
@@ -1597,7 +1600,7 @@ function collision() {
                     if (pokebolas[pi].x + pokebolas[pi].velx < radius && pokebolas[pi].x < pokebolas[p].x) {
                     fix2x = radius
                     }else{
-                        loop = false
+                        //loop = false
                         fix2x = 300 - radius 
                     }
                   
