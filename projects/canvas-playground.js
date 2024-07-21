@@ -1547,6 +1547,7 @@ function collision() {
                     console.log('NÃO PODE CONTINUAR',pokebolas[p].color)
                     loop = false
                     tcor1[0] = false
+                    pokebolas[p].x = radius
                 }else{
                     tcor1[0] = true
                 }
@@ -1788,49 +1789,50 @@ function collision() {
 
     
         tcor1 = [true,true]
+        console.log(p,pokebolas[sortcol[p].pokeb1].color)
         if (pokebolas[sortcol[p].pokeb1].stat == true) {
-        if (pokebolas[p].x + pokebolas[p].velx < radius && pokebolas[p].x < pokebolas[pi].x || pokebolas[p].x + pokebolas[p].velx > 300 - radius && pokebolas[p].x > pokebolas[pi].x) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[p].color)
-            loop = false
+            if (pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx < radius && pokebolas[sortcol[p].pokeb1].x < pokebolas[sortcol[p].pokeb2].x || pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx > 300 - radius && pokebolas[sortcol[p].pokeb1].x > pokebolas[sortcol[p].pokeb2].x) {
+                console.log('NÃO PODE CONTINUAR 0',pokebolas[sortcol[p].pokeb1].color)
+                loop = false
+                tcor1[0] = false
+            }else{
+                tcor1[0] = true
+            }
+            
+            if (pokebolas[sortcol[p].pokeb1].y + pokebolas[sortcol[p].pokeb1].vely < radius && pokebolas[sortcol[p].pokeb1].y < pokebolas[sortcol[p].pokeb2].y || pokebolas[sortcol[p].pokeb1].y + pokebolas[sortcol[p].pokeb1].vely > 150 - radius && pokebolas[sortcol[p].pokeb1].y > pokebolas[sortcol[p].pokeb2].y) {
+                console.log('NÃO PODE CONTINUAR 1',pokebolas[sortcol[p].pokeb1].color)
+                tcor1[1] = false
+            }else{
+                tcor1[1] = true
+            }
+        }else{
             tcor1[0] = false
-        }else{
-            tcor1[0] = true
-        }
-        
-        if (pokebolas[p].y + pokebolas[p].vely < radius && pokebolas[p].y < pokebolas[pi].y || pokebolas[p].y + pokebolas[p].vely > 150 - radius && pokebolas[p].y > pokebolas[pi].y) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[p].color)
             tcor1[1] = false
-        }else{
-            tcor1[1] = true
         }
-    }else{
-        tcor1[0] = false
-        tcor1[1] = false
-    }
 
         tcor2 = [true,true]
         if (pokebolas[sortcol[p].pokeb2].stat == true) {
-        if (pokebolas[pi].x + pokebolas[pi].velx < radius && pokebolas[pi].x < pokebolas[pi].x || pokebolas[pi].x + pokebolas[pi].velx > 300 - radius && pokebolas[pi].x > pokebolas[pi].x) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[pi].color)
-            loop = false
-            tcor2[0] = false
+            if (pokebolas[sortcol[p].pokeb2].x + pokebolas[sortcol[p].pokeb2].velx < radius && pokebolas[sortcol[p].pokeb2].x < pokebolas[sortcol[p].pokeb1].x || pokebolas[sortcol[p].pokeb2].x + pokebolas[sortcol[p].pokeb2].velx > 300 - radius && pokebolas[sortcol[p].pokeb2].x > pokebolas[sortcol[p].pokeb1].x) {
+                console.log('NÃO PODE CONTINUAR',pokebolas[sortcol[p].pokeb2].color)
+                tcor2[0] = false
+            }else{
+                tcor2[0] = true
+            }
+            
+            if (pokebolas[sortcol[p].pokeb2].y + pokebolas[sortcol[p].pokeb2].vely < radius && pokebolas[sortcol[p].pokeb2].y < pokebolas[sortcol[p].pokeb1].y || pokebolas[sortcol[p].pokeb2].y + pokebolas[sortcol[p].pokeb2].vely > 150 - radius && pokebolas[sortcol[p].pokeb2].y > pokebolas[sortcol[p].pokeb1].y) {
+                console.log('NÃO PODE CONTINUAR',pokebolas[sortcol[p].pokeb2].color)
+                tcor2[1] = false
+            }else{
+                tcor2[1] = true
+            }
         }else{
-            tcor2[0] = true
+            tcor2[0] = false
+            tcoe2[1] = false
         }
 
-        if (pokebolas[pi].y + pokebolas[pi].vely < radius && pokebolas[pi].y < pokebolas[pi].y || pokebolas[pi].y + pokebolas[pi].vely > 150 - radius && pokebolas[pi].y > pokebolas[pi].y) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[pi].color)
-            tcor2[1] = false
-        }else{
-            tcor2[1] = true
-        }
-    }else{
-        tcor2[0] = false
-        tcor2[1] = false
-    }
         console.log(tcor1,tcor2)
-        tcor1 = [true,true]
-        tcor2 = [true,true]
+        //tcor1 = [true,true]
+        //tcor2 = [true,true]
         //console.log(pokebolas[sortcol[p].pokeb1].stat,pokebolas[sortcol[p].pokeb2].stat,'colisão')
         result = detectCollision(sortcol[p].pokeb1,sortcol[p].pokeb2,pokebolas[sortcol[p].pokeb1].x,pokebolas[sortcol[p].pokeb1].y,pokebolas[sortcol[p].pokeb2].x,pokebolas[sortcol[p].pokeb2].y,tcor1[0],tcor1[1],tcor2[0],tcor2[1])
 
