@@ -415,7 +415,7 @@ animate()
 
 coll = 0
 function collision() {
-    //console.log('DO THE COLLISION BROTHER','colisão')
+    console.log('----------^^^^^^^^^^^^DO THE COLLISION BROTHER^^^^^^----------------','colisão')
     for (a in pokebolas) {
         console.log(a)
         cx = pokebolas[a].x
@@ -476,6 +476,7 @@ function collision() {
                    }
                 }
 
+                console.log(a,pokebolas[a].color,pokebolas[a].x,pokebolas[a].velx)
                 if (pokebolas[a].x == radius && pokebolas[a].velx < 0) {
                     //loop = false
                     console.log('TEM QUE MUDAR-------------------------------------35454579OOO-------------------------------------------6767575768999999999999999999999999999999999999999--------------5765757576')
@@ -1575,6 +1576,7 @@ function collision() {
                     if (pokebolas[pi].x + pokebolas[pi].velx < radius && pokebolas[pi].x < pokebolas[p].x) {
                     pokebolas[pi].x = radius
                     }else{
+                        loop = false
                         pokebolas[pi].x = 300 - radius 
                     }
                   
