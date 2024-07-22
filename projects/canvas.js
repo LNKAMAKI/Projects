@@ -25,8 +25,8 @@ pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color
     //pokepos = [{x:20,y:130}]
 //{x:60,y:75,color:'red'},{x:60,y:75 + radius*2,color:'red'},{x:60,y:75 + radius*4,color:'red'},{x:60,y:75 - radius*2,color:'red'},{x:60,y:75 - radius*4,color:'red'},{x:60 + radius*2,y:75,color:'red'}
 //pokepos = [{x:20,y:130}]
-function setTable() {
-    c.fillStyle = '#18c10f'
+function setTable(backcolor) {
+    c.fillStyle = backcolor
     c.fillRect((300 - comp)/2,(150 - alt)/2,comp,alt)
     c.beginPath()
     c.lineWidth = '1.3'
@@ -92,9 +92,13 @@ function setTable() {
 }
 playstate = false
 
+offsetColor = '#51ecfd'
+offsetColor = '#51fddd'
+offsetColor = '#51fdf6'
 function load() {
     canv = document.getElementById("canv")
     c = canv.getContext('2d')
+    setTable(offsetColor)
     listfont = ['Bangers','Paytone One','Luckiest Guy','Bungee','Russo One','Passion One','Righteous','Patua One','Concert One','Acme','Alfa Slab One','Rowdies','Red Hat Display','Lobster','Ga Maamli','Archivo Black','Rubik Mono One','Lilita One']
     c.font = "30px Bangers"
     c.font = "30px Paytone One"
@@ -143,6 +147,7 @@ window.addEventListener('mousemove',function(event) {
     mousey = ((event.y - 2)/cHeight)*150
     if (mousex >= 122 && mousex <= 181 && mousey >= 90 && mousey <= 112) {
         c.clearRect(0,0,300,150)
+        setTable(offsetColor)
         c.font = `38px ${listfont[2]}`
         c.textBaseline = 'middle'
         c.textAlign = 'center'
@@ -165,6 +170,7 @@ window.addEventListener('mousemove',function(event) {
     }else{
         clickplay = false
         c.clearRect(0,0,300,150)
+        setTable(offsetColor)
         c.font = `38px ${listfont[2]}`
         c.textBaseline = 'middle'
         c.textAlign = 'center'
@@ -183,7 +189,6 @@ window.addEventListener('mousemove',function(event) {
         document.body.style.cursor = 'default'
        c.strokeText("PLAY", 150, 105)
        c.fillText("PLAY", 150, 105)
-        clickplay = true
         //this.document.getElementById('x').innerText = 'false'
     }
    
@@ -202,7 +207,7 @@ function start() {
     c = canv.getContext('2d')
     c.clearRect(0,0,300,150)
     c.strokeStyle = 'black'
-    setTable()
+    setTable('#18c10f')
     //c.strokeStyle = 'black'
     //c.stroke()
     
@@ -1995,7 +2000,7 @@ function collision() {
                  
                 wid = 120 // comprimento do cue
                 c.clearRect(0,0,300,150)
-                setTable()
+                setTable('#18c10f')
         
                 origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
                 alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3253,7 +3258,7 @@ window.addEventListener('mousemove', function(event) {
          
         wid = 120 // comprimento do cue
         c.clearRect(0,0,300,150)
-        setTable()
+        setTable('#18c10f')
 
         origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
         alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3434,7 +3439,7 @@ window.addEventListener('mousedown',function (event) {
             let pokex = pokebolas[onpoke].x
             let pokey = pokebolas[onpoke].y
             pokebolas = []
-            setTable()
+            setTable('#18c10f')
             drawcue = true
             for (v = 0; v < pokepos.length; v++) {
                 color = pokepos[v].color
@@ -3565,7 +3570,7 @@ window.addEventListener('keyup',function(event) {
         c.strokeStyle = 'blue'
         c.stroke()
         pokebolas = []
-        setTable()
+        setTable('#18c10f')
         function animate2() {
             // for (t = 0; t < 2;t++) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
@@ -3627,7 +3632,7 @@ window.addEventListener('keyup',function(event) {
                 contagem++
        //console.log('CONTAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM',contagem)
                  c.clearRect(0,0,300,150)
-                 setTable()
+                 setTable('#18c10f')
                  collision()
                 
                  pokestay = []
