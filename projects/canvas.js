@@ -162,7 +162,6 @@ window.addEventListener('mousemove',function(event) {
        document.body.style.cursor = 'pointer'
        c.fillText("PLAY", 150, 105)
         clickplay = true
-        //this.document.getElementById('x').innerText = 'true'
     }else{
         clickplay = false
         c.clearRect(0,0,300,150)
