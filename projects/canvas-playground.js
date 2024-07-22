@@ -1877,7 +1877,7 @@ function collision() {
             if (pokebolas[sortcol[p].pokeb2].x + pokebolas[sortcol[p].pokeb2].velx < (300 - comp)/2 + radius && pokebolas[sortcol[p].pokeb2].x < pokebolas[sortcol[p].pokeb1].x) {
             fix2x = (300 - comp)/2 + radius
             }else{
-                loop = false
+                //loop = false
                 fix2x = (300 - comp)/2 + comp - radius 
             }
           
@@ -1955,6 +1955,7 @@ function collision() {
     }
     if (cont == pokebolas.length) {
         //console.log('WYU')
+        loop = false
         powerup = false
         stopcue = false
         onpoke = -1
