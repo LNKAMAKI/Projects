@@ -17,7 +17,7 @@ let pokebolas = []
 // to go back to testing mode
 loop = false
 loop = true
-radius = 5
+radius = 3.5
 comp = 280
 alt = 130
 contagem = 0
@@ -202,20 +202,20 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    velx = 2
-    vely = -2
+    //velx = 2
+    //vely = -2
    // velx = -10
-    velx = 0
+    //velx = 0
     //const vx1 = [...velx]
     //const vy1 = [...vely]
 }else  if (v == 1){
     color = 'red'
     x = 100
     y = 40
-    velx = 2
-    vely = 1
+    //velx = 2
+    //vely = 1
     //velx = -30
-    velx = 0
+    //velx = 0
 }else if(v == 2){
     color = 'yellow'
     x = 140
