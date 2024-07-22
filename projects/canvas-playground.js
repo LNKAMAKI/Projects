@@ -17,12 +17,12 @@ let pokebolas = []
 // to go back to testing mode
 loop = false
 loop = true
-radius = 10
+radius = 5
 comp = 280
 alt = 130
 contagem = 0
 potwidth = 10
-pokepos = [{x:40,y:(150 - alt)/2 + radius,color:'pink'},{x:(300 - comp)/2 + radius,y:(150 - alt)/2 + alt - radius,color:'red'}]
+pokepos = [{x:100,y:90,color:'pink'},{x:100,y:40,color:'red'}]//,{x:230,y:45,color:'yellow'}]
 //{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
@@ -113,8 +113,8 @@ width = Math.random()*8 + 10
 width = radius
 velx = Number((Math.random()*0.2).toFixed(5)) + 0.5
 vely = Number((Math.random()*0.2).toFixed(5)) + 0.5
-velx = Number((Math.random()*1).toFixed(0)) + 10
-vely = Number((Math.random()*1).toFixed(0)) + 10
+velx = Number((Math.random()*1).toFixed(0)) + 3
+vely = Number((Math.random()*1).toFixed(0)) + 3
 //velx = 1.008
 //vely = 7
 
@@ -202,20 +202,20 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    //velx = 2
-    //vely = -2
+    velx = 2
+    vely = -2
    // velx = -10
-    //vely = 0
+    velx = 0
     //const vx1 = [...velx]
     //const vy1 = [...vely]
 }else  if (v == 1){
     color = 'red'
     x = 100
     y = 40
-    //velx = 2
-    //vely = 1
+    velx = 2
+    vely = 1
     //velx = -30
-    //vely = 0
+    velx = 0
 }else if(v == 2){
     color = 'yellow'
     x = 140
@@ -2519,7 +2519,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     
     c.fillStyle = 'black'
     
-    
+    /*
     if (velx < 0) {
     c.fillText('←', x - width - radius,y + 6)
     }else{
@@ -2530,6 +2530,7 @@ function createPokebola(x,y,width,color,velx,vely,addornot,rangex,rangey) {
     }else{
         c.fillText('↓', x - 5,y + width + 3)
     }
+        */
 }
 
 
