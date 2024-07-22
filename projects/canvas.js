@@ -91,6 +91,7 @@ function setTable() {
 
 }
 playstate = false
+
 function load() {
     canv = document.getElementById("canv")
     c = canv.getContext('2d')
@@ -141,10 +142,49 @@ window.addEventListener('mousemove',function(event) {
     mousex = ((event.x - dif/2)/cWidth)*300
     mousey = ((event.y - 2)/cHeight)*150
     if (mousex >= 122 && mousex <= 181 && mousey >= 90 && mousey <= 112) {
+        c.clearRect(0,0,300,150)
+        c.font = `38px ${listfont[2]}`
+        c.textBaseline = 'middle'
+        c.textAlign = 'center'
+        c.lineWidth = '4'
+        c.strokeStyle = '#20366B'
+        c.fillStyle = '#F7C505'
+        c.strokeText("POKE", 70, 55)
+        c.fillText("POKE", 70, 55)
+        c.strokeStyle = 'black'
+        c.lineWidth = '3'
+        c.fillStyle = 'red'
+        c.strokeText("SNOOKER", 195, 55)
+        c.fillText("SNOOKER", 195, 55)
+        c.font = `28px ${listfont[2]}`
+        c.fillStyle = '#2a98ff'
+       c.strokeText("PLAY", 150, 105)
+       document.body.style.cursor = 'pointer'
+       c.fillText("PLAY", 150, 105)
         clickplay = true
         //this.document.getElementById('x').innerText = 'true'
     }else{
         clickplay = false
+        c.clearRect(0,0,300,150)
+        c.font = `38px ${listfont[2]}`
+        c.textBaseline = 'middle'
+        c.textAlign = 'center'
+        c.lineWidth = '4'
+        c.strokeStyle = '#20366B'
+        c.fillStyle = '#F7C505'
+        c.strokeText("POKE", 70, 55)
+        c.fillText("POKE", 70, 55)
+        c.strokeStyle = 'black'
+        c.lineWidth = '3'
+        c.fillStyle = 'red'
+        c.strokeText("SNOOKER", 195, 55)
+        c.fillText("SNOOKER", 195, 55)
+        c.font = `25px ${listfont[2]}`
+        c.fillStyle = '#2a98ff'
+        document.body.style.cursor = 'default'
+       c.strokeText("PLAY", 150, 105)
+       c.fillText("PLAY", 150, 105)
+        clickplay = true
         //this.document.getElementById('x').innerText = 'false'
     }
    
