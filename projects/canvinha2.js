@@ -1,55 +1,82 @@
+if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
+   
+    hipo = (pokebolas[number].velx**2 + pokebolas[number].vely**2)**(1/2)
+    sena = Math.abs(pokebolas[number].vely/hipo)
+    cosa = Math.abs(pokebolas[number].velx/hipo)
 
+    
+    if (pokebolas[number].velx > 0) {
+    if (pokebolas[number].velx > 0.015*cosa) {
+    pokebolas[number].velx -= 0.015*cosa
+    }else{
+        //console.log('ZERO')
+    pokebolas[number].velx = 0
+    }
+    }else if (pokebolas[number].velx != 0){
+        if (pokebolas[number].velx < 0.015*cosa) {
+            pokebolas[number].velx += 0.015*cosa
+            }else{
+                //console.log('ZERO')
+            pokebolas[number].velx = 0
+            }
+    }
 
-tcor1 = [true,true]
-        if (pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx < (300 - comp)/2 + radius && pokebolas[sortcol[p].pokeb1].x < pokebolas[sortcol[p].pokeb2].x || pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx > (300 - comp)/2 + comp - radius && pokebolas[sortcol[p].pokeb1].x > pokebolas[sortcol[p].pokeb2].x) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[sortcol[p].pokeb1].color)
-            //loop = false
-            tcor1[0] = false
-            if (pokebolas[sortcol[p].pokeb1].x + pokebolas[sortcol[p].pokeb1].velx < (300 - comp)/2 + radius && pokebolas[sortcol[p].pokeb1].x < pokebolas[sortcol[p].pokeb2].x) {
-            fix1x = (300 - comp)/2 + radius
-            }else{
-            fix1x = (300 - comp)/2 + comp - radius 
-            }
+    
+    if (pokebolas[number].vely > 0) {
+        if (pokebolas[number].vely > 0.015*sena) {
+        pokebolas[number].vely -= 0.015*sena
         }else{
-            tcor1[0] = true
+            //console.log('ZERO')
+        pokebolas[number].vely = 0
         }
-        
-        if (pokebolas[sortcol[p].pokeb1].y + pokebolas[sortcol[p].pokeb1].vely < (150 - alt)/2 + radius && pokebolas[sortcol[p].pokeb1].y < pokebolas[sortcol[p].pokeb2].y || pokebolas[sortcol[p].pokeb1].y + pokebolas[sortcol[p].pokeb1].vely > (150 - alt)/2 + alt - radius && pokebolas[sortcol[p].pokeb1].y > pokebolas[sortcol[p].pokeb2].y) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[sortcol[p].pokeb1].color)
-            tcor1[1] = false
-            if (pokebolas[sortcol[p].pokeb1].y + pokebolas[sortcol[p].pokeb1].vely < (150 - alt)/2 + radius && pokebolas[sortcol[p].pokeb1].y < pokebolas[sortcol[p].pokeb2].y) {
-                fix1y = (150 - alt)/2 + radius
+        }else if (pokebolas[number].vely != 0){
+            if (pokebolas[number].vely < 0.015*sena) {
+                pokebolas[number].vely += 0.015*sena
                 }else{
-                    fix1y = (150 - alt)/2 + alt - radius 
+                    //console.log('ZERO')
+                pokebolas[number].vely = 0
                 }
-        }else{
-            tcor1[1] = true
         }
         
-        tcor2 = [true,true]
-        if (pokebolas[sortcol[p].pokeb2].x + pokebolas[sortcol[p].pokeb2].velx < (300 - comp)/2 + radius && pokebolas[sortcol[p].pokeb2].x < pokebolas[sortcol[p].pokeb1].x || pokebolas[sortcol[p].pokeb2].x + pokebolas[sortcol[p].pokeb2].velx > (300 - comp)/2 + comp - radius && pokebolas[sortcol[p].pokeb2].x > pokebolas[sortcol[p].pokeb1].x) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[sortcol[p].pokeb2].color)
-            tcor2[0] = false
-            if (pokebolas[sortcol[p].pokeb2].x + pokebolas[sortcol[p].pokeb2].velx < (300 - comp)/2 + radius && pokebolas[sortcol[p].pokeb2].x < pokebolas[sortcol[p].pokeb1].x) {
-            fix2x = (300 - comp)/2 + radius
-            }else{
-                loop = false
-                fix2x = (300 - comp)/2 + comp - radius 
-            }
-          
+    
+    //pokebolas[number].x+=pokebolas[number].velx
+    console.log(pokebolas[number].color)
+    console.log('x:',pokebolas[number].x,'velx:',pokebolas[number].velx)
+    console.log('y:',pokebolas[number].y,'vely:',pokebolas[number].vely)
+    console.log('newx:',pokebolas[number].x + pokebolas[number].velx)
+    console.log('newy:',pokebolas[number].y + pokebolas[number].vely)
+
+    if (pokebolas[number].y + pokebolas[number].vely <= (150 - alt)/2 + alt - radius && pokebolas[number].y + pokebolas[number].vely >= (150 - alt)/2 + radius) {
+    pokebolas[number].y+=pokebolas[number].vely
+    }else if (pokebolas[number].y + pokebolas[number].vely > (150 - alt)/2 + alt - radius){
+    pokebolas[number].y = (150 - alt)/2 + alt - radius
+    pokebolas[number].vely = -pokebolas[number].vely
+    console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* vely to 150 - radius')
+        //console.log(`no puedes andar, ${pokebolas[number].color}`)
+    }else{
+        pokebolas[number].y = (150 - alt)/2 + radius
+        pokebolas[number].vely = -pokebolas[number].vely
+        console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* vely to radius')
+    }
+
+    if (pokebolas[number].x + pokebolas[number].velx <= (300 - comp)/2 + comp - radius && pokebolas[number].x + pokebolas[number].velx >= (300 - comp)/2 + radius) {
+        pokebolas[number].x+=pokebolas[number].velx
+        }else if (pokebolas[number].x + pokebolas[number].velx > (300 - comp)/2 + comp - radius){
+        pokebolas[number].x = (300 - comp)/2 + comp - radius
+        pokebolas[number].velx = -pokebolas[number].velx
+        console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to 300 - radius')
+            //console.log(`no puedes andar, ${pokebolas[number].color}`)
         }else{
-            tcor2[0] = true
+            pokebolas[number].x = (300 - comp)/2 + radius
+            pokebolas[number].velx = -pokebolas[number].velx
+            console.log(pokebolas[number].color,'change NO HEART IS TAKEN -----14932482943849248888(((((((()******* velx to radius')
         }
-        
-        if (pokebolas[sortcol[p].pokeb2].y + pokebolas[sortcol[p].pokeb2].vely < (150 - alt)/2 + radius && pokebolas[sortcol[p].pokeb2].y < pokebolas[sortcol[p].pokeb1].y || pokebolas[sortcol[p].pokeb2].y + pokebolas[sortcol[p].pokeb2].vely > (150 - alt)/2 + alt - radius && pokebolas[sortcol[p].pokeb2].y > pokebolas[sortcol[p].pokeb1].y) {
-            console.log('NÃO PODE CONTINUAR',pokebolas[sortcol[p].pokeb2].color)
-            tcor2[1] = false
-            if (pokebolas[sortcol[p].pokeb2].y + pokebolas[sortcol[p].pokeb2].vely < (150 - alt)/2 + radius && pokebolas[sortcol[p].pokeb2].y < pokebolas[sortcol[p].pokeb1].y) {
-                fix2y = (150 - alt)/2 + radius
-                }else{
-                    fix2y = (150 - alt)/2 + alt - radius 
-                }
-           
-        }else{
-            tcor2[1] = true
-        }
+
+}else{
+    if (pokebolas[number].x > (300 - comp)/2 + comp - radius || pokebolas[number].x < (300 - comp)/2 + radius || pokebolas[number].y > (150 - alt)/2 + alt - radius || pokebolas[number].y < (150 - alt)/2 + radius) {
+        loop = false
+        window.alert('ULTRAPASSOU')
+        pokebolas[number].velx = 0
+       pokebolas[number].vely = 0
+    }
+}
