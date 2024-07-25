@@ -80,3 +80,17 @@ if (pokebolas[number].r === '' || pokebolas[number].r == undefined) {
        pokebolas[number].vely = 0
     }
 }
+
+if (Math.random() < 0.5) {
+    if (pky < 3) {
+pky += 2
+    }else{
+        pky -= 2
+    }
+}else{
+    if (pky > 0) {
+        pky -= 2
+            }else{
+                pky += 2
+            }
+}

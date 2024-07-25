@@ -91,10 +91,13 @@ function setTable(backcolor) {
 
 }
 playstate = false
+playsize = '25'
 
 offsetColor = '#51ecfd'
 offsetColor = '#51fddd'
 offsetColor = '#51fdf6'
+pkx = 0
+pky = 0
 function load() {
     canv = document.getElementById("canv")
     c = canv.getContext('2d')
@@ -110,6 +113,54 @@ function load() {
     c.font = "30px Patua One"
     c.font = "30px Concert One"
     c.font = "30px Acme"
+    
+    //c.strokeRect(122,90,59,22)
+    // fstx = 122
+    // sndx = 181
+    // fsty = 90
+    // sndy = 112
+
+    len = 20
+    function startInterval(seconds) {
+        const intervalId = setInterval(() => {
+            if (Math.random() < 0.5) {
+                if (pkx < 3) {
+            pkx += 0.25
+                }else{
+                    pkx -= 0.25
+                }
+            }else{
+                if (pkx > 0) {
+                    pkx -= 0.25
+                        }else{
+                            pkx += 0.25
+                        }
+            }
+            if (Math.random() < 0.5) {
+                if (pky < 3) {
+            pky += 0.25
+                }else{
+                    pky -= 0.25
+                }
+            }else{
+                if (pky > 0) {
+                    pky -= 0.25
+                        }else{
+                            pky += 0.25
+                        }
+            }
+            c.clearRect(0,0,300,150)
+          console.log(`Executed after every ${seconds} seconds`);
+          setTable(offsetColor)
+          setIntro(playsize)
+        }, seconds * 1000);
+        // Return the interval ID so that it can be cleared later
+        return intervalId;
+      }
+      
+     const intervalId = startInterval(0.2);
+}
+function setIntro(playsize,) {
     c.font = `38px ${listfont[2]}`
     c.textBaseline = 'middle'
     c.textAlign = 'center'
@@ -123,16 +174,15 @@ function load() {
     c.fillStyle = 'red'
     c.strokeText("SNOOKER", 195, 55)
     c.fillText("SNOOKER", 195, 55)
-     c.font = `25px ${listfont[2]}`
+     c.font = `${playsize}px ${listfont[2]}`
      c.fillStyle = '#2a98ff'
     c.strokeText("PLAY", 150, 105)
     c.fillText("PLAY", 150, 105)
     c.lineWidth = '1'
-    //c.strokeRect(122,90,59,22)
-    // fstx = 122
-    // sndx = 181
-    // fsty = 90
-    // sndy = 112
+    createPokebola(40 + pkx, 95 + pky,len,'red',5,6,false,0,0)
+    createPokebola(230 + pkx, 95 + pky,len - 5,'#FF4E70',5,6,false,0,0)
+    createPokebola(90 + pkx, 120 + pky,len - 5,'blue',5,6,false,0,0)
+    createPokebola(260 + pkx, 120 + pky,len - 7,'green',5,6,false,0,0)
 }
 clickplay = false
 window.addEventListener('mousemove',function(event) {
@@ -148,47 +198,18 @@ window.addEventListener('mousemove',function(event) {
     if (mousex >= 122 && mousex <= 181 && mousey >= 90 && mousey <= 112) {
         c.clearRect(0,0,300,150)
         setTable(offsetColor)
-        c.font = `38px ${listfont[2]}`
-        c.textBaseline = 'middle'
-        c.textAlign = 'center'
-        c.lineWidth = '4'
-        c.strokeStyle = '#20366B'
-        c.fillStyle = '#F7C505'
-        c.strokeText("POKE", 70, 55)
-        c.fillText("POKE", 70, 55)
-        c.strokeStyle = 'black'
-        c.lineWidth = '3'
-        c.fillStyle = 'red'
-        c.strokeText("SNOOKER", 195, 55)
-        c.fillText("SNOOKER", 195, 55)
-        c.font = `28px ${listfont[2]}`
-        c.fillStyle = '#2a98ff'
-       c.strokeText("PLAY", 150, 105)
+        playsize = '28'
+        setIntro(playsize)
        document.body.style.cursor = 'pointer'
-       c.fillText("PLAY", 150, 105)
         clickplay = true
     }else{
         clickplay = false
         c.clearRect(0,0,300,150)
         setTable(offsetColor)
-        c.font = `38px ${listfont[2]}`
-        c.textBaseline = 'middle'
-        c.textAlign = 'center'
-        c.lineWidth = '4'
-        c.strokeStyle = '#20366B'
-        c.fillStyle = '#F7C505'
-        c.strokeText("POKE", 70, 55)
-        c.fillText("POKE", 70, 55)
-        c.strokeStyle = 'black'
-        c.lineWidth = '3'
-        c.fillStyle = 'red'
-        c.strokeText("SNOOKER", 195, 55)
-        c.fillText("SNOOKER", 195, 55)
-        c.font = `25px ${listfont[2]}`
-        c.fillStyle = '#2a98ff'
+        playsize = '25'
+        setIntro(playsize)
         document.body.style.cursor = 'default'
-       c.strokeText("PLAY", 150, 105)
-       c.fillText("PLAY", 150, 105)
+      
         //this.document.getElementById('x').innerText = 'false'
     }
    
@@ -201,6 +222,7 @@ if (clickplay == true) {
 
 function start() {
     //console.log(document.querySelector('canvas'))
+    clearInterval(intervalId)
     canv = document.getElementById("canv")
     canv.style.backgroundColor = '#18c10f'
     canv.style.backgroundColor = '#2E2318'

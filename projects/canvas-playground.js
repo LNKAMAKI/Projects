@@ -15,14 +15,15 @@ criar um algoritmo para quando mais de 2 pokebolas se colidirem ao mesmo tempo:
 // IMPORTANT: quando o mecanismo de detectar colisões (linha 1307) adiciona as possíveis colisões ao sortob, ele utiliza a função detectCollision - que simula o que irá acontecer no próximo frame e, consequentemente, se as pokebolas irão ou não bater (se a raiz2 - que é a menor raiz for maior ou igual a zero e menor ou igual a 1, significa que as pokebolas irão se chocar, já que o x da expressão se refere à porcentagem das velocidades das pokebolas necessária para que elas se encostem). Mas note que, duas pokebolas que incialmente não colidem uma com a outra podem posteriormente colidir caso suas velocidades forem alteradas após a colisão com outras pokebolas, o que necessitaria de nova checagem(que pode acabar em um loop infinito)
 let pokebolas = []
 // to go back to testing mode
-loop = false
-radius = 3.5
+//loop = false
+loop = true
+radius = 5
 comp = 280
 alt = 130
 contagem = 0
 potwidth = 10
-pokepos = [{x:100,y:90,color:'pink'},{x:100,y:40,color:'red'}]//,{x:230,y:45,color:'yellow'}]
-//{x:230,y:75,color:'brown'},{x:230,y:45,color:'yellow'},{x:230,y:105,color:'green'},{x:240,y:60,color:'white'}]
+pokepos = [{x:100,y:90,color:'pink'},{x:100,y:40,color:'red'}]
+//,{x:230,y:45,color:'yellow'},{x:230,y:75,color:'brown'},{x:230,y:105,color:'green'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
     c.beginPath()
@@ -201,8 +202,8 @@ if (v == 0) {
     color = 'pink'
     x = 100
     y = 90
-    //velx = 2
-    //vely = -2
+    velx = 2
+    vely = -2
    // velx = -10
     //velx = 0
     //const vx1 = [...velx]
@@ -211,8 +212,8 @@ if (v == 0) {
     color = 'red'
     x = 100
     y = 40
-    //velx = 2
-    //vely = 1
+    velx = 2
+    vely = 1
     //velx = -30
     //velx = 0
 }else if(v == 2){
@@ -1620,7 +1621,7 @@ function collision() {
                 }else{
                     tcor2[1] = true
                 }
-                console.log(tcor1,tcor2)
+                //console.log(tcor1,tcor2)
                 //tcor1 = [true,true]
                 //tcor2 = [true,true]
 
@@ -1942,6 +1943,7 @@ function collision() {
             //console.log(caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
         }
         if (caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color) < (2*radius)**2 - 1) {
+            window.alert('ENCOSTOU')
          console.log('ENCOSTOOOOOOOOU',caldis(pokebolas[posibs[che].a].color,pokebolas[posibs[che].b].color))
          loop = false
         }
@@ -2803,9 +2805,9 @@ if (pokebolas[b].y >= (150 - alt)/2 + potwidth - radius) {
         //console.log('time',time,'colisão')
         //console.log(life**2 + time**2)
         difvex = velx1 - velx2
-        console.log('difvex',difvex,'colisão')
+       //console.log('difvex',difvex,'colisão')
         difvey = vely1 - vely2
-        console.log('difvey',difvey,'colisão')
+        //console.log('difvey',difvey,'colisão')
         aex = 0
         bex = 0
         cex = life**2 + time**2 - (2*radius)**2
