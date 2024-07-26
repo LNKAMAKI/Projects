@@ -94,3 +94,34 @@ pky += 2
                 pky += 2
             }
 }
+
+if (raiz2a > 0) {
+    console.log(dirahor,diraver)
+}else if(raiz2a < 0) {
+    if (dirahor == 'right') {
+        console.log('left')
+        dirahor = 'left'
+    }else if (dirahor == 'left'){
+        console.log('right')
+        dirahor = 'right'
+    }
+    if (diraver == 'up') {
+        console.log('down')
+        diraver = 'down'
+    }else if (diraver == 'down'){
+        console.log('up')
+        diraver = 'up'
+    }
+}
+velax = 0
+velay = 0
+if (dirahor == 'right') {
+    velax = Math.abs(raiz2a*senx)
+}else if(dirahor == 'left') {
+    velax = Math.abs(raiz2a*senx)*-1
+}
+if (diraver == 'down') {
+    velay = Math.abs(raiz2a*senx)
+}else if(diraver == 'up') {
+    velay = Math.abs(raiz2a*senx)*-1
+}
