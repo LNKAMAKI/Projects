@@ -133,12 +133,12 @@ pky += 2
             pokebolas[b].vely = (sumparver2 + velby)*-1
 
             pokebolas[b].color,'irá ficar com velocidade'
-            console.log(`${pokebolas[a].color} irá ficar com velocidade`,(Math.abs(pokebolas[a].m*sumper1) - Math.abs(pokebolas[b].m*sumper2) + pokebolas[b].m*raizreal)/pokebolas[a].m)
+            console.log(`${pokebolas[a].color} irá ficar com velocidade`,(Math.abs(pokebolas[a].m*sumper1) + Math.abs(pokebolas[b].m*sumper2) - pokebolas[b].m*raizreal)/pokebolas[a].m)
 
-            raizreala = (Math.abs(pokebolas[a].m*sumper1) - Math.abs(pokebolas[b].m*sumper2) + pokebolas[b].m*raizreal)/pokebolas[a].m
-            if (raizreala > 0) {
+            raiza = (Math.abs(pokebolas[a].m*sumper1) + Math.abs(pokebolas[b].m*sumper2) - pokebolas[b].m*raizreal)/pokebolas[a].m
+            if (raiza > 0) {
                 console.log(dirahor,diraver)
-            }else if(raizreala < 0) {
+            }else if(raiza < 0) {
                 if (dirahor == 'right') {
                     console.log('left')
                     dirahor = 'left'
@@ -157,14 +157,14 @@ pky += 2
             velax = 0
             velay = 0
             if (dirahor == 'right') {
-                velax = Math.abs(raizreala*senx)
+                velax = Math.abs(raiza*senx)
             }else if(dirahor == 'left') {
-                velax = Math.abs(raizreala*senx)*-1
+                velax = Math.abs(raiza*senx)*-1
             }
             if (diraver == 'down') {
-                velay = Math.abs(raizreala*senx)
+                velay = Math.abs(raiza*senx)
             }else if(diraver == 'up') {
-                velay = Math.abs(raizreala*senx)*-1
+                velay = Math.abs(raiza*senx)*-1
             }
 
             console.log('horizontal:',velax)
