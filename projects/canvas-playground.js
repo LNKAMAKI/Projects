@@ -22,7 +22,7 @@ comp = 280
 alt = 130
 contagem = 0
 potwidth = 10
-pokepos = [{x:100,y:80,color:'pink',m:10},{x:40,y:80,color:'red',m:10}]
+pokepos = [{x:100,y:80,color:'pink',m:50},{x:40,y:80,color:'red',m:10}]
 //,{x:230,y:45,color:'yellow'},{x:230,y:75,color:'brown'},{x:230,y:105,color:'green'}]
 //pokepos = [{x:20,y:130}]
 function setTable() {
@@ -1759,7 +1759,7 @@ function collision() {
                 console.log(9999,'eeee',7687,'***********&&&&&&&&&&&&&&$$$$$$______________(((((((((((())))))*723215163236155123123215215SEU LIXO COLISÃO ENTRE',pokebolas[a].color,' e ', pokebolas[b].color)
                 console.log(pokebolas[a].color, 'fica com velx:',pokebolas[a].velx)
                 console.log(pokebolas[b].color, 'fica com velx:',pokebolas[b].velx)
-                loop = false
+                //loop = false
                 
                 /*
                 pokebolas[a].velx = 0

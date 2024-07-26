@@ -95,7 +95,7 @@ playsize = '25'
 
 offsetColor = '#51ecfd'
 offsetColor = '#51fddd'
-offsetColor = '#51fdf6'
+offsetColor = '#51d5fd'
 pkx = 0
 pky = 0
 function load() {
@@ -121,6 +121,7 @@ function load() {
     // sndy = 112
 
     len = 20
+    /*
     function startInterval(seconds) {
         const intervalId = setInterval(() => {
             if (Math.random() < 0.5) {
@@ -159,8 +160,9 @@ function load() {
       }
       
      const intervalId = startInterval(0.2);
+     */
 }
-function setIntro(playsize,) {
+function setIntro(playsize) {
     c.font = `38px ${listfont[2]}`
     c.textBaseline = 'middle'
     c.textAlign = 'center'
@@ -204,6 +206,7 @@ window.addEventListener('mousemove',function(event) {
         clickplay = true
     }else{
         clickplay = false
+        c = canv.getContext('2d')
         c.clearRect(0,0,300,150)
         setTable(offsetColor)
         playsize = '25'
@@ -222,14 +225,14 @@ if (clickplay == true) {
 
 function start() {
     //console.log(document.querySelector('canvas'))
-    clearInterval(intervalId)
+    //clearInterval(intervalId)
     canv = document.getElementById("canv")
     canv.style.backgroundColor = '#18c10f'
     canv.style.backgroundColor = '#2E2318'
     c = canv.getContext('2d')
     c.clearRect(0,0,300,150)
     c.strokeStyle = 'black'
-    setTable('#18c10f')
+    setTable('#51d5fd')
     //c.strokeStyle = 'black'
     //c.stroke()
     
@@ -2022,7 +2025,7 @@ function collision() {
                  
                 wid = 120 // comprimento do cue
                 c.clearRect(0,0,300,150)
-                setTable('#18c10f')
+                setTable('#51d5fd')
         
                 origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
                 alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3280,7 +3283,7 @@ window.addEventListener('mousemove', function(event) {
          
         wid = 120 // comprimento do cue
         c.clearRect(0,0,300,150)
-        setTable('#18c10f')
+        setTable('#51d5fd')
 
         origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
         alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3461,7 +3464,7 @@ window.addEventListener('mousedown',function (event) {
             let pokex = pokebolas[onpoke].x
             let pokey = pokebolas[onpoke].y
             pokebolas = []
-            setTable('#18c10f')
+            setTable('#51d5fd')
             drawcue = true
             for (v = 0; v < pokepos.length; v++) {
                 color = pokepos[v].color
@@ -3592,7 +3595,7 @@ window.addEventListener('keyup',function(event) {
         c.strokeStyle = 'blue'
         c.stroke()
         pokebolas = []
-        setTable('#18c10f')
+        setTable('#51d5fd')
         function animate2() {
             // for (t = 0; t < 2;t++) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
@@ -3654,7 +3657,7 @@ window.addEventListener('keyup',function(event) {
                 contagem++
        //console.log('CONTAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM',contagem)
                  c.clearRect(0,0,300,150)
-                 setTable('#18c10f')
+                 setTable('#51d5fd')
                  collision()
                 
                  pokestay = []
