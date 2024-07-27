@@ -28,6 +28,7 @@ pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color
 function setTable(backcolor) {
     c.fillStyle = '#294061'
     c.fillStyle = backcolor
+    c.strokeStyle = 'black'
     c.fillRect((300 - comp)/2 - 4,(150 - alt)/2 - 4,comp + 8,alt + 8)
     c.lineWidth = '0.4'
     c.strokeRect((300 - comp)/2 - 4,(150 - alt)/2 - 4,comp + 8,alt + 8)
@@ -170,6 +171,17 @@ function load() {
      */
 }
 function setIntro(playsize) {
+    c.fillStyle = '#28c8f9'
+    c.beginPath()
+    c.arc(173,54,13.1,0,2*Math.PI)
+    c.fill()
+    c.beginPath()
+    c.arc(198,54,13.1,0,2*Math.PI)
+    c.fill()
+    c.font = `44px ${listfont[2]}`
+    c.fillStyle = '#28c8f9'
+    c.fillText("POKE", 70, 59)
+    c.fillText("SN      KER", 193, 59)
     c.font = `38px ${listfont[2]}`
     c.textBaseline = 'middle'
     c.textAlign = 'center'
@@ -183,6 +195,13 @@ function setIntro(playsize) {
     c.fillStyle = 'red'
     c.strokeText("SNOOKER", 195, 55)
     c.fillText("SNOOKER", 195, 55)
+    if (playsize == '28') {
+    c.font = `${Number(playsize) + 4}px ${listfont[2]}`
+    }else{
+    c.font = `${Number(playsize) + 3}px ${listfont[2]}`
+    }
+    c.fillStyle = '#28c8f9'
+   c.fillText("PLAY", 150, 108)
      c.font = `${playsize}px ${listfont[2]}`
      c.fillStyle = '#2a98ff'
     c.strokeText("PLAY", 150, 105)
@@ -206,6 +225,7 @@ window.addEventListener('mousemove',function(event) {
     
     mousex = ((event.x - dif/2)/cWidth)*300
     mousey = ((event.y - 2)/cHeight)*150
+    if (playstate == false) {
     if (mousex >= 122 && mousex <= 181 && mousey >= 90 && mousey <= 112) {
         c.clearRect(0,0,300,150)
         setTable(offsetColor)
@@ -225,11 +245,15 @@ window.addEventListener('mousemove',function(event) {
       
         //this.document.getElementById('x').innerText = 'false'
     }
+}
    
 })
 window.addEventListener('mousedown',function() {
 if (clickplay == true) {
+    if (playstate == false) {
     start()
+    playstate = true
+    }
 }
 })
 
@@ -2035,7 +2059,7 @@ function collision() {
                     caso = 1
                  }
                  
-                wid = 140 // comprimento do cue
+                wid = 120// comprimento do cue
                 c.clearRect(0,0,300,150)
                 setTable(offsetColor)
         
