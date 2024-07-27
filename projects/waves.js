@@ -16,7 +16,11 @@ function animate() {
     // function = A*sen(2*Math.PI/comp*(x + wt))
     for (i = 0; i < 75;i++) {
         if (timer - x*0.1 >= 0) {
-            y = starty + 30*Math.sin(0 - 0.4*(timer - x*0.1))
+            if (30 - i*0.3 >= 0) {
+            y = starty + (30 - i*0.3)*Math.sin(0 - 0.4*(timer - x*0.1))
+            }else{
+                y = starty
+            }
         }else{
             y = starty
         }
@@ -38,7 +42,12 @@ function animate() {
         x = 0
         for (i = 0; i < 75;i++) {
             if (timer - x*0.1 >= 0) {
-                y = starty + 30*Math.sin(0 - 0.4*(timer - x*0.1))
+                if (30 - i*0.3 >= 0) {
+                    y = starty + (30 - i*0.3)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }else{
+                        y = starty
+                    }
+               // y = starty + 30*Math.sin(0 - 0.4*(timer - x*0.1))
             }else{
                 y = starty
             }
@@ -77,7 +86,7 @@ function animate() {
             x+= 2*radius
             }
 
-        timer+= 0.1
+        timer+= 0.07
 if (loop == true) {
 requestAnimationFrame(animate)
 }
