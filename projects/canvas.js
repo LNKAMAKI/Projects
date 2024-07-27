@@ -26,37 +26,43 @@ pokepos = [{x:150,y:75,color:'blue'},{x:30,y:75,color:'black'},{x:230,y:75,color
 //{x:60,y:75,color:'red'},{x:60,y:75 + radius*2,color:'red'},{x:60,y:75 + radius*4,color:'red'},{x:60,y:75 - radius*2,color:'red'},{x:60,y:75 - radius*4,color:'red'},{x:60 + radius*2,y:75,color:'red'}
 //pokepos = [{x:20,y:130}]
 function setTable(backcolor) {
+    c.fillStyle = '#294061'
+    c.fillStyle = backcolor
+    c.fillRect((300 - comp)/2 - 4,(150 - alt)/2 - 4,comp + 8,alt + 8)
+    c.lineWidth = '0.4'
+    c.strokeRect((300 - comp)/2 - 4,(150 - alt)/2 - 4,comp + 8,alt + 8)
     c.fillStyle = backcolor
     c.fillRect((300 - comp)/2,(150 - alt)/2,comp,alt)
+     c.lineWidth = '0.7'
+    c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
     c.beginPath()
     c.lineWidth = '1.3'
     c.strokeStyle = 'black'
-    c.strokeRect((300 - comp)/2,(150 - alt)/2,comp,alt)
     c.arc((300 - comp)/2,(150 - alt)/2,potwidth,Math.PI/2,2*Math.PI)
-    c.fillStyle = 'white'
+    c.fillStyle = 'black'
     c.fill()
     c.stroke()
 
     c.arc((300 - comp)/2,(150 - alt)/2,potwidth,0,Math.PI/2)
-    c.fillStyle = 'white'
+    c.fillStyle = 'black'
     //c.fill()
     //c.stroke()
 
     c.beginPath()
     c.arc((300 - comp)/2,150 - (150 - alt)/2,potwidth,0,3*Math.PI/2)
-    c.fillStyle = 'white'
+    c.fillStyle = 'black'
     c.fill()
     c.stroke()
 
     c.beginPath()
     c.arc(300 - (300 - comp)/2,150 - (150 - alt)/2,potwidth,0,Math.PI)
-    c.fillStyle = 'white'
+    c.fillStyle = 'black'
     c.fill()
     //c.stroke()
 
     c.beginPath()
     c.arc(300 - (300 - comp)/2,150 - (150 - alt)/2,potwidth,3*Math.PI/2,Math.PI)
-    c.fillStyle = 'white'
+    c.fillStyle = 'black'
     c.fill()
     //c.stroke()
 
@@ -70,13 +76,13 @@ function setTable(backcolor) {
 
     c.beginPath()
     c.arc(300 - (300 - comp)/2,(150 - alt)/2,potwidth,0,Math.PI/2)
-    c.fillStyle = 'white'
+    c.fillStyle = 'black'
     c.fill()
     //c.stroke()
    
     c.beginPath()
     c.arc(300 - (300 - comp)/2,(150 - alt)/2,potwidth,Math.PI,Math.PI/2)
-    c.fillStyle = 'white'
+    c.fillStyle = 'black'
     c.fill()
     //c.stroke()
 
@@ -93,9 +99,10 @@ function setTable(backcolor) {
 playstate = false
 playsize = '25'
 
-offsetColor = '#51ecfd'
-offsetColor = '#51fddd'
+
+offsetColor = 'var(--tabblue)'
 offsetColor = '#51d5fd'
+//offsetColor = 'red'
 pkx = 0
 pky = 0
 function load() {
@@ -181,10 +188,12 @@ function setIntro(playsize) {
     c.strokeText("PLAY", 150, 105)
     c.fillText("PLAY", 150, 105)
     c.lineWidth = '1'
-    createPokebola(40 + pkx, 95 + pky,len,'red',5,6,false,0,0)
-    createPokebola(230 + pkx, 95 + pky,len - 5,'#FF4E70',5,6,false,0,0)
-    createPokebola(90 + pkx, 120 + pky,len - 5,'blue',5,6,false,0,0)
-    createPokebola(260 + pkx, 120 + pky,len - 7,'green',5,6,false,0,0)
+    createPokebola(174,50,12.8,'red',5,6,false,0,0)
+    createPokebola(199,50,12.8,'#FF4E70',5,6,false,0,0)
+    //createPokebola(40 + pkx, 95 + pky,len,'red',5,6,false,0,0)
+    //createPokebola(230 + pkx, 95 + pky,len - 5,'#FF4E70',5,6,false,0,0)
+    //createPokebola(90 + pkx, 120 + pky,len - 5,'blue',5,6,false,0,0)
+    //createPokebola(260 + pkx, 120 + pky,len - 7,'green',5,6,false,0,0)
 }
 clickplay = false
 window.addEventListener('mousemove',function(event) {
@@ -204,6 +213,7 @@ window.addEventListener('mousemove',function(event) {
         setIntro(playsize)
        document.body.style.cursor = 'pointer'
         clickplay = true
+        //createPokebola(102,101,12,'blue',5,6,false,0,0)
     }else{
         clickplay = false
         c = canv.getContext('2d')
@@ -229,10 +239,12 @@ function start() {
     canv = document.getElementById("canv")
     canv.style.backgroundColor = '#18c10f'
     canv.style.backgroundColor = '#2E2318'
+    canv.style.backgroundColor = '#51d5fd'
+    canv.style.backgroundColor = 'var(--border-blue)'
     c = canv.getContext('2d')
     c.clearRect(0,0,300,150)
     c.strokeStyle = 'black'
-    setTable('#51d5fd')
+    setTable(offsetColor)
     //c.strokeStyle = 'black'
     //c.stroke()
     
@@ -2023,9 +2035,9 @@ function collision() {
                     caso = 1
                  }
                  
-                wid = 120 // comprimento do cue
+                wid = 140 // comprimento do cue
                 c.clearRect(0,0,300,150)
-                setTable('#51d5fd')
+                setTable(offsetColor)
         
                 origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
                 alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3283,7 +3295,7 @@ window.addEventListener('mousemove', function(event) {
          
         wid = 120 // comprimento do cue
         c.clearRect(0,0,300,150)
-        setTable('#51d5fd')
+        setTable(offsetColor)
 
         origem = cuewidth*Math.cos(angle) + pokebolas[onpoke].x
         alvo = cuewidth*Math.cos(angle) + pokebolas[onpoke].x + wid*Math.cos(angle)
@@ -3464,7 +3476,7 @@ window.addEventListener('mousedown',function (event) {
             let pokex = pokebolas[onpoke].x
             let pokey = pokebolas[onpoke].y
             pokebolas = []
-            setTable('#51d5fd')
+            setTable(offsetColor)
             drawcue = true
             for (v = 0; v < pokepos.length; v++) {
                 color = pokepos[v].color
@@ -3595,7 +3607,7 @@ window.addEventListener('keyup',function(event) {
         c.strokeStyle = 'blue'
         c.stroke()
         pokebolas = []
-        setTable('#51d5fd')
+        setTable(offsetColor)
         function animate2() {
             // for (t = 0; t < 2;t++) {
              if (pokebolas.length == 0) { // start - no pokeballs => create pokeballs
@@ -3657,7 +3669,7 @@ window.addEventListener('keyup',function(event) {
                 contagem++
        //console.log('CONTAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM',contagem)
                  c.clearRect(0,0,300,150)
-                 setTable('#51d5fd')
+                 setTable(offsetColor)
                  collision()
                 
                  pokestay = []
