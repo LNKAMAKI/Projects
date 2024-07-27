@@ -1,5 +1,5 @@
 let radius = 2
-let starty = 80
+let starty = 100
 let x = 0
 timer = 0
 loop = true
@@ -9,15 +9,19 @@ c = canv.getContext('2d')
 console.log(x)
 
 function animate() {
+    amplitude = 40
+    space = 20
+    at = 0.3
+    contnumber = 120
     conts = []
     conts2 = []
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
-    for (i = 0; i < 75;i++) {
+    for (i = 0; i < contnumber;i++) {
         if (timer - x*0.1 >= 0) {
-            if (30 - i*0.3 >= 0) {
-            y = starty + (30 - i*0.3)*Math.sin(0 - 0.4*(timer - x*0.1))
+            if (amplitude -i*at*amplitude*0.03 >= 0) {
+            y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
             }else{
                 y = starty
             }
@@ -27,23 +31,24 @@ function animate() {
         conts.push({index:i,y: y - starty})
         conts2.push({index: i, y: y - starty})
         c.beginPath()
-        //c.arc(x + radius + 0.6,y,radius,0,2*Math.PI)
+        //c.arc(x + radius + space,y,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
         c.stroke()
         c.beginPath()
-        //c.arc(x + radius - 2,y - 2,radius - radius*0.6,0,2*Math.PI)
+        //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
         c.fillStyle = 'white'
         c.fill()
         x+= 2*radius
         }
 
         x = 0
-        for (i = 0; i < 75;i++) {
+        lastx = space + 2*radius*(contnumber)
+        for (i = 0; i < contnumber;i++) {
             if (timer - x*0.1 >= 0) {
-                if (30 - i*0.3 >= 0) {
-                    y = starty + (30 - i*0.3)*Math.sin(0 - 0.4*(timer - x*0.1))
+                if (amplitude -i*at*amplitude*0.03 >= 0) {
+                    y = starty + -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
                     }else{
                         y = starty
                     }
@@ -51,36 +56,45 @@ function animate() {
             }else{
                 y = starty
             }
-            conts2[74 - i].y = y - starty
+            conts2[contnumber - 1 - i].y = y - starty
             
             c.beginPath()
-            //c.arc(300 - x - radius - 0.6,y,radius,0,2*Math.PI)
+           // c.arc(lastx - x - radius,y,radius,0,2*Math.PI)
             c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
             c.beginPath()
-            //c.arc(300 - x - radius - 2,y - 2,radius - radius*0.6,0,2*Math.PI)
+            //c.arc(300 - x - radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
             }
 
-        constall = []
+        contsall = []
         for (cont in conts) {
-            constall.push({index:cont,y:conts[cont].y + conts2[cont].y})
+            contsall.push({index:cont,y:conts[cont].y + conts2[cont].y})
         }
         
         x = 0
-        for (i = 0; i < 75;i++) {
+        for (i = 0; i < contnumber/2;i++) {
             c.beginPath()
-            c.arc(x + radius + 0.6,constall[i].y + starty,radius,0,2*Math.PI)
+            c.moveTo(x + radius + space,contsall[i].y + starty)
+            //c.lineTo(0,9)
+            x+= 2*radius
+            c.lineTo(x + radius + space,contsall[i + 1].y + starty)
+            c.stroke()
+            }
+            x = 0
+        for (i = 0; i < contnumber/2;i++) {
+            c.beginPath()
+            c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
             c.beginPath()
-            //c.arc(x + radius - 2,y - 2,radius - radius*0.6,0,2*Math.PI)
+            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
