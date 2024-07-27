@@ -13,7 +13,7 @@ function animate() {
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
-    for (i = 0; i < 40;i++) {
+    for (i = 0; i < 37;i++) {
         if (timer - x*0.1 >= 0) {
             y = starty + 30*Math.sin(0 - 0.4*(timer - x*0.1))
         }else{
@@ -30,8 +30,8 @@ function animate() {
         c.fillStyle = 'white'
         c.fill()
         x+= 2*radius
-        
         }
+
         timer+= 0.03
 if (loop == true) {
 requestAnimationFrame(animate)
