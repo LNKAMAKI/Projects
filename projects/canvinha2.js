@@ -173,3 +173,99 @@ pky += 2
             pokebolas[a].velx = sumparhor1 + velax
             pokebolas[a].vely = (sumparver1 + velay)*-1
         }
+
+
+        for (i = 0; i < contnumber;i++) {
+        
+            canmove = true
+            
+            if (timer - x*0.1 >= 0) {
+                if (type == 'pulse') {
+                if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
+                y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0 && conts[i].move == true){
+                    y = starty
+                    conts[i].move = false
+                }
+            }else{
+                if (amplitude -i*at*amplitude*0.03 >= 0) {
+                    y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }else{
+                        y = starty
+                        conts[i].move = false
+                    }
+            }
+            }else{
+                y = starty
+            }
+    
+            if (conts[i].move == false && type == 'pulse') {
+                y = starty
+            }
+           
+            conts[i].y = y - starty
+            c.beginPath()
+            //c.arc(x + radius + space,y,radius,0,2*Math.PI)
+            c.fillStyle = 'red'
+            c.fill()
+            c.strokeStyle = 'black'
+            c.stroke()
+            c.beginPath()
+            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            c.fillStyle = 'white'
+            c.fill()
+            x+= 2*radius
+            }
+        
+    
+    
+            x = 0
+            lastx = space + 2*radius*(contnumber)
+            for (i = 0; i < contnumber;i++) {
+                if (timer - x*0.1 >= 0) {
+                if (type == 'pulse') {
+                    if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
+                        if (fixo == false) {
+                            y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        }else{
+                            y = starty - (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        }
+                    }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
+                        y = starty
+                        conts2[i].move = false
+                    }
+                }else{
+                    if (amplitude -i*at*amplitude*0.03 >= 0) {
+                        if (fixo == false) {
+                            y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        }else{
+                            y = starty - (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        }
+                        }else{
+                            y = starty
+                            conts2[i].move = false
+                        }
+                }
+                }else{
+                    y = starty
+                }
+    
+                if (conts2[i].move == false && type == 'pulse') {
+                    y = starty
+                    }
+    
+                conts2[contnumber - 1 - i].y = y - starty
+                
+                
+                c.beginPath()
+                //c.arc(lastx - x - radius,y,radius,0,2*Math.PI)
+                c.fillStyle = 'blue'
+                c.fill()
+                c.strokeStyle = 'black'
+                c.stroke()
+                c.beginPath()
+                //c.arc(300 - x - radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+                c.fillStyle = 'white'
+                c.fill()
+                x+= 2*radius
+                }

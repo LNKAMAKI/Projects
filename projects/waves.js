@@ -8,7 +8,7 @@ canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
 
-contnumber = 120
+contnumber = 98
 conts = []
 conts2 = []
 for (i = 0; i < contnumber;i++) {
@@ -17,11 +17,12 @@ for (i = 0; i < contnumber;i++) {
 }
 
 type = 'pulse'
+fixo = true
+drawball = true
 function animate() {
     amplitude = 40
     space = 20
     at = 0.3
-    contnumber = 120
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -33,7 +34,7 @@ function animate() {
             if (type == 'pulse') {
             if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
             y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-            }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
+            }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0 && conts[i].move == true){
                 y = starty
                 conts[i].move = false
             }
@@ -75,14 +76,22 @@ function animate() {
             if (timer - x*0.1 >= 0) {
             if (type == 'pulse') {
                 if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
-                y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    if (fixo == false) {
+                        y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }else{
+                        y = starty - (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }
                 }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
                     y = starty
                     conts2[i].move = false
                 }
             }else{
                 if (amplitude -i*at*amplitude*0.03 >= 0) {
-                    y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    if (fixo == false) {
+                        y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }else{
+                        y = starty - (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }
                     }else{
                         y = starty
                         conts2[i].move = false
@@ -119,7 +128,7 @@ function animate() {
         }
         
         x = 0
-        /*
+        
         for (i = 0; i < contnumber/2;i++) {
             if (i < contnumber/2 - 1) {
             c.beginPath()
@@ -130,7 +139,7 @@ function animate() {
             c.stroke()
             }
             }
-            */
+            
             x = 0
         for (i = 0; i < contnumber/2;i++) {
             c.beginPath()
@@ -145,7 +154,9 @@ function animate() {
             if (contsall[i].y + starty > starty) {
                 //loop = false
             }
+            if (drawball == true) {
             c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
+            }
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'
@@ -165,9 +176,13 @@ requestAnimationFrame(animate)
 animate()
 }
 
+
 window.addEventListener('keypress',function (event) {
     //this.window.alert(event.key)
     if (event.key == 'p') {
         loop = false
+    }
+    if (event.key == 'm') {
+        //this.window.alert('m')
     }
 }) 
