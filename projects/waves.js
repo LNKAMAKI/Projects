@@ -15,11 +15,13 @@ for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:true})
     conts2.push({y:0,move:true})
 }
+
+type = 'pulse'
 function animate() {
     amplitude = 40
     space = 20
     at = 0.3
-    contnumber = 60
+    contnumber = 120
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -28,6 +30,7 @@ function animate() {
         canmove = true
         
         if (timer - x*0.1 >= 0) {
+            if (type == 'pulse') {
             if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
             y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
             }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
@@ -35,10 +38,18 @@ function animate() {
                 conts[i].move = false
             }
         }else{
+            if (amplitude -i*at*amplitude*0.03 >= 0) {
+                y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                }else{
+                    y = starty
+                    conts[i].move = false
+                }
+        }
+        }else{
             y = starty
         }
 
-        if (conts[i].move == false) {
+        if (conts[i].move == false && type == 'pulse') {
             y = starty
         }
        
@@ -62,19 +73,26 @@ function animate() {
         lastx = space + 2*radius*(contnumber)
         for (i = 0; i < contnumber;i++) {
             if (timer - x*0.1 >= 0) {
+            if (type == 'pulse') {
                 if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
+                y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
+                    y = starty
+                    conts2[i].move = false
+                }
+            }else{
+                if (amplitude -i*at*amplitude*0.03 >= 0) {
                     y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-                    }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
+                    }else{
                         y = starty
-                        //loop = false
                         conts2[i].move = false
                     }
-               // y = starty + 30*Math.sin(0 - 0.4*(timer - x*0.1))
+            }
             }else{
                 y = starty
             }
 
-            if (conts2[i].move == false) {
+            if (conts2[i].move == false && type == 'pulse') {
                 y = starty
                 }
 
