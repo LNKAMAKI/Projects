@@ -4,11 +4,11 @@ let x = 0
 timer = 0
 loop = true
 addpulse = false
+times 
 function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-
 contnumber = 70
 conts = []
 conts2 = []
@@ -18,7 +18,7 @@ for (i = 0; i < contnumber;i++) {
 }
 
 type = 'pulse'
-fixo = true
+fixo = false
 drawball = false
 function animate() {
     amplitude = 40
@@ -49,30 +49,30 @@ function animate() {
         if (timer - x*0.1 >= 0) {
             if (type == 'pulse') {
             if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
-            y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+            y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
             }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0 && conts[i].move == true){
-                y = starty
+                y = 0
                 conts[i].move = false
             }
         }else{
             if (amplitude -i*at*amplitude*0.03 >= 0) {
-                y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
                 }else{
-                    y = starty
+                    y = 0
                     conts[i].move = false
                 }
         }
         }else{
-            y = starty
+            y = 0
         }
 
         if (conts[i].move == false && type == 'pulse') {
-            y = starty
+            y = 0
         }
        
-        conts[i].y += y - starty
+        conts[i].y += y
         c.beginPath()
-        c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        //c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -93,35 +93,35 @@ function animate() {
             if (type == 'pulse') {
                 if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
                     if (fixo == false) {
-                        y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
                     }else{
-                        y = starty - (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
                     }
                 }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
-                    y = starty
+                    y = 0
                     conts2[i].move = false
                 }
             }else{
                 if (amplitude -i*at*amplitude*0.03 >= 0) {
                     if (fixo == false) {
-                        y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
                     }else{
-                        y = starty - (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y =  -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
                     }
                     }else{
-                        y = starty
+                        y = 0
                         conts2[i].move = false
                     }
             }
             }else{
-                y = starty
+                y = 0
             }
 
             if (conts2[i].move == false && type == 'pulse') {
-                y = starty
+                y = 0
                 }
 
-            conts2[contnumber - 1 - i].y += y - starty
+            conts2[contnumber - 1 - i].y += y
             
             
             c.beginPath()
@@ -152,7 +152,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            //c.stroke()
+            c.stroke()
             }
             }
             
