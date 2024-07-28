@@ -28,10 +28,11 @@ function animate() {
         }else{
             y = starty
         }
+       
         conts.push({index:i,y: y - starty})
         conts2.push({index: i, y: y - starty})
         c.beginPath()
-        //c.arc(x + radius + space,y,radius,0,2*Math.PI)
+        c.arc(x + radius + space,y,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -43,12 +44,13 @@ function animate() {
         x+= 2*radius
         }
 
+
         x = 0
         lastx = space + 2*radius*(contnumber)
         for (i = 0; i < contnumber;i++) {
             if (timer - x*0.1 >= 0) {
                 if (amplitude -i*at*amplitude*0.03 >= 0) {
-                    y = starty + -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
                     }else{
                         y = starty
                     }
@@ -71,6 +73,7 @@ function animate() {
             x+= 2*radius
             }
 
+
         contsall = []
         for (cont in conts) {
             contsall.push({index:cont,y:conts[cont].y + conts2[cont].y})
@@ -78,6 +81,7 @@ function animate() {
         
         x = 0
         for (i = 0; i < contnumber/2;i++) {
+            if (i < contnumber/2 - 1) {
             c.beginPath()
             c.moveTo(x + radius + space,contsall[i].y + starty)
             //c.lineTo(0,9)
@@ -85,9 +89,17 @@ function animate() {
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
             c.stroke()
             }
+            }
             x = 0
         for (i = 0; i < contnumber/2;i++) {
             c.beginPath()
+            if (i == (contnumber/2 - 1)) {
+                c.fillStyle = 'pink'
+                c.beginPath()
+                c.ellipse(x + 2*radius + space + 10,contsall[i].y + starty, 10, 5, 0, 0, 2*Math.PI)
+                c.stroke()
+                c.beginPath()
+            }
             c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
             c.fill()
@@ -100,7 +112,7 @@ function animate() {
             x+= 2*radius
             }
 
-        timer+= 0.07
+        timer+= 0.1
 if (loop == true) {
 requestAnimationFrame(animate)
 }
