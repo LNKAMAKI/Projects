@@ -19,7 +19,7 @@ function animate() {
     amplitude = 40
     space = 20
     at = 0.3
-    contnumber = 120
+    contnumber = 60
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -28,9 +28,6 @@ function animate() {
         canmove = true
         
         if (timer - x*0.1 >= 0) {
-            if (Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
-               // window.alert('maior')
-            }
             if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
             y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
             }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
@@ -47,7 +44,7 @@ function animate() {
        
         conts[i].y = y - starty
         c.beginPath()
-        c.arc(x + radius + space,y,radius,0,2*Math.PI)
+        //c.arc(x + radius + space,y,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -65,16 +62,24 @@ function animate() {
         lastx = space + 2*radius*(contnumber)
         for (i = 0; i < contnumber;i++) {
             if (timer - x*0.1 >= 0) {
-                if (amplitude -i*at*amplitude*0.03 >= 0) {
+                if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
                     y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-                    }else{
+                    }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
                         y = starty
+                        //loop = false
+                        conts2[i].move = false
                     }
                // y = starty + 30*Math.sin(0 - 0.4*(timer - x*0.1))
             }else{
                 y = starty
             }
+
+            if (conts2[i].move == false) {
+                y = starty
+                }
+
             conts2[contnumber - 1 - i].y = y - starty
+            
             
             c.beginPath()
             //c.arc(lastx - x - radius,y,radius,0,2*Math.PI)
@@ -122,7 +127,7 @@ function animate() {
             if (contsall[i].y + starty > starty) {
                 //loop = false
             }
-            //c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
+            c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'
