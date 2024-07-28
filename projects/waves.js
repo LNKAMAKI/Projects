@@ -19,20 +19,33 @@ function animate() {
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
     for (i = 0; i < contnumber;i++) {
+        
+        canmove = true
+        
         if (timer - x*0.1 >= 0) {
-            if (amplitude -i*at*amplitude*0.03 >= 0) {
+            if (Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
+               // window.alert('maior')
+            }
+            if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
             y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-            }else{
+            }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
                 y = starty
+                canmove = false
+                loop = false
             }
         }else{
             y = starty
         }
+
+        if (conts[i] != )
+        if (conts[i].move == false) {
+            y = starty
+        }
        
-        conts.push({index:i,y: y - starty})
+        conts.push({index:i,y: y - starty,move:canmove})
         conts2.push({index: i, y: y - starty})
         c.beginPath()
-        //c.arc(x + radius + space,y,radius,0,2*Math.PI)
+        c.arc(x + radius + space,y,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -43,6 +56,7 @@ function animate() {
         c.fill()
         x+= 2*radius
         }
+    
 
 
         x = 0
@@ -61,7 +75,7 @@ function animate() {
             conts2[contnumber - 1 - i].y = y - starty
             
             c.beginPath()
-           // c.arc(lastx - x - radius,y,radius,0,2*Math.PI)
+            //c.arc(lastx - x - radius,y,radius,0,2*Math.PI)
             c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
@@ -80,6 +94,7 @@ function animate() {
         }
         
         x = 0
+        /*
         for (i = 0; i < contnumber/2;i++) {
             if (i < contnumber/2 - 1) {
             c.beginPath()
@@ -90,6 +105,7 @@ function animate() {
             c.stroke()
             }
             }
+            */
             x = 0
         for (i = 0; i < contnumber/2;i++) {
             c.beginPath()
@@ -100,6 +116,9 @@ function animate() {
                 c.ellipse(x + 2*radius + space + elradius + 0.5,contsall[i].y + starty, elradius, elradius/2, 0, 0, 2*Math.PI)
                 c.stroke()
                 c.beginPath()
+            }
+            if (contsall[i].y + starty > starty) {
+                //loop = false
             }
             //c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
