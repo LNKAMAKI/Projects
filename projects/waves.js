@@ -8,13 +8,18 @@ canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
 
+contnumber = 120
+conts = []
+conts2 = []
+for (i = 0; i < contnumber;i++) {
+    conts.push({y:0,move:true})
+    conts2.push({y:0,move:true})
+}
 function animate() {
     amplitude = 40
     space = 20
     at = 0.3
     contnumber = 120
-    conts = []
-    conts2 = []
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -30,20 +35,17 @@ function animate() {
             y = starty + (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
             }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
                 y = starty
-                canmove = false
-                loop = false
+                conts[i].move = false
             }
         }else{
             y = starty
         }
 
-        if (conts[i] != )
         if (conts[i].move == false) {
             y = starty
         }
        
-        conts.push({index:i,y: y - starty,move:canmove})
-        conts2.push({index: i, y: y - starty})
+        conts[i].y = y - starty
         c.beginPath()
         c.arc(x + radius + space,y,radius,0,2*Math.PI)
         c.fillStyle = 'red'
