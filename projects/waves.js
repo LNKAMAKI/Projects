@@ -32,7 +32,7 @@ function animate() {
         conts.push({index:i,y: y - starty})
         conts2.push({index: i, y: y - starty})
         c.beginPath()
-        c.arc(x + radius + space,y,radius,0,2*Math.PI)
+        //c.arc(x + radius + space,y,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -96,11 +96,12 @@ function animate() {
             if (i == (contnumber/2 - 1)) {
                 c.fillStyle = 'pink'
                 c.beginPath()
-                c.ellipse(x + 2*radius + space + 10,contsall[i].y + starty, 10, 5, 0, 0, 2*Math.PI)
+                elradius = 6
+                c.ellipse(x + 2*radius + space + elradius + 0.5,contsall[i].y + starty, elradius, elradius/2, 0, 0, 2*Math.PI)
                 c.stroke()
                 c.beginPath()
             }
-            c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
+            //c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'
