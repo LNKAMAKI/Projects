@@ -56,29 +56,19 @@ function animate() {
         canmove = true
         
         if (timers[current] - x*0.1 >= 0) {
-            if (type == 'pulse') {
-            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
+            if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
                 if (direct[current] == 'u') {
             y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                 }else{
                     y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                 }
-            }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
+            }
+            
+            if (Math.round(Math.sin(0 - vels[current]*(timers[current] - x*0.1))) == 1){
+                window.alert('aaaa')
                 y = 0
                 conts[i].move[current] = false
             }
-        }else{
-            if (amps[current] -i*at*amps[current]*0.03 >= 0) {
-                if (direct[current] == 'u') {
-                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                        }else{
-                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                        }
-                }else{
-                    y = 0
-                    conts[i].move[current] = false
-                }
-        }
         }else{
             y = 0
         }
@@ -87,9 +77,16 @@ function animate() {
             y = 0
         }
        
-        conts[i].y += y
+
+        
         c.beginPath()
-        //c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        if (i != 0.1) {
+        conts[i].y += y
+        c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        }else{
+        conts[i].y += mousey - starty
+        c.arc(x + radius + space,mousey,radius,0,2*Math.PI)
+        }
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -101,98 +98,6 @@ function animate() {
         x+= 2*radius
         }
     }
-
-
-        x = 0
-        lastx = space + 2*radius*(contnumber)
-        for (current in timers) {
-            x = 0
-        for (i = 0; i < contnumber;i++) {
-            
-            canmove = true
-            
-            if (timers[current] - x*0.1 >= 0) {
-                if (type == 'pulse') {
-                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
-                    if (fixo == false) {
-                        if (direct[current] == 'u') {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                        }else{
-                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                        }
-                    }else{
-                        if (direct[current] == 'd') {
-                            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                            }else{
-                                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                            }
-                    }
-                }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
-                    y = 0
-                    if (contnumber - 1 - i == 0) {
-                    //window.alert('PARE')
-                    timers[current]= 0
-
-                    for (l in conts) {
-                        //conts[l].move = true
-                        conts[l].move[current] = true
-                        conts2[l].move[current] = true
-                    }
-                   // amps[current] = - amps[current]
-                   if (fixo == false) {
-                   if (direct[current] == 'u') {
-                    direct[current] = 'd'
-                   }else{
-                    direct[current] = 'u'
-                   }
-                }else{
-                    if (direct[current] == 'u') {
-                        direct[current] = 'u'
-                       }else{
-                        direct[current] = 'd'
-                       }
-                }
-                    amps[current] -= amplitude*0.7
-                    vels[current] -= vel*0.2
-                    }else{
-                    conts2[contnumber - 1 - i].move[current] = false
-                    }
-                }
-            }else{
-                if (amps[current] -i*at*amps[current]*0.03 >= 0) {
-                    if (fixo == false) {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                    }else{
-                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                    }
-                    }else{
-                        y = 0
-                        conts2[contnumber - 1 - i].move[current] = false
-                    }
-            }
-            }else{
-                y = 0
-            }
-    
-            if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
-                y = 0
-            }
-           
-            //conts2[i].y += y
-            conts2[contnumber - 1 - i].y += y
-            c.beginPath()
-            //c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
-            c.fillStyle = 'blue'
-            c.fill()
-            c.strokeStyle = 'black'
-            c.stroke()
-            c.beginPath()
-            //mc.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-            c.fillStyle = 'white'
-            c.fill()
-            x+= 2*radius
-            }
-        }
 
 
         contsall = []
@@ -209,7 +114,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            c.stroke()
+            //c.stroke()
             }
             }
             
@@ -228,7 +133,7 @@ function animate() {
                 //loop = false
             }
             if (drawball == true) {
-            c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
+            //c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             }
             c.fillStyle = 'red'
             c.fill()
@@ -294,7 +199,7 @@ window.addEventListener('mousemove',function(event) {
     dif = wWidth - cWidth
     
     mousex = ((event.x - dif/2)/cWidth)*300
-    mousey = ((event.y - 2.8)/cHeight)*150
+    mousey = ((event.y)/cHeight)*150
     this.document.getElementById('x').innerText = mousex
     this.document.getElementById('y').innerText = mousey
    
