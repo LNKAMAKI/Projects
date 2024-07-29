@@ -13,6 +13,8 @@ conts2 = []
 timers = [0]
 amplitude = 40
 amps = [amplitude]
+vel = 0.4
+vels = [vel]
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
     conts2.push({y:0,move:[]})
@@ -54,15 +56,15 @@ function animate() {
         
         if (timers[current] - x*0.1 >= 0) {
             if (type == 'pulse') {
-            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
-            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
-            }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
+            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
+            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+            }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
                 y = 0
                 conts[i].move[current] = false
             }
         }else{
             if (amps[current] -i*at*amps[current]*0.03 >= 0) {
-                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                 }else{
                     y = 0
                     conts[i].move[current] = false
@@ -102,13 +104,13 @@ function animate() {
             
             if (timers[current] - x*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
+                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
                     if (fixo == false) {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                     }else{
-                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                     }
-                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
+                }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
                     y = 0
                     if (contnumber - 1 - i == 0) {
                     //window.alert('PARE')
@@ -119,7 +121,8 @@ function animate() {
                         conts[l].move[current] = true
                         conts2[l].move[current] = true
                     }
-                    amps[current] -= 10
+                   // amps[current] = - amps[current]
+                    vels[current] -= vel*0.1
                     }else{
                     conts2[contnumber - 1 - i].move[current] = false
                     }
@@ -127,9 +130,9 @@ function animate() {
             }else{
                 if (amps[current] -i*at*amps[current]*0.03 >= 0) {
                     if (fixo == false) {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                     }else{
-                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                     }
                     }else{
                         y = 0
@@ -175,7 +178,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            //c.stroke()
+            c.stroke()
             }
             }
             
@@ -238,6 +241,7 @@ window.addEventListener('keyup',function (event) {
     //this.window.alert('NOW')
     timers.push(0)
     amps.push(amplitude)
+    vels.push(vel)
     for (a in conts) {
         conts[a].move.push(true)
     }
