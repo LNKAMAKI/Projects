@@ -15,6 +15,7 @@ amplitude = 40
 amps = [amplitude]
 vel = 0.4
 vels = [vel]
+direct = ['u']
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
     conts2.push({y:0,move:[]})
@@ -57,14 +58,22 @@ function animate() {
         if (timers[current] - x*0.1 >= 0) {
             if (type == 'pulse') {
             if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
+                if (direct[current] == 'u') {
             y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                }else{
+                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                }
             }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
                 y = 0
                 conts[i].move[current] = false
             }
         }else{
             if (amps[current] -i*at*amps[current]*0.03 >= 0) {
-                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                if (direct[current] == 'u') {
+                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                        }else{
+                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                        }
                 }else{
                     y = 0
                     conts[i].move[current] = false
@@ -80,7 +89,7 @@ function animate() {
        
         conts[i].y += y
         c.beginPath()
-        //c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -122,8 +131,8 @@ function animate() {
                         conts2[l].move[current] = true
                     }
                    // amps[current] = - amps[current]
-                    amps[current] -= amplitude*0.8
-                    vels[current] -= vel*0.5
+                    amps[current] -= amplitude*0.2
+                    vels[current] -= vel*0.2
                     }else{
                     conts2[contnumber - 1 - i].move[current] = false
                     }
@@ -151,7 +160,7 @@ function animate() {
             //conts2[i].y += y
             conts2[contnumber - 1 - i].y += y
             c.beginPath()
-            //c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
+            c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
@@ -179,7 +188,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            c.stroke()
+            //c.stroke()
             }
             }
             
@@ -198,7 +207,7 @@ function animate() {
                 //loop = false
             }
             if (drawball == true) {
-            c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
+           // c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             }
             c.fillStyle = 'red'
             c.fill()
