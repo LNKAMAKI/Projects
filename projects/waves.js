@@ -119,6 +119,7 @@ function animate() {
                         conts[l].move[current] = true
                         conts2[l].move[current] = true
                     }
+                    amps[current] -= 10
                     }else{
                     conts2[contnumber - 1 - i].move[current] = false
                     }
