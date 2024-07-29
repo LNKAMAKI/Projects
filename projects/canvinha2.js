@@ -174,7 +174,6 @@ pky += 2
             pokebolas[a].vely = (sumparver1 + velay)*-1
         }
 
-
         for (current in timers) {
             x = 0
         for (i = 0; i < contnumber;i++) {
@@ -183,39 +182,31 @@ pky += 2
             
             if (timers[current] - x*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
-                    if (fixo == false) {
-                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-                    }else{
-                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-                    }
-                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts2[i].move[current] == true){
+                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
+                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
                     y = 0
-                    conts2[i].move[current] = false
+                    conts[i].move[current] = false
                 }
             }else{
-                if (amplitude -i*at*amplitude*0.03 >= 0) {
-                    if (fixo == false) {
-                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-                    }else{
-                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-                    }
+                if (amps[current] -i*at*amps[current]*0.03 >= 0) {
+                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }else{
                         y = 0
-                        conts2[i].move[current] = false
+                        conts[i].move[current] = false
                     }
             }
             }else{
                 y = 0
             }
     
-            if (conts2[i].move[current] == false && type == 'pulse') {
+            if (conts[i].move[current] == false && type == 'pulse') {
                 y = 0
             }
            
-            conts2[i].y += y
+            conts[i].y += y
             c.beginPath()
-            c.arc(lastx - x - radius,conts2[i].y + starty,radius,0,2*Math.PI)
+            c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'

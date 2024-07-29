@@ -11,6 +11,8 @@ contnumber = 60
 conts = []
 conts2 = []
 timers = [0]
+amplitude = 40
+amps = [amplitude]
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
     conts2.push({y:0,move:[]})
@@ -25,7 +27,6 @@ type = 'pulse'
 fixo = false
 drawball = false
 function animate() {
-    amplitude = 40
     space = 20
     at = 0.3
     x = 0
@@ -53,15 +54,15 @@ function animate() {
         
         if (timers[current] - x*0.1 >= 0) {
             if (type == 'pulse') {
-            if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
-            y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
+            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
             }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
                 y = 0
                 conts[i].move[current] = false
             }
         }else{
-            if (amplitude -i*at*amplitude*0.03 >= 0) {
-                y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+            if (amps[current] -i*at*amps[current]*0.03 >= 0) {
+                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                 }else{
                     y = 0
                     conts[i].move[current] = false
@@ -89,7 +90,6 @@ function animate() {
         x+= 2*radius
         }
     }
-    
 
 
         x = 0
@@ -102,17 +102,17 @@ function animate() {
             
             if (timers[current] - x*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
+                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
                     if (fixo == false) {
-                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }else{
-                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }
                 }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
                     y = 0
                     if (contnumber - 1 - i == 0) {
                     //window.alert('PARE')
-                    timers[0]= 0
+                    timers[current]= 0
 
                     for (l in conts) {
                         //conts[l].move = true
@@ -124,11 +124,11 @@ function animate() {
                     }
                 }
             }else{
-                if (amplitude -i*at*amplitude*0.03 >= 0) {
+                if (amps[current] -i*at*amps[current]*0.03 >= 0) {
                     if (fixo == false) {
-                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }else{
-                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }
                     }else{
                         y = 0
@@ -236,10 +236,11 @@ window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
     timers.push(0)
+    amps.push(amplitude)
     for (a in conts) {
         conts[a].move.push(true)
     }
-    for (a in conts) {
+    for (a in conts2) {
         conts2[a].move.push(true)
     }
     }
