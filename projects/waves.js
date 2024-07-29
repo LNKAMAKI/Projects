@@ -4,21 +4,25 @@ let x = 0
 timer = 0
 loop = true
 addpulse = false
-times 
 function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 70
+contnumber = 60
 conts = []
 conts2 = []
+timers = [0]
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:true})
-    conts2.push({y:0,move:true})
+    conts.push({y:0,move:[]})
+    conts2.push({y:0,move:[]})
+
+    for (tic in timers) {
+        conts[i].move.push(true)
+    }
 }
 
 type = 'pulse'
-fixo = false
+fixo = true
 drawball = false
 function animate() {
     amplitude = 40
@@ -40,33 +44,34 @@ function animate() {
             conts2[l].y = 10
         }
     }
-
-
+   
+    for (current in timers) {
+        x = 0
     for (i = 0; i < contnumber;i++) {
         
         canmove = true
         
-        if (timer - x*0.1 >= 0) {
+        if (timers[current] - x*0.1 >= 0) {
             if (type == 'pulse') {
-            if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
-            y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
-            }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0 && conts[i].move == true){
+            if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
+            y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+            }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
                 y = 0
-                conts[i].move = false
+                conts[i].move[current] = false
             }
         }else{
             if (amplitude -i*at*amplitude*0.03 >= 0) {
-                y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                 }else{
                     y = 0
-                    conts[i].move = false
+                    conts[i].move[current] = false
                 }
         }
         }else{
             y = 0
         }
 
-        if (conts[i].move == false && type == 'pulse') {
+        if (conts[i].move[current] == false && type == 'pulse') {
             y = 0
         }
        
@@ -83,6 +88,7 @@ function animate() {
         c.fill()
         x+= 2*radius
         }
+    }
     
 
 
@@ -185,6 +191,9 @@ function animate() {
             }
 
         timer+= 0.1
+        for (k in timers){
+            timers[k] += 0.1
+        }
 if (loop == true) {
 requestAnimationFrame(animate)
 }
@@ -212,7 +221,10 @@ window.addEventListener('keydown',function (event) {
 window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
-    addpulse = true
+    timers.push(0)
+    for (a in conts) {
+        conts[a].move.push(true)
+    }
     }
     
 })
