@@ -7,7 +7,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 50
+contnumber = 60
 conts = []
 conts2 = []
 timers = [0]
@@ -22,7 +22,7 @@ for (i = 0; i < contnumber;i++) {
 }
 
 type = 'pulse'
-fixo = true
+fixo = false
 drawball = false
 function animate() {
     amplitude = 40
@@ -77,7 +77,7 @@ function animate() {
        
         conts[i].y += y
         c.beginPath()
-        //c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -108,9 +108,20 @@ function animate() {
                     }else{
                         y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }
-                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts2[i].move[current] == true){
+                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
                     y = 0
-                    conts2[i].move[current] = false
+                    if (contnumber - 1 - i == 0) {
+                    //window.alert('PARE')
+                    timers[0]= 0
+
+                    for (l in conts) {
+                        //conts[l].move = true
+                        conts[l].move[current] = true
+                        conts2[l].move[current] = true
+                    }
+                    }else{
+                    conts2[contnumber - 1 - i].move[current] = false
+                    }
                 }
             }else{
                 if (amplitude -i*at*amplitude*0.03 >= 0) {
@@ -121,22 +132,22 @@ function animate() {
                     }
                     }else{
                         y = 0
-                        conts2[i].move[current] = false
+                        conts2[contnumber - 1 - i].move[current] = false
                     }
             }
             }else{
                 y = 0
             }
     
-            if (conts2[i].move[current] == false && type == 'pulse') {
+            if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
                 y = 0
             }
            
             //conts2[i].y += y
             conts2[contnumber - 1 - i].y += y
             c.beginPath()
-            //c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
-            c.fillStyle = 'red'
+            c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
+            c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
@@ -163,7 +174,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            c.stroke()
+            //c.stroke()
             }
             }
             
