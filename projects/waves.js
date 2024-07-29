@@ -27,7 +27,7 @@ for (i = 0; i < contnumber;i++) {
 
 type = 'pulse'
 fixo = false
-drawball = false
+drawball = true
 function animate() {
     space = 20
     at = 0.3
@@ -80,7 +80,7 @@ function animate() {
        
         conts[i].y += y
         c.beginPath()
-        c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        //c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -122,7 +122,8 @@ function animate() {
                         conts2[l].move[current] = true
                     }
                    // amps[current] = - amps[current]
-                    vels[current] -= vel*0.1
+                    amps[current] -= amplitude*0.8
+                    vels[current] -= vel*0.5
                     }else{
                     conts2[contnumber - 1 - i].move[current] = false
                     }
@@ -150,7 +151,7 @@ function animate() {
             //conts2[i].y += y
             conts2[contnumber - 1 - i].y += y
             c.beginPath()
-            c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
+            //c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
