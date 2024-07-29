@@ -175,44 +175,55 @@ pky += 2
         }
 
 
-                for (i = 0; i < contnumber;i++) {
-        
-                    canmove = true
-                    
-                    if (timers[current] - x*0.1 >= 0) {
-                        if (type == 'pulse') {
-                        if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
-                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
-                        }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts[i].move == true){
-                            y = 0
-                            conts[i].move = false
-                        }
-                    }else{
-                        if (amplitude -i*at*amplitude*0.03 >= 0) {
-                            y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
-                            }else{
-                                y = 0
-                                conts[i].move = false
-                            }
-                    }
-                    }else{
-                        y = 0
-                    }
+        for (current in timers) {
+            x = 0
+        for (i = 0; i < contnumber;i++) {
             
-                    if (conts[i].move == false && type == 'pulse') {
+            canmove = true
+            
+            if (timers[current] - x*0.1 >= 0) {
+                if (type == 'pulse') {
+                if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
+                    if (fixo == false) {
+                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }else{
+                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }
+                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts2[i].move[current] == true){
+                    y = 0
+                    conts2[i].move[current] = false
+                }
+            }else{
+                if (amplitude -i*at*amplitude*0.03 >= 0) {
+                    if (fixo == false) {
+                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }else{
+                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                    }
+                    }else{
                         y = 0
+                        conts2[i].move[current] = false
                     }
-                   
-                    conts[i].y += y
-                    c.beginPath()
-                    //c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
-                    c.fillStyle = 'red'
-                    c.fill()
-                    c.strokeStyle = 'black'
-                    c.stroke()
-                    c.beginPath()
-                    //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-                    c.fillStyle = 'white'
-                    c.fill()
-                    x+= 2*radius
-                    }
+            }
+            }else{
+                y = 0
+            }
+    
+            if (conts2[i].move[current] == false && type == 'pulse') {
+                y = 0
+            }
+           
+            conts2[i].y += y
+            c.beginPath()
+            c.arc(lastx - x - radius,conts2[i].y + starty,radius,0,2*Math.PI)
+            c.fillStyle = 'red'
+            c.fill()
+            c.strokeStyle = 'black'
+            c.stroke()
+            c.beginPath()
+            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            c.fillStyle = 'white'
+            c.fill()
+            x+= 2*radius
+            }
+        }

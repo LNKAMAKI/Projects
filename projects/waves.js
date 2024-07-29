@@ -1,14 +1,13 @@
 let radius = 2
 let starty = 100
 let x = 0
-timer = 0
 loop = true
 addpulse = false
 function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 60
+contnumber = 50
 conts = []
 conts2 = []
 timers = [0]
@@ -18,6 +17,7 @@ for (i = 0; i < contnumber;i++) {
 
     for (tic in timers) {
         conts[i].move.push(true)
+        conts2[i].move.push(true)
     }
 }
 
@@ -94,54 +94,59 @@ function animate() {
 
         x = 0
         lastx = space + 2*radius*(contnumber)
+        for (current in timers) {
+            x = 0
         for (i = 0; i < contnumber;i++) {
-            if (timer - x*0.1 >= 0) {
-            if (type == 'pulse') {
-                if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timer - x*0.1)) <= 0) {
+            
+            canmove = true
+            
+            if (timers[current] - x*0.1 >= 0) {
+                if (type == 'pulse') {
+                if (amplitude -i*at*amplitude*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
                     if (fixo == false) {
-                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }else{
-                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }
-                }else if(Math.sin(0 - 0.4*(timer - x*0.1)) >= 0){
+                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts2[i].move[current] == true){
                     y = 0
-                    conts2[i].move = false
+                    conts2[i].move[current] = false
                 }
             }else{
                 if (amplitude -i*at*amplitude*0.03 >= 0) {
                     if (fixo == false) {
-                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y = (amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }else{
-                        y =  -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer - x*0.1))
+                        y = -(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
                     }
                     }else{
                         y = 0
-                        conts2[i].move = false
+                        conts2[i].move[current] = false
                     }
             }
             }else{
                 y = 0
             }
-
-            if (conts2[i].move == false && type == 'pulse') {
+    
+            if (conts2[i].move[current] == false && type == 'pulse') {
                 y = 0
-                }
-
+            }
+           
+            //conts2[i].y += y
             conts2[contnumber - 1 - i].y += y
-            
-            
             c.beginPath()
-            //c.arc(lastx - x - radius,y,radius,0,2*Math.PI)
-            c.fillStyle = 'blue'
+            //c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
+            c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
             c.beginPath()
-            //c.arc(300 - x - radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            //mc.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
             }
+        }
 
 
         contsall = []
@@ -190,7 +195,6 @@ function animate() {
             x+= 2*radius
             }
 
-        timer+= 0.1
         for (k in timers){
             timers[k] += 0.1
         }
@@ -212,7 +216,6 @@ window.addEventListener('keydown',function (event) {
         for (l in conts) {
             //conts[l].move = true
             conts[l].y = 0
-            //(amplitude -i*at*amplitude*0.03)*Math.sin(0 - 0.4*(timer2 - x*0.1))
         }
      
     }
@@ -224,6 +227,9 @@ window.addEventListener('keyup',function (event) {
     timers.push(0)
     for (a in conts) {
         conts[a].move.push(true)
+    }
+    for (a in conts) {
+        conts2[a].move.push(true)
     }
     }
     
