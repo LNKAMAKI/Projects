@@ -146,12 +146,20 @@ function animate() {
         }
         if ((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2) == -1.00 && timers2[current] - x*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] == true) {
             c.fontStyle = '3px'
-            c.fillStyle = 'green'
+            c.fillStyle = 'red'
             conts2[contnumber - 1 - i].move[current] = false
             conts2[contnumber - 1 - i].fixpos[current] = y
 
             if (contnumber - 1 - i == 1) {
-                window.alert('EITA')
+               // window.alert('EITA')
+              // timers2.push(0)
+              /// direct.push('u')
+              //amps.push(amplitude)
+               // vels.push(vel)
+                //for (a in conts2) {
+                  //  conts2[a].move.push(true)
+               // }
+               // timers2.push(0)
 
             }
             //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
@@ -160,7 +168,7 @@ function animate() {
             c.fontStyle = '3px'
             c.fillStyle = 'black'
             //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
-            c.fillText('I',lastx - x - radius,90)
+           // c.fillText('I',lastx - x - radius,90)
         }
         
         c.fillStyle = 'red'
