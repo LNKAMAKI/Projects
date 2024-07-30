@@ -11,6 +11,7 @@ contnumber = 60
 conts = []
 conts2 = []
 timers = [0]
+timers2 = [0]
 amplitude = 40
 amps = [amplitude]
 vel = 0.4
@@ -22,6 +23,8 @@ for (i = 0; i < contnumber;i++) {
 
     for (tic in timers) {
         conts[i].move.push(true)
+    }
+    for (tic in timers2) {
         conts2[i].move.push(true)
     }
 }
@@ -70,14 +73,10 @@ function animate() {
 
         if (conts[i].move[current] == false && type == 'pulse') {
             y = conts[i].fixpos[current]
-            //loop = false
-            //window.alert(conts[i].y)
-            //y = conts[i].y
-            //window.alert('EITA')
         }
 
         c.beginPath()
-        if (i != 0.1) {
+       
         conts[i].y += y
         if (draw2 == true) {
         c.arc(x + radius + space,y + starty,radius,0,2*Math.PI)
@@ -88,17 +87,14 @@ function animate() {
             conts[i].move[current] = false
             conts[i].fixpos[current] = y
             //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
-            c.fillText('I',x + radius + space,90)
+            //c.fillText('I',x + radius + space,90)
         }else{
             c.fontStyle = '3px'
             c.fillStyle = 'black'
             //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
-            c.fillText('I',x + radius + space,90)
+            //c.fillText('I',x + radius + space,90)
         }
-        }else{
-        //conts[i].y += mousey - starty
-        c.arc(x + radius + space,mousey,radius,0,2*Math.PI)
-        }
+        
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -113,25 +109,25 @@ function animate() {
 
 
     lastx = space + 2*radius*(contnumber)
-    for (current in timers) {
+    for (current in timers2) {
         x = 0
     for (i = 0; i < contnumber;i++) {
         
         canmove = true
         
-        if (timers[current] - x*0.1 >= 0) {
-            if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
+        if (timers2[current] - x*0.1 >= 0) {
+            if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
                 if (fixo == false) {
                 if (direct[current] == 'u') {
-            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                 }else{
-                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                 }
             }else{
                 if (direct[current] == 'd') {
-                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                         }else{
-                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                         }
             }
             }
@@ -144,28 +140,29 @@ function animate() {
         }
 
         c.beginPath()
-        if (i != 0.1) {
         conts2[contnumber - 1 - i].y += y
         if (draw2 == true) {
         c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
         }
-        if ((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2) == -1.00 && timers[current] - x*0.1 >= 0) {
+        if ((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2) == -1.00 && timers2[current] - x*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] == true) {
             c.fontStyle = '3px'
-            c.fillStyle = 'red'
+            c.fillStyle = 'green'
             conts2[contnumber - 1 - i].move[current] = false
             conts2[contnumber - 1 - i].fixpos[current] = y
-            //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
-            c.fillText('I',x + radius + space,90)
+
+            if (contnumber - 1 - i == 1) {
+                window.alert('EITA')
+
+            }
+            //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+            c.fillText('I',lastx -x - radius,90)
         }else{
             c.fontStyle = '3px'
             c.fillStyle = 'black'
-            //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
-            c.fillText('I',x + radius + space,90)
+            //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+            c.fillText('I',lastx - x - radius,90)
         }
-        }else{
-        //conts2[contnumber - 1 - i].y += mousey - starty
-        c.arc(x + radius + space,mousey,radius,0,2*Math.PI)
-        }
+        
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -228,6 +225,9 @@ function animate() {
         for (k in timers){
             timers[k] += 0.1
         }
+        for (k in timers2){
+            timers2[k] += 0.1
+        }
 if (loop == true) {
 requestAnimationFrame(animate)
 }
@@ -255,6 +255,7 @@ window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
     timers.push(0)
+    timers2.push(0)
     direct.push('u')
     amps.push(amplitude)
     vels.push(vel)
