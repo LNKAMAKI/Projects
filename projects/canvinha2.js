@@ -174,6 +174,8 @@ pky += 2
             pokebolas[a].vely = (sumparver1 + velay)*-1
         }
 
+
+
         for (current in timers) {
             x = 0
         for (i = 0; i < contnumber;i++) {
@@ -181,32 +183,46 @@ pky += 2
             canmove = true
             
             if (timers[current] - x*0.1 >= 0) {
-                if (type == 'pulse') {
-                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - 0.4*(timers[current] - x*0.1)) <= 0) {
-                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
-                }else if(Math.sin(0 - 0.4*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
-                    y = 0
-                    conts[i].move[current] = false
-                }
-            }else{
-                if (amps[current] -i*at*amps[current]*0.03 >= 0) {
-                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - 0.4*(timers[current] - x*0.1))
+                if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
+                    if (direct[current] == 'u') {
+                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                     }else{
-                        y = 0
-                        conts[i].move[current] = false
+                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
                     }
-            }
+                }
             }else{
                 y = 0
             }
     
-            if (conts[i].move[current] == false && type == 'pulse') {
-                y = 0
+            if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
+                y = conts2[contnumber - 1 - i].fixpos[current]
+                //loop = false
+                //window.alert(conts2[contnumber - 1 - i].y)
+                //y = conts2[contnumber - 1 - i].y
+                //window.alert('EITA')
             }
-           
-            conts[i].y += y
+    
             c.beginPath()
-            c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+            if (i != 0.1) {
+            conts2[contnumber - 1 - i].y += y
+            c.arc(x + radius + space,y + starty,radius,0,2*Math.PI)
+            if ((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2) == -1.00 && timers[current] - x*0.1 >= 0) {
+                c.fontStyle = '3px'
+                c.fillStyle = 'red'
+                conts2[contnumber - 1 - i].move[current] = false
+                conts2[contnumber - 1 - i].fixpos[current] = y
+                //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+                c.fillText('I',x + radius + space,90)
+            }else{
+                c.fontStyle = '3px'
+                c.fillStyle = 'black'
+                //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+                c.fillText('I',x + radius + space,90)
+            }
+            }else{
+            //conts2[contnumber - 1 - i].y += mousey - starty
+            c.arc(x + radius + space,mousey,radius,0,2*Math.PI)
+            }
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'

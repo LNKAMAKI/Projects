@@ -26,7 +26,7 @@ for (i = 0; i < contnumber;i++) {
     }
 }
 
-type = 'pulse'
+type = 'infmm'
 fixo = true
 drawball = true
 function animate() {

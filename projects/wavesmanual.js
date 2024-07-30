@@ -17,8 +17,8 @@ vel = 0.4
 vels = [vel]
 direct = ['u']
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[]})
-    conts2.push({y:0,move:[]})
+    conts.push({y:0,move:[],fixpos:[]})
+    conts2.push({y:0,move:[],fixpos:[]})
 
     for (tic in timers) {
         conts[i].move.push(true)
@@ -28,7 +28,8 @@ for (i = 0; i < contnumber;i++) {
 
 type = 'pulse'
 fixo = true
-drawball = true
+drawball = false
+draw2 = true
 function animate() {
     space = 20
     at = 0.3
@@ -57,17 +58,19 @@ function animate() {
         
         if (timers[current] - x*0.1 >= 0) {
             if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
-                //if (direct[current] == 'u') {
+                if (direct[current] == 'u') {
             y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-               // }else{
-                   // y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                //}
+                }else{
+                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                }
             }
         }else{
             y = 0
         }
 
         if (conts[i].move[current] == false && type == 'pulse') {
+            y = conts[i].fixpos[current]
+            //loop = false
             //window.alert(conts[i].y)
             //y = conts[i].y
             //window.alert('EITA')
@@ -76,11 +79,14 @@ function animate() {
         c.beginPath()
         if (i != 0.1) {
         conts[i].y += y
+        if (draw2 == true) {
         c.arc(x + radius + space,y + starty,radius,0,2*Math.PI)
+        }
         if ((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2) == -1.00 && timers[current] - x*0.1 >= 0) {
             c.fontStyle = '3px'
             c.fillStyle = 'red'
             conts[i].move[current] = false
+            conts[i].fixpos[current] = y
             //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
             c.fillText('I',x + radius + space,90)
         }else{
@@ -106,10 +112,77 @@ function animate() {
     }
 
 
+    lastx = space + 2*radius*(contnumber)
+    for (current in timers) {
+        x = 0
+    for (i = 0; i < contnumber;i++) {
+        
+        canmove = true
+        
+        if (timers[current] - x*0.1 >= 0) {
+            if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
+                if (fixo == false) {
+                if (direct[current] == 'u') {
+            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                }else{
+                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                }
+            }else{
+                if (direct[current] == 'd') {
+                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                        }else{
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                        }
+            }
+            }
+        }else{
+            y = 0
+        }
+
+        if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
+            y = conts2[contnumber - 1 - i].fixpos[current]
+        }
+
+        c.beginPath()
+        if (i != 0.1) {
+        conts2[contnumber - 1 - i].y += y
+        if (draw2 == true) {
+        c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+        }
+        if ((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2) == -1.00 && timers[current] - x*0.1 >= 0) {
+            c.fontStyle = '3px'
+            c.fillStyle = 'red'
+            conts2[contnumber - 1 - i].move[current] = false
+            conts2[contnumber - 1 - i].fixpos[current] = y
+            //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+            c.fillText('I',x + radius + space,90)
+        }else{
+            c.fontStyle = '3px'
+            c.fillStyle = 'black'
+            //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+            c.fillText('I',x + radius + space,90)
+        }
+        }else{
+        //conts2[contnumber - 1 - i].y += mousey - starty
+        c.arc(x + radius + space,mousey,radius,0,2*Math.PI)
+        }
+        c.fillStyle = 'red'
+        c.fill()
+        c.strokeStyle = 'black'
+        c.stroke()
+        c.beginPath()
+        //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+        c.fillStyle = 'white'
+        c.fill()
+        x+= 2*radius
+        }
+    }
+
         contsall = []
         for (cont in conts) {
             contsall.push({index:cont,y:conts[cont].y + conts2[cont].y})
         }
+        
         
         x = 0
         
@@ -120,7 +193,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            c.stroke()
+           // c.stroke()
             }
             }
             
@@ -139,7 +212,7 @@ function animate() {
                 //loop = false
             }
             if (drawball == true) {
-            //c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
+            c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
             }
             c.fillStyle = 'red'
             c.fill()
