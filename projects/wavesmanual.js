@@ -57,34 +57,40 @@ function animate() {
         
         if (timers[current] - x*0.1 >= 0) {
             if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
-                if (direct[current] == 'u') {
+                //if (direct[current] == 'u') {
             y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                }else{
-                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
-                }
-            }
-            
-            if (Math.round(Math.sin(0 - vels[current]*(timers[current] - x*0.1))) == 1){
-                window.alert('aaaa')
-                y = 0
-                conts[i].move[current] = false
+               // }else{
+                   // y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                //}
             }
         }else{
             y = 0
         }
 
         if (conts[i].move[current] == false && type == 'pulse') {
-            y = 0
+            //window.alert(conts[i].y)
+            //y = conts[i].y
+            //window.alert('EITA')
         }
-       
 
-        
         c.beginPath()
         if (i != 0.1) {
         conts[i].y += y
-        c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        c.arc(x + radius + space,y + starty,radius,0,2*Math.PI)
+        if ((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2) == -1.00 && timers[current] - x*0.1 >= 0) {
+            c.fontStyle = '3px'
+            c.fillStyle = 'red'
+            conts[i].move[current] = false
+            //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+            c.fillText('I',x + radius + space,90)
         }else{
-        conts[i].y += mousey - starty
+            c.fontStyle = '3px'
+            c.fillStyle = 'black'
+            //c.fillText((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+            c.fillText('I',x + radius + space,90)
+        }
+        }else{
+        //conts[i].y += mousey - starty
         c.arc(x + radius + space,mousey,radius,0,2*Math.PI)
         }
         c.fillStyle = 'red'
@@ -114,7 +120,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            //c.stroke()
+            c.stroke()
             }
             }
             
