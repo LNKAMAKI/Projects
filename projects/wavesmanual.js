@@ -18,14 +18,16 @@ vel = 0.4
 vels = [vel]
 direct = ['u']
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[],fixpos:[]})
-    conts2.push({y:0,move:[],fixpos:[]})
+    conts.push({y:0,move:[],fixpos:[],starty:[]})
+    conts2.push({y:0,move:[],fixpos:[],starty:[]})
 
     for (tic in timers) {
         conts[i].move.push(true)
+        conts[i].starty.push(starty)
     }
     for (tic in timers2) {
         conts2[i].move.push(true)
+       conts2[i].starty.push(starty)
     }
 }
 
@@ -269,9 +271,13 @@ window.addEventListener('keyup',function (event) {
     vels.push(vel)
     for (a in conts) {
         conts[a].move.push(true)
+        //conts[a].fixpos.push(0)
+        conts[a].starty.push(0)
     }
     for (a in conts2) {
         conts2[a].move.push(true)
+        //conts2[a].fixpos.push(0)
+        conts2[a].starty.push(0)
     }
     }
     
