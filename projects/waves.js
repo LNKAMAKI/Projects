@@ -1,4 +1,4 @@
-let radius = 2
+let radius = 2.5
 let starty = 100
 let x = 0
 loop = true
@@ -16,9 +16,9 @@ timers2 = [0]
 timers3 = []
 amplitude = 40
 amps = [amplitude]
-amps2 = [amplitude - 4]
+amps2 = [amplitude]
 amps3 = []
-vel = 0.4
+vel = 0.2
 vels = [vel]
 direct = ['u']
 direct2 = ['u']
@@ -43,7 +43,7 @@ type = 'pulse'
 fixo = false
 drawball = false
 function animate() {
-    space = 20
+    space = 0
     at = 0.3
     x = 0
     c.clearRect(0,0,300,150)
@@ -104,7 +104,7 @@ function animate() {
         conts3[i].y += y
         c.beginPath()
         c.arc(x + radius + space,y + starty,radius,0,2*Math.PI)
-        c.fillStyle = 'red'
+        c.fillStyle = 'purple'
         c.fill()
         c.strokeStyle = 'black'
         c.stroke()
@@ -193,20 +193,23 @@ function animate() {
                                 y = -(amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                             }
                     }
+
+        
                 }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
                     
-                    if (i == contnumber/3 - 1) {
-                    window.alert('EI')
-                    timers3.push(0)
-                    direct3.push('u')
-                    amps2.push(amplitude)
-                    vels.push(vel)
-                    for (a in conts3) {
-                        conts3[a].move.push(true)
-                    }
-                    //loop = false
-                    
-                    }
+                    if (i == contnumber/3 - 4) {
+                       // window.alert('EI')
+                        timers3.push(timers2[current])
+                        direct3.push('u')
+                        amps3.push(amps2[current] -i*at*amps2[current]*0.03)
+                        amps3.push(amplitude)
+                        vels.push(vel)
+                        for (a in conts3) {
+                            conts3[a].move.push(true)
+                        }
+                        //loop = false
+                        
+                        }
                     conts2[contnumber - 1 - i].move[current] = false
                     /*
                     y = 0
