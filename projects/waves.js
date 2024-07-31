@@ -56,24 +56,24 @@ function animate() {
         
         canmove = true
         
-        if (timers[current] - x*0.1 >= 0) {
+        if (timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
             if (type == 'pulse') {
-            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - x*0.1)) <= 0) {
+            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
                 if (direct[current] == 'u') {
-            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
                 }else{
-                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
                 }
-            }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts[i].move[current] == true){
+            }else if(Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i].move[current] == true){
                 y = 0
                 conts[i].move[current] = false
             }
         }else{
             if (amps[current] -i*at*amps[current]*0.03 >= 0) {
                 if (direct[current] == 'u') {
-                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
                         }else{
-                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - x*0.1))
+                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
                         }
                 }else{
                     y = 0
