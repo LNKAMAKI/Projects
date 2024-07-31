@@ -1,4 +1,4 @@
-let radius = 2.5
+let radius = 2.3
 let starty = 100
 let x = 0
 loop = true
@@ -7,26 +7,25 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 60
+contnumber = 36
 conts = []
 conts2 = []
 conts3 = []
-timers = [0]
+timers = []
 timers2 = [0]
 timers3 = []
 amplitude = 40
 amps = [amplitude]
 amps2 = [amplitude]
-amps3 = []
-vel = 0.2
+amps3 = [amplitude]
+vel = 0.25
 vels = [vel]
 direct = ['u']
 direct2 = ['u']
-direct3 = []
+direct3 = ['u']
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
-    conts2.push({y:0,move:[]})
-    conts3.push({y:0,move:[]})
+    conts2.push({y:0,move:[],reflect:[]})
 
     for (tic in timers) {
         conts[i].move.push(true)
@@ -34,6 +33,10 @@ for (i = 0; i < contnumber;i++) {
     for (tic in timers2) {
         conts2[i].move.push(true)
     }
+}
+
+for (i = 0; i < contnumber + contnumber/3;i++) {
+    conts3.push({y:0,move:[]})
     for (tic in timers3) {
         conts3[i].move.push(true)
     }
@@ -43,7 +46,7 @@ type = 'pulse'
 fixo = false
 drawball = false
 function animate() {
-    space = 0
+    space = 105
     at = 0.3
     x = 0
     c.clearRect(0,0,300,150)
@@ -62,10 +65,11 @@ function animate() {
         }
     }
    
-    
+    /*
     for (current in timers3) {
-        x = 0
-    for (i = 0; i < contnumber;i++) {
+        x =  0
+       // - (contnumber/3)*2*radius
+    for (i = 0; i < contnumber + contnumber/3;i++) {
         
         canmove = true
         
@@ -103,7 +107,7 @@ function animate() {
        
         conts3[i].y += y
         c.beginPath()
-        c.arc(x + radius + space,y + starty,radius,0,2*Math.PI)
+        c.arc(x + radius + space - (contnumber/3)*2*radius,y + starty,radius,0,2*Math.PI)
         c.fillStyle = 'purple'
         c.fill()
         c.strokeStyle = 'black'
@@ -114,7 +118,61 @@ function animate() {
         c.fill()
         x+= 2*radius
         }
-    }
+    }*/
+
+        for (current in timers3) {
+            x =  2*(contnumber/3)*radius
+           // - (contnumber/3)*2*radius
+        for (i = 0; i < contnumber;i++) {
+            
+            canmove = true
+            
+            if (timers3[current] - x*0.1 >= 0) {
+                if (type == 'pulse') {
+                if (amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) <= 0) {
+                    if (direct3[current] == 'u') {
+                y = (amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                    }else{
+                        y = -(amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                    }
+                }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[contnumber/3 + i].move[current] == true){
+                    y = 0
+                    conts3[contnumber/3 + i].move[current] = false
+                }
+            }else{
+                if (amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03 >= 0) {
+                    if (direct3[current] == 'u') {
+                        y = (amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                            }else{
+                                y = -(amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                            }
+                    }else{
+                        y = 0
+                        conts3[contnumber/3 + i].move[current] = false
+                    }
+            }
+            }else{
+                y = 0
+            }
+    
+            if (conts3[contnumber/3 + i].move[current] == false && type == 'pulse') {
+                y = 0
+            }
+           
+            conts3[contnumber/3 + i].y += y
+            c.beginPath()
+            c.arc(x + radius + space - (contnumber/3)*2*radius,y + starty,radius,0,2*Math.PI)
+            c.fillStyle = 'cyan'
+            c.fill()
+            c.strokeStyle = 'black'
+            c.stroke()
+            c.beginPath()
+            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            c.fillStyle = 'white'
+            c.fill()
+            x+= 2*radius
+            }
+        }
 
         for (current in timers) {
             x = space + 2*radius*(contnumber/3)
@@ -194,14 +252,14 @@ function animate() {
                             }
                     }
 
-        
-                }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
-                    
-                    if (i == contnumber/3 - 4) {
-                       // window.alert('EI')
+                    if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
+                        
+                        conts2[contnumber - 1 - i].reflect[current] = false
+                        window.alert('EI')
+                        conts
                         timers3.push(timers2[current])
                         direct3.push('u')
-                        amps3.push(amps2[current] -i*at*amps2[current]*0.03)
+                        amps3.push(amplitude)
                         amps3.push(amplitude)
                         vels.push(vel)
                         for (a in conts3) {
@@ -209,7 +267,12 @@ function animate() {
                         }
                         //loop = false
                         
+                        
                         }
+
+        
+                }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
+                    
                     conts2[contnumber - 1 - i].move[current] = false
                     /*
                     y = 0
@@ -267,7 +330,7 @@ function animate() {
             conts2[contnumber - 1 - i].y += y
             c.beginPath()
             c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
-            c.fillStyle = 'blue'
+            c.fillStyle = 'white'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
