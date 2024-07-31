@@ -11,7 +11,7 @@ contnumber = 36
 conts = []
 conts2 = []
 conts3 = []
-timers = []
+timers = [0]
 timers2 = [0]
 timers3 = []
 amplitude = 40
@@ -26,6 +26,7 @@ direct3 = ['u']
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
     conts2.push({y:0,move:[],reflect:[]})
+    conts3.push({y:0,move:[]})
 
     for (tic in timers) {
         conts[i].move.push(true)
@@ -33,14 +34,18 @@ for (i = 0; i < contnumber;i++) {
     for (tic in timers2) {
         conts2[i].move.push(true)
     }
+    for (tic in timers3) {
+        conts3[i].move.push(true)
+    }
 }
 
+/*
 for (i = 0; i < contnumber + contnumber/3;i++) {
     conts3.push({y:0,move:[]})
     for (tic in timers3) {
         conts3[i].move.push(true)
     }
-}
+}*/
 
 type = 'pulse'
 fixo = false
@@ -135,9 +140,9 @@ function animate() {
                     }else{
                         y = -(amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
                     }
-                }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[contnumber/3 + i].move[current] == true){
+                }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[i].move[current] == true){
                     y = 0
-                    conts3[contnumber/3 + i].move[current] = false
+                    conts3[i].move[current] = false
                 }
             }else{
                 if (amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03 >= 0) {
@@ -148,18 +153,18 @@ function animate() {
                             }
                     }else{
                         y = 0
-                        conts3[contnumber/3 + i].move[current] = false
+                        conts3[i].move[current] = false
                     }
             }
             }else{
                 y = 0
             }
     
-            if (conts3[contnumber/3 + i].move[current] == false && type == 'pulse') {
+            if (conts3[i].move[current] == false && type == 'pulse') {
                 y = 0
             }
            
-            conts3[contnumber/3 + i].y += y
+            conts3[i].y += y
             c.beginPath()
             c.arc(x + radius + space - (contnumber/3)*2*radius,y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'cyan'
@@ -255,7 +260,7 @@ function animate() {
                     if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
                         
                         conts2[contnumber - 1 - i].reflect[current] = false
-                        window.alert('EI')
+                        //window.alert('EI')
                         conts
                         timers3.push(timers2[current])
                         direct3.push('u')

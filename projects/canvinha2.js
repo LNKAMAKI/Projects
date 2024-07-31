@@ -190,9 +190,9 @@ pky += 2
                     }else{
                         y = -(amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
                     }
-                }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[contnumber/3 + i].move[current] == true){
+                }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[i].move[current] == true){
                     y = 0
-                    conts3[contnumber/3 + i].move[current] = false
+                    conts3[i].move[current] = false
                 }
             }else{
                 if (amps3[current] -(contnumber/3 + i)*at*amps3[current]*0.03 >= 0) {
@@ -203,18 +203,18 @@ pky += 2
                             }
                     }else{
                         y = 0
-                        conts3[contnumber/3 + i].move[current] = false
+                        conts3[i].move[current] = false
                     }
             }
             }else{
                 y = 0
             }
     
-            if (conts3[contnumber/3 + i].move[current] == false && type == 'pulse') {
+            if (conts3[i].move[current] == false && type == 'pulse') {
                 y = 0
             }
            
-            conts3[contnumber/3 + i].y += y
+            conts3[i].y += y
             c.beginPath()
             c.arc(x + radius + space - (contnumber/3)*2*radius,y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'cyan'
