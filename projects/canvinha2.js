@@ -176,53 +176,96 @@ pky += 2
 
 
 
-        for (current in timers) {
-            x = space + 2*radius*(contnumber/3)
-        for (i = 0; i < (contnumber/3)*2;i++) {
+        for (current in timers2) {
+            x = 0
+        for (i = 0; i < contnumber;i++) {
             
             canmove = true
             
-            if (timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
+            if (timers2[current] - x*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
-                    if (direct[current] == 'u') {
-                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
+                    if (fixo == false) {
+                        if (direct2[current] == 'u') {
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                        }else{
+                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                        }
                     }else{
-                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                        if (direct2[current] == 'd') {
+                            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                            }else{
+                                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                            }
                     }
-                }else if(Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
+                }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
+                    
+                    if (i == contnumber/3 - 1) {
+                    window.alert('EI')
+                    }
+                    conts2[contnumber - 1 - i].move[current] = false
+                    /*
                     y = 0
-                    conts[i + contnumber/3].move[current] = false
+                    if (contnumber - 1 - i == 0) {
+                    //window.alert('PARE')
+                    timers2[current]= 0
+
+                    for (l in conts) {
+                        //conts[l].move = true
+                        conts[l].move[current] = true
+                        conts2[l].move[current] = true
+                    }
+                   // amps[current] = - amps[current]
+                   if (fixo == false) {
+                   if (direct2[current] == 'u') {
+                    direct2[current] = 'd'
+                   }else{
+                    direct2[current] = 'u'
+                   }
+                }else{
+                    if (direct2[current] == 'u') {
+                        direct2[current] = 'u'
+                       }else{
+                        direct2[current] = 'd'
+                       }
+                }
+                    amps[current] -= amplitude*0.7
+                    vels[current] -= vel*0.2
+                    }else{
+                    conts2[contnumber - 1 - i].move[current] = false
+                    }
+                    */
                 }
             }else{
                 if (amps[current] -i*at*amps[current]*0.03 >= 0) {
-                    if (direct[current] == 'u') {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
-                            }else{
-                                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
-                            }
+                    if (fixo == false) {
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                    }else{
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                    }
                     }else{
                         y = 0
-                        conts[i + contnumber/3].move[current] = false
+                        conts2[contnumber - 1 - i].move[current] = false
                     }
             }
             }else{
                 y = 0
             }
     
-            if (conts[i + contnumber/3].move[current] == false && type == 'pulse') {
+            if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
                 y = 0
             }
-           
-            conts[i + contnumber/3].y += y
+            
+            //conts2[i].y += y
+            conts2[contnumber - 1 - i].y += y
             c.beginPath()
-            c.arc(x + radius,y + starty,radius,0,2*Math.PI)
-            c.fillStyle = 'red'
+            c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+            c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
             c.beginPath()
-            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            //mc.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
