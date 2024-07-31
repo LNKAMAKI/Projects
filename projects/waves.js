@@ -16,7 +16,7 @@ timers2 = [0]
 timers3 = []
 amplitude = 40
 amps = [amplitude]
-amps2 = [amplitude]
+amps2 = [amplitude - 4]
 amps3 = []
 vel = 0.4
 vels = [vel]
@@ -71,22 +71,22 @@ function animate() {
         
         if (timers3[current] - x*0.1 >= 0) {
             if (type == 'pulse') {
-            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) <= 0) {
+            if (amps3[current] -i*at*amps3[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) <= 0) {
                 if (direct3[current] == 'u') {
-            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+            y = (amps3[current] -i*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
                 }else{
-                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                    y = -(amps3[current] -i*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
                 }
             }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[i].move[current] == true){
                 y = 0
                 conts3[i].move[current] = false
             }
         }else{
-            if (amps[current] -i*at*amps[current]*0.03 >= 0) {
+            if (amps3[current] -i*at*amps3[current]*0.03 >= 0) {
                 if (direct3[current] == 'u') {
-                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                    y = (amps3[current] -i*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
                         }else{
-                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                            y = -(amps3[current] -i*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
                         }
                 }else{
                     y = 0
@@ -277,6 +277,36 @@ function animate() {
         }
 
 
+        x = 0
+      
+        for (i = 0; i < contnumber/3;i++) {
+            c.beginPath()
+            c.arc(x + radius + space,130,radius,0,2*Math.PI)
+            c.fillStyle = 'yellow'
+            c.fill()
+            c.strokeStyle = 'black'
+            c.stroke()
+            x+= 2*radius
+            }
+            for (i = 0; i < contnumber/3;i++) {
+                c.beginPath()
+                c.arc(x + radius + space,130,radius,0,2*Math.PI)
+                c.fillStyle = 'pink'
+                c.fill()
+                c.strokeStyle = 'black'
+                c.stroke()
+                x+= 2*radius
+                }
+                for (i = 0; i < contnumber/3;i++) {
+                    c.beginPath()
+                    c.arc(x + radius + space,130,radius,0,2*Math.PI)
+                    c.fillStyle = 'green'
+                    c.fill()
+                    c.strokeStyle = 'black'
+                    c.stroke()
+                    x+= 2*radius
+                    }
+        
         contsall = []
         for (cont in conts) {
             contsall.push({index:cont,y:conts[cont].y + conts2[cont].y})
