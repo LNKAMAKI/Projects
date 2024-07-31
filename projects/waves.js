@@ -16,6 +16,8 @@ timers2 = [0]
 timers3 = []
 amplitude = 40
 amps = [amplitude]
+amps2 = [amplitude]
+amps3 = []
 vel = 0.4
 vels = [vel]
 direct = ['u']
@@ -177,25 +179,33 @@ function animate() {
             
             if (timers2[current] - x*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
+                if (amps2[current] -i*at*amps2[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
                     if (fixo == false) {
                         if (direct2[current] == 'u') {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                        y = (amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                         }else{
-                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                            y = -(amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                         }
                     }else{
                         if (direct2[current] == 'd') {
-                            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                            y = (amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                             }else{
-                                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                                y = -(amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                             }
                     }
                 }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
                     
                     if (i == contnumber/3 - 1) {
-                    //window.alert('EI')
+                    window.alert('EI')
+                    timers3.push(0)
+                    direct3.push('u')
+                    amps2.push(amplitude)
+                    vels.push(vel)
+                    for (a in conts3) {
+                        conts3[a].move.push(true)
+                    }
                     //loop = false
+                    
                     }
                     conts2[contnumber - 1 - i].move[current] = false
                     /*
@@ -209,7 +219,7 @@ function animate() {
                         conts[l].move[current] = true
                         conts2[l].move[current] = true
                     }
-                   // amps[current] = - amps[current]
+                   // amps2[current] = - amps2[current]
                    if (fixo == false) {
                    if (direct2[current] == 'u') {
                     direct2[current] = 'd'
@@ -223,7 +233,7 @@ function animate() {
                         direct2[current] = 'd'
                        }
                 }
-                    amps[current] -= amplitude*0.7
+                    amps2[current] -= amplitude*0.7
                     vels[current] -= vel*0.2
                     }else{
                     conts2[contnumber - 1 - i].move[current] = false
@@ -231,11 +241,11 @@ function animate() {
                     */
                 }
             }else{
-                if (amps[current] -i*at*amps[current]*0.03 >= 0) {
+                if (amps2[current] -i*at*amps2[current]*0.03 >= 0) {
                     if (fixo == false) {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                        y = (amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                     }else{
-                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                        y = -(amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
                     }
                     }else{
                         y = 0
@@ -319,6 +329,9 @@ function animate() {
         for (k in timers2){
             timers2[k] += 0.1
         }
+        for (k in timers3){
+            timers3[k] += 0.1
+        }
 if (loop == true) {
 requestAnimationFrame(animate)
 }
@@ -358,5 +371,5 @@ window.addEventListener('keyup',function (event) {
         conts2[a].move.push(true)
     }
     }
-    
+
 })
