@@ -26,7 +26,7 @@ direct3 = ['u']
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
     conts2.push({y:0,move:[],reflect:[]})
-    conts3.push({y:0,move:[]})
+    conts3.push({y:0,move:[],reflect:[]})
 
     for (tic in timers) {
         conts[i].move.push(true)
@@ -141,6 +141,23 @@ function animate() {
                     }else{
                         y = -(amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
                     }
+
+
+                    if (i == (contnumber/3)*2 && conts3[i].reflect[current] != false) {
+                        
+                        conts3[i].reflect[current] = false
+                        window.alert('EI')
+                        timers3.push(0)
+                        direct3.push('u')
+                        amps3.push(amplitude)
+                        vels.push(vel)
+                        for (a in conts3) {
+                            conts3[a].move.push(true)
+                        }
+                        //loop = false
+                        
+                        
+                        }
                 }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[i].move[current] == true){
                     y = 0
                     conts3[i].move[current] = false
@@ -265,7 +282,6 @@ function animate() {
                         conts
                         timers3.push(timers2[current])
                         direct3.push('u')
-                        amps3.push(amplitude)
                         amps3.push(amplitude)
                         vels.push(vel)
                         for (a in conts3) {
