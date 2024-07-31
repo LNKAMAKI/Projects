@@ -145,6 +145,7 @@ function animate() {
 
                     if (i == (contnumber/3)*2 && conts3[i].reflect[current] != false) {
                         
+                        /*
                         conts3[i].reflect[current] = false
                         window.alert('EI')
                         timers3.push(0)
@@ -153,7 +154,7 @@ function animate() {
                         vels.push(vel)
                         for (a in conts3) {
                             conts3[a].move.push(true)
-                        }
+                        }*/
                         //loop = false
                         
                         
