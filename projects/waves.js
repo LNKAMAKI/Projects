@@ -49,6 +49,7 @@ function animate() {
         }
     }
    
+    /*
     for (current in timers) {
         x = 0
     for (i = 0; i < contnumber;i++) {
@@ -100,60 +101,61 @@ function animate() {
         c.fill()
         x+= 2*radius
         }
-    }
+    }*/
 
-    for (current in timers) {
-        x = space + 2*radius*(contnumber/3)
-    for (i = 0; i < (contnumber/3)*2;i++) {
-        
-        canmove = true
-        
-        if (timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
-            if (type == 'pulse') {
-            if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
-                if (direct[current] == 'u') {
-            y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
-                }else{
-                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
-                }
-            }else if(Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i].move[current] == true){
-                y = 0
-                conts[i].move[current] = false
-            }
-        }else{
-            if (amps[current] -i*at*amps[current]*0.03 >= 0) {
-                if (direct[current] == 'u') {
-                    y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
-                        }else{
-                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
-                        }
-                }else{
+        for (current in timers) {
+            x = space + 2*radius*(contnumber/3)
+        for (i = 0; i < (contnumber/3)*2;i++) {
+            
+            canmove = true
+            
+            if (timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
+                if (type == 'pulse') {
+                if (amps[current] -i*at*amps[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
+                    if (direct[current] == 'u') {
+                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                    }else{
+                        y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                    }
+                }else if(Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
                     y = 0
-                    conts[i].move[current] = false
+                    conts[i + contnumber/3].move[current] = false
                 }
+            }else{
+                if (amps[current] -i*at*amps[current]*0.03 >= 0) {
+                    if (direct[current] == 'u') {
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                            }else{
+                                y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                            }
+                    }else{
+                        y = 0
+                        conts[i + contnumber/3].move[current] = false
+                    }
+            }
+            }else{
+                y = 0
+            }
+    
+            if (conts[i + contnumber/3].move[current] == false && type == 'pulse') {
+                y = 0
+            }
+           
+            conts[i + contnumber/3].y += y
+            c.beginPath()
+            c.arc(x + radius,y + starty,radius,0,2*Math.PI)
+            c.fillStyle = 'red'
+            c.fill()
+            c.strokeStyle = 'black'
+            c.stroke()
+            c.beginPath()
+            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            c.fillStyle = 'white'
+            c.fill()
+            x+= 2*radius
+            }
         }
-        }else{
-            y = 0
-        }
-
-        if (conts[i].move[current] == false && type == 'pulse') {
-            y = 0
-        }
-       
-        conts[i].y += y
-        c.beginPath()
-        c.arc(x + radius,y + starty,radius,0,2*Math.PI)
-        c.fillStyle = 'red'
-        c.fill()
-        c.strokeStyle = 'black'
-        c.stroke()
-        c.beginPath()
-        //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-        c.fillStyle = 'white'
-        c.fill()
-        x+= 2*radius
-        }
-    }
+        
         x = 0
         lastx = space + 2*radius*(contnumber)
         for (current in timers) {
@@ -232,7 +234,8 @@ function animate() {
             if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
                 y = 0
             }
-           
+            
+            if ()
             //conts2[i].y += y
             conts2[contnumber - 1 - i].y += y
             c.beginPath()
