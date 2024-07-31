@@ -26,9 +26,9 @@ for (i = 0; i < contnumber;i++) {
     }
 }
 
-type = 'infmm'
-fixo = true
-drawball = true
+type = 'pulse'
+fixo = false
+drawball = false
 function animate() {
     space = 20
     at = 0.3
@@ -49,9 +49,10 @@ function animate() {
         }
     }
    
+    
     for (current in timers) {
-        x = 0
-    for (i = 0; i < contnumber;i++) {
+        x = space + 2*radius*(contnumber/3)
+    for (i = 0; i < contnumber - contnumber/2;i++) {
         
         canmove = true
         
@@ -89,7 +90,7 @@ function animate() {
        
         conts[i].y += y
         c.beginPath()
-        //c.arc(x + radius + space,conts[i].y + starty,radius,0,2*Math.PI)
+        c.arc(x + radius,conts[i].y + starty,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.strokeStyle = 'black'
@@ -128,6 +129,9 @@ function animate() {
                             }
                     }
                 }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
+                    
+                    conts2[contnumber - 1 - i].move[current] = false
+                    /*
                     y = 0
                     if (contnumber - 1 - i == 0) {
                     //window.alert('PARE')
@@ -157,6 +161,7 @@ function animate() {
                     }else{
                     conts2[contnumber - 1 - i].move[current] = false
                     }
+                    */
                 }
             }else{
                 if (amps[current] -i*at*amps[current]*0.03 >= 0) {
@@ -181,7 +186,7 @@ function animate() {
             //conts2[i].y += y
             conts2[contnumber - 1 - i].y += y
             c.beginPath()
-            //c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
+            c.arc(lastx - x - radius,conts2[contnumber - 1 - i].y + starty,radius,0,2*Math.PI)
             c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
@@ -209,7 +214,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-            c.stroke()
+            //c.stroke()
             }
             }
             
