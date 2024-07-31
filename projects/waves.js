@@ -155,7 +155,7 @@ function animate() {
             x+= 2*radius
             }
         }
-        
+
         x = 0
         lastx = space + 2*radius*(contnumber)
         for (current in timers) {
@@ -182,6 +182,9 @@ function animate() {
                     }
                 }else if(Math.sin(0 - vels[current]*(timers[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
                     
+                    if (i == contnumber/3 - 1) {
+                    window.alert('EI')
+                    }
                     conts2[contnumber - 1 - i].move[current] = false
                     /*
                     y = 0
@@ -235,7 +238,6 @@ function animate() {
                 y = 0
             }
             
-            if ()
             //conts2[i].y += y
             conts2[contnumber - 1 - i].y += y
             c.beginPath()
