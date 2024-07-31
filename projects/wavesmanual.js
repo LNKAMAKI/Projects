@@ -17,6 +17,7 @@ amps = [amplitude]
 vel = 0.4
 vels = [vel]
 direct = ['u']
+pointat = ['left']
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[],fixpos:[],starty:[]})
     conts2.push({y:0,move:[],fixpos:[],starty:[]})
@@ -55,6 +56,7 @@ function animate() {
         }
     }
    
+    
     for (current in timers) {
         x = 0
     for (i = 0; i < contnumber;i++) {
@@ -81,7 +83,7 @@ function animate() {
        
         conts[i].y += y
         if (draw2 == true) {
-        c.arc(x + radius + space,y + starty,radius,0,2*Math.PI)
+        c.arc(x + radius + space,y + conts[i].starty[current],radius,0,2*Math.PI)
         }
         if ((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2) == -1.00 && timers[current] - x*0.1 >= 0) {
             c.fontStyle = '3px'
@@ -111,6 +113,8 @@ function animate() {
 
 
     lastx = space + 2*radius*(contnumber)
+    
+    /*
     for (current in timers2) {
         x = 0
     for (i = 0; i < contnumber;i++) {
@@ -144,7 +148,7 @@ function animate() {
         c.beginPath()
         conts2[contnumber - 1 - i].y += y
         if (draw2 == true) {
-        c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+        c.arc(lastx - x - radius,y + conts2[contnumber - 1 - i].starty[current],radius,0,2*Math.PI)
         }
         if ((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2) == -1.00 && timers2[current] - x*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] == true) {
             c.fontStyle = '3px'
@@ -154,18 +158,18 @@ function animate() {
 
             if (contnumber - 1 - i == 1) {
                // window.alert('EITA')
-              // timers2.push(0)
-              /// direct.push('u')
-              //amps.push(amplitude)
-               // vels.push(vel)
-                //for (a in conts2) {
-                  //  conts2[a].move.push(true)
-               // }
-               // timers2.push(0)
+               timers.push(0)
+               direct.push('u')
+              amps.push(amplitude)
+                vels.push(vel)
+                for (a in conts) {
+                    conts[a].move.push(true)
+                    conts[a].starty.push(starty)
+                }
 
             }
             //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
-            c.fillText('I',lastx -x - radius,90)
+            c.fillText('I',lastx) - radius,90)
         }else{
             c.fontStyle = '3px'
             c.fillStyle = 'black'
@@ -183,7 +187,92 @@ function animate() {
         c.fill()
         x+= 2*radius
         }
-    }
+    }*/
+ 
+        for (current in timers2) {
+
+            x = 0
+            
+        for (i = 0; i < contnumber;i++) {
+            
+            if (pointat[current] == 'left') {
+                point = x
+            }else{
+                point = lastx - x
+            }
+            canmove = true
+            
+            if (timers2[current] - (point)*0.1 >= 0) {
+                if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1)) <= 0) {
+                    if (fixo == false) {
+                    if (direct[current] == 'u') {
+                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
+                    }else{
+                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
+                    }
+                }else{
+                    if (direct[current] == 'd') {
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
+                            }else{
+                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
+                            }
+                }
+                }
+            }else{
+                y = 0
+            }
+    
+            if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
+                y = conts2[contnumber - 1 - i].fixpos[current]
+            }
+    
+            c.beginPath()
+            conts2[contnumber - 1 - i].y += y
+            if (draw2 == true) {
+            c.arc(lastx - x - radius,y + conts2[contnumber - 1 - i].starty[current],radius,0,2*Math.PI)
+            }
+            if ((Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))).toFixed(2) == -1.00 && timers2[current] - (point)*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] == true) {
+                c.fontStyle = '3px'
+                c.fillStyle = 'red'
+                conts2[contnumber - 1 - i].move[current] = false
+                conts2[contnumber - 1 - i].fixpos[current] = y
+    
+                
+                if (contnumber - 1 - i == 1.1 && pointat[current] == 'left') {
+                    //window.alert('EITA')
+                   timers2.push(0)
+                   direct.push('d')
+                  amps.push(amplitude)
+                    vels.push(vel)
+                    pointat.push('right')
+                    for (a in conts) {
+                        conts2[a].move.push(true)
+                        conts2[a].starty.push(conts2[a].fixpos[current] + starty)
+                    }
+    
+                }
+                //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+                c.fillText('I',lastx -x - radius,90)
+            }else{
+                c.fontStyle = '3px'
+                c.fillStyle = 'black'
+                //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+               // c.fillText('I',point - radius,90)
+            }
+            
+            c.fillStyle = 'red'
+            c.fill()
+            c.strokeStyle = 'black'
+            c.stroke()
+            c.beginPath()
+            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            c.fillStyle = 'white'
+            c.fill()
+            x+= 2*radius
+            }
+        }
+        
+
 
         contsall = []
         for (cont in conts) {

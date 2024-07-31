@@ -182,19 +182,19 @@ pky += 2
             
             canmove = true
             
-            if (timers2[current] - x*0.1 >= 0) {
-                if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
+            if (timers2[current] - (point)*0.1 >= 0) {
+                if (amps[current] -i*at*amps[current]*0.03 >= 0){// && Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1)) <= 0) {
                     if (fixo == false) {
                     if (direct[current] == 'u') {
-                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
                     }else{
-                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                    y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
                     }
                 }else{
                     if (direct[current] == 'd') {
-                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                        y = (amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
                             }else{
-                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                            y = -(amps[current] -i*at*amps[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))
                             }
                 }
                 }
@@ -209,24 +209,33 @@ pky += 2
             c.beginPath()
             conts2[contnumber - 1 - i].y += y
             if (draw2 == true) {
-            c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+            c.arc(point - radius,y + conts2[contnumber - 1 - i].starty[current],radius,0,2*Math.PI)
             }
-            if ((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2) == -1.00 && timers2[current] - x*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] == true) {
+            if ((Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))).toFixed(2) == -1.00 && timers2[current] - (point)*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] == true) {
                 c.fontStyle = '3px'
-                c.fillStyle = 'green'
+                c.fillStyle = 'red'
                 conts2[contnumber - 1 - i].move[current] = false
                 conts2[contnumber - 1 - i].fixpos[current] = y
     
                 if (contnumber - 1 - i == 1) {
                     window.alert('EITA')
+                   timers2.push(0)
+                   direct.push('u')
+                  amps.push(amplitude)
+                    vels.push(vel)
+                    for (a in conts) {
+                        conts2[a].move.push(true)
+                        conts2[a].starty.push(starty)
+                    }
+    
                 }
-                //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+                //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
                 c.fillText('I',lastx -x - radius,90)
             }else{
                 c.fontStyle = '3px'
                 c.fillStyle = 'black'
-                //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
-                c.fillText('I',lastx - x - radius,90)
+                //c.fillText((Math.sin(0 - vels[current]*(timers2[current] - (point)*0.1))).toFixed(2),x + radius + space + 2.3*x,90)
+               // c.fillText('I',point - radius,90)
             }
             
             c.fillStyle = 'red'
@@ -239,8 +248,4 @@ pky += 2
             c.fill()
             x+= 2*radius
             }
-        }
-
-        for (l in conts) {
-            conts[l].move = true
         }
