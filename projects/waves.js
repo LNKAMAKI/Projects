@@ -12,9 +12,10 @@ conts = []
 conts2 = []
 conts3 = []
 timers = [0]
-timers2 = [0]
+timers2 = [0,3]
 timers3 = []
 advances = [0]
+advances2 = [contnumber/3]
 amplitude = 40
 amps = [amplitude]
 amps2 = [amplitude]
@@ -53,7 +54,7 @@ fixo = false
 drawball = false
 function animate() {
     space = 10
-    at = 0.3
+    at = 0.27
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -130,8 +131,8 @@ function animate() {
          lastx = space + 2*radius*(contnumber)
          
          for (current in timers3) {
-            advance = advances[current]
-            advance = contnumber/3
+            advance = advances2[current]
+           // advance = 0
             x =  2*(advance)*radius
             //x = 0
             // - (advance)*2*radius
@@ -149,18 +150,21 @@ function animate() {
                      }
  
  
-                     if (i == contnumber - 1 && conts3[i].reflect[current] != false) {
+                     if (i == (contnumber/3)*2 - 1 && conts3[i].reflect[current] != false) {
                          
                          
                          conts3[i].reflect[current] = false
-                         //window.alert('EI')
-                         timers2.push(0)
+                         
+                         window.alert('EI, vai aumentar')
+                         timers2.push(timers3[current])
                          direct2.push('u')
                          amps2.push(amplitude)
                          vels.push(vel)
                          for (a in conts2) {
                              conts2[a].move.push(true)
                          }
+                             
+                         //advances.push(0)
                          //loop = false
                          
                          
@@ -379,6 +383,7 @@ function animate() {
     
         lastx = space + 2*radius*(contnumber)
         for (current in timers2) {
+            advance = advances[current]
             advance = 0
             x =  2*(advance)*radius
             //x = 0
@@ -398,9 +403,11 @@ function animate() {
     
     
                      if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
-                         
+                        console.log(current,contnumber - 1 - i)
+                        console.log(conts2[contnumber - 1 - i])
+                        console.log(conts2[contnumber - 1 - i].reflect[current])
                         conts2[contnumber - 1 - i].reflect[current] = false
-                         //window.alert('EI')
+                         window.alert('EI',`${advances[current]}`)
                         timers3.push(timers2[current])
                         direct3.push('u')
                         amps3.push(amplitude)
