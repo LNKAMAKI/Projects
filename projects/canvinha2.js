@@ -178,19 +178,157 @@ pky += 2
        
 
 
-        if (i == (contnumber/3)*2 && conts3[contnumber - 1 - i].reflect[current] != false) {
-                        
-            conts3[contnumber - 1 - i].reflect[current] = false
-            window.alert('EI')
-            timers3.push(timers2[current])
-            direct3.push('u')
-            amps3.push(amplitude)
-            amps3.push(amplitude)
-            vels.push(vel)
-            for (a in conts3) {
-                conts3[a].move.push(true)
-            }
-            //loop = false
+        advance = contnumber/3
+        // advance = 0
+         //advance = 0
+         lastx = space + 2*radius*(contnumber)
+         
+         for (current in timers3) {
+            x =  2*(advance)*radius
+            //x = 0
+            // - (advance)*2*radius
+         for (i = 0; i < contnumber;i++) {
+             
+             canmove = true
+             
+             if (timers3[current] - x*0.1 >= 0) {
+                 if (type == 'pulse') {
+                 if (amps3[current] -(advance + i)*at*amps3[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) <= 0) {
+                     if (direct3[current] == 'u') {
+                 y = (amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                     }else{
+                         y = -(amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                     }
+ 
+ 
+                     if (i == (contnumber/3)*2 && conts3[i].reflect[current] != false) {
+                         
+                         
+                        // conts3[i].reflect[current] = false
+                         //window.alert('EI')
+                        // timers3.push(0)
+                        // direct3.push('u')
+                       //  amps3.push(amplitude)
+                       //  vels.push(vel)
+                       //  for (a in conts3) {
+                         //    conts3[a].move.push(true)
+                        // }
+                         //loop = false
+                         
+                         
+                         }
+                 }else if(Math.sin(0 - vels[current]*(timers3[current] - x*0.1)) >= 0 && conts3[i].move[current] == true){
+                     y = 0
+                     conts3[i].move[current] = false
+                 }
+             }else{
+                 if (amps3[current] -(advance + i)*at*amps3[current]*0.03 >= 0) {
+                     if (direct3[current] == 'u') {
+                         y = (amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                             }else{
+                                 y = -(amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers3[current] - x*0.1))
+                             }
+                     }else{
+                         y = 0
+                         conts3[i].move[current] = false
+                     }
+             }
+             }else{
+                 y = 0
+             }
+     
+             if (conts3[i].move[current] == false && type == 'pulse') {
+                 y = 0
+             }
             
+             conts3[i].y += y
+             c.beginPath()
+             //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
+             c.arc(lastx - x - radius +2*(advance)*radius ,y + starty,radius,0,2*Math.PI)
+             //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+             c.fillStyle = 'cyan'
+             c.fill()
+             c.strokeStyle = 'black'
+             c.stroke()
+             c.beginPath()
+             //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+             c.fillStyle = 'white'
+             c.fill()
+             x+= 2*radius
+             }
+         }
+
+
+
+         for (current in timers2) {
+            x =  2*(advance)*radius
+            //x = 0
+            // - (advance)*2*radius
+         for (i = 0; i < contnumber;i++) {
+             
+             canmove = true
+             
+             if (timers2[current] - x*0.1 >= 0) {
+                 if (type == 'pulse') {
+                 if (amps2[current] -(advance + i)*at*amps2[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
+                     if (direct2[current] == 'u') {
+                 y = (amps2[current] -(advance + i)*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                     }else{
+                         y = -(amps2[current] -(advance + i)*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                     }
+    
+    
+                     if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
+                         
+                        conts2[contnumber - 1 - i].reflect[current] = false
+                         window.alert('EI')
+                        timers3.push(timers2[current])
+                        direct3.push('u')
+                        amps3.push(amplitude)
+                        vels.push(vel)
+                        for (a in conts3) {
+                            conts3[a].move.push(true)
+                        }
+                        //loop = false
+                         
+                         }
+                 }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
+                     y = 0
+                     conts2[contnumber - 1 - i].move[current] = false
+                 }
+             }else{
+                 if (amps2[current] -(advance + i)*at*amps2[current]*0.03 >= 0) {
+                     if (direct2[current] == 'u') {
+                         y = (amps2[current] -(advance + i)*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                             }else{
+                                 y = -(amps2[current] -(advance + i)*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
+                             }
+                     }else{
+                         y = 0
+                         conts2[contnumber - 1 - i].move[current] = false
+                     }
+             }
+             }else{
+                 y = 0
+             }
+     
+             if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
+                 y = 0
+             }
             
-            }
+             conts2[contnumber - 1 - i].y += y
+             c.beginPath()
+             //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
+             c.arc(lastx - x - radius +2*(advance)*radius ,y + starty,radius,0,2*Math.PI)
+             //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+             c.fillStyle = 'cyan'
+             c.fill()
+             c.strokeStyle = 'black'
+             c.stroke()
+             c.beginPath()
+             //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+             c.fillStyle = 'white'
+             c.fill()
+             x+= 2*radius
+             }
+         }
