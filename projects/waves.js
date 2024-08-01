@@ -157,6 +157,7 @@ function animate() {
                          timers2.push(0)
                          direct2.push('u')
                          amps2.push(amplitude)
+                         advances.push(0)
                          vels.push(vel)
                          for (a in conts2) {
                              conts2[a].move.push(true)
@@ -379,7 +380,7 @@ function animate() {
     
         lastx = space + 2*radius*(contnumber)
         for (current in timers2) {
-            advance = 0
+            advance = advances[current]
             x =  2*(advance)*radius
             //x = 0
             // - (advance)*2*radius
