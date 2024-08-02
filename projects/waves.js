@@ -15,6 +15,7 @@ timers = [0]
 timers2 = [0]
 timers3 = []
 advances = [0]
+advances2 = [0]
 amplitude = 40
 amps = [amplitude]
 amps2 = [amplitude]
@@ -130,8 +131,8 @@ function animate() {
          lastx = space + 2*radius*(contnumber)
          
          for (current in timers3) {
-            advance = advances[current]
-            advance = contnumber/3
+            advance = advances2[current]
+            //advance = contnumber/3
             x =  2*(advance)*radius
             //x = 0
             // - (advance)*2*radius
@@ -291,7 +292,7 @@ function animate() {
                     if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
                         
                         conts2[contnumber - 1 - i].reflect[current] = false
-                        //window.alert('EI')
+                        window.alert('EI')
                         timers3.push(timers2[current])
                         direct3.push('u')
                         amps3.push(amplitude)
@@ -405,6 +406,7 @@ function animate() {
                         timers3.push(timers2[current])
                         direct3.push('u')
                         amps3.push(amplitude)
+                        advances2.push(0)
                         vels.push(vel)
                         for (a in conts3) {
                             conts3[a].move.push(true)
