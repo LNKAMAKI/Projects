@@ -11,11 +11,11 @@ contnumber = 60
 conts = []
 conts2 = []
 conts3 = []
-timers = [0]
+timers = []
 timers2 = [0]
 timers3 = []
 advances = [0]
-advances2 = [0]
+advances2 = [contnumber/3]
 amplitude = 40
 amps = [amplitude]
 amps2 = [amplitude]
@@ -150,15 +150,23 @@ function animate() {
                      }
  
  
-                     if (i == contnumber - 1 && conts3[i].reflect[current] != false) {
+                     if (i == (contnumber/3)*2 - 1 && conts3[i].reflect[current] != false) {
                          
                          
                          conts3[i].reflect[current] = false
-                         window.alert('EI, vai aumentar')
-                         timers2.push(0)
+                         window.alert('WHITE')
+                         //timers2.push(timers3[current])
+                         window.alert(timers3[current])
+                         console.log(timers3[current])
+                         timers2.push(timers3[current])
+                         //timers2.push(0)
                          direct2.push('u')
                          amps2.push(amplitude)
-                         advances.push(0)
+                         if (advances.length == 1) {
+                         advances.push(40)
+                         }else{
+                         advances.push(80)
+                         }
                          vels.push(vel)
                          for (a in conts2) {
                              conts2[a].move.push(true)
@@ -194,7 +202,9 @@ function animate() {
              conts3[i].y += y
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
+             
              c.arc(x + radius -2*(advance)*radius + space,y + starty,radius,0,2*Math.PI)
+             
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
              c.fillStyle = 'cyan'
              c.fill()
@@ -248,7 +258,9 @@ function animate() {
            
             conts[i + contnumber/3].y += y
             c.beginPath()
+            
             c.arc(x + radius,y + starty,radius,0,2*Math.PI)
+            
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'
@@ -265,118 +277,6 @@ function animate() {
 
         x = 0
         lastx = space + 2*radius*(contnumber)
-        if (0 == 1) {
-        for (current in timers2) {
-            x = 0
-        for (i = 0; i < contnumber;i++) {
-            
-            canmove = true
-            
-            if (timers2[current] - x*0.1 >= 0) {
-                if (type == 'pulse') {
-                if (amps2[current] -i*at*amps2[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
-                    if (fixo == false) {
-                        if (direct2[current] == 'u') {
-                        y = (amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                        }else{
-                            y = -(amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                        }
-                    }else{
-                        if (direct2[current] == 'd') {
-                            y = (amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                            }else{
-                                y = -(amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                            }
-                    }
-
-                    if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
-                        
-                        conts2[contnumber - 1 - i].reflect[current] = false
-                        window.alert('EI')
-                        timers3.push(timers2[current])
-                        direct3.push('u')
-                        amps3.push(amplitude)
-                        vels.push(vel)
-                        for (a in conts3) {
-                            conts3[a].move.push(true)
-                        }
-                        //loop = false
-                        
-                        
-                        }
-
-        
-                }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
-                    
-                    conts2[contnumber - 1 - i].move[current] = false
-                    /*
-                    y = 0
-                    if (contnumber - 1 - i == 0) {
-                    //window.alert('PARE')
-                    timers2[current]= 0
-
-                    for (l in conts) {
-                        //conts[l].move = true
-                        conts[l].move[current] = true
-                        conts2[l].move[current] = true
-                    }
-                   // amps2[current] = - amps2[current]
-                   if (fixo == false) {
-                   if (direct2[current] == 'u') {
-                    direct2[current] = 'd'
-                   }else{
-                    direct2[current] = 'u'
-                   }
-                }else{
-                    if (direct2[current] == 'u') {
-                        direct2[current] = 'u'
-                       }else{
-                        direct2[current] = 'd'
-                       }
-                }
-                    amps2[current] -= amplitude*0.7
-                    vels[current] -= vel*0.2
-                    }else{
-                    conts2[contnumber - 1 - i].move[current] = false
-                    }
-                    */
-                }
-            }else{
-                if (amps2[current] -i*at*amps2[current]*0.03 >= 0) {
-                    if (fixo == false) {
-                        y = (amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                    }else{
-                        y = -(amps2[current] -i*at*amps2[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                    }
-                    }else{
-                        y = 0
-                        conts2[contnumber - 1 - i].move[current] = false
-                    }
-            }
-            }else{
-                y = 0
-            }
-    
-            if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
-                y = 0
-            }
-            
-            //conts2[i].y += y
-            conts2[contnumber - 1 - i].y += y
-            c.beginPath()
-            c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
-            c.fillStyle = 'white'
-            c.fill()
-            c.strokeStyle = 'black'
-            c.stroke()
-            c.beginPath()
-            //mc.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-            c.fillStyle = 'white'
-            c.fill()
-            x+= 2*radius
-            }
-        }
-    }
 
     
         lastx = space + 2*radius*(contnumber)
@@ -402,11 +302,17 @@ function animate() {
                      if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
                          
                         conts2[contnumber - 1 - i].reflect[current] = false
-                         window.alert('EI')
+                         window.alert('CYAN')
+                        //timers3.push(timers2[current])
                         timers3.push(timers2[current])
                         direct3.push('u')
                         amps3.push(amplitude)
+                        
+                        if (timers3.length > 1) {
                         advances2.push(0)
+                        }else{
+                            advances2.push(60)
+                        }
                         vels.push(vel)
                         for (a in conts3) {
                             conts3[a].move.push(true)
@@ -442,6 +348,7 @@ function animate() {
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              c.arc(lastx - x - radius +2*(advance)*radius ,y + starty,radius,0,2*Math.PI)
+             
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
              c.fillStyle = 'white'
              c.fill()
