@@ -16,6 +16,7 @@ timers2 = [0]
 timers3 = []
 advances = [0]
 advances2 = [contnumber/3]
+advances2 = []
 amplitude = 40
 amps = [amplitude]
 amps2 = [amplitude]
@@ -54,7 +55,7 @@ fixo = false
 drawball = false
 function animate() {
     space = 10
-    at = 0.3
+    at = 0.1
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -163,9 +164,10 @@ function animate() {
                          direct2.push('u')
                          amps2.push(amplitude)
                          if (advances.length == 1) {
-                         advances.push(40)
+                            window.alert('ON THE SIDELINES')
+                         advances.push((contnumber/3)*2)
                          }else{
-                         advances.push(80)
+                         advances.push(advances[timers2.length - 2] + (contnumber/3)*2)
                          }
                          vels.push(vel)
                          for (a in conts2) {
@@ -308,10 +310,12 @@ function animate() {
                         direct3.push('u')
                         amps3.push(amplitude)
                         
-                        if (timers3.length > 1) {
-                        advances2.push(0)
+                        if (timers3.length == 1) {
+                        advances2.push(20)
                         }else{
-                            advances2.push(60)
+                            window.alert('PUSH')
+                            console.log(advances2[timers3.length - 2] + (contnumber/3)*2)
+                            advances2.push(advances2[timers3.length - 2] + 40)
                         }
                         vels.push(vel)
                         for (a in conts3) {
