@@ -7,7 +7,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 60
+contnumber = 180
 conts = []
 conts2 = []
 conts3 = []
@@ -53,10 +53,11 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = false
 drawball = false
-draw1 = true
+draw1 = false
+stroke = true
 function animate() {
     space = 10
-    at = 0.1
+    at = 0.14
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -428,7 +429,9 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y + starty)
-            //c.stroke()
+            if (stroke == true) {
+            c.stroke()
+            }
             }
             }
             
