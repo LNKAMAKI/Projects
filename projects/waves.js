@@ -7,7 +7,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 180
+contnumber = 120
 conts = []
 conts2 = []
 conts3 = []
@@ -52,12 +52,12 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 
 type = 'pulse'
 fixo = false
-drawball = false
+drawball = true
 draw1 = false
 stroke = true
 function animate() {
     space = 10
-    at = 0.14
+    at = 0.05
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -422,7 +422,7 @@ function animate() {
         
         x = 0
         
-        for (i = 0; i < (contnumber/3)*2;i++) {
+        for (i = 0; i < (contnumber/3);i++) {
             if (i < (contnumber/3) - 1) {
             c.beginPath()
             c.moveTo(x + radius + space,contsall[i + contnumber/3].y + starty)
@@ -436,13 +436,13 @@ function animate() {
             }
             
             x = 0
-        for (i = 0; i < contnumber/2;i++) {
+        for (i = 0; i < contnumber/3;i++) {
             c.beginPath()
-            if (i == (contnumber/2 - 1)) {
+            if (i == (contnumber/3 - 1)) {
                 c.fillStyle = 'pink'
                 c.beginPath()
                 elradius = 6
-                c.ellipse(x + 2*radius + space + elradius + 0.5,contsall[i].y + starty, elradius, elradius/2, 0, 0, 2*Math.PI)
+                c.ellipse(x + 2*radius + space + elradius + 0.5,contsall[i + contnumber/3].y + starty, elradius, elradius/2, 0, 0, 2*Math.PI)
                 //c.stroke()
                 c.beginPath()
             }
@@ -450,14 +450,16 @@ function animate() {
                 //loop = false
             }
             if (drawball == true) {
-            c.arc(x + radius + space,contsall[i].y + starty,radius,0,2*Math.PI)
+            c.arc(x + radius + space,contsall[i + contnumber/3].y + starty,radius,0,2*Math.PI)
             }
             c.fillStyle = 'red'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
             c.beginPath()
-            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            if (drawball == true) {
+            c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            }
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
