@@ -28,7 +28,7 @@ direct2 = ['d']
 direct3 = ['u']
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
-    conts2.push({y:0,move:[],reflect:[]})
+    conts2.push({y:0,move:[],reflect:[],fixpos:[]})
     conts3.push({y:0,move:[],reflect:[]})
 
     for (tic in timers) {
@@ -53,7 +53,7 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = false
 drawball = true
-draw1 = false
+draw1 =  false
 stroke = true
 function animate() {
     space = 10
@@ -158,7 +158,7 @@ function animate() {
                          
                          
                          conts3[i].reflect[current] = false
-                        // window.alert('WHITE')
+                         //window.alert('WHITE')
                          //timers2.push(timers3[current])
                          //window.alert(timers3[current])
                          console.log(timers3[current])
@@ -168,6 +168,7 @@ function animate() {
                             direct2.push('u')
                          }else{
                             direct2.push('d')
+                           // direct2.push('u')
                          }
                          amps2.push(amplitude)
                          if (advances.length == 1) {
@@ -315,13 +316,14 @@ function animate() {
                      if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
                          
                         conts2[contnumber - 1 - i].reflect[current] = false
-                         //window.alert('CYAN')
-                        //timers3.push(timers2[current])
+                        //window.alert('CYAN')
                         timers3.push(timers2[current])
+                        //timers3.push(timers2[current])
                         if (direct2[current] == 'd') {
                         direct3.push('u')
                         }else{
                             direct3.push('d')
+                            //direct3.push('d')
                         }
                         amps3.push(amplitude)
                         
@@ -340,9 +342,16 @@ function animate() {
                          
                          }
                  }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
-                     y = 0
-                     conts2[contnumber - 1 - i].move[current] = false
+                    y = 0
+                   conts2[contnumber - 1 - i].move[current] = false
+                }
+
+                 if ((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2) == -1.00 && timers2[current] - x*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] != false) {
+                    //window.alert('STOP')
+                   conts2[contnumber - 1 - i].fixpos[current] = y
+                   // conts2[contnumber - 1 - i].move[current] = false
                  }
+                  
              }else{
                  if (amps2[current] -(advance + i)*at*amps2[current]*0.03 >= 0) {
                      if (direct2[current] == 'u') {
@@ -360,7 +369,8 @@ function animate() {
              }
      
              if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
-                 y = 0
+               y = 0
+                // y = conts2[contnumber - 1 - i].fixpos[current]
              }
             
              conts2[contnumber - 1 - i].y += y

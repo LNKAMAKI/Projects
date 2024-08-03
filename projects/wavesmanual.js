@@ -289,7 +289,7 @@ function animate() {
             //c.lineTo(0,9)
             x+= 2*radius
             c.lineTo(x + radius + space,contsall[i + 1].y + starty)
-           // c.stroke()
+            c.stroke()
             }
             }
             
@@ -315,7 +315,7 @@ function animate() {
             c.strokeStyle = 'black'
             c.stroke()
             c.beginPath()
-            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+            c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
