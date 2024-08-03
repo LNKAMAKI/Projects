@@ -12,7 +12,7 @@ conts = []
 conts2 = []
 conts3 = []
 timers = [0]
-timers2 = [0]
+timers2 = [0,0]
 timers3 = []
 advances = [0]
 advances2 = [contnumber/3]
@@ -52,13 +52,13 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 
 type = 'pulse'
 fixo = false
-drawball = true
-draw1 = false
-man = true
+drawball = false
+draw1 = true
+man = false
 stroke = false
 function animate() {
     space = 10
-    at = 0
+    at = 0.1
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -160,11 +160,8 @@ function animate() {
                          
                          conts3[i].reflect[current] = false
                          //window.alert('WHITE')
-                         //timers2.push(timers3[current])
-                         //window.alert(timers3[current])
                          console.log(timers3[current])
                          timers2.push(timers3[current])
-                         //timers2.push(0)
                          if (direct3[current] == 'd') {
                             direct2.push('u')
                          }else{
@@ -322,7 +319,7 @@ function animate() {
                }
                }
 
-               c.fillText('I',x + radius, 120)
+               //c.fillText('I',x + radius, 120)
            
             conts[i + contnumber/3].y += y
             c.beginPath()
@@ -594,12 +591,13 @@ window.addEventListener('keydown',function (event) {
 
 window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
-    //this.window.alert('NOW')
+    this.window.alert('NOW')
     timers.push(0)
     timers2.push(0)
     direct.push('u')
     direct2.push('u')
     amps.push(amplitude)
+    amps2.push(amplitude)
     vels.push(vel)
     for (a in conts) {
         conts[a].move.push(true)
