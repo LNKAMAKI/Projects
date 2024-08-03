@@ -7,7 +7,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 120
+contnumber = 60
 conts = []
 conts2 = []
 conts3 = []
@@ -24,7 +24,7 @@ amps3 = [amplitude]
 vel = 0.3
 vels = [vel]
 direct = ['u']
-direct2 = ['u']
+direct2 = ['d']
 direct3 = ['u']
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[]})
@@ -163,7 +163,11 @@ function animate() {
                          console.log(timers3[current])
                          timers2.push(timers3[current])
                          //timers2.push(0)
-                         direct2.push('u')
+                         if (direct3[current] == 'd') {
+                            direct2.push('u')
+                         }else{
+                            direct2.push('d')
+                         }
                          amps2.push(amplitude)
                          if (advances.length == 1) {
                             //window.alert('ON THE SIDELINES')
@@ -313,7 +317,11 @@ function animate() {
                          //window.alert('CYAN')
                         //timers3.push(timers2[current])
                         timers3.push(timers2[current])
+                        if (direct2[current] == 'd') {
                         direct3.push('u')
+                        }else{
+                            direct3.push('d')
+                        }
                         amps3.push(amplitude)
                         
                         if (timers3.length == 1) {
