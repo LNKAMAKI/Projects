@@ -184,111 +184,33 @@ pky += 2
          lastx = space + 2*radius*(contnumber)
     
 
-        for (i = 0; i < contnumber;i++) {
-             
-            canmove = true
-            
-            if (timers2[current] - x*0.1 >= 0) {
-                if (type == 'pulse') {
-                if (amps3[current] -(advance + i)*at*amps3[current]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) <= 0) {
-                    if (direct3[current] == 'u') {
-                y = (amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                    }else{
-                        y = -(amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                    }
-
-
-                    if (i == (contnumber/3)*2 - 1 && conts2[contnumber - 1 - i].reflect[current] != false) {
-                        
-                        
-                        conts2[contnumber - 1 - i].reflect[current] = false
-                        window.alert('WHITE')
-                        //timers2.push(timers2[current])
-                        //window.alert(timers2[current])
-                        console.log(timers2[current])
-                        timers2.push(timers2[current])
-                        //timers2.push(0)
-                        if (direct3[current] == 'd') {
-                           direct2.push('u')
-                        }else{
-                           //direct2.push('d')
-                           direct2.push('u')
-                        }
-                        amps2.push(amplitude)
-                        if (advances.length == 1) {
-                           //window.alert('ON THE SIDELINES')
-                        advances.push((contnumber/3)*2)
-                        }else{
-                        advances.push(advances[timers2.length - 2] + (contnumber/3)*2)
-                        }
-                        vels.push(vel)
-                        for (a in conts2) {
-                            conts2[a].move.push(true)
-                        }
-                        //loop = false
-                        
-                        
-                        }
-                }else if(Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
-                   // y = 0
-                   // conts2[contnumber - 1 - i].move[current] = false
-                }
-            }else{
-                if (amps3[current] -(advance + i)*at*amps3[current]*0.03 >= 0) {
-                    if (direct3[current] == 'u') {
-                        y = (amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                            }else{
-                                y = -(amps3[current] -(advance + i)*at*amps3[current]*0.03)*Math.sin(0 - vels[current]*(timers2[current] - x*0.1))
-                            }
-                    }else{
-                        y = 0
-                        conts2[contnumber - 1 - i].move[current] = false
-                    }
-            }
-            }else{
-                y = 0
-            }
-    
-           
+         if (man == true) {
             c.fillStyle = 'black'
-            if (conts2[contnumber - 1 - i].move[current] == true) {
-            if ((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(1) == 0) {
+            if (conts[i + contnumber/3].move[current] == true) {
+            if ((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(1) == 0) {
                c.fillStyle = 'red'
-            }else if((Math.sin(0 - vels[current]*(timers2[current] - x*0.1))).toFixed(2) == -1.00) {
+            }else if((Math.sin(0 - vels[current]*(timers[current] - x*0.1))).toFixed(2) == -1.00) {
                c.fillStyle = 'blue'
             }
             }
 
             c.font = '20px Arial'
-            if (Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current] + 0.01 - x*0.1)) && timers2[current] - x*0.1 >= 0) {
+            if (Math.sin(0 - vels[current]*(timers[current] - x*0.1)) < Math.sin(0 - vels[current]*(timers[current] + 0.01 - x*0.1)) && timers[current] - x*0.1 >= 0) {
                c.fillStyle = 'yellow'
-               y = (amps3[current] -(advance + i)*at*amps3[current]*0.03)*-1
-               conts2[contnumber - 1 - i].move[current] = false
-               conts2[contnumber - 1 - i].fixpos[current] = y
+               y = (amps[current] -(advance + i)*at*amps[current]*0.03)*-1
+               conts[i + contnumber/3].move[current] = false
+               conts[i + contnumber/3].fixpos[current] = y
             }
-
-            if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
-               y = conts2[contnumber - 1 - i].fixpos[current]
            }
 
-           conts2[contnumber - 1 - i].y += y
-
-            c.fillText('I',x + radius -2*(advance)*radius + space,120)
-            c.beginPath()
-            //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
-            
-            if (draw1 == true) {
-            c.arc(x + radius -2*(advance)*radius + space,y + starty,radius,0,2*Math.PI)
-            }
-            
-            //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
-            c.fillStyle = 'cyan'
-            c.fill()
-            c.strokeStyle = 'black'
-            c.stroke()
-            c.beginPath()
-            //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-            c.fillStyle = 'white'
-            c.fill()
-            x+= 2*radius
-            }
+            if (conts[i + contnumber/3].move[current] == false && type == 'pulse') {
+               if (man == true) {
+               if (direct[current] == 'u') {
+                   y = conts[i + contnumber/3].fixpos[current]
+               }else{
+                   y = -conts[i + contnumber/3].fixpos[current] 
+               }
+           }else{
+               y = 0
+           }
+           }

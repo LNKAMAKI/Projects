@@ -24,10 +24,10 @@ amps3 = [amplitude]
 vel = 0.5
 vels = [vel]
 direct = ['u']
-direct2 = ['u']
+direct2 = ['d']
 direct3 = []
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[]})
+    conts.push({y:0,move:[],fixpos:[]})
     conts2.push({y:0,move:[],reflect:[],fixpos:[]})
     conts3.push({y:0,move:[],reflect:[],fixpos:[]})
 
@@ -52,13 +52,13 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 
 type = 'pulse'
 fixo = false
-drawball = false
+drawball = true
 draw1 = false
 man = true
 stroke = false
 function animate() {
     space = 10
-    at = 0.2
+    at = 0
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -276,7 +276,9 @@ function animate() {
                     }
                 }else if(Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
                     y = 0
+                    if (man == false){
                     conts[i + contnumber/3].move[current] = false
+                    }
                 }
             }else{
                 if (amps[current] -i*at*amps[current]*0.03 >= 0) {
@@ -294,9 +296,33 @@ function animate() {
                 y = 0
             }
     
-            if (conts[i + contnumber/3].move[current] == false && type == 'pulse') {
-                y = 0
-            }
+            if (man == true) {
+                c.fillStyle = 'black'
+                if (conts[i + contnumber/3].move[current] == true) {
+                if ((Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))).toFixed(1) == 0) {
+                   c.fillStyle = 'red'
+                }else if((Math.sin(0 - vels[current]*(timers[current] - (x - (space + 2*radius*(contnumber/3)))*0.1))).toFixed(2) == -1.00) {
+                   c.fillStyle = 'blue'
+                   conts[i + contnumber/3].move[current] = false
+                   conts[i + contnumber/3].fixpos[current] = y
+                }
+                }
+    
+               }
+    
+                if (conts[i + contnumber/3].move[current] == false && type == 'pulse') {
+                   if (man == true) {
+                   if (direct[current] == 'u') {
+                       y = conts[i + contnumber/3].fixpos[current]
+                   }else{
+                       y = -conts[i + contnumber/3].fixpos[current] 
+                   }
+               }else{
+                   y = 0
+               }
+               }
+
+               c.fillText('I',x + radius, 120)
            
             conts[i + contnumber/3].y += y
             c.beginPath()
@@ -412,7 +438,7 @@ function animate() {
             c.font = '20px Arial'
             if (Math.sin(0 - vels[current]*(timers2[current] - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current] + 0.01 - x*0.1)) && timers2[current] - x*0.1 >= 0) {
                c.fillStyle = 'yellow'
-               y = (amps3[current] -(advance + i)*at*amps3[current]*0.03)*-1
+               y = (amps2[current] -(advance + i)*at*amps2[current]*0.03)*-1
                conts2[contnumber - 1 - i].move[current] = false
                conts2[contnumber - 1 - i].fixpos[current] = y
             }
