@@ -7,11 +7,11 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 60
+contnumber = 120
 conts = []
 conts2 = []
 conts3 = []
-timers = []
+timers = [0]
 timers2 = [0]
 timers3 = []
 advances = [0]
@@ -21,7 +21,7 @@ amplitude = 40
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = [amplitude]
-vel = 0.25
+vel = 0.3
 vels = [vel]
 direct = ['u']
 direct2 = ['u']
@@ -53,6 +53,7 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = false
 drawball = false
+draw1 = true
 function animate() {
     space = 10
     at = 0.1
@@ -63,6 +64,7 @@ function animate() {
     for (l in conts) {
         conts[l].y = 0
         conts2[l].y = 0
+        conts3[l].y = 0
     }
 
     if (addpulse == true) {
@@ -155,16 +157,16 @@ function animate() {
                          
                          
                          conts3[i].reflect[current] = false
-                         window.alert('WHITE')
+                        // window.alert('WHITE')
                          //timers2.push(timers3[current])
-                         window.alert(timers3[current])
+                         //window.alert(timers3[current])
                          console.log(timers3[current])
                          timers2.push(timers3[current])
                          //timers2.push(0)
                          direct2.push('u')
                          amps2.push(amplitude)
                          if (advances.length == 1) {
-                            window.alert('ON THE SIDELINES')
+                            //window.alert('ON THE SIDELINES')
                          advances.push((contnumber/3)*2)
                          }else{
                          advances.push(advances[timers2.length - 2] + (contnumber/3)*2)
@@ -205,7 +207,9 @@ function animate() {
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              
+             if (draw1 == true) {
              c.arc(x + radius -2*(advance)*radius + space,y + starty,radius,0,2*Math.PI)
+             }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
              c.fillStyle = 'cyan'
@@ -261,7 +265,9 @@ function animate() {
             conts[i + contnumber/3].y += y
             c.beginPath()
             
+            if (draw1 == true) {
             c.arc(x + radius,y + starty,radius,0,2*Math.PI)
+            }
             
             c.fillStyle = 'red'
             c.fill()
@@ -304,18 +310,18 @@ function animate() {
                      if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
                          
                         conts2[contnumber - 1 - i].reflect[current] = false
-                         window.alert('CYAN')
+                         //window.alert('CYAN')
                         //timers3.push(timers2[current])
                         timers3.push(timers2[current])
                         direct3.push('u')
                         amps3.push(amplitude)
                         
                         if (timers3.length == 1) {
-                        advances2.push(20)
+                        advances2.push((contnumber/3))
                         }else{
-                            window.alert('PUSH')
+                            //window.alert('PUSH')
                             console.log(advances2[timers3.length - 2] + (contnumber/3)*2)
-                            advances2.push(advances2[timers3.length - 2] + 40)
+                            advances2.push(advances2[timers3.length - 2] + (contnumber/3)*2)
                         }
                         vels.push(vel)
                         for (a in conts3) {
@@ -351,7 +357,9 @@ function animate() {
              conts2[contnumber - 1 - i].y += y
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
+             if (draw1 == true) {
              c.arc(lastx - x - radius +2*(advance)*radius ,y + starty,radius,0,2*Math.PI)
+             }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
              c.fillStyle = 'white'
@@ -400,18 +408,18 @@ function animate() {
         
         contsall = []
         for (cont in conts) {
-            contsall.push({index:cont,y:conts[cont].y + conts2[cont].y})
+            contsall.push({index:cont,y:conts2[cont].y + conts3[cont].y + conts[cont].y})
         }
         
         x = 0
         
-        for (i = 0; i < contnumber/2;i++) {
-            if (i < contnumber/2 - 1) {
+        for (i = 0; i < (contnumber/3)*2;i++) {
+            if (i < (contnumber/3) - 1) {
             c.beginPath()
-            c.moveTo(x + radius + space,contsall[i].y + starty)
+            c.moveTo(x + radius + space,contsall[i + contnumber/3].y + starty)
             //c.lineTo(0,9)
             x+= 2*radius
-            c.lineTo(x + radius + space,contsall[i + 1].y + starty)
+            c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y + starty)
             //c.stroke()
             }
             }
