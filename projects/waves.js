@@ -52,9 +52,9 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = false
 drawball = false
-draw1 =false
-man = false
-stroke = true
+draw1 = true
+man = true
+stroke = false
 function animate() {
     space = 10
     at = 0.4
@@ -183,8 +183,13 @@ function animate() {
                          }
                  }else if(Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) >= 0 && conts3[i].move[current] == true){
                      y = 0
+                     if (man == false) {
                      conts3[i].move[current] = false
-                 }
+                     }
+                 }else{
+                        y = 0
+                        //window.alert('EITA')
+                    }
              }else{
                  if (amps3[current] -(advance + i)*at*amps3[current]*0.03 >= 0) {
                      if (direct3[current] == 'u') {
@@ -212,7 +217,7 @@ function animate() {
              }
 
              c.font = '20px Arial'
-             if (Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers3[current].time + 0.01 - x*0.1)) && timers3[current].time - x*0.1 >= 0) {
+             if (Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers3[current].time + 0.01 - x*0.1)) && timers3[current].time - x*0.1 >= 0 && amps3[current] -(advance + i)*at*amps3[current]*0.03 >= 0) {
                 c.fillStyle = 'yellow'
                 y = (amps3[current] -(advance + i)*at*amps3[current]*0.03)*-1
                 conts3[i].move[current] = false
@@ -374,7 +379,7 @@ function animate() {
                         if (direct2[current] == 'd') {
                         direct3.push('u')
                         }else{
-                            direct3.push('u')
+                            direct3.push('d')
                             //direct3.push('u')
                         }
                         amps3.push(amplitude)
@@ -397,7 +402,12 @@ function animate() {
                          }
                  }else if(Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
                     y = 0
+                    if (man == false) {
                    conts2[contnumber - 1 - i].move[current] = false
+                    }
+                }else{
+                    y = 0
+                    //window.alert('EITA')
                 }
 
                 /*
@@ -434,7 +444,7 @@ function animate() {
             }
 
             c.font = '20px Arial'
-            if (Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time + 0.01 - x*0.1)) && timers2[current].time - x*0.1 >= 0) {
+            if (Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time + 0.01 - x*0.1)) && timers2[current].time - x*0.1 >= 0 && amps2[current] -(advance + i)*at*amps2[current]*0.03 >= 0) {
                c.fillStyle = 'yellow'
                y = (amps2[current] -(advance + i)*at*amps2[current]*0.03)*-1
                conts2[contnumber - 1 - i].move[current] = false
@@ -456,7 +466,9 @@ function animate() {
              }
             
              conts2[contnumber - 1 - i].y += y
-             //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
+             if (current == 1) {
+             c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
+             }
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              if (draw1 == true) {
