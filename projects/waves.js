@@ -52,12 +52,12 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = false
 drawball = false
-draw1 = true
+draw1 =false
 man = false
-stroke = false
+stroke = true
 function animate() {
     space = 10
-    at = 0.2
+    at = 0.4
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -163,7 +163,7 @@ function animate() {
                          if (direct3[current] == 'd') {
                             direct2.push('u')
                          }else{
-                            direct2.push('u')
+                            direct2.push('d')
                             //direct2.push('u')
                          }
                          amps2.push(amplitude)
