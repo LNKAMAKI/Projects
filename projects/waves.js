@@ -466,9 +466,9 @@ function animate() {
              }
             
              conts2[contnumber - 1 - i].y += y
-             if (current == 1) {
-             c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
-             }
+             
+             //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
+             
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              if (draw1 == true) {
@@ -622,4 +622,19 @@ window.addEventListener('keyup',function (event) {
     }
     }
 
+})
+
+window.addEventListener('mousemove',function(event) {
+    canv = document.querySelector('canvas')
+    cWidth = canv.offsetWidth
+    wWidth = this.window.innerWidth
+    cHeight = canv.offsetHeight
+    wHeight = this.window.innerHeight
+    dif = wWidth - cWidth
+    
+    mousex = ((event.x - dif/2)/cWidth)*300
+    mousey = ((event.y)/cHeight)*150
+    this.document.getElementById('x').innerText = mousex
+    this.document.getElementById('y').innerText = mousey
+   
 })
