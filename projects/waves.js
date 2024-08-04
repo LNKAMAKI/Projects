@@ -1,5 +1,5 @@
 let radius = 2.3
-let starty = 100
+let starty = 120
 let x = 0
 loop = true
 addpulse = false
@@ -13,10 +13,11 @@ conts2 = []
 conts3 = []
 timers = [{time: 0,ind:0,ind2:0}]
 timers2 = [{time: 0,ind:0,ind2:0}]
+timers2 = []
 timers3 = []
-advances = [{ads:[0]}]
-advances2 = [{ads:[]}]
-amplitude = 40
+advances = [{ads:[0],sty:starty}]
+advances2 = [{ads:[],sty:starty}]
+amplitude = 1
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
@@ -52,9 +53,9 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = false
 drawball = false
-draw1 = true
+draw1 = false
 man = true
-stroke = false
+stroke = true
 function animate() {
     space = 10
     at = 0.4
@@ -244,7 +245,7 @@ function animate() {
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              
              if (draw1 == true) {
-             c.arc(x + radius -2*(advance)*radius + space,y + starty,radius,0,2*Math.PI)
+             c.arc(x + radius -2*(advance)*radius + space,y + advances2[timers3[current].ind].sty,radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -315,7 +316,8 @@ function animate() {
                    if (direct[current] == 'u') {
                        y = conts[i + contnumber/3].fixpos[current]
                    }else{
-                       y = -conts[i + contnumber/3].fixpos[current] 
+                       y = conts[i + contnumber/3].fixpos[current] 
+                       //y = 0
                    }
                }else{
                    y = 0
@@ -328,7 +330,7 @@ function animate() {
             c.beginPath()
             
             if (draw1 == true) {
-            c.arc(x + radius,y + starty,radius,0,2*Math.PI)
+            c.arc(x + radius,y + advances[timers[current].ind].sty,radius,0,2*Math.PI)
             }
             
             c.fillStyle = 'red'
@@ -373,7 +375,7 @@ function animate() {
                          
                         conts2[contnumber - 1 - i].reflect[current] = false
                         //window.alert('CYAN')
-                        console.log('CYAN',current,advances[timers2[current].ind])
+                        //console.log('CYAN',current,advances[timers2[current].ind])
                         timers3.push({time:timers2[current].time,ind:timers2[current].ind,ind2:advances2[timers2[current].ind].ads.length})
                         //timers3.push(timers2[current].time)
                         if (direct2[current] == 'd') {
@@ -384,13 +386,13 @@ function animate() {
                         }
                         amps3.push(amplitude)
                         
-                        console.log('WHAT',advances2[timers2[current].ind].ads.length)
+                       // console.log('WHAT',advances2[timers2[current].ind].ads.length)
                         if (advances2[timers2[current].ind].ads.length == 0) {
                             advances2[timers2[current].ind].ads.push((contnumber/3))
-                            console.log('WHAT2',advances2[timers2[current].ind].ads.length)
+                            //console.log('WHAT2',advances2[timers2[current].ind].ads.length)
                         }else{
                             //Mwindow.alert('PUSH')
-                            console.log(advances2[timers3.length - 2] + (contnumber/3)*2)
+                            //console.log(advances2[timers3.length - 2] + (contnumber/3)*2)
                             advances2[timers2[current].ind].ads.push(advances2[timers2[current].ind].ads[advances2[timers2[current].ind].ads.length - 1] + (contnumber/3)*2)
                         }
                         vels.push(vel)
@@ -472,7 +474,7 @@ function animate() {
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              if (draw1 == true) {
-             c.arc(lastx - x - radius +2*(advance)*radius ,y + starty,radius,0,2*Math.PI)
+             c.arc(lastx - x - radius +2*(advance)*radius ,y + advances[timers2[current].ind].sty,radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -624,17 +626,45 @@ window.addEventListener('keyup',function (event) {
 
 })
 
+mousex = 'i'
+mousey = 'i'
+find = 0
 window.addEventListener('mousemove',function(event) {
     canv = document.querySelector('canvas')
+    c = canv.getContext('2d')
     cWidth = canv.offsetWidth
     wWidth = this.window.innerWidth
     cHeight = canv.offsetHeight
     wHeight = this.window.innerHeight
     dif = wWidth - cWidth
     
+    this.document.getElementById('ev').innerText = ((event.y)/cHeight)*150
+    //console.log(mousey,(((event.y)/cHeight)*150))
+    if (mousey != 'i') {
+        if (((event.y)/cHeight)*150 < mousey) {
+             c.fillStyle = 'red'
+             direct.push('u')
+        }else{
+            c.fillStyle = 'blue'
+            direct.push('d')
+        }
+    }
+
+      timers.push({time:0,ind:find})
+        advances.push({ads:[],sty:mousey})
+    amps.push(amplitude)
+    vels.push(vel)
+    for (a in conts) {
+        conts[a].move.push(true)
+    }
+
+    c.clearRect(0,0,300,150)
+    c.fillText('EPAOA',100,120)
+    c.stroke()
     mousex = ((event.x - dif/2)/cWidth)*300
     mousey = ((event.y)/cHeight)*150
     this.document.getElementById('x').innerText = mousex
     this.document.getElementById('y').innerText = mousey
-   
+    find++
 })
+
