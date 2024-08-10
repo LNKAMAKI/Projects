@@ -144,90 +144,142 @@ function load() {
    const intervalId = setInterval(loop,100)
 }
 
-for (current in timers) {
-           
-    x = space + 2*radius*(contnumber/3)
-for (i = 0; i < (contnumber/3)*2;i++) {
+for (current in timers2) {
+    //advance = conts2[contnumber - 1 - i].advances[current]
+    advance = advances[timers2[current].ind].ads[timers2[current].ind2]
+    x =  2*(advance)*radius
+    //x = 0
+    // - (advance)*2*radius
+ for (i = 0; i < contnumber;i++) {
+     
+     canmove = true
+     if (timers2[current].time[i] - x*0.1 >= 0) {
+         if (type == 'pulse') {
+         if (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1)) <= 0) {
+             if (direct2[current] == 'u') {
+         y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+             }else{
+                 y = -(advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+             }
 
-    if (conts[i + contnumber/3] != undefined) {
-    
-    canmove = true
-    
-    if (timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
-        if (type == 'pulse') {
-        if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
-            if (direct[current] == 'u') {
-        y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
-            }else{
-                y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
-            }
-        }else if(Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
+
+             if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
+                 
+                conts2[contnumber - 1 - i].reflect[current] = false
+                //window.alert('CYAN')
+                //console.log('CYAN',current,advances[timers2[current].ind])
+                timers3.push({time:timers2[current].time[i],ind:timers2[current].ind,ind2:advances2[timers2[current].ind].ads.length})
+                //timers3.push(timers2[current].time[i])
+                if (direct2[current] == 'd') {
+                direct3.push('u')
+                }else{
+                    direct3.push('d')
+                    //direct3.push('u')
+                }
+                amps3.push(amplitude)
+                
+               // console.log('WHAT',advances2[timers2[current].ind].ads.length)
+                if (advances2[timers2[current].ind].ads.length == 0) {
+                    advances2[timers2[current].ind].ads.push((contnumber/3))
+                    //console.log('WHAT2',advances2[timers2[current].ind].ads.length)
+                }else{
+                    //Mwindow.alert('PUSH')
+                    //console.log(advances2[timers3.length - 2] + (contnumber/3)*2)
+                    advances2[timers2[current].ind].ads.push(advances2[timers2[current].ind].ads[advances2[timers2[current].ind].ads.length - 1] + (contnumber/3)*2)
+                }
+                vels.push(vel)
+                for (a in conts3) {
+                    conts3[a].move.push(true)
+                }
+                //loop = false
+                 
+                 }
+         }else if(Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1)) >= 0 && conts2[contnumber - 1 - i].move[current] == true){
             y = 0
-            if (man == false){
-            conts[i + contnumber/3].move[current] = false
+            if (man == false) {
+           conts2[contnumber - 1 - i].move[current] = false
             }
-        }
-    }else{
-        if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0) {
-            if (direct[current] == 'u') {
-                y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
-                    }else{
-                        y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
-                    }
-            }else{
-                y = 0
-                conts[i + contnumber/3].move[current] = false
-            }
-    }
-    }else{
-        y = 0
-    }
-
-    if (man == true) {
-        c.fillStyle = 'black'
-        if (conts[i + contnumber/3].move[current] == true) {
-        if ((Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))).toFixed(1) == 0) {
-           c.fillStyle = 'red'
-        }else if((Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))).toFixed(2) == -1.00) {
-           c.fillStyle = 'blue'
-           conts[i + contnumber/3].move[current] = false
-           conts[i + contnumber/3].fixpos[current] = y
-        }
+        }else{
+            y = 0
+            //window.alert('EITA')
         }
 
-       }
+        /*
+         if ((Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))).toFixed(2) == -1.00 && timers2[current].time[i] - x*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] != false) {
+            //window.alert('STOP')
+           conts2[contnumber - 1 - i].fixpos[current] = y
+            conts2[contnumber - 1 - i].move[current] = false
+         }*/
+          
+     }else{
+         if (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0) {
+             if (direct2[current] == 'u') {
+                 y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+                     }else{
+                         y = -(advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+                     }
+             }else{
+                 y = 0
+                 conts2[contnumber - 1 - i].move[current] = false
+             }
+     }
+     }else{
+         y = 0
+     }
 
-        if (conts[i + contnumber/3].move[current] == false && type == 'pulse') {
-           if (man == true) {
-           if (direct[current] == 'u') {
-               y = conts[i + contnumber/3].fixpos[current]
-           }else{
-               y = conts[i + contnumber/3].fixpos[current] 
-               //y = 0
-           }
-       }else{
-           y = 0
-       }
-       }
-
-       //c.fillText('I',x + radius, 120)
-   
-    conts[i + contnumber/3].y += y
-    c.beginPath()
-    
-    if (draw1 == true) {
-    c.arc(x + radius,y + advances[timers[current].ind].sty,radius,0,2*Math.PI)
+     if (man == true) {
+     c.fillStyle = 'black'
+     /*
+    if (conts2[contnumber - 1 - i].move[current] == true) {
+    if ((Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))).toFixed(1) == 0) {
+       c.fillStyle = 'red'
+    }else if((Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))).toFixed(2) == -1.00) {
+       c.fillStyle = 'blue'
     }
-    
-    c.fillStyle = 'blue'
-    c.fill()
-    c.strokeStyle = 'black'
-    c.stroke()
-    c.beginPath()
-    //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-    c.fillStyle = 'white'
-    c.fill()
-    x+= 2*radius
+    }
+    */
+
+    c.font = '20px Arial'
+    if (Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time[i] + 0.01 - x*0.1)) && timers2[current].time[i] - x*0.1 >= 0 && advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0) {
+       c.fillStyle = 'yellow'
+       y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*-1
+       conts2[contnumber - 1 - i].move[current] = false
+       conts2[contnumber - 1 - i].fixpos[current] = y
     }
 }
-}
+
+     if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
+      // y = 0
+      if (man == true){
+      if (direct2[current] == 'u') {
+         y = conts2[contnumber - 1 - i].fixpos[current]
+      }else{
+        y = -conts2[contnumber - 1 - i].fixpos[current]
+      }
+      }else{
+      y = 0
+      }
+     }
+    
+     conts2[contnumber - 1 - i].y += y
+     
+     //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
+     
+     c.beginPath()
+     //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
+     if (draw1 == true) {
+     c.arc(lastx - x - radius +2*(advance)*radius ,y + advances[timers2[current].ind].sty,radius,0,2*Math.PI)
+     }
+     
+     //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+     c.fillStyle = 'white'
+     c.fill()
+     c.strokeStyle = 'black'
+     c.stroke()
+     c.beginPath()
+     //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+     c.fillStyle = 'white'
+     c.fill()
+     x+= 2*radius
+     }
+ }
