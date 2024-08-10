@@ -598,12 +598,12 @@ go = false
 window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
-    //timers.push({time:0,ind:1})
+    timers.push({time:0,ind:1})
     timers2.push({time:0, ind:1,ind2:0})
     direct.push('u')
     direct2.push('u')
    // advances[timers[current].ind].amp.push(amplitude)
-    advances[timers2[current].ind].amp.push(amplitude)
+    amps.push(amplitude)
     advances.push({ads:[0]})
     advances2.push({ads:[]})
     vels.push(vel)
@@ -674,7 +674,7 @@ window.addEventListener('mousemove',function(event) {
     if (ir == true) {
         ir = false
     setTimeout(function () {
-        window.alert('hello')
+        //window.alert('hello')
         console.log(conts.length)
         ir = true
         for (k = 0; k < contnumber/3; k++) {
@@ -717,8 +717,3 @@ window.addEventListener('keydown',function (event) {
      
     }
 }) 
-
-
-
-
-

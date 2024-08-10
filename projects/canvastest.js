@@ -143,3 +143,91 @@ function load() {
    }
    const intervalId = setInterval(loop,100)
 }
+
+for (current in timers) {
+           
+    x = space + 2*radius*(contnumber/3)
+for (i = 0; i < (contnumber/3)*2;i++) {
+
+    if (conts[i + contnumber/3] != undefined) {
+    
+    canmove = true
+    
+    if (timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
+        if (type == 'pulse') {
+        if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
+            if (direct[current] == 'u') {
+        y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+            }else{
+                y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+            }
+        }else if(Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
+            y = 0
+            if (man == false){
+            conts[i + contnumber/3].move[current] = false
+            }
+        }
+    }else{
+        if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0) {
+            if (direct[current] == 'u') {
+                y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                    }else{
+                        y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                    }
+            }else{
+                y = 0
+                conts[i + contnumber/3].move[current] = false
+            }
+    }
+    }else{
+        y = 0
+    }
+
+    if (man == true) {
+        c.fillStyle = 'black'
+        if (conts[i + contnumber/3].move[current] == true) {
+        if ((Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))).toFixed(1) == 0) {
+           c.fillStyle = 'red'
+        }else if((Math.sin(0 - vels[current]*(timers[current].time - (1 - (space + 2*radius*(contnumber/3)))*0.1))).toFixed(2) == -1.00) {
+           c.fillStyle = 'blue'
+           conts[i + contnumber/3].move[current] = false
+           conts[i + contnumber/3].fixpos[current] = y
+        }
+        }
+
+       }
+
+        if (conts[i + contnumber/3].move[current] == false && type == 'pulse') {
+           if (man == true) {
+           if (direct[current] == 'u') {
+               y = conts[i + contnumber/3].fixpos[current]
+           }else{
+               y = conts[i + contnumber/3].fixpos[current] 
+               //y = 0
+           }
+       }else{
+           y = 0
+       }
+       }
+
+       //c.fillText('I',x + radius, 120)
+   
+    conts[i + contnumber/3].y += y
+    c.beginPath()
+    
+    if (draw1 == true) {
+    c.arc(x + radius,y + advances[timers[current].ind].sty,radius,0,2*Math.PI)
+    }
+    
+    c.fillStyle = 'blue'
+    c.fill()
+    c.strokeStyle = 'black'
+    c.stroke()
+    c.beginPath()
+    //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+    c.fillStyle = 'white'
+    c.fill()
+    x+= 2*radius
+    }
+}
+}
