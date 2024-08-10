@@ -1,5 +1,5 @@
 let radius = 2.3
-let starty = 120
+let starty = 100
 let x = 0
 loop = true
 addpulse = false
@@ -16,8 +16,9 @@ timers = []
 timers2 = [{time: 0,ind:0,ind2:0}]
 timers2 = []
 timers3 = []
-amplitude = 1
+amplitude = 60
 advances = [{ads:[0],sty:starty,amp:amplitude}]
+advances = []
 advances2 = [{ads:[],sty:starty,amp:amplitude}]
 amps = [amplitude]
 amps2 = [amplitude]
@@ -54,9 +55,9 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = false
 drawball = false
-draw1 = false
-man = true
-stroke = true
+draw1 = true
+man = false
+stroke = false  
 function animate() {
     space = 10
     at = 0.4
@@ -587,24 +588,8 @@ requestAnimationFrame(animate)
 }
 }
 animate()
-}
 
-
-window.addEventListener('keydown',function (event) {
-    //this.window.alert(event.key)
-    if (event.key == 'p') {
-        loop = false
-    }
-    if (event.key == 'm') {
-        //this.window.alert('m')
-        for (l in conts) {
-            //conts[l].move = true
-            conts[l].y = 0
-        }
-     
-    }
-}) 
-
+go = false
 window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
@@ -625,12 +610,18 @@ window.addEventListener('keyup',function (event) {
     }
     }
 
+    if (event.key == 'e') {
+        go = true
+    }
+
 })
 
 mousex = 'i'
 mousey = 'i'
 find = 0
 window.addEventListener('mousemove',function(event) {
+    if (go == true) {
+        c.clearRect(0,0,300,150)
     canv = document.querySelector('canvas')
     c = canv.getContext('2d')
     cWidth = canv.offsetWidth
@@ -641,31 +632,65 @@ window.addEventListener('mousemove',function(event) {
     
     this.document.getElementById('ev').innerText = ((event.y)/cHeight)*150
     //console.log(mousey,(((event.y)/cHeight)*150))
+    axis = 100
     if (mousey != 'i') {
         if (((event.y)/cHeight)*150 < mousey) {
              c.fillStyle = 'red'
-             direct.push('u')
+             direct = ['u']
         }else{
             c.fillStyle = 'blue'
-            direct.push('d')
+            direct = ['d']
         }
-    }
+    
 
-      timers.push({time:0,ind:find})
-        advances.push({ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)})
+    //if (find < 4) {
+    timers = [{time:0,ind:0}]
+    //timers.push({time:0,ind:find})
+        //advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - 120)}]
+        advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)}]
+        //advances.push({ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)})
+        //advances.push({ads:[],sty:mousey,amp:20})
+        
+    
     //advances[timers[current].ind].amp.push(amplitude)
     vels.push(vel)
     for (a in conts) {
-        conts[a].move.push(true)
+        conts[a].move[0] = true
+        //conts[a].move.push(true)
+        //conts[a].y = 0
+    }
+    find++
+//}  
     }
 
-    c.clearRect(0,0,300,150)
     c.fillText('EPAOA',100,120)
     c.stroke()
     mousex = ((event.x - dif/2)/cWidth)*300
     mousey = ((event.y)/cHeight)*150
     this.document.getElementById('x').innerText = mousex
     this.document.getElementById('y').innerText = mousey
-    find++
+    //find++
+}
 })
+}
+
+
+window.addEventListener('keydown',function (event) {
+    //this.window.alert(event.key)
+    if (event.key == 'p') {
+        loop = false
+    }
+    if (event.key == 'm') {
+        //this.window.alert('m')
+        for (l in conts) {
+            //conts[l].move = true
+            conts[l].y = 0
+        }
+     
+    }
+}) 
+
+
+
+
 
