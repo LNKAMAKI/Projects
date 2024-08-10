@@ -12,13 +12,13 @@ conts = []
 conts2 = []
 conts3 = []
 timers = [{time: 0,ind:0,ind2:0}]
-timers = []
+//timers = []
 timers2 = [{time: 0,ind:0,ind2:0}]
-timers2 = []
+//timers2 = []
 timers3 = []
 amplitude = 60
 advances = [{ads:[0],sty:starty,amp:amplitude}]
-advances = []
+//advances = []
 advances2 = [{ads:[],sty:starty,amp:amplitude}]
 amps = [amplitude]
 amps2 = [amplitude]
@@ -29,12 +29,12 @@ direct = ['u']
 direct2 = ['d']
 direct3 = []
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[],fixpos:[]})
+    //conts.push({y:0,move:[],fixpos:[]})
     conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
     conts3.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
 
     for (tic in timers) {
-        conts[i].move.push(true)
+        //conts[i].move.push(true)
     }
     for (tic in timers2) {
         conts2[i].move.push(true)
@@ -67,15 +67,15 @@ function animate() {
 
     for (l in conts) {
         conts[l].y = 0
-        conts2[l].y = 0
-        conts3[l].y = 0
+        //conts2[l].y = 0
+       // conts3[l].y = 0
     }
 
     if (addpulse == true) {
        // window.alert('FAZER ISSO AQUI')
         for (l in conts) {
             conts[l].y = 10
-            conts2[l].y = 10
+            //conts2[l].y = 10
         }
     }
    
@@ -264,8 +264,11 @@ function animate() {
          }
 
         for (current in timers) {
+           
             x = space + 2*radius*(contnumber/3)
         for (i = 0; i < (contnumber/3)*2;i++) {
+
+            if (conts[i + contnumber/3] != undefined) {
             
             canmove = true
             
@@ -335,7 +338,7 @@ function animate() {
             c.arc(x + radius,y + advances[timers[current].ind].sty,radius,0,2*Math.PI)
             }
             
-            c.fillStyle = 'red'
+            c.fillStyle = 'blue'
             c.fill()
             c.strokeStyle = 'black'
             c.stroke()
@@ -345,6 +348,7 @@ function animate() {
             c.fill()
             x+= 2*radius
             }
+        }
         }
 
 
@@ -524,6 +528,7 @@ function animate() {
                     x+= 2*radius
                     }
         
+                    /*
         contsall = []
         for (cont in conts) {
             contsall.push({index:cont,y:conts2[cont].y + conts3[cont].y + conts[cont].y})
@@ -534,10 +539,10 @@ function animate() {
         for (i = 0; i < (contnumber/3);i++) {
             if (i < (contnumber/3) - 1) {
             c.beginPath()
-            c.moveTo(x + radius + space,contsall[i + contnumber/3].y + starty)
+           // c.moveTo(x + radius + space,contsall[i + contnumber/3].y + starty)
             //c.lineTo(0,9)
             x+= 2*radius
-            c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y + starty)
+           // c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y + starty)
             if (stroke == true) {
             c.stroke()
             }
@@ -551,13 +556,13 @@ function animate() {
                 c.fillStyle = 'pink'
                 c.beginPath()
                 elradius = 6
-                c.ellipse(x + 2*radius + space + elradius + 0.5,contsall[i + contnumber/3].y + starty, elradius, elradius/2, 0, 0, 2*Math.PI)
+               // c.ellipse(x + 2*radius + space + elradius + 0.5,contsall[i + contnumber/3].y + starty, elradius, elradius/2, 0, 0, 2*Math.PI)
                 //c.stroke()
                 c.beginPath()
             }
-            if (contsall[i].y + starty > starty) {
+           // if (contsall[i].y + starty > starty) {
                 //loop = false
-            }
+           // }
             if (drawball == true) {
             c.arc(x + radius + space,contsall[i + contnumber/3].y + starty,radius,0,2*Math.PI)
             }
@@ -572,7 +577,7 @@ function animate() {
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
-            }
+            }*/
 
         for (k in timers){
             timers[k].time += 0.1
@@ -612,6 +617,12 @@ window.addEventListener('keyup',function (event) {
 
     if (event.key == 'e') {
         go = true
+
+        //setTimeout(sayHello, 1000)
+    }
+
+    function sayHello() {
+        window.alert('Hello')
     }
 
 })
@@ -619,6 +630,7 @@ window.addEventListener('keyup',function (event) {
 mousex = 'i'
 mousey = 'i'
 find = 0
+ir = true
 window.addEventListener('mousemove',function(event) {
     if (go == true) {
         c.clearRect(0,0,300,150)
@@ -644,7 +656,7 @@ window.addEventListener('mousemove',function(event) {
     
 
     //if (find < 4) {
-    timers = [{time:0,ind:0}]
+    //timers = [{time:0,ind:0}]
     //timers.push({time:0,ind:find})
         //advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - 120)}]
         advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)}]
@@ -654,8 +666,24 @@ window.addEventListener('mousemove',function(event) {
     
     //advances[timers[current].ind].amp.push(amplitude)
     vels.push(vel)
+    //conts = []
+    conts.push({y:0,move:[true],fixpos:[]})
+    for (j = 0; j < contnumber/3 + 1;j++) {
+       // conts.push({y:0,move:[true],fixpos:[]})
+    }
+    if (ir == true) {
+        ir = false
+    setTimeout(function () {
+        window.alert('hello')
+        console.log(conts.length)
+        ir = true
+        for (k = 0; k < contnumber/3; k++) {
+        conts.push({y:0,move:[true],fixpos:[]})
+        }
+    }, 2000)
+}
     for (a in conts) {
-        conts[a].move[0] = true
+        //conts[a].move[0] = true
         //conts[a].move.push(true)
         //conts[a].y = 0
     }
