@@ -68,7 +68,7 @@ man = true
 stroke = false  
 function animate() {
     space = 10
-    at = 0.5
+    at = 0.4
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -421,6 +421,7 @@ function animate() {
                         for (a in conts3) {
                             conts3[a].move.push(true)
                         }
+                        //advances2[timers2[current].ind].amp = 0
                         //loop = false
                          
                          }
@@ -624,16 +625,20 @@ window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
     //timers.push({time:0,ind:1})
-    timers2.push({time:0, ind:1,ind2:0})
+    timers2.push({time:[], ind:1,ind2:0})
+    advances.push({ads:[0],sty:starty,amp:amplitude})
+    advances2.push({ads:[],sty:starty,amp:amplitude})
+    for (nt = 0; nt < contnumber; nt++) {
+        timers2[timers2.length - 1].time.push(0)
+    }
     direct.push('u')
     direct2.push('u')
    // advances[timers[current].ind].amp.push(amplitude)
-    advances[timers2[current].ind].amp.push(amplitude)
-    advances.push({ads:[0]})
+    amps.push({ads:[0]})
     advances2.push({ads:[]})
     vels.push(vel)
     for (a in conts) {
-        conts[a].move.push(true)
+        //conts[a].move.push(true)
     }
     for (a in conts2) {
         conts2[a].move.push(true)
