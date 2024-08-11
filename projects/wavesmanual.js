@@ -24,16 +24,19 @@ contnumber = 60
 conts = []
 conts2 = []
 conts3 = []
-timers = [{time: [],ind:0,ind2:0,amp:[]}]
+timers = [{time: [],ind:0,ind2:0,amp:[],sty:[]}]
 timers[0].time.push(1)
 for (nt = 0; nt < contnumber/3*2 - 1; nt++) {
     timers[0].time.push(0)
     timers[0].amp.push(amplitude)
+    timers[0].sty.push(100)
 }
 //timers = []
-timers2 = [{time: [],ind:0,ind2:0}]
+timers2 = [{time: [],ind:0,ind2:0,amp:[],sty:[]}]
 for (nt = 0; nt < contnumber; nt++) {
     timers2[0].time.push(0)
+    timers2[0].amp.push(amplitude)
+    timers2[0].sty.push(100)
 }
 //timers2[0].time.push(0)
 
@@ -172,11 +175,11 @@ function animate() {
              
              if (timers3[current].time[i] - x*0.1 >= 0) {
                  if (type == 'pulse') {
-                 if (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1)) <= 0) {
+                 if (timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1)) <= 0) {
                      if (direct3[current] == 'u') {
-                 y = (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
+                 y = (timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
                      }else{
-                         y = -(advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
+                         y = -(timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
                      }
         
         
@@ -185,10 +188,12 @@ function animate() {
                          
                          conts3[i].reflect[current] = false
                          //window.alert('WHITE')
-                         timers2.push({time:[],ind:timers3[current].ind,ind2:advances[timers3[current].ind].ads.length})
-
+                         timers2.push({time:[],ind:timers3[current].ind,ind2:advances[timers3[current].ind].ads.length,amp:[],sty:[]})
+        
                          for (bask in timers3[current].time) {
                             timers2[timers2.length - 1].time.push(timers3[current].time[bask])
+                            timers2[timers2.length - 1].amp.push(timers3[current].amp[bask])
+                            timers2[timers2.length - 1].sty.push(timers3[current].sty[bask])
                         }
                          if (direct3[current] == 'd') {
                             direct2.push('u')
@@ -221,11 +226,11 @@ function animate() {
                         //window.alert('EITA')
                     }
              }else{
-                 if (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03 >= 0) {
+                 if (timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03 >= 0) {
                      if (direct3[current] == 'u') {
-                         y = (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
+                         y = (timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
                              }else{
-                                 y = -(advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
+                                 y = -(timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1))
                              }
                      }else{
                          y = 0
@@ -247,9 +252,9 @@ function animate() {
              }
         
              c.font = '20px Arial'
-             if (Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1)) < Math.sin(0 - vels[current]*(timers3[current].time[i] + 0.01 - x*0.1)) && timers3[current].time[i] - x*0.1 >= 0 && advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03 >= 0) {
+             if (Math.sin(0 - vels[current]*(timers3[current].time[i] - x*0.1)) < Math.sin(0 - vels[current]*(timers3[current].time[i] + 0.01 - x*0.1)) && timers3[current].time[i] - x*0.1 >= 0 && timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03 >= 0) {
                 c.fillStyle = 'yellow'
-                y = (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*-1
+                y = (timers3[current].amp[i] -(advance + i)*at*timers3[current].amp[i]*0.03)*-1
                 conts3[i].move[current] = false
                 conts3[i].fixpos[current] = y
              }
@@ -274,7 +279,7 @@ function animate() {
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              
              if (draw1 == true) {
-             c.arc(x + radius -2*(advance)*radius + space,y + advances2[timers3[current].ind].sty,radius,0,2*Math.PI)
+             c.arc(x + radius -2*(advance)*radius + space,y + timers3[current].sty[i],radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -301,11 +306,11 @@ function animate() {
             
             if (timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
+                if (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
                     if (direct[current] == 'u') {
-                y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                y = (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                     }else{
-                        y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                        y = -(timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                     }
                 }else if(Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
                     y = 0
@@ -314,11 +319,11 @@ function animate() {
                     }
                 }
             }else{
-                if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0) {
+                if (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03 >= 0) {
                     if (direct[current] == 'u') {
-                        y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                        y = (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                             }else{
-                                y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                                y = -(timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                             }
                     }else{
                         y = 0
@@ -362,7 +367,7 @@ function animate() {
             c.beginPath()
             
             if (draw1 == true) {
-            c.arc(x + radius,y + advances[timers[current].ind].sty,radius,0,2*Math.PI)
+            c.arc(x + radius,y + timers[current].sty[i],radius,0,2*Math.PI)
             }
             
             c.fillStyle = 'blue'
@@ -396,23 +401,25 @@ function animate() {
              canmove = true
              if (timers2[current].time[i] - x*0.1 >= 0) {
                  if (type == 'pulse') {
-                 if (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1)) <= 0) {
+                 if (timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1)) <= 0) {
                      if (direct2[current] == 'u') {
-                 y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+                 y = (timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
                      }else{
-                         y = -(advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+                         y = -(timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
                      }
         
         
                      if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
                          
                         conts2[contnumber - 1 - i].reflect[current] = false
-                        window.alert('CYAN')
+                        //window.alert('CYAN')
                         //console.log('CYAN',current,advances[timers2[current].ind])
-                        timers3.push({time:[],ind:timers2[current].ind,ind2:advances2[timers2[current].ind].ads.length})
-
+                        timers3.push({time:[],ind:timers2[current].ind,ind2:advances2[timers2[current].ind].ads.length,amp:[],sty:[]})
+        
                         for (bask in timers2[current].time) {
                             timers3[timers3.length - 1].time.push(timers2[current].time[bask])
+                            timers3[timers3.length - 1].amp.push(timers2[current].amp[bask])
+                            timers3[timers3.length - 1].sty.push(timers2[current].sty[bask])
                         }
                         //timers3.push(timers2[current].time[i])
                         if (direct2[current] == 'd') {
@@ -458,11 +465,11 @@ function animate() {
                  }*/
                   
              }else{
-                 if (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0) {
+                 if (timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03 >= 0) {
                      if (direct2[current] == 'u') {
-                         y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+                         y = (timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
                              }else{
-                                 y = -(advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
+                                 y = -(timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1))
                              }
                      }else{
                          y = 0
@@ -486,9 +493,9 @@ function animate() {
             */
         
             c.font = '20px Arial'
-            if (Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time[i] + 0.01 - x*0.1)) && timers2[current].time[i] - x*0.1 >= 0 && advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0) {
+            if (Math.sin(0 - vels[current]*(timers2[current].time[i] - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time[i] + 0.01 - x*0.1)) && timers2[current].time[i] - x*0.1 >= 0 && timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03 >= 0) {
                c.fillStyle = 'yellow'
-               y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*-1
+               y = (timers2[current].amp[i] -(advance + i)*at*timers2[current].amp[i]*0.03)*-1
                conts2[contnumber - 1 - i].move[current] = false
                conts2[contnumber - 1 - i].fixpos[current] = y
             }
@@ -514,7 +521,7 @@ function animate() {
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              if (draw1 == true) {
-             c.arc(lastx - x - radius +2*(advance)*radius ,y + advances[timers2[current].ind].sty,radius,0,2*Math.PI)
+             c.arc(lastx - x - radius +2*(advance)*radius ,y + timers2[current].sty[i],radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
