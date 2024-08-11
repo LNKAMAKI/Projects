@@ -3,6 +3,19 @@ let starty = 100
 let x = 0
 loop = true
 addpulse = false
+
+contnumber = 60
+contspos = []
+for(ag = 0; ag < contnumber/3*2;ag++) {
+    contspos.push({ir:true})
+}
+
+amplitude = 60
+timers = [{time:[],ind:0,amp:[]}] 
+for (nt = 0; nt < contnumber/3*2; nt++) {
+    timers[0].time.push(0)
+    timers[0].amp.push(amplitude)
+}
 function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
@@ -11,9 +24,11 @@ contnumber = 60
 conts = []
 conts2 = []
 conts3 = []
-timers = [{time: [],ind:0,ind2:0}]
-for (nt = 0; nt < contnumber/3*2; nt++) {
+timers = [{time: [],ind:0,ind2:0,amp:[]}]
+timers[0].time.push(1)
+for (nt = 0; nt < contnumber/3*2 - 1; nt++) {
     timers[0].time.push(0)
+    timers[0].amp.push(amplitude)
 }
 //timers = []
 timers2 = [{time: [],ind:0,ind2:0}]
@@ -707,56 +722,31 @@ window.addEventListener('mousemove',function(event) {
     for (j = 0; j < contnumber/3 + 1;j++) {
        // conts.push({y:0,move:[true],fixpos:[]})
     }
-    if (ir == true) {
-        ir = false
-        my = ((event.y)/cHeight)*150
-    setTimeout(function () {
-       // window.alert('hello')
-        conts = []
-        conts2 = []
-        //timers.push({time:0,ind:0})
-        timers = [{time:0,ind:0}]     
-        //timers2 = [{time:0,ind:0,ind2:0}]                                                                   
-    //timers2 = [{time:0,ind:0}]
 
-    if (my < mousey) {
-        c.fillStyle = 'red'
-        direct = ['d']
-        direct2 = ['d']
-        //window.alert('UP')
-   }else{
-       c.fillStyle = 'blue'
-       direct = ['u']
-       direct2 = ['u']
-       //window.alert('DOWN')
-   }
-    //advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)}]
-    //advances = [{ads:[],sty:100,amp:Math.abs(mousey - 100)}]
-    advances = [{ads:[0],sty:my,amp:Math.abs(mousey - my)}]
-    vels.push(vel)
-        console.log(conts.length)
-        ir = true
-        for (k = 0; k < contnumber/3*2; k++) {
-        conts.push({y:0,move:[true],fixpos:[]})
-        }
-        for (k = 0; k < contnumber; k++) {
-            conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
-            }
-    }, 1000)
+    //conts = []
+    for (d in contspos) {
+
+    if (contspos[d].ir == true) {
+        contspos[d].ir = false
+        contspos[d].my = ((event.y)/cHeight)*150
+        excont(d)
 }
+    }
+
+
+    //conts[d].move[0] = true
     for (a in conts) {
-        conts[a].move.push(true)
         //conts[a].move.push(true)
+        //conts[a].move[0] = true
         //conts[a].y = 0
     }
     for (a in conts2) {
-        conts2[a].move.push(true)
+        //conts2[a].move.push(true)
         //conts[a].move.push(true)
         //conts[a].y = 0
     }
-
     find++
-//}  
+//} 
     }
 
     c.fillText('EPAOA',100,120)
@@ -768,6 +758,55 @@ window.addEventListener('mousemove',function(event) {
     //find++
 }
 })
+
+function excont(d) {
+    //window.alert(d)
+     setTimeout(function () {
+
+         //window.alert('0')
+         //timers[0].time[d] = d
+         contspos[d].ir = true
+         conts[d].move[0] = true
+         timers[0].time[d] = 0
+        // window.alert('hello')
+         //timers.push({time:0,ind:0})
+         //timers.push({time: [],ind:timers.length - 1,ind2:0})
+      for (nt = 0; nt < contnumber/3 - 5; nt++) {
+    //timers[0].time.push(0)
+      }  
+ 
+      //timers2 = [{time: [],ind:0,ind2:0}]
+     for (nt = 0; nt < contnumber; nt++) {
+         //timers2[0].time.push(0)
+     }
+         //timers2 = [{time:0,ind:0,ind2:0}]                                                                   
+     //timers2 = [{time:0,ind:0}]
+ 
+     if (contspos[d].my < mousey) {
+         c.fillStyle = 'red'
+         direct = ['d']
+         direct2 = ['d']
+         //window.alert('UP')
+    }else{
+        c.fillStyle = 'blue'
+        direct = ['u']
+        direct2 = ['u']
+        //window.alert('DOWN')
+    }
+     //advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)}]
+     //advances = [{ads:[],sty:100,amp:Math.abs(mousey - 100)}]
+     //advances = [{ads:[0],sty:contspos[d].my,amp:Math.abs(mousey - contspos[d].my)}]
+     vels.push(vel)
+         console.log(conts.length)
+         ir = true
+        // for (k = 0; k < contnumber/3*2; k++) {
+        // conts.push({y:0,move:[true],fixpos:[]})
+         //}
+         for (k = 0; k < contnumber; k++) {
+            // conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
+             }
+     },1000 + d*100)
+ }
 }
 
 
