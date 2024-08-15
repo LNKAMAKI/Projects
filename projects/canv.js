@@ -38,6 +38,7 @@ function drawPrism() {
 penwidth = 60
 fx = 20
 fy = 75
+touch = false
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
     c.lineWidth = '2'
@@ -46,7 +47,7 @@ function drawpen (angle) {
     y = -(penwidth/2)*Math.sin(angle) + fy
     c.moveTo(fx + penwidth/2,fy)
     c.lineTo(x,y)
-    c.strokeStyle = 'black'
+    c.strokeStyle = 'blue'
     c.stroke()
 
     c.beginPath()
@@ -57,7 +58,24 @@ function drawpen (angle) {
     c.strokeStyle = 'black'
     c.stroke()
 
-    
+    xc = x  - (300 - b)/2
+    yc = ((150 - fixy)/2 + fixy) - y
+    // y = tg(angle).xc + cc
+    // cc = y - tg(angle).xc
+    cc =  yc + Math.tan(angle)*xc
+    // y = tg*x
+    // y = tg(angle)*xc + cc
+    // quando inteceptam:
+    // tg(prisma)*x' = tg(angle)*x' + cc
+    // x'(tg(prisma) - tg(angle)) = cc
+    // x' = cc/(tg - tg(angle))
+    xl = cc/(tg + Math.tan(angle))
+    yl = tg*xl
+    if (xl >= 0 && xl <= b/2) {
+        touch = true
+    }else{
+        touch = false
+    }
 
 }
 window.addEventListener('mousemove', function(event) {
@@ -73,7 +91,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | difx: ${(difx).toFixed(1)}, dify: ${(dify).toFixed(1)}, tg (pen): ${(dify/difx).toFixed(1)} | angle: ${(Math.atan((dify/difx))).toFixed(1)}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${-(dify/difx).toFixed(1)} | angle: ${(Math.atan((dify/difx))).toFixed(1)} | xc: ${(xc).toFixed(1)}, yc: ${(yc).toFixed(1)} | c: ${(cc).toFixed(1)}, x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
