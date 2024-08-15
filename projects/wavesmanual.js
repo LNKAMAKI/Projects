@@ -1,21 +1,15 @@
 let radius = 2.3
-let starty = 100
+let starty = 0
 let x = 0
 loop = true
 addpulse = false
 
 contnumber = 60
 contspos = []
-for(ag = 0; ag < contnumber/3*2;ag++) {
+for(ag = 0; ag < contnumber/3 + 1;ag++) {
     contspos.push({ir:true})
 }
-
 amplitude = 60
-timers = [{time:[],ind:0,amp:[]}] 
-for (nt = 0; nt < contnumber/3*2; nt++) {
-    timers[0].time.push(0)
-    timers[0].amp.push(amplitude)
-}
 function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
@@ -25,8 +19,8 @@ conts = []
 conts2 = []
 conts3 = []
 timers = [{time: [],ind:0,ind2:0,amp:[],sty:[]}]
-timers[0].time.push(1)
-for (nt = 0; nt < contnumber/3*2 - 1; nt++) {
+timers[0].time.push(0)
+for (nt = 0; nt < contnumber/3 + 1; nt++) {
     timers[0].time.push(0)
     timers[0].amp.push(amplitude)
     timers[0].sty.push(100)
@@ -40,21 +34,21 @@ for (nt = 0; nt < contnumber; nt++) {
 }
 //timers2[0].time.push(0)
 
-//timers2 = []
+timers2 = []
 timers3 = []
 amplitude = 60
 advances = [{ads:[0],sty:starty,amp:amplitude}]
-//advances = []
+advances = []
 advances2 = [{ads:[],sty:starty,amp:amplitude}]
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.5
+vel = 0.4
 vels = [vel]
 direct = ['u']
 direct2 = ['d']
 direct3 = []
-for (i = 0; i < contnumber;i++) {
+for (i = 0; i < contnumber/3 + 1;i++) {
     conts.push({y:0,move:[],fixpos:[]})
     conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
     conts3.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
@@ -306,11 +300,11 @@ function animate() {
             
             if (timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
+                if (timers[current].amp[i + contnumber/3] -i*at*timers[current].amp[i + contnumber/3]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
                     if (direct[current] == 'u') {
-                y = (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                y = (timers[current].amp[i + contnumber/3] -i*at*timers[current].amp[i + contnumber/3]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                     }else{
-                        y = -(timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                        y = -(timers[current].amp[i + contnumber/3] -i*at*timers[current].amp[i + contnumber/3]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                     }
                 }else if(Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
                     y = 0
@@ -319,11 +313,11 @@ function animate() {
                     }
                 }
             }else{
-                if (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03 >= 0) {
+                if (timers[current].amp[i + contnumber/3] -i*at*timers[current].amp[i + contnumber/3]*0.03 >= 0) {
                     if (direct[current] == 'u') {
-                        y = (timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                        y = (timers[current].amp[i + contnumber/3] -i*at*timers[current].amp[i + contnumber/3]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                             }else{
-                                y = -(timers[current].amp[i] -i*at*timers[current].amp[i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
+                                y = -(timers[current].amp[i + contnumber/3] -i*at*timers[current].amp[i + contnumber/3]*0.03)*Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))
                             }
                     }else{
                         y = 0
@@ -342,6 +336,8 @@ function animate() {
                 }else if((Math.sin(0 - vels[current]*(timers[current].time[i] - (1 - (space + 2*radius*(contnumber/3)))*0.1))).toFixed(2) == -1.00) {
                    c.fillStyle = 'blue'
                    conts[i + contnumber/3].move[current] = false
+                   //window.alert('É FALSO FALLMILIA',i + contnumber/3)
+                   contspos[i + contnumber/3].ir = true
                    conts[i + contnumber/3].fixpos[current] = y
                 }
                 }
@@ -367,7 +363,14 @@ function animate() {
             c.beginPath()
             
             if (draw1 == true) {
-            c.arc(x + radius,y + timers[current].sty[i],radius,0,2*Math.PI)
+            c.arc(x + radius,y + timers[current].sty[i + contnumber/3],radius,0,2*Math.PI)
+
+            if (conts[i + contnumber/3].move[current] == false) {
+            this.document.getElementById('ev').innerText = `${y + timers[current].sty[i + contnumber/3]}`
+            contspos[i + contnumber/3].my = y + timers[current].sty[i + contnumber/3]
+            //contspos[i + contnumber/3].my = 100
+            }
+            this.document.getElementById('ev2').innerText = 'move: ' + conts[i + contnumber/3].move[current] + '/ podeir: ' + contspos[i + contnumber/3].ir
             }
             
             c.fillStyle = 'blue'
@@ -642,7 +645,7 @@ requestAnimationFrame(animate)
 }
 animate()
 
-go = false
+go = true
 window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
@@ -694,7 +697,7 @@ window.addEventListener('mousemove',function(event) {
     wHeight = this.window.innerHeight
     dif = wWidth - cWidth
     
-    this.document.getElementById('ev').innerText = ((event.y)/cHeight)*150
+    //this.document.getElementById('ev').innerText = ((event.y)/cHeight)*150
     //console.log(mousey,(((event.y)/cHeight)*150))
     axis = 100
     
@@ -736,6 +739,7 @@ window.addEventListener('mousemove',function(event) {
     if (contspos[d].ir == true) {
         contspos[d].ir = false
         contspos[d].my = ((event.y)/cHeight)*150
+       // this.window.alert(contspos[d].my)
         excont(d)
 }
     }
@@ -769,12 +773,22 @@ window.addEventListener('mousemove',function(event) {
 function excont(d) {
     //window.alert(d)
      setTimeout(function () {
-
-         //window.alert('0')
+        if (contspos[d].ir == true || conts[d].move[0] == false) {
+        if (d == 20 || d == 21) {
+        //window.alert('FAMILIA')
+        }
+         //window.alert(contspos[d].my)
+        //timers[0].sty[d] = contspos[d].my
+        //timers[0].sty[d] = 0
+        //timers[0].amp[d] = Math.abs(mousey - contspos[d].my)
+        
          //timers[0].time[d] = d
-         contspos[d].ir = true
+         //contspos[d].ir = true
          conts[d].move[0] = true
-         timers[0].time[d] = 0
+         timers[0].sty[d] = contspos[d].my 
+         //timers[0].time[20] = ''
+         timers[0].amp[d] = Math.abs(mousey - contspos[d].my)
+         //timers[0].amp[d] = 50
         // window.alert('hello')
          //timers.push({time:0,ind:0})
          //timers.push({time: [],ind:timers.length - 1,ind2:0})
@@ -812,8 +826,10 @@ function excont(d) {
          for (k = 0; k < contnumber; k++) {
             // conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
              }
-     },1000 + d*100)
+            }
+     },300 + (d - 20)*1000)
  }
+
 }
 
 
