@@ -48,14 +48,30 @@ function drawpen (angle) {
     c.moveTo(fx + penwidth/2,fy)
     c.lineTo(x,y)
     c.strokeStyle = 'blue'
-    c.stroke()
+    //c.stroke()
 
     c.beginPath()
-    x = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
-    y = (penwidth/2)*Math.sin(angle) + fy
+    y2 = (penwidth/2)*Math.sin(angle) + fy
+    //x2 = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
+    if (angle >= 0) {
+    x2 = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
+    }else{
+    x2 = (penwidth/2)*Math.cos(Math.PI + angle) + fx + penwidth/2
+    y2 = (penwidth/2)*Math.sin(Math.PI + angle) + fy
+    }
+
+    if (mousey >= fy && mousex >= fx + penwidth/2) { // mouse em baixo e na direita
+        x2 = (penwidth/2)*-Math.cos(angle) + fx + penwidth/2
+    y2 = (penwidth/2)*-Math.sin(angle) + fy
+    }else if(mousey >= fy && mousex <= fx + penwidth/2){ // mouse em baixo e na esquerda
+        x2 = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
+       y2 = (penwidth/2)*Math.sin(angle) + fy
+    }
+   
     c.moveTo(fx + penwidth/2,fy)
-    c.lineTo(x,y)
+    c.lineTo(x2,y2)
     c.strokeStyle = 'black'
+
     c.stroke()
 
     xc = x  - (300 - b)/2
@@ -76,6 +92,15 @@ function drawpen (angle) {
     }else{
         touch = false
     }
+  
+    c.beginPath()
+    if (x > x2) {
+        c.moveTo(x,y)
+    }else{
+        c.moveTo(x2,y2)
+    }
+    c.lineTo(150,150)
+    //c.stroke()
 
 }
 window.addEventListener('mousemove', function(event) {
