@@ -105,7 +105,8 @@ function drawpen (angle) {
     c.moveTo(x2,y2)
     // y = tg(angle)*x
     // x = y/tg(angle)
-    if (Math.tan(angle) != -Infinity) {
+    
+    if (mousex != fx + penwidth/2) {
     if (Math.tan(angle) > 0) {
         if (mousex > fx + penwidth/2) {
     c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
@@ -118,7 +119,9 @@ function drawpen (angle) {
                 }else{
                 c.lineTo((y2)/-Math.tan(angle) + x2,0)
                 }
-    }
+            }
+}else{
+    window.alert(Math.tan(angle))
 }
     c.strokeStyle = 'red'
     c.stroke()
