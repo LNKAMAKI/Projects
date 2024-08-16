@@ -7,7 +7,7 @@ function drawPrism() {
     canv = document.getElementById('c')
     c = canv.getContext('2d')
     b = 70
-    h = 60
+    h = 40
     fixy = 80
     tg = h/(b/2)
     c.lineWidth = '1'
@@ -38,7 +38,7 @@ function drawPrism() {
 
 penwidth = 60
 fx = 20
-fy = 75
+fy = 80
 touch = false
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -95,7 +95,8 @@ function drawpen (angle) {
     // x' = cc/(tg - tg(angle))
     xl = cc/(tg + Math.tan(angle))
     yl = tg*xl
-
+    
+    c.lineWidth = '1.5'
     notouch = false
     if (Math.tan(angle) > 0 && mousex < fx + penwidth/2) {
         notouch = true
@@ -162,6 +163,14 @@ c.stroke()
         c.lineTo(xper0 + (300 - b)/2,150 - (150 - fixy)/2)
         c.strokeStyle = 'black'
         c.stroke()
+
+        xper0 = (150 - (150 - fixy)/2 - cper)/-Math.tan(perslope)
+        c.beginPath()
+        c.moveTo(xl + (300 - b)/2,150 - (150 - fixy)/2 - yl)
+        c.lineTo(xper0 + (300 - b)/2,0)
+        c.strokeStyle = 'black'
+        c.stroke()
+
 
     }
    
