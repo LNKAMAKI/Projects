@@ -25,6 +25,7 @@ function drawPrism() {
     c.lineTo((300 - b)/2 + b/2,(150 - fixy)/2 + fixy - h)
     c.stroke()
 
+    // (0,0) => ((300 - b)/2, 150 - (150 - fixy)/2)
     c.beginPath()
     c.moveTo(0,150 - (150 - fixy)/2)
     c.lineTo(300,150 - (150 - fixy)/2)
@@ -71,15 +72,14 @@ function drawpen (angle) {
     c.lineWidth = '2'
     c.beginPath()
     c.moveTo(fx + penwidth/2,fy)
-    c.lineTo(x,y)
-    c.strokeStyle = 'blue'
+    c.lineTo(x2,y2)
+    c.strokeStyle = 'black'
     c.stroke()
 
     c.beginPath()
     c.moveTo(fx + penwidth/2,fy)
-    c.lineTo(x2,y2)
-    c.strokeStyle = 'black'
-
+    c.lineTo(x,y)
+    c.strokeStyle = 'blue'
     c.stroke()
 
     xc = x  - (300 - b)/2
@@ -95,7 +95,14 @@ function drawpen (angle) {
     // x' = cc/(tg - tg(angle))
     xl = cc/(tg + Math.tan(angle))
     yl = tg*xl
-    if (xl >= 0 && xl <= b/2) {
+
+    notouch = false
+    if (Math.tan(angle) > 0 && mousex < fx + penwidth/2) {
+        notouch = true
+    }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
+        notouch = true
+    }
+    if (xl >= 0 && xl <= b/2 && notouch == false) {
         touch = true
     }else{
         touch = false
@@ -106,6 +113,7 @@ function drawpen (angle) {
     // y = tg(angle)*x
     // x = y/tg(angle)
     
+    if (touch == false) {
     if (mousex != fx + penwidth/2) {
     if (Math.tan(angle) > 0) {
         if (mousex > fx + penwidth/2) {
@@ -128,6 +136,9 @@ function drawpen (angle) {
         c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
     }
 }
+    }else{
+        c.lineTo(xl + (300 - b)/2,150 - (150 - fixy)/2 - yl)
+    }
     c.strokeStyle = 'red'
     c.stroke()
 
