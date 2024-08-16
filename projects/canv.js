@@ -64,7 +64,7 @@ function drawpen (angle) {
     }else if(mousey >= fy && mousex <= fx + penwidth/2){ // mouse em baixo e na esquerda
         x2 = -(penwidth/2)*Math.cos(angle) + fx + penwidth/2
        y2 = -(penwidth/2)*Math.sin(angle) + fy
-       x = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
+       x = (penwidth/2 )*Math.cos(angle) + fx + penwidth/2
        y = (penwidth/2)*Math.sin(angle) + fy
     }
    
