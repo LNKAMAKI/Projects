@@ -137,8 +137,12 @@ function drawpen (angle) {
         c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
     }
 }
+c.strokeStyle = 'red'
+c.stroke()
     }else{
         c.lineTo(xl + (300 - b)/2,150 - (150 - fixy)/2 - yl)
+        c.strokeStyle = 'red'
+        c.stroke()
 
         // feixe está interceptando prisma
         // arctg(tg) + 90 + x = 180
@@ -147,16 +151,20 @@ function drawpen (angle) {
         // yl = xl*-tg(perslope) + cper
         // cper = yl + xl*tg(perslope)
         cper = yl + xl*Math.tan(perslope)
-        //window.alert(cper)
         // tg(prisma)*x' = -tg(perslope)*x' + cper
         // x'(tg(prisma) + tg(perslope)) = cper
         // x' = cper/(tg(prisma) + tg(perslope))
         xper = cper/(tg + Math.tan(perslope))
-        //window.alert(xper)
+        //xl = (yl - cper)/-tg(perslope)
+        xper0 = (0 - cper)/-Math.tan(perslope)
+        c.beginPath()
+        c.moveTo(xl + (300 - b)/2,150 - (150 - fixy)/2 - yl)
+        c.lineTo(xper0 + (300 - b)/2,150 - (150 - fixy)/2)
+        c.strokeStyle = 'black'
+        c.stroke()
 
     }
-    c.strokeStyle = 'red'
-    c.stroke()
+   
 
 
 }
