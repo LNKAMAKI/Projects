@@ -102,13 +102,13 @@ function drawpen (angle) {
     }
   
     c.beginPath()
-    if (x > x2) {
-        c.moveTo(x,y)
-    }else{
-        c.moveTo(x2,y2)
-    }
-    c.lineTo(150,150)
-    //c.stroke()
+    c.moveTo(x2,y2)
+    // y = tg(angle)*x
+    // x = y/tg(angle)
+    c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
+    c.strokeStyle = 'red'
+    c.stroke()
+
 
 }
 window.addEventListener('mousemove', function(event) {
