@@ -41,33 +41,41 @@ fy = 75
 touch = false
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
-    c.lineWidth = '2'
-    c.beginPath()
-    x = -(penwidth/2)*Math.cos(angle) + fx + penwidth/2
-    y = -(penwidth/2)*Math.sin(angle) + fy
-    c.moveTo(fx + penwidth/2,fy)
-    c.lineTo(x,y)
-    c.strokeStyle = 'blue'
     //c.stroke()
 
-    c.beginPath()
-    y2 = (penwidth/2)*Math.sin(angle) + fy
-    //x2 = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
     if (angle >= 0) {
-    x2 = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
+    x2 = -(penwidth/2)*Math.cos(angle) + fx + penwidth/2
+    y2 = -(penwidth/2)*Math.sin(angle) + fy
+    x = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
+    y = (penwidth/2)*Math.sin(angle) + fy
     }else{
-    x2 = (penwidth/2)*Math.cos(Math.PI + angle) + fx + penwidth/2
-    y2 = (penwidth/2)*Math.sin(Math.PI + angle) + fy
+    x2 = -(penwidth/2)*Math.cos(Math.PI + angle) + fx + penwidth/2
+    y2 = -(penwidth/2)*Math.sin(Math.PI + angle) + fy
+    x = (penwidth/2)*Math.cos(Math.PI + angle) + fx + penwidth/2
+    y = (penwidth/2)*Math.sin(Math.PI + angle) + fy
     }
 
     if (mousey >= fy && mousex >= fx + penwidth/2) { // mouse em baixo e na direita
-        x2 = (penwidth/2)*-Math.cos(angle) + fx + penwidth/2
-    y2 = (penwidth/2)*-Math.sin(angle) + fy
-    }else if(mousey >= fy && mousex <= fx + penwidth/2){ // mouse em baixo e na esquerda
         x2 = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
-       y2 = (penwidth/2)*Math.sin(angle) + fy
+    y2 = (penwidth/2)*Math.sin(angle) + fy
+    x = (penwidth/2)*-Math.cos(angle) + fx + penwidth/2
+    y = (penwidth/2)*-Math.sin(angle) + fy
+    }else if(mousey >= fy && mousex <= fx + penwidth/2){ // mouse em baixo e na esquerda
+        x2 = -(penwidth/2)*Math.cos(angle) + fx + penwidth/2
+       y2 = -(penwidth/2)*Math.sin(angle) + fy
+       x = (penwidth/2)*Math.cos(angle) + fx + penwidth/2
+       y = (penwidth/2)*Math.sin(angle) + fy
     }
    
+
+    c.lineWidth = '2'
+    c.beginPath()
+    c.moveTo(fx + penwidth/2,fy)
+    c.lineTo(x,y)
+    c.strokeStyle = 'blue'
+    c.stroke()
+
+    c.beginPath()
     c.moveTo(fx + penwidth/2,fy)
     c.lineTo(x2,y2)
     c.strokeStyle = 'black'
