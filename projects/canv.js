@@ -82,11 +82,11 @@ function drawpen (angle) {
     c.strokeStyle = 'blue'
     c.stroke()
 
-    xc = x  - (300 - b)/2
-    yc = ((150 - fixy)/2 + fixy) - y
+    xc = x  - (300 - b)/2 // pra direita = +
+    yc = ((150 - fixy)/2 + fixy) - y // pra cima = +
     // y = tg(angle).xc + cc
     // cc = y - tg(angle).xc
-    cc =  yc + Math.tan(angle)*xc
+    cc =  yc + Math.tan(angle)*xc // tangente tem que coincidir com a equação do prisma - -tg(angle)
     // y = tg*x
     // y = tg(angle)*xc + cc
     // quando inteceptam:
