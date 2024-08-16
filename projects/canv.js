@@ -109,7 +109,7 @@ function drawpen (angle) {
     if (mousex != fx + penwidth/2) {
     if (Math.tan(angle) > 0) {
         if (mousex > fx + penwidth/2) {
-    c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
+        c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
         }else{
         c.lineTo((y2)/-Math.tan(angle) + x2,0)
         }
@@ -121,7 +121,12 @@ function drawpen (angle) {
                 }
             }
 }else{
-    window.alert(Math.tan(angle))
+    //window.alert(Math.tan(angle))
+    if (Math.tan(angle) < 0) {
+        c.lineTo((y2)/-Math.tan(angle) + x2,0)
+    }else{
+        c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
+    }
 }
     c.strokeStyle = 'red'
     c.stroke()
