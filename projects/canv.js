@@ -9,30 +9,32 @@ function drawPrism() {
     b = 70
     h = 40
     fixy = 80
+    x0 = (300 - b)/2
+    y0 = 150 - (150 - fixy)/2
     tg = h/(b/2)
     c.lineWidth = '1'
     c.strokeStyle = 'black'
     c.beginPath()
-    c.moveTo((300 - b)/2,(150 - fixy)/2 + fixy)
-    c.lineTo((300 - b)/2 + b,(150 - fixy)/2 + fixy)
+    c.moveTo(x0,(150 - fixy)/2 + fixy)
+    c.lineTo(x0 + b,(150 - fixy)/2 + fixy)
     c.stroke()
     c.beginPath()
-    c.moveTo((300 - b)/2 + b,(150 - fixy)/2 + fixy)
-    c.lineTo((300 - b)/2 + b/2,(150 - fixy)/2 + fixy - h)
+    c.moveTo(x0 + b,(150 - fixy)/2 + fixy)
+    c.lineTo(x0 + b/2,(150 - fixy)/2 + fixy - h)
     c.stroke()
     c.beginPath()
-    c.moveTo((300 - b)/2,(150 - fixy)/2 + fixy)
-    c.lineTo((300 - b)/2 + b/2,(150 - fixy)/2 + fixy - h)
+    c.moveTo(x0,(150 - fixy)/2 + fixy)
+    c.lineTo(x0 + b/2,(150 - fixy)/2 + fixy - h)
     c.stroke()
 
-    // (0,0) => ((300 - b)/2, 150 - (150 - fixy)/2)
+    // (0,0) => (x0, y0)
     c.beginPath()
-    c.moveTo(0,150 - (150 - fixy)/2)
-    c.lineTo(300,150 - (150 - fixy)/2)
+    c.moveTo(0,y0)
+    c.lineTo(300,y0)
     c.stroke()
     c.beginPath()
-    c.moveTo((300 - b)/2,0)
-    c.lineTo((300 - b)/2,150)
+    c.moveTo(x0,0)
+    c.lineTo(x0,150)
     c.stroke()
 }
 
@@ -82,7 +84,7 @@ function drawpen (angle) {
     c.strokeStyle = 'blue'
     c.stroke()
 
-    xc = x  - (300 - b)/2 // pra direita = +
+    xc = x  - x0 // pra direita = +
     yc = ((150 - fixy)/2 + fixy) - y // pra cima = +
     // y = tg(angle).xc + cc
     // cc = y - tg(angle).xc
@@ -141,7 +143,7 @@ function drawpen (angle) {
 c.strokeStyle = 'red'
 c.stroke()
     }else{
-        c.lineTo(xl + (300 - b)/2,150 - (150 - fixy)/2 - yl)
+        c.lineTo(xl + x0,y0 - yl)
         c.strokeStyle = 'red'
         c.stroke()
 
@@ -159,15 +161,15 @@ c.stroke()
         //xl = (yl - cper)/-tg(perslope)
         xper0 = (0 - cper)/-Math.tan(perslope)
         c.beginPath()
-        c.moveTo(xl + (300 - b)/2,150 - (150 - fixy)/2 - yl)
-        c.lineTo(xper0 + (300 - b)/2,150 - (150 - fixy)/2)
+        c.moveTo(xl + x0,y0 - yl)
+        c.lineTo(xper0 + x0,y0)
         c.strokeStyle = 'black'
         c.stroke()
 
-        xper0 = (150 - (150 - fixy)/2 - cper)/-Math.tan(perslope)
+        xper0 = (y0 - cper)/-Math.tan(perslope)
         c.beginPath()
-        c.moveTo(xl + (300 - b)/2,150 - (150 - fixy)/2 - yl)
-        c.lineTo(xper0 + (300 - b)/2,0)
+        c.moveTo(xl + x0,y0 - yl)
+        c.lineTo(xper0 + x0,0)
         c.strokeStyle = 'black'
         c.stroke()
 
