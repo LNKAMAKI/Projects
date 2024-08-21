@@ -39,7 +39,7 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 20
+fx = 170
 fy = 80
 touch = false
 function drawpen (angle) {
@@ -173,7 +173,31 @@ c.stroke()
         c.strokeStyle = 'black'
         c.stroke()
 
-        
+        if (Math.tan(angle) > 0 && perslope > angle) {
+          // primeiro caso
+          // pi = perslope - angle
+          c.beginPath()
+          c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope)
+          c.stroke()
+        }
+
+        if (Math.tan(angle) > 0 && perslope < angle) {
+            // primeiro caso
+            // pi = perslope - angle
+            c.beginPath()
+            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle)
+            c.stroke()
+            c.fillStyle = 'cyan'
+          }
+
+          if (Math.tan(angle) < 0 && perslope > angle) {
+            // primeiro caso
+            // pi = perslope - angle
+            c.beginPath()
+            c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope)
+            c.stroke()
+            c.fillStyle = 'cyan'
+          }
 
 
     }
