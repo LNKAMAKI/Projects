@@ -150,7 +150,7 @@ c.stroke()
         // feixe está interceptando prisma
         // arctg(tg) + 90 + x = 180
         // x = 90 - arctg(tg)
-        perslope = Math.PI/2 - Math.atan(tg)
+        perslope = Math.PI/2 - Math.atan(tg) // ângulo de inclinação da reta perpendicular
         // yl = xl*-tg(perslope) + cper
         // cper = yl + xl*tg(perslope)
         cper = yl + xl*Math.tan(perslope)
@@ -172,6 +172,8 @@ c.stroke()
         c.lineTo(xper0 + x0,0)
         c.strokeStyle = 'black'
         c.stroke()
+
+        
 
 
     }
