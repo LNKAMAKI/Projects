@@ -39,8 +39,8 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 30
-fy = 80
+fx = 140
+fy = 120
 touch = false
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -95,7 +95,7 @@ function drawpen (angle) {
     // tg(prisma)*x' = tg(angle)*x' + cc
     // x'(tg(prisma) - tg(angle)) = cc
     // x' = cc/(tg - tg(angle))
-    xl = cc/(tg + Math.tan(angle))
+    xl = cc/(tg + Math.tan(angle)) // troca de sinal (tg)
     yl = tg*xl
     
     c.lineWidth = '1.5'
@@ -119,6 +119,7 @@ function drawpen (angle) {
     xper = 0
     if (touch == false) {
     if (mousex != fx + penwidth/2) {
+        // código para rotacionar a caneta (lembre-se de que as tg's assumem ambos os valores)
     if (Math.tan(angle) > 0) {
         if (mousex > fx + penwidth/2) {
         c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
@@ -155,7 +156,7 @@ c.stroke()
         perslope = Math.PI/2 - Math.atan(tg) // ângulo de inclinação da reta perpendicular
         // yl = xl*-tg(perslope) + cper
         // cper = yl + xl*tg(perslope)
-        cper = yl + xl*Math.tan(perslope)
+        cper = yl + xl*Math.tan(perslope) // troca de sinal
         // tg(prisma)*x' = -tg(perslope)*x' + cper
         // x'(tg(prisma) + tg(perslope)) = cper
         // x' = cper/(tg(prisma) + tg(perslope))
