@@ -218,7 +218,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${-(dify/difx).toFixed(1)} | angle: ${(Math.atan((dify/difx))).toFixed(1)} |, x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${-(dify/difx).toFixed(1)} | angle: ${(Math.atan((dify/difx))).toFixed(1)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
