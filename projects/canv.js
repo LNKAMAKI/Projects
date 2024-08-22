@@ -188,7 +188,7 @@ c.stroke()
           // x = (c - 0)/tg(angle)
           ang = perslope - 0.3
           ct = yl + xl*Math.tan(ang)
-          xt = ct/Math.tan(ang)
+          xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'red'
