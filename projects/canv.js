@@ -39,8 +39,8 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 100
-fy = 30
+fx = 30
+fy = 80
 touch = false
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -181,6 +181,19 @@ c.stroke()
           c.beginPath()
           c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope)
           c.stroke()
+        
+          // angle
+          // yl = xl*tg(angle) + c
+          // c = yl + xl*tg(angle)
+          // x = (c - 0)/tg(angle)
+          ang = perslope - 0.3
+          ct = yl + xl*Math.tan(ang)
+          xt = ct/Math.tan(ang)
+          c.moveTo(xl + x0,y0 - yl)
+          c.lineTo(xt + x0, y0)
+          c.strokeStyle = 'red'
+          c.stroke()
+
         }
 
         if (Math.tan(angle) > 0 && perslope < angle) {
