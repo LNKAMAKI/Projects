@@ -39,8 +39,8 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 170
-fy = 80
+fx = 100
+fy = 30
 touch = false
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -105,7 +105,7 @@ function drawpen (angle) {
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
     }
-    if (xl >= 0 && xl <= b/2 && notouch == false) {
+    if (xl >= 0 && xl <= b/2 ) { // && notouch == false) {
         touch = true
     }else{
         touch = false
@@ -140,6 +140,8 @@ function drawpen (angle) {
         c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
     }
 }
+
+
 c.strokeStyle = 'red'
 c.stroke()
     }else{
@@ -190,11 +192,25 @@ c.stroke()
             c.fillStyle = 'cyan'
           }
 
-          if (Math.tan(angle) < 0 && perslope > angle) {
+          if (Math.tan(angle) > 0) {
+           // window.alert(perslope )
+          }
+
+          if (Math.tan(angle) < 0 && perslope > Math.abs(angle)) {
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope)
+            c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope)
+            c.stroke()
+            c.fillStyle = 'cyan'
+          }
+
+          if (Math.tan(angle) < 0 && perslope < Math.abs(angle)) {
+           // window.alert('HEY')
+            // primeiro caso
+            // pi = perslope - angle
+            c.beginPath()
+            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle))
             c.stroke()
             c.fillStyle = 'cyan'
           }
