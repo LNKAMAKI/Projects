@@ -84,7 +84,7 @@ function drawpen (angle) {
     c.strokeStyle = 'blue'
     c.stroke()
 
-    xc = x  - x0 // pra direita = +
+    xc = x - x0 // pra direita = +
     yc = ((150 - fixy)/2 + fixy) - y // pra cima = +
     // y = tg(angle).xc + cc
     // cc = y - tg(angle).xc
