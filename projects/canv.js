@@ -7,7 +7,7 @@ function drawPrism() {
     canv = document.getElementById('c')
     c = canv.getContext('2d')
     b = 70
-    h = 40
+    h = 70
     fixy = 80
     x0 = (300 - b)/2
     y0 = 150 - (150 - fixy)/2
@@ -39,8 +39,8 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 140
-fy = 120
+fx = 50
+fy = 110
 touch = false
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -187,7 +187,7 @@ c.stroke()
           // yl = xl*tg(angle) + c
           // c = yl + xl*tg(angle)
           // x = (c - 0)/tg(angle)
-          ang = perslope - 0.3
+          ang = Math.abs(angle)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
@@ -204,29 +204,48 @@ c.stroke()
             c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle)
             c.stroke()
             c.fillStyle = 'cyan'
+
+            ang = Math.abs(angle)
+          ct = yl + xl*Math.tan(ang)
+          xt = (ct)/Math.tan(ang)
+          c.moveTo(xl + x0,y0 - yl)
+          c.lineTo(xt + x0, y0)
+          c.strokeStyle = 'red'
+          c.stroke()
           }
 
           if (Math.tan(angle) > 0) {
            // window.alert(perslope )
           }
 
-          if (Math.tan(angle) < 0 && perslope > Math.abs(angle)) {
+          
+          /*
+          if (Math.tan(angle) < 0 && perslope < Math.abs(Math.atan(tg))) {
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
             c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope)
             c.stroke()
             c.fillStyle = 'cyan'
-          }
+          }*/
 
-          if (Math.tan(angle) < 0 && perslope < Math.abs(angle)) {
+          
+          if (Math.tan(angle) < 0 && perslope < Math.abs(Math.atan(tg))) {
            // window.alert('HEY')
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle))
+            c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope)
             c.stroke()
             c.fillStyle = 'cyan'
+
+            ang = Math.abs(angle)
+          ct = yl - xl*Math.tan(ang)
+          xt = (ct - y0)/-Math.tan(ang)
+          c.moveTo(xl + x0,y0 - yl)
+          c.lineTo(xt + x0, 0)
+          c.strokeStyle = 'red'
+          c.stroke()
           }
 
 
