@@ -44,8 +44,8 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 68
-fy = 20
+fx = 58
+fy = 120
 touch = false
 prismaind = 2
 corind = 1.514
