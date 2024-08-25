@@ -277,9 +277,8 @@ c.stroke()
                 ct = yl + xl*Math.tan(ang)
                 xt = (ct)/Math.tan(ang)
                 document.getElementById('ab1').innerText = xt
-                yfin = y0
                 c.moveTo(xl + x0,y0 - yl)
-                c.lineTo(xt + x0, y0 - yfin)
+                c.lineTo(xt + x0, y0)
                 c.stroke()
                 //yfin = 0
             }
