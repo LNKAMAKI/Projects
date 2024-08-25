@@ -199,7 +199,7 @@ c.stroke()
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'red'
-         // c.stroke()
+          c.stroke()
 
         }
 
@@ -234,7 +234,7 @@ c.stroke()
             // pi = perslope - angle
             c.beginPath()
             c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope)
-            c.stroke()
+            //c.stroke()
             c.fillStyle = 'cyan'
           }*/
 
