@@ -44,7 +44,7 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 100
+fx = 130
 fy = 120
 touch = false
 prismaind = 2
@@ -112,7 +112,7 @@ function drawpen (angle) {
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
     }
-    if (xl >= 0 && xl <= b/2 && notouch == false) {
+    if (xl >= 0 && xl <= b/2 ) {//&& notouch == false) {
         touch = true
     }else{
         touch = false
@@ -200,7 +200,7 @@ c.stroke()
           // x = (c - 0)/tg(angle)
           // sigma = perslope - angle
           senang = (corind*Math.sin(perslope - Math.abs(angle)))/prismaind
-          document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
+          //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
             ang = perslope - Math.sin(senang)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
@@ -269,7 +269,7 @@ c.stroke()
                 c.strokeStyle = 'cyan'
                 ct = yl + xl*Math.tan(ang)
                 xt = (ct - yfin)/Math.tan(ang)
-                document.getElementById('ab1').innerText = xt
+                //document.getElementById('ab1').innerText = xt
                 ang = perslope - Math.sin(senang)
                 yfin = y0
                 c.moveTo(xl + x0,y0 - yl)
@@ -280,7 +280,7 @@ c.stroke()
                 c.strokeStyle = 'blue'
                 ct = yl + xl*Math.tan(ang)
                 xt = (ct)/Math.tan(ang)
-                document.getElementById('ab1').innerText = xt
+                //document.getElementById('ab1').innerText = xt
                 c.moveTo(xl + x0,y0 - yl)
                 c.lineTo(xt + x0, y0)
                 c.stroke()
