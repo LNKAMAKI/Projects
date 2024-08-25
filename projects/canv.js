@@ -3,6 +3,7 @@ function load() {
     drawpen(Math.PI)
 }
 
+senang = 'i'
 function drawPrism() {
     canv = document.getElementById('c')
     c = canv.getContext('2d')
@@ -42,6 +43,8 @@ penwidth = 60
 fx = 50
 fy = 110
 touch = false
+prismaind = 1.52
+corind = 1.514
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
     //c.stroke()
@@ -187,6 +190,7 @@ c.stroke()
           // yl = xl*tg(angle) + c
           // c = yl + xl*tg(angle)
           // x = (c - 0)/tg(angle)
+          // sigma = perslope - angle
           ang = Math.abs(angle)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
@@ -205,6 +209,7 @@ c.stroke()
             c.stroke()
             c.fillStyle = 'cyan'
 
+            // siigma = angle + perslope
             ang = Math.abs(angle)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
@@ -239,7 +244,15 @@ c.stroke()
             c.stroke()
             c.fillStyle = 'cyan'
 
-            ang = Math.abs(angle)
+            
+            // vermelho: 1,514, 
+            // prisma: 1,52
+            // pi = Math(angle) + perslope
+            // lei de snell:
+            // n1.sen1 = n2.sen2
+            // corind.sen(pi) = prismaind.sen(resangle)
+            senang = (corind*Math.sin(Math.abs(angle) + perslope))/prismaind
+            ang = Math.sin(senang)
           ct = yl - xl*Math.tan(ang)
           xt = (ct - y0)/-Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
@@ -267,7 +280,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${-(dify/difx).toFixed(1)} | angle: ${(Math.atan((dify/difx))).toFixed(1)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${-(dify/difx).toFixed(1)} | angle: ${(Math.atan((dify/difx))).toFixed(1)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)} ! sena: ${senang}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
