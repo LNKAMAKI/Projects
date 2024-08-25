@@ -263,20 +263,44 @@ c.stroke()
             if (ang < 0) {
                 yfin = y0
                 c.strokeStyle = 'cyan'
+                ct = yl + xl*Math.tan(ang)
+                xt = (ct - yfin)/Math.tan(ang)
+                document.getElementById('ab1').innerText = xt
+                ang = perslope - Math.sin(senang)
+                yfin = y0
+                c.moveTo(xl + x0,y0 - yl)
+                c.lineTo(xt + x0, y0 - yfin)
+                c.stroke()
             }else if (ang != 0){
+                ang = perslope - Math.sin(senang)
                 c.strokeStyle = 'blue'
+                ct = yl + xl*Math.tan(ang)
+                xt = (ct)/Math.tan(ang)
+                document.getElementById('ab1').innerText = xt
+                yfin = y0
+                c.moveTo(xl + x0,y0 - yl)
+                c.lineTo(xt + x0, y0 - yfin)
+                c.stroke()
                 //yfin = 0
             }
             yfin = y0
             tang = Math.tan(ang)
             senang = (corind*Math.sin(Math.abs(angle) + perslope))/prismaind
-            //ang = perslope - Math.sin(senang)
-            ang = angle
+            ang = perslope - Math.sin(senang)
+            //ang = angle
+            /*
           ct = yl + xl*Math.tan(ang)
           xt = (ct - yfin)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0 - yfin)
           c.stroke()
+
+          ct = yl + xl*Math.tan(ang)
+          xt = (ct)/Math.tan(ang)
+          c.moveTo(xl + x0,y0 - yl)
+          c.lineTo(xt + x0, y0)
+          c.stroke()
+          */
 
           }
 
