@@ -264,14 +264,14 @@ c.stroke()
                 yfin = y0
                 c.strokeStyle = 'cyan'
             }else if (ang != 0){
-                //c.strokeStyle = 'blue'
+                c.strokeStyle = 'blue'
                 //yfin = 0
             }
             yfin = y0
             tang = Math.tan(ang)
             senang = (corind*Math.sin(Math.abs(angle) + perslope))/prismaind
-            ang = perslope - Math.sin(senang)
-            //ang = angle
+            //ang = perslope - Math.sin(senang)
+            ang = angle
           ct = yl + xl*Math.tan(ang)
           xt = (ct - yfin)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
@@ -299,7 +299,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${-(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(1)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)} ! sena: ${senang} | ang: ${ang} | tang: ${tang} | yfin: ${yfin} | ct: ${ct}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${-(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)} ! sena: ${senang} | ang: ${ang} | tang: ${tang} | yfin: ${yfin} | ct: ${ct}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
