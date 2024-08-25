@@ -43,7 +43,7 @@ penwidth = 60
 fx = 50
 fy = 110
 touch = false
-prismaind = 1.52
+prismaind = 2
 corind = 1.514
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -252,7 +252,7 @@ c.stroke()
             // n1.sen1 = n2.sen2
             // corind.sen(pi) = prismaind.sen(resangle)
             senang = (corind*Math.sin(Math.abs(angle) + perslope))/prismaind
-            ang = Math.sin(senang)
+            ang = Math.sin(senang) + perslope
           ct = yl - xl*Math.tan(ang)
           xt = (ct - y0)/-Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
