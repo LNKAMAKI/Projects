@@ -40,8 +40,8 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 50
-fy = 110
+fx = 40
+fy = 60
 touch = false
 prismaind = 2
 corind = 1.514
@@ -108,7 +108,7 @@ function drawpen (angle) {
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
     }
-    if (xl >= 0 && xl <= b/2 ) { // && notouch == false) {
+    if (xl >= 0 && xl <= b/2 && notouch == false) {
         touch = true
     }else{
         touch = false
@@ -191,13 +191,15 @@ c.stroke()
           // c = yl + xl*tg(angle)
           // x = (c - 0)/tg(angle)
           // sigma = perslope - angle
-          ang = Math.abs(angle)
+          senang = (corind*Math.sin(perslope - Math.abs(angle)))/prismaind
+            ang = perslope - Math.sin(senang)
+            ang = 0.5
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'red'
-          c.stroke()
+         // c.stroke()
 
         }
 
@@ -205,11 +207,13 @@ c.stroke()
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle)
+            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.abs(angle))
             c.stroke()
             c.fillStyle = 'cyan'
 
             // siigma = angle + perslope
+           // senang = (corind*Math.sin(perslope - Math.ab(angle)))/prismaind
+            ang = Math.sin(senang) + perslope
             ang = Math.abs(angle)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
