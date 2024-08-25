@@ -193,7 +193,7 @@ c.stroke()
           // sigma = perslope - angle
           senang = (corind*Math.sin(perslope - Math.abs(angle)))/prismaind
             ang = perslope - Math.sin(senang)
-            ang = 0.5
+            //ang = 0.5
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
@@ -256,13 +256,14 @@ c.stroke()
             // n1.sen1 = n2.sen2
             // corind.sen(pi) = prismaind.sen(resangle)
             senang = (corind*Math.sin(Math.abs(angle) + perslope))/prismaind
-            ang = Math.sin(senang) + perslope
-          ct = yl - xl*Math.tan(ang)
-          xt = (ct - y0)/-Math.tan(ang)
+            ang = perslope - Math.sin(senang)
+          ct = yl + xl*Math.tan(ang)
+          xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
-          c.lineTo(xt + x0, 0)
+          c.lineTo(xt + x0, y0)
           c.strokeStyle = 'red'
           c.stroke()
+
           }
 
 
