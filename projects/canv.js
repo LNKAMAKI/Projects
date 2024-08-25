@@ -44,8 +44,8 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 50
-fy = 80
+fx = 120
+fy = 130
 touch = false
 prismaind = 2
 corind = 1.514
@@ -116,12 +116,23 @@ function drawpen (angle) {
     
     c.lineWidth = '1.5'
     notouch = false
+    /*
     if (Math.tan(angle) > 0 && mousex < fx + penwidth/2) {
         notouch = true
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
-    }
-    if (xl >= 0 && xl <= b/2 ) {//&& notouch == false) {
+    }*/
+   if (direct == 'u') {
+    if (yl < yc) {
+        notouch = true
+     }
+   }
+   if (direct == 'd') {
+    if (yl > yc) {
+        notouch = true
+     }
+   }
+    if (xl >= 0 && xl <= b/2 && notouch == false) {
         touch = true
     }else{
         touch = false
