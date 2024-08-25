@@ -44,10 +44,10 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 110
+fx = 120
 fy = 50
 touch = false
-prismaind = 2
+prismaind = 1
 corind = 1.514
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -256,18 +256,37 @@ c.stroke()
           }
 
           
-          /*
-          if (Math.tan(angle) < 0 && perslope < Math.abs(Math.atan(tg))) {
+          
+          if (Math.tan(angle) < 0 && Math.abs(angle) > Math.abs(Math.atan(tg))) {
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope)
-            //c.stroke()
+            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle))
+            c.stroke()
             c.fillStyle = 'cyan'
-          }*/
+
+            senang = (corind*Math.sin(Math.PI - perslope - Math.abs(angle))/prismaind)
+            ang = Math.sin(senang) + perslope
+            //ang = Math.abs(angle)
+          ct = yl + xl*Math.tan(ang)
+          xt = (ct)/Math.tan(ang)
+          c.moveTo(xl + x0,y0 - yl)
+          c.lineTo(xt + x0, y0)
+          c.strokeStyle = 'red'
+          c.stroke()
+
+         
+            ang = Math.abs(angle)
+            ct = yl - xl*Math.tan(ang)
+            xt = (ct)/-Math.tan(ang)
+            c.moveTo(xl + x0,y0 - yl)
+            c.lineTo(xt + x0, y0)
+            c.strokeStyle = 'purple'
+            c.stroke()
+          }
 
           
-          if (Math.tan(angle) < 0 && Math.abs(angle) < Math.abs(Math.atan(tg))) {
+          if (Math.tan(angle) < 0  && Math.abs(angle) < Math.abs(Math.atan(tg))) {
            // window.alert('HEY')
             // primeiro caso
             // pi = perslope - angle
