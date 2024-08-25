@@ -12,7 +12,7 @@ function drawPrism() {
     canv = document.getElementById('c')
     c = canv.getContext('2d')
     b = 70
-    h = 70
+    h = 40
     fixy = 80
     x0 = (300 - b)/2
     y0 = 150 - (150 - fixy)/2
@@ -44,7 +44,7 @@ function drawPrism() {
 }
 
 penwidth = 60
-fx = 58
+fx = 100
 fy = 120
 touch = false
 prismaind = 2
@@ -247,7 +247,7 @@ c.stroke()
           }*/
 
           
-          if (Math.tan(angle) < 0 && perslope < Math.abs(Math.atan(tg))) {
+          if (Math.tan(angle) < 0 && Math.abs(angle) < Math.abs(Math.atan(tg))) {
            // window.alert('HEY')
             // primeiro caso
             // pi = perslope - angle
