@@ -43,7 +43,7 @@ penwidth = 60
 fx = 40
 fy = 60
 touch = false
-prismaind = 2
+prismaind = 1.6
 corind = 1.514
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
