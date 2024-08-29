@@ -47,7 +47,7 @@ penwidth = 70
 fx = 40
 fy = 80
 touch = false
-prismaind = 1.8
+prismaind = 1.58
 corind = 1.514
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -221,7 +221,7 @@ c.stroke()
           // sigma = perslope - angle
           senang = (corind*Math.sin(perslope - Math.abs(angle)))/prismaind
           //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
-            ang = perslope - Math.sin(senang)
+            ang = perslope - Math.asin(senang)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
@@ -241,8 +241,8 @@ c.stroke()
 
             // siigma = angle + perslope
            // senang = (corind*Math.sin(perslope - Math.ab(angle)))/prismaind
-            ang = Math.sin(senang) + perslope
-            ang = Math.abs(angle)
+            ang = Math.asin(senang) + perslope
+           // ang = Math.abs(angle)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
@@ -266,7 +266,8 @@ c.stroke()
             c.fillStyle = 'cyan'
 
             senang = (corind*Math.sin(Math.PI - perslope - Math.abs(angle))/prismaind)
-            ang = Math.sin(senang) + perslope
+            ang = Math.asin(senang) + perslope
+            //ang = angle
             //ang = Math.abs(angle)
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
@@ -297,31 +298,30 @@ c.stroke()
             
 
             yfin = y0
-            tang = Math.tan(ang)
             senang = (corind*Math.sin(Math.abs(angle) + perslope))/prismaind
-            ang = perslope - Math.sin(senang)
+            ang = perslope - Math.asin(senang)
+            ct = yl + xl*Math.tan(ang)
             if (ang < 0) {
                 yfin = y0
                 c.strokeStyle = 'cyan'
-                ct = yl + xl*Math.tan(ang)
-                xt = (ct - yfin)/Math.tan(ang)
                 //document.getElementById('ab1').innerText = xt
-                ang = perslope - Math.sin(senang)
-                yfin = y0
-                c.moveTo(xl + x0,y0 - yl)
-                c.lineTo(xt + x0, y0 - yfin)
-                c.stroke()
+               // c.moveTo(xl + x0,y0 - yl)
+                //c.lineTo(xt + x0, y0 - yfin)
+                //c.stroke()
             }else {
-                ang = perslope - Math.sin(senang)
+                yfin = 0
                 c.strokeStyle = 'blue'
-                ct = yl + xl*Math.tan(ang)
-                xt = (ct)/Math.tan(ang)
                 //document.getElementById('ab1').innerText = xt
-                c.moveTo(xl + x0,y0 - yl)
-                c.lineTo(xt + x0, y0)
-                c.stroke()
+                //c.moveTo(xl + x0,y0 - yl)
+                //c.lineTo(xt + x0, y0)
+                //c.stroke()
                 //yfin = 0
             }
+
+            xt = (ct - yfin)/Math.tan(ang)
+            c.moveTo(xl + x0,y0 - yl)
+            c.lineTo(xt + x0, y0 - yfin)
+            c.stroke()
             //ang = angle
             /*
           ct = yl + xl*Math.tan(ang)
@@ -339,6 +339,18 @@ c.stroke()
 
           }
 
+          if (Math.tan(angle) < 0) {
+          tang = Math.tan(ang)
+          c.beginPath()
+          ang = angle
+          ct = yl + xl*Math.tan(ang)
+          xt = (ct - y0)/Math.tan(ang)
+          c.moveTo(xl + x0,y0 - yl)
+          c.lineTo(xt + x0, 0)
+          c.strokeStyle = 'purple'
+          c.stroke()
+          }else{
+            tang = Math.tan(ang)
           c.beginPath()
           ang = angle
           ct = yl + xl*Math.tan(ang)
@@ -347,7 +359,7 @@ c.stroke()
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'purple'
           c.stroke()
-
+          }
     }
    
 
