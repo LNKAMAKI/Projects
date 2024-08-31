@@ -45,10 +45,10 @@ function drawPrism() {
 
 penwidth = 70
 fx = 30
-fy = 70
+fy = 90
 touch = false
 touch2 = false
-prismaind = 2
+prismaind = 1.514
 corind = 1.514
 xl2 = 0
 yl2 = 0
@@ -197,14 +197,14 @@ c.stroke()
         c.moveTo(xl + x0,y0 - yl)
         c.lineTo(xper0 + x0,y0)
         c.strokeStyle = 'black'
-        c.stroke()
+        //c.stroke() -> desenhar reta perpendicular à primeira face
 
         xper0 = (y0 - cper)/-Math.tan(perslope)
         c.beginPath()
         c.moveTo(xl + x0,y0 - yl)
         c.lineTo(xper0 + x0,0)
         c.strokeStyle = 'black'
-        c.stroke()
+        //c.stroke() -> desenhar reta perpendicular à primeira face
 
         // primeira face
         if (Math.tan(angle) > 0) { //&& perslope > angle) {
@@ -231,6 +231,7 @@ c.stroke()
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'red'
+          c.strokeStyle = 'purple'
           c.stroke()
 
         }
@@ -274,6 +275,7 @@ c.stroke()
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'black'
+          c.strokeStyle = 'purple'
           c.stroke()
 
           }
@@ -318,6 +320,7 @@ c.stroke()
                 //yfin = 0
             }
 
+            c.strokeStyle = 'purple'
             xt = (ct - yfin)/Math.tan(ang)
             c.moveTo(xl + x0,y0 - yl)
             c.lineTo(xt + x0, y0 - yfin)
