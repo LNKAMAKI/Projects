@@ -44,12 +44,14 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 90
-fy = 40
+fx = 30
+fy = 150
 touch = false
 touch2 = false
 prismaind = 2
 corind = 1.514
+xl2 = 0
+yl2 = 0
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
     //c.stroke()
@@ -379,7 +381,7 @@ c.stroke()
          c.moveTo(x0 + xl, y0 - yl)
           c.lineTo((ct - 0)/Math.tan(ang) + x0,y0 - 0)
           c.strokeStyle = 'green'
-          c.stroke()
+          //c.stroke()
           xl2 = (ct - b*tg)/(-tg + Math.tan(ang))
           yl2 = xl2*-tg + 0 + b*tg
 
