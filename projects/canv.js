@@ -420,31 +420,33 @@ c.stroke()
              // feixe está interceptando prisma
         // arctg(tg) + 90 + x = 180
         // x = 90 - arctg(tg)
-        perslope2 = Math.PI/2 - Math.atan(tg) // ângulo de inclinação da reta perpendicular
+        perslope = Math.PI/2 - Math.atan(tg) // ângulo de inclinação da reta perpendicular
         // yl = xl*-tg(perslope) + cper
         // cper = yl + xl*tg(perslope)
-        cper = yl2 - xl2*Math.tan(perslope2) 
+        cper = yl2 - xl2*Math.tan(perslope) 
         // y = x*tg(perslope) + cper
         // x = (y - cper)/x*tg(perslope)
         //y = x.-tg + 0 + b.tg
         // -tg(prisma)*x' + b*tg(prisma) = tg(perslope)*x' + cper
         // x'(tg(prisma) + tg(perslope)) = b*tg(prisma) - cper
         // x' = (b*tg(prisma) - cper)/(tg(prisma) + tg(perslope))
-        xper = (b*tg - cper)/(tg + Math.tan(perslope2))
+        xper = (b*tg - cper)/(tg + Math.tan(perslope))
         //xl = (yl - cper)/-tg(perslope)
-        xper0 = (0 - cper)/Math.tan(perslope2)
+        xper0 = (0 - cper)/Math.tan(perslope)
         c.beginPath()
         c.moveTo(xper + x0,y0 - yl2)
         c.lineTo(xper0 + x0,y0)
         c.strokeStyle = 'black'
         c.stroke()
 
-        xper0 = (y0 - cper)/Math.tan(perslope2)
+        xper0 = (y0 - cper)/Math.tan(perslope)
         c.beginPath()
         c.moveTo(xper + x0,y0 - yl2)
         c.lineTo(xper0 + x0,0)
         c.strokeStyle = 'black'
         c.stroke()
+
+
         }
    
 
