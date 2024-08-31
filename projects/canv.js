@@ -13,7 +13,7 @@ function drawPrism() {
     canv = document.getElementById('c')
     c = canv.getContext('2d')
     b = 70
-    h = 200
+    h = 80
     fixy = 80
     x0 = (300 - b)/2
     y0 = 150 - (150 - fixy)/2
@@ -46,7 +46,7 @@ function drawPrism() {
 
 penwidth = 70
 fx = 30
-fy = 120
+fy = 50
 touch = false
 touch2 = false
 prismaind = 1.514
@@ -482,7 +482,40 @@ c.stroke()
         
           }
 
+          if (Math.tan(ang) > 0) { //&& perslope > ang) {
+            // primeiro caso
+            // pi = perslope - ang
+            c.beginPath()
+            if (perslope > Math.abs(ang)) {
+            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(ang))
+            }else{
+              c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(ang),Math.PI - perslope)
+            }
+            c.stroke()
           
+            // ang
+            // yl2 = xl2*tg(ang) + c
+            // c = yl2 + xl2*tg(ang)
+            // x = (c - 0)/tg(ang)
+            // sigma = perslope - ang
+            senang = (prismaind*Math.sin(perslope + ang))/corind
+            //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
+              ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
+              if (ang2 > 0) {
+                yfin = 0
+                c.strokeStyle = 'red'
+              }else{
+                yfin = y0
+                c.strokeStyle = 'gray'
+              }
+            ct = yl2 + xl2*Math.tan(ang2)
+            xt = (ct - yfin)/Math.tan(ang2)
+            c.moveTo(xl2 + x0,y0 - yl2)
+            c.lineTo(xt + x0, y0 - yfin)
+            c.stroke()
+        
+          }
+
         }
    
 
