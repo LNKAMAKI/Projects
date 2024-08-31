@@ -467,7 +467,7 @@ c.stroke()
             senang = (prismaind*Math.sin(perslope - Math.abs(ang)))/corind
             //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
               ang2 = Math.asin(senang) - perslope // se sin(senang) for negativo, ent caso == 2
-              if (Math.abs(ang2) > perslope) {
+              if (ang2 > 0) {
                 yfin = 0
                 c.strokeStyle = 'red'
               }else{
