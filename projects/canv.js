@@ -336,6 +336,7 @@ c.stroke()
 
           }
 
+          /*
           if (Math.tan(angle) < 0) {
           tang = Math.tan(ang)
           c.beginPath()
@@ -356,7 +357,7 @@ c.stroke()
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'purple'
           //c.stroke()
-          }
+          }*/
 
           // segunda face
           // equação da segunda reta:
@@ -372,10 +373,33 @@ c.stroke()
           // x.-tg + x*tg(ang) = ct - b.tg
           // x(-tg + tg(ang)) = ct - b.tg
           // x = (ct - b.tg)/(-tg + tg(ang)) 
-          xl2 = (ct - b*tg)/(-tg + Math.tan(ang)) 
-          // (ct - y)/Math.tan(ang) = (y - b.tg)/-tg
-          // y = (ct*tg + b*tg*Math.tan(ang))/(Math.tan(ang) - tg)
-          yl2 = xl2*-tg + 0 + b.tg
+         // (y - ct)/(-tg(ang)) = x
+         c.beginPath()
+         c.moveTo(x0 + xl, y0 - yl)
+          c.lineTo((ct - 0)/Math.tan(ang) + x0,y0 - 0)
+          c.strokeStyle = 'green'
+          c.stroke()
+          xl2 = (ct - b*tg)/(-tg + Math.tan(ang))
+          yl2 = xl2*-tg + 0 + b*tg
+
+          if (direct == 'u') {
+            if (yl2 < yl) {
+                notouch = true
+             }
+           }
+           if (direct == 'd') {
+            if (yl2 > yl) {
+                notouch = true
+             }
+           }
+
+           if (xl >= 0 && xl <= b/2 && notouch == false) {
+            touch = true
+        }else{
+            touch = false
+        }
+
+
         }
    
 
@@ -394,7 +418,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${xl2}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${yl2}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
