@@ -466,13 +466,13 @@ c.stroke()
             // sigma = perslope - ang
             senang = (prismaind*Math.sin(perslope - Math.abs(ang)))/corind
             //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
-              ang2 = Math.asin(senang) - perslope // se sin(senang) for negativo, ent caso == 2
+              ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
               if (ang2 > 0) {
                 yfin = 0
                 c.strokeStyle = 'red'
               }else{
                 yfin = y0
-                c.strokeStyle = 'orange'
+                c.strokeStyle = 'black'
               }
             ct = yl2 + xl2*Math.tan(ang2)
             xt = (ct - yfin)/Math.tan(ang2)
