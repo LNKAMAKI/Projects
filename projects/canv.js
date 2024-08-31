@@ -13,7 +13,7 @@ function drawPrism() {
     canv = document.getElementById('c')
     c = canv.getContext('2d')
     b = 70
-    h = 80
+    h = 200
     fixy = 80
     x0 = (300 - b)/2
     y0 = 150 - (150 - fixy)/2
@@ -46,7 +46,7 @@ function drawPrism() {
 
 penwidth = 70
 fx = 30
-fy = 90
+fy = 120
 touch = false
 touch2 = false
 prismaind = 1.514
@@ -472,7 +472,7 @@ c.stroke()
                 c.strokeStyle = 'red'
               }else{
                 yfin = y0
-                c.strokeStyle = 'black'
+                c.strokeStyle = 'gray'
               }
             ct = yl2 + xl2*Math.tan(ang2)
             xt = (ct - yfin)/Math.tan(ang2)
