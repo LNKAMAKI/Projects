@@ -44,10 +44,10 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 40
-fy = 80
+fx = 90
+fy = 40
 touch = false
-prismaind = 1.58
+prismaind = 2
 corind = 1.514
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
@@ -231,6 +231,7 @@ c.stroke()
 
         }
 
+        /*
         if (Math.tan(angle) > 0 && perslope < angle) {
             // primeiro caso
             // pi = perslope - angle
@@ -250,6 +251,7 @@ c.stroke()
           c.strokeStyle = 'red'
           //c.stroke()
           }
+          */
 
           if (Math.tan(angle) > 0) {
            // window.alert(perslope )
@@ -273,7 +275,7 @@ c.stroke()
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
-          c.strokeStyle = 'red'
+          c.strokeStyle = 'black'
           c.stroke()
 
           }
@@ -342,9 +344,9 @@ c.stroke()
           if (Math.tan(angle) < 0) {
           tang = Math.tan(ang)
           c.beginPath()
-          ang = angle
-          ct = yl + xl*Math.tan(ang)
-          xt = (ct - y0)/Math.tan(ang)
+          //ang = angle
+          ct = yl + xl*Math.tan(angle)
+          xt = (ct - y0)/Math.tan(angle)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, 0)
           c.strokeStyle = 'purple'
@@ -352,13 +354,13 @@ c.stroke()
           }else{
             tang = Math.tan(ang)
           c.beginPath()
-          ang = angle
-          ct = yl + xl*Math.tan(ang)
-          xt = (ct)/Math.tan(ang)
+          //ang = angle
+          ct = yl + xl*Math.tan(angle)
+          xt = (ct)/Math.tan(angle)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'purple'
-          c.stroke()
+          //c.stroke()
           }
     }
    
@@ -378,7 +380,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)} ! sena: ${senang} | ang: ${ang} | tang: ${tang} | yfin: ${yfin} | ct: ${ct} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
