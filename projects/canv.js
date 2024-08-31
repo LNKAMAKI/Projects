@@ -221,7 +221,7 @@ c.stroke()
           // sigma = perslope - angle
           senang = (corind*Math.sin(perslope - Math.abs(angle)))/prismaind
           //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
-            ang = perslope - Math.asin(senang)
+            ang = perslope - Math.asin(senang) // se sin(senang) for negativo, ent caso == 2
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
@@ -252,12 +252,6 @@ c.stroke()
           //c.stroke()
           }
           */
-
-          if (Math.tan(angle) > 0) {
-           // window.alert(perslope )
-          }
-
-          
           
           if (Math.tan(angle) < 0 && Math.abs(angle) > Math.abs(Math.atan(tg))) {
             // primeiro caso
@@ -360,7 +354,7 @@ c.stroke()
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'purple'
-          //c.stroke()
+          c.stroke()
           }
     }
    
