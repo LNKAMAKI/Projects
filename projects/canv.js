@@ -175,7 +175,7 @@ function drawpen (angle) {
 
 c.strokeStyle = 'red'
 c.stroke()
-    }else{ // quando raio está tocando a primeira face do prisma99
+    }else{ // quando raio está tocando a primeira face do prisma
         c.lineTo(xl + x0,y0 - yl)
         c.strokeStyle = 'red'
         c.stroke()
@@ -362,7 +362,9 @@ c.stroke()
           //c.stroke()
           }*/
 
-          // segunda face
+        }
+
+        // segunda face
           // equação da segunda reta:
           // x = b, y = 0
           // y = x.-tg + c
@@ -403,7 +405,12 @@ c.stroke()
             touch2 = false
         }
 
-
+        if (touch2 == true && touch == true) {
+            c.beginPath()
+            c.moveTo(xl + x0,y0 - yl)
+            c.lineTo(xl2 + x0, y0 - yl2)
+            c.strokeStyle = 'green'
+            c.stroke()
         }
    
 
