@@ -47,6 +47,7 @@ penwidth = 70
 fx = 90
 fy = 40
 touch = false
+touch2 = false
 prismaind = 2
 corind = 1.514
 function drawpen (angle) {
@@ -382,6 +383,7 @@ c.stroke()
           xl2 = (ct - b*tg)/(-tg + Math.tan(ang))
           yl2 = xl2*-tg + 0 + b*tg
 
+          notouch = false
           if (direct == 'u') {
             if (yl2 < yl) {
                 notouch = true
@@ -393,10 +395,10 @@ c.stroke()
              }
            }
 
-           if (xl >= 0 && xl <= b/2 && notouch == false) {
-            touch = true
+           if (xl2 >= b/2 && xl2 <= b && notouch == false) {
+            touch2 = true
         }else{
-            touch = false
+            touch2 = false
         }
 
 
@@ -418,7 +420,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${yl2}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${yl2} | touch2 = ${touch2}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
