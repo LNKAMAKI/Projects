@@ -203,6 +203,7 @@ c.stroke()
         c.strokeStyle = 'black'
         c.stroke()
 
+        // primeira face
         if (Math.tan(angle) > 0) { //&& perslope > angle) {
           // primeiro caso
           // pi = perslope - angle
@@ -354,9 +355,28 @@ c.stroke()
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'purple'
-          c.stroke()
+          //c.stroke()
           }
-    }
+
+          // segunda face
+          // equação da segunda reta:
+          // x = b, y = 0
+          // y = x.-tg + c
+          // c = 0 + b.tg
+          //y = x.-tg + 0 + b.tg
+          //x = (y - b.tg)/-tg 
+          // equação do raio:
+          // y = -x*tg(ang) + ct
+          // equação da intercepção:
+          // x.-tg + 0 + b.tg = -x*tg(ang) + ct
+          // x.-tg + x*tg(ang) = ct - b.tg
+          // x(-tg + tg(ang)) = ct - b.tg
+          // x = (ct - b.tg)/(-tg + tg(ang)) 
+          xl2 = (ct - b*tg)/(-tg + Math.tan(ang)) 
+          // (ct - y)/Math.tan(ang) = (y - b.tg)/-tg
+          // y = (ct*tg + b*tg*Math.tan(ang))/(Math.tan(ang) - tg)
+          yl2 = xl2*-tg + 0 + b.tg
+        }
    
 
 
@@ -374,7 +394,7 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct}`
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${xl2}`
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
