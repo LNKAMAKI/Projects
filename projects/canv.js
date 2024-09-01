@@ -45,12 +45,12 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 120
-fy = 30
+fx = 60
+fy = 100
 touch = false
 touch2 = false
 prismaind = 1.514
-//prismaind = 2
+prismaind = 2
 corind = 1.514
 xl2 = 0
 yl2 = 0
@@ -436,133 +436,138 @@ c.strokeStyle = 'red'
         if (touch == false) {
             xref = xc
             yref = yc
+            angchose = angle
         }else{
             xref = xl
             yref = yl
+            angchose = ang
         }
         if (touch2 == true) { // && touch == true) {
-            c.beginPath()
-            c.moveTo(xref + x0,y0 - yref)
-            c.lineTo(xl2 + x0, y0 - yl2)
-            c.strokeStyle = 'green'
-            c.stroke()
-
-             // feixe está interceptando prisma
-        // arctg(tg) + 90 + x = 180
-        // x = 90 - arctg(tg)
-        perslope = Math.PI/2 - Math.atan(tg) // ângulo de inclinação da reta perpendicular
-        // yl = xl*-tg(perslope) + cper
-        // cper = yl + xl*tg(perslope)
-        cper = yl2 - xl2*Math.tan(perslope) 
-        // y = x*tg(perslope) + cper
-        // x = (y - cper)/x*tg(perslope)
-        //y = x.-tg + 0 + b.tg
-        // -tg(prisma)*x' + b*tg(prisma) = tg(perslope)*x' + cper
-        // x'(tg(prisma) + tg(perslope)) = b*tg(prisma) - cper
-        // x' = (b*tg(prisma) - cper)/(tg(prisma) + tg(perslope))
-        xper = (b*tg - cper)/(tg + Math.tan(perslope))
-        //xl = (yl - cper)/-tg(perslope)
-        xper0 = (0 - cper)/Math.tan(perslope)
-        c.beginPath()
-        c.moveTo(xper + x0,y0 - yl2)
-        c.lineTo(xper0 + x0,y0)
-        c.strokeStyle = 'black'
-        c.stroke()
-
-        xper0 = (y0 - cper)/Math.tan(perslope)
-        c.beginPath()
-        c.moveTo(xper + x0,y0 - yl2)
-        c.lineTo(xper0 + x0,0)
-        c.strokeStyle = 'black'
-        c.stroke()
-
-        if (Math.tan(ang) < 0) { //&& perslope > ang) {
-            // primeiro caso
-            // pi = perslope - ang
-            c.beginPath()
-            if (perslope > Math.abs(ang)) {
-            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(ang))
-            }else{
-              c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(ang),Math.PI - perslope)
-            }
-            c.stroke()
-          
-            // ang
-            // yl2 = xl2*tg(ang) + c
-            // c = yl2 + xl2*tg(ang)
-            // x = (c - 0)/tg(ang)
-            // sigma = perslope - ang
-            senang = (prismaind*Math.sin(perslope - Math.abs(ang)))/corind
-            //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
-              ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
-              if (ang2 > 0) {
-                yfin = 0
-                c.strokeStyle = 'red'
-              }else{
-                yfin = y0
-                c.strokeStyle = 'gray'
-              }
-
-              c.strokeStyle = 'black'
-            ct = yl2 + xl2*Math.tan(ang2)
-            xt = (ct - yfin)/Math.tan(ang2)
-            c.moveTo(xl2 + x0,y0 - yl2)
-            c.lineTo(xt + x0, y0 - yfin)
-            c.stroke()
-        
-          }
-
-          if (Math.tan(ang) > 0 && Math.abs(ang) < Math.abs(Math.atan(tg))) { //&& perslope > ang) {
-            // primeiro caso
-            // pi = perslope - ang
-            c.beginPath()
-            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI + ang)
-            c.stroke()
-          
-            // ang
-            // yl2 = xl2*tg(ang) + c
-            // c = yl2 + xl2*tg(ang)
-            // x = (c - 0)/tg(ang)
-            // sigma = perslope - ang
-            senang = (prismaind*Math.sin(perslope + ang))/corind
-            //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
-              ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
-              if (ang2 > 0) {
-                yfin = 0
-                c.strokeStyle = 'red'
-              }else{
-                yfin = y0
-                c.strokeStyle = 'gray'
-              }
-            ct = yl2 + xl2*Math.tan(ang2)
-            xt = (ct - yfin)/Math.tan(ang2)
-            c.moveTo(xl2 + x0,y0 - yl2)
-            c.lineTo(xt + x0, y0 - yfin)
-            c.stroke()
-        
-          }
-
-          if (Math.tan(ang) > 0 && Math.abs(ang) > Math.abs(Math.atan(tg))) {
-            // primeiro caso
-            // pi = perslope - angle
-            c.beginPath()
-            c.arc(xl2 + x0, y0 - yl2,20,Math.PI + ang,Math.PI + Math.PI - perslope)
-            c.stroke()
-            c.fillStyle = 'cyan'
-
-            senang = (prismaind*Math.sin(Math.PI - perslope - ang)/corind)
-            ang2 = -Math.asin(senang) - perslope
-            //ang = angle
-            //ang = Math.abs(angle)
-          ct = yl + xl*Math.tan(ang2)
-          xt = (ct)/Math.tan(ang2)
-          c.moveTo(xl2 + x0,y0 - yl2)
-          c.lineTo(xt + x0, y0)
-          c.strokeStyle = 'purple'
+          c.beginPath()
+          c.moveTo(xref + x0,y0 - yref)
+          c.lineTo(xl2 + x0, y0 - yl2)
+          c.strokeStyle = 'green'
           c.stroke()
-
+      
+           // feixe está interceptando prisma
+      // arctg(tg) + 90 + x = 180
+      // x = 90 - arctg(tg)
+      perslope = Math.PI/2 - Math.atan(tg) // ângulo de inclinação da reta perpendicular
+      // yl = xl*-tg(perslope) + cper
+      // cper = yl + xl*tg(perslope)
+      cper = yl2 - xl2*Math.tan(perslope) 
+      // y = x*tg(perslope) + cper
+      // x = (y - cper)/x*tg(perslope)
+      //y = x.-tg + 0 + b.tg
+      // -tg(prisma)*x' + b*tg(prisma) = tg(perslope)*x' + cper
+      // x'(tg(prisma) + tg(perslope)) = b*tg(prisma) - cper
+      // x' = (b*tg(prisma) - cper)/(tg(prisma) + tg(perslope))
+      xper = (b*tg - cper)/(tg + Math.tan(perslope))
+      //xl = (yl - cper)/-tg(perslope)
+      xper0 = (0 - cper)/Math.tan(perslope)
+      c.beginPath()
+      c.moveTo(xper + x0,y0 - yl2)
+      c.lineTo(xper0 + x0,y0)
+      c.strokeStyle = 'black'
+      c.stroke()
+      
+      xper0 = (y0 - cper)/Math.tan(perslope)
+      c.beginPath()
+      c.moveTo(xper + x0,y0 - yl2)
+      c.lineTo(xper0 + x0,0)
+      c.strokeStyle = 'black'
+      c.stroke()
+      
+      if (Math.tan(angchose) < 0) { //&& perslope > angchose) {
+          // primeiro caso
+          // pi = perslope - angchose
+          c.beginPath()
+          if (perslope > Math.abs(angchose)) {
+          c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(angchose))
+          }else{
+            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(angchose),Math.PI - perslope)
           }
+          c.stroke()
+        
+          // angchose
+          // yl2 = xl2*tg(angchose) + c
+          // c = yl2 + xl2*tg(angchose)
+          // x = (c - 0)/tg(angchose)
+          // sigma = perslope - angchose
+          senang = (prismaind*Math.sin(perslope - Math.abs(angchose)))/corind
+          //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
+            ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
+            if (ang2 > 0) {
+              yfin = 0
+              c.strokeStyle = 'red'
+            }else{
+              yfin = y0
+              c.strokeStyle = 'gray'
+            }
+      
+            c.strokeStyle = 'black'
+            c.strokeStyle = 'red'
+          ct = yl2 + xl2*Math.tan(ang2)
+          xt = (ct - yfin)/Math.tan(ang2)
+          c.moveTo(xl2 + x0,y0 - yl2)
+          c.lineTo(xt + x0, y0 - yfin)
+          c.stroke()
+      
         }
+      
+        if (Math.tan(angchose) > 0 && Math.abs(angchose) < Math.abs(Math.atan(tg))) { //&& perslope > angchose) {
+          // primeiro caso
+          // pi = perslope - angchose
+          c.beginPath()
+          c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI + angchose)
+          c.stroke()
+        
+          // angchose
+          // yl2 = xl2*tg(angchose) + c
+          // c = yl2 + xl2*tg(angchose)
+          // x = (c - 0)/tg(angchose)
+          // sigma = perslope - angchose
+          senang = (prismaind*Math.sin(perslope + angchose))/corind
+          //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
+            ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
+            if (ang2 > 0) {
+              yfin = 0
+              c.strokeStyle = 'red'
+            }else{
+              yfin = y0
+              c.strokeStyle = 'gray'
+            }
+            c.strokeStyle = 'red'
+          ct = yl2 + xl2*Math.tan(ang2)
+          xt = (ct - yfin)/Math.tan(ang2)
+          c.moveTo(xl2 + x0,y0 - yl2)
+          c.lineTo(xt + x0, y0 - yfin)
+          c.stroke()
+      
+        }
+      
+        if (Math.tan(angchose) > 0 && Math.abs(angchose) > Math.abs(Math.atan(tg))) {
+          // primeiro caso
+          // pi = perslope - angchosele
+          c.beginPath()
+          c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angchose,Math.PI + Math.PI - perslope)
+          c.stroke()
+          c.fillStyle = 'cyan'
+      
+          senang = (prismaind*Math.sin(Math.PI - perslope - angchose)/corind)
+          ang2 = -Math.asin(senang) - perslope
+          //angchose = angchosele
+          //angchose = Math.abs(angchosele)
+        ct = yl2 + xl2*Math.tan(ang2)
+        xt = (ct)/Math.tan(ang2)
+        c.moveTo(xl2 + x0,y0 - yl2)
+        c.lineTo(xt + x0, y0)
+        c.strokeStyle = 'purple'
+        c.strokeStyle = 'red'
+        c.stroke()
+      
+        }
+      }
    
 
 
