@@ -45,7 +45,7 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 60
+fx = 40
 fy = 100
 touch = false
 touch2 = false
@@ -129,12 +129,12 @@ function drawpen (angle) {
     }*/
    if (direct == 'u') {
     if (yl < yc) {
-        //notouch = true
+      notouch = true
      }
    }
    if (direct == 'd') {
     if (yl > yc) {
-        //notouch = true
+        notouch = true
      }
    }
     if (xl >= 0 && xl <= b/2 && notouch == false) {
@@ -176,7 +176,7 @@ function drawpen (angle) {
 
 
 c.strokeStyle = 'red'
-//c.stroke()
+c.stroke()
     }else{ // quando raio está tocando a primeira face do prisma
         c.lineTo(xl + x0,y0 - yl)
         c.strokeStyle = 'red'
@@ -442,7 +442,7 @@ c.strokeStyle = 'red'
             yref = yl
             angchose = ang
         }
-        if (touch2 == true) { // && touch == true) {
+        if (touch2 == true && touch == true) {
           c.beginPath()
           c.moveTo(xref + x0,y0 - yref)
           c.lineTo(xl2 + x0, y0 - yl2)
