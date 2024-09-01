@@ -50,7 +50,7 @@ fy = 15
 touch = false
 touch2 = false
 prismaind = 1.514
-prismaind = 2 
+prismaind = 1.57
 corind = 1.514
 xl2 = 0
 yl2 = 0
@@ -176,7 +176,7 @@ function drawpen (angle) {
 
 
 c.strokeStyle = 'red'
-c.stroke()
+//c.stroke()
     }else{ // quando raio está tocando a primeira face do prisma
         c.lineTo(xl + x0,y0 - yl)
         c.strokeStyle = 'red'
@@ -431,9 +431,13 @@ c.stroke()
             touch2 = false
         }
 
+        if (touch == false) {
+            xref = xc
+            yref = yc
+        }
         if (touch2 == true) { // && touch == true) {
             c.beginPath()
-            c.moveTo(xc + x0,y0 - yc)
+            c.moveTo(xref + x0,y0 - yref)
             c.lineTo(xl2 + x0, y0 - yl2)
             c.strokeStyle = 'green'
             c.stroke()
@@ -467,7 +471,7 @@ c.stroke()
         c.strokeStyle = 'black'
         c.stroke()
 
-        if (Math.tan(ang) < 0) { //&& perslope > ang) {
+        if (Math.tan(angle) < 0) { //&& perslope > ang) {
             // primeiro caso
             // pi = perslope - ang
             c.beginPath()
@@ -501,7 +505,7 @@ c.stroke()
         
           }
 
-          if (Math.tan(ang) > 0 && Math.abs(angle) < Math.abs(Math.atan(tg))) { //&& perslope > ang) {
+          if (Math.tan(angle) > 0 && Math.abs(angle) < Math.abs(Math.atan(tg))) { //&& perslope > ang) {
             // primeiro caso
             // pi = perslope - ang
             c.beginPath()
@@ -531,7 +535,7 @@ c.stroke()
             xt = (ct - yfin)/Math.tan(ang2)
             c.moveTo(xl2 + x0,y0 - yl2)
             c.lineTo(xt + x0, y0 - yfin)
-            c.stroke()
+            //c.stroke()
         
           }
 
@@ -539,19 +543,18 @@ c.stroke()
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle))
+            c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angle,Math.PI + Math.PI - perslope)
             c.stroke()
             c.fillStyle = 'cyan'
 
-            senang = (corind*Math.sin(Math.PI - perslope - Math.abs(angle))/prismaind)
-            ang = Math.asin(senang) + perslope
+            senang = (prismaind*Math.sin(Math.PI - perslope - angle)/corind)
+            ang2 = -Math.asin(senang) - perslope
             //ang = angle
             //ang = Math.abs(angle)
-          ct = yl + xl*Math.tan(ang)
-          xt = (ct)/Math.tan(ang)
-          c.moveTo(xl + x0,y0 - yl)
+          ct = yl + xl*Math.tan(ang2)
+          xt = (ct)/Math.tan(ang2)
+          c.moveTo(xl2 + x0,y0 - yl2)
           c.lineTo(xt + x0, y0)
-          c.strokeStyle = 'black'
           c.strokeStyle = 'purple'
           c.stroke()
 
