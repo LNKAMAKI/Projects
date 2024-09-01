@@ -45,12 +45,12 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx =  115
-fy = 15
+fx =  40
+fy = 120
 touch = false
 touch2 = false
 prismaind = 1.514
-prismaind = 1.57
+prismaind = 2
 corind = 1.514
 xl2 = 0
 yl2 = 0
@@ -129,12 +129,12 @@ function drawpen (angle) {
     }*/
    if (direct == 'u') {
     if (yl < yc) {
-        notouch = true
+        //notouch = true
      }
    }
    if (direct == 'd') {
     if (yl > yc) {
-        notouch = true
+        //notouch = true
      }
    }
     if (xl >= 0 && xl <= b/2 && notouch == false) {
@@ -407,8 +407,10 @@ c.strokeStyle = 'red'
         yl2 = (xl2)*-tg + b*tg
           }
 
+          if (touch == false) {
           xl2 = (b*tg - cc)/(-Math.tan(angle) + tg)
         yl2 = (xl2)*-tg + b*tg
+          }
 
 
           notouch = false
@@ -434,6 +436,9 @@ c.strokeStyle = 'red'
         if (touch == false) {
             xref = xc
             yref = yc
+        }else{
+            xref = xl
+            yref = yl
         }
         if (touch2 == true) { // && touch == true) {
             c.beginPath()
@@ -497,6 +502,8 @@ c.strokeStyle = 'red'
                 yfin = y0
                 c.strokeStyle = 'gray'
               }
+
+              c.strokeStyle = 'black'
             ct = yl2 + xl2*Math.tan(ang2)
             xt = (ct - yfin)/Math.tan(ang2)
             c.moveTo(xl2 + x0,y0 - yl2)
@@ -509,11 +516,7 @@ c.strokeStyle = 'red'
             // primeiro caso
             // pi = perslope - ang
             c.beginPath()
-            if (perslope > Math.abs(ang)) {
-            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(ang))
-            }else{
-              c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(ang),Math.PI - perslope)
-            }
+            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI + ang)
             c.stroke()
           
             // ang
@@ -535,7 +538,7 @@ c.strokeStyle = 'red'
             xt = (ct - yfin)/Math.tan(ang2)
             c.moveTo(xl2 + x0,y0 - yl2)
             c.lineTo(xt + x0, y0 - yfin)
-            //c.stroke()
+            c.stroke()
         
           }
 
