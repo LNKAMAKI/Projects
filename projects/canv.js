@@ -45,8 +45,8 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 30
-fy = 50
+fx =  115
+fy = 15
 touch = false
 touch2 = false
 prismaind = 1.514
@@ -385,12 +385,31 @@ c.stroke()
           // x = (ct - b.tg)/(-tg + tg(ang)) 
          // (y - ct)/(-tg(ang)) = x
          c.beginPath()
-         c.moveTo(x0 + xl, y0 - yl)
-          c.lineTo((ct - 0)/Math.tan(ang) + x0,y0 - 0)
+         //c.moveTo(x0 + xl, y0 - yl)
+         //c.lineTo((ct - 0)/Math.tan(ang) + x0,y0 - 0)
           c.strokeStyle = 'green'
           //c.stroke()
+
+          
+          if (ct != undefined) {
           xl2 = (ct - b*tg)/(-tg + Math.tan(ang))
           yl2 = xl2*-tg + 0 + b*tg
+          }else{
+             // y = tg(angle).xc + cc
+    // cc = y - tg(angle).xc
+    //cc =  yc + Math.tan(angle)*xc // tangente tem que coincidir com a equação do prisma - -tg(angle)
+    // y = tg*x
+    // y = tg(angle)*xc + cc 
+    // tg(angle)*x' + cc = x'.-tg + 0 + b.tg
+    // x'(tg(angle) + tg) = b*tg - cc
+    // x' = (b*tg - cc)/(tg(angle) + tg)
+        xl2 = (b*tg - cc)/(-Math.tan(angle) + tg)
+        yl2 = (xl2)*-tg + b*tg
+          }
+
+          xl2 = (b*tg - cc)/(-Math.tan(angle) + tg)
+        yl2 = (xl2)*-tg + b*tg
+
 
           notouch = false
           /*
@@ -412,9 +431,9 @@ c.stroke()
             touch2 = false
         }
 
-        if (touch2 == true && touch == true) {
+        if (touch2 == true) { // && touch == true) {
             c.beginPath()
-            c.moveTo(xl + x0,y0 - yl)
+            c.moveTo(xc + x0,y0 - yc)
             c.lineTo(xl2 + x0, y0 - yl2)
             c.strokeStyle = 'green'
             c.stroke()
@@ -482,7 +501,7 @@ c.stroke()
         
           }
 
-          if (Math.tan(ang) > 0) { //&& perslope > ang) {
+          if (Math.tan(ang) > 0 && Math.abs(angle) < Math.abs(Math.atan(tg))) { //&& perslope > ang) {
             // primeiro caso
             // pi = perslope - ang
             c.beginPath()
@@ -516,6 +535,27 @@ c.stroke()
         
           }
 
+          if (Math.tan(angle) > 0 && Math.abs(angle) > Math.abs(Math.atan(tg))) {
+            // primeiro caso
+            // pi = perslope - angle
+            c.beginPath()
+            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle))
+            c.stroke()
+            c.fillStyle = 'cyan'
+
+            senang = (corind*Math.sin(Math.PI - perslope - Math.abs(angle))/prismaind)
+            ang = Math.asin(senang) + perslope
+            //ang = angle
+            //ang = Math.abs(angle)
+          ct = yl + xl*Math.tan(ang)
+          xt = (ct)/Math.tan(ang)
+          c.moveTo(xl + x0,y0 - yl)
+          c.lineTo(xt + x0, y0)
+          c.strokeStyle = 'black'
+          c.strokeStyle = 'purple'
+          c.stroke()
+
+          }
         }
    
 
