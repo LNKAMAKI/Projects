@@ -471,7 +471,7 @@ c.strokeStyle = 'red'
         c.strokeStyle = 'black'
         c.stroke()
 
-        if (Math.tan(angle) < 0) { //&& perslope > ang) {
+        if (Math.tan(ang) < 0) { //&& perslope > ang) {
             // primeiro caso
             // pi = perslope - ang
             c.beginPath()
@@ -505,7 +505,7 @@ c.strokeStyle = 'red'
         
           }
 
-          if (Math.tan(angle) > 0 && Math.abs(angle) < Math.abs(Math.atan(tg))) { //&& perslope > ang) {
+          if (Math.tan(ang) > 0 && Math.abs(ang) < Math.abs(Math.atan(tg))) { //&& perslope > ang) {
             // primeiro caso
             // pi = perslope - ang
             c.beginPath()
@@ -539,15 +539,15 @@ c.strokeStyle = 'red'
         
           }
 
-          if (Math.tan(angle) > 0 && Math.abs(angle) > Math.abs(Math.atan(tg))) {
+          if (Math.tan(ang) > 0 && Math.abs(ang) > Math.abs(Math.atan(tg))) {
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angle,Math.PI + Math.PI - perslope)
+            c.arc(xl2 + x0, y0 - yl2,20,Math.PI + ang,Math.PI + Math.PI - perslope)
             c.stroke()
             c.fillStyle = 'cyan'
 
-            senang = (prismaind*Math.sin(Math.PI - perslope - angle)/corind)
+            senang = (prismaind*Math.sin(Math.PI - perslope - ang)/corind)
             ang2 = -Math.asin(senang) - perslope
             //ang = angle
             //ang = Math.abs(angle)
