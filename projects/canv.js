@@ -442,7 +442,7 @@ c.stroke()
             yref = yl
             angchose = ang
         }
-        if (touch2 == true && touch == true) {
+        if (touch2 == true && touch == true) { // precisa passar pela primeira face antes
           c.beginPath()
           c.moveTo(xref + x0,y0 - yref)
           c.lineTo(xl2 + x0, y0 - yl2)
