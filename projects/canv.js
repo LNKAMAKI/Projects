@@ -10,7 +10,7 @@ tang = 'i'
 yfin = 'i'
 ct= 'i'
 maincor = 'black'
-promode = true
+promode = false
 function drawPrism() {
     canv = document.getElementById('c')
     if (maincor == 'black') {
@@ -52,8 +52,8 @@ function drawPrism() {
 }
 
 penwidth = 51
-fx = 90
-fy = 60
+fx = 40
+fy = 85
 touch = false
 touch2 = false
 priscorindex = [
@@ -72,6 +72,11 @@ yl2 = 0
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
     //c.stroke()
+    if (document.getElementsByTagName('select')[0].value == 'white') {
+      imax = 6
+    }else{
+      imax = 1
+    }
 
     direct = 'u'
     if (angle >= 0) {
@@ -142,7 +147,7 @@ function drawpen (angle) {
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
     }*/
-        for (i = 0; i < 1; i++) {
+        for (i = 0; i < imax; i++) {
           prismaind = priscorindex[i].index
           c.lineWidth = '1'
    if (direct == 'u') {
@@ -496,7 +501,6 @@ c.stroke()
           c.beginPath()
           c.moveTo(xref + x0,y0 - yref)
           c.lineTo(xl2 + x0, y0 - yl2)
-          c.strokeStyle = 'red'
           c.stroke()
 
           if (ang < 0) {
