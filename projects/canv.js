@@ -1,6 +1,15 @@
 function load() {
     drawPrism()
     drawpen(Math.PI)
+
+    inputs = ['b','h']
+    for (op in inputs) {
+    window.document.getElementById(inputs[op]).addEventListener('change', function () {
+      c.clearRect(0,0,300,150)
+      drawPrism()
+      drawpen(angle)
+    })
+  }
 }
 
 senang = 'i'
@@ -21,8 +30,8 @@ function drawPrism() {
       canv.style.backgroundColor = 'black'
     }
     c = canv.getContext('2d')
-    b = 70
-    h = 70
+    b = Number(document.getElementById('b').value)
+    h = Number(document.getElementById('h').value)
     fixy = 80
     x0 = (300 - b)/2
     y0 = 150 - (150 - fixy)/2
