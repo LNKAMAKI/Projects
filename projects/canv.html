@@ -38,17 +38,20 @@
             margin: auto;
         }
         canvas {
-            border: 1px solid black;
+            border: 0px solid black;
             width: 100%;
             max-width:950px;
             display: block;
             margin: auto;
-            background-color: black;
+            background-color: white;
         }
         div#prop {
+            border: 1px solid black;
+            position: relative;
             background-color: white;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
+            margin: none;
         }
         select {
             width: 80px;
@@ -91,10 +94,10 @@
                     </option>
                   </select>
         </div>
+        <canvas id="c">
+        </canvas>
         <!--<div id="ab1">e</div>-->
     </div>
     
-<canvas id="c">
-    </canvas>
 </body>
 </html>

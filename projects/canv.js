@@ -1,6 +1,27 @@
+startsim = false
 function load() {
     drawPrism()
-    drawpen(Math.PI)
+    //drawpen(0)
+    x2 = -(penwidth/2) + fx + penwidth/2
+    y2 = fy
+    x = (penwidth/2) + fx + penwidth/2
+    y = fy
+
+    c.lineWidth = '2'
+    c.beginPath()
+    c.moveTo(fx + penwidth/2,fy)
+    c.lineTo(x2,y2)
+    if (maincor == 'white') {
+      c.strokeStyle = 'gray'
+    }else{
+      c.strokeStyle = 'black'
+    }
+    c.stroke()
+
+    c.beginPath()
+    c.moveTo(fx + penwidth/2,fy)
+    c.lineTo(x,y)
+    c.stroke()
 
     inputs = ['b','h']
     for (op in inputs) {
@@ -10,6 +31,20 @@ function load() {
       drawpen(angle)
     })
   }
+
+
+   // draw logo
+   const img = new Image();
+   img.src = 'logo.svg'; // Replace with your image path
+   img.onload = function() {
+     // Draw the image with specific width and height
+     w = 70
+     l = 70
+     //c.drawImage(img, (300 - w)/2, (150 - l)/2, w, l)
+ }
+
+//document.getElementById('prop').style.visibility = 'visible'
+
 }
 
 senang = 'i'
@@ -20,7 +55,7 @@ yfin = 'i'
 ct= 'i'
 tg = 0
 cc = 'i'
-maincor = 'black'
+maincor = 'white'
 promode = false
 function drawPrism() {
     canv = document.getElementById('c')
@@ -53,6 +88,7 @@ function drawPrism() {
 
     // (0,0) => (x0, y0)
     c.beginPath()
+    c.strokeStyle = maincor
     c.moveTo(0,y0)
     c.lineTo(300,y0)
     c.stroke()
@@ -60,6 +96,7 @@ function drawPrism() {
     c.moveTo(x0,0)
     c.lineTo(x0,150)
     //c.stroke() -> desenhar a reta vertical
+
 }
 
 penwidth = 51
@@ -134,13 +171,16 @@ function drawpen (angle) {
     c.beginPath()
     c.moveTo(fx + penwidth/2,fy)
     c.lineTo(x2,y2)
-    c.strokeStyle = 'gray'
+    if (maincor == 'white') {
+      c.strokeStyle = 'gray'
+    }else{
+      c.strokeStyle = 'black'
+    }
     c.stroke()
 
     c.beginPath()
     c.moveTo(fx + penwidth/2,fy)
     c.lineTo(x,y)
-    c.strokeStyle = 'gray'
     c.stroke()
 
     xc = x - x0 // pra direita = +
@@ -223,12 +263,27 @@ function drawpen (angle) {
 }
 
 
-c.strokeStyle = maincor // white
+if (selectcor != 'white') {
+  c.strokeStyle = priscorindex[selectcor].color // white
+}else{
+  c.strokeStyle = 'white'
+}
+
+if (startsim == true) {
 c.stroke()
+}
+
     }else{ // quando raio está tocando a primeira face do prisma
         c.lineTo(xl + x0,y0 - yl)
-        c.strokeStyle = maincor // white
+        if (selectcor != 'white') {
+          c.strokeStyle = priscorindex[selectcor].color // white
+        }else{
+          c.strokeStyle = 'white'
+        }
+        
+        if (startsim == true) {
         c.stroke()
+        }
 
         // feixe está interceptando prisma
         // arctg(tg) + 90 + x = 180
@@ -271,7 +326,6 @@ c.stroke()
            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle) //draw angle
             }
           
-          c.strokeStyle = 'black'
           if (promode == true) {
           c.stroke()
           }
@@ -724,6 +778,8 @@ c.stroke()
     }
 }
 window.addEventListener('mousemove', function(event) {
+  c.clearRect(0,0,300,150)
+  startsim = true
     canv = document.getElementById('c')
     c = canv.getContext('2d')
 cWidth = canv.offsetWidth
