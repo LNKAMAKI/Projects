@@ -11,8 +11,8 @@ yfin = 'i'
 ct= 'i'
 tg = 0
 cc = 'i'
-maincor = 'white'
-promode = false
+maincor = 'black'
+promode = true
 function drawPrism() {
     canv = document.getElementById('c')
     if (maincor == 'black') {
@@ -54,7 +54,7 @@ function drawPrism() {
 }
 
 penwidth = 51
-fx = 40
+fx = 30
 fy = 85
 touch = false
 touch2 = false
@@ -656,7 +656,6 @@ c.stroke()
               yfin = y0
               //c.strokeStyle = 'gray'
             }
-           //c.strokeStyle = 'red'
            c.beginPath()
           ct = yl2 + xl2*Math.tan(ang2)
           xt = (ct - yfin)/Math.tan(ang2)
@@ -689,6 +688,19 @@ c.stroke()
         //c.strokeStyle = 'red'
         c.stroke()
       
+        }
+
+        if (senang > 1) {
+          // reflexão total
+
+          c.beginPath()
+          yfin = 0
+          angref = Math.PI - perslope - (perslope + angchose)
+          ct = yl2 + xl2*Math.tan(angref)
+          xt = (ct - yfin)/Math.tan(angref)
+          c.moveTo(xl2 + x0,y0 - yl2)
+          c.lineTo(xt + x0, y0 - yfin)
+          c.stroke()
         }
       }else if (touch == true) {
         ct = yl + xl*Math.tan(ang)
