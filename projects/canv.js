@@ -50,7 +50,7 @@ fy = 90
 touch = false
 touch2 = false
 priscorindex = [
-  { color: "red", index: 1.700 },
+  { color: "red", index: 0.8},
   { color: "orange", index: 1.732 },
   { color: "yellow", index: 1.764 },
   { color: "green", index: 1.796 },
@@ -226,9 +226,9 @@ c.stroke()
           // pi = perslope - angle
           c.beginPath()
           if (perslope > angle) {
-          //c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope) //draw angle
+          c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope) //draw angle
           }else{
-           //c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle) //draw angle
+           c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle) //draw angle
           }
           c.stroke()
         
@@ -240,13 +240,18 @@ c.stroke()
           senang = (corind*Math.sin(perslope - Math.abs(angle)))/prismaind
           //document.getElementById('ab1').innerText = senang + ' | ' + Math.sin(senang)
             ang = perslope - Math.asin(senang) // se sin(senang) for negativo, ent caso == 2
+            if (ang < 0) {
+              yfin = y0
+            }else{
+              yfin = 0
+            }
           ct = yl + xl*Math.tan(ang)
-          xt = (ct)/Math.tan(ang)
+          xt = (ct - yfin)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
-          c.lineTo(xt + x0, y0)
+          c.lineTo(xt + x0, y0  - yfin)
           c.strokeStyle = 'red'
           c.strokeStyle = 'purple'
-          //c.stroke() // draw ray
+          c.stroke() // draw ray
 
         }
 
