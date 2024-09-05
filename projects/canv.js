@@ -12,7 +12,7 @@ ct= 'i'
 tg = 0
 cc = 'i'
 maincor = 'black'
-promode = true
+promode = false
 function drawPrism() {
     canv = document.getElementById('c')
     if (maincor == 'black') {
@@ -63,9 +63,9 @@ priscorindex = [
   { color: "orange", index: 1.732 },
   { color: "yellow", index: 1.764 },
   { color: "green", index: 1.796 },
-  { color: "blue", index: 1.828 },
+  { color: 'rgb(0, 0, 255)', index: 1.828 },
   { color: "indigo", index: 1.860 },
-  { color: "violet", index: 1.892 }
+  { color: "rgb(148, 0, 211)", index: 1.892 }
 ]
 //prismaind = 2
 corind = 1.1
@@ -77,7 +77,7 @@ function drawpen (angle) {
     selectcor = document.getElementsByTagName('select')[0].value
     selectback = document.getElementsByTagName('select')[1]
     if (selectcor == 'white') {
-      imax = 6
+      imax = 7
       maincor = 'white'
       selectback.value = 'white'
       selectback.options[0].disabled = true
@@ -157,7 +157,7 @@ function drawpen (angle) {
         notouch = true
     }*/
         for (i = 0; i < imax; i++) {
-          if (imax == 6) {
+          if (imax == 7) {
           prismaind = priscorindex[i].index
           chosencor = priscorindex[i].color
           }else{
