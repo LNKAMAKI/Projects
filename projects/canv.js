@@ -9,6 +9,8 @@ ang2 = 'i'
 tang = 'i'
 yfin = 'i'
 ct= 'i'
+tg = 0
+cc = 'i'
 maincor = 'white'
 promode = false
 function drawPrism() {
@@ -48,7 +50,7 @@ function drawPrism() {
     c.beginPath()
     c.moveTo(x0,0)
     c.lineTo(x0,150)
-    c.stroke()
+    //c.stroke() -> desenhar a reta vertical
 }
 
 penwidth = 51
@@ -713,7 +715,9 @@ mousey = ((event.y - 2)/cHeight)*150
 difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
+if (promode == true) {
  document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${yl2} | touch2 = ${touch2} |  ang2: ${ang2}`
+}
 c.clearRect(0,0,300,150)
 drawPrism()
 drawpen(angle)
