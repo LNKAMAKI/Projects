@@ -44,9 +44,9 @@ function drawPrism() {
     c.stroke()
 }
 
-penwidth = 70
+penwidth = 51
 fx = 25
-fy = 87
+fy = 90
 touch = false
 touch2 = false
 priscorindex = [
@@ -166,13 +166,13 @@ function drawpen (angle) {
         // código para rotacionar a = (lembre-se de que as tg's assumem ambos os valores)
     if (Math.tan(angle) > 0) {
         if (mousex > fx + penwidth/2) {
-        c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
+        c.lineTo((y0 - y2)/Math.tan(angle) + x2,y0)
         }else{
         c.lineTo((y2)/-Math.tan(angle) + x2,0)
         }
     }else if (Math.tan(angle) < 0){
         if (mousex < fx + penwidth/2) {
-            c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
+            c.lineTo((y0 - y2)/Math.tan(angle) + x2,y0)
                 }else{
                 c.lineTo((y2)/-Math.tan(angle) + x2,0)
                 }
@@ -182,7 +182,7 @@ function drawpen (angle) {
     if (Math.tan(angle) < 0) {
         c.lineTo((y2)/-Math.tan(angle) + x2,0)
     }else{
-        c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
+        c.lineTo((y0 - y2)/Math.tan(angle) + x2,y0)
     }
 }
 
