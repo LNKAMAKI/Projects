@@ -52,12 +52,12 @@ function drawPrism() {
 }
 
 penwidth = 51
-fx = 60
+fx = 90
 fy = 60
 touch = false
 touch2 = false
 priscorindex = [
-  { color: "red", index: 0.8},
+  { color: "red", index: 1.700},
   { color: "orange", index: 1.732 },
   { color: "yellow", index: 1.764 },
   { color: "green", index: 1.796 },
@@ -510,7 +510,9 @@ c.stroke()
           c.lineTo(xp2 + x0, y0)
           c.strokeStyle = 'gray'
           //c.strokeStyle = 'red'
+          if (promode == true) {
           c.stroke()
+          }
           }else{
             c.beginPath()
             ct2 = yl2 + xl2*Math.tan(angchose)
@@ -518,7 +520,9 @@ c.stroke()
             c.moveTo(xref + x0,y0 - yref)
             c.lineTo(xp2 + x0, 0)
             c.strokeStyle = 'gray'
+            if (promode == true) {
             c.stroke()
+            }
           }
 
            // feixe está interceptando prisma
@@ -633,7 +637,7 @@ c.stroke()
               yfin = y0
               //c.strokeStyle = 'gray'
             }
-           // c.strokeStyle = 'red'
+           //c.strokeStyle = 'red'
            c.beginPath()
           ct = yl2 + xl2*Math.tan(ang2)
           xt = (ct - yfin)/Math.tan(ang2)
