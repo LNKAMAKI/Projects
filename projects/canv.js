@@ -520,14 +520,19 @@ c.stroke()
       c.moveTo(xper + x0,y0 - yl2)
       c.lineTo(xper0 + x0,y0)
       c.strokeStyle = 'black'
-      //c.stroke()
+      if (promode == true) {
+      c.stroke() // desenhar reta perpendicular
+      }
       
       xper0 = (y0 - cper)/Math.tan(perslope)
       c.beginPath()
       c.moveTo(xper + x0,y0 - yl2)
       c.lineTo(xper0 + x0,0)
       c.strokeStyle = 'black'
-      //c.stroke()
+      
+      if (promode == true) {
+      c.stroke() // desenhar reta perpendicular
+      }
       
       c.lineWidth = '2.2'
       c.strokeStyle = priscorindex[i].color
