@@ -19,7 +19,7 @@ function drawPrism() {
     y0 = 150 - (150 - fixy)/2
     tg = h/(b/2)
     c.lineWidth = '1'
-    c.strokeStyle = 'white'
+    c.strokeStyle = 'black' // white
     c.beginPath()
     c.moveTo(x0,(150 - fixy)/2 + fixy)
     c.lineTo(x0 + b,(150 - fixy)/2 + fixy)
@@ -135,7 +135,7 @@ function drawpen (angle) {
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
     }*/
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 6; i++) {
           prismaind = priscorindex[i].index
           c.lineWidth = '1'
    if (direct == 'u') {
@@ -187,11 +187,11 @@ function drawpen (angle) {
 }
 
 
-c.strokeStyle = 'white'
+c.strokeStyle = 'black' // white
 c.stroke()
     }else{ // quando raio está tocando a primeira face do prisma
         c.lineTo(xl + x0,y0 - yl)
-        c.strokeStyle = 'white'
+        c.strokeStyle = 'black' // white
         c.stroke()
 
         // feixe está interceptando prisma
@@ -454,13 +454,13 @@ c.stroke()
             yref = yl
             angchose = ang
         }
+        c.strokeStyle = priscorindex[i].color
         if (touch2 == true && touch == true) { // precisa passar pela primeira face antes
           c.beginPath()
           c.moveTo(xref + x0,y0 - yref)
           c.lineTo(xl2 + x0, y0 - yl2)
-          c.strokeStyle = 'green'
-          c.strokeStyle = 'red'
-          c.strokeStyle = priscorindex[i].color
+          //c.strokeStyle = 'green'
+          //c.strokeStyle = 'red'
           c.stroke()
 
            // feixe está interceptando prisma
@@ -583,6 +583,12 @@ c.stroke()
         c.stroke()
       
         }
+      }else if (touch == true) {
+        ct = yl + xl*Math.tan(ang)
+        xt = (ct)/Math.tan(ang)
+        c.moveTo(xl + x0,y0 - yl)
+        c.lineTo(xt + x0, y0)
+        c.stroke()
       }
    
     }
