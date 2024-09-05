@@ -10,7 +10,7 @@ tang = 'i'
 yfin = 'i'
 ct= 'i'
 maincor = 'black'
-promode = false
+promode = true
 function drawPrism() {
     canv = document.getElementById('c')
     if (maincor == 'black') {
@@ -541,11 +541,13 @@ c.stroke()
           // pi = perslope - angchose
           c.beginPath()
           if (perslope > Math.abs(angchose)) {
-          //c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(angchose)) //draw angle
+          c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(angchose)) //draw angle
           }else{
-            //c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(angchose),Math.PI - perslope) //draw angle
+            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(angchose),Math.PI - perslope) //draw angle
           }
+          if (promode == true) {
           c.stroke()
+          }
         
           // angchose
           // yl2 = xl2*tg(angchose) + c
@@ -565,6 +567,7 @@ c.stroke()
       
            // c.strokeStyle = 'black'
            // c.strokeStyle = 'red'
+           c.beginPath()
           ct = yl2 + xl2*Math.tan(ang2)
           xt = (ct - yfin)/Math.tan(ang2)
           c.moveTo(xl2 + x0,y0 - yl2)
@@ -577,8 +580,10 @@ c.stroke()
           // primeiro caso
           // pi = perslope - angchose
           c.beginPath()
-          //c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI + angchose) //draw angle
+          c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI + angchose) //draw angle
+          if (promode == true) {
           c.stroke()
+          }
         
           // angchose
           // yl2 = xl2*tg(angchose) + c
@@ -596,6 +601,7 @@ c.stroke()
               //c.strokeStyle = 'gray'
             }
            // c.strokeStyle = 'red'
+           c.beginPath()
           ct = yl2 + xl2*Math.tan(ang2)
           xt = (ct - yfin)/Math.tan(ang2)
           c.moveTo(xl2 + x0,y0 - yl2)
@@ -608,14 +614,17 @@ c.stroke()
           // primeiro caso
           // pi = perslope - angchosele
           c.beginPath()
-          //c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angchose,Math.PI + Math.PI - perslope) //draw angle
+          c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angchose,Math.PI + Math.PI - perslope) //draw angle
+          if (promode == true) {
           c.stroke()
+          }
           c.fillStyle = 'cyan'
         
           senang = (prismaind*Math.sin(Math.PI - perslope - angchose)/corind)
           ang2 = -Math.asin(senang) - perslope
           //angchose = angchosele
           //angchose = Math.abs(angchosele)
+          c.beginPath()
         ct = yl2 + xl2*Math.tan(ang2)
         xt = (ct)/Math.tan(ang2)
         c.moveTo(xl2 + x0,y0 - yl2)
