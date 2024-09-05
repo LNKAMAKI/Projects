@@ -496,9 +496,30 @@ c.stroke()
           c.beginPath()
           c.moveTo(xref + x0,y0 - yref)
           c.lineTo(xl2 + x0, y0 - yl2)
-          //c.strokeStyle = 'green'
+          c.strokeStyle = 'red'
+          c.stroke()
+
+          if (ang < 0) {
+          c.beginPath()
+           // yl2 = xl2*Math.tan(angchose) + c
+          // c = yl2 - xl2*Math.tan(angchose)
+          // x = (yl2 - c)/Math.tan(angchose)
+          ct2 = yl2 + xl2*Math.tan(angchose)
+          xp2 = (ct2)/Math.tan(angchose)
+          c.moveTo(xref + x0,y0 - yref)
+          c.lineTo(xp2 + x0, y0)
+          c.strokeStyle = 'gray'
           //c.strokeStyle = 'red'
           c.stroke()
+          }else{
+            c.beginPath()
+            ct2 = yl2 + xl2*Math.tan(angchose)
+            xp2 = (ct2 - y0)/Math.tan(angchose)
+            c.moveTo(xref + x0,y0 - yref)
+            c.lineTo(xp2 + x0, 0)
+            c.strokeStyle = 'gray'
+            c.stroke()
+          }
 
            // feixe está interceptando prisma
       // arctg(tg) + 90 + x = 180
@@ -546,7 +567,7 @@ c.stroke()
             c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(angchose),Math.PI - perslope) //draw angle
           }
           if (promode == true) {
-          c.stroke()
+            c.stroke()
           }
         
           // angchose
@@ -573,6 +594,18 @@ c.stroke()
           c.moveTo(xl2 + x0,y0 - yl2)
           c.lineTo(xt + x0, y0 - yfin)
           c.stroke()
+
+          c.beginPath()
+          if (yfin == y0) {
+            c.beginPath()
+          ct = yl2 + xl2*Math.tan(ang2)
+          xt = (ct)/Math.tan(ang2)
+          c.moveTo(xl2 + x0,y0 - yl2)
+          c.lineTo(xt + x0, y0)
+          //c.stroke()
+          }else{
+
+          }
       
         }
       
