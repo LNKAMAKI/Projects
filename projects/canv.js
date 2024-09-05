@@ -9,8 +9,15 @@ ang2 = 'i'
 tang = 'i'
 yfin = 'i'
 ct= 'i'
+maincor = 'black'
+promode = false
 function drawPrism() {
     canv = document.getElementById('c')
+    if (maincor == 'black') {
+      canv.style.backgroundColor = 'white'
+    }else{
+      canv.style.backgroundColor = 'black'
+    }
     c = canv.getContext('2d')
     b = 70
     h = 70
@@ -19,7 +26,7 @@ function drawPrism() {
     y0 = 150 - (150 - fixy)/2
     tg = h/(b/2)
     c.lineWidth = '1'
-    c.strokeStyle = 'black' // white
+    c.strokeStyle = maincor// white
     c.beginPath()
     c.moveTo(x0,(150 - fixy)/2 + fixy)
     c.lineTo(x0 + b,(150 - fixy)/2 + fixy)
@@ -45,8 +52,8 @@ function drawPrism() {
 }
 
 penwidth = 51
-fx = 25
-fy = 90
+fx = 60
+fy = 60
 touch = false
 touch2 = false
 priscorindex = [
@@ -187,11 +194,11 @@ function drawpen (angle) {
 }
 
 
-c.strokeStyle = 'black' // white
+c.strokeStyle = maincor // white
 c.stroke()
     }else{ // quando raio está tocando a primeira face do prisma
         c.lineTo(xl + x0,y0 - yl)
-        c.strokeStyle = 'black' // white
+        c.strokeStyle = maincor // white
         c.stroke()
 
         // feixe está interceptando prisma
@@ -211,14 +218,18 @@ c.stroke()
         c.moveTo(xl + x0,y0 - yl)
         c.lineTo(xper0 + x0,y0)
         c.strokeStyle = 'black'
-        //c.stroke() //-> desenhar reta perpendicular à primeira face
+        if (promode == true) {
+        c.stroke() //-> desenhar reta perpendicular à primeira face
+        }
 
         xper0 = (y0 - cper)/-Math.tan(perslope)
         c.beginPath()
         c.moveTo(xl + x0,y0 - yl)
         c.lineTo(xper0 + x0,0)
         c.strokeStyle = 'black'
-        //c.stroke() //-> desenhar reta perpendicular à primeira face
+        if (promode == true) {
+        c.stroke() //-> desenhar reta perpendicular à primeira face
+        }
 
         // primeira face
         if (Math.tan(angle) > 0) { //&& perslope > angle) {
@@ -229,8 +240,12 @@ c.stroke()
           c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope) //draw angle
           }else{
            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle) //draw angle
-          }
+            }
+          
+          c.strokeStyle = 'black'
+          if (promode == true) {
           c.stroke()
+          }
         
           // angle
           // yl = xl*tg(angle) + c
@@ -245,13 +260,15 @@ c.stroke()
             }else{
               yfin = 0
             }
+            c.beginPath()
           ct = yl + xl*Math.tan(ang)
           xt = (ct - yfin)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0  - yfin)
-          c.strokeStyle = 'red'
           c.strokeStyle = 'purple'
+          if (promode == true) {
           c.stroke() // draw ray
+          }
 
         }
 
@@ -281,21 +298,27 @@ c.stroke()
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            //c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle)) //draw angle
+            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle)) //draw angle
+            c.strokeStyle = 'black'
+           
+            if (promode == true) {
             c.stroke()
-            c.fillStyle = 'cyan'
+            }
+            
 
             senang = (corind*Math.sin(Math.PI - perslope - Math.abs(angle))/prismaind)
             ang = Math.asin(senang) + perslope
             //ang = angle
             //ang = Math.abs(angle)
+            c.beginPath()
           ct = yl + xl*Math.tan(ang)
           xt = (ct)/Math.tan(ang)
           c.moveTo(xl + x0,y0 - yl)
           c.lineTo(xt + x0, y0)
-          c.strokeStyle = 'black'
           c.strokeStyle = 'purple'
-          //c.stroke() // draw ray
+          if (promode == true) {
+          c.stroke() // draw ray
+          }
 
           }
 
@@ -305,9 +328,11 @@ c.stroke()
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-           // c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope) /draw angle
+            c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope) //draw angle
+            c.strokeStyle = 'black'
+            if (promode == true) {
             c.stroke()
-            c.fillStyle = 'cyan'
+            }
 
             
             // vermelho: 1,514, 
@@ -338,12 +363,19 @@ c.stroke()
                 //c.stroke()
                 //yfin = 0
             }
+            c.strokeStyle = 'black'
+            if (promode == true) {
+            c.stroke()
+            }
 
+            c.beginPath()
             c.strokeStyle = 'purple'
             xt = (ct - yfin)/Math.tan(ang)
             c.moveTo(xl + x0,y0 - yl)
             c.lineTo(xt + x0, y0 - yfin)
-           // c.stroke() // draw ray
+            if (promode == true) {
+            c.stroke() // draw ray
+            }
             //ang = angle
             /*
           ct = yl + xl*Math.tan(ang)
@@ -574,7 +606,7 @@ c.stroke()
           //c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angchose,Math.PI + Math.PI - perslope) //draw angle
           c.stroke()
           c.fillStyle = 'cyan'
-      
+        
           senang = (prismaind*Math.sin(Math.PI - perslope - angchose)/corind)
           ang2 = -Math.asin(senang) - perslope
           //angchose = angchosele
@@ -596,8 +628,9 @@ c.stroke()
         c.stroke()
       }
    
-    }
 
+    
+    }
 }
 window.addEventListener('mousemove', function(event) {
     canv = document.getElementById('c')
