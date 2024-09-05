@@ -13,7 +13,7 @@ function drawPrism() {
     canv = document.getElementById('c')
     c = canv.getContext('2d')
     b = 70
-    h = 80
+    h = 70
     fixy = 80
     x0 = (300 - b)/2
     y0 = 150 - (150 - fixy)/2
@@ -135,7 +135,7 @@ function drawpen (angle) {
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
     }*/
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 1; i++) {
           prismaind = priscorindex[i].index
           c.lineWidth = '1'
    if (direct == 'u') {
