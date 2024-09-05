@@ -9,7 +9,7 @@ ang2 = 'i'
 tang = 'i'
 yfin = 'i'
 ct= 'i'
-maincor = 'black'
+maincor = 'white'
 promode = false
 function drawPrism() {
     canv = document.getElementById('c')
@@ -72,10 +72,17 @@ yl2 = 0
 function drawpen (angle) {
     // centro = fx + penwidth/2, fy
     //c.stroke()
-    if (document.getElementsByTagName('select')[0].value == 'white') {
+    selectcor = document.getElementsByTagName('select')[0].value
+    selectback = document.getElementsByTagName('select')[1]
+    if (selectcor == 'white') {
       imax = 6
+      maincor = 'white'
+      selectback.value = 'white'
+      selectback.options[0].disabled = true
     }else{
       imax = 1
+      selectback.options[0].disabled = false
+      maincor = selectback.value
     }
 
     direct = 'u'
@@ -148,7 +155,13 @@ function drawpen (angle) {
         notouch = true
     }*/
         for (i = 0; i < imax; i++) {
+          if (imax == 6) {
           prismaind = priscorindex[i].index
+          chosencor = priscorindex[i].color
+          }else{
+            prismaind = priscorindex[selectcor].index
+            chosencor = priscorindex[selectcor].color
+          }
           c.lineWidth = '1'
    if (direct == 'u') {
     if (yl < yc) {
@@ -496,7 +509,7 @@ c.stroke()
             yref = yl
             angchose = ang
         }
-        c.strokeStyle = priscorindex[i].color
+        c.strokeStyle = chosencor
         if (touch2 == true && touch == true) { // precisa passar pela primeira face antes
           c.beginPath()
           c.moveTo(xref + x0,y0 - yref)
@@ -564,7 +577,7 @@ c.stroke()
       }
       
       c.lineWidth = '2.2'
-      c.strokeStyle = priscorindex[i].color
+      c.strokeStyle = chosencor
       if (Math.tan(angchose) < 0) { //&& perslope > angchose) {
           // primeiro caso
           // pi = perslope - angchose
