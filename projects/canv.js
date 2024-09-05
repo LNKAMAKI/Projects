@@ -19,7 +19,7 @@ function drawPrism() {
     y0 = 150 - (150 - fixy)/2
     tg = h/(b/2)
     c.lineWidth = '1'
-    c.strokeStyle = 'black'
+    c.strokeStyle = 'white'
     c.beginPath()
     c.moveTo(x0,(150 - fixy)/2 + fixy)
     c.lineTo(x0 + b,(150 - fixy)/2 + fixy)
@@ -45,13 +45,21 @@ function drawPrism() {
 }
 
 penwidth = 70
-fx = 40
-fy = 100
+fx = 25
+fy = 87
 touch = false
 touch2 = false
-prismaind = 1.514
-prismaind = 2
-corind = 1.514
+priscorindex = [
+  { color: "red", index: 1.700 },
+  { color: "orange", index: 1.732 },
+  { color: "yellow", index: 1.764 },
+  { color: "green", index: 1.796 },
+  { color: "blue", index: 1.828 },
+  { color: "indigo", index: 1.860 },
+  { color: "violet", index: 1.892 }
+]
+//prismaind = 2
+corind = 1.1
 xl2 = 0
 yl2 = 0
 function drawpen (angle) {
@@ -96,13 +104,13 @@ function drawpen (angle) {
     c.beginPath()
     c.moveTo(fx + penwidth/2,fy)
     c.lineTo(x2,y2)
-    //c.strokeStyle = 'black'
+    c.strokeStyle = 'gray'
     c.stroke()
 
     c.beginPath()
     c.moveTo(fx + penwidth/2,fy)
     c.lineTo(x,y)
-    c.strokeStyle = 'blue'
+    c.strokeStyle = 'gray'
     c.stroke()
 
     xc = x - x0 // pra direita = +
@@ -119,7 +127,7 @@ function drawpen (angle) {
     xl = cc/(tg + Math.tan(angle)) // troca de sinal (tg)
     yl = tg*xl
     
-    c.lineWidth = '1.5'
+    c.lineWidth = '1'
     notouch = false
     /*
     if (Math.tan(angle) > 0 && mousex < fx + penwidth/2) {
@@ -127,6 +135,9 @@ function drawpen (angle) {
     }else if(Math.tan(angle) < 0 && mousex < fx + penwidth/2) {
         notouch = true
     }*/
+        for (i = 0; i < 5; i++) {
+          prismaind = priscorindex[i].index
+          c.lineWidth = '1'
    if (direct == 'u') {
     if (yl < yc) {
       notouch = true
@@ -149,9 +160,10 @@ function drawpen (angle) {
     // x = y/tg(angle)
 
     xper = 0
+
     if (touch == false) {
     if (mousex != fx + penwidth/2) {
-        // código para rotacionar a caneta (lembre-se de que as tg's assumem ambos os valores)
+        // código para rotacionar a = (lembre-se de que as tg's assumem ambos os valores)
     if (Math.tan(angle) > 0) {
         if (mousex > fx + penwidth/2) {
         c.lineTo((150 - y2)/Math.tan(angle) + x2,150)
@@ -175,11 +187,11 @@ function drawpen (angle) {
 }
 
 
-c.strokeStyle = 'red'
+c.strokeStyle = 'white'
 c.stroke()
     }else{ // quando raio está tocando a primeira face do prisma
         c.lineTo(xl + x0,y0 - yl)
-        c.strokeStyle = 'red'
+        c.strokeStyle = 'white'
         c.stroke()
 
         // feixe está interceptando prisma
@@ -206,7 +218,7 @@ c.stroke()
         c.moveTo(xl + x0,y0 - yl)
         c.lineTo(xper0 + x0,0)
         c.strokeStyle = 'black'
-        c.stroke() //-> desenhar reta perpendicular à primeira face
+        //c.stroke() //-> desenhar reta perpendicular à primeira face
 
         // primeira face
         if (Math.tan(angle) > 0) { //&& perslope > angle) {
@@ -214,9 +226,9 @@ c.stroke()
           // pi = perslope - angle
           c.beginPath()
           if (perslope > angle) {
-          c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope)
+          //c.arc(xl + x0, y0 - yl,20,Math.PI + angle,Math.PI + perslope) //draw angle
           }else{
-            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle)
+           //c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + angle) //draw angle
           }
           c.stroke()
         
@@ -234,7 +246,7 @@ c.stroke()
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'red'
           c.strokeStyle = 'purple'
-          c.stroke()
+          //c.stroke() // draw ray
 
         }
 
@@ -264,7 +276,7 @@ c.stroke()
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle))
+            //c.arc(xl + x0, y0 - yl,20,Math.PI + perslope,Math.PI + Math.PI - Math.abs(angle)) //draw angle
             c.stroke()
             c.fillStyle = 'cyan'
 
@@ -278,7 +290,7 @@ c.stroke()
           c.lineTo(xt + x0, y0)
           c.strokeStyle = 'black'
           c.strokeStyle = 'purple'
-          c.stroke()
+          //c.stroke() // draw ray
 
           }
 
@@ -288,7 +300,7 @@ c.stroke()
             // primeiro caso
             // pi = perslope - angle
             c.beginPath()
-            c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope)
+           // c.arc(xl + x0, y0 - yl,20,Math.PI - Math.abs(angle),Math.PI + perslope) /draw angle
             c.stroke()
             c.fillStyle = 'cyan'
 
@@ -326,7 +338,7 @@ c.stroke()
             xt = (ct - yfin)/Math.tan(ang)
             c.moveTo(xl + x0,y0 - yl)
             c.lineTo(xt + x0, y0 - yfin)
-            c.stroke()
+           // c.stroke() // draw ray
             //ang = angle
             /*
           ct = yl + xl*Math.tan(ang)
@@ -447,8 +459,10 @@ c.stroke()
           c.moveTo(xref + x0,y0 - yref)
           c.lineTo(xl2 + x0, y0 - yl2)
           c.strokeStyle = 'green'
+          c.strokeStyle = 'red'
+          c.strokeStyle = priscorindex[i].color
           c.stroke()
-      
+
            // feixe está interceptando prisma
       // arctg(tg) + 90 + x = 180
       // x = 90 - arctg(tg)
@@ -469,23 +483,25 @@ c.stroke()
       c.moveTo(xper + x0,y0 - yl2)
       c.lineTo(xper0 + x0,y0)
       c.strokeStyle = 'black'
-      c.stroke()
+      //c.stroke()
       
       xper0 = (y0 - cper)/Math.tan(perslope)
       c.beginPath()
       c.moveTo(xper + x0,y0 - yl2)
       c.lineTo(xper0 + x0,0)
       c.strokeStyle = 'black'
-      c.stroke()
+      //c.stroke()
       
+      c.lineWidth = '2.2'
+      c.strokeStyle = priscorindex[i].color
       if (Math.tan(angchose) < 0) { //&& perslope > angchose) {
           // primeiro caso
           // pi = perslope - angchose
           c.beginPath()
           if (perslope > Math.abs(angchose)) {
-          c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(angchose))
+          //c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI - Math.abs(angchose)) //draw angle
           }else{
-            c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(angchose),Math.PI - perslope)
+            //c.arc(xl2 + x0, y0 - yl2,20,Math.PI - Math.abs(angchose),Math.PI - perslope) //draw angle
           }
           c.stroke()
         
@@ -499,14 +515,14 @@ c.stroke()
             ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
             if (ang2 > 0) {
               yfin = 0
-              c.strokeStyle = 'red'
+              //c.strokeStyle = 'red'
             }else{
               yfin = y0
-              c.strokeStyle = 'gray'
+              //c.strokeStyle = 'gray'
             }
       
-            c.strokeStyle = 'black'
-            c.strokeStyle = 'red'
+           // c.strokeStyle = 'black'
+           // c.strokeStyle = 'red'
           ct = yl2 + xl2*Math.tan(ang2)
           xt = (ct - yfin)/Math.tan(ang2)
           c.moveTo(xl2 + x0,y0 - yl2)
@@ -519,7 +535,7 @@ c.stroke()
           // primeiro caso
           // pi = perslope - angchose
           c.beginPath()
-          c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI + angchose)
+          //c.arc(xl2 + x0, y0 - yl2,20,Math.PI - perslope,Math.PI + angchose) //draw angle
           c.stroke()
         
           // angchose
@@ -532,12 +548,12 @@ c.stroke()
             ang2 = Math.asin(senang) - perslope // pra baixo = +, pra cima = -
             if (ang2 > 0) {
               yfin = 0
-              c.strokeStyle = 'red'
+              //c.strokeStyle = 'red'
             }else{
               yfin = y0
-              c.strokeStyle = 'gray'
+              //c.strokeStyle = 'gray'
             }
-            c.strokeStyle = 'red'
+           // c.strokeStyle = 'red'
           ct = yl2 + xl2*Math.tan(ang2)
           xt = (ct - yfin)/Math.tan(ang2)
           c.moveTo(xl2 + x0,y0 - yl2)
@@ -550,7 +566,7 @@ c.stroke()
           // primeiro caso
           // pi = perslope - angchosele
           c.beginPath()
-          c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angchose,Math.PI + Math.PI - perslope)
+          //c.arc(xl2 + x0, y0 - yl2,20,Math.PI + angchose,Math.PI + Math.PI - perslope) //draw angle
           c.stroke()
           c.fillStyle = 'cyan'
       
@@ -562,14 +578,14 @@ c.stroke()
         xt = (ct)/Math.tan(ang2)
         c.moveTo(xl2 + x0,y0 - yl2)
         c.lineTo(xt + x0, y0)
-        c.strokeStyle = 'purple'
-        c.strokeStyle = 'red'
+        //c.strokeStyle = 'purple'
+        //c.strokeStyle = 'red'
         c.stroke()
       
         }
       }
    
-
+    }
 
 }
 window.addEventListener('mousemove', function(event) {
