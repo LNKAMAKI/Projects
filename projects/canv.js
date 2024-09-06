@@ -197,7 +197,7 @@ function drawpen (angle) {
     xl = cc/(tg + Math.tan(angle)) // troca de sinal (tg)
     yl = tg*xl
     
-    c.lineWidth = '1'
+    c.lineWidth = '1.3'
     notouch = false
     /*
     if (Math.tan(angle) > 0 && mousex < fx + penwidth/2) {
