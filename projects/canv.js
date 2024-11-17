@@ -56,7 +56,7 @@ ct= 'i'
 tg = 0
 cc = 'i'
 maincor = 'white'
-promode = false
+promode = true
 function drawPrism() {
     canv = document.getElementById('c')
     if (maincor == 'black') {
@@ -100,8 +100,8 @@ function drawPrism() {
 }
 
 penwidth = 51
-fx = 30
-fy = 85
+fx = 40
+fy = 90
 touch = false
 touch2 = false
 priscorindex = [
@@ -793,7 +793,8 @@ difx = mousex - fx - penwidth/2
 dify = mousey - fy
 angle = Math.atan((dify/difx))
 if (promode == true) {
- document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${yl2} | touch2 = ${touch2} |  ang2: ${ang2}`
+  /*
+ document.getElementById('ab').innerText = `tg (prism): ${(tg).toFixed(2)} | mousex:${(mousex).toFixed(1)}, mousey:${(mousey).toFixed(1)} | tg (pen): ${(dify/difx).toFixed(3)} | angle: ${(Math.atan((dify/difx))).toFixed(3)} |, c: ${cc} | x': ${(xl).toFixed(2)}, y': ${(yl).toFixed(2)}, touch:${touch}  | xper: ${(xper).toFixed(2)}  | yfin: ${yfin} | ct: ${ct} | sena: ${senang} | ang: ${ang} | tang: ${tang} |  angle: ${(Math.atan((dify/difx)))} | direct: ${direct} | xl2: ${xl2} | yl2 = ${yl2} | touch2 = ${touch2} |  ang2: ${ang2}`*/
 }
 c.clearRect(0,0,300,150)
 drawPrism()

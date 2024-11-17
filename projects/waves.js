@@ -16,14 +16,14 @@ timers = [{time: 0,ind:0,ind2:0}]
 timers2 = [{time: 0,ind:0,ind2:0}]
 //timers2 = []
 timers3 = []
-amplitude = 60
+amplitude = 40
 advances = [{ads:[0],sty:starty,amp:amplitude}]
 //advances = []
 advances2 = [{ads:[],sty:starty,amp:amplitude}]
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.5
+vel = 0.4
 vels = [vel]
 direct = ['u']
 direct2 = ['d']
@@ -57,10 +57,10 @@ fixo = false
 drawball = false
 draw1 = true
 man = false
-stroke = false  
+stroke = true
 function animate() {
     space = 10
-    at = 0.4
+    at = 0.3
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -240,7 +240,7 @@ function animate() {
             }
             }
 
-            conts3[i].y += y
+            conts3[i].y = y //+ advances2[timers3[current].ind].sty
 
             // c.fillText('I',x + radius -2*(advance)*radius + space,120)
              c.beginPath()
@@ -473,7 +473,7 @@ function animate() {
               }
              }
             
-             conts2[contnumber - 1 - i].y += y
+             conts2[contnumber - 1 - i].y = y + advances[timers2[current].ind].sty
              
              //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
              
@@ -528,10 +528,10 @@ function animate() {
                     x+= 2*radius
                     }
         
-                    /*
+                    
         contsall = []
-        for (cont in conts) {
-            contsall.push({index:cont,y:conts2[cont].y + conts3[cont].y + conts[cont].y})
+        for (cont in conts2) {
+          contsall.push({index:cont,y:conts2[cont].y + conts3[cont].y})
         }
         
         x = 0
@@ -539,10 +539,10 @@ function animate() {
         for (i = 0; i < (contnumber/3);i++) {
             if (i < (contnumber/3) - 1) {
             c.beginPath()
-           // c.moveTo(x + radius + space,contsall[i + contnumber/3].y + starty)
+            c.moveTo(x + radius + space,contsall[i + contnumber/3].y)
             //c.lineTo(0,9)
             x+= 2*radius
-           // c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y + starty)
+            c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y)
             if (stroke == true) {
             c.stroke()
             }
@@ -577,7 +577,7 @@ function animate() {
             c.fillStyle = 'white'
             c.fill()
             x+= 2*radius
-            }*/
+            }
 
         for (k in timers){
             timers[k].time += 0.1
