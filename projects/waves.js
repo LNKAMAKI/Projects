@@ -499,7 +499,7 @@ function animate() {
         
 
         x = 0
-      
+      /*
         for (i = 0; i < contnumber/3;i++) {
             c.beginPath()
             c.arc(x + radius + space,130,radius,0,2*Math.PI)
@@ -527,6 +527,7 @@ function animate() {
                     c.stroke()
                     x+= 2*radius
                     }
+                    */
         
                     
         contsall = []
