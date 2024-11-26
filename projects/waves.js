@@ -29,12 +29,12 @@ direct = ['u']
 direct2 = ['d']
 direct3 = []
 for (i = 0; i < contnumber;i++) {
-    //conts.push({y:0,move:[],fixpos:[]})
+    conts.push({y:0,move:[],fixpos:[]})
     conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
     conts3.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
 
     for (tic in timers) {
-        //conts[i].move.push(true)
+        conts[i].move.push(true)
     }
     for (tic in timers2) {
         conts2[i].move.push(true)
@@ -626,6 +626,38 @@ window.addEventListener('keyup',function (event) {
         window.alert('Hello')
     }
 
+})
+
+tot = 1
+tot2 = 0
+window.addEventListener('keyup',function (event) {
+    if (event.key == 'o') {
+    //oooooooooooothis.window.alert('NOW')
+    timers.push({time:0,ind:tot,ind2:0})
+    timers2.push({time:0, ind:tot,ind2:0})
+    advances.push({ads:[0],sty:starty,amp:amplitude})
+    advances2.push({ads:[],sty:starty,amp:amplitude})
+    for (nt = 0; nt < contnumber; nt++) {
+        //timers2[timers2.length - 1].time.push(0)
+    }
+    direct.push('u')
+    direct2.push('u')
+   // advances[timers[current].ind].amp.push(amplitude)
+    //amps.push({ads:[0]})
+    //advances2.push({ads:[]})
+    vels.push(vel)
+    for (a in conts) {
+        conts[a].move.push(true)
+    }
+    for (a in conts2) {
+        conts2[a].move.push(true)
+    }
+    for (a in conts3) {
+        conts3[a].move.push(true)
+    }
+}
+tot++
+tot2++
 })
 
 mousex = 'i'
