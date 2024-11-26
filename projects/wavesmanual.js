@@ -76,7 +76,7 @@ type = 'pulse'
 fixo = false
 drawball = true
 draw1 = true
-man = true
+man = false
 stroke = false  
 function animate() {
     space = 10

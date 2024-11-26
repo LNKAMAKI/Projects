@@ -56,7 +56,7 @@ type = 'pulse'
 fixo = false
 drawball = false
 draw1 = true
-man = false
+man = true
 stroke = true
 function animate() {
     space = 10
@@ -241,6 +241,7 @@ function animate() {
             }
 
             conts3[i].y = y //+ advances2[timers3[current].ind].sty
+            //conts3[i].fixpos[current] = y + advances2[timers3[current].ind].sty
 
             // c.fillText('I',x + radius -2*(advance)*radius + space,120)
              c.beginPath()
@@ -472,8 +473,9 @@ function animate() {
               y = 0
               }
              }
-            
+            //
              conts2[contnumber - 1 - i].y = y + advances[timers2[current].ind].sty
+             //conts2[contnumber - 1 - i].fixpos[current] = y + advances[timers2[current].ind].sty
              
              //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
              
@@ -640,8 +642,8 @@ window.addEventListener('keyup',function (event) {
     for (nt = 0; nt < contnumber; nt++) {
         //timers2[timers2.length - 1].time.push(0)
     }
-    direct.push('u')
-    direct2.push('u')
+    direct.push('d')
+    direct2.push('d')
    // advances[timers[current].ind].amp.push(amplitude)
     //amps.push({ads:[0]})
     //advances2.push({ads:[]})
