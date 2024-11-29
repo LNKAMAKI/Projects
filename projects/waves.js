@@ -31,8 +31,8 @@ amps2 = [amplitude]
 amps3 = []
 vel = 0.2
 vels = [vel]
-direct = ['u']
-direct2 = ['d']
+direct = []
+direct2 = []
 direct3 = []
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[],fixpos:[]})
@@ -549,10 +549,10 @@ function animate() {
         for (i = 0; i < (contnumber/3);i++) {
             if (i < (contnumber/3) - 1) {
             c.beginPath()
-            c.moveTo(x + radius + space,contsall[i + contnumber/3].y)
+            c.moveTo(x + radius + space,contsall[i + contnumber/3].y + starty)
             //c.lineTo(0,9)
             x+= 2*radius
-            c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y)
+            c.lineTo(x + radius + space,contsall[i + contnumber/3 + 1].y + starty)
             if (stroke == true) {
             c.stroke()
             }
@@ -604,7 +604,7 @@ requestAnimationFrame(animate)
 }
 animate()
 
-go = false
+go = true
 window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
@@ -656,7 +656,7 @@ window.addEventListener('keyup',function (event) {
         //timers2[timers2.length - 1].time.push(0)
     }
     direct.push('u')
-    direct2.push('d')
+    direct2.push('u')
    // advances[timers[current].ind].amp.push(amplitude)
     //amps.push({ads:[0]})
     //advances2.push({ads:[]})
@@ -689,63 +689,34 @@ window.addEventListener('mousemove',function(event) {
     cHeight = canv.offsetHeight
     wHeight = this.window.innerHeight
     dif = wWidth - cWidth
+    mousex = ((event.x - dif/2)/cWidth)*300
+    mousey = ((event.y)/cHeight)*150
     
-    this.document.getElementById('ev').innerText = ((event.y)/cHeight)*150
-    //console.log(mousey,(((event.y)/cHeight)*150))
-    axis = 100
     if (mousey != 'i') {
         if (((event.y)/cHeight)*150 < mousey) {
-             c.fillStyle = 'red'
-             direct = ['u']
+             //c.fillStyle = 'red'
+             //direct = ['u']
         }else{
-            c.fillStyle = 'blue'
-            direct = ['d']
+            //c.fillStyle = 'blue'
+            //direct = ['d']
         }
     
 
-    //if (find < 4) {
-    //timers = [{time:0,ind:0}]
-    //timers.push({time:0,ind:find})
-        //advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - 120)}]
-        advances = [{ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)}]
-        //advances.push({ads:[],sty:mousey,amp:Math.abs(mousey - ((event.y)/cHeight)*150)})
-        //advances.push({ads:[],sty:mousey,amp:20})
-        
-    
-    //advances[timers[current].ind].amp.push(amplitude)
-    vels.push(vel)
-    //conts = []
-    conts.push({y:0,move:[true],fixpos:[]})
-    for (j = 0; j < contnumber/3 + 1;j++) {
-       // conts.push({y:0,move:[true],fixpos:[]})
-    }
     if (ir == true) {
         ir = false
     setTimeout(function () {
         //window.alert('hello')
-        console.log(conts.length)
         ir = true
-        for (k = 0; k < contnumber/3; k++) {
-        conts.push({y:0,move:[true],fixpos:[]})
-        }
+        prevx = String(this.document.getElementById('x').innerText)
+        this.document.getElementById('ev').innerText = prevx
+        prevy = String(this.document.getElementById('y').innerText)
+        this.document.getElementById('ev2').innerText = prevy
+        this.document.getElementById('x').innerText = mousex
+        this.document.getElementById('y').innerText = mousey
     }, 2000)
 }
-    for (a in conts) {
-        //conts[a].move[0] = true
-        //conts[a].move.push(true)
-        //conts[a].y = 0
-    }
-    find++
-//}  
     }
 
-    c.fillText('EPAOA',100,120)
-    c.stroke()
-    mousex = ((event.x - dif/2)/cWidth)*300
-    mousey = ((event.y)/cHeight)*150
-    this.document.getElementById('x').innerText = mousex
-    this.document.getElementById('y').innerText = mousey
-    //find++
 }
 })
 }
