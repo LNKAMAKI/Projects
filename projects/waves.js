@@ -12,18 +12,24 @@ conts = []
 conts2 = []
 conts3 = []
 timers = [{time: 0,ind:0,ind2:0}]
-//timers = []
+timers = [] // suspend wave automatic formation at manual
 timers2 = [{time: 0,ind:0,ind2:0}]
-//timers2 = []
+timers2 = []
 timers3 = []
 amplitude = 40
-advances = [{ads:[0],sty:starty,amp:amplitude}]
+advances = [{ads:[0],sty:[],amp:amplitude}]
+for (ia = 0; ia <= contnumber; ia++) {
+    advances[0].sty.push(starty)
+}
 //advances = []
-advances2 = [{ads:[],sty:starty,amp:amplitude}]
+advances2 = [{ads:[],sty:[],amp:amplitude}]
+for (ia = 0; ia <= contnumber; ia++) {
+    advances2[0].sty.push(starty + ia)
+}
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.4
+vel = 0.2
 vels = [vel]
 direct = ['u']
 direct2 = ['d']
@@ -39,6 +45,7 @@ for (i = 0; i < contnumber;i++) {
     for (tic in timers2) {
         conts2[i].move.push(true)
     }
+
     for (tic in timers3) {
         conts3[i].move.push(true)
     }
@@ -60,7 +67,7 @@ man = true
 stroke = true
 function animate() {
     space = 10
-    at = 0.3
+    at = 0.3 // usar o at para estabelecer o alinhamento das contas no manual?
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -248,7 +255,7 @@ function animate() {
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              
              if (draw1 == true) {
-             c.arc(x + radius -2*(advance)*radius + space,y + advances2[timers3[current].ind].sty,radius,0,2*Math.PI)
+             c.arc(x + radius -2*(advance)*radius + space,y + advances2[timers3[current].ind].sty[i],radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -336,7 +343,7 @@ function animate() {
             c.beginPath()
             
             if (draw1 == true) {
-            c.arc(x + radius,y + advances[timers[current].ind].sty,radius,0,2*Math.PI)
+            c.arc(x + radius,y + advances[timers[current].ind].sty[i + contnumber/3],radius,0,2*Math.PI)
             }
             
             c.fillStyle = 'blue'
@@ -474,7 +481,7 @@ function animate() {
               }
              }
             //
-             conts2[contnumber - 1 - i].y = y + advances[timers2[current].ind].sty
+             conts2[contnumber - 1 - i].y = y //+ advances[timers2[current].ind].sty
              //conts2[contnumber - 1 - i].fixpos[current] = y + advances[timers2[current].ind].sty
              
              //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
@@ -482,7 +489,7 @@ function animate() {
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              if (draw1 == true) {
-             c.arc(lastx - x - radius +2*(advance)*radius ,y + advances[timers2[current].ind].sty,radius,0,2*Math.PI)
+             c.arc(lastx - x - radius +2*(advance)*radius ,y + advances[timers2[current].ind].sty[contnumber - 1 - i],radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -633,16 +640,22 @@ window.addEventListener('keyup',function (event) {
 tot = 1
 tot2 = 0
 window.addEventListener('keyup',function (event) {
-    if (event.key == 'o') {
+    if (event.key == 'o') { // add set of waves
     //oooooooooooothis.window.alert('NOW')
     timers.push({time:0,ind:tot,ind2:0})
     timers2.push({time:0, ind:tot,ind2:0})
-    advances.push({ads:[0],sty:starty,amp:amplitude})
-    advances2.push({ads:[],sty:starty,amp:amplitude})
+    advances.push({ads:[0],sty:[],amp:amplitude})
+    for (ia = 0; ia <= contnumber; ia++) {
+        advances[tot].sty.push(starty)
+    }
+    advances2.push({ads:[],sty:[],amp:amplitude})
+    for (ia = 0; ia <= contnumber; ia++) {
+        advances2[tot].sty.push(starty)
+    }
     for (nt = 0; nt < contnumber; nt++) {
         //timers2[timers2.length - 1].time.push(0)
     }
-    direct.push('d')
+    direct.push('u')
     direct2.push('d')
    // advances[timers[current].ind].amp.push(amplitude)
     //amps.push({ads:[0]})
