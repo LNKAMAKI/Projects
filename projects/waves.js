@@ -641,7 +641,11 @@ tot = 1
 tot2 = 0
 window.addEventListener('keyup',function (event) {
     if (event.key == 'o') { // add set of waves
-    //oooooooooooothis.window.alert('NOW')
+        addwave()
+}
+})
+
+function addwave() {
     timers.push({time:0,ind:tot,ind2:0})
     timers2.push({time:0, ind:tot,ind2:0})
     advances.push({ads:[0],sty:[],amp:amplitude})
@@ -652,14 +656,8 @@ window.addEventListener('keyup',function (event) {
     for (ia = 0; ia <= contnumber; ia++) {
         advances2[tot].sty.push(starty)
     }
-    for (nt = 0; nt < contnumber; nt++) {
-        //timers2[timers2.length - 1].time.push(0)
-    }
     direct.push('u')
     direct2.push('u')
-   // advances[timers[current].ind].amp.push(amplitude)
-    //amps.push({ads:[0]})
-    //advances2.push({ads:[]})
     vels.push(vel)
     for (a in conts) {
         conts[a].move.push(true)
@@ -670,10 +668,9 @@ window.addEventListener('keyup',function (event) {
     for (a in conts3) {
         conts3[a].move.push(true)
     }
-}
-tot++
+    tot++
 tot2++
-})
+}
 
 mousex = 'i'
 mousey = 'i'
@@ -713,6 +710,7 @@ window.addEventListener('mousemove',function(event) {
         this.document.getElementById('ev2').innerText = prevy
         this.document.getElementById('x').innerText = mousex
         this.document.getElementById('y').innerText = mousey
+        addwave()
     }, 2000)
 }
     }
