@@ -21,6 +21,7 @@ amplitude = 40
 advances = [{ads:[0],sty:[],amp:amplitude}]
 for (ia = 0; ia <= contnumber; ia++) {
     advances[0].sty.push(starty) // sty da primmeira onda (partindo do y = 100)
+    //advances[0].amp.push(amplitude)
 }
 //advances = []
 advances2 = [{ads:[],sty:[],amp:amplitude}]
@@ -30,14 +31,14 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.2
+vel = 0.4
 vels = [vel]
 direct = ['u']
 direct2 = ['u']
 direct3 = []
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[],fixpos:[0]})
-    conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[],ys:[]})
+    conts.push({y:0,move:[],fixpos:[0],ys:[]})
+    conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
     conts3.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
 
     for (tic in timers) {
@@ -76,7 +77,7 @@ function animate() {
     // function = A*sen(2*Math.PI/comp*(x + wt))
 
     for (l in conts) {
-        conts[l].y = 0
+        //conts[l].y = 0
         //conts2[l].y = 0
        // conts3[l].y = 0
     }
@@ -84,7 +85,7 @@ function animate() {
     if (addpulse == true) {
        // window.alert('FAZER ISSO AQUI')
         for (l in conts) {
-            conts[l].y = 10
+            //conts[l].y = 10
             //conts2[l].y = 10
         }
     }
@@ -344,7 +345,7 @@ function animate() {
                    if (direct[current] == 'u') {
                        y = conts[i + contnumber/3].fixpos[current]
                    }else{
-                       y = conts[i + contnumber/3].fixpos[current] 
+                       y = -conts[i + contnumber/3].fixpos[current] 
                        //y = 0
                    }
                }else{
@@ -387,7 +388,7 @@ function animate() {
             x =  2*(advance)*radius
             //x = 0
             // - (advance)*2*radius
-         for (i = 0; i < contnumber;i++) {
+         for (i = 0; i < (contnumber/3)*2;i++) {
              
              canmove = true
              if (timers2[current].time - x*0.1 >= 0) {
@@ -398,8 +399,8 @@ function animate() {
                      }else{
                          y = -(advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                      }
-    
-    
+        
+        
                      if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
                          
                         conts2[contnumber - 1 - i].reflect[current] = false
@@ -440,7 +441,7 @@ function animate() {
                     y = 0
                     //window.alert('EITA')
                 }
-
+        
                 /*
                  if ((Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))).toFixed(2) == -1.00 && timers2[current].time - x*0.1 >= 0 && conts2[contnumber - 1 - i].move[current] != false) {
                     //window.alert('STOP')
@@ -463,7 +464,7 @@ function animate() {
              }else{
                  y = 0
              }
-     
+        
              if (man == true) {
              c.fillStyle = 'black'
             if (conts2[contnumber - 1 - i].move[current] == true) {
@@ -473,7 +474,7 @@ function animate() {
                c.fillStyle = 'blue'
             }
             }
-
+        
             c.font = '20px Arial'
             if (Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time + 0.01 - x*0.1)) && timers2[current].time - x*0.1 >= 0 && advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0) {
                c.fillStyle = 'yellow'
@@ -482,7 +483,7 @@ function animate() {
                conts2[contnumber - 1 - i].fixpos[current] = y //+ advances[timers2[current].ind].sty[contnumber - 1 - i]
             }
         }
-
+        
              if (conts2[contnumber - 1 - i].move[current] == false && type == 'pulse') {
               // y = 0
               if (man == true){
@@ -503,8 +504,8 @@ function animate() {
              
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
-             if (draw1 == true && contnumber - 1 - i != contnumber/3) {
-             c.arc(lastx - x - radius +2*(advance)*radius,y + advances[timers2[current].ind].sty[contnumber - 1 - i],radius,0,2*Math.PI)
+             if (draw1 == true &&  contnumber - 1 - i != contnumber/3) {
+             c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers2[current].ind].sty[contnumber - 1 - i],radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -738,7 +739,7 @@ window.addEventListener('mousemove',function(event) {
 
     if (ir == true) {
         ir = false
-    setTimeout(function () {
+    //setTimeout(function () {
         //window.alert('hello')
         ir = true
         prevx = String(this.document.getElementById('x').innerText)
@@ -748,7 +749,7 @@ window.addEventListener('mousemove',function(event) {
         this.document.getElementById('x').innerText = mousex
         this.document.getElementById('y').innerText = mousey
         //addwave()
-    }, 2000)
+   // }, 2000)
 }
     }
 
