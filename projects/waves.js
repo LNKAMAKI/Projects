@@ -18,10 +18,10 @@ timers2 = [{time: 0,ind:0,ind2:0}]
 timers2 = []
 timers3 = []
 amplitude = 40
-advances = [{ads:[0],sty:[],amp:amplitude}]
+advances = [{ads:[0],sty:[],amp:[]}]
 for (ia = 0; ia <= contnumber; ia++) {
     advances[0].sty.push(starty) // sty da primmeira onda (partindo do y = 100)
-    //advances[0].amp.push(amplitude)
+    advances[0].amp.push(amplitude)
 }
 //advances = []
 advances2 = [{ads:[],sty:[],amp:amplitude}]
@@ -192,7 +192,7 @@ function animate() {
                             direct2.push('d')
                             //direct2.push('u')
                          }
-                         //advances[timers2[current].ind].amp.push(amplitude)
+                         //advances[timers2[current].ind].amp[contnumber - 1 - i].push(amplitude)
                          if (advances[timers3[current].ind].length == 1) {
                             window.alert('ON THE SIDELINES')
                          advances[timers3[current].ind].ads.push((contnumber/3)*2)
@@ -393,11 +393,11 @@ function animate() {
              canmove = true
              if (timers2[current].time - x*0.1 >= 0) {
                  if (type == 'pulse') {
-                 if (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) <= 0) {
+                 if (advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) <= 0) {
                      if (direct2[current] == 'u') {
-                 y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                 y = (advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                      }else{
-                         y = -(advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                         y = -(advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                      }
         
         
@@ -450,11 +450,11 @@ function animate() {
                  }*/
                   
              }else{
-                 if (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0) {
+                 if (advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03 >= 0) {
                      if (direct2[current] == 'u') {
-                         y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                         y = (advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                              }else{
-                                 y = -(advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                                 y = -(advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                              }
                      }else{
                          y = 0
@@ -476,9 +476,9 @@ function animate() {
             }
         
             c.font = '20px Arial'
-            if (Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time + 0.01 - x*0.1)) && timers2[current].time - x*0.1 >= 0 && advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03 >= 0) {
+            if (Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time + 0.01 - x*0.1)) && timers2[current].time - x*0.1 >= 0 && advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03 >= 0) {
                c.fillStyle = 'yellow'
-               y = (advances[timers2[current].ind].amp -(advance + i)*at*advances[timers2[current].ind].amp*0.03)*-1
+               y = (advances[timers2[current].ind].amp[contnumber - 1 - i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber - 1 - i]*0.03)*-1
                conts2[contnumber - 1 - i].move[current] = false
                conts2[contnumber - 1 - i].fixpos[current] = y //+ advances[timers2[current].ind].sty[contnumber - 1 - i]
             }
@@ -666,7 +666,7 @@ function addwave() {
     //timers.push({time:0,ind:tot,ind2:0})
     timers2.push({time:0, ind:tot,ind2:0})
     if (tot > 0) {
-    advances.push({ads:[0],sty:[],amp:amplitude})
+    advances.push({ads:[0],sty:[],amp:[]})
     }
     
     console.log('tot',tot)
@@ -682,7 +682,7 @@ function addwave() {
                     console.log('tot igual a 0')
                     styman = 0 // o sty já está definido para primeira onda
                 }
-        
+                advances[tot].amp.push(amplitude)
        //}
     }
     if (tot > 0) {
