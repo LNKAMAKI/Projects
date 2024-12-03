@@ -31,7 +31,7 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.08
+vel = 0.2
 vels = [vel]
 direct = ['u']
 direct2 = []
@@ -69,9 +69,9 @@ man = true
 stroke = true
 mousex = 'i'
 mousey = 'i'
+at = 3.6 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
     space = 10
-    at = 0.3 // usar o at para estabelecer o alinhamento das contas no manual?
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -401,7 +401,7 @@ function animate() {
                      }
         
         
-                     if (i == (contnumber/3)*2 && conts2[contnumber/3 + i].reflect[current] != false) {
+                     if (i == (contnumber/3)*2 - 1 && conts2[contnumber/3 + i].reflect[current] != false) {
                          
                         conts2[contnumber/3 + i].reflect[current] = false
                         //window.alert('CYAN')
@@ -496,7 +496,7 @@ function animate() {
               y = 0
               }
              }
-            //
+            
              conts2[contnumber/3 + i].y = y + advances[timers2[current].ind].sty[contnumber/3 + i]
              conts2[contnumber/3 + i].ys.push(conts2[contnumber/3 + i].y)
              
@@ -504,8 +504,10 @@ function animate() {
              
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
-             if (draw1 == true){ //&&){ contnumber/3 + i != contnumber/3) {
-             c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers2[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+             if (draw1 == true && contnumber/3 + i != contnumber - 1) {
+             c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers2[current].ind].sty[20],radius,0,2*Math.PI)
+             }else{
+                c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),100,radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -668,10 +670,20 @@ function addwave() {
     if (tot > 0) {
         console.log('first beed y position',conts2[20].ys[tot - 1])
         ampman = conts2[20].ys[tot - 1] - mousey
+        ampman = starty - mousey
         }else{
             ampman = starty - mousey
         }
         console.log('amplitude',ampman)
+        // determinar o at a partir da posição da última conta (contnumber - 1)
+        //  y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+        // y = ampman - 
+        // ampman + 59*at*ampman*0.03 = 0
+        // ampman = -59*at*ampman*0.03
+        // at = -ampman/(59*ampman*0.03)
+        at = ampman/(40*ampman*0.03)
+        // prever o y máximo de todas as contas
+
 
     timers2.push({time:0, ind:tot,ind2:0})
     if (tot > 0) {
@@ -685,6 +697,7 @@ function addwave() {
             if (tot > 0 ) {
                 if (ia >= 20) {
                 styman = conts2[ia].ys[tot - 1]
+                styman = 100 
                 }else{
                     styman = 100 
                 }
@@ -697,7 +710,7 @@ function addwave() {
                     styman = 0 // o sty já está definido para primeira onda
                 }
                 if (ia != 20) {
-                advances[tot].amp.push(amplitude)
+                advances[tot].amp.push(Math.abs(ampman)) 
                 }else{
                     advances[tot].amp.push(Math.abs(ampman))
                 }
