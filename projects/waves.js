@@ -33,11 +33,11 @@ amps2 = [amplitude]
 amps3 = []
 vel = 0.2
 vels = [vel]
-direct = ['u']
+direct = []
 direct2 = []
 direct3 = []
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[],fixpos:[0],ys:[]})
+    conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[]})
     conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
     conts3.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
 
@@ -66,10 +66,11 @@ fixo = false
 drawball = false
 draw1 = true
 man = true
+manf = true
 stroke = true
 mousex = 'i'
 mousey = 'i'
-at = 3.6 // usar o at para estabelecer o alinhamento das contas no manual?
+at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
     space = 10
     x = 0
@@ -155,6 +156,7 @@ function animate() {
 
         for (tic in conts2) {
             conts2[tic].ys = []
+            conts[tic].ys = []
         }
     
 
@@ -287,6 +289,7 @@ function animate() {
              }
          }
 
+         /*
         for (current in timers) {
            
             x = space + 2*radius*(contnumber/3) //here
@@ -374,6 +377,7 @@ function animate() {
             }
         }
         }
+        */
 
 
 
@@ -382,6 +386,7 @@ function animate() {
 
     
         lastx = space + 2*radius*(contnumber)
+        /*
         for (current in timers2) {
             //advance = conts2[contnumber/3 + i].advances[current]
             advance = advances[timers2[current].ind].ads[timers2[current].ind2]
@@ -442,12 +447,6 @@ function animate() {
                     //window.alert('EITA')
                 }
         
-                /*
-                 if ((Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))).toFixed(2) == -1.00 && timers2[current].time - x*0.1 >= 0 && conts2[contnumber/3 + i].move[current] != false) {
-                    //window.alert('STOP')
-                   conts2[contnumber/3 + i].fixpos[current] = y
-                    conts2[contnumber/3 + i].move[current] = false
-                 }*/
                   
              }else{
                  if (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
@@ -510,6 +509,7 @@ function animate() {
                 c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),100,radius,0,2*Math.PI)
              }
              
+             
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
              c.fillStyle = 'white'
              c.fill()
@@ -522,10 +522,163 @@ function animate() {
              x+= 2*radius
              }
          }
+         */
 
+         for (current in timers) {
+            //advance = conts[contnumber/3 + i].advances[current]
+            advance = advances[timers[current].ind].ads[timers[current].ind2]
+            x =  2*(advance)*radius
+            //x = 0
+            // - (advance)*2*radius
+         for (i = 0; i < (contnumber/3)*2;i++) {
+             
+             canmove = true
+             if (timers[current].time - x*0.1 >= 0) {
+                 if (type == 'pulse') {
+                 if (advances[timers[current].ind].amp[contnumber/3 + i] - (advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time - x*0.1)) <= 0) {
+                     if (direct[current] == 'u') {
+                 y = (advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time - x*0.1))
+                     }else{
+                         y = -(advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time - x*0.1))
+                     }
         
-
-        x = 0
+                     /*
+                     if (i == (contnumber/3)*2 - 1 && conts[contnumber/3 + i].reflect[current] != false) {
+                         
+                        conts[contnumber/3 + i].reflect[current] = false
+                        //window.alert('CYAN')
+                        //console.log('CYAN',current,advances[timers[current].ind])
+                        //timers3.push({time:timers[current].time,ind:timers[current].ind,ind2:advances2[timers[current].ind].ads.length})
+                        //timers3.push(timers[current].time)
+                        if (direct[current] == 'd') {
+                        direct3.push('u')
+                        }else{
+                            direct3.push('d')
+                            //direct3.push('u')
+                        }
+                        amps3.push(amplitude)
+                        
+                       // console.log('WHAT',advances2[timers[current].ind].ads.length)
+                        if (advances2[timers[current].ind].ads.length == 0) {
+                            advances2[timers[current].ind].ads.push((contnumber/3))
+                            //console.log('WHAT2',advances2[timers[current].ind].ads.length)
+                        }else{
+                            //Mwindow.alert('PUSH')
+                            //console.log(advances2[timers3.length - 2] + (contnumber/3)*2)
+                            advances2[timers[current].ind].ads.push(advances2[timers[current].ind].ads[advances2[timers[current].ind].ads.length - 1] + (contnumber/3)*2)
+                        }
+                        vels.push(vel)
+                        for (a in conts3) {
+                            conts3[a].move.push(true)
+                        }
+                        //loop = false
+                         
+                         }*/
+                 }else if(Math.sin(0 - vels[current]*(timers[current].time - x*0.1)) >= 0 && conts[contnumber/3 + i].move[current] == true){
+                    y = 0
+                    if (man == false) {
+                   conts[contnumber/3 + i].move[current] = false
+                    }
+                }else{
+                    y = 0
+                    //window.alert('EITA')
+                }
+        
+                /*
+                 if ((Math.sin(0 - vels[current]*(timers[current].time - x*0.1))).toFixed(2) == -1.00 && timers[current].time - x*0.1 >= 0 && conts[contnumber/3 + i].move[current] != false) {
+                    //window.alert('STOP')
+                   conts[contnumber/3 + i].fixpos[current] = y
+                    conts[contnumber/3 + i].move[current] = false
+                 }*/
+                  
+             }else{
+                 if (advances[timers[current].ind].amp[contnumber/3 + i] - (advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
+                     if (direct[current] == 'u') {
+                         y = (advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time - x*0.1))
+                             }else{
+                                 y = -(advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers[current].time - x*0.1))
+                             }
+                     }else{
+                         y = 0
+                         conts[contnumber/3 + i].move[current] = false
+                     }
+             }
+             }else{
+                 y = 0
+             }
+        
+             if (manf == true) {
+             c.fillStyle = 'black'
+            if (conts[contnumber/3 + i].move[current] == true) {
+            if ((Math.sin(0 - vels[current]*(timers[current].time - x*0.1))).toFixed(1) == 0) {
+               c.fillStyle = 'red'
+            }else if((Math.sin(0 - vels[current]*(timers[current].time - x*0.1))).toFixed(2) == -1.00) {
+               c.fillStyle = 'blue'
+            }
+            }
+        
+            c.font = '20px Arial'
+            if (Math.sin(0 - vels[current]*(timers[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers[current].time + 0.01 - x*0.1)) && timers[current].time - x*0.1 >= 0 && advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
+               c.fillStyle = 'yellow'
+               y = (advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03)*-1
+               conts[contnumber/3 + i].move[current] = false
+               conts[contnumber/3 + i].fixpos[current] = y //+ advances[timers[current].ind].sty[contnumber/3 + i]
+            }
+        }
+        
+             if (conts[contnumber/3 + i].move[current] == false && type == 'pulse') {
+              // y = 0
+              if (manf == true){
+              if (direct[current] == 'u') {
+                 y = conts[contnumber/3 + i].fixpos[current]
+              }else{
+                y = -conts[contnumber/3 + i].fixpos[current]
+              }
+              }else{
+              y = 0
+              }
+             }
+            
+             conts[contnumber/3 + i].y = y + advances[timers[current].ind].sty[contnumber/3 + i]
+             conts[contnumber/3 + i].a = i //(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03
+             conts[contnumber/3 + i].ys.push(conts[contnumber/3 + i].y)
+             
+             //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
+             
+             c.beginPath()
+             //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
+             //if (timers[current].delete == undefined) {
+             if (draw1 == true && contnumber/3 + i != contnumber - 1) {
+             c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+             }else{
+                c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),100,radius,0,2*Math.PI)
+             }
+            //}
+             
+             
+             //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+             c.fillStyle = 'white'
+             c.fill()
+             c.strokeStyle = 'black'
+             c.stroke()
+             c.beginPath()
+             //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+             c.fillStyle = 'white'
+             c.fill()
+             x+= 2*radius
+             }
+         }
+        
+        c.beginPath()
+        x = 0 //+ (contnumber/3)*radius
+        for (i = contnumber/3; i < contnumber; i++) {
+            if (conts[i].ysfinal.length > 0) {
+            //c.arc(x + radius + space + 2*radius*(contnumber/3),conts[i].ysfinal[conts[i].ysfinal.length - 1],radius,0,2*Math.PI)
+            c.stroke()
+            c.fill()
+            x+= 2*radius
+            }
+        }
       /*
         for (i = 0; i < contnumber/3;i++) {
             c.beginPath()
@@ -616,6 +769,7 @@ function animate() {
         for (k in timers3){
             timers3[k].time += 0.1
         }
+
 if (loop == true) {
 requestAnimationFrame(animate)
 }
@@ -666,69 +820,102 @@ window.addEventListener('keyup',function (event) {
 
 function addwave() {
     //timers.push({time:0,ind:tot,ind2:0})
-    console.log('mousey:',mousey)
+    //console.log('mousey:',mousey)
     if (tot > 0) {
-        console.log('first beed y position',conts2[20].ys[tot - 1])
-        ampman = conts2[20].ys[tot - 1] - mousey
-        ampman = starty - mousey
+        //console.log('first beed y position',conts[20].ys[tot - 1])
+        ampcont1 = conts[20].ys[tot - 1] - mousey
+        ampman = conts[20].ys[tot - 1] - mousey
+        //ampman = starty - mousey
         }else{
             ampman = starty - mousey
+            ampcont1 = starty - mousey
         }
         console.log('amplitude',ampman)
         // determinar o at a partir da posição da última conta (contnumber - 1)
         //  y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
-        // y = ampman - 
-        // ampman + 59*at*ampman*0.03 = 0
-        // ampman = -59*at*ampman*0.03
-        // at = -ampman/(59*ampman*0.03)
-        at = ampman/(40*ampman*0.03)
-        // prever o y máximo de todas as contas
+        // y = ampman - i*at*ampman*0.03
+        // ampman - 40*at*ampman*0.03 = 0
+        // ampman = 40*at*ampman*0.03
+        // at = ampman/(40*ampman*0.03)
+        at = (starty - mousey)/(20*(starty - mousey)*0.03)
+        at = 0.8
+        // prever o y máximo de todas as contas ()
+        //x = 2*(advance)*radius
+        x = space + (contnumber/3)*radius
+        for (i = contnumber/3; i < contnumber; i++) {
+            //console.log(i,':', ampman - (contnumber - i)*at*ampman*0.03 + starty)
+            yat = starty - ampman - (contnumber - i)*at*ampman*0.03
+            //conts[i].ysfinal.push(starty - ampman - (contnumber - i)*at*ampman*0.03)
+            x+= 2*radius
+        }
 
 
-    timers2.push({time:0, ind:tot,ind2:0})
+    timers.push({time:0, ind:tot,ind2:0})
     if (tot > 0) {
     advances.push({ads:[0],sty:[],amp:[]})
     }
     
-    console.log('tot',tot)
+    //console.log('tot',tot)
     for (ia = 0; ia <= contnumber - 1; ia++) { // adicionar sty para cada conta
         //if (conts[ia].fixpos.length > 0) {
 
             if (tot > 0 ) {
-                if (ia >= 20) {
-                styman = conts2[ia].ys[tot - 1]
-                styman = 100 
+                if (ia > 20) { // ia >= 20
+                styman = conts[ia].ys[tot - 1]
+                //styman = 100 
+                }else if (ia  == 20){
+                    styman = conts[ia].ys[tot - 1]
                 }else{
                     styman = 100 
                 }
                 advances[tot].sty.push(styman)// + starty)
                 if (ia == 0) {
-                    console.log('styman:',styman)
+                    //console.log('styman:',styman)
                 }
                 }else{
-                    console.log('tot igual a 0')
-                    styman = 0 // o sty já está definido para primeira onda
+                    //console.log('tot igual a 0')
+                    styman = 100 // o sty já está definido para primeira onda
                 }
-                if (ia != 20) {
-                advances[tot].amp.push(Math.abs(ampman)) 
-                }else{
-                    advances[tot].amp.push(Math.abs(ampman))
+                if (ia > 20 && ia <= 40) {
+                //console.log(conts[ia].ys[tot])
+                //console.log(conts[ia].ysfinal[tot])
+                // para diferentes stys as amps são diferentes
+                // conts[ia].ysfinal[tot] = amp - ia*at*amp*0.03 + styman
+                // y - styman = amp(1 - ia*at*0.03)
+                // amp = (y - styman)/(1 - ia*at*0.03))
+                //console.log('STAND',1 - ia*at*0.03)
+                ampadd = (conts[ia].ysfinal[tot] - 100)/(1 - ia*at*0.03)
+                //console.log(ampadd)
+                //advances[tot].amp.push(Math.abs(conts[ia].ysfinal[tot] - starty))
+                //advances[tot].amp.push(ampadd)
+                //conts[ia].ysfinal[tot] = styman + ampman
+                // ampman = conts[ia].ysfinal[tot] - styman 
+                console.log(ia, 'sty',styman,'ysfinal',conts[ia].ysfinal[tot],'amp',Math.abs(styman - conts[ia].ysfinal[tot]))
+                //advances[tot].amp.push(Math.abs(styman - conts[ia].ysfinal[tot]))
+                //conts[ia].ysfinal.push(styman - ampman - (ia)*at*ampman*0.03)
+                conts[ia].ysfinal.push((ia)) //*at*ampman*0.03)
+                advances[tot].amp.push(Math.abs(ampman))
+                }else if (ia < 20){
+                        //advances[tot].amp.push(Math.abs(ampcont1))
+                        //advances[tot].amp.push(Math.abs(styman - conts[ia].ysfinal[tot]))
+                        advances[tot].amp.push(0)
                 }
        //}
     }
     if (tot > 0) {
     advances2.push({ads:[],sty:[],amp:amplitude})
+    //window.alert(cont)
     for (ia = 0; ia <= contnumber - 1; ia++) {
         //if (conts3[ia].fixpos.length > 0) {
-        advances2[tot].sty.push(conts2[ia].fixpos[0] + starty)
+        advances2[tot].sty.push(conts[ia].fixpos[0] + starty)
         //}
     }
+    timers[tot - 1].delete = true
 }
+    if (ampcont1 > 0) {
     direct.push('u')
-    if (ampman > 0) {
-    direct2.push('u')
     }else{
-        direct2.push('d')
+        direct.push('d')
     }
     vels.push(vel)
     for (a in conts) {
@@ -751,6 +938,22 @@ find = 0
 ir = true
 window.addEventListener('mousemove',function(event) {
     if (go == true) {
+    if (mousey != 'i') {
+    if (ir == true) {
+        ir = false
+    setTimeout(function () {
+        ir = true
+        //addwave()
+        //tot++
+    }, 800)
+}
+    }
+
+}
+})
+
+window.addEventListener('mousemove',function(event) {
+    if (go == true) {
     c.clearRect(0,0,300,150)
     canv = document.querySelector('canvas')
     c = canv.getContext('2d')
@@ -762,35 +965,17 @@ window.addEventListener('mousemove',function(event) {
     mousex = ((event.x - dif/2)/cWidth)*300
     mousey = ((event.y)/cHeight)*150
     
-    if (mousey != 'i') {
-        if (((event.y)/cHeight)*150 < mousey) {
-             //c.fillStyle = 'red'
-             //direct = ['u']
-        }else{
-            //c.fillStyle = 'blue'
-            //direct = ['d']
-        }
-    
-
-    if (ir == true) {
-        ir = false
-    //setTimeout(function () {
-        //window.alert('hello')
-        ir = true
         prevx = String(this.document.getElementById('x').innerText)
         this.document.getElementById('ev').innerText = prevx
         prevy = String(this.document.getElementById('y').innerText)
         this.document.getElementById('ev2').innerText = prevy
         this.document.getElementById('x').innerText = mousex
         this.document.getElementById('y').innerText = mousey
-        //addwave()
-   // }, 2000)
-}
+       
     }
-
-}
 })
 }
+
 
 
 window.addEventListener('keydown',function (event) {

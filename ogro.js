@@ -283,7 +283,7 @@ for (current in timers2) {
     x =  2*(advance)*radius
     //x = 0
     // - (advance)*2*radius
- for (i = 0; i < (contnumber/3)*2;i++) {
+ for (i = 0; i < (contnumber/3)*2;i++) { //  for (i = 0; i < contnumber;i++) {
      
      canmove = true
      if (timers2[current].time - x*0.1 >= 0) {
@@ -296,7 +296,7 @@ for (current in timers2) {
              }
 
 
-             if (i == (contnumber/3)*2 && conts2[contnumber - 1 - i].reflect[current] != false) {
+             if (contnumber - 1 - i == contnumber - 1 && conts2[contnumber - 1 - i].reflect[current] != false) { 
                  
                 conts2[contnumber - 1 - i].reflect[current] = false
                 //window.alert('CYAN')
@@ -401,6 +401,7 @@ for (current in timers2) {
      //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
      if (draw1 == true &&  contnumber - 1 - i != contnumber/3) {
      c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers2[current].ind].sty[contnumber - 1 - i],radius,0,2*Math.PI)
+     //c.arc(lastx - x - radius + 2*(advance)*radius,y + advances[timers2[current].ind].sty[contnumber - 1 - i],radius,0,2*Math.PI)
      }
      
      //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
