@@ -524,6 +524,7 @@ function animate() {
          }
          */
 
+         document.getElementById('t3').innerText = 'numero de ondas:' + timers.length
          for (current in timers) {
             //advance = conts[contnumber/3 + i].advances[current]
             advance = advances[timers[current].ind].ads[timers[current].ind2]
@@ -668,21 +669,56 @@ function animate() {
              eq = (conts[contnumber/3 + i].ys[current - 1]).toFixed(3) == (conts[contnumber/3 + i].ysfinal[current - 1]).toFixed(3)
                 if (conts[contnumber/3 + i].go[current - 1] == false && eq == true) {
                      //window.alert('ADD NOW')
-                    timers[current].time = conts[24].start[current - 1].time
+                     //timers[current].time = conts[24].start[current - 1].time
                 }
                 //if (conts[contnumber/3 + i].go[current - 1] == undefined) {
-                conts[contnumber/3 + i].go[current - 1] = eq
+                if (eq == false) {
+                conts[contnumber/3 + i].go[current - 1] = false
+                }else{ // if (conts[contnumber/3 + i].go[current - 1] == false){
+                    add = true
+                    for (dom = current - 2; dom >= 0; dom--){
+                        if (conts[contnumber/3 + i].go[dom] == false) {
+                            add = false
+                            //window.alert('n adicionar true em',current - 1)
+                        }
+                    }
+                    //if (add == true) {
+                    if (conts[contnumber/3 + i].go[current - 1] != true) {
+                        timers[current].time = conts[24].start[current - 1].time
+                    
+                        conts[contnumber/3 + i].go[current - 1] = true
+                        timers[current].time = conts[24].start[current - 1].time
+                        document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
+                    }
+                        //window.alert('ADD NOW')
+                    //}
+                }/*else{
+                    add = true
+                    for (dom = current - 2; dom >= 0; dom--){
+                        if (conts[contnumber/3 + i].go[dom] == false) {
+                            add = false
+                            //window.alert('n adicionar true em',current - 1)
+                        }
+                    }
+                    if (add == true) {
+                        //conts[contnumber/3 + i].go[current - 1] = 'none'
+                        //timers[current].time = conts[24].start[current - 1].time
+                        //window.alert('ADD NOW')
+                    }
+                }*/
                 //}
              }
              //conts[contnumber/3 + i].go[current - 1] = eq
              }
              if (draw1 == true && contnumber/3 + i != contnumber - 1) { // && conts[contnumber/3 + i].ys[current - 1] == conts[contnumber/3 + i].ysfinal[current - 1]) {
-                if (i != 4) {
-             //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                if (i != 4) {// && conts[24].go[current - 1] != true) {
+              c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                 }else{
+                    //if (conts[contnumber/3 + i].go[current] != true && conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != 'none') {
                     if (conts[contnumber/3 + i].go[current - 1] != false) {
                         c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                     }
+                   // }
                 }
              }else{
                 c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),100,radius,0,2*Math.PI)
@@ -694,8 +730,9 @@ function animate() {
              c.fillStyle = 'white'
              if (contnumber/3 + i == 24) {
                 c.fillStyle = 'black'
+                c.fill()
              }
-             c.fill()
+             //c.fill()
              c.strokeStyle = 'black'
              c.stroke()
              c.beginPath()
@@ -797,7 +834,7 @@ function animate() {
             }
 
         for (k in timers){
-            timers[k].time += 0.1
+            timers[k].time += 0.05
         }
         for (k in timers2){
             timers2[k].time += 0.1
