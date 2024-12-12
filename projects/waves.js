@@ -37,7 +37,7 @@ direct = []
 direct2 = []
 direct3 = []
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[]})
+    conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[]})
     conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
     conts3.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
 
@@ -681,7 +681,7 @@ function animate() {
                     for (ci = 0; ci <= current; ci++) { 
                         if (conts[24].ys[current] != undefined) {
                         //document.getElementById('t').innerText += (conts[24].ys[ci]).toFixed(0) + ' , ' 
-                        //document.getElementById('t2').innerText = conts[24].start[current].time + ' | ' + conts[contnumber/3 + i].go
+                        //document.getElementById('t2').innerText = (conts[contnumber/3 + i].time[0]).toFixed(0) + '' + (conts[25].time[0]).toFixed(0)//conts[24].start[current].time + ' | ' + conts[contnumber/3 + i].time
                         //document.getElementById('t3').innerText += (conts[24].ysfinal[ci]).toFixed(0) + ' , '
                     }
                 }
@@ -781,7 +781,7 @@ function animate() {
              //c.fill()
              }
             // c.strokeStyle = 'black'
-            //c.stroke() 
+            c.stroke() 
             // if (conts[24].go[current - 1] == true && conts[24].go[current] != true) {
             if (contnumber/3 + i == 20) {
              //c.stroke()   
@@ -885,6 +885,11 @@ function animate() {
             x+= 2*radius
             }
 
+            for (p in conts) {
+                for (h in timers) {
+                    conts[p].time[h] += 0.15
+                }
+            }
         for (k in timers){
             timers[k].time += 0.15
         }
@@ -951,8 +956,8 @@ function addwave() {
         //console.log('first beed y position',conts[20].ys[tot - 1])
         ampcont1 = conts[24].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
         ampman = Math.abs(conts[24].ysfinal[tot - 1] - mousey)
-        console.log(tot - 1,':')
-        console.log(tot - 1 ,'final: ',conts[24].ysfinal[tot - 1], mousey)
+        //console.log(tot - 1,':')
+        //console.log(tot - 1 ,'final: ',conts[24].ysfinal[tot - 1], mousey)
         //ampman = starty - mousey
         dir = ''
         if (ampcont1 > 0) {
@@ -985,7 +990,7 @@ function addwave() {
         // ampman = 40*at*ampman*0.03
         // at = ampman/(40*ampman*0.03)
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
-        console.log('mousey',mousey,'starty',starty)
+        //console.log('mousey',mousey,'starty',starty)
         //at = 0
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
@@ -1030,6 +1035,10 @@ function addwave() {
                     //console.log('tot igual a 0')
                     styman = 100 // o sty já está definido para primeira onda
                 }
+
+                if (join ==  false) {
+                    conts[ia].time.push(0)
+                }
                 if (ia >= 20 && ia <= 40) {
                 //console.log(conts[ia].ys[tot])
                 //console.log(conts[ia].ysfinal[tot])
@@ -1052,8 +1061,8 @@ function addwave() {
                     conts[ia].ysfinal[totof] = styman + ampmanof - (ia - contnumber/3)*at*ampmanof*0.03
                 }
                 if (ia == 24) {
-                    console.log('totof', totof, 'final',conts[ia].ysfinal[totof])
-                    console.log('styman',styman,'ampmanof',ampmanof,'at',at,'join',join)
+                    //console.log('totof', totof, 'final',conts[ia].ysfinal[totof])
+                    //console.log('styman',styman,'ampmanof',ampmanof,'at',at,'join',join)
                     }
                 advances[totof].amp[ia] = ampmanof
                 }else if (ia < 20){
@@ -1111,7 +1120,7 @@ window.addEventListener('mousemove',function(event) {
         ir = false
     setTimeout(function () {
         ir = true
-        addwave()
+        //addwave()
         //tot++
         // mousey
     }, 70)
