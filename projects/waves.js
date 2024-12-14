@@ -721,12 +721,12 @@ function animate() {
 
                         if (conts[contnumber/3 + i].go[current - 1] == false) {
                          conts[contnumber/3 + i].time[current] = x*0.1 //conts[24].start[current - 1].time
-                        }else{
-                         conts[contnumber/3 + i].time[current] = -0.5
-                        }
+                        }//else{
+                        // conts[contnumber/3 + i].time[current] = 0
+                       //}
+                       conts[contnumber/3 + i].go[current - 1] = true
                         //conts[24].ys[current] = -100
-                        conts[contnumber/3 + i].go[current - 1] = true
-                        document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
+                        //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
                         //console.log('ADD NOW')
                         //console.log(conts[24].ys[current], i)
                     }
@@ -902,7 +902,7 @@ function animate() {
                 }
             }
         for (k in timers){
-            timers[k].time += 0.01
+            timers[k].time += 0.1
         }
         for (k in timers2){
             timers2[k].time += 0.1
@@ -965,8 +965,8 @@ function addwave() {
     if (starty != mousey) {
     if (tot > 0) {
         //console.log('first beed y position',conts[20].ys[tot - 1])
-        ampcont1 = conts[24].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
-        ampman = Math.abs(conts[24].ysfinal[tot - 1] - mousey)
+        ampcont1 = conts[21].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
+        ampman = Math.abs(conts[21].ysfinal[tot - 1] - mousey)
         //console.log(tot - 1,':')
         //console.log(tot - 1 ,'final: ',conts[24].ysfinal[tot - 1], mousey)
         //ampman = starty - mousey
@@ -977,9 +977,9 @@ function addwave() {
             dir = 'd'
         }
         join = false
-        if (conts[24].go[tot - 2] == false && direct[tot - 1] == dir) {
+        if (conts[21].go[tot - 2] == false && direct[tot - 1] == dir) {
             //console.log('juntar')
-            ampmanof = ampman + Number(advances[tot - 1].amp[24])
+            ampmanof = ampman + Number(advances[tot - 1].amp[21])
             totof = tot - 1
             join = true
         }else{
