@@ -131,7 +131,7 @@ function sw(what){
    case 6:
          tit.innerText = 'Seres vivos respondem a estímulos'
          outra.innerHTML = '<div class="pic"><img src="imagens/estimulo.jpg" alt=""></div>'
-         cont.innerText = 'Os seres vivos também respondem a estímulos, que são a forma como eles reagem às informações do meio no qual vivem. Os sentidos têm um papel essencial nesse contexto, já que é por meio deles que animais conseguem detectar a presença de alimento ou de prepadores. A planta carnívora, por exemplo, reage ao contato com insetos fechando as suas folhas, para que possa aprisioná-los, ou seja, ela recebe um estímulo por meio do tato. '
+         cont.innerText = 'Os seres vivos também respondem a estímulos, que são a forma como eles reagem às informações do meio no qual vivem. Os sentidos têm um papel essencial nesse contexto, já que é por meio deles que animais conseguem detectar a presença de alimento ou de predadores. A planta carnívora, por exemplo, reage ao contato com insetos fechando as suas folhas, para que possa aprisioná-los, ou seja, ela recebe um estímulo por meio do tato. '
    break
    case 7:
          tit.innerText = 'Seres vivos têm material genético'
