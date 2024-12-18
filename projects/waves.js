@@ -67,7 +67,7 @@ drawball = false
 draw1 = true
 man = true
 manf = true
-stroke = false
+stroke = true
 mousex = 'i'
 mousey = 'i'
 at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
@@ -84,7 +84,7 @@ function animate() {
     }
 
     if (addpulse == true) {
-       // window.alert('FAZER ISSO AQUI')
+       // window.alert('FAZER ISSO AQUI') 
         for (l in conts) {
             //conts[l].y = 10
             //conts2[l].y = 10
@@ -691,7 +691,9 @@ function animate() {
             if (i == 3) {
                 //console.log('why',conts[contnumber/3 + i - 1].ys[0] == conts[contnumber/3 + i - 1].ysfinal[0])
             }
-            if (conts[contnumber/3 + i - 1].ys[0] == conts[contnumber/3 + i - 1].ysfinal[0] && conts[contnumber/3 + i].ys[0] == -100) {
+            if (conts[contnumber/3 + i - 1].ys[0] != undefined && conts[contnumber/3 + i - 1].ysfinal[0] != undefined) {
+                // console.log(conts[contnumber/3 + i - 1].ys[0])
+            if ((conts[contnumber/3 + i - 1].ys[0]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[0]).toFixed(3) && conts[contnumber/3 + i].ys[0] == -100) {
                     //if (i == 2 || i == 3) {
                         //console.log('hey yyou',contnumber/3 + i,x*0.1,advances[timers[0].ind].sty[contnumber/3 + i])
                         y = 0
@@ -700,7 +702,7 @@ function animate() {
                         conts[contnumber/3 + i].time[0] = x*0.1
                         
                    // }
-            }else if ((conts[contnumber/3 + i - 1].ys[0]) == (conts[contnumber/3 + i - 1].ysfinal[0])){
+            }else if (((conts[contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts[contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
                 if (i == 3) {
                 //console.log('pode atualizar',conts[23].time[0],y)
                 }
@@ -710,7 +712,7 @@ function animate() {
                 //if (i == 3) {
                     conts[contnumber/3 + i].time[0] = 0
            //}
- }            
+ }}           
                 }
              if (i > 0 && i < 20) {
                 if (conts[24].start[current] != undefined) {
@@ -786,7 +788,7 @@ function animate() {
                         //window.alert('ADD NOW')
                     //}
                 }*/
-        }}else if (current  > 0){
+        }}else if (current > 0){
             eq = (conts[contnumber/3 + i].ys[current - 1]).toFixed(3) == (conts[contnumber/3 + i].ysfinal[current - 1]).toFixed(3)
             if (conts[contnumber/3 + i].go[current - 1] == false && eq == true) {
                  //window.alert('ADD NOW')
@@ -806,12 +808,13 @@ function animate() {
                 if (i == 2)  {
                 //console.log(add,'eq: true',)
                 }
-                if (add == true && conts[contnumber/3 + i].time[current] != conts[contnumber/3 + i].start[current - 1].time && conts[contnumber/3 + i - 1].ys[current] == conts[contnumber/3 + i].ysfinal[current]){
+                //console.log('EI',add,)
+                if (add == true && (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) {//conts[contnumber/3 + i].time[current] != conts[contnumber/3 + i].start[current - 1].time && conts[contnumber/3 + i - 1].ys[current] == conts[contnumber/3 + i - 1].ysfinal[current]){
                 if (conts[contnumber/3 + i].go[current - 1] != true) {
 
                     if (conts[contnumber/3 + i].go[current - 1] == false) {
                      conts[contnumber/3 + i].time[current] = x*0.1 //conts[24].start[current - 1].time
-                     console.log('ADD NOW')
+                     //console.log('ADD NOW')
                     }//else{
                     // conts[contnumber/3 + i].time[current] = 0
                    //}
@@ -821,7 +824,7 @@ function animate() {
                     //console.log(conts[24].ys[current], i)
                 }
                     //window.alert('ADD NOW')
-                }else if (conts[contnumber/3 + i - 1].ys[current] != conts[contnumber/3 + i].ysfinal[current]){
+                }else if (conts[contnumber/3 + i - 1].ys[current] != conts[contnumber/3 + i - 1].ysfinal[current]){
                     conts[contnumber/3 + i].go[current - 1] = false
                 }
             }
@@ -1115,7 +1118,7 @@ function addwave() {
         // at = ampman/(40*ampman*0.03)
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
-        at = 0
+        //at = 0.1
         //at = 0
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
@@ -1184,7 +1187,7 @@ function addwave() {
                 if (ampcont1 > 0) {
                   conts[ia].ysfinal[totof] = Number(styman) - ampmanof + Number((ia - contnumber/3)*at*ampmanof*0.03)
                 }else if (ampcont1 !== 0){
-                    conts[ia].ysfinal[totof] = styman + ampmanof - (ia - contnumber/3)*at*ampmanof*0.03
+                    conts[ia].ysfinal[totof] = Number(styman) + ampmanof - Number((ia - contnumber/3)*at*ampmanof*0.03)
                 }
                 if (ia == 24) {
                     //console.log('totof', totof, 'final',conts[ia].ysfinal[totof])
