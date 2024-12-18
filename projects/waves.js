@@ -38,8 +38,8 @@ direct2 = []
 direct3 = []
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[]})
-    conts2.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
-    conts3.push({y:0,move:[],reflect:[],fixpos:[],advances:[]})
+    conts2.push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],advances:[]})
+    conts3.push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal: [],go:[],start:[],advances:[]})
 
     for (tic in timers) {
         conts[i].move.push(true)
@@ -542,7 +542,7 @@ function animate() {
                  if (type == 'pulse') {
                  if (advances[timers[current].ind].amp[contnumber/3 + i] - (advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1)) <= 0) {
                     if (conts[contnumber/3 + i].start[current] == undefined) {
-                        if (i > 0 && i < 20) { //(i == 4 || i == 3 || i == 2) {
+                        if (i > 0 && i < contnumber/3) { //(i == 4 || i == 3 || i == 2) {
                         conts[contnumber/3 + i].start[current] = {time:conts[contnumber/3 + i].time[current]}
                         }
                         //console.log('terminou', conts[contnumber/3 + i].time[current], vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1), x*0.1)
@@ -634,7 +634,7 @@ function animate() {
             if (Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1)) < Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] + 0.01 - x*0.1)) && conts[contnumber/3 + i].time[current] - x*0.1 >= 0 && advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
                c.fillStyle = 'yellow'
                y = (advances[timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers[current].ind].amp[contnumber/3 + i]*0.03)*-1
-               if (i > 0 && i < 20) {//(i == 4 || i == 3 || i == 2) {
+               if (i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                 if (conts[contnumber/3 + i].go[current - 1] != false) {
                     conts[contnumber/3 + i].move[current] = false
                     //if (i == 3 && current == 0)
@@ -674,7 +674,7 @@ function animate() {
                  }
              }
              if (current > 0 || i == 1) {
-             if (i > 0 && i < 20) {//(i == 4 || i == 3 || i == 2) {
+             if (i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
              if (add == true && conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != true) {
                 conts[contnumber/3 + i].ys[current] = conts[contnumber/3 + i].y
              }else if (conts[contnumber/3 + i].go[current] == true){
@@ -714,7 +714,7 @@ function animate() {
            //}
  }}           
                 }
-             if (i > 0 && i < 20) {
+             if (i > 0 && i < contnumber/3) {
                 if (conts[24].start[current] != undefined) {
                     document.getElementById('t').innerText = ''
                     document.getElementById('t2').innerText = ''
@@ -736,8 +736,8 @@ function animate() {
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              //if (timers[current].delete == undefined) {
             
-           if (i > 0 && i < 20) {    
-                if (i == 1){ //(i > 0 && i < 20) {//(i == 4 || i == 3 || i == 2) {
+           if (i > 0 && i < contnumber/3) {    
+                if (i == 1){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                     if (current > 0) {
                 //if (contnumber/3 + i > 21 && contnumber/3 + i < 40) {
                     //console.log('index',contnumber/3 + i, 'current',current, 'current - 1',current - 1)
@@ -866,7 +866,7 @@ function animate() {
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
              //c.fillStyle = 'white'
-            if (i > 0 && i < 20) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < 20) { //(contnumber/3 + i == 24 || i == 3 || i == 2) {
+            if (i > 0 && i < contnumber/3) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < contnumber/3) { //(contnumber/3 + i == 24 || i == 3 || i == 2) {
                 c.fill()
                 c.stroke()
              }else{
