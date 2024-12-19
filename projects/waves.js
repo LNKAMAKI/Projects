@@ -927,7 +927,7 @@ function animate() {
                          y = -(advances[n][timers2[n][current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[n][timers2[n][current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts2[n][contnumber/3 + i].time[current] - x*0.1))
                      }
         
-                     
+                     /*
                      if (i == 19 && conts2[n][contnumber/3 + i].reflect[current] != false) {
                          
                         conts2[n][contnumber/3 + i].reflect[current] = false
@@ -958,7 +958,7 @@ function animate() {
                         }
                         //loop = false
                          
-                         }
+                         }*/
                  }else if(Math.sin(0 - vels[current]*(conts2[n][contnumber/3 + i].time[current] - x*0.1)) >= 0 && conts2[n][contnumber/3 + i].move[current] == true){
                     y = 0
                     if (man == false) {
@@ -1020,7 +1020,10 @@ function animate() {
         }
         
              if (conts2[n][contnumber/3 + i].move[current] == false && type == 'pulse') {
-              // y = 0
+                if (i == 19 && conts2[n][19].reflect[current] != false) {
+                    conts2[n][19].reflect[current] = false
+                    //window.alert('CAPISCO')
+                }              // y = 0
               if (manf == true){
               if (direct2[n][current] == 'u') {
                  y = conts2[n][contnumber/3 + i].fixpos[current]
@@ -1072,6 +1075,17 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
+                        if (i == 19) {
+                        console.log('addy')
+                        // run add timers function
+                        /* variables:
+                        timers (2 or 3)
+                        index (0,1,...)
+                        amp
+                        direction
+                        ad (20,40,60...)
+                        */
+                        }
                         
                    // }
             }else if (((conts2[n][contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts2[n][contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
@@ -1187,6 +1201,9 @@ function animate() {
                     if (conts2[n][contnumber/3 + i].go[current - 1] == false) {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
+                     if (i == 19) {
+                        console.log('hereadd now',current)
+                    }
                     }//else{
                     // conts2[n][contnumber/3 + i].time[current] = 0
                    //}
@@ -1195,7 +1212,6 @@ function animate() {
                     //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
                     //console.log(conts2[n][24].ys[current], i)
                 }
-                    //window.alert('ADD NOW')
                 }else if (conts2[n][contnumber/3 + i - 1].ys[current] != conts2[n][contnumber/3 + i - 1].ysfinal[current]){
                     conts2[n][contnumber/3 + i].go[current - 1] = false
                 }
@@ -1240,6 +1256,9 @@ function animate() {
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
              //c.fillStyle = 'white'
             if (i > 0 && i < contnumber/3) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < contnumber/3) { //(contnumber/3 + i == 24 || i == 3 || i == 2) {
+                if (i == 19 && c.fillStyle != 'transparent') {
+                   // c.fillStyle = 'yellow'
+                }
                 c.fill()
                 c.stroke()
              }else{
@@ -1390,7 +1409,7 @@ function animate() {
             for (p in conts) {
                 for (h in timers) {
                     conts[p].time[h] += 0.2
-                    conts2[0][p].time[h] += 0.2
+                    conts2[0][p].time[h] += 0.08
                 }
             }
         for (k in timers){
@@ -1495,7 +1514,7 @@ function addwave() {
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        //at = 0.1
+        at = 0
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
@@ -1635,7 +1654,7 @@ window.addEventListener('mousemove',function(event) {
         ir = false
     setTimeout(function () {
         ir = true
-        addwave()
+        //addwave()
         //tot++
         // mousey
     }, 70)
