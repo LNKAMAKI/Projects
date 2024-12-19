@@ -925,11 +925,11 @@ function animate() {
                          y = -(advances[0][timers2[0][current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers2[0][current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts2[0][contnumber/3 + i].time[current] - x*0.1))
                      }
         
-                     /*
-                     if (i == (contnumber/3)*2 - 1 && conts2[0][contnumber/3 + i].reflect[current] != false) {
+                     
+                     if (i == 19 && conts2[0][contnumber/3 + i].reflect[current] != false) {
                          
                         conts2[0][contnumber/3 + i].reflect[current] = false
-                        //window.alert('CYAN')
+                        window.alert(`CYAN ${current}`)
                         //console.log('CYAN',current,advances[0][timers2[0][current].ind])
                         //timers3.push({time:conts2[0][contnumber/3 + i].time[current],ind:timers2[0][current].ind,ind2:advances[0]2[timers2[0][current].ind].ads.length})
                         //timers3.push(conts2[0][contnumber/3 + i].time[current])
@@ -942,13 +942,13 @@ function animate() {
                         amps3.push(amplitude)
                         
                        // console.log('WHAT',advances[0]2[timers2[0][current].ind].ads.length)
-                        if (advances[0]2[timers2[0][current].ind].ads.length == 0) {
-                            advances[0]2[timers2[0][current].ind].ads.push((contnumber/3))
+                        if (advances2[timers2[0][current].ind].ads.length == 0) {
+                            advances2[timers2[0][current].ind].ads.push((contnumber/3))
                             //console.log('WHAT2',advances[0]2[timers2[0][current].ind].ads.length)
                         }else{
                             //Mwindow.alert('PUSH')
                             //console.log(advances[0]2[timers3.length - 2] + (contnumber/3)*2)
-                            advances[0]2[timers2[0][current].ind].ads.push(advances[0]2[timers2[0][current].ind].ads[advances[0]2[timers2[0][current].ind].ads.length - 1] + (contnumber/3)*2)
+                            advances2[timers2[0][current].ind].ads.push(advances2[timers2[0][current].ind].ads[advances2[timers2[0][current].ind].ads.length - 1] + (contnumber/3)*2)
                         }
                         vels.push(vel)
                         for (a in conts3) {
@@ -956,7 +956,7 @@ function animate() {
                         }
                         //loop = false
                          
-                         }*/
+                         }
                  }else if(Math.sin(0 - vels[current]*(conts2[0][contnumber/3 + i].time[current] - x*0.1)) >= 0 && conts2[0][contnumber/3 + i].move[current] == true){
                     y = 0
                     if (man == false) {
@@ -1224,7 +1224,7 @@ function animate() {
                     c.fillStyle = 'transparent'
                     c.strokeStyle = 'transparent'
                 }
-                        c.arc(lastx - x - radius + 2*(advance)*radius,y + advances[0][timers2[0][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                        c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3),y + advances[0][timers2[0][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                      //}
                    // }
                 //}
@@ -1491,7 +1491,7 @@ function addwave() {
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0
+        //at = 0.1
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
@@ -1506,11 +1506,11 @@ function addwave() {
 
     if (join == false) {
     timers.push({time:0, ind:tot,ind2:0})
-    console.log('o')
     timers2[0].push({time:0, ind:tot,ind2:0})
     }
+    ad = 0
     if (tot > 0 && join == false) {
-    advances[0].push({ads:[0],sty:[],amp:[]})
+    advances[0].push({ads:[ad],sty:[],amp:[]})
     }
     
     //console.log('tot',tot)
@@ -1560,10 +1560,10 @@ function addwave() {
                 //console.log(ia, 'sty',styman,'ysfinal',conts[ia].ysfinal[tot],'amp',Math.abs(styman - conts[ia].ysfinal[tot]))
                 //advances[tot].amp.push(Math.abs(styman - conts[ia].ysfinal[tot]))
                 if (ampcont1 > 0) {
-                  conts[ia].ysfinal[totof] = Number(styman) - ampmanof + Number((ia - contnumber/3)*at*ampmanof*0.03)
+                  conts[ia].ysfinal[totof] = Number(styman) - ampmanof + Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
                   conts2[0][ia].ysfinal[totof] = Number(styman) - ampmanof + Number((ia - contnumber/3)*at*ampmanof*0.03)
                 }else if (ampcont1 !== 0){
-                    conts[ia].ysfinal[totof] = Number(styman) + ampmanof - Number((ia - contnumber/3)*at*ampmanof*0.03)
+                    conts[ia].ysfinal[totof] = Number(styman) + ampmanof - Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
                     conts2[0][ia].ysfinal[totof] = Number(styman) + ampmanof - Number((ia - contnumber/3)*at*ampmanof*0.03)
                 }
                 if (ia == 24) {
@@ -1592,10 +1592,10 @@ function addwave() {
    if (join == false){
     if (ampcont1 > 0) {
     direct.push('u')
-    //direct2[0].push('u')
+    direct2[0].push('u')
     }else{
         direct.push('d')
-        //direct2[0].push('d')
+        direct2[0].push('d')
     }
 }
     vels.push(vel)
@@ -1629,7 +1629,7 @@ window.addEventListener('mousemove',function(event) {
         ir = false
     setTimeout(function () {
         ir = true
-        addwave()
+        //addwave()
         //tot++
         // mousey
     }, 70)
