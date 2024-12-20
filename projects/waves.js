@@ -702,6 +702,9 @@ function animate() {
                             
                             conts[contnumber/3 + i].ys[0] = advances[0][timers[0].ind].sty[contnumber/3 + i]
                             conts[contnumber/3 + i].time[0] = x*0.1
+                            if (i == 19) {
+                            console.log('add timers2')
+                            }
                             
                        // }
                 }else if (((conts[contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts[contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
@@ -817,6 +820,9 @@ function animate() {
                         if (conts[contnumber/3 + i].go[current - 1] == false) {
                          conts[contnumber/3 + i].time[current] = x*0.1 //conts[24].start[current - 1].time
                          //console.log('ADD NOW')
+                         if (i == 19) {
+                            console.log('add timerss2')
+                         }
                         }//else{
                         // conts[contnumber/3 + i].time[current] = 0
                        //}
@@ -1081,9 +1087,9 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
-                        if (i == 19 && n == 0) {
-                        console.log('addy')
-                        addTimers(timers2,1)
+                        if (i == 19 && n < 2) {
+                        console.log('ADD TO TIMERS 2')
+                        addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'u',0)
                         // run add timers function
                         /* variables:
                         timers (2 or 3)
@@ -1208,10 +1214,10 @@ function animate() {
                     if (conts2[n][contnumber/3 + i].go[current - 1] == false) {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
-                     if (i == 19) {
+                     if (i == 19 && n < 2) {
                         console.log(x*0.1)
-                        console.log('hereadd now',current)
-                        addTimers(timers2,1)
+                        console.log('ADD TO TIMERS',current)
+                        addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'u',0)
                     }
                     }//else{
                     // conts2[n][contnumber/3 + i].time[current] = 0
@@ -1419,14 +1425,14 @@ function animate() {
             for (p in conts) {
                 for (h in timers) {
                     conts[p].time[h] += 0.2
-                    conts2[0][p].time[h] += 0.15
+                    //conts2[0][p].time[h] += 0.15
                 }
             }
             for (t = 0; t < timers2.length; t++) {
                 //timers2[t]
                 for (lo in conts){
                     for (ti = 0; ti < timers2[t].length; ti++) {
-                        conts2[t][lo].time[ti] += 0.1
+                        conts2[t][lo].time[ti] += 0.2
                     }
                 }           
             }
@@ -1533,7 +1539,7 @@ function addwave() {
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0
+        at = 2
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
@@ -1600,7 +1606,7 @@ function addwave() {
                 //advances[tot].amp.push(ampadd)
                 //conts[ia].ysfinal[tot] = styman + ampman
                 // ampman = conts[ia].ysfinal[tot] - styman 
-                console.log(ia, 'sty',styman,'ysfinal',conts[ia].ysfinal[tot],'amp',Math.abs(styman - conts[ia].ysfinal[tot]))
+                //console.log(ia, 'sty',styman,'ysfinal',conts[ia].ysfinal[tot],'amp',Math.abs(styman - conts[ia].ysfinal[tot]))
                 //advances[tot].amp.push(Math.abs(styman - conts[ia].ysfinal[tot]))
                 if (ampcont1 > 0) { // direction
                   conts[ia].ysfinal[totof] = Number(styman) - ampmanof + Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
@@ -1708,13 +1714,13 @@ window.addEventListener('mousemove',function(event) {
 }
 
 
-function addTimers(settimer, contindex) {
+function addTimers(settimer, contindex, ampli, mov, ad) {
     console.log('adadwdwdwdwd',settimer)
  /* variables:
- timers (2 or 3)
- index (0,1,...)
- amp
- direction
+ timers (2 or 3) check
+ index (0,1,...) check
+ amp check
+ direction 
  ad (20,40,60..)
 */
 if (conts2[contindex] != undefined){
@@ -1723,14 +1729,14 @@ if (conts2[contindex] != undefined){
         conts2[contindex][j].move.push(true) 
         conts2[contindex][j].fixpos.push(0)   
     }
-       settimer[contindex].push({time:0, ind:1,ind2:0}) // essential ind: conts[n].length - 1
+       settimer[contindex].push({time:0, ind:settimer[contindex].length,ind2:0}) // essential ind: conts[n].length - 1
         
-        ad = 0
+        //ad = 0
         advances[contindex].push({ads:[ad],sty:[],amp:[]}) // essential
         
         //essential
-        ampli = 5
-        mov = 'u'
+        //ampli = 5
+        //mov = 'd'
         for (ia2 = 0; ia2 <= contnumber - 1; ia2++) { // adicionar sty para cada conta
             //if (conts[ia].fixpos.length > 0) {
     
@@ -1754,7 +1760,7 @@ if (conts2[contindex] != undefined){
            //}
         }
     // essential => use previous directions
-        direct2[contindex].push('u')
+        direct2[contindex].push(mov)
 }else{
     conts2.push([])
     for (j = 0; j < contnumber;j++) {
@@ -1766,7 +1772,7 @@ if (conts2[contindex] != undefined){
        settimer.push([])
        settimer[contindex].push({time:0, ind:0,ind2:0}) // essential ind: conts[n].length - 1
         
-        ad = 0
+        //ad = 0
         //if (tot > 0 && join == false) {
         advances.push([])
         advances[contindex].push({ads:[ad],sty:[],amp:[]}) // essential
@@ -1774,7 +1780,7 @@ if (conts2[contindex] != undefined){
         
         //console.log('tot',tot)
         //essential
-        ampli = 5
+        //ampli = 5
         mov = 'u'
         for (ia2 = 0; ia2 <= contnumber - 1; ia2++) { // adicionar sty para cada conta
             //if (conts[ia].fixpos.length > 0) {
