@@ -962,8 +962,11 @@ function animate() {
                  }else if(Math.sin(0 - vels[current]*(conts2[n][contnumber/3 + i].time[current] - x*0.1)) >= 0 && conts2[n][contnumber/3 + i].move[current] == true){
                     y = 0
                     if (man == false) {
-                   conts2[n][contnumber/3 + i].move[current] = false
-                    }
+                   conts2[n][contnumber/3 + i].move[current] = false // move false
+                   if (n == 1 && current == 1) {
+                        console.log('now this')
+                   }
+                     }
                 }else{
                     y = 0
                     //window.alert('EITA')
@@ -1007,8 +1010,11 @@ function animate() {
                c.fillStyle = 'yellow'
                y = (advances[n][timers2[n][current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[n][timers2[n][current].ind].amp[contnumber/3 + i]*0.03)*-1
                if (i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
-                if (conts2[n][contnumber/3 + i].go[current - 1] != false) {
-                    conts2[n][contnumber/3 + i].move[current] = false
+                if (conts2[n][contnumber/3 + i].go[current - 1] != false && conts2[n][contnumber/3 + i].move[current] == true) {
+                    conts2[n][contnumber/3 + i].move[current] = false // move false
+                    if (n == 1 && current == 1 && i == 1) {
+                        console.log('now this 2')
+                    }
                     //if (i == 3 && current == 0)
                     //console.log('N ERA PRA SE FAZER ISSO')
                 }
@@ -1075,7 +1081,7 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
-                        if (i == 19) {
+                        if (i == 19 && n == 0) {
                         console.log('addy')
                         addTimers(timers2,1)
                         // run add timers function
@@ -1203,7 +1209,9 @@ function animate() {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
                      if (i == 19) {
+                        console.log(x*0.1)
                         console.log('hereadd now',current)
+                        addTimers(timers2,1)
                     }
                     }//else{
                     // conts2[n][contnumber/3 + i].time[current] = 0
@@ -1710,60 +1718,42 @@ function addTimers(settimer, contindex) {
  ad (20,40,60..)
 */
 if (conts2[contindex] != undefined){
-    conts2.push([])
+   
     for (j = 0; j < contnumber;j++) {
-            conts2[contindex].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]})
-            conts2[contindex][j].move.push(true) 
-            conts2[contindex][j].fixpos.push(0)   
-        }
-
-       settimer.push([])
-       settimer[contindex].push({time:0, ind:0,ind2:0}) // essential ind: conts[n].length - 1
+        conts2[contindex][j].move.push(true) 
+        conts2[contindex][j].fixpos.push(0)   
+    }
+       settimer[contindex].push({time:0, ind:1,ind2:0}) // essential ind: conts[n].length - 1
         
         ad = 0
-        //if (tot > 0 && join == false) {
-        advances.push([])
         advances[contindex].push({ads:[ad],sty:[],amp:[]}) // essential
-        //}
         
-        //console.log('tot',tot)
         //essential
         ampli = 5
         mov = 'u'
         for (ia2 = 0; ia2 <= contnumber - 1; ia2++) { // adicionar sty para cada conta
             //if (conts[ia].fixpos.length > 0) {
     
-                /*
-                if (tot > 0) {
-                    if (ia > 20 && ia <= contnumber) { // ia >= 20
-                        if (join  == false) {
-                        styman = conts[ia].ysfinal[tot - 1]
-                        }
+                    if (ia2 > 20 && ia2 <= contnumber) { // ia >= 20
+                        styman = conts2[contindex][ia2].ysfinal[conts2[contindex][ia2].ysfinal.length - 1]
                     //styman = 100 
-                    }else if (ia  == 20){
-                        styman = conts[ia].ysfinal[tot - 1]
                     }
-                    advances[contnumber][totof].sty[ia] = styman// + starty)
-                    }else{*/
-                        //console.log('tot igual a 0')
-                        styman = starty // o sty já está definido para primeira onda
-                    //}
-                        advances[contindex][0].sty[ia2] = starty
-                        conts2[contindex][ia2].time.push(0) 
+                    advances[contindex][advances[contindex].length - 1].sty[ia2] = styman// + starty)
+        
+                    conts2[contindex][ia2].time.push(0) 
 
-                    if (ia >= 20 && ia <= contnumber) {
+                    if (ia2 >= 20 && ia2 <= contnumber) {
                     if (mov == 'u') { // direction
-                      conts2[contindex][ia2].ysfinal[0] = Number(styman) - ampli + Number((ia2 - contnumber/3)*at*ampli*0.03) // ampmanof => previous amp
+                      conts2[contindex][ia2].ysfinal.push(Number(styman) - ampli + Number((ia2 - contnumber/3)*at*ampli*0.03)) // ampmanof => previous amp
                     }else{
-                        conts2[contindex][ia2].ysfinal[0] = Number(styman) + ampli - Number((ia2 - contnumber/3)*at*ampli*0.03)
+                        conts2[contindex][ia2].ysfinal.push(Number(styman) + ampli - Number((ia2 - contnumber/3)*at*ampli*0.03))
                     }
                     
-                    advances[contindex][0].amp[ia2] = ampli // essential
+                    advances[contindex][advances[contindex].length - 1].amp[ia2] = ampli // essential
                     }
            //}
         }
     // essential => use previous directions
-        direct2.push([])
         direct2[contindex].push('u')
 }else{
     conts2.push([])
