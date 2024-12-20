@@ -1077,6 +1077,7 @@ function animate() {
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
                         if (i == 19) {
                         console.log('addy')
+                        addTimers(timers2,1)
                         // run add timers function
                         /* variables:
                         timers (2 or 3)
@@ -1226,6 +1227,7 @@ function animate() {
              //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[n][timers2[n][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
               //c.strokeStyle = 'black'
                 //}else{
+                //console.log('conts vai',n,conts2[n][contnumber/3 + i])
                     //if (conts2[n][contnumber/3 + i].go[current] == false && conts2[n][contnumber/3 + i].go[current - 1] == true) { //&& conts2[n][contnumber/3 + i].go[current - 1] != 'none') {
                     if (conts2[n][contnumber/3 + i].go[current - 1] != false && conts2[n][contnumber/3 + i].go[current] != true) {
                        // if (current != 0) {
@@ -1409,7 +1411,7 @@ function animate() {
             for (p in conts) {
                 for (h in timers) {
                     conts[p].time[h] += 0.2
-                    conts2[0][p].time[h] += 0.08
+                    conts2[0][p].time[h] += 0.15
                 }
             }
         for (k in timers){
@@ -1474,8 +1476,9 @@ function addwave() {
     //timers.push({time:0,ind:tot,ind2:0})
     //console.log('mousey:',mousey)
     if (starty != mousey) {
+        console.log('hey')
     if (tot > 0) {
-        //console.log('first beed y position',conts[20].ys[tot - 1])
+        console.log('first beed y position',conts[20].ys[tot - 1])
         ampcont1 = conts[21].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
         ampman = Math.abs(conts[21].ysfinal[tot - 1] - mousey)
         //console.log(tot - 1,':')
@@ -1689,7 +1692,77 @@ window.addEventListener('mousemove',function(event) {
 }
 
 
+function addTimers(settimer, contindex) {
+    console.log('adadwdwdwdwd',settimer)
+ /* variables:
+ timers (2 or 3)
+ index (0,1,...)
+ amp
+ direction
+ ad (20,40,60..)
+*/
+if (conts2[contindex] != undefined){
+     
+}else{
+    conts2.push([])
+    for (j = 0; j < contnumber;j++) {
+            conts2[contindex].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]})
+            conts2[contindex][j].move.push(true) 
+            conts2[contindex][j].fixpos.push(0)   
+        }
 
+        timers2.push([])
+       timers2[contindex].push({time:0, ind:0,ind2:0}) // essential ind: conts[n].length - 1
+        
+        ad = 0
+        //if (tot > 0 && join == false) {
+        advances.push([])
+        advances[contindex].push({ads:[ad],sty:[],amp:[]}) // essential
+        //}
+        
+        //console.log('tot',tot)
+        //essential
+        ampli = 5
+        mov = 'u'
+        for (ia = 0; ia <= contnumber - 1; ia++) { // adicionar sty para cada conta
+            //if (conts[ia].fixpos.length > 0) {
+    
+                /*
+                if (tot > 0) {
+                    if (ia > 20 && ia <= contnumber) { // ia >= 20
+                        if (join  == false) {
+                        styman = conts[ia].ysfinal[tot - 1]
+                        }
+                    //styman = 100 
+                    }else if (ia  == 20){
+                        styman = conts[ia].ysfinal[tot - 1]
+                    }
+                    advances[contnumber][totof].sty[ia] = styman// + starty)
+                    }else{*/
+                        //console.log('tot igual a 0')
+                        styman = starty // o sty já está definido para primeira onda
+                    //}
+                        advances[contindex][0].sty[ia] = starty
+                        conts2[contindex][ia].time.push(0) 
+
+                    if (ia >= 20 && ia <= contnumber) {
+                    if (mov == 'u') { // direction
+                      conts[ia].ysfinal[0] = Number(styman) - ampli + Number(((ad) + ia - contnumber/3)*at*ampli*0.03)
+                      conts2[0][ia].ysfinal[0] = Number(styman) - ampli + Number((ia - contnumber/3)*at*ampli*0.03) // ampmanof => previous amp
+                    }else{
+                        conts[ia].ysfinal[0] = Number(styman) + ampli - Number(((ad) + ia - contnumber/3)*at*ampli*0.03)
+                        conts2[0][ia].ysfinal[0] = Number(styman) + ampli - Number((ia - contnumber/3)*at*ampli*0.03)
+                    }
+                    
+                    advances[contindex][0].amp[ia] = ampli // essential
+                    }
+           //}
+        }
+    // essential => use previous directions
+        direct2.push([])
+        direct2[contindex].push('u')
+}
+}
 window.addEventListener('keydown',function (event) {
     //this.window.alert(event.key)
     if (event.key == 'p' || event.key == 'P') {
