@@ -37,6 +37,10 @@ vels = [vel]
 direct = []
 direct2 = []
 direct3 = []
+yf = []
+for (i = 0; i < contnumber; i++) {
+    yf.push(100)
+}
 for (i = 0; i < contnumber;i++) {
     conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[]})
     //conts2[0].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]}) // essential
@@ -738,7 +742,11 @@ function animate() {
                         for (ci = 0; ci <= current; ci++) { 
                             if (conts[24].ys[current] != undefined) {
                             //document.getElementById('t').innerText += (conts[24].ys[ci]).toFixed(0) + ' , ' 
-                            //document.getElementById('t').innerText = conts[22].go
+                            if (conts2[0] != undefined) {
+                                if (conts2[0][21].yx != undefined) {
+                            //document.getElementById('t').innerText = conts2[0][21].yx
+                                }
+                            }
                             //document.getElementById('t2').innerText = (conts[contnumber/3 + i].time[0]).toFixed(0) + '' + (conts[25].time[0]).toFixed(0)//conts[24].start[current].time + ' | ' + conts[contnumber/3 + i].time
                             //document.getElementById('t3').innerText += (conts[24].ysfinal[ci]).toFixed(0) + ' , '
                         }
@@ -1148,7 +1156,7 @@ function animate() {
                 }
              if (i > 0 && i < contnumber/3) {
                 if (conts2[n][24].start[current] != undefined) {
-                    document.getElementById('t').innerText = ''
+                    //document.getElementById('t').innerText = ''
                     document.getElementById('t2').innerText = ''
                     document.getElementById('t3').innerText = ''
                     for (ci = 0; ci <= current; ci++) { 
@@ -1571,7 +1579,7 @@ function animate() {
                }
             if (i > 0 && i < contnumber/3) {
                if (conts2[n][24].start[current] != undefined) {
-                   document.getElementById('t').innerText = ''
+                   //document.getElementById('t').innerText = ''
                    document.getElementById('t2').innerText = ''
                    document.getElementById('t3').innerText = ''
                    for (ci = 0; ci <= current; ci++) { 
@@ -1770,8 +1778,9 @@ function animate() {
         }
        }
         
-        c.beginPath()
-        x = 0 //+ (contnumber/3)*radius
+        //c.beginPath()
+        //x = 0 //+ (contnumber/3)*radius
+        /*
         for (i = contnumber/3; i < contnumber; i++) {
             if (conts[i].ysfinal.length > 0) {
             //c.arc(x + radius + space + 2*radius*(contnumber/3),conts[i].ysfinal[conts[i].ysfinal.length - 1],radius,0,2*Math.PI)
@@ -1780,6 +1789,7 @@ function animate() {
             x+= 2*radius
             }
         }
+            */
       /*
         for (i = 0; i < contnumber/3;i++) {
             c.beginPath()
@@ -1816,19 +1826,19 @@ function animate() {
           contsall.push({index:cont,y:conts2[cont].y + conts3[cont].y})
         }
         
-        x = 2*radius*21
+        x1 = 2*radius*21
         
-        for (i = 1; i < (contnumber/3)*2;i++) {
-            if (i < (contnumber/3)*2 - 1) {
+        for (i3 = 1; i3 < (contnumber/3)*2;i3++) {
+            if (i3 < (contnumber/3)*2 - 1) {
             c.beginPath()
             y1 = 150
             found = false
-            for (o in conts[i + contnumber/3].ys) {
+            for (o in conts[i3 + contnumber/3].ys) {
                 //console.log('yosh',o,conts[i + contnumber/3].ys[Number(o) + 1])
-                if (conts[i + contnumber/3].ys[Number(o) + 1] == -100 || o == conts[i + contnumber/3].ys.length - 1) {
+                if (conts[i3 + contnumber/3].ys[Number(o) + 1] == -100 || o == conts[i3 + contnumber/3].ys.length - 1) {
                     if (found == false) {
                     // stop here
-                    y1 = conts[i  + contnumber/3].ys[o]
+                    y1 = conts[i3  + contnumber/3].ys[o]
                     found = true
                     }
                 }
@@ -1836,13 +1846,19 @@ function animate() {
             if (y1 == -100) {
                 y1 = starty
             }
+            
+            
+            if (i3 == 1) {
+            yf[21] = y1
+            }
+            yf[i3 + contnumber/3] = y1
             y2 = 150
             found = false
-            for (o in conts[i + contnumber/3 + 1].ys) {
-                if (conts[i + contnumber/3 + 1].ys[Number(o)  + 1] == -100 || o == conts[i + contnumber/3 + 1].ys.length - 1) {
+            for (o in conts[i3 + contnumber/3 + 1].ys) {
+                if (conts[i3 + contnumber/3 + 1].ys[Number(o)  + 1] == -100 || o == conts[i3 + contnumber/3 + 1].ys.length - 1) {
                  if (found == false) {
                     // stop here
-                    y2 = conts[i  + contnumber/3 + 1].ys[o]
+                    y2 = conts[i3  + contnumber/3 + 1].ys[o]
                     found = true
                  }
                 }
@@ -1853,24 +1869,32 @@ function animate() {
             //if (i == 1 && timers2.length < 2)
             //console.log('y1',y1,'y2',y2)
         
-            c.moveTo(x + radius + space,y1) //conts[i + contnumber/3].y)//contsall[i + contnumber/3].y + starty)
-            
+            c.moveTo(x1 + radius + space,y1) //conts[i + contnumber/3].y)//contsall[i + contnumber/3].y + starty)
+            if (i3 == 1)
+            console.log('x1',x1 + radius + space)
             //c.lineTo(0,9)
-            x+= 2*radius
-            c.lineTo(x + radius + space,y2) //conts[i + contnumber/3 + 1].y)// contsall[i + contnumber/3 + 1].y + starty)
+            x1 += 2*radius
+            c.lineTo(x1 + radius + space,y2) //conts[i + contnumber/3 + 1].y)// contsall[i + contnumber/3 + 1].y + starty)
+            if (i3 == 1)
+            console.log('x2',x1 + radius + space)
 
-            if (i == 1 && timers2.length < 2) {
+            if (i3 == 1 && timers2.length < 2) {
                 //console.log('---------')
                 //console.log(x - 2*radius + radius + space, y1)
                 //console.log(x + radius + space, y2)
             }
             //if (stroke == true) {
+            //c.stroke()
+            c.arc(150,75,5,0,2*Math.PI)
             c.stroke()
+            if (i3 == 1)
+            console.log('y1',y1,'y2',y2)
             //}
             //console.log('IAAAAA',i)
             }
             }
 
+            
             for (t = 0; t < timers2.length; t++) {
                 //timers2[t]
                 
@@ -1903,7 +1927,25 @@ function animate() {
                     //console.log('y1',y1)
                     //console.log('total',conts2[t][lo].ysfinal[indx],y1,Number(conts2[t][lo].ysfinal[indx]) - Number(y1))
                     //console.log(advances2[t])
-                    conts2[t][lo].yx = Number(conts2[t][lo].ysfinal[indx]) - Number(y1)
+                    //conts2[t][lo].yx = Number(conts2[t][lo].ysfinal[indx]) - Number(y1)
+                    if (conts2[t][lo].yx != undefined) {
+                    if (direct2[t][indx] == 'u') {
+                        conts2[t][lo].yx[indx] = -Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                        //yf[contnumber - lo] += -Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                    }else{
+                        conts2[t][lo].yx[indx] = Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                        //yf[contnumber - lo] += Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                    }
+                    }else{
+                        conts2[t][lo].yx = []
+                        if (direct2[t][indx] == 'u') {
+                            conts2[t][lo].yx[indx] = -Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                            //yf[contnumber - lo] += -Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                        }else{
+                            conts2[t][lo].yx[indx] = Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                            //yf[contnumber - lo] += Math.abs(Number(advances2[t][indx].sty[lo]) - Number(y1))
+                        }
+                    }
                // }
                 }           
             }
@@ -1911,6 +1953,7 @@ function animate() {
             
             
             x = 0
+            /*
         for (i = 0; i < contnumber/3;i++) {
             c.beginPath()
             if (i == (contnumber/3 - 1)) {
@@ -1939,6 +1982,7 @@ function animate() {
             c.fill()
             x+= 2*radius
             }
+            */
 
             for (p in conts) {
                 for (h in timers) {
@@ -2057,7 +2101,7 @@ function addwave() {
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 1
+        at = 0
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
@@ -2198,7 +2242,7 @@ window.addEventListener('mousemove',function(event) {
         ir = false
     setTimeout(function () {
         ir = true
-        addwave()
+        //addwave()
         //tot++
         // mousey
     }, 70)
@@ -2210,7 +2254,7 @@ window.addEventListener('mousemove',function(event) {
 
 window.addEventListener('mousemove',function(event) {
     if (go == true) {
-    c.clearRect(0,0,300,150)
+    //c.clearRect(0,0,300,150)
     canv = document.querySelector('canvas')
     c = canv.getContext('2d')
     cWidth = canv.offsetWidth
