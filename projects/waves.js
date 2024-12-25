@@ -897,8 +897,8 @@ function animate() {
                          //}
                        // }
                     //}
-                 }else{
-                    c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),starty,radius,0,2*Math.PI)
+                 }else if (contnumber/3 + i == contnumber - 1){
+                    //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),starty,radius,0,2*Math.PI)
                  }
                 //}
                  
@@ -1119,7 +1119,7 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
-                        if (i == 19) {// && n < 1) {
+                        if (i == 19 && n < 1) {
                         //console.log('ADD TO TIMERS 2')
                         if (fixo == false) {
                             addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
@@ -1255,7 +1255,7 @@ function animate() {
                     if (conts2[n][contnumber/3 + i].go[current - 1] == false) {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
-                     if (i == 19) {// && n < 1) {
+                     if (i == 19 && n < 1) {
                         //console.log(x*0.1)
                         //console.log('ADD TO TIMERS',current)
                         
@@ -1551,7 +1551,7 @@ function animate() {
                        
                        conts2[n][indirec].ys[0] = advances2[n][timers2[n][0].ind].sty[indirec]
                        conts2[n][indirec].time[0] = x*0.1
-                       if (i == 19) {//&& n < 1) {
+                       if (i == 19 && n < 1) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
@@ -1687,7 +1687,7 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == 19) {// && n < 1) {
+                    if (i == 19 && n < 1) {
                        //console.log(x*0.1)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -1755,7 +1755,7 @@ function animate() {
                 if (i == 1) {
                     //console.log('y21',x + radius -2*(advance)*radius + 2*radius*(contnumber/3))
                 }
-               c.arc(x + radius -2*(advance)*radius + 2*radius*(contnumber/3),starty,radius,0,2*Math.PI)
+               //c.arc(x + radius -2*(advance)*radius + 2*radius*(contnumber/3),starty,radius,0,2*Math.PI)
             }
            //}
             
