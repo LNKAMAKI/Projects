@@ -146,7 +146,7 @@ function animate() {
        
         conts3[i].y += y
         c.beginPath()
-        c.arc(x + radius + space - (contnumber/3)*2*radius,y + starty,radius,0,2*Math.PI)
+        //c.arc(x + radius + space - (contnumber/3)*2*radius,y + starty,radius,0,2*Math.PI)
         c.fillStyle = 'purple'
         c.fill()
         c.strokeStyle = 'black'
@@ -278,7 +278,7 @@ function animate() {
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              
              if (draw1 == true && i != contnumber/3) {
-             c.arc(x + radius -2*(advance)*radius + space,y + advances2[timers3[current].ind].sty[i],radius,0,2*Math.PI)
+             //c.arc(x + radius -2*(advance)*radius + space,y + advances2[timers3[current].ind].sty[i],radius,0,2*Math.PI)
              }
              
              //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
@@ -367,7 +367,7 @@ function animate() {
             c.beginPath()
             
             if (draw1 == true && i + contnumber/3 != contnumber/3) {
-            c.arc(x + radius,y + advances[timers[current].ind].sty[i + contnumber/3],radius,0,2*Math.PI)
+            //c.arc(x + radius,y + advances[timers[current].ind].sty[i + contnumber/3],radius,0,2*Math.PI)
             }
             
             c.fillStyle = 'blue'
@@ -509,9 +509,9 @@ function animate() {
              c.beginPath()
              //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
              if (draw1 == true && contnumber/3 + i != contnumber - 1) {
-             c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers2[current].ind].sty[20],radius,0,2*Math.PI)
+             //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[timers2[current].ind].sty[20],radius,0,2*Math.PI)
              }else{
-                c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),100,radius,0,2*Math.PI)
+                //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),100,radius,0,2*Math.PI)
              }
              
              
@@ -893,7 +893,7 @@ function animate() {
                         c.fillStyle = 'transparent'
                         c.strokeStyle = 'transparent'
                     }
-                            c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                            //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                          //}
                        // }
                     //}
@@ -1309,11 +1309,11 @@ function animate() {
                     c.fillStyle = 'transparent'
                     c.strokeStyle = 'transparent'
                 }
-                        c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3),y + advances[n][timers2[n][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                        //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3),y + advances[n][timers2[n][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                         if (n % 2 == 0) {
-                            c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3 - 1),y + advances[n][timers2[n][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                            //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3 - 1),y + advances[n][timers2[n][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                         }else{
-                            c.arc(x + radius - 2*(advance)*radius + 2*radius*(contnumber/3 + 2),y + advances[n][timers2[n][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                            //c.arc(x + radius - 2*(advance)*radius + 2*radius*(contnumber/3 + 2),y + advances[n][timers2[n][current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                         }
                      //}
                    // }
@@ -1743,9 +1743,9 @@ function animate() {
                }
                        //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
                        if (n % 2 == 0) {
-                           c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3 - 1),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
+                           //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3 - 1),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
                        }else{
-                           c.arc(x + radius - 2*(advance)*radius + 2*radius*(contnumber/3 + 2),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
+                           //c.arc(x + radius - 2*(advance)*radius + 2*radius*(contnumber/3 + 2),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
                        }
                     //}
                   // }
@@ -1806,7 +1806,7 @@ function animate() {
       /*
         for (i = 0; i < contnumber/3;i++) {
             c.beginPath()
-            c.arc(x + radius + space,130,radius,0,2*Math.PI)
+            //c.arc(x + radius + space,130,radius,0,2*Math.PI)
             c.fillStyle = 'yellow'
             c.fill()
             c.strokeStyle = 'black'
@@ -1815,7 +1815,7 @@ function animate() {
             }
             for (i = 0; i < contnumber/3;i++) {
                 c.beginPath()
-                c.arc(x + radius + space,130,radius,0,2*Math.PI)
+                //c.arc(x + radius + space,130,radius,0,2*Math.PI)
                 c.fillStyle = 'pink'
                 c.fill()
                 c.strokeStyle = 'black'
@@ -1824,7 +1824,7 @@ function animate() {
                 }
                 for (i = 0; i < contnumber/3;i++) {
                     c.beginPath()
-                    c.arc(x + radius + space,130,radius,0,2*Math.PI)
+                    //c.arc(x + radius + space,130,radius,0,2*Math.PI)
                     c.fillStyle = 'green'
                     c.fill()
                     c.strokeStyle = 'black'
@@ -1844,7 +1844,7 @@ function animate() {
         for (i3 = 1; i3 < (contnumber/3)*2;i3++) {
             if (i3 < (contnumber/3)*2 - 1) {
             c.beginPath()
-            y1 = 150
+            y1 = starty
             found = false
             for (o in conts[i3 + contnumber/3].ys) {
                 //console.log('yosh',o,conts[i + contnumber/3].ys[Number(o) + 1])
@@ -1865,7 +1865,7 @@ function animate() {
             yf[21] = y1
             }
             yf[i3 + contnumber/3] = y1
-            y2 = 150
+            y2 = starty
             found = false
             for (o in conts[i3 + contnumber/3 + 1].ys) {
                 if (conts[i3 + contnumber/3 + 1].ys[Number(o)  + 1] == -100 || o == conts[i3 + contnumber/3 + 1].ys.length - 1) {
@@ -1899,7 +1899,7 @@ function animate() {
             //if (stroke == true) {
             //c.stroke()
             //c.arc(150,75,5,0,2*Math.PI)
-            c.stroke()
+            //c.stroke()
             //if (i3 == 1)
             //console.log('y1',y1,'y2',y2)
             //}
