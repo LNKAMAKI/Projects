@@ -707,7 +707,7 @@ function animate() {
                             conts[contnumber/3 + i].ys[0] = advances[0][timers[0].ind].sty[contnumber/3 + i]
                             conts[contnumber/3 + i].time[0] = x*0.1
                             if (i == 19) {
-                            console.log('add timers2')
+                            //console.log('add timers2')
                             
                             if (fixo == false) {
                               addTimers(timers2,0,advances[0][timers[current].ind].amp[20],direct[current],20)
@@ -840,7 +840,7 @@ function animate() {
                          conts[contnumber/3 + i].time[current] = x*0.1 //conts[24].start[current - 1].time
                          //console.log('ADD NOW')
                          if (i == 19) {
-                            console.log('add timers2')
+                            //console.log('add timers2')
                             
                             if (fixo == false) {
                                 addTimers(timers2,0,advances[0][timers[current].ind].amp[20],direct[current],20)
@@ -1002,7 +1002,7 @@ function animate() {
                     if (man == false) {
                    conts2[n][contnumber/3 + i].move[current] = false // move false
                    if (n == 1 && current == 1) {
-                        console.log('now this')
+                        //console.log('now this')
                    }
                      }
                 }else{
@@ -1051,7 +1051,7 @@ function animate() {
                 if (conts2[n][contnumber/3 + i].go[current - 1] != false && conts2[n][contnumber/3 + i].move[current] == true) {
                     conts2[n][contnumber/3 + i].move[current] = false // move false
                     if (n == 1 && current == 1 && i == 1) {
-                        console.log('now this 2')
+                        //console.log('now this 2')
                     }
                     //if (i == 3 && current == 0)
                     //console.log('N ERA PRA SE FAZER ISSO')
@@ -1119,15 +1119,15 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
-                        if (i == 19 && n < 1) {
-                        console.log('ADD TO TIMERS 2')
+                        if (i == 19) {// && n < 1) {
+                        //console.log('ADD TO TIMERS 2')
                         if (fixo == false) {
-                            addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 1))
+                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
                           }else{
                               if (direct2[n][current] == 'u') {
-                                addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'d',20*(n + 1))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
                               }else{
-                                addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'u',20*(n + 1))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
                               }
                           }
                         //addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'u',20)
@@ -1255,17 +1255,17 @@ function animate() {
                     if (conts2[n][contnumber/3 + i].go[current - 1] == false) {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
-                     if (i == 19 && n < 1) {
-                        console.log(x*0.1)
-                        console.log('ADD TO TIMERS',current)
+                     if (i == 19) {// && n < 1) {
+                        //console.log(x*0.1)
+                        //console.log('ADD TO TIMERS',current)
                         
                         if (fixo == false) {
-                            addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 1))
+                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
                           }else{
                               if (direct2[n][current] == 'u') {
-                                addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'d',20*(n + 1))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
                               }else{
-                                addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'u',20*(n + 1))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
                               }
                           }
                         //addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'d',0)
@@ -1434,7 +1434,7 @@ function animate() {
                    if (man == false) {
                   conts2[n][indirec].move[current] = false // move false
                   if (n == 1 && current == 1) {
-                       console.log('now this')
+                       //console.log('now this')
                   }
                     }
                }else{
@@ -1483,7 +1483,7 @@ function animate() {
                if (conts2[n][indirec].go[current - 1] != false && conts2[n][indirec].move[current] == true) {
                    conts2[n][indirec].move[current] = false // move false
                    if (n == 1 && current == 1 && i == 1) {
-                       console.log('now this 2')
+                       //console.log('now this 2')
                    }
                    //if (i == 3 && current == 0)
                    //console.log('N ERA PRA SE FAZER ISSO')
@@ -1551,15 +1551,15 @@ function animate() {
                        
                        conts2[n][indirec].ys[0] = advances2[n][timers2[n][0].ind].sty[indirec]
                        conts2[n][indirec].time[0] = x*0.1
-                       if (i == 19 && n < 1) {
-                       console.log('ADD TO TIMERS 2')
+                       if (i == 19) {//&& n < 1) {
+                       //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 1))
+                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 1))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 1))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20)
@@ -1687,17 +1687,17 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == 19 && n < 1) {
-                       console.log(x*0.1)
-                       console.log('ADD TO TIMERS',current)
+                    if (i == 19) {// && n < 1) {
+                       //console.log(x*0.1)
+                       //console.log('ADD TO TIMERS',current)
                        
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 1))
+                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 1))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 1))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',0)
@@ -1988,14 +1988,23 @@ function animate() {
 
                     c.beginPath()
                     //c.arc(2*radius*0 + radius + 2*radius*(contnumber/3),yf[21],radius,0,2*Math.PI)
-                    c.arc(2*radius + radius + 2*radius*(contnumber/3) + space,yf[21],radius,0,2*Math.PI)
+                    //c.arc(2*radius + radius + 2*radius*(contnumber/3) + space,yf[21],radius,0,2*Math.PI)
                     //if (inde == 21)
                     //console.log('total sum',ysum)
                // }
                 }           
             }
 
-            
+
+
+            for (ke = 1; ke < 20; ke++) {
+                //console.log('ke HEY',ke)
+                c.beginPath()
+                c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
+                c.fillStyle = 'red'
+                c.fill()
+                c.stroke()
+            }
             
             x = 0
             /*
@@ -2146,7 +2155,7 @@ function addwave() {
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0.1
+        at = 0.4
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
@@ -2323,7 +2332,7 @@ window.addEventListener('mousemove',function(event) {
 
 
 function addTimers(settimer, contindex, ampli, mov, ad) {
-    console.log('adadwdwdwdwd',settimer,mov)
+    //console.log('adadwdwdwdwd',settimer,mov)
  /* variables:
  timers (2 or 3) check
  index (0,1,...) check
@@ -2331,6 +2340,7 @@ function addTimers(settimer, contindex, ampli, mov, ad) {
  direction 
  ad (20,40,60..)
 */
+//console.log('AD',ad)
 if (conts2[contindex] != undefined){
    
     for (j = 0; j < contnumber;j++) {
