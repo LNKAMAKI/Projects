@@ -8,7 +8,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 60
+contnumber = 129
 conts = []
 mouse = 'up'
 conts2 = []
@@ -33,7 +33,7 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.4
+vel = 0.7
 vels = [vel]
 direct = []
 direct2 = []
@@ -78,7 +78,7 @@ mousex = 'i'
 mousey = 'i'
 at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
-    space = 10
+    space = -145
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -712,12 +712,12 @@ function animate() {
                             //console.log('add timers2')
                             
                             if (fixo == false) {
-                              addTimers(timers2,0,advances[0][timers[current].ind].amp[20],direct[current],20)
+                              addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],direct[current],(contnumber/3))
                             }else{
                                 if (direct[current] == 'u') {
-                                    addTimers(timers2,0,advances[0][timers[current].ind].amp[20],'d',20)
+                                    addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],'d',(contnumber/3))
                                 }else{
-                                    addTimers(timers2,0,advances[0][timers[current].ind].amp[20],'u',20)
+                                    addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],'u',(contnumber/3))
                                 }
                             }
                                 //addTimers(timers2,0,advances[0][timers[current].ind].amp[20],'u',0)
@@ -845,12 +845,12 @@ function animate() {
                             //console.log('add timers2')
                             
                             if (fixo == false) {
-                                addTimers(timers2,0,advances[0][timers[current].ind].amp[20],direct[current],20)
+                                addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],direct[current],(contnumber/3))
                               }else{
                                   if (direct[current] == 'u') {
-                                      addTimers(timers2,0,advances[0][timers[current].ind].amp[20],'d',20)
+                                      addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],'d',(contnumber/3))
                                   }else{
-                                      addTimers(timers2,0,advances[0][timers[current].ind].amp[20],'u',20)
+                                      addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],'u',(contnumber/3))
                                   }
                               }
 
@@ -1136,12 +1136,12 @@ function animate() {
                         if (i == contnumber/3 - 1 && n < 10) {
                         //console.log('ADD TO TIMERS 2')
                         if (fixo == false) {
-                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
+                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
                           }else{
                               if (direct2[n][current] == 'u') {
-                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],'d',(contnumber/3)*(n + 2))
                               }else{
-                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],'u',(contnumber/3)*(n + 2))
                               }
                           }
                         //addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'u',20)
@@ -1274,12 +1274,12 @@ function animate() {
                         //console.log('ADD TO TIMERS',current)
                         
                         if (fixo == false) {
-                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
+                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
                           }else{
                               if (direct2[n][current] == 'u') {
-                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],'d',(contnumber/3)*(n + 2))
                               }else{
-                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
+                                addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],'u',(contnumber/3)*(n + 2))
                               }
                           }
                         //addTimers(timers2,n + 1,advances[n][timers2[n][current].ind].amp[20],'d',0)
@@ -1569,12 +1569,12 @@ function animate() {
                        if (i == contnumber/3 - 1 && n < 10) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
+                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[contnumber/3],'d',(contnumber/3)*(n + 2))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[contnumber/3],'u',(contnumber/3)*(n + 2))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20)
@@ -1708,12 +1708,12 @@ function animate() {
                        //console.log('ADD TO TIMERS',current)
                        
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
+                           addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[contnumber/3],direct2[n][current],(contnumber/3)*(n + 2))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',20*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[contnumber/3],'d',(contnumber/3)*(n + 2))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'u',20*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[contnumber/3],'u',(contnumber/3)*(n + 2))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],'d',0)
@@ -2016,21 +2016,36 @@ function animate() {
 
 
 
+
             if (timers2.length > 0) {
+            c.beginPath()
+            c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mousey,radius,0,2*Math.PI)
+            c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
+            c.stroke()
+            }else{
+            c.beginPath()
+            c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mousey,radius,0,2*Math.PI)
+            //c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
+            c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,conts[2 + contnumber/3].yo,radius,0,2*Math.PI)
+            c.stroke()
+            }
+            if (timers2.length > 0) {
+                for (ke = 2; ke < contnumber/3 - 1; ke++) {
+                    if (ke > 2) {
+                        c.beginPath()
+                        c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3],radius,0,2*Math.PI)
+                        c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
+                        c.stroke()
+                        }
+                }
+
             for (ke = 2; ke < contnumber/3 - 1; ke++) {
                 //console.log('ke HEY',ke)
-                if (ke > 2) {
-                    c.beginPath()
-                    c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3],radius,0,2*Math.PI)
-                    c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
-                    c.stroke()
-                    }
                 c.beginPath()
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
                 c.fillStyle = 'red'
                 c.fill()
                 c.stroke()
-                
             }
 
             c.beginPath()
@@ -2041,6 +2056,12 @@ function animate() {
         }else{
             //document.getElementById('t').innerText = yf[(contnumber/3 + i)]
         }
+
+        c.beginPath()
+        c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mousey,radius,0,2*Math.PI)
+        c.fillStyle = 'red'
+        c.fill()
+        c.stroke()
         c.beginPath()
         c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
         c.fillStyle = 'red'
@@ -2225,14 +2246,14 @@ function addwave() {
         //if (conts[ia].fixpos.length > 0) {
 
             if (tot > 0 ) {
-                if (ia > 20 && ia <= contnumber) { // ia >= 20
+                if (ia > contnumber/3 && ia <= contnumber) { // ia >= 20
                     if (join  == false) {
                     styman = conts[ia].ysfinal[tot - 1]
                     }else{
                         styman = advances[0][tot - 1].sty[ia]
                     }
                 //styman = 100 
-                }else if (ia  == 20){
+                }else if (ia  == contnumber/3){
                     styman = conts[ia].ysfinal[tot - 1]
                 }else{
                     //styman = starty
@@ -2250,7 +2271,7 @@ function addwave() {
                     conts[ia].time.push(0) 
                     //conts2[0][ia].time.push(0) // not to include
                 }
-                if (ia >= 20 && ia <= contnumber) {
+                if (ia >= contnumber/3 && ia <= contnumber) {
                 //console.log(conts[ia].ys[tot])
                 //console.log(conts[ia].ysfinal[tot])
                 // para diferentes stys as amps são diferentes
@@ -2413,7 +2434,7 @@ if (conts2[contindex] != undefined){
         for (ia2 = 0; ia2 <= contnumber - 1; ia2++) { // adicionar sty para cada conta
             //if (conts[ia].fixpos.length > 0) {
     
-                    if (ia2 > 20 && ia2 <= contnumber) { // ia >= 20
+                    if (ia2 > (contnumber/3) && ia2 <= contnumber) { // ia >= 20
                         styman = conts2[contindex][ia2].ysfinal[conts2[contindex][ia2].ysfinal.length - 1]
                     //styman = 100 
                     }
@@ -2421,7 +2442,7 @@ if (conts2[contindex] != undefined){
         
                     conts2[contindex][ia2].time.push(0) 
 
-                    if (ia2 >= 20 && ia2 <= contnumber) {
+                    if (ia2 >= (contnumber/3) && ia2 <= contnumber) {
                     if (mov == 'u') { // direction
                       conts2[contindex][ia2].ysfinal.push(Number(styman) - ampli + Number((ad + ia2 - contnumber/3)*at*ampli*0.03)) // ampmanof => previous amp
                     }else{
@@ -2476,7 +2497,7 @@ if (conts2[contindex] != undefined){
                         advances2[contindex][0].sty[ia2] = starty
                         conts2[contindex][ia2].time.push(0) 
 
-                    if (ia >= 20 && ia <= contnumber) {
+                    if (ia >= (contnumber/3) && ia <= contnumber) {
                     if (mov == 'u') { // direction
                       conts2[contindex][ia2].ysfinal[0] = Number(styman) - ampli + Number((ad + ia2 - contnumber/3)*at*ampli*0.03) // ampmanof => previous amp
                     }else{
