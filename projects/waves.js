@@ -10,6 +10,7 @@ c = canv.getContext('2d')
 console.log(x)
 contnumber = 60
 conts = []
+mouse = 'up'
 conts2 = []
 conts3 = []
 timers = [{time: 0,ind:0,ind2:0}]
@@ -32,7 +33,7 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.3
+vel = 0.4
 vels = [vel]
 direct = []
 direct2 = []
@@ -529,7 +530,7 @@ function animate() {
          }
          */
 
-         document.getElementById('t3').innerText = 'numero de ondas:' + timers.length
+         //document.getElementById('t3').innerText = 'numero de ondas:' + timers.length
          if (0 == 0) {
             for (current in timers) {
                 //advance = conts[contnumber/3 + i].advances[0][current]
@@ -738,8 +739,8 @@ function animate() {
                  if (i > 0 && i < contnumber/3) {
                     if (conts[24].start[current] != undefined) {
                         //document.getElementById('t').innerText = ''
-                        document.getElementById('t2').innerText = ''
-                        document.getElementById('t3').innerText = ''
+                        //document.getElementById('t2').innerText = ''
+                        //document.getElementById('t3').innerText = ''
                         for (ci = 0; ci <= current; ci++) { 
                             if (conts[24].ys[current] != undefined) {
                             //document.getElementById('t').innerText += (conts[24].ys[ci]).toFixed(0) + ' , ' 
@@ -1170,8 +1171,8 @@ function animate() {
              if (i > 0 && i < contnumber/3) {
                 if (conts2[n][24].start[current] != undefined) {
                     //document.getElementById('t').innerText = ''
-                    document.getElementById('t2').innerText = ''
-                    document.getElementById('t3').innerText = ''
+                    //document.getElementById('t2').innerText = ''
+                    //document.getElementById('t3').innerText = ''
                     for (ci = 0; ci <= current; ci++) { 
                         if (conts2[n][24].ys[current] != undefined) {
                         //document.getElementById('t').innerText += (conts2[n][24].ys[ci]).toFixed(0) + ' , ' 
@@ -1603,8 +1604,8 @@ function animate() {
             if (i > 0 && i < contnumber/3) {
                if (conts2[n][24].start[current] != undefined) {
                    //document.getElementById('t').innerText = ''
-                   document.getElementById('t2').innerText = ''
-                   document.getElementById('t3').innerText = ''
+                   //document.getElementById('t2').innerText = ''
+                   //document.getElementById('t3').innerText = ''
                    for (ci = 0; ci <= current; ci++) { 
                        if (conts2[n][24].ys[current] != undefined) {
                        //document.getElementById('t').innerText += (conts2[n][24].ys[ci]).toFixed(0) + ' , ' 
@@ -2093,6 +2094,7 @@ function animate() {
 
 if (loop == true) {
 requestAnimationFrame(animate)
+//document.getElementById('t').innerText = mouse
 }
 }
 animate()
@@ -2318,8 +2320,9 @@ mousex = 'i'
 mousey = 'i'
 find = 0
 ir = true
+console.log('onmouse',window.onmousedown)
 window.addEventListener('mousemove',function(event) {
-    if (go == true) {
+    if (go == true && mouse == 'down') {
     if (mousey != 'i') {
     if (ir == true) {
         ir = false
@@ -2334,6 +2337,16 @@ window.addEventListener('mousemove',function(event) {
 
 }
 })
+
+mouse = 'up'
+window.addEventListener('mousedown',function(event) {
+    mouse = 'down'
+})
+window.addEventListener('mouseup',function(event) {
+    mouse = 'up'
+})
+
+
 
 window.addEventListener('mousemove',function(event) {
     if (go == true) {
@@ -2352,8 +2365,8 @@ window.addEventListener('mousemove',function(event) {
         //this.document.getElementById('ev').innerText = 'y atual:' + conts[20].ys[tot - 1]
         prevy = String(this.document.getElementById('y').innerText)
         //this.document.getElementById('ev2').innerText = conts[24].ys[current]
-        this.document.getElementById('x').innerText = direct[tot - 1]
-        this.document.getElementById('y').innerText = mousey
+        //this.document.getElementById('x').innerText = direct[tot - 1]
+        //this.document.getElementById('y').innerText = mousey
        
     }
 })
