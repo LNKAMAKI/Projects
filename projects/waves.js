@@ -2032,9 +2032,20 @@ function animate() {
                 c.stroke()
                 
             }
+
+            c.beginPath()
+            c.moveTo(2*radius*(contnumber/3 - 2) + radius + 2*radius*(contnumber/3) + space,yf[contnumber/3 - 2 + contnumber/3],radius,0,2*Math.PI)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
+            c.stroke()
+            c.beginPath()
         }else{
             //document.getElementById('t').innerText = yf[(contnumber/3 + i)]
         }
+        c.beginPath()
+        c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
+        c.fillStyle = 'red'
+        c.fill()
+        c.stroke()
             
             x = 0
             /*
@@ -2341,9 +2352,11 @@ window.addEventListener('mousemove',function(event) {
 mouse = 'up'
 window.addEventListener('mousedown',function(event) {
     mouse = 'down'
+    this.window.document.body.style.cursor = 'grab'
 })
 window.addEventListener('mouseup',function(event) {
     mouse = 'up'
+    this.window.document.body.style.cursor = 'auto'
 })
 
 
