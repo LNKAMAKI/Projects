@@ -42,7 +42,7 @@ for (i = 0; i < contnumber; i++) {
     yf.push(100)
 }
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[]})
+    conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[],yo:100})
     //conts2[0].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]}) // essential
     conts3.push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal: [],go:[],start:[],advances:[]})
 
@@ -69,7 +69,7 @@ for (i = 0; i < contnumber + contnumber/3;i++) {
 type = 'pulse'
 fixo = true
 drawball = false
-draw1 = false
+draw1 = true
 man = true
 manf = true
 stroke = true
@@ -103,7 +103,7 @@ function animate() {
     c.fillStyle = 'red'
     c.fill()
     c.strokeStyle = 'black'
-    c.stroke()
+    //c.stroke()
     /*
     for (current in timers3) {
         x =  0
@@ -285,7 +285,7 @@ function animate() {
              c.fillStyle = 'cyan'
              c.fill()
              c.strokeStyle = 'black'
-             c.stroke()
+             //c.stroke()
              c.beginPath()
              //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
              c.fillStyle = 'white'
@@ -888,12 +888,24 @@ function animate() {
                                     //console.log('y1',advances[0][timers[current].ind].sty[contnumber/3 + i],conts[contnumber/3 + i].time[current])
                                     y = 0
                             }
+                            //conts[contnumber/3 + i].
+                            
+                            conts[contnumber/3 + i].yo = y + advances[0][timers[current].ind].sty[contnumber/3 + i]
+                            if (i > 2 && i < (contnumber/3) && timers2.length == 0) {
+                            c.beginPath()
+                            c.moveTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3) - 2*radius,conts[contnumber/3 + i - 1].yo,radius,0,2*Math.PI)
+                            c.lineTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
+                            c.stroke()
+                            c.beginPath()
+                            }
                        // }
                     }else{
                         c.fillStyle = 'transparent'
                         c.strokeStyle = 'transparent'
                     }
-                            //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                    if (timers2.length == 0) {
+                    c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                    }
                          //}
                        // }
                     //}
@@ -1842,7 +1854,7 @@ function animate() {
         x1 = 2*radius*21
         
         for (i3 = 1; i3 < (contnumber/3)*2;i3++) {
-            if (i3 < (contnumber/3)*2 - 1) {
+            if (i3 < (contnumber/3)*2 - 1 && conts[i3 + contnumber/3].ys != undefined) {
             c.beginPath()
             y1 = starty
             found = false
@@ -1862,7 +1874,7 @@ function animate() {
             
             
             if (i3 == 1) {
-            yf[21] = y1
+            //yf[21] = y1
             }
             yf[i3 + contnumber/3] = y1
             y2 = starty
@@ -1899,7 +1911,9 @@ function animate() {
             //if (stroke == true) {
             //c.stroke()
             //c.arc(150,75,5,0,2*Math.PI)
+            c.strokeStyle = 'black'
             //c.stroke()
+            //console.log(y1,y2)
             //if (i3 == 1)
             //console.log('y1',y1,'y2',y2)
             //}
@@ -1984,7 +1998,7 @@ function animate() {
                         ysum += conts2[t][inde].yx[ji]
                     }
                     yf[inde] += ysum
-                    //document.getElementById('t').innerText = yf[21]
+                    document.getElementById('t').innerText = yf[21]
 
                     c.beginPath()
                     //c.arc(2*radius*0 + radius + 2*radius*(contnumber/3),yf[21],radius,0,2*Math.PI)
@@ -1997,14 +2011,24 @@ function animate() {
 
 
 
-            for (ke = 1; ke < 20; ke++) {
+            if (timers2.length > 0) {
+            for (ke = 2; ke < 20; ke++) {
                 //console.log('ke HEY',ke)
                 c.beginPath()
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
                 c.fillStyle = 'red'
                 c.fill()
                 c.stroke()
+                if (ke > 2) {
+                c.beginPath()
+                c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3],radius,0,2*Math.PI)
+                c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
+                c.stroke()
+                }
             }
+        }else{
+            document.getElementById('t').innerText = yf[21]
+        }
             
             x = 0
             /*
@@ -2015,7 +2039,7 @@ function animate() {
                 c.beginPath()
                 elradius = 6
                // c.ellipse(x + 2*radius + space + elradius + 0.5,contsall[i + contnumber/3].y + starty, elradius, elradius/2, 0, 0, 2*Math.PI)
-                //c.stroke()
+                c.stroke()
                 c.beginPath()
             }
            // if (contsall[i].y + starty > starty) {
@@ -2053,10 +2077,10 @@ function animate() {
                 }           
             }
         for (k in timers){
-            timers[k].time += 0.1
+            timers[k].time += 0.02
         }
         for (k in timers2){
-            timers2[k].time += 0.1
+            timers2[k].time += 0.02
         }
         for (k in timers3){
             timers3[k].time += 0.1
