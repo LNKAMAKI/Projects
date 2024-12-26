@@ -535,30 +535,31 @@ function animate() {
                 //advance = conts[contnumber/3 + i].advances[0][current]
                 advance = advances[0][timers[current].ind].ads[timers[current].ind2]
                 x =  2*(advance)*radius
+                hiro = 0
                 //x = 0
                 // - (advance)*2*radius
              for (i = 0; i < (contnumber/3)*2;i++) {
-                 // y = x*0.1 
+                 // y = hiro 
                  canmove = true
                  if (i == 3 && current == 0) {
                     //console.log('biranga',conts[23].time[0])
-                    //console.log(-(advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1)))
+                    //console.log(-(advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)))
                  }
-                 if (conts[contnumber/3 + i].time[current] - x*0.1 >= 0) { // Math.sin(-vel*(conts[contnumber/3 + i].time[current]  - x*0.1)) = 0 
+                 if (conts[contnumber/3 + i].time[current] - hiro >= 0) { // Math.sin(-vel*(conts[contnumber/3 + i].time[current]  - hiro)) = 0 
                      if (type == 'pulse') {
-                     if (advances[0][timers[current].ind].amp[contnumber/3 + i] - (advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1)) <= 0) {
+                     if (advances[0][timers[current].ind].amp[contnumber/3 + i] - (advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)) <= 0) {
                         if (conts[contnumber/3 + i].start[current] == undefined) {
                             if (i > 0 && i < (contnumber/3)*2) { //(i == 4 || i == 3 || i == 2) {
                             conts[contnumber/3 + i].start[current] = {time:conts[contnumber/3 + i].time[current]}
                             }
-                            //console.log('terminou', conts[contnumber/3 + i].time[current], vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1), x*0.1)
+                            //console.log('terminou', conts[contnumber/3 + i].time[current], vels[current]*(conts[contnumber/3 + i].time[current] - hiro), hiro)
                         }
                          if (direct[current] == 'u') {
                             //console.log('UP')
-                     y = (advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1))
+                     y = (advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
                          }else{
                             //console.log('DOWN')
-                             y = -(advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1))
+                             y = -(advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
                          }
             
                          /*
@@ -593,7 +594,7 @@ function animate() {
                             //loop = false
                              
                              }*/
-                     }else if(Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1)) >= 0 && conts[contnumber/3 + i].move[current] == true){
+                     }else if(Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)) >= 0 && conts[contnumber/3 + i].move[current] == true){
                         y = 0
                         if (man == false) {
                        conts[contnumber/3 + i].move[current] = false
@@ -604,7 +605,7 @@ function animate() {
                     }
             
                     /*
-                     if ((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1))).toFixed(2) == -1.00 && conts[contnumber/3 + i].time[current] - x*0.1 >= 0 && conts[contnumber/3 + i].move[current] != false) {
+                     if ((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))).toFixed(2) == -1.00 && conts[contnumber/3 + i].time[current] - hiro >= 0 && conts[contnumber/3 + i].move[current] != false) {
                         //window.alert('STOP')
                        conts[contnumber/3 + i].fixpos[current] = y
                         conts[contnumber/3 + i].move[current] = false
@@ -613,9 +614,9 @@ function animate() {
                  }else{
                      if (advances[0][timers[current].ind].amp[contnumber/3 + i] - (advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
                          if (direct[current] == 'u') {
-                             y = (advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1))
+                             y = (advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
                                  }else{
-                                     y = -(advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1))
+                                     y = -(advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
                                  }
                          }else{
                              y = 0
@@ -629,15 +630,15 @@ function animate() {
                  if (manf == true) {
                  c.fillStyle = 'black'
                 if (conts[contnumber/3 + i].move[current] == true) {
-                if ((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1))).toFixed(1) == 0) {
+                if ((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))).toFixed(1) == 0) {
                    c.fillStyle = 'red'
-                }else if((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1))).toFixed(2) == -1.00) {
+                }else if((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))).toFixed(2) == -1.00) {
                    c.fillStyle = 'blue'
                 }
                 }
             
                 c.font = '20px Arial'
-                if (Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - x*0.1)) < Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] + 0.01 - x*0.1)) && conts[contnumber/3 + i].time[current] - x*0.1 >= 0 && advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
+                if (Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)) < Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] + 0.01 - hiro)) && conts[contnumber/3 + i].time[current] - hiro >= 0 && advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
                    c.fillStyle = 'yellow'
                    y = (advances[0][timers[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[0][timers[current].ind].amp[contnumber/3 + i]*0.03)*-1
                    if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
@@ -701,11 +702,11 @@ function animate() {
                     // console.log(conts[contnumber/3 + i - 1].ys[0])
                 if ((conts[contnumber/3 + i - 1].ys[0]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[0]).toFixed(3) && conts[contnumber/3 + i].ys[0] == -100) {
                         //if (i == 2 || i == 3) {
-                            //console.log('hey yyou',contnumber/3 + i,x*0.1,advances[0][timers[0].ind].sty[contnumber/3 + i])
+                            //console.log('hey yyou',contnumber/3 + i,hiro,advances[0][timers[0].ind].sty[contnumber/3 + i])
                             y = 0
                             
                             conts[contnumber/3 + i].ys[0] = advances[0][timers[0].ind].sty[contnumber/3 + i]
-                            conts[contnumber/3 + i].time[0] = x*0.1
+                            conts[contnumber/3 + i].time[0] = hiro
                             if (i == contnumber/3 - 1) {
                             //console.log('add timers2')
                             
@@ -785,7 +786,7 @@ function animate() {
                         if (conts[contnumber/3 + i].go[current - 1] != true) {
     
                             if (conts[contnumber/3 + i].go[current - 1] == false) {
-                             conts[contnumber/3 + i].time[current] = x*0.1 //conts[24].start[current - 1].time
+                             conts[contnumber/3 + i].time[current] = hiro //conts[24].start[current - 1].time
                              //console.log('ADD NOW')
                             }//else{
                             // conts[contnumber/3 + i].time[current] = 0
@@ -837,7 +838,7 @@ function animate() {
                     if (conts[contnumber/3 + i].go[current - 1] != true) {
     
                         if (conts[contnumber/3 + i].go[current - 1] == false) {
-                         conts[contnumber/3 + i].time[current] = x*0.1 //conts[24].start[current - 1].time
+                         conts[contnumber/3 + i].time[current] = hiro //conts[24].start[current - 1].time
                          //console.log('ADD NOW')
                          if (i == contnumber/3 - 1) {
                             //console.log('add timers2')
