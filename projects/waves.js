@@ -743,8 +743,8 @@ function animate() {
                             if (conts[24].ys[current] != undefined) {
                             //document.getElementById('t').innerText += (conts[24].ys[ci]).toFixed(0) + ' , ' 
                             if (conts2[0] != undefined) {
-                                if (conts2[0][21].yx != undefined) {
-                            //document.getElementById('t').innerText = conts2[0][21].yx
+                                if (conts2[0][(contnumber/3 + 1)].yx != undefined) {
+                            //document.getElementById('t').innerText = conts2[0][(contnumber/3 + i)].yx
                                 }
                             }
                             //document.getElementById('t2').innerText = (conts[contnumber/3 + i].time[0]).toFixed(0) + '' + (conts[25].time[0]).toFixed(0)//conts[24].start[current].time + ' | ' + conts[contnumber/3 + i].time
@@ -763,7 +763,7 @@ function animate() {
                if (i > 0 && i < (contnumber/3)*2) {    
                     if (i == 1){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                         if (current > 0) {
-                    //if (contnumber/3 + i > 21 && contnumber/3 + i < 40) {
+                    //if (contnumber/3 + i > (contnumber/3 + 1) && contnumber/3 + i < 40) {
                         //console.log('index',contnumber/3 + i, 'current',current, 'current - 1',current - 1)
                  eq = (conts[contnumber/3 + i].ys[current - 1]).toFixed(3) == (conts[contnumber/3 + i].ysfinal[current - 1]).toFixed(3)
                     if (conts[contnumber/3 + i].go[current - 1] == false && eq == true) {
@@ -872,7 +872,7 @@ function animate() {
                  //conts[contnumber/3 + i].go[current - 1] = eq
                  }
                  
-                 if (draw1 == true && contnumber/3 + i != contnumber - 1 && i != 1) { // && conts[contnumber/3 + i].ys[current - 1] == conts[contnumber/3 + i].ysfinal[current - 1]) {
+                 if (draw1 == true && contnumber/3 + i != contnumber - 1) { //&& i != 1) { // && conts[contnumber/3 + i].ys[current - 1] == conts[contnumber/3 + i].ysfinal[current - 1]) {
                    // if (i != 4) {// && conts[24].go[current - 1] != true) {
                  //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                   //c.strokeStyle = 'black'
@@ -1131,7 +1131,7 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
-                        if (i == 19 && n < 1) {
+                        if (i == 19 && n < 3) {
                         //console.log('ADD TO TIMERS 2')
                         if (fixo == false) {
                             addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
@@ -1191,7 +1191,7 @@ function animate() {
            if (i > 0 && i < contnumber/3) {    
                 if (i == 1){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                     if (current > 0) {
-                //if (contnumber/3 + i > 21 && contnumber/3 + i < 40) {
+                //if (contnumber/3 + i > (contnumber/3 + i) && contnumber/3 + i < 40) {
                     //console.log('index',contnumber/3 + i, 'current',current, 'current - 1',current - 1)
              eq = (conts2[n][contnumber/3 + i].ys[current - 1]).toFixed(3) == (conts2[n][contnumber/3 + i].ysfinal[current - 1]).toFixed(3)
                 if (conts2[n][contnumber/3 + i].go[current - 1] == false && eq == true) {
@@ -1267,7 +1267,7 @@ function animate() {
                     if (conts2[n][contnumber/3 + i].go[current - 1] == false) {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
-                     if (i == 19 && n < 1) {
+                     if (i == 19 && n < 3) {
                         //console.log(x*0.1)
                         //console.log('ADD TO TIMERS',current)
                         
@@ -1563,7 +1563,7 @@ function animate() {
                        
                        conts2[n][indirec].ys[0] = advances2[n][timers2[n][0].ind].sty[indirec]
                        conts2[n][indirec].time[0] = x*0.1
-                       if (i == 19 && n < 1) {
+                       if (i == 19 && n < 3) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[20],direct2[n][current],20*(n + 2))
@@ -1623,7 +1623,7 @@ function animate() {
           if (i > 0 && i < contnumber/3) {    
                if (i == 1){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                    if (current > 0) {
-               //if (indirec > 21 && indirec < 40) {
+               //if (indirec > (contnumber/3 + 1) && indirec < 40) {
                    //console.log('index',indirec, 'current',current, 'current - 1',current - 1)
             eq = (conts2[n][indirec].ys[current - 1]).toFixed(3) == (conts2[n][indirec].ysfinal[current - 1]).toFixed(3)
                if (conts2[n][indirec].go[current - 1] == false && eq == true) {
@@ -1699,7 +1699,7 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == 19 && n < 1) {
+                    if (i == 19 && n < 3) {
                        //console.log(x*0.1)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -1731,7 +1731,7 @@ function animate() {
             //conts2[n][indirec].go[current - 1] = eq
             }
             
-            if (draw1 == true && indirec != contnumber - 1 && i != 1) { // && conts2[n][indirec].ys[current - 1] == conts2[n][indirec].ysfinal[current - 1]) {
+            if (draw1 == true && indirec != contnumber - 1) { // && i != 1) { // && conts2[n][indirec].ys[current - 1] == conts2[n][indirec].ysfinal[current - 1]) {
               // if (i != 4) {// && conts2[n][24].go[current - 1] != true) {
             //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
              //c.strokeStyle = 'black'
@@ -1765,7 +1765,7 @@ function animate() {
             }else{
                 //window.alert('HEY')
                 if (i == 1) {
-                    //console.log('y21',x + radius -2*(advance)*radius + 2*radius*(contnumber/3))
+                    //console.log('y(contnumber/3 + i)',x + radius -2*(advance)*radius + 2*radius*(contnumber/3))
                 }
                //c.arc(x + radius -2*(advance)*radius + 2*radius*(contnumber/3),starty,radius,0,2*Math.PI)
             }
@@ -1851,7 +1851,7 @@ function animate() {
           contsall.push({index:cont,y:conts2[cont].y + conts3[cont].y})
         }
         
-        x1 = 2*radius*21
+        x1 = 2*radius*(contnumber/3 + 1)
         
         for (i3 = 1; i3 < (contnumber/3)*2;i3++) {
             if (i3 < (contnumber/3)*2 - 1 && conts[i3 + contnumber/3].ys != undefined) {
@@ -1874,7 +1874,7 @@ function animate() {
             
             
             if (i3 == 1) {
-            //yf[21] = y1
+            //yf[(contnumber/3 + 1)] = y1
             }
             yf[i3 + contnumber/3] = y1
             y2 = starty
@@ -1926,7 +1926,7 @@ function animate() {
                 //timers2[t]
                 
                 for (lo = 0; lo < conts2[t].length; lo++) {
-                   // if (lo == 21) {
+                   // if (lo == (contnumber/3 + 1)) {
                         found = false
                         //console.log(lo, conts2[t][lo])
                         y1 = ''
@@ -1937,8 +1937,8 @@ function animate() {
                             if (found == false) {
                             // stop here
                             y1 = conts2[t][lo].ys[o]
-                            ampsep = advances2[t][o].amp[21]
-                            //console.log('esse amp',advances2[t][o].amp[21])
+                            ampsep = advances2[t][o].amp[contnumber/3 + 1]
+                            //console.log('esse amp',advances2[t][o].amp[(contnumber/3 + i)])
                             found = true
                             indx = o
                             }
@@ -1992,18 +1992,18 @@ function animate() {
 
                     ysum = 0
                     for (ji in conts2[t][inde].yx) { 
-                        if (inde == 21) {
+                        if (inde == (contnumber/3 + 1)) {
                         //console.log('somar com amp: ',conts2[t][inde].yx[ji])
                         }
                         ysum += conts2[t][inde].yx[ji]
                     }
                     yf[inde] += ysum
-                    document.getElementById('t').innerText = yf[21]
+                    //document.getElementById('t').innerText = yf[(contnumber/3 + 1)]
 
                     c.beginPath()
-                    //c.arc(2*radius*0 + radius + 2*radius*(contnumber/3),yf[21],radius,0,2*Math.PI)
-                    //c.arc(2*radius + radius + 2*radius*(contnumber/3) + space,yf[21],radius,0,2*Math.PI)
-                    //if (inde == 21)
+                    //c.arc(2*radius*0 + radius + 2*radius*(contnumber/3),yf[(contnumber/3 + 1)],radius,0,2*Math.PI)
+                    //c.arc(2*radius + radius + 2*radius*(contnumber/3) + space,yf[(contnumber/3 + 1)],radius,0,2*Math.PI)
+                    //if (inde == (contnumber/3 + 1))
                     //console.log('total sum',ysum)
                // }
                 }           
@@ -2012,22 +2012,23 @@ function animate() {
 
 
             if (timers2.length > 0) {
-            for (ke = 2; ke < 20; ke++) {
+            for (ke = 1; ke < 20; ke++) {
                 //console.log('ke HEY',ke)
+                if (ke > 2) {
+                    c.beginPath()
+                    c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3],radius,0,2*Math.PI)
+                    c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
+                    c.stroke()
+                    }
                 c.beginPath()
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
                 c.fillStyle = 'red'
                 c.fill()
                 c.stroke()
-                if (ke > 2) {
-                c.beginPath()
-                c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3],radius,0,2*Math.PI)
-                c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
-                c.stroke()
-                }
+                
             }
         }else{
-            document.getElementById('t').innerText = yf[21]
+            //document.getElementById('t').innerText = yf[(contnumber/3 + i)]
         }
             
             x = 0
@@ -2140,9 +2141,9 @@ function addwave() {
     if (starty != mousey) {
         //console.log('hey')
     if (tot > 0) {
-        //console.log('first beed y position',conts[21].ys[tot - 1])
-        ampcont1 = conts[21].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
-        ampman = Math.abs(conts[21].ysfinal[tot - 1] - mousey)
+        //console.log('first beed y position',conts[(contnumber/3 + i)].ys[tot - 1])
+        ampcont1 = conts[(contnumber/3 + 1)].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
+        ampman = Math.abs(conts[(contnumber/3 + 1)].ysfinal[tot - 1] - mousey)
         //console.log(tot - 1,':')
         //console.log(tot - 1 ,'final: ',conts[24].ysfinal[tot - 1], mousey)
         //ampman = starty - mousey
@@ -2153,9 +2154,9 @@ function addwave() {
             dir = 'd'
         }
         join = false
-        if (conts[21].go[tot - 2] == false && direct[tot - 1] == dir) {
+        if (conts[(contnumber/3 + 1)].go[tot - 2] == false && direct[tot - 1] == dir) {
             //console.log('juntar')
-            ampmanof = ampman + Number(advances[0][tot - 1].amp[21])
+            ampmanof = ampman + Number(advances[0][tot - 1].amp[(contnumber/3 + 1)])
             totof = tot - 1
             join = true
         }else{
