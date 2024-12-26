@@ -1731,7 +1731,7 @@ function animate() {
             //conts2[n][indirec].go[current - 1] = eq
             }
             
-            if (draw1 == true && indirec != contnumber - 1) { // && i != 1) { // && conts2[n][indirec].ys[current - 1] == conts2[n][indirec].ysfinal[current - 1]) {
+            if (draw1 == true && indirec != contnumber - 1) {// && i != 1) { // && conts2[n][indirec].ys[current - 1] == conts2[n][indirec].ysfinal[current - 1]) {
               // if (i != 4) {// && conts2[n][24].go[current - 1] != true) {
             //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
              //c.strokeStyle = 'black'
@@ -1778,6 +1778,7 @@ function animate() {
                if (i == 19 && c.fillStyle != 'transparent') {
                   // c.fillStyle = 'yellow'
                }
+               c.fillStyle = 'purple'
                c.fill()
                c.stroke()
             }else{
@@ -2012,7 +2013,7 @@ function animate() {
 
 
             if (timers2.length > 0) {
-            for (ke = 1; ke < 20; ke++) {
+            for (ke = 2; ke < 20; ke++) {
                 //console.log('ke HEY',ke)
                 if (ke > 2) {
                     c.beginPath()
