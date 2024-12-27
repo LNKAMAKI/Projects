@@ -11,6 +11,8 @@ console.log(x)
 contnumber = 129
 conts = []
 mouse = 'up'
+mouseprev = 100
+mousefollow = false
 conts2 = []
 conts3 = []
 timers = [{time: 0,ind:0,ind2:0}]
@@ -2017,18 +2019,29 @@ function animate() {
 
 
 
+            
+        comp = 9
+        alt = 7
+        comp2 = 10
+        alt2 = 70
+        alt3 = 16
+
+            xtouch = mousex >= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 && mousex <= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp
+            ytouch = mousey >= mouseprev - radius - alt && mousey <= mouseprev - radius - alt + alt2
+            
             if (timers2.length > 0) {
             c.beginPath()
-            c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mousey,radius,0,2*Math.PI)
+            c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
             c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
             c.stroke()
             }else{
             c.beginPath()
-            c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mousey,radius,0,2*Math.PI)
+            c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
             //c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
             c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,conts[2 + contnumber/3].yo,radius,0,2*Math.PI)
             c.stroke()
             }
+        
             if (timers2.length > 0) {
                 for (ke = 2; ke < contnumber/3 - 1; ke++) {
                     if (ke > 2) {
@@ -2057,11 +2070,48 @@ function animate() {
             //document.getElementById('t').innerText = yf[(contnumber/3 + i)]
         }
 
+
+        fstcon = mouse == 'down' && xtouch == true && ytouch == true
+        if (fstcon == true || mousefollow == true) {
+            mouseprev = mousey
+        }
+        //if (mouse == 'down' && xtouch == true && ytouch == true) {
         c.beginPath()
-        c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mousey,radius,0,2*Math.PI)
+        c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
         c.fillStyle = 'red'
         c.fill()
         c.stroke()
+       //}
+
+        comp = 15
+        alt = 7
+        c.beginPath()
+        //c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey - radius)
+        //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey - radius)
+        c.fillStyle = 'gray'
+        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
+        c.fill()
+
+        c.beginPath()
+        //c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey + radius)
+        //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey + radius)
+        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev + radius,comp + 2,alt)
+        c.fill()
+
+        comp2 = 12
+        alt2 = 74
+        c.beginPath()
+        c.fillStyle = 'black'
+        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2,alt2)
+        c.fill()
+
+        alt3 = 16
+        c.beginPath()
+        c.fillStyle = 'red'
+        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,comp2 + comp + 2,alt3)
+        c.fill()
+        
+
         c.beginPath()
         c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
         c.fillStyle = 'red'
@@ -2218,7 +2268,7 @@ function addwave() {
         at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0.2
+        at = 0.01
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
@@ -2354,7 +2404,10 @@ find = 0
 ir = true
 console.log('onmouse',window.onmousedown)
 window.addEventListener('mousemove',function(event) {
-    if (go == true && mouse == 'down') {
+    xtouch = mousex >= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 && mousex <= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp
+    ytouch = mousey >= mouseprev - radius - alt && mousey <= mouseprev - radius - alt + alt2
+    fstcon = go == true && mouse == 'down' && xtouch == true && ytouch == true
+    if (fstcon == true || mousefollow == true) {
     if (mousey != 'i') {
     if (ir == true) {
         ir = false
@@ -2363,11 +2416,13 @@ window.addEventListener('mousemove',function(event) {
         addwave()
         //tot++
         // mousey
-    }, 70)
+    },20)
 }
+mousefollow = true
     }
 
 }
+this.document.getElementById('t').innerText =  mouse == 'down' && xtouch == true && ytouch == true
 })
 
 mouse = 'up'
@@ -2378,6 +2433,7 @@ window.addEventListener('mousedown',function(event) {
 window.addEventListener('mouseup',function(event) {
     mouse = 'up'
     this.window.document.body.style.cursor = 'auto'
+    mousefollow = false
 })
 
 
