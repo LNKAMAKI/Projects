@@ -896,11 +896,13 @@ function animate() {
                             
                             conts[contnumber/3 + i].yo = y + advances[0][timers[current].ind].sty[contnumber/3 + i]
                             if (i > 2 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
+                                /*
                             c.beginPath()
                             c.moveTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3) - 2*radius,conts[contnumber/3 + i - 1].yo,radius,0,2*Math.PI)
                             c.lineTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
                             c.stroke()
                             c.beginPath()
+                            */
                             }
                        // }
                     }else{
@@ -908,7 +910,7 @@ function animate() {
                         c.strokeStyle = 'transparent'
                     }
                     if (timers2.length == 0 && i != 1 && i != contnumber/3 - 1) {
-                    c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                    //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
                     }
                          //}
                        // }
@@ -945,6 +947,34 @@ function animate() {
                 //}
             
              }
+
+            
+            x = 0
+             for (i = 0; i < (contnumber/3)*2;i++) {
+                if (i > 0 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
+                    c.strokeStyle = 'black'
+                    c.beginPath()
+                    c.moveTo(x + radius + space + 2*radius*(contnumber/3) - 2*radius,conts[contnumber/3 + i - 1].yo,radius,0,2*Math.PI)
+                    c.lineTo(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
+                    c.stroke()
+                    c.beginPath()
+                }
+                //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][timers[current].ind].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                x+= 2*radius
+            }
+             x = 0
+             for (i = 0; i < (contnumber/3)*2;i++) {
+                if (i > 2 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
+                    c.beginPath()
+                    c.fillStyle = 'red'
+                    c.strokeStyle = 'black'
+                    c.arc(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
+                    c.fill()
+                    c.stroke()
+                }
+                x+= 2*radius
+             }
+
           }
          // 2nd wave
          n = 0
@@ -2055,7 +2085,7 @@ function animate() {
             for (ke = 2; ke < contnumber/3 - 1; ke++) {
                 //console.log('ke HEY',ke)
                 c.beginPath()
-                c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
+                //c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
                 c.fillStyle = 'red'
                 c.fill()
                 c.stroke()
@@ -2413,7 +2443,7 @@ window.addEventListener('mousemove',function(event) {
         ir = false
     setTimeout(function () {
         ir = true
-        addwave()
+        //addwave()
         //tot++
         // mousey
     },20)
