@@ -8,7 +8,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 129
+contnumber = 60
 conts = []
 mouse = 'up'
 mouseprev = 100
@@ -35,7 +35,7 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.7
+vel = 0.2
 vels = [vel]
 direct = []
 direct2 = []
@@ -45,7 +45,11 @@ for (i = 0; i < contnumber; i++) {
     yf.push(100)
 }
 for (i = 0; i < contnumber;i++) {
-    conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[],yo:100})
+    if (i == 21) {
+        conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[],yo:100,running:[true]})
+    }else{
+        conts.push({y:0,move:[],fixpos:[0],ys:[-100],ysfinal:[],go:[],start:[],time:[],yo:100,running:[false]})
+    }
     //conts2[0].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]}) // essential
     conts3.push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal: [],go:[],start:[],advances:[]})
 
@@ -80,7 +84,7 @@ mousex = 'i'
 mousey = 'i'
 at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
-    space = -145
+    space = 5//-145
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -683,7 +687,7 @@ function animate() {
                          //window.alert('n adicionar true em',current - 1)
                      }
                  }
-                 if (current > 0 || i == 1) {
+                 if (current > 0 || i == 1) { 
                  if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
                  if (add == true && conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != true) {
                     conts[contnumber/3 + i].ys[current] = conts[contnumber/3 + i].y
@@ -703,13 +707,26 @@ function animate() {
                 }
                 if (conts[contnumber/3 + i - 1].ys[0] != undefined && conts[contnumber/3 + i - 1].ysfinal[0] != undefined) {
                     // console.log(conts[contnumber/3 + i - 1].ys[0])
-                if ((conts[contnumber/3 + i - 1].ys[0]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[0]).toFixed(3) && conts[contnumber/3 + i].ys[0] == -100) {
+                    fstperc = Math.abs(conts[contnumber/3 + i - 1].ys[0] - advances[0][timers[0].ind].sty[contnumber/3 + i - 1])
+                    secperc = Math.abs(conts[contnumber/3 + i - 1].ysfinal[0] - advances[0][timers[0].ind].sty[contnumber/3 + i - 1])
+                    finalperc = fstperc/secperc
+
+                        if (i == 3) {
+                            //console.log(contnumber/3 + i - 1,':', advances[0][timers[0].ind].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[0])
+                        //console.log(conts[contnumber/3 + i - 1].ys[0])
+                        //console.log('has moved: ',fstperc)
+                        ////console.log('still remains: ',secperc)
+                        //console.log('final percento:',finalperc)
+                        }
+                if (conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.5 && conts[contnumber/3 + i].ys[0] == -100) {
                         //if (i == 2 || i == 3) {
                             //console.log('hey yyou',contnumber/3 + i,hiro,advances[0][timers[0].ind].sty[contnumber/3 + i])
                             y = 0
                             
                             conts[contnumber/3 + i].ys[0] = advances[0][timers[0].ind].sty[contnumber/3 + i]
                             conts[contnumber/3 + i].time[0] = hiro
+                            conts[contnumber/3 + i].running[0] = true
+                            //console.log(contnumber/3 + i,':',conts[contnumber/3 + i].running[0])
                             if (i == contnumber/3 - 1) {
                             //console.log('add timers2')
                             
@@ -726,10 +743,11 @@ function animate() {
                             }
                             
                        // }
-                }else if (((conts[contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts[contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
+                }else if (conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.5) {//(((conts[contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts[contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
                     if (i == 3) {
                     //console.log('pode atualizar',conts[23].time[0],y)
                     }
+                   // console.log('sim')
                     conts[contnumber/3 + i].ys[0] = conts[contnumber/3 + i].y
                 }else{
                     conts[contnumber/3 + i].ys[0] = -100
@@ -790,11 +808,14 @@ function animate() {
     
                             if (conts[contnumber/3 + i].go[current - 1] == false) {
                              conts[contnumber/3 + i].time[current] = hiro //conts[24].start[current - 1].time
+                             //conts[contnumber/3 + i].running[current] = true
                              //console.log('ADD NOW')
                             }//else{
                             // conts[contnumber/3 + i].time[current] = 0
                            //}
                            conts[contnumber/3 + i].go[current - 1] = true
+                           //conts[contnumber/3 + i].running[current] = true
+                           //conts[contnumber/3 + i].running[current] = true
                             //conts[24].ys[current] = -100
                             //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
                             //console.log(conts[24].ys[current], i)
@@ -818,6 +839,7 @@ function animate() {
                     }*/
             }}else if (current > 0){
                 eq = (conts[contnumber/3 + i].ys[current - 1]).toFixed(3) == (conts[contnumber/3 + i].ysfinal[current - 1]).toFixed(3)
+                
                 if (conts[contnumber/3 + i].go[current - 1] == false && eq == true) {
                      //window.alert('ADD NOW')
                      //conts[contnumber/3 + i].time[current] = conts[24].start[current - 1].time
@@ -837,14 +859,59 @@ function animate() {
                     //console.log(add,'eq: true',)
                     }
                     //console.log('EI',add,)
-                    if (add == true && (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) {//conts[contnumber/3 + i].time[current] != conts[contnumber/3 + i].start[current - 1].time && conts[contnumber/3 + i - 1].ys[current] == conts[contnumber/3 + i - 1].ysfinal[current]){
-                    if (conts[contnumber/3 + i].go[current - 1] != true) {
-    
+                    if (conts[contnumber/3 + i - 1].ys[current] != -100) { //conts[contnumber/3 + i - 1].ys[current] != undefined && conts[contnumber/3 + i - 1].ys[current] != -100 && conts[contnumber/3 + i - 1].ysfinal[current] != undefined) {
+                    fstperc = Math.abs(conts[contnumber/3 + i - 1].ys[current] - advances[0][timers[current].ind].sty[contnumber/3 + i - 1])
+                    secperc = Math.abs(conts[contnumber/3 + i - 1].ysfinal[current] - advances[0][timers[current].ind].sty[contnumber/3 + i - 1])
+                    finalperc = fstperc/secperc
+                    }else{
+                        finalperc = 0
+                    }
+
+                    if (i == 19 && conts[38].running[current] == true && current == 1 && conts[38].ys[current] != -100) {
+                    //console.log(current, conts[contnumber/3 + i - 1].running[current])
+                    //console.log(contnumber/3 + i - 1,':', advances[0][timers[current].ind].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[current])
+                    //console.log(conts[contnumber/3 + i - 1].ys[current])
+                    //console.log('has moved: ',fstperc)
+                    //console.log('still remains: ',secperc)
+                    //console.log('final percento:',current,finalperc)
+                    }
+                    if (i == 4 && (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) { // conts[contnumber/3 + i - 1].running[current] == true && finalperc == 1 && current == 2) { 
+                        //conts[22].running[current] != undefined
+                        /*
+                        console.log(current, conts[22].running[current])
+                        console.log(contnumber/3 + i - 1,':', advances[0][timers[current].ind].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[current])
+                        console.log(conts[contnumber/3 + i - 1].ys[current])
+                        console.log('has moved: ',fstperc)
+                        console.log('still remains: ',secperc)
+                        console.log('final percento:',finalperc)
+                        */
+                        //if (Math.round(finalperc) == 1) {
+                           //console.log(current,'euhduehdedhed')
+                        //}
+                    }
+                    if (i == 2) {
+                        //console.log('running',current,conts[contnumber/3 + i - 1].running[current])
+                    }
+                    if (i > 2) {
+                        wi = conts[contnumber/3 + i - 1].running[current] == true && finalperc > 0.5
+                    //wi == (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)
+                    }else{
+                        wi = true
+                    }
+                    if (add == true && wi == true) {// && (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)){ //conts[contnumber/3 + i - 1].running[current] == true && finalperc >= 0.5) { //Math.round(finalperc) == 1){//&& (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) {//&& (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) {//conts[contnumber/3 + i].time[current] != conts[contnumber/3 + i].start[current - 1].time && conts[contnumber/3 + i - 1].ys[current] == conts[contnumber/3 + i - 1].ysfinal[current]){
+                       if (i == 19) {
+                        //console.log('wi',wi,finalperc)
+                       }
+                        if (conts[contnumber/3 + i].go[current - 1] != true) {
+                            if (i == 19) {
+                            console.log('what',conts[contnumber/3 + i].go[current - 1] != true)
+                            }
                         if (conts[contnumber/3 + i].go[current - 1] == false) {
                          conts[contnumber/3 + i].time[current] = hiro //conts[24].start[current - 1].time
+                         
                          //console.log('ADD NOW')
                          if (i == contnumber/3 - 1) {
-                            //console.log('add timers2')
+                            console.log('add timers2')
                             
                             if (fixo == false) {
                                 addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],direct[current],(contnumber/3))
@@ -862,13 +929,20 @@ function animate() {
                         // conts[contnumber/3 + i].time[current] = 0
                        //}
                        conts[contnumber/3 + i].go[current - 1] = true
+                       if (i == 19) {
+                        console.log('hey',current - 1,conts[contnumber/3 + i].go[current - 1])
+                       }
+                       conts[contnumber/3 + i].running[current] = true
                         //conts[24].ys[current] = -100
                         //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
                         //console.log(conts[24].ys[current], i)
                     }
                         //window.alert('ADD NOW')
-                    }else if (conts[contnumber/3 + i - 1].ys[current] != conts[contnumber/3 + i - 1].ysfinal[current]){
+                    }else if(wi == false){ //conts[contnumber/3 + i - 1].ys[current] != conts[contnumber/3 + i - 1].ysfinal[current]){
                         conts[contnumber/3 + i].go[current - 1] = false
+                        if (current == 1 && i == 19) {
+                        //console.log('wi',wi,finalperc)
+                        }
                     }
                 }
             }
@@ -949,9 +1023,17 @@ function animate() {
              }
 
             
+
+
+
+
+
+
+
+
             x = 0
              for (i = 0; i < (contnumber/3)*2;i++) {
-                if (i > 0 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
+                if (i > 2 && i < (contnumber/3) && timers2.length >= 0 && i != contnumber/3 - 1) {
                     c.strokeStyle = 'black'
                     c.beginPath()
                     c.moveTo(x + radius + space + 2*radius*(contnumber/3) - 2*radius,conts[contnumber/3 + i - 1].yo,radius,0,2*Math.PI)
@@ -964,7 +1046,7 @@ function animate() {
             }
              x = 0
              for (i = 0; i < (contnumber/3)*2;i++) {
-                if (i > 2 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
+                if (i > 1 && i < (contnumber/3) && i != contnumber/3 - 1 && timers2.length >= 0) {
                     c.beginPath()
                     c.fillStyle = 'red'
                     c.strokeStyle = 'black'
@@ -1793,7 +1875,7 @@ function animate() {
                        if (n % 2 == 0 && i != 1) {
                            //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3 - 1),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
                        }else{
-                           //c.arc(x + radius - 2*(advance)*radius + 2*radius*(contnumber/3 + 2),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
+                            //c.arc(x + radius - 2*(advance)*radius + 2*radius*(contnumber/3 + 2),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
                        }
                     //}
                   // }
@@ -1811,11 +1893,11 @@ function animate() {
             //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
             //c.fillStyle = 'white'
            if (i > 1 && i < contnumber/3) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < contnumber/3) { //(indirec == 24 || i == 3 || i == 2) {
-               if (i == contnumber/3 - 1 && c.fillStyle != 'transparent') {
+               if (c.fillStyle != 'transparent') {//(i == contnumber/3 - 1 && c.fillStyle != 'transparent') {
                   // c.fillStyle = 'yellow'
-               }
-               c.fillStyle = 'purple'
+                  c.fillStyle = 'purple'
                c.fill()
+               }
                c.stroke()
             }else{
                //c.strokeStyle = 'black'
@@ -2443,7 +2525,7 @@ window.addEventListener('mousemove',function(event) {
         ir = false
     setTimeout(function () {
         ir = true
-        //addwave()
+        addwave()
         //tot++
         // mousey
     },20)
