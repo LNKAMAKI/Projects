@@ -2199,14 +2199,14 @@ function animate() {
             if (timers2.length > 0) {
             c.beginPath()
             c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
-            c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
-            //c.stroke()
+            c.lineTo(2*radius*(3) + radius + 2*radius*(contnumber/3) + space,yf[3 + contnumber/3],radius,0,2*Math.PI)
+            c.stroke()
             }else{
             c.beginPath()
             c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
             //c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
-            c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,conts[2 + contnumber/3].yo,radius,0,2*Math.PI)
-            //c.stroke()
+            c.lineTo(2*radius*(3) + radius + 2*radius*(contnumber/3) + space,conts[3 + contnumber/3].yo,radius,0,2*Math.PI)
+            c.stroke()
             }
         
             if (timers2.length > 0) {
@@ -2216,7 +2216,7 @@ function animate() {
                         c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3],radius,0,2*Math.PI)
                         c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
                         c.stroke()
-                        document.getElementById('t').innerText = (yf[22]).toFixed(2)
+                        //document.getElementById('t').innerText = (yf[22]).toFixed(2)
                         }
                 }
 
