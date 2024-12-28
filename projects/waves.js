@@ -84,7 +84,7 @@ mousex = 'i'
 mousey = 'i'
 at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
-    space = 5//-145
+    space = 0//-145
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -687,7 +687,7 @@ function animate() {
                          //window.alert('n adicionar true em',current - 1)
                      }
                  }
-                 if (current > 0 || i == 1) { 
+                 if (current > 0 || i < 2) { 
                  if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
                  if (add == true && conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != true) {
                     conts[contnumber/3 + i].ys[current] = conts[contnumber/3 + i].y
@@ -711,14 +711,18 @@ function animate() {
                     secperc = Math.abs(conts[contnumber/3 + i - 1].ysfinal[0] - advances[0][timers[0].ind].sty[contnumber/3 + i - 1])
                     finalperc = fstperc/secperc
 
-                        if (i == 3) {
+                      //  if (i == 3) {
+                            //cond = conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.01 && conts[contnumber/3 + i].ys[0] == -100
+                        //}else{
+                            cond = conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.5 && conts[contnumber/3 + i].ys[0] == -100
+                        //}
                             //console.log(contnumber/3 + i - 1,':', advances[0][timers[0].ind].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[0])
                         //console.log(conts[contnumber/3 + i - 1].ys[0])
                         //console.log('has moved: ',fstperc)
                         ////console.log('still remains: ',secperc)
                         //console.log('final percento:',finalperc)
-                        }
-                if (conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.5 && conts[contnumber/3 + i].ys[0] == -100) {
+                        
+                if (cond == true) {
                         //if (i == 2 || i == 3) {
                             //console.log('hey yyou',contnumber/3 + i,hiro,advances[0][timers[0].ind].sty[contnumber/3 + i])
                             y = 0
@@ -1033,7 +1037,7 @@ function animate() {
 
             x = 0
              for (i = 0; i < (contnumber/3)*2;i++) {
-                if (i > 2 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
+                if (i > 3 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
                     c.strokeStyle = 'black'
                     c.beginPath()
                     c.moveTo(x + radius + space + 2*radius*(contnumber/3) - 2*radius,conts[contnumber/3 + i - 1].yo,radius,0,2*Math.PI)
@@ -1046,7 +1050,7 @@ function animate() {
             }
              x = 0
              for (i = 0; i < (contnumber/3)*2;i++) {
-                if (i > 1 && i < (contnumber/3) && i != contnumber/3 - 1 && timers2.length == 0) {
+                if (i > 2 && i < (contnumber/3) && i != contnumber/3 - 1 && timers2.length == 0) {
                     c.beginPath()
                     c.fillStyle = 'red'
                     c.strokeStyle = 'black'
@@ -1921,11 +1925,11 @@ function animate() {
                    c.strokeStyle = 'transparent'
                }
                        //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
-                       //if (n % 2 == 0 && i != 1) {
-                           //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3 - 1),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
-                       //}else{
+                       if (n % 2 == 0 && i != 1) {
+                           c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3 - 1),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
+                       }else{
                             c.arc(x + radius - 2*(advance)*radius + 2*radius*(contnumber/3 + 2),y + advances2[n][timers2[n][current].ind].sty[indirec],radius,0,2*Math.PI)
-                       //}
+                       }
                     //}
                   // }
                //}
@@ -1941,10 +1945,12 @@ function animate() {
             
             //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
             //c.fillStyle = 'white'
-           if (i > 1 && i < contnumber/3) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < contnumber/3) { //(indirec == 24 || i == 3 || i == 2) {
+           if (i > 1 && i < contnumber/3 && n == 0 && i < contnumber/3 - 1) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < contnumber/3) { //(indirec == 24 || i == 3 || i == 2) {
                if (c.strokeStyle != 'transparent') {//(i == contnumber/3 - 1 && c.fillStyle != 'transparent') {
                   // c.fillStyle = 'yellow'
-                  //c.fillStyle = 'purple'
+                  if (i == 2) {
+                  c.fillStyle = 'purple'
+                  }
                //c.fill()
                }
                //c.stroke()
@@ -2194,26 +2200,27 @@ function animate() {
             c.beginPath()
             c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
             c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
-            c.stroke()
+            //c.stroke()
             }else{
             c.beginPath()
             c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
             //c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[2 + contnumber/3],radius,0,2*Math.PI)
             c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,conts[2 + contnumber/3].yo,radius,0,2*Math.PI)
-            c.stroke()
+            //c.stroke()
             }
         
             if (timers2.length > 0) {
-                for (ke = 2; ke < contnumber/3 - 1; ke++) {
+                for (ke = 4; ke < contnumber/3 - 1; ke++) {
                     if (ke > 2) {
                         c.beginPath()
                         c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3],radius,0,2*Math.PI)
                         c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
                         c.stroke()
+                        document.getElementById('t').innerText = (yf[22]).toFixed(2)
                         }
                 }
 
-            for (ke = 2; ke < contnumber/3 - 1; ke++) {
+            for (ke = 3; ke < contnumber/3 - 1; ke++) {
                 //console.log('ke HEY',ke)
                 c.beginPath()
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3],radius,0,2*Math.PI)
@@ -2583,7 +2590,7 @@ mousefollow = true
     }
 
 }
-this.document.getElementById('t').innerText =  mouse == 'down' && xtouch == true && ytouch == true
+//this.document.getElementById('t').innerText =  mouse == 'down' && xtouch == true && ytouch == true
 })
 
 mouse = 'up'
