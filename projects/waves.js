@@ -728,7 +728,7 @@ function animate() {
                             conts[contnumber/3 + i].running[0] = true
                             //console.log(contnumber/3 + i,':',conts[contnumber/3 + i].running[0])
                             if (i == contnumber/3 - 1) {
-                            console.log('add timers2')
+                            //console.log('add timers2')
                             
                             if (fixo == false) {
                               addTimers(timers2,0,advances[0][timers[current].ind].amp[(contnumber/3)],direct[current],(contnumber/3))
@@ -1696,7 +1696,7 @@ function animate() {
            if (conts2[n][indirec - 1].running[0] == true && finalperc > 0.5 && conts2[n][indirec].ys[0] == -100) { // && finalperc >= 0.5 && conts2[n][indirec].ys[0] == -100) {
                    //if (i == 2 || i == 3) {
                    if (i == 3) {
-                       console.log('hey yyou',indirec,hiro,advances2[n][timers2[n][current].ind].sty[indirec])
+                       //console.log('hey yyou',indirec,hiro,advances2[n][timers2[n][current].ind].sty[indirec])
                    }
                        y = 0
                        
@@ -1704,7 +1704,7 @@ function animate() {
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
                        if (i == contnumber/3 - 1 && n < 10) {
-                       console.log('ADD TO TIMERS 2')
+                       //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
                          }else{
@@ -1846,12 +1846,12 @@ function animate() {
                 wi = conts2[n][indirec - 1].running[current] == true && finalperc > 0.5
                 //if (i == 19 && conts2[n][38].running[current] == true && current == 1 && conts2[n][38].ys[current] != -100 && finalperc > 0.5) {
                 if (i == 19 && conts2[n][indirec - 1].running[current] == true && finalperc > 0.5 && current == 2) {
-                    console.log(current, conts2[n][indirec - 1].running[current])
-                    console.log(indirec - 1,':', advances2[n][timers2[n][current].ind].sty[indirec - 1], '=>',conts2[n][indirec - 1].ysfinal[current])
-                    console.log(conts2[n][indirec - 1].ys[current])
-                    console.log('has moved: ',fstperc)
-                    console.log('still remains: ',secperc)
-                    console.log('final percento:',current,finalperc)
+                    //console.log(current, conts2[n][indirec - 1].running[current])
+                    //console.log(indirec - 1,':', advances2[n][timers2[n][current].ind].sty[indirec - 1], '=>',conts2[n][indirec - 1].ysfinal[current])
+                    //console.log(conts2[n][indirec - 1].ys[current])
+                    //console.log('has moved: ',fstperc)
+                    //console.log('still remains: ',secperc)
+                    //console.log('final percento:',current,finalperc)
                     }
 
                     if (i > 2) {
