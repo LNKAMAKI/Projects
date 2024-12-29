@@ -8,7 +8,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 60
+contnumber = 129
 conts = []
 mouse = 'up'
 mouseprev = 100
@@ -84,7 +84,7 @@ mousex = 'i'
 mousey = 'i'
 at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
-    space = 0//-145
+    space = -130
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -2193,7 +2193,7 @@ function animate() {
             for (t2 = 0; t2 < timers2.length; t2++) {
                 //timers2[t]
                 
-                for (l2 = 21; l2 < conts2[t2].length - 1; l2++) {
+                for (l2 = contnumber/3 + 1; l2 < conts2[t2].length - 1; l2++) {
                   if (t2 % 2 == 0) {
                     index = contnumber - l2
                   }else{
