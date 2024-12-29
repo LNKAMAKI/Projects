@@ -45,7 +45,7 @@ for (i = 0; i < contnumber; i++) {
     yf.push(100)
 }
 for (i = 0; i < contnumber;i++) {
-    if (i == contnumber/3 + 1){ // || i == contnumber/3 + 2 || i == contnumber/3 + 3) {
+    if (i == contnumber/3 + 1 || i == contnumber/3 + 2){ // || i == contnumber/3 + 2 || i == contnumber/3 + 3) {
         conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[],yo:100,running:[true]})
     }else{
         conts.push({y:0,move:[],fixpos:[0],ys:[-100],ysfinal:[],go:[],start:[],time:[],yo:100,running:[false]})
@@ -687,7 +687,7 @@ function animate() {
                          //window.alert('n adicionar true em',current - 1)
                      }
                  }
-                 if (current > 0 || i < 2) { 
+                 if (current > 0 || i == 1 || i == 2) { 
                  if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
                  if (add == true && conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != true) {
                     conts[contnumber/3 + i].ys[current] = conts[contnumber/3 + i].y
@@ -711,11 +711,8 @@ function animate() {
                     secperc = Math.abs(conts[contnumber/3 + i - 1].ysfinal[0] - advances[0][timers[0].ind].sty[contnumber/3 + i - 1])
                     finalperc = fstperc/secperc
 
-                      //  if (i == 3) {
-                            //cond = conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.01 && conts[contnumber/3 + i].ys[0] == -100
-                        //}else{
                             cond = conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.5 && conts[contnumber/3 + i].ys[0] == -100
-                        //}
+                        
                             //console.log(contnumber/3 + i - 1,':', advances[0][timers[0].ind].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[0])
                         //console.log(conts[contnumber/3 + i - 1].ys[0])
                         //console.log('has moved: ',fstperc)
@@ -787,7 +784,7 @@ function animate() {
                  //if (timers[current].delete == undefined) {
                 
                if (i > 0 && i < (contnumber/3)*2) {    
-                    if (i == 1){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
+                    if (i == 1 || i == 2){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                         if (current > 0) {
                     //if (contnumber/3 + i > (contnumber/3 + 1) && contnumber/3 + i < 40) {
                         //console.log('index',contnumber/3 + i, 'current',current, 'current - 1',current - 1)
@@ -1037,7 +1034,7 @@ function animate() {
 
             x = 0
              for (i = 0; i < (contnumber/3)*2;i++) {
-                if (i > 3 && i < (contnumber/3) && timers2.length >= 0 && i != contnumber/3 - 1) {
+                if (i > 1 && i < (contnumber/3) && timers2.length >= 0 && i != contnumber/3 - 1) {
                     c.strokeStyle = 'black'
                     c.beginPath()
                     c.moveTo(x + radius + space + 2*radius*(contnumber/3) - 2*radius,conts[contnumber/3 + i - 1].yo,radius,0,2*Math.PI)
@@ -1050,7 +1047,7 @@ function animate() {
             }
              x = 0
              for (i = 0; i < (contnumber/3)*2;i++) {
-                if (i > 2 && i < (contnumber/3) && i != contnumber/3 - 1 && timers2.length >= 0) {
+                if (i > 1 && i < (contnumber/3) && i != contnumber/3 - 1 && timers2.length >= 0) {
                     c.beginPath()
                     c.fillStyle = 'red'
                     c.strokeStyle = 'black'
