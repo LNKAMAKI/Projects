@@ -1476,7 +1476,7 @@ function animate() {
             // }
              c.beginPath()
              //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-             c.fillStyle = 'white'
+             c.fillStyle = 'red'
              x+= 2*radius
          }
             //}
@@ -2241,11 +2241,7 @@ function animate() {
                 //console.log('ke HEY',ke)
                 c.beginPath()
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + conts[ke + contnumber/3].yo,radius,0,2*Math.PI)
-                //if (ke == 3) {
-                    c.fillStyle = 'white'
-                //}else{
-                    //c.fillStyle = 'red'
-                //}
+                c.fillStyle = 'red'
                 c.fill()
                 c.stroke()
             }
