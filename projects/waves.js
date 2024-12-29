@@ -1,5 +1,5 @@
 let radius = 2.3
-let starty = 100
+let starty = 80
 let x = 0
 loop = true
 addpulse = false
@@ -11,7 +11,7 @@ console.log(x)
 contnumber = 129
 conts = []
 mouse = 'up'
-mouseprev = 100
+mouseprev = starty
 mousefollow = false
 conts2 = []
 conts3 = []
@@ -35,20 +35,21 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 0.3
+vel = 0.6
+tension = 0.3
 vels = [vel]
 direct = []
 direct2 = []
 direct3 = []
 yf = []
 for (i = 0; i < contnumber; i++) {
-    yf.push(100)
+    yf.push(starty)
 }
 for (i = 0; i < contnumber;i++) {
     if (i == contnumber/3 + 1 || i == contnumber/3 + 2){ // || i == contnumber/3 + 2 || i == contnumber/3 + 3) {
-        conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[],yo:100,running:[true]})
+        conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[],yo:starty,running:[true]})
     }else{
-        conts.push({y:0,move:[],fixpos:[0],ys:[-100],ysfinal:[],go:[],start:[],time:[],yo:100,running:[false]})
+        conts.push({y:0,move:[],fixpos:[0],ys:[-100],ysfinal:[],go:[],start:[],time:[],yo:starty,running:[false]})
     }
     //conts2[0].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]}) // essential
     conts3.push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal: [],go:[],start:[],advances:[]})
@@ -894,7 +895,7 @@ function animate() {
                         //console.log('running',current,conts[contnumber/3 + i - 1].running[current])
                     }
                     if (i > 2) {
-                        wi = conts[contnumber/3 + i - 1].running[current] == true && finalperc > 0.5
+                        wi = conts[contnumber/3 + i - 1].running[current] == true && finalperc > tension
                     //wi == (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)
                     }else{
                         wi = true
@@ -1248,7 +1249,7 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
-                        if (i == contnumber/3 - 1 && n < 10) {
+                        if (i == contnumber/3 - 1 && n < 20) {
                         //console.log('ADD TO TIMERS 2')
                         if (fixo == false) {
                             addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
@@ -1384,7 +1385,7 @@ function animate() {
                     if (conts2[n][contnumber/3 + i].go[current - 1] == false) {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
-                     if (i == contnumber/3 - 1 && n < 10) {
+                     if (i == contnumber/3 - 1 && n < 20) {
                         //console.log(x*0.1)
                         //console.log('ADD TO TIMERS',current)
                         
@@ -1694,7 +1695,7 @@ function animate() {
                     }
                         */
                 }
-           if (conts2[n][indirec - 1].running[0] == true && finalperc > 0.5 && conts2[n][indirec].ys[0] == -100) { // && finalperc >= 0.5 && conts2[n][indirec].ys[0] == -100) {
+           if (conts2[n][indirec - 1].running[0] == true && finalperc > tension && conts2[n][indirec].ys[0] == -100) { // && finalperc >= 0.5 && conts2[n][indirec].ys[0] == -100) {
                    //if (i == 2 || i == 3) {
                    if (i == 3) {
                        //console.log('hey yyou',indirec,hiro,advances2[n][timers2[n][current].ind].sty[indirec])
@@ -1704,7 +1705,7 @@ function animate() {
                        conts2[n][indirec].ys[0] = advances2[n][timers2[n][0].ind].sty[indirec]
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
-                       if (i == contnumber/3 - 1 && n < 10) {
+                       if (i == contnumber/3 - 1 && n < 20) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
@@ -1727,7 +1728,7 @@ function animate() {
                        }
                        
                   // }
-           }else if (conts2[n][indirec - 1].running[0] == true && finalperc > 0.5) { // && finalperc >= 0.5) { //(((conts2[n][indirec - 1].ys[0])).toFixed(3) == ((conts2[n][indirec - 1].ysfinal[0])).toFixed(3)){
+           }else if (conts2[n][indirec - 1].running[0] == true && finalperc > tension) { // && finalperc >= 0.5) { //(((conts2[n][indirec - 1].ys[0])).toFixed(3) == ((conts2[n][indirec - 1].ysfinal[0])).toFixed(3)){
                if (i == 3) {
                //console.log('pode atualizar',conts2[n][23].time[0],y)
                }
@@ -1844,9 +1845,9 @@ function animate() {
                     finalperc = 0
                 }
 
-                wi = conts2[n][indirec - 1].running[current] == true && finalperc > 0.5
+                wi = conts2[n][indirec - 1].running[current] == true && finalperc > tension
                 //if (i == 19 && conts2[n][38].running[current] == true && current == 1 && conts2[n][38].ys[current] != -100 && finalperc > 0.5) {
-                if (i == 19 && conts2[n][indirec - 1].running[current] == true && finalperc > 0.5 && current == 2) {
+                if (i == 19 && conts2[n][indirec - 1].running[current] == true && finalperc > tension && current == 2) {
                     //console.log(current, conts2[n][indirec - 1].running[current])
                     //console.log(indirec - 1,':', advances2[n][timers2[n][current].ind].sty[indirec - 1], '=>',conts2[n][indirec - 1].ysfinal[current])
                     //console.log(conts2[n][indirec - 1].ys[current])
@@ -1856,7 +1857,7 @@ function animate() {
                     }
 
                     if (i > 2) {
-                        wi = conts2[n][indirec - 1].running[current] == true && finalperc > 0.5
+                        wi = conts2[n][indirec - 1].running[current] == true && finalperc > tension
                     }else{
                         wi = (conts2[n][indirec - 1].ys[current]).toFixed(3) == (conts2[n][indirec - 1].ysfinal[current]).toFixed(3)
                     }
@@ -1866,7 +1867,7 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 10) {
+                    if (i == contnumber/3 - 1 && n < 20) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -2123,7 +2124,7 @@ function animate() {
                     }
 
                     if (conts2[t][lo].ys.length == 0 || y1 == -100) {
-                        y1 = 100
+                        y1 = starty
                         ampsep = 0
                         //console.log('esse amp',0)
                         indx = 0
