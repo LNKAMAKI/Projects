@@ -712,7 +712,7 @@ function animate() {
                     secperc = Math.abs(conts[contnumber/3 + i - 1].ysfinal[0] - advances[0][timers[0].ind].sty[contnumber/3 + i - 1])
                     finalperc = fstperc/secperc
 
-                            cond = conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.5 && conts[contnumber/3 + i].ys[0] == -100
+                            cond = conts[contnumber/3 + i - 1].running[0] == true && finalperc > tension && conts[contnumber/3 + i].ys[0] == -100
                         
                             //console.log(contnumber/3 + i - 1,':', advances[0][timers[0].ind].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[0])
                         //console.log(conts[contnumber/3 + i - 1].ys[0])
@@ -745,7 +745,7 @@ function animate() {
                             }
                             
                        // }
-                }else if (conts[contnumber/3 + i - 1].running[0] == true && finalperc >= 0.5) {//(((conts[contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts[contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
+                }else if (conts[contnumber/3 + i - 1].running[0] == true && finalperc > tension) {//(((conts[contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts[contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
                     if (i == 3) {
                     //console.log('pode atualizar',conts[23].time[0],y)
                     }
@@ -1052,7 +1052,7 @@ function animate() {
                     c.beginPath()
                     c.fillStyle = 'red'
                     c.strokeStyle = 'black'
-                    //c.arc(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
+                    c.arc(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
                     c.fill()
                     c.stroke()
                 }
@@ -1249,7 +1249,7 @@ function animate() {
                         
                         conts2[n][contnumber/3 + i].ys[0] = advances[n][timers2[n][0].ind].sty[contnumber/3 + i]
                         conts2[n][contnumber/3 + i].time[0] = x*0.1
-                        if (i == contnumber/3 - 1 && n < 10) {
+                        if (i == contnumber/3 - 1 && n < 30) {
                         //console.log('ADD TO TIMERS 2')
                         if (fixo == false) {
                             addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
@@ -1385,7 +1385,7 @@ function animate() {
                     if (conts2[n][contnumber/3 + i].go[current - 1] == false) {
                      conts2[n][contnumber/3 + i].time[current] = x*0.1 //conts2[n][24].start[current - 1].time
                      //console.log('ADD NOW')
-                     if (i == contnumber/3 - 1 && n < 10) {
+                     if (i == contnumber/3 - 1 && n < 30) {
                         //console.log(x*0.1)
                         //console.log('ADD TO TIMERS',current)
                         
@@ -1705,7 +1705,7 @@ function animate() {
                        conts2[n][indirec].ys[0] = advances2[n][timers2[n][0].ind].sty[indirec]
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
-                       if (i == contnumber/3 - 1 && n < 10) {
+                       if (i == contnumber/3 - 1 && n < 30) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][timers2[n][current].ind].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
@@ -1867,7 +1867,7 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 10) {
+                    if (i == contnumber/3 - 1 && n < 30) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -2238,7 +2238,7 @@ function animate() {
                         c.stroke()
                 }
 
-            for (ke = 1; ke < contnumber/3 - 1; ke++) {
+            for (ke = 2; ke < contnumber/3 - 1; ke++) {
                 //console.log('ke HEY',ke)
                 c.beginPath()
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + conts[ke + contnumber/3].yo,radius,0,2*Math.PI)
@@ -2256,9 +2256,9 @@ function animate() {
 
 
         fstcon = mouse == 'down' && xtouch == true && ytouch == true
-        //if (fstcon == true || mousefollow == true) {
+        if (fstcon == true || mousefollow == true) {
             mouseprev = conts[21].yo //mousey
-       // }
+        }
         //if (mouse == 'down' && xtouch == true && ytouch == true) {
         c.beginPath()
         //c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
@@ -2303,8 +2303,8 @@ function animate() {
         c.stroke()
 
         c.beginPath()
-        c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,conts[21].yo,radius,0,2*Math.PI)
-        c.fillStyle = 'red'
+        c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
+        c.fillStyle = 'white'
         c.fill()
         c.stroke()
             
