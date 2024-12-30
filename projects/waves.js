@@ -2257,7 +2257,7 @@ function animate() {
 
         fstcon = mouse == 'down' && xtouch == true && ytouch == true
         if (fstcon == true || mousefollow == true) {
-            mouseprev = conts[21].yo //mousey
+            //mouseprev = conts[21].yo //mousey
         }
         //if (mouse == 'down' && xtouch == true && ytouch == true) {
         c.beginPath()
@@ -2604,6 +2604,7 @@ window.addEventListener('mousemove',function(event) {
     setTimeout(function () {
         ir = true
         addwave()
+        mouseprev = mousey
         //tot++
         // mousey
     },20)
