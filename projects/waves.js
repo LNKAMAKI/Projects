@@ -2256,14 +2256,20 @@ function animate() {
             xtouch = mousex >= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 && mousex <= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp
             ytouch = mousey >= mouseprev - radius - alt && mousey <= mouseprev - radius - alt + alt2
             
-            if (0 == 0) {
+            // draw first ball
             c.beginPath()
-            c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
-            c.lineTo(2*radius*(3) + radius + 2*radius*(contnumber/3) + space,yf[3 + contnumber/3] + conts[3 + contnumber/3].yo,radius,0,2*Math.PI)
-            //c.stroke()
-            }
-        
+            c.fillStyle = 'red'
+            c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
+            c.fill()
+            c.stroke()
+    
+            c.beginPath()
+            c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - 1,mouseprev - 1.2,radius/3,0,2*Math.PI)
+            c.fillStyle = 'white'
+            c.fill()
+
             if (0 == 0) {
+                // draw lines
                 for (ke = 3; ke < contnumber/3 - 1; ke++) {
                         c.beginPath()
                         c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3] + conts[ke - 1 + contnumber/3].yo,radius,0,2*Math.PI)
@@ -2271,27 +2277,40 @@ function animate() {
                         c.stroke()
                 }
 
+                // draw last line
+                c.beginPath()
+                c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
+                c.lineTo(2*radius*(contnumber/3 - 2) + radius + 2*radius*(contnumber/3) + space,yf[contnumber/3 - 2 + contnumber/3] + conts[contnumber/3 - 2 + contnumber/3].yo,radius,0,2*Math.PI)
+                c.stroke()
+                c.beginPath()
+
+                // draw balls
             for (ke = 2; ke < contnumber/3 - 1; ke++) {
                 //console.log('ke HEY',ke)
                 c.beginPath()
-                c.lineWidth = '0.9'
+                c.lineWidth = '0.8'
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + conts[ke + contnumber/3].yo,radius,0,2*Math.PI)
-                c.fillStyle = 'red'
+                c.fillStyle = '#FF0000'
                 c.fill()
                 c.stroke()
+
+                c.beginPath()
+                c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space - 1,yf[ke + contnumber/3] + conts[ke + contnumber/3].yo - 1.2,radius/3,0,2*Math.PI)
+                c.fillStyle = 'white'
+                c.fill()
             }
 
-            c.beginPath()
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
-            c.lineTo(2*radius*(contnumber/3 - 2) + radius + 2*radius*(contnumber/3) + space,yf[contnumber/3 - 2 + contnumber/3] + conts[contnumber/3 - 2 + contnumber/3].yo,radius,0,2*Math.PI)
-            c.stroke()
-            c.beginPath()
-
+            // draw last ball 
             c.beginPath()
             c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
             c.fill()
             c.stroke()
+
+            c.beginPath()
+            c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 1,starty - 1.2,radius/3,0,2*Math.PI)
+            c.fillStyle = 'white'
+            c.fill()
         }
 
 
@@ -2313,7 +2332,7 @@ function animate() {
         c.lineWidth = '0.6'
         //c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey - radius)
         //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey - radius)
-        c.fillStyle = 'gray'
+        c.fillStyle = 'rgb(197, 197, 197)'
         c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
         c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
         c.fill()
@@ -2328,22 +2347,35 @@ function animate() {
         comp2 = 12
         alt2 = 74
         c.beginPath()
-        c.fillStyle = 'black'       
+        c.fillStyle = 'black' 
+        c.fillStyle = 'rgb(211, 21, 21)'      
         c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2,alt2)
         c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2,alt2)
         c.fill()
 
+        c.fillStyle = 'black' 
+        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2/2,alt2/2)
+        c.fill()
+
         alt3 = 16
         c.beginPath()
-        c.fillStyle = 'red'
+        c.fillStyle = 'rgb(211, 21, 21)'
+        c.fillStyle = 'gray' 
         c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,comp2 + comp + 2,alt3)
         c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,comp2 + comp + 2,alt3)
         c.fill()
 
+
         c.beginPath()
-        c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
-        c.fillStyle = 'white'
-        c.fill()
+        xb = 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2
+        yb = mouseprev - radius - alt - alt3
+        c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3)
+        //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 + comp2 + comp + 2,mouseprev - radius - alt - alt3 + alt3)
+        c.stroke()
+
+        c.beginPath()
+        //c.arcTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 + comp2 + comp + 2,mouseprev - radius - alt - alt3 + alt3, 10)
+        //c.arcTo(5,5,10,10,6)
         c.stroke()
             
             x = 0
