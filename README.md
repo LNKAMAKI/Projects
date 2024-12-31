@@ -8,6 +8,8 @@ height: 516px;"></iframe>
 <li><a href= "https://lnkamaki.github.io/Projects/projects/canv.html"><span style=" font-weight: normal; font-size: 1.3em;">Refração em prismas</span></a></li> 
 
 #POKESNOOKER
+<li><a href= "https://lnkamaki.github.io/Projects/projects/waves.html"><span style=" font-weight: normal; font-size: 1.3em;">WAVE SIMULATOR</span></a></li> 
+
 <li><a href= "https://lnkamaki.github.io/Projects/projects/canvas.html"><span style=" font-weight: normal; font-size: 1.3em;">POKESNOOKER</span></a></li> 
 # Math
 <li><a href= "https://lnkamaki.github.io/Projects/projects/pendulum.html"><span style=" font-weight: normal; font-size: 1.3em;">Pendulum</span></a></li> 
