@@ -86,7 +86,7 @@ mousex = 'i'
 mousey = 'i'
 at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
-    space = -130
+    space = 300 -(contnumber/3 - 1)*radius*2*2 - 40
     x = 0
     c.clearRect(0,0,300,150)
     // function = A*sen(2*Math.PI/comp*(x + wt))
@@ -2300,8 +2300,80 @@ function animate() {
                 c.fill()
             }
 
+
+            c.beginPath()
+            c.lineWidth = '4.4'
+            c.strokeStyle = 'black'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty + 45)
+            c.stroke() 
+
+            c.beginPath()
+            c.lineWidth = '3'
+            c.strokeStyle = '#B5B6B9'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty + 45)
+            c.stroke()
+
+            c.beginPath()
+            c.lineWidth = '11'
+            c.strokeStyle = 'black'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 1.5,starty - 14)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 1.5,starty - 4)
+            c.stroke()
+
+            c.beginPath()
+            c.lineWidth = '2.6'
+            c.strokeStyle = 'black'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 9,starty - 2.8)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 5.6,starty - 2.8)
+            c.stroke()
+
+            c.beginPath()
+            c.strokeStyle = 'black'
+            c.lineWidth = '8'
+            c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 6.6,starty + 1,15,3*Math.PI/2 - 0.6,2*Math.PI)
+            c.stroke()
+
+
+            c.beginPath()
+            c.lineWidth = '7.7'
+            c.strokeStyle = 'black'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty + 20)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty - 2)
+            c.stroke()
+
+            c.beginPath()
+            c.strokeStyle = 'black'
+            c.lineWidth = '8'
+            c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 6.6,starty + 18,15,0,Math.PI/2 + 0.5)
+            c.stroke()
+
+            c.beginPath()
+            c.lineWidth = '11'
+            c.strokeStyle = 'black'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 0.5,starty + 26)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 0.5,starty + 35)
+            c.stroke()
+
+            c.beginPath()
+            c.lineWidth = '4'
+            c.strokeStyle = 'black'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 12.5,starty + 45)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 12.5,starty + 45)
+            c.stroke()
+
+            c.beginPath()
+            c.lineWidth = '3'
+            c.strokeStyle = '#B5B6B9'
+            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 12,starty + 45)
+            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 12,starty + 45)
+            c.stroke()
+
             // draw last ball 
             c.beginPath()
+            c.lineWidth = '0.8'
+            c.strokeStyle = 'black'
             c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
             c.fillStyle = 'red'
             c.fill()
@@ -2332,7 +2404,7 @@ function animate() {
         c.lineWidth = '0.6'
         //c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey - radius)
         //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey - radius)
-        c.fillStyle = 'rgb(197, 197, 197)'
+        c.fillStyle = '#B5B6B9'
         c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
         c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
         c.fill()
@@ -2712,9 +2784,9 @@ window.addEventListener('mousemove',function(event) {
     mousex = ((event.x - dif/2)/cWidth)*300
     mousey = ((event.y)/cHeight)*150
     
-        prevx = String(this.document.getElementById('x').innerText)
+        //prevx = String(this.document.getElementById('x').innerText)
         //this.document.getElementById('ev').innerText = 'y atual:' + conts[20].ys[tot - 1]
-        prevy = String(this.document.getElementById('y').innerText)
+        //prevy = String(this.document.getElementById('y').innerText)
         //this.document.getElementById('ev2').innerText = conts[24].ys[current]
         //this.document.getElementById('x').innerText = direct[tot - 1]
         //this.document.getElementById('y').innerText = mousey
