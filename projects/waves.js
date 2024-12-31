@@ -2337,7 +2337,7 @@ function animate() {
 
 
             c.beginPath()
-            c.lineWidth = '7.7'
+            c.lineWidth = '8.2'
             c.strokeStyle = 'black'
             c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty + 20)
             c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty - 2)
