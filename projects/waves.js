@@ -84,7 +84,7 @@ manf = true
 stroke = true
 mousex = 'i'
 mousey = 'i'
-at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
+//at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
     space = 300 -(contnumber/3 - 1)*radius*2*2 - 40
     x = 0
@@ -689,6 +689,11 @@ function animate() {
                          //window.alert('n adicionar true em',current - 1)
                      }
                  }
+
+                 //conts[22].running[0] = true
+                 if (current == 0 && i == 2) {
+                    //conts[22].running[0] = true
+                 }
                  if (current > 0 || i == 1 || i == 2) { 
                  if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
                  if (add == true && conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != true) {
@@ -1053,9 +1058,9 @@ function animate() {
                     c.beginPath()
                     c.fillStyle = 'red'
                     c.strokeStyle = 'black'
-                    //c.arc(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
-                    c.fill()
-                    c.stroke()
+                    c.arc(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
+                    //c.fill()
+                    //c.stroke()
                 }
                 x+= 2*radius
              }
@@ -1778,6 +1783,7 @@ function animate() {
                        direct.splice(0,1)
                        for (l3 = contnumber/3 + 1; l3 < conts.length - 1; l3++) {
                        conts[l3].change = false
+                       
                        conts[l3].fixpos.splice(0,1)
                        conts[l3].go.splice(0,1)
                        conts[l3].move.splice(0,1)
@@ -1786,6 +1792,7 @@ function animate() {
                        conts[l3].time.splice(0,1)
                        conts[l3].ys.splice(0,1)
                        conts[l3].ysfinal.splice(0,1)
+                       
                     }
                     }
                     }
@@ -2196,7 +2203,7 @@ function addwave() {
         // ampman - 40*at*ampman*0.03 = 0
         // ampman = 40*at*ampman*0.03
         // at = ampman/(40*ampman*0.03)
-        at = (starty - mousey)/(20*(starty - mousey)*0.03)
+        //at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
         at = 0.1
