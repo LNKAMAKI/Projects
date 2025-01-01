@@ -10,22 +10,32 @@
             background-color: black;
             cursor:auto;
         }
+        #sim {
+            /*height: 30vw;
+            min-height: fit-content;*/
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            border: 1px solid black;
+            background-color: rgb(72, 143, 125);
+        }
         canvas {
-            width: 80%;
-        /*max-width:1200px;*/
-        display: block;
-        margin: auto;
-        border: 1px solid black;
-
-        background-color: aquamarine;
-        color: rgb(197, 197, 197);
-        color: rgba(255, 0, 0, 0.678);
+            position: relative;
+            height: 90%;
+            background-color: aquamarine;
+            display: block;
+            margin: auto;
+            color: rgb(197, 197, 197);
+            color: rgba(255, 0, 0, 0.678);
         }
     </style>
 </head>
 <body onload="load()">
     <script src="waves.js"></script>
-    <canvas id="canvas"></canvas>
+    <div id="sim">
+        <p>aawddw</p>
+        <canvas id="canvas"></canvas>
+    </div>
     <!---
     <h1 id="t" style="color: white;">y:</h1>
     <h1 id="t2" style="color: white;">y:</h1>
