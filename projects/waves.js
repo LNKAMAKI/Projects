@@ -2318,8 +2318,8 @@ function addwave() {
 }
     vels.push(vel)
     for (a in conts) {
-        conts[a].move.push(true)
-        conts[a].fixpos.push(0)
+        //conts[a].move.push(true)
+        //conts[a].fixpos.push(0)
     }
     //for (a = 0; a < conts2[0].length; a++) {
         //conts2[0][a].move.push(true)
