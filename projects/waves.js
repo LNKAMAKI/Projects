@@ -8,7 +8,7 @@ function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 129
+contnumber = 120
 conts = []
 mouse = 'up'
 mouseprev = starty
@@ -1159,7 +1159,7 @@ function animate() {
                        conts2[n][indirec].ys[0] = advances2[n][0].sty[indirec]
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
-                       if (i == contnumber/3 - 1 && n < 20) {
+                       if (i == contnumber/3 - 1 && n < 10) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
@@ -1321,7 +1321,7 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 20) {
+                    if (i == contnumber/3 - 1 && n < 10) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -2240,7 +2240,7 @@ window.addEventListener('mousemove',function(event) {
         mouseprev = mousey
         //tot++
         // mousey
-    },20)
+    },40)
 }
 mousefollow = true
     }
