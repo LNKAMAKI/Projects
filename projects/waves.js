@@ -3,12 +3,12 @@ let starty = 80
 let x = 0
 loop = true
 addpulse = false
-tot = 0
 function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
-contnumber = 120
+tot = 0
+contnumber = 90
 conts = []
 mouse = 'up'
 mouseprev = starty
@@ -1654,7 +1654,10 @@ function animate() {
                     conts[r].ysfinal = []
                     conts[r].start = []
                 }
-                if (r == (contnumber/3)*2 - 2 && conts[r].ys[0] != undefined && conts[r].ysfinal[0] != undefined  && conts[r].ys[1]!= undefined && conts[r].ysfinal[1] != undefined && timers.length > 1) {
+            }
+
+            r = (contnumber/3)*2 - 2
+                if (conts[r].ys[0] != undefined && conts[r].ysfinal[0] != undefined  && conts[r].ys[1]!= undefined && conts[r].ysfinal[1] != undefined && timers.length > 1) {
                     if ((conts[r].ys[0]).toFixed(3) == (conts[r].ysfinal[0]).toFixed(3) && (conts[r].ys[1]).toFixed(3) == (conts[r].ysfinal[1]).toFixed(3)) {
                        timers.splice(0,1)
                        tot = tot - 1
@@ -1673,7 +1676,6 @@ function animate() {
                     }
                     }
                     }
-            }
             for (t2 = 0; t2 < timers2.length; t2++) {
                 //timers2[t]
                 
@@ -1691,14 +1693,21 @@ function animate() {
                       }else{
                         index = l2
                        }
+                    
+                        yf[index] += ysep[t2][index]
+                        for (ko = 0; ko < conts2[t2][l2].yo.length; ko++) {
+                            yf[index] += conts2[t2][l2].yo[ko]
+                        }
+                }
 
-                   conts2[t2][l2].done = []
+                ko = 0
+                l2 = (contnumber/3)*2 - 2
+                conts2[t2][l2].done = []
 
-                   ko = 0
-                   if (l2 == (contnumber/3)*2 - 2 && conts2[t2][l2].ys[ko] != undefined && conts2[t2][l2].ysfinal[ko] != undefined  && conts2[t2][l2].ys[1] != undefined && conts2[t2][l2].ysfinal[1] != undefined && timers2[t2].length > 1) {
+                   if (conts2[t2][l2].ys[ko] != undefined && conts2[t2][l2].ysfinal[ko] != undefined  && conts2[t2][l2].ys[1] != undefined && conts2[t2][l2].ysfinal[1] != undefined && timers2[t2].length > 1) {
                     if ((conts2[t2][l2].ys[ko]).toFixed(3) == (conts2[t2][l2].ysfinal[ko]).toFixed(3) && (conts2[t2][l2].ys[1]).toFixed(3) == (conts2[t2][l2].ysfinal[1]).toFixed(3)) {
-                       conts2[t2][l2].done[ko] = true
-                       //console.log('T2',t2)
+                        conts2[t2][l2].done[ko] = true
+                        //console.log('T2',t2)
                        //console.log('length',conts2[t2][l2].running.length,conts2[t2][l2].go.length,conts2[t2][l2].fixpos.length,conts2[t2][l2].move.length,conts2[t2][l2].start.length,conts2[t2][l2].time.length)
                        //console.log(conts2[t2][22].ys[1],conts2[t2][22].ysfinal[1])
                        timers2[t2].splice(0,1)
@@ -1725,12 +1734,6 @@ function animate() {
                     }
                     }
                     }
-                    
-                        yf[index] += ysep[t2][index]
-                        for (ko = 0; ko < conts2[t2][l2].yo.length; ko++) {
-                            yf[index] += conts2[t2][l2].yo[ko]
-                        }
-                }
             }
            
                 c.beginPath()
@@ -2240,7 +2243,7 @@ window.addEventListener('mousemove',function(event) {
         mouseprev = mousey
         //tot++
         // mousey
-    },40)
+    },70)
 }
 mousefollow = true
     }
