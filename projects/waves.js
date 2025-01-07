@@ -57,6 +57,7 @@ for (i = 0; i < contnumber;i++) {
     //conts2[0].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]}) // essential
     conts3.push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal: [],go:[],start:[],advances:[]})
 
+    if (i > contnumber/3 && i < (contnumber/3)*2) {
     for (tic in timers) {
         conts[i].move.push(true)
     }
@@ -67,6 +68,7 @@ for (i = 0; i < contnumber;i++) {
     for (tic in timers3) {
         conts3[i].move.push(true)
     }
+}
 }
 
 /*
@@ -636,25 +638,6 @@ function animate() {
                //}
      }}           
                     }
-                 if (i > 0 && i < contnumber/3) {
-                    if (conts[24].start[current] != undefined) {
-                        //document.getElementById('t').innerText = ''
-                        //document.getElementById('t2').innerText = ''
-                        //document.getElementById('t3').innerText = ''
-                        for (ci = 0; ci <= current; ci++) { 
-                            if (conts[24].ys[current] != undefined) {
-                            //document.getElementById('t').innerText += (conts[24].ys[ci]).toFixed(0) + ' , ' 
-                            if (conts2[0] != undefined) {
-                                if (conts2[0][(contnumber/3 + 1)].yx != undefined) {
-                            //document.getElementById('t').innerText = conts2[0][(contnumber/3 + i)].yx
-                                }
-                            }
-                            //document.getElementById('t2').innerText = (conts[contnumber/3 + i].time[0]).toFixed(0) + '' + (conts[25].time[0]).toFixed(0)//conts[24].start[current].time + ' | ' + conts[contnumber/3 + i].time
-                            //document.getElementById('t3').innerText += (conts[24].ysfinal[ci]).toFixed(0) + ' , '
-                        }
-                    }
-                 }
-                 }
                  
                  //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
                  
@@ -1650,15 +1633,6 @@ function animate() {
                 yf.push(0)
             }
 
-            for (r in conts) {
-                if (r < contnumber/3 + 1 || r > (contnumber/3)*2) {
-                    conts[r].fixpos = []
-                    conts[r].time = []
-                    conts[r].ys = []
-                    conts[r].ysfinal = []
-                    conts[r].start = []
-                }
-            }
             r = (contnumber/3)*2 - 2
             if (conts[r].ys[0] != undefined && conts[r].ysfinal[0] != undefined  && conts[r].ys[1]!= undefined && conts[r].ysfinal[1] != undefined && timers.length > 1) {
                 if ((conts[r].ys[0]).toFixed(3) == (conts[r].ysfinal[0]).toFixed(3) && (conts[r].ys[1]).toFixed(3) == (conts[r].ysfinal[1]).toFixed(3)) {
@@ -1681,18 +1655,7 @@ function animate() {
                 }
 
             for (t2 = 0; t2 < timers2.length; t2++) {
-                //timers2[t]
-                
                 for (l2 = 0; l2 < conts2[t2].length; l2++) {
-                    /*
-                    if (l2 < contnumber/3 + 1 || l2 > (contnumber/3)*2) {
-                        conts2[t2][l2].fixpos = []
-                        conts2[t2][l2].time = []
-                        conts2[t2][l2].move = []
-                        conts2[t2][l2].yo = []
-                        conts2[t2][l2].ys = []
-                        conts2[t2][l2].ysfinal = []
-                    }*/
                     if (t2 % 2 == 0) {
                         index = contnumber - l2
                       }else{
