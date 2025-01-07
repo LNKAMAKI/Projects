@@ -38,7 +38,7 @@ timers2 = []
 timers3 = []
 amplitude = 60
 advances = [{ads:[0],sty:starty,amp:amplitude}]
-advances = []
+//advances = []
 advances2 = [{ads:[],sty:starty,amp:amplitude}]
 amps = [amplitude]
 amps2 = [amplitude]
@@ -645,7 +645,7 @@ requestAnimationFrame(animate)
 }
 animate()
 
-go = true
+go = false
 window.addEventListener('keyup',function (event) {
     if (event.key == 'm') {
     //this.window.alert('NOW')
