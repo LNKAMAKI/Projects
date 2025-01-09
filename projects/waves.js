@@ -1129,7 +1129,7 @@ function animate() {
             if (conts[r].ys[0] != undefined && conts[r].ysfinal[0] != undefined  && conts[r].ys[1]!= undefined && conts[r].ysfinal[1] != undefined && timers.length > 1) {
                 if ((conts[r].ys[0]).toFixed(3) == (conts[r].ysfinal[0]).toFixed(3) && (conts[r].ys[1]).toFixed(3) == (conts[r].ysfinal[1]).toFixed(3)) {
                    timers.shift()
-                   tot = tot - 1
+                   //tot = tot - 1
                    advances[0].shift()
                    direct.shift()
                    for (l3 = contnumber/3 + 1; l3 < (contnumber/3)*2; l3++) {
@@ -1175,6 +1175,7 @@ function animate() {
                     timers2[t2].shift()
                     advances2[t2].shift()
                     direct2[t2].shift()
+                    tot = tot - 1
                     for (l3 = contnumber/3 + 1; l3 < (contnumber/3)*2; l3++) {
                      if (t2 % 2 == 0) {
                         index2 = l3
@@ -1569,15 +1570,11 @@ function addwave() {
             if (tot > 0 ) {
                 if (ia > contnumber/3 && ia <= contnumber) { // ia >= 20
                     if (join  == false) {
-                    styman = conts[ia].ysfinal[tot - 1]
+                    styman = conts2[0][ia].ysfinal[tot - 1]
                     }else{
-                        styman = advances[0][tot - 1].sty[ia]
+                        styman = advances2[0][tot - 1].sty[ia]
                     }
                 //styman = 100 
-                }else if (ia  == contnumber/3){
-                    styman = conts[ia].ysfinal[tot - 1]
-                }else{
-                    //styman = starty
                 }
                 advances[0][totof].sty[ia] = styman// + starty)
                 if (ia == 0) {
