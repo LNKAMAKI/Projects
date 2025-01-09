@@ -1468,6 +1468,7 @@ animate()
 
 go = true
 
+aman = 0
 function addwave() {
     //timers.push({time:0,ind:tot,ind2:0})
     //console.log('mousey:',mousey)
@@ -1475,8 +1476,8 @@ function addwave() {
         //console.log('hey')
     if (tot > 0) {
         //console.log('first beed y position',conts[(contnumber/3 + i)].ys[tot - 1])
-        ampcont1 = conts[(contnumber/3 + 1)].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
-        ampman = Math.abs(conts[(contnumber/3 + 1)].ysfinal[tot - 1] - mousey)
+        ampcont1 = conts2[0][(contnumber/3 + 1)].ysfinal[tot - 1] - mousey//Number(this.document.getElementById('ev2').innerText) - mousey
+        ampman = Math.abs(conts2[0][(contnumber/3 + 1)].ysfinal[tot - 1] - mousey)
         //console.log(tot - 1,':')
         //console.log(tot - 1 ,'final: ',conts[24].ysfinal[tot - 1], mousey)
         //ampman = starty - mousey
@@ -1487,15 +1488,31 @@ function addwave() {
             dir = 'd'
         }
         join = false
-        if (conts[(contnumber/3 + 1)].go[tot - 2] == false && direct[tot - 1] == dir) {
-            //console.log('juntar')
-            ampmanof = ampman + Number(advances[0][tot - 1].amp[(contnumber/3 + 1)])
+        if (conts2[0][(contnumber/3 + 2)].go[tot - 2] == false && direct2[0][tot - 1] == dir) {
+            console.log('juntar')
+            ampmanof = ampman + Number(advances2[0][tot - 1].amp[(contnumber/3 + 1)])
+            aman = ampmanof
             totof = tot - 1
             join = true
         }else{
             totof = tot
             ampmanof = ampman 
         }
+        /*
+        if (join == false && aman != 0) {
+            aman = 0
+            if (ampcont1 > 0) {
+                addTimers(timers2,0,aman,'u',0)
+            }else{
+               addTimers(timers2,0,aman,'d',0) 
+            }
+        }else if (join == false) {
+            if (ampcont1 > 0) {
+                addTimers(timers2,0,ampmanof,'u',0)
+            }else{
+               addTimers(timers2,0,ampmanof,'d',0) 
+            }
+        }*/
         }else{
             ampman = Math.abs(starty - mousey)
             ampcont1 = starty - mousey
@@ -1516,12 +1533,13 @@ function addwave() {
         //at = 0.1
         at = 0.2
 
+        if (join == false) {
         if (ampcont1 > 0) {
             addTimers(timers2,0,ampmanof,'u',0)
         }else{
            addTimers(timers2,0,ampmanof,'d',0) 
         }
-
+    }
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
@@ -1592,9 +1610,11 @@ function addwave() {
                 //advances[tot].amp.push(Math.abs(styman - conts[ia].ysfinal[tot]))
                 if (ampcont1 > 0) { // direction
                   conts[ia].ysfinal[totof] = Number(styman) - ampmanof + Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
+                  conts2[0][ia].ysfinal[totof] = Number(styman) - ampmanof + Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
                   //conts2[0][ia].ysfinal[totof] = Number(styman) - ampmanof + Number((ia - contnumber/3)*at*ampmanof*0.03) // ampmanof => previous amp
                 }else if (ampcont1 !== 0){
                     conts[ia].ysfinal[totof] = Number(styman) + ampmanof - Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
+                    conts2[0][ia].ysfinal[totof] = Number(styman) + ampmanof - Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
                     //conts2[0][ia].ysfinal[totof] = Number(styman) + ampmanof - Number((ia - contnumber/3)*at*ampmanof*0.03)
                 }
                 if (ia == 24) {
@@ -1602,6 +1622,7 @@ function addwave() {
                     //console.log('styman',styman,'ampmanof',ampmanof,'at',at,'join',join)
                     }
                 advances[0][totof].amp[ia] = ampmanof // essential
+                advances2[0][totof].amp[ia] = ampmanof 
                 }else if (ia < 20){
                         //advances[tot].amp.push(Math.abs(ampcont1))
                         //advances[tot].amp.push(Math.abs(styman - conts[ia].ysfinal[tot]))
