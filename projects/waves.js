@@ -520,215 +520,9 @@ function animate() {
 
             r = (contnumber/3)*2 - 2
 
-            deleteElements()
+            //deleteElements()
            
-                c.beginPath()
-                c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
-                c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[contnumber/3 + 2] + starty,radius,0,2*Math.PI)
-                c.stroke()
-            
-                comp = 9
-                alt = 7
-                comp2 = 10
-                alt2 = 70
-                alt3 = 16
-
-            xtouch = mousex >= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 && mousex <= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp
-            ytouch = mousey >= mouseprev - radius - alt && mousey <= mouseprev - radius - alt + alt2
-            
-            // draw first ball
-            c.beginPath()
-            c.fillStyle = 'red'
-            c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
-            c.fill()
-            c.stroke()
-    
-            c.beginPath()
-            c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - 1,mouseprev - 1.2,radius/3,0,2*Math.PI)
-            c.fillStyle = 'white'
-            c.fill()
-
-            if (0 == 0) {
-                // draw lines
-                for (ke = 3; ke < contnumber/3 - 1; ke++) {
-                        c.beginPath()
-                        c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3] + starty,radius,0,2*Math.PI)
-                        c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + starty,radius,0,2*Math.PI)
-                        c.stroke()
-                }
-
-                // draw last line
-                c.beginPath()
-                c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
-                c.lineTo(2*radius*(contnumber/3 - 2) + radius + 2*radius*(contnumber/3) + space,yf[contnumber/3 - 2 + contnumber/3] + starty,radius,0,2*Math.PI)
-                c.stroke()
-                c.beginPath()
-
-                // draw balls
-            for (ke = 2; ke < contnumber/3 - 1; ke++) {
-                //console.log('ke HEY',ke)
-                c.beginPath()
-                c.lineWidth = '0.8'
-                c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + starty,radius,0,2*Math.PI)
-                c.fillStyle = '#FF0000'
-                c.fill()
-                c.stroke()
-
-                c.beginPath()
-                c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space - 1,yf[ke + contnumber/3] + starty - 1.2,radius/3,0,2*Math.PI)
-                c.fillStyle = 'white'
-                c.fill()
-            }
-
-
-            c.beginPath()
-            c.lineWidth = '4.4'
-            c.strokeStyle = 'black'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty + 45)
-            c.stroke() 
-
-            c.beginPath()
-            c.lineWidth = '3'
-            c.strokeStyle = '#B5B6B9'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty + 45)
-            c.stroke()
-
-            c.beginPath()
-            c.lineWidth = '11'
-            c.strokeStyle = 'black'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 1.5,starty - 14)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 1.5,starty - 4)
-            c.stroke()
-
-            c.beginPath()
-            c.lineWidth = '2.6'
-            c.strokeStyle = 'black'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 9,starty - 3.6)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 5.6,starty - 3.6)
-            c.stroke()
-
-            c.beginPath()
-            c.strokeStyle = 'black'
-            c.lineWidth = '8'
-            c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 6.6,starty + 1,15,3*Math.PI/2 - 0.6,2*Math.PI)
-            c.stroke()
-
-
-            c.beginPath()
-            c.lineWidth = '8.2'
-            c.strokeStyle = 'black'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty + 20)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty - 2)
-            c.stroke()
-
-            c.beginPath()
-            c.strokeStyle = 'black'
-            c.lineWidth = '8'
-            c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 6.6,starty + 18,15,0,Math.PI/2 + 0.5)
-            c.stroke()
-
-            c.beginPath()
-            c.lineWidth = '11'
-            c.strokeStyle = 'black'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 0.5,starty + 26)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 0.5,starty + 35)
-            c.stroke()
-
-            c.beginPath()
-            c.lineWidth = '4'
-            c.strokeStyle = 'black'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 12.5,starty + 45)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 12.5,starty + 45)
-            c.stroke()
-
-            c.beginPath()
-            c.lineWidth = '3'
-            c.strokeStyle = '#B5B6B9'
-            c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 12,starty + 45)
-            c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 12,starty + 45)
-            c.stroke()
-
-            // draw last ball 
-            c.beginPath()
-            c.lineWidth = '0.8'
-            c.strokeStyle = 'black'
-            c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
-            c.fillStyle = 'red'
-            c.fill()
-            c.stroke()
-
-            c.beginPath()
-            c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 1,starty - 1.2,radius/3,0,2*Math.PI)
-            c.fillStyle = 'white'
-            c.fill()
-        }
-
-
-        fstcon = mouse == 'down' && xtouch == true && ytouch == true
-        if (fstcon == true || mousefollow == true) {
-            //mouseprev = conts[21].yo //mousey
-        }
-        //if (mouse == 'down' && xtouch == true && ytouch == true) {
-        c.beginPath()
-        //c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
-        c.fillStyle = 'red'
-        c.fill()
-        c.stroke()
-       //}
-
-        comp = 15
-        alt = 7
-        c.beginPath()
-        c.lineWidth = '0.6'
-        //c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey - radius)
-        //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey - radius)
-        c.fillStyle = '#B5B6B9'
-        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
-        c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
-        c.fill()
-
-        c.beginPath()
-        //c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey + radius)
-        //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey + radius)
-        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev + radius,comp + 2,alt)
-        c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev + radius,comp + 2,alt)
-        c.fill()
-
-        comp2 = 12
-        alt2 = 74
-        c.beginPath()
-        c.fillStyle = 'black' 
-        c.fillStyle = 'rgb(211, 21, 21)'      
-        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2,alt2)
-        c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2,alt2)
-        c.fill()
-
-        c.fillStyle = 'black' 
-        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2/2,alt2/2)
-        c.fill()
-
-        alt3 = 16
-        c.beginPath()
-        c.fillStyle = 'rgb(211, 21, 21)'
-        c.fillStyle = 'gray' 
-        c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,comp2 + comp + 2,alt3)
-        c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,comp2 + comp + 2,alt3)
-        c.fill()
-
-
-        c.beginPath()
-        xb = 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2
-        yb = mouseprev - radius - alt - alt3
-        c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3)
-        //c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 + comp2 + comp + 2,mouseprev - radius - alt - alt3 + alt3)
-        c.stroke()
-
-        c.beginPath()
-        //c.arcTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 + comp2 + comp + 2,mouseprev - radius - alt - alt3 + alt3, 10)
-        //c.arcTo(5,5,10,10,6)
-        c.stroke()
+            //draw()
             
             x = 0
             for (t = 0; t < timers2.length; t++) {
@@ -749,6 +543,7 @@ requestAnimationFrame(animate)
 }
 }
 animate()
+}
 
 go = true
 
@@ -988,7 +783,6 @@ window.addEventListener('mousemove',function(event) {
        
     }
 })
-}
 
 
 function addTimers(settimer, contindex, ampli, mov, ad) {
@@ -1092,6 +886,204 @@ if (conts2[contindex] != undefined){
             ysep[ysep.length - 1].push(0)
         }
 }
+}
+
+function draw() {
+    c.beginPath()
+    c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
+    c.lineTo(2*radius*(2) + radius + 2*radius*(contnumber/3) + space,yf[contnumber/3 + 2] + starty,radius,0,2*Math.PI)
+    c.stroke()
+
+    comp = 9
+    alt = 7
+    comp2 = 10
+    alt2 = 70
+    alt3 = 16
+
+xtouch = mousex >= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 && mousex <= 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp
+ytouch = mousey >= mouseprev - radius - alt && mousey <= mouseprev - radius - alt + alt2
+
+// draw first ball
+c.beginPath()
+c.fillStyle = 'red'
+c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
+c.fill()
+c.stroke()
+
+c.beginPath()
+c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - 1,mouseprev - 1.2,radius/3,0,2*Math.PI)
+c.fillStyle = 'white'
+c.fill()
+
+    // draw lines
+    for (ke = 3; ke < contnumber/3 - 1; ke++) {
+            c.beginPath()
+            c.moveTo(2*radius*(ke - 1) + radius + 2*radius*(contnumber/3) + space,yf[ke - 1 + contnumber/3] + starty,radius,0,2*Math.PI)
+            c.lineTo(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + starty,radius,0,2*Math.PI)
+            c.stroke()
+    }
+
+    // draw last line
+    c.beginPath()
+    c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
+    c.lineTo(2*radius*(contnumber/3 - 2) + radius + 2*radius*(contnumber/3) + space,yf[contnumber/3 - 2 + contnumber/3] + starty,radius,0,2*Math.PI)
+    c.stroke()
+    c.beginPath()
+
+    // draw balls
+for (ke = 2; ke < contnumber/3 - 1; ke++) {
+    //console.log('ke HEY',ke)
+    c.beginPath()
+    c.lineWidth = '0.8'
+    c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + starty,radius,0,2*Math.PI)
+    c.fillStyle = '#FF0000'
+    c.fill()
+    c.stroke()
+
+    c.beginPath()
+    c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space - 1,yf[ke + contnumber/3] + starty - 1.2,radius/3,0,2*Math.PI)
+    c.fillStyle = 'white'
+    c.fill()
+}
+
+
+c.beginPath()
+c.lineWidth = '4.4'
+c.strokeStyle = 'black'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty + 45)
+c.stroke() 
+
+c.beginPath()
+c.lineWidth = '3'
+c.strokeStyle = '#B5B6B9'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty + 45)
+c.stroke()
+
+c.beginPath()
+c.lineWidth = '11'
+c.strokeStyle = 'black'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 1.5,starty - 14)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 1.5,starty - 4)
+c.stroke()
+
+c.beginPath()
+c.lineWidth = '2.6'
+c.strokeStyle = 'black'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 9,starty - 3.6)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 5.6,starty - 3.6)
+c.stroke()
+
+c.beginPath()
+c.strokeStyle = 'black'
+c.lineWidth = '8'
+c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 6.6,starty + 1,15,3*Math.PI/2 - 0.6,2*Math.PI)
+c.stroke()
+
+
+c.beginPath()
+c.lineWidth = '8.2'
+c.strokeStyle = 'black'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty + 20)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 21.6,starty - 2)
+c.stroke()
+
+c.beginPath()
+c.strokeStyle = 'black'
+c.lineWidth = '8'
+c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 6.6,starty + 18,15,0,Math.PI/2 + 0.5)
+c.stroke()
+
+c.beginPath()
+c.lineWidth = '11'
+c.strokeStyle = 'black'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 0.5,starty + 26)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 0.5,starty + 35)
+c.stroke()
+
+c.beginPath()
+c.lineWidth = '4'
+c.strokeStyle = 'black'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 12.5,starty + 45)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 12.5,starty + 45)
+c.stroke()
+
+c.beginPath()
+c.lineWidth = '3'
+c.strokeStyle = '#B5B6B9'
+c.moveTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 12,starty + 45)
+c.lineTo(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space + 12,starty + 45)
+c.stroke()
+
+// draw last ball 
+c.beginPath()
+c.lineWidth = '0.8'
+c.strokeStyle = 'black'
+c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space,starty,radius,0,2*Math.PI)
+c.fillStyle = 'red'
+c.fill()
+c.stroke()
+
+c.beginPath()
+c.arc(2*radius*(contnumber/3 - 1) + radius + 2*radius*(contnumber/3) + space - 1,starty - 1.2,radius/3,0,2*Math.PI)
+c.fillStyle = 'white'
+c.fill()
+
+//if (mouse == 'down' && xtouch == true && ytouch == true) {
+c.beginPath()
+//c.arc(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
+c.fillStyle = 'red'
+c.fill()
+c.stroke()
+//}
+
+comp = 15
+alt = 7
+c.beginPath()
+c.lineWidth = '0.6'
+//c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey - radius)
+//c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey - radius)
+c.fillStyle = '#B5B6B9'
+c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
+c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev - radius - alt,comp + 2,alt)
+c.fill()
+
+c.beginPath()
+//c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mousey + radius)
+//c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space + comp,mousey + radius)
+c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev + radius,comp + 2,alt)
+c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp,mouseprev + radius,comp + 2,alt)
+c.fill()
+
+comp2 = 12
+alt2 = 74
+c.beginPath()
+c.fillStyle = 'black' 
+c.fillStyle = 'rgb(211, 21, 21)'      
+c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2,alt2)
+c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2,alt2)
+c.fill()
+
+c.fillStyle = 'black' 
+c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt,comp2/2,alt2/2)
+c.fill()
+
+alt3 = 16
+c.beginPath()
+c.fillStyle = 'rgb(211, 21, 21)'
+c.fillStyle = 'gray' 
+c.fillRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,comp2 + comp + 2,alt3)
+c.strokeRect(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3,comp2 + comp + 2,alt3)
+c.fill()
+
+
+c.beginPath()
+xb = 2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2
+yb = mouseprev - radius - alt - alt3
+c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2,mouseprev - radius - alt - alt3)
+//c.lineTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space - comp - comp2 + comp2 + comp + 2,mouseprev - radius - alt - alt3 + alt3)
+c.stroke()
 }
 
 function deleteElements() {
