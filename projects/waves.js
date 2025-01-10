@@ -1121,7 +1121,7 @@ function animate() {
                     */
 
             yf = []
-            for (i in conts2[0]) {
+            for (i = 0; i < contnumber;i++) {
                 yf.push(0)
             }
 
