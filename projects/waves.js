@@ -818,15 +818,15 @@ function animate() {
                        conts2[n][indirec].ys[0] = advances2[n][0].sty[indirec]
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
-                       if (i == contnumber/3 - 1 && n < 20) {
+                       if (i == contnumber/3 - 1 && n < 10) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3) + 1],direct2[n][current],(contnumber/3)*(n + 2))
+                           addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3) + 1],direct2[n][current],(contnumber/3)*(n + 1))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'d',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'d',(contnumber/3)*(n + 1))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'u',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'u',(contnumber/3)*(n + 1))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][current].amp[20],'u',20)
@@ -965,17 +965,17 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 20) {
+                    if (i == contnumber/3 - 1 && n < 10) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],direct2[n][current],(contnumber/3)*(n + 2))
+                           addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],direct2[n][current],(contnumber/3)*(n + 1))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'d',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'d',(contnumber/3)*(n + 1))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'u',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'u',(contnumber/3)*(n + 1))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][current].amp[20],'d',0)
@@ -1121,11 +1121,12 @@ function animate() {
                     */
 
             yf = []
-            for (i in conts) {
+            for (i in conts2[0]) {
                 yf.push(0)
             }
 
             r = (contnumber/3)*2 - 2
+            
             if (conts[r].ys[0] != undefined && conts[r].ysfinal[0] != undefined  && conts[r].ys[1]!= undefined && conts[r].ysfinal[1] != undefined && timers.length > 1) {
                 if ((conts[r].ys[0]).toFixed(3) == (conts[r].ysfinal[0]).toFixed(3) && (conts[r].ys[1]).toFixed(3) == (conts[r].ysfinal[1]).toFixed(3)) {
                    timers.shift()
@@ -1175,7 +1176,9 @@ function animate() {
                     timers2[t2].shift()
                     advances2[t2].shift()
                     direct2[t2].shift()
+                    if (t2 == 0) {
                     tot = tot - 1
+                    }
                     for (l3 = contnumber/3 + 1; l3 < (contnumber/3)*2; l3++) {
                      if (t2 % 2 == 0) {
                         index2 = l3
@@ -1847,7 +1850,7 @@ if (conts2[contindex] != undefined){
         direct2[contindex].push(mov)
 
         ysep.push([])
-        for (ar in conts) {
+        for (ar in conts2[0]) {
             ysep[ysep.length - 1].push(0)
         }
 }
