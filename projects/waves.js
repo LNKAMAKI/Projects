@@ -520,60 +520,7 @@ function animate() {
 
             r = (contnumber/3)*2 - 2
 
-            for (t2 = 0; t2 < timers2.length; t2++) {
-                for (l2 = 0; l2 < conts2[t2].length; l2++) {
-                    if (t2 % 2 == 0) {
-                        index = l2
-                      }else{
-                        index = contnumber - l2
-                       }
-
-                   conts2[t2][l2].done = []
-                    
-                        yf[index] += ysep[t2][index]
-                        if (l2 > contnumber/3 && l2 < (contnumber/3)*2) {
-                        for (ko = 0; ko < conts2[t2][l2].yo.length; ko++) {
-                            yf[index] += conts2[t2][l2].yo[ko]
-                        }
-                    }
-                }
-
-                ko = 0
-                l2 = (contnumber/3)*2 - 2
-                if (conts2[t2][l2].ys[ko] != undefined && conts2[t2][l2].ysfinal[ko] != undefined  && conts2[t2][l2].ys[1] != undefined && conts2[t2][l2].ysfinal[1] != undefined && timers2[t2].length > 1) {
-                 if ((conts2[t2][l2].ys[ko]).toFixed(3) == (conts2[t2][l2].ysfinal[ko]).toFixed(3) && (conts2[t2][l2].ys[1]).toFixed(3) == (conts2[t2][l2].ysfinal[1]).toFixed(3)) {
-                    conts2[t2][l2].done[ko] = true
-                    //console.log('T2',t2)
-                    //console.log('length',conts2[t2][l2].running.length,conts2[t2][l2].go.length,conts2[t2][l2].fixpos.length,conts2[t2][l2].move.length,conts2[t2][l2].start.length,conts2[t2][l2].time.length)
-                    //console.log(conts2[t2][22].ys[1],conts2[t2][22].ysfinal[1])
-                    timers2[t2].shift()
-                    advances2[t2].shift()
-                    direct2[t2].shift()
-                    if (t2 == 0) {
-                    tot = tot - 1
-                    }
-                    for (l3 = contnumber/3 + 1; l3 < (contnumber/3)*2; l3++) {
-                     if (t2 % 2 == 0) {
-                        index2 = l3
-                   }else{
-                        index2 = contnumber - l3
-                   }
-                   
-                     ysep[t2][index2] += conts2[t2][l3].yo[0]
-                    conts2[t2][l3].change = false
-                    conts2[t2][l3].fixpos.shift()
-                    conts2[t2][l3].go.shift()
-                    conts2[t2][l3].move.shift()
-                    conts2[t2][l3].running.shift()
-                    conts2[t2][l3].start.shift()
-                    conts2[t2][l3].time.shift()
-                    conts2[t2][l3].yo.shift()
-                    conts2[t2][l3].ys.shift()
-                    conts2[t2][l3].ysfinal.shift()
-                 }
-                 }
-                 }
-            }
+            deleteElements()
            
                 c.beginPath()
                 c.moveTo(2*radius*(1) + radius + 2*radius*(contnumber/3) + space,mouseprev,radius,0,2*Math.PI)
@@ -1145,4 +1092,48 @@ if (conts2[contindex] != undefined){
             ysep[ysep.length - 1].push(0)
         }
 }
+}
+
+function deleteElements() {
+    for (let t2 = 0; t2 < timers2.length; t2++) {
+        for (let l2 = 0; l2 < conts2[t2].length; l2++) {
+            let index = (t2 % 2 === 0) ? l2 : contnumber - l2;
+
+            yf[index] += ysep[t2][index];
+            if (l2 > contnumber / 3 && l2 < (contnumber / 3) * 2) {
+                for (let ko = 0; ko < conts2[t2][l2].yo.length; ko++) {
+                    yf[index] += conts2[t2][l2].yo[ko];
+                }
+            }
+        }
+
+        let ko = 0;
+        let l2 = (contnumber / 3) * 2 - 2;
+        if (conts2[t2][l2].ys[ko] !== undefined && conts2[t2][l2].ysfinal[ko] !== undefined && conts2[t2][l2].ys[1] !== undefined && conts2[t2][l2].ysfinal[1] !== undefined && timers2[t2].length > 4) {
+            if (conts2[t2][l2].ys[ko].toFixed(3) === conts2[t2][l2].ysfinal[ko].toFixed(3) && conts2[t2][l2].ys[1].toFixed(3) === conts2[t2][l2].ysfinal[1].toFixed(3)) {
+                //conts2[t2][l2].done[ko] = true;
+                timers2[t2] = timers2[t2].slice(1);
+                advances2[t2] = advances2[t2].slice(1);
+                direct2[t2] = direct2[t2].slice(1);
+                if (t2 === 0) {
+                    tot -= 1;
+                }
+                for (let l3 = contnumber / 3 + 1; l3 < (contnumber / 3) * 2; l3++) {
+                    let index2 = (t2 % 2 === 0) ? l3 : contnumber - l3;
+
+                    ysep[t2][index2] += conts2[t2][l3].yo[0];
+                    conts2[t2][l3].change = false;
+                    conts2[t2][l3].fixpos = conts2[t2][l3].fixpos.slice(1);
+                    conts2[t2][l3].go = conts2[t2][l3].go.slice(1);
+                    conts2[t2][l3].move = conts2[t2][l3].move.slice(1);
+                    conts2[t2][l3].running = conts2[t2][l3].running.slice(1);
+                    conts2[t2][l3].start = conts2[t2][l3].start.slice(1);
+                    conts2[t2][l3].time = conts2[t2][l3].time.slice(1);
+                    conts2[t2][l3].yo = conts2[t2][l3].yo.slice(1);
+                    conts2[t2][l3].ys = conts2[t2][l3].ys.slice(1);
+                    conts2[t2][l3].ysfinal = conts2[t2][l3].ysfinal.slice(1);
+                }
+            }
+        }
+    }
 }
