@@ -35,7 +35,7 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 1.8
+vel = 1.7
 tension = 0.3
 vels = [vel]
 direct = []
@@ -1188,7 +1188,7 @@ function animate() {
                 l2 = (contnumber/3)*2 - 2
                 if (conts2[t2][l2].ys[ko] != undefined && conts2[t2][l2].ysfinal[ko] != undefined  && conts2[t2][l2].ys[1] != undefined && conts2[t2][l2].ysfinal[1] != undefined && timers2[t2].length > 1) {
                     firstcon = (conts2[t2][l2].ys[ko]).toFixed(3) == (conts2[t2][l2].ysfinal[ko]).toFixed(3) && (conts2[t2][l2].ys[1]).toFixed(3) == (conts2[t2][l2].ysfinal[1]).toFixed(3)
-                    seccon = conts2[t2][l2].ys[0] == -100 && conts2[t2][l2].go[0] == false && timers2[t2].length > 20 && t2 == timers2.length - 1 && t2 > 2
+                    seccon = conts2[t2][l2].ys[0] == -100 && conts2[t2][l2].go[0] == false && timers2[t2].length > 10 && t2 == timers2.length - 1 && t2 > 2
                     //seccon = false
                     if (seccon == true) {
                         console.log('ISSUE',t2)
@@ -1690,7 +1690,7 @@ window.addEventListener('mousemove',function(event) {
         mouseprev = mousey
         //tot++
         // mousey
-    },48)
+    },40)
 }
 mousefollow = true
     }
