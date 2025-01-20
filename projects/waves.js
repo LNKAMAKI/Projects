@@ -1,10 +1,10 @@
 let radius = 2.3
 let starty = 80
+function load() {
 let x = 0
 loop = true
 addpulse = false
 tot = 0
-function load() {
 canv = document.getElementById('canvas')
 c = canv.getContext('2d')
 console.log(x)
@@ -18,7 +18,7 @@ amplitude = 40
 //advances = []
 advances2 = [] //[{ads:[],sty:[],amp:[]}]]
 amps2 = [amplitude]
-vel = 1.8
+vel = 1.7
 tension = 0.3
 vels = [vel]
 direct2 = []
@@ -319,7 +319,7 @@ function animate() {
                            //window.alert('n adicionar true em',current - 1)
                        }
                    }
-                   if (add == true && conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time) {
+                   if (add == true) { // && conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time) {
                    if (conts2[n][indirec].go[current - 1] != true) {
 
                        if (conts2[n][indirec].go[current - 1] == false) {
@@ -550,7 +550,7 @@ function animate() {
                     if (seccon == true) {
                         console.log('ISSUE',t2)
                     }
-                 if (firstcon == true) {// || seccon == true) {
+                 if (firstcon == true || seccon == true) {
                     conts2[t2][l2].done[ko] = true
                     if (t2 == 0) {
                         tot -= 1
@@ -573,7 +573,7 @@ function animate() {
                     conts2[t2][l3].fixpos.shift()
                     conts2[t2][l3].go.shift()
                     conts2[t2][l3].move.shift()
-                    if (firstcon == true) {
+                     if (firstcon == true) {
                     conts2[t2][l3].running.shift()
                     conts2[t2][l3].start.shift()
                     }
@@ -1159,5 +1159,10 @@ if (conts2[contindex] != undefined){
 }
 
 function changeat() {
+    //ot = 0
+    //conts2 = []
+    //timers2 = []
+   //advances2 = []
+    //load()
     at = Number(document.getElementById('at').value)
 }
