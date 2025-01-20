@@ -147,6 +147,7 @@ function animate() {
                  }
 
                  conts[contnumber/3 + 1].running[0] = true
+                 conts[contnumber/3 + 2].running[0] = true
                  if (conts[contnumber/3 + i].time[current] - hiro >= 0) { // Math.sin(-vel*(conts[contnumber/3 + i].time[current]  - hiro)) = 0 
                      if (type == 'pulse') {
                      if (advances[0][current].amp[contnumber/3 + i] - (advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)) <= 0) {
@@ -837,7 +838,7 @@ function animate() {
                        conts2[n][indirec].ys[0] = advances2[n][0].sty[indirec]
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
-                       if (i == contnumber/3 - 1 && n < 3) {
+                       if (i == contnumber/3 - 1 && n < 1) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3) + 1],direct2[n][current],(contnumber/3)*(n + 2))
@@ -984,7 +985,7 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 3) {
+                    if (i == contnumber/3 - 1 && n < 1) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -1188,7 +1189,7 @@ function animate() {
                 l2 = (contnumber/3)*2 - 2
                 if (conts2[t2][l2].ys[ko] != undefined && conts2[t2][l2].ysfinal[ko] != undefined  && conts2[t2][l2].ys[1] != undefined && conts2[t2][l2].ysfinal[1] != undefined && timers2[t2].length > 1) {
                     firstcon = (conts2[t2][l2].ys[ko]).toFixed(3) == (conts2[t2][l2].ysfinal[ko]).toFixed(3) && (conts2[t2][l2].ys[1]).toFixed(3) == (conts2[t2][l2].ysfinal[1]).toFixed(3)
-                    seccon = conts2[t2][l2].ys[0] == -100 && conts2[t2][l2].go[0] == false && timers2[t2].length > 10 && t2 == timers2.length - 1 && t2 > 2
+                    seccon = conts2[t2][l2].ys[0] == -100 && conts2[t2][l2].go[0] == false && timers2[t2].length > 8 && t2 == timers2.length - 1 && t2 > 0
                     //seccon = false
                     if (seccon == true) {
                         console.log('ISSUE',t2)
@@ -1541,7 +1542,7 @@ function addwave() {
         //at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0.15
+        at = 0.26
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
