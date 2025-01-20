@@ -837,7 +837,7 @@ function animate() {
                        conts2[n][indirec].ys[0] = advances2[n][0].sty[indirec]
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
-                       if (i == contnumber/3 - 1 && n < 20) {
+                       if (i == contnumber/3 - 1 && n < 3) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3) + 1],direct2[n][current],(contnumber/3)*(n + 2))
@@ -900,7 +900,7 @@ function animate() {
                            //window.alert('n adicionar true em',current - 1)
                        }
                    }
-                   if (add == true && conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time) {
+                   if (add == true) { // && conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time) {
                    if (conts2[n][indirec].go[current - 1] != true) {
 
                        if (conts2[n][indirec].go[current - 1] == false) {
@@ -984,7 +984,7 @@ function animate() {
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 20) {
+                    if (i == contnumber/3 - 1 && n < 3) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -1193,7 +1193,7 @@ function animate() {
                     if (seccon == true) {
                         console.log('ISSUE',t2)
                     }
-                 if (firstcon == true || seccon == true) {
+                 if (firstcon == true) {// || seccon == true) {
                     conts2[t2][l2].done[ko] = true
                     //console.log('T2',t2)
                     //console.log('length',conts2[t2][l2].running.length,conts2[t2][l2].go.length,conts2[t2][l2].fixpos.length,conts2[t2][l2].move.length,conts2[t2][l2].start.length,conts2[t2][l2].time.length)
@@ -1541,7 +1541,7 @@ function addwave() {
         //at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0.1
+        at = 0.15
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
