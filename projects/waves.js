@@ -28,6 +28,7 @@ for (i = 0; i < contnumber; i++) {
     yf.push(starty)
 }
 
+at = 0.26
 type = 'pulse'
 fixo = true
 drawball = false
@@ -86,13 +87,13 @@ function animate() {
             canmove = true
             //if (i == 3 && current == 0) {
                //console.log('biranga',conts2[n][23].time[0])
-               //console.log(-(advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)))
+               //console.log(-(advances2[n][current].amp[indirec] -(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)))
             //}
             conts2[n][indirec].running[0] = true
 
             if (conts2[n][indirec].time[current] - hiro >= 0) { // Math.sin(-vel*(conts2[n][indirec].time[current]  - hiro)) = 0 
                 if (type == 'pulse') {
-                if (advances2[n][current].amp[indirec] - (advance + i)*at*advances2[n][current].amp[indirec]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) <= 0) {
+                if (advances2[n][current].amp[indirec] - (advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) <= 0) {
                    if (conts2[n][indirec].start[current] == undefined) {
                        if (i > 0 && i < contnumber/3) { //(i == 4 || i == 3 || i == 2) {
                        conts2[n][indirec].start[current] = {time:conts2[n][indirec].time[current]}
@@ -101,10 +102,10 @@ function animate() {
                    }
                     if (direct2[n][current] == 'u') {
                        //console.log('UP')
-                y = (advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                y = (advances2[n][current].amp[indirec] -(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                     }else{
                        //console.log('DOWN')
-                        y = -(advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                        y = -(advances2[n][current].amp[indirec] -(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                     }
        
                    
@@ -129,11 +130,11 @@ function animate() {
                 }*/
                  
             }else{
-                if (advances2[n][current].amp[indirec] - (advance + i)*at*advances2[n][current].amp[indirec]*0.03 >= 0) {
+                if (advances2[n][current].amp[indirec] - (advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03 >= 0) {
                     if (direct2[n][current] == 'u') {
-                        y = (advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                        y = (advances2[n][current].amp[indirec] -(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                             }else{
-                                y = -(advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                                y = -(advances2[n][current].amp[indirec] -(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                             }
                     }else{
                         y = 0
@@ -155,9 +156,9 @@ function animate() {
            }
        
            c.font = '20px Arial'
-           if (Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) < Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] + 0.01 - hiro)) && conts2[n][indirec].time[current] - hiro >= 0 && advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03 >= 0) {
+           if (Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) < Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] + 0.01 - hiro)) && conts2[n][indirec].time[current] - hiro >= 0 && advances2[n][current].amp[indirec] -(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03 >= 0) {
               c.fillStyle = 'yellow'
-              y = (advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*-1
+              y = (advances2[n][current].amp[indirec] -(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03)*-1
               if (i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                if (conts2[n][indirec].go[current - 1] != false && conts2[n][indirec].move[current] == true) {
                    conts2[n][indirec].move[current] = false // move false
@@ -196,7 +197,7 @@ function animate() {
                //console.log('EIK',y)
             //}
             conts2[n][indirec].y = y + advances2[n][current].sty[indirec]
-            conts2[n][indirec].a = i //(advance + i)*at*advances2[n][current].amp[indirec]*0.03
+            conts2[n][indirec].a = i //(advance + i)*(advances2[n][current].at)*advances2[n][current].amp[indirec]*0.03
 
             add = true
             for (dom = current - 2; dom >= 0; dom--){
@@ -878,7 +879,7 @@ function addwave() {
         //at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0.26
+        //at = 0.26
 
         if (join == false) {
         if (ampcont1 > 0) {
@@ -1073,7 +1074,7 @@ if (conts2[contindex] != undefined){
        settimer[contindex].push({time:0, ind:settimer[contindex].length,ind2:0}) // essential ind: conts[n].length - 1
         
         //ad = 0
-        advances2[contindex].push({ads:[ad],sty:[],amp:[]}) // essential
+        advances2[contindex].push({ads:[ad],sty:[],amp:[],at: at}) // essential
         
         //essential
         //ampli = 5
@@ -1122,7 +1123,7 @@ if (conts2[contindex] != undefined){
         //ad = 0
         //if (tot > 0 && join == false) {
         advances2.push([])
-        advances2[contindex].push({ads:[ad],sty:[],amp:[]}) // essential
+        advances2[contindex].push({ads:[ad],sty:[],amp:[],at:at}) // essential
         //}
         
         //console.log('tot',tot)
@@ -1155,4 +1156,8 @@ if (conts2[contindex] != undefined){
             ysep[ysep.length - 1].push(0)
         }
 }
+}
+
+function changeat() {
+    at = Number(document.getElementById('at').value)
 }
