@@ -88,6 +88,11 @@ mousex = 'i'
 mousey = 'i'
 //at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
+    if (timers2[2] != undefined){
+        
+        document.getElementById('t').innerText = timers2[2].length
+    
+    }
     space = 300 -(contnumber/3 - 1)*radius*2*2 - 40
     x = 0
     c.clearRect(0,0,300,150)
@@ -1016,14 +1021,18 @@ function animate() {
                        //loop = false
                         
                         }*/
-                }else if(Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) >= 0 && conts2[n][indirec].move[current] == true){
+                }else if(Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) >= 0 && conts2[n][indirec].move[current] == true && conts2[n][indirec].running[current] == true) {
                    y = 0
-                   if (man == false) {
+                   //if (man == false) {
                   conts2[n][indirec].move[current] = false // move false
+                  conts2[n][indirec].ys[current] =  advances2[n][0].sty[indirec]
+                  conts2[n][indirec].passou = []
+                  conts2[n][indirec].passou[current] = true
+                  conts2[n][indirec].ysfinal[current] = advances2[n][0].sty[indirec]
                   if (n == 1 && current == 1) {
                        //console.log('now this')
                   }
-                    }
+                    //}
                }else{
                    y = 0
                    //window.alert('EITA')
@@ -1123,6 +1132,7 @@ function animate() {
             conts2[n][indirec].ys[current] = conts2[n][indirec].ysfinal[current]
             }else{
                conts2[n][indirec].ys[current] = -100
+               conts2[n][indirec].reset2 = true
             }
            }else{
                conts2[n][indirec].ys[current] = conts2[n][indirec].y
@@ -1165,7 +1175,7 @@ function animate() {
                        conts2[n][indirec].ys[0] = advances2[n][0].sty[indirec]
                        conts2[n][indirec].time[0] = hiro
                        conts2[n][indirec].running[0] == true
-                       if (i == contnumber/3 - 1 && n < 3) {
+                       if (i == contnumber/3 - 1 && n < 2) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
                            addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3) + 1],direct2[n][current],(contnumber/3)*(n + 2))
@@ -1188,12 +1198,14 @@ function animate() {
                        }
                        
                   // }
-           }else if (conts2[n][indirec - 1].running[0] == true && finalperc > tension) { // && finalperc >= 0.5) { //(((conts2[n][indirec - 1].ys[0])).toFixed(3) == ((conts2[n][indirec - 1].ysfinal[0])).toFixed(3)){
+           }else if (conts2[n][indirec - 1].running[0] == true && (finalperc > tension || conts2[n][indirec - 1].move[0] == false)) { // && finalperc >= 0.5) { //(((conts2[n][indirec - 1].ys[0])).toFixed(3) == ((conts2[n][indirec - 1].ysfinal[0])).toFixed(3)){
+            conts2[n][indirec].reset = true
                if (i == 3) {
                //console.log('pode atualizar',conts2[n][23].time[0],y)
                }
                conts2[n][indirec].ys[0] = conts2[n][indirec].y
            }else{
+                conts2[n][indirec].reset = true
                conts2[n][indirec].ys[0] = -100
                //if (i == 3) {
                    conts2[n][indirec].time[0] = 0
@@ -1228,6 +1240,7 @@ function animate() {
                //if (indirec > (contnumber/3 + 1) && indirec < 40) {
                    //console.log('index',indirec, 'current',current, 'current - 1',current - 1)
             eq = (conts2[n][indirec].ys[current - 1]).toFixed(3) == (conts2[n][indirec].ysfinal[current - 1]).toFixed(3)
+            eq = conts2[n][indirec].move[current - 1] == false
                if (conts2[n][indirec].go[current - 1] == false && eq == true) {
                     //window.alert('ADD NOW')
                     //conts2[n][indirec].time[current] = conts2[n][24].start[current - 1].time
@@ -1278,6 +1291,8 @@ function animate() {
        }}else if (current > 0 && i != 1){
         //console.log('heya',i,indirec,conts2[n][indirec])
            eq = (conts2[n][indirec].ys[current - 1]).toFixed(3) == (conts2[n][indirec].ysfinal[current - 1]).toFixed(3)
+           eq = conts2[n][indirec].move[current - 1] == false 
+           conts2[n][indirec].eq = current + '' + eq
            if (conts2[n][indirec].go[current - 1] == false && eq == true) {
                 //window.alert('ADD NOW')
                 //conts2[n][indirec].time[current] = conts2[n][24].start[current - 1].time
@@ -1297,6 +1312,7 @@ function animate() {
                //console.log(add,'eq: true',)
                }
                //console.log('EI',add,)
+               conts2[n][indirec].add = current + '' + add
                if (conts2[n][indirec - 1].ys[current] != -100) { //conts2[n][indirec - 1].ys[current] != undefined && conts2[n][indirec - 1].ys[current] != -100 && conts2[n][indirec - 1].ysfinal[current] != undefined) {
                 fstperc = Math.abs(conts2[n][indirec - 1].ys[current] - advances2[n][current].sty[indirec - 1])
                 secperc = Math.abs(conts2[n][indirec - 1].ysfinal[current] - advances2[n][current].sty[indirec - 1])
@@ -1317,17 +1333,19 @@ function animate() {
                     }
 
                     if (i > 2) {
-                        wi = conts2[n][indirec - 1].running[current] == true && finalperc > tension
+                        wi = conts2[n][indirec - 1].running[current] == true && (finalperc > tension || conts2[n][indirec - 1].move[current] == false)
                     }else{
                         wi = (conts2[n][indirec - 1].ys[current]).toFixed(3) == (conts2[n][indirec - 1].ysfinal[current]).toFixed(3)
                     }
+
+                    conts2[n][indirec].wi = current + '' + wi
                if (add == true && wi == true) {//conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time && conts2[n][indirec - 1].ys[current] == conts2[n][indirec - 1].ysfinal[current]){
                if (conts2[n][indirec].go[current - 1] != true) {
 
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 3) {
+                    if (i == contnumber/3 - 1 && n < 2) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
@@ -1721,7 +1739,8 @@ function animate() {
                         console.log('ISSUE',t2,l2)
                     }
                     firstcon = (conts2[t2][l2].ys[ko]).toFixed(3) == (conts2[t2][l2].ysfinal[ko]).toFixed(3) && (conts2[t2][l2].ys[1]).toFixed(3) == (conts2[t2][l2].ysfinal[1]).toFixed(3)
-                 if (firstcon == true) {
+                    firstcon = conts2[t2][l2].move[ko] == false && conts2[t2][l2].move[1] == false
+                 if (firstcon == true && t2 < 4) {
                     conts2[t2][l2].done[ko] = true
                     //console.log('T2',t2)
                     //console.log('length',conts2[t2][l2].running.length,conts2[t2][l2].go.length,conts2[t2][l2].fixpos.length,conts2[t2][l2].move.length,conts2[t2][l2].start.length,conts2[t2][l2].time.length)
@@ -2136,7 +2155,7 @@ function addwave() {
         //at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0.1
+        at = 0.25
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
