@@ -37,13 +37,18 @@
         }
 
         p {
-            padding-top: 5px;
+            padding-top: 0px;
             padding-left: 10px;
             padding-bottom: 5px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 1.1em;
+            margin: 4px 0px 0px 0px;
         }
-        
+        p.slide {
+            background-color: rgb(184, 184, 184);
+            padding: 13px 10px 16px 10px;
+            border-radius: 7px;
+        }
             input[type="range"] {
             -webkit-appearance: none;
                 appearance: none;
@@ -82,6 +87,18 @@
             border: 2px solid #053a5f;
             }
 
+            #damp {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 12px 0px 12px 0px;
+            }
+
+            .title {
+                margin: 0px;
+                font-size: 18px;
+            }
+
           </style>  
 </head>
 
@@ -89,10 +106,12 @@
     <script src="waves.js"></script>
     <div id="sim">
         <canvas id="canvas"></canvas>
-        <p></p>
-        <p>
-            low<input type="range" name="" id="at" min="0.26" max="0.46" step="0.05" value="0.26" onchange="changeat()">high
-        </p>
+        <div id="damp">
+            <p class="title">Damping</p>
+            <p class="slide">
+                low<input type="range" name="" id="at" min="0.26" max="0.46" step="0.05" value="0.26" onchange="changeat()">high
+            </p>
+        </div>
     </div>
     <h1 id="t" style="color: white;">y:</h1>
     <!---
