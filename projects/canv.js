@@ -56,7 +56,7 @@ ct= 'i'
 tg = 0
 cc = 'i'
 maincor = 'white'
-promode = true
+promode = false
 function drawPrism() {
     canv = document.getElementById('c')
     if (maincor == 'black') {
