@@ -5,16 +5,8 @@
 <iframe src="https://lnkamaki.github.io/Projects/projects/clock.html" frameborder="0" style="width: 654px;
 height: 516px;"></iframe>
 
-<li><a href= "https://lnkamaki.github.io/Projects/projects/waves.html"><span style=" font-weight: normal; font-size: 1.3em;">WAVE SIMULATOR</span></a></li> 
-
-<li><a href= "https://lnkamaki.github.io/Projects/projects/canv.html"><span style=" font-weight: normal; font-size: 1.3em;">Refração em prismas</span></a></li> 
-
-#POKESNOOKER
-
-<li><a href= "https://lnkamaki.github.io/Projects/projects/canvas.html"><span style=" font-weight: normal; font-size: 1.3em;">POKESNOOKER</span></a></li> 
 
 # Math
-<li><a href= "https://lnkamaki.github.io/Projects/projects/pendulum.html"><span style=" font-weight: normal; font-size: 1.3em;">Pendulum</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/modclock.html"><span style=" font-weight: normal; font-size: 1.3em;">Mod(n) Clock</span></a></li> 
 
@@ -42,6 +34,8 @@ height: 516px;"></iframe>
 <li><a href= "https://lnkamaki.github.io/Projects/projects/canv.html"><span style=" font-weight: normal; font-size: 1.3em;">Refração em prismas</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/canvas.html"><span style=" font-weight: normal; font-size: 1.3em;">POKESNOOKER</span></a></li> 
+
+<li><a href= "https://lnkamaki.github.io/Projects/projects/pendulum.html"><span style=" font-weight: normal; font-size: 1.3em;">Pendulum</span></a></li> 
 <br>
 # Other
  <li><a href= "https://lnkamaki.github.io/Projects/projects/dicionario.html"><span style=" font-weight: normal; font-size: 1.3em;">Dicionário</span></a></li>   
