@@ -1,4 +1,5 @@
 let ans = []
+let bns = []
 let timer = 0
 let intlimits = []
 const tension = 120
@@ -28,32 +29,12 @@ for (let i = 0; i < contsnumber; i++){
    }else{
       intlimits.push({xinf: i*radius*2, xsup: i*radius*2 + 2*radius, y: 150*Math.sin(i*radius*2),vel:0})
       velocities.push(0
-         
+
       )
    }
 }
 
-
-ans = []
-bns = []
-for (let n = 1; n < modos; n++){
-let an = 0
-let bn = 0
-for (let i = 0; i < contsnumber; i++){ // for each x interval
-    // 2/L.y(x)∫(xinf - xsup)sin(nπx/L).dx
-   // 2/L.y(x).-L/nπx.cos(nπx/l)
-   // 2/L.y(x).(-L/nπx.cos(nπxsub/l) + L/nπ.cos(nπxinf/l)
-   // 2/L.y(x).(-L/nπ(cos(nπxsub/L) - cos(nπxinf/L)))
-   //console.log('y',intlimits[i].y,'xinferior', intlimits[i].xinf,'xsuperior', intlimits[i].xsup)
-   let wn2 = (n*Math.PI*v)/L
-   an += (2/L)*intlimits[i].y*((-L/(n*Math.PI))*(Math.cos(n*Math.PI*intlimits[i].xsup/L) - Math.cos(n*Math.PI*intlimits[i].xinf/L)))
-   bn += (2/(wn2*L))*velocities[i]*((-L/(n*Math.PI))*(Math.cos(n*Math.PI*intlimits[i].xsup/L) - Math.cos(n*Math.PI*intlimits[i].xinf/L)))
-}
-ans.push(an)
-bns.push(bn)
-console.log(an)
-}   
-
+update()
 
 animate()   
 
@@ -96,4 +77,25 @@ function Timerset(n) {
   this.el = function (n) {
    return n*timer
   }
+}
+
+function update() {
+ans = []
+bns = []
+for (let n = 1; n < modos; n++){
+let an = 0
+let bn = 0
+for (let i = 0; i < contsnumber; i++){ // for each x interval
+    // 2/L.y(x)∫(xinf - xsup)sin(nπx/L).dx
+   // 2/L.y(x).-L/nπx.cos(nπx/l)
+   // 2/L.y(x).(-L/nπx.cos(nπxsub/l) + L/nπ.cos(nπxinf/l)
+   // 2/L.y(x).(-L/nπ(cos(nπxsub/L) - cos(nπxinf/L)))
+   //console.log('y',intlimits[i].y,'xinferior', intlimits[i].xinf,'xsuperior', intlimits[i].xsup)
+   let wn2 = (n*Math.PI*v)/L
+   an += (2/L)*intlimits[i].y*((-L/(n*Math.PI))*(Math.cos(n*Math.PI*intlimits[i].xsup/L) - Math.cos(n*Math.PI*intlimits[i].xinf/L)))
+   bn += (2/(wn2*L))*velocities[i]*((-L/(n*Math.PI))*(Math.cos(n*Math.PI*intlimits[i].xsup/L) - Math.cos(n*Math.PI*intlimits[i].xinf/L)))
+}
+ans.push(an)
+bns.push(bn)
+}   
 }
