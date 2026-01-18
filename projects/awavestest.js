@@ -27,7 +27,9 @@ for (let i = 0; i < contsnumber; i++){
       intlimits.push({xinf:i*radius*2, xsup: i*radius*2 + 2*radius, y: yinitial - yinitial,vel:0})
    }else{
       intlimits.push({xinf: i*radius*2, xsup: i*radius*2 + 2*radius, y: 150*Math.sin(i*radius*2),vel:0})
-      velocities.push(1)
+      velocities.push(0
+         
+      )
    }
 }
 

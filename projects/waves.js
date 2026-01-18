@@ -1843,7 +1843,7 @@ function animate() {
             for (ke = 2; ke < contnumber/3 - 1; ke++) {
                 //console.log('ke HEY',ke)
                 c.beginPath()
-                c.lineWidth = '0.8'
+                c.lineWidth = '0.3'
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + conts[ke + contnumber/3].yo,radius,0,2*Math.PI)
                 c.fillStyle = '#FF0000'
                 c.fill()
