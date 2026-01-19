@@ -1,9 +1,10 @@
 let ans = []
 let bns = []
 let timer = 0
+let lastTime = 0
 let intlimits = []
 const tension = 80
-const density = 0.05
+const density = 0.005
 const v = Math.sqrt(tension/density)
 const L = 150
 const contsnumber = 60
@@ -25,7 +26,7 @@ const yinitial = 75
 g = 0
 for (let i = 0; i < contsnumber; i++){
    if (i != 10) {
-      intlimits.push({xinf:i*radius*2, xsup: i*radius*2 + 2*radius, y: -30,vel:0})
+      intlimits.push({xinf:i*radius*2, xsup: i*radius*2 + 2*radius, y: -20,vel:0})
       velocities.push(0)
    }else{
       intlimits.push({xinf: i*radius*2, xsup: i*radius*2 + 2*radius, y: 0,vel:0})
@@ -39,6 +40,18 @@ animate()
 
  b = 6*timer
 function animate() {
+
+     const currentTime = performance.now();  // Pega tempo atual
+    
+    if (lastTime === 0) {
+        lastTime = currentTime;
+    }
+    
+    const dt = (currentTime - lastTime) / 1000;
+    lastTime = currentTime;
+    
+    timer += dt
+
     c.clearRect(0, 0, 300, 150);
 
 for (let i = 0; i < contsnumber; i++){
@@ -85,7 +98,8 @@ for (let i = 0; i < contsnumber; i++){
 // function format: sin(npix/L).Ancos(wnt) + sin(npix/L).Bsin(wnt)
 // wn = npiv/L
 // v = sqrt(tension/density)
-timer += 0.01
+//timer += 0.01
+timer += dt;
 requestAnimationFrame(animate)
 }
 }
@@ -126,7 +140,7 @@ window.addEventListener('keyup', function (event) {
 
 })
 
-setInterval(() => {timer = 0; update()}, 40);
+//setInterval(() => {timer = 0; update()}, 15);
 
 /*
 function updatevelocities() {
@@ -149,4 +163,3 @@ timer = 0
 update()
 }
 */
-
