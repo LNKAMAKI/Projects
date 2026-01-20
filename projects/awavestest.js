@@ -4,29 +4,32 @@ let timer = 0
 let lastTime = 0
 let intlimits = []
 const tension = 80
-const density = 0.005
+const density = 0.05
 const v = Math.sqrt(tension/density)
-const L = 150
-const contsnumber = 60
+const L = 250 
+const contsnumber = 121 // N >= 2M
 const radius = L/(2*contsnumber)
 let b = 9
 let velocities = []
+let cHeight = 0
+const xinitial = 2
+const yinitial = 75
+const dot = 6
 
 //const L = radius*2*contsnumber
-const modos = 30
+const modos = 60
 
 function begin(){
 const canv = document.getElementById("canvas")
+cHeight = canv.offsetHeight
 const c = canv.getContext('2d')
 
 intlimits = []
-const xinitial = 50
-const yinitial = 75
 
 g = 0
 for (let i = 0; i < contsnumber; i++){
-   if (i != 10) {
-      intlimits.push({xinf:i*radius*2, xsup: i*radius*2 + 2*radius, y: -20,vel:0})
+   if (i != dot) {
+      intlimits.push({xinf:i*radius*2, xsup: i*radius*2 + 2*radius, y: -10,vel:0})
       velocities.push(0)
    }else{
       intlimits.push({xinf: i*radius*2, xsup: i*radius*2 + 2*radius, y: 0,vel:0})
@@ -60,7 +63,7 @@ for (let i = 0; i < contsnumber; i++){
    c.beginPath()
    c.arc(x_center + xinitial, intlimits[i].y + yinitial, radius, 0, Math.PI*2); // círculo completo
    c.stroke(); // contorno
-   if (i != 10) {
+   if (i != dot) {
       c.fillStyle = 'red'
    }else{
       c.fillStyle = 'blue'
@@ -69,18 +72,21 @@ for (let i = 0; i < contsnumber; i++){
    c.fill()
    c.closePath()
    
-   intlimits[i].y = 0
+   if (i != dot) {
+       intlimits[i].y = 0
+   }
+  
    vel = 0
-   if (i != 10) {
+   if (i != dot) {
     for (let n = 1; n < modos; n++){
 
    let k = (n*Math.PI*x_center)/L
    let wn = (n*Math.PI*v)/L
-   gamma = -0.00
+   gamma = -0.1
    //intlimits[i].y += Math.exp(gamma*timer)*Math.sin(k) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer)); //+ Math.sin(k) * bns[n - 1] * Math.sin(wn * timer);
     //sin_medio = (cos(k*intlimits[i].xinf) - cos(k*intlimits[i].xsup)) / (k*(intlimits[i].xsup - intlimits[i].xinf))
 
-    intlimits[i].y += Math.sin(k) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer));
+    intlimits[i].y += Math.exp(gamma*timer) * Math.sin(k) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer));
     vel += Math.sin(k) * wn * ( bns[n-1] * Math.cos(wn * timer)  - ans[n-1] * Math.sin(wn * timer))
    //intlimits[i].exp = `sin(${k}).Ancos(${wn}.${timer}) + sin(${k}).Bnsin(${wn}.${timer})`
    //console.log(intlimits[i].exp)
@@ -133,14 +139,20 @@ bns.push(bn)
 
 
 
-window.addEventListener('keyup', function (event) {
-   if (event.key == 'l') {
-      update()
-   }
+window.addEventListener('mousemove', function (event) {
+
+ alt = ((event.y)/cHeight)*150
+ if (alt >= 10 && alt <= 140) {
+   intlimits[dot].y = alt - yinitial
+ }
+   this.document.getElementById('par').innerText = `mousey: ${event.y} ${((event.y)/cHeight)*150}`
+   
+  // timer = 0
+   //update()
 
 })
 
-//setInterval(() => {timer = 0; update()}, 15);
+setInterval(() => {timer = 0; update()}, 15);
 
 /*
 function updatevelocities() {
