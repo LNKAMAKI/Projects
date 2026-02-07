@@ -22,6 +22,7 @@ timers2 = [[{a: 'b'}]]
 timers2 = []
 timers3 = []
 amplitude = 40
+at = 0.5
 advances = [[{ads:[0],sty:[],amp:[]}]]
 for (ia = 0; ia <= contnumber; ia++) {
     advances[0][0].sty.push(starty) // sty da primmeira onda (partindo do y = 100)
@@ -35,8 +36,10 @@ for (ia = 0; ia <= contnumber; ia++) {
 amps = [amplitude]
 amps2 = [amplitude]
 amps3 = []
-vel = 1
+vel = 0.6
 tension = 0.3
+density = 0.05
+vel = Math.sqrt(tension/density)
 vels = [vel]
 direct = []
 direct2 = []
@@ -49,8 +52,10 @@ for (i = 0; i < contnumber; i++) {
 for (i = 0; i < contnumber;i++) {
     if (i == 1 || i == 2){ // || i == contnumber/3 + 2 || i == contnumber/3 + 3) {
         conts.push({y:0,move:[],fixpos:[0],ys:[],ysfinal:[],go:[],start:[],time:[],yo:starty,running:[true]})
-    }else{
+    }else if (i > contnumber/3 && i < (contnumber/3)*2){
         conts.push({y:0,move:[],fixpos:[0],ys:[-100],ysfinal:[],go:[],start:[],time:[],yo:starty,running:[false]})
+    }else{
+        conts.push([])
     }
     //conts2[0].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[]}) // essential
     conts3.push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal: [],go:[],start:[],advances:[]})
@@ -86,6 +91,11 @@ mousex = 'i'
 mousey = 'i'
 //at = 0.8 // usar o at para estabelecer o alinhamento das contas no manual?
 function animate() {
+    if (timers2[4] != undefined){
+        
+        document.getElementById('t').innerText = timers2[4].length
+    
+    }
     space = 300 -(contnumber/3 - 1)*radius*2*2 - 40
     x = 0
     c.clearRect(0,0,300,150)
@@ -123,22 +133,22 @@ function animate() {
         
         if (timers3[current].time - x*0.1 >= 0) {
             if (type == 'pulse') {
-            if (advances2[timers3[current].ind].amp -i*at*advances2[timers3[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) <= 0) {
+            if (advances2[timers3[current].ind].amp -i*Math.exp(0)*advances2[timers3[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) <= 0) {
                 if (direct3[current] == 'u') {
-            y = (advances2[timers3[current].ind].amp -i*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
+            y = (advances2[timers3[current].ind].amp -i*Math.exp(0)*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
                 }else{
-                    y = -(advances2[timers3[current].ind].amp -i*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
+                    y = -(advances2[timers3[current].ind].amp -i*Math.exp(0)*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
                 }
             }else if(Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) >= 0 && conts3[i].move[current] == true){
                 y = 0
                 conts3[i].move[current] = false
             }
         }else{
-            if (advances2[timers3[current].ind].amp -i*at*advances2[timers3[current].ind].amp*0.03 >= 0) {
+            if (advances2[timers3[current].ind].amp -i*Math.exp(0)*advances2[timers3[current].ind].amp*0.03 >= 0) {
                 if (direct3[current] == 'u') {
-                    y = (advances2[timers3[current].ind].amp -i*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
+                    y = (advances2[timers3[current].ind].amp -i*Math.exp(0)*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
                         }else{
-                            y = -(advances2[timers3[current].ind].amp -i*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
+                            y = -(advances2[timers3[current].ind].amp -i*Math.exp(0)*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
                         }
                 }else{
                     y = 0
@@ -172,136 +182,6 @@ function animate() {
             conts2[tic].ys = []
             //conts[tic].ys = []
         }
-    
-
-         lastx = space + 2*radius*(contnumber)
-         
-         for (current in timers3) {
-            advance = advances2[timers3[current].ind].ads[timers3[current].ind2]
-            //advance = contnumber/3
-            x =  2*(advance)*radius
-            //x = 0
-            // - (advance)*2*radius
-         for (i = 0; i < contnumber;i++) {
-             
-             canmove = true
-             
-             if (timers3[current].time - x*0.1 >= 0) {
-                 if (type == 'pulse') {
-                 if (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) <= 0) {
-                     if (direct3[current] == 'u') {
-                 y = (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
-                     }else{
-                         y = -(advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
-                     }
- 
- 
-                     if (i == (contnumber/3)*2 - 1 && conts3[i].reflect[current] != false) {
-                         
-                         
-                         conts3[i].reflect[current] = false
-                         //window.alert('WHITE')
-                         timers2.push({time:timers3[current].time,ind:timers3[current].ind,ind2:advances[timers3[current].ind].ads.length})
-                         if (direct3[current] == 'd') {
-                            direct2.push('u')
-                         }else{
-                            direct2.push('d')
-                            //direct2.push('u')
-                         }
-                         //advances[timers2[current].ind].amp[contnumber - 1 - i].push(amplitude)
-                         if (advances[timers3[current].ind].length == 1) {
-                            window.alert('ON THE SIDELINES')
-                         advances[timers3[current].ind].ads.push((contnumber/3)*2)
-                         }else{
-                            advances[timers3[current].ind].ads.push(advances[timers3[current].ind].ads[advances[timers3[current].ind].ads.length - 1] + (contnumber/3)*2)
-                         }
-                         vels.push(vel)
-                         for (a in conts2) {
-                             conts2[a].move.push(true)
-                         }
-                         //loop = false
-                         
-                         
-                         }
-                 }else if(Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) >= 0 && conts3[i].move[current] == true){
-                     y = 0
-                     if (man == false) {
-                     conts3[i].move[current] = false
-                     }
-                 }else{
-                        y = 0
-                        //window.alert('EITA')
-                    }
-             }else{
-                 if (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03 >= 0) {
-                     if (direct3[current] == 'u') {
-                         y = (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
-                             }else{
-                                 y = -(advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))
-                             }
-                     }else{
-                         y = 0
-                         conts3[i].move[current] = false
-                     }
-             }
-             }else{
-                 y = 0
-             }
-     
-            if (man == true) {
-             c.fillStyle = 'black'
-             if (conts3[i].move[current] == true) {
-             if ((Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))).toFixed(1) == 0) {
-                c.fillStyle = 'red'
-             }else if((Math.sin(0 - vels[current]*(timers3[current].time - x*0.1))).toFixed(2) == -1.00) {
-                c.fillStyle = 'blue'
-             }
-             }
-
-             c.font = '20px Arial'
-             if (Math.sin(0 - vels[current]*(timers3[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers3[current].time + 0.01 - x*0.1)) && timers3[current].time - x*0.1 >= 0 && advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03 >= 0) {
-                c.fillStyle = 'yellow'
-                y = (advances2[timers3[current].ind].amp -(advance + i)*at*advances2[timers3[current].ind].amp*0.03)*-1
-                conts3[i].move[current] = false
-                conts3[i].fixpos[current] = y
-             }
-            }
-
-             if (conts3[i].move[current] == false && type == 'pulse') {
-                if (man == true) {
-                if (direct3[current] == 'u') {
-                    y = conts3[i].fixpos[current]
-                }else{
-                    y = -conts3[i].fixpos[current] 
-                }
-            }else{
-                y = 0
-            }
-            }
-
-            conts3[i].y = y //+ advances2[timers3[current].ind].sty
-            //conts3[i].fixpos[current] = y + advances2[timers3[current].ind].sty
-
-            // c.fillText('I',x + radius -2*(advance)*radius + space,120)
-             c.beginPath()
-             //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
-             
-             if (draw1 == true && i != contnumber/3) {
-             //c.arc(x + radius -2*(advance)*radius + space,y + advances2[timers3[current].ind].sty[i],radius,0,2*Math.PI)
-             }
-             
-             //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
-             c.fillStyle = 'cyan'
-             c.fill()
-             c.strokeStyle = 'black'
-             //c.stroke()
-             c.beginPath()
-             //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-             c.fillStyle = 'white'
-             c.fill()
-             x+= 2*radius
-             }
-         }
 
          /*
         for (current in timers) {
@@ -315,11 +195,11 @@ function animate() {
             
             if (timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1 >= 0) {
                 if (type == 'pulse') {
-                if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
+                if (advances[timers[current].ind].amp -i*Math.exp(0)*advances[timers[current].ind].amp*0.03 >= 0 && Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1)) <= 0) {
                     if (direct[current] == 'u') {
-                y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                y = (advances[timers[current].ind].amp -i*Math.exp(0)*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
                     }else{
-                        y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                        y = -(advances[timers[current].ind].amp -i*Math.exp(0)*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
                     }
                 }else if(Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1)) >= 0 && conts[i + contnumber/3].move[current] == true){
                     y = 0
@@ -328,11 +208,11 @@ function animate() {
                     }
                 }
             }else{
-                if (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03 >= 0) {
+                if (advances[timers[current].ind].amp -i*Math.exp(0)*advances[timers[current].ind].amp*0.03 >= 0) {
                     if (direct[current] == 'u') {
-                        y = (advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                        y = (advances[timers[current].ind].amp -i*Math.exp(0)*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
                             }else{
-                                y = -(advances[timers[current].ind].amp -i*at*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
+                                y = -(advances[timers[current].ind].amp -i*Math.exp(0)*advances[timers[current].ind].amp*0.03)*Math.sin(0 - vels[current]*(timers[current].time - (x - (space + 2*radius*(contnumber/3)))*0.1))
                             }
                     }else{
                         y = 0
@@ -412,11 +292,11 @@ function animate() {
              canmove = true
              if (timers2[current].time - x*0.1 >= 0) {
                  if (type == 'pulse') {
-                 if (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) <= 0) {
+                 if (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) <= 0) {
                      if (direct2[current] == 'u') {
-                 y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                 y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                      }else{
-                         y = -(advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                         y = -(advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                      }
         
         
@@ -463,11 +343,11 @@ function animate() {
         
                   
              }else{
-                 if (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
+                 if (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
                      if (direct2[current] == 'u') {
-                         y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                         y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                              }else{
-                                 y = -(advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+                                 y = -(advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
                              }
                      }else{
                          y = 0
@@ -489,9 +369,9 @@ function animate() {
             }
         
             c.font = '20px Arial'
-            if (Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time + 0.01 - x*0.1)) && timers2[current].time - x*0.1 >= 0 && advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
+            if (Math.sin(0 - vels[current]*(timers2[current].time - x*0.1)) < Math.sin(0 - vels[current]*(timers2[current].time + 0.01 - x*0.1)) && timers2[current].time - x*0.1 >= 0 && advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03 >= 0) {
                c.fillStyle = 'yellow'
-               y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*-1
+               y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*-1
                conts2[contnumber/3 + i].move[current] = false
                conts2[contnumber/3 + i].fixpos[current] = y //+ advances[timers2[current].ind].sty[contnumber/3 + i]
             }
@@ -547,485 +427,485 @@ function animate() {
                 hiro = 0
                 //x = 0
                 // - (advance)*2*radius
-                for (i = 1; i < contnumber;i++) {
-                    // y = hiro 
-                    canmove = true
-                    if (i == 3 && current == 0) {
-                       //console.log('biranga',conts[23].time[0])
-                       //console.log(-(advances[0][current].amp[i] -(advance + i)*at*advances[0][current].amp[i]*0.03)*Math.sin(0 - vels[current]*(conts[i].time[current] - hiro)))
-                    }
-                    if (conts[i].time[current] - hiro >= 0) { // Math.sin(-vel*(conts[i].time[current]  - hiro)) = 0 
-                        if (type == 'pulse') {
-                        if (advances[0][current].amp[i] - (advance + i)*at*advances[0][current].amp[i]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts[i].time[current] - hiro)) <= 0) {
-                           if (conts[i].start[current] == undefined) {
-                               if (i > 0 && i < (contnumber/3)*2) { //(i == 4 || i == 3 || i == 2) {
-                               conts[i].start[current] = {time:conts[i].time[current]}
-                               }
-                               //console.log('terminou', conts[i].time[current], vels[current]*(conts[i].time[current] - hiro), hiro)
-                           }
-                            if (direct[current] == 'u') {
-                               //console.log('UP')
-                        y = (advances[0][current].amp[i] -(advance + i)*at*advances[0][current].amp[i]*0.03)*Math.sin(0 - vels[current]*(conts[i].time[current] - hiro))
-                            }else{
-                               //console.log('DOWN')
-                                y = -(advances[0][current].amp[i] -(advance + i)*at*advances[0][current].amp[i]*0.03)*Math.sin(0 - vels[current]*(conts[i].time[current] - hiro))
+             for (i = 0; i < (contnumber/3)*2;i++) {
+                 // y = hiro 
+                 canmove = true
+                 if (i == 3 && current == 0) {
+                    //console.log('biranga',conts[23].time[0])
+                    //console.log(-(advances[0][current].amp[contnumber/3 + i] -(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)))
+                 }
+                 if (conts[contnumber/3 + i].time[current] - hiro >= 0) { // Math.sin(-vel*(conts[contnumber/3 + i].time[current]  - hiro)) = 0 
+                     if (type == 'pulse') {
+                     if (advances[0][current].amp[contnumber/3 + i] - (advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)) <= 0) {
+                        if (conts[contnumber/3 + i].start[current] == undefined) {
+                            if (i > 0 && i < (contnumber/3)*2) { //(i == 4 || i == 3 || i == 2) {
+                            conts[contnumber/3 + i].start[current] = {time:conts[contnumber/3 + i].time[current]}
                             }
-                
-                            /*
-                            if (i == (contnumber/3)*2 - 1 && conts[i].reflect[current] != false) {
-                                
-                               conts[i].reflect[current] = false
-                               //window.alert('CYAN')
-                               //console.log('CYAN',current,advances[0][current])
-                               //timers3.push({time:conts[i].time[current],ind:current,ind2:advances[0]2[current].ads.length})
-                               //timers3.push(conts[i].time[current])
-                               if (direct[current] == 'd') {
-                               direct3.push('u')
-                               }else{
-                                   direct3.push('d')
-                                   //direct3.push('u')
-                               }
-                               amps3.push(amplitude)
-                               
-                              // console.log('WHAT',advances[0]2[current].ads.length)
-                               if (advances[0]2[current].ads.length == 0) {
-                                   advances[0]2[current].ads.push((contnumber/3))
-                                   //console.log('WHAT2',advances[0]2[current].ads.length)
-                               }else{
-                                   //Mwindow.alert('PUSH')
-                                   //console.log(advances[0]2[timers3.length - 2] + (contnumber/3)*2)
-                                   advances[0]2[current].ads.push(advances[0]2[current].ads[advances[0]2[current].ads.length - 1] + (contnumber/3)*2)
-                               }
-                               vels.push(vel)
-                               for (a in conts3) {
-                                   conts3[a].move.push(true)
-                               }
-                               //loop = false
-                                
-                                }*/
-                        }else if(Math.sin(0 - vels[current]*(conts[i].time[current] - hiro)) >= 0 && conts[i].move[current] == true){
-                           y = 0
-                           if (man == false) {
-                          conts[i].move[current] = false
-                           }
-                       }else{
-                           y = 0
-                           //window.alert('EITA')
-                       }
-                
-                       /*
-                        if ((Math.sin(0 - vels[current]*(conts[i].time[current] - hiro))).toFixed(2) == -1.00 && conts[i].time[current] - hiro >= 0 && conts[i].move[current] != false) {
-                           //window.alert('STOP')
-                          conts[i].fixpos[current] = y
-                           conts[i].move[current] = false
-                        }*/
-                         
-                    }else{
-                        if (advances[0][current].amp[i] - (advance + i)*at*advances[0][current].amp[i]*0.03 >= 0) {
-                            if (direct[current] == 'u') {
-                                y = (advances[0][current].amp[i] -(advance + i)*at*advances[0][current].amp[i]*0.03)*Math.sin(0 - vels[current]*(conts[i].time[current] - hiro))
-                                    }else{
-                                        y = -(advances[0][current].amp[i] -(advance + i)*at*advances[0][current].amp[i]*0.03)*Math.sin(0 - vels[current]*(conts[i].time[current] - hiro))
-                                    }
+                            //console.log('terminou', conts[contnumber/3 + i].time[current], vels[current]*(conts[contnumber/3 + i].time[current] - hiro), hiro)
+                        }
+                         if (direct[current] == 'u') {
+                            //console.log('UP')
+                     y = (advances[0][current].amp[contnumber/3 + i] -(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
+                         }else{
+                            //console.log('DOWN')
+                             y = -(advances[0][current].amp[contnumber/3 + i] -(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
+                         }
+            
+                         /*
+                         if (i == (contnumber/3)*2 - 1 && conts[contnumber/3 + i].reflect[current] != false) {
+                             
+                            conts[contnumber/3 + i].reflect[current] = false
+                            //window.alert('CYAN')
+                            //console.log('CYAN',current,advances[0][current])
+                            //timers3.push({time:conts[contnumber/3 + i].time[current],ind:current,ind2:advances[0]2[current].ads.length})
+                            //timers3.push(conts[contnumber/3 + i].time[current])
+                            if (direct[current] == 'd') {
+                            direct3.push('u')
                             }else{
-                                y = 0
-                                conts[i].move[current] = false
+                                direct3.push('d')
+                                //direct3.push('u')
                             }
-                    }
+                            amps3.push(amplitude)
+                            
+                           // console.log('WHAT',advances[0]2[current].ads.length)
+                            if (advances[0]2[current].ads.length == 0) {
+                                advances[0]2[current].ads.push((contnumber/3))
+                                //console.log('WHAT2',advances[0]2[current].ads.length)
+                            }else{
+                                //Mwindow.alert('PUSH')
+                                //console.log(advances[0]2[timers3.length - 2] + (contnumber/3)*2)
+                                advances[0]2[current].ads.push(advances[0]2[current].ads[advances[0]2[current].ads.length - 1] + (contnumber/3)*2)
+                            }
+                            vels.push(vel)
+                            for (a in conts3) {
+                                conts3[a].move.push(true)
+                            }
+                            //loop = false
+                             
+                             }*/
+                     }else if(Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)) >= 0 && conts[contnumber/3 + i].move[current] == true){
+                        y = 0
+                        if (man == false) {
+                       conts[contnumber/3 + i].move[current] = false
+                        }
                     }else{
                         y = 0
+                        //window.alert('EITA')
                     }
-                
-                    if (manf == true) {
-                    c.fillStyle = 'black'
-                   if (conts[i].move[current] == true) {
-                   if ((Math.sin(0 - vels[current]*(conts[i].time[current] - hiro))).toFixed(1) == 0) {
-                      c.fillStyle = 'red'
-                   }else if((Math.sin(0 - vels[current]*(conts[i].time[current] - hiro))).toFixed(2) == -1.00) {
-                      c.fillStyle = 'blue'
-                   }
-                   }
-                
-                   c.font = '20px Arial'
-                   if (Math.sin(0 - vels[current]*(conts[i].time[current] - hiro)) < Math.sin(0 - vels[current]*(conts[i].time[current] + 0.01 - hiro)) && conts[i].time[current] - hiro >= 0 && advances[0][current].amp[i] -(advance + i)*at*advances[0][current].amp[i]*0.03 >= 0) {
-                      c.fillStyle = 'yellow'
-                      y = (advances[0][current].amp[i] -(advance + i)*at*advances[0][current].amp[i]*0.03)*-1
-                      if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
-                       if (conts[i].go[current - 1] != false) {
-                           conts[i].move[current] = false
-                           //if (i == 3 && current == 0)
-                           //console.log('N ERA PRA SE FAZER ISSO')
-                       }
-                      }else{
-                        conts[i].move[current] = false
-                    }
-                      conts[i].fixpos[current] = y //+ advances[0][current].sty[i]
-                   }
-                }
-                
-                    if (conts[i].move[current] == false && type == 'pulse') {
-                     // y = 0
-                     if (manf == true){
-                     if (direct[current] == 'u') {
-                        y = conts[i].fixpos[current]
-                     }else{
-                      y = -conts[i].fixpos[current]
-                     }
-                     }else{
+            
+                    /*
+                     if ((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))).toFixed(2) == -1.00 && conts[contnumber/3 + i].time[current] - hiro >= 0 && conts[contnumber/3 + i].move[current] != false) {
+                        //window.alert('STOP')
+                       conts[contnumber/3 + i].fixpos[current] = y
+                        conts[contnumber/3 + i].move[current] = false
+                     }*/
+                      
+                 }else{
+                     if (advances[0][current].amp[contnumber/3 + i] - (advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03 >= 0) {
+                         if (direct[current] == 'u') {
+                             y = (advances[0][current].amp[contnumber/3 + i] -(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
+                                 }else{
+                                     y = -(advances[0][current].amp[contnumber/3 + i] -(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))
+                                 }
+                         }else{
+                             y = 0
+                             conts[contnumber/3 + i].move[current] = false
+                         }
+                 }
+                 }else{
                      y = 0
-                     }
+                 }
+            
+                 if (manf == true) {
+                 c.fillStyle = 'black'
+                if (conts[contnumber/3 + i].move[current] == true) {
+                if ((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))).toFixed(1) == 0) {
+                   c.fillStyle = 'red'
+                }else if((Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro))).toFixed(2) == -1.00) {
+                   c.fillStyle = 'blue'
+                }
+                }
+            
+                c.font = '20px Arial'
+                if (Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] - hiro)) < Math.sin(0 - vels[current]*(conts[contnumber/3 + i].time[current] + 0.01 - hiro)) && conts[contnumber/3 + i].time[current] - hiro >= 0 && advances[0][current].amp[contnumber/3 + i] -(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03 >= 0) {
+                   c.fillStyle = 'yellow'
+                   y = (advances[0][current].amp[contnumber/3 + i] -(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03)*-1
+                   if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
+                    if (conts[contnumber/3 + i].go[current - 1] != false) {
+                        conts[contnumber/3 + i].move[current] = false
+                        //if (i == 3 && current == 0)
+                        //console.log('N ERA PRA SE FAZER ISSO')
                     }
-                   
-                    if (i == 3 && current == 0){
-                       //console.log('EIK',y)
-                    }
-                    conts[i].y = y + advances[0][current].sty[i]
-                    conts[i].a = i //(advance + i)*at*advances[0][current].amp[i]*0.03
+                   }else{
+                     conts[contnumber/3 + i].move[current] = false
+                 }
+                   conts[contnumber/3 + i].fixpos[current] = y //+ advances[0][current].sty[contnumber/3 + i]
+                }
+            }
+            
+                 if (conts[contnumber/3 + i].move[current] == false && type == 'pulse') {
+                  // y = 0
+                  if (manf == true){
+                  if (direct[current] == 'u') {
+                     y = conts[contnumber/3 + i].fixpos[current]
+                  }else{
+                   y = -conts[contnumber/3 + i].fixpos[current]
+                  }
+                  }else{
+                  y = 0
+                  }
+                 }
                 
+                 if (i == 3 && current == 0){
+                    //console.log('EIK',y)
+                 }
+                 conts[contnumber/3 + i].y = y + advances[0][current].sty[contnumber/3 + i]
+                 conts[contnumber/3 + i].a = i //(advance + i)*at*advances[0][current].amp[contnumber/3 + i]*0.03
+    
+                 add = true
+                 for (dom = current - 2; dom >= 0; dom--){
+                     if (conts[contnumber/3 + i].go[dom] == false) {
+                         add = false
+                         //window.alert('n adicionar true em',current - 1)
+                     }
+                 }
+
+                 //conts[22].running[0] = true
+                 if (current == 0 && i == 2) {
+                    //conts[22].running[0] = true
+                 }
+                 if (current > 0 || i == 1 || i == 2) { 
+                 if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
+                 if (add == true && conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != true) {
+                    conts[contnumber/3 + i].ys[current] = conts[contnumber/3 + i].y
+                 }else if (conts[contnumber/3 + i].go[current] == true){
+                 conts[contnumber/3 + i].ys[current] = conts[contnumber/3 + i].ysfinal[current]
+                 }else{
+                    conts[contnumber/3 + i].ys[current] = -100
+                 }
+                }else{
+                    conts[contnumber/3 + i].ys[current] = conts[contnumber/3 + i].y
+                }
+            }else{
+                //if (i == 2)
+                //console.log(conts[contnumber/3 + i - 1].ys[0] == conts[contnumber/3 + i - 1].ysfinal[0],conts[contnumber/3 + i].ys[0])
+                if (i == 3) {
+                    //console.log('why',conts[contnumber/3 + i - 1].ys[0] == conts[contnumber/3 + i - 1].ysfinal[0])
+                }
+                if (conts[contnumber/3 + i - 1].ys[0] != undefined && conts[contnumber/3 + i - 1].ysfinal[0] != undefined) {
+                    // console.log(conts[contnumber/3 + i - 1].ys[0])
+                    fstperc = Math.abs(conts[contnumber/3 + i - 1].ys[0] - advances[0][0].sty[contnumber/3 + i - 1])
+                    secperc = Math.abs(conts[contnumber/3 + i - 1].ysfinal[0] - advances[0][0].sty[contnumber/3 + i - 1])
+                    finalperc = fstperc/secperc
+
+                            cond = conts[contnumber/3 + i - 1].running[0] == true && finalperc > tension && conts[contnumber/3 + i].ys[0] == -100
+                        
+                            //console.log(contnumber/3 + i - 1,':', advances[0][0].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[0])
+                        //console.log(conts[contnumber/3 + i - 1].ys[0])
+                        //console.log('has moved: ',fstperc)
+                        ////console.log('still remains: ',secperc)
+                        //console.log('final percento:',finalperc)
+                        
+                if (cond == true) {
+                        //if (i == 2 || i == 3) {
+                            //console.log('hey yyou',contnumber/3 + i,hiro,advances[0][0].sty[contnumber/3 + i])
+                            y = 0
+                            
+                            conts[contnumber/3 + i].ys[0] = advances[0][0].sty[contnumber/3 + i]
+                            conts[contnumber/3 + i].time[0] = hiro
+                            conts[contnumber/3 + i].running[0] = true
+                            //console.log(contnumber/3 + i,':',conts[contnumber/3 + i].running[0])
+                            if (i == contnumber/3 - 1) {
+                            //console.log('add timers2')
+                            
+                            if (fixo == false) {
+                              addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],direct[current],(contnumber/3))
+                            }else{
+                                if (direct[current] == 'u') {
+                                    addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'d',(contnumber/3))
+                                }else{
+                                    addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'u',(contnumber/3))
+                                }
+                            }
+                                //addTimers(timers2,0,advances[0][current].amp[20],'u',0)
+                            }
+                            
+                       // }
+                }else if (conts[contnumber/3 + i - 1].running[0] == true && finalperc > tension) {//(((conts[contnumber/3 + i - 1].ys[0])).toFixed(3) == ((conts[contnumber/3 + i - 1].ysfinal[0])).toFixed(3)){
+                    if (i == 3) {
+                    //console.log('pode atualizar',conts[23].time[0],y)
+                    }
+                   // console.log('sim')
+                    conts[contnumber/3 + i].ys[0] = conts[contnumber/3 + i].y
+                }else{
+                    conts[contnumber/3 + i].ys[0] = -100
+                    //if (i == 3) {
+                        conts[contnumber/3 + i].time[0] = 0
+               //}
+     }}           
+                    }
+                 if (i > 0 && i < contnumber/3) {
+                    if (conts[24].start[current] != undefined) {
+                        //document.getElementById('t').innerText = ''
+                        //document.getElementById('t2').innerText = ''
+                        //document.getElementById('t3').innerText = ''
+                        for (ci = 0; ci <= current; ci++) { 
+                            if (conts[24].ys[current] != undefined) {
+                            //document.getElementById('t').innerText += (conts[24].ys[ci]).toFixed(0) + ' , ' 
+                            if (conts2[0] != undefined) {
+                                if (conts2[0][(contnumber/3 + 1)].yx != undefined) {
+                            //document.getElementById('t').innerText = conts2[0][(contnumber/3 + i)].yx
+                                }
+                            }
+                            //document.getElementById('t2').innerText = (conts[contnumber/3 + i].time[0]).toFixed(0) + '' + (conts[25].time[0]).toFixed(0)//conts[24].start[current].time + ' | ' + conts[contnumber/3 + i].time
+                            //document.getElementById('t3').innerText += (conts[24].ysfinal[ci]).toFixed(0) + ' , '
+                        }
+                    }
+                 }
+                 }
+                 
+                 //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
+                 
+                 //c.beginPath()
+                 //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
+                 //if (timers[current].delete == undefined) {
+                
+               if (i > 0 && i < (contnumber/3)*2) {    
+                    if (i == 1 || i == 2){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
+                        if (current > 0) {
+                    //if (contnumber/3 + i > (contnumber/3 + 1) && contnumber/3 + i < 40) {
+                        //console.log('index',contnumber/3 + i, 'current',current, 'current - 1',current - 1)
+                 eq = (conts[contnumber/3 + i].ys[current - 1]).toFixed(3) == (conts[contnumber/3 + i].ysfinal[current - 1]).toFixed(3)
+                    if (conts[contnumber/3 + i].go[current - 1] == false && eq == true) {
+                         //window.alert('ADD NOW')
+                         //conts[contnumber/3 + i].time[current] = conts[24].start[current - 1].time
+                    }
+                    //if (conts[contnumber/3 + i].go[current - 1] == undefined) {
+                    if (eq == false) {
+                    conts[contnumber/3 + i].go[current - 1] = false
+                    }else{//if (conts[contnumber/3 + i].go[current - 1] == false){
+                        add = true
+                        for (dom = current - 2; dom >= 0; dom--){
+                            if (conts[contnumber/3 + i].go[dom] == false) {
+                                add = false
+                                //window.alert('n adicionar true em',current - 1)
+                            }
+                        }
+                        if (add == true && conts[contnumber/3 + i].time[current] != conts[contnumber/3 + i].start[current - 1].time) {
+                        if (conts[contnumber/3 + i].go[current - 1] != true) {
+    
+                            if (conts[contnumber/3 + i].go[current - 1] == false) {
+                             conts[contnumber/3 + i].time[current] = hiro //conts[24].start[current - 1].time
+                             //conts[contnumber/3 + i].running[current] = true
+                             //console.log('ADD NOW')
+                            }//else{
+                            // conts[contnumber/3 + i].time[current] = 0
+                           //}
+                           conts[contnumber/3 + i].go[current - 1] = true
+                           conts[contnumber/3 + i].running[current] = true
+                           //conts[contnumber/3 + i].running[current] = true
+                            //conts[24].ys[current] = -100
+                            //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
+                            //console.log(conts[24].ys[current], i)
+                        }
+                            //window.alert('ADD NOW')
+                        }
+                    }
+                        /*else{
+                        add = true
+                        for (dom = current - 2; dom >= 0; dom--){
+                            if (conts[contnumber/3 + i].go[dom] == false) {
+                                add = false
+                                //window.alert('n adicionar true em',current - 1)
+                            }
+                        }
+                        //if (add == true) {
+                            conts[contnumber/3 + i].go[current - 1] = 'none'
+                            //conts[contnumber/3 + i].time[current] = conts[24].start[current - 1].time
+                            //window.alert('ADD NOW')
+                        //}
+                    }*/
+            }}else if (current > 0){
+                eq = (conts[contnumber/3 + i].ys[current - 1]).toFixed(3) == (conts[contnumber/3 + i].ysfinal[current - 1]).toFixed(3)
+                
+                if (conts[contnumber/3 + i].go[current - 1] == false && eq == true) {
+                     //window.alert('ADD NOW')
+                     //conts[contnumber/3 + i].time[current] = conts[24].start[current - 1].time
+                }
+                //if (conts[contnumber/3 + i].go[current - 1] == undefined) {
+                if (eq == false) {
+                conts[contnumber/3 + i].go[current - 1] = false
+                }else {//if (conts[contnumber/3 + i].go[current - 1] == false){
                     add = true
-                    for (dom = current - 2; dom >= 0; dom--){
-                        if (conts[i].go[dom] == false) {
+                        for (dom = current - 2; dom >= 0; dom--){
+                        if (conts[contnumber/3 + i].go[dom] == false) {
                             add = false
                             //window.alert('n adicionar true em',current - 1)
                         }
                     }
-                
-                    //conts[22].running[0] = true
-                    if (current == 0 && i == 2) {
-                       //conts[22].running[0] = true
+                    if (i == 2)  {
+                    //console.log(add,'eq: true',)
                     }
-                    if (current > 0 || i == 1 || i == 2) { 
-                    //if (i > 0 && i < (contnumber/3)*2) {//(i == 4 || i == 3 || i == 2) {
-                    if (add == true && conts[i].go[current - 1] != false && conts[i].go[current] != true) {
-                       conts[i].ys[current] = conts[i].y
-                    }else if (conts[i].go[current] == true){
-                    conts[i].ys[current] = conts[i].ysfinal[current]
+                    //console.log('EI',add,)
+                    if (conts[contnumber/3 + i - 1].ys[current] != -100) { //conts[contnumber/3 + i - 1].ys[current] != undefined && conts[contnumber/3 + i - 1].ys[current] != -100 && conts[contnumber/3 + i - 1].ysfinal[current] != undefined) {
+                    fstperc = Math.abs(conts[contnumber/3 + i - 1].ys[current] - advances[0][current].sty[contnumber/3 + i - 1])
+                    secperc = Math.abs(conts[contnumber/3 + i - 1].ysfinal[current] - advances[0][current].sty[contnumber/3 + i - 1])
+                    finalperc = fstperc/secperc
                     }else{
-                       conts[i].ys[current] = -100
+                        finalperc = 0
                     }
-                   //}else{
-                       //conts[i].ys[current] = conts[i].y
-                   //}
-                }else{
-                   //if (i == 2)
-                   //console.log(conts[i - 1].ys[0] == conts[i - 1].ysfinal[0],conts[i].ys[0])
-                   if (i == 3) {
-                       //console.log('why',conts[i - 1].ys[0] == conts[i - 1].ysfinal[0])
-                   }
-                   if (conts[i - 1].ys[0] != undefined && conts[i - 1].ysfinal[0] != undefined) {
-                       // console.log(conts[i - 1].ys[0])
-                       fstperc = Math.abs(conts[i - 1].ys[0] - advances[0][0].sty[i - 1])
-                       secperc = Math.abs(conts[i - 1].ysfinal[0] - advances[0][0].sty[i - 1])
-                       finalperc = fstperc/secperc
-                
-                               cond = conts[i - 1].running[0] == true && finalperc > tension && conts[i].ys[0] == -100
-                           
-                               //console.log(i - 1,':', advances[0][0].sty[i - 1], '=>',conts[i - 1].ysfinal[0])
-                           //console.log(conts[i - 1].ys[0])
-                           //console.log('has moved: ',fstperc)
-                           ////console.log('still remains: ',secperc)
-                           //console.log('final percento:',finalperc)
-                           
-                   if (cond == true) {
-                           //if (i == 2 || i == 3) {
-                               //console.log('hey yyou',i,hiro,advances[0][0].sty[i])
-                               y = 0
-                               
-                               conts[i].ys[0] = advances[0][0].sty[i]
-                               conts[i].time[0] = hiro
-                               conts[i].running[0] = true
-                               //console.log(i,':',conts[i].running[0])
-                               if (i == contnumber/3 - 1) {
-                               //console.log('add timers2')
-                               
-                               if (fixo == false) {
-                                 addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],direct[current],(contnumber/3))
-                               }else{
-                                   if (direct[current] == 'u') {
-                                       addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'d',(contnumber/3))
-                                   }else{
-                                       addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'u',(contnumber/3))
-                                   }
-                               }
-                                   //addTimers(timers2,0,advances[0][current].amp[20],'u',0)
-                               }
-                               
-                          // }
-                   }else if (conts[i - 1].running[0] == true && finalperc > tension) {//(((conts[i - 1].ys[0])).toFixed(3) == ((conts[i - 1].ysfinal[0])).toFixed(3)){
-                       if (i == 3) {
-                       //console.log('pode atualizar',conts[23].time[0],y)
-                       }
-                      // console.log('sim')
-                       conts[i].ys[0] = conts[i].y
-                   }else{
-                       conts[i].ys[0] = -100
-                       //if (i == 3) {
-                           conts[i].time[0] = 0
-                  //}
-                }}           
-                       }
-                    if (i > 0 && i < contnumber/3) {
-                       if (conts[24].start[current] != undefined) {
-                           //document.getElementById('t').innerText = ''
-                           //document.getElementById('t2').innerText = ''
-                           //document.getElementById('t3').innerText = ''
-                           for (ci = 0; ci <= current; ci++) { 
-                               if (conts[24].ys[current] != undefined) {
-                               //document.getElementById('t').innerText += (conts[24].ys[ci]).toFixed(0) + ' , ' 
-                               if (conts2[0] != undefined) {
-                                   if (conts2[0][(contnumber/3 + 1)].yx != undefined) {
-                               //document.getElementById('t').innerText = conts2[0][(i)].yx
-                                   }
-                               }
-                               //document.getElementById('t2').innerText = (conts[i].time[0]).toFixed(0) + '' + (conts[25].time[0]).toFixed(0)//conts[24].start[current].time + ' | ' + conts[i].time
-                               //document.getElementById('t3').innerText += (conts[24].ysfinal[ci]).toFixed(0) + ' , '
-                           }
-                       }
+
+                    if (i == 19 && conts[38].running[current] == true && current == 1 && conts[38].ys[current] != -100) {
+                    //console.log(current, conts[contnumber/3 + i - 1].running[current])
+                    //console.log(contnumber/3 + i - 1,':', advances[0][current].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[current])
+                    //console.log(conts[contnumber/3 + i - 1].ys[current])
+                    //console.log('has moved: ',fstperc)
+                    //console.log('still remains: ',secperc)
+                    //console.log('final percento:',current,finalperc)
                     }
+                    if (i == 4 && (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) { // conts[contnumber/3 + i - 1].running[current] == true && finalperc == 1 && current == 2) { 
+                        //conts[22].running[current] != undefined
+                        /*
+                        console.log(current, conts[22].running[current])
+                        console.log(contnumber/3 + i - 1,':', advances[0][current].sty[contnumber/3 + i - 1], '=>',conts[contnumber/3 + i - 1].ysfinal[current])
+                        console.log(conts[contnumber/3 + i - 1].ys[current])
+                        console.log('has moved: ',fstperc)
+                        console.log('still remains: ',secperc)
+                        console.log('final percento:',finalperc)
+                        */
+                        //if (Math.round(finalperc) == 1) {
+                           //console.log(current,'euhduehdedhed')
+                        //}
                     }
-                    
-                    //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
-                    
-                    //c.beginPath()
-                    //c.arc(x + radius + space - (advance)*2*radius,y + starty,radius,0,2*Math.PI)
-                    //if (timers[current].delete == undefined) {
-                   
-                  //if (i > 0 && i < (contnumber/3)*2) {    
-                       if (i == 1 || i == 2){ //(i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
-                           if (current > 0) {
-                       //if (i > (contnumber/3 + 1) && i < 40) {
-                           //console.log('index',i, 'current',current, 'current - 1',current - 1)
-                    eq = (conts[i].ys[current - 1]).toFixed(3) == (conts[i].ysfinal[current - 1]).toFixed(3)
-                       if (conts[i].go[current - 1] == false && eq == true) {
-                            //window.alert('ADD NOW')
-                            //conts[i].time[current] = conts[24].start[current - 1].time
+                    if (i == 2) {
+                        //console.log('running',current,conts[contnumber/3 + i - 1].running[current])
+                    }
+                    if (i > 2) {
+                        wi = conts[contnumber/3 + i - 1].running[current] == true && finalperc > tension
+                    //wi == (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)
+                    }else{
+                        wi = true
+                    }
+                    if (add == true && wi == true) {// && (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)){ //conts[contnumber/3 + i - 1].running[current] == true && finalperc >= 0.5) { //Math.round(finalperc) == 1){//&& (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) {//&& (conts[contnumber/3 + i - 1].ys[current]).toFixed(3) == (conts[contnumber/3 + i - 1].ysfinal[current]).toFixed(3)) {//conts[contnumber/3 + i].time[current] != conts[contnumber/3 + i].start[current - 1].time && conts[contnumber/3 + i - 1].ys[current] == conts[contnumber/3 + i - 1].ysfinal[current]){
+                       if (i == 19) {
+                        //console.log('wi',wi,finalperc)
                        }
-                       //if (conts[i].go[current - 1] == undefined) {
-                       if (eq == false) {
-                       conts[i].go[current - 1] = false
-                       }else{//if (conts[i].go[current - 1] == false){
-                           add = true
-                           for (dom = current - 2; dom >= 0; dom--){
-                               if (conts[i].go[dom] == false) {
-                                   add = false
-                                   //window.alert('n adicionar true em',current - 1)
-                               }
-                           }
-                           if (add == true && conts[i].time[current] != conts[i].start[current - 1].time) {
-                           if (conts[i].go[current - 1] != true) {
-                
-                               if (conts[i].go[current - 1] == false) {
-                                conts[i].time[current] = hiro //conts[24].start[current - 1].time
-                                //conts[i].running[current] = true
-                                //console.log('ADD NOW')
-                               }//else{
-                               // conts[i].time[current] = 0
-                              //}
-                              conts[i].go[current - 1] = true
-                              conts[i].running[current] = true
-                              //conts[i].running[current] = true
-                               //conts[24].ys[current] = -100
-                               //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
-                               //console.log(conts[24].ys[current], i)
-                           }
-                               //window.alert('ADD NOW')
-                           }
-                       }
-                           /*else{
-                           add = true
-                           for (dom = current - 2; dom >= 0; dom--){
-                               if (conts[i].go[dom] == false) {
-                                   add = false
-                                   //window.alert('n adicionar true em',current - 1)
-                               }
-                           }
-                           //if (add == true) {
-                               conts[i].go[current - 1] = 'none'
-                               //conts[i].time[current] = conts[24].start[current - 1].time
-                               //window.alert('ADD NOW')
-                           //}
-                       }*/
-                }}else if (current > 0){
-                   eq = (conts[i].ys[current - 1]).toFixed(3) == (conts[i].ysfinal[current - 1]).toFixed(3)
-                   
-                   if (conts[i].go[current - 1] == false && eq == true) {
-                        //window.alert('ADD NOW')
-                        //conts[i].time[current] = conts[24].start[current - 1].time
-                   }
-                   //if (conts[i].go[current - 1] == undefined) {
-                   if (eq == false) {
-                   conts[i].go[current - 1] = false
-                   }else {//if (conts[i].go[current - 1] == false){
-                       add = true
-                           for (dom = current - 2; dom >= 0; dom--){
-                           if (conts[i].go[dom] == false) {
-                               add = false
-                               //window.alert('n adicionar true em',current - 1)
-                           }
-                       }
-                       if (i == 2)  {
-                       //console.log(add,'eq: true',)
-                       }
-                       //console.log('EI',add,)
-                       if (conts[i - 1].ys[current] != -100) { //conts[i - 1].ys[current] != undefined && conts[i - 1].ys[current] != -100 && conts[i - 1].ysfinal[current] != undefined) {
-                       fstperc = Math.abs(conts[i - 1].ys[current] - advances[0][current].sty[i - 1])
-                       secperc = Math.abs(conts[i - 1].ysfinal[current] - advances[0][current].sty[i - 1])
-                       finalperc = fstperc/secperc
-                       }else{
-                           finalperc = 0
-                       }
-                
-                       if (i == 19 && conts[38].running[current] == true && current == 1 && conts[38].ys[current] != -100) {
-                       //console.log(current, conts[i - 1].running[current])
-                       //console.log(i - 1,':', advances[0][current].sty[i - 1], '=>',conts[i - 1].ysfinal[current])
-                       //console.log(conts[i - 1].ys[current])
-                       //console.log('has moved: ',fstperc)
-                       //console.log('still remains: ',secperc)
-                       //console.log('final percento:',current,finalperc)
-                       }
-                       if (i == 4 && (conts[i - 1].ys[current]).toFixed(3) == (conts[i - 1].ysfinal[current]).toFixed(3)) { // conts[i - 1].running[current] == true && finalperc == 1 && current == 2) { 
-                           //conts[22].running[current] != undefined
-                           /*
-                           console.log(current, conts[22].running[current])
-                           console.log(i - 1,':', advances[0][current].sty[i - 1], '=>',conts[i - 1].ysfinal[current])
-                           console.log(conts[i - 1].ys[current])
-                           console.log('has moved: ',fstperc)
-                           console.log('still remains: ',secperc)
-                           console.log('final percento:',finalperc)
-                           */
-                           //if (Math.round(finalperc) == 1) {
-                              //console.log(current,'euhduehdedhed')
-                           //}
-                       }
-                       if (i == 2) {
-                           //console.log('running',current,conts[i - 1].running[current])
-                       }
-                       if (i > 2) {
-                           wi = conts[i - 1].running[current] == true && finalperc > tension
-                       //wi == (conts[i - 1].ys[current]).toFixed(3) == (conts[i - 1].ysfinal[current]).toFixed(3)
-                       }else{
-                           wi = true
-                       }
-                       if (add == true && wi == true) {// && (conts[i - 1].ys[current]).toFixed(3) == (conts[i - 1].ysfinal[current]).toFixed(3)){ //conts[i - 1].running[current] == true && finalperc >= 0.5) { //Math.round(finalperc) == 1){//&& (conts[i - 1].ys[current]).toFixed(3) == (conts[i - 1].ysfinal[current]).toFixed(3)) {//&& (conts[i - 1].ys[current]).toFixed(3) == (conts[i - 1].ysfinal[current]).toFixed(3)) {//conts[i].time[current] != conts[i].start[current - 1].time && conts[i - 1].ys[current] == conts[i - 1].ysfinal[current]){
-                          if (i == 19) {
-                           //console.log('wi',wi,finalperc)
-                          }
-                           if (conts[i].go[current - 1] != true) {
-                               if (i == 19) {
-                               //console.log('what',conts[i].go[current - 1] != true)
-                               }
-                           if (conts[i].go[current - 1] == false) {
-                            conts[i].time[current] = hiro //conts[24].start[current - 1].time
-                            
-                            //console.log('ADD NOW')
-                            if (i == contnumber/3 - 1) {
-                               //console.log('add timers2')
-                               
-                               if (fixo == false) {
-                                   addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],direct[current],(contnumber/3))
-                                 }else{
-                                     if (direct[current] == 'u') {
-                                         addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'d',(contnumber/3))
-                                     }else{
-                                         addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'u',(contnumber/3))
-                                     }
-                                 }
-                
-                                 //addTimers(timers2,0,advances[0][current].amp[20],'u',0)
+                        if (conts[contnumber/3 + i].go[current - 1] != true) {
+                            if (i == 19) {
+                            //console.log('what',conts[contnumber/3 + i].go[current - 1] != true)
                             }
-                           }//else{
-                           // conts[i].time[current] = 0
-                          //}
-                          conts[i].go[current - 1] = true
-                          if (i == 19) {
-                           //console.log('hey',current - 1,conts[i].go[current - 1])
-                          }
-                          conts[i].running[current] = true
-                           //conts[24].ys[current] = -100
-                           //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
-                           //console.log(conts[24].ys[current], i)
-                       }
-                           //window.alert('ADD NOW')
-                       }else if(wi == false){ //conts[i - 1].ys[current] != conts[i - 1].ysfinal[current]){
-                           conts[i].go[current - 1] = false
-                           if (current == 1 && i == 19) {
-                           //console.log('wi',wi,finalperc)
-                           }
-                       }
-                   }
-                }
-                
-                    //conts[i].go[current - 1] = eq
-                    //}
-                    
-                    if (draw1 == true && i != contnumber - 1) { //&& i != 1) { // && conts[i].ys[current - 1] == conts[i].ysfinal[current - 1]) {
-                      // if (i != 4) {// && conts[24].go[current - 1] != true) {
-                    //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][current].sty[i],radius,0,2*Math.PI)
-                     //c.strokeStyle = 'black'
-                       //}else{
-                           //if (conts[i].go[current] == false && conts[i].go[current - 1] == true) { //&& conts[i].go[current - 1] != 'none') {
-                           if (conts[i].go[current - 1] != false && conts[i].go[current] != true) {
-                              // if (current != 0) {
-                              //console.log('head straight')
-                               c.fillStyle = 'red'
-                               c.strokeStyle = 'black'
-                               if (conts[i].ys[current] == -100) {
-                              // console.log('I WANNA RUN AWAY', y)
-                                       //console.log('y1',advances[0][current].sty[i],conts[i].time[current])
-                                       y = 0
-                               }
-                               //conts[i].
-                               
-                               conts[i].yo = y + advances[0][current].sty[i]
-                               if (i > 2 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
-                                   /*
-                               c.beginPath()
-                               c.moveTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3) - 2*radius,conts[i - 1].yo,radius,0,2*Math.PI)
-                               c.lineTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),conts[i].yo,radius,0,2*Math.PI)
-                               c.stroke()
-                               c.beginPath()
-                               */
-                               }
-                          // }
-                       }else{
-                           c.fillStyle = 'transparent'
-                           c.strokeStyle = 'transparent'
-                       }
-                       if (timers2.length == 0 && i != 1 && i != contnumber/3 - 1) {
-                       //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][current].sty[i],radius,0,2*Math.PI)
-                       }
-                            //}
-                          // }
+                        if (conts[contnumber/3 + i].go[current - 1] == false) {
+                         conts[contnumber/3 + i].time[current] = hiro //conts[24].start[current - 1].time
+                         
+                         //console.log('ADD NOW')
+                         if (i == contnumber/3 - 1) {
+                            //console.log('add timers2')
+                            
+                            if (fixo == false) {
+                                addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],direct[current],(contnumber/3))
+                              }else{
+                                  if (direct[current] == 'u') {
+                                      addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'d',(contnumber/3))
+                                  }else{
+                                      addTimers(timers2,0,advances[0][current].amp[(contnumber/3)],'u',(contnumber/3))
+                                  }
+                              }
+
+                              //addTimers(timers2,0,advances[0][current].amp[20],'u',0)
+                         }
+                        }//else{
+                        // conts[contnumber/3 + i].time[current] = 0
                        //}
-                    }else if (i == contnumber - 1){
-                       //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),starty,radius,0,2*Math.PI)
+                       conts[contnumber/3 + i].go[current - 1] = true
+                       if (i == 19) {
+                        //console.log('hey',current - 1,conts[contnumber/3 + i].go[current - 1])
+                       }
+                       conts[contnumber/3 + i].running[current] = true
+                        //conts[24].ys[current] = -100
+                        //document.getElementById('t2').innerText = `fazer a ${Number(current)} onda`
+                        //console.log(conts[24].ys[current], i)
                     }
-                   //}
-                    
-                    
-                    //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
-                    //c.fillStyle = 'white'
-                   //if (i > 0 && i < (contnumber/3)) {// 2*(contnumber/3) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < contnumber/3) { //(i == 24 || i == 3 || i == 2) {
-                       c.fill()
-                       c.stroke()
-                    //}else{
-                       //c.strokeStyle = 'black'
-                    //c.fill()
-                    //}
-                   // c.strokeStyle = 'black'
-                   if (i != 20) {
-                   //c.stroke() 
-                   }
-                   // if (conts[24].go[current - 1] == true && conts[24].go[current] != true) {
-                   if (i == 20) {
-                    //c.stroke()   
-                   }
-                   // }
-                    c.beginPath()
-                    //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
-                    c.fillStyle = 'white'
-                    x+= 2*radius
+                        //window.alert('ADD NOW')
+                    }else if(wi == false){ //conts[contnumber/3 + i - 1].ys[current] != conts[contnumber/3 + i - 1].ysfinal[current]){
+                        conts[contnumber/3 + i].go[current - 1] = false
+                        if (current == 1 && i == 19) {
+                        //console.log('wi',wi,finalperc)
+                        }
+                    }
                 }
+            }
+        
+                 //conts[contnumber/3 + i].go[current - 1] = eq
+                 }
+                 
+                 if (draw1 == true && contnumber/3 + i != contnumber - 1) { //&& i != 1) { // && conts[contnumber/3 + i].ys[current - 1] == conts[contnumber/3 + i].ysfinal[current - 1]) {
+                   // if (i != 4) {// && conts[24].go[current - 1] != true) {
+                 //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][current].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                  //c.strokeStyle = 'black'
+                    //}else{
+                        //if (conts[contnumber/3 + i].go[current] == false && conts[contnumber/3 + i].go[current - 1] == true) { //&& conts[contnumber/3 + i].go[current - 1] != 'none') {
+                        if (conts[contnumber/3 + i].go[current - 1] != false && conts[contnumber/3 + i].go[current] != true) {
+                           // if (current != 0) {
+                           //console.log('head straight')
+                            c.fillStyle = 'red'
+                            c.strokeStyle = 'black'
+                            if (conts[contnumber/3 + i].ys[current] == -100) {
+                           // console.log('I WANNA RUN AWAY', y)
+                                    //console.log('y1',advances[0][current].sty[contnumber/3 + i],conts[contnumber/3 + i].time[current])
+                                    y = 0
+                            }
+                            //conts[contnumber/3 + i].
+                            
+                            conts[contnumber/3 + i].yo = y + advances[0][current].sty[contnumber/3 + i]
+                            if (i > 2 && i < (contnumber/3) && timers2.length == 0 && i != contnumber/3 - 1) {
+                                /*
+                            c.beginPath()
+                            c.moveTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3) - 2*radius,conts[contnumber/3 + i - 1].yo,radius,0,2*Math.PI)
+                            c.lineTo(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
+                            c.stroke()
+                            c.beginPath()
+                            */
+                            }
+                       // }
+                    }else{
+                        c.fillStyle = 'transparent'
+                        c.strokeStyle = 'transparent'
+                    }
+                    if (timers2.length == 0 && i != 1 && i != contnumber/3 - 1) {
+                    //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),y + advances[0][current].sty[contnumber/3 + i],radius,0,2*Math.PI)
+                    }
+                         //}
+                       // }
+                    //}
+                 }else if (contnumber/3 + i == contnumber - 1){
+                    //c.arc(x + radius -2*(advance)*radius + space + 2*radius*(contnumber/3),starty,radius,0,2*Math.PI)
+                 }
+                //}
+                 
+                 
+                 //c.arc(lastx - x - radius,y + starty,radius,0,2*Math.PI)
+                 //c.fillStyle = 'white'
+                if (i > 0 && i < (contnumber/3)) {// 2*(contnumber/3) {//(i == 1 || i == 2 || i == 3) { // (i > 0 && i < contnumber/3) { //(contnumber/3 + i == 24 || i == 3 || i == 2) {
+                    c.fill()
+                    c.stroke()
+                 }else{
+                    //c.strokeStyle = 'black'
+                 //c.fill()
+                 }
+                // c.strokeStyle = 'black'
+                if (contnumber/3 + i != 20) {
+                //c.stroke() 
+                }
+                // if (conts[24].go[current - 1] == true && conts[24].go[current] != true) {
+                if (contnumber/3 + i == 20) {
+                 //c.stroke()   
+                }
+                // }
+                 c.beginPath()
+                 //c.arc(x + radius - 2,y - 2,radius - radius*0.5,0,2*Math.PI)
+                 c.fillStyle = 'white'
+                 x+= 2*radius
+             }
                 //}
             
              }
@@ -1040,6 +920,7 @@ function animate() {
 
 
             x = 0
+            /*
              for (i = 0; i < (contnumber/3)*2;i++) {
                 if (i > 0 && i < (contnumber/3) && timers2.length >= 0 && i != contnumber/3 - 1) {
                     c.strokeStyle = 'black'
@@ -1058,12 +939,13 @@ function animate() {
                     c.beginPath()
                     c.fillStyle = 'red'
                     c.strokeStyle = 'black'
-                    c.arc(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
-                    //c.fill()
-                    //c.stroke()
+                    //c.arc(x + radius + space + 2*radius*(contnumber/3),conts[contnumber/3 + i].yo,radius,0,2*Math.PI)
+                    c.fill()
+                    c.stroke()
                 }
                 x+= 2*radius
              }
+             */
 
           }
          // 2nd wave
@@ -1077,7 +959,7 @@ function animate() {
            hiro = 0
            //x = 0
            // - (advance)*2*radius
-           for (i = 0; i < (contnumber/3)*2;i++) {
+           for (i = 1; i < (contnumber/3);i++) {
             // y = hiro 
 
             if (n % 2 == 0) {
@@ -1091,11 +973,11 @@ function animate() {
             canmove = true
             if (i == 3 && current == 0) {
                //console.log('biranga',conts2[n][23].time[0])
-               //console.log(-(advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)))
+               //console.log(-(advances2[n][current].amp[indirec] -(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)))
             }
             if (conts2[n][indirec].time[current] - hiro >= 0) { // Math.sin(-vel*(conts2[n][indirec].time[current]  - hiro)) = 0 
                 if (type == 'pulse') {
-                if (advances2[n][current].amp[indirec] - (advance + i)*at*advances2[n][current].amp[indirec]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) <= 0) {
+                if (advances2[n][current].amp[indirec] - (advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03 >= 0 && Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) <= 0) {
                    if (conts2[n][indirec].start[current] == undefined) {
                        if (i > 0 && i < contnumber/3) { //(i == 4 || i == 3 || i == 2) {
                        conts2[n][indirec].start[current] = {time:conts2[n][indirec].time[current]}
@@ -1104,10 +986,10 @@ function animate() {
                    }
                     if (direct2[n][current] == 'u') {
                        //console.log('UP')
-                y = (advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                y = (advances2[n][current].amp[indirec] -(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                     }else{
                        //console.log('DOWN')
-                        y = -(advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                        y = -(advances2[n][current].amp[indirec] -(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                     }
        
                     /*
@@ -1142,14 +1024,18 @@ function animate() {
                        //loop = false
                         
                         }*/
-                }else if(Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) >= 0 && conts2[n][indirec].move[current] == true){
-                   y = 0
-                   if (man == false) {
-                  conts2[n][indirec].move[current] = false // move false
+                }else if(Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) >= 0 && conts2[n][indirec].move[current] == true && conts2[n][indirec].running[current] == true) {
+                   //y = 0
+                   //if (man == false) {
+                  //conts2[n][indirec].move[current] = false // move false
+                  //conts2[n][indirec].ys[current] =  advances2[n][0].sty[indirec]
+                  conts2[n][indirec].passou = []
+                  conts2[n][indirec].passou[current] = true
+                  //conts2[n][indirec].ysfinal[current] = advances2[n][0].sty[indirec]
                   if (n == 1 && current == 1) {
                        //console.log('now this')
                   }
-                    }
+                    //}
                }else{
                    y = 0
                    //window.alert('EITA')
@@ -1163,19 +1049,21 @@ function animate() {
                 }*/
                  
             }else{
-                if (advances2[n][current].amp[indirec] - (advance + i)*at*advances2[n][current].amp[indirec]*0.03 >= 0) {
+                /*
+                if (advances2[n][current].amp[indirec] - (advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03 >= 0) {
                     if (direct2[n][current] == 'u') {
-                        y = (advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                        y = (advances2[n][current].amp[indirec] -(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                             }else{
-                                y = -(advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
+                                y = -(advances2[n][current].amp[indirec] -(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03)*Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro))
                             }
                     }else{
                         y = 0
                         conts2[n][indirec].move[current] = false
                     }
+                        */
             }
             }else{
-                y = 0
+               // y = 0
             }
        
             if (manf == true) {
@@ -1189,9 +1077,9 @@ function animate() {
            }
        
            c.font = '20px Arial'
-           if (Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) < Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] + 0.01 - hiro)) && conts2[n][indirec].time[current] - hiro >= 0 && advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03 >= 0) {
+           if (Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] - hiro)) < Math.sin(0 - vels[current]*(conts2[n][indirec].time[current] + 0.001 - hiro)) && conts2[n][indirec].time[current] - hiro >= 0 && advances2[n][current].amp[indirec] -(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03 >= 0) {
               c.fillStyle = 'yellow'
-              y = (advances2[n][current].amp[indirec] -(advance + i)*at*advances2[n][current].amp[indirec]*0.03)*-1
+              y = (advances2[n][current].amp[indirec] -(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03)*-1
               if (i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
                if (conts2[n][indirec].go[current - 1] != false && conts2[n][indirec].move[current] == true) {
                    conts2[n][indirec].move[current] = false // move false
@@ -1209,10 +1097,12 @@ function animate() {
        }
        
             if (conts2[n][indirec].move[current] == false && type == 'pulse') {
+                /*
                if (i == contnumber/3 - 1 && conts2[n][contnumber/3 - 1].reflect[current] != false) {
                    conts2[n][contnumber/3 - 1].reflect[current] = false
                    //window.alert('CAPISCO')
                }              // y = 0
+                             */
              if (manf == true){
              if (direct2[n][current] == 'u') {
                 y = conts2[n][indirec].fixpos[current]
@@ -1228,7 +1118,7 @@ function animate() {
                //console.log('EIK',y)
             }
             conts2[n][indirec].y = y + advances2[n][current].sty[indirec]
-            conts2[n][indirec].a = i //(advance + i)*at*advances2[n][current].amp[indirec]*0.03
+            conts2[n][indirec].a = i //(advance + i)*Math.exp(0)*advances2[n][current].amp[indirec]*0.03
 
             add = true
             for (dom = current - 2; dom >= 0; dom--){
@@ -1237,7 +1127,7 @@ function animate() {
                     //window.alert('n adicionar true em',current - 1)
                 }
             }
-            if (current > 0 || i == 2) {
+            if (current > 0 || i == 1 || i == 2) {
             if (i > 0 && i < contnumber/3) {//(i == 4 || i == 3 || i == 2) {
             if (add == true && conts2[n][indirec].go[current - 1] != false && conts2[n][indirec].go[current] != true) {
                conts2[n][indirec].ys[current] = conts2[n][indirec].y
@@ -1245,6 +1135,7 @@ function animate() {
             conts2[n][indirec].ys[current] = conts2[n][indirec].ysfinal[current]
             }else{
                conts2[n][indirec].ys[current] = -100
+               conts2[n][indirec].reset2 = true
             }
            }else{
                conts2[n][indirec].ys[current] = conts2[n][indirec].y
@@ -1290,12 +1181,12 @@ function animate() {
                        if (i == contnumber/3 - 1 && n < 20) {
                        //console.log('ADD TO TIMERS 2')
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3)],direct2[n][current],(contnumber/3)*(n + 2))
+                           addTimers(timers2,n + 1,advances2[n][current].amp[(contnumber/3) + 1],direct2[n][current],(contnumber/3)*(n + 2))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3],'d',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'d',(contnumber/3)*(n + 2))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3],'u',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'u',(contnumber/3)*(n + 2))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][current].amp[20],'u',20)
@@ -1310,12 +1201,14 @@ function animate() {
                        }
                        
                   // }
-           }else if (conts2[n][indirec - 1].running[0] == true && finalperc > tension) { // && finalperc >= 0.5) { //(((conts2[n][indirec - 1].ys[0])).toFixed(3) == ((conts2[n][indirec - 1].ysfinal[0])).toFixed(3)){
+           }else if (conts2[n][indirec - 1].running[0] == true && (finalperc > tension || conts2[n][indirec - 1].move[0] == false)) { // && finalperc >= 0.5) { //(((conts2[n][indirec - 1].ys[0])).toFixed(3) == ((conts2[n][indirec - 1].ysfinal[0])).toFixed(3)){
+            conts2[n][indirec].reset = true
                if (i == 3) {
                //console.log('pode atualizar',conts2[n][23].time[0],y)
                }
                conts2[n][indirec].ys[0] = conts2[n][indirec].y
            }else{
+                conts2[n][indirec].reset = true
                conts2[n][indirec].ys[0] = -100
                //if (i == 3) {
                    conts2[n][indirec].time[0] = 0
@@ -1323,19 +1216,19 @@ function animate() {
 }}           
                }
             if (i > 0 && i < contnumber/3) {
-               if (conts2[n][24].start[current] != undefined) {
+               //if (conts2[n][24].start[current] != undefined) {
                    //document.getElementById('t').innerText = ''
                    //document.getElementById('t2').innerText = ''
                    //document.getElementById('t3').innerText = ''
-                   for (ci = 0; ci <= current; ci++) { 
-                       if (conts2[n][24].ys[current] != undefined) {
+                   //for (ci = 0; ci <= current; ci++) { 
+                      // if (conts2[n][24].ys[current] != undefined) {
                        //document.getElementById('t').innerText += (conts2[n][24].ys[ci]).toFixed(0) + ' , ' 
                        //document.getElementById('t').innerText = conts2[n][22].go
                        //document.getElementById('t2').innerText = (conts2[n][indirec].time[0]).toFixed(0) + '' + (conts2[n][25].time[0]).toFixed(0)//conts2[n][24].start[current].time + ' | ' + conts2[n][indirec].time
                        //document.getElementById('t3').innerText += (conts2[n][24].ysfinal[ci]).toFixed(0) + ' , '
-                   }
-               }
-            }
+                   //}
+               //}
+           // }
             }
             
             //c.fillText('I',lastx - x - radius +2*(advance)*radius,50)
@@ -1350,6 +1243,7 @@ function animate() {
                //if (indirec > (contnumber/3 + 1) && indirec < 40) {
                    //console.log('index',indirec, 'current',current, 'current - 1',current - 1)
             eq = (conts2[n][indirec].ys[current - 1]).toFixed(3) == (conts2[n][indirec].ysfinal[current - 1]).toFixed(3)
+            eq = conts2[n][indirec].move[current - 1] == false
                if (conts2[n][indirec].go[current - 1] == false && eq == true) {
                     //window.alert('ADD NOW')
                     //conts2[n][indirec].time[current] = conts2[n][24].start[current - 1].time
@@ -1365,7 +1259,7 @@ function animate() {
                            //window.alert('n adicionar true em',current - 1)
                        }
                    }
-                   if (add == true && conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time) {
+                   if (add == true) {// && conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time) {
                    if (conts2[n][indirec].go[current - 1] != true) {
 
                        if (conts2[n][indirec].go[current - 1] == false) {
@@ -1400,6 +1294,8 @@ function animate() {
        }}else if (current > 0 && i != 1){
         //console.log('heya',i,indirec,conts2[n][indirec])
            eq = (conts2[n][indirec].ys[current - 1]).toFixed(3) == (conts2[n][indirec].ysfinal[current - 1]).toFixed(3)
+           eq = conts2[n][indirec].move[current - 1] == false 
+           conts2[n][indirec].eq = current + '' + eq
            if (conts2[n][indirec].go[current - 1] == false && eq == true) {
                 //window.alert('ADD NOW')
                 //conts2[n][indirec].time[current] = conts2[n][24].start[current - 1].time
@@ -1419,6 +1315,7 @@ function animate() {
                //console.log(add,'eq: true',)
                }
                //console.log('EI',add,)
+               conts2[n][indirec].add = current + '' + add
                if (conts2[n][indirec - 1].ys[current] != -100) { //conts2[n][indirec - 1].ys[current] != undefined && conts2[n][indirec - 1].ys[current] != -100 && conts2[n][indirec - 1].ysfinal[current] != undefined) {
                 fstperc = Math.abs(conts2[n][indirec - 1].ys[current] - advances2[n][current].sty[indirec - 1])
                 secperc = Math.abs(conts2[n][indirec - 1].ysfinal[current] - advances2[n][current].sty[indirec - 1])
@@ -1439,27 +1336,29 @@ function animate() {
                     }
 
                     if (i > 2) {
-                        wi = conts2[n][indirec - 1].running[current] == true && finalperc > tension
+                        wi = conts2[n][indirec - 1].running[current] == true && (finalperc > tension || conts2[n][indirec - 1].move[current] == false)
                     }else{
                         wi = (conts2[n][indirec - 1].ys[current]).toFixed(3) == (conts2[n][indirec - 1].ysfinal[current]).toFixed(3)
                     }
+
+                    conts2[n][indirec].wi = current + '' + wi
                if (add == true && wi == true) {//conts2[n][indirec].time[current] != conts2[n][indirec].start[current - 1].time && conts2[n][indirec - 1].ys[current] == conts2[n][indirec - 1].ysfinal[current]){
                if (conts2[n][indirec].go[current - 1] != true) {
 
                    if (conts2[n][indirec].go[current - 1] == false) {
                     conts2[n][indirec].time[current] = hiro //conts2[n][24].start[current - 1].time
                     //console.log('ADD NOW')
-                    if (i == contnumber/3 - 1 && n < 20) {
+                    if (i == contnumber/3 - 1 && n < 4) {
                        //console.log(hiro)
                        //console.log('ADD TO TIMERS',current)
                        
                        if (fixo == false) {
-                           addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3],direct2[n][current],(contnumber/3)*(n + 2))
+                           addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],direct2[n][current],(contnumber/3)*(n + 2))
                          }else{
                              if (direct2[n][current] == 'u') {
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3],'d',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'d',(contnumber/3)*(n + 2))
                              }else{
-                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3],'u',(contnumber/3)*(n + 2))
+                               addTimers(timers2,n + 1,advances2[n][current].amp[contnumber/3 + 1],'u',(contnumber/3)*(n + 2))
                              }
                          }
                        //addTimers(timers2,n + 1,advances2[n][current].amp[20],'d',0)
@@ -1504,8 +1403,8 @@ function animate() {
                        
                   // }
                }else{
-                   c.fillStyle = 'transparent'
-                   c.strokeStyle = 'transparent'
+                   //c.fillStyle = 'transparent'
+                   //c.strokeStyle = 'transparent'
                }
                        //c.arc(lastx - x - radius + 2*(advance)*radius - 2*radius*(contnumber/3),y + advances2[n][current].sty[indirec],radius,0,2*Math.PI)
                        if (n % 2 == 0 && i != 1) {
@@ -1612,6 +1511,7 @@ function animate() {
         
         x1 = 2*radius*(contnumber/3 + 1)
         
+        /*
         for (i3 = 1; i3 < (contnumber/3)*2;i3++) {
             if (i3 < (contnumber/3)*2 - 1 && conts[i3 + contnumber/3].ys != undefined) {
             c.beginPath()
@@ -1678,7 +1578,7 @@ function animate() {
             //}
             //console.log('IAAAAA',i)
             }
-            }
+            }*/
 
             /*
             for (t = 0; t < timers2.length; t++) {
@@ -1774,48 +1674,33 @@ function animate() {
             }
 
             for (r in conts) {
-                    if (r < 1 || r > (contnumber/3)*2) {
-                       // conts[r].time.length = 0
-                        //conts[r].fixpos.length = 0
-                        //conts[r].time.length = 0
-                        //conts[r].start.length = 0
+                
+                if (r == (contnumber/3)*2 - 2 && conts[r].ys[0] != undefined && conts[r].ysfinal[0] != undefined  && conts[r].ys[1]!= undefined && conts[r].ysfinal[1] != undefined && timers.length > 1) {
+                    if ((conts[r].ys[0]).toFixed(3) == (conts[r].ysfinal[0]).toFixed(3) && (conts[r].ys[1]).toFixed(3) == (conts[r].ysfinal[1]).toFixed(3)) {
+                       timers.splice(0,1)
+                       tot = tot - 1
+                       advances[0].splice(0,1)
+                       direct.splice(0,1)
+                       for (l3 = contnumber/3 + 1; l3 < conts.length - 1; l3++) {
+                       conts[l3].change = false
+                       
+                       conts[l3].fixpos.splice(0,1)
+                       conts[l3].go.splice(0,1)
+                       conts[l3].move.splice(0,1)
+                       conts[l3].running.splice(0,1)
+                       conts[l3].start.splice(0,1)
+                       conts[l3].time.splice(0,1)
+                       conts[l3].ys.splice(0,1)
+                       conts[l3].ysfinal.splice(0,1)
+                       
+                    }
+                    }
                     }
             }
-
-            r = (contnumber/3)*2 - 2
-            if (conts[r].ys[0] != undefined && conts[r].ysfinal[0] != undefined  && conts[r].ys[1]!= undefined && conts[r].ysfinal[1] != undefined && timers.length > 1) {
-                if ((conts[r].ys[0]).toFixed(3) == (conts[r].ysfinal[0]).toFixed(3) && (conts[r].ys[1]).toFixed(3) == (conts[r].ysfinal[1]).toFixed(3)) {
-                   timers.shift()
-                   tot = tot - 1
-                   advances[0].shift()
-                   direct.shift()
-                   for (l3 = 1; l3 < conts.length - 1; l3++) {
-                   conts[l3].change = false
-                   
-                   conts[l3].fixpos.shift()
-                   conts[l3].go.shift()
-                   conts[l3].move.shift()
-                   conts[l3].running.shift()
-                   conts[l3].start.shift()
-                   conts[l3].time.shift()
-                   conts[l3].ys.shift()
-                   conts[l3].ysfinal.shift()
-                }
-                }
-                }
-
             for (t2 = 0; t2 < timers2.length; t2++) {
                 //timers2[t]
                 
-                for (l2 = 1; l2 < conts2[t2].length - 1; l2++) {
-                    if (l2 < 1 || l2 > (contnumber/3)*2) {
-                        conts2[t2][l2].fixpos.length = 0
-                        //conts2[t2][l2] = []
-                        conts2[t2][l2].move.length = 0
-                        conts2[t2][l2].yo.length = 0
-                        conts2[t2][l2].ys.length = 0
-                        conts2[t2][l2].ysfinal.length = 0
-                    }
+                for (l2 = contnumber/3 + 1; l2 < conts2[t2].length - 1; l2++) {
                     if (t2 % 2 == 0) {
                         index = contnumber - l2
                       }else{
@@ -1823,45 +1708,44 @@ function animate() {
                        }
 
                    conts2[t2][l2].done = []
+
+                   ko = 0
+                   if (l2 == (contnumber/3)*2 - 2 && conts2[t2][l2].ys[ko] != undefined && conts2[t2][l2].ysfinal[ko] != undefined  && conts2[t2][l2].ys[1] != undefined && conts2[t2][l2].ysfinal[1] != undefined && timers2[t2].length > 1) {
+                    if ((conts2[t2][l2].ys[ko]).toFixed(3) == (conts2[t2][l2].ysfinal[ko]).toFixed(3) && (conts2[t2][l2].ys[1]).toFixed(3) == (conts2[t2][l2].ysfinal[1]).toFixed(3)) {
+                       conts2[t2][l2].done[ko] = true
+                       //console.log('T2',t2)
+                       //console.log('length',conts2[t2][l2].running.length,conts2[t2][l2].go.length,conts2[t2][l2].fixpos.length,conts2[t2][l2].move.length,conts2[t2][l2].start.length,conts2[t2][l2].time.length)
+                       //console.log(conts2[t2][22].ys[1],conts2[t2][22].ysfinal[1])
+                       timers2[t2].splice(0,1)
+                       advances2[t2].splice(0,1)
+                       direct2[t2].splice(0,1)
+                       for (l3 = contnumber/3 + 1; l3 < conts2[t2].length - 1; l3++) {
+                        if (t2 % 2 == 0) {
+                        index2 = contnumber - l3
+                      }else{
+                        index2 = l3
+                      }
+                      
+                        ysep[t2][index2] += conts2[t2][l3].yo[0]
+                       conts2[t2][l3].change = false
+                       conts2[t2][l3].fixpos.splice(0,1)
+                       conts2[t2][l3].go.splice(0,1)
+                       conts2[t2][l3].move.splice(0,1)
+                       conts2[t2][l3].running.splice(0,1)
+                       conts2[t2][l3].start.splice(0,1)
+                       conts2[t2][l3].time.splice(0,1)
+                       conts2[t2][l3].yo.splice(0,1)
+                       conts2[t2][l3].ys.splice(0,1)
+                       conts2[t2][l3].ysfinal.splice(0,1)
+                    }
+                    }
+                    }
                     
                         yf[index] += ysep[t2][index]
                         for (ko = 0; ko < conts2[t2][l2].yo.length; ko++) {
                             yf[index] += conts2[t2][l2].yo[ko]
                         }
                 }
-
-                ko = 0
-                l2 = (contnumber/3)*2 - 2 
-                if (conts2[t2][l2].ys[ko] != undefined && conts2[t2][l2].ysfinal[ko] != undefined  && conts2[t2][l2].ys[1] != undefined && conts2[t2][l2].ysfinal[1] != undefined && timers2[t2].length > 1) {
-                 if ((conts2[t2][l2].ys[ko]).toFixed(3) == (conts2[t2][l2].ysfinal[ko]).toFixed(3) && (conts2[t2][l2].ys[1]).toFixed(3) == (conts2[t2][l2].ysfinal[1]).toFixed(3)) {
-                    conts2[t2][l2].done[ko] = true
-                    //console.log('T2',t2)
-                    //console.log('length',conts2[t2][l2].running.length,conts2[t2][l2].go.length,conts2[t2][l2].fixpos.length,conts2[t2][l2].move.length,conts2[t2][l2].start.length,conts2[t2][l2].time.length)
-                    //console.log(conts2[t2][22].ys[1],conts2[t2][22].ysfinal[1])
-                    timers2[t2].shift()
-                    advances2[t2].shift()
-                    direct2[t2].shift()
-                    for (l3 = 1; l3 < conts2[t2].length - 1; l3++) {
-                     if (t2 % 2 == 0) {
-                     index2 = contnumber - l3
-                   }else{
-                     index2 = l3
-                   }
-                   //
-                     ysep[t2][index2] += conts2[t2][l3].yo[0]
-                    conts2[t2][l3].change = false
-                    conts2[t2][l3].fixpos.shift()
-                    conts2[t2][l3].go.shift()
-                    conts2[t2][l3].move.shift()
-                    conts2[t2][l3].running.shift()
-                    conts2[t2][l3].start.shift()
-                    conts2[t2][l3].time.shift()
-                    conts2[t2][l3].yo.shift()
-                    conts2[t2][l3].ys.shift()
-                    conts2[t2][l3].ysfinal.shift()
-                 }
-                 }
-                 }
             }
            
                 c.beginPath()
@@ -1910,7 +1794,7 @@ function animate() {
             for (ke = 2; ke < contnumber/3 - 1; ke++) {
                 //console.log('ke HEY',ke)
                 c.beginPath()
-                c.lineWidth = '0.8'
+                c.lineWidth = '0.3'
                 c.arc(2*radius*ke + radius + 2*radius*(contnumber/3) + space,yf[ke + contnumber/3] + conts[ke + contnumber/3].yo,radius,0,2*Math.PI)
                 c.fillStyle = '#FF0000'
                 c.fill()
@@ -2104,7 +1988,7 @@ function animate() {
             }
             */
 
-            for (p in conts) {
+            for (p = contnumber/3 + 1; p < (contnumber/3)*2; p++) {
                 for (h in timers) {
                     conts[p].time[h] += 0.2
                     //conts2[0][p].time[h] += 0.15
@@ -2112,20 +1996,20 @@ function animate() {
             }
             for (t = 0; t < timers2.length; t++) {
                 //timers2[t]
-                for (lo in conts){
+                for (lo = contnumber/3 + 1; lo < (contnumber/3)*2; lo++){
                     for (ti = 0; ti < timers2[t].length; ti++) {
                         conts2[t][lo].time[ti] += 0.2
                     }
                 }           
             }
         for (k in timers){
-            timers[k].time += 0.1
+            timers[k].time += 0.01
         }
         for (k in timers2){
-            timers2[k].time += 0.1
+            timers2[k].time += 0.01
         }
         for (k in timers3){
-            timers3[k].time += 0.1
+            timers3[k].time += 0.01
         }
 
 if (loop == true) {
@@ -2214,23 +2098,23 @@ function addwave() {
         }
         //console.log('amplitude',ampman)
         // determinar o at a partir da posição da última conta (contnumber - 1)
-        //  y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*at*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
-        // y = ampman - i*at*ampman*0.03
-        // ampman - 40*at*ampman*0.03 = 0
-        // ampman = 40*at*ampman*0.03
+        //  y = (advances[timers2[current].ind].amp[contnumber/3 + i] -(advance + i)*Math.exp(0)*advances[timers2[current].ind].amp[contnumber/3 + i]*0.03)*Math.sin(0 - vels[current]*(timers2[current].time - x*0.1))
+        // y = ampman - i*Math.exp(0)*ampman*0.03
+        // ampman - 40*Math.exp(0)*ampman*0.03 = 0
+        // ampman = 40*Math.exp(0)*ampman*0.03
         // at = ampman/(40*ampman*0.03)
         //at = (starty - mousey)/(20*(starty - mousey)*0.03)
         //console.log('mousey',mousey,'starty',starty)
         //at = 0.1
-        at = 0.1
+        //at = 0.13
         // prever o y máximo de todas as contas ()
         //x = 2*(advance)*radius
         x = space + (contnumber/3)*radius
         if (ampmanof != 0) {
         for (i = contnumber/3; i < contnumber; i++) {
-            //console.log(i,':', ampman - (contnumber - i)*at*ampman*0.03 + starty)
-            yat = starty - ampman - (contnumber - i)*at*ampman*0.03
-            //conts[i].ysfinal.push(starty - ampman - (contnumber - i)*at*ampman*0.03)
+            //console.log(i,':', ampman - (contnumber - i)*Math.exp(0)*ampman*0.03 + starty)
+            yat = starty - ampman - (contnumber - i)*Math.exp(0)*ampman*0.03
+            //conts[i].ysfinal.push(starty - ampman - (contnumber - i)*Math.exp(0)*ampman*0.03)
             x+= 2*radius
         }
 
@@ -2246,7 +2130,7 @@ function addwave() {
     
     //console.log('tot',tot)
     //essential
-    for (ia = 0; ia <= contnumber - 1; ia++) { // adicionar sty para cada conta
+    for (ia = contnumber/3 + 1; ia < (contnumber/3)*2; ia++) { // adicionar sty para cada conta
         //if (conts[ia].fixpos.length > 0) {
 
             if (tot > 0 ) {
@@ -2279,11 +2163,11 @@ function addwave() {
                 //console.log(conts[ia].ys[tot])
                 //console.log(conts[ia].ysfinal[tot])
                 // para diferentes stys as amps são diferentes
-                // conts[ia].ysfinal[tot] = amp - ia*at*amp*0.03 + styman
-                // y - styman = amp(1 - ia*at*0.03)
-                // amp = (y - styman)/(1 - ia*at*0.03))
-                //console.log('STAND',1 - ia*at*0.03)
-                //ampadd = (conts[ia].ysfinal[tot] - 100)/(1 - ia*at*0.03)
+                // conts[ia].ysfinal[tot] = amp - ia*Math.exp(0)*amp*0.03 + styman
+                // y - styman = amp(1 - ia*Math.exp(0)*0.03)
+                // amp = (y - styman)/(1 - ia*Math.exp(0)*0.03))
+                //console.log('STAND',1 - ia*Math.exp(0)*0.03)
+                //ampadd = (conts[ia].ysfinal[tot] - 100)/(1 - ia*Math.exp(0)*0.03)
                 //console.log(ampadd)
                 //advances[tot].amp.push(Math.abs(conts[ia].ysfinal[tot] - starty))
                 //advances[tot].amp.push(ampadd)
@@ -2292,11 +2176,11 @@ function addwave() {
                 //console.log(ia, 'sty',styman,'ysfinal',conts[ia].ysfinal[tot],'amp',Math.abs(styman - conts[ia].ysfinal[tot]))
                 //advances[tot].amp.push(Math.abs(styman - conts[ia].ysfinal[tot]))
                 if (ampcont1 > 0) { // direction
-                  conts[ia].ysfinal[totof] = Number(styman) - ampmanof + Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
-                  //conts2[0][ia].ysfinal[totof] = Number(styman) - ampmanof + Number((ia - contnumber/3)*at*ampmanof*0.03) // ampmanof => previous amp
+                  conts[ia].ysfinal[totof] = Number(styman) - ampmanof + Number(((ad) + ia - contnumber/3)*Math.exp(0)*ampmanof*0.03)
+                  //conts2[0][ia].ysfinal[totof] = Number(styman) - ampmanof + Number((ia - contnumber/3)*Math.exp(0)*ampmanof*0.03) // ampmanof => previous amp
                 }else if (ampcont1 !== 0){
-                    conts[ia].ysfinal[totof] = Number(styman) + ampmanof - Number(((ad) + ia - contnumber/3)*at*ampmanof*0.03)
-                    //conts2[0][ia].ysfinal[totof] = Number(styman) + ampmanof - Number((ia - contnumber/3)*at*ampmanof*0.03)
+                    conts[ia].ysfinal[totof] = Number(styman) + ampmanof - Number(((ad) + ia - contnumber/3)*Math.exp(0)*ampmanof*0.03)
+                    //conts2[0][ia].ysfinal[totof] = Number(styman) + ampmanof - Number((ia - contnumber/3)*Math.exp(0)*ampmanof*0.03)
                 }
                 if (ia == 24) {
                     //console.log('totof', totof, 'final',conts[ia].ysfinal[totof])
@@ -2371,7 +2255,7 @@ window.addEventListener('mousemove',function(event) {
         mouseprev = mousey
         //tot++
         // mousey
-    },20)
+    },40)
 }
 mousefollow = true
     }
@@ -2430,7 +2314,7 @@ function addTimers(settimer, contindex, ampli, mov, ad) {
 //console.log('AD',ad)
 if (conts2[contindex] != undefined){
    
-    for (j = 0; j < contnumber;j++) {
+    for (j = contnumber/3 + 1; j < (contnumber/3)*2;j++) {
         conts2[contindex][j].move.push(true) 
         conts2[contindex][j].fixpos.push(0)   
     }
@@ -2442,22 +2326,22 @@ if (conts2[contindex] != undefined){
         //essential
         //ampli = 5
         //mov = 'd'
-        for (ia2 = 0; ia2 <= contnumber - 1; ia2++) { // adicionar sty para cada conta
+        for (ia2 = contnumber/3 + 1; ia2 < (contnumber/3)*2; ia2++) { // adicionar sty para cada conta
             //if (conts[ia].fixpos.length > 0) {
     
-                    if (ia2 > (contnumber/3) && ia2 <= contnumber) { // ia >= 20
+                    //if (ia2 > (contnumber/3) && ia2 < (contnumber/3)*2) { // ia >= 20
                         styman = conts2[contindex][ia2].ysfinal[conts2[contindex][ia2].ysfinal.length - 1]
                     //styman = 100 
-                    }
+                    //}
                     advances2[contindex][advances2[contindex].length - 1].sty[ia2] = styman// + starty)
         
                     conts2[contindex][ia2].time.push(0) 
 
                     //if (ia2 >= (contnumber/3) && ia2 <= contnumber) {
                     if (mov == 'u') { // direction
-                      conts2[contindex][ia2].ysfinal.push(Number(styman) - ampli + Number((ad + ia2 - contnumber/3)*at*ampli*0.03)) // ampmanof => previous amp
+                      conts2[contindex][ia2].ysfinal.push(Number(styman) - ampli + Number((ad + ia2 - contnumber/3)*Math.exp(0)*ampli*0.03)) // ampmanof => previous amp
                     }else{
-                        conts2[contindex][ia2].ysfinal.push(Number(styman) + ampli - Number((ad + ia2 - contnumber/3)*at*ampli*0.03))
+                        conts2[contindex][ia2].ysfinal.push(Number(styman) + ampli - Number((ad + ia2 - contnumber/3)*Math.exp(0)*ampli*0.03))
                     }
                     
                     advances2[contindex][advances2[contindex].length - 1].amp[ia2] = ampli // essential
@@ -2470,13 +2354,14 @@ if (conts2[contindex] != undefined){
     //console.log('s')
     conts2.push([])
     for (j = 0; j < contnumber;j++) {
-        if (i = contnumber/3 + 2) {
+        if (j > contnumber/3 && j < (contnumber/3)*2) {
             conts2[contindex].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[],running:[true],yo:[]})
-        }else{
-            conts2[contindex].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[],running:[false],yo:[]})
-        }
             conts2[contindex][j].move.push(true) 
-            conts2[contindex][j].fixpos.push(0)   
+            conts2[contindex][j].fixpos.push(0)  
+        }else{
+            conts2[contindex].push([])
+            //conts2[contindex].push({y:0,move:[],reflect:[],fixpos:[],ys:[],ysfinal:[],go:[],start:[],time:[],advances:[],running:[false],yo:[]})
+        } 
         }
 
        settimer.push([])
@@ -2492,7 +2377,7 @@ if (conts2[contindex] != undefined){
         //essential
         //ampli = 5
         //mov = 'u'
-        for (ia2 = 0; ia2 <= contnumber - 1; ia2++) { // adicionar sty para cada conta
+        for (ia2 = contnumber/3 + 1; ia2 < (contnumber/3)*2; ia2++) { // adicionar sty para cada conta
             //if (conts[ia].fixpos.length > 0) {
     
                 /*
@@ -2513,15 +2398,15 @@ if (conts2[contindex] != undefined){
                         advances2[contindex][0].sty[ia2] = starty
                         conts2[contindex][ia2].time.push(0) 
 
-                    if (ia >= (contnumber/3) && ia <= contnumber) {
+                    //if (ia >= (contnumber/3) && ia <= contnumber) {
                     if (mov == 'u') { // direction
-                      conts2[contindex][ia2].ysfinal[0] = Number(styman) - ampli + Number((ad + ia2 - contnumber/3)*at*ampli*0.03) // ampmanof => previous amp
+                      conts2[contindex][ia2].ysfinal[0] = Number(styman) - ampli + Number((ad + ia2 - contnumber/3)*Math.exp(0)*ampli*0.03) // ampmanof => previous amp
                     }else{
-                        conts2[contindex][ia2].ysfinal[0] = Number(styman) + ampli - Number((ad + ia2 - contnumber/3)*at*ampli*0.03)
+                        conts2[contindex][ia2].ysfinal[0] = Number(styman) + ampli - Number((ad + ia2 - contnumber/3)*Math.exp(0)*ampli*0.03)
                     }
                     
                     advances2[contindex][0].amp[ia2] = ampli // essential
-                    }
+                    //}
            //}
         }
     // essential => use previous directions

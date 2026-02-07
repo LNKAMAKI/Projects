@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,101 +9,125 @@
         body {
             margin-top: 0px;
             background-color: black;
-            cursor:auto;
+            cursor: auto;
         }
+
         #sim {
             /*height: 30vw;
             min-height: fit-content;*/
             position: relative;
             width: 80%;
-            max-width: 1100px;
+            max-width: 900px;
             height: 30vw;
             min-height: fit-content;
             margin: auto;
             padding-top: 50px;
-            padding-bottom: 20px;
+            padding-bottom: 5px;
             border: 1px solid black;
-            background-color: whitesmoke;
+            background-color: rgb(255, 250, 163);
         }
+
         canvas {
-            position: relative;
-            width: 90%;
-            background-color: aquamarine;
+            width: 100%;
+            max-width: 950px;
             display: block;
             margin: auto;
-            color: rgb(197, 197, 197);
-            color: rgba(255, 0, 0, 0.678);
             border: 1px solid black;
+            background-color: aquamarine;
         }
-        /********** Range Input Styles **********/
-                /*Range Reset*/
-                input[type="range"] {
-                -webkit-appearance: none;
-                    appearance: none;
-                    background: transparent;
-                    cursor: pointer;
-                    width: 100px;
-                }
-
-                /***** Chrome, Safari, Opera and Edge Chromium styles *****/
-                /* slider track */
-                input[type="range"]::-webkit-slider-runnable-track {
-                background-color: #053a5f;
-                border-radius: 0.5rem;
-                height: 0.5rem;  
-                }
-
-                /* slider thumb */
-                input[type="range"]::-webkit-slider-thumb {
-                -webkit-appearance: none; /* Override default look */
-                appearance: none;
-                margin-top: -12px; /* Centers thumb on the track */
-
-                /*custom styles*/
-                background-color: rgb(156, 156, 156);
-                height: 2rem;
-                width: 1.2rem;
-                border: 1px solid black;
-                border-radius: 5px;
-                }
-
-                input[type="range"]:focus::-webkit-slider-thumb {   
-                border: 2px solid #053a5f;
-                outline-offset: 0.125rem; 
-                }
-
-                /******** Firefox styles ********/
-                /* slider track */
-                input[type="range"]::-moz-range-track {
-                background-color: #053a5f;
-                border-radius: 0.5rem;
-                height: 0.5rem;
-                }
-
-                /* slider thumb */
-                input[type="range"]::-moz-range-thumb {
-                border: none; /*Removes extra border that FF applies*/
-                border-radius: 0; /*Removes default border-radius that FF applies*/
-
-                /*custom styles*/
-                background-color: #5cd5eb;
-                height: 2rem;
-                width: 1rem;
-                }
 
         p {
-            text-align: center;
-            align-content: center;
+            padding-top: 0px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.1em;
+            margin: 4px 0px 0px 0px;
         }
+        p.slide {
+            background-color: rgb(193, 193, 193);
+            padding: 13px 10px 16px 10px;
+            border-radius: 7px;
+            margin-left: 15px;
+        }
+            input[type="range"] {
+            -webkit-appearance: none;
+                appearance: none;
+                background: transparent;
+                cursor: pointer;
+                width: 8rem;
+            }
 
-        </style>
+            /* Removes default focus */
+            input[type="range"]:focus {
+            outline: none;
+            }
+
+            /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+            /* slider track */
+            input[type="range"]::-webkit-slider-runnable-track {
+            background-color: #053a5f;
+            border-radius: 0.5rem;
+            height: 0.5rem;  
+            }
+
+            /* slider thumb */
+            input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            margin-top: -15.8px; /* Centers thumb on the track */
+            border-radius: 5px;
+            /*custom styles*/
+            background-color: #5cd5eb;
+            border: 1.2px solid black;
+            height: 2.4rem;
+            width: 1.4rem;
+            }
+
+            input[type="range"]:focus::-webkit-slider-thumb {   
+            border: 2px solid #053a5f;
+            }
+
+            #tab {
+                display: flex;
+                justify-content: center;
+                padding: 12px 0px 12px 0px;
+            }   
+            
+            #parameter {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .title {
+                margin: 0px;
+                font-size: 18px;
+            }
+
+          </style>  
 </head>
+
 <body onload="load()">
     <script src="waves.js"></script>
     <div id="sim">
         <canvas id="canvas"></canvas>
-        <p>1<input type="range" name="" id="" min="0" max="2" step="0.5" value="0">2</p>
+        <div id="tab">
+            <div id="parameter">
+                <p class="title">Damping</p>
+                <p class="slide">
+                    low<input type="range" name="" id="at" min="0.26" max="0.46" step="0.05" value="0.26" onchange="changeat()">high
+                </p>
+            </div>
+            <div id="parameter">
+                <p class="title">Tension</p>
+                <p class="slide">
+                    low<input type="range" name="" id="at" min="0.26" max="0.46" step="0.05" value="0.26" onchange="changeat()">high
+                </p>
+            </div>
+        </div>
     </div>
+    <h1 id="t" style="color: white;">y:</h1>
     <!---
     <h1 id="t" style="color: white;">y:</h1>
     <h1 id="t2" style="color: white;">y:</h1>
@@ -113,4 +138,5 @@
     <h1 id="y" style="color: white;">y:</h1>
 -->
 </body>
+
 </html>
