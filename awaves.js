@@ -15,7 +15,7 @@ let cHeight = 0
 const xinitial = 2
 const yinitial = 75
 const dot = 0
-const h0 = 40
+const h0 = 20
 
 //const L = radius*2*contsnumber
 const modos = 120
@@ -71,7 +71,9 @@ for (let i = 0; i < contsnumber; i++){
 
    x_center = intlimits[i].xinf + radius
    c.beginPath()
-   c.arc(x_center + xinitial, intlimits[i].y + yinitial, radius, 0, Math.PI*2); // círculo completo
+   if (dot != 0) {
+      c.arc(x_center + xinitial, intlimits[i].y + yinitial, radius, 0, Math.PI*2); // círculo completo
+   }
    c.stroke(); // contorno
    if (i != dot) {
       c.fillStyle = 'red'
@@ -83,36 +85,49 @@ for (let i = 0; i < contsnumber; i++){
    c.closePath()
    
    if (i != dot) {
-       intlimits[i].y = h0*(1 - x_center/L)
+       intlimits[i].y = intlimits[0].y*(1 - x_center/L)
+   }else{
+      // intlimits[i].y = a*Math.sin(c*timer_nochange)
    }
   
-   vel = 0
+   if (dot != 1) {
+      vel = 0
+   }else{
+      vel = 0 // a*c*Math.cos(c*timer_nochange)
+   }
+
    if (i != dot) {
     for (let n = 1; n < modos; n++){
 
-   let k = (n*Math.PI*x_center)/L
+   let kx = (n*Math.PI*x_center)/L
    let wn = (n*Math.PI*v)/L
-   gamma = -0.1
+   gamma = -0.5
    //intlimits[i].y += Math.exp(gamma*timer)*Math.sin(k) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer)); //+ Math.sin(k) * bns[n - 1] * Math.sin(wn * timer);
     //sin_medio = (cos(k*intlimits[i].xinf) - cos(k*intlimits[i].xsup)) / (k*(intlimits[i].xsup - intlimits[i].xinf))
 
-    // sem ressonância:
-   // w não ressonante:
- // an += - (2*a*k**2/(n*Math.PI*(wn2**2 - k**2)))*Math.sin(k*c)
-let bn = 0 
- // w não ressonante:
- // bn += - ((2*a*k**3/(n*Math.PI*(wn2**2 - k**2)))*Math.cos(k*c))/wn2
- // w ressonante:
- // bn += ((a*k/(2*n*Math.PI))*Math.cos(k*c))/k
+    tp_n = 0
+    t_p_n = 0
+    // k != wn:
+// tp_n = (2*a*k**2/(n*Math.PI*(wn2**2 - k**2)))*Math.sin(k*timer_nochange)
+// else:
+// tp_n = - (a*k/(2*n*Math.PI))*(timer_nochange)*Math.cos(k*(timer_nochange))
+// an += Tp,n(0) 
+// k != wn2::
+// t_p_n = (2*a*k**3/(n*Math.PI*(wn2**2 - k**2)))*Math.cos(k*timer_nochange)
+// else:
+// t_p_n = - (a*k/(2*n*Math.PI))*Math.cos(k*timer_nochange) + (a*k**2/(2*n*Math.PI))*(timer_nochange)*Math.sin(k*timer_nochange)
+// bn += T'p,n(0)
+
     // com ressonãncia:
-    intlimits[i].y +=  Math.exp(gamma*timer) * Math.sin(k) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer));
-    vel += Math.sin(k) * wn * ( bns[n-1] * Math.cos(wn * timer)  - ans[n-1] * Math.sin(wn * timer)) //+ h0*(1 - x_center/L)
-   //intlimits[i].exp = `sin(${k}).Ancos(${wn}.${timer}) + sin(${k}).Bnsin(${wn}.${timer})`
+    intlimits[i].y +=  Math.exp(gamma*timer) * Math.sin(kx) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer) + tp_n);
+    vel +=  Math.exp(gamma*timer) * Math.sin(kx) * (wn * ( bns[n-1] * Math.cos(wn * timer)  - ans[n-1] * Math.sin(wn * timer)) + t_p_n) //+ velocities[0]*(1 - x_center/L)
+   //intlimits[i].exp = `sin(${kx}).Ancos(${wn}.${timer}) + sin(${kx}).Bnsin(${wn}.${timer})`
    //console.log(intlimits[i].exp)
     }    
    }
-    
+
    velocities[i] = vel
+
    // function format: sin(npix/L).Ancos(wnt) + sin(npix/L).Bsin(wnt)
   // wn = npiv/L
   // v = sqrt(tension/density)
@@ -138,26 +153,27 @@ ans = []
 bns = []
 for (let n = 1; n < modos; n++){
 let wn2 = (n*Math.PI*v)/L
-let an = -(2*h0)/(n*Math.PI) // (2*a.sin(kt))/(n*Math.PI)
-// w não ressonante:
-// an += - (2*a*k**2/(n*Math.PI*(wn2**2 - k**2)))*Math.sin(k*c)
-let bn = 0 
-// w não ressonante:
-// bn += - ((2*a*k**3/(n*Math.PI*(wn2**2 - k**2)))*Math.cos(k*c))/wn2
-// w ressonante:
-// bn += ((a*k/(2*n*Math.PI))*Math.cos(k*c))/k
+let an = -(2*intlimits[0].y)/(n*Math.PI)
+// k != wn2:
+// Tp,n(0) = (2*a*k**2/(n*Math.PI*(wn2**2 - k**2)))*Math.sin(k*timer_nochange)
+// else:
+// Tp,n(0) = - (a*k/(2*n*Math.PI))*(timer_nochange)*Math.cos(k*(timer_nochange))
+// an += Tp,n(0) 
+let bn = - (2*velocities[0])/(n*Math.PI)
+// k != wn2::
+// T'p,n(0) = (2*a*k**3/(n*Math.PI*(wn2**2 - k**2)))*Math.cos(k*timer_nochange)
+// else:
+// T'p,n(0) = - (a*k/(2*n*Math.PI))*Math.cos(k*timer_nochange) + (a*k**2/(2*n*Math.PI))*(timer_nochange)*Math.sin(k*timer_nochange)
+// bn += T'p,n(0)
+
 // FAZENDO A INTEGRAÇÃO POR PARTES
 for (let i = 0; i < contsnumber; i++){ // for each x interval
    //console.log('y',intlimits[i].y,'xinferior', intlimits[i].xinf,'xsuperior', intlimits[i].xsup)
    an += (2/L)*intlimits[i].y*((-L/(n*Math.PI))*(Math.cos(n*Math.PI*intlimits[i].xsup/L) - Math.cos(n*Math.PI*intlimits[i].xinf/L)))
-   bn += (2/(wn2*L))*velocities[i]*((-L/(n*Math.PI))*(Math.cos(n*Math.PI*intlimits[i].xsup/L) - Math.cos(n*Math.PI*intlimits[i].xinf/L)))
+   bn += (2/L)*velocities[i]*((-L/(n*Math.PI))*(Math.cos(n*Math.PI*intlimits[i].xsup/L) - Math.cos(n*Math.PI*intlimits[i].xinf/L)))
 }
 ans.push(an)
-// if n%2 = 0 (even):
-// add nothing to bn
-// if n%2 = 1 (odd) and no ressnonance:
-// add - ((4ak^3)/(n.pi(wn^2 - k^2))/wn2
-bns.push(bn)
+bns.push(bn/wn2)
 
 }   
 }
