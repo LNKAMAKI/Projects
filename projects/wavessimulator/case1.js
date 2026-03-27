@@ -1,23 +1,23 @@
-let ans = []
-let bns = []
-let timer = 0
+let ans = [] // coeficientes an
+let bns = [] // coeficientes bn
+let timer = 0 // tempo decorrido
 let lastTime = 0
-let intlimits = []
-const tension = 80
-const density = 0.05
-const v = Math.sqrt(tension/density)
-const L = 250 
-const contsnumber = 121 // N >= 2M
-const radius = L/(2*contsnumber)
-let b = 9
+let intlimits = [] // limites das integrais
+const tension = 55 // tensão 
+const density = 0.02 // densidade
+const v = Math.sqrt(tension/density) // velocidade de propagação da onda
+const L = 250 // comprimento da corda
+const contsnumber = 150 // N >= 2M // número de contas
+const radius = L/(2*contsnumber) // raio das contas
+//let b = 9
 let velocities = []
 let cHeight = 0
 const xinitial = 2
 const yinitial = 75
-const dot = 6
+const dot = 10
 
 //const L = radius*2*contsnumber
-const modos = 60
+const modos = 100
 
 function begin(){
 const canv = document.getElementById("canvas")
@@ -41,7 +41,7 @@ update()
 
 animate()   
 
- b = 6*timer
+ //b = 6*timer
 function animate() {
 
      const currentTime = performance.now();  // Pega tempo atual
@@ -50,10 +50,10 @@ function animate() {
         lastTime = currentTime;
     }
     
-    const dt = (currentTime - lastTime) / 1000;
+    const dt = (currentTime - lastTime) / 990;
     lastTime = currentTime;
     
-    timer += dt
+    timer += 0.01 // dt
 
     c.clearRect(0, 0, 300, 150);
 
@@ -142,8 +142,12 @@ bns.push(bn)
 window.addEventListener('mousemove', function (event) {
 
  alt = ((event.y)/cHeight)*150
- if (alt >= 10 && alt <= 140) {
+ if (alt >= 50 && alt <= 90) {
    intlimits[dot].y = alt - yinitial
+ } else if (alt < 50) {
+   intlimits[dot].y = 50 - yinitial
+ }else if (alt > 90){
+   intlimits[dot].y = 90 - yinitial
  }
    this.document.getElementById('par').innerText = `mousey: ${event.y} ${((event.y)/cHeight)*150}`
    
@@ -152,7 +156,7 @@ window.addEventListener('mousemove', function (event) {
 
 })
 
-setInterval(() => {timer = 0; update()}, 15);
+setInterval(() => {timer = 0; update()}, 1);
 
 /*
 function updatevelocities() {
