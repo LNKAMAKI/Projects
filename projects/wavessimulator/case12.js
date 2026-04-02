@@ -3,23 +3,21 @@ let bns = [] // coeficientes bn
 let timer = 0 // tempo decorrido
 let lastTime = 0
 let intlimits = [] // limites das integrais
-const tension = 40 // tensão 
-const density = 0.01 // densidade
+const tension = 55 // tensão 
+const density = 0.3 // densidade
 const v = Math.sqrt(tension/density) // velocidade de propagação da onda
 const L = 250 // comprimento da corda
-const contsnumber = 120 // N >= 2M // número de contas
+const contsnumber = 150 // N >= 2M // número de contas
 const radius = L/(2*contsnumber) // raio das contas
 //let b = 9
 let velocities = []
 let cHeight = 0
 const xinitial = 2
 const yinitial = 75
-const dot = 5
-mousey = 0
-ischanging = []
+const dot = 10
 
 //const L = radius*2*contsnumber
-const modos = 60
+const modos = 75
 
 function begin(){
 const canv = document.getElementById("canvas")
@@ -31,10 +29,10 @@ intlimits = []
 g = 0
 for (let i = 0; i < contsnumber; i++){
    if (i != dot) {
-      intlimits.push({xinf:i*radius*2, xsup: i*radius*2 + 2*radius, y: 20,vel:0})
+      intlimits.push({xinf:i*radius*2, xsup: i*radius*2 + 2*radius, y: 0,vel:0})
       velocities.push(0)
    }else{
-      intlimits.push({xinf: i*radius*2, xsup: i*radius*2 + 2*radius, y: 30,vel:0})
+      intlimits.push({xinf: i*radius*2, xsup: i*radius*2 + 2*radius, y: 150,vel:0})
       velocities.push(0)
    }
 }
@@ -52,7 +50,7 @@ function animate() {
         lastTime = currentTime;
     }
     
-    const dt = (currentTime - lastTime) /1000;
+    const dt = (currentTime - lastTime) / 1000;
     lastTime = currentTime;
     
     timer += dt
@@ -74,28 +72,28 @@ for (let i = 0; i < contsnumber; i++){
    c.fill()
    c.closePath()
    
-   if (i != dot) {
+   //if (i != dot) {
        intlimits[i].y = 0
-   }
+   //}
   
    vel = 0
-   if (i != dot) {
+   //if (i != dot) {
     for (let n = 1; n < modos; n++){
 
    let k = (n*Math.PI*x_center)/L
    let wn = (n*Math.PI*v)/L
-   gamma = -0.8
+   gamma = -0.1
    //intlimits[i].y += Math.exp(gamma*timer)*Math.sin(k) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer)); //+ Math.sin(k) * bns[n - 1] * Math.sin(wn * timer);
     //sin_medio = (cos(k*intlimits[i].xinf) - cos(k*intlimits[i].xsup)) / (k*(intlimits[i].xsup - intlimits[i].xinf))
-    //Math.exp(gamma*timer)
+
     intlimits[i].y += Math.exp(gamma*timer) * Math.sin(k) * (ans[n-1] * Math.cos(wn * timer) + bns[n-1] * Math.sin(wn * timer));
-    vel += Math.exp(gamma*timer) * Math.sin(k) * wn * ( bns[n-1] * Math.cos(wn * timer)  - ans[n-1] * Math.sin(wn * timer))
+    vel += Math.sin(k) * wn * ( bns[n-1] * Math.cos(wn * timer)  - ans[n-1] * Math.sin(wn * timer))
    //intlimits[i].exp = `sin(${k}).Ancos(${wn}.${timer}) + sin(${k}).Bnsin(${wn}.${timer})`
    //console.log(intlimits[i].exp)
     }    
-   }else{
+  // }else{
 
-   }
+   //}
     
    velocities[i] = vel
    // function format: sin(npix/L).Ancos(wnt) + sin(npix/L).Bsin(wnt)
@@ -107,7 +105,6 @@ for (let i = 0; i < contsnumber; i++){
 // wn = npiv/L
 // v = sqrt(tension/density)
 //timer += 0.01
-timer += dt;
 requestAnimationFrame(animate)
 }
 }
@@ -143,58 +140,22 @@ bns.push(bn)
 
 window.addEventListener('mousemove', function (event) {
 
-   
  alt = ((event.y)/cHeight)*150
  if (alt >= 50 && alt <= 90) {
+
  } else if (alt < 50) {
    alt = 50
  }else if (alt > 90){
    alt = 90
  }
- mousey = alt - yinitial
- /*
- this.document.getElementById('par').innerText = `mousey: ${alt - yinitial} doty: ${intlimits[0].y}`
+   this.document.getElementById('par').innerText = `mousey: ${event.y} ${((event.y)/cHeight)*150}`
+   
+  // timer = 0
+   //update()
 
- intlimits[0].y = alt - yinitial
-
- this.document.getElementById('par2').innerText = `mousey: ${alt - yinitial} doty: ${intlimits[0].y}`
- */
-
- //if (alt - yinitial = )
- 
 })
 
-setInterval(() => {timer = 0; update()},20)
-/*
-setInterval(() => {
-   this.document.getElementById('par3').innerText = `mousey: ${mousey} doty: ${intlimits[0].y}`
-   if (mousey != intlimits[dot].y) {
-       this.document.getElementById('par4').innerText = `changing`
-       ischanging.push('yes')
-   }else{
-      this.document.getElementById('par4').innerText = `not changing`
-      ischanging.push('no')
-   }
-   intlimits[dot].y = mousey
-   if (ischanging[ischanging.length - 1] == 'no' && ischanging[ischanging.length - 2] == 'no' && ischanging[ischanging.length - 3] == 'no' &&
-      ischanging[ischanging.length - 4] == 'no' && ischanging[ischanging.length - 5] == 'no' && ischanging[ischanging.length - 5] == 'no' &&
-      ischanging[ischanging.length - 6] == 'no' && ischanging[ischanging.length - 7] == 'no' && ischanging[ischanging.length - 8] == 'no' &&
-      ischanging[ischanging.length - 9] == 'no' && ischanging[ischanging.length - 10] == 'no' && ischanging[ischanging.length - 11] == 'no' &&
-      ischanging[ischanging.length - 12] == 'no' && ischanging[ischanging.length - 13] == 'no' && ischanging[ischanging.length - 14] == 'no' &&
-      ischanging[ischanging.length - 15] == 'no' && ischanging[ischanging.length - 16] == 'no' && ischanging[ischanging.length - 17] == 'no' &&
-      ischanging[ischanging.length - 18] == 'no' && ischanging[ischanging.length - 19] == 'no' && ischanging[ischanging.length - 20] == 'no' &&
-      ischanging[ischanging.length - 21] == 'no' && ischanging[ischanging.length - 22] == 'no' && ischanging[ischanging.length - 23] == 'no' &&
-      ischanging[ischanging.length - 24] == 'no' && ischanging[ischanging.length - 25] == 'no'
-   ) {
-       intlimits[dot].y = mousey
-   }else if (ischanging[ischanging.length - 1] == 'no') {
-       timer = 0
-       update()
-   }else{
-       timer = 0
-       update()
-   }
-}, 10);*/
+setInterval(() => {timer = 0; update()}, 1);
 
 /*
 function updatevelocities() {
