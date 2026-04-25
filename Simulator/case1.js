@@ -8,7 +8,7 @@ function start() {
     L = 270
     beedsnumber = 60//(L/500)*250
     radius = (L/beedsnumber)/2
-    modos = 15 //beedsnumber/2 
+    modos = 20 //beedsnumber/2 
     ans = []
     bns = []
     beeds = []
@@ -43,6 +43,7 @@ function start() {
     
     
     function update() {
+        document.getElementById('par4').innerText = ''
          ans = []
          bns = []
      for (n = 1; n <= modos; n++) {
@@ -58,6 +59,7 @@ function start() {
             bn += (2/L)*y*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
         }
         ans.push(an)
+        document.getElementById('par4').innerText += Math.round(an) + ', '
         bns.push(bn)
         if (n == 1) {
             //this.document.getElementById('par1').innerText = an + ' ' + bn
@@ -82,7 +84,7 @@ function start() {
       document.getElementById('par1').innerText = nan
       document.getElementById('par2').innerText = 'timer: ' + timer
       document.getElementById('par3').innerText = 't: ' + t + ' tension: ' + tension
-      document.getElementById('par4').innerText = change
+      
             if (beed != dot) {
         beeds[beed].y = 0
             
@@ -140,18 +142,18 @@ function start() {
 window.addEventListener('mousemove', function (event) {
 
 
- cWidth = Number(this.document.getElementById('canvas').offsetWidth)
- bodyWidth = Number(this.document.body.offsetWidth)
- alt = ((event.y)/cHeight)*150
- alt2 = ((event.y)/cHeight)*150
- mousex = ((event.x - (bodyWidth - cWidth)/2)/cWidth)*300
+ cWidth = Number(this.document.getElementById('canvas').offsetWidth) // pega comprimento do canvas
+ bodyWidth = Number(this.document.body.offsetWidth) // pega comprimento do body do documento
+ alt = ((event.y)/cHeight)*150 // alt = com limites de y inclusos
+ alt2 = ((event.y)/cHeight)*150 // alt2 = sem limites de y inclusos
+ mousex = ((event.x - (bodyWidth - cWidth)/2)/cWidth)*300 // mousex dentro das coordenadas do canva
  if (alt >= 50 && alt <= 90) {
  } else if (alt < 50) {
   alt = 50
  }else if (alt > 120){
   alt = 120
  }
- mousey = alt + 65.5 - yinitial
+ mousey = alt + 65.5 - yinitial // 65.5 - referente ao padding superior
  mousey2 = alt2 + 65.5 - yinitial
  //beeds[dot].y = mousey - yinitial
 
@@ -180,18 +182,39 @@ window.addEventListener('mousemove', function (event) {
 })
 
 window.addEventListener('mousedown', function (event) {
-
     mousedown = true
-    console.log('down')
-
 })
 
 window.addEventListener('mouseup', function (event) {
-
     mousedown = false
-    console.log('up')
-
 })
+
+// quando o atrito muda
+function changeDamping() {
+    constant2 = f()
+    constant = nan
+    timer = 0
+    document.getElementById('par3').innerText = 'nan: ' + nan + ', constant2: ' + constant2
+    gamma = Number(document.getElementById('damping').value)*-1
+}
+
+// quando a tensão muda
+function changeTension() {
+    change = true
+    tension = Number(document.getElementById('tension').value)
+}
+
+function f() {
+    return Math.exp(gamma*timer)
+}
+
+
+
+
+
+
+
+
 
 function sen(number) {
     return Math.sin(number)
@@ -210,24 +233,3 @@ window.addEventListener('keypress', function(event) {
         //update()
     }
 })
-
-function changeDamping() {
-    constant2 = f()
-    constant = nan
-    timer = 0
-    document.getElementById('par3').innerText = 'nan: ' + nan + ', constant2: ' + constant2
-    gamma = Number(document.getElementById('damping').value)*-1
-}
-
-function changeTension() {
-    change = true
-    tension = Number(document.getElementById('tension').value)
-    //v = (Math.sqrt(tension/density))
-    //constant = nan
-    //timer = 0
-   // update()
-}
-
-function f() {
-    return Math.exp(gamma*timer)
-}
