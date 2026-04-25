@@ -1,22 +1,21 @@
-    
+ 
     function start() {
         //func = new makeWave(50,0.02,100,30,7,80,20)
-        func2 = new makeWave(50,0.02,200,60,17,80,120)
-        func2.update()
+        gamma = -0.1
         //func.update()
 
             tension = 50
             density = 0.02
             v = (Math.sqrt(tension/density))
-            L = 100
-            beedsnumber = 30
+            L = 200
+            beedsnumber = 60
             radius = (L/beedsnumber)/2
-            modos = 7
+            modos = 17
             ans = []
             bns = []
             beeds = []
             t = 0
-            yinitial = 80 // espaçamento vertical
+            yinitial = 60 // espaçamento vertical
             xinitial = 20 // espaçamento horizontal
             pi = Math.PI
             c = document.getElementById('canvas').getContext('2d') 
@@ -91,7 +90,7 @@
         setInterval(() => {
             c.clearRect(0, 0, 300, 150)
             //func.draw()
-            func2.draw()
+            //func2.draw()
 
           for (beed in beeds) {
              x = beeds[beed].xcenter
@@ -104,6 +103,9 @@
           }
         }, 0);
         //func.ani()
+
+         func2 = new makeWave(50,0.02,100,30,7,110,20)
+        func2.update()
     }
         function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
             this.tension = tensao
@@ -117,15 +119,15 @@
             this.bns = []
             this.beeds = []
             this.t = 0
+            this.timer = 0
             this.yinitial = yin // espaçamento vertical
             this.xinitial = xin// espaçamento horizontal
             pi = Math.PI
             c = document.getElementById('canvas').getContext('2d') 
-            lastTime = 0
-            currentTime = 0
 
+            console.log('beed',beeds)
             for (n = 0; n < this.beedsnumber; n++) {
-            object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: 10, velocity: 0}
+            object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[n].y, velocity: 0}
             this.beeds.push(object)
             }
             
@@ -153,15 +155,9 @@
             }
             }
 
-            //console.log('MOOODOS',this.this.modos)
-            //animate(this.this.L, this.this.modos)
             this.ani= setInterval (() => {
 
-                //console.log('fweweiweiw',this.L)
-                //console.log('l',this.L, 'this.modos',this.modos)
-                
                 this.t += 0.005
-                //c.clearRect(0, 0, 300, 150)
                 for (beed in this.beeds) {
                 x = this.beeds[beed].xcenter
 
@@ -171,15 +167,11 @@
                 for (n = 1; n <= this.modos; n++) {
             
                 wn = (n*pi*this.v)/this.L
-                this.beeds[beed].y += sen((n*pi*x)/this.L)*(this.ans[n - 1]*sen(wn*this.t) + this.bns[n - 1]*cos(wn*this.t))
-                if (beed == 10) {
-                //console.log('y',this.beeds[beed].y)
-                }
-                this.beeds[beed].velocity += wn*sen((n*pi*x)/this.L)*(this.ans[n - 1]*cos(wn*this.t) - this.bns[n - 1]*sen(wn*this.t))
+                this.beeds[beed].y += this.f()*sen((n*pi*x)/this.L)*(this.ans[n - 1]*sen(wn*this.t) + this.bns[n - 1]*cos(wn*this.t))
+                this.beeds[beed].velocity += this.f()*wn*sen((n*pi*x)/this.L)*(this.ans[n - 1]*cos(wn*this.t) - this.bns[n - 1]*sen(wn*this.t))
                 
                 }
-
-                // desenhar conta
+                this.timer += 0.0001
             }
 
             }, 0)
@@ -194,6 +186,10 @@
                 c.stroke()
                 c.closePath()
                 }
+            }
+
+            this.f = function() {
+            return Math.exp(gamma*this.timer)
             }
 
     
