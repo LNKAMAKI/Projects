@@ -1,6 +1,9 @@
 let nan = 1
 let timer = 0
 let change = false
+let doty = []
+let nowdot = -1
+let still = false
 function start() {
     tension = 80
     density = 0.02
@@ -43,7 +46,7 @@ function start() {
     
     
     function update() {
-        document.getElementById('par4').innerText = ''
+        //document.getElementById('par4').innerText = ''
          ans = []
          bns = []
      for (n = 1; n <= modos; n++) {
@@ -59,7 +62,7 @@ function start() {
             bn += (2/L)*y*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
         }
         ans.push(an)
-        document.getElementById('par4').innerText += Math.round(an) + ', '
+        //document.getElementById('par4').innerText += Math.round(an) + ', '
         bns.push(bn)
         if (n == 1) {
             //this.document.getElementById('par1').innerText = an + ' ' + bn
@@ -67,10 +70,10 @@ function start() {
      }
     }
     
-    animate()
+    //animate()
     
     
-    function animate() {
+    setInterval( () => {
 
         t += 0.05
         //timer += 0.02
@@ -118,11 +121,46 @@ function start() {
         c.lineWidth = '0.6'
         c.stroke()
         c.closePath()
+
     }
 
     timer += 0.02
-    requestAnimationFrame(animate)
+
+    if (mousedown == true && dot != -1) {
+        if (still == false || nowdot != dot) {
+            doty = []
+            console.log('quebrou')
+            still = true
+            nowdot = dot
+            console.log('true',nowdot)
+            for (ys in doty) {
+                console.log(ys,doty[ys])
+            }
+        }
+        doty.push(mousey)
+        //for (ys in doty) {
+                //console.log(doty)
+            //}
+        if (doty.length > 1) {
+            //console.log('revolted',doty[doty.length - 1], doty[doty.length - 2])
+            if (doty[doty.length - 1]!= doty[doty.length - 2]) {
+                //console.log('clear')
+                doty = []
+                console.log('quebrou')
+            }
+        }
+
+        if (doty.length == 10) {
+            console.log('muito tempo parado ',dot)
+        }
+    }else{
+        doty = []
+        if (still == true) {
+        console.log('quebrou')
+        still = false
+        }
     }
+    },10)
 
     setInterval(() => {
         if ((mousedown == true && dot != -1) || change == true) {
@@ -155,20 +193,21 @@ window.addEventListener('mousemove', function (event) {
  }
  mousey = alt + 65.5 - yinitial // 65.5 - referente ao padding superior
  mousey2 = alt2 + 65.5 - yinitial
- //beeds[dot].y = mousey - yinitial
 
- if (mousedown == true && dot != -1) {
+ if (mousedown == true && dot != -1) { // se mouse está pressionado e conta foi selecionada
  beeds[dot].y = mousey - yinitial
  }else{
+    this.document.getElementById('par4').innerText = 'unselected'
     dot = -1
  }
-  //this.document.getElementById('par3').innerText = ''
+  
  for (beed in beeds) {
    //if (beed == 2) {
    if (mousedown == true && mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && mousey2 < beeds[beed].ysup && mousey2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
-         //this.document.getElementById('par3').innerText += 'its touching' + beed
          dot = beed
+         //doty.push(mousey)
          beeds[beed].y = mousey - yinitial
+         this.document.getElementById('par4').innerText = 'selected, '
    }
 //}
     //console.log(this.document.body.offsetWidth - this.document.getElementById('canvas').offsetWidth)
