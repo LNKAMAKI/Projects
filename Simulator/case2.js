@@ -2,10 +2,10 @@ function start() {
     tension = 80
     density = 0.02
     v = (Math.sqrt(tension/density))
-    L = 250
+    L = 270
     beedsnumber = 60
     radius = (L/beedsnumber)/2
-    modos = 31
+    modos = 14
     ans = []
     bns = []
     beeds = []
@@ -65,7 +65,7 @@ function start() {
     
     function animate() {
 
-            t += 0.05
+            t += 0.03
 
         c.clearRect(0, 0, 300, 150)
         for (beed in beeds) {

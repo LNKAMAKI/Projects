@@ -107,10 +107,14 @@ function start() {
 
 
     timer += 0.02
+},0)
+
+setInterval (() => {
     if (mousedown == true && dot != -1) {
         if (still == false || nowdot != dot) {
             doty = []
             console.log('quebrou')
+            func2 = 0
             still = true
             nowdot = dot
             console.log('true',nowdot)
@@ -128,22 +132,24 @@ function start() {
                 //console.log('clear')
                 doty = []
                 console.log('quebrou')
+                func2 = 0
             }
         }
 
-        if (doty.length == 10) {
+        if (doty.length == 60) {
             console.log('muito tempo parado ',dot)
             b = beedsnumber - dot
-            func2 = new makeWave(80,0.02,b*radius*2,b,b/4.1,110,15 + Number(dot)*radius*2)
+            func2 = new makeWave(80,0.02,b*radius*2,b,b/4.3,80,15 + Number(dot)*radius*2)
         }
     }else{
         doty = []
         if (still == true) {
         console.log('quebrou')
+        func2 = 0
         still = false
         }
     }
-    },0)
+},0)
 
     setInterval(() => {
         if ((mousedown == true && dot != -1) || change == true) {
@@ -177,7 +183,9 @@ function start() {
         c.stroke()
         c.closePath()
     }
+    //if (mousedown == true && dot != -1) {
     func2.draw()
+    //}
     },0)
 
 
@@ -303,7 +311,7 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
             console.log('beed',beeds)
             for (n = 0; n < this.beedsnumber; n++) {
                 if (n == 0) {
-                    object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[dot].y, velocity:0}
+                    object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[dot].y, velocity: 0}
                 }else{
             object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[Number(dot) + n].y, velocity: beeds[Number(dot) + n].velocity}
                 }
@@ -320,7 +328,7 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                 this.bns = []
             for (n = 1; n <= this.modos; n++) {
                 w = (n*pi*this.v)/this.L
-                an = 0
+                an =  0//-(2*this.beeds[0].velocity)/(n*pi)
                 bn = -(2*this.beeds[0].y)/(n*pi)
                 for (beed in this.beeds) {
                     y = this.beeds[beed].y
@@ -343,8 +351,9 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
 
                 if (beed != 0) {
                 this.beeds[beed].y = this.beeds[0].y*(1 - x/this.L)
+                this.beeds[beed].velocity = 0//this.beeds[0].velocity*(1 - x/this.L)
                 }
-                this.beeds[beed].velocity = 0
+                
                 for (n = 1; n <= this.modos; n++) {
             
                 wn = (n*pi*this.v)/this.L
@@ -354,7 +363,7 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                 }
 
                 }
-                this.timer += 0.00002
+                this.timer += 0.0001
             }
 
             }, 0)
@@ -364,7 +373,7 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                     x = this.beeds[beed].xcenter
                  c.beginPath()
                 c.arc(x + this.xinitial,this.beeds[beed].y + this.yinitial,this.radius,0,2*pi) 
-                c.fillStyle = 'red'
+                c.fillStyle = 'yellow'
                 c.fill()
                 c.stroke()
                 c.closePath()
