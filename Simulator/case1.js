@@ -133,8 +133,8 @@ function start() {
 
         if (doty.length == 10) {
             console.log('muito tempo parado ',dot)
-            b = 10
-            func2 = new makeWave(80,0.02,b*radius*2,b,b/4.1,110,15)
+            b = beedsnumber - dot
+            func2 = new makeWave(80,0.02,b*radius*2,b,b/4.1,110,15 + Number(dot)*radius*2)
         }
     }else{
         doty = []
@@ -302,7 +302,11 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
 
             console.log('beed',beeds)
             for (n = 0; n < this.beedsnumber; n++) {
-            object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[n].y, velocity: beeds[n].velocity}
+                if (n == 0) {
+                    object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[dot].y, velocity:0}
+                }else{
+            object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[Number(dot) + n].y, velocity: beeds[Number(dot) + n].velocity}
+                }
             this.beeds.push(object)
             //console.log('beedeew',this.beeds[n].y)
             }
@@ -317,7 +321,7 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
             for (n = 1; n <= this.modos; n++) {
                 w = (n*pi*this.v)/this.L
                 an = 0
-                bn = 0
+                bn = -(2*this.beeds[0].y)/(n*pi)
                 for (beed in this.beeds) {
                     y = this.beeds[beed].y
                     velocity = this.beeds[beed].velocity
@@ -337,17 +341,20 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                 for (beed in this.beeds) {
                 x = this.beeds[beed].xcenter
 
-                
-                this.beeds[beed].y = 0
+                if (beed != 0) {
+                this.beeds[beed].y = this.beeds[0].y*(1 - x/this.L)
+                }
                 this.beeds[beed].velocity = 0
                 for (n = 1; n <= this.modos; n++) {
             
                 wn = (n*pi*this.v)/this.L
+                if (beed != 0) {
                 this.beeds[beed].y += this.f()*sen((n*pi*x)/this.L)*(this.ans[n - 1]*sen(wn*this.t) + this.bns[n - 1]*cos(wn*this.t))
                 this.beeds[beed].velocity += this.f()*wn*sen((n*pi*x)/this.L)*(this.ans[n - 1]*cos(wn*this.t) - this.bns[n - 1]*sen(wn*this.t))
-                
                 }
-                this.timer += 0.000385
+
+                }
+                this.timer += 0.00002
             }
 
             }, 0)

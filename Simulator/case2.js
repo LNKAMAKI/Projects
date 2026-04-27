@@ -14,7 +14,7 @@ function start() {
     xinitial = 20 // espaçamento horizontal
     pi = Math.PI
     dot = -1
-    gamma = -0.02
+    gamma = -0
     mousedown = false
     c = document.getElementById('canvas').getContext('2d')
     canv = document.getElementById('canvas')
@@ -22,7 +22,7 @@ function start() {
 
     for (n = 0; n < beedsnumber; n++) {
         if (n == 0) {
-      object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: 0,ycenter: yinitial, yinf: yinitial - radius,ysup: yinitial + radius,  velocity: 0}
+      object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: -40,ycenter: yinitial, yinf: yinitial - radius,ysup: yinitial + radius,  velocity: 0}
       beeds.push(object)
         }else{
             object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: 0, velocity: 0}
@@ -42,7 +42,7 @@ function start() {
          bns = []
      for (n = 1; n <= modos; n++) {
         w = (n*pi*v)/L
-        let an = 0
+        let an = -(2*beeds[0].velocity)/(n*pi)
         let bn = -(2*beeds[0].y)/(n*pi) //- (2*beeds[0].velocity)/(n*Math.PI)
         for (beed in beeds) {
             y = beeds[beed].y
@@ -77,14 +77,16 @@ function start() {
         if (beed != 0) {
         beeds[beed].y = beeds[0].y*(1 - x/L)
         }
-        beeds[beed].velocity = 0
+        beeds[beed].velocity = beeds[0].velocity*(1 - x/L)
         for (n = 1; n <= modos; n++) {
        
         wn = (n*pi*v)/L
         if (beed != 0) {
         beeds[beed].y += Math.exp(gamma*t) * sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+        
         beeds[beed].velocity +=  Math.exp(gamma*t) * wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
         }
+        
         }
     //}
 
