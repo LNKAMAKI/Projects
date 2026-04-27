@@ -14,7 +14,7 @@ function start() {
     xinitial = 20 // espaçamento horizontal
     pi = Math.PI
     dot = -1
-    gamma = -0
+    gamma = -0.02
     mousedown = false
     c = document.getElementById('canvas').getContext('2d')
     canv = document.getElementById('canvas')
@@ -75,7 +75,7 @@ function start() {
         
         //if (beed != 0) {
         if (beed != 0) {
-        beeds[beed].y = Math.exp(gamma*t) * (beeds[0].y*(1 - x/L))
+        beeds[beed].y = beeds[0].y*(1 - x/L)
         }
         beeds[beed].velocity = 0
         for (n = 1; n <= modos; n++) {
@@ -83,8 +83,8 @@ function start() {
         wn = (n*pi*v)/L
         if (beed != 0) {
         beeds[beed].y += Math.exp(gamma*t) * sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
-        }
         beeds[beed].velocity +=  Math.exp(gamma*t) * wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
+        }
         }
     //}
 
