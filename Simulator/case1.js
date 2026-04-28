@@ -114,8 +114,10 @@ setInterval (() => {
     if (mousedown == true && dot != -1) {
         if (still == false || nowdot != dot) {
             doty = []
+            if (func2 != 0) {
             console.log('quebrou')
-            //func2 = 0
+            }
+            func2 = 0
             still = true
             nowdot = dot
             console.log('true',nowdot)
@@ -132,8 +134,10 @@ setInterval (() => {
             if (doty[doty.length - 1]!= doty[doty.length - 2]) {
                 //console.log('clear')
                 doty = []
+                if (func2 != 0) {
                 console.log('quebrou')
-                //func2 = 0
+                }
+                func2 = 0
             }
         }
 
@@ -142,13 +146,21 @@ setInterval (() => {
             b = beedsnumber - dot
             func2 = new makeWave(80,0.02,b*radius*2,b,b/4.3,80,15 + Number(dot)*radius*2)
         }
+
+        drawWave()
+        if (func2 != 0) {
+            func2.draw()
+        }
     }else{
         doty = []
         if (still == true) {
+            if (func2 != 0) {
         console.log('quebrou')
-        //func2 = 0
+            }
+        func2 = 0
         still = false
         }
+        drawWave()
     }
 },0)
 
@@ -166,9 +178,7 @@ setInterval (() => {
         //this.document.getElementById('par2').innerText = mousedown
     }, 0)
 
-   //func2 = new makeWave(50,0.02,100,30,7,110,20)
-
-   setInterval(() => {
+   function drawWave() {
     c.clearRect(0, 0, 300, 150)
     for (beed in beeds){
         c.beginPath()
@@ -184,10 +194,36 @@ setInterval (() => {
         c.stroke()
         c.closePath()
     }
-    if (func2 != 0) {
-    func2.draw()
+}
+
+    window.addEventListener('keypress', function(event) {
+    if (event.key == 'd') {
+        //func2 = new makeWave(80,0.02,270,60,19,110,15)
+        //tension = 20
+        v = (Math.sqrt(tension/density))
+        t = 0
+        timer = 0
+        
+        ans = []
+        bns = []
+        for (n = 1; n <= modos; n++) {
+            w = (n*pi*v)/L
+            an = 0
+            bn = 0
+            for (beed in beeds) {
+                y = 10 //beeds[beed].y
+                velocity = 0 //beeds[beed].velocity
+                xf = beeds[beed].xsup // limite superior
+                xi = beeds[beed].xinf // limite inferior
+                an += (2/(w*L))*velocity*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
+                bn += (2/L)*y*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
+            }
+            ans.push(an)
+            bns.push(bn)
+        }
+        console.log('hey')
     }
-    },0)
+})
 
 
 }
@@ -280,16 +316,6 @@ function cos(number) {
     return Math.cos(number)
 }
 
-window.addEventListener('keypress', function(event) {
-    if (event.key == 'd') {
-        func2 = new makeWave(80,0.02,270,60,19,110,15)
-        //tension = 20
-        //v = (Math.sqrt(tension/density))
-        //t = 0
-        //timer = 0
-        //update()
-    }
-})
 
 function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
             this.tension = tensao
