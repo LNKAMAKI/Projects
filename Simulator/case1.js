@@ -5,6 +5,7 @@ let doty = []
 let nowdot = -1
 let still = false
 function start() {
+    func2 = 0
     tension = 80
     density = 0.02
     v = (Math.sqrt(tension/density))
@@ -114,7 +115,7 @@ setInterval (() => {
         if (still == false || nowdot != dot) {
             doty = []
             console.log('quebrou')
-            func2 = 0
+            //func2 = 0
             still = true
             nowdot = dot
             console.log('true',nowdot)
@@ -132,7 +133,7 @@ setInterval (() => {
                 //console.log('clear')
                 doty = []
                 console.log('quebrou')
-                func2 = 0
+                //func2 = 0
             }
         }
 
@@ -145,7 +146,7 @@ setInterval (() => {
         doty = []
         if (still == true) {
         console.log('quebrou')
-        func2 = 0
+        //func2 = 0
         still = false
         }
     }
@@ -183,9 +184,9 @@ setInterval (() => {
         c.stroke()
         c.closePath()
     }
-    //if (mousedown == true && dot != -1) {
+    if (func2 != 0) {
     func2.draw()
-    //}
+    }
     },0)
 
 
@@ -330,11 +331,11 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                 w = (n*pi*this.v)/this.L
                 an =  0//-(2*this.beeds[0].velocity)/(n*pi)
                 bn = -(2*this.beeds[0].y)/(n*pi)
-                for (beed in this.beeds) {
-                    y = this.beeds[beed].y
-                    velocity = this.beeds[beed].velocity
-                    xf = this.beeds[beed].xsup // limite superior
-                    xi = this.beeds[beed].xinf // limite inferior
+                for (i = 0; i < this.beedsnumber; i++) {
+                    y = beeds[Number(dot) + i].y
+                    velocity = beeds[Number(dot) + i].velocity
+                    xf = beeds[i].xsup // limite superior
+                    xi = beeds[i].xinf // limite inferior
                     an += (2/(w*this.L))*velocity*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
                     bn += (2/this.L)*y*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
                 }
