@@ -116,6 +116,7 @@ setInterval (() => {
             doty = []
             if (func2 != 0) {
             console.log('quebrou')
+            //update2()
             }
             func2 = 0
             still = true
@@ -136,6 +137,7 @@ setInterval (() => {
                 doty = []
                 if (func2 != 0) {
                 console.log('quebrou')
+                //update2()
                 }
                 func2 = 0
             }
@@ -156,6 +158,7 @@ setInterval (() => {
         if (still == true) {
             if (func2 != 0) {
         console.log('quebrou')
+        //update2()
             }
         func2 = 0
         still = false
@@ -163,6 +166,26 @@ setInterval (() => {
         drawWave()
     }
 },0)
+
+function update2 () {
+    ans = []
+        bns = []
+        for (n = 1; n <= modos; n++) {
+            w = (n*pi*v)/L
+            an = 0
+            bn = 0
+            for (beed in beeds) {
+                y = 10 //beeds[beed].y
+                velocity = 0 //beeds[beed].velocity
+                xf = beeds[beed].xsup // limite superior
+                xi = beeds[beed].xinf // limite inferior
+                an += (2/(w*L))*velocity*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
+                bn += (2/L)*y*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
+            }
+            ans.push(an)
+            bns.push(bn)
+        }
+}
 
     setInterval(() => {
         if ((mousedown == true && dot != -1) || change == true) {
@@ -183,7 +206,13 @@ setInterval (() => {
     for (beed in beeds){
         c.beginPath()
         x = beeds[beed].xcenter
+        if (func2 == 0 || beed < Number(dot)) {
         c.arc(x + xinitial,beeds[beed].y + yinitial,radius,0,2*pi) 
+        }else{
+            console.log('func2',func2.beeds[beed - dot].y)
+            c.arc(x + xinitial,func2.beeds[beed - dot].y + yinitial,radius,0,2*pi) 
+            beeds[beed].y = func2.beeds[beed - dot].y
+        }
         if (beed != dot) {
             c.fillStyle = 'red'
         }else{
@@ -248,7 +277,11 @@ window.addEventListener('mousemove', function (event) {
  mousey2 = alt2 + 65.5 - yinitial
 
  if (mousedown == true && dot != -1) { // se mouse está pressionado e conta foi selecionada
+    //if (func2 == 0){
  beeds[dot].y = mousey - yinitial
+    //}else{
+        //beeds[dot].y = 0
+    //}
  }else{
     this.document.getElementById('par4').innerText = 'unselected'
     dot = -1
