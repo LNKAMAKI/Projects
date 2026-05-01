@@ -213,7 +213,7 @@ function update2 () {
         if (func2 == 0){ // beed < Number(dot)) {
         c.arc(x + xinitial,beeds[beed].y + yinitial,radius,0,2*pi) 
         }else if (beed > Number(dot)){
-            console.log('func2',func2) //.beeds[beed - dot].y)
+            //console.log('func2',func2) //.beeds[beed - dot].y)
             c.arc(x + xinitial,func2.beeds[beed - dot].y + yinitial,radius,0,2*pi) 
             beeds[beed].y = func2.beeds[beed - dot].y
         }else{
@@ -375,7 +375,7 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
             pi = Math.PI
             c = document.getElementById('canvas').getContext('2d') 
 
-            console.log('beed',beeds)
+            //console.log('beed',beeds)
             for (n = 0; n < this.beedsnumber; n++) {
                 if (n == 0) {
                     object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[dot].y, velocity: 0}
@@ -480,7 +480,7 @@ function makeWave2(tensao, densidade, comp, contas, mods, yin, xin) {
             pi = Math.PI
             c = document.getElementById('canvas').getContext('2d') 
 
-            console.log('beed',beeds)
+            //console.log('beed',beeds)
             for (n = 0; n < this.beedsnumber; n++) {
                 if (n == 0) {
                     object = {xinf: n*this.radius*2, xcenter: n*this.radius*2 + this.radius, xsup: n*this.radius*2 + 2*this.radius, y: beeds[dot].y, velocity: 0}
