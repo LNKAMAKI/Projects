@@ -106,24 +106,26 @@ function start() {
 
     }
 
+    //document.getElementById('par1').innerText =  'dot: ' + dot
+    //document.getElementById('par2').innerText =  'mousedown: ' + mousedown
+
 
     timer += 0.02
-},0)
 
-setInterval (() => {
-    if (mousedown == true && dot != -1) {
+    // pinning condition
+     if (mousedown == true && dot != -1) {
         if (still == false || nowdot != dot) {
             doty = []
             if (func2 != 0) {
-            console.log('quebrou')
+            //console.log('quebrou')
             //update2()
             }
             func2 = 0
             still = true
             nowdot = dot
-            console.log('true',nowdot)
+            //console.log('true',nowdot)
             for (ys in doty) {
-                console.log(ys,doty[ys])
+                //console.log(ys,doty[ys])
             }
         }
         doty.push(mousey)
@@ -136,7 +138,7 @@ setInterval (() => {
                 //console.log('clear')
                 doty = []
                 if (func2 != 0) {
-                console.log('quebrou')
+                //console.log('quebrou')
                 //update2()
                 }
                 func2 = 0
@@ -144,7 +146,7 @@ setInterval (() => {
         }
 
         if (doty.length == 60) {
-            console.log('muito tempo parado ',dot)
+            //console.log('muito tempo parado ',dot)
             b = Number(dot) + 1//beedsnumber - dot
             func = new makeWave2(tension,0.02,b*radius*2,b,b/4.3,80,15) // + Number(dot)*radius*2)
 
@@ -154,8 +156,8 @@ setInterval (() => {
 
         drawWave()
         if (func2 != 0) {
-            func2.draw()
-            func.draw()
+           // func2.draw()
+           // func.draw()
         }
     }else{
         doty = []
@@ -268,20 +270,21 @@ function update2 () {
 
 window.addEventListener('mousemove', function (event) {
 
-
  cWidth = Number(this.document.getElementById('canvas').offsetWidth) // pega comprimento do canvas
  bodyWidth = Number(this.document.body.offsetWidth) // pega comprimento do body do documento
  alt = ((event.y)/cHeight)*150 // alt = com limites de y inclusos
  alt2 = ((event.y)/cHeight)*150 // alt2 = sem limites de y inclusos
  mousex = ((event.x - (bodyWidth - cWidth)/2)/cWidth)*300 // mousex dentro das coordenadas do canva
  if (alt >= 50 && alt <= 100) {
- } else if (alt < 50) {
-  alt = 50
- }else if (alt > 100){
-  alt = 100
+ } else if (alt < 40) {
+  alt = 40
+ }else if (alt > 110){
+  alt = 110
  }
  mousey = alt + 65.5 - yinitial // 65.5 - referente ao padding superior
  mousey2 = alt2 + 65.5 - yinitial
+
+//this.document.getElementById('par3').innerText = 'mousey: ' + mousey
 
  if (mousedown == true && dot != -1) { // se mouse está pressionado e conta foi selecionada
     //if (func2 == 0){
@@ -290,7 +293,7 @@ window.addEventListener('mousemove', function (event) {
         //beeds[dot].y = 0
     //}
  }else{
-    this.document.getElementById('par4').innerText = 'unselected'
+    //this.document.getElementById('par4').innerText = 'unselected'
     dot = -1
  }
   
@@ -300,7 +303,7 @@ window.addEventListener('mousemove', function (event) {
          dot = beed
          //doty.push(mousey)
          beeds[beed].y = mousey - yinitial
-         this.document.getElementById('par4').innerText = 'selected, '
+         //this.document.getElementById('par4').innerText = 'selected, '
    }
 //}
     //console.log(this.document.body.offsetWidth - this.document.getElementById('canvas').offsetWidth)
@@ -319,6 +322,7 @@ window.addEventListener('mousedown', function (event) {
 
 window.addEventListener('mouseup', function (event) {
     mousedown = false
+    dot = -1
 })
 
 // quando o atrito muda
@@ -326,7 +330,7 @@ function changeDamping() {
     constant2 = f()
     constant = nan
     timer = 0
-    document.getElementById('par3').innerText = 'nan: ' + nan + ', constant2: ' + constant2
+    //document.getElementById('par3').innerText = 'nan: ' + nan + ', constant2: ' + constant2
     gamma = Number(document.getElementById('damping').value)*-1
 }
 
@@ -386,9 +390,6 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
             //console.log('beedeew',this.beeds[n].y)
             }
             
-            this.hey = function () {
-                console.log('this is this.L', this.L)
-            }
             
             //this.update = function () {
                 this.ans = []
@@ -492,9 +493,6 @@ function makeWave2(tensao, densidade, comp, contas, mods, yin, xin) {
             //console.log('beedeew',this.beeds[n].y)
             }
             
-            this.hey = function () {
-                console.log('this is this.L', this.L)
-            }
             
             //this.update = function () {
                 this.ans = []
