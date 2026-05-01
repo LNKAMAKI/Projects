@@ -296,7 +296,7 @@ window.addEventListener('mousemove', function (event) {
   
  for (beed in beeds) {
    //if (beed == 2) {
-   if (mousedown == true && mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && mousey2 < beeds[beed].ysup && mousey2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
+   if (mousedown == true && mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && mousey2 < beeds[beed].ysup && mousey2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1 && beed > 4 && beed < beedsnumber - 5) {
          dot = beed
          //doty.push(mousey)
          beeds[beed].y = mousey - yinitial
@@ -546,7 +546,7 @@ function makeWave2(tensao, densidade, comp, contas, mods, yin, xin) {
                     x = this.beeds[beed].xcenter
                  c.beginPath()
                 c.arc(x + this.xinitial,this.beeds[this.beedsnumber - 1 - beed].y + this.yinitial,this.radius,0,2*pi) 
-                c.fillStyle = 'yellow'
+                c.fillStyle = 'blue'
                 c.fill()
                 c.stroke()
                 c.closePath()

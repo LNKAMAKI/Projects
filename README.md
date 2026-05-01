@@ -29,7 +29,7 @@ height: 516px;"></iframe>
 # Physics
  <li><a href= "https://lnkamaki.github.io/Projects/projects/conversor-temperatura.html"><span style=" font-weight: normal; font-size: 1.3em;">Conversor de Temperatura</span></a></li> 
  
- <li><a href= "https://lnkamaki.github.io/Projects/projects/waves.html"><span style=" font-weight: normal; font-size: 1.3em;">WAVE SIMULATOR</span></a></li> 
+ <li><a href= "https://lnkamaki.github.io/Projects/projects/case1.html"><span style=" font-weight: normal; font-size: 1.3em;">WAVE SIMULATOR</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/canv.html"><span style=" font-weight: normal; font-size: 1.3em;">Refração em prismas</span></a></li> 
 
