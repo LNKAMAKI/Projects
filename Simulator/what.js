@@ -4,19 +4,19 @@
         gamma = -0.1
         //func.update()
 
-            tension = 50
+            tension = 55
             density = 0.02
             v = (Math.sqrt(tension/density))
             L = 200
             beedsnumber = 60
             radius = (L/beedsnumber)/2
-            modos = 17
+            modos = 15
             ans = []
             bns = []
             beeds = []
             t = 0
-            yinitial = 60 // espaçamento vertical
-            xinitial = 20 // espaçamento horizontal
+            yinitial = 80 // espaçamento vertical
+            xinitial = 50 // espaçamento horizontal
             pi = Math.PI
             c = document.getElementById('canvas').getContext('2d') 
             lastTime = 0
@@ -56,37 +56,35 @@
                 t += 0.02
 
                 //t += 0.01
-                //c.clearRect(0, 0, 300, 150)
+                c.clearRect(0, 0, 300, 150)
                 for (beed in beeds) {
-                x = beeds[beed].xcenter
 
+                x = beeds[beed].xcenter
                 beeds[beed].y = 0
                 beeds[beed].velocity = 0
                 for (n = 1; n <= modos; n++) {
             
                 wn = (n*pi*v)/L
                 beeds[beed].y += sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
-                if (beed == 10) {
-                //console.log('y',beeds[beed].y)
-                }
                 beeds[beed].velocity += wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
                 
                 }
 
                 // desenhar conta
-                /*
+                
                 c.beginPath()
                 c.arc(x + xinitial,beeds[beed].y + yinitial,radius,0,2*pi) 
                 c.fillStyle = 'red'
                 c.fill()
                 c.stroke()
                 c.closePath()
-                */
+                
             }
 
             requestAnimationFrame(animate)
             }
 
+            /*
         setInterval(() => {
             c.clearRect(0, 0, 300, 150)
             //func.draw()
@@ -94,6 +92,7 @@
 
           for (beed in beeds) {
              x = beeds[beed].xcenter
+
             c.beginPath()
             c.arc(x + xinitial,beeds[beed].y + yinitial,radius,0,2*pi) 
             c.fillStyle = 'red'
@@ -102,11 +101,18 @@
             c.closePath()
           }
         }, 0);
+        */
         //func.ani()
 
-         func2 = new makeWave(50,0.02,100,30,7,110,20)
-        func2.update()
+         //func2 = new makeWave(50,0.02,100,30,7,110,20)
+        //func2.update()
     }
+
+    
+
+
+
+
         function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
             this.tension = tensao
             this.density = densidade
@@ -194,7 +200,7 @@
 
     
     
-    /*
+     /*
     setInterval(() => {
         this.t = 0
         update()

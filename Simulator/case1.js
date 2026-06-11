@@ -12,7 +12,7 @@ function start() {
     L = 270
     beedsnumber = 60//(L/500)*250
     radius = (L/beedsnumber)/2
-    modos = 19 //beedsnumber/2 
+    modos = 19 //beedsnumber/4.3 
     ans = []
     bns = []
     beeds = []
@@ -45,7 +45,7 @@ function start() {
     
     update()
     
-    
+
     function update() {
         //document.getElementById('par4').innerText = ''
          ans = []
@@ -73,7 +73,7 @@ function start() {
     
     //animate()
     
-    
+    // determinar y + pinning condition + drawWave
     setInterval( () => {
         
         t += 0.018
@@ -145,7 +145,7 @@ function start() {
             }
         }
 
-        if (doty.length == 60) {
+        if (doty.length == 30) {
             //console.log('muito tempo parado ',dot)
             b = Number(dot) + 1//beedsnumber - dot
             func = new makeWave2(tension,0.02,b*radius*2,b,b/4.3,80,15) // + Number(dot)*radius*2)
@@ -193,6 +193,7 @@ function update2 () {
         }
 }
 
+// chamar update da onda
     setInterval(() => {
         if ((mousedown == true && dot != -1) || change == true) {
             //beeds[dot].y = mousey - yinitial
@@ -207,6 +208,7 @@ function update2 () {
         //this.document.getElementById('par2').innerText = mousedown
     }, 0)
 
+    // desenhar onda
    function drawWave() {
     c.clearRect(0, 0, 300, 150)
     for (beed in beeds){
