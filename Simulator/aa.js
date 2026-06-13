@@ -9,7 +9,7 @@ function start() {
     tension = 80
     density = 0.02
     v = (Math.sqrt(tension/density))
-    L = 900
+    L = 600
     beedsnumber = 60//(L/500)*250
     radius = (L/beedsnumber)/2
     modos = 19 //beedsnumber/2 
@@ -218,6 +218,7 @@ window.addEventListener('mousemove', function (event) {
 
  count++
  cWidth = Number(this.document.getElementById('canvas').offsetWidth) // pega comprimento do canvas
+ cHeight = Number(this.document.getElementById('canvas').offsetHeight)
  bodyWidth = Number(this.document.body.offsetWidth) // pega comprimento do body do documento
  alt = ((event.y - 50)/cHeight)*150 // alt = com limites de y inclusos
  alt2 = ((event.y - 50)/cHeight)*150 // alt2 = sem limites de y inclusos
@@ -230,8 +231,9 @@ window.addEventListener('mousemove', function (event) {
  }
  mousey = alt //+ 65.5 - yinitial // 65.5 - referente ao padding superior
  mousey2 = alt2 //+ 65.5 - yinitial
- this.document.getElementById('par1').innerText = `${mousey2} ${((event.y - 50)/cHeight)*150}`
+ this.document.getElementById('par1').innerText = `${event.y} ${((event.y - 50)/cHeight)*150}`
   this.document.getElementById('par2').innerText = 'count: ' + count
+  this.document.getElementById('par3').innerText =  'height: ' + cHeight
 
  if (dot != -1) { // se mouse está pressionado e conta foi selecionada
     //if (func2 == 0){
@@ -246,7 +248,7 @@ window.addEventListener('mousemove', function (event) {
   
  for (beed in beeds) {
     // mousedown == true && 
-   if (mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && mousey2 < beeds[beed].ysup && mousey2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
+   if (mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && alt2 < beeds[beed].ysup && alt2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
          dot = beed
          beeds[beed].y = mousey - yinitial
          this.document.getElementById('par4').innerText = `selected, ${dot}`
