@@ -1,18 +1,14 @@
-let nan = 1
 let timer = 0
-let change = false
-let doty = []
-let nowdot = -1
-let still = false
+let change = false // change Tension
 function start() {
     func2 = 0
     tension = 80
     density = 0.02
     v = (Math.sqrt(tension/density))
-    L = 600
+    L = 270
     beedsnumber = 60//(L/500)*250
     radius = (L/beedsnumber)/2
-    modos = 19 //beedsnumber/2 
+    modos = 19
     ans = []
     bns = []
     beeds = []
@@ -24,7 +20,6 @@ function start() {
     gamma = -0.1
     mousedown = false
     constant = 1
-    count = 0
     //Math.exp(gamma*t) //f()
     c = document.getElementById('canvas').getContext('2d')
     canv = document.getElementById('canvas')
@@ -78,16 +73,10 @@ function start() {
     setInterval( () => {
         
         t += 0.018
-        //c.clearRect(0, 0, 300, 150)
         for (beed in beeds) {
         x = beeds[beed].xcenter
 
         // calculando posições das contas
-        
-      // if (beed != dot) { 
-      //document.getElementById('par1').innerText = nan
-      //document.getElementById('par2').innerText = 'timer: ' + timer
-      //document.getElementById('par3').innerText = 't: ' + t + ' tension: ' + tension
       
             if (beed != dot) {
             beeds[beed].y = 0
@@ -145,7 +134,6 @@ setInterval (() => {
             }
             func2 = 0
             still = true
-            nowdot = dot
             console.log('true',nowdot)
             for (ys in doty) {
                 console.log(ys,doty[ys])
@@ -216,10 +204,9 @@ setInterval (() => {
 
 window.addEventListener('mousemove', function (event) {
 
- count++
- cWidth = Number(this.document.getElementById('canvas').offsetWidth) // pega comprimento do canvas
- cHeight = Number(this.document.getElementById('canvas').offsetHeight)
- bodyWidth = Number(this.document.body.offsetWidth) // pega comprimento do body do documento
+ cWidth = Number(this.document.getElementById('canvas').offsetWidth) // comprimento do canvas
+ cHeight = Number(this.document.getElementById('canvas').offsetHeight) //altura do canvas
+ bodyWidth = Number(this.document.body.offsetWidth) // omprimento do body do documento
  alt = ((event.y - 50)/cHeight)*150 // alt = com limites de y inclusos
  alt2 = ((event.y - 50)/cHeight)*150 // alt2 = sem limites de y inclusos
  mousex = ((event.x - (bodyWidth - cWidth)/2)/cWidth)*300 // mousex dentro das coordenadas do canva
@@ -230,27 +217,21 @@ window.addEventListener('mousemove', function (event) {
   alt = 140
  }
  mousey = alt //+ 65.5 - yinitial // 65.5 - referente ao padding superior
- mousey2 = alt2 //+ 65.5 - yinitial
- this.document.getElementById('par1').innerText = `${event.y} ${((event.y - 50)/cHeight)*150}`
-  this.document.getElementById('par2').innerText = 'count: ' + count
+ this.document.getElementById('par1').innerText = `${ ((event.y)/cHeight)*150 + 65.5 - yinitial} ${alt2}`
+  this.document.getElementById('par2').innerText = mousex
   this.document.getElementById('par3').innerText =  'height: ' + cHeight
 
- if (dot != -1) { // se mouse está pressionado e conta foi selecionada
-    //if (func2 == 0){
- beeds[dot].y = mousey - yinitial
-    //}else{
-        //beeds[dot].y = 0
-    //}
+ if (mousedown == true && dot != -1) { // se mouse está pressionado e conta foi selecionada
+ beeds[dot].y = alt - yinitial
  }else{
     this.document.getElementById('par4').innerText = 'unselected'
-    //dot = -1
+    dot = -1
  }
   
  for (beed in beeds) {
-    // mousedown == true && 
-   if (mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && alt2 < beeds[beed].ysup && alt2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
+   if (mousedown == true && mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && alt2 < beeds[beed].ysup && alt2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
          dot = beed
-         beeds[beed].y = mousey - yinitial
+         beeds[beed].y = alt - yinitial
          this.document.getElementById('par4').innerText = `selected, ${dot}`
    }
  }
