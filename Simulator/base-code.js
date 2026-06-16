@@ -23,7 +23,7 @@
             currentTime = 0
 
             for (n = 0; n < beedsnumber; n++) {
-            object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: 0, velocity: 0}
+            object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: 20, velocity: 0}
             beeds.push(object)
             }
             
