@@ -18,12 +18,15 @@
             yinitial = 75 // espaçamento vertical
             xinitial = 50 // espaçamento horizontal
             pi = Math.PI
+            dot = -1
+            mousedown = false
             c = document.getElementById('canvas').getContext('2d') 
             lastTime = 0
             currentTime = 0
 
             for (n = 0; n < beedsnumber; n++) {
-            object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: 20, yinf: - radius,ysup: radius, velocity: 0}
+            object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, 
+                y: 0, yinf: - radius,ysup: radius, velocity: 0}
             beeds.push(object)
             }
             
@@ -75,10 +78,16 @@
                 
                 c.beginPath()
                 c.arc(x + xinitial,beeds[beed].y + yinitial,radius,0,2*pi) 
-                c.fillStyle = 'red'
+                if (beed != dot) {
+                 c.fillStyle = 'red'
+                }else{
+                 c.fillStyle = 'blue'
+                }
                 c.fill()
                 c.stroke()
                 c.closePath()
+
+                window.document.getElementById('par2').innerText = mousedown
                 
             }
 
@@ -212,44 +221,46 @@
 
 
 window.addEventListener('mousemove', function (event) {
-
- cWidth = Number(this.document.getElementById('canvas').offsetWidth) // pega comprimento do canvas
- cHeight = this.document.getElementById('canvas').offsetHeight
- bodyWidth = Number(this.document.body.offsetWidth) // pega comprimento do body do documento
- alt = ((event.y - 50)/cHeight)*150// alt = com limites de y inclusos
- alt2 = ((event.y - 50)/cHeight)*150 // alt2 = sem limites de y inclusos
- mousex = ((event.x - (bodyWidth - cWidth)/2)/cWidth)*300 // mousex dentro das coordenadas do canva
- if (alt >= 50 && alt <= 100) {
- } else if (alt < 50) {
-  alt = 50
- }else if (alt > 100){
-  alt = 100
+ cWidth = Number(this.document.getElementById('canvas').offsetWidth)
+ cHeight = Number(this.document.getElementById('canvas').offsetHeight) 
+ bodyWidth = Number(this.document.body.offsetWidth)
+ yfix = 50
+ mousey = ((event.y - yfix)/cHeight)*150 
+ mousex = ((event.x - (bodyWidth - cWidth)/2)/cWidth)*300 
+ if (mousey >= 50 && mousey <= 100) {
+ } else if (mousey < 50) {
+  mousey = 50
+ }else if (mousey > 140){
+  mousey = 140
  }
- mousey = alt - yinitial
- mousey2 = alt2 - yinitial
+ mousey2 = ((event.y - 50)/cHeight)*150
+ 
 
- this.document.getElementById('par1').innerText = mousey2
- /*
- if (mousedown == true && dot != -1) { // se mouse está pressionado e conta foi selecionada
-    //if (func2 == 0){
+ if (dot != -1) { // se mouse está pressionado e conta foi selecionada
  beeds[dot].y = mousey - yinitial
-    //}else{
-        //beeds[dot].y = 0
-    //}
  }else{
-    this.document.getElementById('par4').innerText = 'unselected'
     dot = -1
  }
   
  for (beed in beeds) {
-   if (mousedown == true && mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && mousey2 < beeds[beed].ysup && mousey2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
+  if (mousedown == true) {
+    if (mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial 
+    && mousey2 < beeds[beed].ysup + yinitial && mousey2 > beeds[beed].yinf + yinitial) {
          dot = beed
          beeds[beed].y = mousey - yinitial
-         this.document.getElementById('par4').innerText = 'selected, '
+    }
    }
- }*/
+ }
  
-})
+ })
+
+ window.addEventListener('mousedown', function(event) {
+    mousedown = true
+ })
+
+  window.addEventListener('mouseup', function(event) {
+    mousedown = false
+ })
 
 function sen(number) {
     return Math.sin(number)
