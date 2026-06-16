@@ -23,7 +23,7 @@
             currentTime = 0
 
             for (n = 0; n < beedsnumber; n++) {
-            object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: 20, velocity: 0}
+            object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, y: 20, yinf: - radius,ysup: radius, velocity: 0}
             beeds.push(object)
             }
             
@@ -55,17 +55,21 @@
 
                 c.clearRect(0, 0, 300, 150)
                 for (beed in beeds) {
-
                 x = beeds[beed].xcenter
-                beeds[beed].y = 0
-                beeds[beed].velocity = 0
-                for (n = 1; n <= modos; n++) {
-            
-                wn = (n*pi*v)/L
-                beeds[beed].y += sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
-                beeds[beed].velocity += wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
+
+                if (beed != dot) {
+                    beeds[beed].y = 0
+                    beeds[beed].velocity = 0
+                    for (n = 1; n <= modos; n++) {
                 
+                    wn = (n*pi*v)/L
+                    beeds[beed].y += sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                    beeds[beed].velocity += wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
+                    }
                 }
+
+                  beeds[beed].yinf = beeds[beed].y - radius
+                  beeds[beed].ysup = beeds[beed].y + radius
 
                 // desenhar conta
                 

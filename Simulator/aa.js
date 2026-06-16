@@ -91,8 +91,8 @@ function start() {
     }
 
         beeds[beed].ycenter = yinitial + beeds[beed].y
-        beeds[beed].yinf = yinitial + beeds[beed].y - radius
-        beeds[beed].ysup = yinitial + beeds[beed].y + radius
+        beeds[beed].yinf = beeds[beed].y - radius
+        beeds[beed].ysup = beeds[beed].y + radius
 
     }
 
@@ -174,13 +174,17 @@ window.addEventListener('mousemove', function (event) {
  }
   
  for (beed in beeds) {
-   if (mousedown == true && mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && mousey2 < beeds[beed].ysup && mousey2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1) {
+  if (mousedown == true) {
+   if (mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial 
+    && mousey2 < beeds[beed].ysup + yinitial && mousey2 > beeds[beed].yinf + yinitial) {
          dot = beed
          beeds[beed].y = mousey - yinitial
-         this.document.getElementById('par4').innerText = `selected, ${dot}`
    }
+  }
  }
- 
+
+ // && beed != 0 && beed != beedsnumber - 1
+ // this.document.getElementById('par4').innerText = `selected, ${dot}`
 })
 
 window.addEventListener('mousedown', function (event) {
