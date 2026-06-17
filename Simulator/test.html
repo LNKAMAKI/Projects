@@ -11,7 +11,6 @@
             align-content: center;
             justify-content: center;
             justify-items: center;
-            background-color: rgb(3, 227, 227);
         }
         canvas {
             display: block;
@@ -21,11 +20,19 @@
             background-color: white;
             border: 3px solid black;
         }
+        #tab {
+            margin-top: 20px;
+             margin-bottom: 10px;
+        }
     </style>
 </head>
 <body onload="start()">
     <script src="base-code.js"></script>
     <canvas id="canvas"></canvas>
+    <div id="tab">
+        low <input type="range" id="damping" min="0" max="0.5"> high
+        low <input type="range" id="tension" min="10" max="90"> high
+    </div>
     <p id="par1"></p>
     <p id="par2"></p>
     <p id="par3"></p>
