@@ -94,6 +94,13 @@
             requestAnimationFrame(animate)
             }
 
+            setInterval(() => {
+                if (dot != -1) {
+                    t = 0
+                    update()
+                }
+            },0)
+
             /*
         setInterval(() => {
             c.clearRect(0, 0, 300, 150)
@@ -236,7 +243,7 @@ window.addEventListener('mousemove', function (event) {
  mousey2 = ((event.y - 50)/cHeight)*150
  
 
- if (dot != -1) { // se mouse está pressionado e conta foi selecionada
+ if (dot != -1 && mousedown == true) { // se mouse está pressionado e conta foi selecionada
  beeds[dot].y = mousey - yinitial
  }else{
     dot = -1
