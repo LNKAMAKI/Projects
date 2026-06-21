@@ -12,27 +12,127 @@
             justify-content: center;
             justify-items: center;
         }
+
+        #sim {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            min-height: fit-content;
+            margin: auto;
+            padding-top: 8px;
+            padding-bottom: 5px;
+            border: 1px solid black;
+            background-color: rgb(255, 250, 163);
+        }
+
         canvas {
             display: block;
             width: 100%;
             margin: auto;
             max-width: 600px;
             background-color: white;
-            border: 3px solid black;
+             border: 1px solid black;
         }
-        #tab {
-            margin-top: 20px;
-             margin-bottom: 10px;
+
+
+        p {
+            padding-top: 0px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.1em;
+            margin: 4px 0px 0px 0px;
         }
+        p.slide {
+            background-color: rgb(193, 193, 193);
+            padding: 13px 15px 16px 10px;
+            border-radius: 7px;
+        }
+            input[type="range"] {
+            -webkit-appearance: none;
+                appearance: none;
+                background: transparent;
+                cursor: pointer;
+                width: 8rem;
+            }
+            /* Removes default focus */
+            input[type="range"]:focus {
+            outline: none;
+            }
+
+             /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+            /* slider track */
+            input[type="range"]::-webkit-slider-runnable-track {
+            background-color: #053a5f;
+            border-radius: 0.5rem;
+            height: 0.5rem;  
+            }
+
+            /* slider thumb */
+            input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            margin-top: -15.8px; /* Centers thumb on the track */
+            border-radius: 5px;
+            /*custom styles*/
+            background-color: #5cd5eb;
+            border: 1.2px solid black;
+            height: 2.4rem;
+            width: 1.4rem;
+            }
+
+            input[type="range"]:focus::-webkit-slider-thumb {   
+            border: 2px solid #053a5f;
+            }
+
+
+            #tab {
+                display: flex;
+                justify-content: center;
+                padding: 12px 0px 12px 0px;
+            }   
+            
+            .parameter {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .title {
+                margin: 0px;
+                font-size: 18px;
+                padding-left: 0px;
+                display: block;
+                justify-self: center;
+            }
+            .space {
+                color: transparent;
+                width: 15px;
+            }
     </style>
 </head>
 <body onload="start()">
     <script src="base-code.js"></script>
     <canvas id="canvas"></canvas>
-    <div id="tab">
-        low <input type="range" id="damping" min="0" max="0.5"> high
-        low <input type="range" id="tension" min="10" max="90"> high
-    </div>
+   <div id="sim">
+       
+          <div id="tab">
+                <div id="parameter">
+                    <p class="title">Damping</p>
+                    <p class="slide">
+                        low<input type="range" name="" id="damping" min="0" max="0.5" step="0.02" value="0.1" oninput="changeDamping()">high
+                    </p>
+                </div>
+                <div class="space"></div>
+                <div id="parameter">
+                    <p class="title">Tension</p>
+                    <p class="slide">
+                        low<input type="range" name="" id="tension" min="10" max="90" step="1" value="80" oninput="changeTension()">high
+                    </p>
+                </div>
+            </div>
+   </div>
+
     <p id="par1"></p>
     <p id="par2"></p>
     <p id="par3"></p>

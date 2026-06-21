@@ -87,7 +87,7 @@
                 c.stroke()
                 c.closePath()
 
-                window.document.getElementById('par2').innerText = mousedown
+                //window.document.getElementById('par2').innerText = mousedown
                 
             }
 
