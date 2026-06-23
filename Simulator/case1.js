@@ -1,5 +1,5 @@
 let nan = 1
-let timer = 0
+//let timer = 0
 let change = false
 let doty = []
 let nowdot = -1
@@ -17,6 +17,7 @@ function start() {
     bns = []
     beeds = []
     t = 0
+    timer = 0
     yinitial = 80 // espaçamento vertical
     xinitial = 15 // espaçamento horizontal
     pi = Math.PI
@@ -96,7 +97,7 @@ function start() {
             wn = (n*pi*v)/L
             beeds[beed].y += constant*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
             nan = constant*f()
-            beeds[beed].velocity += constant*f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
+            beeds[beed].velocity += constant*f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) +  gamma*constant*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
         }
     }
 
@@ -288,32 +289,18 @@ window.addEventListener('mousemove', function (event) {
 
 //this.document.getElementById('par3').innerText = 'mousey: ' + mousey
 
- if (mousedown == true && dot != -1) { // se mouse está pressionado e conta foi selecionada
-    //if (func2 == 0){
+ if (mousedown == true && dot != -1) {
  beeds[dot].y = mousey - yinitial
-    //}else{
-        //beeds[dot].y = 0
-    //}
+   
  }else{
-    //this.document.getElementById('par4').innerText = 'unselected'
     dot = -1
  }
   
  for (beed in beeds) {
-   //if (beed == 2) {
    if (mousedown == true && mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial && mousey2 < beeds[beed].ysup && mousey2 > beeds[beed].yinf && beed != 0 && beed != beedsnumber - 1 && beed > 4 && beed < beedsnumber - 5) {
          dot = beed
-         //doty.push(mousey)
          beeds[beed].y = mousey - yinitial
-         //this.document.getElementById('par4').innerText = 'selected, '
    }
-//}
-    //console.log(this.document.body.offsetWidth - this.document.getElementById('canvas').offsetWidth)
-    if (beed == 2) {
-    //his.document.getElementById('par1').innerText = mousey + ' ' + beeds[beed].yinf + ' ' + beeds[beed].ysup
-   //this.document.getElementById('par2').innerText = mousex + ' ' + (Math.round(Number(beeds[beed].xinf)) + xinitial) + ' ' + (Math.round(Number(beeds[beed].xcenter)) + xinitial) + ' ' + (Math.round(Number(beeds[beed].xsup)) + xinitial)
-    }
-     //console.log(`menor que ${beeds[beed].ysup} e maior que ${beeds[beed].yinf}`)
  }
  
 })

@@ -4,19 +4,19 @@
         gamma = -0.1
         //func.update()
 
-            tension = 55
+            tension = 80
             density = 0.02
             v = (Math.sqrt(tension/density))
-            L = 200
+            L = 270
             beedsnumber = 60
             radius = (L/beedsnumber)/2
-            modos = 15
+            modos = 19
             ans = []
             bns = []
             beeds = []
             t = 0
-            yinitial = 75 // espaçamento vertical
-            xinitial = 50 // espaçamento horizontal
+            yinitial = 80 // espaçamento vertical
+            xinitial = 15 // espaçamento horizontal
             pi = Math.PI
             dot = -1
             mousedown = false
@@ -51,9 +51,9 @@
             }
             }
 
-             animate()
-            function animate() {
-
+             //animate()
+            //function animate() {
+            setInterval(() => {
                 t += 0.02
 
                 c.clearRect(0, 0, 300, 150)
@@ -64,10 +64,9 @@
                     beeds[beed].y = 0
                     beeds[beed].velocity = 0
                     for (n = 1; n <= modos; n++) {
-                
-                    wn = (n*pi*v)/L
-                    beeds[beed].y += sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
-                    beeds[beed].velocity += wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
+                      wn = (n*pi*v)/L
+                      beeds[beed].y += sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      beeds[beed].velocity += wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
                     }
                 }
 
@@ -91,16 +90,16 @@
                 
             }
 
-            requestAnimationFrame(animate)
-            }
+            //requestAnimationFrame(animate)
+            //}
+        },10)
 
-            setInterval(() => {
+         setInterval(() => {
                 if (dot != -1) {
                     t = 0
                     update()
                 }
-            },0)
-
+            },10)
             /*
         setInterval(() => {
             c.clearRect(0, 0, 300, 150)
