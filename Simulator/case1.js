@@ -52,7 +52,7 @@ function start() {
          ans = []
          bns = []
      for (n = 1; n <= modos; n++) {
-        w = (n*pi*v)/L
+        w = (((n*pi*v)/L)**2 - gamma**2)**(1/2) // (n*pi*v)/L
         an = 0
         bn = 0
         for (beed in beeds) {
@@ -60,10 +60,10 @@ function start() {
             velocity = beeds[beed].velocity
             xf = beeds[beed].xsup // limite superior
             xi = beeds[beed].xinf // limite inferior
-            an += (2/(w*L))*velocity*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
+            an += (2/(L))*velocity*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
             bn += (2/L)*y*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
         }
-        ans.push(an)
+        ans.push((an - gamma*bn)/w)
         //document.getElementById('par4').innerText += Math.round(an) + ', '
         bns.push(bn)
         if (n == 1) {
@@ -94,7 +94,7 @@ function start() {
             beeds[beed].velocity = 0
             for (n = 1; n <= modos; n++) {
         
-            wn = (n*pi*v)/L
+            wn = (((n*pi*v)/L)**2 - gamma**2)**(1/2)
             beeds[beed].y += constant*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
             nan = constant*f()
             beeds[beed].velocity += constant*f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) +  gamma*constant*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
