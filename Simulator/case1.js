@@ -384,7 +384,7 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                 this.ans = []
                 this.bns = []
             for (n = 1; n <= this.modos; n++) {
-                w = (n*pi*this.v)/this.L
+                w = (((n*pi*this.v)/this.L)**2 - gamma**2)**(1/2)
                 an =  0//-(2*this.beeds[0].velocity)/(n*pi)
                 bn = -(2*this.beeds[0].y)/(n*pi)
                 for (i = 0; i < this.beedsnumber; i++) {
@@ -392,10 +392,10 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                     velocity = this.beeds[i].velocity //beeds[Number(dot) + i].velocity
                     xf = beeds[i].xsup // limite superior
                     xi = beeds[i].xinf // limite inferior
-                    an += (2/(w*this.L))*velocity*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
+                    an += (2/(this.L))*velocity*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
                     bn += (2/this.L)*y*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
                 }
-                this.ans.push(an)
+                this.ans.push((an - gamma*bn)/w)
                 this.bns.push(bn)
             }
             //}
@@ -413,10 +413,10 @@ function makeWave(tensao, densidade, comp, contas, mods, yin, xin) {
                 
                 for (n = 1; n <= this.modos; n++) {
             
-                wn = (n*pi*this.v)/this.L
+                wn = (((n*pi*this.v)/this.L)**2 - gamma**2)**(1/2)//(n*pi*this.v)/this.L
                 if (beed != 0) {
                 this.beeds[beed].y += this.f()*sen((n*pi*x)/this.L)*(this.ans[n - 1]*sen(wn*this.t) + this.bns[n - 1]*cos(wn*this.t))
-                this.beeds[beed].velocity += this.f()*wn*sen((n*pi*x)/this.L)*(this.ans[n - 1]*cos(wn*this.t) - this.bns[n - 1]*sen(wn*this.t))
+                this.beeds[beed].velocity += this.f()*wn*sen((n*pi*x)/this.L)*(this.ans[n - 1]*cos(wn*this.t) - this.bns[n - 1]*sen(wn*this.t)) + gamma*f()*sen((n*pi*x)/this.L)*(this.ans[n - 1]*sen(wn*this.t) + this.bns[n - 1]*cos(wn*this.t))
                 }
 
                 }
@@ -487,7 +487,7 @@ function makeWave2(tensao, densidade, comp, contas, mods, yin, xin) {
                 this.ans = []
                 this.bns = []
             for (n = 1; n <= this.modos; n++) {
-                w = (n*pi*this.v)/this.L
+                w = (((n*pi*this.v)/this.L)**2 - gamma**2)**(1/2)
                 an =  0//-(2*this.beeds[0].velocity)/(n*pi)
                 bn = -(2*this.beeds[0].y)/(n*pi)
                 for (i = 0; i < this.beedsnumber; i++) {
@@ -495,16 +495,15 @@ function makeWave2(tensao, densidade, comp, contas, mods, yin, xin) {
                     velocity = this.beeds[i].velocity //beeds[Number(dot) + i].velocity
                     xf = beeds[i].xsup // limite superior
                     xi = beeds[i].xinf // limite inferior
-                    an += (2/(w*this.L))*velocity*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
+                    an += (2/(this.L))*velocity*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
                     bn += (2/this.L)*y*(-(this.L/(n*pi))*(cos((n*pi*xf)/this.L) - cos((n*pi*xi)/this.L)))
                 }
-                this.ans.push(an)
+                this.ans.push((an - gamma*bn)/w)
                 this.bns.push(bn)
             }
             //}
 
             this.ani= setInterval (() => {
-
                 this.t += 0.018
                 for (beed in this.beeds) {
                 x = this.beeds[beed].xcenter
@@ -516,10 +515,10 @@ function makeWave2(tensao, densidade, comp, contas, mods, yin, xin) {
                 
                 for (n = 1; n <= this.modos; n++) {
             
-                wn = (n*pi*this.v)/this.L
+                wn = (((n*pi*this.v)/this.L)**2 - gamma**2)**(1/2)
                 if (beed != 0) {
                 this.beeds[beed].y += this.f()*sen((n*pi*x)/this.L)*(this.ans[n - 1]*sen(wn*this.t) + this.bns[n - 1]*cos(wn*this.t))
-                this.beeds[beed].velocity += this.f()*wn*sen((n*pi*x)/this.L)*(this.ans[n - 1]*cos(wn*this.t) - this.bns[n - 1]*sen(wn*this.t))
+                this.beeds[beed].velocity += this.f()*wn*sen((n*pi*x)/this.L)*(this.ans[n - 1]*cos(wn*this.t) - this.bns[n - 1]*sen(wn*this.t)) + gamma*this.f()*sen((n*pi*x)/this.L)*(this.ans[n - 1]*sen(wn*this.t) + this.bns[n - 1]*cos(wn*this.t))
                 }
 
                 }

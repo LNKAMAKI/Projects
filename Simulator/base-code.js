@@ -1,7 +1,7 @@
  
     function start() {
         //func = new makeWave(50,0.02,100,30,7,80,20)
-        gamma = -0.1
+        gamma = -0.7
         //func.update()
 
             tension = 80
@@ -35,7 +35,7 @@
                 ans = []
                 bns = []
             for (n = 1; n <= modos; n++) {
-                w = (n*pi*v)/L
+                w = (((n*pi*v)/L)**2 - gamma**2)**(1/2)  //(n*pi*v)/L
                 an = 0
                 bn = 0
                 for (beed in beeds) {
@@ -43,10 +43,10 @@
                     velocity = beeds[beed].velocity
                     xf = beeds[beed].xsup // limite superior
                     xi = beeds[beed].xinf // limite inferior
-                    an += (2/(w*L))*velocity*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
+                    an += (2/L)*velocity*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
                     bn += (2/L)*y*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
                 }
-                ans.push(an)
+                ans.push((an - gamma*bn)/w)
                 bns.push(bn)
             }
             }
@@ -65,9 +65,10 @@
                     beeds[beed].velocity = 0
                     for (n = 1; n <= modos; n++) {
                       wn = (n*pi*v)/L
-                      beeds[beed].y += sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
-                      beeds[beed].velocity += wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t))
+                      beeds[beed].y += Math.exp(gamma*t)*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      beeds[beed].velocity += Math.exp(gamma*t)*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) + gamma* Math.exp(gamma*t)*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
                     }
+                    // (((n*pi*v)/L)**2 - gamma**2)**(1/2) 
                 }
 
                   beeds[beed].yinf = beeds[beed].y - radius
@@ -92,14 +93,14 @@
 
             //requestAnimationFrame(animate)
             //}
-        },10)
+        },0)
 
          setInterval(() => {
                 if (dot != -1) {
                     t = 0
                     update()
                 }
-            },10)
+            },0)
             /*
         setInterval(() => {
             c.clearRect(0, 0, 300, 150)
