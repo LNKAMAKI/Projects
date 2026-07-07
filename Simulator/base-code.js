@@ -1,9 +1,7 @@
  
     function start() {
-        //func = new makeWave(50,0.02,100,30,7,80,20)
-        gamma = -0.7
-        //func.update()
-
+        
+            gamma = -0.7
             tension = 80
             density = 0.02
             v = (Math.sqrt(tension/density))
@@ -64,11 +62,12 @@
                     beeds[beed].y = 0
                     beeds[beed].velocity = 0
                     for (n = 1; n <= modos; n++) {
-                      wn = (n*pi*v)/L
-                      beeds[beed].y += Math.exp(gamma*t)*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
-                      beeds[beed].velocity += Math.exp(gamma*t)*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) + gamma* Math.exp(gamma*t)*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      wn = (((n*pi*v)/L)**2 - gamma**2)**(1/2) 
+                      beeds[beed].y += f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      beeds[beed].velocity += f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) 
+                                           + gamma*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
                     }
-                    // (((n*pi*v)/L)**2 - gamma**2)**(1/2) 
+                    // 
                 }
 
                   beeds[beed].yinf = beeds[beed].y - radius
@@ -275,3 +274,16 @@ function sen(number) {
 function cos(number) {
     return Math.cos(number)
 }
+
+function f() {
+    return Math.exp(gamma*t)
+}
+
+function changeDamping() {
+    gamma = Number(document.getElementById('damping').value)*-1
+}
+
+function changeTension() {
+    tension = Number(document.getElementById('tension').value)
+}
+
