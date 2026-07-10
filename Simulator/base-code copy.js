@@ -1,5 +1,4 @@
  let nan = 1
- let change_damping = false
     function start() {
         
             gamma = -0.5
@@ -16,6 +15,7 @@
             bns = []
             beeds = []
             t = 0
+            ts = []
             yinitial = 80 // espaçamento vertical
             xinitial = 15 // espaçamento horizontal
             pi = Math.PI
@@ -29,6 +29,10 @@
             object = {xinf: n*radius*2, xcenter: n*radius*2 + radius, xsup: n*radius*2 + 2*radius, 
                 y: 0, yinf: - radius,ysup: radius, velocity: 0}
             beeds.push(object)
+            }
+
+             for (lo = 0; lo < modos; lo++) {
+                ts.push(t)
             }
             
             update()
@@ -57,7 +61,10 @@
             //function animate() {
             setInterval(() => {
                 t += 0.01
-            
+
+                for (t_index in ts) {
+                    ts[t_index] += 0.01
+                }
                 c.clearRect(0, 0, 300, 150)
                 for (beed in beeds) {
                 x = beeds[beed].xcenter
@@ -67,9 +74,9 @@
                     beeds[beed].velocity = 0
                     for (n = 1; n <= modos; n++) {
                       wn = (((n*pi*v)/L)**2 - gamma**2)**(1/2) 
-                      beeds[beed].y += constant*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      beeds[beed].y += constant*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*ts[n - 1]) + bns[n - 1]*cos(wn*ts[n - 1]))
                       nan = constant*f()
-                      beeds[beed].velocity += constant*f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) + constant*gamma*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      beeds[beed].velocity += constant*f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*ts[n - 1]) - bns[n - 1]*sen(wn*ts[n - 1])) + constant*gamma*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*ts[n - 1]) + bns[n - 1]*cos(wn*ts[n - 1]))
                     }
                     
                 }
@@ -96,9 +103,12 @@
 
             //requestAnimationFrame(animate)
             //}
-           
+            /*
+             for (t_index in ts) {
+                    ts[t_index] += 0.01
+                }*/
             timer += 0.02
-            //this.document.getElementById('par1').innerText = 'wn:' + wn
+            this.document.getElementById('par1').innerText = 'wn:' + wn
             //this.document.getElementById('par1').innerText = 't:' + t
             this.document.getElementById('par2').innerText = 't: ' + t
             this.document.getElementById('par4').innerText = 'const: ' + constant
@@ -106,14 +116,14 @@
         },0)
 
          setInterval(() => {
-                if (dot != -1 || change_damping == true) {
-                    gamma = Number(document.getElementById('damping').value)*-1
-                    v = (Math.sqrt(tension/density))
+                if (dot != -1) {
                     constant = 1
                     timer = 0
                     t = 0
+                    for (t_index in ts) {
+                    ts[t_index] = 0
+                    }
                     update()
-                    change_damping == false
                 }
             },0)
             /*
@@ -249,7 +259,7 @@ window.addEventListener('mousemove', function (event) {
  yfix = 50
  mousey = ((event.y - yfix)/cHeight)*150 
  mousex = ((event.x - (bodyWidth - cWidth)/2)/cWidth)*300 
- if (mousey >= 40 && mousey <= 110) {
+ if (mousey >= 50 && mousey <= 100) {
  } else if (mousey < 40) {
   mousey = 40
  }else if (mousey > 110){
@@ -268,9 +278,6 @@ window.addEventListener('mousemove', function (event) {
   if (mousedown == true) {
     if (mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial 
     && mousey2 < beeds[beed].ysup + yinitial && mousey2 > beeds[beed].yinf + yinitial) {
-        yan = Math.round(beeds[beed].yinf + yinitial)
-        yup = Math.round(beeds[beed].ysup + yinitial)
-        this.document.getElementById('par1').innerText = yan + ' < ' + mousey2 + ' < ' + yup
          dot = beed
          beeds[beed].y = mousey - yinitial
     }
@@ -299,18 +306,24 @@ function f() {
 }
 
 function changeDamping() {
-    change_damping = true
-    /*
     constant = nan
     timer = 0
-    gamma = Number(document.getElementById('damping').value)*-1
-    */
+    
+    new_gamma = Number(document.getElementById('damping').value)*-1
+    for (n = 1; n <= modos; n++) {
+    now_wn = (((n*pi*v)/L)**2 - gamma**2)**(1/2)
+    new_wn = (((n*pi*v)/L)**2 - new_gamma**2)**(1/2)
+    console.log('wn',wn,t)
+    ts[n - 1] = (now_wn*ts[n - 1])/new_wn 
+    //t = (now_wn*t)/new_wn
+    }
+    gamma = new_gamma
     
     //console.log(f())-56
     //gamma = Number(document.getElementById('damping').value)*-1
 }
 
 function changeTension() {
-    //tension = Number(document.getElementById('tension').value)
+    tension = Number(document.getElementById('tension').value)
 }
 

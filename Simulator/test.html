@@ -8,6 +8,8 @@
         body {
             margin: 0px;
             margin-top: 50px;
+            margin-right: 5px;
+            margin-left: 5px;
             align-content: center;
             justify-content: center;
             justify-items: center;
@@ -16,7 +18,7 @@
         #sim {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             min-height: fit-content;
             margin: auto;
             padding-top: 8px;
@@ -29,7 +31,7 @@
             display: block;
             width: 100%;
             margin: auto;
-            max-width: 600px;
+            max-width: 800px;
             background-color: white;
              border: 1px solid black;
         }
@@ -112,7 +114,7 @@
     </style>
 </head>
 <body onload="start()">
-    <script src="base-code.js"></script>
+    <script src="base-code copy.js"></script>
     <canvas id="canvas"></canvas>
    <div id="sim">
        
@@ -121,7 +123,7 @@
                     <p class="title">Damping</p>
                     <p class="slide">
                         low
-                        <input type="range" id="damping" min="0" max="0.5" step="0.02" value="-0.1" oninput="changeDamping()">high
+                        <input type="range" id="damping" min="0" max="0.8" step="0.02" value="0.8" oninput="changeDamping()">high
                     </p>
                 </div>
                 <div class="space"></div>

@@ -1,6 +1,7 @@
 let nan = 1
 //let timer = 0
-let change = false
+let changetension = false
+let changedamping = false
 let doty = []
 let nowdot = -1
 let still = false
@@ -85,7 +86,7 @@ function start() {
         // calculando posições das contas
         
       // if (beed != dot) { 
-      //document.getElementById('par1').innerText = nan
+      //document.getElementById('par1').innerText = 
       //document.getElementById('par2').innerText = 'timer: ' + timer
       //document.getElementById('par3').innerText = 't: ' + t + ' tension: ' + tension
       
@@ -196,15 +197,17 @@ function update2 () {
 
 // chamar update da onda
     setInterval(() => {
-        if ((mousedown == true && dot != -1) || change == true) {
+        if ((mousedown == true && dot != -1) || changetension == true || changedamping == true) {
             //beeds[dot].y = mousey - yinitial
             //tension += 0.1
+            gamma = Number(document.getElementById('damping').value)*-1
             v = (Math.sqrt(tension/density))
             constant = 1
             timer = 0
             t = 0
             update()
-            change = false
+            changetension = false
+            changedamping = false
         }
         //this.document.getElementById('par2').innerText = mousedown
     }, 0)
@@ -316,16 +319,17 @@ window.addEventListener('mouseup', function (event) {
 
 // quando o atrito muda
 function changeDamping() {
-    constant2 = f()
-    constant = nan
-    timer = 0
-    //document.getElementById('par3').innerText = 'nan: ' + nan + ', constant2: ' + constant2
-    gamma = Number(document.getElementById('damping').value)*-1
+    changedamping = true
+    //constant2 = f()
+    //constant = nan
+    //timer = 0
+    //document.getElementById('par3').innerText = ': ' + + ', constant2: ' + constant2
+    //gamma = Number(document.getElementById('damping').value)*-1
 }
 
 // quando a tensão muda
 function changeTension() {
-    change = true
+    changetension = true
     tension = Number(document.getElementById('tension').value)
 }
 
