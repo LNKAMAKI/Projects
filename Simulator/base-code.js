@@ -1,11 +1,11 @@
  let nan = 1
  let change_damping = false
+ let change_tension = false
     function start() {
         
             gamma = -0.5
             constant = 1
-            timer = 0
-            tension = 60
+            tension = 80
             density = 0.004
             v = (Math.sqrt(tension/density))
             L = 270
@@ -56,7 +56,7 @@
              //animate()
             //function animate() {
             setInterval(() => {
-                t += 0.01
+                t += 0.008
             
                 c.clearRect(0, 0, 300, 150)
                 for (beed in beeds) {
@@ -97,7 +97,6 @@
             //requestAnimationFrame(animate)
             //}
            
-            timer += 0.02
             //this.document.getElementById('par1').innerText = 'wn:' + wn
             //this.document.getElementById('par1').innerText = 't:' + t
             this.document.getElementById('par2').innerText = 't: ' + t
@@ -106,16 +105,16 @@
         },0)
 
          setInterval(() => {
-                if (dot != -1 || change_damping == true) {
-                    gamma = Number(document.getElementById('damping').value)*-1
-                    v = (Math.sqrt(tension/density))
-                    constant = 1
-                    timer = 0
-                    t = 0
-                    update()
-                    change_damping == false
-                }
-            },0)
+          if (dot != -1 || change_damping == true || change_tension == true) {
+            gamma = Number(document.getElementById('damping').value)*-1
+            tension = Number(document.getElementById('tension').value)
+            v = (Math.sqrt(tension/density))
+            t = 0
+            update()
+            change_damping = false
+            change_damping = tension
+          }
+         },0)
             /*
         setInterval(() => {
             c.clearRect(0, 0, 300, 150)
@@ -295,22 +294,14 @@ function cos(number) {
 }
 
 function f() {
-    return Math.exp(gamma*timer)
+    return Math.exp(gamma*t)
 }
 
 function changeDamping() {
     change_damping = true
-    /*
-    constant = nan
-    timer = 0
-    gamma = Number(document.getElementById('damping').value)*-1
-    */
-    
-    //console.log(f())-56
-    //gamma = Number(document.getElementById('damping').value)*-1
 }
 
 function changeTension() {
-    //tension = Number(document.getElementById('tension').value)
+    change_tension = true
 }
 
