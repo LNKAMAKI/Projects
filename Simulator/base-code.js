@@ -1,17 +1,15 @@
- let nan = 1
  let change_damping = false
  let change_tension = false
     function start() {
         
             gamma = -0.5
-            constant = 1
             tension = 80
             density = 0.004
             v = (Math.sqrt(tension/density))
             L = 270
             beedsnumber = 60
             radius = (L/beedsnumber)/2
-            modos = 19 //9
+            modos = 120
             ans = []
             bns = []
             beeds = []
@@ -49,6 +47,7 @@
                     bn += (2/L)*y*(-(L/(n*pi))*(cos((n*pi*xf)/L) - cos((n*pi*xi)/L)))
                 }
                 ans.push((an - gamma*bn)/w)
+                console.log(n,(an - gamma*bn)/w)
                 bns.push(bn)
             }
             }
@@ -67,9 +66,8 @@
                     beeds[beed].velocity = 0
                     for (n = 1; n <= modos; n++) {
                       wn = (((n*pi*v)/L)**2 - gamma**2)**(1/2) 
-                      beeds[beed].y += constant*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
-                      nan = constant*f()
-                      beeds[beed].velocity += constant*f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) + constant*gamma*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      beeds[beed].y += f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
+                      beeds[beed].velocity += f()*wn*sen((n*pi*x)/L)*(ans[n - 1]*cos(wn*t) - bns[n - 1]*sen(wn*t)) + gamma*f()*sen((n*pi*x)/L)*(ans[n - 1]*sen(wn*t) + bns[n - 1]*cos(wn*t))
                     }
                     
                 }
@@ -99,9 +97,6 @@
            
             //this.document.getElementById('par1').innerText = 'wn:' + wn
             //this.document.getElementById('par1').innerText = 't:' + t
-            this.document.getElementById('par2').innerText = 't: ' + t
-            this.document.getElementById('par4').innerText = 'const: ' + constant
-            this.document.getElementById('par3').innerText = 'nan: ' + nan
         },0)
 
          setInterval(() => {
@@ -266,16 +261,17 @@ window.addEventListener('mousemove', function (event) {
  for (beed in beeds) {
   if (mousedown == true) {
     if (mousex < beeds[beed].xsup + xinitial && mousex > beeds[beed].xinf + xinitial 
-    && mousey2 < beeds[beed].ysup + yinitial && mousey2 > beeds[beed].yinf + yinitial) {
-        yan = Math.round(beeds[beed].yinf + yinitial)
-        yup = Math.round(beeds[beed].ysup + yinitial)
-        this.document.getElementById('par1').innerText = yan + ' < ' + mousey2 + ' < ' + yup
+    && mousey < beeds[beed].ysup + yinitial && mousey > beeds[beed].yinf + yinitial) {
          dot = beed
          beeds[beed].y = mousey - yinitial
     }
    }
  }
  
+ yan = Math.round(beeds[beed].yinf + yinitial)
+        yup = Math.round(beeds[beed].ysup + yinitial)
+        this.document.getElementById('par1').innerText = yan + ' < ' + mousey2 + ' < ' + yup
+        
  })
 
  window.addEventListener('mousedown', function(event) {
