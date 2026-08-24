@@ -1,0 +1,150 @@
+body {
+    margin: 0px;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+}
+header {
+    position: relative;
+    background-color: black;
+    display: grid;
+    align-items: center;
+    padding: 10px 5px 10px 15px;
+}
+header img {
+    position: relative;
+    width: 30px;
+}
+nav {
+   position: absolute;
+   display: inline-block;
+   left: calc(100% - 210px);
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 22px;
+    right: 800px;
+}
+
+nav a#last {
+    margin-right: 0px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    position: relative;
+    background-color: rgb(229, 229, 229);
+    /*
+    display: grid;
+    grid-auto-flow: column;
+    margin-left: 20vw;
+    */
+}
+
+section div {
+    position: relative;
+    display: inline-block;
+    margin-left: 20vw;
+    background-color: beige;
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    /*
+    top: calc(50vh - 54.8px - 18px);
+    top: calc(50vh - 27.4px - 18.8px);
+    */
+    margin: 0px;
+    top: calc(50vh - 27.4px - 18.8px - 23px);
+    /*margin-top: calc(50vh - 100px);*/
+}
+
+section div span {
+    position: absolute;
+    left: 260px;
+    width: 100%;
+    bottom: 0;
+}
+
+
+aside {
+    position: relative;
+    background-color: aqua;
+    display: inline-block;
+    margin: 0px;
+    top: calc(50vh - 27.4px - 48px - 23px);
+}
+    
+
+/*
+aside {
+    position: absolute;
+    margin: 0px;
+    margin-top: calc(50vh - 27.4px - 144px - 23px);
+    right: 25vw;
+    top: 0;
+    display: inline-block;
+}
+    */
+    
+
+    
+@media (max-width: 700px) {
+    section div{
+        margin-left: 2vw;
+    }
+    aside {
+        position: relative;
+        display: block;
+        margin: 0px;
+        margin-top: 26px;
+        margin-bottom: 45px;
+        left: 2vw;
+    }
+} 
+
+
+@media (min-width: 701px) and (max-width: 940px) {
+     section div {
+        margin-left: 10vw;
+        left: 0px;
+    }
+     aside {
+        right: 14vw;
+    }
+} 
+
+
+aside a {
+    display: block;
+    font-size: 1.5em;
+    line-height: 4;
+    color: black;
+    text-decoration: none;
+}
+
+aside a:hover {
+    display: block;
+    font-size: 1.5em;
+    line-height: 4;
+    color: black;
+    text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    background-color: black;
+    display: block;
+    width: 100vw;
+    padding: 0px;
+    padding-left: 20px;
+    color: white;
+    top: calc(100vh - 46px);
+}
+
+h5 {
+    margin: 15px;
+}
