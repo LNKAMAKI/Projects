@@ -123,31 +123,32 @@ nav {
 }
 
 section {
-    display: flex;
     margin-top: 60px;
+    display: flex;
     background-color: blue;
-}
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+
 .holder {
     display: flex;
     background-color: pink;
-    flex-direction: row;
+    flex-basis: 48%;
     align-items: stretch;
-    width: 60%;
-    height: fit-content;
+    max-width: fit-content;
 
     img {
-        background-color: aqua;
-        flex-shrink: 3;
         width: 50%;
-        min-width: 60px;
-        max-width: 370px;
+        min-width: 120px;
+        max-width: 250px;
+        background-color: aqua;
     }
 
-    div {
+   div {
         position: relative;
         width: 50%;
+        min-width: 290px;
         background-color: white;
-        flex-shrink: 3;
 
         p {
             position: absolute;
@@ -157,7 +158,10 @@ section {
             top: 50%;
             transform: translateY(-50%);
             height: 50%;
+            max-height: fit-content ;
             overflow-y: scroll;
         }
     }
+}
+
 }
