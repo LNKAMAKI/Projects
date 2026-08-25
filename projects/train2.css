@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-body {
-    margin: 0px;
-}
+
 :root {
     --espifont: "Luckiest Guy",cursive;
     --corespigão: rgb(20, 190, 105);
     --lightcorespigão: rgb(200, 255, 200);
 }
+body {
+    margin: 0px;
+    background-color: var(--lightcorespigão);
+}
 header {
     position: relative;
     background-color: var(--corespigão);
-    padding: 15px;
-
+    padding: 15px 8px 10px 8px;
+    border-bottom: 4px solid green;
+}
     
 nav {
    
@@ -119,4 +122,42 @@ nav {
     }
 }
 
+section {
+    display: flex;
+    margin-top: 60px;
+    background-color: blue;
+}
+.holder {
+    display: flex;
+    background-color: pink;
+    flex-direction: row;
+    align-items: stretch;
+    width: 60%;
+    height: fit-content;
+
+    img {
+        background-color: aqua;
+        flex-shrink: 3;
+        width: 50%;
+        min-width: 60px;
+        max-width: 370px;
+    }
+
+    div {
+        position: relative;
+        width: 50%;
+        background-color: white;
+        flex-shrink: 3;
+
+        p {
+            position: absolute;
+            background-color: wheat;
+            margin: 0px;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 50%;
+            overflow-y: scroll;
+        }
+    }
 }
