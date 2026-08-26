@@ -123,7 +123,7 @@ nav {
 }
 
 section {
-    margin: 60px 15px;
+    background: blue;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
