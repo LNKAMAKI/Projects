@@ -199,6 +199,7 @@ section {
             max-height: fit-content;
             overflow-y: auto;
             font-family: sans-serif;
+            line-height: 1.6;
         }
     }
 }
