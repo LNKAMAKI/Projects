@@ -123,10 +123,10 @@ nav {
 }
 
 section {
-    background: blue;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    margin: 60px 10px;
     justify-content: space-evenly;
 }
     
@@ -134,8 +134,9 @@ section {
     background-color: pink;
     display: flex;
     flex-grow: 1;
-    min-width: 400px;
+    flex-basis: 400px;
     align-items: stretch;
+    flex-shrink: 1;
 
     img {
         background-color: aqua;
@@ -151,7 +152,6 @@ section {
 
         p {
             position: absolute;
-            background-color: wheat;
             margin: 0px;
             width: 100%;
             top: 50%;
