@@ -1,0 +1,53 @@
+
+:root {
+    --mainblue: #0348AC;
+    --sideblue: #9bc3ff;
+    --gold: #FFC824;
+}
+body {
+    margin: 0px;
+}
+header {
+    position: relative;
+    background-color: var(--mainblue);
+    color: var(--gold);
+    font-weight: 600;
+    padding: 18px 10px 14px 10px;
+    border-bottom: 4px solid var(--gold);
+    font-family: sans-serif;
+    margin-bottom: 45px;
+}
+    
+nav {
+    max-width: 760px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.2px;
+    justify-content: center;
+   
+     h1 {
+    font-size: 1.5rem;
+    }
+
+> img {
+    width: 24.5px;
+    background-color: var(--lightcorespigão);
+    padding: 4px;
+    border-radius: 4px;
+}
+> img:hover {
+    cursor: pointer;
+    outline: 3.5px solid var(--gold);
+}
+}
+
+h2 {
+    font-size: clamp(30px, 2vw, 88px);
+    color: var(--mainblue);
+    text-align: center;
+}
+
+
+
