@@ -1,7 +1,8 @@
 
 :root {
     --mainblue: #0348AC;
-    --sideblue: #9bc3ff;
+    --side1blue: #9bc3ff;
+    --side2blue: rgb(225, 255, 255);
     --gold: #FFC824;
 }
 body {
@@ -12,27 +13,22 @@ header {
     background-color: var(--mainblue);
     color: var(--gold);
     font-weight: 600;
-    padding: 18px 10px 14px 10px;
+    padding: clamp(9px,3vw,27px) 10px clamp(7px,2vw,21px) 10px;
     border-bottom: 4px solid var(--gold);
     font-family: sans-serif;
     margin-bottom: 45px;
-}
-    
-nav {
-    max-width: 760px;
-    margin: auto;
-    display: flex;
+     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 2.2px;
     justify-content: center;
    
-     h1 {
-    font-size: 1.5rem;
+     span {
+    font-size: clamp(0.95rem,3vw,1.4rem);
     }
 
 > img {
-    width: 24.5px;
+    width: clamp(16px,3vw,25px);
     background-color: var(--lightcorespigão);
     padding: 4px;
     border-radius: 4px;
@@ -43,10 +39,21 @@ nav {
 }
 }
 
-h2 {
-    font-size: clamp(30px, 2vw, 88px);
-    color: var(--mainblue);
+h2,h3 {
     text-align: center;
+    padding: 20px 5px;
+    margin: 0px;
+}
+
+h2 {
+ font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: var(--mainblue);
+    line-height: 50px;
+}
+
+h3 {
+    color: var(--mainblue);
+    font-size: clamp(0.95rem, 2vw, 1.17rem);
 }
 
 
