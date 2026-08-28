@@ -5,8 +5,8 @@ function erase() {
     ////console.log('ERASE')
     get1('write').value = ''
 }
-
-   function load() {
+function load() {
+   
     pexps = document.getElementsByClassName('pexp')
 for (sure = 0; sure < pexps.length; sure++) {
     //console.log(pexps[sure])
@@ -739,6 +739,22 @@ function cli(state,index,jin,n,jor) {
    search.cl = false
 }}
 
+function copy() {
+    nums = document.getElementsByClassName('type')
+    copyText = nums[0]
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); 
+    navigator.clipboard.writeText(copyText.value);
+}
+
+function copy2() {
+    nums = document.getElementsByClassName('type')
+    if (nums[1].value != 'Não é possível agrupar todos os monômios') {
+    copyText = nums[1]
+    var copyGfGText = copyText;
+    copyGfGText.select();
+    document.execCommand("copy");
+    }}
 
 abriu = false;
 vez = 0;
@@ -1510,7 +1526,7 @@ function CreateEngine2() {
      if (somarmons == false) {
      ////console.log('MV',mv)
      }
-     //segs_2.push({car: '1', mons: mv})
+     segs_2.push({car: '1', mons: mv})
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -2745,10 +2761,13 @@ if (somarmons == false) {
             //console.log('newexpress',newexpress)
             }
       
+            console.warn("NUMDESFAT",numsdesfat)
          for (e in pans_2[bababa].todos) {
           numsdesfat.push(pans_2[bababa].todos[e])
          }}}
      
+         console.warn("NUMDESFAT",numsdesfat)
+         console.log('SOMARMONS',somarmons)
      if (numsdesfat.length > 0) {
         ////console.log(concatenar_2)
       console.warn('VAI TER QUE FATORAR DE NOVO')
@@ -2786,7 +2805,7 @@ if (somarmons == false) {
         }
           //if (somarmons == false) 
           //console.log('newexpress',newexpress)
-         //this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
+         this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
      }else{
      todososnumeros_2 = []
      for (acaba in monomios_2) {
@@ -3716,8 +3735,8 @@ if (somarmons == false) {
   
   //console.log('ARANJARR',arj)
   if (ir == true) {
-    //console.log('IR: TRUEE')
     if (somarmons == false)
+    console.log('IR: TRUEE')
     return [
         concatenar_2,
         pans_2.length,
@@ -3733,8 +3752,8 @@ if (somarmons == false) {
         pans_2
       ]
     }else{
-        //console.log('IR: FALSEE')
         if (somarmons == false)
+        console.log('IR: FALSEE')
         return [
         concatenar_2,
         pans_2.length,
@@ -3755,7 +3774,7 @@ ep = FATORE(exal)
 fat1 = new CreateEngine2().FATORAR(ep,true)
 fat2 = new CreateEngine2().FATORAR(ep,false)
 
-////console.log('FAT',fat2[0])
+console.warn('FAT',fat1, fat2)
         alt = 1
         if (fat2[1] == 1 && fat2[2] == 0) {
           alt = 2
@@ -3775,11 +3794,12 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
 
           plo = false
           
-          
+          /*
           if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
-            ////console.log('isso')
+            console.warn('isso')
           while (plo == false) {
             seps = SPLITEXPS(okexp)
+            console.warn('SEPS', seps)
               rexp =  ''
               chain = []
           for (varnot in seps) {          
@@ -3859,7 +3879,10 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
-              }}}
+              }}} 
+              */
+
+              console.warn('SLITEXPS', )
           
               if (alt == 1) {
                 vari = fat1
@@ -4181,7 +4204,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                      } 
                     }
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
-                     roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
+                 roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
                  // repetidos - opl, posições - position, way: rept
              } }
 

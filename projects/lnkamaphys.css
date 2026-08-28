@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Luckiest+Guy&display=swap');
 :root {
     --mainblue: #0348AC;
     --side1blue: #9bc3ff;
@@ -7,13 +8,15 @@
 }
 body {
     margin: 0px;
+    font-family: 'Cal Sans', sans-serif;
+    margin-bottom: 50px;
 }
 header {
     position: relative;
     background-color: var(--mainblue);
     color: var(--gold);
     font-weight: 600;
-    padding: clamp(9px,3vw,27px) 10px clamp(7px,2vw,21px) 10px;
+    padding: clamp(8px,3vw,24px) 10px clamp(6px,2vw,18px) 10px;
     border-bottom: 4px solid var(--gold);
     font-family: sans-serif;
     margin-bottom: 45px;
@@ -39,22 +42,101 @@ header {
 }
 }
 
-h2,h3 {
+section {
+    margin-top: clamp(0px, 6vw, 85px);
+}
+h1,h2 {
     text-align: center;
     padding: 20px 5px;
     margin: 0px;
 }
 
-h2 {
+h1 {
  font-size: clamp(1.8rem, 5vw, 2.5rem);
     color: var(--mainblue);
     line-height: 50px;
 }
 
-h3 {
+h2 {
     color: var(--mainblue);
     font-size: clamp(0.95rem, 2vw, 1.17rem);
 }
 
+a {
+    text-decoration: none;
+}
 
+    button {
+            display: block;
+            height: 15%;
+            background-color: var(--mainblue);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 7px;
+            margin: 20px auto;
+            color: white;
+        }
 
+        button:hover {
+            outline: 2.6px solid var(--gold);
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+.tool-examples {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(55px, 4.7vw, 90px);
+    gap: clamp(25px, 4vw, 170px);
+    flex-wrap: wrap;
+    background-color: var(--side2blue);
+    padding: 30px 0px;
+
+    .example {
+        background-color: var(--side1blue);
+        padding: 20px;
+        border: 5px solid var(--side1blue);
+        flex: 1 1 250px;
+        max-width: 320px;
+        border-radius: 10px;
+        /*height: clamp(250px, 20vw, 400px);*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+            flex-grow: 0;
+            flex-shrink: 0;
+            height: 85%;
+        }
+
+        button {
+            height: 15%;
+            background-color: var(--mainblue);
+            border: none;
+            margin: 0px;
+            padding: 10px 15px;
+            border-radius: 7px;
+            margin-top: 10px;
+
+            a {
+                color: white;
+            }
+        }
+
+        button:hover {
+            outline: 2.6px solid var(--gold);
+            cursor: pointer;
+        }
+
+        button:hover > a {
+            color: var(--gold);
+        }
+    }
+    
+     .example:hover {
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--mainblue);
+        }
+
+    }
