@@ -75,6 +75,7 @@ a {
             border-radius: 7px;
             margin: 20px auto;
             color: white;
+
         }
 
         button:hover {
@@ -83,7 +84,15 @@ a {
             cursor: pointer;
         }
 
-.tool-examples {
+          a {
+                color: white;
+            }
+
+         button:hover > a {
+            color: var(--gold);
+        }
+
+#tool-examples {
     display: flex;
     justify-content: center;
     margin-top: clamp(55px, 4.7vw, 90px);
@@ -111,26 +120,8 @@ a {
         }
 
         button {
-            height: 15%;
-            background-color: var(--mainblue);
-            border: none;
             margin: 0px;
-            padding: 10px 15px;
-            border-radius: 7px;
             margin-top: 10px;
-
-            a {
-                color: white;
-            }
-        }
-
-        button:hover {
-            outline: 2.6px solid var(--gold);
-            cursor: pointer;
-        }
-
-        button:hover > a {
-            color: var(--gold);
         }
     }
     
