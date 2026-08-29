@@ -301,13 +301,12 @@ a {
 
 section#cards {
     background-color: var(--side1blue);
-    padding-bottom: 50px;
 
     h2 {
         background-color: var(--side2blue);
     }
     .cards-holder {
-        padding-top: 50px;
+        padding: 50px 0px;
         display: flex;
         gap: 20px;
         justify-content: center;

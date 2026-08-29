@@ -1,8 +1,7 @@
 
 <!--<img src="https://lnkamaki.github.io/Projects/projects/cidade-lago.jpg">-->
 <u type= "circle">
-<iframe src="https://lnkamaki.github.io/Projects/projects/lnkamaphys.html" frameborder="0" style="width: 654px;
-height: 516px;">LNKAMAPHYS</iframe>
+<li><a href= "https://lnkamaki.github.io/Projects/projects/lnkamaphys.html"><span style=" font-weight: normal; font-size: 1.3em;">LNKmaphys</span></a></li> 
 
 <iframe src="https://lnkamaki.github.io/Projects/projects/clock.html" frameborder="0" style="width: 654px;
 height: 516px;"></iframe>
