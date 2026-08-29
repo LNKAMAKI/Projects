@@ -79,23 +79,18 @@ a {
     button {
             display: block;
             height: 15%;
-            background-color: var(--mainblue);
+            background-color: gold;
             border: none;
             padding: 10px 15px;
             border-radius: 7px;
             margin: clamp(7px, 1vw, 20px) auto 0px auto;
-            color: white;
+            outline: 2px solid black;
+            font-weight: 600;
 
-        }
-
-        button:hover {
-            outline: 2.6px solid var(--gold);
-            color: var(--gold);
-            cursor: pointer;
         }
 
           a {
-                color: white;
+                color: var(--mainblue);
             }
 
          button:hover > a {
@@ -226,7 +221,7 @@ a {
     }
 
     section#interactive-tools {
-        background-color: var(--gold);
+        background-color: gold;
 
         h2 {
             padding-bottom: 15px;
@@ -238,12 +233,13 @@ a {
             margin: 10px auto 40px auto;
             padding: clamp(10px,3vw,18px) 15px;
             border-radius: 5px;
+            font-weight: 400;
         }
     }
 
 #tool-examples {
     display: flex;
-    background-color: var(--side2blue);
+    background-color: var(--side1blue);
     flex-direction: row;
     justify-content: center;
     gap: clamp(25px, 4vw, 170px);
@@ -256,7 +252,7 @@ a {
     
     .example {
         position: relative;
-        background-color: var(--side1blue);
+        background-color: var(--mainblue);
         padding: 15px 10px;
         flex-grow: 1;
         flex-basis: 250px;
@@ -295,10 +291,23 @@ a {
             box-shadow: 0 0 10px var(--mainblue);
         }
 
+        
+        button:hover {
+            outline: 2.6px solid var(--gold);
+            color: var(--gold);
+            background-color: var(--mainblue);
+            cursor: pointer;
+        }
+
 section#cards {
     background-color: var(--side1blue);
+    padding-bottom: 50px;
 
+    h2 {
+        background-color: var(--side2blue);
+    }
     .cards-holder {
+        padding-top: 50px;
         display: flex;
         gap: 20px;
         justify-content: center;
@@ -307,21 +316,45 @@ section#cards {
     .card {
         background-color: var(--side2blue);
         /*width: 30%;*/
-        max-width: 380px;
+        max-width: 300px;
         aspect-ratio: 1.4;
         flex-basis: 300px;
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 3px solid var(--mainblue);
 
         h3 {
             font-size: clamp(0.8rem, 5vw, 1.2rem);
+            padding-bottom: 0px;
+            padding-top: 0px;
         }
 
         p {
-            background-color: aquamarine;
             text-align: center;
             display: block;
-            margin: auto;
             padding: 0px 20px;
+            font-size: clamp(0.4rem, 5vw, 0.9rem);
+        }
+    }
+
+    .number1 {
+        background-color: gold;
+        color: var(--mainblue);
+        border-color: black;
+        p {
+            color: black;
+        }
+    }
+
+    .number3 {
+        background-color: var(--mainblue);
+        color: var(--gold);
+        border-color: white;
+        
+        p {
+            color: white;
         }
     }
 }
