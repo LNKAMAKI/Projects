@@ -433,6 +433,10 @@ section#form {
             width: 100%;
             display: flex;
 
+            label {
+                min-width: fit-content;
+            }
+
             input {
                 width: 90%;
                 max-width: 280px;
