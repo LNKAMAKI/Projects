@@ -169,7 +169,7 @@ a {
     section#simulators {
         background-color: var(--mainblue);
         color: var(--gold);
-        padding: clamp(35px,4.2vw,70px) 20px;
+        padding: clamp(35px,4.2vw,70px) 10px;
         padding-top: 0px;
 
         .container {
@@ -221,7 +221,7 @@ a {
                 }
 
                 ul {
-                    font-size: clamp(1rem,3vw,1.2rem);
+                    font-size: clamp(0.95rem,2.3vw,1.2rem);
                 }
             }
         }
