@@ -185,7 +185,7 @@ a {
 
             ul {
                 list-style-position: inside;
-                font-size: clamp(0.9rem,2vw,1.2rem);
+                font-size: clamp(0.8rem,1.5vw,1.2rem);
                 font-weight: 500;
             }
 
@@ -221,9 +221,6 @@ a {
                     width: fit-content;
                     padding: 0px;
                 }
-                li {
-                    font-size: clamp(0.6rem,3.2vw,1.2rem);
-            }
         }
     }
 
@@ -287,7 +284,8 @@ a {
             margin: 0px;
             width: 100%;
             padding: 0px;
-            height: clamp(10px, 5vw, 40px);
+            font-size: clamp(0.7rem,1vw,0.8rem);
+            height: clamp(28px, 5vw, 40px);
         }
     }
     
@@ -390,7 +388,7 @@ section#cards {
 
 section#form {
     background-color: var(--mainblue);
-    padding: 0px 10px 40px 10px;
+    padding: 0px 15px 40px 15px;
 
     h2 {
         color: white;
@@ -398,7 +396,7 @@ section#form {
     }
 
     p {
-        font-size: clamp(0.6rem, 4vw, 1rem);
+        font-size: clamp(0.75rem, 4vw, 1rem);
         padding: 0px 10px;
         color: white;
         padding-bottom: 30px;
@@ -417,7 +415,6 @@ section#form {
 
         input {
             border-radius: 10px;
-            border: none;
             border: 2px solid var(--mainblue);
             text-indent: 5px;
         }
@@ -434,10 +431,11 @@ section#form {
 
            div {
             flex-grow: 1;
+            width: 100%;
             display: flex;
 
             input {
-                flex-grow: 1;
+                width: 90%;
                 max-width: 280px;
             }
            }
