@@ -11,17 +11,16 @@
 }
 body {
     margin: 0px;
-    margin-bottom: 50px;
     font-family: var(--roboto);
 }
-header {
+header,footer {
     background-color: var(--mainblue);
     color: var(--gold);
+    margin-bottom: 45px;
+    border-bottom: 4px solid var(--gold);
     font-weight: 600;
     padding: clamp(8px,3vw,24px) 10px clamp(6px,2vw,18px) 10px;
-    border-bottom: 4px solid var(--gold);
     font-family: sans-serif;
-    margin-bottom: 45px;
      display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,6 +38,23 @@ header {
     padding: 4px;
     border-radius: 4px;
 }
+}
+
+footer {
+    margin: 0px;
+    border: 0px;
+    margin-top: 45px;
+    border-top: 4px solid var(--gold);
+    padding: clamp(10px,3vw,20px) 10px;
+    
+    span {
+    font-size: clamp(0.9rem,2.8vw,0.95rem);
+    }
+    align-items: flex-end;
+
+    > img {
+        width: clamp(9px,3vw,12px);
+    }
 }
 
 section {
