@@ -252,9 +252,7 @@ a {
         position: relative;
         background-color:  transparent;
         padding: 10px 10px;
-        flex-grow: 1;
         flex-basis: 260px;
-        max-width: 300px;
         border-radius: 10px;
         display: flex;
         gap: 10px;
@@ -289,6 +287,19 @@ a {
             cursor: pointer;
         }
 
+      @media (max-width: 650px) {
+         #tool-examples {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+         }
+         
+         .example {
+            width: 100%;
+            max-width: 200px;
+            flex-basis: auto;
+         }
+      }
         
         button:hover {
             outline: 2.6px solid gold;
@@ -391,6 +402,7 @@ section#form {
 
         textarea {
             border: 2px solid var(--mainblue);
+            border-radius: 10px;
         }
 
         > div#group1{
