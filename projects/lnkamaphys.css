@@ -82,11 +82,13 @@ a {
             height: 15%;
             background-color: var(--side2blue);
             border: none;
+            color: var(--mainblue);
             padding: 10px 15px;
             border-radius: 7px;
             margin: clamp(7px, 1vw, 20px) auto 0px auto;
             outline: 0px;
             font-weight: 600;
+            border: 2px solid var(--mainblue);
 
         }
 
@@ -279,7 +281,7 @@ a {
             margin: 0px;
             width: 100%;
             padding: 0px;
-            height: clamp(30px, 20vw, 40px);
+            height: clamp(10px, 5vw, 40px);
         }
     }
     
@@ -289,8 +291,7 @@ a {
 
         
         button:hover {
-            outline: 2.6px solid var(--gold);
-            color: var(--gold);
+            outline: 2.6px solid gold;
             background-color: var(--mainblue);
             cursor: pointer;
         }
@@ -421,6 +422,18 @@ section#form {
         #mensagem {
             max-width: 450px;
             height: 70px;
+        }
+
+        button {
+            border-radius: 30px;
+            margin: 0px;
+            align-self: flex-start;
+            background-color: var(--mainblue);
+            color: white;
+        }
+        button:hover {
+            background-color: var(--mainblue);
+            color: gold;
         }
     }
 
