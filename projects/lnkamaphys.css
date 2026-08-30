@@ -313,17 +313,39 @@ section#cards {
     h2 {
         background-color: var(--side2blue);
     }
+}
     .cards-holder {
-        padding: 50px 0px;
+        background-color: bisque;
+        padding: 50px 40px;
         display: flex;
         gap: 20px;
         justify-content: center;
         flex-wrap: wrap;
 
-    .card {
+
+    .number1 {
+        background-color: gold;
+        color: var(--mainblue);
+        border-color: black;
+        p {
+            color: black;
+        }
+    }
+
+    .number3 {
+        background-color: var(--mainblue);
+        color: var(--gold);
+        border-color: white;
+        
+        p {
+            color: white;
+        }
+    }
+}
+
+ .card {
         background-color: var(--side2blue);
         /*width: 30%;*/
-        max-width: 300px;
         aspect-ratio: 1.4;
         flex-basis: 300px;
         border-radius: 10px;
@@ -345,26 +367,18 @@ section#cards {
         }
     }
 
-    .number1 {
-        background-color: gold;
-        color: var(--mainblue);
-        border-color: black;
-        p {
-            color: black;
+
+    @media (max-width: 724px) {
+        .cards-holder {
+            flex-direction: column;
+            align-content: center;
+        }
+        .card {
+            max-width: 260px;
+            flex-basis: 0px;
         }
     }
 
-    .number3 {
-        background-color: var(--mainblue);
-        color: var(--gold);
-        border-color: white;
-        
-        p {
-            color: white;
-        }
-    }
-}
-}
 
 section#form {
     background-color: var(--mainblue);
