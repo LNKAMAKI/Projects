@@ -153,74 +153,66 @@ a {
     section#simulators {
         background-color: var(--mainblue);
         color: var(--gold);
-        padding: clamp(35px,4.2vw,70px) 10px;
+        padding: clamp(35px,4.2vw,70px) 20px;
         padding-top: 0px;
 
         .container {
                 display: flex;
                 align-items: stretch;
+                gap: 40px;
                 justify-content: center;
                 
         .img-holder {
-            max-width: 750px;
             background-color: #FFC824;
             padding: 5px 0px;
-            height: fit-content;
+            max-width: 750px;
+            flex: 1 1 350px;
             display: flex;
             justify-content: flex-start;
             padding-left: 6px;
             align-self: center;
 
-             img {
+            img {
                 width: 70%;
             }
         }
-        .ul-holder {
+        ul {
             margin: 0px;
+            width: fit-content;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-
-            ul {
-                list-style-position: inside;
-                font-size: clamp(0.94rem,1.8vw,1.2rem);
-                font-weight: 500;
-            }
-
-            li + li{
-                margin-top: clamp(20px,2.9vw,60px);
-            }
-        }
+            align-items: flex-start;
+            align-content: center;
+            gap: 40px;
+            padding: 0px;
+            list-style-position: inside;
+            font-size: clamp(0.8rem,1.8vw,1.2rem);
+            font-weight: 500;
         }
 
-          @media (min-width: 805px){
+        }
 
-            .img-holder {
-                width: 50%;
-            }
-
-          }
-    }
-
-
-        @media (max-width: 805px){
+         @media (max-width: 860px){
             .container {
                 flex-direction: column;
-                gap: 20px;
+                justify-content: center;
+                align-items: center;
 
                 .img-holder {
+                    flex: 0 1 auto;
                     width: 100%;
                 }
 
-                .ul-holder {
-                    flex-direction: row;
-                }
                 ul {
-                    width: fit-content;
-                    padding: 0px;
+                    font-size: clamp(1rem,3vw,1.2rem);
                 }
+            }
         }
+
     }
+
+
 
     section#interactive-tools {
         background-color: gold;
