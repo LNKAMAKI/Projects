@@ -19,7 +19,7 @@ header,footer {
     margin-bottom: 45px;
     border-bottom: 4px solid var(--gold);
     font-weight: 600;
-    padding: clamp(8px,3vw,24px) 10px clamp(6px,2vw,18px) 10px;
+    padding: clamp(10px,3vw,20px) 0px clamp(7px,2vw,15px) 10px;
     font-family: sans-serif;
      display: flex;
     flex-direction: row;
@@ -29,7 +29,7 @@ header,footer {
    
      span {
     font-family: var(--roboto);
-    font-size: clamp(0.95rem,3vw,1.4rem);
+    font-size: clamp(0.94rem,2.2vw,1.2rem);
     }
 
 > img {
@@ -48,7 +48,7 @@ footer {
     padding: clamp(10px,3vw,20px) 10px;
     
     span {
-    font-size: clamp(0.9rem,2.8vw,0.95rem);
+    font-size: clamp(0.9rem,1.5vw,0.95rem);
     }
     align-items: flex-end;
 
