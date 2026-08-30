@@ -118,25 +118,31 @@ a {
         align-items: stretch;
         flex-wrap: wrap;
 
-        h2 {
-            flex-basis: 50%;
+
+        .h2-holder {
+            flex: 1 1 410px;
+            box-sizing: border-box;
             background-color: var(--mainblue);
-            background-color: aqua;
             color: white;
-            padding: 85px 15px;
+            padding: 85px 10px;
             display: flex;
             align-items: center;
-            justify-content: center;
+
+            h2 {
+            display: inline;
+            width: fit-content;
+            padding: 0px;
+        }
         }
 
         .frase {
+            flex: 1 1 410px;
+            box-sizing: border-box;
             font-size: clamp(0.9rem, 1.5vw, 1.2rem);
             background-color: var(--side2blue);
             color: var(--mainblue);
             box-sizing: border-box;
             padding: 90px 30px;
-            flex-basis: 50%;
-            flex-grow: 1;
             margin: 0px;
             display: flex;
             align-items: center;
