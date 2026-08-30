@@ -29,14 +29,13 @@ header,footer {
    
      span {
     font-family: var(--roboto);
-    font-size: clamp(0.94rem,2.2vw,1.2rem);
+    font-size: clamp(0.95rem,2.2vw,1.2rem);
     }
 
 > img {
     width: clamp(16px,3vw,25px);
     background-color: var(--lightcorespigão);
     padding: 4px;
-    border-radius: 4px;
 }
 }
 
@@ -46,14 +45,15 @@ footer {
     margin-top: 45px;
     border-top: 4px solid var(--gold);
     padding: clamp(10px,3vw,20px) 10px;
+    align-items: flex-end;
     
     span {
-    font-size: clamp(0.9rem,1.5vw,0.95rem);
+    font-size: clamp(0.8rem,1vw,0.94rem);
     }
-    align-items: flex-end;
+
 
     > img {
-        width: clamp(9px,3vw,12px);
+        width: clamp(10px,1.5vw,12px);
     }
 }
 
