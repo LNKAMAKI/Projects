@@ -55,6 +55,7 @@ h1,h2.subtitle,h3 {
 p {
     color: var(--mainblue);
     font-weight: 700;
+    text-align: center;
 }
 
 h1 {
@@ -79,12 +80,12 @@ a {
     button {
             display: block;
             height: 15%;
-            background-color: gold;
+            background-color: var(--side2blue);
             border: none;
             padding: 10px 15px;
             border-radius: 7px;
             margin: clamp(7px, 1vw, 20px) auto 0px auto;
-            outline: 2px solid black;
+            outline: 0px;
             font-weight: 600;
 
         }
@@ -118,7 +119,7 @@ a {
         flex-wrap: wrap;
 
         h2 {
-            width: 50%;
+            flex-basis: 50%;
             background-color: var(--mainblue);
             color: white;
             padding: 85px 15px;
@@ -127,20 +128,16 @@ a {
         .frase {
             font-size: clamp(0.9rem, 1.5vw, 1.2rem);
             background-color: var(--side2blue);
-            width: 50%;
             color: var(--mainblue);
             box-sizing: border-box;
             padding: 90px 30px;
-            min-width: 350px;
+            flex-basis: 50%;
             flex-grow: 1;
             margin: 0px;
             display: flex;
             align-items: center;
             justify-content: center;
 
-            p {
-                text-align: center;
-            }
         }
     }
 
@@ -243,8 +240,7 @@ a {
     flex-direction: row;
     justify-content: center;
     gap: clamp(25px, 4vw, 170px);
-    flex-wrap: wrap;
-    padding: 20px;
+    padding: 40px;
     border-top: 20px solid var(--mainblue);
     border-bottom: 20px solid var(--mainblue);
     }
@@ -252,16 +248,17 @@ a {
     
     .example {
         position: relative;
-        background-color: var(--mainblue);
-        padding: 15px 10px;
+        background-color:  transparent;
+        padding: 10px 10px;
         flex-grow: 1;
-        flex-basis: 250px;
-        max-width: 320px;
+        flex-basis: 260px;
+        max-width: 300px;
         border-radius: 10px;
         display: flex;
         gap: 10px;
         flex-direction: column;
         align-items: center;
+        box-shadow: 0 0 10px var(--mainblue);
 
         .img-holder {
             position: relative;
@@ -288,7 +285,6 @@ a {
     
      .example:hover {
             cursor: pointer;
-            box-shadow: 0 0 10px var(--mainblue);
         }
 
         
@@ -331,7 +327,6 @@ section#cards {
         }
 
         p {
-            text-align: center;
             display: block;
             padding: 0px 20px;
             font-size: clamp(0.4rem, 5vw, 0.9rem);
@@ -357,4 +352,76 @@ section#cards {
         }
     }
 }
+}
+
+section#form {
+    background-color: var(--mainblue);
+    padding: 0px 10px 40px 10px;
+
+    h2 {
+        color: white;
+        padding-bottom: clamp(10px,2vw,20px);
+    }
+
+    p {
+        font-size: clamp(0.6rem, 4vw, 1rem);
+        padding: 0px 10px;
+        color: white;
+        padding-bottom: 30px;
+    }
+
+    form {
+        background-color: var(--side2blue);
+        display: flex;
+        max-width: 650px;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0px auto;
+        padding: 40px 20px;
+        border-radius: 20px;
+        border: 3px solid black;
+
+        input {
+            border-radius: 10px;
+            border: none;
+            border: 2px solid var(--mainblue);
+            text-indent: 5px;
+        }
+
+        textarea {
+            border: 2px solid var(--mainblue);
+        }
+
+        > div#group1{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+
+           div {
+            flex-grow: 1;
+            display: flex;
+
+            input {
+                flex-grow: 1;
+                max-width: 280px;
+            }
+           }
+        }
+
+        .group2 {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+
+        }
+        #assunto {
+            max-width: 380px;
+        }
+
+        #mensagem {
+            max-width: 450px;
+            height: 70px;
+        }
+    }
+
 }
