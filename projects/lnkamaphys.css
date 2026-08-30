@@ -310,6 +310,7 @@ a {
             cursor: pointer;
         }
 
+
 section#cards {
     background-color: var(--side1blue);
 
@@ -409,7 +410,7 @@ section#form {
         margin: 0px auto;
         padding: 40px 20px;
         border-radius: 20px;
-        border: 3px solid black;
+        box-shadow: 0px 0px 10px var(--side2blue);
 
         input {
             border-radius: 10px;
