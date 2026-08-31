@@ -1,12 +1,9 @@
 
 <!--<img src="https://lnkamaki.github.io/Projects/projects/cidade-lago.jpg">-->
 <u type= "circle">
-<li><a href= "https://lnkamaki.github.io/Projects/projects/lnkamaphys.html"><span style=" font-weight: normal; font-size: 1.3em;">LNKmaphys</span></a></li> 
 
 <iframe src="https://lnkamaki.github.io/Projects/projects/clock.html" frameborder="0" style="width: 654px;
 height: 516px;"></iframe>
-
-<li><a href= "https://lnkamaki.github.io/Projects/projects/fundamentos-programacao-web-pti/index.html"><span style=" font-weight: normal; font-size: 1.3em;">PTI</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/espiloja.html"><span style=" font-weight: normal; font-size: 1.3em;">Espiloja</span></a></li> 
 # Math
