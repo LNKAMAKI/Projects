@@ -10,12 +10,12 @@ height: 516px;"></iframe>
 # LNKmaphys
 <li><a href= "https://lnkamaki.github.io/Projects/projects/lnkmaphys.html"><span style=" font-weight: normal; font-size: 1.3em;">LNKmaphys</span></a></li> 
 
-</br>
+<br>
 
 # Espigão
 <li><a href= "https://lnkamaki.github.io/Projects/projects/espiloja.html"><span style=" font-weight: normal; font-size: 1.3em;">Espiloja</span></a></li> 
 
-</br>
+<br>
 # Math
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/clock.html"><span style=" font-weight: normal; font-size: 1.3em;">Standard Clock</span></a></li> 
