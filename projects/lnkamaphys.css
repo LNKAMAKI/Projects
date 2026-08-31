@@ -289,10 +289,6 @@ h3 {
         }
 
     }
-    
-     .example:hover {
-            cursor: pointer;
-        }
 
       @media (max-width: 650px) {
          #tool-examples {
