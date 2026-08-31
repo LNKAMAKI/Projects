@@ -451,11 +451,11 @@ section#form {
             flex-direction: column;
 
         }
-        #assunto {
+        #subject {
             max-width: 380px;
         }
 
-        #mensagem {
+        #message {
             max-width: 450px;
             height: 70px;
         }
