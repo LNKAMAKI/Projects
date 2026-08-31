@@ -14,7 +14,6 @@
 }
 
 body {
-    margin: 0px;
     font-family: var(--roboto);
 }
 header,footer {
@@ -44,8 +43,8 @@ header,footer {
 }
 
 footer {
-    margin: 0px;
     border: 0px;
+    margin-bottom: 0px;
     margin-top: 45px;
     border-top: 4px solid var(--gold);
     padding: clamp(10px,3vw,20px) 10px;
@@ -67,7 +66,6 @@ section {
 h1,h2.subtitle,h3 {
     text-align: center;
     padding: 20px 5px;
-    margin: 0px;
     font-family: var(--calsans);
 }
 
@@ -120,7 +118,6 @@ h3 {
         h2 {
             font-size: clamp(1.8rem, 5vw, 2.5rem);
             flex-grow: 1;
-            margin: 0px;
             font-family: var(--calsans);
             box-sizing: border-box;
             padding: clamp(35px, 5vw, 50px) 15px;
@@ -160,7 +157,6 @@ h3 {
             background-color: var(--side2blue);
             padding: clamp(85px,8vw,110px) 30px;
             color: var(--mainblue);
-            margin: 0px;
         }
     }
 
@@ -192,7 +188,6 @@ h3 {
             }
         }
         ul {
-            margin: 0px;
             width: fit-content;
             display: flex;
             flex-direction: column;
@@ -270,7 +265,6 @@ h3 {
         box-shadow: 0 0 10px var(--mainblue);
 
         img {
-            margin: 0px;
             background-color: pink;
             width: 100%;
             aspect-ratio: 1.2;
@@ -448,7 +442,6 @@ section#form {
             border: none;
             border-radius: 30px;
             padding: 10px 15px;
-            margin: 0px;
             align-self: flex-start;
             background-color: var(--mainblue);
             color: white;
