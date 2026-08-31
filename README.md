@@ -5,16 +5,20 @@
 <iframe src="https://lnkamaki.github.io/Projects/projects/clock.html" frameborder="0" style="width: 654px;
 height: 516px;"></iframe>
 
-<li><a href= "https://lnkamaki.github.io/Projects/projects/espiloja.html"><span style=" font-weight: normal; font-size: 1.3em;">Espiloja</span></a></li> 
-# Math
-
 <li><a href= "https://lnkamaki.github.io/Projects/projects/modclock.html"><span style=" font-weight: normal; font-size: 1.3em;">Mod(n) Clock</span></a></li> 
+
+# Espigão
+<li><a href= "https://lnkamaki.github.io/Projects/projects/espiloja.html"><span style=" font-weight: normal; font-size: 1.3em;">Espiloja</span></a></li> 
+
+# Math
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/clock.html"><span style=" font-weight: normal; font-size: 1.3em;">Standard Clock</span></a></li> 
 
  <li><a href= "https://lnkamaki.github.io/Projects/projects/piechart.html"><span style=" font-weight: normal; font-size: 1.3em;">Gráfico de Setores</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/fat.html"><span style=" font-weight: normal; font-size: 1.3em;">Fatorador 2.0</span></a></li> 
+
+<li><a href= "https://lnkamaki.github.io/Projects/projects/fatorador.html"><span style=" font-weight: normal; font-size: 1.3em;">Fatorador 1.0</span></a></li> 
 
 <li><a href= "https://lnkamaki.github.io/Projects/projects/funcao.html"><span style=" font-weight: normal; font-size: 1.3em;">Função</span></a></li> 
 
