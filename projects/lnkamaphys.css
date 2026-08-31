@@ -9,6 +9,10 @@
     --calsans: 'Cal Sans', sans-serif;
     --roboto: 'Roboto', sans-serif;
 }
+* {
+    margin: 0px;
+}
+
 body {
     margin: 0px;
     font-family: var(--roboto);
@@ -86,33 +90,32 @@ h2.subtitle {
 
 h3 {
     font-size: clamp(0.7rem, 2.7vw, 1rem);
+    padding: 0px;
 }
 
-a {
-    text-decoration: none;
-}
-
-    button {
-            height: 15%;
+    a {
+            text-decoration: none;
             background-color: var(--side2blue);
-            border: none;
             color: var(--mainblue);
-            padding: 10px 15px;
             border-radius: 7px;
-            margin: clamp(7px, 1vw, 20px) auto 0px auto;
-            outline: 0px;
             font-weight: 600;
             border: 2px solid var(--mainblue);
+            width: 100%;
+            height: clamp(28px, 5vw, 40px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
 
-        }
-
-          a {
-                color: var(--mainblue);
-            }
-
-         button:hover > a {
+    a,button {
+        font-size: clamp(0.7rem,1vw,0.8rem);
+    }
+    a:hover, button:hover {
             color: var(--gold);
-        }
+            outline: 2.6px solid var(--gold);
+            background-color: var(--mainblue);
+            cursor: pointer;
+    }
 
         h2 {
             font-size: clamp(1.8rem, 5vw, 2.5rem);
@@ -133,14 +136,17 @@ a {
         flex-wrap: wrap;
 
 
+        .h2-holder, .frase {
+              flex: 1 1 410px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+        }
         .h2-holder {
-            flex: 1 1 410px;
-            box-sizing: border-box;
             background-color: var(--mainblue);
             color: white;
-            padding: 85px 10px;
-            display: flex;
-            align-items: center;
+            padding: clamp(85px,8vw,110px) 10px;
 
             h2 {
             display: inline;
@@ -150,18 +156,11 @@ a {
         }
 
         .frase {
-            flex: 1 1 410px;
-            box-sizing: border-box;
             font-size: clamp(0.9rem, 1.5vw, 1.2rem);
             background-color: var(--side2blue);
+            padding: clamp(85px,8vw,110px) 30px;
             color: var(--mainblue);
-            box-sizing: border-box;
-            padding: 90px 30px;
             margin: 0px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
         }
     }
 
@@ -277,13 +276,6 @@ a {
             aspect-ratio: 1.2;
         }
 
-        button {
-            margin: 0px;
-            width: 100%;
-            padding: 0px;
-            font-size: clamp(0.7rem,1vw,0.8rem);
-            height: clamp(28px, 5vw, 40px);
-        }
     }
     
      .example:hover {
@@ -304,12 +296,6 @@ a {
          }
       }
         
-        button:hover {
-            outline: 2.6px solid gold;
-            background-color: var(--mainblue);
-            cursor: pointer;
-        }
-
 
 section#cards {
     background-color: var(--side1blue);
@@ -361,8 +347,6 @@ section#cards {
 
         h3 {
             font-size: clamp(0.8rem, 5vw, 1.2rem);
-            padding-bottom: 0px;
-            padding-top: 0px;
         }
 
         p {
@@ -461,16 +445,20 @@ section#form {
         }
 
         button {
+            border: none;
             border-radius: 30px;
+            padding: 10px 15px;
             margin: 0px;
             align-self: flex-start;
             background-color: var(--mainblue);
             color: white;
+            font-weight: 600;
         }
+
         button:hover {
-            background-color: var(--mainblue);
-            color: gold;
+            color: var(--gold);
         }
+       
     }
 
 }
