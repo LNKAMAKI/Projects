@@ -18,34 +18,43 @@
 body {
     font-family: var(--roboto);
 }
+
 header,footer {
     background-color: var(--mainblue);
     color: var(--gold);
-    margin-bottom: 45px;
-    border-bottom: 4px solid var(--gold);
     font-weight: 600;
-    padding: clamp(10px,3vw,20px) 0px clamp(7px,2vw,15px) 10px;
     font-family: sans-serif;
-     display: flex;
+    display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 2.2px;
     justify-content: center;
    
      span {
     font-family: var(--roboto);
+    }
+
+>   img {
+    padding: 4px;
+    }
+
+}
+
+header {
+    margin-bottom: 45px;
+    border-bottom: 4px solid var(--gold);
+    padding: clamp(10px,3vw,20px) 0px clamp(7px,2vw,15px) 10px;
+    align-items: center;
+   
+     span {
     font-size: clamp(0.95rem,2.2vw,1.2rem);
     }
 
 > img {
     width: clamp(16px,3vw,25px);
-    background-color: var(--lightcorespigão);
-    padding: 4px;
 }
 }
 
 footer {
-    margin-bottom: 0px;
     margin-top: 45px;
     border-top: 4px solid var(--gold);
     padding: clamp(10px,3vw,20px) 10px;
@@ -109,6 +118,18 @@ h3 {
     a,button {
         font-size: clamp(0.7rem,1vw,0.8rem);
     }
+
+    
+    button {
+            border: none;
+            border-radius: 30px;
+            padding: 10px 15px;
+            align-self: flex-start;
+            background-color: var(--mainblue);
+            color: white;
+            font-weight: 600;
+    }
+
     a:hover, button:hover {
             color: var(--gold);
             outline: 2.6px solid var(--gold);
@@ -144,11 +165,11 @@ h3 {
         .h2-holder {
             background-color: var(--mainblue);
             color: white;
-            padding: clamp(85px,8vw,110px) 10px;
+            padding: clamp(70px,5vw,110px) 10px;
 
             h2 {
             display: inline;
-            width: fit-content;
+            width: max-content;
         }
         }
 
@@ -188,7 +209,6 @@ h3 {
             }
         }
         ul {
-            width: fit-content;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -328,7 +348,6 @@ section#cards {
 
  .card {
         background-color: var(--side2blue);
-        /*width: 30%;*/
         aspect-ratio: 1.4;
         flex-basis: 280px;
         border-radius: 10px;
@@ -434,20 +453,6 @@ section#form {
         #message {
             max-width: 450px;
             height: 70px;
-        }
-
-        button {
-            border: none;
-            border-radius: 30px;
-            padding: 10px 15px;
-            align-self: flex-start;
-            background-color: var(--mainblue);
-            color: white;
-            font-weight: 600;
-        }
-
-        button:hover {
-            color: var(--gold);
         }
        
     }
