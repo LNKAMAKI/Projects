@@ -213,7 +213,6 @@ h3 {
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            align-content: center;
             gap: 40px;
             list-style-position: inside;
             font-size: clamp(0.8rem,1.8vw,1.2rem);
