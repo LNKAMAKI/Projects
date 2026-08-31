@@ -410,7 +410,6 @@ section#form {
         margin: 0px auto;
         padding: 40px 20px;
         border-radius: 20px;
-        max-width: fit-content;
         box-shadow: 0px 0px 8px var(--side2blue);
 
         input {
