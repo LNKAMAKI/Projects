@@ -967,6 +967,7 @@ function SPLITEXPS(expression) {
   return splitedExps
   }
   function desfat(algo) {
+    console.warn('ESSE ALGO', algo)
   quase = [...algo]
   gates = []
   aconta = ''
@@ -1052,6 +1053,9 @@ function SPLITEXPS(expression) {
 }
 
 function REFORMATAR(q) {
+
+q = q.replace(/,/g, '')
+console.log('REFORMATAR',q)
 qualexp1 = q;
 qualexp = "";
 parar = false;
