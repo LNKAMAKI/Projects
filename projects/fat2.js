@@ -967,7 +967,7 @@ function SPLITEXPS(expression) {
   return splitedExps
   }
   function desfat(algo) {
-    console.warn('ESSE ALGO', algo)
+    //console.warn('ESSE ALGO', algo)
   quase = [...algo]
   gates = []
   aconta = ''
@@ -1531,6 +1531,7 @@ function CreateEngine2() {
      ////console.log('MV',mv)
      }
      segs_2.push({car: '1', mons: mv})
+     console.warn('INDEX SEGS',segs_2.length - 1)
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -1778,6 +1779,7 @@ function CreateEngine2() {
        }}
      
      segs_2 = [...segs_2ordered]
+     console.warn('SEGS_2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',segs_2[0], segs_2[1])
 //
 
      if (segs_2.length > 0) {
@@ -2765,16 +2767,16 @@ if (somarmons == false) {
             //console.log('newexpress',newexpress)
             }
       
-            console.warn("NUMDESFAT",numsdesfat)
+            //console.warn("NUMDESFAT",numsdesfat)
          for (e in pans_2[bababa].todos) {
           numsdesfat.push(pans_2[bababa].todos[e])
          }}}
      
-         console.warn("NUMDESFAT",numsdesfat)
+         //console.warn("NUMDESFAT",numsdesfat)
          console.log('SOMARMONS',somarmons)
      if (numsdesfat.length > 0) {
         ////console.log(concatenar_2)
-      console.warn('VAI TER QUE FATORAR DE NOVO')
+      //console.warn('VAI TER QUE FATORAR DE NOVO')
       ////console.log('youdumb')
      
       ////console.log(pans_2)
@@ -3778,7 +3780,7 @@ ep = FATORE(exal)
 fat1 = new CreateEngine2().FATORAR(ep,true)
 fat2 = new CreateEngine2().FATORAR(ep,false)
 
-console.warn('FAT',fat1, fat2)
+//console.warn('FAT',fat1, fat2)
         alt = 1
         if (fat2[1] == 1 && fat2[2] == 0) {
           alt = 2
@@ -3797,9 +3799,10 @@ console.warn('FAT',fat1, fat2)
           ////console.log('ALT',alt)
 
           plo = false
+          vez = 0
           
-          /*
-          if (monomios_2.length > 1 && segs_2.length > 0 && okexp != '?') {
+          
+          if (monomios_2.length > 1 && segs_2.length > 1 && okexp != '?') {
             console.warn('isso')
           while (plo == false) {
             seps = SPLITEXPS(okexp)
@@ -3883,8 +3886,14 @@ console.warn('FAT',fat1, fat2)
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
-              }}} 
-              */
+              }
+
+              vez++
+            }
+              
+            } 
+              
+              
 
               console.warn('SLITEXPS', )
           
@@ -4208,9 +4217,17 @@ console.warn('FAT',fat1, fat2)
                      } 
                     }
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
-                 roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
+                console.warn('ROLLER_2 AAAAAAAAAAAAAAAA',roller_2[r].opl)
+                if (roller_2[r].opl.length == 1 && segs_2ordered[roller_2[r].opl[0]].car == '1') {
+                console.warn('AAAAAAAAAAAADJDJW3Y73CYE3H3CHU3RHCU2I3HRIURHC2UIHR3RHCU2RH2IRH2CIURHR2IH')
                  // repetidos - opl, posições - position, way: rept
-             } }
+                }else{
+                      
+                 roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
+                }
+             } 
+             console.warn('ROLL_2',roll_2[0])
+            }
 
             function sortob(n, pam) {
                 var maiorparamenor = []
