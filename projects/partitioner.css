@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+
+:root {
+    --font-family: 'Changa One';
+    --medium-blue: #84cefc;
+    --light-blue: #e0f7ff;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border:none;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+header {
+    background-color: #b7e4ff;
+    padding: 20px 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    background-color: #e0f7ff;
+    max-width: 850px;
+    border: 2px solid black;
+    aspect-ratio: 1.9;
+    margin: clamp(40px, 5%, 60px) auto 30px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+div.divider {
+    position: relative;
+    background-color: var(--medium-blue);
+}
+
+#controls {
+    background-color: var(--light-blue);
+    margin: 0px auto;
+    width: fit-content;
+    display: flex;
+    gap: 15px;
+    padding: 15px 0px;
+
+    .input-container {
+        background-color: var(--medium-blue);
+        padding: 2px 2px;
+        border: 2px solid black;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    input {
+        width: 50px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: var(--font-family);
+        font-size: 1.05rem;
+    }
+}
