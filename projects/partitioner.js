@@ -7,14 +7,20 @@ function initializePartitioner() {
 
     maincontainer = document.getElementsByTagName('main')[0];
 
-    console.log(document.getElementsByClassName('divider'));
+    dividers = document.getElementsByClassName('divider')
+    if (dividers.length > 0) {
+        console.log('removendo dividers existentes');
+        maincontainer.removeChild(dividers[0]);
+    }
     // criando o retângulo com as dimensões especificadas
     divider = document.createElement('div');
-    ratio1 = Number(width) / Number(height); // razão entre largura e altura (aspect ratio)
-    ratio2 = Number(height) / Number(width); // razão entre altura e largura (1/aspect ratio)
-    divider.style.width = '100%'; // offset width for the divider
-    //divider.style.height = '100%'; // offset height for the divider
-    divider.style.aspectRatio = String(ratio1);
+    ratio = Number(width) / Number(height); // razão entre largura e altura (aspect ratio)
+    if (ratio >= 1.9) {
+          divider.style.width = '80%'; // offset width for the divider
+    }else{
+        divider.style.height = '80%'; // offset height for the divider
+    }
+    divider.style.aspectRatio = String(ratio);
 
     divider.classList.add('divider');
     maincontainer.appendChild(divider);
