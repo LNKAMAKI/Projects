@@ -73,7 +73,8 @@ function initializePartitioner() {
     fraction.appendChild(widthspan);
     fraction.appendChild(heightspan);
     fractionlist.push(new Input(indexfraction))
-    fractionlist[indexfraction].divfraction()
+    fractionlist[indexfraction].changeColor()
+    fractionlist[indexfraction].fractionClicked()
 
     indexfraction++
     }
@@ -84,11 +85,15 @@ function Input(index) {
     this.index = index
     this.fraction = dividers[0].getElementsByClassName('fraction')[index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
-    this.divfraction = function () {
+    this.changeColor = function () {
        this.colorinput.addEventListener("change", () => {
             console.log(index)
             this.fraction.style.backgroundColor = this.colorinput.value
         })
     }
- 
+    this.fractionClicked = function () {
+        this.fraction.addEventListener('mouseenter', () => {
+             this.colorinput.classList.toggle('visible')
+        })
+    }
 }

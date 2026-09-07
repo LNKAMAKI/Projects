@@ -60,6 +60,17 @@ div.fraction {
     border: 2px solid black;
     border-right: none;
     border-bottom: none;
+
+    .colorinput {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+
 }
 
 div.fraction:hover {
