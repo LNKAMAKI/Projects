@@ -42,8 +42,12 @@ function initializePartitioner() {
     // height = 100% / rows
     fraction.style.height = String(100 / rows) + '%';
 
+    // posicionando no divider
     fraction.style.left = String(100 / cols * col) + '%';
     fraction.style.top = String(100 / rows * row) + '%';
+
+    // setting background color
+    fraction.style.backgroundColor = color
 
     // adicionando os spans de largura e altura dentro do fraction
     widthspan = document.createElement('span');
@@ -66,12 +70,15 @@ function initializePartitioner() {
 
     colorinput = document.createElement('input');
     colorinput.setAttribute('type','color')
+    colorinput.value = color
     colorinput.classList.add('colorinput')
     
+    // adicionando os elementos ao documento
     divider.appendChild(fraction);
     fraction.appendChild(colorinput);
     fraction.appendChild(widthspan);
     fraction.appendChild(heightspan);
+
     fractionlist.push(new Input(indexfraction))
     fractionlist[indexfraction].changeColor()
     fractionlist[indexfraction].fractionClicked()

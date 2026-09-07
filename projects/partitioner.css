@@ -56,7 +56,6 @@ div.divider {
 div.fraction {
     display: inline-block;
     position: absolute;
-    background-color: yellow;
     border: 2px solid black;
     border-right: none;
     border-bottom: none;
