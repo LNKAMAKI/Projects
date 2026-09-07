@@ -12,6 +12,10 @@ height: 516px;"></iframe>
 
 <br>
 
+<li><a href= "https://lnkamaki.github.io/Projects/projects/partitioner.html"><span style=" font-weight: normal; font-size: 1.3em;">Partitioner</span></a></li> 
+
+<br>
+
 # Espigão
 <li><a href= "https://lnkamaki.github.io/Projects/projects/espiloja.html"><span style=" font-weight: normal; font-size: 1.3em;">Espiloja</span></a></li> 
 

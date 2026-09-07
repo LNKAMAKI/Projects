@@ -16,15 +16,21 @@
    </main>
    <div id='controls'>
        <div class="input-container">
-        width:
-        <input type="number" id='width'>
+        <span>width:</span>
+        <input type="number" id='width' value='1'>
         /
-        height:
-        <input type="number" id='height'>
+        <span>height:</span>
+        <input type="number" id='height' value='1'>
     </div>
-    <div class="input-container">
-        fractions:
-        <input type="number" id='numfractions'>
+    <div class="input-container fractions">
+        <span>cols:</span>
+        <input type="number" id='columns' value='2'>
+        ,
+        <span>rows:</span>
+        <input type="number" id='rows' value='2'>
+    </div> 
+    <div class="input-container color">
+        <input type="color" id='color' value='#d0f3fb'>
     </div> 
     <button id='partitioner' onclick="initializePartitioner()">Create</button>
 </div>
