@@ -85,15 +85,40 @@ function Input(index) {
     this.index = index
     this.fraction = dividers[0].getElementsByClassName('fraction')[index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
+    this.colorinput_selected = false
     this.changeColor = function () {
        this.colorinput.addEventListener("change", () => {
-            console.log(index)
             this.fraction.style.backgroundColor = this.colorinput.value
+            this.colorinput.classList.remove('visible')
+            this.colorinput.classList.remove('visible2')
         })
+
+         this.colorinput.addEventListener("click", () => {
+            this.colorinput.classList.toggle('visible2')
+            if (this.colorinput_selected == false) {
+                this.colorinput_selected = true
+            }
+        })
+
+         document.body.addEventListener("click", () => {
+             if (this.colorinput_selected == true && this.fractionhovered == false) {
+                this.colorinput_selected = false
+                this.colorinput.classList.remove('visible2')
+            }
+        })
+
     }
+
+    this.fractionhovered = false
     this.fractionClicked = function () {
         this.fraction.addEventListener('mouseenter', () => {
-             this.colorinput.classList.toggle('visible')
+             this.colorinput.classList.add('visible')
+             this.fractionhovered = true
+        })
+
+         this.fraction.addEventListener('mouseleave', () => {
+             this.colorinput.classList.remove('visible')
+             this.fractionhovered = false
         })
     }
 }

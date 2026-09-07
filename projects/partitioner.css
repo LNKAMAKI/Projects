@@ -71,6 +71,10 @@ div.fraction {
         display: block;
     }
 
+    .visible2 {
+        display: block;
+    }
+
 }
 
 div.fraction:hover {
