@@ -58,7 +58,13 @@ function initializePartitioner() {
     heightspan.innerText = height + '/' + rows;
     heightspan.classList.add('heightspan');
 
-    heightspan.style.zIndex = '10'
+    if (col == 0)
+    heightspan.classList.add('show')
+
+    if (row == rows - 1)
+    widthspan.classList.add('show')
+
+    widthspan.style.zIndex = '10'
 
     if (col == cols - 1) {
         fraction.style.borderRight = '2px solid black'; // adicionando borda direita ao último divider
