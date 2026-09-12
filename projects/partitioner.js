@@ -28,75 +28,12 @@ function initializePartitioner() {
     divider.classList.add('divider'); // adicionando classe divider para o retângulo
     maincontainer.appendChild(divider); // adicionando o retângulo ao maincontainer
 
-    fractionlist = []
-    indexfraction = 0
-    for (row = 0; row < rows; row++) {
-    for (col = 0; col < cols; col++) {
-    // Criando os dividers por coluna para cada linha
-    fraction = document.createElement('div');
-    fraction.classList.add('fraction');
-
-    // width = 100% / cols
-    fraction.style.width = String(100 / cols) + '%';
-
-    // height = 100% / rows
-    fraction.style.height = String(100 / rows) + '%';
-
-    // posicionando no divider
-    fraction.style.left = String(100 / cols * col) + '%';
-    fraction.style.top = String(100 / rows * row) + '%';
-
-    // setting background color
-    fraction.style.backgroundColor = color
-
-    // adicionando os spans de largura e altura dentro do fraction
-    widthspan = document.createElement('span');
-    widthspan.innerText = width + '/' + cols;
-    widthspan.classList.add('widthspan');
-
-    heightspan = document.createElement('span');
-    heightspan.innerText = height + '/' + rows;
-    heightspan.classList.add('heightspan');
-
-    if (col == 0)
-    heightspan.classList.add('show')
-
-    if (row == rows - 1)
-    widthspan.classList.add('show')
-
-    widthspan.style.zIndex = '10'
-
-    if (col == cols - 1) {
-        fraction.style.borderRight = '2px solid black'; // adicionando borda direita ao último divider
-    }
-
-    if (row == rows - 1) {
-        fraction.style.borderBottom = '2px solid black'; // adicionando borda inferior ao último divider
-    }
-
-    colorinput = document.createElement('input');
-    colorinput.setAttribute('type','color')
-    colorinput.value = color
-    colorinput.classList.add('colorinput')
-    
-    // adicionando os elementos ao documento
-    divider.appendChild(fraction);
-    fraction.appendChild(colorinput);
-    fraction.appendChild(widthspan);
-    fraction.appendChild(heightspan);
-
-    fractionlist.push(new Input(indexfraction))
-    fractionlist[indexfraction].changeColor()
-    fractionlist[indexfraction].fractionClicked()
-
-    indexfraction++
-    }
-    }
+    elements = new CreateFractions(divider)
 }
 
-function Input(index) {
+function Input(index,appender) {
     this.index = index
-    this.fraction = dividers[0].getElementsByClassName('fraction')[index]
+    this.fraction = appender.getElementsByClassName('fraction')[index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
     this.colorinput_selected = false
     this.changeColor = function () {
@@ -134,4 +71,72 @@ function Input(index) {
              this.fractionhovered = false
         })
     }
+}
+
+function CreateFractions(appender) {
+    this.fractionlist = []
+    this.indexfraction = 0
+    for (row = 0; row < rows; row++) {
+    for (col = 0; col < cols; col++) {
+    // Criando os dividers por coluna para cada linha
+    fraction = document.createElement('div');
+    fraction.classList.add('fraction');
+
+    // width = 100% / cols
+    fraction.style.width = String(100 / cols) + '%';
+
+    // height = 100% / rows
+    fraction.style.height = String(100 / rows) + '%';
+
+    // posicionando no divider
+    fraction.style.left = String(100 / cols * col) + '%';
+    fraction.style.top = String(100 / rows * row) + '%';
+
+    // setting background color
+    fraction.style.backgroundColor = color
+
+    // adicionando os spans de largura e altura dentro do fraction
+    widthspan = document.createElement('span');
+    widthspan.innerText = width + '/' + cols;
+    widthspan.classList.add('widthspan');
+
+    heightspan = document.createElement('span');
+    heightspan.innerText = height + '/' + rows;
+    heightspan.classList.add('heightspan');
+
+    if (col == 0) 
+    heightspan.classList.add('show')    
+
+    if (row == rows - 1)
+    widthspan.classList.add('show')
+
+    widthspan.style.zIndex = '10'
+
+    if (col == 0) 
+        fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
+    
+
+    if (row == 0) 
+        fraction.style.borderTop= 'none'; // adicionando borda inferior ao último divider
+    
+
+    colorinput = document.createElement('input');
+    colorinput.setAttribute('type','color')
+    colorinput.value = color
+    colorinput.classList.add('colorinput')
+    
+    // adicionando os elementos ao documento
+    appender.appendChild(fraction);
+    fraction.appendChild(colorinput);
+    fraction.appendChild(widthspan);
+    fraction.appendChild(heightspan);
+
+    this.fractionlist.push(new Input(this.indexfraction,appender))
+    this.fractionlist[this.indexfraction].changeColor()
+    this.fractionlist[this.indexfraction].fractionClicked()
+
+    this.indexfraction++
+    }
+    }
+    return this.fractionlist
 }
