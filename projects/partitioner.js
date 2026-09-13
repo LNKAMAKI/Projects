@@ -46,6 +46,7 @@ function initializePartitioner() {
 
 function Input(index,appender,elementinlist) {
     this.index = index
+    this.elementinlist = elementinlist
     this.fraction = appender.getElementsByClassName('fraction')[this.index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
     this.colorinput_selected = false
