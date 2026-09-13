@@ -1,5 +1,6 @@
 
 let colorize_desktop_state = 'off'
+let elementsList = []
 function colorize_desktop () {
     // botões de estado
     colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
@@ -40,12 +41,12 @@ function initializePartitioner() {
     divider.classList.add('divider'); // adicionando classe divider para o retângulo
     maincontainer.appendChild(divider); // adicionando o retângulo ao maincontainer
 
-    elements = new CreateFractions(divider)
+    elements = new CreateFractions(divider,elementsList)
 }
 
-function Input(index,appender) {
+function Input(index,appender,elementinlist) {
     this.index = index
-    this.fraction = appender.getElementsByClassName('fraction')[index]
+    this.fraction = appender.getElementsByClassName('fraction')[this.index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
     this.colorinput_selected = false
     this.changeColor = function () {
@@ -96,14 +97,15 @@ function Input(index,appender) {
         document.body.addEventListener('keypress',() => {
             if (this.fractionhovered == true) {
             console.log('keypressed')
-            CreateFractions(this.fraction)
+            console.log('elementinlist',elementinlist[this.index])
+            CreateFractions(this.fraction,elementinlist[this.index])
             }
         })
     }
 }
 
-function CreateFractions(appender) {
-    this.fractionlist = []
+function CreateFractions(appender,elementinlist) {
+    //this.fractionlist = []
     this.indexfraction = 0
     for (row = 0; row < rows; row++) {
     for (col = 0; col < cols; col++) {
@@ -160,12 +162,13 @@ function CreateFractions(appender) {
     fraction.appendChild(widthspan);
     fraction.appendChild(heightspan);
 
-    this.fractionlist.push(new Input(this.indexfraction,appender))
-    this.fractionlist[this.indexfraction].changeColor()
-    this.fractionlist[this.indexfraction].fractionClicked()
+    element = new Input(this.indexfraction,appender,elementinlist)
+    elementinlist.push([element])
+    element.changeColor()
+    element.fractionClicked()
 
     this.indexfraction++
     }
     }
-    return this.fractionlist
+    //return this.fractionlist
 }
