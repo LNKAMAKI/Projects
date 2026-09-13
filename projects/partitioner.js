@@ -1,4 +1,16 @@
 
+let colorize_desktop_state = 'off'
+function colorize_desktop () {
+    // botões de estado
+    colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
+    colorize_desktop_button.classList.toggle('active')
+    if (colorize_desktop_state == 'off') {
+        colorize_desktop_state = 'on'
+    }else{
+        colorize_desktop_state = 'off'
+    }
+}
+
 function initializePartitioner() {
     // pegar os valores dos inputs
     width = document.getElementById('width').value;
@@ -38,23 +50,29 @@ function Input(index,appender) {
     this.colorinput_selected = false
     this.changeColor = function () {
        this.colorinput.addEventListener("change", () => {
+        if (colorize_desktop_state == 'on') {
             this.fraction.style.backgroundColor = this.colorinput.value
             this.colorinput.classList.remove('visible')
             this.colorinput.classList.remove('visible2')
+        }
         })
 
          this.colorinput.addEventListener("click", () => {
+             if (colorize_desktop_state == 'on') {
             this.colorinput.classList.toggle('visible2')
             if (this.colorinput_selected == false) {
                 this.colorinput_selected = true
             }
+        }
         })
 
          document.body.addEventListener("click", () => {
+             if (colorize_desktop_state == 'on') {
              if (this.colorinput_selected == true && this.fractionhovered == false) {
                 this.colorinput_selected = false
                 this.colorinput.classList.remove('visible2')
             }
+        }
         })
 
     }
@@ -62,12 +80,16 @@ function Input(index,appender) {
     this.fractionhovered = false
     this.fractionClicked = function () {
         this.fraction.addEventListener('mouseenter', () => {
+             if (colorize_desktop_state == 'on') {
              this.colorinput.classList.add('visible')
+             }
              this.fractionhovered = true
         })
 
          this.fraction.addEventListener('mouseleave', () => {
+             if (colorize_desktop_state == 'on') {
              this.colorinput.classList.remove('visible')
+             }
              this.fractionhovered = false
         })
     }
