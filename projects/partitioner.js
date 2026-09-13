@@ -92,6 +92,13 @@ function Input(index,appender) {
              }
              this.fractionhovered = false
         })
+
+        document.body.addEventListener('keypress',() => {
+            if (this.fractionhovered == true) {
+            console.log('keypressed')
+            CreateFractions(this.fraction)
+            }
+        })
     }
 }
 
@@ -132,7 +139,7 @@ function CreateFractions(appender) {
     if (row == rows - 1)
     widthspan.classList.add('show')
 
-    widthspan.style.zIndex = '10'
+    widthspan.style.zIndex = '70'
 
     if (col == 0) 
         fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
