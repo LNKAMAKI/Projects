@@ -1,5 +1,6 @@
 
 let colorize_desktop_state = 'off'
+let divide_state = 'off'
 let elementsList = []
 function colorize_desktop () {
     // botões de estado
@@ -7,8 +8,23 @@ function colorize_desktop () {
     colorize_desktop_button.classList.toggle('active')
     if (colorize_desktop_state == 'off') {
         colorize_desktop_state = 'on'
+        divide_state = 'off'
+         divide_button.classList.remove('active')
     }else{
         colorize_desktop_state = 'off'
+    }
+}
+
+function divide () {
+    // botões de estado
+    divide_button = document.getElementsByClassName('divide')[0]
+    divide_button.classList.toggle('active')
+    if (divide_state == 'off') {
+        divide_state = 'on'
+        colorize_desktop_state = 'off'
+         colorize_desktop_button.classList.remove('active')
+    }else{
+        divide_state = 'off'
     }
 }
 
@@ -95,12 +111,29 @@ function Input(index,appender,elementinlist) {
              this.fractionhovered = false
         })
 
+        // código para dividir as frações em mais frações
         document.body.addEventListener('keypress',() => {
-            if (this.fractionhovered == true) {
+            if (this.fractionhovered == true && divide_state == 'on') {
             console.log('keypressed')
-            console.log('elementinlist',Array.isArray(elementinlist[this.index]))
-            console.log('elementinlist',elementinlist[this.index])
-            CreateFractions(this.fraction,elementinlist[this.index])
+            console.log('essa fracao foi pressionada',this.fraction)
+            console.log('elementinlist',Array.isArray(elementinlist[0]))
+            if (Array.isArray(elementinlist[0]) == true) {
+               console.log('ela contém filhos?',elementinlist[this.index].length)
+            }else{
+                console.log('ela contém filhos?',elementinlist[this.index + 1].length)
+            }
+            console.log('elementinlist',this.index,elementinlist[this.index])
+            console.log('')
+
+                if (Array.isArray(elementinlist[0]) == true) { // se for um array ([Input])
+                    if (elementinlist[this.index].length == 1) { // se não tiver filhos
+                    CreateFractions(this.fraction,elementinlist[this.index])
+                    }
+                }else{ // se for um objeto ({Input})
+                    if (elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                    CreateFractions(this.fraction,elementinlist[this.index + 1])
+                    }
+                }
             }
         })
     }
@@ -138,12 +171,13 @@ function CreateFractions(appender,elementinlist) {
     heightspan.classList.add('heightspan');
 
     if (col == 0) 
-    heightspan.classList.add('show')    
+    //heightspan.classList.add('show')    
 
-    if (row == rows - 1)
-    widthspan.classList.add('show')
+    if (row == rows - 1) {
+    //widthspan.classList.add('show')
+    }
 
-    widthspan.style.zIndex = '70'
+    widthspan.style.zIndex = '120'
 
     if (col == 0) 
         fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
@@ -155,7 +189,16 @@ function CreateFractions(appender,elementinlist) {
 
     colorinput = document.createElement('input');
     colorinput.setAttribute('type','color')
-    colorinput.value = color
+
+    
+    if (elementinlist != elementsList) { // se o elemento mãe for um array
+        colorinput.value = elementinlist[0].colorinput.value
+        fraction.style.backgroundColor = colorinput.value
+        console.log(elementinlist[0].fraction,elementinlist[0].colorinput.value,'HEY')
+    }else{
+        colorinput.value = fraction.style.backgroundColor
+    }
+    
     colorinput.classList.add('colorinput')
     
     // adicionando os elementos ao documento
