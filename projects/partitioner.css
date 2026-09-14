@@ -110,17 +110,6 @@ div.fraction:hover > .widthspan{
     transform: translate(calc(-100% - 5px), -50%);
 }
 
-.show {
-    display: block;
-}
-
-.colorize-desktop, .divide {
-    opacity: 40%;
-}
-
-.active {
-    opacity: 100%;
-}
 
 .controls {
     background-color: var(--light-blue);
@@ -135,9 +124,20 @@ div.fraction:hover > .widthspan{
     flex-wrap: wrap;
 }
 
-.divide-tab {
-    background-color:var(--medium-blue);
+.colorize-desktop, .divide {
+    opacity: 40%;
 }
+
+.active {
+    opacity: 100%;
+}
+
+.divide-tab { 
+    background-color: rgb(249, 247, 247);
+    outline: 2px solid black;
+    display: none; 
+}
+
 
     .input-container,button {
         background-color: var(--medium-blue);
@@ -185,4 +185,12 @@ div.fraction:hover > .widthspan{
     button:hover{
         cursor: pointer;
         box-shadow: 0px 0px 5px 4px var(--medium-blue);
+    }
+
+    .show {
+    display: block;
+    }
+
+    .show2 {
+        display: flex;
     }

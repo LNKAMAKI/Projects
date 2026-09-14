@@ -9,7 +9,8 @@ function colorize_desktop () {
     if (colorize_desktop_state == 'off') {
         colorize_desktop_state = 'on'
         divide_state = 'off'
-         divide_button.classList.remove('active')
+        divide_button.classList.remove('active')
+        document.getElementsByClassName('divide-tab')[0].classList.remove('show2')
     }else{
         colorize_desktop_state = 'off'
     }
@@ -21,10 +22,12 @@ function divide () {
     divide_button.classList.toggle('active')
     if (divide_state == 'off') {
         divide_state = 'on'
+        document.getElementsByClassName('divide-tab')[0].classList.add('show2')
         colorize_desktop_state = 'off'
          colorize_desktop_button.classList.remove('active')
     }else{
         divide_state = 'off'
+        document.getElementsByClassName('divide-tab')[0].classList.remove('show2')
     }
 }
 
@@ -32,8 +35,6 @@ function initializePartitioner() {
     // pegar os valores dos inputs
     width = document.getElementById('width').value;
     height = document.getElementById('height').value;
-    cols = document.getElementById('columns').value;
-    rows = document.getElementById('rows').value;
     color = document.getElementById('color').value;
 
     maincontainer = document.getElementsByTagName('main')[0];
@@ -112,7 +113,7 @@ function Input(index,appender,elementinlist) {
         })
 
         // código para dividir as frações em mais frações
-        document.body.addEventListener('keypress',() => {
+        this.fraction.addEventListener('click',() => {
             if (this.fractionhovered == true && divide_state == 'on') {
             console.log('keypressed')
             console.log('essa fracao foi pressionada',this.fraction)
@@ -142,6 +143,15 @@ function Input(index,appender,elementinlist) {
 function CreateFractions(appender,elementinlist) {
     //this.fractionlist = []
     this.indexfraction = 0
+
+    if (elementinlist != elementsList) { // se o elemento mãe NÃO for o divider
+        cols = document.getElementById('columnsdiv').value;
+        rows = document.getElementById('rowsdiv').value;
+    }else{
+        cols = document.getElementById('columns').value;
+        rows = document.getElementById('rows').value;
+    }
+
     for (row = 0; row < rows; row++) {
     for (col = 0; col < cols; col++) {
     // Criando os dividers por coluna para cada linha
@@ -191,7 +201,7 @@ function CreateFractions(appender,elementinlist) {
     colorinput.setAttribute('type','color')
 
     
-    if (elementinlist != elementsList) { // se o elemento mãe for o divider
+    if (elementinlist != elementsList) { // se o elemento mãe NÃO for o divider
         colorinput.value = elementinlist[0].colorinput.value
         fraction.style.backgroundColor = colorinput.value
         console.log(elementinlist[0].fraction,elementinlist[0].colorinput.value,'HEY')
