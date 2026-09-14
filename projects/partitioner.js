@@ -33,6 +33,7 @@ function divide () {
 
 function initializePartitioner() {
     // pegar os valores dos inputs
+    elementsList = []
     width = document.getElementById('width').value;
     height = document.getElementById('height').value;
     color = document.getElementById('color').value;
