@@ -191,7 +191,7 @@ function CreateFractions(appender,elementinlist) {
     colorinput.setAttribute('type','color')
 
     
-    if (elementinlist != elementsList) { // se o elemento mãe for um array
+    if (elementinlist != elementsList) { // se o elemento mãe for o divider
         colorinput.value = elementinlist[0].colorinput.value
         fraction.style.backgroundColor = colorinput.value
         console.log(elementinlist[0].fraction,elementinlist[0].colorinput.value,'HEY')

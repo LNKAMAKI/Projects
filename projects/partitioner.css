@@ -135,6 +135,9 @@ div.fraction:hover > .widthspan{
     flex-wrap: wrap;
 }
 
+.divide-tab {
+    background-color:var(--medium-blue);
+}
 
     .input-container,button {
         background-color: var(--medium-blue);
