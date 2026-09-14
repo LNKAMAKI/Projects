@@ -98,6 +98,7 @@ function Input(index,appender,elementinlist) {
         document.body.addEventListener('keypress',() => {
             if (this.fractionhovered == true) {
             console.log('keypressed')
+            console.log('elementinlist',Array.isArray(elementinlist[this.index]))
             console.log('elementinlist',elementinlist[this.index])
             CreateFractions(this.fraction,elementinlist[this.index])
             }
