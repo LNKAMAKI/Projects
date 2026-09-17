@@ -60,6 +60,9 @@ div.fraction {
     border: clamp(0.7px,0.5vw,2px) solid black;
     border-right: none;
     border-bottom: none;
+    border: none;
+    outline: 2px solid black;
+
 
     .colorinput {
         width: 100%;
@@ -124,7 +127,7 @@ div.fraction:hover > .widthspan{
     flex-wrap: wrap;
 }
 
-.colorize-desktop, .divide {
+.colorize-desktop, .divide, .deletar {
     opacity: 40%;
 }
 

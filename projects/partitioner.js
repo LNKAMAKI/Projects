@@ -1,7 +1,13 @@
 
 let colorize_desktop_state = 'off'
 let divide_state = 'off'
+let delete_state = 'off'
 let elementsList = []
+function load() {
+      colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
+      divide_button = document.getElementsByClassName('divide')[0]
+      delete_button = document.getElementsByClassName('deletar')[0]
+}
 function colorize_desktop () {
     // botões de estado
     colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
@@ -10,6 +16,8 @@ function colorize_desktop () {
         colorize_desktop_state = 'on'
         divide_state = 'off'
         divide_button.classList.remove('active')
+        delete_state = 'off'
+        delete_button.classList.remove('active')
         document.getElementsByClassName('divide-tab')[0].classList.remove('show2')
     }else{
         colorize_desktop_state = 'off'
@@ -24,10 +32,27 @@ function divide () {
         divide_state = 'on'
         document.getElementsByClassName('divide-tab')[0].classList.add('show2')
         colorize_desktop_state = 'off'
-         colorize_desktop_button.classList.remove('active')
+        colorize_desktop_button.classList.remove('active')
+        delete_state = 'off'
+        delete_button.classList.remove('active')
     }else{
         divide_state = 'off'
         document.getElementsByClassName('divide-tab')[0].classList.remove('show2')
+    }
+}
+
+function deletar () {
+    // botões de estado
+    delete_button = document.getElementsByClassName('deletar')[0]
+    delete_button.classList.toggle('active')
+    if (delete_state == 'off') {
+        delete_state = 'on'
+        colorize_desktop_state = 'off'
+        colorize_desktop_button.classList.remove('active')
+        divide_state = 'off'
+        divide_button.classList.remove('active')
+    }else{
+        delete_state = 'off'
     }
 }
 
@@ -136,8 +161,20 @@ function Input(index,appender,elementinlist) {
                     CreateFractions(this.fraction,elementinlist[this.index + 1])
                     }
                 }
-            }
-        })
+            }else if (delete_state == 'on') {
+                //this.fraction.style.backgroundColor = 'yellow'
+                if (Array.isArray(elementinlist[0]) == true) { 
+                    if (elementinlist[this.index].length == 1) {
+                    console.log('removido')
+                    this.fraction.remove()
+                    }
+                }else{
+                    if (elementinlist[this.index + 1].length == 1) {
+                    console.log('removido')
+                    this.fraction.remove()
+                    }
+                }
+        }})
     }
 }
 
@@ -190,12 +227,12 @@ function CreateFractions(appender,elementinlist) {
 
     widthspan.style.zIndex = '120'
 
-    if (col == 0) 
-        fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
+    //if (col == 0) 
+        //fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
     
 
-    if (row == 0) 
-        fraction.style.borderTop= 'none'; // adicionando borda inferior ao último divider
+    //if (row == 0) 
+        //fraction.style.borderTop= 'none'; // adicionando borda inferior ao último divider
     
 
     colorinput = document.createElement('input');
