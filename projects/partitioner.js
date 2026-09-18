@@ -163,10 +163,16 @@ function Input(index,appender,elementinlist) {
                 }
             }else if (delete_state == 'on') {
                 //this.fraction.style.backgroundColor = 'yellow'
+                console.log('remover',this.index)
                 if (Array.isArray(elementinlist[0]) == true) { 
                     if (elementinlist[this.index].length == 1) {
                     console.log('removido')
                     this.fraction.remove()
+                    console.log(elementinlist)
+                    for (a = elementinlist.length - 1; a > this.index; a--) {
+                        console.log(a,elementinlist[a],elementsList[a][0].fraction)
+                    }
+                    elementsList.splice(this.index,1)
                     }
                 }else{
                     if (elementinlist[this.index + 1].length == 1) {
@@ -242,7 +248,7 @@ function CreateFractions(appender,elementinlist) {
     if (elementinlist != elementsList) { // se o elemento mãe NÃO for o divider
         colorinput.value = elementinlist[0].colorinput.value
         fraction.style.backgroundColor = colorinput.value
-        console.log(elementinlist[0].fraction,elementinlist[0].colorinput.value,'HEY')
+       // console.log(elementinlist[0].fraction,elementinlist[0].colorinput.value,'HEY')
     }else{
         colorinput.value = fraction.style.backgroundColor
     }
