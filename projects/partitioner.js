@@ -3,6 +3,7 @@ let colorize_desktop_state = 'off'
 let divide_state = 'off'
 let delete_state = 'off'
 let elementsList = []
+let elements_inOrganizedList = []
 function load() {
       colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
       divide_button = document.getElementsByClassName('divide')[0]
@@ -59,6 +60,7 @@ function deletar () {
 function initializePartitioner() {
     // pegar os valores dos inputs
     elementsList = []
+    elements_inOrganizedList = []
     width = document.getElementById('width').value;
     height = document.getElementById('height').value;
     color = document.getElementById('color').value;
@@ -84,12 +86,15 @@ function initializePartitioner() {
     divider.classList.add('divider'); // adicionando classe divider para o retângulo
     maincontainer.appendChild(divider); // adicionando o retângulo ao maincontainer
 
-    elements = new CreateFractions(divider,elementsList)
+    elements = new CreateFractions(divider,elementsList,elements_inOrganizedList)
 }
 
-function Input(index,appender,elementinlist) {
+function Input(index,appender,elementinlist,elementsorganized,row,col) {
     this.index = index
     this.elementinlist = elementinlist
+    this.elementsorganized = elementsorganized
+    this.row = row
+    this.col = col
     this.fraction = appender.getElementsByClassName('fraction')[this.index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
     this.colorinput_selected = false
@@ -155,11 +160,11 @@ function Input(index,appender,elementinlist) {
 
                 if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
                     if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
-                    CreateFractions(this.fraction,this.elementinlist[this.index])
+                    CreateFractions(this.fraction,this.elementinlist[this.index],this.elementsorganized[this.row][this.col])
                     }
                 }else{ // se for um objeto ({Input})
                     if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
-                    CreateFractions(this.fraction,this.elementinlist[this.index + 1])
+                    CreateFractions(this.fraction,this.elementinlist[this.index + 1],this.elementsorganized[this.row][this.col])
                     }
                 }
             }else if (delete_state == 'on') {
@@ -178,6 +183,8 @@ function Input(index,appender,elementinlist) {
                         this.elementinlist[a][0].index = this.elementinlist[a][0].index - 1
                     }
                     elementsList.splice(this.index,1)
+                    console.log('HEEEEY',this.elementsorganized[this.row][this.col])
+                    this.elementsorganized[this.row][this.col].push('a')
                     }
                 }else{
                     if (this.elementinlist[this.index + 1].length == 1) {
@@ -190,6 +197,8 @@ function Input(index,appender,elementinlist) {
                         this.elementinlist[a][0].index = this.elementinlist[a][0].index - 1
                     }
                     elementinlist.splice(this.index + 1,1)
+                    console.log('HEEEEY',this.elementsorganized[this.row][this.col])
+                    this.elementsorganized[this.row][this.col].push('a')
                     console.log('can delete = false!!')
                     elementinlist[0].can_delete = false
                     }
@@ -205,7 +214,7 @@ function Input(index,appender,elementinlist) {
     }
 }
 
-function CreateFractions(appender,elementinlist) {
+function CreateFractions(appender,elementinlist,elementsorganized) {
     //this.fractionlist = []
     this.indexfraction = 0
 
@@ -218,8 +227,10 @@ function CreateFractions(appender,elementinlist) {
     }
 
     for (row = 0; row < rows; row++) {
+        elementsorganized.push([])
     for (col = 0; col < cols; col++) {
     // Criando os dividers por coluna para cada linha
+    elementsorganized[row].push([])
     fraction = document.createElement('div');
     fraction.classList.add('fraction');
 
@@ -282,7 +293,7 @@ function CreateFractions(appender,elementinlist) {
     fraction.appendChild(widthspan);
     fraction.appendChild(heightspan);
 
-    element = new Input(this.indexfraction,appender,elementinlist)
+    element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col)
     elementinlist.push([element])
     element.changeColor()
     element.fractionClicked()
