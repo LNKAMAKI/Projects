@@ -6,6 +6,10 @@
     --light-blue: #e0f7ff;
 }
 
+body {
+    background-color: black;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -36,6 +40,7 @@ h1 {
 
 main {
     background-color: white;
+    background-color: black;
     max-width: 850px;
     border: 2px solid black;
     aspect-ratio: 1.9;
@@ -60,8 +65,6 @@ div.fraction {
     border: clamp(0.7px,0.5vw,2px) solid black;
     border-right: none;
     border-bottom: none;
-    border: none;
-    outline: 2px solid black;
 
 
     .colorinput {

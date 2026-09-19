@@ -152,32 +152,41 @@ function Input(index,appender,elementinlist) {
             console.log('elementinlist',this.index,elementinlist[this.index])
             console.log('')
 
-                if (Array.isArray(elementinlist[0]) == true) { // se for um array ([Input])
-                    if (elementinlist[this.index].length == 1) { // se não tiver filhos
-                    CreateFractions(this.fraction,elementinlist[this.index])
+                if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
+                    if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
+                    CreateFractions(this.fraction,this.elementinlist[this.index])
                     }
                 }else{ // se for um objeto ({Input})
-                    if (elementinlist[this.index + 1].length == 1) { // se não tiver filhos
-                    CreateFractions(this.fraction,elementinlist[this.index + 1])
+                    if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                    CreateFractions(this.fraction,this.elementinlist[this.index + 1])
                     }
                 }
             }else if (delete_state == 'on') {
                 //this.fraction.style.backgroundColor = 'yellow'
-                console.log('remover',this.index)
+                console.log('remover',this.index, this.fraction)
                 if (Array.isArray(elementinlist[0]) == true) { 
                     if (elementinlist[this.index].length == 1) {
+                        console.log('REMOVE',this.fraction)
                     console.log('removido')
                     this.fraction.remove()
                     console.log(elementinlist)
                     for (a = elementinlist.length - 1; a > this.index; a--) {
-                        console.log(a,elementinlist[a],elementsList[a][0].fraction)
+                        console.log(a,elementinlist[a],elementinlist[a][0].fraction)
+                        this.elementinlist[a][0].index = this.elementinlist[a][0].index - 1
                     }
                     elementsList.splice(this.index,1)
                     }
                 }else{
-                    if (elementinlist[this.index + 1].length == 1) {
-                    console.log('removido')
+                    if (this.elementinlist[this.index + 1].length == 1) {
+                    console.log('removido outro')
                     this.fraction.remove()
+
+                    //console.log(this.elementinlist[2][0].fraction)
+                     for (a = this.elementinlist.length - 1; a > this.index + 1; a--) {
+                        console.log(a,elementinlist[a][0],this.elementinlist[a][0].fraction)
+                        this.elementinlist[a][0].index = this.elementinlist[a][0].index - 1
+                    }
+                    elementinlist.splice(this.index + 1,1)
                     }
                 }
         }})
@@ -233,12 +242,12 @@ function CreateFractions(appender,elementinlist) {
 
     widthspan.style.zIndex = '120'
 
-    //if (col == 0) 
-        //fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
+    if (col == 0) 
+        fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
     
 
-    //if (row == 0) 
-        //fraction.style.borderTop= 'none'; // adicionando borda inferior ao último divider
+    if (row == 0) 
+        fraction.style.borderTop= 'none'; // adicionando borda inferior ao último divider
     
 
     colorinput = document.createElement('input');
