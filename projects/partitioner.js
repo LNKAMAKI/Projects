@@ -52,6 +52,7 @@ function deletar () {
         colorize_desktop_button.classList.remove('active')
         divide_state = 'off'
         divide_button.classList.remove('active')
+        document.getElementsByClassName('divide-tab')[0].classList.remove('show2')
     }else{
         delete_state = 'off'
     }
@@ -185,6 +186,7 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
                     elementsList.splice(this.index,1)
                     console.log('HEEEEY',this.elementsorganized[this.row][this.col])
                     this.elementsorganized[this.row][this.col].push('a')
+                    borderize(this.elementinlist,this.elementsorganized)
                     }
                 }else{
                     if (this.elementinlist[this.index + 1].length == 1) {
@@ -199,6 +201,7 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
                     elementinlist.splice(this.index + 1,1)
                     console.log('HEEEEY',this.elementsorganized[this.row][this.col])
                     this.elementsorganized[this.row][this.col].push('a')
+                    borderize(this.elementinlist,this.elementsorganized)
                     console.log('can delete = false!!')
                     elementinlist[0].can_delete = false
                     }
@@ -235,14 +238,28 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     fraction.classList.add('fraction');
 
     // width = 100% / cols
-    fraction.style.width = String(100 / cols) + '%';
+    fraction.style.width = `calc(${String(100 / cols)}% - 5px)`;
 
     // height = 100% / rows
-    fraction.style.height = String(100 / rows) + '%';
+    fraction.style.height = `calc(${String(100 / rows)}% - 5px)`;
 
     // posicionando no divider
-    fraction.style.left = String(100 / cols * col) + '%';
-    fraction.style.top = String(100 / rows * row) + '%';
+     //fraction.style.left = String(100 / cols * col) + '%';
+   //fraction.style.top = String(100 / rows * row) + '%';
+
+    
+    if (col != 0) {
+        fraction.style.left = `calc(${String(100 / cols * col)}% - 5px)`;
+    }else{
+        fraction.style.left = '0px'
+    }
+
+    if (row != 0) {
+        fraction.style.top = `calc(${String(100 / rows * row)}% - 5px)`;
+    }else{
+        fraction.style.top = '0px'
+    }
+    
 
     // setting background color
     fraction.style.backgroundColor = color
@@ -302,4 +319,43 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     }
     }
     //return this.fractionlist
+}
+
+function borderize(elementsingrid,arraysgrid) {
+    console.log('Elements in the Grid',elementsingrid)
+    console.log('GRID',arraysgrid)
+    if (Array.isArray(elementsingrid[0]) == false) {
+        for (element = 1; element < elementsingrid.length; element++) {
+            console.log(element,elementsingrid[element][0].fraction)
+            row = elementsingrid[element][0].row
+            col = elementsingrid[element][0].col
+
+            if (row != arraysgrid.length - 1) { // se o elemento não estiver na última linha
+                console.log('pode ver embaixo')
+                console.log('tem elemento embaixo?')
+                console.log(arraysgrid[row + 1][col])
+                if (arraysgrid[row + 1][col].length == 0) {
+                    console.log('sim')
+                }else{
+                    console.log('não')
+                    elementsingrid[element][0].fraction.style.borderBottom = '10px solid black'
+                }
+            }
+            if (col != arraysgrid[row].length - 1) { // se o elemento não estiver na última coluna
+                 console.log('pode ver a direita')
+                 console.log('tem elemento na direita?')
+                 console.log(arraysgrid[row][col + 1])
+                 if (arraysgrid[row][col + 1].length == 0) {
+                    console.log('sim')
+                }else{
+                    console.log('não')
+                    elementsingrid[element][0].fraction.style.borderRight = '10px solid black'
+                }
+            }
+        }
+        if (elementsingrid.length == 1) {
+            console.log('está vazio, precisa apagar')
+            arraysgrid.splice(0,arraysgrid.length)
+        }
+    }
 }
