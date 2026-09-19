@@ -50,17 +50,16 @@ main {
 div.divider {
     position: relative;
     background-color: var(--medium-blue);
-    border: 10px solid black;
-    border: none;
+    border: 0px solid black;
 }
 
 div.fraction {
     display: inline-block;
     position: absolute;
     border: clamp(0.7px,0.5vw,2px) solid black;
-    border: 10px solid black;
+    border: 2.4px solid black;
     border-right: none;
-    border-bottom: none;
+    /*border-bottom: none;*/
 
 
     .colorinput {

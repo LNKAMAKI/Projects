@@ -4,6 +4,7 @@ let divide_state = 'off'
 let delete_state = 'off'
 let elementsList = []
 let elements_inOrganizedList = []
+const borderwidth = 2.4
 function load() {
       colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
       divide_button = document.getElementsByClassName('divide')[0]
@@ -238,10 +239,11 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     fraction.classList.add('fraction');
 
     // width = 100% / cols
-    fraction.style.width = `calc(${String(100 / cols)}% - 5px)`;
+    fraction.style.width = `calc(${String(100 / cols)}% - ${borderwidth*(cols - 1)/cols}px)`;
+    //fraction.style.width = `calc(${String(100 / cols)}% - 5px)`;
 
     // height = 100% / rows
-    fraction.style.height = `calc(${String(100 / rows)}% - 5px)`;
+    fraction.style.height = `calc(${String(100 / rows)}% - ${borderwidth*(rows - 1)/rows}px)`;
 
     // posicionando no divider
      //fraction.style.left = String(100 / cols * col) + '%';
@@ -249,13 +251,14 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
 
     
     if (col != 0) {
-        fraction.style.left = `calc(${String(100 / cols * col)}% - 5px)`;
+        fraction.style.left = `calc(${String(100 / cols * col)}% - ${(borderwidth*(cols - 1)/cols)*col}px + ${borderwidth*(col - 1)}px)`;
+        //fraction.style.left = `calc(${String(100 / cols * col)}% - 5px)`;
     }else{
         fraction.style.left = '0px'
     }
 
     if (row != 0) {
-        fraction.style.top = `calc(${String(100 / rows * row)}% - 5px)`;
+        fraction.style.top = `calc(${String(100 / rows * row)}% - ${(borderwidth*(rows - 1)/rows)*row}px + ${borderwidth*(row - 1)}px)`;
     }else{
         fraction.style.top = '0px'
     }
@@ -338,7 +341,7 @@ function borderize(elementsingrid,arraysgrid) {
                     console.log('sim')
                 }else{
                     console.log('não')
-                    elementsingrid[element][0].fraction.style.borderBottom = '10px solid black'
+                    elementsingrid[element][0].fraction.style.borderBottom = `${borderwidth}px solid black`
                 }
             }
             if (col != arraysgrid[row].length - 1) { // se o elemento não estiver na última coluna
@@ -349,11 +352,44 @@ function borderize(elementsingrid,arraysgrid) {
                     console.log('sim')
                 }else{
                     console.log('não')
-                    elementsingrid[element][0].fraction.style.borderRight = '10px solid black'
+                    elementsingrid[element][0].fraction.style.borderRight = `${borderwidth}px solid black`
                 }
             }
         }
         if (elementsingrid.length == 1) {
+            console.log('está vazio, precisa apagar')
+            arraysgrid.splice(0,arraysgrid.length)
+        }
+    } else {
+        for (element = 0; element < elementsingrid.length; element++) {
+            console.log(element,elementsingrid[element][0].fraction)
+            row = elementsingrid[element][0].row
+            col = elementsingrid[element][0].col
+
+            if (row != arraysgrid.length - 1) { // se o elemento não estiver na última linha
+                console.log('pode ver embaixo')
+                console.log('tem elemento embaixo?')
+                console.log(arraysgrid[row + 1][col])
+                if (arraysgrid[row + 1][col].length == 0) {
+                    console.log('sim')
+                }else{
+                    console.log('não')
+                    elementsingrid[element][0].fraction.style.borderBottom = `${borderwidth}px solid black`
+                }
+            }
+            if (col != arraysgrid[row].length - 1) { // se o elemento não estiver na última coluna
+                 console.log('pode ver a direita')
+                 console.log('tem elemento na direita?')
+                 console.log(arraysgrid[row][col + 1])
+                 if (arraysgrid[row][col + 1].length == 0) {
+                    console.log('sim')
+                }else{
+                    console.log('não')
+                    elementsingrid[element][0].fraction.style.borderRight = `${borderwidth}px solid black`
+                }
+            }
+        }
+        if (elementsingrid.length == 0) {
             console.log('está vazio, precisa apagar')
             arraysgrid.splice(0,arraysgrid.length)
         }
