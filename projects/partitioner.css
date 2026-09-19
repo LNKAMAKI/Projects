@@ -6,10 +6,6 @@
     --light-blue: #e0f7ff;
 }
 
-body {
-    background-color: black;
-}
-
 * {
     margin: 0px;
     padding: 0px;
@@ -40,7 +36,6 @@ h1 {
 
 main {
     background-color: white;
-    background-color: black;
     max-width: 850px;
     border: 2px solid black;
     aspect-ratio: 1.9;

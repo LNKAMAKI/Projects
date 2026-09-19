@@ -93,6 +93,7 @@ function Input(index,appender,elementinlist) {
     this.fraction = appender.getElementsByClassName('fraction')[this.index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
     this.colorinput_selected = false
+    this.can_delete = true
     this.changeColor = function () {
        this.colorinput.addEventListener("change", () => {
         if (colorize_desktop_state == 'on') {
@@ -164,9 +165,11 @@ function Input(index,appender,elementinlist) {
             }else if (delete_state == 'on') {
                 //this.fraction.style.backgroundColor = 'yellow'
                 console.log('remover',this.index, this.fraction)
+                if (this.can_delete == true) {
                 if (Array.isArray(elementinlist[0]) == true) { 
+                    console.log(elementinlist)
                     if (elementinlist[this.index].length == 1) {
-                        console.log('REMOVE',this.fraction)
+                        console.log('REMOVE')
                     console.log('removido')
                     this.fraction.remove()
                     console.log(elementinlist)
@@ -183,12 +186,21 @@ function Input(index,appender,elementinlist) {
 
                     //console.log(this.elementinlist[2][0].fraction)
                      for (a = this.elementinlist.length - 1; a > this.index + 1; a--) {
-                        console.log(a,elementinlist[a][0],this.elementinlist[a][0].fraction)
+                        console.log(a,this.elementinlist[a][0].fraction)
                         this.elementinlist[a][0].index = this.elementinlist[a][0].index - 1
                     }
                     elementinlist.splice(this.index + 1,1)
+                    console.log('can delete = false!!')
+                    elementinlist[0].can_delete = false
                     }
                 }
+            }else{
+                console.log('não deletar!!')
+                if (Array.isArray(elementinlist[0]) == false) {
+                    elementinlist[0].can_delete = false
+                }
+                this.can_delete = true
+            }
         }})
     }
 }
