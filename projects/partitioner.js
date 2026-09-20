@@ -92,15 +92,15 @@ function initializePartitioner() {
 }
 
 function Input(index,appender,elementinlist,elementsorganized,row,col) {
-    this.index = index
+    this.index = index // index no elementinlist (pai do elemento correspondente a div fraction na lista não ordenada)
     this.elementinlist = elementinlist
-    this.elementsorganized = elementsorganized
-    this.row = row
-    this.col = col
+    this.elementsorganized = elementsorganized // pai do elemento correspondente a div fraction na lista ordenada)
+    this.row = row // linha do elemento correspondente a div fraction na lista ordenada
+    this.col = col // coluna do elemento correspondente a div fraction na lista ordenada
     this.fraction = appender.getElementsByClassName('fraction')[this.index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
     this.colorinput_selected = false
-    this.can_delete = true
+    this.can_delete = true // pode deletar seguindo a hierarquia de elementos
     this.changeColor = function () {
        this.colorinput.addEventListener("change", () => {
         if (colorize_desktop_state == 'on') {
@@ -192,7 +192,7 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
             }else if (delete_state == 'on') {
                 //this.fraction.style.backgroundColor = 'yellow'
                 console.log('remover',this.index, this.fraction)
-                if (this.can_delete == true) {
+                if (this.can_delete == true) { // se esse é o elemento prioridade da hierarquia (último filho)
                 if (Array.isArray(elementinlist[0]) == true) { 
                     console.log(elementinlist)
                     if (elementinlist[this.index].length == 1) {
@@ -227,7 +227,7 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
                     elementinlist[0].can_delete = false
                     }
                 }
-            }else{
+            }else{ // se o elemento não for prioridade (seu filho já foi deletado)
                 console.log('não deletar!!')
                 if (Array.isArray(elementinlist[0]) == false) {
                     elementinlist[0].can_delete = false
