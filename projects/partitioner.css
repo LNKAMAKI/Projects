@@ -50,7 +50,7 @@ main {
 div.divider {
     position: relative;
     background-color: var(--medium-blue);
-    border: 0px solid black;
+    border: 2.4px solid black;
 }
 
 div.fraction {

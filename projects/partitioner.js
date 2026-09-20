@@ -112,10 +112,22 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
 
          this.colorinput.addEventListener("click", () => {
              if (colorize_desktop_state == 'on') {
-            this.colorinput.classList.toggle('visible2')
-            if (this.colorinput_selected == false) {
-                this.colorinput_selected = true
-            }
+
+                 if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
+                    if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
+                          this.colorinput.classList.toggle('visible2')
+                            if (this.colorinput_selected == false) {
+                                this.colorinput_selected = true
+                            }
+                    }
+                }else{ // se for um objeto ({Input})
+                    if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                          this.colorinput.classList.toggle('visible2')
+                            if (this.colorinput_selected == false) {
+                                this.colorinput_selected = true
+                            }
+                    }
+                }
         }
         })
 
@@ -134,7 +146,15 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
     this.fractionClicked = function () {
         this.fraction.addEventListener('mouseenter', () => {
              if (colorize_desktop_state == 'on') {
-             this.colorinput.classList.add('visible')
+                 if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
+                    if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
+                         this.colorinput.classList.add('visible')
+                    }
+                }else{ // se for um objeto ({Input})
+                    if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                         this.colorinput.classList.add('visible')
+                    }
+                }
              }
              this.fractionhovered = true
         })
