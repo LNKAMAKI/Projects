@@ -4,7 +4,7 @@ let divide_state = 'off'
 let delete_state = 'off'
 let elementsList = []
 let elements_inOrganizedList = []
-const borderwidth = 2.4
+const borderwidth = 2.667
 function load() {
       colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
       divide_button = document.getElementsByClassName('divide')[0]
@@ -91,14 +91,18 @@ function initializePartitioner() {
     elements = new CreateFractions(divider,elementsList,elements_inOrganizedList)
 }
 
-function Input(index,appender,elementinlist,elementsorganized,row,col) {
+function Input(index,appender,elementinlist,elementsorganized,row,col,rows,cols) {
     this.index = index // index no elementinlist (pai do elemento correspondente a div fraction na lista não ordenada)
     this.elementinlist = elementinlist
     this.elementsorganized = elementsorganized // pai do elemento correspondente a div fraction na lista ordenada)
     this.row = row // linha do elemento correspondente a div fraction na lista ordenada
     this.col = col // coluna do elemento correspondente a div fraction na lista ordenada
+    this.rows = rows
+    this.cols = cols
     this.fraction = appender.getElementsByClassName('fraction')[this.index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
+    this.widthspan = this.fraction.getElementsByClassName('widthspan')[0]
+    this.heightspan = this.fraction.getElementsByClassName('heightspan')[0]
     this.colorinput_selected = false
     this.can_delete = true // pode deletar seguindo a hierarquia de elementos
     this.changeColor = function () {
@@ -145,17 +149,21 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
     this.fractionhovered = false
     this.fractionClicked = function () {
         this.fraction.addEventListener('mouseenter', () => {
-             if (colorize_desktop_state == 'on') {
                  if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
                     if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
+                        if (colorize_desktop_state == 'on') 
                          this.colorinput.classList.add('visible')
+                         this.widthspan.classList.add('visible')
+                         this.heightspan.classList.add('visible')
                     }
                 }else{ // se for um objeto ({Input})
                     if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                        if (colorize_desktop_state == 'on') 
                          this.colorinput.classList.add('visible')
+                         this.widthspan.classList.add('visible')
+                         this.heightspan.classList.add('visible')
                     }
                 }
-             }
              this.fractionhovered = true
         })
 
@@ -163,6 +171,8 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
              if (colorize_desktop_state == 'on') {
              this.colorinput.classList.remove('visible')
              }
+             this.widthspan.classList.remove('visible')
+             this.heightspan.classList.remove('visible')
              this.fractionhovered = false
         })
 
@@ -182,11 +192,17 @@ function Input(index,appender,elementinlist,elementsorganized,row,col) {
 
                 if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
                     if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
-                    CreateFractions(this.fraction,this.elementinlist[this.index],this.elementsorganized[this.row][this.col])
+                        console.log(this.elementinlist[0], 'NOT THIS AAAAAAAAAAAsssssssssssssssssssssssssssss')
+                    CreateFractions(this.fraction,this.elementinlist[this.index],this.elementsorganized[this.row][this.col],rows,cols)
+                    this.widthspan.classList.remove('visible')
+                    this.heightspan.classList.remove('visible')
                     }
                 }else{ // se for um objeto ({Input})
                     if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
-                    CreateFractions(this.fraction,this.elementinlist[this.index + 1],this.elementsorganized[this.row][this.col])
+                    CreateFractions(this.fraction,this.elementinlist[this.index + 1],this.elementsorganized[this.row][this.col],rows,cols)
+                    console.log(this.elementinlist[0].fraction, 'AAAAAAAAAAAsssssssssssssssssssssssssssss')
+                    this.widthspan.classList.remove('visible')
+                    this.heightspan.classList.remove('visible')
                     }
                 }
             }else if (delete_state == 'on') {
@@ -320,6 +336,9 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     if (elementinlist != elementsList) { // se o elemento mãe NÃO for o divider
         colorinput.value = elementinlist[0].colorinput.value
         fraction.style.backgroundColor = colorinput.value
+        widthspan.innerText = width + '/' + elementinlist[0].cols*cols;
+        heightspan.innerText = height + '/' + elementinlist[0].rows*rows;
+        //cols = elementinlist[0].cols*cols
        // console.log(elementinlist[0].fraction,elementinlist[0].colorinput.value,'HEY')
     }else{
         colorinput.value = fraction.style.backgroundColor
@@ -333,7 +352,11 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     fraction.appendChild(widthspan);
     fraction.appendChild(heightspan);
 
-    element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col)
+    if (elementinlist != elementsList) {
+        element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col,Number(elementinlist[0].rows*rows),Number(elementinlist[0].cols*cols))
+    }else{
+        element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col,Number(rows),Number(cols))
+    }
     elementinlist.push([element])
     element.changeColor()
     element.fractionClicked()
