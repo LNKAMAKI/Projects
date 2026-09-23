@@ -483,7 +483,7 @@ function borderize(elementsingrid,arraysgrid) {
                     console.log('sim')
                 }else{
                     console.log('não')
-                    elementsingrid[element][0].fraction.style.borderBottom = `${borderwidth}px solid black`
+                    elementsingrid[element][0].fraction.style.borderBottom = 'clamp(0.7px,0.4vw,2.667px) solid black' //`${borderwidth}px solid black`
                 }
             }
             if (col != arraysgrid[row].length - 1) { // se o elemento não estiver na última coluna
@@ -494,7 +494,7 @@ function borderize(elementsingrid,arraysgrid) {
                     console.log('sim')
                 }else{
                     console.log('não')
-                    elementsingrid[element][0].fraction.style.borderRight = `${borderwidth}px solid black`
+                    elementsingrid[element][0].fraction.style.borderRight = 'clamp(0.7px,0.4vw,2.667px) solid black' //`${borderwidth}px solid black`
                 }
             }
         }
@@ -516,7 +516,7 @@ function borderize(elementsingrid,arraysgrid) {
                     console.log('sim')
                 }else{
                     console.log('não')
-                    elementsingrid[element][0].fraction.style.borderBottom = `${borderwidth}px solid black`
+                    elementsingrid[element][0].fraction.style.borderBottom = 'clamp(0.7px,0.4vw,2.667px) solid black'//`${borderwidth}px solid black`
                 }
             }
             if (col != arraysgrid[row].length - 1) { // se o elemento não estiver na última coluna
@@ -527,7 +527,7 @@ function borderize(elementsingrid,arraysgrid) {
                     console.log('sim')
                 }else{
                     console.log('não')
-                    elementsingrid[element][0].fraction.style.borderRight = `${borderwidth}px solid black`
+                    elementsingrid[element][0].fraction.style.borderRight = 'clamp(0.7px,0.4vw,2.667px) solid black' //`${borderwidth}px solid black`
                 }
             }
         }
