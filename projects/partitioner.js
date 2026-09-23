@@ -2,6 +2,7 @@
 let colorize_desktop_state = 'off'
 let divide_state = 'off'
 let delete_state = 'off'
+let measure_state = 'off'
 let elementsList = []
 let elements_inOrganizedList = []
 const borderwidth = 2.667
@@ -17,6 +18,8 @@ function colorize_desktop () {
     if (colorize_desktop_state == 'off') {
         colorize_desktop_state = 'on'
         divide_state = 'off'
+        measure_state = 'off'
+        measure_button.classList.remove('active')
         divide_button.classList.remove('active')
         delete_state = 'off'
         delete_button.classList.remove('active')
@@ -34,6 +37,8 @@ function divide () {
         divide_state = 'on'
         document.getElementsByClassName('divide-tab')[0].classList.add('show2')
         colorize_desktop_state = 'off'
+        measure_button.classList.remove('active')
+        measure_state = 'off'
         colorize_desktop_button.classList.remove('active')
         delete_state = 'off'
         delete_button.classList.remove('active')
@@ -52,10 +57,31 @@ function deletar () {
         colorize_desktop_state = 'off'
         colorize_desktop_button.classList.remove('active')
         divide_state = 'off'
+        measure_button.classList.remove('active')
+        measure_state = 'off'
         divide_button.classList.remove('active')
         document.getElementsByClassName('divide-tab')[0].classList.remove('show2')
     }else{
         delete_state = 'off'
+    }
+}
+
+function showmeasure () {
+    // botões de estado
+    measure_button = document.getElementsByClassName('showmeasure')[0]
+    measure_button.classList.toggle('active')
+    if (measure_state == 'off') {
+        measure_state = 'on'
+        colorize_desktop_state = 'off'
+        colorize_desktop_button.classList.remove('active')
+        divide_state = 'off'
+        delete_button.classList.remove('active')
+        delete_state = 'off'
+        delete_state = 'off'
+        divide_button.classList.remove('active')
+        document.getElementsByClassName('divide-tab')[0].classList.remove('show2')
+    }else{
+        measure_state = 'off'
     }
 }
 

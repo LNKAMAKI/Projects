@@ -138,7 +138,7 @@ div.fraction:hover > .widthspan{
     flex-wrap: wrap;
 }
 
-.colorize-desktop, .divide, .deletar {
+.colorize-desktop, .divide, .deletar, .showmeasure {
     opacity: 40%;
 }
 
