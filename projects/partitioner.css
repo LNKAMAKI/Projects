@@ -96,6 +96,7 @@ div.fraction:hover > .widthspan{
     font-weight: normal;
     color: black;
 }
+
 .widthspan {
     position: absolute;
     display: none;
@@ -104,18 +105,30 @@ div.fraction:hover > .widthspan{
     transform: translate(-50%, 5px);
 }
 
+.top {
+    left: 50%;
+    transform: translate(-50%,calc(-100% - 5px));
+    top: 0%;
+}
+
 .heightspan {
     position: absolute;
     display: none;
     top: 50%;
-    transform: translate(calc(-100% - 5px), -50%);
+    transform: translate(calc(-100% - 8px), -50%);
 }
+
+.right {
+    top: 50%;
+    left: calc(100% + 8px);
+    transform: translate(0%,0%);
+}
+    
 
 
 .controls {
     background-color: var(--light-blue);
     margin: 0px auto;
-    width: 100%;
     max-width: 850px;
     padding: 15px 10px;
     display: flex;

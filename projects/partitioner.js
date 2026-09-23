@@ -320,6 +320,7 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     }
 
     widthspan.style.zIndex = '120'
+    heightspan.style.zIndex = '120'
 
     if (col == 0) 
         fraction.style.borderLeft = 'none'; // adicionando borda direita ao último divider
