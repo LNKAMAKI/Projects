@@ -5,12 +5,24 @@ let delete_state = 'off'
 let measure_state = 'off'
 let elementsList = []
 let elements_inOrganizedList = []
-const borderwidth = 2.667
+let allelements = []
+let borderwidth = 1 //2.667
 function load() {
       colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
       divide_button = document.getElementsByClassName('divide')[0]
       delete_button = document.getElementsByClassName('deletar')[0]
+      measure_button = document.getElementsByClassName('showmeasure')[0]
+
+      let timer
+      window.addEventListener('resize',function () {
+        clearTimeout(timer)
+        timer = setTimeout(function () {
+            console.log('parou')
+            reborderize()
+        },200)
+      })
 }
+
 function colorize_desktop () {
     // botões de estado
     colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
@@ -89,6 +101,7 @@ function initializePartitioner() {
     // pegar os valores dos inputs
     elementsList = []
     elements_inOrganizedList = []
+    allelements = []
     width = document.getElementById('width').value;
     height = document.getElementById('height').value;
     color = document.getElementById('color').value;
@@ -100,6 +113,7 @@ function initializePartitioner() {
         console.log('removendo dividers existentes');
         maincontainer.removeChild(dividers[0]);
     }
+
     // criando o retângulo com as dimensões especificadas
     divider = document.createElement('div');
     ratio = Number(width) / Number(height); // razão entre largura e altura (aspect ratio)
@@ -114,17 +128,24 @@ function initializePartitioner() {
     divider.classList.add('divider'); // adicionando classe divider para o retângulo
     maincontainer.appendChild(divider); // adicionando o retângulo ao maincontainer
 
+    // pegando o valor da largura da borda atual (com o recálculo)
+    estilo = getComputedStyle(dividers[0])
+    console.warn('AQUI Ó',Number(estilo.borderWidth.replace('px','')))
+    borderwidth = Number(estilo.borderWidth.replace('px',''))
     elements = new CreateFractions(divider,elementsList,elements_inOrganizedList)
 }
 
-function Input(index,appender,elementinlist,elementsorganized,row,col,rows,cols) {
+function Input(index,appender,elementinlist,elementsorganized,row,col,rows,cols,rowsfix,colsfix) {
     this.index = index // index no elementinlist (pai do elemento correspondente a div fraction na lista não ordenada)
+    this.showmeasure = false
     this.elementinlist = elementinlist
     this.elementsorganized = elementsorganized // pai do elemento correspondente a div fraction na lista ordenada)
     this.row = row // linha do elemento correspondente a div fraction na lista ordenada
     this.col = col // coluna do elemento correspondente a div fraction na lista ordenada
     this.rows = rows
     this.cols = cols
+    this.rowsfix = rowsfix
+    this.colsfix = colsfix
     this.fraction = appender.getElementsByClassName('fraction')[this.index]
     this.colorinput = this.fraction.getElementsByClassName('colorinput')[0]
     this.widthspan = this.fraction.getElementsByClassName('widthspan')[0]
@@ -197,8 +218,10 @@ function Input(index,appender,elementinlist,elementsorganized,row,col,rows,cols)
              if (colorize_desktop_state == 'on') {
              this.colorinput.classList.remove('visible')
              }
+              if (this.showmeasure == false) {
              this.widthspan.classList.remove('visible')
              this.heightspan.classList.remove('visible')
+              }
              this.fractionhovered = false
         })
 
@@ -220,15 +243,19 @@ function Input(index,appender,elementinlist,elementsorganized,row,col,rows,cols)
                     if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
                         console.log(this.elementinlist[0], 'NOT THIS AAAAAAAAAAAsssssssssssssssssssssssssssss')
                     CreateFractions(this.fraction,this.elementinlist[this.index],this.elementsorganized[this.row][this.col],rows,cols)
+                    if (this.showmeasure == false) {
                     this.widthspan.classList.remove('visible')
                     this.heightspan.classList.remove('visible')
+                    }
                     }
                 }else{ // se for um objeto ({Input})
                     if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
                     CreateFractions(this.fraction,this.elementinlist[this.index + 1],this.elementsorganized[this.row][this.col],rows,cols)
                     console.log(this.elementinlist[0].fraction, 'AAAAAAAAAAAsssssssssssssssssssssssssssss')
+                     if (this.showmeasure == false) {
                     this.widthspan.classList.remove('visible')
                     this.heightspan.classList.remove('visible')
+                     }
                     }
                 }
             }else if (delete_state == 'on') {
@@ -276,8 +303,55 @@ function Input(index,appender,elementinlist,elementsorganized,row,col,rows,cols)
                 }
                 this.can_delete = true
             }
+        }else if (measure_state == 'on') {
+             if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
+                    if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
+                        if (this.showmeasure == false) {
+                            this.showmeasure = true
+                            console.log('HEY')
+                        }else{
+                            this.showmeasure = false
+                        }
+                    }
+                }else{ // se for um objeto ({Input})
+                    if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                          if (this.showmeasure == false) {
+                            this.showmeasure = true
+                        }else{
+                            this.showmeasure = false
+                        }
+                    }
+                }
         }})
     }
+
+    window.addEventListener('keydown',(event) => {
+        console.log('EEEEEEEPA')
+
+        if (event.key == 't' && this.fractionhovered == true) {
+          if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
+                    if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
+                        this.widthspan.classList.toggle('top')
+                    }
+                }else{ // se for um objeto ({Input})
+                    if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                         this.widthspan.classList.toggle('top')
+                    }
+                }
+        }
+
+          if (event.key == 'r' && this.fractionhovered == true) {
+          if (Array.isArray(this.elementinlist[0]) == true) { // se for um array ([Input])
+                    if (this.elementinlist[this.index].length == 1) { // se não tiver filhos
+                        this.heightspan.classList.toggle('right')
+                    }
+                }else{ // se for um objeto ({Input})
+                    if (this.elementinlist[this.index + 1].length == 1) { // se não tiver filhos
+                         this.heightspan.classList.toggle('right')
+                    }
+                }
+        }
+    })
 }
 
 function CreateFractions(appender,elementinlist,elementsorganized) {
@@ -302,8 +376,6 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
 
     // width = 100% / cols
     fraction.style.width = `calc(${String(100 / cols)}% - ${borderwidth*(cols - 1)/cols}px)`;
-    //fraction.style.width = `calc(${String(100 / cols)}% - 5px)`;
-
     // height = 100% / rows
     fraction.style.height = `calc(${String(100 / rows)}% - ${borderwidth*(rows - 1)/rows}px)`;
 
@@ -314,7 +386,6 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     
     if (col != 0) {
         fraction.style.left = `calc(${String(100 / cols * col)}% - ${(borderwidth*(cols - 1)/cols)*col}px + ${borderwidth*(col - 1)}px)`;
-        //fraction.style.left = `calc(${String(100 / cols * col)}% - 5px)`;
     }else{
         fraction.style.left = '0px'
     }
@@ -380,11 +451,12 @@ function CreateFractions(appender,elementinlist,elementsorganized) {
     fraction.appendChild(heightspan);
 
     if (elementinlist != elementsList) {
-        element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col,Number(elementinlist[0].rows*rows),Number(elementinlist[0].cols*cols))
+        element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col,Number(elementinlist[0].rows*rows),Number(elementinlist[0].cols*cols),Number(rows),Number(cols))
     }else{
-        element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col,Number(rows),Number(cols))
+        element = new Input(this.indexfraction,appender,elementinlist,elementsorganized,row,col,Number(rows),Number(cols),Number(rows),Number(cols))
     }
     elementinlist.push([element])
+    allelements.push(element)
     element.changeColor()
     element.fractionClicked()
 
@@ -462,6 +534,37 @@ function borderize(elementsingrid,arraysgrid) {
         if (elementsingrid.length == 0) {
             console.log('está vazio, precisa apagar')
             arraysgrid.splice(0,arraysgrid.length)
+        }
+    }
+}
+
+function reborderize() {
+    console.log('HAHAHHAHA')
+    // pegando o valor de borda atual
+    estilo = getComputedStyle(dividers[0])
+    borderwidth = Number(estilo.borderWidth.replace('px',''))
+
+    for (el in allelements) {
+        console.log(allelements[el].fraction)
+        fraction = allelements[el].fraction
+        cols = allelements[el].colsfix
+        rows = allelements[el].rowsfix
+        col = allelements[el].col
+        row = allelements[el].row
+
+        fraction.style.width = `calc(${String(100 / cols)}% - ${borderwidth*(cols - 1)/cols}px)`;
+        fraction.style.height = `calc(${String(100 / rows)}% - ${borderwidth*(rows - 1)/rows}px)`;
+    
+        if (col != 0) {
+            fraction.style.left = `calc(${String(100 / cols * col)}% - ${(borderwidth*(cols - 1)/cols)*col}px + ${borderwidth*(col - 1)}px)`;
+        }else{
+            fraction.style.left = '0px'
+        }
+
+        if (row != 0) {
+            fraction.style.top = `calc(${String(100 / rows * row)}% - ${(borderwidth*(rows - 1)/rows)*row}px + ${borderwidth*(row - 1)}px)`;
+        }else{
+            fraction.style.top = '0px'
         }
     }
 }
