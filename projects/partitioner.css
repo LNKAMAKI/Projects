@@ -123,6 +123,7 @@ div.fraction:hover > .widthspan{
 .controls {
     background-color: var(--light-blue);
     margin: 0px auto;
+    box-sizing: border-box;
     max-width: 850px;
     padding: 15px 10px;
     display: flex;

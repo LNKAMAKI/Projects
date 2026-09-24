@@ -1,4 +1,3 @@
-
 let colorize_desktop_state = 'off'
 let divide_state = 'off'
 let delete_state = 'off'
