@@ -7,6 +7,7 @@ let elementsList = []
 let elements_inOrganizedList = []
 let allelements = []
 let borderwidth = 1 //2.667
+let divider_measure_mode = 1
 function load() {
       colorize_desktop_button = document.getElementsByClassName('colorize-desktop')[0]
       divide_button = document.getElementsByClassName('divide')[0]
@@ -21,6 +22,44 @@ function load() {
             reborderize()
         },200)
       })
+}
+
+function divider_measure() {
+    console.log('hello')
+    dividers = document.getElementsByClassName('divider')
+    divider_measure_switch = document.getElementsByClassName('dividermeasure')[0]
+    if (dividers.length > 0) {
+        console.warn(divider_measure_mode)
+        if (divider_measure_mode == 5) {
+        console.log('existe',dividers[0].getElementsByClassName('widthspan')[0])
+        divider_measure_mode = 1
+        dividers[0].getElementsByClassName('widthspan')[0].classList.remove('visible')
+        dividers[0].getElementsByClassName('heightspan')[0].classList.remove('visible')
+         dividers[0].getElementsByClassName('widthspan')[0].classList.remove('top')
+        dividers[0].getElementsByClassName('heightspan')[0].classList.remove('right')
+        divider_measure_switch.innerText = 'modo 1'
+        }else if (divider_measure_mode == 1) {
+             dividers[0].getElementsByClassName('widthspan')[0].classList.add('visible')
+            dividers[0].getElementsByClassName('heightspan')[0].classList.add('visible')
+            divider_measure_mode++
+            divider_measure_switch.innerText = 'modo 2'
+        }else if (divider_measure_mode == 2) {
+        console.log(2)
+            dividers[0].getElementsByClassName('widthspan')[0].classList.add('visible')
+            dividers[0].getElementsByClassName('heightspan')[0].classList.add('visible')
+            dividers[0].getElementsByClassName('heightspan')[0].classList.add('right')
+            divider_measure_mode++
+            divider_measure_switch.innerText = 'modo 3'
+    }else if (divider_measure_mode == 3) {
+        dividers[0].getElementsByClassName('widthspan')[0].classList.add('top')
+        divider_measure_switch.innerText = 'modo 4'
+        divider_measure_mode++
+    }else if (divider_measure_mode == 4){
+        dividers[0].getElementsByClassName('heightspan')[0].classList.remove('right')
+        divider_measure_switch.innerText = 'modo 5'
+        divider_measure_mode++
+    }
+}
 }
 
 function colorize_desktop () {
@@ -127,6 +166,17 @@ function initializePartitioner() {
 
     divider.classList.add('divider'); // adicionando classe divider para o retângulo
     maincontainer.appendChild(divider); // adicionando o retângulo ao maincontainer
+
+    widthspan = document.createElement('span');
+    widthspan.innerText = width;
+    widthspan.classList.add('widthspan');
+
+    heightspan = document.createElement('span');
+    heightspan.innerText = height;
+    heightspan.classList.add('heightspan');
+
+    divider.appendChild(widthspan)
+    divider.appendChild(heightspan)
 
     // pegando o valor da largura da borda atual (com o recálculo)
     estilo = getComputedStyle(dividers[0])
@@ -568,3 +618,4 @@ function reborderize() {
         }
     }
 }
+

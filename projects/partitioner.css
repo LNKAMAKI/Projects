@@ -26,7 +26,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 header {
     background-color: #b7e4ff;
-    padding: 20px 5px;
+    padding: clamp(20px,2vw,25px) 5px;
 }
 
 h1 {
@@ -62,22 +62,13 @@ div.fraction {
     /*border: 2.667px solid black;*/
     border-right: none;
     border-bottom: none;
+}
 
 
-    .colorinput {
+.colorinput {
         width: 100%;
         height: 100%;
         display: none;
-    }
-
-    .visible {
-        display: block;
-    }
-
-    .visible2 {
-        display: block;
-    }
-
 }
 
 div.fraction:hover {
@@ -209,4 +200,12 @@ div.fraction:hover > .widthspan{
 
     .show2 {
         display: flex;
+    }
+
+     .visible {
+        display: block;
+    }
+
+    .visible2 {
+        display: block;
     }
