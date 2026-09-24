@@ -35,7 +35,8 @@ h1 {
 
 main {
     background-color: white;
-    width: 90%;
+    width: 95%;
+    box-sizing: border-box;
     max-width: 850px;
     border: 2px solid black;
     aspect-ratio: 1.9;
