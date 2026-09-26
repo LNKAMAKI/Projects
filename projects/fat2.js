@@ -1958,16 +1958,16 @@ function CreateEngine2() {
      
              for (moon in roll_2[ne].posições) { // *['0','1'] Eg.: ['b','a']
                 qualmon = roll_2[ne].monosplit[moon].mons[pq]
-                console.log('monosplit',moon,roll_2[ne].monosplit[moon],qualmon)
+                //console.log('monosplit',moon,roll_2[ne].monosplit[moon],qualmon)
                  //vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)] 
                 vaiir = scarecrow_2[gosto].outrodiv[scarecrow_2[gosto].positions.indexOf(qualmon)]
-                 console.log('VAIIIR',vaiir)
+                 //console.log('VAIIIR',vaiir)
                  // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 arranjar[pq].ocupa.push(vaiir) // CHECK THIS ONE
                 ////console.log(moon,':', miss_2[roll_2[ne].posições[moon]].dividido)
              }}
-             console.log('arranjar:')
-             console.log(arranjar)
+             //console.log('arranjar:')
+             //console.log(arranjar)
              //console.log('ARRANJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRR',arranjar)
          jafoi = []
          
@@ -2234,7 +2234,7 @@ function CreateEngine2() {
             youdumb_2ordered.push(its[c])
             } }
 
-        ////console.log('youdumb_2ordered', youdumb_2ordered)
+        console.log('youdumb_2ordered', youdumb_2ordered)
         youdumb_2 = youdumb_2ordered
         
         for (yes in youdumb_2) {
@@ -2269,7 +2269,7 @@ function CreateEngine2() {
 
      heya_2 = [...youdumb_2]
      for (imback in youdumb_2) {
-        ////console.log('---------YOUDUMB-------',youdumb_2[imback])
+        console.log('---------YOUDUMB-------',youdumb_2[imback])
          sticky = []
          initial = youdumb_2[imback].w.what
          ////console.log('initial',initial)
@@ -2289,7 +2289,7 @@ function CreateEngine2() {
                  } }
               if (taai == false) {
                  inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
-                 ////console.log(`inform: {mons: ${initial[agg].ar},indice: ${initial[agg].indice}}`)
+                 console.log(`inform: {mons: ${initial[agg].ar},indice: ${initial[agg].indice}}`)
                  inside.which.push(inform)
   
                  for (darkening in inform.monos) {
@@ -2328,7 +2328,7 @@ function CreateEngine2() {
      newexpress = []
      
      for (bababa in pans_2) {
-        ////console.log('pans_2[bababa]',pans_2[bababa])
+        console.log('pans_2[bababa]',pans_2[bababa])
          edge_2 = []
          naonao_2 = ''
          amount = []
@@ -2336,7 +2336,7 @@ function CreateEngine2() {
            realife = []
            amontoado_2 = []
 
-           ////console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
+           console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
            for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyoudumb].posições = ['0','1']
              el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido // *miss_2[0].dividido = 'a'
              gates = []
@@ -2369,7 +2369,7 @@ function CreateEngine2() {
                          if (estudar == el.length - 1) {
                              quase.push(juntar)
                          }}} }
-                         ////console.log('quase',quase)
+                         console.log('quase',quase)
      
               if (teri == false) {
                  quase = []
@@ -2474,7 +2474,7 @@ function CreateEngine2() {
                  amontoado_2.push('+')
                  amontoado_2.push(friend)
              } }
-            ////console.log('amontoado',amontoado_2)
+            console.log('amontoado',amontoado_2)
             ////console.log('')
 
          for (repr in pans_2[bababa].which) {
@@ -2577,9 +2577,13 @@ function CreateEngine2() {
                   }}
               amount.push('-')
               amount.push(uh)
+              console.log('-',uh)
+              console.log('mamamount',amount)
           }else{
               amount.push('+')
               amount.push(friend)
+              console.log(friend)
+              console.log('mamamount',amount)
           }
   
              if (naonao_2.length == 0) {
@@ -2594,7 +2598,6 @@ function CreateEngine2() {
                  }else{
                      naonao_2+= ` + ${aconta_2}`  
                  }}}
-                 ////console.log('amount',amount)
                  ////console.log('')
          
           if (edge_2.length > 1) {
@@ -2623,7 +2626,7 @@ function CreateEngine2() {
         }}}
          
         //console.log(concatenar_2)
-        //console.log(amount, '*', amontoado_2)
+        console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
