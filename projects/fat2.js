@@ -59,6 +59,9 @@ function showresult() {
     if (res[0] != '?') {
     get1('fatoracao').value = res[0]
     }else{
+        //fat1 = new CreateEngine2().FATORAR(ep,true)
+        //console.log('expressão com monômios somados: ', fat1[0])
+        //doTheFactoring(fat1[0])
         get1('fatoracao').value = 'Não é possível agrupar todos os monômios'
     }
 
@@ -747,10 +750,10 @@ function copy() {
     navigator.clipboard.writeText(copyText.value);
 }
 
-function copy2() {
+function copy2(num) {
     nums = document.getElementsByClassName('type')
-    if (nums[1].value != 'Não é possível agrupar todos os monômios') {
-    copyText = nums[1]
+    if (nums[num].value != 'Não é possível agrupar todos os monômios') {
+    copyText = nums[num]
     var copyGfGText = copyText;
     copyGfGText.select();
     document.execCommand("copy");
@@ -3760,8 +3763,9 @@ if (somarmons == false) {
     }else{
         if (somarmons == false)
         console.log('IR: FALSEE')
+        if (somarmons == false) {
         return [
-        concatenar_2,
+        '?',
         pans_2.length,
         todososnumeros_2.length,
         segs_2.length,
@@ -3773,6 +3777,22 @@ if (somarmons == false) {
         youdumb_2,
         monomios_2,
         pans_2] 
+        }else{
+            return [
+            concatenar_2,
+            pans_2.length,
+            todososnumeros_2.length,
+            segs_2.length,
+            roll_2.length,
+            segs_2,
+            scarecrow_2,
+            miss_2,
+            roll_2,
+            youdumb_2,
+            monomios_2,
+            pans_2
+        ]
+        }
 }}}
 
 ep = FATORE(exal)
@@ -3802,6 +3822,14 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
 
           plo = false
           vez = 0
+
+          if (fat2[0] == '?') {
+            fat3 = new CreateEngine2().FATORAR(FATORE(fat1[0]),false)
+            console.warn('FATTT 3333',fat3)
+            if (fat3[0] != '?') {
+                okexp = fat3[0]
+            }
+          }
           
           
           if (monomios_2.length > 1 && segs_2.length > 1 && okexp != '?') {
