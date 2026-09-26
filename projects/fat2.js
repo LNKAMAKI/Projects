@@ -1055,7 +1055,7 @@ function SPLITEXPS(expression) {
 function REFORMATAR(q) {
 
 q = q.replace(/,/g, '')
-console.log('REFORMATAR',q)
+//console.log('REFORMATAR',q)
 qualexp1 = q;
 qualexp = "";
 parar = false;
@@ -1148,7 +1148,6 @@ for (meow in pam) {
   }}
 return podeir;
 }
-
 function doTheFactoring(exal) {
 ////console.log(exal)
 function CreateEngine2() {
@@ -1531,7 +1530,7 @@ function CreateEngine2() {
      ////console.log('MV',mv)
      }
      segs_2.push({car: '1', mons: mv})
-     console.warn('INDEX SEGS',segs_2.length - 1)
+     //console.warn('INDEX SEGS',segs_2.length - 1)
      for (m = 0; m < monomios_2.length; m++) { // CADA MOnÔMIO
          repetido = []
          col = false
@@ -1779,7 +1778,7 @@ function CreateEngine2() {
        }}
      
      segs_2 = [...segs_2ordered]
-     console.warn('SEGS_2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',segs_2[0], segs_2[1])
+     //console.warn('SEGS_2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',segs_2[0], segs_2[1])
 //
 
      if (segs_2.length > 0) {
@@ -2116,7 +2115,7 @@ function CreateEngine2() {
   
                  ////console.log('ROLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL')
                  for (still2 in roll_2[raging].monosplit) {
-                    ////console.log(still2, roll_2[raging].monosplit[still2], roll_2[raging].monosplit[still2].mons[still])
+                    //console.log(still2, roll_2[raging].monosplit[still2], roll_2[raging].monosplit[still2].mons[still])
                     //older = scarecrow_2[roll_2[raging].repetidos[still]].positions[scarecrow_2[roll_2[raging].repetidos[still]].divididos.indexOf(miss_2[roll_2[raging].posições[still2]].dividido)]
                     older = roll_2[raging].monosplit[still2].mons[still]
                    asitwas.push(older)
@@ -2649,7 +2648,7 @@ if (somarmons == false) {
             }
         } }
 
-        //console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${outrocon} )`)
+        console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${outrocon} )`)
         size1 = 0
         if (primeirocaso[0].length == 1) {
         wholecon+= outrocon
@@ -2679,7 +2678,7 @@ if (somarmons == false) {
             outrocon+= ` ${segundocaso[0][am]} `
             } } }
 
-        //console.log('tobreak_2',`( ${tobreak_2} )`, 'outrocon', `( ${outrocon} )`)
+        console.log('tobreak_2',`( ${tobreak_2} )`, 'outrocon', `( ${outrocon} )`)
         if (segundocaso[0].length == 1) {
             if (size1 == 0) {
                 //console.log('EPaaaaaaaaaaaaaaaaaaaaaaaA!')
@@ -2701,7 +2700,7 @@ if (somarmons == false) {
 
     //
 
-    //console.log(primeirocaso[0], segundocaso[0])
+    console.log(primeirocaso[0], segundocaso[0])
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
             mudou = true // DEU PRA SOMAR
@@ -2764,7 +2763,7 @@ if (somarmons == false) {
                   newexpress.push('+')
                   newexpress.push(novomon)
               }}
-            //console.log('newexpress',newexpress)
+            console.log('newexpress',newexpress)
             }
       
             //console.warn("NUMDESFAT",numsdesfat)
@@ -2776,10 +2775,9 @@ if (somarmons == false) {
          console.log('SOMARMONS',somarmons)
      if (numsdesfat.length > 0) {
         ////console.log(concatenar_2)
-      //console.warn('VAI TER QUE FATORAR DE NOVO')
+      console.warn('VAI TER QUE FATORAR DE NOVO')
       ////console.log('youdumb')
-     
-      ////console.log(pans_2)
+      console.log(pans_2)
       todososnumeros_2 = []
       for (acaba in monomios_2) {
           todososnumeros_2.push(acaba)
@@ -2810,7 +2808,7 @@ if (somarmons == false) {
           //console.log('newexpress',newexpress)
         }
           //if (somarmons == false) 
-          //console.log('newexpress',newexpress)
+          console.log('newexpress',newexpress)
          this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
      }else{
      todososnumeros_2 = []
@@ -3724,11 +3722,13 @@ if (somarmons == false) {
 
   ir = false
   if (todososnumeros_2.length == 0 && pans_2.length <= 1) {
-    ////console.log('DEU CERTOOOOOOOOOOOOOOO')
+    console.warn('DEU CERTOOOOOOOOOOOOOOO')
     ir = true
   }else if (monomios_2.length == 1) {
-    ////console.log('DEU CERTOOOOOOOOOOOOOOO')
+    console.warn('DEU CERTOOOOOOOOOOOOOOO')
     ir = true
+  }else{
+    console.warn('DEU RUIM ZÉ')
   }
 
   ////console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
@@ -3772,7 +3772,7 @@ if (somarmons == false) {
         roll_2,
         youdumb_2,
         monomios_2,
-        pans_2]
+        pans_2] 
 }}}
 
 ep = FATORE(exal)
@@ -3781,6 +3781,7 @@ fat1 = new CreateEngine2().FATORAR(ep,true)
 fat2 = new CreateEngine2().FATORAR(ep,false)
 
 //console.warn('FAT',fat1, fat2)
+       
         alt = 1
         if (fat2[1] == 1 && fat2[2] == 0) {
           alt = 2
@@ -3793,6 +3794,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               alt = 2
               okexp = fat2[0]
           } }
+              
           alt = 2
           okexp = fat2[0]
 
@@ -3891,11 +3893,10 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               vez++
             }
               
-            } 
-              
+            } ;
               
 
-              console.warn('SLITEXPS', )
+              //console.warn('SLITEXPS', )
           
               if (alt == 1) {
                 vari = fat1
@@ -4060,14 +4061,14 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                           // *mons2 = [2,4]
         
                           if (roller_2.find(function (roller_2) { return roller_2.rept == repwri;}) == undefined) { // Se não tiver no roller_2
-                            console.log('pushar novo:',{
+                            /*console.log('pushar novo:',{
                                 rept: repwri, // *,1,2
                                 opl: [...repeated], // *[1,2]
                                 factor: [miss_2[eep].dividido,miss_2[quad].dividido],
                                 position: [eep, quad], // 0,1
                                 monomios: [...compar], // [1,2,3,4]
                                 monosplit: [{misspos: eep,mons: mons1},{misspos: quad, mons: mons2}]
-                              })
+                              })*/
                                roller_2.push({
                               rept: repwri, // *,1,2
                               opl: [...repeated], // *[1,2]
@@ -4217,16 +4218,16 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                      } 
                     }
              for (r in roller_2) { // Transferindo o roller_2 para o roll_2
-                console.warn('ROLLER_2 AAAAAAAAAAAAAAAA',roller_2[r].opl)
+                //console.warn('ROLLER_2 AAAAAAAAAAAAAAAA',roller_2[r].opl)
                 if (roller_2[r].opl.length == 1 && segs_2ordered[roller_2[r].opl[0]].car == '1') {
-                console.warn('AAAAAAAAAAAADJDJW3Y73CYE3H3CHU3RHCU2I3HRIURHC2UIHR3RHCU2RH2IRH2CIURHR2IH')
+                //onsole.warn('AAAAAAAAAAAADJDJW3Y73CYE3H3CHU3RHCU2I3HRIURHC2UIHR3RHCU2RH2IRH2CIURHR2IH')
                  // repetidos - opl, posições - position, way: rept
                 }else{
                       
                  roll_2.push({repetidos: roller_2[r].opl, factor: roller_2[r].factor, posições: roller_2[r].position, way: roller_2[r].rept, monomios: roller_2[r].monomios, monosplit: roller_2[r].monosplit})
                 }
              } 
-             console.warn('ROLL_2',roll_2[0])
+             //console.warn('ROLL_2',roll_2[0])
             }
 
             function sortob(n, pam) {
