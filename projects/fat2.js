@@ -1153,13 +1153,14 @@ return podeir;
 }
 function doTheFactoring(exal) {
 ////console.log(exal)
+steps = []
 function CreateEngine2() {
     ////console.log('')
     ////console.log('')
     ////console.log('creating engine........')
   this.FATORAR = 
   function (expression_2,somarmons) {
-    //console.log('HEY!')
+    console.log('HEY!')
     if (expression_2[0] !== "-" && expression_2[0] !== "+") {
       expo_2 = ["+"];
       for (ent in expression_2) {
@@ -2006,9 +2007,9 @@ function CreateEngine2() {
         // {agrupar: [2], referencia: ['-b','a']}
        //]
        
-       console.log('perfectwave:')
+       //console.log('perfectwave:')
        for (pe in perfectwave) {
-        console.log(pe,perfectwave[pe])
+        //console.log(pe,perfectwave[pe])
        }
        for (youchoose in perfectwave) { // {agrupar: [0,1], referencia: ['-b','-a']}
         ficarassim =  perfectwave[youchoose].referencia // *['-b','-a'] => referência, ou seja, como todos irão ficar
@@ -2018,9 +2019,9 @@ function CreateEngine2() {
             for (moon in roll_2[ne].posições) { // *roll_2[ne].posições = ['0','1'] ('b','a')
                 //vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].divididos.indexOf(miss_2[roll_2[ne].posições[moon]].dividido)]
                 qualmon = roll_2[ne].monosplit[moon].mons[catraca]
-                console.log('qualmon',qualmon)
+                //console.log('qualmon',qualmon)
                 vaiir = scarecrow_2[arranjar[presa].origin].outrodiv[scarecrow_2[arranjar[presa].origin].positions.indexOf(qualmon)]
-                console.log('vaiir',vaiir)
+                //console.log('vaiir',vaiir)
                 // *Eg.: scarecrow_2[0].outrodiv[scarecrow_2[0].divididos.indexOf('b')]
                 if (vaiir != ficarassim[moon]) { // *ficarassim[0] = '-b'
                     diferente = true
@@ -2028,7 +2029,7 @@ function CreateEngine2() {
                   // vaiir = ficarassim[moon]// *Eg.: vaiir('b') e ficarassim('-b')
                 } }
             if (diferente == true) {
-                console.log('EPA!')
+                //console.log('EPA!')
                ////console.log('AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII*******&77&&&&&&&&%%%%%%%%%%%%%77')
                refer = [] 
                for (ho in perfectwave[youchoose].referencia) {
@@ -2234,7 +2235,7 @@ function CreateEngine2() {
             youdumb_2ordered.push(its[c])
             } }
 
-        console.log('youdumb_2ordered', youdumb_2ordered)
+        //console.log('youdumb_2ordered', youdumb_2ordered)
         youdumb_2 = youdumb_2ordered
         
         for (yes in youdumb_2) {
@@ -2269,7 +2270,7 @@ function CreateEngine2() {
 
      heya_2 = [...youdumb_2]
      for (imback in youdumb_2) {
-        console.log('---------YOUDUMB-------',youdumb_2[imback])
+        //console.log('---------YOUDUMB-------',youdumb_2[imback])
          sticky = []
          initial = youdumb_2[imback].w.what
          ////console.log('initial',initial)
@@ -2289,7 +2290,7 @@ function CreateEngine2() {
                  } }
               if (taai == false) {
                  inform = {monos: initial[agg].ar, numberwhat: initial[agg].indice} 
-                 console.log(`inform: {mons: ${initial[agg].ar},indice: ${initial[agg].indice}}`)
+                 //console.log(`inform: {mons: ${initial[agg].ar},indice: ${initial[agg].indice}}`)
                  inside.which.push(inform)
   
                  for (darkening in inform.monos) {
@@ -2304,6 +2305,8 @@ function CreateEngine2() {
              inside.todos = sticky
       pans_2.push(inside)
          }
+
+         //console.log('PANNNNNS',pans_2)
      
          for (h in youdumb_2) {
              if (h != imback) {
@@ -2335,8 +2338,8 @@ function CreateEngine2() {
            tobreak_2 = ''
            realife = []
            amontoado_2 = []
-
-           console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
+           amontext = ''
+           //console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
            for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyoudumb].posições = ['0','1']
              el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido // *miss_2[0].dividido = 'a'
              gates = []
@@ -2369,7 +2372,7 @@ function CreateEngine2() {
                          if (estudar == el.length - 1) {
                              quase.push(juntar)
                          }}} }
-                         console.log('quase',quase)
+                         //console.log('quase',quase)
      
               if (teri == false) {
                  quase = []
@@ -2468,13 +2471,23 @@ function CreateEngine2() {
                  if (friend[i] != '-') {
                      uh+= friend[i]
                  }}
+                 if (amontext.length == 0) {
+                    amontext += '-' + uh
+                 }else{
+                    amontext += ' - ' + uh
+                 }
              amontoado_2.push('-')
              amontoado_2.push(uh)
              }else{
+                if (amontext.length == 0) {
+                    amontext += friend
+                 }else{
+                    amontext += ' + ' + friend
+                 }
                  amontoado_2.push('+')
                  amontoado_2.push(friend)
              } }
-            console.log('amontoado',amontoado_2)
+            //console.log('amontoado',amontoado_2,amontext)
             ////console.log('')
 
          for (repr in pans_2[bababa].which) {
@@ -2577,13 +2590,13 @@ function CreateEngine2() {
                   }}
               amount.push('-')
               amount.push(uh)
-              console.log('-',uh)
-              console.log('mamamount',amount)
+              console.log(`-${uh}(${amontext})`)
+              //console.log('mamamount',amount)
           }else{
               amount.push('+')
               amount.push(friend)
-              console.log(friend)
-              console.log('mamamount',amount)
+              console.log(`${friend}(${amontext})`)
+              //console.log('mamamount',amount)
           }
   
              if (naonao_2.length == 0) {
@@ -2626,7 +2639,7 @@ function CreateEngine2() {
         }}}
          
         //console.log(concatenar_2)
-        console.log(amount, '*', amontoado_2)
+        //console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
@@ -2635,35 +2648,39 @@ function CreateEngine2() {
 
 if (somarmons == false) {
            wholecon = ''
-           outrocon = ''
+           outrocon1 = ''
         for (am in primeirocaso[0]) {
             //console.log('am',am, ':',primeirocaso[0][am])
            if (primeirocaso[0][am].search('[0-9]') != -1 || primeirocaso[0][am].search('[a-z]') != -1) {
             if (primeirocaso[0][0] == '-' && am == 1) {
                 //console.log('-',desfat(REFORMATAR(primeirocaso[0][am])))
-                outrocon+= '-' + desfat(REFORMATAR(primeirocaso[0][am]))
+                outrocon1+= '-' + desfat(REFORMATAR(primeirocaso[0][am]))
             }else{
                 //console.log(desfat(REFORMATAR(primeirocaso[0][am])))
-                outrocon+= desfat(REFORMATAR(primeirocaso[0][am]))
+                outrocon1+= desfat(REFORMATAR(primeirocaso[0][am]))
             }
         }else{
             ////console.log(primeirocaso[0][am])
             if (am == 0 && primeirocaso[0][0] == '-') {
             }else{
-            outrocon+= ` ${primeirocaso[0][am]} `
+            outrocon1+= ` ${primeirocaso[0][am]} `
             }
         } }
 
-        console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${outrocon} )`)
+        //console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${outrocon1} )`)
+        if (outrocon1.length < naonao_2.length) {
+            console.log('mudou')
+           console.log(`(${outrocon1})(${tobreak_2})`)
+        }
         size1 = 0
         if (primeirocaso[0].length == 1) {
-        wholecon+= outrocon
+        wholecon+= outrocon1
         size1 = 1
         }else if (primeirocaso[0].length == 2 && primeirocaso[0][0] == '-') {
             size1 = 1
-            wholecon+= outrocon
+            wholecon+= outrocon1
         }else{
-            wholecon+= `(${outrocon})`
+            wholecon+= `(${outrocon1})`
         }
 
         outrocon = ''
@@ -2684,7 +2701,10 @@ if (somarmons == false) {
             outrocon+= ` ${segundocaso[0][am]} `
             } } }
 
-        console.log('tobreak_2',`( ${tobreak_2} )`, 'outrocon', `( ${outrocon} )`)
+        //console.log('tobreak_2',`( ${tobreak_2} )`, 'outrocon', `( ${outrocon} )`)
+        if (outrocon.length < tobreak_2.length) {
+        console.log(`(${outrocon1})(${outrocon})`)
+        }
         if (segundocaso[0].length == 1) {
             if (size1 == 0) {
                 //console.log('EPaaaaaaaaaaaaaaaaaaaaaaaA!')
@@ -2706,7 +2726,8 @@ if (somarmons == false) {
 
     //
 
-    console.log(primeirocaso[0], segundocaso[0])
+    //console.log(primeirocaso[0], segundocaso[0])
+    console.log(`${wholecon}`)
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
             mudou = true // DEU PRA SOMAR
@@ -2769,21 +2790,22 @@ if (somarmons == false) {
                   newexpress.push('+')
                   newexpress.push(novomon)
               }}
-            console.log('newexpress',newexpress)
+            //console.log('newexpress',newexpress)
             }
       
             //console.warn("NUMDESFAT",numsdesfat)
+            //console.log('pansssss',pans_2[bababa])
          for (e in pans_2[bababa].todos) {
           numsdesfat.push(pans_2[bababa].todos[e])
          }}}
      
          //console.warn("NUMDESFAT",numsdesfat)
-         console.log('SOMARMONS',somarmons)
+         //console.log('SOMARMONS',somarmons)
      if (numsdesfat.length > 0) {
-        ////console.log(concatenar_2)
+      //console.log(concatenar_2)
       console.warn('VAI TER QUE FATORAR DE NOVO')
       ////console.log('youdumb')
-      console.log(pans_2)
+      //console.log(pans_2)
       todososnumeros_2 = []
       for (acaba in monomios_2) {
           todososnumeros_2.push(acaba)
@@ -2794,6 +2816,7 @@ if (somarmons == false) {
               todososnumeros_2.splice(feliz, 1)
            }}
    
+           console.warn('isso é o que sobrou: ',todososnumeros_2)
       for (eh in todososnumeros_2) {
           join = ''
           for (sempresei in monomios_2[todososnumeros_2[eh]].numero) {
@@ -2814,9 +2837,15 @@ if (somarmons == false) {
           //console.log('newexpress',newexpress)
         }
           //if (somarmons == false) 
-          console.log('newexpress',newexpress)
+          //console.log('newexpress',newexpress)
+          if (todososnumeros_2.length == 0 && pans_2.length == 1) {
+          console.log('fatore, espigão, fatore!!!!!!!!!!!!!!!!!!!')
          this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
+          }else{
+            console.log('na verdade, não... abortar')
+          }
      }else{
+        console.log('não fez')
      todososnumeros_2 = []
      for (acaba in monomios_2) {
          todososnumeros_2.push(acaba)
@@ -3728,13 +3757,13 @@ if (somarmons == false) {
 
   ir = false
   if (todososnumeros_2.length == 0 && pans_2.length <= 1) {
-    console.warn('DEU CERTOOOOOOOOOOOOOOO')
+    console.warn('DEU CERTOOOOOOOOOOOOOOO',somarmons)
     ir = true
   }else if (monomios_2.length == 1) {
-    console.warn('DEU CERTOOOOOOOOOOOOOOO')
+    console.warn('DEU CERTOOOOOOOOOOOOOOO',somarmons)
     ir = true
   }else{
-    console.warn('DEU RUIM ZÉ')
+    console.warn('DEU RUIM ZÉ',somarmons)
   }
 
   ////console.log('AAAAAAA AQUI ESTÁ O IRRRRR',ir)
@@ -3847,13 +3876,14 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               end = seps[varnot].close
               expin = seps[varnot].exp
           
+              console.log('vai fatorar ', seps[varnot].exp)
             fator1 = new CreateEngine2().FATORAR(FATORE(seps[varnot].exp), false)
           
             //console.log('HEY ============>', seps[varnot].exp)
             previous = okexp[Number(seps[varnot].open) - 1]
-            //console.log(okexp, previous)
-            //console.log('FATORAÇÃO:', fator1[0])
-            //console.log('rexp',rexp)
+            console.log(okexp)
+            console.log('FATORAÇÃO:', fator1[0])
+            console.log('rexp',rexp)
             alr = true
             if (previous == ')' && fator1[0] != '(' && fator1[0] != '?') {
                 //console.log('Looks like we have an issue')
@@ -3909,13 +3939,14 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                   rexp+= lastfat
                   rexp+= '(' + expin + ')'
               }
-              //console.log('rexp',rexp)
+
               if (varnot == seps.length - 1) {
                   if (end != okexp.length - 1) {
                       for (c = Number(end) + 1; c < okexp.length;c++) {
                           rexp+= okexp[c]
                       }}}}
 
+           console.warn('rexp',rexp)
            okexp = rexp
            if (chain.indexOf(true) == -1) {
               plo = true
@@ -3926,7 +3957,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
               
             } ;
               
-
+            
               //console.warn('SLITEXPS', )
           
               if (alt == 1) {
