@@ -1153,7 +1153,8 @@ return podeir;
 }
 function doTheFactoring(exal) {
 ////console.log(exal)
-steps = []
+
+allsteps = []
 function CreateEngine2() {
     ////console.log('')
     ////console.log('')
@@ -1523,6 +1524,7 @@ function CreateEngine2() {
   // AQUI ACABA O CÓDIGO PARA SOMAR OS MONÔMIOS
      reps = []
      segs_2 = []
+     steps = []
      let  = []
      
 
@@ -2471,21 +2473,26 @@ function CreateEngine2() {
                  if (friend[i] != '-') {
                      uh+= friend[i]
                  }}
+
+                 amontoado_2.push('-')
+              amontoado_2.push(uh) 
                  if (amontext.length == 0) {
-                    amontext += '-' + uh
+                    amontext += '-' + desfat(uh)
+                    console.log(uh)
                  }else{
-                    amontext += ' - ' + uh
+                    amontext += ' - ' + desfat(uh)
+                    console.log(uh)
                  }
-             amontoado_2.push('-')
-             amontoado_2.push(uh)
              }else{
-                if (amontext.length == 0) {
-                    amontext += friend
-                 }else{
-                    amontext += ' + ' + friend
-                 }
                  amontoado_2.push('+')
                  amontoado_2.push(friend)
+                if (amontext.length == 0) {
+                    amontext += '' + desfat(friend)
+                    console.log(friend)
+                 }else{
+                    amontext += ' + ' + desfat(friend)
+                    console.log(friend)
+                 }
              } }
             //console.log('amontoado',amontoado_2,amontext)
             ////console.log('')
@@ -2591,11 +2598,15 @@ function CreateEngine2() {
               amount.push('-')
               amount.push(uh)
               console.log(`-${uh}(${amontext})`)
+              steps.push(`-${uh}(${amontext})`)
+              console.log(steps,monomios_2.length)
               //console.log('mamamount',amount)
           }else{
               amount.push('+')
               amount.push(friend)
               console.log(`${friend}(${amontext})`)
+              steps.push(`${friend}(${amontext})`)
+              console.log(steps,monomios_2.length)
               //console.log('mamamount',amount)
           }
   
@@ -2639,7 +2650,7 @@ function CreateEngine2() {
         }}}
          
         //console.log(concatenar_2)
-        //console.log(amount, '*', amontoado_2)
+        console.log(amount, '*', amontoado_2)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
@@ -2667,10 +2678,36 @@ if (somarmons == false) {
             }
         } }
 
-        //console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${outrocon1} )`)
+        //console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${tobreak_2} )`)
+         if (naonao_2.search('[\\-\\+]') == -1 && tobreak_2.search('[\\-\\+]') == -1) {
+             console.log(`${naonao_2}.${tobreak_2}`)
+             steps.push(`${naonao_2}.${tobreak_2}`)
+            }else if (naonao_2.search('[\\-\\+]') == -1) {
+                console.log(`${naonao_2}(${tobreak_2})`)
+                steps.push(`${naonao_2}(${tobreak_2})`)
+            }else if (tobreak_2.search('[\\-\\+]') == -1) {
+                console.log(`(${naonao_2}).${tobreak_2}`)
+                steps.push(`(${naonao_2}).${tobreak_2}`)
+            }else{
+                console.log(`(${naonao_2})(${tobreak_2})`)
+                steps.push(`(${naonao_2})(${tobreak_2})`)
+            }
         if (outrocon1.length < naonao_2.length) {
             console.log('mudou')
-           console.log(`(${outrocon1})(${tobreak_2})`)
+
+              if (outrocon1.search('[\\-\\+]') == -1 && tobreak_2.search('[\\-\\+]') == -1) {
+             console.log(`${outrocon1}.${tobreak_2}`)
+             steps.push(`${outrocon1}.${tobreak_2}`)
+            }else if (outrocon1.search('[\\-\\+]') == -1) {
+                console.log(`${outrocon1}(${tobreak_2})`)
+                steps.push(`${outrocon1}(${tobreak_2})`)
+            }else if (tobreak_2.search('[\\-\\+]') == -1) {
+                console.log(`(${outrocon1}).${tobreak_2}`)
+                steps.push(`(${outrocon1}).${tobreak_2}`)
+            }else{
+                console.log(`(${outrocon1})(${tobreak_2})`)
+                steps.push(`(${outrocon1})(${tobreak_2})`)
+            }
         }
         size1 = 0
         if (primeirocaso[0].length == 1) {
@@ -2685,7 +2722,7 @@ if (somarmons == false) {
 
         outrocon = ''
         for (am in segundocaso[0]) {
-            //console.log('am',am, ':',segundocaso[0][am])
+            console.log('am',am, ':',segundocaso[0][am])
            if (segundocaso[0][am].search('[0-9]') != -1 || segundocaso[0][am].search('[a-z]') != -1) {
             if (segundocaso[0][0] == '-' && am == 1) {
                 //console.log('-',desfat(REFORMATAR(segundocaso[0][am])))
@@ -2703,7 +2740,19 @@ if (somarmons == false) {
 
         //console.log('tobreak_2',`( ${tobreak_2} )`, 'outrocon', `( ${outrocon} )`)
         if (outrocon.length < tobreak_2.length) {
-        console.log(`(${outrocon1})(${outrocon})`)
+            if (outrocon1.search('[\\-\\+]') == -1 && outrocon.search('[\\-\\+]') == -1) {
+             console.log(`${outrocon1}.${outrocon}`)
+             steps.push(`${outrocon1}.${outrocon}`)
+            }else if (outrocon1.search('[\\-\\+]') == -1) {
+                console.log(`${outrocon1}(${outrocon})`)
+                steps.push(`${outrocon1}(${outrocon})`)
+            }else if (outrocon.search('[\\-\\+]') == -1) {
+                console.log(`(${outrocon1}).${outrocon}`)
+                steps.push(`(${outrocon1}).${outrocon}`)
+            }else{
+                console.log(`(${outrocon1})(${outrocon})`)
+                steps.push(`(${outrocon1})(${outrocon})`)
+            }
         }
         if (segundocaso[0].length == 1) {
             if (size1 == 0) {
@@ -2728,6 +2777,7 @@ if (somarmons == false) {
 
     //console.log(primeirocaso[0], segundocaso[0])
     console.log(`${wholecon}`)
+    steps.push(`${wholecon}`)
         if (primeirocaso[1] == primeirocaso[2]) {
         }else{
             mudou = true // DEU PRA SOMAR
@@ -2806,6 +2856,7 @@ if (somarmons == false) {
       console.warn('VAI TER QUE FATORAR DE NOVO')
       ////console.log('youdumb')
       //console.log(pans_2)
+      console.log('AQUI ESTÁ O SEU NUGGETS',steps)
       todososnumeros_2 = []
       for (acaba in monomios_2) {
           todososnumeros_2.push(acaba)
@@ -2840,12 +2891,15 @@ if (somarmons == false) {
           //console.log('newexpress',newexpress)
           if (todososnumeros_2.length == 0 && pans_2.length == 1) {
           console.log('fatore, espigão, fatore!!!!!!!!!!!!!!!!!!!')
-         this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
+          allsteps.push(steps)
+          this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
           }else{
             console.log('na verdade, não... abortar')
           }
      }else{
-        console.log('não fez')
+        console.log('não fez, mas aqui está:',steps)
+        if (steps.length > 0)
+        allsteps.push(steps)
      todososnumeros_2 = []
      for (acaba in monomios_2) {
          todososnumeros_2.push(acaba)
@@ -3825,7 +3879,8 @@ if (somarmons == false) {
             pans_2
         ]
         }
-}}}
+}
+}}
 
 ep = FATORE(exal)
 ////console.log(ep)
@@ -3883,7 +3938,6 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             previous = okexp[Number(seps[varnot].open) - 1]
             console.log(okexp)
             console.log('FATORAÇÃO:', fator1[0])
-            console.log('rexp',rexp)
             alr = true
             if (previous == ')' && fator1[0] != '(' && fator1[0] != '?') {
                 //console.log('Looks like we have an issue')
@@ -3939,6 +3993,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                   rexp+= lastfat
                   rexp+= '(' + expin + ')'
               }
+              console.log('REEEXP',rexp)
 
               if (varnot == seps.length - 1) {
                   if (end != okexp.length - 1) {
