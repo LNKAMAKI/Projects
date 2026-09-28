@@ -33,7 +33,7 @@
             --shadowgray: #bdbdbd;
             --number: rgb(26 26 168);
             --string: rgb(200 0 82);
-            --pretty-pink: #ffc4c4;
+            --pretty-pink: #ffd7d7;
             --lilac: #d7cee7;
             --max-height: 300px;
         }
@@ -308,13 +308,31 @@
             width: calc(100% - 60px);
             height: 100px;
             margin: 15px auto 0px auto;
-            padding: 5px 10px;
+            padding: 6px 10px;
             border-radius: 10px;
-            align-content: center;
+            height: 40px;
             font-family: 'Inconsolata',Arial;
             font-size: 1.1em;
             overflow-y: hidden;
         }
+
+        #passo_a_passo {
+            background-color: var(--pretty-pink);
+            border-radius: 10px;
+            margin-left: 20px;
+            padding-left: 10px;
+            width: calc(100% - 50px);
+            font-family: 'Inconsolata',Arial;
+            font-size: 1.1em;
+            overflow-y: hidden;
+            height: 38px;
+        }
+
+        div#canva {
+            background-color: white;
+            width: calc(99% - 5px);
+        }
+
         .space {
             background-color: white;
             height: 6px;
@@ -531,7 +549,7 @@
     .pexp {
         background-color: var(--pretty-pink);
         margin: 0px 5px 4px 5px;
-        border-radius: 20px;
+        border-radius: 10px;
         width: calc(100% - 10px);
         padding: 3px 0px;
         cursor: pointer;
@@ -646,14 +664,6 @@
             <!--<img src="/projects/imagens/copy.png" class="copy" alt="copy text" onclick="copy()">-->
         </div>
        <!-- <p><input type="button" value="FATORAR(expressão)" onclick="ir()"></p>-->
-        
-
-           <div class="cont" id="passo_a_passo">
-                    <div class="center">
-                        <img src="./imagens/rar.png" alt="" class="ar">
-                        <span>Passo a Passo</span>
-                    </div>
-                </div>
 
 
                 <p id="res">/* Resultado: */</p>
@@ -664,7 +674,15 @@
                 </div>
 
               
-                <div id="resol" class="cont sect" style="height: 40px;">
+           <div class="cont" id="passo_a_passo">
+                    <div class="center" style="align-items: center;">
+                        <img src="./imagens/rar.png" alt="" class="ar">
+                        <span>Passo a Passo</span>
+                    </div>
+                    <div id="canva">oi</div>
+                </div>
+
+                <div id="resol" class="cont sect" style="height: 20px;">
                     <div class="center" id="nopad">
                         <img src="./imagens/rar.png" alt="" class="ar">
                         <span>Resolução</span>
@@ -678,16 +696,6 @@
                     <p></p>
                 </div>
 
-                <div class="cont">
-                    <div class="center">
-                        <img src="./imagens/rar.png" alt="" class="ar">
-                        <span>
-                            Passo a passo
-                        </span>
-                    </div>
-                    <p></p>
-                </div>
-                </div>
             </div>
 </body>
 </html>
