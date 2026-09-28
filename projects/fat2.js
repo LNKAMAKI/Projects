@@ -54,6 +54,25 @@ function showresult() {
     ////console.log('type',type)
     ////console.log(type)
     res = doTheFactoring(type)
+    console.log(res[12])
+
+    for (part in res[12]) {
+        respart = res[12][part]
+        //console.log(respart)
+        if (Array.isArray(respart) == true) {
+        for (p in respart){
+            if (p == 1 && respart[0] == respart[1]) {
+
+            }else if (p == respart.length - 1 && respart[respart.length - 2] == respart[p]) {
+
+            }else{
+                console.log(respart[p])
+            }
+        }
+    }else{
+        console.log(respart)
+    }
+    }
    
     //console.log('RESSSSSSSSSSSSSSSSS',res)
     if (res[0] != '?') {
@@ -1160,7 +1179,7 @@ function CreateEngine2() {
     ////console.log('')
     ////console.log('creating engine........')
   this.FATORAR = 
-  function (expression_2,somarmons) {
+  function (expression_2,somarmons,tafatorando) {
     console.log('HEY!')
     if (expression_2[0] !== "-" && expression_2[0] !== "+") {
       expo_2 = ["+"];
@@ -2341,6 +2360,8 @@ function CreateEngine2() {
            realife = []
            amontoado_2 = []
            amontext = ''
+           amontexts = ''
+           nanaoreplace = ''
            //console.log(roll_2[pans_2[bababa].numberyoudumb].factor, roll_2[pans_2[bababa].numberyoudumb].repetidos)
            for (quassao in roll_2[pans_2[bababa].numberyoudumb].posições) { // *roll_2[pans_2[bababa].numberyoudumb].posições = ['0','1']
              el = miss_2[roll_2[pans_2[bababa].numberyoudumb].posições[quassao]].dividido // *miss_2[0].dividido = 'a'
@@ -2497,6 +2518,7 @@ function CreateEngine2() {
             //console.log('amontoado',amontoado_2,amontext)
             ////console.log('')
 
+            console.log('esse quase',quase)
          for (repr in pans_2[bababa].which) {
               triste = scarecrow_2[roll_2[pans_2[bababa].numberyoudumb].repetidos[pans_2[bababa].which[repr].numberwhat]].divisor
               quase = []
@@ -2598,14 +2620,36 @@ function CreateEngine2() {
               amount.push('-')
               amount.push(uh)
               console.log(`-${uh}(${amontext})`)
-              steps.push(`-${uh}(${amontext})`)
+              //steps.push(`-${uh}(${amontext})`)
               console.log(steps,monomios_2.length)
               //console.log('mamamount',amount)
+              console.log('nanaoreplace',nanaoreplace)
+               if (amontexts.length > 0) {
+                addnow = desfat(uh)
+                amontexts += ` + -${addnow}(${amontext})`
+                nanaoreplace += ` - ${addnow}`
+              }else{
+                addnow = desfat(uh)
+                amontexts += `-${addnow}(${amontext})`
+                nanaoreplace += `-${addnow}`
+              }
+              console.log('nanaoreplace',nanaoreplace)
           }else{
               amount.push('+')
               amount.push(friend)
               console.log(`${friend}(${amontext})`)
-              steps.push(`${friend}(${amontext})`)
+              console.log('nanaoreplace',nanaoreplace)
+              if (amontexts.length > 0) {
+                addnow = desfat(friend)
+                amontexts += ` + ${addnow}(${amontext})`
+                nanaoreplace += ` + ${addnow}`
+              }else{
+                addnow = desfat(friend)
+                amontexts += `${addnow}(${amontext})`
+                nanaoreplace += `${addnow}`
+              }
+              console.log('nanaoreplace',nanaoreplace)
+              //steps.push(`${desfat(friend)}(${amontext})`)
               console.log(steps,monomios_2.length)
               //console.log('mamamount',amount)
           }
@@ -2613,14 +2657,18 @@ function CreateEngine2() {
              if (naonao_2.length == 0) {
                  if (quase[0] == '-') {
                      naonao_2+= `-${aconta_2}`
+                     console.log('nanao',naonao_2)
                  }else{
                      naonao_2+= aconta_2
+                     console.log('nanao',naonao_2)
                  }
              }else{
                  if (quase[0] == '-') {
                      naonao_2+= ` - ${aconta_2}`
+                     console.log('nanao',naonao_2)
                  }else{
                      naonao_2+= ` + ${aconta_2}`  
+                     console.log('nanao',naonao_2)
                  }}}
                  ////console.log('')
          
@@ -2651,6 +2699,9 @@ function CreateEngine2() {
          
         //console.log(concatenar_2)
         console.log(amount, '*', amontoado_2)
+
+        console.log(amontexts,nanaoreplace)
+        steps.push(amontexts)
      // FAZENDO A CONTA
         primeirocaso = SOMANDOMONOMIOS_2(amount) // SOMANDO MONOMIOS DO AGRUPAMENTO ESQUERDO *Eg.: ('+','9x')
         segundocaso = SOMANDOMONOMIOS_2(amontoado_2) // SOMANDO MONOMIOS DO AGRUPAMENTO DIREITO *Eg.: ('-','2','+','y')
@@ -2679,20 +2730,20 @@ if (somarmons == false) {
         } }
 
         //console.log('naonao_2:',`( ${naonao_2} )`, 'outrocon:', `( ${tobreak_2} )`)
-         if (naonao_2.search('[\\-\\+]') == -1 && tobreak_2.search('[\\-\\+]') == -1) {
-             console.log(`${naonao_2}.${tobreak_2}`)
-             steps.push(`${naonao_2}.${tobreak_2}`)
-            }else if (naonao_2.search('[\\-\\+]') == -1) {
-                console.log(`${naonao_2}(${tobreak_2})`)
-                steps.push(`${naonao_2}(${tobreak_2})`)
+         if (nanaoreplace.search('[\\-\\+]') == -1 && tobreak_2.search('[\\-\\+]') == -1) {
+             console.log(`${nanaoreplace}.${tobreak_2}`)
+             steps.push(`${nanaoreplace}.${tobreak_2}`)
+            }else if (nanaoreplace.search('[\\-\\+]') == -1) {
+                console.log(`${nanaoreplace}(${tobreak_2})`)
+                steps.push(`${nanaoreplace}(${tobreak_2})`)
             }else if (tobreak_2.search('[\\-\\+]') == -1) {
-                console.log(`(${naonao_2}).${tobreak_2}`)
-                steps.push(`(${naonao_2}).${tobreak_2}`)
+                console.log(`(${nanaoreplace}).${tobreak_2}`)
+                steps.push(`(${nanaoreplace}).${tobreak_2}`)
             }else{
-                console.log(`(${naonao_2})(${tobreak_2})`)
-                steps.push(`(${naonao_2})(${tobreak_2})`)
+                console.log(`(${nanaoreplace})(${tobreak_2})`)
+                steps.push(`(${nanaoreplace})(${tobreak_2})`)
             }
-        if (outrocon1.length < naonao_2.length) {
+        if (outrocon1.length < nanaoreplace.length) {
             console.log('mudou')
 
               if (outrocon1.search('[\\-\\+]') == -1 && tobreak_2.search('[\\-\\+]') == -1) {
@@ -2788,7 +2839,7 @@ if (somarmons == false) {
             mudou = true // DEU PRA SOMAR
         }
   
-        if (mudou == true) { // Se deu pra somar pelo menos um dos dois (amount ou amontoado_2)
+        if (mudou == true || 0 == 0) { // Se deu pra somar pelo menos um dos dois (amount ou amontoado_2)
           naonao_2 = primeirocaso[0] // *9x
           tobreak_2 = segundocaso[0] // *-2 + y
 
@@ -2851,12 +2902,7 @@ if (somarmons == false) {
      
          //console.warn("NUMDESFAT",numsdesfat)
          //console.log('SOMARMONS',somarmons)
-     if (numsdesfat.length > 0) {
-      //console.log(concatenar_2)
-      console.warn('VAI TER QUE FATORAR DE NOVO')
-      ////console.log('youdumb')
-      //console.log(pans_2)
-      console.log('AQUI ESTÁ O SEU NUGGETS',steps)
+    
       todososnumeros_2 = []
       for (acaba in monomios_2) {
           todososnumeros_2.push(acaba)
@@ -2868,6 +2914,12 @@ if (somarmons == false) {
            }}
    
            console.warn('isso é o que sobrou: ',todososnumeros_2)
+            if (0 == 1) {
+      //console.log(concatenar_2)
+      console.warn('VAI TER QUE FATORAR DE NOVO')
+      ////console.log('youdumb')
+      //console.log(pans_2)
+      //console.log('AQUI ESTÁ O SEU NUGGETS',steps)
       for (eh in todososnumeros_2) {
           join = ''
           for (sempresei in monomios_2[todososnumeros_2[eh]].numero) {
@@ -2892,13 +2944,13 @@ if (somarmons == false) {
           if (todososnumeros_2.length == 0 && pans_2.length == 1) {
           console.log('fatore, espigão, fatore!!!!!!!!!!!!!!!!!!!')
           allsteps.push(steps)
-          this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
+          //this.FATORAR(newexpress,false) // !--------- PONTO DE ATENÇÃO ---------!
           }else{
             console.log('na verdade, não... abortar')
           }
      }else{
         console.log('não fez, mas aqui está:',steps)
-        if (steps.length > 0)
+        if (steps.length > 0 && tafatorando == false && todososnumeros_2.length == 0 && pans_2.length == 1) 
         allsteps.push(steps)
      todososnumeros_2 = []
      for (acaba in monomios_2) {
@@ -3884,8 +3936,8 @@ if (somarmons == false) {
 
 ep = FATORE(exal)
 ////console.log(ep)
-fat1 = new CreateEngine2().FATORAR(ep,true)
-fat2 = new CreateEngine2().FATORAR(ep,false)
+fat1 = new CreateEngine2().FATORAR(ep,true,false)
+fat2 = new CreateEngine2().FATORAR(ep,false,false)
 
 //console.warn('FAT',fat1, fat2)
        
@@ -3911,7 +3963,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
           vez = 0
 
           if (fat2[0] == '?') {
-            fat3 = new CreateEngine2().FATORAR(FATORE(fat1[0]),false)
+            fat3 = new CreateEngine2().FATORAR(FATORE(fat1[0]),false,false)
             console.warn('FATTT 3333',fat3)
             if (fat3[0] != '?') {
                 okexp = fat3[0]
@@ -3926,18 +3978,31 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             console.warn('SEPS', seps)
               rexp =  ''
               chain = []
+              fatorando = ''
           for (varnot in seps) {          
             start = seps[varnot].open
               end = seps[varnot].close
               expin = seps[varnot].exp
           
               console.log('vai fatorar ', seps[varnot].exp)
-            fator1 = new CreateEngine2().FATORAR(FATORE(seps[varnot].exp), false)
+            fator1 = new CreateEngine2().FATORAR(FATORE(seps[varnot].exp), false, true)
           
             //console.log('HEY ============>', seps[varnot].exp)
             previous = okexp[Number(seps[varnot].open) - 1]
             console.log(okexp)
             console.log('FATORAÇÃO:', fator1[0])
+            if (fator1[0] != '?') {
+                if (varnot == 0) {
+                    firstslice = okexp.slice(0,Number(seps[varnot].open))
+                    fatorando += firstslice 
+                    if (firstslice.length > 0) {
+                        fatorando += '.'
+                    }
+                }
+                fatorando += fator1[0]
+                console.warn('eeeeeeeeeeeeeeeeeeeeeeee',fatorando + okexp.slice(Number(seps[varnot].close) + 1))
+                allsteps.push(fatorando + okexp.slice(Number(seps[varnot].close) + 1))
+            }
             alr = true
             if (previous == ')' && fator1[0] != '(' && fator1[0] != '?') {
                 //console.log('Looks like we have an issue')
@@ -4015,6 +4080,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
             
               //console.warn('SLITEXPS', )
           
+              allsteps.push(okexp)
               if (alt == 1) {
                 vari = fat1
               }else{
@@ -4033,6 +4099,7 @@ fat2 = new CreateEngine2().FATORAR(ep,false)
                 vari[9],
                 vari[10],
                 vari[11],
+                allsteps
               ]
             }
 
