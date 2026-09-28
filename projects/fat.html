@@ -306,6 +306,7 @@
             position: relative;
             background-color: var(--darkblue);
             width: calc(100% - 60px);
+            height: 100px;
             margin: 15px auto 0px auto;
             padding: 5px 10px;
             border-radius: 10px;
@@ -341,7 +342,7 @@
         #nopad {
             padding: 0px;
             margin-bottom: 5px;
-            height: 20px;
+            height: 40px;
         }
         ::-webkit-scrollbar {
             height: 7px;
@@ -646,17 +647,25 @@
         </div>
        <!-- <p><input type="button" value="FATORAR(expressão)" onclick="ir()"></p>-->
         
-        <div id="passo_a_passo">
-            <p>PASSO A PASSO</p>
-        </div>
+
+           <div class="cont" id="passo_a_passo">
+                    <div class="center">
+                        <img src="./imagens/rar.png" alt="" class="ar">
+                        <span>Passo a Passo</span>
+                    </div>
+                </div>
+
+
                 <p id="res">/* Resultado: */</p>
                 <div style="text-align: center;display: flex;flex-direction: column;align-items: center;">
                     <input id="fatoracao" class="type" readonly="readonly"></input>
                     <img src="./imagens/copy.png" class="copy" alt="copy text" onclick="copy2(1)">
 
                 </div>
-                <div id="resol" class="cont" style="height: 20px;">
-                    <div class="center">
+
+              
+                <div id="resol" class="cont sect" style="height: 40px;">
+                    <div class="center" id="nopad">
                         <img src="./imagens/rar.png" alt="" class="ar">
                         <span>Resolução</span>
                     </div>

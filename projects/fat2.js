@@ -51,10 +51,27 @@ function showresult() {
         }}
    
     type = get1('write').value
+    passo_a_passo = document.getElementById('passo_a_passo')
     ////console.log('type',type)
     ////console.log(type)
     res = doTheFactoring(type)
     console.log(res[12])
+   
+    // deletando os parágrafos anteriores...
+    p_passos = passo_a_passo.getElementsByClassName('passo')
+        console.log('ESSA PORCARIA DE PASSOS',p_passos, p_passos.length)
+   if (p_passos.length > 0) {
+    console.log('ESSA PORCARIA E MAIOR Q ZERO')
+    for (pindex = p_passos.length - 1; pindex >= 0; pindex--) {
+        console.log(pindex, 'DELETAAAAAAAAAAAAAAAR')
+        passo_a_passo.removeChild(p_passos[pindex])
+    }
+   }
+    //console.log('RESSSSSSSSSSSSSSSSS',res)
+    if (res[0] != '?') {
+    get1('fatoracao').value = res[0]
+
+    // criando os parágrafos do passoa a passo
 
     for (part in res[12]) {
         respart = res[12][part]
@@ -65,18 +82,25 @@ function showresult() {
 
             }else if (p == respart.length - 1 && respart[respart.length - 2] == respart[p]) {
 
+            }else if (p == respart.length - 2 && respart[respart.length - 3] == respart[p]){
+               
             }else{
+                p_passo = document.createElement('p')
+                p_passo.innerText = respart[p]
+                p_passo.classList.add('passo')
                 console.log(respart[p])
+                passo_a_passo.appendChild(p_passo)
             }
         }
-    }else{
+    }else if (part != res[12].length - 1 || res[12][part - 1] != respart) {
+        p_passo = document.createElement('p')
+        p_passo.innerText = respart
         console.log(respart)
+        p_passo.classList.add('passo')
+        passo_a_passo.appendChild(p_passo)
     }
     }
-   
-    //console.log('RESSSSSSSSSSSSSSSSS',res)
-    if (res[0] != '?') {
-    get1('fatoracao').value = res[0]
+
     }else{
         //fat1 = new CreateEngine2().FATORAR(ep,true)
         //console.log('expressão com monômios somados: ', fat1[0])
@@ -4080,7 +4104,11 @@ fat2 = new CreateEngine2().FATORAR(ep,false,false)
             
               //console.warn('SLITEXPS', )
           
+              if (Array.isArray(allsteps[allsteps.length - 1]) == true) {
+                allsteps[allsteps.length - 1].push(okexp)
+              }else{
               allsteps.push(okexp)
+             }
               if (alt == 1) {
                 vari = fat1
               }else{
