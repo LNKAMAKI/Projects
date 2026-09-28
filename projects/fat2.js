@@ -51,20 +51,20 @@ function showresult() {
         }}
    
     type = get1('write').value
-    passo_a_passo = document.getElementById('passo_a_passo')
+    canva = document.getElementById('canva')
     ////console.log('type',type)
     ////console.log(type)
     res = doTheFactoring(type)
     console.log(res[12])
    
     // deletando os parágrafos anteriores...
-    p_passos = passo_a_passo.getElementsByClassName('passo')
+    p_passos = canva.getElementsByClassName('passo')
         console.log('ESSA PORCARIA DE PASSOS',p_passos, p_passos.length)
    if (p_passos.length > 0) {
     console.log('ESSA PORCARIA E MAIOR Q ZERO')
     for (pindex = p_passos.length - 1; pindex >= 0; pindex--) {
         console.log(pindex, 'DELETAAAAAAAAAAAAAAAR')
-        passo_a_passo.removeChild(p_passos[pindex])
+        canva.removeChild(p_passos[pindex])
     }
    }
     //console.log('RESSSSSSSSSSSSSSSSS',res)
@@ -89,7 +89,7 @@ function showresult() {
                 p_passo.innerText = respart[p]
                 p_passo.classList.add('passo')
                 console.log(respart[p])
-                passo_a_passo.appendChild(p_passo)
+                canva.appendChild(p_passo)
             }
         }
     }else if (part != res[12].length - 1 || res[12][part - 1] != respart) {
@@ -97,7 +97,7 @@ function showresult() {
         p_passo.innerText = respart
         console.log(respart)
         p_passo.classList.add('passo')
-        passo_a_passo.appendChild(p_passo)
+        canva.appendChild(p_passo)
     }
     }
 

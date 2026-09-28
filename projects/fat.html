@@ -272,6 +272,7 @@
             text-align: center;
             width: 100%;
         }
+
         input[type="button"] {
            height: fit-content;
            font-family: 'Inconsolata',Arial;
@@ -302,15 +303,16 @@
             margin:8px;
             cursor: pointer;
         }
-        #resol {
+       
+         #resol {
             position: relative;
             background-color: var(--darkblue);
             width: calc(100% - 60px);
             height: 100px;
             margin: 15px auto 0px auto;
-            padding: 6px 10px;
+            padding: 5px 10px;
             border-radius: 10px;
-            height: 40px;
+            align-content: center;
             font-family: 'Inconsolata',Arial;
             font-size: 1.1em;
             overflow-y: hidden;
@@ -325,12 +327,19 @@
             font-family: 'Inconsolata',Arial;
             font-size: 1.1em;
             overflow-y: hidden;
-            height: 38px;
+            height: 35px;
+        }
+
+        .passo {
+            margin: 10px 0px;
         }
 
         div#canva {
             background-color: white;
             width: calc(99% - 5px);
+            margin-bottom: 10px;
+            height: fit-content;
+            padding: 5px 0px;
         }
 
         .space {
@@ -360,7 +369,6 @@
         #nopad {
             padding: 0px;
             margin-bottom: 5px;
-            height: 40px;
         }
         ::-webkit-scrollbar {
             height: 7px;
@@ -679,7 +687,7 @@
                         <img src="./imagens/rar.png" alt="" class="ar">
                         <span>Passo a Passo</span>
                     </div>
-                    <div id="canva">oi</div>
+                    <div id="canva"></div>
                 </div>
 
                 <div id="resol" class="cont sect" style="height: 20px;">
