@@ -6,7 +6,7 @@
     L = 200
     beedsnumber = 80
     radius = (L/beedsnumber)/2
-    modos = 10
+    modos = 30
     ans = []
     bns = []
     beeds = []
