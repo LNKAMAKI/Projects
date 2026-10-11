@@ -60,17 +60,16 @@ animate()
  b = 6*timer
 function animate() {
 
-     const currentTime = performance.now();  // Pega tempo atual
+     //const currentTime = performance.now();  // Pega tempo atual
     
-    if (lastTime === 0) {
-        lastTime = currentTime;
-    }
+    //if (lastTime === 0) {
+      // lastTime = currentTime;
+    //}
     
-    const dt = (currentTime - lastTime) / 1000;
-    lastTime = currentTime;
-    
-    timer += dt
-    timer_nochange += dt
+   // const dt = (currentTime - lastTime) / 1000;
+    //lastTime = currentTime;=
+    timer += 0.01
+    //timer_nochange += dt
 
     c.clearRect(0, 0, 300, 150);
 
@@ -147,7 +146,7 @@ for (let i = 0; i < contsnumber; i++){
 // wn = npiv/L
 // v = sqrt(tension/density)
 //timer += 0.01
-timer += dt;
+//timer += dt;
 requestAnimationFrame(animate)
 }
 }

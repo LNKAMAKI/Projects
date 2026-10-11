@@ -824,7 +824,9 @@ function resolverParênteses() {
 
                    anstxt = txt
                    console.warn('fazer conta de ',anstxt)
-                console.log('igual a: ',fazerConta(anstxt)) 
+                //console.log('igual a: ',fazerConta(anstxt)) 
+                console.log(expression,'dddddddddddddddddddddddd')
+                console.warn('degs está assim:',degs)
                 position = 0    
                ansd = true
     
