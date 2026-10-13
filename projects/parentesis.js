@@ -5,19 +5,53 @@ Initialparenteses =[ [ ],
 {start: 3, end: 9}, //-> 1
 {start: 5, end: 7}, //-> 2
 {start: 11, end: 15}, //-> 3
-{start: 12, end: 14} // -> 4
+{start: 12, end: 14}, //-> 4
+{start: 16, end: 20}, //-> 5
+{start: 17, end: 19}
 ]
 
-group(Initialparenteses)
+/*
+Initialparenteses =[
+{start: 0, end: 10}, //-> 0
+{start: 3, end: 9}, //-> 1
+{start: 5, end: 7} //-> 2
+]
 
-function group (parenteses) {
+Initialparenteses =[ [ ],
+{start: 0, end: 10}, //-> 0
+{start: 3, end: 9}, //-> 1
+{start: 5, end: 7}, //-> 2
+{start: 11, end: 15}, //-> 3
+{start: 12, end: 14}, //-> 4
+]
+
+Initialparenteses =[ [ ],
+{start: 0, end: 10}, //-> 0
+{start: 3, end: 9}, //-> 1
+]
+*/
+
+Initialparenteses =[ [ ],
+{start: 0, end: 10}, //-> 0
+{start: 3, end: 9}, //-> 1
+{start: 5, end: 7}, //-> 2
+{start: 11, end: 15}, //-> 3
+{start: 12, end: 14}, //-> 4
+]
+
+
+
+
+new Group(Initialparenteses)
+
+function Group (parenteses) {
 
 referobj = parenteses[1]
 index_referobj = 1
 arraygroup = [referobj]
 
 console.log('parenteses: ', parenteses)
-if (parenteses.length >= 2) {
+if (parenteses.length >= 3) {
     contador = 0
 for (obj = 2; obj < parenteses.length && contador < 10; obj++) {
     console.log('objeto a ser analisado',obj, parenteses[obj])
@@ -30,15 +64,18 @@ for (obj = 2; obj < parenteses.length && contador < 10; obj++) {
 
     if (obj == parenteses.length - 1 && arraygroup.length != parenteses.length) {
         console.log('obj é o último e arraygroup não tem todos os objetos, então é preciso criar o array')
+        console.log('arraygroup', arraygroup)
     parenteses[index_referobj] = arraygroup
 
     parenteses.splice(index_referobj + 1, obj - index_referobj)
 
     obj = index_referobj 
+    index_referobj = obj
 // para ajustar o parâmetro com a diminuição do tamanho
 
 // chamar a função de novo
-//group(parenteses[index_referobj])
+console.log('chamando a função de novo',index_referobj, parenteses[obj])
+new Group(parenteses[obj])
     }
 
    }else{
@@ -58,8 +95,8 @@ for (obj = 2; obj < parenteses.length && contador < 10; obj++) {
     arraygroup = [referobj]
 
 // chamar a função de novo
-
-//group(parenteses[index_referobj])
+console.log('chamando a função de novo',index_referobj, parenteses[obj - 1])
+new Group(parenteses[obj - 1])
   }
 }else{
     console.log(obj,'tem q parar aqui')
@@ -67,6 +104,8 @@ for (obj = 2; obj < parenteses.length && contador < 10; obj++) {
 contador++
 }
 }
+console.log('fim do programa')
+console.log('resultado final: ', parenteses)
 }
 
 /*
