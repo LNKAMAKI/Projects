@@ -34,9 +34,10 @@ Initialparenteses =[ [ ],
 Initialparenteses =[ [ ],
 {start: 0, end: 10}, //-> 0
 {start: 3, end: 9}, //-> 1
-{start: 5, end: 7}, //-> 2
-{start: 11, end: 15}, //-> 3
-{start: 12, end: 14}, //-> 4
+{start: 5, end: 7}, //-> 
+{start: 8, end: 9},
+{start: 11, end: 15}, //-> 4
+{start: 12, end: 14} //-> 5
 ]
 
 
@@ -46,60 +47,62 @@ new Group(Initialparenteses)
 
 function Group (parenteses) {
 
-referobj = parenteses[1]
-index_referobj = 1
-arraygroup = [referobj]
+this.referobj = parenteses[1]
+this.index_referobj = 1
+this.arraygroup = [this.referobj]
 
 console.log('parenteses: ', parenteses)
 if (parenteses.length >= 3) {
     contador = 0
-for (obj = 2; obj < parenteses.length && contador < 10; obj++) {
-    console.log('objeto a ser analisado',obj, parenteses[obj])
-    console.log('comparar com referobj: ', referobj)
-    if (Array.isArray(parenteses[obj - 1]) == false) {
-  if (parenteses[obj].start < referobj.end) {
+for (this.obj = 2; this.obj < parenteses.length && contador < 10; this.obj++) {
+    console.log('')
+    console.log('objeto a ser analisado',this.obj, parenteses[this.obj])
+    console.log('comparar com this.referobj: ', this.referobj)
+    if (Array.isArray(parenteses[this.obj - 1]) == false) {
+  if (parenteses[this.obj].start < this.referobj.end) {
   //o parenteses do objeto atual começa antes do paresentes em referência acabar, ou seja, o parenteses atual está contido no outro
-    console.log(parenteses[obj], 'está contido em', referobj)
-    arraygroup.push(parenteses[obj])
+    console.log(parenteses[this.obj], 'está contido em', this.referobj)
+    this.arraygroup.push(parenteses[this.obj])
 
-    if (obj == parenteses.length - 1 && arraygroup.length != parenteses.length) {
-        console.log('obj é o último e arraygroup não tem todos os objetos, então é preciso criar o array')
-        console.log('arraygroup', arraygroup)
-    parenteses[index_referobj] = arraygroup
+    if (this.obj == parenteses.length - 1 && this.arraygroup.length != parenteses.length) {
+        console.log('this.obj é o último e this.arraygroup não tem todos os objetos, então é preciso criar o array')
+        console.log('this.arraygroup', this.arraygroup)
+    parenteses[this.index_referobj] = this.arraygroup
 
-    parenteses.splice(index_referobj + 1, obj - index_referobj)
+    parenteses.splice(this.index_referobj + 1, this.obj - this.index_referobj)
+    console.log('parenteses depois do splice', parenteses)
 
-    obj = index_referobj 
-    index_referobj = obj
+    this.obj = this.index_referobj 
+    this.index_referobj = this.obj
 // para ajustar o parâmetro com a diminuição do tamanho
 
 // chamar a função de novo
-console.log('chamando a função de novo',index_referobj, parenteses[obj])
-new Group(parenteses[obj])
+console.log('chamando a função de novo',this.index_referobj, parenteses[this.obj])
+new Group(parenteses[this.obj])
     }
 
    }else{
      //o parenteses atual não está contido no de referência
-    console.log(parenteses[obj], 'não está contido em', referobj)
-    parenteses[index_referobj] = arraygroup
+    console.log(parenteses[this.obj], 'não está contido em', this.referobj)
+    parenteses[this.index_referobj] = this.arraygroup
 
-    console.log('splice',index_referobj + 1, obj - index_referobj - 1)
-    parenteses.splice(index_referobj + 1, obj - index_referobj - 1)
+    console.log('splice',this.index_referobj + 1, this.obj - this.index_referobj - 1)
+    parenteses.splice(this.index_referobj + 1, this.obj - this.index_referobj - 1)
     console.log('parenteses depois do splice', parenteses)
 
-    obj = index_referobj + 1
+    this.obj = this.index_referobj + 1
 // para ajustar o parâmetro com a diminuição do tamanho
 
-    referobj = parenteses[obj]
-    index_referobj = obj
-    arraygroup = [referobj]
+    this.referobj = parenteses[this.obj]
+    this.index_referobj = this.obj
+    this.arraygroup = [this.referobj]
 
 // chamar a função de novo
-console.log('chamando a função de novo',index_referobj, parenteses[obj - 1])
-new Group(parenteses[obj - 1])
+console.log('chamando a função de novo',this.index_referobj, parenteses[this.obj - 1])
+new Group(parenteses[this.obj - 1])
   }
 }else{
-    console.log(obj,'tem q parar aqui')
+    console.log(this.obj,'tem q parar aqui')
 }
 contador++
 }
@@ -131,7 +134,7 @@ Ex:
 [ {start: 0, end: 10},
 {start: 3, end: 9}, {start: 5, end: 7}
 ]
-Não tem obj que leve a criação do novo array, porém, é preciso criá-lo independente: 
+Não tem this.obj que leve a criação do novo array, porém, é preciso criá-lo independente: 
 [ {start: 0, end: 10},
 [{start: 3, end: 9}, {start: 5, end: 7}]
 ]
