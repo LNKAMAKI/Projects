@@ -197,3 +197,10 @@ function cos(number) {
 let an = -(2*intlimits[0].y)/(n*Math.PI)
 let bn = - (2*velocities[0])/(n*Math.PI)
 */
+   gamma = -0.1
+   if (i != dot) {
+      intlimits[i].y = Math.exp(gamma*timer) * (intlimits[0].y*(1 - x_center/L))
+   }
+   
+let an = -(2*intlimits[0].y)/(n*Math.PI)
+let bn = - (2*velocities[0])/(n*Math.PI)
