@@ -122,6 +122,7 @@ subjects = sortWords(subjects,'title2')
 
 var songsSearched = []
 
+/* DESCOMENTAR DEPOIS DE TESTAR
 window.addEventListener('keyup', function(event) {
     console.log(event.key)
     console.log('pselected:', pselected,'ps:',ps.length)
@@ -156,6 +157,7 @@ window.addEventListener('keyup', function(event) {
             //this.document.getElementById('searcher').value = pselected
            ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         } }})
+           */
 
 // Quando uma tecla é pressionada
 document.getElementById('searcher').addEventListener('keyup',function(event) {
@@ -284,7 +286,7 @@ function dothesearch(whichid) {
       // }
     }
 
-    search(whichid)
+    //search(whichid)
     
     console.log('HERE', document.getElementById('main').style.display)
     document.getElementById('main').style.display = 'none'
@@ -293,6 +295,7 @@ function dothesearch(whichid) {
 }
 
 // Cria o conteúdo(quando é feita a pesquisa)
+/*
 function search(path) {
     //window.alert('search')
     pesquisa = document.getElementById('searcher').value
@@ -324,8 +327,9 @@ function search(path) {
         wordSearched = subjects.find(function(subjects){
         return subjects.title2 == pesquisa.toLowerCase()
        })}
+        */
 
-
+/* DESCOMENTAR DEPOIS DE TESTAR
 function fclic() {
     pesquisa = document.getElementById('searcher').value
     if (pesquisa.length == 0) {
@@ -360,10 +364,11 @@ function saiu(thing) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
     }}
+    */
 
 
 /*MATERIAL*/
-
+/*
 d = document.createElement('div')
 d.setAttribute('class','container-lg')
 document.body.appendChild(d)
@@ -464,3 +469,4 @@ function criariframe(a,b,c) {
     iframe.style.width = '100%'
     dv.appendChild(iframe)
 }
+    */
