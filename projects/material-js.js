@@ -160,117 +160,119 @@ window.addEventListener('keyup', function(event) {
            */
 
 // Quando uma tecla é pressionada
-document.getElementById('searcher').addEventListener('keyup',function(event) {
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.addEventListener('keyup',function(event) {
     if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
         search2(subjects2,'title2')
     }})
 
 // Cada vez que o usuário digite um caractere na barra de pesquisa
 function search2(subjects,titleProperty) {    
-    pselected = -1
-    pnumber = -1
+    this.pselected = -1
+    this.pnumber = -1
+    this.opnumbers = 0
+    pholder = document.getElementById('main')
     pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
-    document.getElementById('main').style.display = 'none'
+    pholder.style.display = 'none'
    }
    
     //window.alert(pesquisa.toLowerCase())
-    allps = document.getElementById('main').getElementsByClassName('psearcher')
+    allps = pholder.getElementsByClassName('psearcher')
     //window.alert(allps.length)
     for (n = allps.length - 1; n >= 0; n--) {
    //window.alert(allps[n])
-   document.getElementById('main').removeChild(allps[n])
+   pholder.removeChild(allps[n])
     }
-   opnumbers = 0
+   this.opnumbers = 0
     for (n in subjects) { 
         // window.alert(subjects[n])
         // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (subjects[n][titleProperty].search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
-             pnumber++
-             psearcher = document.createElement('p')
-             psearcher.style.position = 'sticky'
-             psearcher.innerText = subjects[n][titleProperty]
-             psearcher.setAttribute('class', 'psearcher')
-             psearcher.id = 'a' + n
-             psearcher.style.fontWeight = 'bold'
-             psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-             //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
-             psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
-             d = document.createElement('span')
-             //d.innerText = 'o'
-             d.setAttribute('onmouseenter', `entrou(${pnumber})`)
-             d.setAttribute('class','phelp')
+             this.pnumber++
+             this.psearcher = document.createElement('p')
+             this.psearcher.style.position = 'sticky'
+             this.psearcher.innerText = subjects[n][titleProperty]
+             this.psearcher.setAttribute('class', 'psearcher')
+             this.psearcher.id = 'a' + n
+             this.psearcher.style.fontWeight = 'bold'
+             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')})`)
+             //psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+             this.d = document.createElement('span')
+             //this.d.innerText = 'o'
+             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.d.setAttribute('class','phelp')
 
-             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
-             if (pnumber < 7) {
-             document.getElementById('main').appendChild(psearcher)
-             document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
+             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             if (this.pnumber < 7) {
+             pholder.appendChild(this.psearcher)
+             pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
              }
-             opnumbers++
-             document.getElementById('main').style.display = 'block'
+             this.opnumbers++
+             pholder.style.display = 'block'
          } }
-    if (pesquise.length != 0 && opnumbers == 0) {
+    if (pesquise.length != 0 && this.opnumbers == 0) {
         for (n in subjects) {
             // window.alert(subjects[n])
             // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
              pesquise = pesquisa.toLowerCase()
              if (subjects[n][titleProperty].search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
-                pnumber++
-                psearcher = document.createElement('p')
-                 psearcher.style.position = 'sticky'
-                 psearcher.innerText = subjects[n][titleProperty]
-                 psearcher.setAttribute('class', 'psearcher')
-                 psearcher.id = 'a' + n
-                 psearcher.style.fontWeight = 'bold'
-                 psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-                 //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
-                 psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
-                 d = document.createElement('span')
-                 d.setAttribute('onmouseenter', `entrou(${pnumber})`)
-                 //d.innerText = 'o'
-                 d.setAttribute('class','phelp')
+                this.pnumber++
+                this.psearcher = document.createElement('p')
+                 this.psearcher.style.position = 'sticky'
+                 this.psearcher.innerText = subjects[n][titleProperty]
+                 this.psearcher.setAttribute('class', 'psearcher')
+                 this.psearcher.id = 'a' + n
+                 this.psearcher.style.fontWeight = 'bold'
+                 this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')})`)
+                 //this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+                 this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+                 this.d = document.createElement('span')
+                 this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+                 //this.d.innerText = 'o'
+                 this.d.setAttribute('class','phelp')
 
-                 psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
-                 if (pnumber < 7) {
-                    document.getElementById('main').appendChild(psearcher)
-                    document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
+                 this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+                 if (this.pnumber < 7) {
+                    pholder.appendChild(this.psearcher)
+                    pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
                     }
-                 opnumbers++
-                 document.getElementById('main').style.display = 'block'
+                 this.opnumbers++
+                 pholder.style.display = 'block'
              }}}
- if (pesquise.length != 0 && opnumbers == 0){
+ if (pesquise.length != 0 && this.opnumbers == 0){
     for (n in subjects) {
         // window.alert(subjects[n])
         // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
          if (subjects[n][titleProperty].search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
-            pnumber++
-             psearcher = document.createElement('p')
-             psearcher.style.position = 'sticky'
-             psearcher.innerText = subjects[n][titleProperty]
-             psearcher.setAttribute('class', 'psearcher')
-             psearcher.id = 'a' + n 
-             psearcher.style.fontWeight = 'bold'
-             psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
-             //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
-             psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
-             d = document.createElement('span')
-             d.setAttribute('onmouseenter', `entrou(${pnumber})`)
-             //d.innerText = 'o'
-             d.setAttribute('class','phelp')
+            this.pnumber++
+             this.psearcher = document.createElement('p')
+             this.psearcher.style.position = 'sticky'
+             this.psearcher.innerText = subjects[n][titleProperty]
+             this.psearcher.setAttribute('class', 'psearcher')
+             this.psearcher.id = 'a' + n 
+             this.psearcher.style.fontWeight = 'bold'
+             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')})`)
+             //this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+             this.d = document.createElement('span')
+             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             //this.d.innerText = 'o'
+             this.d.setAttribute('class','phelp')
 
-             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
-             if (pnumber < 7) {
-                document.getElementById('main').appendChild(psearcher)
-                document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
+             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             if (this.pnumber < 7) {
+                pholder.appendChild(this.psearcher)
+                pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
                 }
-             opnumbers++
-             document.getElementById('main').style.display = 'block'
+             this.opnumbers++
+             pholder.style.display = 'block'
          }}}
- if (opnumbers == 0) {
-     document.getElementById('main').style.display = 'none'
+ if (this.opnumbers == 0) {
+     pholder.style.display = 'none'
  }}
 
 // Quando a pesquisa é realizada
