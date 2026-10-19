@@ -171,7 +171,7 @@
           position: relative;
        }
        
-       input:focus ~ #main {
+       input:focus ~ .main {
            opacity: 100;
            display: none;
         z-index: 10;
@@ -211,7 +211,7 @@
           color: black;
         
        }
-     #main {
+     .main {
         opacity: 0;
     z-index: 10;
     width: 100%;
@@ -228,7 +228,7 @@
            margin-bottom: 0;
          text-align: center;
        }
-       #main > .psearcher{
+       .main > .psearcher{
         transition-property: width, background-color;
         transition-duration: 0.4s;
            z-index: 20;
@@ -241,7 +241,7 @@
            text-align: center;
            background-color: white;
        }
-       #main > .psearcher:hover{
+       .main > .psearcher:hover{
            background-color: rgb(235, 235, 235);
            cursor: pointer;
        }
@@ -380,16 +380,16 @@
         <div id="ali">
                     <div id="circle"><img id="fav" src="imagens/eln-l.png" alt=""></div>
             <div id="rev">
-                <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
-                <div id="main">
+                <input type="text" name="" class="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+                <div class="main">
                 </div>
             </div>
         </div>
     </div>
 
      <div id="rev">
-                <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
-                <div id="main">
+                <input type="text" name="" class="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+                <div class="main">
                 </div>
             </div>
             
