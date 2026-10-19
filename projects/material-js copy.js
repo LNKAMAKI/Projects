@@ -126,48 +126,10 @@ return newlista
 }
 
 pselected = [-1,-1]
-podeir = true
+podeir = [true,true]
 subjects2 = sortWords(subjects2,'title2')
 
 var songsSearched = []
-/*
- window.addEventListener('keyup', function(event) {
-    console.log(event.key)
-    //console.log('pselected[0]:', pselected[0],'ps:',ps.length)
-    searcher = document.getElementsByClassName('searcher')[0]
-    pholder = document.getElementsByClassName('main')[0]
-    if (searcher == document.activeElement && event.key == 'Enter' && pselected[0] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
-
-        if (pselected[0] == -1) {
-        quantasopções = pholder.getElementsByClassName('psearcher').length
-        if (quantasopções == 1) {
-           dothesearch(Number(pholder.getElementsByClassName('psearcher')[0].id.replace('a','')),0)
-        }}
-    }else if(searcher == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
-        console.log('UEPA!')
-        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[0]].id.replace('a','')),0)
-    }
-    
-    // Selecionando a sugestão com as setas
-    ps = pholder.getElementsByClassName('psearcher')
-    if (searcher == document.activeElement && event.key == 'ArrowDown') { 
-        console.log(pselected)
-        console.log('VAI',ps.length, pselected[0])
-        if (pselected[0] < ps.length - 1 && podeir == true) {
-            if (pselected[0] != -1)
-            ps[pselected[0]].style.backgroundColor = 'white'
-            pselected[0]++
-            //this.searcher.value = pselected[0]
-            ps[pselected[0]].style.backgroundColor = 'rgb(235, 235, 235)'
-        }
-    }else if(searcher == document.activeElement && event.key == 'ArrowUp') {
-        if (pselected[0] >= 1 && podeir == true) {
-            if (pselected[0] != -1)
-            ps[pselected[0]].style.backgroundColor = 'white'
-            pselected[0]--
-            //this.searcher.value = pselected[0]
-           ps[pselected[0]].style.backgroundColor = 'rgb(235, 235, 235)'
-        } }})*/
 
 
 // Quando uma tecla é pressionada
@@ -203,7 +165,7 @@ for (let s = 0; s < document.getElementsByClassName('searcher').length; s++) {
     if (searcher == document.activeElement && event.key == 'ArrowDown') { 
         console.log(pselected)
         console.log('VAI',ps.length, pselected[s])
-        if (pselected[s] < ps.length - 1 && podeir == true) {
+        if (pselected[s] < ps.length - 1 && podeir[s] == true) {
             if (pselected[s] != -1)
             ps[pselected[s]].style.backgroundColor = 'white'
             pselected[s]++
@@ -211,7 +173,7 @@ for (let s = 0; s < document.getElementsByClassName('searcher').length; s++) {
             ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }else if(searcher == document.activeElement && event.key == 'ArrowUp') {
-        if (pselected[s] >= 1 && podeir == true) {
+        if (pselected[s] >= 1 && podeir[s] == true) {
             if (pselected[s] != -1)
             ps[pselected[s]].style.backgroundColor = 'white'
             pselected[s]--
@@ -339,7 +301,7 @@ function dothesearch(whichid,searcher) {
     document.getElementsByClassName('searcher')[searcher].value = subjects2[whichid].title2
     mainholder = document.getElementsByClassName('main')[searcher]
     allps = mainholder.getElementsByClassName('psearcher')
-    podeir = true
+    podeir[searcher] = true
 
    for (n = allps.length - 1; n >= 0; n--) {
        //if (allps[n].id != 'a' + whichid) {
@@ -403,7 +365,7 @@ function entrou(thing) {
     if (document.getElementsByClassName('searcher')[0] == document.activeElement) {
     ps = document.getElementsByClassName('main')[0].getElementsByClassName('psearcher')
 
-    podeir = false 
+    podeir[0] = false
     //document.getElementsByClassName('searcher')[0].value = 'entrou' + thing + podeir
     
     if (pselected[0] != -1 && pselected[0] != thing) {
@@ -418,7 +380,7 @@ function entrou(thing) {
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing) {
     if (document.getElementsByClassName('searcher')[0] == document.activeElement) {
-    podeir = true
+    podeir[0] = true
     //document.getElementsByClassName('searcher')[0].value = 'saiu' + thing + podeir
     pselected[0] = -1
     ps = document.getElementsByClassName('main')[0].getElementsByClassName('psearcher')
