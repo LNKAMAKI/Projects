@@ -7,12 +7,12 @@ contents = [
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},
 ]
 
-var subjects = []
+var subjects2 = []
 
 for (i in contents) {
     for (e in contents[i].subs) {
         console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
-        subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
+        subjects2.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
     }}
 
 // Ordena as palavras alfabeticamente
@@ -118,7 +118,7 @@ return newlista
 
 pselected = -1
 podeir = true
-subjects = sortWords(subjects,'title2')
+subjects2 = sortWords(subjects2,'title2')
 
 var songsSearched = []
 
@@ -162,11 +162,11 @@ window.addEventListener('keyup', function(event) {
 // Quando uma tecla é pressionada
 document.getElementById('searcher').addEventListener('keyup',function(event) {
     if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
-        search2()
+        search2(subjects2,'title2')
     }})
 
 // Cada vez que o usuário digite um caractere na barra de pesquisa
-function search2() {    
+function search2(subjects,titleProperty) {    
     pselected = -1
     pnumber = -1
     pesquisa = document.getElementById('searcher').value
@@ -176,22 +176,22 @@ function search2() {
    }
    
     //window.alert(pesquisa.toLowerCase())
-    allps = document.getElementsByClassName('psearcher')
+    allps = document.getElementById('main').getElementsByClassName('psearcher')
     //window.alert(allps.length)
     for (n = allps.length - 1; n >= 0; n--) {
    //window.alert(allps[n])
    document.getElementById('main').removeChild(allps[n])
     }
    opnumbers = 0
-    for (n in subjects) {
+    for (n in subjects) { 
         // window.alert(subjects[n])
         // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
-         if (subjects[n].title2.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+         if (subjects[n][titleProperty].search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
              pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
-             psearcher.innerText = subjects[n].title2
+             psearcher.innerText = subjects[n][titleProperty]
              psearcher.setAttribute('class', 'psearcher')
              psearcher.id = 'a' + n
              psearcher.style.fontWeight = 'bold'
@@ -216,11 +216,11 @@ function search2() {
             // window.alert(subjects[n])
             // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
              pesquise = pesquisa.toLowerCase()
-             if (subjects[n].title2.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+             if (subjects[n][titleProperty].search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
                 pnumber++
                 psearcher = document.createElement('p')
                  psearcher.style.position = 'sticky'
-                 psearcher.innerText = subjects[n].title2
+                 psearcher.innerText = subjects[n][titleProperty]
                  psearcher.setAttribute('class', 'psearcher')
                  psearcher.id = 'a' + n
                  psearcher.style.fontWeight = 'bold'
@@ -245,11 +245,11 @@ function search2() {
         // window.alert(subjects[n])
         // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
-         if (subjects[n].title2.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+         if (subjects[n][titleProperty].search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
             pnumber++
              psearcher = document.createElement('p')
              psearcher.style.position = 'sticky'
-             psearcher.innerText = subjects[n].title2
+             psearcher.innerText = subjects[n][titleProperty]
              psearcher.setAttribute('class', 'psearcher')
              psearcher.id = 'a' + n 
              psearcher.style.fontWeight = 'bold'
@@ -276,7 +276,7 @@ function search2() {
 // Quando a pesquisa é realizada
 function dothesearch(whichid) {
 
-    document.getElementById('searcher').value = subjects[whichid].title2
+    document.getElementById('searcher').value = subjects2[whichid].title2
     allps = document.getElementsByClassName('psearcher')
     podeir = true
 
