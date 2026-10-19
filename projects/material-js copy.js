@@ -5,6 +5,15 @@ contents = [
     {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura HTML básica, tags HTML e hierarquia de títulos',url:'../materiais/introducao-html.html'},{title:'Parágrafos, quebras de linha, símbolos e emojis',url:'../materiais/br,símbolos.html'},{title:'Formatos de imagem, tag img, direitos autorais e imagens responsivas',url:'../materiais/imagens.html'},{title:'Favicon e links internos, externos e para download',url:'../materiais/favicon-links.html'},{title:'Formatações de texto',url:'../materiais/tipostexto.html'},{title:'Citações, códigos e abreviações',url:'../materiais/citações-code.html'},{title:'Listas ol, ul e de definição',url:'../materiais/listas.html'},{title:'Áudios e vídeos',url:'../materiais/audios-videos.html'},{title:'Tabelas',url:'../materiais/tabelas.html'},{title:'Iframes',url:'../materiais/iframe.html'}]},
     {title:'CSS', url:'css-logo.svg',subs:[]},
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},
+    {title:'abobrinha', url:'js-logo.svg',subs:[{title:'abacaxi',url:'../materiais/iframe.html'}]},
+    {title:'abacaxi', url:'js-logo.svg',subs:[{title:'abacate',url:'../materiais/iframe.html'}]},
+   {title:'abol', url:'js-logo.svg',subs:[{title:'abol',url:'../materiais/iframe.html'}]},
+    {title:'abol', url:'js-logo.svg',subs:[{title:'abobrinha',url:'../materiais/iframe.html'}]},
+     {title:'abol', url:'js-logo.svg',subs:[{title:'abol2',url:'../materiais/iframe.html'}]},
+      {title:'abol', url:'js-logo.svg',subs:[{title:'abol4',url:'../materiais/iframe.html'}]},
+       {title:'abol', url:'js-logo.svg',subs:[{title:'abol3',url:'../materiais/iframe.html'}]},
+        {title:'abol', url:'js-logo.svg',subs:[{title:'abol6',url:'../materiais/iframe.html'}]},
+         {title:'abol', url:'js-logo.svg',subs:[{title:'abol5',url:'../materiais/iframe.html'}]},
 ]
 
 var subjects2 = []
@@ -116,61 +125,105 @@ newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
 return newlista
 }
 
-pselected = -1
+pselected = [-1,-1]
 podeir = true
 subjects2 = sortWords(subjects2,'title2')
 
 var songsSearched = []
-
-/* DESCOMENTAR DEPOIS DE TESTAR
-window.addEventListener('keyup', function(event) {
+/*
+ window.addEventListener('keyup', function(event) {
     console.log(event.key)
-    console.log('pselected:', pselected,'ps:',ps.length)
-    if (document.getElementById('searcher') == document.activeElement && event.key == 'Enter' && pselected == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
+    //console.log('pselected[0]:', pselected[0],'ps:',ps.length)
+    searcher = document.getElementsByClassName('searcher')[0]
+    pholder = document.getElementsByClassName('main')[0]
+    if (searcher == document.activeElement && event.key == 'Enter' && pselected[0] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
-        if (pselected == -1) {
-        quantasopções = document.getElementById('main').getElementsByClassName('psearcher').length
+        if (pselected[0] == -1) {
+        quantasopções = pholder.getElementsByClassName('psearcher').length
         if (quantasopções == 1) {
-           dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[0].id.replace('a','')))
+           dothesearch(Number(pholder.getElementsByClassName('psearcher')[0].id.replace('a','')),0)
         }}
-    }else if(document.getElementById('searcher') == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
+    }else if(searcher == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
         console.log('UEPA!')
-        dothesearch(Number(document.getElementById('main').getElementsByClassName('psearcher')[pselected].id.replace('a','')))
+        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[0]].id.replace('a','')),0)
     }
     
     // Selecionando a sugestão com as setas
-    ps = document.getElementById('main').getElementsByClassName('psearcher')
-    if (document.getElementById('searcher') == document.activeElement && event.key == 'ArrowDown') { 
-        console.log('VAI',ps.length, pselected)
-        if (pselected < ps.length - 1 && podeir == true) {
-            if (pselected != -1)
-            ps[pselected].style.backgroundColor = 'white'
-            pselected++
-            //this.document.getElementById('searcher').value = pselected
-            ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
+    ps = pholder.getElementsByClassName('psearcher')
+    if (searcher == document.activeElement && event.key == 'ArrowDown') { 
+        console.log(pselected)
+        console.log('VAI',ps.length, pselected[0])
+        if (pselected[0] < ps.length - 1 && podeir == true) {
+            if (pselected[0] != -1)
+            ps[pselected[0]].style.backgroundColor = 'white'
+            pselected[0]++
+            //this.searcher.value = pselected[0]
+            ps[pselected[0]].style.backgroundColor = 'rgb(235, 235, 235)'
         }
-    }else if(document.getElementById('searcher') == document.activeElement && event.key == 'ArrowUp') {
-        if (pselected >= 1 && podeir == true) {
-            if (pselected != -1)
-            ps[pselected].style.backgroundColor = 'white'
-            pselected--
-            //this.document.getElementById('searcher').value = pselected
-           ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
-        } }})
-           */
+    }else if(searcher == document.activeElement && event.key == 'ArrowUp') {
+        if (pselected[0] >= 1 && podeir == true) {
+            if (pselected[0] != -1)
+            ps[pselected[0]].style.backgroundColor = 'white'
+            pselected[0]--
+            //this.searcher.value = pselected[0]
+           ps[pselected[0]].style.backgroundColor = 'rgb(235, 235, 235)'
+        } }})*/
+
 
 // Quando uma tecla é pressionada
-for (let s in document.getElementsByClassName('searcher')) {
+
+for (let s = 0; s < document.getElementsByClassName('searcher').length; s++) {
+    console.log('hey')
     document.getElementsByClassName('searcher')[s].addEventListener('keyup', function(event) {
+
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
             search2(subjects2,'title2',s)
         }
     })
+
+      window.addEventListener('keyup', function(event) {
+    console.log(event.key)
+    //console.log('pselected[s]:', pselected[s],'ps:',ps.length)
+    searcher = document.getElementsByClassName('searcher')[s]
+    pholder = document.getElementsByClassName('main')[s]
+    if (searcher == document.activeElement && event.key == 'Enter' && pselected[s] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
+
+        if (pselected[s] == -1) {
+        quantasopções = pholder.getElementsByClassName('psearcher').length
+        if (quantasopções == 1) {
+           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s)
+        }}
+    }else if(searcher == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
+        console.log('UEPA!')
+        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[s]].id.replace('a','')),s)
+    }
+    
+    // Selecionando a sugestão com as setas
+    ps = pholder.getElementsByClassName('psearcher')
+    if (searcher == document.activeElement && event.key == 'ArrowDown') { 
+        console.log(pselected)
+        console.log('VAI',ps.length, pselected[s])
+        if (pselected[s] < ps.length - 1 && podeir == true) {
+            if (pselected[s] != -1)
+            ps[pselected[s]].style.backgroundColor = 'white'
+            pselected[s]++
+            //this.searcher.value = pselected[s]
+            ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
+        }
+    }else if(searcher == document.activeElement && event.key == 'ArrowUp') {
+        if (pselected[s] >= 1 && podeir == true) {
+            if (pselected[s] != -1)
+            ps[pselected[s]].style.backgroundColor = 'white'
+            pselected[s]--
+            //this.searcher.value = pselected[s]
+           ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
+        } }})
 }
+
 
 // Cada vez que o usuário digite um caractere na barra de pesquisa
 function search2(subjects,titleProperty,searcherIndex) {    
-    this.pselected = -1
+    pselected[searcherIndex] = -1
     this.pnumber = -1
     this.opnumbers = 0
     pholder = document.getElementsByClassName('main')[searcherIndex]
@@ -202,11 +255,11 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.id = 'a' + n
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-             //psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             //this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
              this.d = document.createElement('span')
              //this.d.innerText = 'o'
-             //this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
              this.d.setAttribute('class','phelp')
 
              this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
@@ -231,10 +284,10 @@ function search2(subjects,titleProperty,searcherIndex) {
                  this.psearcher.id = 'a' + n
                  this.psearcher.style.fontWeight = 'bold'
                  this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-                 //this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-                 //this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+                 this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+                 this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
                  this.d = document.createElement('span')
-                 //this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+                 this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
                  //this.d.innerText = 'o'
                  this.d.setAttribute('class','phelp')
 
@@ -260,10 +313,10 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.id = 'a' + n 
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-             //this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             //this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
              this.d = document.createElement('span')
-             //this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
              //this.d.innerText = 'o'
              this.d.setAttribute('class','phelp')
 
@@ -299,7 +352,6 @@ function dothesearch(whichid,searcher) {
     console.log('HERE', mainholder.style.display)
     mainholder.style.display = 'none'
     console.log('HERE', mainholder.style.display)
-    pselected = -1
 }
 
 // Cria o conteúdo(quando é feita a pesquisa)
@@ -337,45 +389,42 @@ function search(path) {
        })}
         */
 
-       function fclic () {
-        
-       }
-/* DESCOMENTAR DEPOIS DE TESTAR
+   
 function fclic() {
-    pesquisa = document.getElementById('searcher').value
+    pesquisa = document.getElementsByClassName('searcher')[0].value
     if (pesquisa.length == 0) {
-     document.getElementById('main').style.display = 'none'
+     document.getElementsByClassName('main')[0].style.display = 'none'
     }}
 
-ps = document.getElementById('main').getElementsByClassName('psearcher')
+//ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 // Quando o mouse entra em uma opção(psearcher)
 function entrou(thing) {
-    if (document.getElementById('searcher') == document.activeElement) {
-    ps = document.getElementById('main').getElementsByClassName('psearcher')
+    if (document.getElementsByClassName('searcher')[0] == document.activeElement) {
+    ps = document.getElementsByClassName('main')[0].getElementsByClassName('psearcher')
 
     podeir = false 
-    //document.getElementById('searcher').value = 'entrou' + thing + podeir
+    //document.getElementsByClassName('searcher')[0].value = 'entrou' + thing + podeir
     
-    if (pselected != -1 && pselected != thing) {
-        ps[pselected].style.backgroundColor = 'white'
-        pselected = -1
+    if (pselected[0] != -1 && pselected[0] != thing) {
+        ps[pselected[0]].style.backgroundColor = 'white'
+        pselected[0] = -1
     }
-    //document.getElementById('searcher').value += 'thing' + thing
+    //document.getElementsByClassName('searcher')[0].value += 'thing' + thing
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
 }}
 
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing) {
-    if (document.getElementById('searcher') == document.activeElement) {
+    if (document.getElementsByClassName('searcher')[0] == document.activeElement) {
     podeir = true
-    //document.getElementById('searcher').value = 'saiu' + thing + podeir
-    pselected = -1
-    ps = document.getElementById('main').getElementsByClassName('psearcher')
+    //document.getElementsByClassName('searcher')[0].value = 'saiu' + thing + podeir
+    pselected[0] = -1
+    ps = document.getElementsByClassName('main')[0].getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
     }}
-    */
+    
 
 
 /*MATERIAL*/
