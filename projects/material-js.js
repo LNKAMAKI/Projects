@@ -7,12 +7,12 @@ contents = [
     {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},
 ]
 
-var subjects2 = []
+var subjects = []
 
 for (i in contents) {
     for (e in contents[i].subs) {
         console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
-        subjects2.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
+        subjects.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
     }}
 
 // Ordena as palavras alfabeticamente
@@ -118,11 +118,10 @@ return newlista
 
 pselected = -1
 podeir = true
-subjects2 = sortWords(subjects2,'title2')
+subjects = sortWords(subjects,'title2')
 
 var songsSearched = []
 
-/* DESCOMENTAR DEPOIS DE TESTAR
 window.addEventListener('keyup', function(event) {
     console.log(event.key)
     console.log('pselected:', pselected,'ps:',ps.length)
@@ -157,153 +156,143 @@ window.addEventListener('keyup', function(event) {
             //this.document.getElementById('searcher').value = pselected
            ps[pselected].style.backgroundColor = 'rgb(235, 235, 235)'
         } }})
-           */
 
 // Quando uma tecla é pressionada
-for (let s in document.getElementsByClassName('searcher')) {
-    document.getElementsByClassName('searcher')[s].addEventListener('keyup', function(event) {
-        if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
-            search2(subjects2,'title2',s)
-        }
-    })
-}
+document.getElementById('searcher').addEventListener('keyup',function(event) {
+    if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
+        search2()
+    }})
 
 // Cada vez que o usuário digite um caractere na barra de pesquisa
-function search2(subjects,titleProperty,searcherIndex) {    
-    this.pselected = -1
-    this.pnumber = -1
-    this.opnumbers = 0
-    pholder = document.getElementsByClassName('main')[searcherIndex]
-    searcher = document.getElementsByClassName('searcher')[searcherIndex]
-    pesquisa = searcher.value
+function search2() {    
+    pselected = -1
+    pnumber = -1
+    pesquisa = document.getElementById('searcher').value
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
-    pholder.style.display = 'none'
+    document.getElementById('main').style.display = 'none'
    }
    
     //window.alert(pesquisa.toLowerCase())
-    allps = pholder.getElementsByClassName('psearcher')
+    allps = document.getElementsByClassName('psearcher')
     //window.alert(allps.length)
     for (n = allps.length - 1; n >= 0; n--) {
    //window.alert(allps[n])
-   pholder.removeChild(allps[n])
+   document.getElementById('main').removeChild(allps[n])
     }
-   this.opnumbers = 0
-    for (n in subjects) { 
-        // window.alert(subjects[n])
-        // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
-         pesquise = pesquisa.toLowerCase()
-         if (subjects[n][titleProperty].search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
-             this.pnumber++
-             this.psearcher = document.createElement('p')
-             this.psearcher.style.position = 'sticky'
-             this.psearcher.innerText = subjects[n][titleProperty]
-             this.psearcher.setAttribute('class', 'psearcher')
-             this.psearcher.id = 'a' + n
-             this.psearcher.style.fontWeight = 'bold'
-             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-             //psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             //this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
-             this.d = document.createElement('span')
-             //this.d.innerText = 'o'
-             //this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             this.d.setAttribute('class','phelp')
-
-             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
-             if (this.pnumber < 7) {
-             pholder.appendChild(this.psearcher)
-             pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
-             }
-             this.opnumbers++
-             pholder.style.display = 'block'
-         } }
-    if (pesquise.length != 0 && this.opnumbers == 0) {
-        for (n in subjects) {
-            // window.alert(subjects[n])
-            // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
-             pesquise = pesquisa.toLowerCase()
-             if (subjects[n][titleProperty].search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
-                this.pnumber++
-                this.psearcher = document.createElement('p')
-                 this.psearcher.style.position = 'sticky'
-                 this.psearcher.innerText = subjects[n][titleProperty]
-                 this.psearcher.setAttribute('class', 'psearcher')
-                 this.psearcher.id = 'a' + n
-                 this.psearcher.style.fontWeight = 'bold'
-                 this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-                 //this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-                 //this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
-                 this.d = document.createElement('span')
-                 //this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-                 //this.d.innerText = 'o'
-                 this.d.setAttribute('class','phelp')
-
-                 this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
-                 if (this.pnumber < 7) {
-                    pholder.appendChild(this.psearcher)
-                    pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
-                    }
-                 this.opnumbers++
-                 pholder.style.display = 'block'
-             }}}
- if (pesquise.length != 0 && this.opnumbers == 0){
+   opnumbers = 0
     for (n in subjects) {
         // window.alert(subjects[n])
         // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
          pesquise = pesquisa.toLowerCase()
-         if (subjects[n][titleProperty].search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
-            this.pnumber++
-             this.psearcher = document.createElement('p')
-             this.psearcher.style.position = 'sticky'
-             this.psearcher.innerText = subjects[n][titleProperty]
-             this.psearcher.setAttribute('class', 'psearcher')
-             this.psearcher.id = 'a' + n 
-             this.psearcher.style.fontWeight = 'bold'
-             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-             //this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             //this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
-             this.d = document.createElement('span')
-             //this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             //this.d.innerText = 'o'
-             this.d.setAttribute('class','phelp')
+         if (subjects[n].title2.search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+             pnumber++
+             psearcher = document.createElement('p')
+             psearcher.style.position = 'sticky'
+             psearcher.innerText = subjects[n].title2
+             psearcher.setAttribute('class', 'psearcher')
+             psearcher.id = 'a' + n
+             psearcher.style.fontWeight = 'bold'
+             psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
+             //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
+             d = document.createElement('span')
+             //d.innerText = 'o'
+             d.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             d.setAttribute('class','phelp')
 
-             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
-             if (this.pnumber < 7) {
-                pholder.appendChild(this.psearcher)
-                pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
+             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             if (pnumber < 7) {
+             document.getElementById('main').appendChild(psearcher)
+             document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
+             }
+             opnumbers++
+             document.getElementById('main').style.display = 'block'
+         } }
+    if (pesquise.length != 0 && opnumbers == 0) {
+        for (n in subjects) {
+            // window.alert(subjects[n])
+            // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
+             pesquise = pesquisa.toLowerCase()
+             if (subjects[n].title2.search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+                pnumber++
+                psearcher = document.createElement('p')
+                 psearcher.style.position = 'sticky'
+                 psearcher.innerText = subjects[n].title2
+                 psearcher.setAttribute('class', 'psearcher')
+                 psearcher.id = 'a' + n
+                 psearcher.style.fontWeight = 'bold'
+                 psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
+                 //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+                 psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
+                 d = document.createElement('span')
+                 d.setAttribute('onmouseenter', `entrou(${pnumber})`)
+                 //d.innerText = 'o'
+                 d.setAttribute('class','phelp')
+
+                 psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+                 if (pnumber < 7) {
+                    document.getElementById('main').appendChild(psearcher)
+                    document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
+                    }
+                 opnumbers++
+                 document.getElementById('main').style.display = 'block'
+             }}}
+ if (pesquise.length != 0 && opnumbers == 0){
+    for (n in subjects) {
+        // window.alert(subjects[n])
+        // window.alert(subjects[n].includes(pesquisa.toLowerCase()))
+         pesquise = pesquisa.toLowerCase()
+         if (subjects[n].title2.search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
+            pnumber++
+             psearcher = document.createElement('p')
+             psearcher.style.position = 'sticky'
+             psearcher.innerText = subjects[n].title2
+             psearcher.setAttribute('class', 'psearcher')
+             psearcher.id = 'a' + n 
+             psearcher.style.fontWeight = 'bold'
+             psearcher.setAttribute('onclick', `dothesearch(${psearcher.id.replace('a', '')})`)
+             //psearcher.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             psearcher.setAttribute('onmouseout', `saiu(${pnumber})`)
+             d = document.createElement('span')
+             d.setAttribute('onmouseenter', `entrou(${pnumber})`)
+             //d.innerText = 'o'
+             d.setAttribute('class','phelp')
+
+             psearcher.innerHTML = psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             if (pnumber < 7) {
+                document.getElementById('main').appendChild(psearcher)
+                document.getElementById('main').getElementsByClassName('psearcher')[pnumber].appendChild(d)
                 }
-             this.opnumbers++
-             pholder.style.display = 'block'
+             opnumbers++
+             document.getElementById('main').style.display = 'block'
          }}}
- if (this.opnumbers == 0) {
-     pholder.style.display = 'none'
+ if (opnumbers == 0) {
+     document.getElementById('main').style.display = 'none'
  }}
 
 // Quando a pesquisa é realizada
-function dothesearch(whichid,searcher) {
+function dothesearch(whichid) {
 
-    console.log('AAAAAAAAAAAAAAAAAA')
-    document.getElementsByClassName('searcher')[searcher].value = subjects2[whichid].title2
-    mainholder = document.getElementsByClassName('main')[searcher]
-    allps = mainholder.getElementsByClassName('psearcher')
+    document.getElementById('searcher').value = subjects[whichid].title2
+    allps = document.getElementsByClassName('psearcher')
     podeir = true
 
    for (n = allps.length - 1; n >= 0; n--) {
        //if (allps[n].id != 'a' + whichid) {
-   mainholder.removeChild(allps[n])
+   document.getElementById('main').removeChild(allps[n])
       // }
     }
 
-    //search(whichid)
+    search(whichid)
     
-    console.log('HERE', mainholder.style.display)
-    mainholder.style.display = 'none'
-    console.log('HERE', mainholder.style.display)
+    console.log('HERE', document.getElementById('main').style.display)
+    document.getElementById('main').style.display = 'none'
+    console.log('HERE', document.getElementById('main').style.display)
     pselected = -1
 }
 
 // Cria o conteúdo(quando é feita a pesquisa)
-/*
 function search(path) {
     //window.alert('search')
     pesquisa = document.getElementById('searcher').value
@@ -335,12 +324,8 @@ function search(path) {
         wordSearched = subjects.find(function(subjects){
         return subjects.title2 == pesquisa.toLowerCase()
        })}
-        */
 
-       function fclic () {
-        
-       }
-/* DESCOMENTAR DEPOIS DE TESTAR
+
 function fclic() {
     pesquisa = document.getElementById('searcher').value
     if (pesquisa.length == 0) {
@@ -375,11 +360,10 @@ function saiu(thing) {
     ps = document.getElementById('main').getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
     }}
-    */
 
 
 /*MATERIAL*/
-/*
+
 d = document.createElement('div')
 d.setAttribute('class','container-lg')
 document.body.appendChild(d)
@@ -480,4 +464,3 @@ function criariframe(a,b,c) {
     iframe.style.width = '100%'
     dv.appendChild(iframe)
 }
-    */

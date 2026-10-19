@@ -171,7 +171,7 @@
           position: relative;
        }
        
-       input:focus ~ .main {
+       input:focus ~ #main {
            opacity: 100;
            display: none;
         z-index: 10;
@@ -211,7 +211,7 @@
           color: black;
         
        }
-     .main {
+     #main {
         opacity: 0;
     z-index: 10;
     width: 100%;
@@ -228,7 +228,7 @@
            margin-bottom: 0;
          text-align: center;
        }
-       .main > .psearcher{
+       #main > .psearcher{
         transition-property: width, background-color;
         transition-duration: 0.4s;
            z-index: 20;
@@ -241,7 +241,7 @@
            text-align: center;
            background-color: white;
        }
-       .main > .psearcher:hover{
+       #main > .psearcher:hover{
            background-color: rgb(235, 235, 235);
            cursor: pointer;
        }
@@ -380,21 +380,27 @@
         <div id="ali">
                     <div id="circle"><img id="fav" src="imagens/eln-l.png" alt=""></div>
             <div id="rev">
-                <input type="text" name="" class="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
-                <div class="main">
+                <input type="text" name="" id="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+                <div id="main">
                 </div>
             </div>
         </div>
     </div>
 
-     <div id="rev">
-                <input type="text" name="" class="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
-                <div class="main">
-                </div>
+    <!--
+    <div class="container-lg my-5">
+        <div class="row justify-content-center" name='select-content'>
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone">
+                <div class="p-4 bg-light" name='icon-img'>  p = padding
+                    <img src=".\imagens\html-logo.jpg">
+                  </div>
             </div>
+          
+            
             
         </div>
     </div>
+-->
  
     <p id="se"></p>
   
