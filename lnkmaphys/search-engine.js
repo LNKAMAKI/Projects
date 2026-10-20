@@ -41,10 +41,8 @@ subjects = [
     {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
 ]
    
-console.log('hey','AAAAAAAAAAA')
 class_searcher = 'searcher'
 class_pholder = 'main'
-console.log('hey','AAAAAAAAAAA',document.getElementsByClassName(class_searcher)[0])
 
 pselected = [-1,-1]
 podeir = [true,true]
@@ -56,7 +54,8 @@ var songsSearched = []
 lists = [subjects2,subjects]
 
 // Quando uma tecla é pressionada
-
+function load() {
+    console.log('aaa',document.getElementsByClassName(class_searcher))
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
         console.log(event.key)
@@ -103,12 +102,12 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
            ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
         } }})
 }
+}
 
 
 // Cada vez que o usuário digite um caractere na barra de pesquisa
 function search2(subjects,titleProperty,searcherIndex) {    
 
-    conhsole.log('HEYYYY')
     pselected[searcherIndex] = -1
     this.pnumber = -1
     this.opnumbers = 0
