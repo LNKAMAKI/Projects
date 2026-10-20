@@ -71,9 +71,11 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 
     window.addEventListener('keydown', (event) => {
         ps = pholder.getElementsByClassName('psearcher')
-
+        console.log('pressionouaaaaaaaaaaaaaaa')
         fila = fila.then(async () => {
            return new Promise (r => {
+            console.log('AAAAAAAAAAA',!(pselected[s] == ps.length - 1  && event.key == 'ArrowDown'))
+            if (!(pselected[s] == ps.length - 1  && event.key == 'ArrowDown') && !(pselected[s] == 0  && event.key == 'ArrowUp')) {// && document.getElementsByClassName(class_searcher)[s] == document.activeElement) {
                   setTimeout(() => {
     console.log(event.key)
     console.log('teclou',pselected[s])
@@ -114,7 +116,12 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 
         console.log('teclou agora',pselected[s])
         r()
-    },130)}
+    },130)
+}else{
+    r()
+}
+}
+    
             )
         })
 })
