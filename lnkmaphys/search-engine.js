@@ -4,6 +4,9 @@
 subjects2 = [
     {title2: 'Aço', link: 'https://www.google.com/search?q=a%C3%A7o'},
     {title2: 'Alumínio', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
+    {title2: 'Alumínio2', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
+    {title2: 'Alumínio3', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
+    {title2: 'Alumínio4', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
     {title2: 'Cobre', link: 'https://www.google.com/search?q=cobre'},
     {title2: 'Ferro', link: 'https://www.google.com/search?q=ferro'},
     {title2: 'Madeira', link: 'https://www.google.com/search?q=madeira'},
@@ -64,8 +67,16 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
         }
     })
 
-    window.addEventListener('keyup', function(event) {
+    let fila = Promise.resolve()
+
+    window.addEventListener('keydown', (event) => {
+        ps = pholder.getElementsByClassName('psearcher')
+
+        fila = fila.then(async () => {
+           return new Promise (r => {
+                  setTimeout(() => {
     console.log(event.key)
+    console.log('teclou',pselected[s])
     searcher = document.getElementsByClassName(class_searcher)[s]
     pholder = document.getElementsByClassName(class_pholder)[s]
     if (searcher == document.activeElement && event.key == 'Enter' && pselected[s] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
@@ -74,7 +85,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
         quantasopções = pholder.getElementsByClassName('psearcher').length
         console.log('ueepa')
         if (quantasopções == 1) {
-           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s,attributes[s])
+           dothesearch(Number(pholder.getElementsByClassName('psearcher')[0].id.replace('a','')),s,attributes[s])
         }}
     }else if(searcher == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
         console.log('UEPA!')
@@ -82,10 +93,9 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     }
     
     // Selecionando a sugestão com as setas
-    ps = pholder.getElementsByClassName('psearcher')
     if (searcher == document.activeElement && event.key == 'ArrowDown') { 
-        console.log(pselected)
-        console.log('VAI',ps.length, pselected[s])
+        //console.log(pselected)
+        //console.log('VAI',ps.length, pselected[s])
         if (pselected[s] < ps.length - 1 && podeir[s] == true) {
             if (pselected[s] != -1)
             ps[pselected[s]].style.backgroundColor = 'white'
@@ -100,7 +110,15 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             pselected[s]--
             //this.searcher.value = pselected[s]
            ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
-        } }})
+        } }
+
+        console.log('teclou agora',pselected[s])
+        r()
+    },130)}
+            )
+        })
+})
+        
 }
 }
 
@@ -232,27 +250,32 @@ function dothesearch(whichid,searcher,titleProperty) {
     //search(whichid)
     
     console.log('HERE', mainholder.style.display)
-    mainholder.style.display = 'none'
+    //mainholder.style.display = 'none'
     console.log('HERE', mainholder.style.display)
 }
 
+/*
 function fclic() {
     pesquisa = document.getElementsByClassName(class_searcher)[0].value
     if (pesquisa.length == 0) {
      document.getElementsByClassName(class_pholder)[0].style.display = 'none'
-    }}
+    }}*/
 
 
 // Quando o mouse entra em uma opção(psearcher)
 function entrou(thing,sindex) {
+    console.log('entrou',thing)
     if (document.getElementsByClassName(class_searcher)[sindex] == document.activeElement) {
     ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
 
     podeir[sindex] = false
+    console.log('podeir',podeir[sindex])
+    console.log('pselected',pselected[sindex])
     
     if (pselected[sindex] != -1 && pselected[sindex] != thing) {
         ps[pselected[sindex]].style.backgroundColor = 'white'
         pselected[sindex] = -1
+        console.log('pselected',pselected[sindex])
     }
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
@@ -260,12 +283,23 @@ function entrou(thing,sindex) {
 
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing,sindex) {
+    console.log('saiu',thing)
     if (document.getElementsByClassName(class_searcher)[sindex] == document.activeElement) {
-    podeir[sindex] = true
-    pselected[sindex] = -1
     ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
+
+    podeir[sindex] = true
+    console.log('podeir',podeir[sindex])
+
+     if (pselected[sindex] != -1 && pselected[sindex] != thing) {
+        ps[pselected[sindex]].style.backgroundColor = 'white'
+        pselected[sindex] = -1
+        console.log('pselected',pselected[sindex])
+    }
+
+    if (pselected[sindex] != thing)
     ps[thing].style.backgroundColor = 'white'
-    }}
+
+}}
 
     // Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {

@@ -15,7 +15,7 @@ nav {
 
    .searchtab {
     display: flex;
-    width: 50%;
+    width: 55%;
     padding: 0px 5px;
     background-color: var(--gold);
     border-radius: 50px;
@@ -28,9 +28,6 @@ nav {
         background-color: var(--gold);
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
-    }
-    img:has(~.searchbar:active) {
-    background-color: white;
     }
     .searchbar {
         display: inline;
@@ -46,19 +43,16 @@ nav {
     border: none;
 }
 .searchbar:active {
-    background-color: var(--gold);
 }
 }
 
 .searchtab:has(.searchbar:active) img {
-    background-color: white;
 }
 
 .searchtab:has(.searchbar:hover) {
         outline: 3px solid white;
    }
    .searchtab:has(.searchbar:active){
-    background-color: white;
     outline: none;
    }
    .searchtab:has(.searchbar:focus){
