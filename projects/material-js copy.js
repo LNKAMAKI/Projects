@@ -124,9 +124,11 @@ return newlista
 
 pselected = [-1,-1]
 podeir = [true,true]
-subjects2 = sortWords(subjects2,'title2')
+attribute = 'title2'
+subjects2 = sortWords(subjects2, attribute)
 
 var songsSearched = []
+lists = [subjects2,subjects2]
 
 // Quando uma tecla é pressionada
 
@@ -135,7 +137,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
 
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
-            search2(subjects2, 'title2', s)
+            search2(lists[s], attribute, s)
         }
     })
 
@@ -149,11 +151,11 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
         quantasopções = pholder.getElementsByClassName('psearcher').length
         console.log('ueepa')
         if (quantasopções == 1) {
-           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s,'title2')
+           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s,attribute)
         }}
     }else if(searcher == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
         console.log('UEPA!')
-        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[s]].id.replace('a','')),s,'title2')
+        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[s]].id.replace('a','')),s,attribute)
     }
     
     // Selecionando a sugestão com as setas
@@ -293,7 +295,7 @@ function search2(subjects,titleProperty,searcherIndex) {
 // Quando a pesquisa é realizada
 function dothesearch(whichid,searcher,titleProperty) {
 
-    document.getElementsByClassName(class_searcher)[searcher].value = subjects2[whichid][titleProperty]
+    document.getElementsByClassName(class_searcher)[searcher].value = lists[searcher][whichid][titleProperty]
     mainholder = document.getElementsByClassName(class_pholder)[searcher]
     allps = mainholder.getElementsByClassName('psearcher')
     podeir[searcher] = true
