@@ -10,20 +10,20 @@
     <link rel="stylesheet" href="lnkmaphys-platform.css">
 
     <style>
-           span.tipo {
-           color: rgb(158, 158, 158);
-           font-size: 1.4em;
-       }
-    
-       #rev {
+       .rev {
          display: inline-block;
          position: relative;
+         width: calc(100% - 38px);
        }
 
+       .searcher {
+        width: 100%;
+       }
        .main {
         background-color: white;
         opacity: 0;
     position: absolute;
+    top: 100%;
     width: 100%;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -42,11 +42,21 @@
           margin: 0 0 0 0 ;
            text-align: center;
            background-color: white;
+           font-family: var(--calsans);
+           font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+       }
+
+       .psearcher:hover {
+         cursor: pointer;
        }
 
         input:focus ~ .main {
            opacity: 100;
            display: none;
+       }
+
+       span.phelp {
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
        }
     </style>
 </head>
@@ -61,18 +71,22 @@
           <nav>
             <div>
                 <img src="images/lnkamaphys-logo-yellow.svg" alt="Logo LNKmaphys">
-                <span>LNKmaphys</span>
+                <span class="logo">LNKmaphys</span>
             </div>
               <div class="searchtab">
                     <img src="images/lupa.webp" alt="">
-                    <input class="searchbar" type="text" placeholder="Pesquisar...">
+                    <div class="rev">
+                        <input type="text" name="" class="searcher searchbar" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
+                                        <div class="main">
+                                        </div>
+                    </div>
                 </div>
           </nav>
     </header>
 
     <main>
 
-        <div id="rev">
+        <div class="rev">
                 <input type="text" name="" class="searcher" placeholder="Pesquisar..." onclick="fclic()" spellcheck="false">
                 <div class="main">
                 </div>
