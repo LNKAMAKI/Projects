@@ -1,29 +1,26 @@
 /*PESQUISA*/
 
 // Materiais Array
-contents = [
-    {title:'HTML', url:'html-logo.svg',subs:[{title:'Estrutura HTML básica, tags HTML e hierarquia de títulos',url:'../materiais/introducao-html.html'},{title:'Parágrafos, quebras de linha, símbolos e emojis',url:'../materiais/br,símbolos.html'},{title:'Formatos de imagem, tag img, direitos autorais e imagens responsivas',url:'../materiais/imagens.html'},{title:'Favicon e links internos, externos e para download',url:'../materiais/favicon-links.html'},{title:'Formatações de texto',url:'../materiais/tipostexto.html'},{title:'Citações, códigos e abreviações',url:'../materiais/citações-code.html'},{title:'Listas ol, ul e de definição',url:'../materiais/listas.html'},{title:'Áudios e vídeos',url:'../materiais/audios-videos.html'},{title:'Tabelas',url:'../materiais/tabelas.html'},{title:'Iframes',url:'../materiais/iframe.html'}]},
-    {title:'CSS', url:'css-logo.svg',subs:[]},
-    {title:'JAVASCRIPT', url:'js-logo.svg',subs:[{title:'Iframas',url:'../materiais/iframe.html'}]},
-    {title:'abobrinha', url:'js-logo.svg',subs:[{title:'abacaxi',url:'../materiais/iframe.html'}]},
-    {title:'abacaxi', url:'js-logo.svg',subs:[{title:'abacate',url:'../materiais/iframe.html'}]},
-   {title:'abol', url:'js-logo.svg',subs:[{title:'abol',url:'../materiais/iframe.html'}]},
-    {title:'abol', url:'js-logo.svg',subs:[{title:'abobrinha',url:'../materiais/iframe.html'}]},
-     {title:'abol', url:'js-logo.svg',subs:[{title:'abol2',url:'../materiais/iframe.html'}]},
-      {title:'abol', url:'js-logo.svg',subs:[{title:'abol4',url:'../materiais/iframe.html'}]},
-       {title:'abol', url:'js-logo.svg',subs:[{title:'abol3',url:'../materiais/iframe.html'}]},
-        {title:'abol', url:'js-logo.svg',subs:[{title:'abol6',url:'../materiais/iframe.html'}]},
-         {title:'abol', url:'js-logo.svg',subs:[{title:'abol5',url:'../materiais/iframe.html'}]},
+subjects2 = [
+    {title2: 'Aço', link: 'https://www.google.com/search?q=a%C3%A7o'},
+    {title2: 'Alumínio', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
+    {title2: 'Cobre', link: 'https://www.google.com/search?q=cobre'},
+    {title2: 'Ferro', link: 'https://www.google.com/search?q=ferro'},
+    {title2: 'Madeira', link: 'https://www.google.com/search?q=madeira'},
+    {title2: 'Plástico', link: 'https://www.google.com/search?q=pl%C3%A1stico'},
+    {title2: 'Vidro', link: 'https://www.google.com/search?q=vidro'},
+    {title2: 'Tecido', link: 'https://www.google.com/search?q=tecido'},
+    {title2: 'Borracha', link: 'https://www.google.com/search?q=borracha'},
+    {title2: 'Cerâmica', link: 'https://www.google.com/search?q=cer%C3%A2mica'},
+    {title2: 'Papel', link: 'https://www.google.com/search?q=papel'},
+    {title2: 'Couro', link: 'https://www.google.com/search?q=couro'},
+    {title2: 'Lã', link: 'https://www.google.com/search?q=l%C3%A3'},
+    {title2: 'Plástico biodegradável', link: 'https://www.google.com/search?q=pl%C3%A1stico+biodegrad%C3%A1vel'},
+    {title2: 'Aço inoxidável', link: 'https://www.google.com/search?q=a%C3%A7o+inoxid%C3%A1vel'},
+    {title2: 'Alumínio anodizado', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
 ]
-
-var subjects2 = []
-
-for (i in contents) {
-    for (e in contents[i].subs) {
-        console.log(contents[i].title,contents[i].subs[e].title, contents[i].subs[e].url)
-        subjects2.push({title1:i, title2: contents[i].subs[e].title.toLowerCase(), url:contents[i].subs[e].url,index:e})
-    }}
-
+    class_searcher = 'searcher'
+    class_pholder = 'main'
 // Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
     alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -131,32 +128,32 @@ subjects2 = sortWords(subjects2,'title2')
 
 var songsSearched = []
 
-
 // Quando uma tecla é pressionada
 
-for (let s = 0; s < document.getElementsByClassName('searcher').length; s++) {
+for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
     console.log('hey')
-    document.getElementsByClassName('searcher')[s].addEventListener('keyup', function(event) {
+    document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
 
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
-            search2(subjects2,'title2',s)
+            search2(subjects2, 'title2', s)
         }
     })
 
     window.addEventListener('keyup', function(event) {
     console.log(event.key)
-    searcher = document.getElementsByClassName('searcher')[s]
-    pholder = document.getElementsByClassName('main')[s]
+    searcher = document.getElementsByClassName(class_searcher)[s]
+    pholder = document.getElementsByClassName(class_pholder)[s]
     if (searcher == document.activeElement && event.key == 'Enter' && pselected[s] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
         if (pselected[s] == -1) {
         quantasopções = pholder.getElementsByClassName('psearcher').length
+        console.log('ueepa')
         if (quantasopções == 1) {
-           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s)
+           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s,'title2')
         }}
     }else if(searcher == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
         console.log('UEPA!')
-        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[s]].id.replace('a','')),s)
+        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[s]].id.replace('a','')),s,'title2')
     }
     
     // Selecionando a sugestão com as setas
@@ -187,8 +184,8 @@ function search2(subjects,titleProperty,searcherIndex) {
     pselected[searcherIndex] = -1
     this.pnumber = -1
     this.opnumbers = 0
-    pholder = document.getElementsByClassName('main')[searcherIndex]
-    searcher = document.getElementsByClassName('searcher')[searcherIndex]
+    pholder = document.getElementsByClassName(class_pholder)[searcherIndex]
+    searcher = document.getElementsByClassName(class_searcher)[searcherIndex]
     pesquisa = searcher.value
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
@@ -294,10 +291,10 @@ function search2(subjects,titleProperty,searcherIndex) {
  }}
 
 // Quando a pesquisa é realizada
-function dothesearch(whichid,searcher) {
+function dothesearch(whichid,searcher,titleProperty) {
 
-    document.getElementsByClassName('searcher')[searcher].value = subjects2[whichid].title2
-    mainholder = document.getElementsByClassName('main')[searcher]
+    document.getElementsByClassName(class_searcher)[searcher].value = subjects2[whichid].title2
+    mainholder = document.getElementsByClassName(class_pholder)[searcher]
     allps = mainholder.getElementsByClassName('psearcher')
     podeir[searcher] = true
 
@@ -313,16 +310,16 @@ function dothesearch(whichid,searcher) {
 }
 
 function fclic() {
-    pesquisa = document.getElementsByClassName('searcher')[0].value
+    pesquisa = document.getElementsByClassName(class_searcher)[0].value
     if (pesquisa.length == 0) {
-     document.getElementsByClassName('main')[0].style.display = 'none'
+     document.getElementsByClassName(class_pholder)[0].style.display = 'none'
     }}
 
 
 // Quando o mouse entra em uma opção(psearcher)
 function entrou(thing,sindex) {
-    if (document.getElementsByClassName('searcher')[sindex] == document.activeElement) {
-    ps = document.getElementsByClassName('main')[sindex].getElementsByClassName('psearcher')
+    if (document.getElementsByClassName(class_searcher)[sindex] == document.activeElement) {
+    ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
 
     podeir[sindex] = false
     
@@ -336,9 +333,9 @@ function entrou(thing,sindex) {
 
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing,sindex) {
-    if (document.getElementsByClassName('searcher')[sindex] == document.activeElement) {
+    if (document.getElementsByClassName(class_searcher)[sindex] == document.activeElement) {
     podeir[sindex] = true
     pselected[sindex] = -1
-    ps = document.getElementsByClassName('main')[sindex].getElementsByClassName('psearcher')
+    ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
     }}
