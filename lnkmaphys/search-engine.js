@@ -55,11 +55,14 @@ subjects = sortWords(subjects, attributes[1])
 
 var songsSearched = []
 lists = [subjects2,subjects]
+pstate = []
 
 // Quando uma tecla é pressionada
 function load() {
     console.log('aaa',document.getElementsByClassName(class_searcher))
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
+
+    pstate.push([])
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
         console.log(event.key)
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
@@ -69,8 +72,25 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 
     let fila = Promise.resolve()
 
+    pholder = document.getElementsByClassName(class_pholder)[s]
+    ps = pholder.getElementsByClassName('psearcher')
+    setInterval(() => {
+        if (pselected[s] != -1) {
+        ps[pselected[s]].style.backgroundColor = 'red'
+        }
+        for (let psearch in ps) {
+            if (psearch < ps.length) {
+            console.log(psearch)
+            console.log('HOVER',pstate[s][psearch].onhover)
+            if (pstate[s][psearch].onhover == true) {
+               ps[psearch].style.backgroundColor = 'blue'
+            }else{
+                ps[psearch].style.backgroundColor = 'white'
+            }
+        }
+    }
+},160)
     window.addEventListener('keydown', (event) => {
-        ps = pholder.getElementsByClassName('psearcher')
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
         fila = fila.then(async () => {
@@ -81,7 +101,6 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     console.log(event.key)
     console.log('teclou',pselected[s])
     searcher = document.getElementsByClassName(class_searcher)[s]
-    pholder = document.getElementsByClassName(class_pholder)[s]
     if (searcher == document.activeElement && event.key == 'Enter' && pselected[s] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
         if (pselected[s] == -1) {
@@ -100,19 +119,19 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
         //console.log(pselected)
         //console.log('VAI',ps.length, pselected[s])
         if (pselected[s] < ps.length - 1 && podeir[s] == true) {
-            if (pselected[s] != -1)
-            ps[pselected[s]].style.backgroundColor = 'white'
+            //if (pselected[s] != -1)
+            //ps[pselected[s]].style.backgroundColor = 'white'
             pselected[s]++
             //this.searcher.value = pselected[s]
-            ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
+            //ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
         }
     }else if(searcher == document.activeElement && event.key == 'ArrowUp') {
         if (pselected[s] >= 1 && podeir[s] == true) {
-            if (pselected[s] != -1)
-            ps[pselected[s]].style.backgroundColor = 'white'
+            //if (pselected[s] != -1)
+            //ps[pselected[s]].style.backgroundColor = 'white'
             pselected[s]--
             //this.searcher.value = pselected[s]
-           ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
+           //ps[pselected[s]].style.backgroundColor = 'rgb(235, 235, 235)'
         } }
 
         console.log('teclou agora',pselected[s])
@@ -135,6 +154,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 // Cada vez que o usuário digite um caractere na barra de pesquisa
 function search2(subjects,titleProperty,searcherIndex) {    
 
+    pstate[searcherIndex] = []
     pselected[searcherIndex] = -1
     this.pnumber = -1
     this.opnumbers = 0
@@ -160,6 +180,7 @@ function search2(subjects,titleProperty,searcherIndex) {
          pesquise = pesquisa.toLowerCase()
          if (subjects[n][titleProperty].search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
              this.pnumber++
+             pstate[searcherIndex].push({p_id:pnumber,onhover:false})
              this.psearcher = document.createElement('p')
              this.psearcher.style.position = 'sticky'
              this.psearcher.innerText = subjects[n][titleProperty]
@@ -168,7 +189,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
              this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
-             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
+             this.psearcher.setAttribute('onmouseleave', `saiu(${this.pnumber},${searcherIndex})`)
              this.d = document.createElement('span')
              //this.d.innerText = 'o'
              this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
@@ -189,6 +210,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              pesquise = pesquisa.toLowerCase()
              if (subjects[n][titleProperty].search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
                 this.pnumber++
+                pstate[searcherIndex].push({p_id:pnumber,onhover:false})
                 this.psearcher = document.createElement('p')
                  this.psearcher.style.position = 'sticky'
                  this.psearcher.innerText = subjects[n][titleProperty]
@@ -197,7 +219,7 @@ function search2(subjects,titleProperty,searcherIndex) {
                  this.psearcher.style.fontWeight = 'bold'
                  this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
                  this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
-                 this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
+                 this.psearcher.setAttribute('onmouseleave', `saiu(${this.pnumber},${searcherIndex})`)
                  this.d = document.createElement('span')
                  this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
                  //this.d.innerText = 'o'
@@ -218,6 +240,7 @@ function search2(subjects,titleProperty,searcherIndex) {
          pesquise = pesquisa.toLowerCase()
          if (subjects[n][titleProperty].search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
             this.pnumber++
+            pstate[searcherIndex].push({p_id:pnumber,onhover:false})
              this.psearcher = document.createElement('p')
              this.psearcher.style.position = 'sticky'
              this.psearcher.innerText = subjects[n][titleProperty]
@@ -226,7 +249,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
              this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
-             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
+             this.psearcher.setAttribute('onmouseleave', `saiu(${this.pnumber},${searcherIndex})`)
              this.d = document.createElement('span')
              this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
              //this.d.innerText = 'o'
@@ -282,12 +305,13 @@ function entrou(thing,sindex) {
     console.log('pselected',pselected[sindex])
     
     if (pselected[sindex] != -1 && pselected[sindex] != thing) {
-        ps[pselected[sindex]].style.backgroundColor = 'white'
+       // ps[pselected[sindex]].style.backgroundColor = 'white'
         pselected[sindex] = -1
         console.log('pselected',pselected[sindex])
     }
 
-    ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
+   // ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
+    pstate[sindex][thing].onhover = true
 }}
 
 // Quando o mouse sai de uma opção(psearcher)
@@ -300,13 +324,15 @@ function saiu(thing,sindex) {
     console.log('podeir',podeir[sindex])
 
      if (pselected[sindex] != -1 && pselected[sindex] != thing) {
-        ps[pselected[sindex]].style.backgroundColor = 'white'
+        //ps[pselected[sindex]].style.backgroundColor = 'white'
         pselected[sindex] = -1
         console.log('pselected',pselected[sindex])
     }
 
-    if (pselected[sindex] != thing)
-    ps[thing].style.backgroundColor = 'white'
+    //if (pselected[sindex] != thing)
+    //ps[thing].style.backgroundColor = 'white'
+
+    pstate[sindex][thing].onhover = false
 
 }}
 
