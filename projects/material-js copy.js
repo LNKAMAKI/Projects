@@ -20,25 +20,25 @@ subjects2 = [
     {title2: 'Alumínio anodizado', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
 ]
 subjects = [
-    {title2: 'abacate', link: 'https://www.google.com/search?q=abacate'},
-    {title2: 'banana', link: 'https://www.google.com/search?q=banana'},
-    {title2: 'caju', link: 'https://www.google.com/search?q=caju'},
-    {title2: 'damasco', link: 'https://www.google.com/search?q=damasco'},
-    {title2: 'figo', link: 'https://www.google.com/search?q=figo'},
-    {title2: 'goiaba', link: 'https://www.google.com/search?q=goiaba'},
-    {title2: 'jabuticaba', link: 'https://www.google.com/search?q=jabuticaba'},
-    {title2: 'kiwi', link: 'https://www.google.com/search?q=kiwi'},
-    {title2: 'laranja', link: 'https://www.google.com/search?q=laranja'},
-    {title2: 'mamão', link: 'https://www.google.com/search?q=mam%C3%A3o'},
-    {title2: 'nectarina', link: 'https://www.google.com/search?q=nectarina'},
-    {title2: 'pera', link: 'https://www.google.com/search?q=pera'},
-    {title2: 'romã', link: 'https://www.google.com/search?q=rom%C3%A3'},
-    {title2: 'tangerina', link: 'https://www.google.com/search?q=tangerina'},
-    {title2: 'uva', link: 'https://www.google.com/search?q=uva'},
-    {title2: 'abacaxi', link: 'https://www.google.com/search?q=abacaxi'},
-    {title2: 'acerola', link: 'https://www.google.com/search?q=acerola'},
-    {title2: 'amora', link: 'https://www.google.com/search?q=amora'},
-    {title2: 'cereja', link: 'https://www.google.com/search?q=cereja'},
+    {title: 'abacate', link: 'https://www.google.com/search?q=abacate'},
+    {title: 'banana', link: 'https://www.google.com/search?q=banana'},
+    {title: 'caju', link: 'https://www.google.com/search?q=caju'},
+    {title: 'damasco', link: 'https://www.google.com/search?q=damasco'},
+    {title: 'figo', link: 'https://www.google.com/search?q=figo'},
+    {title: 'goiaba', link: 'https://www.google.com/search?q=goiaba'},
+    {title: 'jabuticaba', link: 'https://www.google.com/search?q=jabuticaba'},
+    {title: 'kiwi', link: 'https://www.google.com/search?q=kiwi'},
+    {title: 'laranja', link: 'https://www.google.com/search?q=laranja'},
+    {title: 'mamão', link: 'https://www.google.com/search?q=mam%C3%A3o'},
+    {title: 'nectarina', link: 'https://www.google.com/search?q=nectarina'},
+    {title: 'pera', link: 'https://www.google.com/search?q=pera'},
+    {title: 'romã', link: 'https://www.google.com/search?q=rom%C3%A3'},
+    {title: 'tangerina', link: 'https://www.google.com/search?q=tangerina'},
+    {title: 'uva', link: 'https://www.google.com/search?q=uva'},
+    {title: 'abacaxi', link: 'https://www.google.com/search?q=abacaxi'},
+    {title: 'acerola', link: 'https://www.google.com/search?q=acerola'},
+    {title: 'amora', link: 'https://www.google.com/search?q=amora'},
+    {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
 ]
    
 
@@ -47,7 +47,7 @@ class_pholder = 'main'
 
 pselected = [-1,-1]
 podeir = [true,true]
-attributes = ['title2','title2']
+attributes = ['title2','title']
 subjects2 = sortWords(subjects2, attributes[0])
 subjects = sortWords(subjects, attributes[1])
 
