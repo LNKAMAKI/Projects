@@ -143,9 +143,8 @@ for (let s = 0; s < document.getElementsByClassName('searcher').length; s++) {
         }
     })
 
-      window.addEventListener('keyup', function(event) {
+    window.addEventListener('keyup', function(event) {
     console.log(event.key)
-    //console.log('pselected[s]:', pselected[s],'ps:',ps.length)
     searcher = document.getElementsByClassName('searcher')[s]
     pholder = document.getElementsByClassName('main')[s]
     if (searcher == document.activeElement && event.key == 'Enter' && pselected[s] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
@@ -217,11 +216,11 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.id = 'a' + n
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-             this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
+             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
              this.d = document.createElement('span')
              //this.d.innerText = 'o'
-             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
              this.d.setAttribute('class','phelp')
 
              this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
@@ -246,10 +245,10 @@ function search2(subjects,titleProperty,searcherIndex) {
                  this.psearcher.id = 'a' + n
                  this.psearcher.style.fontWeight = 'bold'
                  this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-                 this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-                 this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+                 this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
+                 this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
                  this.d = document.createElement('span')
-                 this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+                 this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
                  //this.d.innerText = 'o'
                  this.d.setAttribute('class','phelp')
 
@@ -275,10 +274,10 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.id = 'a' + n 
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
-             this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
-             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber})`)
+             this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
+             this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
              this.d = document.createElement('span')
-             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber})`)
+             this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
              //this.d.innerText = 'o'
              this.d.setAttribute('class','phelp')
 
@@ -297,16 +296,13 @@ function search2(subjects,titleProperty,searcherIndex) {
 // Quando a pesquisa é realizada
 function dothesearch(whichid,searcher) {
 
-    console.log('AAAAAAAAAAAAAAAAAA')
     document.getElementsByClassName('searcher')[searcher].value = subjects2[whichid].title2
     mainholder = document.getElementsByClassName('main')[searcher]
     allps = mainholder.getElementsByClassName('psearcher')
     podeir[searcher] = true
 
    for (n = allps.length - 1; n >= 0; n--) {
-       //if (allps[n].id != 'a' + whichid) {
    mainholder.removeChild(allps[n])
-      // }
     }
 
     //search(whichid)
@@ -316,179 +312,33 @@ function dothesearch(whichid,searcher) {
     console.log('HERE', mainholder.style.display)
 }
 
-// Cria o conteúdo(quando é feita a pesquisa)
-/*
-function search(path) {
-    //window.alert('search')
-    pesquisa = document.getElementById('searcher').value
-    songsSearched.length = 0
-    songsSearched.unshift(pesquisa.toLowerCase())
-       //document.getElementsByTagName('iframe')[0].src = path
-    console.log('VEJA:',subjects[path].title1,subjects[path])
-
-    if (layer == 0) {
-        //window.alert('ok')
-        //window.alert(subjects[path].title1,subjects[path].index)
-        mostrarlista(subjects[path].title1)
-        window.alert('mostrarlista')
-        criariframe(subjects[path].title1,subjects[path].index,true)
-    }else if(layer == 1){
-        criariframe(subjects[path].title1,subjects[path].index,true)
-        document.getElementsByClassName('cont')[0].getElementsByClassName('ps2')[0].innerText = contents[subjects[path].title1].title
-        qualicon = subjects[path].title1
-    }else{
-        dv.removeChild(dv.getElementsByClassName('pt')[0])
-        whichi = document.getElementById('index').getElementsByTagName('iframe')[0]
-        console.log(whichi)
-        document.getElementById('index').removeChild(whichi)
-        qualicon = subjects[path].title1
-        document.getElementsByClassName('cont')[0].getElementsByClassName('ps2')[0].innerText = 
-        contents[subjects[path].title1].title
-        criariframe(subjects[path].title1,subjects[path].index)
-    }
-        wordSearched = subjects.find(function(subjects){
-        return subjects.title2 == pesquisa.toLowerCase()
-       })}
-        */
-
-   
 function fclic() {
     pesquisa = document.getElementsByClassName('searcher')[0].value
     if (pesquisa.length == 0) {
      document.getElementsByClassName('main')[0].style.display = 'none'
     }}
 
-//ps = document.getElementById('main').getElementsByClassName('psearcher')
 
 // Quando o mouse entra em uma opção(psearcher)
-function entrou(thing) {
-    if (document.getElementsByClassName('searcher')[0] == document.activeElement) {
-    ps = document.getElementsByClassName('main')[0].getElementsByClassName('psearcher')
+function entrou(thing,sindex) {
+    if (document.getElementsByClassName('searcher')[sindex] == document.activeElement) {
+    ps = document.getElementsByClassName('main')[sindex].getElementsByClassName('psearcher')
 
-    podeir[0] = false
-    //document.getElementsByClassName('searcher')[0].value = 'entrou' + thing + podeir
+    podeir[sindex] = false
     
-    if (pselected[0] != -1 && pselected[0] != thing) {
-        ps[pselected[0]].style.backgroundColor = 'white'
-        pselected[0] = -1
+    if (pselected[sindex] != -1 && pselected[sindex] != thing) {
+        ps[pselected[sindex]].style.backgroundColor = 'white'
+        pselected[sindex] = -1
     }
-    //document.getElementsByClassName('searcher')[0].value += 'thing' + thing
 
     ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
 }}
 
 // Quando o mouse sai de uma opção(psearcher)
-function saiu(thing) {
-    if (document.getElementsByClassName('searcher')[0] == document.activeElement) {
-    podeir[0] = true
-    //document.getElementsByClassName('searcher')[0].value = 'saiu' + thing + podeir
-    pselected[0] = -1
-    ps = document.getElementsByClassName('main')[0].getElementsByClassName('psearcher')
+function saiu(thing,sindex) {
+    if (document.getElementsByClassName('searcher')[sindex] == document.activeElement) {
+    podeir[sindex] = true
+    pselected[sindex] = -1
+    ps = document.getElementsByClassName('main')[sindex].getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
     }}
-    
-
-
-/*MATERIAL*/
-/*
-d = document.createElement('div')
-d.setAttribute('class','container-lg')
-document.body.appendChild(d)
-
-d2 = document.createElement('div')
-d2.setAttribute('class','row justify-content-center')
-d2.setAttribute('name','select-content')
-d.appendChild(d2)
-
-// Cria os bigicons/ícones
-for (i in contents) {
-d2.innerHTML +=  `<div class="col-lg-6 col-md-6 col-sm-6 mt-3" name="icone"><div class="bg-light" name="icon-img" onclick="mostrarlista(${i})"><img src="./\imagens/${contents[i].url}" alt="${contents[i].title}"> <p>${contents[i].title}</p></div></div>`
-}
-
-qualicon = -1
-function mostrarlista(which1) {
-qualicon = which1
-layer = 1
-bigicons = document.getElementsByName('select-content')[0]
-bigicons.style.display = 'none'
-    container = document.getElementsByClassName('container-lg')[0]
-    dv = document.createElement('div')
-    dv.setAttribute('id', 'index')
-    container.appendChild(dv)
-
-    cont = document.createElement('div')
-    cont.setAttribute('class', 'cont')
-    dv.appendChild(cont)
-    ps = document.createElement('p')
-    ps.innerText = contents[which1].title
-    ps.setAttribute('class','ps2')
-    cont.appendChild(ps)
-    btn = document.createElement('button')
-    btn.setAttribute('onclick','voltar()')
-    btn.setAttribute('class','button')
-    btn.innerText = 'Voltar'
-    cont.appendChild(btn)
-
-    list = document.createElement('div')
-    list.setAttribute('class','names')
-   
-    dv.appendChild(list)
-    for (f in contents[qualicon].subs) {
-    ps = document.createElement('p')
-    ps.innerText = contents[qualicon].subs[f].title
-    ps.setAttribute('class', 'ps')
-    
-    ps.setAttribute('onclick',`criariframe(${qualicon},${f},true)`)
-    list.appendChild(ps)
-    }}
-
-layer = 0
-function voltar() {
-    //window.alert(qualicon)
-    //window.alert(`${contents[qualicon].subs[f].title}`)
-    if (layer == 2) {
-        dv.removeChild(dv.getElementsByClassName('pt')[0])
-        dv.removeChild(dv.getElementsByTagName('iframe')[0])
-        
-        list = document.createElement('div')
-        list.setAttribute('class','names')
-       
-        dv.appendChild(list)
-        for (f in contents[qualicon].subs) {
-        ps = document.createElement('p')
-        ps.innerText = contents[qualicon].subs[f].title
-        ps.setAttribute('class', 'ps')
-        
-        ps.setAttribute('onclick',`criariframe(${qualicon},${f},true)`)
-        list.appendChild(ps)
-        }
-
-    }else if(layer == 1){
-    container.removeChild(dv)
-    bigicons.style.display = 'flex'
-    }
-    layer--
-}
-
-// Cria o iframe
-function criariframe(a,b,c) {
-    layer = 2
-    cont = document.getElementsByClassName('cont')[0]
-    if (c == true) {
-    listsubs = document.getElementsByClassName('names')[0]
-    listsubs.parentNode.removeChild(listsubs)
-    }
-    
-   //cont.getElementsByClassName('ps2')[0].innerText = contents[a].subs[b].title
-   //cont.getElementsByClassName('ps2')[0].style.fontWeight = 'bold'
-    
-    p = document.createElement('p')
-    p.innerText =  contents[a].subs[b].title
-    p.setAttribute('class', 'pt')
-    dv.appendChild(p)
-    iframe = document.createElement('iframe')
-    iframe.setAttribute('src',contents[a].subs[b].url)
-    iframe.style.width = '100%'
-    dv.appendChild(iframe)
-}
-    */
