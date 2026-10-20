@@ -19,116 +19,40 @@ subjects2 = [
     {title2: 'Aço inoxidável', link: 'https://www.google.com/search?q=a%C3%A7o+inoxid%C3%A1vel'},
     {title2: 'Alumínio anodizado', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
 ]
-    class_searcher = 'searcher'
-    class_pholder = 'main'
-// Ordena as palavras alfabeticamente
-function sortWords(palavrasPrimitivas,s) {
-    alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-palavrasNumericas = []
-posicaoPalavras = []
+subjects = [
+    {title2: 'abacate', link: 'https://www.google.com/search?q=abacate'},
+    {title2: 'banana', link: 'https://www.google.com/search?q=banana'},
+    {title2: 'caju', link: 'https://www.google.com/search?q=caju'},
+    {title2: 'damasco', link: 'https://www.google.com/search?q=damasco'},
+    {title2: 'figo', link: 'https://www.google.com/search?q=figo'},
+    {title2: 'goiaba', link: 'https://www.google.com/search?q=goiaba'},
+    {title2: 'jabuticaba', link: 'https://www.google.com/search?q=jabuticaba'},
+    {title2: 'kiwi', link: 'https://www.google.com/search?q=kiwi'},
+    {title2: 'laranja', link: 'https://www.google.com/search?q=laranja'},
+    {title2: 'mamão', link: 'https://www.google.com/search?q=mam%C3%A3o'},
+    {title2: 'nectarina', link: 'https://www.google.com/search?q=nectarina'},
+    {title2: 'pera', link: 'https://www.google.com/search?q=pera'},
+    {title2: 'romã', link: 'https://www.google.com/search?q=rom%C3%A3'},
+    {title2: 'tangerina', link: 'https://www.google.com/search?q=tangerina'},
+    {title2: 'uva', link: 'https://www.google.com/search?q=uva'},
+    {title2: 'abacaxi', link: 'https://www.google.com/search?q=abacaxi'},
+    {title2: 'acerola', link: 'https://www.google.com/search?q=acerola'},
+    {title2: 'amora', link: 'https://www.google.com/search?q=amora'},
+    {title2: 'cereja', link: 'https://www.google.com/search?q=cereja'},
+]
+   
 
-for (palavra in palavrasPrimitivas) {
-    word = palavrasPrimitivas[palavra][s].toLowerCase()
-    neword = ''
-    for (car in word) {
-        if (word[car] != ' ') {
-            neword+= word[car]
-        }
-        }
-    word = neword
-    wordToNumber = ''
-    for (letra = 0; letra < word.length; letra++) {
-        if (letra != word.length - 1) {
-            wordToNumber += `${alfabeto.indexOf(word[letra])}.`
-        } else {
-            wordToNumber += `${alfabeto.indexOf(word[letra])}`
-        }  }
-    palavrasNumericas.push(wordToNumber)
-    posicaoPalavras.push(palavra)
-}
-
-for (pNumber in palavrasNumericas) {
-    stop = false
-    for (n = 0; stop == false && n < pNumber; n++) {
-        if (n != pNumber) {
-            palavraAnalisar = []
-            numint = ''
-            for (num = 0; num < palavrasNumericas[n].length; num++) {
-                   if (palavrasNumericas[n][num] == '.') {
-                    palavraAnalisar.push(numint)
-                    numint = ''
-                   }else if(num == palavrasNumericas[n].length - 1){
-                        numint += `${palavrasNumericas[n][num]}`
-                        palavraAnalisar.push(numint)
-                   }else{
-                    numint += `${palavrasNumericas[n][num]}`
-                   }}
-            palavraOrigin = []
-            numint = ''
-            for (num = 0; num < palavrasNumericas[pNumber].length; num++) {
-                   if (palavrasNumericas[pNumber][num] == '.') {
-                    palavraOrigin.push(numint)
-                    numint = ''
-                   }else if(num == palavrasNumericas[pNumber].length - 1){
-                        numint += `${palavrasNumericas[pNumber][num]}`
-                        palavraOrigin.push(numint)
-                   }else{
-                    numint += `${palavrasNumericas[pNumber][num]}`
-                   }}
-           if (palavraOrigin.length > palavraAnalisar.length) {
-             pare = false
-             for (numb = 0; numb < palavraAnalisar.length && pare == false; numb++) {
-              if (Number(palavraAnalisar[numb]) < Number(palavraOrigin[numb])) {
-                pare = true
-              }else if (Number(palavraAnalisar[numb]) > Number(palavraOrigin[numb])) {
-                pare = true
-                stop = true
-                palavraSubir = palavrasNumericas[pNumber]
-                wordposition = posicaoPalavras[pNumber]
-                for (posicao = pNumber; posicao > n; posicao--) {
-                  palavrasNumericas[posicao] = palavrasNumericas[posicao - 1]
-                  posicaoPalavras[posicao] = posicaoPalavras[posicao - 1]
-                }
-                palavrasNumericas[n] = palavraSubir
-                posicaoPalavras[n] = wordposition
-              }else{
-                  pare = false
-              }}
-           }else{
-            pare = false
-            for (numb = 0; numb < palavraOrigin.length && pare == false; numb++) {
-                if (Number(palavraAnalisar[numb]) < Number(palavraOrigin[numb])) {
-                    pare = true
-                  }else if (Number(palavraAnalisar[numb]) > Number(palavraOrigin[numb])) {
-                    pare = true
-                    stop = true
-                    palavraSubir = palavrasNumericas[pNumber]
-                    wordposition = posicaoPalavras[pNumber]
-                    for (posicao = pNumber; posicao > n; posicao--) {
-                      palavrasNumericas[posicao] = palavrasNumericas[posicao - 1]
-                      posicaoPalavras[posicao] = posicaoPalavras[posicao - 1]
-                    }
-                    palavrasNumericas[n] = palavraSubir
-                    posicaoPalavras[n] = wordposition
-                  }else{
-                      pare = false
-                  }}}}}}
-
-newlista = []
-for (p in palavrasNumericas) {
-newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
-}
-
-return newlista
-}
+class_searcher = 'searcher'
+class_pholder = 'main'
 
 pselected = [-1,-1]
 podeir = [true,true]
-attribute = 'title2'
-subjects2 = sortWords(subjects2, attribute)
+attributes = ['title2','title2']
+subjects2 = sortWords(subjects2, attributes[0])
+subjects = sortWords(subjects, attributes[1])
 
 var songsSearched = []
-lists = [subjects2,subjects2]
+lists = [subjects2,subjects]
 
 // Quando uma tecla é pressionada
 
@@ -137,7 +61,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
 
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
-            search2(lists[s], attribute, s)
+            search2(lists[s], attributes[s], s)
         }
     })
 
@@ -151,11 +75,11 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
         quantasopções = pholder.getElementsByClassName('psearcher').length
         console.log('ueepa')
         if (quantasopções == 1) {
-           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s,attribute)
+           dothesearch(Number(pholder.getElementsByClassName('psearcher')[s].id.replace('a','')),s,attributes[s])
         }}
     }else if(searcher == document.activeElement && event.key == 'Enter'){ // Se uma sugestão estiver selecionada e a tecla Enter for pressionada
         console.log('UEPA!')
-        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[s]].id.replace('a','')),s,attribute)
+        dothesearch(Number(pholder.getElementsByClassName('psearcher')[pselected[s]].id.replace('a','')),s,attributes[s])
     }
     
     // Selecionando a sugestão com as setas
@@ -341,3 +265,104 @@ function saiu(thing,sindex) {
     ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
     ps[thing].style.backgroundColor = 'white'
     }}
+
+    // Ordena as palavras alfabeticamente
+function sortWords(palavrasPrimitivas,s) {
+    alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+palavrasNumericas = []
+posicaoPalavras = []
+
+for (palavra in palavrasPrimitivas) {
+    word = palavrasPrimitivas[palavra][s].toLowerCase()
+    neword = ''
+    for (car in word) {
+        if (word[car] != ' ') {
+            neword+= word[car]
+        }
+        }
+    word = neword
+    wordToNumber = ''
+    for (letra = 0; letra < word.length; letra++) {
+        if (letra != word.length - 1) {
+            wordToNumber += `${alfabeto.indexOf(word[letra])}.`
+        } else {
+            wordToNumber += `${alfabeto.indexOf(word[letra])}`
+        }  }
+    palavrasNumericas.push(wordToNumber)
+    posicaoPalavras.push(palavra)
+}
+
+for (pNumber in palavrasNumericas) {
+    stop = false
+    for (n = 0; stop == false && n < pNumber; n++) {
+        if (n != pNumber) {
+            palavraAnalisar = []
+            numint = ''
+            for (num = 0; num < palavrasNumericas[n].length; num++) {
+                   if (palavrasNumericas[n][num] == '.') {
+                    palavraAnalisar.push(numint)
+                    numint = ''
+                   }else if(num == palavrasNumericas[n].length - 1){
+                        numint += `${palavrasNumericas[n][num]}`
+                        palavraAnalisar.push(numint)
+                   }else{
+                    numint += `${palavrasNumericas[n][num]}`
+                   }}
+            palavraOrigin = []
+            numint = ''
+            for (num = 0; num < palavrasNumericas[pNumber].length; num++) {
+                   if (palavrasNumericas[pNumber][num] == '.') {
+                    palavraOrigin.push(numint)
+                    numint = ''
+                   }else if(num == palavrasNumericas[pNumber].length - 1){
+                        numint += `${palavrasNumericas[pNumber][num]}`
+                        palavraOrigin.push(numint)
+                   }else{
+                    numint += `${palavrasNumericas[pNumber][num]}`
+                   }}
+           if (palavraOrigin.length > palavraAnalisar.length) {
+             pare = false
+             for (numb = 0; numb < palavraAnalisar.length && pare == false; numb++) {
+              if (Number(palavraAnalisar[numb]) < Number(palavraOrigin[numb])) {
+                pare = true
+              }else if (Number(palavraAnalisar[numb]) > Number(palavraOrigin[numb])) {
+                pare = true
+                stop = true
+                palavraSubir = palavrasNumericas[pNumber]
+                wordposition = posicaoPalavras[pNumber]
+                for (posicao = pNumber; posicao > n; posicao--) {
+                  palavrasNumericas[posicao] = palavrasNumericas[posicao - 1]
+                  posicaoPalavras[posicao] = posicaoPalavras[posicao - 1]
+                }
+                palavrasNumericas[n] = palavraSubir
+                posicaoPalavras[n] = wordposition
+              }else{
+                  pare = false
+              }}
+           }else{
+            pare = false
+            for (numb = 0; numb < palavraOrigin.length && pare == false; numb++) {
+                if (Number(palavraAnalisar[numb]) < Number(palavraOrigin[numb])) {
+                    pare = true
+                  }else if (Number(palavraAnalisar[numb]) > Number(palavraOrigin[numb])) {
+                    pare = true
+                    stop = true
+                    palavraSubir = palavrasNumericas[pNumber]
+                    wordposition = posicaoPalavras[pNumber]
+                    for (posicao = pNumber; posicao > n; posicao--) {
+                      palavrasNumericas[posicao] = palavrasNumericas[posicao - 1]
+                      posicaoPalavras[posicao] = posicaoPalavras[posicao - 1]
+                    }
+                    palavrasNumericas[n] = palavraSubir
+                    posicaoPalavras[n] = wordposition
+                  }else{
+                      pare = false
+                  }}}}}}
+
+newlista = []
+for (p in palavrasNumericas) {
+newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
+}
+
+return newlista
+}
