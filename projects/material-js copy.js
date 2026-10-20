@@ -212,7 +212,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.setAttribute('class', 'psearcher')
              this.psearcher.id = 'a' + n
              this.psearcher.style.fontWeight = 'bold'
-             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
+             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
              this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
              this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
              this.d = document.createElement('span')
@@ -241,7 +241,7 @@ function search2(subjects,titleProperty,searcherIndex) {
                  this.psearcher.setAttribute('class', 'psearcher')
                  this.psearcher.id = 'a' + n
                  this.psearcher.style.fontWeight = 'bold'
-                 this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
+                 this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
                  this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
                  this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
                  this.d = document.createElement('span')
@@ -270,7 +270,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.psearcher.setAttribute('class', 'psearcher')
              this.psearcher.id = 'a' + n 
              this.psearcher.style.fontWeight = 'bold'
-             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex})`)
+             this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
              this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
              this.psearcher.setAttribute('onmouseout', `saiu(${this.pnumber},${searcherIndex})`)
              this.d = document.createElement('span')
@@ -293,7 +293,7 @@ function search2(subjects,titleProperty,searcherIndex) {
 // Quando a pesquisa é realizada
 function dothesearch(whichid,searcher,titleProperty) {
 
-    document.getElementsByClassName(class_searcher)[searcher].value = subjects2[whichid].title2
+    document.getElementsByClassName(class_searcher)[searcher].value = subjects2[whichid][titleProperty]
     mainholder = document.getElementsByClassName(class_pholder)[searcher]
     allps = mainholder.getElementsByClassName('psearcher')
     podeir[searcher] = true
