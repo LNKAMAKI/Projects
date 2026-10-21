@@ -2,39 +2,49 @@
 
 // Materiais Array
 subjects2 = [
-    {title2: 'Alo', link: 'https://www.google.com/search?q=a%C3%A7o'},
-    {title2: 'Alumínio', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
-    {title2: 'Alumínio2', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
-    {title2: 'Alumínio3', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
-    {title2: 'Alumínio4', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
-    {title2: 'acobre', link: 'https://www.google.com/search?q=cobre'},
-    {title2: 'Ferro', link: 'https://www.google.com/search?q=ferro'},
-    {title2: 'Madeira', link: 'https://www.google.com/search?q=madeira'},
-    {title2: 'Plástico', link: 'https://www.google.com/search?q=pl%C3%A1stico'},
-    {title2: 'Vidro', link: 'https://www.google.com/search?q=vidro'},
-    {title2: 'Tecido', link: 'https://www.google.com/search?q=tecido'},
-    {title2: 'Borracha', link: 'https://www.google.com/search?q=borracha'},
-    {title2: 'Papel', link: 'https://www.google.com/search?q=papel'},
-    {title2: 'Lã', link: 'https://www.google.com/search?q=l%C3%A3'},
-    {title2: 'Plástico biodegradável', link: 'https://www.google.com/search?q=pl%C3%A1stico+biodegrad%C3%A1vel'},
-    {title2: 'Aço inoxidável', link: 'https://www.google.com/search?q=a%C3%A7o+inoxid%C3%A1vel'},
-    {title2: 'Alumínio anodizado', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
-    {title2: 'a a', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
-    {title2: 'ab ab ayolo ayolo', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
-     {title2: 'ab cobre', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
-     {title2: 'a a a a a a ya', link: '---'},
-     {title2: 'a a a a a a a ya', link: '---'},
-      {title2: 'a a a a a a a a ya', link: '---'},
-       {title2: 'a a a a a a a a a ya', link: '---'},
-        {title2: 'a a a a a a a a a a ya', link: '---'},
-         {title2: 'a a a a a ya', link: '---'},
-     {title2: 'a a ya', link: '---'},
-     {title2: 'b ya', link: '---'},
-     {title2: 'a a a a a ya', link: '---'},
-     {title2: 'a a ya', link: '---'},
-     {title2: 'a a a ya', link: '---'},
-     {title2: 'a a a a ya', link: '---'},
+     {title2: 'aya'},
+     {title2: 'ayaya'},
+     {title2: 'ayayaya'},
+     {title2: 'ayayayaya',},
+     {title2: 'ayayayo',},
+     {title2: 'ayayaye'},
+     {title2: 'ayayayi'},
+     {title2: 'ayayi'},
+     {title2: 'a a a a a a ya'},
+     {title2: 'a a a a a a a ya'},
+      {title2: 'a a a a a a a a ya'},
+       {title2: 'a a a a a a a a a ya'},
+        {title2: 'a a a a a a a a a a ya'},
+         {title2: 'a c ya'},
+     {title2: 'a b ya'},
+     {title2: 'b ya'},
+     {title2: 'a a a a a ya'},
+     {title2: 'a d ya'},
+     {title2: 'a a ya'},
+     {title2: 'a a a ya'},
+     {title2: 'a a a a ya'},
 ]
+
+subjects2 = [
+  {title: 'banana  santana'},
+  {title: 'fernanda giovanna  ana '},
+  {title: 'ana  amanda '},
+  {title: 'mariana amanda '},
+  {title: ' ananda  fernandes  banana '},
+  {title: 'amanda  ana '},
+  {title: ' anderson  fernandes santana '},
+  {title: ' ana  amanda  anastasia '},
+  {title: ' joana  anastasia  ana '},
+  {title: 'ana'},
+  {title: ' ana  andrade anastasia  '},
+  {title: ' ana  fernanda   andrade  santana '},
+  {title: ' mariana  ana '},
+  {title: ' ananda '},
+  {title: '  ana  banana santana  '},
+  {title: '  anastasia   ana '},
+  {title: ' amanda  anastasia '},
+]
+
 subjects = [
     {title: 'abacate', link: 'https://www.google.com/search?q=abacate'},
     {title: 'banana', link: 'https://www.google.com/search?q=banana'},
@@ -62,8 +72,8 @@ class_pholder = 'main'
 
 pselected = [-1,-1]
 podeir = [true,true]
-attributes = ['title2','title']
-subjects2 = sortWords(subjects2, attributes[0])
+attributes = ['title','title']
+subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
 subjects = sortWords(subjects, attributes[1])
 color_selected = 'var(--sideyellow)'
 
@@ -103,7 +113,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             }
         }
     }
-},60)
+},60000)
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
@@ -373,6 +383,7 @@ posicaoPalavras = []
 
 for (palavra in palavrasPrimitivas) {
     word = palavrasPrimitivas[palavra][s].toLowerCase()
+    console.log('word',word)
     neword = ''
     for (car in word) {
         if (word[car] != ' ') {
@@ -499,4 +510,34 @@ function sortob(n, pam, pim) {
         }
     }
     return maiorparamenor
+}
+
+function sortWordsByNumber(palavrasPrimitivas,s) {
+for (palavra in palavrasPrimitivas) {
+    word = palavrasPrimitivas[palavra][s].toLowerCase()
+    console.log('word',word)
+    break_word = ''
+    words_number = 0
+    word_right_spaced = ''
+    for (car in word) {
+        //console.log('caractere',word[car])
+        if (word[car] != ' ') {
+             if (break_word == '') {
+                console.warn(break_word,'new word')
+                words_number += 1
+            }
+            break_word += word[car]
+        }else{
+            if (break_word != '') {
+            console.warn(break_word)
+            }
+            break_word = ''
+        }
+        }
+        console.warn('words number:',words_number,word_right_spaced)
+        palavrasPrimitivas[palavra].words_number = words_number
+}
+
+palavrasPrimitivas = sortob(palavrasPrimitivas,'words_number')
+return palavrasPrimitivas
 }
