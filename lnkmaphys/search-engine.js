@@ -103,7 +103,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             }
         }
     }
-},600000)
+},60)
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
