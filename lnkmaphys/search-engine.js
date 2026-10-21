@@ -1,6 +1,6 @@
 /*PESQUISA*/
 
-// Materiais Array
+// arrays que serão utilizados pelo mecanismo de busca
 subjects2 = [
      {title2: 'aya'},
      {title2: 'ayaya'},
@@ -27,20 +27,20 @@ subjects2 = [
 
 subjects2 = [
   {title: 'banana  santana'},
-  {title: 'fernanda giovanna  ana '},
-  {title: 'ana  amanda '},
-  {title: 'mariana amanda '},
+  {title: 'fernanda  giovanna    ana '},
+  {title: 'ana  amanda  '},
+  {title: 'mariana  amanda  '},
   {title: ' ananda  fernandes  banana '},
   {title: 'amanda  ana '},
-  {title: ' anderson  fernandes santana '},
+  {title: ' anferson  fernandes  santana '},
   {title: ' ana  amanda  anastasia '},
-  {title: ' joana  anastasia  ana '},
+  {title: ' joana  anastasia   ana '},
   {title: 'ana'},
   {title: ' ana  andrade anastasia  '},
-  {title: ' ana  fernanda   andrade  santana '},
-  {title: ' mariana  ana '},
-  {title: ' ananda '},
-  {title: '  ana  banana santana  '},
+  {title: ' ana  dernanda   andrade  santana '},
+  {title: ' mariana   ana '},
+  {title: ' ananda  '},
+  {title: '  ana  banana   santana  '},
   {title: '  anastasia   ana '},
   {title: ' amanda  anastasia '},
 ]
@@ -67,21 +67,22 @@ subjects = [
     {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
 ]
    
-class_searcher = 'searcher'
-class_pholder = 'main'
+class_searcher = 'searcher' // classe da barra de pesquisa
+class_pholder = 'main' // classe do div que contêm as opções de busca
 
-pselected = [-1,-1]
-podeir = [true,true]
-attributes = ['title','title']
+pselected = [-1,-1] // reseta os parágrafos selecionados por teclado para -1
+podeir = [true,true] // outro reset de navegação
+attributes = ['title','title'] // atributos que contêm os textos a serem buscadas em cada array
 subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
-subjects = sortWords(subjects, attributes[1])
-color_selected = 'var(--sideyellow)'
+// aqui em cima é o código para sortear os textos primeiro por quantidade de palavras e depois alfabeticamente
+subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
+color_selected = 'var(--sideyellow)' // cor atribuída aos parágrafos em seleção
 
 var songsSearched = []
-lists = [subjects2,subjects]
+lists = [subjects2,subjects] // listas de arrays a serem usados
 pstate = []
 
-// Quando uma tecla é pressionada
+// Quando uma tecla é pressionada na barra de pesquisa/Navegação por teclado
 function load() {
     console.log('aaa',document.getElementsByClassName(class_searcher))
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
@@ -99,13 +100,14 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     pholder = document.getElementsByClassName(class_pholder)[s]
     ps = pholder.getElementsByClassName('psearcher')
     setInterval(() => {
+        //console.log(pselected[s])
         if (pselected[s] != -1) {
         ps[pselected[s]].style.backgroundColor = color_selected
         }
         for (let psearch in ps) {
             if (psearch < ps.length) {
-            console.log(psearch)
-            console.log('HOVER',pstate[s][psearch].onhover)
+            //console.log(psearch)
+            //console.log('HOVER',pstate[s][psearch].onhover)
             if (pstate[s][psearch].onhover == true) {
                ps[psearch].style.backgroundColor = color_selected
             }else if (psearch != pselected[s]){
@@ -113,7 +115,8 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             }
         }
     }
-},60000)
+},60)
+
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
@@ -175,9 +178,9 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 }
 
 
-// Cada vez que o usuário digite um caractere na barra de pesquisa
+// Cada vez que o usuário digita um caractere na barra de pesquisa
 function search2(subjects,titleProperty,searcherIndex) {    
-
+    // aqui fica o mecanismo de busca (criação das opções)
     console.log('LOGGG',subjects)
     pstate[searcherIndex] = []
     pselected[searcherIndex] = -1
@@ -219,12 +222,11 @@ function search2(subjects,titleProperty,searcherIndex) {
          pesquise = pesquisa.toLowerCase()
          if (subjects[n][titleProperty].search(new RegExp(`(?<=^)${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
              this.pnumber++
-             pstate[searcherIndex].push({p_id:pnumber,onhover:false})
              this.psearcher = document.createElement('p')
              this.psearcher.style.position = 'sticky'
              this.psearcher.innerText = subjects[n][titleProperty]
              this.psearcher.setAttribute('class', 'psearcher')
-             this.psearcher.id = 'a' + n
+             this.psearcher.id = 'a' + subjects[n].original_index
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
              this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
@@ -238,6 +240,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              if (this.pnumber < 7) {
              pholder.appendChild(this.psearcher)
              pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
+             pstate[searcherIndex].push({p_id:pnumber,onhover:false})
              }
              this.opnumbers++
              pholder.style.display = 'block'
@@ -249,12 +252,11 @@ function search2(subjects,titleProperty,searcherIndex) {
              pesquise = pesquisa.toLowerCase()
              if (subjects[n][titleProperty].search(new RegExp(`(?<![a-z])${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
                 this.pnumber++
-                pstate[searcherIndex].push({p_id:pnumber,onhover:false})
                 this.psearcher = document.createElement('p')
                  this.psearcher.style.position = 'sticky'
                  this.psearcher.innerText = subjects[n][titleProperty]
                  this.psearcher.setAttribute('class', 'psearcher')
-                 this.psearcher.id = 'a' + n
+                 this.psearcher.id = 'a' + subjects[n].original_index
                  this.psearcher.style.fontWeight = 'bold'
                  this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
                  this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
@@ -268,6 +270,7 @@ function search2(subjects,titleProperty,searcherIndex) {
                  if (this.pnumber < 7) {
                     pholder.appendChild(this.psearcher)
                     pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
+                    pstate[searcherIndex].push({p_id:pnumber,onhover:false})
                     }
                  this.opnumbers++
                  pholder.style.display = 'block'
@@ -279,12 +282,11 @@ function search2(subjects,titleProperty,searcherIndex) {
          pesquise = pesquisa.toLowerCase()
          if (subjects[n][titleProperty].search(new RegExp(`${pesquise}`,"gi")) != -1 && pesquise.length != 0) {
             this.pnumber++
-            pstate[searcherIndex].push({p_id:pnumber,onhover:false})
              this.psearcher = document.createElement('p')
              this.psearcher.style.position = 'sticky'
              this.psearcher.innerText = subjects[n][titleProperty]
              this.psearcher.setAttribute('class', 'psearcher')
-             this.psearcher.id = 'a' + n 
+             this.psearcher.id = 'a' + subjects[n].original_index
              this.psearcher.style.fontWeight = 'bold'
              this.psearcher.setAttribute('onclick', `dothesearch(${this.psearcher.id.replace('a', '')},${searcherIndex},'${titleProperty}')`)
              this.psearcher.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
@@ -298,6 +300,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              if (this.pnumber < 7) {
                 pholder.appendChild(this.psearcher)
                 pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
+                pstate[searcherIndex].push({p_id:pnumber,onhover:false})
                 }
              this.opnumbers++
              pholder.style.display = 'block'
@@ -375,7 +378,7 @@ function saiu(thing,sindex) {
 
 }}
 
-    // Ordena as palavras alfabeticamente
+// Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
     alfabeto = ['a', 'b', 'c','ç', 'd', 'e', 'f', 'g', 'h', 'i','í', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 palavrasNumericas = []
@@ -477,6 +480,7 @@ newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
 return newlista
 }
 
+// Ordena os objetos numericamente por propriedade
 function sortob(n, pam, pim) {
     var maiorparamenor = []
     var posiçõesnumeros = []
@@ -484,6 +488,7 @@ function sortob(n, pam, pim) {
 
     for (n in yposition) {
         maiorparamenor[n] = {}
+        yposition[n].original_index = Number(n)
         posiçõesnumeros.push(-1)
         maiorparamenor[n][pam] = 100000000000000000000000000000000000000000000000000000000000000000000000000000000
     }
@@ -512,6 +517,7 @@ function sortob(n, pam, pim) {
     return maiorparamenor
 }
 
+// Ordena as palavras por quantidade de palavras
 function sortWordsByNumber(palavrasPrimitivas,s) {
 for (palavra in palavrasPrimitivas) {
     word = palavrasPrimitivas[palavra][s].toLowerCase()
@@ -519,6 +525,7 @@ for (palavra in palavrasPrimitivas) {
     break_word = ''
     words_number = 0
     word_right_spaced = ''
+    word += ' '
     for (car in word) {
         //console.log('caractere',word[car])
         if (word[car] != ' ') {
@@ -530,12 +537,16 @@ for (palavra in palavrasPrimitivas) {
         }else{
             if (break_word != '') {
             console.warn(break_word)
+            if (word_right_spaced != '')
+                word_right_spaced += ' '
+            word_right_spaced += break_word
             }
             break_word = ''
         }
         }
-        console.warn('words number:',words_number,word_right_spaced)
+        console.warn('words number:',words_number,word_right_spaced,word_right_spaced.length)
         palavrasPrimitivas[palavra].words_number = words_number
+        palavrasPrimitivas[palavra][s] = word_right_spaced
 }
 
 palavrasPrimitivas = sortob(palavrasPrimitivas,'words_number')
