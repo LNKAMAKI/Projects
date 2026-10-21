@@ -2,12 +2,12 @@
 
 // Materiais Array
 subjects2 = [
-    {title2: 'Aço', link: 'https://www.google.com/search?q=a%C3%A7o'},
+    {title2: 'Alo', link: 'https://www.google.com/search?q=a%C3%A7o'},
     {title2: 'Alumínio', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
     {title2: 'Alumínio2', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
     {title2: 'Alumínio3', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
     {title2: 'Alumínio4', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
-    {title2: 'a a a a Cobre', link: 'https://www.google.com/search?q=cobre'},
+    {title2: 'acobre', link: 'https://www.google.com/search?q=cobre'},
     {title2: 'Ferro', link: 'https://www.google.com/search?q=ferro'},
     {title2: 'Madeira', link: 'https://www.google.com/search?q=madeira'},
     {title2: 'Plástico', link: 'https://www.google.com/search?q=pl%C3%A1stico'},
@@ -19,9 +19,21 @@ subjects2 = [
     {title2: 'Plástico biodegradável', link: 'https://www.google.com/search?q=pl%C3%A1stico+biodegrad%C3%A1vel'},
     {title2: 'Aço inoxidável', link: 'https://www.google.com/search?q=a%C3%A7o+inoxid%C3%A1vel'},
     {title2: 'Alumínio anodizado', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
-    {title2: 'ayolo', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
+    {title2: 'a a', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
     {title2: 'ab ab ayolo ayolo', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
      {title2: 'ab cobre', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
+     {title2: 'a a a a a a ya', link: '---'},
+     {title2: 'a a a a a a a ya', link: '---'},
+      {title2: 'a a a a a a a a ya', link: '---'},
+       {title2: 'a a a a a a a a a ya', link: '---'},
+        {title2: 'a a a a a a a a a a ya', link: '---'},
+         {title2: 'a a a a a ya', link: '---'},
+     {title2: 'a a ya', link: '---'},
+     {title2: 'b ya', link: '---'},
+     {title2: 'a a a a a ya', link: '---'},
+     {title2: 'a a ya', link: '---'},
+     {title2: 'a a a ya', link: '---'},
+     {title2: 'a a a a ya', link: '---'},
 ]
 subjects = [
     {title: 'abacate', link: 'https://www.google.com/search?q=abacate'},
@@ -91,7 +103,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             }
         }
     }
-},60)
+},600000)
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
@@ -156,6 +168,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 // Cada vez que o usuário digite um caractere na barra de pesquisa
 function search2(subjects,titleProperty,searcherIndex) {    
 
+    console.log('LOGGG',subjects)
     pstate[searcherIndex] = []
     pselected[searcherIndex] = -1
     this.pnumber = -1
@@ -163,6 +176,20 @@ function search2(subjects,titleProperty,searcherIndex) {
     pholder = document.getElementsByClassName(class_pholder)[searcherIndex]
     searcher = document.getElementsByClassName(class_searcher)[searcherIndex]
     pesquisa = searcher.value
+
+      for (n in subjects) {
+        console.log('www',subjects[n][titleProperty].search(new RegExp(`${pesquisa}`,"gi")))
+        index_found = subjects[n][titleProperty].search(new RegExp(`${pesquisa}`,"gi"))
+        if (index_found > -1) {
+            subjects[n].index_found = subjects[n][titleProperty].search(new RegExp(`${pesquisa}`,"gi"))
+        }else{
+            subjects[n].index_found = 1000
+        }
+         }
+
+    subjects = sortob(subjects, 'index_found')
+    console.log('SUBJECTS',subjects)
+
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
     pholder.style.display = 'none'
@@ -340,7 +367,7 @@ function saiu(thing,sindex) {
 
     // Ordena as palavras alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
-    alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    alfabeto = ['a', 'b', 'c','ç', 'd', 'e', 'f', 'g', 'h', 'i','í', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 palavrasNumericas = []
 posicaoPalavras = []
 
@@ -437,4 +464,39 @@ newlista.push(palavrasPrimitivas[posicaoPalavras[p]])
 }
 
 return newlista
+}
+
+function sortob(n, pam, pim) {
+    var maiorparamenor = []
+    var posiçõesnumeros = []
+    var yposition = n
+
+    for (n in yposition) {
+        maiorparamenor[n] = {}
+        posiçõesnumeros.push(-1)
+        maiorparamenor[n][pam] = 100000000000000000000000000000000000000000000000000000000000000000000000000000000
+    }
+
+    for (item in yposition) {
+        var volume = 0
+        var dn = 0
+        for (volume in yposition) {
+            if (dn == 0) {
+                if (yposition[item][pam] < maiorparamenor[volume][pam] || yposition[item][pam] == maiorparamenor[volume][pam] && yposition[item][pim] < maiorparamenor[volume][pim]) {
+                    var itens = yposition.length - (Number(volume) + 1)
+                    var leng = yposition.length
+
+                    for (c = 0; c < itens; c++) {
+                        maiorparamenor[Number(leng) - 1] = maiorparamenor[Number(leng) - 2]
+                        posiçõesnumeros[Number(leng) - 1] = posiçõesnumeros[Number(leng) - 2]
+                        leng--
+                    }
+                    maiorparamenor[volume] = yposition[item]
+                    posiçõesnumeros[volume] = Number(item)
+                    dn = 10
+                }
+            }
+        }
+    }
+    return maiorparamenor
 }

@@ -1,5 +1,11 @@
 number = [{a: 2, b: 10},{a: 5, b: 8},{a: 7, b: 10},{a: 2, b: 6},{a: 7, b: 8},{a: 7, b: 9}]
-console.log(sortob(number, 'a','b'))
+
+number = [{title2: 'a a a a ya', index_found:8, link: '---'},
+     {title2: 'a ya', link: '---', index_found:2},
+     {title2: 'a a ya', link: '---', index_found:4},
+     {title2: 'a a a ya', link: '---', index_found:-1}]
+
+console.log(sortob(number, 'index_found'))
 
 function sortob(n, pam, pim) {
     var maiorparamenor = []
