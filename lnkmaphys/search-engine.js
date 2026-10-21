@@ -53,6 +53,7 @@ podeir = [true,true]
 attributes = ['title2','title']
 subjects2 = sortWords(subjects2, attributes[0])
 subjects = sortWords(subjects, attributes[1])
+color_selected = 'var(--sideyellow)'
 
 var songsSearched = []
 lists = [subjects2,subjects]
@@ -77,20 +78,20 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     ps = pholder.getElementsByClassName('psearcher')
     setInterval(() => {
         if (pselected[s] != -1) {
-        ps[pselected[s]].style.backgroundColor = 'red'
+        ps[pselected[s]].style.backgroundColor = color_selected
         }
         for (let psearch in ps) {
             if (psearch < ps.length) {
             console.log(psearch)
             console.log('HOVER',pstate[s][psearch].onhover)
             if (pstate[s][psearch].onhover == true) {
-               ps[psearch].style.backgroundColor = 'blue'
+               ps[psearch].style.backgroundColor = color_selected
             }else if (psearch != pselected[s]){
                 ps[psearch].style.backgroundColor = 'white'
             }
         }
     }
-},160)
+},60)
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
@@ -137,7 +138,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 
         console.log('teclou agora',pselected[s])
         r()
-    },300)
+    },100)
 }else{
     r()
 }
