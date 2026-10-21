@@ -7,20 +7,21 @@ subjects2 = [
     {title2: 'Alumínio2', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
     {title2: 'Alumínio3', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
     {title2: 'Alumínio4', link: 'https://www.google.com/search?q=alum%C3%ADnio'},
-    {title2: 'Cobre', link: 'https://www.google.com/search?q=cobre'},
+    {title2: 'a a a a Cobre', link: 'https://www.google.com/search?q=cobre'},
     {title2: 'Ferro', link: 'https://www.google.com/search?q=ferro'},
     {title2: 'Madeira', link: 'https://www.google.com/search?q=madeira'},
     {title2: 'Plástico', link: 'https://www.google.com/search?q=pl%C3%A1stico'},
     {title2: 'Vidro', link: 'https://www.google.com/search?q=vidro'},
     {title2: 'Tecido', link: 'https://www.google.com/search?q=tecido'},
     {title2: 'Borracha', link: 'https://www.google.com/search?q=borracha'},
-    {title2: 'Cerâmica', link: 'https://www.google.com/search?q=cer%C3%A2mica'},
     {title2: 'Papel', link: 'https://www.google.com/search?q=papel'},
-    {title2: 'Couro', link: 'https://www.google.com/search?q=couro'},
     {title2: 'Lã', link: 'https://www.google.com/search?q=l%C3%A3'},
     {title2: 'Plástico biodegradável', link: 'https://www.google.com/search?q=pl%C3%A1stico+biodegrad%C3%A1vel'},
     {title2: 'Aço inoxidável', link: 'https://www.google.com/search?q=a%C3%A7o+inoxid%C3%A1vel'},
     {title2: 'Alumínio anodizado', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
+    {title2: 'ayolo', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
+    {title2: 'ab ab ayolo ayolo', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
+     {title2: 'ab cobre', link: 'https://www.google.com/search?q=alum%C3%ADnio+anodizado'},
 ]
 subjects = [
     {title: 'abacate', link: 'https://www.google.com/search?q=abacate'},
@@ -84,7 +85,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             console.log('HOVER',pstate[s][psearch].onhover)
             if (pstate[s][psearch].onhover == true) {
                ps[psearch].style.backgroundColor = 'blue'
-            }else{
+            }else if (psearch != pselected[s]){
                 ps[psearch].style.backgroundColor = 'white'
             }
         }
@@ -96,7 +97,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
         fila = fila.then(async () => {
            return new Promise (r => {
             console.log('AAAAAAAAAAA',!(pselected[s] == ps.length - 1  && event.key == 'ArrowDown'))
-            if (!(pselected[s] == ps.length - 1  && event.key == 'ArrowDown') && !(pselected[s] == 0  && event.key == 'ArrowUp') && podeir[s] == true) {// && document.getElementsByClassName(class_searcher)[s] == document.activeElement) {
+            if (!(pselected[s] == ps.length - 1  && event.key == 'ArrowDown') && !(pselected[s] == 0  && event.key == 'ArrowUp') && !(pselected[s] == -1  && event.key == 'ArrowUp') && podeir[s] == true) {// && document.getElementsByClassName(class_searcher)[s] == document.activeElement) {
                   setTimeout(() => {
     console.log(event.key)
     console.log('teclou',pselected[s])
@@ -136,7 +137,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 
         console.log('teclou agora',pselected[s])
         r()
-    },130)
+    },300)
 }else{
     r()
 }
