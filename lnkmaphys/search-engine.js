@@ -1,5 +1,5 @@
 /*PESQUISA*/
-// 
+//
 subjects2 = [
      {title2: 'aya'},
      {title2: 'ayaya'},
@@ -66,10 +66,10 @@ subjects = [
     {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
 ]
    
-class_searcher = 'searcher'
-class_pholder = 'main'
+class_searcher = 'searcher' //
+class_pholder = 'main' //
 
-pselected = [-1,-1] //
+pselected = [-1,-1] // 
 podeir = [true,true] //
 attributes = ['title','title'] //
 //
