@@ -1,5 +1,5 @@
 /*PESQUISA*/
-//
+// arrays a serem buscados
 subjects2 = [
      {title2: 'aya'},
      {title2: 'ayaya'},
@@ -66,19 +66,19 @@ subjects = [
     {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
 ]
    
-class_searcher = 'searcher' //
-class_pholder = 'main' //
+class_searcher = 'searcher' // classe das barras de pesquisa
+class_pholder = 'main' // classe das divs que contêm as opções de busca
 
-pselected = [-1,-1] //
-podeir = [true,true] //
-attributes = ['title','title'] //
-//
+pselected = [-1,-1] // reseta as opções selecionadas por teclado para -1
+podeir = [true,true] // outro reset de navegação
+attributes = ['title','title'] // atributos que contêm os textos a serem buscados em cada array
+// código para sortear os textos primeiro por quantidade de palavras e depois alfabeticamente
 subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
 subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
-color_selected = 'var(--sideyellow)' //
+color_selected = 'var(--sideyellow)' // cor atribuída aos parágrafos em seleção
 
-lists = [subjects2,subjects] //
-pstate = [] //
+lists = [subjects2,subjects] // listas de arrays a serem buscados
+pstate = [] // estado das opções ( (des)selecionada, (não) em hover )
 
 // Quando uma tecla é pressionada na barra de pesquisa/Navegação por teclado
 function load() {
@@ -86,7 +86,7 @@ function load() {
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
 
     pstate.push([])
-    //
+    // acionamento da busca
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
         console.log(event.key)
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
@@ -116,7 +116,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     }
 },60)
 
-    //
+    // navegação por teclado
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
@@ -199,7 +199,10 @@ function search2(subjects,titleProperty,searcherIndex) {
         }
          }
 
-    //
+    // ordenação pelos índices em que a busca foi encontrada
+    // ex: pesquisa = 'a'
+    // índice em 'abacate' = 0
+    // índice em 'tangerina' = 1
     subjects = sortob(subjects, 'index_found')
     console.log('SUBJECTS',subjects)
 
