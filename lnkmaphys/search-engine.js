@@ -1,6 +1,5 @@
 /*PESQUISA*/
 
-
 subjects2 = [
      {title2: 'aya'},
      {title2: 'ayaya'},
