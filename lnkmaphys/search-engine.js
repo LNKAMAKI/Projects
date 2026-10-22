@@ -1,5 +1,4 @@
 /*PESQUISA*/
-
 subjects2 = [
      {title2: 'aya'},
      {title2: 'ayaya'},
@@ -70,13 +69,12 @@ class_searcher = 'searcher'
 class_pholder = 'main'
 
 pselected = [-1,-1] 
-podeir = [true,true] 
+podeir = [true,true]
 attributes = ['title','title']
 subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
 subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
 color_selected = 'var(--sideyellow)'
 
-var songsSearched = []
 lists = [subjects2,subjects]
 pstate = []
 
