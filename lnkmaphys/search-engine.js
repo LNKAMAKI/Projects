@@ -1,5 +1,5 @@
 /*PESQUISA*/
-
+// 
 subjects2 = [
      {title2: 'aya'},
      {title2: 'ayaya'},
@@ -69,15 +69,16 @@ subjects = [
 class_searcher = 'searcher'
 class_pholder = 'main'
 
-pselected = [-1,-1] 
-podeir = [true,true]
-attributes = ['title','title']
+pselected = [-1,-1] //
+podeir = [true,true] //
+attributes = ['title','title'] //
+//
 subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
 subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
-color_selected = 'var(--sideyellow)'
+color_selected = 'var(--sideyellow)' //
 
-lists = [subjects2,subjects]
-pstate = []
+lists = [subjects2,subjects] //
+pstate = [] //
 
 // Quando uma tecla é pressionada na barra de pesquisa/Navegação por teclado
 function load() {
@@ -85,6 +86,7 @@ function load() {
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
 
     pstate.push([])
+    //
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
         console.log(event.key)
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
@@ -114,6 +116,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
     }
 },60)
 
+    //
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
@@ -176,8 +179,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 
 
 // Cada vez que o usuário digita um caractere na barra de pesquisa
-function search2(subjects,titleProperty,searcherIndex) {    
-   
+function search2(subjects,titleProperty,searcherIndex) {   
     console.log('LOGGG',subjects)
     pstate[searcherIndex] = []
     pselected[searcherIndex] = -1
@@ -197,6 +199,7 @@ function search2(subjects,titleProperty,searcherIndex) {
         }
          }
 
+    //
     subjects = sortob(subjects, 'index_found')
     console.log('SUBJECTS',subjects)
 
