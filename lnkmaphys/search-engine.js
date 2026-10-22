@@ -69,7 +69,7 @@ subjects = [
 class_searcher = 'searcher' //
 class_pholder = 'main' //
 
-pselected = [-1,-1] // 
+pselected = [-1,-1] //
 podeir = [true,true] //
 attributes = ['title','title'] //
 //
