@@ -1,6 +1,6 @@
 /*PESQUISA*/
 
-// arrays que serão utilizados pelo mecanismo de busca
+
 subjects2 = [
      {title2: 'aya'},
      {title2: 'ayaya'},
@@ -67,19 +67,18 @@ subjects = [
     {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
 ]
    
-class_searcher = 'searcher' // classe da barra de pesquisa
-class_pholder = 'main' // classe do div que contêm as opções de busca
+class_searcher = 'searcher'
+class_pholder = 'main'
 
-pselected = [-1,-1] // reseta os parágrafos selecionados por teclado para -1
-podeir = [true,true] // outro reset de navegação
-attributes = ['title','title'] // atributos que contêm os textos a serem buscadas em cada array
+pselected = [-1,-1] 
+podeir = [true,true] 
+attributes = ['title','title']
 subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
-// aqui em cima é o código para sortear os textos primeiro por quantidade de palavras e depois alfabeticamente
 subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
-color_selected = 'var(--sideyellow)' // cor atribuída aos parágrafos em seleção
+color_selected = 'var(--sideyellow)'
 
 var songsSearched = []
-lists = [subjects2,subjects] // listas de arrays a serem usados
+lists = [subjects2,subjects]
 pstate = []
 
 // Quando uma tecla é pressionada na barra de pesquisa/Navegação por teclado
@@ -180,7 +179,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
 
 // Cada vez que o usuário digita um caractere na barra de pesquisa
 function search2(subjects,titleProperty,searcherIndex) {    
-    // aqui fica o mecanismo de busca (criação das opções)
+   
     console.log('LOGGG',subjects)
     pstate[searcherIndex] = []
     pselected[searcherIndex] = -1
