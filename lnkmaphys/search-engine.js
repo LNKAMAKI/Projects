@@ -381,7 +381,7 @@ function saiu(thing,sindex) {
 
 }}
 
-// Ordena as palavras alfabeticamente
+// Ordena os textos alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
     alfabeto = ['a', 'b', 'c','ç', 'd', 'e', 'f', 'g', 'h', 'i','í', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 palavrasNumericas = []
@@ -484,6 +484,7 @@ return newlista
 }
 
 // Ordena os objetos numericamente por propriedade
+// os textos pelo índice de busca
 function sortob(n, pam, pim) {
     var maiorparamenor = []
     var posiçõesnumeros = []
@@ -520,7 +521,7 @@ function sortob(n, pam, pim) {
     return maiorparamenor
 }
 
-// Ordena as palavras por quantidade de palavras
+// Ordena os textos por quantidade de palavras
 function sortWordsByNumber(palavrasPrimitivas,s) {
 for (palavra in palavrasPrimitivas) {
     word = palavrasPrimitivas[palavra][s].toLowerCase()
