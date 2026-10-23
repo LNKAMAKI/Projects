@@ -69,16 +69,22 @@ subjects = [
 class_searcher = 'searcher' // classe das barras de pesquisa
 class_pholder = 'main' // classe das divs que contêm as opções de busca
 
-pselected = [-1,-1] // reseta as opções selecionadas por teclado para -1
-podeir = [true,true] // outro reset de navegação
-attributes = ['title','title'] // atributos que contêm os textos a serem buscados em cada array
+pselected = [] // reseta as opções selecionadas por teclado para -1
+podeir = [] // outro reset de navegação
+attributes = ['title','title']// atributos que contêm os textos a serem buscados em cada array
 // código para sortear os textos primeiro por quantidade de palavras e depois alfabeticamente
-subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
-subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
+//subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
+//subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
 color_selected = 'var(--sideyellow)' // cor atribuída aos parágrafos em seleção
 
 lists = [subjects2,subjects] // listas de arrays a serem buscados
 pstate = [] // estado das opções ( (des)selecionada, (não) em hover )
+for (list in lists) {
+    console.log('list',lists[list])
+    pselected.push(-1)
+    lists[list] = sortWords(sortWordsByNumber(lists[list], attributes[list]),attributes[list])
+    podeir.push(true)
+}
 
 // Quando uma tecla é pressionada na barra de pesquisa/Navegação por teclado
 function load() {
