@@ -44,6 +44,7 @@ subjects2 = [
   {title: ' amanda  anastasia '},
 ]
 
+/*
 subjects = [
     {title: 'abacate', link: 'https://www.google.com/search?q=abacate'},
     {title: 'banana', link: 'https://www.google.com/search?q=banana'},
@@ -64,30 +65,52 @@ subjects = [
     {title: 'acerola', link: 'https://www.google.com/search?q=acerola'},
     {title: 'amora', link: 'https://www.google.com/search?q=amora'},
     {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
-]
+]*/
    
 class_searcher = 'searcher' // classe das barras de pesquisa
 class_pholder = 'main' // classe das divs que contêm as opções de busca
 
+//createLists([subjects2,subjects],['title','title'])
+createLists([nomes,frutas],['title','title'])
+function createLists(lists,attributes) {
+    window.lists = lists
 pselected = [] // reseta as opções selecionadas por teclado para -1
 podeir = [] // outro reset de navegação
-attributes = ['title','title']// atributos que contêm os textos a serem buscados em cada array
-// código para sortear os textos primeiro por quantidade de palavras e depois alfabeticamente
-//subjects2 = sortWords(sortWordsByNumber(subjects2, attributes[0]),attributes[0])
-//subjects = sortWords(sortWordsByNumber(subjects, attributes[1]),attributes[1])
+window.attributes = attributes// atributos que contêm os textos a serem buscados em cada array
 color_selected = 'var(--sideyellow)' // cor atribuída aos parágrafos em seleção
-
-lists = [subjects2,subjects] // listas de arrays a serem buscados
 pstate = [] // estado das opções ( (des)selecionada, (não) em hover )
 for (list in lists) {
     console.log('list',lists[list])
     pselected.push(-1)
+    // código para sortear os textos primeiro por quantidade de palavras e depois alfabeticamente
     lists[list] = sortWords(sortWordsByNumber(lists[list], attributes[list]),attributes[list])
     podeir.push(true)
 }
 
+new Promise((carregou) => {
+    window.addEventListener('load',() => {
+        carregou('carreegou')
+    })
+    
+}).then(answer => {
+    console.log(answer)
+    startEngine()
+})
+
+//waitPage_load()
+async function waitPage_load() {
+waitload = await new Promise ((carregou) => {
+    document.body.onload = () => {
+        carregou('carreegou')
+    }
+})
+console.log(waitload)
+startEngine(lists)
+}
+}
+
 // Quando uma tecla é pressionada na barra de pesquisa/Navegação por teclado
-function load() {
+function startEngine() {
     console.log('aaa',document.getElementsByClassName(class_searcher))
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
 
@@ -99,30 +122,17 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             search2(lists[s], attributes[s], s)
         }
     })
+        
+}
+}
 
-    let fila = Promise.resolve()
-
+// aparência das opções
+function optionsLook(s) {
     pholder = document.getElementsByClassName(class_pholder)[s]
     ps = pholder.getElementsByClassName('psearcher')
-    setInterval(() => {
-        //console.log(pselected[s])
-        if (pselected[s] != -1) {
-        ps[pselected[s]].style.backgroundColor = color_selected
-        }
-        for (let psearch in ps) {
-            if (psearch < ps.length) {
-            //console.log(psearch)
-            //console.log('HOVER',pstate[s][psearch].onhover)
-            if (pstate[s][psearch].onhover == true) {
-               ps[psearch].style.backgroundColor = color_selected
-            }else if (psearch != pselected[s]){
-                ps[psearch].style.backgroundColor = 'white'
-            }
-        }
-    }
-},50)
 
     // navegação por teclado
+    let fila = Promise.resolve()
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
         if (podeir[s] == true) {
@@ -179,10 +189,26 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
         })
     }
 })
-        
-}
-}
+    setInterval(() => {
+        //console.log(pselected[s])
+        if (pselected[s] != -1) {
+        ps[pselected[s]].style.backgroundColor = color_selected
+        }
 
+        for (let psearch in ps) {
+            if (psearch < ps.length) {
+                console.log(s, ps.length,'!!!!')
+            console.log('PSTATE',pholder,pstate[s][psearch],s,psearch)
+            console.log('HOVER',pstate[s][psearch].onhover)
+            if (pstate[s][psearch].onhover == true) {
+               ps[psearch].style.backgroundColor = color_selected
+            }else if (psearch != pselected[s]){
+                ps[psearch].style.backgroundColor = 'white'
+            }
+        }
+    }
+},400)
+}
 
 // Cada vez que o usuário digita um caractere na barra de pesquisa
 function search2(subjects,titleProperty,searcherIndex) {   
@@ -196,7 +222,7 @@ function search2(subjects,titleProperty,searcherIndex) {
     pesquisa = searcher.value
 
       for (n in subjects) {
-        console.log('www',subjects[n][titleProperty].search(new RegExp(`${pesquisa}`,"gi")))
+        //console.log('www',subjects[n][titleProperty].search(new RegExp(`${pesquisa}`,"gi")))
         index_found = subjects[n][titleProperty].search(new RegExp(`${pesquisa}`,"gi"))
         if (index_found > -1) {
             subjects[n].index_found = subjects[n][titleProperty].search(new RegExp(`${pesquisa}`,"gi"))
@@ -210,7 +236,7 @@ function search2(subjects,titleProperty,searcherIndex) {
     // índice em 'abacate' = 0
     // índice em 'tangerina' = 1
     subjects = sortob(subjects, 'index_found')
-    console.log('SUBJECTS',subjects)
+    //console.log('SUBJECTS',subjects)
 
    // window.alert(allvidholders.length)
    if (pesquisa.length == 0) {
@@ -347,18 +373,18 @@ function fclic() {
 
 // Quando o mouse entra em uma opção(psearcher)
 function entrou(thing,sindex) {
-    console.log('entrou',thing)
+    //console.log('entrou',thing)
     if (document.getElementsByClassName(class_searcher)[sindex] == document.activeElement) {
     ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
 
     podeir[sindex] = false
-    console.log('podeir',podeir[sindex])
-    console.log('pselected',pselected[sindex])
+    //console.log('podeir',podeir[sindex])
+    //console.log('pselected',pselected[sindex])
     
     if (pselected[sindex] != -1 && pselected[sindex] != thing) {
        // ps[pselected[sindex]].style.backgroundColor = 'white'
         pselected[sindex] = -1
-        console.log('pselected',pselected[sindex])
+        //console.log('pselected',pselected[sindex])
     }
 
    // ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
@@ -367,12 +393,12 @@ function entrou(thing,sindex) {
 
 // Quando o mouse sai de uma opção(psearcher)
 function saiu(thing,sindex) {
-    console.log('saiu',thing)
+    //console.log('saiu',thing)
     if (document.getElementsByClassName(class_searcher)[sindex] == document.activeElement) {
     ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
 
     podeir[sindex] = true
-    console.log('podeir',podeir[sindex])
+    //console.log('podeir',podeir[sindex])
 
      if (pselected[sindex] != -1 && pselected[sindex] != thing) {
         //ps[pselected[sindex]].style.backgroundColor = 'white'
@@ -395,7 +421,7 @@ posicaoPalavras = []
 
 for (palavra in palavrasPrimitivas) {
     word = palavrasPrimitivas[palavra][s].toLowerCase()
-    console.log('word',word)
+    //console.log('word',word)
     neword = ''
     for (car in word) {
         if (word[car] != ' ') {
@@ -531,7 +557,7 @@ function sortob(n, pam, pim) {
 function sortWordsByNumber(palavrasPrimitivas,s) {
 for (palavra in palavrasPrimitivas) {
     word = palavrasPrimitivas[palavra][s].toLowerCase()
-    console.log('word',word)
+    //console.log('word',word)
     break_word = ''
     words_number = 0
     word_right_spaced = ''
@@ -540,13 +566,13 @@ for (palavra in palavrasPrimitivas) {
         //console.log('caractere',word[car])
         if (word[car] != ' ') {
              if (break_word == '') {
-                console.warn(break_word,'new word')
+                //console.warn(break_word,'new word')
                 words_number += 1
             }
             break_word += word[car]
         }else{
             if (break_word != '') {
-            console.warn(break_word)
+            //console.warn(break_word)
             if (word_right_spaced != '')
                 word_right_spaced += ' '
             word_right_spaced += break_word
@@ -554,7 +580,7 @@ for (palavra in palavrasPrimitivas) {
             break_word = ''
         }
         }
-        console.warn('words number:',words_number,word_right_spaced,word_right_spaced.length)
+        //console.warn('words number:',words_number,word_right_spaced,word_right_spaced.length)
         palavrasPrimitivas[palavra].words_number = words_number
         palavrasPrimitivas[palavra][s] = word_right_spaced
 }
