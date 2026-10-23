@@ -43,7 +43,6 @@ subjects2 = [
   {title: '  anastasia   ana '},
   {title: ' amanda  anastasia '},
 ]
-
 /*
 subjects = [
     {title: 'abacate', link: 'https://www.google.com/search?q=abacate'},
@@ -113,7 +112,7 @@ startEngine(lists)
 function startEngine() {
     console.log('aaa',document.getElementsByClassName(class_searcher))
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
-
+    console.log('AAAAAAAAAAAAAA',s)
     pstate.push([])
     // acionamento da busca
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
@@ -122,16 +121,26 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             search2(lists[s], attributes[s], s)
         }
     })
+
+    new optionsLook(s)
         
 }
 }
 
 // aparência das opções
 function optionsLook(s) {
-    pholder = document.getElementsByClassName(class_pholder)[s]
-    ps = pholder.getElementsByClassName('psearcher')
 
+    this.s = s
+    this.pholder = document.getElementsByClassName(class_pholder)[this.s]
+    this.ps = this.pholder.getElementsByClassName('psearcher')
+
+    setInterval(() => {
+        console.log(this.s,this.pholder,this.ps.length)
+    },600)
+
+    
     // navegação por teclado
+    /*
     let fila = Promise.resolve()
     window.addEventListener('keydown', (event) => {
         console.log('pressionouaaaaaaaaaaaaaaa')
@@ -208,6 +217,8 @@ function optionsLook(s) {
         }
     }
 },400)
+*/
+
 }
 
 // Cada vez que o usuário digita um caractere na barra de pesquisa
