@@ -114,7 +114,7 @@ for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++)
             }
         }
     }
-},60)
+},50)
 
     // navegação por teclado
     window.addEventListener('keydown', (event) => {
