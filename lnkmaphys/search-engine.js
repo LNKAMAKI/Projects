@@ -150,7 +150,7 @@ function optionsLook(s) {
         if (searcher == document.activeElement && event.key == 'Enter' && pselected[this.s] == -1) { // Se a barra de pesquisa estiver em foco e a tecla Enter for pressionada
 
             if (pselected[this.s] == -1) {
-            quantasopções = this.pholder.getElementsByClassName('psearcher').length
+            quantasopções = this.ps.length
             console.log('ueepa')
             if (quantasopções == 1) {
             dothesearch(Number(this.pholder.getElementsByClassName('psearcher')[0].id.replace('a','')),this.s,attributes[this.s])
@@ -182,7 +182,7 @@ function optionsLook(s) {
 
             console.log('teclou agora',pselected[this.s])
             r()
-        },100)
+        },80)
     }else{
         r()
     }
@@ -196,14 +196,14 @@ function optionsLook(s) {
         setInterval(() => {
             //console.log(pselected[this.s])
             if (pselected[this.s] != -1) {
-            this.ps[pselected[this.s]].style.backgroundColor = color_selected
+            this.ps[pselected[this.s]].style.backgroundColor = 'blue'
             }
 
+            console.log(this.s, this.ps.length,'!!!!')
             for (let psearch in this.ps) {
                 if (psearch < this.ps.length) {
-                    console.log(this.s, this.ps.length,'!!!!')
-                console.log('PSTATE',this.pholder,pstate[this.s][psearch],this.s,psearch)
-                console.log('HOVER',pstate[this.s][psearch].onhover)
+                console.log('PSTATE',psearch,pstate[this.s][psearch],)
+                //console.log('HOVER',pstate[this.s][psearch].onhover)
                 if (pstate[this.s][psearch].onhover == true) {
                 this.ps[psearch].style.backgroundColor = color_selected
                 }else if (psearch != pselected[this.s]){
@@ -211,7 +211,7 @@ function optionsLook(s) {
                 }
             }
         }
-    },50)
+    },700)
 }
 
 // Cada vez que o usuário digita um caractere na barra de pesquisa
@@ -360,6 +360,8 @@ function dothesearch(whichid,searcher,titleProperty) {
    mainholder.removeChild(allps[n])
     }
 
+    pselected[searcher] = -1
+    pstate[searcher] = []
     //search(whichid)
     
     console.log('HERE', mainholder.style.display)
@@ -412,10 +414,9 @@ function saiu(thing,sindex) {
 
     //if (pselected[sindex] != thing)
     //ps[thing].style.backgroundColor = 'white'
-
-    pstate[sindex][thing].onhover = false
-
-}}
+}
+pstate[sindex][thing].onhover = false
+}
 
 // Ordena os textos alfabeticamente
 function sortWords(palavrasPrimitivas,s) {
