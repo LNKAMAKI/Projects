@@ -18,6 +18,7 @@ const frutas = [
     {title: 'acerola', link: 'https://www.google.com/search?q=acerola'},
     {title: 'amora', link: 'https://www.google.com/search?q=amora'},
     {title: 'cereja', link: 'https://www.google.com/search?q=cereja'},
+    {title: 'abobrinha'}
 ]
 
 const nomes = [
@@ -38,4 +39,16 @@ const nomes = [
   {title: '  ana  banana   santana  '},
   {title: '  anastasia   ana '},
   {title: ' amanda  anastasia '},
+  {title: ' felipe guisoli '},
+  {title: ' toninho rodriguinho'},
+  {title: ' ze gotinha '},
+  {title: ' guilhermo anastasio'},
+  {title: ' ellen kaori '},
+  {title: 'potato batato '},
+  {title: ' felipe guisoli '},
+  {title: ' oliver rodrigo '},
+  {title: ' garotinho andrade '},
+  {title: ' espigao espigo '},
+  {title: ' ze espigao '},
+  {title: ' emaunelo almeida'},
 ]

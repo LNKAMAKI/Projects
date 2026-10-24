@@ -112,11 +112,11 @@ startEngine(lists)
 function startEngine() {
     console.log('aaa',document.getElementsByClassName(class_searcher))
 for (let s = 0; s < document.getElementsByClassName(class_searcher).length; s++) {
-    console.log('AAAAAAAAAAAAAA',s)
+    //console.log('AAAAAAAAAAAAAA',s)
     pstate.push([])
     // acionamento da busca
     document.getElementsByClassName(class_searcher)[s].addEventListener('keyup', function(event) {
-        console.log(event.key)
+        //console.log(event.key)
         if (event.key != 'ArrowDown' && event.key != 'ArrowUp' && event.key != 'Enter') {
             search2(lists[s], attributes[s], s)
         }
@@ -141,7 +141,7 @@ function optionsLook(s) {
             if (podeir[this.s] == true) {
             fila = fila.then(async () => {
             return new Promise (r => {
-                console.log('AAAAAAAAAAA',!(pselected[this.s] == this.ps.length - 1  && event.key == 'ArrowDown'))
+                console.log('cria',!(pselected[this.s] == this.ps.length - 1  && event.key == 'ArrowDown'))
                 if (!(pselected[this.s] == this.ps.length - 1  && event.key == 'ArrowDown') && !(pselected[this.s] == 0  && event.key == 'ArrowUp') && !(pselected[this.s] == -1  && event.key == 'ArrowUp') && podeir[this.s] == true) {// && document.getElementsByClassName(class_searcher)[this.s] == document.activeElement) {
                     setTimeout(() => {
         console.log(event.key)
@@ -184,6 +184,7 @@ function optionsLook(s) {
             r()
         },70)
     }else{
+        console.log('descria')
         r()
     }
     }
@@ -199,10 +200,10 @@ function optionsLook(s) {
             this.ps[pselected[this.s]].style.backgroundColor = 'blue'
             }
 
-            console.log(this.s, this.ps.length,'!!!!')
+            //onsole.log(this.s, this.ps.length,'!!!!')
             for (let psearch in this.ps) {
                 if (psearch < this.ps.length) {
-                console.log('PSTATE',psearch,pstate[this.s][psearch],)
+                //console.log('PSTATE',psearch,pstate[this.s][psearch],)
                 //console.log('HOVER',pstate[this.s][psearch].onhover)
                 if (pstate[this.s][psearch].onhover == true) {
                 this.ps[psearch].style.backgroundColor = color_selected
