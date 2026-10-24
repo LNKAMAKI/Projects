@@ -141,7 +141,7 @@ function optionsLook(s) {
             if (podeir[this.s] == true) {
             fila = fila.then(async () => {
             return new Promise (r => {
-                console.log('cria',!(pselected[this.s] == this.ps.length - 1  && event.key == 'ArrowDown'))
+                console.log(this.s,'cria',this.ps,!(pselected[this.s] == this.ps.length - 1  && event.key == 'ArrowDown'))
                 if (!(pselected[this.s] == this.ps.length - 1  && event.key == 'ArrowDown') && !(pselected[this.s] == 0  && event.key == 'ArrowUp') && !(pselected[this.s] == -1  && event.key == 'ArrowUp') && podeir[this.s] == true) {// && document.getElementsByClassName(class_searcher)[this.s] == document.activeElement) {
                     setTimeout(() => {
         console.log(event.key)
@@ -404,7 +404,6 @@ function saiu(thing,sindex) {
     if (document.getElementsByClassName(class_searcher)[sindex] == document.activeElement) {
     ps = document.getElementsByClassName(class_pholder)[sindex].getElementsByClassName('psearcher')
 
-    podeir[sindex] = true
     //console.log('podeir',podeir[sindex])
 
      if (pselected[sindex] != -1 && pselected[sindex] != thing) {
@@ -417,6 +416,7 @@ function saiu(thing,sindex) {
     //ps[thing].style.backgroundColor = 'white'
 }
 pstate[sindex][thing].onhover = false
+podeir[sindex] = true
 }
 
 // Ordena os textos alfabeticamente
