@@ -182,7 +182,7 @@ function optionsLook(s) {
 
             console.log('teclou agora',pselected[this.s])
             r()
-        },80)
+        },70)
     }else{
         r()
     }
@@ -211,7 +211,7 @@ function optionsLook(s) {
                 }
             }
         }
-    },700)
+    },40)
 }
 
 // Cada vez que o usuário digita um caractere na barra de pesquisa
