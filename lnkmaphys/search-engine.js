@@ -165,19 +165,19 @@ function optionsLook(s) {
             //console.log(pselected)
             //console.log('VAI',this.ps.length, pselected[this.s])
             if (pselected[this.s] < this.ps.length - 1 && podeir[this.s] == true) {
-                //if (pselected[this.s] != -1)
-                //this.ps[pselected[this.s]].style.backgroundColor = 'white'
+                if (pselected[this.s] != -1)
+                this.ps[pselected[this.s]].style.backgroundColor = 'white'
                 pselected[this.s]++
                 //this.searcher.value = pselected[this.s]
-                //this.ps[pselected[this.s]].style.backgroundColor = 'rgb(235, 235, 235)'
+                this.ps[pselected[this.s]].style.backgroundColor = color_selected
             }
         }else if(searcher == document.activeElement && event.key == 'ArrowUp') {
             if (pselected[this.s] >= 1 && podeir[this.s] == true) {
-                //if (pselected[this.s] != -1)
-                //this.ps[pselected[this.s]].style.backgroundColor = 'white'
+                if (pselected[this.s] != -1)
+                this.ps[pselected[this.s]].style.backgroundColor = 'white'
                 pselected[this.s]--
                 //this.searcher.value = pselected[this.s]
-            //this.ps[pselected[this.s]].style.backgroundColor = 'rgb(235, 235, 235)'
+            this.ps[pselected[this.s]].style.backgroundColor = color_selected
             } }
 
             console.log('teclou agora',pselected[this.s])
@@ -194,6 +194,7 @@ function optionsLook(s) {
         }
     })
 
+    /*
         setInterval(() => {
             //console.log(pselected[this.s])
             if (pselected[this.s] != -1) {
@@ -213,6 +214,7 @@ function optionsLook(s) {
             }
         }
     },40)
+    */
 }
 
 // Cada vez que o usuário digita um caractere na barra de pesquisa
@@ -276,7 +278,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
              this.d.setAttribute('class','phelp')
 
-             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
              if (this.pnumber < 7) {
              pholder.appendChild(this.psearcher)
              pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
@@ -306,7 +308,7 @@ function search2(subjects,titleProperty,searcherIndex) {
                  //this.d.innerText = 'o'
                  this.d.setAttribute('class','phelp')
 
-                 this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+                 this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
                  if (this.pnumber < 7) {
                     pholder.appendChild(this.psearcher)
                     pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
@@ -336,7 +338,7 @@ function search2(subjects,titleProperty,searcherIndex) {
              //this.d.innerText = 'o'
              this.d.setAttribute('class','phelp')
 
-             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal">${pesquise}</span>`)
+             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
              if (this.pnumber < 7) {
                 pholder.appendChild(this.psearcher)
                 pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
@@ -389,12 +391,12 @@ function entrou(thing,sindex) {
     //console.log('pselected',pselected[sindex])
     
     if (pselected[sindex] != -1 && pselected[sindex] != thing) {
-       // ps[pselected[sindex]].style.backgroundColor = 'white'
+        ps[pselected[sindex]].style.backgroundColor = 'white'
         pselected[sindex] = -1
         //console.log('pselected',pselected[sindex])
     }
 
-   // ps[thing].style.backgroundColor = 'rgb(235, 235, 235)'
+    ps[thing].style.backgroundColor = color_selected
     pstate[sindex][thing].onhover = true
 }}
 
@@ -415,6 +417,8 @@ function saiu(thing,sindex) {
     //if (pselected[sindex] != thing)
     //ps[thing].style.backgroundColor = 'white'
 }
+  if (pselected[sindex] != thing)
+    ps[thing].style.backgroundColor = 'white'
 pstate[sindex][thing].onhover = false
 podeir[sindex] = true
 }
