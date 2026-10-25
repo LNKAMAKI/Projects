@@ -81,6 +81,10 @@
         overflow: hidden;
        }
 
+       .icard:hover {
+        box-shadow: 0px 0px 10px 5px rgb(225, 225, 225);
+       }
+
        .p-holder {
         background-color: var(--side2blue);
         box-sizing: border-box;
@@ -90,14 +94,19 @@
         flex-grow: 1;
         display: flex;
         align-items: center;
-        justify-content: center;
         border-top: 5px solid var(--side1blue);
 
         p {
             border-radius: 5px;
             padding: 5px;
+            width: 100%;
+            margin: 0px 4px;
             max-height: 70px;
             overflow: hidden;
+       }
+
+       p:hover {
+        background-color: aqua;
        }
     }
 
@@ -106,15 +115,35 @@
         width: 100%;
         aspect-ratio: 1.4;
         position: relative;
-        display: flex;
-        justify-content: center;
-       img {
+        display:grid;
+        justify-items: center;
+
+        img {
             position: absolute;
             top: 0%;
             height: 100%;
             box-sizing: border-box;
         }
+
+        .star {
+            position: absolute;
+            top: 100%;
+            transform: translateY(-100%);
+            justify-self: flex-start;
+            height: auto;
+            justify-self: flex-end;
+            font-size: 25px;
+            content: 'aa';
+            z-index: 10;
+        }
+
+        .star:hover {
+            background-color: #F7DF1E;
+            border-top-left-radius: 4px;
+        }
+        
        }
+
 
        .icard:has(#logo-img) {
         background-color: var(--mainblue);
@@ -133,7 +162,6 @@
 
        @media (max-width: 550px) {
         #i-cards {
-            background-color: aquamarine;
             grid-template-columns: 1fr;
             max-width: 300px;
         }
@@ -141,11 +169,11 @@
     </style>
 </head>
 
-<body>
+<body onload="load()">
 
     <script src="database.js"></script>
     <script src="search-engine.js"></script>
-    <script type="module" src="lnkmaphys-platform.js"></script>
+    <script src="lnkmaphys-platform.js"></script>
 
     <header>
        
@@ -189,8 +217,8 @@
 
             <section id="i-cards">
                 <div class="icard">
-                      <div class="holder">
-                        <img src="images/medidas-frequencias.png" alt="">
+                      <div class="holder" style="background-color: #FFFFFF;">
+                        <img src="images/medidas-frequencias.png">
                     </div>
                      <div class="p-holder">
                         <p>aaa</p>
@@ -198,8 +226,11 @@
                 </div>
                 </div>
                 <div class="icard">
-                    <div class="holder">
+                    <div class="holder" style="background-color: #FFFFFF;">
                         <img src="images/fatorador-img.png" alt="">
+                        <div class="star">
+                            ⭐
+                        </div>
                     </div>
                     <div class="p-holder">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet cupiditate quis ad natus obcaecati porro, repudiandae iste minu</p>

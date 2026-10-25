@@ -52,3 +52,10 @@ const nomes = [
   {title: ' ze espigao '},
   {title: ' emaunelo almeida'},
 ]
+
+const icards = [
+  {src: 'images/medidas-frequencias.png',title:'Estatística: Medidas de Tendência Central e Frequências'},
+  {src: 'images/fatorador-img.png',title:'Fatorador'},
+  {src: 'images/refracao-sim.png',title:'Refração em prismas'},
+  {src: 'images/partitioner.png',title:'Partitioner'}
+]
