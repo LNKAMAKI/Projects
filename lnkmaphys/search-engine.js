@@ -70,7 +70,7 @@ class_searcher = 'searcher' // classe das barras de pesquisa
 class_pholder = 'main' // classe das divs que contêm as opções de busca
 
 //createLists([subjects2,subjects],['title','title'])
-createLists([nomes,frutas],['title','title'])
+createLists([icards],['title'])
 function createLists(lists,attributes) {
     window.lists = lists
 pselected = [] // reseta as opções selecionadas por teclado para -1
@@ -566,7 +566,7 @@ function sortob(n, pam, pim) {
 // Ordena os textos por quantidade de palavras
 function sortWordsByNumber(palavrasPrimitivas,s) {
 for (palavra in palavrasPrimitivas) {
-    word = palavrasPrimitivas[palavra][s].toLowerCase()
+    word = palavrasPrimitivas[palavra][s] //.toLowerCase()
     //console.log('word',word)
     break_word = ''
     words_number = 0

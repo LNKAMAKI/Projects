@@ -21,6 +21,14 @@ const frutas = [
     {title: 'abobrinha'}
 ]
 
+const nomes2 = [
+  {title: 'banana  santana'},
+  {title: 'fernanda  giovanna    ana '},
+  {title: 'ana  amanda  '},
+  {title: 'mariana  amanda  '},
+  {title: ' ananda  fernandes  banana '},
+]
+
 const nomes = [
   {title: 'banana  santana'},
   {title: 'fernanda  giovanna    ana '},
@@ -54,8 +62,8 @@ const nomes = [
 ]
 
 const icards = [
-  {src: 'images/medidas-frequencias.png',title:'Estatística: Medidas de Tendência Central e Frequências'},
-  {src: 'images/fatorador-img.png',title:'Fatorador'},
-  {src: 'images/refracao-sim.png',title:'Refração em prismas'},
-  {src: 'images/partitioner.png',title:'Partitioner'}
+  {img_src: 'images/medidas-frequencias.png',title:'Estatística: Medidas de Tendência Central e Frequências'},
+  {img_src: 'images/fatorador-img.png',title:'Fatorador'},
+  {img_src: 'images/refracao-sim.png',title:'Refração em prismas'},
+  {img_src: 'images/partitioner.png',title:'Partitioner'}
 ]
