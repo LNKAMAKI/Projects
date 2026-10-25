@@ -60,6 +60,70 @@
        span.phelp {
         font-size: clamp(0.75rem, 1.5vw, 0.85rem);
        }
+
+       #i-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        max-width: 1000px;
+        padding: 0px 10px;
+        margin: 20px auto;
+       }
+
+       .icard {
+        background-color: var(--side2blue);
+        border: 5px solid var(--side1blue);
+        /*aspect-ratio: 1.2;*/
+        border-radius: 15px;
+        padding: 0px 5px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+       }
+
+       .try {
+        margin: 10px 0px;
+        border-radius: 15;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            border-radius: 5px;
+            background-color: rgb(255, 218, 242);
+            padding: 4px;
+            max-height: 70px;
+            overflow: hidden;
+       }
+    }
+
+       .holder {
+        padding-top: 10px;
+        width: 100%;
+        aspect-ratio: 1.4;
+       img {
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+       }
+
+       @media (max-width: 820px) {
+        #i-cards {
+            background-color: aquamarine;
+            grid-template-columns: 1fr 1fr;
+            max-width: 640px;
+        }
+       }
+
+       @media (max-width: 550px) {
+        #i-cards {
+            background-color: aquamarine;
+            grid-template-columns: 1fr;
+            max-width: 300px;
+        }
+       }
     </style>
 </head>
 
@@ -90,13 +154,13 @@
 
     <main>
         
-
+        <!--
         <div class="rev" style="width: 300px;">
                 <input type="text" name="" class="searcher" placeholder="Pesquisar..." spellcheck="false" style="background-color:pink">
                 <div class="main">
                 </div>
             </div>
-        
+        -->
 
             <section>
                     <h1>
@@ -104,11 +168,34 @@
                         <span style="color: var(--gold);">LNKmaphys</span>
                     </h1>
                 <div class="frase">
-                    <p>
-                        A plataforma LNKmaphys é um espaço dedicado à exploração da Matemática e da Física, oferecendo ferramentas interativas, simuladores, conteúdos didáticos e experiências que permitem ir além dos resultados e compreender os conceitos por trás deles.
-                    </p>
+                    <p> </p>
                 </div>
                 <br>
+            </section>
+
+            <section id="i-cards">
+                <div class="icard">
+                      <div class="holder">
+                        <img src="/alitus-logo.svg" alt="">
+                    </div>
+                     <div class="try">
+                        <p>aaa</p>
+                    </div>
+                </div>
+                </div>
+                <div class="icard">
+                    <div class="holder">
+                        <img src="/alitus-logo.svg" alt="">
+                    </div>
+                    <div class="try">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet cupiditate quis ad natus obcaecati porro, repudiandae iste minus nam asperiores eos sunt assumenda sit eius expedita iure minima nostrum animi!</p>
+                    </div>
+                </div>
+                <div class="icard">d</div>
+                <div class="icard">a</div>
+                <div class="icard">o</div>
+                <div class="icard">d</div>
+                 <div class="icard">d</div>
             </section>
 
 
