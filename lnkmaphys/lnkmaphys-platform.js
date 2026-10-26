@@ -18,16 +18,7 @@ function load() {
      `${icards[icard].title}</p>` +  '</div></div>'
     }
 }
-
-favsection = document.querySelector('.favoritos')
- for (icard in favslist_object) {
-    console.log('hau')
-      favsection.innerHTML += '<div class="icard"><div class="holder" style="background-color: #FFFFFF;"><img src='
-     + `${favslist_object[icard].img_src}` + ' alt=""><div class="star2" onclick="addtolist(' + `${icard}` + ')">⭐</div></div> <div class="p-holder"> <p>' +
-     `${favslist_object[icard].title}</p>` +  '</div></div>'
-}
-
-
+    reloadFavs()
 }
 
 function addtolist(indexcard) {
@@ -47,7 +38,6 @@ function addtolist(indexcard) {
             localStorage.setItem('favslist',JSON.stringify([{img_src: objcard.img_src,title:objcard.title}]))
          }
          console.log(JSON.parse(localStorage.getItem("favslist")))
-         addToFavs(indexcard)
     }else{
          fav_star.classList.remove('star2')
          console.log(favslist_object)
@@ -55,5 +45,17 @@ function addtolist(indexcard) {
          favslist_object.splice(favslist_object.indexOf(favslist_object.find(obj => obj.title === objcard.title)),1)
          console.log(favslist_object)
          localStorage.setItem('favslist',JSON.stringify(favslist_object))
+    }
+    reloadFavs()
+}
+
+function reloadFavs() {
+    favsection = document.querySelector('.favoritos')
+    favsection.innerHTML = ''
+    for (icard in favslist_object) {
+        console.log('hau')
+        favsection.innerHTML += '<div class="icard"><div class="holder" style="background-color: #FFFFFF;"><img src='
+        + `${favslist_object[icard].img_src}` + ' alt=""><div class="star2" onclick="addtolist(' + `${icard}` + ')">⭐</div></div> <div class="p-holder"> <p>' +
+        `${favslist_object[icard].title}</p>` +  '</div></div>'
     }
 }
