@@ -72,7 +72,7 @@ class_pholder = 'main' // classe das divs que contêm as opções de busca
 //createLists([subjects2,subjects],['title','title'])
 createLists([icards],['title'])
 function createLists(lists,attributes) {
-    window.lists = lists
+    window.lists = [...lists]
 pselected = [] // reseta as opções selecionadas por teclado para -1
 podeir = [] // outro reset de navegação
 window.attributes = attributes// atributos que contêm os textos a serem buscados em cada array

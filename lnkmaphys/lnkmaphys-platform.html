@@ -61,7 +61,7 @@
         font-size: clamp(0.75rem, 1.5vw, 0.85rem);
        }
 
-       #i-cards {
+       .i-cards {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
@@ -159,14 +159,14 @@
        }
 
        @media (max-width: 820px) {
-        #i-cards {
+        .i-cards {
             grid-template-columns: 1fr 1fr;
             max-width: 640px;
         }
        }
 
        @media (max-width: 550px) {
-        #i-cards {
+        .i-cards {
             grid-template-columns: 1fr;
             max-width: 300px;
         }
@@ -220,7 +220,7 @@
                 <br>
             </section>
 
-            <section id="i-cards">
+            <section class="i-cards">
                 <div class="icard">
                       <div class="holder" style="background-color: #FFFFFF;">
                         <img src="images/medidas-frequencias.png">
@@ -294,7 +294,7 @@
             </section>
 
             <h1>Favoritos</h1>
-            <section id="favoritos">
+            <section class="favoritos i-cards">
             </section>
 
     </main>
