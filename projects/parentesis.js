@@ -49,7 +49,9 @@ Initialparenteses =[ [ ],
 ]
 
 
-expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
+expression_text = "(100x - (4 - (20 * 5) + (4 - 6 * 9 + (8 - 4)) - 6)) * (5 + (6 - (5 - 2) + (6 + 8)))"
+//expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
+//expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -81,11 +83,12 @@ Initialparenteses = parenteses_set
 Initialparenteses.unshift([])
 console.log('Initialparenteses: ', Initialparenteses)
 
-parenteses_grouped = new Group([...Initialparenteses])
-console.log('parenteses grouped: ',parenteses_grouped)
+parenteses_grouped = new Group([...Initialparenteses], [])
+console.log('parenteses grouped: ',parenteses_grouped[0])
+console.log('group array: ',parenteses_grouped[1])
 
 group_text = []
-function Group (parenteses,grouparray = []) {
+function Group (parenteses,grouparray) {
 
 this.grouparray = grouparray
 this.parenteses = parenteses
@@ -98,8 +101,9 @@ if (this.parenteses.length >= 3) {
     contador = 0
 for (this.obj = 2; this.obj < this.parenteses.length && contador < 10; this.obj++) {
     //console.log('')
-    //console.log('objeto a ser analisado',this.obj, this.parenteses[this.obj])
-    //console.log('comparar com this.referobj: ', this.referobj)
+    console.log('objeto a ser analisado',this.obj, this.parenteses[this.obj])
+    console.log('comparar com this.referobj: ', this.referobj)
+    console.log(' ')
   if (this.parenteses[this.obj].start < this.referobj.end) {
   //o this.parenteses do objeto atual começa antes do paresentes em referência acabar, ou seja, o this.parenteses atual está contido no outro
     //console.log(this.parenteses[this.obj], 'está contido em', this.referobj)
@@ -117,14 +121,16 @@ for (this.obj = 2; this.obj < this.parenteses.length && contador < 10; this.obj+
 
     this.obj = this.index_referobj 
     this.index_referobj = this.obj
+    this.grouparray.push([this.referobj.start + ':' + this.referobj.end])
 // para ajustar o parâmetro com a diminuição do tamanho
 
 // chamar a função de novo
-//console.log('chamando a função de novo',this.index_referobj, this.parenteses[this.obj])
-new Group(this.parenteses[this.obj])
+console.warn('chamando a função de novo',this.index_referobj, this.parenteses[this.obj])
+new Group(this.parenteses[this.obj], this.grouparray[this.grouparray.length - 1])
     }
 
    }else if (this.arraygroup.length > 1) {
+   
      //o this.parenteses atual não está contido no de referência
     //console.log(this.parenteses[this.obj], 'não está contido em', this.referobj)
     console.log('this.arraygroup', this.arraygroup)
@@ -138,20 +144,30 @@ new Group(this.parenteses[this.obj])
 
     this.obj = this.index_referobj + 1
 // para ajustar o parâmetro com a diminuição do tamanho
-
+    this.grouparray.push([this.referobj.start + ':' + this.referobj.end])
     this.referobj = this.parenteses[this.obj]
     this.index_referobj = this.obj
     this.arraygroup = [this.referobj]
-
 // chamar a função de novo
-//console.log('chamando a função de novo',this.index_referobj, this.parenteses[this.obj - 1])
-new Group(this.parenteses[this.obj - 1])
+console.warn('chamando a função de novo',this.index_referobj, this.parenteses[this.obj - 1])
+new Group(this.parenteses[this.obj - 1],this.grouparray[this.grouparray.length - 1])
+  }else{
+    console.log('objeto adjacente')
+    /*
+    if (this.index_referobj == 1) {
+        console.log('ADDD')
+        this.grouparray.push(['a'])
+    }*/
+    this.referobj = this.parenteses[this.obj]
+    this.index_referobj = this.obj
+    this.arraygroup = [this.referobj]
+    this.grouparray.push([this.referobj.start + ':' + this.referobj.end])
   }
 contador++
 }
 }
 
-return this.parenteses
+return [this.parenteses,this.grouparray]
 //console.log('fim do programa')
 //console.log('resultado final: ', this.parenteses)
 }
@@ -244,7 +260,7 @@ function resolverParênteses() {
                return degs
 }
 
-DoGroup()
+//DoGroup()
 function DoGroup() {
     for (index_group in parenteses_grouped) {
         console.log('index_group',parenteses_grouped[index_group])
