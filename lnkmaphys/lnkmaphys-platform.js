@@ -4,6 +4,11 @@ function load() {
     icards_holder.innerHTML = ''
 
     console.log('AAAAAAAAAAATAAA',frutas,nomes,icards)
+    if (localStorage.getItem("favslist")) {
+
+    }else{
+        localStorage.setItem('favslist',JSON.stringify([]))
+    }
     favslist_object = JSON.parse(localStorage.getItem("favslist"))
     for (icard in icards) {
         //console.log(icards[icard],icards[icard].title)
@@ -52,6 +57,8 @@ function addtolist(indexcard) {
 function reloadFavs() {
     favsection = document.querySelector('.favoritos')
     favsection.innerHTML = ''
+    favslist = localStorage.getItem("favslist")
+    favslist_object = JSON.parse(favslist)
     for (icard in favslist_object) {
         console.log('hau')
         favsection.innerHTML += '<div class="icard"><div class="holder" style="background-color: #FFFFFF;"><img src='

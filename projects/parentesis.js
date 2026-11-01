@@ -49,7 +49,31 @@ Initialparenteses =[ [ ],
 ]
 
 
-expression = ['(', '10', '-', '(', '4', '-', '2', ')', ')', 'x', '5','+','(','6','-','(','5','-','2',')',')']
+expression_text = "(100x - (4 - 2)) * 5 + (6 - (5 - 2))"
+
+expression = Str_toArray(expression_text)
+function Str_toArray(str) {
+    str = str.replaceAll(' ','')
+    console.log('string',str)
+    str_array = []
+    str_element = ''
+    for (e in str) {
+        console.log(e,str[e])
+        if (str_element.search('[a-z]|[0-9]') != -1 && str[e].search('[a-z]|[0-9]') != -1) {
+            str_element += str[e]
+        }else if (e != 0){  // if (str_element.search('[a-z]|[0-9]') == -1 && str[e].search('[a-z]|[0-9]') != -1) {
+            str_array.push(str_element)
+            str_element = str[e]
+        }else{
+            str_element = str[e]
+        }
+    }
+    str_array.push(str_element)
+    console.log(str_array)
+    return str_array
+}
+
+//expression = ['10']//['(', '10', '-', '(', '4', '-', '2', ')', ')', '*', '5','+','(','6','-','(','5','-','2',')',')']
 console.log('expression: ', expression)
 parenteses_set = resolverParênteses()
 console.log('parenteses_set: ', parenteses_set)
@@ -58,7 +82,7 @@ Initialparenteses.unshift([])
 console.log('Initialparenteses: ', Initialparenteses)
 
 parenteses_grouped = new Group([...Initialparenteses])
-console.log('degsexp group: ',parenteses_grouped)
+console.log('parenteses grouped: ',parenteses_grouped)
 
 function Group (parenteses) {
 
