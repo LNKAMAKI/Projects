@@ -49,7 +49,7 @@ Initialparenteses =[ [ ],
 ]
 
 
-expression_text = "(100x - (4 - 2)) * 5 + (6 - (5 - 2))"
+expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -84,8 +84,10 @@ console.log('Initialparenteses: ', Initialparenteses)
 parenteses_grouped = new Group([...Initialparenteses])
 console.log('parenteses grouped: ',parenteses_grouped)
 
-function Group (parenteses) {
+group_text = []
+function Group (parenteses,grouparray = []) {
 
+this.grouparray = grouparray
 this.parenteses = parenteses
 this.referobj = this.parenteses[1]
 this.index_referobj = 1
@@ -105,7 +107,9 @@ for (this.obj = 2; this.obj < this.parenteses.length && contador < 10; this.obj+
 
     if (this.obj == this.parenteses.length - 1 && this.arraygroup.length != this.parenteses.length && this.arraygroup.length > 1) {
         //console.log('this.obj é o último e this.arraygroup não tem todos os objetos, então é preciso criar o array')
-        //console.log('this.arraygroup', this.arraygroup)
+        console.log('this.arraygroup', this.arraygroup)
+        console.log(this.referobj.start,this.referobj.end)
+         console.log('adicionar o array')
     this.parenteses[this.index_referobj] = this.arraygroup
 
     this.parenteses.splice(this.index_referobj + 1, this.obj - this.index_referobj)
@@ -123,6 +127,9 @@ new Group(this.parenteses[this.obj])
    }else if (this.arraygroup.length > 1) {
      //o this.parenteses atual não está contido no de referência
     //console.log(this.parenteses[this.obj], 'não está contido em', this.referobj)
+    console.log('this.arraygroup', this.arraygroup)
+    console.log(this.referobj.start,this.referobj.end)
+    console.log('adicionar o array')
     this.parenteses[this.index_referobj] = this.arraygroup
 
     //console.log('splice',this.index_referobj + 1, this.obj - this.index_referobj - 1)
@@ -235,4 +242,11 @@ function resolverParênteses() {
                }
 
                return degs
+}
+
+DoGroup()
+function DoGroup() {
+    for (index_group in parenteses_grouped) {
+        console.log('index_group',parenteses_grouped[index_group])
+    }
 }
