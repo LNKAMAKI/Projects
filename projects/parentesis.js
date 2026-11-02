@@ -49,9 +49,10 @@ Initialparenteses =[ [ ],
 ]
 
 
-expression_text = "(100x - (4 - (20 * 5) + (4 - 6 * 9 + (8 - 4)) - 6)) * (5 + (6 - (5 - 2) + (6 + 8)))"
+expression_text = "(100x - (4 - (20 * 5) + (4 - 6 * 9 + (8 - 4)) - 6)) * 4 + (5 + (6 - (5 - 2) + (6 + 8)))"
 //expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
+expression_text = "(100x - 4) + (5 * 9)"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -84,11 +85,11 @@ Initialparenteses.unshift([])
 console.log('Initialparenteses: ', Initialparenteses)
 
 parenteses_grouped = new Group([...Initialparenteses], [])
-console.log('parenteses grouped: ',parenteses_grouped[0])
-console.log('group array: ',parenteses_grouped[1])
+console.log('parenteses grouped: ',parenteses_grouped)
+//console.log('group array: ',parenteses_grouped[1])
 
 group_text = []
-function Group (parenteses,grouparray) {
+function Group (parenteses,grouparray = []) {
 
 this.grouparray = grouparray
 this.parenteses = parenteses
@@ -167,7 +168,7 @@ contador++
 }
 }
 
-return [this.parenteses,this.grouparray]
+return this.parenteses // [this.parenteses,this.grouparray]
 //console.log('fim do programa')
 //console.log('resultado final: ', this.parenteses)
 }
@@ -260,9 +261,41 @@ function resolverParênteses() {
                return degs
 }
 
-//DoGroup()
-function DoGroup() {
-    for (index_group in parenteses_grouped) {
-        console.log('index_group',parenteses_grouped[index_group])
+parenteses_grouped2 = [...parenteses_grouped]
+expression2 = [...expression]
+DoGroup(parenteses_grouped2)
+function DoGroup(currentArray) {
+    this.currentArray = currentArray
+    this.ends = [-1]
+    this.groups = []
+    if (Array.isArray(currentArray[0]) && currentArray[0].length == 0) {
+        console.log('shift')
+    currentArray.shift()
     }
+    for (index_group in this.currentArray) {
+        console.log('ends',this.ends)
+        group = this.currentArray[index_group]
+        console.log(index_group,group,group.length,group.length == 0)
+       
+        groupsup = currentArray
+         if (Array.isArray(group) && group.length > 0) {
+            console.log('group[0]')
+            groupsup = group
+            group = group[0]
+            console.log(Array.isArray(group))
+        }
+        
+            console.log('rgoup > 0')
+            console.log(group.start,':',group.end)
+            console.log(this.ends[this.ends.length - 1] + 1,group.start)
+            //console.log(expression.slice(this.ends[this.ends.length - 1] + 1, group.start))
+            console.log(expression2.slice(this.ends[this.ends.length - 1] + 1, group.start))
+            this.groups.push(expression2.slice(this.ends[this.ends.length - 1] + 1, group.start))
+            this.ends.push(group.end)
+            console.log('groupsup',groupsup)
+            if (groupsup.length > 1) {
+            this.groups.push(groupsup.slice(1,groupsup.length))
+            }
+            console.log('this.groups',this.groups)
+}
 }
