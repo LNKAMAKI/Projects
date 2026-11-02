@@ -275,11 +275,12 @@ function DoGroup(currentArray,initial_index) {
     this.currentArray.shift()
     }
     // hora de fazer a recursividade
-    for (index_group in this.currentArray) {
+    for (this.index_group = 0; this.index_group < this.currentArray.length; this.index_group++) {
         console.log('ends',this.ends)
-        this.group = this.currentArray[index_group]
+        this.group = this.currentArray[this.index_group]
+        console.log(this.index_group)
         console.log('-------------------------------------------------',this.currentArray)
-        console.log(index_group,this.group)
+        console.log(this.index_group,this.group)
        
         this.groupsup = this.currentArray
          if (Array.isArray(this.group) && this.group.length > 0) {
@@ -298,10 +299,15 @@ function DoGroup(currentArray,initial_index) {
             this.ends.push(this.group.end)
             console.log('groupsup',this.groupsup)
             if (this.groupsup.length > 1 && this.groupsup != this.currentArray) {
+                console.log('adicionando array ao this.groups')
                 this.groups.push('(')
                 this.groups.push(this.groupsup.slice(1,this.groupsup.length))
                 this.groups.push(')')
+                console.log('this.groups',[...this.groups])
+                // RECURSIVIDADE
+                new DoGroup(this.groupsup.slice(1,this.groupsup.length),this.group.start)
             }else if (this.groupsup == this.currentArray) {
+                console.log('adicionando texto ao this.groups')
                 this.groups.push('(')
                  this.groups.push(expression2.slice(this.group.start + 1, this.group.end))
                   this.groups.push(')')
