@@ -52,7 +52,7 @@ Initialparenteses =[ [ ],
 expression_text = "(100x - (4 - (20 * 5) + (4 - 6 * 9 + (8 - 4)) - 6)) * 4 + (5 + (6 - (5 - 2) + (6 + 8)))"
 //expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
-expression_text = "(100x - 4) + (5 * 9)"
+expression_text = "(100x - 4) + (5 * (9 + 5))"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -266,7 +266,7 @@ expression2 = [...expression]
 DoGroup(parenteses_grouped2)
 function DoGroup(currentArray) {
     this.currentArray = currentArray
-    this.ends = [-1]
+    this.ends = [-1] // somente para quando currentArray = parenteses_grouped()
     this.groups = []
     if (Array.isArray(currentArray[0]) && currentArray[0].length == 0) {
         console.log('shift')
@@ -274,27 +274,30 @@ function DoGroup(currentArray) {
     }
     for (index_group in this.currentArray) {
         console.log('ends',this.ends)
-        group = this.currentArray[index_group]
-        console.log(index_group,group,group.length,group.length == 0)
+        this.group = this.currentArray[index_group]
+        console.log('-------------------------------------------------')
+        console.log(index_group,this.group)
        
-        groupsup = currentArray
-         if (Array.isArray(group) && group.length > 0) {
+        this.groupsup = currentArray
+         if (Array.isArray(this.group) && this.group.length > 0) {
             console.log('group[0]')
-            groupsup = group
-            group = group[0]
-            console.log(Array.isArray(group))
+            this.groupsup = this.group // array do qual group faz parte
+            this.group = this.group[0]
+            console.log(Array.isArray(this.group))
         }
         
-            console.log('rgoup > 0')
-            console.log(group.start,':',group.end)
-            console.log(this.ends[this.ends.length - 1] + 1,group.start)
+            console.log(this.group.start,':',this.group.end)
             //console.log(expression.slice(this.ends[this.ends.length - 1] + 1, group.start))
-            console.log(expression2.slice(this.ends[this.ends.length - 1] + 1, group.start))
-            this.groups.push(expression2.slice(this.ends[this.ends.length - 1] + 1, group.start))
-            this.ends.push(group.end)
-            console.log('groupsup',groupsup)
-            if (groupsup.length > 1) {
-            this.groups.push(groupsup.slice(1,groupsup.length))
+            console.log('de ',this.ends[this.ends.length - 1] + 1,' a ',this.group.start, ' : ', expression2.slice(this.ends[this.ends.length - 1] + 1, this.group.start))
+            this.groups.push(expression2.slice(this.ends[this.ends.length - 1] + 1, this.group.start)) // adicionar o que está entre os grupos
+            this.ends.push(this.group.end)
+            console.log('groupsup',this.groupsup)
+            if (this.groupsup.length > 1 && this.groupsup != currentArray) {
+                this.groups.push('(')
+                this.groups.push(this.groupsup.slice(1,this.groupsup.length))
+                this.groups.push(')')
+            }else if (this.groupsup == currentArray) {
+                 this.groups.push(expression2.slice(this.group.start, this.group.end))
             }
             console.log('this.groups',this.groups)
 }
