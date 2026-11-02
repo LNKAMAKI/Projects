@@ -52,7 +52,8 @@ Initialparenteses =[ [ ],
 expression_text = "(100x - (4 - (20 * 5) + (4 - 6 * 9 + (8 - 4)) - 6)) * 4 + (5 + (6 - (5 - 2) + (6 + 8)))"
 //expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
-expression_text = "(100x - (4 + 9)) + (5 * (9 + 5))"
+expression_text = "(100x - ( 4 + 9 ) ) +  (  5  *  ( 9  +  5   )  )"
+    //             0 1   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  18
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -273,13 +274,14 @@ function DoGroup(currentArray,initial_index) {
         console.log('shift')
     this.currentArray.shift()
     }
+    // hora de fazer a recursividade
     for (index_group in this.currentArray) {
         console.log('ends',this.ends)
         this.group = this.currentArray[index_group]
-        console.log('-------------------------------------------------')
+        console.log('-------------------------------------------------',this.currentArray)
         console.log(index_group,this.group)
        
-        this.groupsup = currentArray
+        this.groupsup = this.currentArray
          if (Array.isArray(this.group) && this.group.length > 0) {
             console.log('group[0]')
             this.groupsup = this.group // array do qual group faz parte
@@ -295,15 +297,16 @@ function DoGroup(currentArray,initial_index) {
             }
             this.ends.push(this.group.end)
             console.log('groupsup',this.groupsup)
-            if (this.groupsup.length > 1 && this.groupsup != currentArray) {
+            if (this.groupsup.length > 1 && this.groupsup != this.currentArray) {
                 this.groups.push('(')
                 this.groups.push(this.groupsup.slice(1,this.groupsup.length))
                 this.groups.push(')')
-            }else if (this.groupsup == currentArray) {
+            }else if (this.groupsup == this.currentArray) {
                 this.groups.push('(')
                  this.groups.push(expression2.slice(this.group.start + 1, this.group.end))
                   this.groups.push(')')
             }
             console.log('this.groups',[...this.groups])
 }
+  // modificar o array original (currentArray) para groups
 }
