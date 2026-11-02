@@ -305,7 +305,9 @@ function DoGroup(currentArray,initial_index) {
                 this.groups.push(')')
                 console.log('this.groups',[...this.groups])
                 // RECURSIVIDADE
-                new DoGroup(this.groupsup.slice(1,this.groupsup.length),this.group.start)
+                //this.groups[this.groups.length - 3] = '777'
+                //new DoGroup(this.groupsup.slice(1,this.groupsup.length),this.group.start)
+                new DoGroup(this.groups[this.groups.length - 2],this.group.start)
             }else if (this.groupsup == this.currentArray) {
                 console.log('adicionando texto ao this.groups')
                 this.groups.push('(')
@@ -314,5 +316,7 @@ function DoGroup(currentArray,initial_index) {
             }
             console.log('this.groups',[...this.groups])
 }
+currentArray.length = 0
+currentArray.push(this.groups)
   // modificar o array original (currentArray) para groups
 }
