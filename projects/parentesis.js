@@ -52,7 +52,7 @@ Initialparenteses =[ [ ],
 expression_text = "(100x - (4 - (20 * 5) + (4 - 6 * 9 + (8 - 4)) - 6)) * 4 + (5 + (6 - (5 - 2) + (6 + 8)))"
 //expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
-expression_text = "(100x - 4) + (5 * (9 + 5))"
+expression_text = "(100x - (4 + 9)) + (5 * (9 + 5))"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -263,14 +263,15 @@ function resolverParênteses() {
 
 parenteses_grouped2 = [...parenteses_grouped]
 expression2 = [...expression]
-DoGroup(parenteses_grouped2)
-function DoGroup(currentArray) {
+DoGroup(parenteses_grouped2,-1)
+function DoGroup(currentArray,initial_index) {
     this.currentArray = currentArray
-    this.ends = [-1] // somente para quando currentArray = parenteses_grouped()
+    this.initial_index = initial_index
+    this.ends = [this.initial_index] // somente para quando currentArray = parenteses_grouped()
     this.groups = []
-    if (Array.isArray(currentArray[0]) && currentArray[0].length == 0) {
+    if (Array.isArray(this.currentArray[0]) && this.currentArray[0].length == 0) {
         console.log('shift')
-    currentArray.shift()
+    this.currentArray.shift()
     }
     for (index_group in this.currentArray) {
         console.log('ends',this.ends)
@@ -289,7 +290,9 @@ function DoGroup(currentArray) {
             console.log(this.group.start,':',this.group.end)
             //console.log(expression.slice(this.ends[this.ends.length - 1] + 1, group.start))
             console.log('de ',this.ends[this.ends.length - 1] + 1,' a ',this.group.start, ' : ', expression2.slice(this.ends[this.ends.length - 1] + 1, this.group.start))
+            if (this.ends[this.ends.length - 1] + 1 < this.group.start) {
             this.groups.push(expression2.slice(this.ends[this.ends.length - 1] + 1, this.group.start)) // adicionar o que está entre os grupos
+            }
             this.ends.push(this.group.end)
             console.log('groupsup',this.groupsup)
             if (this.groupsup.length > 1 && this.groupsup != currentArray) {
@@ -297,8 +300,10 @@ function DoGroup(currentArray) {
                 this.groups.push(this.groupsup.slice(1,this.groupsup.length))
                 this.groups.push(')')
             }else if (this.groupsup == currentArray) {
-                 this.groups.push(expression2.slice(this.group.start, this.group.end))
+                this.groups.push('(')
+                 this.groups.push(expression2.slice(this.group.start + 1, this.group.end))
+                  this.groups.push(')')
             }
-            console.log('this.groups',this.groups)
+            console.log('this.groups',[...this.groups])
 }
 }
