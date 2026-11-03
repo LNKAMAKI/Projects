@@ -49,12 +49,15 @@ Initialparenteses =[ [ ],
 ]
 
 
-expression_text = "(100x - (4 - (20 * 5) + (4 - 6 * 9 + (8 - 4)) - 6)) * 4 + (5 + (6 - (5 - 2) + (6 + 8)))"
+expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 )  ) * 4 + (  5 + (  6 - (5 - 2) + (6 + 8) )  )"
 //expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
-expression_text = "(100x - ( 4 + 9 ) ) +  (  5  *  ( 9  +  5   )  )"
+//expression_text = "(100x - ( 4 + 9 ) ) +  (  5  *  ( 9  +  5   )  )"
     //             0 1   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  18
-expression_text = "(100x - ( 4 + ( 9 * 5 ) ) ) +  (  5  *  ( 9  +  5   )  )"
+//expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5)  )  ) ) +  (  5  *  ( 9  +  5   )  )"
+//expression_text = "(100x -  4 + (    (9 * 5)   + ((6 + 5))    ) )"
+//expression_text = "(100x - ((4 + 5))) +  ( 9  +  5  )"
+expression_text = "(100 - (5 + 6 + (2 - 3)))"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -301,20 +304,25 @@ function DoGroup(currentArray,initial_index) {
             this.ends.push(this.group.end)
             console.log('groupsup',this.groupsup)
             console.log('O INDEX_GROUP NÃO É 0?',this.index_group == 0)
-            console.log(this.currentArray == parenteses_grouped2)
-            if (this.index_group == 0 || this.currentArray == parenteses_grouped2) { // se for o primeiro grupo, ou seja, não há recursividade
+            console.log(this.currentArray,this.groupsup)
+            if (this.groupsup != this.currentArray) {
+            //if (this.index_group == 0 || this.currentArray == parenteses_grouped2) {
                 console.log('SSSSSSSSSSSSSS')
             if (this.groupsup.length > 1) { // se houver mais de um grupo dentro do array, ou seja, há recursividade
                 console.log('adicionando array ao this.groups')
                 this.groups.push('(')
+                /*
                 if (Array.isArray(this.groupsup.slice(1,this.groupsup.length)[0])) { // se for array
                    this.groups.push(this.groupsup.slice(1,this.groupsup.length)[0])
                 }else{ // se não for array, ou seja, é um objeto
                    this.groups.push(this.groupsup.slice(1,this.groupsup.length))
-                }
+                }*/
+                
+                   this.groups.push(this.groupsup.slice(1,this.groupsup.length))
                 console.log(this.groupsup.slice(1,this.groupsup.length)[0])
                 this.groups.push(')')
-                console.log('this.groups',[...this.groups])
+                console.log(':0',this.groups[this.groups.length - 2])
+                //console.log('this.groups',[...this.groups])
                 // RECURSIVIDADE
                 //this.groups[this.groups.length - 3] = '777'
                 //new DoGroup(this.groupsup.slice(1,this.groupsup.length),this.group.start)
@@ -326,7 +334,13 @@ function DoGroup(currentArray,initial_index) {
                  this.groups.push(expression2.slice(this.group.start + 1, this.group.end))
                   this.groups.push(')')
             }
-        }
+       // }
+    }else{
+        console.log('ADJACENTEEEE')
+        this.groups.push('(')
+                 this.groups.push(expression2.slice(this.group.start + 1, this.group.end))
+                  this.groups.push(')')
+    }
             console.log('this.groups',[...this.groups])
 }
 //console.log('CURRENT ARRAY',currentArray)
