@@ -57,7 +57,7 @@ expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 ) 
 //expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5)  )  ) ) +  (  5  *  ( 9  +  5   )  )"
 //expression_text = "(100x -  4 + (    (9 * 5)   + ((6 + 5))    ) )"
 //expression_text = "(100x - ((4 + 5))) +  ( 9  +  5  )"
-expression_text = "(100 - (5 + 6 + (2 - 3)))"
+expression_text = "(100 - (5 + 6 + (2 - 3)) + (89 * 7))"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
