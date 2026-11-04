@@ -54,14 +54,14 @@ expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 ) 
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
 //expression_text = "(100x - ( 4 + 9 ) ) +  (  5  *  ( 9  +  5   )  )"
     //             0 1   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  18
-expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5)  )  ) ) +  (  5  *  ( 9  +  5   )  )"
+expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5) ) + 102 ) ) +  (  5  *  ( 9  +  5   )  ) + 91"
 //expression_text = "(100x -  4 + (    (9 * 5)   + ((6 + 5))    ) )"
 //expression_text = "(100x - ((4 + 5))) +  ( 9  +  5  )"
-// não vai ter o caso de triplo par de parênteses, tipo [[[Array]]], no  máximo vai ter [[Array], {...}], 
+// não vai ter o caso de triplo par de parênteses, tipo [[[Array]]], no  máximo vai ter [[Array], {...}], que só vai acontecer quando currentArray = parenteses_grouped2
 //expression_text = "(100 - ( 5 + 6 + (2 - 3) ) + (89 * 7) )"
-//expression_text = "( 100 - ( (5 + 6 + (2 - 3)) + (4 * 5) ) ) + (89 * 7))"
+//expression_text = "( 100 - ( (5 + 6 + (2 - 3)) + (4 * 5) + 8 * 6) ) + (89 * 7))"
 // [[Array],{...}]
-expression_text = "100 - (5x * 8) + 3"
+//expression_text = "100 - (5x * 8) + 3"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -272,8 +272,9 @@ function resolverParênteses() {
 
 parenteses_grouped2 = [...parenteses_grouped]
 expression2 = [...expression]
-DoGroup(parenteses_grouped2,-1)
-function DoGroup(currentArray,initial_index) {
+DoGroup(parenteses_grouped2,-1,expression2.length)
+function DoGroup(currentArray,initial_index,final_index) {
+    this.final_index = final_index
     this.currentArray = currentArray
     this.initial_index = initial_index
     this.ends = [this.initial_index] // somente para quando currentArray = parenteses_grouped()
@@ -331,7 +332,7 @@ function DoGroup(currentArray,initial_index) {
                 //this.groups[this.groups.length - 3] = '777'
                 //new DoGroup(this.groupsup.slice(1,this.groupsup.length),this.group.start)
                 //console.log('new construct',[...this.groups[this.groups.length - 2]])
-                new DoGroup(this.groups[this.groups.length - 2],this.group.start)
+                new DoGroup(this.groups[this.groups.length - 2],this.group.start,this.group.end)
             }else if (this.groupsup == this.currentArray) {
                 console.log('adicionando texto ao this.groups')
                 this.groups.push('(')
@@ -344,6 +345,11 @@ function DoGroup(currentArray,initial_index) {
         this.groups.push('(')
                  this.groups.push(expression2.slice(this.group.start + 1, this.group.end))
                   this.groups.push(')')
+    }
+
+    if (this.index_group == this.currentArray.length - 1 && this.group.end + 1 < this.final_index) {
+        console.warn('falta adicionar o que está depois do último grupo')
+        this.groups.push(expression2.slice(this.group.end + 1, this.final_index))
     }
             console.log('this.groups',[...this.groups])
 }
