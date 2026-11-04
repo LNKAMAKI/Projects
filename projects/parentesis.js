@@ -54,7 +54,7 @@ expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 ) 
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
 //expression_text = "(100x - ( 4 + 9 ) ) +  (  5  *  ( 9  +  5   )  )"
     //             0 1   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  18
-expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5) ) + 102 ) ) +  (  5  *  ( 9  +  5   )  ) + 91"
+//expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5) ) + 102 ) ) +  (  5  *  ( 9  +  5   )  ) + 91"
 //expression_text = "(100x -  4 + (    (9 * 5)   + ((6 + 5))    ) )"
 //expression_text = "(100x - ((4 + 5))) +  ( 9  +  5  )"
 // não vai ter o caso de triplo par de parênteses, tipo [[[Array]]], no  máximo vai ter [[Array], {...}], que só vai acontecer quando currentArray = parenteses_grouped2
