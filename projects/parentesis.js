@@ -54,10 +54,14 @@ expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 ) 
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
 //expression_text = "(100x - ( 4 + 9 ) ) +  (  5  *  ( 9  +  5   )  )"
     //             0 1   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  18
-//expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5)  )  ) ) +  (  5  *  ( 9  +  5   )  )"
+expression_text = "(100x - ( 4 + ( 9 * 5 + (6 + 5)  )  ) ) +  (  5  *  ( 9  +  5   )  )"
 //expression_text = "(100x -  4 + (    (9 * 5)   + ((6 + 5))    ) )"
 //expression_text = "(100x - ((4 + 5))) +  ( 9  +  5  )"
-expression_text = "(100 - (5 + 6 + (2 - 3)) + (89 * 7))"
+// não vai ter o caso de triplo par de parênteses, tipo [[[Array]]], no  máximo vai ter [[Array], {...}], 
+//expression_text = "(100 - ( 5 + 6 + (2 - 3) ) + (89 * 7) )"
+//expression_text = "( 100 - ( (5 + 6 + (2 - 3)) + (4 * 5) ) ) + (89 * 7))"
+// [[Array],{...}]
+expression_text = "100 - (5x * 8) + 3"
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -348,3 +352,24 @@ currentArray.length = 0
 currentArray.push(this.groups)
   // modificar o array original (currentArray) para groups
 }
+
+
+/*
+
+{...},
+[
+
+[
+
+[
+  {...}, {...}
+]
+
+  {...}
+],
+ {...}
+
+]
+
+
+*/
