@@ -278,7 +278,8 @@ function search2(subjects,titleProperty,searcherIndex) {
              this.d.setAttribute('onmouseenter', `entrou(${this.pnumber},${searcherIndex})`)
              this.d.setAttribute('class','phelp')
 
-             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
+             //this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=^|\\W)${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
+             this.psearcher.innerHTML = searchInnertext(subjects[n][titleProperty],pesquise,'(?<=^|\\W)')
              if (this.pnumber < 7) {
              pholder.appendChild(this.psearcher)
              pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
@@ -308,7 +309,8 @@ function search2(subjects,titleProperty,searcherIndex) {
                  //this.d.innerText = 'o'
                  this.d.setAttribute('class','phelp')
 
-                 this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
+                 //this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`(?<=\\W)${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
+                 this.psearcher.innerHTML = searchInnertext(subjects[n][titleProperty],pesquise,'(?<=\\W)')
                  if (this.pnumber < 7) {
                     pholder.appendChild(this.psearcher)
                     pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
@@ -338,7 +340,9 @@ function search2(subjects,titleProperty,searcherIndex) {
              //this.d.innerText = 'o'
              this.d.setAttribute('class','phelp')
 
-             this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
+             //this.psearcher.innerHTML = this.psearcher.innerHTML.replace(new RegExp(`${pesquise}`,"gi"), `<span style="font-weight:normal;color:yellow">${pesquise}</span>`)
+             this.psearcher.innerHTML = searchInnertext(subjects[n][titleProperty],pesquise,'')
+             
              if (this.pnumber < 7) {
                 pholder.appendChild(this.psearcher)
                 pholder.getElementsByClassName('psearcher')[this.pnumber].appendChild(this.d)
