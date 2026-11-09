@@ -49,7 +49,7 @@ Initialparenteses =[ [ ],
 ]
 
 
-expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 )  ) * 4 + (  5 + (  6 - (5 - 2) + (6 + 8) )  )"
+//expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 )  ) * 4 + ( 5 + (  6 - (5 - 2) + (6 + 8) )  )"
 //expression_text = "(100x - (4 - (20 * 5) - 6)) * 5 + (6 - (5 - 2))"
 //expression_text = "100x  (5x + 3x) + (10 * 5) - (6 - (5 - 2))"
 //expression_text = "(100x - ( 4 + 9 ) ) +  (  5  *  ( 9  +  5   )  )"
@@ -61,7 +61,8 @@ expression_text = "(100x - ( 4 - ( 20 * 5 ) + ( 4 - 6 * 9 + (  8 - 4 )  ) - 6 ) 
 //expression_text = "(100 - ( 5 + 6 + (2 - 3) ) + (89 * 7) )"
 //expression_text = "( 100 - ( (5 + 6 + (2 - 3)) + (4 * 5) + 8 * 6) ) + (89 * 7))"
 // [[Array],{...}]
-//expression_text = "100 - (5x * 8) + 3"
+//expression_text = "100 - (5x * (8 - 5)) + 3"
+expression_text = '((4 + 5)/(7*5))'
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -272,7 +273,8 @@ function resolverParênteses() {
 
 parenteses_grouped2 = [...parenteses_grouped]
 expression2 = [...expression]
-DoGroup(parenteses_grouped2,-1,expression2.length)
+result = DoGroup(parenteses_grouped2,-1,expression2.length)
+console.log('resultado final: ', result)
 function DoGroup(currentArray,initial_index,final_index) {
     this.final_index = final_index
     this.currentArray = currentArray
@@ -356,10 +358,26 @@ function DoGroup(currentArray,initial_index,final_index) {
 //console.log('CURRENT ARRAY',currentArray)
 currentArray.length = 0
 currentArray.push(this.groups)
+
+return this.groups
   // modificar o array original (currentArray) para groups
 }
 
-
+console.log('')
+console.log('percorrer array')
+percorrerArray(result)
+// criar os elementos
+function percorrerArray (resarray) {
+    this.resarray = resarray
+    this.pares = {start:-1,end:-1}
+for (char in this.resarray) {
+    console.log(this.resarray[char])
+    this.reschar = this.resarray[char]
+    if (this.reschar == '(') {
+        console.log('parenteses')
+    }
+}
+}
 /*
 
 {...},
