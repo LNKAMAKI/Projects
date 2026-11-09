@@ -46,3 +46,36 @@ document.getElementById('p').innerHTML = searchInnertext('abacaxi is aBacaxi is 
 // (?<=\\W)
 //replace(new RegExp(`(?<=^|\\W)${busca}`,"gi"), `/${busca}/`)
 //replace(new RegExp(`${busca}`,"gi"), `/${busca}</span>`)
+
+
+function searchInnertext(text,busca,search_regex) {
+
+let text_changed = text.replace(new RegExp(`${search_regex}${busca}`,"gi"), `/${busca}`)
+let indexes = []
+let innertext = ''
+let countindex = 0
+
+for (char = 0; char < text_changed.length; char++) {
+    if (text_changed[char] == '/') {
+        if (char > 0) {
+          trecho = text_changed[char - 1] + text_changed.slice(char + 1, char + 1 + busca.length)
+        }else{
+          trecho = text_changed.slice(char + 1, char + 1 + busca.length)
+        }
+         if (trecho.search(new RegExp(`${search_regex}${busca}`,"gi")) != -1) {
+         indexes.push(char - countindex)
+         countindex++
+         }
+    }
+}
+
+for (char = 0; char < text.length; char++) {
+    if (indexes.indexOf(Number(char)) == -1) {
+        innertext += text[char]
+    }else{
+        innertext += `<span style="font-weight: normal;color:yellow;">${text.slice(Number(char),Number(char) + Number(busca.length))}</span>`
+        char += busca.length - 1
+    }
+}
+return innertext
+}

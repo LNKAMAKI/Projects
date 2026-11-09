@@ -1,5 +1,5 @@
-let nome = "Ellen";
-let idade = 8;
+let nome = "Ana";
+let idade = 20;
 
 function verificarIdade() {
     if (idade >= 18) {
