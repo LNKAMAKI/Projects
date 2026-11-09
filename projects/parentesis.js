@@ -62,7 +62,7 @@ Initialparenteses =[ [ ],
 //expression_text = "( 100 - ( (5 + 6 + (2 - 3)) + (4 * 5) + 8 * 6) ) + (89 * 7))"
 // [[Array],{...}]
 //expression_text = "100 - (5x * (8 - 5)) + 3"
-expression_text = '((4 + 5)/(7*5))'
+expression_text = '((4 + 5)/(7*5)) + 5 - (3 + 4)'
 
 expression = Str_toArray(expression_text)
 function Str_toArray(str) {
@@ -369,12 +369,24 @@ percorrerArray(result)
 // criar os elementos
 function percorrerArray (resarray) {
     this.resarray = resarray
-    this.pares = {start:-1,end:-1}
+    this.pares = []
 for (char in this.resarray) {
     console.log(this.resarray[char])
     this.reschar = this.resarray[char]
     if (this.reschar == '(') {
-        console.log('parenteses')
+        console.log('parenteses abriu')
+        this.pares.push({start:char,end:-1})
+    }
+    if (this.reschar == ')') {
+        console.log('parenteses fechou')
+        this.pares[this.pares.length - 1].end = char
+        console.log(this.pares[this.pares.length - 1].start,'-',this.pares[this.pares.length - 1].end)
+        console.log(this.resarray.slice(Number(this.pares[this.pares.length - 1].start) + 1,this.pares[this.pares.length - 1].end))
+        console.log('pares',this.pares)
+    }
+
+    if (this.pares[this.pares.length - 1].start != -1 && this.pares[this.pares.length - 1].end != -1 && this.reschar != ')') {
+        console.log('n tem nada aqui')
     }
 }
 }
